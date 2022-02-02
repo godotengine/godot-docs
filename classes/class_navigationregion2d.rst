@@ -20,7 +20,7 @@ A region of the navigation map. It tells the :ref:`NavigationServer2D<class_Navi
 
 Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
 
-**Note:** Overlapping two regions' polygons is not enough for connecting two regions. They must share a similar edge.
+\ **Note:** Overlapping two regions' polygons is not enough for connecting two regions. They must share a similar edge.
 
 Properties
 ----------

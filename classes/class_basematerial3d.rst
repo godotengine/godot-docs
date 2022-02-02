@@ -582,9 +582,9 @@ enum **DepthDrawMode**:
 
 enum **CullMode**:
 
-- **CULL_BACK** = **0** --- Default cull mode. The back of the object is culled when not visible.
+- **CULL_BACK** = **0** --- Default cull mode. The back of the object is culled when not visible. Back face triangles will be culled when facing the camera. This results in only the front side of triangles being drawn. For closed-surface meshes this means that only the exterior of the mesh will be visible.
 
-- **CULL_FRONT** = **1** --- The front of the object is culled when not visible.
+- **CULL_FRONT** = **1** --- Front face triangles will be culled when facing the camera. This results in only the back side of triangles being drawn. For closed-surface meshes this means that the interior of the mesh will be drawn instead of the exterior.
 
 - **CULL_DISABLED** = **2** --- No culling is performed.
 
@@ -929,7 +929,7 @@ Threshold at which the alpha scissor will discard values.
 | *Getter*  | get_anisotropy()      |
 +-----------+-----------------------+
 
-The strength of the anisotropy effect.
+The strength of the anisotropy effect. This is multiplied by :ref:`anisotropy_flowmap<class_BaseMaterial3D_property_anisotropy_flowmap>`'s alpha channel if a texture is defined there and the texture contains an alpha channel.
 
 ----
 
@@ -945,7 +945,11 @@ The strength of the anisotropy effect.
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, anisotropy is enabled. Changes the shape of the specular blob and aligns it to tangent space. Mesh tangents are needed for this to work. If the mesh does not contain tangents the anisotropy effect will appear broken.
+If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular blob and aligns it to tangent space. This is useful for brushed aluminium and hair reflections.
+
+\ **Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
+
+\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering, which can be enabled by setting :ref:`texture_filter<class_BaseMaterial3D_property_texture_filter>` to :ref:`TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>`.
 
 ----
 
@@ -959,7 +963,9 @@ If ``true``, anisotropy is enabled. Changes the shape of the specular blob and a
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture that offsets the tangent map for anisotropy calculations.
+Texture that offsets the tangent map for anisotropy calculations and optionally controls the anisotropy effect (if an alpha channel is present). The flowmap texture is expected to be a derivative map, with the red channel representing distortion on the X axis and green channel representing distortion on the Y axis. Values below 0.5 will result in negative distortion, whereas values above 0.5 will result in positive distortion.
+
+If present, the texture's alpha channel will be used to multiply the strength of the :ref:`anisotropy<class_BaseMaterial3D_property_anisotropy>` effect. Fully opaque pixels will keep the anisotropy effect's original strength while fully transparent pixels will disable the anisotropy effect entirely. The flowmap texture's blue channel is ignored.
 
 ----
 
@@ -1117,7 +1123,7 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise, the sca
 
 Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`.
 
-**Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
+\ **Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
 
 ----
 
@@ -1135,7 +1141,7 @@ Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMater
 
 The material's blend mode.
 
-**Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`.
+\ **Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`.
 
 ----
 
@@ -1169,7 +1175,7 @@ Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as di
 
 If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can be either glossy or rough.
 
-**Note:** Clearcoat rendering is not visible if the material's :ref:`shading_mode<class_BaseMaterial3D_property_shading_mode>` is :ref:`SHADING_MODE_UNSHADED<class_BaseMaterial3D_constant_SHADING_MODE_UNSHADED>`.
+\ **Note:** Clearcoat rendering is not visible if the material's :ref:`shading_mode<class_BaseMaterial3D_property_shading_mode>` is :ref:`SHADING_MODE_UNSHADED<class_BaseMaterial3D_constant_SHADING_MODE_UNSHADED>`.
 
 ----
 
@@ -1215,7 +1221,7 @@ Texture that defines the strength of the clearcoat effect and the glossiness of 
 | *Getter*  | get_cull_mode()      |
 +-----------+----------------------+
 
-Which side of the object is not drawn when backfaces are rendered. See :ref:`CullMode<enum_BaseMaterial3D_CullMode>`.
+Determines which side of the triangle to cull depending on whether the triangle faces towards or away from the camera. See :ref:`CullMode<enum_BaseMaterial3D_CullMode>`.
 
 ----
 
@@ -1307,7 +1313,7 @@ Texture used to specify how the detail textures get blended with the base textur
 
 Texture that specifies the per-pixel normal of the detail overlay.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -1389,7 +1395,7 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 Distance at which the object appears fully opaque.
 
-**Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
 
 ----
 
@@ -1407,7 +1413,7 @@ Distance at which the object appears fully opaque.
 
 Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
 
-**Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
 
 ----
 
@@ -1597,7 +1603,7 @@ Grows object vertices in the direction of their normals.
 
 If ``true``, height mapping is enabled (also called "parallax mapping" or "depth mapping"). See also :ref:`normal_enabled<class_BaseMaterial3D_property_normal_enabled>`.
 
-**Note:** Height mapping is not supported if triplanar mapping is used on the same material. The value of :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>` will be ignored if :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled.
+\ **Note:** Height mapping is not supported if triplanar mapping is used on the same material. The value of :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>` will be ignored if :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled.
 
 ----
 
@@ -1723,7 +1729,7 @@ A high value makes the material appear more like a metal. Non-metals use their a
 
 Sets the size of the specular lobe. The specular lobe is the bright spot that is reflected from light sources.
 
-**Note:** Unlike :ref:`metallic<class_BaseMaterial3D_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_BaseMaterial3D_property_roughness>`.
+\ **Note:** Unlike :ref:`metallic<class_BaseMaterial3D_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_BaseMaterial3D_property_roughness>`.
 
 ----
 
@@ -1817,9 +1823,9 @@ The strength of the normal map's effect.
 
 Texture used to specify the normal at a given pixel. The ``normal_texture`` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from ``normal_texture`` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
-**Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
+\ **Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -2017,7 +2023,7 @@ Sets the strength of the rim lighting effect.
 
 If ``true``, rim effect is enabled. Rim lighting increases the brightness at glancing angles on an object.
 
-**Note:** Rim lighting is not visible if the material's :ref:`shading_mode<class_BaseMaterial3D_property_shading_mode>` is :ref:`SHADING_MODE_UNSHADED<class_BaseMaterial3D_constant_SHADING_MODE_UNSHADED>`.
+\ **Note:** Rim lighting is not visible if the material's :ref:`shading_mode<class_BaseMaterial3D_property_shading_mode>` is :ref:`SHADING_MODE_UNSHADED<class_BaseMaterial3D_constant_SHADING_MODE_UNSHADED>`.
 
 ----
 
@@ -2351,7 +2357,7 @@ If ``true``, transparency is enabled on the body. See also :ref:`blend_mode<clas
 
 If ``true``, render point size can be changed.
 
-**Note:** This is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`point_size<class_BaseMaterial3D_property_point_size>`.
+\ **Note:** This is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`point_size<class_BaseMaterial3D_property_point_size>`.
 
 ----
 

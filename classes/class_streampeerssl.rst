@@ -18,7 +18,7 @@ Description
 
 SSL stream peer. This object can be used to connect to an SSL server or accept a single SSL client connection.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Tutorials
 ---------
@@ -106,7 +106,7 @@ Accepts a peer connection as a server using the given ``private_key`` and provid
 
 Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
 
-**Note:** Specifying a custom ``valid_certificate`` is not supported in HTML5 exports due to browsers restrictions.
+\ **Note:** Specifying a custom ``valid_certificate`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 

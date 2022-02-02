@@ -356,7 +356,7 @@ If ``simplify`` is ``true``, the geometry can be further simplified to reduce th
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh.
 
-**Note:** This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).
+\ **Note:** This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).
 
 ----
 
@@ -382,7 +382,7 @@ Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
 
 Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space. Not affected by ``custom_aabb``. See also :ref:`VisualInstance3D.get_transformed_aabb<class_VisualInstance3D_method_get_transformed_aabb>`.
 
-**Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
+\ **Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 ----
 

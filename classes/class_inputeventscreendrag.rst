@@ -33,7 +33,7 @@ Properties
 +-------------------------------+---------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | ``Vector2(0, 0)`` |
 +-------------------------------+---------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       | ``Vector2(0, 0)`` |
+| :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>` | ``Vector2(0, 0)`` |
 +-------------------------------+---------------------------------------------------------------+-------------------+
 
 Property Descriptions
@@ -87,19 +87,19 @@ The drag position relative to the previous position (position at the last frame)
 
 ----
 
-.. _class_InputEventScreenDrag_property_speed:
+.. _class_InputEventScreenDrag_property_velocity:
 
-- :ref:`Vector2<class_Vector2>` **speed**
+- :ref:`Vector2<class_Vector2>` **velocity**
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_speed(value)  |
-+-----------+-------------------+
-| *Getter*  | get_speed()       |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``Vector2(0, 0)``   |
++-----------+---------------------+
+| *Setter*  | set_velocity(value) |
++-----------+---------------------+
+| *Getter*  | get_velocity()      |
++-----------+---------------------+
 
-The drag speed.
+The drag velocity.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

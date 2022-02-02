@@ -22,7 +22,7 @@ FABRIK works by knowing the positions and lengths of a series of bones, typicall
 
 Because of how FABRIK works, it often gives more natural results than those seen in :ref:`SkeletonModification2DCCDIK<class_SkeletonModification2DCCDIK>`. FABRIK also supports angle constraints, which are fully taken into account when solving.
 
-**Note:** The FABRIK modifier has ``fabrik_joints``, which are the data objects that hold the data for each joint in the FABRIK chain. This is different from :ref:`Bone2D<class_Bone2D>` nodes! FABRIK joints hold the data needed for each :ref:`Bone2D<class_Bone2D>` in the bone chain used by FABRIK.
+\ **Note:** The FABRIK modifier has ``fabrik_joints``, which are the data objects that hold the data for each joint in the FABRIK chain. This is different from :ref:`Bone2D<class_Bone2D>` nodes! FABRIK joints hold the data needed for each :ref:`Bone2D<class_Bone2D>` in the bone chain used by FABRIK.
 
 To help control how the FABRIK joints move, a magnet vector can be passed, which can nudge the bones in a certain direction prior to solving, giving a level of control over the final result.
 
@@ -154,7 +154,7 @@ Sets the magnet position vector for the joint at ``joint_idx``.
 
 Sets whether the joint at ``joint_idx`` will use the target node's rotation rather than letting FABRIK rotate the node.
 
-**Note:** This option only works for the tip/final joint in the chain. For all other nodes, this option will be ignored.
+\ **Note:** This option only works for the tip/final joint in the chain. For all other nodes, this option will be ignored.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

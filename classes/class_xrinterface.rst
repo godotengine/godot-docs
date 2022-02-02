@@ -281,7 +281,7 @@ Call this to initialize this interface. The first interface that is initialized 
 
 After initializing the interface you want to use you then need to enable the AR/VR mode of a viewport and rendering should commence.
 
-**Note:** You must enable the XR mode on the main viewport for any device that uses the main output of Godot, such as for mobile VR.
+\ **Note:** You must enable the XR mode on the main viewport for any device that uses the main output of Godot, such as for mobile VR.
 
 If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport. It will be used to output to the HMD, leaving you free to do anything you like in the main window, such as using a separate camera as a spectator camera or rendering something completely different.
 
@@ -319,9 +319,9 @@ Call this to find out if a given play area mode is supported by this interface.
 
 Triggers a haptic pulse on a device associated with this interface.
 
-``action_name`` is the name of the action for this pulse.
+\ ``action_name`` is the name of the action for this pulse.
 
-``tracker_name`` is optional and can be used to direct the pulse to a specific device provided that device is bound to this haptic.
+\ ``tracker_name`` is optional and can be used to direct the pulse to a specific device provided that device is bound to this haptic.
 
 ----
 

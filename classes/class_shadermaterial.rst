@@ -91,7 +91,7 @@ Returns the default value of the material property with given ``name``.
 
 Changes the value set for this material of a uniform in the shader.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

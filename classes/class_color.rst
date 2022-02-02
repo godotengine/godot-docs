@@ -14,15 +14,15 @@ Color in RGBA format using floats on the range of 0 to 1.
 Description
 -----------
 
-A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for transparency. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).
+A color represented by red, green, blue, and alpha (RGBA) components. The alpha component is often used for opacity. Values are in floating-point and usually range from 0 to 1. Some properties (such as CanvasItem.modulate) may accept values greater than 1 (overbright or HDR colors).
 
 You can also create a color from standardized color names by using the string constructor or directly using the color constants defined here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__.
 
 If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`.
 
-**Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
-`Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
+\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
 Tutorials
 ---------
@@ -96,6 +96,8 @@ Methods
 | :ref:`Color<class_Color>`   | :ref:`from_rgbe9995<class_Color_method_from_rgbe9995>` **(** :ref:`int<class_int>` rgbe **)** |static|                                                                                       |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`from_string<class_Color_method_from_string>` **(** :ref:`String<class_String>` str, :ref:`Color<class_Color>` default **)** |static|                                                   |
++-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`get_luminance<class_Color_method_get_luminance>` **(** **)** |const|                                                                                                                   |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`get_named_color<class_Color_method_get_named_color>` **(** :ref:`int<class_int>` idx **)** |static|                                                                                    |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -767,7 +769,7 @@ Property Descriptions
 | *Default* | ``1.0`` |
 +-----------+---------+
 
-The color's alpha (transparency) component, typically on the range of 0 to 1.
+The color's alpha component, typically on the range of 0 to 1. A value of 0 means that the color is fully transparent. A value of 1 means that the color is fully opaque.
 
 ----
 
@@ -909,11 +911,11 @@ Constructs a ``Color`` from an existing color, but with a custom alpha value.
 
  .. code-tab:: gdscript
 
-    var red = Color(Color.red, 0.5) # 50% transparent red.
+    var red = Color(Color.red, 0.2) # 20% opaque red.
 
  .. code-tab:: csharp
 
-    var red = new Color(Colors.Red, 0.5f); // 50% transparent red.
+    var red = new Color(Colors.Red, 0.2f); // 20% opaque red.
 
 
 
@@ -1068,6 +1070,16 @@ Constructs a color from an `HSV profile <https://en.wikipedia.org/wiki/HSL_and_H
 .. _class_Color_method_from_string:
 
 - :ref:`Color<class_Color>` **from_string** **(** :ref:`String<class_String>` str, :ref:`Color<class_Color>` default **)** |static|
+
+----
+
+.. _class_Color_method_get_luminance:
+
+- :ref:`float<class_float>` **get_luminance** **(** **)** |const|
+
+Returns the luminance of the color in the ``[0.0, 1.0]`` range.
+
+This is useful when determining light or dark color. Colors with a luminance smaller than 0.5 can be generally considered dark.
 
 ----
 
@@ -1368,7 +1380,7 @@ Operator Descriptions
 
 Returns ``true`` if the colors are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -1438,7 +1450,7 @@ Divides each component of the ``Color`` by the given :ref:`int<class_int>`.
 
 Returns ``true`` if the colors are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Color_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 

@@ -36,6 +36,8 @@ Enumerations
 
 .. _class_VisualShaderNodeIntFunc_constant_FUNC_SIGN:
 
+.. _class_VisualShaderNodeIntFunc_constant_FUNC_BITWISE_NOT:
+
 .. _class_VisualShaderNodeIntFunc_constant_FUNC_MAX:
 
 enum **Function**:
@@ -46,7 +48,9 @@ enum **Function**:
 
 - **FUNC_SIGN** = **2** --- Extracts the sign of the parameter. Translates to ``sign(x)`` in the Godot Shader Language.
 
-- **FUNC_MAX** = **3** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` enum.
+- **FUNC_BITWISE_NOT** = **3** --- Returns the result of bitwise ``NOT`` operation on the integer. Translates to ``~a`` in the Godot Shader Language.
+
+- **FUNC_MAX** = **4** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeIntFunc_Function>` enum.
 
 Property Descriptions
 ---------------------

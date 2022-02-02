@@ -18,7 +18,7 @@ Description
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector2<class_Vector2>` when exact precision is required.
 
-**Note:** In a boolean context, a Vector2i will evaluate to ``false`` if it's equal to ``Vector2i(0, 0)``. Otherwise, a Vector2i will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Vector2i will evaluate to ``false`` if it's equal to ``Vector2i(0, 0)``. Otherwise, a Vector2i will always evaluate to ``true``.
 
 Tutorials
 ---------
@@ -60,6 +60,14 @@ Methods
 | :ref:`float<class_float>`       | :ref:`aspect<class_Vector2i_method_aspect>` **(** **)** |const|                                                                        |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>` | :ref:`clamp<class_Vector2i_method_clamp>` **(** :ref:`Vector2i<class_Vector2i>` min, :ref:`Vector2i<class_Vector2i>` max **)** |const| |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`length<class_Vector2i_method_length>` **(** **)** |const|                                                                        |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`length_squared<class_Vector2i_method_length_squared>` **(** **)** |const|                                                        |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`max_axis_index<class_Vector2i_method_max_axis_index>` **(** **)** |const|                                                        |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`min_axis_index<class_Vector2i_method_min_axis_index>` **(** **)** |const|                                                        |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>` | :ref:`sign<class_Vector2i_method_sign>` **(** **)** |const|                                                                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,9 +138,9 @@ Constants
 
 .. _class_Vector2i_constant_DOWN:
 
-- **AXIS_X** = **0** --- Enumerated value for the X axis.
+- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector2i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2i_method_min_axis_index>`.
 
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis.
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector2i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2i_method_min_axis_index>`.
 
 - **ZERO** = **Vector2i(0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
@@ -213,7 +221,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **aspect** **(** **)** |const|
 
-Returns the ratio of :ref:`x<class_Vector2i_property_x>` to :ref:`y<class_Vector2i_property_y>`.
+Returns the aspect ratio of this vector, the ratio of :ref:`x<class_Vector2i_property_x>` to :ref:`y<class_Vector2i_property_y>`.
 
 ----
 
@@ -225,11 +233,45 @@ Returns a new vector with all components clamped between the components of ``min
 
 ----
 
+.. _class_Vector2i_method_length:
+
+- :ref:`float<class_float>` **length** **(** **)** |const|
+
+Returns the length (magnitude) of this vector.
+
+----
+
+.. _class_Vector2i_method_length_squared:
+
+- :ref:`int<class_int>` **length_squared** **(** **)** |const|
+
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector2i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+
+----
+
+.. _class_Vector2i_method_max_axis_index:
+
+- :ref:`int<class_int>` **max_axis_index** **(** **)** |const|
+
+Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector2i_constant_AXIS_X>`.
+
+----
+
+.. _class_Vector2i_method_min_axis_index:
+
+- :ref:`int<class_int>` **min_axis_index** **(** **)** |const|
+
+Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Y<class_Vector2i_constant_AXIS_Y>`.
+
+----
+
 .. _class_Vector2i_method_sign:
 
 - :ref:`Vector2i<class_Vector2i>` **sign** **(** **)** |const|
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components.
+Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
 
 Operator Descriptions
 ---------------------

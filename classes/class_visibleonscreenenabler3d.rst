@@ -20,9 +20,9 @@ The VisibleOnScreenEnabler3D will disable :ref:`RigidDynamicBody3D<class_RigidDy
 
 If you just want to receive notifications, use :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` instead.
 
-**Note:** VisibleOnScreenEnabler3D uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area3D<class_Area3D>` node as a child of a :ref:`Camera3D<class_Camera3D>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
+\ **Note:** VisibleOnScreenEnabler3D uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area3D<class_Area3D>` node as a child of a :ref:`Camera3D<class_Camera3D>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
-**Note:** VisibleOnScreenEnabler3D will not affect nodes added after scene initialization.
+\ **Note:** VisibleOnScreenEnabler3D will not affect nodes added after scene initialization.
 
 Properties
 ----------

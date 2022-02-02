@@ -18,6 +18,8 @@ Description
 
 A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
 
+\ **Note:** There are many known bugs in ``SoftDynamicBody3D``. Therefore, it's not recommended to use them for things that can affect gameplay (such as a player character made entirely out of soft bodies).
+
 Tutorials
 ---------
 
@@ -111,7 +113,7 @@ Property Descriptions
 
 The physics layers this SoftDynamicBody3D **is in**. Collision objects can exist in one or more of 32 different layers. See also :ref:`collision_mask<class_SoftDynamicBody3D_property_collision_mask>`.
 
-**Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -129,7 +131,7 @@ The physics layers this SoftDynamicBody3D **is in**. Collision objects can exist
 
 The physics layers this SoftDynamicBody3D **scans**. Collision objects can scan one or more of 32 different layers. See also :ref:`collision_layer<class_SoftDynamicBody3D_property_collision_layer>`.
 
-**Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **Note:** Object A can detect a contact with object B only if object B is in any of the layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 

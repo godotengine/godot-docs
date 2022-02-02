@@ -16,7 +16,7 @@ Description
 
 ``Callable`` is a first class object which can be held in variables and passed to functions. It represents a given method in an :ref:`Object<class_Object>`, and is typically used for signal callbacks.
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::

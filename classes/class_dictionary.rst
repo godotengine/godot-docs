@@ -20,7 +20,7 @@ You can define a dictionary by placing a comma-separated list of ``key: value`` 
 
 Erasing elements while iterating over them **is not supported** and will result in undefined behavior.
 
-**Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
 
 Creating a dictionary:
 
@@ -163,7 +163,7 @@ Finally, dictionaries can contain different types of keys and values in the same
 
 
 
-**Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
+\ **Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
 
 
 .. tabs::
@@ -231,7 +231,7 @@ You need to first calculate the dictionary's hash with :ref:`hash<class_Dictiona
 
 
 
-**Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
+\ **Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Tutorials
 ---------
@@ -333,7 +333,7 @@ Creates a copy of the dictionary, and returns it. The ``deep`` parameter causes 
 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise.
 
-**Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
+\ **Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
 
 ----
 
@@ -351,7 +351,7 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 Returns ``true`` if the dictionary has a given key.
 
-**Note:** This is equivalent to using the ``in`` operator as follows:
+\ **Note:** This is equivalent to using the ``in`` operator as follows:
 
 
 .. tabs::
@@ -410,7 +410,7 @@ Returns a hashed integer value representing the dictionary contents. This can be
 
 
 
-**Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
+\ **Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
 
 ----
 

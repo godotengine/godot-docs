@@ -23,17 +23,19 @@ Orientation, location, linear velocity and angular velocity are all provided for
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`angular_velocity<class_XRPose_property_angular_velocity>`   | ``Vector3(0, 0, 0)``                                |
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_tracking_data<class_XRPose_property_has_tracking_data>` | ``false``                                           |
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`linear_velocity<class_XRPose_property_linear_velocity>`     | ``Vector3(0, 0, 0)``                                |
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`StringName<class_StringName>`   | :ref:`name<class_XRPose_property_name>`                           | ``&""``                                             |
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`transform<class_XRPose_property_transform>`                 | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-+---------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                             | :ref:`angular_velocity<class_XRPose_property_angular_velocity>`       | ``Vector3(0, 0, 0)``                                |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`has_tracking_data<class_XRPose_property_has_tracking_data>`     | ``false``                                           |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                             | :ref:`linear_velocity<class_XRPose_property_linear_velocity>`         | ``Vector3(0, 0, 0)``                                |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`StringName<class_StringName>`                       | :ref:`name<class_XRPose_property_name>`                               | ``&""``                                             |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>` | :ref:`tracking_confidence<class_XRPose_property_tracking_confidence>` | ``0``                                               |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Transform3D<class_Transform3D>`                     | :ref:`transform<class_XRPose_property_transform>`                     | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
++-----------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -41,6 +43,25 @@ Methods
 +---------------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>` | :ref:`get_adjusted_transform<class_XRPose_method_get_adjusted_transform>` **(** **)** |const| |
 +---------------------------------------+-----------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_XRPose_TrackingConfidence:
+
+.. _class_XRPose_constant_XR_TRACKING_CONFIDENCE_NONE:
+
+.. _class_XRPose_constant_XR_TRACKING_CONFIDENCE_LOW:
+
+.. _class_XRPose_constant_XR_TRACKING_CONFIDENCE_HIGH:
+
+enum **TrackingConfidence**:
+
+- **XR_TRACKING_CONFIDENCE_NONE** = **0** --- No tracking information is available for this pose.
+
+- **XR_TRACKING_CONFIDENCE_LOW** = **1** --- Tracking information may be inaccurate or estimated. For instance with inside out tracking this would indicate a controller may be (partially) obscured.
+
+- **XR_TRACKING_CONFIDENCE_HIGH** = **2** --- Tracking information is deemed accurate and up to date.
 
 Property Descriptions
 ---------------------
@@ -114,6 +135,22 @@ The name of this pose. Pose names are often driven by an action map setup by the
 - ``grip`` defines the location where the user grips the controller
 
 - ``skeleton`` defines the root location a hand mesh should be placed when using hand tracking and the animated skeleton supplied by the XR runtime.
+
+----
+
+.. _class_XRPose_property_tracking_confidence:
+
+- :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>` **tracking_confidence**
+
++-----------+--------------------------------+
+| *Default* | ``0``                          |
++-----------+--------------------------------+
+| *Setter*  | set_tracking_confidence(value) |
++-----------+--------------------------------+
+| *Getter*  | get_tracking_confidence()      |
++-----------+--------------------------------+
+
+The tracking confidence for this pose, provides insight on how accurate the spatial positioning of this record is.
 
 ----
 

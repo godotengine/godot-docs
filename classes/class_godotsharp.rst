@@ -66,7 +66,7 @@ Detaches the current thread from the Mono runtime.
 
 Returns the current MonoDomain ID.
 
-**Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
+\ **Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
 
 ----
 
@@ -76,7 +76,7 @@ Returns the current MonoDomain ID.
 
 Returns the scripts MonoDomain's ID. This will be the same MonoDomain ID as :ref:`get_domain_id<class_GodotSharp_method_get_domain_id>`, unless the scripts domain isn't loaded.
 
-**Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
+\ **Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
 
 ----
 

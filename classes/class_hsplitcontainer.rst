@@ -24,11 +24,9 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------+--------+
 | :ref:`int<class_int>`             | :ref:`autohide<class_HSplitContainer_theme_constant_autohide>`     | ``1``  |
 +-----------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_HSplitContainer_theme_style_bg>`                    |        |
+| :ref:`int<class_int>`             | :ref:`separation<class_HSplitContainer_theme_constant_separation>` | ``12`` |
 +-----------------------------------+--------------------------------------------------------------------+--------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSplitContainer_theme_icon_grabber>`           |        |
-+-----------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`separation<class_HSplitContainer_theme_constant_separation>` | ``12`` |
 +-----------------------------------+--------------------------------------------------------------------+--------+
 
 Theme Property Descriptions
@@ -46,20 +44,6 @@ Boolean value. If 1 (``true``), the grabber will hide automatically when it isn'
 
 ----
 
-.. _class_HSplitContainer_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-----
-
-.. _class_HSplitContainer_theme_icon_grabber:
-
-- :ref:`Texture2D<class_Texture2D>` **grabber**
-
-The icon used for the grabber drawn in the middle area.
-
-----
-
 .. _class_HSplitContainer_theme_constant_separation:
 
 - :ref:`int<class_int>` **separation**
@@ -69,6 +53,14 @@ The icon used for the grabber drawn in the middle area.
 +-----------+--------+
 
 The space between sides of the container.
+
+----
+
+.. _class_HSplitContainer_theme_icon_grabber:
+
+- :ref:`Texture2D<class_Texture2D>` **grabber**
+
+The icon used for the grabber drawn in the middle area.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

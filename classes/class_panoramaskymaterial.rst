@@ -25,12 +25,30 @@ You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>` |
-+-----------------------------------+--------------------------------------------------------------+
++-----------------------------------+--------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`           | :ref:`filter<class_PanoramaSkyMaterial_property_filter>`     | ``true`` |
++-----------------------------------+--------------------------------------------------------------+----------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>` |          |
++-----------------------------------+--------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
+
+.. _class_PanoramaSkyMaterial_property_filter:
+
+- :ref:`bool<class_bool>` **filter**
+
++-----------+------------------------------+
+| *Default* | ``true``                     |
++-----------+------------------------------+
+| *Setter*  | set_filtering_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | is_filtering_enabled()       |
++-----------+------------------------------+
+
+A boolean value to determine if the background texture should be filtered or not.
+
+----
 
 .. _class_PanoramaSkyMaterial_property_panorama:
 

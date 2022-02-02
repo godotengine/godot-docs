@@ -21,33 +21,33 @@ General-purpose progress bar. Shows fill percentage from right to left.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true``                     |
-+---------------------------+--------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`     | size_flags_vertical                                                | ``0`` *(parent override)*    |
-+---------------------------+--------------------------------------------------------------------+------------------------------+
-| :ref:`float<class_float>` | step                                                               | ``0.01`` *(parent override)* |
-+---------------------------+--------------------------------------------------------------------+------------------------------+
++---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true``                                                                     |
++---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | size_flags_vertical                                                | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
++---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | step                                                               | ``0.01`` (overrides :ref:`Range<class_Range_property_step>`)                 |
++---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_theme_style_bg>`                                 |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                                 |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                              |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_theme_color_font_color>`                 | ``Color(0.94, 0.94, 0.94, 1)`` |
+| :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_theme_color_font_color>`                 | ``Color(0.95, 0.95, 0.95, 1)`` |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ProgressBar_theme_color_font_outline_color>` | ``Color(1, 1, 1, 1)``          |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_ProgressBar_theme_color_font_shadow_color>`   | ``Color(0, 0, 0, 1)``          |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+| :ref:`int<class_int>`           | :ref:`outline_size<class_ProgressBar_theme_constant_outline_size>`          | ``0``                          |
++---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                              |                                |
++---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`font_size<class_ProgressBar_theme_font_size_font_size>`               |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_ProgressBar_theme_constant_outline_size>`          | ``0``                          |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_theme_style_bg>`                                 |                                |
++---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                                 |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 
 Property Descriptions
@@ -70,36 +70,12 @@ If ``true``, the fill percentage is displayed on the bar.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ProgressBar_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-The style of the background.
-
-----
-
-.. _class_ProgressBar_theme_style_fg:
-
-- :ref:`StyleBox<class_StyleBox>` **fg**
-
-The style of the progress (i.e. the part that fills the bar).
-
-----
-
-.. _class_ProgressBar_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
-
-----
-
 .. _class_ProgressBar_theme_color_font_color:
 
 - :ref:`Color<class_Color>` **font_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
+| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
 +-----------+--------------------------------+
 
 The color of the text.
@@ -130,14 +106,6 @@ The color of the text's shadow.
 
 ----
 
-.. _class_ProgressBar_theme_font_size_font_size:
-
-- :ref:`int<class_int>` **font_size**
-
-Font size used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
-
-----
-
 .. _class_ProgressBar_theme_constant_outline_size:
 
 - :ref:`int<class_int>` **outline_size**
@@ -147,6 +115,38 @@ Font size used to draw the fill percentage if :ref:`percent_visible<class_Progre
 +-----------+-------+
 
 The size of the text outline.
+
+----
+
+.. _class_ProgressBar_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
+
+----
+
+.. _class_ProgressBar_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
+
+----
+
+.. _class_ProgressBar_theme_style_bg:
+
+- :ref:`StyleBox<class_StyleBox>` **bg**
+
+The style of the background.
+
+----
+
+.. _class_ProgressBar_theme_style_fg:
+
+- :ref:`StyleBox<class_StyleBox>` **fg**
+
+The style of the progress (i.e. the part that fills the bar).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

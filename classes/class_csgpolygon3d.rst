@@ -16,7 +16,7 @@ Extrudes a 2D polygon shape to create a 3D mesh.
 Description
 -----------
 
-An array of 2D points is extruded to quickly and easily create a variety of 3D meshes.
+An array of 2D points is extruded to quickly and easily create a variety of 3D meshes. See also :ref:`CSGMesh3D<class_CSGMesh3D>` for using 3D meshes as CSG nodes.
 
 Properties
 ----------
@@ -88,11 +88,11 @@ enum **PathRotation**:
 
 - **PATH_ROTATION_POLYGON** = **0** --- The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape is not rotated.
 
-**Note:** Requires the path Z coordinates to continually decrease to ensure viable shapes.
+\ **Note:** Requires the path Z coordinates to continually decrease to ensure viable shapes.
 
 - **PATH_ROTATION_PATH** = **1** --- The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape is rotated along the path, but it is not rotated around the path axis.
 
-**Note:** Requires the path Z coordinates to continually decrease to ensure viable shapes.
+\ **Note:** Requires the path Z coordinates to continually decrease to ensure viable shapes.
 
 - **PATH_ROTATION_PATH_FOLLOW** = **2** --- The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape follows the path and its rotations around the path axis.
 
@@ -297,7 +297,9 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 | *Getter*  | get_polygon()                                  |
 +-----------+------------------------------------------------+
 
-The point array that defines the 2D polygon that is extruded.
+The point array that defines the 2D polygon that is extruded. This can be a convex or concave polygon with 3 or more points. The polygon must *not* have any intersecting edges. Otherwise, triangulation will fail and no mesh will be generated.
+
+\ **Note:** If only 1 or 2 points are defined in :ref:`polygon<class_CSGPolygon3D_property_polygon>`, no mesh will be generated.
 
 ----
 

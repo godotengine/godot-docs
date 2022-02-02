@@ -20,11 +20,11 @@ This class provides access to a number of different monitors related to performa
 
 You can add custom monitors using the :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` method. Custom monitors are available in **Monitor** tab in the editor's **Debugger** panel together with built-in monitors.
 
-**Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+\ **Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
 
-**Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
+\ **Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
-**Note:** Custom monitors do not support negative values. Negative values are clamped to 0.
+\ **Note:** Custom monitors do not support negative values. Negative values are clamped to 0.
 
 Methods
 -------
@@ -213,7 +213,7 @@ The debugger calls the callable to get the value of custom monitor. The callable
 
 Callables are called with arguments supplied in argument array.
 
-**Note:** It throws an error if given id is already present.
+\ **Note:** It throws an error if given id is already present.
 
 ----
 
@@ -223,7 +223,7 @@ Callables are called with arguments supplied in argument array.
 
 Returns the value of custom monitor with given id. The callable is called to get the value of custom monitor.
 
-**Note:** It throws an error if the given id is absent.
+\ **Note:** It throws an error if the given id is absent.
 
 ----
 
@@ -278,7 +278,7 @@ Returns true if custom monitor with the given id is present otherwise returns fa
 
 Removes the custom monitor with given id.
 
-**Note:** It throws an error if the given id is already absent.
+\ **Note:** It throws an error if the given id is already absent.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

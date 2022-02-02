@@ -54,7 +54,7 @@ Methods
 -------
 
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_exception<class_RayCast2D_method_add_exception>` **(** :ref:`Object<class_Object>` node **)**                                                        |
+| void                          | :ref:`add_exception<class_RayCast2D_method_add_exception>` **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_exception_rid<class_RayCast2D_method_add_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,7 +74,7 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_colliding<class_RayCast2D_method_is_colliding>` **(** **)** |const|                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_exception<class_RayCast2D_method_remove_exception>` **(** :ref:`Object<class_Object>` node **)**                                                  |
+| void                          | :ref:`remove_exception<class_RayCast2D_method_remove_exception>` **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**                            |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`remove_exception_rid<class_RayCast2D_method_remove_exception_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                 |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -199,9 +199,9 @@ Method Descriptions
 
 .. _class_RayCast2D_method_add_exception:
 
-- void **add_exception** **(** :ref:`Object<class_Object>` node **)**
+- void **add_exception** **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**
 
-Adds a collision exception so the ray does not report collisions with the specified node.
+Adds a collision exception so the ray does not report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
 
 ----
 
@@ -227,7 +227,7 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
 
-**Note:** :ref:`enabled<class_RayCast2D_property_enabled>` does not need to be ``true`` for this to work.
+\ **Note:** :ref:`enabled<class_RayCast2D_property_enabled>` does not need to be ``true`` for this to work.
 
 ----
 
@@ -269,7 +269,7 @@ Returns the normal of the intersecting object's shape at the collision point, or
 
 Returns the collision point at which the ray intersects the closest object.
 
-**Note:** This point is in the **global** coordinate system.
+\ **Note:** This point is in the **global** coordinate system.
 
 ----
 
@@ -283,9 +283,9 @@ Returns whether any object is intersecting with the ray's vector (considering th
 
 .. _class_RayCast2D_method_remove_exception:
 
-- void **remove_exception** **(** :ref:`Object<class_Object>` node **)**
+- void **remove_exception** **(** :ref:`CollisionObject2D<class_CollisionObject2D>` node **)**
 
-Removes a collision exception so the ray does report collisions with the specified node.
+Removes a collision exception so the ray does report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
 
 ----
 

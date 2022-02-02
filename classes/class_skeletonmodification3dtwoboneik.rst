@@ -16,7 +16,7 @@ A modification that moves two bones to reach the target.
 Description
 -----------
 
-This :ref:`SkeletonModification3D<class_SkeletonModification3D>` uses an algorithm typically called TwoBoneIK. This algorithm works by leveraging the law of cosigns and the lengths of the bones to figure out what rotation the bones currently have, and what rotation they need to make a complete triangle, where the first bone, the second bone, and the target form the three verticies of the triangle. Because the algorithm works by making a triangle, it can only opperate on two bones.
+This :ref:`SkeletonModification3D<class_SkeletonModification3D>` uses an algorithm typically called TwoBoneIK. This algorithm works by leveraging the law of cosigns and the lengths of the bones to figure out what rotation the bones currently have, and what rotation they need to make a complete triangle, where the first bone, the second bone, and the target form the three vertices of the triangle. Because the algorithm works by making a triangle, it can only operate on two bones.
 
 TwoBoneIK is great for arms, legs, and really any joints that can be represented by just two bones that bend to reach a target. This solver is more lightweight than :ref:`SkeletonModification3DFABRIK<class_SkeletonModification3DFABRIK>`, but gives similar, natural looking results.
 
@@ -298,7 +298,7 @@ Sets the node to be used as the for the pole of the TwoBoneIK. When a node is se
 
 Sets the node to be used as the tip for the second bone. This is used to calculate the length and position of the end of the second bone in the TwoBoneIK modification.
 
-**Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the second bone, with the child node being offset so it is at the end of the bone.
+\ **Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the second bone, with the child node being offset so it is at the end of the bone.
 
 ----
 

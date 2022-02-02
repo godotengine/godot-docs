@@ -30,17 +30,17 @@ Properties
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`BitMap<class_BitMap>`                                  | :ref:`bitmask<class_TouchScreenButton_property_bitmask>`                 |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                            | :ref:`normal<class_TouchScreenButton_property_normal>`                   |           |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                      | :ref:`passby_press<class_TouchScreenButton_property_passby_press>`       | ``false`` |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                            | :ref:`pressed<class_TouchScreenButton_property_pressed>`                 |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`Shape2D<class_Shape2D>`                                | :ref:`shape<class_TouchScreenButton_property_shape>`                     |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                      | :ref:`shape_centered<class_TouchScreenButton_property_shape_centered>`   | ``true``  |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                      | :ref:`shape_visible<class_TouchScreenButton_property_shape_visible>`     | ``true``  |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`texture_normal<class_TouchScreenButton_property_texture_normal>`   |           |
++--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`texture_pressed<class_TouchScreenButton_property_texture_pressed>` |           |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
 | :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` | :ref:`visibility_mode<class_TouchScreenButton_property_visibility_mode>` | ``0``     |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
@@ -117,20 +117,6 @@ The button's bitmask.
 
 ----
 
-.. _class_TouchScreenButton_property_normal:
-
-- :ref:`Texture2D<class_Texture2D>` **normal**
-
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
-
-The button's texture for the normal state.
-
-----
-
 .. _class_TouchScreenButton_property_passby_press:
 
 - :ref:`bool<class_bool>` **passby_press**
@@ -145,21 +131,7 @@ The button's texture for the normal state.
 
 If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref:`released<class_TouchScreenButton_signal_released>` signals are emitted whenever a pressed finger goes in and out of the button, even if the pressure started outside the active area of the button.
 
-**Note:** This is a "pass-by" (not "bypass") press mode.
-
-----
-
-.. _class_TouchScreenButton_property_pressed:
-
-- :ref:`Texture2D<class_Texture2D>` **pressed**
-
-+----------+----------------------------+
-| *Setter* | set_texture_pressed(value) |
-+----------+----------------------------+
-| *Getter* | get_texture_pressed()      |
-+----------+----------------------------+
-
-The button's texture for the pressed state.
+\ **Note:** This is a "pass-by" (not "bypass") press mode.
 
 ----
 
@@ -206,6 +178,34 @@ If ``true``, the button's shape is centered in the provided texture. If no textu
 +-----------+--------------------------+
 
 If ``true``, the button's shape is visible in the editor.
+
+----
+
+.. _class_TouchScreenButton_property_texture_normal:
+
+- :ref:`Texture2D<class_Texture2D>` **texture_normal**
+
++----------+---------------------------+
+| *Setter* | set_texture_normal(value) |
++----------+---------------------------+
+| *Getter* | get_texture_normal()      |
++----------+---------------------------+
+
+The button's texture for the normal state.
+
+----
+
+.. _class_TouchScreenButton_property_texture_pressed:
+
+- :ref:`Texture2D<class_Texture2D>` **texture_pressed**
+
++----------+----------------------------+
+| *Setter* | set_texture_pressed(value) |
++----------+----------------------------+
+| *Getter* | get_texture_pressed()      |
++----------+----------------------------+
+
+The button's texture for the pressed state.
 
 ----
 

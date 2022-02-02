@@ -20,7 +20,7 @@ Description
 
 Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`RefCounted<class_RefCounted>`, resources are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instantiated from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
 
-**Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
+\ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
 
 Tutorials
 ---------
@@ -66,7 +66,7 @@ Signals
 
 Emitted whenever the resource changes.
 
-**Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
+\ **Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
 
 ----
 
@@ -134,9 +134,9 @@ Duplicates the resource, returning a new resource with the exported members copi
 
 By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
 
-**Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
+\ **Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
 
-**Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
+\ **Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
 
 ----
 
@@ -154,7 +154,7 @@ The method is equivalent to:
 
     emit_signal("changed")
 
-**Note:** This method is called automatically for built-in resources.
+\ **Note:** This method is called automatically for built-in resources.
 
 ----
 

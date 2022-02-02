@@ -76,7 +76,7 @@ Sets the border width of the ``ReferenceRect``. The border grows both inwards an
 | *Getter*  | get_editor_only()      |
 +-----------+------------------------+
 
-If set to ``true``, the ``ReferenceRect`` will only be visible while in editor. Otherwise, ``ReferenceRect`` will be visible in game.
+If ``true``, the ``ReferenceRect`` will only be visible while in editor. Otherwise, ``ReferenceRect`` will be visible in the running project.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -349,7 +349,7 @@ Returns the name of the bone at index ``index``.
 
 Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
-**Note:** The parent bone returned will always be less than ``bone_idx``.
+\ **Note:** The parent bone returned will always be less than ``bone_idx``.
 
 ----
 
@@ -511,7 +511,7 @@ Binds the given Skin to the Skeleton.
 
 Removes the passed in child bone index, ``child_bone_idx``, from the passed-in bone, ``bone_idx``, if it exists.
 
-**Note:** This does not remove the child bone, but instead it removes the connection it has to the parent bone.
+\ **Note:** This does not remove the child bone, but instead it removes the connection it has to the parent bone.
 
 ----
 
@@ -537,9 +537,9 @@ Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone po
 
 Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
-``amount`` is the interpolation strengh that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
-**Note:** The pose transform needs to be a global pose! Use :ref:`world_transform_to_global_pose<class_Skeleton3D_method_world_transform_to_global_pose>` to convert a world transform, like one you can get from a :ref:`Node3D<class_Node3D>`, to a global pose.
+\ **Note:** The pose transform needs to be a global pose! Use :ref:`world_transform_to_global_pose<class_Skeleton3D_method_world_transform_to_global_pose>` to convert a world transform, like one you can get from a :ref:`Node3D<class_Node3D>`, to a global pose.
 
 ----
 
@@ -549,9 +549,9 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
 
-``amount`` is the interpolation strengh that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
-**Note:** The pose transform needs to be a local pose! Use :ref:`global_pose_to_local_pose<class_Skeleton3D_method_global_pose_to_local_pose>` to convert a global pose to a local pose.
+\ **Note:** The pose transform needs to be a local pose! Use :ref:`global_pose_to_local_pose<class_Skeleton3D_method_global_pose_to_local_pose>` to convert a global pose to a local pose.
 
 ----
 
@@ -567,7 +567,7 @@ Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
 
 Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
-**Note:** ``parent_idx`` must be less than ``bone_idx``.
+\ **Note:** ``parent_idx`` must be less than ``bone_idx``.
 
 ----
 

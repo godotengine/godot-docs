@@ -18,17 +18,17 @@ Description
 
 A Visual Script node that checks a :ref:`bool<class_bool>` input port. If ``true``, it will exit via the "true" sequence port. If ``false``, it will exit via the "false" sequence port. After exiting either, it exits via the "done" port. Sequence ports may be left disconnected.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``if (cond) is``
+- Sequence: ``if (cond) is``\ 
 
-- Data (boolean): ``cond``
+- Data (boolean): ``cond``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
-- Sequence: ``true``
+- Sequence: ``true``\ 
 
-- Sequence: ``false``
+- Sequence: ``false``\ 
 
 - Sequence: ``done``
 

@@ -35,7 +35,7 @@ Properties
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>`       | ``0.0``               |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
-| :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                     | ``1``                 |
+| :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                     | ``2``                 |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Color<class_Color>`              | :ref:`light_color<class_Light3D_property_light_color>`                             | ``Color(1, 1, 1, 1)`` |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
@@ -172,19 +172,19 @@ enum **Param**:
 
 .. _class_Light3D_constant_BAKE_DISABLED:
 
-.. _class_Light3D_constant_BAKE_DYNAMIC:
-
 .. _class_Light3D_constant_BAKE_STATIC:
+
+.. _class_Light3D_constant_BAKE_DYNAMIC:
 
 enum **BakeMode**:
 
-- **BAKE_DISABLED** = **0** --- Light is ignored when baking.
+- **BAKE_DISABLED** = **0** --- Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
 
-**Note:** Hiding a light does *not* affect baking.
+\ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see [member Environment.sdfgi_enabled).
 
-- **BAKE_DYNAMIC** = **1**
+- **BAKE_STATIC** = **1** --- Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time. This is suitable for subtle changes (such as flickering torches), but generally not large changes such as toggling a light on and off.
 
-- **BAKE_STATIC** = **2**
+- **BAKE_DYNAMIC** = **2** --- Light is taken into account in dynamic baking (:ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) only). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. This has a greater performance cost compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`.
 
 Property Descriptions
 ---------------------
@@ -226,14 +226,16 @@ The light's angular size in degrees. Increasing this will make shadows softer at
 - :ref:`BakeMode<enum_Light3D_BakeMode>` **light_bake_mode**
 
 +-----------+----------------------+
-| *Default* | ``1``                |
+| *Default* | ``2``                |
 +-----------+----------------------+
 | *Setter*  | set_bake_mode(value) |
 +-----------+----------------------+
 | *Getter*  | get_bake_mode()      |
 +-----------+----------------------+
 
-The light's bake mode. See :ref:`BakeMode<enum_Light3D_BakeMode>`.
+The light's bake mode. This will affect the global illumination techniques that have an effect on the light's rendering. See :ref:`BakeMode<enum_Light3D_BakeMode>`.
+
+\ **Note:** Meshes' global illumination mode will also affect the global illumination rendering. See :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
 
 ----
 
@@ -299,7 +301,7 @@ The light's strength multiplier (this is not a physical unit). For :ref:`OmniLig
 
 Secondary multiplier used with indirect light (light bounces). Used with :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 
-**Note:** This property is ignored if :ref:`light_energy<class_Light3D_property_light_energy>` is equal to ``0.0``, as the light won't be present at all in the GI shader.
+\ **Note:** This property is ignored if :ref:`light_energy<class_Light3D_property_light_energy>` is equal to ``0.0``, as the light won't be present at all in the GI shader.
 
 ----
 

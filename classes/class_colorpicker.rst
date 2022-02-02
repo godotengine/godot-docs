@@ -18,7 +18,7 @@ Description
 
 Displays a color picker widget. Useful for selecting a color from an RGB/RGBA colorspace.
 
-**Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a ``ColorPicker`` in a pop-up.
+\ **Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a ``ColorPicker`` in a pop-up.
 
 Tutorials
 ---------
@@ -61,6 +61,16 @@ Theme Properties
 ----------------
 
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`             | :ref:`h_width<class_ColorPicker_theme_constant_h_width>`                       | ``30``  |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`             | :ref:`label_width<class_ColorPicker_theme_constant_label_width>`               | ``10``  |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`             | :ref:`margin<class_ColorPicker_theme_constant_margin>`                         | ``4``   |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`             | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`             | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`add_preset<class_ColorPicker_theme_icon_add_preset>`                     |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`bar_arrow<class_ColorPicker_theme_icon_bar_arrow>`                       |         |
@@ -69,12 +79,6 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`h_width<class_ColorPicker_theme_constant_h_width>`                       | ``30``  |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`label_width<class_ColorPicker_theme_constant_label_width>`               | ``10``  |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`margin<class_ColorPicker_theme_constant_margin>`                         | ``4``   |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`               |         |
@@ -82,10 +86,6 @@ Theme Properties
 | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_bg<class_ColorPicker_theme_icon_sample_bg>`                       |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`               |         |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 
 Signals
@@ -179,7 +179,7 @@ If ``true``, the color will apply only after the user releases the mouse button,
 | *Getter*  | is_editing_alpha()    |
 +-----------+-----------------------+
 
-If ``true``, shows an alpha channel slider (transparency).
+If ``true``, shows an alpha channel slider (opacity).
 
 ----
 
@@ -197,7 +197,7 @@ If ``true``, shows an alpha channel slider (transparency).
 
 If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
-**Note:** Cannot be enabled if raw mode is on.
+\ **Note:** Cannot be enabled if raw mode is on.
 
 ----
 
@@ -263,7 +263,7 @@ If ``true``, saved color presets are visible.
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
-**Note:** Cannot be enabled if HSV mode is on.
+\ **Note:** Cannot be enabled if HSV mode is on.
 
 Method Descriptions
 -------------------
@@ -274,7 +274,7 @@ Method Descriptions
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
 
-**Note:** The presets list is only for *this* color picker.
+\ **Note:** The presets list is only for *this* color picker.
 
 ----
 
@@ -294,36 +294,6 @@ Returns the list of colors in the presets of the color picker.
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_ColorPicker_theme_icon_add_preset:
-
-- :ref:`Texture2D<class_Texture2D>` **add_preset**
-
-The icon for the "Add Preset" button.
-
-----
-
-.. _class_ColorPicker_theme_icon_bar_arrow:
-
-- :ref:`Texture2D<class_Texture2D>` **bar_arrow**
-
-The texture for the arrow grabber.
-
-----
-
-.. _class_ColorPicker_theme_icon_color_hue:
-
-- :ref:`Texture2D<class_Texture2D>` **color_hue**
-
-Custom texture for the hue selection slider on the right.
-
-----
-
-.. _class_ColorPicker_theme_icon_color_sample:
-
-- :ref:`Texture2D<class_Texture2D>` **color_sample**
-
-----
 
 .. _class_ColorPicker_theme_constant_h_width:
 
@@ -359,6 +329,60 @@ The margin around the ``ColorPicker``.
 
 ----
 
+.. _class_ColorPicker_theme_constant_sv_height:
+
+- :ref:`int<class_int>` **sv_height**
+
++-----------+---------+
+| *Default* | ``256`` |
++-----------+---------+
+
+The height of the saturation-value selection box.
+
+----
+
+.. _class_ColorPicker_theme_constant_sv_width:
+
+- :ref:`int<class_int>` **sv_width**
+
++-----------+---------+
+| *Default* | ``256`` |
++-----------+---------+
+
+The width of the saturation-value selection box.
+
+----
+
+.. _class_ColorPicker_theme_icon_add_preset:
+
+- :ref:`Texture2D<class_Texture2D>` **add_preset**
+
+The icon for the "Add Preset" button.
+
+----
+
+.. _class_ColorPicker_theme_icon_bar_arrow:
+
+- :ref:`Texture2D<class_Texture2D>` **bar_arrow**
+
+The texture for the arrow grabber.
+
+----
+
+.. _class_ColorPicker_theme_icon_color_hue:
+
+- :ref:`Texture2D<class_Texture2D>` **color_hue**
+
+Custom texture for the hue selection slider on the right.
+
+----
+
+.. _class_ColorPicker_theme_icon_color_sample:
+
+- :ref:`Texture2D<class_Texture2D>` **color_sample**
+
+----
+
 .. _class_ColorPicker_theme_icon_overbright_indicator:
 
 - :ref:`Texture2D<class_Texture2D>` **overbright_indicator**
@@ -384,30 +408,6 @@ The indicator used to signalize that the color value is outside the 0-1 range.
 - :ref:`Texture2D<class_Texture2D>` **screen_picker**
 
 The icon for the screen color picker button.
-
-----
-
-.. _class_ColorPicker_theme_constant_sv_height:
-
-- :ref:`int<class_int>` **sv_height**
-
-+-----------+---------+
-| *Default* | ``256`` |
-+-----------+---------+
-
-The height of the saturation-value selection box.
-
-----
-
-.. _class_ColorPicker_theme_constant_sv_width:
-
-- :ref:`int<class_int>` **sv_width**
-
-+-----------+---------+
-| *Default* | ``256`` |
-+-----------+---------+
-
-The width of the saturation-value selection box.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

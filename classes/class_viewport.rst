@@ -67,6 +67,10 @@ Properties
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false`` |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                           | :ref:`fsr_mipmap_bias<class_Viewport_property_fsr_mipmap_bias>`                                       | ``0.0``   |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                           | :ref:`fsr_sharpness<class_Viewport_property_fsr_sharpness>`                                           | ``0.2``   |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`Transform2D<class_Transform2D>`                                               | :ref:`global_canvas_transform<class_Viewport_property_global_canvas_transform>`                       |           |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`gui_disable_input<class_Viewport_property_gui_disable_input>`                                   | ``false`` |
@@ -77,7 +81,7 @@ Properties
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>`                             | ``true``  |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                                           | :ref:`lod_threshold<class_Viewport_property_lod_threshold>`                                           | ``1.0``   |
+| :ref:`float<class_float>`                                                           | :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>`                                 | ``1.0``   |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`MSAA<enum_Viewport_MSAA>`                                                     | :ref:`msaa<class_Viewport_property_msaa>`                                                             | ``0``     |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
@@ -85,7 +89,9 @@ Properties
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`                         | ``false`` |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                                           | :ref:`scale_3d<class_Viewport_property_scale_3d>`                                                     | ``1.0``   |
+| :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>`                                   | :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>`                                       | ``0``     |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                           | :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`                                     | ``1.0``   |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`ScreenSpaceAA<enum_Viewport_ScreenSpaceAA>`                                   | :ref:`screen_space_aa<class_Viewport_property_screen_space_aa>`                                       | ``0``     |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
@@ -149,6 +155,8 @@ Methods
 | :ref:`Rect2<class_Rect2>`                                                 | :ref:`get_visible_rect<class_Viewport_method_get_visible_rect>` **(** **)** |const|                                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                             | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                        |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                   | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** |const|                                                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -224,6 +232,24 @@ enum **ShadowAtlasQuadrantSubdiv**:
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6** --- This quadrant will be split 1024 ways and used by up to 1024 shadow maps. Unless the :ref:`shadow_atlas_size<class_Viewport_property_shadow_atlas_size>` is very high, the shadows in this quadrant will be very low resolution.
 
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Represents the size of the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` enum.
+
+----
+
+.. _enum_Viewport_Scaling3DMode:
+
+.. _class_Viewport_constant_SCALING_3D_MODE_BILINEAR:
+
+.. _class_Viewport_constant_SCALING_3D_MODE_FSR:
+
+.. _class_Viewport_constant_SCALING_3D_MODE_MAX:
+
+enum **Scaling3DMode**:
+
+- **SCALING_3D_MODE_BILINEAR** = **0** --- Enables bilinear scaling on 3D viewports. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+
+- **SCALING_3D_MODE_FSR** = **1** --- Enables FSR upscaling on 3D viewports. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear supersampling will be used instead. A value of ``1.0`` disables scaling.
+
+- **SCALING_3D_MODE_MAX** = **2** --- Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
 ----
 
@@ -339,6 +365,8 @@ enum **RenderInfoType**:
 
 .. _class_Viewport_constant_DEBUG_DRAW_SSAO:
 
+.. _class_Viewport_constant_DEBUG_DRAW_SSIL:
+
 .. _class_Viewport_constant_DEBUG_DRAW_PSSM_SPLITS:
 
 .. _class_Viewport_constant_DEBUG_DRAW_DECAL_ATLAS:
@@ -389,27 +417,29 @@ enum **DebugDraw**:
 
 - **DEBUG_DRAW_SSAO** = **12** --- Draws the screen-space ambient occlusion texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssao_enabled<class_Environment_property_ssao_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
 
-- **DEBUG_DRAW_PSSM_SPLITS** = **13** --- Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order, they will be colored red, green, blue, and yellow.
+- **DEBUG_DRAW_SSIL** = **13** --- Draws the screen-space indirect lighting texture instead of the scene so that you can clearly see how it is affecting objects. In order for this display mode to work, you must have :ref:`Environment.ssil_enabled<class_Environment_property_ssil_enabled>` set in your :ref:`WorldEnvironment<class_WorldEnvironment>`.
 
-- **DEBUG_DRAW_DECAL_ATLAS** = **14** --- Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector textures in the upper left quadrant of the ``Viewport``.
+- **DEBUG_DRAW_PSSM_SPLITS** = **14** --- Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the scene a different color so you can see where the splits are. In order, they will be colored red, green, blue, and yellow.
 
-- **DEBUG_DRAW_SDFGI** = **15**
+- **DEBUG_DRAW_DECAL_ATLAS** = **15** --- Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector textures in the upper left quadrant of the ``Viewport``.
 
-- **DEBUG_DRAW_SDFGI_PROBES** = **16**
+- **DEBUG_DRAW_SDFGI** = **16**
 
-- **DEBUG_DRAW_GI_BUFFER** = **17**
+- **DEBUG_DRAW_SDFGI_PROBES** = **17**
 
-- **DEBUG_DRAW_DISABLE_LOD** = **18**
+- **DEBUG_DRAW_GI_BUFFER** = **18**
 
-- **DEBUG_DRAW_CLUSTER_OMNI_LIGHTS** = **19**
+- **DEBUG_DRAW_DISABLE_LOD** = **19**
 
-- **DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = **20**
+- **DEBUG_DRAW_CLUSTER_OMNI_LIGHTS** = **20**
 
-- **DEBUG_DRAW_CLUSTER_DECALS** = **21**
+- **DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = **21**
 
-- **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = **22**
+- **DEBUG_DRAW_CLUSTER_DECALS** = **22**
 
-- **DEBUG_DRAW_OCCLUDERS** = **23**
+- **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = **23**
+
+- **DEBUG_DRAW_OCCLUDERS** = **24**
 
 ----
 
@@ -620,6 +650,42 @@ Disable 3D rendering (but keep 2D rendering).
 
 ----
 
+.. _class_Viewport_property_fsr_mipmap_bias:
+
+- :ref:`float<class_float>` **fsr_mipmap_bias**
+
++-----------+----------------------------+
+| *Default* | ``0.0``                    |
++-----------+----------------------------+
+| *Setter*  | set_fsr_mipmap_bias(value) |
++-----------+----------------------------+
+| *Getter*  | get_fsr_mipmap_bias()      |
++-----------+----------------------------+
+
+Affects the final texture sharpness by reading from a lower or higher mipmap when using FSR. Mipmap bias does nothing when FSR is not being used. Negative values make textures sharper, while positive values make textures blurrier. This value is used to adjust the mipmap bias calculated internally which is based on the selected quality. The formula for this is ``-log2(1.0 / scale) + mipmap_bias``. This updates the rendering server's mipmap bias when called
+
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/fsr_mipmap_bias<class_ProjectSettings_property_rendering/scaling_3d/fsr_mipmap_bias>` project setting.
+
+----
+
+.. _class_Viewport_property_fsr_sharpness:
+
+- :ref:`float<class_float>` **fsr_sharpness**
+
++-----------+--------------------------+
+| *Default* | ``0.2``                  |
++-----------+--------------------------+
+| *Setter*  | set_fsr_sharpness(value) |
++-----------+--------------------------+
+| *Getter*  | get_fsr_sharpness()      |
++-----------+--------------------------+
+
+Determines how sharp the upscaled image will be when using the FSR upscaling mode. Sharpness halves with every whole number. Values go from 0.0 (sharpest) to 2.0. Values above 2.0 won't make a visible difference.
+
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/fsr_sharpness<class_ProjectSettings_property_rendering/scaling_3d/fsr_sharpness>` project setting.
+
+----
+
 .. _class_Viewport_property_global_canvas_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **global_canvas_transform**
@@ -694,17 +760,23 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 
 ----
 
-.. _class_Viewport_property_lod_threshold:
+.. _class_Viewport_property_mesh_lod_threshold:
 
-- :ref:`float<class_float>` **lod_threshold**
+- :ref:`float<class_float>` **mesh_lod_threshold**
 
-+-----------+--------------------------+
-| *Default* | ``1.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_lod_threshold(value) |
-+-----------+--------------------------+
-| *Getter*  | get_lod_threshold()      |
-+-----------+--------------------------+
++-----------+-------------------------------+
+| *Default* | ``1.0``                       |
++-----------+-------------------------------+
+| *Setter*  | set_mesh_lod_threshold(value) |
++-----------+-------------------------------+
+| *Getter*  | get_mesh_lod_threshold()      |
++-----------+-------------------------------+
+
+The automatic LOD bias to use for meshes rendered within the ``Viewport`` (this is analogous to :ref:`ReflectionProbe.mesh_lod_threshold<class_ReflectionProbe_property_mesh_lod_threshold>`). Higher values will use less detailed versions of meshes that have LOD variations generated. If set to ``0.0``, automatic LOD is disabled. Increase :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>` to improve performance at the cost of geometry detail.
+
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/mesh_lod/lod_change/threshold_pixels<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>` project setting.
+
+\ **Note:** :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>` does not affect :ref:`GeometryInstance3D<class_GeometryInstance3D>` visibility ranges (also known as "manual" LOD or hierarchical LOD).
 
 ----
 
@@ -720,7 +792,7 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 | *Getter*  | get_msaa()      |
 +-----------+-----------------+
 
-The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also :ref:`scale_3d<class_Viewport_property_scale_3d>` for supersampling, which provides higher quality but is much more expensive.
+The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive.
 
 ----
 
@@ -756,21 +828,41 @@ If ``true``, the objects rendered by viewport become subjects of mouse picking p
 
 ----
 
-.. _class_Viewport_property_scale_3d:
+.. _class_Viewport_property_scaling_3d_mode:
 
-- :ref:`float<class_float>` **scale_3d**
+- :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **scaling_3d_mode**
 
-+-----------+---------------------+
-| *Default* | ``1.0``             |
-+-----------+---------------------+
-| *Setter*  | set_scale_3d(value) |
-+-----------+---------------------+
-| *Getter*  | get_scale_3d()      |
-+-----------+---------------------+
++-----------+----------------------------+
+| *Default* | ``0``                      |
++-----------+----------------------------+
+| *Setter*  | set_scaling_3d_mode(value) |
++-----------+----------------------------+
+| *Getter*  | get_scaling_3d_mode()      |
++-----------+----------------------------+
 
-Scales the 3D render buffer based on the viewport size and displays the result with linear filtering. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`msaa<class_Viewport_property_msaa>` for multi-sample antialiasing, which is significantly cheaper but only smoothens the edges of polygons.
+Sets scaling 3d mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
 
-To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/3d/viewport/scale<class_ProjectSettings_property_rendering/3d/viewport/scale>` project setting.
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` project setting.
+
+----
+
+.. _class_Viewport_property_scaling_3d_scale:
+
+- :ref:`float<class_float>` **scaling_3d_scale**
+
++-----------+-----------------------------+
+| *Default* | ``1.0``                     |
++-----------+-----------------------------+
+| *Setter*  | set_scaling_3d_scale(value) |
++-----------+-----------------------------+
+| *Getter*  | get_scaling_3d_scale()      |
++-----------+-----------------------------+
+
+Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`ProjectSettings.rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa>` for multi-sample antialiasing, which is significantly cheaper but only smoothens the edges of polygons.
+
+When using FSR upscaling, AMD recommends exposing the following values as preset options to users "Ultra Quality: 0.77", "Quality: 0.67", "Balanced: 0.59", "Performance: 0.5" instead of exposing the entire scale.
+
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` project setting.
 
 ----
 
@@ -910,7 +1002,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 
 The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
 
-**Note:** If this is set to 0, shadows won't be visible.
+\ **Note:** If this is set to 0, shadows won't be visible.
 
 ----
 
@@ -1035,7 +1127,7 @@ Method Descriptions
 
 - :ref:`World2D<class_World2D>` **find_world_2d** **(** **)** |const|
 
-Returns the 2D world of the viewport.
+Returns the first valid :ref:`World2D<class_World2D>` for this viewport, searching the :ref:`world_2d<class_Viewport_property_world_2d>` property of itself and any Viewport ancestor.
 
 ----
 
@@ -1043,7 +1135,7 @@ Returns the 2D world of the viewport.
 
 - :ref:`World3D<class_World3D>` **find_world_3d** **(** **)** |const|
 
-Returns the 3D world of the viewport, or if none the world of the parent viewport.
+Returns the first valid :ref:`World3D<class_World3D>` for this viewport, searching the :ref:`world_3d<class_Viewport_property_world_3d>` property of itself and any Viewport ancestor.
 
 ----
 
@@ -1099,7 +1191,7 @@ Returns the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSub
 
 Returns the viewport's texture.
 
-**Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` to flip it back, for example:
+\ **Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` to flip it back, for example:
 
 
 .. tabs::
@@ -1139,6 +1231,14 @@ Returns the visible rectangle in global screen coordinates.
 - :ref:`Variant<class_Variant>` **gui_get_drag_data** **(** **)** |const|
 
 Returns the drag data from the GUI, that was previously returned by :ref:`Control._get_drag_data<class_Control_method__get_drag_data>`.
+
+----
+
+.. _class_Viewport_method_gui_is_drag_successful:
+
+- :ref:`bool<class_bool>` **gui_is_drag_successful** **(** **)** |const|
+
+Returns ``true`` if the drag operation is successful.
 
 ----
 

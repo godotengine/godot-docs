@@ -96,7 +96,7 @@ Method Descriptions
 
 Used for drawing **editor-only** modification gizmos. This function will only be called in the Godot editor and can be overridden to draw custom gizmos.
 
-**Note:** You will need to use the Skeleton2D from :ref:`SkeletonModificationStack2D.get_skeleton<class_SkeletonModificationStack2D_method_get_skeleton>` and it's draw functions, as the ``SkeletonModification2D`` resource cannot draw on its own.
+\ **Note:** You will need to use the Skeleton2D from :ref:`SkeletonModificationStack2D.get_skeleton<class_SkeletonModificationStack2D_method_get_skeleton>` and it's draw functions, as the ``SkeletonModification2D`` resource cannot draw on its own.
 
 ----
 

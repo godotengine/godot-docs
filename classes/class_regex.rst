@@ -57,7 +57,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
         print(result.get_string("digit"))
     # Would print 01 03 0 3f 42
 
-**Example of splitting a string using a RegEx:**
+\ **Example of splitting a string using a RegEx:**\ 
 
 ::
 
@@ -68,9 +68,9 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
         results.push_back(result.get_string())
     # The `results` array now contains "One", "Two", "Three".
 
-**Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`__ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`__.
+\ **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`__ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`__.
 
-**Tip:** You can use `Regexr <https://regexr.com/>`__ to test regular expressions online.
+\ **Tip:** You can use `Regexr <https://regexr.com/>`__ to test regular expressions online.
 
 Methods
 -------

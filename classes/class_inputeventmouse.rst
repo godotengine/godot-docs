@@ -67,7 +67,7 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`M
 | *Getter*  | get_global_position()      |
 +-----------+----------------------------+
 
-The global mouse position relative to the current :ref:`Viewport<class_Viewport>` when used in :ref:`Control._gui_input<class_Control_method__gui_input>`, otherwise is at 0,0.
+The global mouse position relative to the current :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>` and if the current :ref:`Control<class_Control>` is not under the mouse, moving it will not update this value.
 
 ----
 
@@ -83,7 +83,7 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 | *Getter*  | get_position()      |
 +-----------+---------------------+
 
-The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse.
+The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse. If the current  :ref:`Control<class_Control>` is not under the mouse, moving it will not update this value.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

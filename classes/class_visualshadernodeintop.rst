@@ -44,6 +44,16 @@ Enumerations
 
 .. _class_VisualShaderNodeIntOp_constant_OP_MIN:
 
+.. _class_VisualShaderNodeIntOp_constant_OP_BITWISE_AND:
+
+.. _class_VisualShaderNodeIntOp_constant_OP_BITWISE_OR:
+
+.. _class_VisualShaderNodeIntOp_constant_OP_BITWISE_XOR:
+
+.. _class_VisualShaderNodeIntOp_constant_OP_BITWISE_LEFT_SHIFT:
+
+.. _class_VisualShaderNodeIntOp_constant_OP_BITWISE_RIGHT_SHIFT:
+
 .. _class_VisualShaderNodeIntOp_constant_OP_ENUM_SIZE:
 
 enum **Operator**:
@@ -62,7 +72,17 @@ enum **Operator**:
 
 - **OP_MIN** = **6** --- Returns the lesser of two numbers. Translates to ``max(a, b)`` in the Godot Shader Language.
 
-- **OP_ENUM_SIZE** = **7** --- Represents the size of the :ref:`Operator<enum_VisualShaderNodeIntOp_Operator>` enum.
+- **OP_BITWISE_AND** = **7** --- Returns the result of bitwise ``AND`` operation on the integer. Translates to ``a & b`` in the Godot Shader Language.
+
+- **OP_BITWISE_OR** = **8** --- Returns the result of bitwise ``OR`` operation for two integers. Translates to ``a | b`` in the Godot Shader Language.
+
+- **OP_BITWISE_XOR** = **9** --- Returns the result of bitwise ``XOR`` operation for two integers. Translates to ``a ^ b`` in the Godot Shader Language.
+
+- **OP_BITWISE_LEFT_SHIFT** = **10** --- Returns the result of bitwise left shift operation on the integer. Translates to ``a << b`` in the Godot Shader Language.
+
+- **OP_BITWISE_RIGHT_SHIFT** = **11** --- Returns the result of bitwise right shift operation on the integer. Translates to ``a >> b`` in the Godot Shader Language.
+
+- **OP_ENUM_SIZE** = **12** --- Represents the size of the :ref:`Operator<enum_VisualShaderNodeIntOp_Operator>` enum.
 
 Property Descriptions
 ---------------------

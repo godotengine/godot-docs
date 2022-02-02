@@ -16,15 +16,15 @@ CurveXYZTexture
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------+----------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_x<class_CurveXYZTexture_property_curve_x>` |          |
-+---------------------------+--------------------------------------------------------+----------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_y<class_CurveXYZTexture_property_curve_y>` |          |
-+---------------------------+--------------------------------------------------------+----------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_z<class_CurveXYZTexture_property_curve_z>` |          |
-+---------------------------+--------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveXYZTexture_property_width>`     | ``2048`` |
-+---------------------------+--------------------------------------------------------+----------+
++---------------------------+--------------------------------------------------------+---------+
+| :ref:`Curve<class_Curve>` | :ref:`curve_x<class_CurveXYZTexture_property_curve_x>` |         |
++---------------------------+--------------------------------------------------------+---------+
+| :ref:`Curve<class_Curve>` | :ref:`curve_y<class_CurveXYZTexture_property_curve_y>` |         |
++---------------------------+--------------------------------------------------------+---------+
+| :ref:`Curve<class_Curve>` | :ref:`curve_z<class_CurveXYZTexture_property_curve_z>` |         |
++---------------------------+--------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`width<class_CurveXYZTexture_property_width>`     | ``256`` |
++---------------------------+--------------------------------------------------------+---------+
 
 Property Descriptions
 ---------------------
@@ -70,7 +70,7 @@ Property Descriptions
 - :ref:`int<class_int>` **width**
 
 +-----------+------------------+
-| *Default* | ``2048``         |
+| *Default* | ``256``          |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

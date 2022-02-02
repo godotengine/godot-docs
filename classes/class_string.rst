@@ -84,6 +84,8 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`humanize_size<class_String_method_humanize_size>` **(** :ref:`int<class_int>` size **)** |static|                                                                         |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`indent<class_String_method_indent>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                                |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`insert<class_String_method_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)** |const|                                                  |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_absolute_path<class_String_method_is_absolute_path>` **(** **)** |const|                                                                                               |
@@ -94,7 +96,7 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_subsequence_of<class_String_method_is_subsequence_of>` **(** :ref:`String<class_String>` text **)** |const|                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofi<class_String_method_is_subsequence_ofi>` **(** :ref:`String<class_String>` text **)** |const|                                                          |
+| :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofn<class_String_method_is_subsequence_ofn>` **(** :ref:`String<class_String>` text **)** |const|                                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_valid_filename<class_String_method_is_valid_filename>` **(** **)** |const|                                                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -331,7 +333,7 @@ Returns a copy of the string with special characters escaped using the C languag
 
 Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\?``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
 
-**Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
+\ **Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
 
 ----
 
@@ -349,9 +351,9 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
@@ -383,7 +385,7 @@ Returns the number of occurrences of substring ``what`` (ignoring case) between 
 
 - :ref:`String<class_String>` **dedent** **(** **)** |const|
 
-Returns a copy of the string with indentation (leading tabs and spaces) removed.
+Returns a copy of the string with indentation (leading tabs and spaces) removed. See also :ref:`indent<class_String_method_indent>` to add indentation.
 
 ----
 
@@ -401,7 +403,7 @@ Returns ``true`` if the string ends with the given string.
 
 Returns the index of the **first** case-sensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the end of the string.
 
-**Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
+\ **Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
 
 
 .. tabs::
@@ -531,6 +533,18 @@ Converts a string containing a hexadecimal number into an integer. Hexadecimal s
 
 ----
 
+.. _class_String_method_indent:
+
+- :ref:`String<class_String>` **indent** **(** :ref:`String<class_String>` prefix **)** |const|
+
+Returns a copy of the string with lines indented with ``prefix``.
+
+For example, the string can be indented with two tabs using ``"\t\t"``, or four spaces using ``"    "``. The prefix can be any string so it can also be used to comment out strings with e.g. ``"# "``. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
+
+\ **Note:** Empty lines are kept empty.
+
+----
+
 .. _class_String_method_insert:
 
 - :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)** |const|
@@ -571,9 +585,9 @@ Returns ``true`` if this string is a subsequence of the given string.
 
 ----
 
-.. _class_String_method_is_subsequence_ofi:
+.. _class_String_method_is_subsequence_ofn:
 
-- :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_String>` text **)** |const|
+- :ref:`bool<class_bool>` **is_subsequence_ofn** **(** :ref:`String<class_String>` text **)** |const|
 
 Returns ``true`` if this string is a subsequence of the given string, without considering case.
 
@@ -585,7 +599,7 @@ Returns ``true`` if this string is a subsequence of the given string, without co
 
 Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
 
-``: / \ ? * " | % < >``
+\ ``: / \ ? * " | % < >``
 
 ----
 
@@ -641,7 +655,7 @@ Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 addr
 
 - :ref:`String<class_String>` **join** **(** :ref:`PackedStringArray<class_PackedStringArray>` parts **)** |const|
 
-Return a ``String`` which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
+Returns a ``String`` which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
 
 Example:
 
@@ -705,7 +719,7 @@ Formats a string to be at least ``min_length`` long by adding ``character``\ s t
 
 Returns a copy of the string with characters removed from the left. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
 
 ----
 
@@ -749,9 +763,9 @@ Performs a case-insensitive *natural order* comparison to another string. Return
 
 When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get ``[1, 2, 3, ...]`` instead of ``[1, 10, 2, 3, ...]``.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
@@ -763,9 +777,9 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
@@ -927,7 +941,7 @@ Example:
 
 Returns a copy of the string with characters removed from the right. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
 
 ----
 
@@ -1061,7 +1075,14 @@ Converts the String (which is a character array) to ASCII/Latin-1 encoded :ref:`
 
 - :ref:`float<class_float>` **to_float** **(** **)** |const|
 
-Converts a string containing a decimal number into a ``float``.
+Converts a string containing a decimal number into a ``float``. The method will stop on the first non-number character except the first ``.`` (decimal point), and ``e`` which is used for exponential.
+
+::
+
+    print("12.3".to_float()) # 12.3
+    print("1.2.3".to_float()) # 1.2
+    print("12ab3".to_float()) # 12
+    print("1e3".to_float()) # 1000
 
 ----
 
@@ -1069,7 +1090,13 @@ Converts a string containing a decimal number into a ``float``.
 
 - :ref:`int<class_int>` **to_int** **(** **)** |const|
 
-Converts a string containing an integer number into an ``int``.
+Converts a string containing an integer number into an ``int``. The method will remove any non-number character and stop if it encounters a ``.``.
+
+::
+
+    print("123".to_int()) # 123
+    print("a1b2c3".to_int()) # 123
+    print("1.2.3".to_int()) # 1
 
 ----
 

@@ -26,26 +26,24 @@ Tutorials
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | ``1`` *(parent override)* |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``                     |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`           |                           |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`                           | ``false``                                                             |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`                           | ``false``                                                             |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`ignore_texture_size<class_TextureRect_property_ignore_texture_size>` | ``false``                                                             |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                               | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>`               | ``0``                                                                 |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`                         |                                                                       |
++--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_TextureRect_StretchMode:
-
-.. _class_TextureRect_constant_STRETCH_SCALE_ON_EXPAND:
 
 .. _class_TextureRect_constant_STRETCH_SCALE:
 
@@ -63,40 +61,22 @@ Enumerations
 
 enum **StretchMode**:
 
-- **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like :ref:`STRETCH_KEEP<class_TextureRect_constant_STRETCH_KEEP>`.
+- **STRETCH_SCALE** = **0** --- Scale to fit the node's bounding rectangle.
 
-- **STRETCH_SCALE** = **1** --- Scale to fit the node's bounding rectangle.
+- **STRETCH_TILE** = **1** --- Tile inside the node's bounding rectangle.
 
-- **STRETCH_TILE** = **2** --- Tile inside the node's bounding rectangle.
+- **STRETCH_KEEP** = **2** --- The texture keeps its original size and stays in the bounding rectangle's top-left corner.
 
-- **STRETCH_KEEP** = **3** --- The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+- **STRETCH_KEEP_CENTERED** = **3** --- The texture keeps its original size and stays centered in the node's bounding rectangle.
 
-- **STRETCH_KEEP_CENTERED** = **4** --- The texture keeps its original size and stays centered in the node's bounding rectangle.
+- **STRETCH_KEEP_ASPECT** = **4** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
 
-- **STRETCH_KEEP_ASPECT** = **5** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+- **STRETCH_KEEP_ASPECT_CENTERED** = **5** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
 
-- **STRETCH_KEEP_ASPECT_CENTERED** = **6** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
-
-- **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+- **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
 Property Descriptions
 ---------------------
-
-.. _class_TextureRect_property_expand:
-
-- :ref:`bool<class_bool>` **expand**
-
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_expand(value) |
-+-----------+-------------------+
-| *Getter*  | has_expand()      |
-+-----------+-------------------+
-
-If ``true``, the texture scales to fit its bounding rectangle.
-
-----
 
 .. _class_TextureRect_property_flip_h:
 
@@ -127,6 +107,22 @@ If ``true``, texture is flipped horizontally.
 +-----------+-------------------+
 
 If ``true``, texture is flipped vertically.
+
+----
+
+.. _class_TextureRect_property_ignore_texture_size:
+
+- :ref:`bool<class_bool>` **ignore_texture_size**
+
++-----------+--------------------------------+
+| *Default* | ``false``                      |
++-----------+--------------------------------+
+| *Setter*  | set_ignore_texture_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_ignore_texture_size()      |
++-----------+--------------------------------+
+
+If ``true``, the size of the texture won't be considered for minimum size calculation, so the ``TextureRect`` can be shrunk down past the texture size. Useful for preventing ``TextureRect``\ s from breaking GUI layout regardless of their texture size.
 
 ----
 

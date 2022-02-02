@@ -20,7 +20,7 @@ ParticlesMaterial defines particle properties and behavior. It is used in the ``
 
 Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
 
-When a randomness ratio is applied to a property it is used to scale that property by a random amount. The random ratio is used to interpolate between ``1.0`` and a random number less than one, the result is multiplied by the property to obtain the randomized property. For example a random ratio of ``0.4`` would scale the original property between ``0.4-1.0`` of its original value.
+Particle animation is available only in :ref:`GPUParticles2D<class_GPUParticles2D>`. To use it, attach a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, with :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>` enabled, to the particles node.
 
 Properties
 ----------
@@ -61,6 +61,8 @@ Properties
 | :ref:`bool<class_bool>`                                      | :ref:`collision_use_scale<class_ParticlesMaterial_property_collision_use_scale>`                     | ``false``               |
 +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                                    | :ref:`color<class_ParticlesMaterial_property_color>`                                                 | ``Color(1, 1, 1, 1)``   |
++--------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Texture2D<class_Texture2D>`                            | :ref:`color_initial_ramp<class_ParticlesMaterial_property_color_initial_ramp>`                       |                         |
 +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Texture2D<class_Texture2D>`                            | :ref:`color_ramp<class_ParticlesMaterial_property_color_ramp>`                                       |                         |
 +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
@@ -378,7 +380,7 @@ Minimum angle.
 | *Getter* | get_param_texture()      |
 +----------+--------------------------+
 
-Each particle's angular velocity will vary along this :ref:`CurveTexture<class_CurveTexture>`.
+Each particle's angular velocity (rotation speed) will vary along this :ref:`CurveTexture<class_CurveTexture>` over its lifetime.
 
 ----
 
@@ -394,7 +396,7 @@ Each particle's angular velocity will vary along this :ref:`CurveTexture<class_C
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum angular velocity.
+Maximum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
 ----
 
@@ -410,7 +412,7 @@ Maximum angular velocity.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum angular velocity.
+Minimum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
 ----
 
@@ -486,7 +488,9 @@ Each particle's animation speed will vary along this :ref:`CurveTexture<class_Cu
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum particle animation speed.
+Maximum particle animation speed. Animation speed of ``1`` means that the particles will make full ``0`` to ``1`` offset cycle during lifetime, ``2`` means ``2`` cycles etc.
+
+With animation speed greater than ``1``, remember to enable :ref:`CanvasItemMaterial.particles_anim_loop<class_CanvasItemMaterial_property_particles_anim_loop>` property if you want the animation to repeat.
 
 ----
 
@@ -599,6 +603,20 @@ Should collision take scale into account.
 +-----------+-----------------------+
 
 Each particle's initial color. If the :ref:`GPUParticles2D<class_GPUParticles2D>`'s ``texture`` is defined, it will be multiplied by this color. To have particle display color in a :ref:`BaseMaterial3D<class_BaseMaterial3D>` make sure to set :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` to ``true``.
+
+----
+
+.. _class_ParticlesMaterial_property_color_initial_ramp:
+
+- :ref:`Texture2D<class_Texture2D>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_ParticlesMaterial_property_color>`).
 
 ----
 
@@ -952,7 +970,7 @@ Minimum initial velocity.
 | *Getter*  | get_lifetime_randomness()      |
 +-----------+--------------------------------+
 
-Particle lifetime randomness ratio.
+Particle lifetime randomness ratio. The lifetime will be multiplied by a value interpolated between ``1.0`` and a random number less than one. For example a random ratio of ``0.4`` would scale the original lifetime between ``0.4-1.0`` of its original value.
 
 ----
 
@@ -1303,7 +1321,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|
 
-Return the maximum value range for the given prameter.
+Returns the maximum value range for the given parameter.
 
 ----
 
@@ -1311,7 +1329,7 @@ Return the maximum value range for the given prameter.
 
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_ParticlesMaterial_Parameter>` param **)** |const|
 
-Return the minimum value range for the given parameter.
+Returns the minimum value range for the given parameter.
 
 ----
 

@@ -103,7 +103,7 @@ Difference in period between :ref:`octaves<class_OpenSimplexNoise_property_octav
 
 Number of OpenSimplex noise layers that are sampled to get the fractal noise. Higher values result in more detailed noise but take more time to generate.
 
-**Note:** The maximum allowed value is 9.
+\ **Note:** The maximum allowed value is 9.
 
 ----
 
@@ -170,7 +170,7 @@ Generate a noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>`
 
 Returns the 1D noise value ``[-1,1]`` at the given x-coordinate.
 
-**Note:** This method actually returns the 2D noise value ``[-1,1]`` with fixed y-coordinate value 0.0.
+\ **Note:** This method actually returns the 2D noise value ``[-1,1]`` with fixed y-coordinate value 0.0.
 
 ----
 
@@ -220,7 +220,7 @@ Returns the 4D noise value ``[-1,1]`` at the given position.
 
 Generate a tileable noise image in :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>` format, based on the current noise parameters. Generated seamless images are always square (``size`` × ``size``).
 
-**Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
+\ **Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -112,11 +112,11 @@ Callable must accept a message string and a data array as argument. If the messa
 
 Registers a profiler with the given ``name``.
 
-``toggle`` callable is called when the profiler is enabled/disabled. It must take an argument array as an argument.
+\ ``toggle`` callable is called when the profiler is enabled/disabled. It must take an argument array as an argument.
 
-``add`` callable is called when data is added to profiler using :ref:`profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`. It must take a data array as argument.
+\ ``add`` callable is called when data is added to profiler using :ref:`profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`. It must take a data array as argument.
 
-``tick`` callable is called at every active profiler iteration. It must take frame time, idle time, physics time, and physics idle time as arguments.
+\ ``tick`` callable is called at every active profiler iteration. It must take frame time, idle time, physics time, and physics idle time as arguments.
 
 ----
 

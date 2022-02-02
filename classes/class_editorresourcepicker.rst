@@ -20,7 +20,7 @@ Description
 
 This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of :ref:`Resource<class_Resource>` type properties. It provides options for creating, loading, saving and converting resources. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
-**Note:** This :ref:`Control<class_Control>` does not include any editor for the resource, as editing is controlled by the Inspector dock itself or sub-Inspectors.
+\ **Note:** This :ref:`Control<class_Control>` does not include any editor for the resource, as editing is controlled by the Inspector dock itself or sub-Inspectors.
 
 Properties
 ----------
@@ -39,7 +39,7 @@ Methods
 -------
 
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_handle_menu_selected<class_EditorResourcePicker_method__handle_menu_selected>` **(** :ref:`int<class_int>` id **)** |virtual|          |
+| :ref:`bool<class_bool>`                           | :ref:`_handle_menu_selected<class_EditorResourcePicker_method__handle_menu_selected>` **(** :ref:`int<class_int>` id **)** |virtual|          |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`_set_create_options<class_EditorResourcePicker_method__set_create_options>` **(** :ref:`Object<class_Object>` menu_node **)** |virtual| |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,7 +133,7 @@ Method Descriptions
 
 .. _class_EditorResourcePicker_method__handle_menu_selected:
 
-- void **_handle_menu_selected** **(** :ref:`int<class_int>` id **)** |virtual|
+- :ref:`bool<class_bool>` **_handle_menu_selected** **(** :ref:`int<class_int>` id **)** |virtual|
 
 This virtual method can be implemented to handle context menu items not handled by default. See :ref:`_set_create_options<class_EditorResourcePicker_method__set_create_options>`.
 
@@ -145,7 +145,7 @@ This virtual method can be implemented to handle context menu items not handled 
 
 This virtual method is called when updating the context menu of ``EditorResourcePicker``. Implement this method to override the "New ..." items with your own options. ``menu_node`` is a reference to the :ref:`PopupMenu<class_PopupMenu>` node.
 
-**Note:** Implement :ref:`_handle_menu_selected<class_EditorResourcePicker_method__handle_menu_selected>` to handle these custom items.
+\ **Note:** Implement :ref:`_handle_menu_selected<class_EditorResourcePicker_method__handle_menu_selected>` to handle these custom items.
 
 ----
 

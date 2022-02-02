@@ -21,11 +21,11 @@ Methods
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                    | :ref:`clipboard_get_primary<class_DisplayServer_method_clipboard_get_primary>` **(** **)** |const|                                                                                                                                                                                                                                                    |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`clipboard_has<class_DisplayServer_method_clipboard_has>` **(** **)** |const|                                                                                                                                                                                                                                                                    |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`clipboard_set<class_DisplayServer_method_clipboard_set>` **(** :ref:`String<class_String>` clipboard **)**                                                                                                                                                                                                                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`clipboard_set_primary<class_DisplayServer_method_clipboard_set_primary>` **(** :ref:`String<class_String>` clipboard_primary **)**                                                                                                                                                                                                              |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`console_set_visible<class_DisplayServer_method_console_set_visible>` **(** :ref:`bool<class_bool>` console_visible **)**                                                                                                                                                                                                                        |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`create_sub_window<class_DisplayServer_method_create_sub_window>` **(** :ref:`WindowMode<enum_DisplayServer_WindowMode>` mode, :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` vsync_mode, :ref:`int<class_int>` flags, :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**                                                                 |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,8 +97,6 @@ Methods
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                    | :ref:`ime_get_text<class_DisplayServer_method_ime_get_text>` **(** **)** |const|                                                                                                                                                                                                                                                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                        | :ref:`is_console_visible<class_DisplayServer_method_is_console_visible>` **(** **)** |const|                                                                                                                                                                                                                                                          |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`keyboard_get_current_layout<class_DisplayServer_method_keyboard_get_current_layout>` **(** **)** |const|                                                                                                                                                                                                                                        |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Key<enum_@GlobalScope_Key>`                              | :ref:`keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                                |
@@ -110,8 +108,6 @@ Methods
 | :ref:`String<class_String>`                                    | :ref:`keyboard_get_layout_name<class_DisplayServer_method_keyboard_get_layout_name>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                                                  |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`keyboard_set_current_layout<class_DisplayServer_method_keyboard_set_current_layout>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                                    |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`                                | :ref:`mouse_get_absolute_position<class_DisplayServer_method_mouse_get_absolute_position>` **(** **)** |const|                                                                                                                                                                                                                                        |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`MouseButton<enum_@GlobalScope_MouseButton>`              | :ref:`mouse_get_button_state<class_DisplayServer_method_mouse_get_button_state>` **(** **)** |const|                                                                                                                                                                                                                                                  |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,6 +176,8 @@ Methods
 | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`WindowMode<enum_DisplayServer_WindowMode>`               | :ref:`window_get_mode<class_DisplayServer_method_window_get_mode>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                              |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`window_get_native_handle<class_DisplayServer_method_window_get_native_handle>` **(** :ref:`HandleType<enum_DisplayServer_HandleType>` handle_type, :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                              |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_position<class_DisplayServer_method_window_get_position>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -255,8 +253,6 @@ Enumerations
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG:
 
-.. _class_DisplayServer_constant_FEATURE_CONSOLE_WINDOW:
-
 .. _class_DisplayServer_constant_FEATURE_IME:
 
 .. _class_DisplayServer_constant_FEATURE_WINDOW_TRANSPARENCY:
@@ -295,23 +291,21 @@ enum **Feature**:
 
 - **FEATURE_NATIVE_DIALOG** = **9**
 
-- **FEATURE_CONSOLE_WINDOW** = **10**
+- **FEATURE_IME** = **10**
 
-- **FEATURE_IME** = **11**
+- **FEATURE_WINDOW_TRANSPARENCY** = **11**
 
-- **FEATURE_WINDOW_TRANSPARENCY** = **12**
+- **FEATURE_HIDPI** = **12**
 
-- **FEATURE_HIDPI** = **13**
+- **FEATURE_ICON** = **13**
 
-- **FEATURE_ICON** = **14**
+- **FEATURE_NATIVE_ICON** = **14**
 
-- **FEATURE_NATIVE_ICON** = **15**
+- **FEATURE_ORIENTATION** = **15**
 
-- **FEATURE_ORIENTATION** = **16**
+- **FEATURE_SWAP_BUFFERS** = **16**
 
-- **FEATURE_SWAP_BUFFERS** = **17**
-
-- **FEATURE_CLIPBOARD_PRIMARY** = **19**
+- **FEATURE_CLIPBOARD_PRIMARY** = **18**
 
 ----
 
@@ -335,7 +329,7 @@ enum **MouseMode**:
 
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and its position locked at the center of the screen.
 
-**Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
+\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
 
 - **MOUSE_MODE_CONFINED** = **3** --- Confines the mouse cursor to the game window, and make it visible.
 
@@ -565,6 +559,40 @@ enum **VSyncMode**:
 
 Although not guaranteed, the images can be rendered as fast as possible, which may reduce input lag.
 
+----
+
+.. _enum_DisplayServer_HandleType:
+
+.. _class_DisplayServer_constant_DISPLAY_HANDLE:
+
+.. _class_DisplayServer_constant_WINDOW_HANDLE:
+
+.. _class_DisplayServer_constant_WINDOW_VIEW:
+
+enum **HandleType**:
+
+- **DISPLAY_HANDLE** = **0** --- Display handle:
+
+- Linux: ``X11::Display*`` for the display.
+
+- **WINDOW_HANDLE** = **1** --- Window handle:
+
+- Windows: ``HWND`` for the window.
+
+- Linux: ``X11::Window*`` for the window.
+
+- MacOS: ``NSWindow*`` for the window.
+
+- iOS: ``UIViewController*`` for the view controller.
+
+- Android: ``jObject`` for the activity.
+
+- **WINDOW_VIEW** = **2** --- Window view:
+
+- MacOS: ``NSView*`` for the window main view.
+
+- iOS: ``UIView*`` for the window main view.
+
 Constants
 ---------
 
@@ -597,7 +625,15 @@ Returns the user's clipboard as a string if possible.
 
 Returns the user's primary clipboard as a string if possible.
 
-**Note:** This method is only implemented on Linux.
+\ **Note:** This method is only implemented on Linux.
+
+----
+
+.. _class_DisplayServer_method_clipboard_has:
+
+- :ref:`bool<class_bool>` **clipboard_has** **(** **)** |const|
+
+Returns ``true`` if there is content on the user's clipboard.
 
 ----
 
@@ -615,13 +651,7 @@ Sets the user's clipboard content to the given string.
 
 Sets the user's primary clipboard content to the given string.
 
-**Note:** This method is only implemented on Linux.
-
-----
-
-.. _class_DisplayServer_method_console_set_visible:
-
-- void **console_set_visible** **(** :ref:`bool<class_bool>` console_visible **)**
+\ **Note:** This method is only implemented on Linux.
 
 ----
 
@@ -835,19 +865,13 @@ Sets the user's primary clipboard content to the given string.
 
 ----
 
-.. _class_DisplayServer_method_is_console_visible:
-
-- :ref:`bool<class_bool>` **is_console_visible** **(** **)** |const|
-
-----
-
 .. _class_DisplayServer_method_keyboard_get_current_layout:
 
 - :ref:`int<class_int>` **keyboard_get_current_layout** **(** **)** |const|
 
 Returns active keyboard layout index.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -857,7 +881,7 @@ Returns active keyboard layout index.
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -867,7 +891,7 @@ Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout
 
 Returns the number of keyboard layouts.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -877,7 +901,7 @@ Returns the number of keyboard layouts.
 
 Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -887,7 +911,7 @@ Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``in
 
 Returns the localized name of the keyboard layout at position ``index``.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -897,13 +921,7 @@ Returns the localized name of the keyboard layout at position ``index``.
 
 Sets active keyboard layout.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
-
-----
-
-.. _class_DisplayServer_method_mouse_get_absolute_position:
-
-- :ref:`Vector2i<class_Vector2i>` **mouse_get_absolute_position** **(** **)** |const|
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 
@@ -953,9 +971,9 @@ Sets the mouse cursor position to the given ``position``.
 
 Returns the dots per inch density of the specified screen. If ``screen`` is ``\ SCREEN_OF_MAIN_WINDOW`` (the default value), a screen with the main window will be used.
 
-**Note:** On macOS, returned value is inaccurate if fractional display scaling mode is used.
+\ **Note:** On macOS, returned value is inaccurate if fractional display scaling mode is used.
 
-**Note:** On Android devices, the actual screen densities are grouped into six generalized densities:
+\ **Note:** On Android devices, the actual screen densities are grouped into six generalized densities:
 
 ::
 
@@ -966,7 +984,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is ``\ 
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
-**Note:** This method is implemented on Android, Linux, macOS and Windows. Returns ``72`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, Linux, macOS and Windows. Returns ``72`` on unsupported platforms.
 
 ----
 
@@ -974,11 +992,11 @@ Returns the dots per inch density of the specified screen. If ``screen`` is ``\ 
 
 - :ref:`float<class_float>` **screen_get_max_scale** **(** **)** |const|
 
-Return the greatest scale factor of all screens.
+Returns the greatest scale factor of all screens.
 
-**Note:** On macOS returned value is ``2.0`` if there is at least one hiDPI (Retina) screen in the system, and ``1.0`` in all other cases.
+\ **Note:** On macOS returned value is ``2.0`` if there is at least one hiDPI (Retina) screen in the system, and ``1.0`` in all other cases.
 
-**Note:** This method is implemented on macOS.
+\ **Note:** This method is implemented on macOS.
 
 ----
 
@@ -998,11 +1016,11 @@ Return the greatest scale factor of all screens.
 
 - :ref:`float<class_float>` **screen_get_scale** **(** :ref:`int<class_int>` screen=-1 **)** |const|
 
-Return the scale factor of the specified screen by index.
+Returns the scale factor of the specified screen by index.
 
-**Note:** On macOS returned value is ``2.0`` for hiDPI (Retina) screen, and ``1.0`` for all other cases.
+\ **Note:** On macOS returned value is ``2.0`` for hiDPI (Retina) screen, and ``1.0`` for all other cases.
 
-**Note:** This method is implemented on macOS.
+\ **Note:** This method is implemented on macOS.
 
 ----
 
@@ -1060,7 +1078,7 @@ Return the scale factor of the specified screen by index.
 
 Returns current active tablet driver name.
 
-**Note:** This method is implemented on Windows.
+\ **Note:** This method is implemented on Windows.
 
 ----
 
@@ -1070,7 +1088,7 @@ Returns current active tablet driver name.
 
 Returns the total number of available tablet drivers.
 
-**Note:** This method is implemented on Windows.
+\ **Note:** This method is implemented on Windows.
 
 ----
 
@@ -1080,7 +1098,7 @@ Returns the total number of available tablet drivers.
 
 Returns the tablet driver name for the given index.
 
-**Note:** This method is implemented on Windows.
+\ **Note:** This method is implemented on Windows.
 
 ----
 
@@ -1090,7 +1108,7 @@ Returns the tablet driver name for the given index.
 
 Set active tablet driver name.
 
-**Note:** This method is implemented on Windows.
+\ **Note:** This method is implemented on Windows.
 
 ----
 
@@ -1116,19 +1134,19 @@ Hides the virtual keyboard if it is shown, does nothing otherwise.
 
 Shows the virtual keyboard if the platform has one.
 
-``existing_text`` parameter is useful for implementing your own :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+\ ``existing_text`` parameter is useful for implementing your own :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
 
-``position`` parameter is the screen space :ref:`Rect2<class_Rect2>` of the edited text.
+\ ``position`` parameter is the screen space :ref:`Rect2<class_Rect2>` of the edited text.
 
-``multiline`` parameter needs to be set to ``true`` to be able to enter multiple lines of text, as in :ref:`TextEdit<class_TextEdit>`.
+\ ``multiline`` parameter needs to be set to ``true`` to be able to enter multiple lines of text, as in :ref:`TextEdit<class_TextEdit>`.
 
-``max_length`` limits the number of characters that can be entered if different from ``-1``.
+\ ``max_length`` limits the number of characters that can be entered if different from ``-1``.
 
-``cursor_start`` can optionally define the current text cursor position if ``cursor_end`` is not set.
+\ ``cursor_start`` can optionally define the current text cursor position if ``cursor_end`` is not set.
 
-``cursor_start`` and ``cursor_end`` can optionally define the current text selection.
+\ ``cursor_start`` and ``cursor_end`` can optionally define the current text selection.
 
-**Note:** This method is implemented on Android, iOS and UWP.
+\ **Note:** This method is implemented on Android, iOS and UWP.
 
 ----
 
@@ -1181,6 +1199,16 @@ Returns the current value of the given window's ``flag``.
 - :ref:`WindowMode<enum_DisplayServer_WindowMode>` **window_get_mode** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
 Returns the mode of the given window.
+
+----
+
+.. _class_DisplayServer_method_window_get_native_handle:
+
+- :ref:`int<class_int>` **window_get_native_handle** **(** :ref:`HandleType<enum_DisplayServer_HandleType>` handle_type, :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns internal structure pointers for use in plugins.
+
+\ **Note:** This method is implemented on Android, Linux, macOS and Windows.
 
 ----
 
@@ -1280,7 +1308,7 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 Sets the minimum size for the given window to ``min_size`` (in pixels).
 
-**Note:** By default, the main window has a minimum size of ``Vector2i(64, 64)``. This prevents issues that can arise when the window is resized to a near-zero size.
+\ **Note:** By default, the main window has a minimum size of ``Vector2i(64, 64)``. This prevents issues that can arise when the window is resized to a near-zero size.
 
 ----
 
@@ -1290,7 +1318,7 @@ Sets the minimum size for the given window to ``min_size`` (in pixels).
 
 Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
-**Note:** Setting the window to fullscreen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
+\ **Note:** Setting the window to fullscreen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
 
 ----
 
@@ -1329,9 +1357,9 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 
 
-**Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux and macOS it is.
+\ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux and macOS it is.
 
-**Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 ----
 

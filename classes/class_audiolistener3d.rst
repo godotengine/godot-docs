@@ -56,7 +56,7 @@ Returns the listener's global orthonormalized :ref:`Transform3D<class_Transform3
 
 Returns ``true`` if the listener was made current using :ref:`make_current<class_AudioListener3D_method_make_current>`, ``false`` otherwise.
 
-**Note:** There may be more than one AudioListener3D marked as "current" in the scene tree, but only the one that was made current last will be used.
+\ **Note:** There may be more than one AudioListener3D marked as "current" in the scene tree, but only the one that was made current last will be used.
 
 ----
 

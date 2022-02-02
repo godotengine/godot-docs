@@ -11,7 +11,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoPlayer<class_VideoPlayer>`
+**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
 
 All user interface nodes inherit from Control. A control's anchors and offsets adapt its position and size relative to its parent.
 
@@ -22,11 +22,11 @@ Base class for all UI-related nodes. ``Control`` features a bounding rectangle t
 
 For more information on Godot's UI system, anchors, offsets, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
 
-**User Interface nodes and input**
+\ **User Interface nodes and input**\ 
 
 Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls ``MainLoop._input_event``.
 
-**FIXME:** No longer valid after DisplayServer split and Input refactoring.
+\ **FIXME:** No longer valid after DisplayServer split and Input refactoring.
 
 Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
 
@@ -34,9 +34,9 @@ Only one ``Control`` node can be in keyboard focus. Only the node in focus will 
 
 Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
-:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_theme_*_override`` methods, like :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>`. You can override the theme with the inspector.
+\ :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_theme_*_override`` methods, like :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>`. You can override the theme with the inspector.
 
-**Note:** Theme items are *not* :ref:`Object<class_Object>` properties. This means you can't access their values using :ref:`Object.get<class_Object_method_get>` and :ref:`Object.set<class_Object_method_set>`. Instead, use the ``get_theme_*`` and ``add_theme_*_override`` methods provided by this class.
+\ **Note:** Theme items are *not* :ref:`Object<class_Object>` properties. This means you can't access their values using :ref:`Object.get<class_Object_method_get>` and :ref:`Object.set<class_Object_method_set>`. Instead, use the ``get_theme_*`` and ``add_theme_*_override`` methods provided by this class.
 
 Tutorials
 ---------
@@ -244,9 +244,9 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_theme_stylebox_override<class_Control_method_has_theme_stylebox_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                  |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_layout_rtl<class_Control_method_is_layout_rtl>` **(** **)** |const|                                                                                                                                                                                       |
+| :ref:`bool<class_bool>`                      | :ref:`is_drag_successful<class_Control_method_is_drag_successful>` **(** **)** |const|                                                                                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`minimum_size_changed<class_Control_method_minimum_size_changed>` **(** **)**                                                                                                                                                                                 |
+| :ref:`bool<class_bool>`                      | :ref:`is_layout_rtl<class_Control_method_is_layout_rtl>` **(** **)** |const|                                                                                                                                                                                       |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`release_focus<class_Control_method_release_focus>` **(** **)**                                                                                                                                                                                               |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -261,6 +261,8 @@ Methods
 | void                                         | :ref:`remove_theme_icon_override<class_Control_method_remove_theme_icon_override>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`remove_theme_stylebox_override<class_Control_method_remove_theme_stylebox_override>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                    |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`reset_size<class_Control_method_reset_size>` **(** **)**                                                                                                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_anchor<class_Control_method_set_anchor>` **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`float<class_float>` anchor, :ref:`bool<class_bool>` keep_offset=false, :ref:`bool<class_bool>` push_opposite_anchor=true **)**                            |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -289,6 +291,8 @@ Methods
 | void                                         | :ref:`set_position<class_Control_method_set_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` keep_offsets=false **)**                                                                                                              |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_size<class_Control_method_set_size>` **(** :ref:`Vector2<class_Vector2>` size, :ref:`bool<class_bool>` keep_offsets=false **)**                                                                                                                          |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`update_minimum_size<class_Control_method_update_minimum_size>` **(** **)**                                                                                                                                                                                   |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`warp_mouse<class_Control_method_warp_mouse>` **(** :ref:`Vector2<class_Vector2>` to_position **)**                                                                                                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,7 +338,7 @@ Emitted when the node's minimum size changes.
 
 Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
 
-**Note:** :ref:`mouse_entered<class_Control_signal_mouse_entered>` will not be emitted if the mouse enters a child ``Control`` node before entering the parent's ``Rect`` area, at least until the mouse is moved to reach the parent's ``Rect`` area.
+\ **Note:** :ref:`mouse_entered<class_Control_signal_mouse_entered>` will not be emitted if the mouse enters a child ``Control`` node before entering the parent's ``Rect`` area, at least until the mouse is moved to reach the parent's ``Rect`` area.
 
 ----
 
@@ -344,7 +348,15 @@ Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mo
 
 Emitted when the mouse leaves the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
 
-**Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
+\ **Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
+
+If you want to check whether the mouse truly left the area, ignoring any top nodes, you can use code like this:
+
+::
+
+    func _on_mouse_exited():
+        if not Rect2(Vector2(), rect_size).has_point(get_local_mouse_position()):
+            # Not hovering over area.
 
 ----
 
@@ -1042,7 +1054,7 @@ Controls layout direction and text writing direction. Right-to-left layouts are 
 
 The default cursor shape for this control. Useful for Godot plugins and applications or games that use the system's mouse cursors.
 
-**Note:** On Linux, shapes may vary depending on the cursor theme of the system.
+\ **Note:** On Linux, shapes may vary depending on the cursor theme of the system.
 
 ----
 
@@ -1238,9 +1250,9 @@ The node's rotation around its pivot, in radians. See :ref:`rect_pivot_offset<cl
 
 The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
 
-**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/viewports/multiple_resolutions>` instead of scaling Controls individually.
+\ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/viewports/multiple_resolutions>` instead of scaling Controls individually.
 
-**Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using ``await get_tree().process_frame`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
+\ **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using ``await get_tree().process_frame`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
 
 ----
 
@@ -1336,9 +1348,9 @@ The name of a theme type variation used by this ``Control`` to look up its own t
 
 When set, this property gives the highest priority to the type of the specified name. This type can in turn extend another type, forming a dependency chain. See :ref:`Theme.set_type_variation<class_Theme_method_set_type_variation>`. If the theme item cannot be found using this type or its base types, lookup falls back on the class names.
 
-**Note:** To look up ``Control``'s own items use various ``get_theme_*`` methods without specifying ``theme_type``.
+\ **Note:** To look up ``Control``'s own items use various ``get_theme_*`` methods without specifying ``theme_type``.
 
-**Note:** Theme items are looked for in the tree order, from branch to root, where each ``Control`` node is checked for its :ref:`theme<class_Control_property_theme>` property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
+\ **Note:** Theme items are looked for in the tree order, from branch to root, where each ``Control`` node is checked for its :ref:`theme<class_Control_property_theme>` property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
 
 Method Descriptions
 -------------------
@@ -1444,6 +1456,8 @@ Virtual method to be implemented by the user. Returns the minimum size for this 
 
 If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
+\ **Note:** This method will not be called when the script is attached to a ``Control`` node that already overrides its minimum size (e.g. :ref:`Label<class_Label>`, :ref:`Button<class_Button>`, :ref:`PanelContainer<class_PanelContainer>` etc.). It can only be used with most basic GUI nodes, like ``Control``, :ref:`Container<class_Container>`, :ref:`Panel<class_Panel>` etc.
+
 ----
 
 .. _class_Control_method__gui_input:
@@ -1492,7 +1506,7 @@ The event won't trigger if:
 
 \* it happens outside the parent's rectangle and the parent has either :ref:`rect_clip_content<class_Control_property_rect_clip_content>` enabled.
 
-**Note:** Event position is relative to the control origin.
+\ **Note:** Event position is relative to the control origin.
 
 ----
 
@@ -1504,7 +1518,7 @@ Virtual method to be implemented by the user. Returns whether the given ``point`
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
-**Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+\ **Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
 
 ----
 
@@ -1518,9 +1532,9 @@ The returned node must be of type ``Control`` or Control-derived. It can have ch
 
 The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
 
-**Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
+\ **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
 
-**Note:** The node (and any relevant children) should be :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` when returned, otherwise, the viewport that instantiates it will not be able to calculate its minimum size reliably.
+\ **Note:** The node (and any relevant children) should be :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` when returned, otherwise, the viewport that instantiates it will not be able to calculate its minimum size reliably.
 
 Example of usage with a custom-constructed node:
 
@@ -1576,7 +1590,7 @@ Example of usage with a custom scene instance:
 
 User defined BiDi algorithm override function.
 
-Return ``Array`` of ``Vector2i`` text ranges, in the left-to-right order. Ranges should cover full source ``text`` without overlaps. BiDi algorithm will be used on each range separately.
+Returns ``Array`` of ``Vector2i`` text ranges, in the left-to-right order. Ranges should cover full source ``text`` without overlaps. BiDi algorithm will be used on each range separately.
 
 ----
 
@@ -1596,7 +1610,7 @@ Creates a local override for a theme :ref:`Color<class_Color>` with the specifie
 
 See also :ref:`get_theme_color<class_Control_method_get_theme_color>`.
 
-**Example of overriding a label's color and resetting it later:**
+\ **Example of overriding a label's color and resetting it later:**\ 
 
 
 .. tabs::
@@ -1671,7 +1685,7 @@ Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the sp
 
 See also :ref:`get_theme_stylebox<class_Control_method_get_theme_stylebox>`.
 
-**Example of modifying a property in a StyleBox by duplicating it:**
+\ **Example of modifying a property in a StyleBox by duplicating it:**\ 
 
 
 .. tabs::
@@ -2132,19 +2146,19 @@ See :ref:`add_theme_stylebox_override<class_Control_method_add_theme_stylebox_ov
 
 ----
 
+.. _class_Control_method_is_drag_successful:
+
+- :ref:`bool<class_bool>` **is_drag_successful** **(** **)** |const|
+
+Returns ``true`` if drag operation is successful.
+
+----
+
 .. _class_Control_method_is_layout_rtl:
 
 - :ref:`bool<class_bool>` **is_layout_rtl** **(** **)** |const|
 
 Returns ``true`` if layout is right-to-left.
-
-----
-
-.. _class_Control_method_minimum_size_changed:
-
-- void **minimum_size_changed** **(** **)**
-
-Invalidates the size cache in this node and in parent nodes up to top_level. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`rect_min_size<class_Control_property_rect_min_size>` directly calls this method automatically.
 
 ----
 
@@ -2204,6 +2218,14 @@ Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the sp
 
 ----
 
+.. _class_Control_method_reset_size:
+
+- void **reset_size** **(** **)**
+
+Resets the size to :ref:`get_combined_minimum_size<class_Control_method_get_combined_minimum_size>`. This is equivalent to calling ``set_size(Vector2())`` (or any size below the minimum).
+
+----
+
 .. _class_Control_method_set_anchor:
 
 - void **set_anchor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`float<class_float>` anchor, :ref:`bool<class_bool>` keep_offset=false, :ref:`bool<class_bool>` push_opposite_anchor=true **)**
@@ -2258,7 +2280,7 @@ Forwards the handling of this control's drag and drop to ``target`` object.
 
 Forwarding can be implemented in the target object similar to the methods :ref:`_get_drag_data<class_Control_method__get_drag_data>`, :ref:`_can_drop_data<class_Control_method__can_drop_data>`, and :ref:`_drop_data<class_Control_method__drop_data>` but with two differences:
 
-1. The function name must be suffixed with **_fw**
+1. The function name must be suffixed with **_fw**\ 
 
 2. The function must take an extra argument that is the control doing the forwarding
 
@@ -2427,6 +2449,14 @@ If ``keep_offsets`` is ``true``, control's anchors will be updated instead of of
 Sets the size (see :ref:`rect_size<class_Control_property_rect_size>`).
 
 If ``keep_offsets`` is ``true``, control's anchors will be updated instead of offsets.
+
+----
+
+.. _class_Control_method_update_minimum_size:
+
+- void **update_minimum_size** **(** **)**
+
+Invalidates the size cache in this node and in parent nodes up to top level. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`rect_min_size<class_Control_property_rect_min_size>` directly calls this method automatically.
 
 ----
 

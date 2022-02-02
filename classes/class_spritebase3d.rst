@@ -42,8 +42,6 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------+-----------------------+
 | :ref:`Vector2<class_Vector2>`                           | :ref:`offset<class_SpriteBase3D_property_offset>`             | ``Vector2(0, 0)``     |
 +---------------------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                               | :ref:`opacity<class_SpriteBase3D_property_opacity>`           | ``1.0``               |
-+---------------------------------------------------------+---------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                               | :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`     | ``0.01``              |
 +---------------------------------------------------------+---------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`shaded<class_SpriteBase3D_property_shaded>`             | ``false``             |
@@ -232,7 +230,9 @@ If ``true``, texture is flipped vertically.
 | *Getter*  | get_modulate()        |
 +-----------+-----------------------+
 
-A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
+A color value used to *multiply* the texture's colors. Can be used for mood-coloring or to simulate the color of light.
+
+\ **Note:** If a :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is defined on the ``SpriteBase3D``, the material override must be configured to take vertex colors into account for albedo. Otherwise, the color defined in :ref:`modulate<class_SpriteBase3D_property_modulate>` will be ignored. For a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` must be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;[/color] must be inserted in the shader's [code]fragment()`` function.
 
 ----
 
@@ -249,22 +249,6 @@ A color value that gets multiplied on, could be used for mood-coloring or to sim
 +-----------+-------------------+
 
 The texture's drawing offset.
-
-----
-
-.. _class_SpriteBase3D_property_opacity:
-
-- :ref:`float<class_float>` **opacity**
-
-+-----------+--------------------+
-| *Default* | ``1.0``            |
-+-----------+--------------------+
-| *Setter*  | set_opacity(value) |
-+-----------+--------------------+
-| *Getter*  | get_opacity()      |
-+-----------+--------------------+
-
-The objects' visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
 
 ----
 

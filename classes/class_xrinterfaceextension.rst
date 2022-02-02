@@ -22,7 +22,7 @@ Methods
 -------
 
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`_commit_views<class_XRInterfaceExtension_method__commit_views>` **(** :ref:`RID<class_RID>` render_target, :ref:`Rect2<class_Rect2>` screen_rect **)** |virtual|                                                                                                                                                                                                                                                                                                                |
+| void                                                | :ref:`_end_frame<class_XRInterfaceExtension_method__end_frame>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                                                 |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`_get_anchor_detection_is_enabled<class_XRInterfaceExtension_method__get_anchor_detection_is_enabled>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,6 +58,12 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`_notification<class_XRInterfaceExtension_method__notification>` **(** :ref:`int<class_int>` what **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`_post_draw_viewport<class_XRInterfaceExtension_method__post_draw_viewport>` **(** :ref:`RID<class_RID>` render_target, :ref:`Rect2<class_Rect2>` screen_rect **)** |virtual|                                                                                                                                                                                                                                                                                                    |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`_pre_draw_viewport<class_XRInterfaceExtension_method__pre_draw_viewport>` **(** :ref:`RID<class_RID>` render_target **)** |virtual|                                                                                                                                                                                                                                                                                                                                             |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`_pre_render<class_XRInterfaceExtension_method__pre_render>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                                               |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`_process<class_XRInterfaceExtension_method__process>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                                                     |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`_set_anchor_detection_is_enabled<class_XRInterfaceExtension_method__set_anchor_detection_is_enabled>` **(** :ref:`bool<class_bool>` enabled **)** |virtual|                                                                                                                                                                                                                                                                                                                     |
@@ -78,9 +84,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_XRInterfaceExtension_method__commit_views:
+.. _class_XRInterfaceExtension_method__end_frame:
 
-- void **_commit_views** **(** :ref:`RID<class_RID>` render_target, :ref:`Rect2<class_Rect2>` screen_rect **)** |virtual|
+- void **_end_frame** **(** **)** |virtual|
+
+Called if interface is active and queues have been submitted.
 
 ----
 
@@ -88,11 +96,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_get_anchor_detection_is_enabled** **(** **)** |virtual| |const|
 
+Return ``true`` if anchor detection is enabled for this interface.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_camera_feed_id:
 
 - :ref:`int<class_int>` **_get_camera_feed_id** **(** **)** |virtual| |const|
+
+Returns the camera feed id for the :ref:`CameraFeed<class_CameraFeed>` registered with the :ref:`CameraServer<class_CameraServer>` that should be presented as the background on an AR capable device (if applicable).
 
 ----
 
@@ -100,11 +112,15 @@ Method Descriptions
 
 - :ref:`Transform3D<class_Transform3D>` **_get_camera_transform** **(** **)** |virtual|
 
+Returns the :ref:`Transform3D<class_Transform3D>` that positions the :ref:`XRCamera3D<class_XRCamera3D>` in the world.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_capabilities:
 
 - :ref:`int<class_int>` **_get_capabilities** **(** **)** |virtual| |const|
+
+Returns the capabilities of this interface.
 
 ----
 
@@ -112,11 +128,15 @@ Method Descriptions
 
 - :ref:`StringName<class_StringName>` **_get_name** **(** **)** |virtual| |const|
 
+Returns the name of this interface.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_play_area:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **_get_play_area** **(** **)** |virtual| |const|
+
+Returns an :ref:`PackedVector3Array<class_PackedVector3Array>` that denotes the play areas boundaries (if applicable).
 
 ----
 
@@ -124,11 +144,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_play_area_mode** **(** **)** |virtual| |const|
 
+Returns the :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` that sets up our play area.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_projection_for_view:
 
 - :ref:`PackedFloat64Array<class_PackedFloat64Array>` **_get_projection_for_view** **(** :ref:`int<class_int>` view, :ref:`float<class_float>` aspect, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |virtual|
+
+Returns the projection matrix for the given view as a :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
 ----
 
@@ -136,11 +160,15 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_get_render_target_size** **(** **)** |virtual|
 
+Returns the size of our render target for this interface, this overrides the size of the :ref:`Viewport<class_Viewport>` marked as the xr viewport.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_suggested_pose_names:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_suggested_pose_names** **(** :ref:`StringName<class_StringName>` tracker_name **)** |virtual| |const|
+
+Returns a :ref:`PackedStringArray<class_PackedStringArray>` with pose names configured by this interface. Note that user configuration can override this list.
 
 ----
 
@@ -148,11 +176,15 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_suggested_tracker_names** **(** **)** |virtual| |const|
 
+Returns a :ref:`PackedStringArray<class_PackedStringArray>` with tracker names configured by this interface. Note that user configuration can override this list.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_tracking_status:
 
 - :ref:`int<class_int>` **_get_tracking_status** **(** **)** |virtual| |const|
+
+Returns a :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` specifying the current status of our tracking.
 
 ----
 
@@ -160,11 +192,15 @@ Method Descriptions
 
 - :ref:`Transform3D<class_Transform3D>` **_get_transform_for_view** **(** :ref:`int<class_int>` view, :ref:`Transform3D<class_Transform3D>` cam_transform **)** |virtual|
 
+Returns a :ref:`Transform3D<class_Transform3D>` for a given view.
+
 ----
 
 .. _class_XRInterfaceExtension_method__get_view_count:
 
 - :ref:`int<class_int>` **_get_view_count** **(** **)** |virtual|
+
+Returns the number of views this interface requires, 1 for mono, 2 for stereoscopic.
 
 ----
 
@@ -172,11 +208,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_initialize** **(** **)** |virtual|
 
+Initializes the interface, returns ``true`` on success.
+
 ----
 
 .. _class_XRInterfaceExtension_method__is_initialized:
 
 - :ref:`bool<class_bool>` **_is_initialized** **(** **)** |virtual| |const|
+
+Returns ``true`` if this interface has been initialised.
 
 ----
 
@@ -184,11 +224,39 @@ Method Descriptions
 
 - void **_notification** **(** :ref:`int<class_int>` what **)** |virtual|
 
+Informs the interface of an applicable system notification.
+
+----
+
+.. _class_XRInterfaceExtension_method__post_draw_viewport:
+
+- void **_post_draw_viewport** **(** :ref:`RID<class_RID>` render_target, :ref:`Rect2<class_Rect2>` screen_rect **)** |virtual|
+
+Called after the XR :ref:`Viewport<class_Viewport>` draw logic has completed.
+
+----
+
+.. _class_XRInterfaceExtension_method__pre_draw_viewport:
+
+- :ref:`bool<class_bool>` **_pre_draw_viewport** **(** :ref:`RID<class_RID>` render_target **)** |virtual|
+
+Called if this is our primary ``XRInterfaceExtension`` before we start processing a :ref:`Viewport<class_Viewport>` for every active XR :ref:`Viewport<class_Viewport>`, returns ``true`` if that viewport should be rendered. An XR interface may return ``false`` if the user has taken off their headset and we can pause rendering.
+
+----
+
+.. _class_XRInterfaceExtension_method__pre_render:
+
+- void **_pre_render** **(** **)** |virtual|
+
+Called if this ``XRInterfaceExtension`` is active before rendering starts, most XR interfaces will sync tracking at this point in time.
+
 ----
 
 .. _class_XRInterfaceExtension_method__process:
 
 - void **_process** **(** **)** |virtual|
+
+Called if this ``XRInterfaceExtension`` is active before our physics and game process is called. most XR interfaces will update its :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ s at this point in time.
 
 ----
 
@@ -196,11 +264,15 @@ Method Descriptions
 
 - void **_set_anchor_detection_is_enabled** **(** :ref:`bool<class_bool>` enabled **)** |virtual|
 
+Enables anchor detection on this interface if supported.
+
 ----
 
 .. _class_XRInterfaceExtension_method__set_play_area_mode:
 
 - :ref:`bool<class_bool>` **_set_play_area_mode** **(** :ref:`int<class_int>` mode **)** |virtual| |const|
+
+Set the play area mode for this interface.
 
 ----
 
@@ -208,17 +280,23 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_supports_play_area_mode** **(** :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` mode **)** |virtual| |const|
 
+Returns ``true`` if this interface supports this play area mode.
+
 ----
 
 .. _class_XRInterfaceExtension_method__trigger_haptic_pulse:
 
 - void **_trigger_haptic_pulse** **(** :ref:`String<class_String>` action_name, :ref:`StringName<class_StringName>` tracker_name, :ref:`float<class_float>` frequency, :ref:`float<class_float>` amplitude, :ref:`float<class_float>` duration_sec, :ref:`float<class_float>` delay_sec **)** |virtual|
 
+Triggers a haptic pulse to be emitted on the specified tracker.
+
 ----
 
 .. _class_XRInterfaceExtension_method__uninitialize:
 
 - void **_uninitialize** **(** **)** |virtual|
+
+Uninitialize the interface.
 
 ----
 
@@ -233,6 +311,8 @@ Blits our render results to screen optionally applying lens distortion. This can
 .. _class_XRInterfaceExtension_method_get_render_target_texture:
 
 - :ref:`RID<class_RID>` **get_render_target_texture** **(** :ref:`RID<class_RID>` render_target **)**
+
+Returns a valid :ref:`RID<class_RID>` for a texture to which we should render the current frame if supported by the interface.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

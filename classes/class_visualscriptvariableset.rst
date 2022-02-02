@@ -18,13 +18,13 @@ Description
 
 Changes a variable's value to the given input.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 - Sequence
 
-- Data (variant): ``set``
+- Data (variant): ``set``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Sequence
 

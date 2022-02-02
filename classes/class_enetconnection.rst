@@ -111,7 +111,7 @@ enum **EventType**:
 
 - **EVENT_CONNECT** = **1** --- A connection request initiated by enet_host_connect has completed. The array will contain the peer which successfully connected.
 
-- **EVENT_DISCONNECT** = **2** --- A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request intialized by :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
+- **EVENT_DISCONNECT** = **2** --- A peer has disconnected. This event is generated on a successful completion of a disconnect initiated by :ref:`ENetPacketPeer.peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>`, if a peer has timed out, or if a connection request initialized by :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` has timed out. The array will contain the peer which disconnected. The data field contains user supplied data describing the disconnection, or 0, if none is available.
 
 - **EVENT_RECEIVE** = **3** --- A packet has been received from a peer. The array will contain the peer which sent the packet, the channel number upon which the packet was received, and the received packet.
 
@@ -170,9 +170,9 @@ Limits the maximum allowed channels of future incoming connections.
 
 Sets the compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
-**Note:** Most games' network design involve sending many small packets frequently (smaller than 4 KB each). If in doubt, it is recommended to keep the default compression algorithm as it works best on these small packets.
+\ **Note:** Most games' network design involve sending many small packets frequently (smaller than 4 KB each). If in doubt, it is recommended to keep the default compression algorithm as it works best on these small packets.
 
-**Note:** The compression mode must be set to the same value on both the server and all its clients. Clients will fail to connect if the compression mode set on the client differs from the one set on the server.
+\ **Note:** The compression mode must be set to the same value on both the server and all its clients. Clients will fail to connect if the compression mode set on the client differs from the one set on the server.
 
 ----
 
@@ -180,9 +180,9 @@ Sets the compression method used for network packets. These have different trade
 
 - :ref:`ENetPacketPeer<class_ENetPacketPeer>` **connect_to_host** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` channels=0, :ref:`int<class_int>` data=0 **)**
 
-Initiates a connection to a foreign ``address`` using the specified ``port`` and allocting the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
+Initiates a connection to a foreign ``address`` using the specified ``port`` and allocating the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
 
-**Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` before calling this method.
+\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` before calling this method.
 
 ----
 
@@ -190,7 +190,7 @@ Initiates a connection to a foreign ``address`` using the specified ``port`` and
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_host** **(** :ref:`int<class_int>` max_peers=32, :ref:`int<class_int>` max_channels=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create an ENetHost that will allow up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwith to ``in_bandwidth`` and ``out_bandwidth``.
+Create an ENetHost that will allow up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth``.
 
 ----
 
@@ -256,7 +256,7 @@ Returns the maximum number of channels allowed for connected peers.
 
 Returns the list of peers associated with this host.
 
-**Note:** This list might include some peers that are not fully connected or are still being disconnected.
+\ **Note:** This list might include some peers that are not fully connected or are still being disconnected.
 
 ----
 
@@ -274,7 +274,7 @@ Returns and resets host statistics. See :ref:`HostStatistic<enum_ENetConnection_
 
 Configures the DTLS server to automatically drop new connections.
 
-**Note:** This method is only relevant after calling :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>`.
+\ **Note:** This method is only relevant after calling :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>`.
 
 ----
 

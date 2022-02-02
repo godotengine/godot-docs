@@ -18,13 +18,13 @@ Description
 
 Ends the execution of a function and returns control to the calling function. Optionally, it can return a :ref:`Variant<class_Variant>` value.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 - Sequence
 
 - Data (variant): ``result`` (optional)
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 none
 

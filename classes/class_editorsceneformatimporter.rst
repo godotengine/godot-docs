@@ -25,23 +25,19 @@ To use ``EditorSceneFormatImporter``, register it using the :ref:`EditorPlugin.a
 Methods
 -------
 
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                       |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                   |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                      |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` option **)** |virtual| |const|                                    |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>`                 | :ref:`_import_animation<class_EditorSceneFormatImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                             |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|                                     |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>`                 | :ref:`import_animation_from_other_importer<class_EditorSceneFormatImporter_method_import_animation_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                           | :ref:`import_scene_from_other_importer<class_EditorSceneFormatImporter_method_import_scene_from_other_importer>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**         |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                                        |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                                    |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                                       |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` option **)** |virtual| |const|                                                     |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Animation<class_Animation>`                 | :ref:`_import_animation<class_EditorSceneFormatImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual| |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|         |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -95,25 +91,13 @@ Method Descriptions
 
 .. _class_EditorSceneFormatImporter_method__import_animation:
 
-- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
+- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 ----
 
 .. _class_EditorSceneFormatImporter_method__import_scene:
 
-- :ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)** |virtual|
-
-----
-
-.. _class_EditorSceneFormatImporter_method_import_animation_from_other_importer:
-
-- :ref:`Animation<class_Animation>` **import_animation_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
-
-----
-
-.. _class_EditorSceneFormatImporter_method_import_scene_from_other_importer:
-
-- :ref:`Node<class_Node>` **import_scene_from_other_importer** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`int<class_int>` bake_fps **)**
+- :ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -47,7 +47,7 @@ Additionally, the attributes used before the first vertex is added determine the
 
 See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateMesh>` and :ref:`MeshDataTool<class_MeshDataTool>` for procedural geometry generation.
 
-**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
+\ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
 Tutorials
 ---------
@@ -239,7 +239,7 @@ Clear all information passed into the surface tool so far.
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
-**FIXME:** Document possible values for ``flags``, it changed in 4.0. Likely some combinations of :ref:`ArrayFormat<enum_Mesh_ArrayFormat>`.
+\ **FIXME:** Document possible values for ``flags``, it changed in 4.0. Likely some combinations of :ref:`ArrayFormat<enum_Mesh_ArrayFormat>`.
 
 ----
 
@@ -287,7 +287,7 @@ Removes the index array by expanding the vertex array.
 
 Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
 
-**Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 ----
 
@@ -351,7 +351,7 @@ Specifies an array of bones to use for the *next* vertex. ``bones`` must contain
 
 Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
-**Note:** The material must have :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
+\ **Note:** The material must have :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
 
 ----
 
