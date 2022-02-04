@@ -38,8 +38,8 @@ Here is a complete class example based on these guidelines:
     export var initial_state = NodePath()
     var is_active = true setget set_is_active
 
-    onready var _state = get_node(initial_state) setget set_state
-    onready var _state_name = _state.name
+    @onready var _state = get_node(initial_state) setget set_state
+    @onready var _state_name = _state.name
 
 
     func _init():
@@ -772,8 +772,8 @@ variables, in that order.
 
    var _speed = 300.0
 
-   onready var sword = get_node("Sword")
-   onready var gun = get_node("Gun")
+   @onready var sword = get_node("Sword")
+   @onready var gun = get_node("Gun")
 
 
 .. note::
@@ -887,7 +887,7 @@ should set the type explicitly.
 
 ::
 
-   onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+   @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
 Alternatively, you can use the ``as`` keyword to cast the return type, and
 that type will be used to infer the type of the var.
@@ -896,7 +896,7 @@ that type will be used to infer the type of the var.
 
 ::
 
-   onready var health_bar := get_node("UI/LifeBar") as ProgressBar
+   @onready var health_bar := get_node("UI/LifeBar") as ProgressBar
    # health_bar will be typed as ProgressBar
 
 This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
@@ -909,4 +909,4 @@ This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_s
 
    # The compiler can't infer the exact type and will use Node
    # instead of ProgressBar.
-   onready var health_bar := get_node("UI/LifeBar")
+   @onready var health_bar := get_node("UI/LifeBar")
