@@ -301,7 +301,7 @@ When enabled, an octree containing the scene's lighting information will be comp
 | *Getter*  | get_capture_propagation()      |
 +-----------+--------------------------------+
 
-Bias value to reduce the amount of light proagation in the captured octree.
+Bias value to reduce the amount of light propagation in the captured octree.
 
 ----
 

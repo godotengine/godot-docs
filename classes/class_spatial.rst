@@ -405,9 +405,11 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 - void **look_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up **)**
 
-Rotates itself so that the local -Z axis points towards the ``target`` position.
+Rotates the node so that the local forward axis (-Z) points toward the ``target`` position.
 
-The transform will first be rotated around the given ``up`` vector, and then fully aligned to the target by a further rotation around an axis perpendicular to both the ``target`` and ``up`` vectors.
+The local up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the local forward axis. The resulting transform is orthogonal, and the scale is preserved. Non-uniform scaling may not work correctly.
+
+The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero, and the direction from the node's position to the ``target`` vector cannot be parallel to the ``up`` vector.
 
 Operations take place in global space.
 

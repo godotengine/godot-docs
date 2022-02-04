@@ -172,7 +172,7 @@ If ``true``, the ``CollisionObject`` will continue to receive input events as th
 | *Getter*  | is_ray_pickable()       |
 +-----------+-------------------------+
 
-If ``true``, the ``CollisionObject``'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s.
+If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. Requires at least one :ref:`collision_layer<class_CollisionObject_property_collision_layer>` bit to be set.
 
 Method Descriptions
 -------------------

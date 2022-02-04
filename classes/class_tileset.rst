@@ -694,6 +694,8 @@ Sets the tile's material.
 
 Sets the tile's modulation color.
 
+**Note:** Modulation is performed by setting the tile's vertex color. To access this in a shader, use ``COLOR`` rather than ``MODULATE`` (which instead accesses the :ref:`TileMap<class_TileMap>`'s :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>` property).
+
 ----
 
 .. _class_TileSet_method_tile_set_name:

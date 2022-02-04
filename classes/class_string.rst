@@ -1088,7 +1088,14 @@ Converts the String (which is a character array) to :ref:`PoolByteArray<class_Po
 
 - :ref:`float<class_float>` **to_float** **(** **)**
 
-Converts a string containing a decimal number into a ``float``.
+Converts a string containing a decimal number into a ``float``. The method will stop on the first non-number character except the first ``.`` (decimal point), and ``e`` which is used for exponential.
+
+::
+
+    print("12.3".to_float()) # 12.3
+    print("1.2.3".to_float()) # 1.2
+    print("12ab3".to_float()) # 12
+    print("1e3".to_float()) # 1000
 
 ----
 
@@ -1096,7 +1103,13 @@ Converts a string containing a decimal number into a ``float``.
 
 - :ref:`int<class_int>` **to_int** **(** **)**
 
-Converts a string containing an integer number into an ``int``.
+Converts a string containing an integer number into an ``int``. The method will remove any non-number character and stop if it encounters a ``.``.
+
+::
+
+    print("123".to_int()) # 123
+    print("a1b2c3".to_int()) # 123
+    print("1.2.3".to_int()) # 1
 
 ----
 

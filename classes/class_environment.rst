@@ -26,7 +26,15 @@ Resource for environment nodes (like :ref:`WorldEnvironment<class_WorldEnvironme
 
 - Adjustments
 
-These effects will only apply when the :ref:`Viewport<class_Viewport>`'s intended usage is "3D" or "3D Without Effects". This can be configured for the root Viewport with :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>`, or for specific Viewports via the :ref:`Viewport.usage<class_Viewport_property_usage>` property.
+If the target :ref:`Viewport<class_Viewport>` is set to "2D Without Sampling", all post-processing effects will be unavailable. With "3D Without Effects", the following options will be unavailable:
+
+- Ssao
+
+- Ss Reflections
+
+This can be configured for the root Viewport with :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>`, or for specific Viewports via the :ref:`Viewport.usage<class_Viewport_property_usage>` property.
+
+Note that :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` has a mobile platform override to use "3D Without Effects" by default. It improves the performance on mobile devices, but at the same time affects the screen display on mobile devices.
 
 Tutorials
 ---------

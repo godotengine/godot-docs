@@ -1041,6 +1041,12 @@ If you wish to access a shell built-in or perform a composite command, a platfor
 
 **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
 
+**Note:** To execute a Windows command interpreter built-in command, specify ``cmd.exe`` in ``path``, ``/c`` as the first argument, and the desired command as the second argument.
+
+**Note:** To execute a PowerShell built-in command, specify ``powershell.exe`` in ``path``, ``-Command`` as the first argument, and the desired command as the second argument.
+
+**Note:** To execute a Unix shell built-in command, specify shell executable name in ``path``, ``-c`` as the first argument, and the desired command as the second argument.
+
 ----
 
 .. _class_OS_method_find_scancode_from_string:

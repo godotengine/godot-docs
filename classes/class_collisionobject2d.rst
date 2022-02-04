@@ -162,7 +162,7 @@ The physics layers this CollisionObject2D scans. Collision objects can scan one 
 | *Getter*  | is_pickable()       |
 +-----------+---------------------+
 
-If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. Requires at least one ``collision_layer`` bit to be set.
+If ``true``, this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events. Requires at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set.
 
 Method Descriptions
 -------------------

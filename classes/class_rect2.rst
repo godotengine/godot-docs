@@ -176,7 +176,7 @@ Returns a copy of this ``Rect2`` expanded to include a given point.
 
 - :ref:`float<class_float>` **get_area** **(** **)**
 
-Returns the area of the ``Rect2``.
+Returns the area of the ``Rect2``. See also :ref:`has_no_area<class_Rect2_method_has_no_area>`.
 
 ----
 
@@ -208,7 +208,9 @@ Returns a copy of the ``Rect2`` grown a given amount of units towards the :ref:`
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)**
 
-Returns ``true`` if the ``Rect2`` is flat or empty.
+Returns ``true`` if the ``Rect2`` is flat or empty, ``false`` otherwise. See also :ref:`get_area<class_Rect2_method_get_area>`.
+
+**Note:** If the ``Rect2`` has a negative size and is not flat or empty, :ref:`has_no_area<class_Rect2_method_has_no_area>` will return ``true``.
 
 ----
 

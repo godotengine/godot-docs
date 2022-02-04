@@ -504,7 +504,7 @@ Clears the tree. This removes all items.
 
 - :ref:`TreeItem<class_TreeItem>` **create_item** **(** :ref:`Object<class_Object>` parent=null, :ref:`int<class_int>` idx=-1 **)**
 
-Creates an item in the tree and adds it as a child of ``parent``.
+Creates an item in the tree and adds it as a child of ``parent``, which can be either a valid :ref:`TreeItem<class_TreeItem>` or ``null``.
 
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
@@ -604,7 +604,7 @@ Returns the column for the currently edited item.
 
 - :ref:`Rect2<class_Rect2>` **get_item_area_rect** **(** :ref:`Object<class_Object>` item, :ref:`int<class_int>` column=-1 **)** |const|
 
-Returns the rectangle area for the specified item. If ``column`` is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
+Returns the rectangle area for the specified :ref:`TreeItem<class_TreeItem>`. If ``column`` is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
 
 ----
 
@@ -620,7 +620,7 @@ Returns the tree item at the specified position (relative to the tree origin pos
 
 - :ref:`TreeItem<class_TreeItem>` **get_next_selected** **(** :ref:`Object<class_Object>` from **)**
 
-Returns the next selected item after the given one, or ``null`` if the end is reached.
+Returns the next selected :ref:`TreeItem<class_TreeItem>` after the given one, or ``null`` if the end is reached.
 
 If ``from`` is ``null``, this returns the first selected item.
 
@@ -678,7 +678,7 @@ To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<
 
 - void **scroll_to_item** **(** :ref:`Object<class_Object>` item **)**
 
-Causes the ``Tree`` to jump to the specified item.
+Causes the ``Tree`` to jump to the specified :ref:`TreeItem<class_TreeItem>`.
 
 ----
 

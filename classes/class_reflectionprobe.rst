@@ -240,6 +240,8 @@ If ``true``, reflections will ignore sky contribution. Ambient lighting is then 
 
 The maximum distance away from the ``ReflectionProbe`` an object can be before it is culled. Decrease this to improve performance, especially when using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
 
+**Note:** The maximum reflection distance is always at least equal to the :ref:`extents<class_ReflectionProbe_property_extents>`. This means that decreasing :ref:`max_distance<class_ReflectionProbe_property_max_distance>` will not always cull objects from reflections, especially if the reflection probe's :ref:`extents<class_ReflectionProbe_property_extents>` are already large.
+
 ----
 
 .. _class_ReflectionProbe_property_origin_offset:
