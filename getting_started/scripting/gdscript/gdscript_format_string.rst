@@ -11,7 +11,7 @@ placeholder character-sequences. These placeholders can then easily be replaced
 by parameters handed to the format string.
 
 As an example, with ``%s`` as a placeholder, the format string ``"Hello %s, how
-are you?`` can easily be changed to ``"Hello World, how are you?"``. Notice
+are you?"`` can easily be changed to ``"Hello World, how are you?"``. Notice
 the placeholder is in the middle of the string; modifying it without format
 strings could be cumbersome.
 
