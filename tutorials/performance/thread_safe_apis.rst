@@ -14,7 +14,7 @@ Below is a list of ways multithreading can be used in different areas of Godot.
 Global scope
 ------------
 
-:ref:`Global Scope<class_@GlobalScope>` singletons are all thread-safe. Accessing servers from threads is supported (for VisualServer and Physics servers, ensure threaded or thread-safe operation is enabled in the project settings!).
+:ref:`Global Scope<class_@GlobalScope>` singletons are all thread-safe. Accessing servers from threads is supported (for RenderingServer and Physics servers, ensure threaded or thread-safe operation is enabled in the project settings!).
 
 This makes them ideal for code that creates dozens of thousands of instances in servers and controls them from threads. Of course, it requires a bit more code, as this is used directly and not within the scene tree.
 

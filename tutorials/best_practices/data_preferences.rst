@@ -317,7 +317,7 @@ Users can manipulate...
 
 2. the number of regions contained within the texture (frames).
 
-Godot's :ref:`VisualServer <class_VisualServer>` then draws
+Godot's :ref:`RenderingServer <class_RenderingServer>` then draws
 the regions in sequence at the prescribed rate. The good news is that this
 involves no extra logic on the part of the engine. The bad news is
 that users have very little control.

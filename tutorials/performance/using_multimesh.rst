@@ -35,7 +35,7 @@ which are ideal for this).
 
 Another alternative is to use GDNative and C++, which should be extremely efficient (it's possible
 to set the entire state for all objects using linear memory via the
-:ref:`VisualServer.multimesh_set_buffer() <class_VisualServer_method_multimesh_set_buffer>`
+:ref:`RenderingServer.multimesh_set_buffer() <class_RenderingServer_method_multimesh_set_buffer>`
 function). This way, the array can be created with multiple threads, then set in one call, providing
 high cache efficiency.
 
