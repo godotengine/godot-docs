@@ -161,7 +161,7 @@ clicked. For that, we'll need a script that extends from
 
 
     func _enter_tree():
-        connect("pressed", self, "clicked")
+        connect("pressed", clicked)
 
 
     func clicked():
@@ -177,7 +177,7 @@ clicked. For that, we'll need a script that extends from
     {
         public override void _EnterTree()
         {
-            Connect("pressed", this, "clicked");
+            Connect("pressed", clicked);
         }
 
         public void clicked()
