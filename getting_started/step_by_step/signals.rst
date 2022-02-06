@@ -241,12 +241,12 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.connect("timeout", self, "_on_Timer_timeout")
+        timer.timeout.connect(_on_Timer_timeout)
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
-which the script is attached (``self``). When the Timer emits "timeout", we want
-to call the function "_on_Timer_timeout", that we need to define. Let's add it
-at the bottom of our script and use it to toggle our sprite's visibility.
+which the script is attached. When the Timer emits "timeout", we want to call
+the function "_on_Timer_timeout", that we need to define. Let's add it at the
+bottom of our script and use it to toggle our sprite's visibility.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
