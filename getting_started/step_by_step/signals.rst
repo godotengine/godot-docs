@@ -244,8 +244,8 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
         timer.timeout.connect(_on_Timer_timeout)
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
-which the script is attached. When the Timer emits "timeout", we want to call
-the function "_on_Timer_timeout", that we need to define. Let's add it at the
+which the script is attached. When the Timer emits ``timeout``, we want to call
+the function ``_on_Timer_timeout()``, that we need to define. Let's add it at the
 bottom of our script and use it to toggle our sprite's visibility.
 
 .. tabs::
