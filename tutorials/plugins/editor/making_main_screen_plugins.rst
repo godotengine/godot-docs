@@ -40,22 +40,22 @@ Add five extra methods such that the script looks like this:
         pass
 
 
-    func has_main_screen():
+    func _has_main_screen():
         return true
 
 
-    func make_visible(visible):
+    func _make_visible(visible):
         pass
 
 
-    func get_plugin_name():
+    func _get_plugin_name():
         return "Main Screen Plugin"
 
 
-    func get_plugin_icon():
+    func _get_plugin_icon():
         return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
-The important part in this script is the ``has_main_screen()`` function,
+The important part in this script is the ``_has_main_screen()`` function,
 which is overloaded so it returns ``true``. This function is automatically
 called by the editor on plugin activation, to tell it that this plugin
 adds a new center view to the editor. For now, we'll leave this script
@@ -112,7 +112,7 @@ Here is the full plugin script:
         # Add the main panel to the editor's main viewport.
         get_editor_interface().get_editor_main_control().add_child(main_panel_instance)
         # Hide the main panel. Very much required.
-        make_visible(false)
+        _make_visible(false)
 
 
     func _exit_tree():
@@ -120,20 +120,20 @@ Here is the full plugin script:
             main_panel_instance.queue_free()
 
 
-    func has_main_screen():
+    func _has_main_screen():
         return true
 
 
-    func make_visible(visible):
+    func _make_visible(visible):
         if main_panel_instance:
             main_panel_instance.visible = visible
 
 
-    func get_plugin_name():
+    func _get_plugin_name():
         return "Main Screen Plugin"
 
 
-    func get_plugin_icon():
+    func _get_plugin_icon():
         # Must return some kind of Texture for the icon.
         return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
 
@@ -144,18 +144,18 @@ The ``_enter_tree()`` function is called before ``_ready()``. This is where
 we instance the main panel scene, and add them as children of specific parts
 of the editor. We use ``get_editor_interface().get_editor_main_control()`` to
 obtain the main editor control and add our main panel instance as a child to it.
-We call the ``make_visible(false)`` function to hide the main panel so
+We call the ``_make_visible(false)`` function to hide the main panel so
 it doesn't compete for space when first activating the plugin.
 
 The ``_exit_tree()`` function is called when the plugin is deactivated.
 If the main screen still exists, we call ``queue_free()`` to free the
 instance and remove it from memory.
 
-The ``make_visible()`` function is overridden to hide or show the main
+The ``_make_visible()`` function is overridden to hide or show the main
 panel as needed. This function is automatically called by the editor when the
 user clicks on the main viewport buttons at the top of the editor.
 
-The ``get_plugin_name()`` and ``get_plugin_icon()`` functions control
+The ``_get_plugin_name()`` and ``_get_plugin_icon()`` functions control
 the displayed name and icon for the plugin's main viewport button.
 
 Another function you can add is the ``handles()`` function, which
