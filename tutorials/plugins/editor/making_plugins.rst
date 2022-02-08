@@ -161,7 +161,7 @@ clicked. For that, we'll need a script that extends from
 
 
     func _enter_tree():
-        connect("pressed", clicked)
+        pressed.connect(clicked)
 
 
     func clicked():
