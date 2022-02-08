@@ -48,7 +48,7 @@ To turn this simple scene into a proper game, the sky is the limit.
 Below, there are a few more topics specific to this plugin.
 However, the following resources are a good place to continue:
 
-- `VR starter tutorial <https://docs.godotengine.org/en/stable/tutorials/vr/openvr/vr_starter_tutorial/vr_starter_tutorial_part_one.html>`__
+- :ref:`VR starter tutorial <doc_vr_starter_tutorial_part_one>`
   in the official documentation may focus on OpenVR, but almost everything
   there applies to OpenXR as well.
 - `Godot XR tools <https://github.com/GodotVR/godot-xr-tools>`__ is a plugin
