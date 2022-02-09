@@ -50,7 +50,7 @@ For example, if you want to execute some code only in the editor, use:
 
  .. code-tab:: csharp
 
-    if (Engine.EditorHint)
+    if (Engine.IsEditorHint())
     {
         // Code to execute when in editor.
     }
@@ -66,7 +66,7 @@ same statement:
 
  .. code-tab:: csharp
 
-    if (!Engine.EditorHint)
+    if (!Engine.IsEditorHint())
     {
         // Code to execute when in game.
     }
@@ -92,12 +92,12 @@ Here is how a ``_process()`` function might look for you:
 
     public override void _Process(float delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
             // Code to execute in editor.
         }
 
-        if (!Engine.EditorHint)
+        if (!Engine.IsEditorHint())
         {
             // Code to execute in game.
         }
@@ -165,7 +165,7 @@ look like this:
 
     public override void _Process(float delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
             RotationDegrees += 180 * delta;
         }
