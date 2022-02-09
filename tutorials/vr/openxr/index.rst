@@ -69,3 +69,4 @@ Plugin features
    runtime_selection
    passthrough
    deploy_on_quest
+   handtracking
