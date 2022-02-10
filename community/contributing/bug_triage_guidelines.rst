@@ -70,8 +70,8 @@ The following labels are currently defined in the Godot repository:
    `godot-proposals <https://github.com/godotengine/godot-proposals>`__ instead.
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
    These meetings are public and are held on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
--  *Junior job*: the issue is *assumed* to be an easy one to fix, which makes
-   it a great fit for junior contributors who need to become familiar with
+-  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
+   it a great fit for new contributors who need to become familiar with
    the code base.
 -  *High priority:* the issue is particularly important as it can
    prevent people from releasing their projects or cause data loss.
