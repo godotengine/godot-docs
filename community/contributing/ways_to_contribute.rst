@@ -84,8 +84,9 @@ To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the Git and PR workflow.
 
-A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_
-(or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
+A good place to start is by searching for issues tagged as
+`good first issue <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22>`_
+on GitHub.
 
 .. seealso:: Technical details about the PR workflow are outlined in a
              specific section, :ref:`doc_pr_workflow`.
