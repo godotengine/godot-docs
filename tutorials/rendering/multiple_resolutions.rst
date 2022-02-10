@@ -403,15 +403,9 @@ Reducing aliasing on downsampling
 
 If the game has a very high base resolution (e.g. 3840×2160), aliasing might
 appear when downsampling to something considerably lower like 1280×720.
-Aliasing can be made less visible by shrinking all images by a factor of 2
-upon loading. This can be done by calling the method below before
-the game data is loaded::
 
-    VisualServer.texture_set_shrink_all_x2_on_set_data(true)
-
-Alternatively, you can also enable mipmaps on all your 2D textures. However,
-enabling mipmaps will increase memory usage which may be problematic on low-end
-mobile devices.
+To resolve this, you can enable mipmaps on all your 2D textures. However, enabling mipmaps
+will increase memory usage which may be problematic on low-end mobile devices.
 
 Handling aspect ratios
 ----------------------

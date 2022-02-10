@@ -156,7 +156,7 @@ it using (for example):
 ::
 
    # Wait until the frame has finished before getting the texture.
-   yield(VisualServer, "frame_post_draw")
+   await RenderingServer.frame_post_draw
    # You can get the image after this.
 
 Viewport Container

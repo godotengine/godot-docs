@@ -52,7 +52,7 @@ What a Mesh is
 
 A Mesh is composed of one or more surfaces. A surface is an array composed of multiple sub-arrays
 containing vertices, normals, UVs, etc. Normally the process of constructing surfaces and meshes is
-hidden from the user in the :ref:`VisualServer <class_VisualServer>`, but with ArrayMeshes, the user can construct a Mesh
+hidden from the user in the :ref:`RenderingServer <class_RenderingServer>`, but with ArrayMeshes, the user can construct a Mesh
 manually by passing in an array containing the surface information.
 
 Surfaces
