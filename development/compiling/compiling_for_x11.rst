@@ -228,3 +228,28 @@ created in the ``bin/`` folder.
 
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
+
+Using Pyston for faster development
+-----------------------------------
+
+You can use `Pyston <https://www.pyston.org/>`__ to run SCons. Pyston is a JIT-enabled
+implementation of the Python language (which SCons is written in). It is currently
+only compatible with Linux. Pyston can speed up incremental builds significantly,
+often by a factor between 1.5× and 2×. Pyston can be combined with Clang and LLD
+to get even faster builds.
+
+- Download the `latest portable Pyston release <https://github.com/pyston/pyston/releases/tag/pyston_2.3.2>`__.
+- Extract the portable ``.tar.gz`` to a set location, such as ``$HOME/.local/opt/pyston/`` (create folders as needed).
+- Use ``cd`` to reach the extracted Pyston folder from a terminal,
+  then run ``./pyston -m pip install scons`` to install SCons within Pyston.
+- Create a file with the following contents in ``$HOME/.local/bin/pyston-scons``::
+
+    #!/bin/sh
+
+    $HOME/.local/opt/pyston/usr/bin/scons "$@"
+
+- Make the script executable: ``chmod +x $HOME/.local/bin/pyston-scons``
+- Instead of running ``scons <build arguments>``, run ``pyston-scons <build arguments>`` to compile Godot.
+
+If you can't run the ``pyston-scons`` script after saving it,
+make sure ``$HOME/.local/bin/`` is part of your user's ``PATH`` environment variable.
