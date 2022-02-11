@@ -54,7 +54,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-learn-introduction
+   :name: toc-learn-first_3d_game
 
    01.game_setup
    02.player_input
