@@ -262,14 +262,13 @@ to get even faster builds.
 - Extract the portable ``.tar.gz`` to a set location, such as ``$HOME/.local/opt/pyston/`` (create folders as needed).
 - Use ``cd`` to reach the extracted Pyston folder from a terminal,
   then run ``./pyston -m pip install scons`` to install SCons within Pyston.
-- Create a file with the following contents in ``$HOME/.local/bin/pyston-scons``::
+- To make SCons via Pyston easier to run, create a symbolic link of its wrapper
+  script to a location in your ``PATH`` environment variable::
 
-    #!/bin/sh
+    ln -s ~/.local/opt/pyston/bin/scons ~/.local/bin/pyston-scons
 
-    $HOME/.local/opt/pyston/usr/bin/scons "$@"
+- Instead of running ``scons <build arguments>``, run ``pyston-scons <build arguments>``
+  to compile Godot.
 
-- Make the script executable: ``chmod +x $HOME/.local/bin/pyston-scons``
-- Instead of running ``scons <build arguments>``, run ``pyston-scons <build arguments>`` to compile Godot.
-
-If you can't run the ``pyston-scons`` script after saving it,
+If you can't run ``pyston-scons`` after creating the symbolic link,
 make sure ``$HOME/.local/bin/`` is part of your user's ``PATH`` environment variable.
