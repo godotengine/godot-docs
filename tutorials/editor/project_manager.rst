@@ -6,7 +6,11 @@ Using the Project manager
 When you launch Godot, the first window you see is the Project Manager. It lets
 you create, remove, import, or play game projects.
 
+You can also reach that screen from within Godot by selecting menu entry Project-->Quit to Project List
+
 .. image:: img/editor_ui_intro_project_manager_01.png
+
+Note : In more recent versions of Godot, the "Tempates" tab has been renamed "Asset Library Projects".
 
 In the window's top-right corner, a drop-down menu allows you to change the
 editor's language.
