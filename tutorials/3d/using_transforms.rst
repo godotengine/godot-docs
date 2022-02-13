@@ -341,7 +341,7 @@ Example of looking around, FPS style:
             _rotationY += mouseMotion.Relative.y * LookAroundSpeed;
 
             // reset rotation
-            Transform transform = Transform;
+            Transform3D transform = Transform;
             transform.basis = Basis.Identity;
             Transform = transform;
 

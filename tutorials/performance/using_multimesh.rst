@@ -70,7 +70,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 
         # Set the transform of the instances.
         for i in multimesh.visible_instance_count:
-            multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
+            multimesh.set_instance_transform(i, Transform3D(Basis(), Vector3(i * 20, 0, 0)))
 
  .. code-tab:: csharp C#
 
@@ -95,7 +95,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             // Set the transform of the instances.
             for (int i = 0; i < Multimesh.VisibleInstanceCount; i++)
             {
-                Multimesh.SetInstanceTransform(i, new Transform(Basis.Identity, new Vector3(i * 20, 0, 0)));
+                Multimesh.SetInstanceTransform(i, new Transform3D(Basis.Identity, new Vector3(i * 20, 0, 0)));
             }
         }
     }

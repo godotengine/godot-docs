@@ -52,7 +52,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
     class Body : RigidBody
     {
-        private void LookFollow(PhysicsDirectBodyState state, Transform currentTransform, Vector3 targetPosition)
+        private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {
             var upDir = new Vector3(0, 1, 0);
             var curDir = currentTransform.basis.Xform(new Vector3(0, 0, 1));

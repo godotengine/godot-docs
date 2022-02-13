@@ -549,7 +549,7 @@ and ``size``. Also contains an ``end`` field which is
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
-:ref:`Transform <class_Transform>`
+:ref:`Transform3D <class_Transform3D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Basis field ``basis`` and a Vector3 field

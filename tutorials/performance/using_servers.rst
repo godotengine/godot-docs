@@ -151,7 +151,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         mesh = load("res://mymesh.obj")
         RenderingServer.instance_set_base(instance, mesh)
         # Move the mesh around.
-        var xform = Transform(Basis(), Vector3(20, 100, 0))
+        var xform = Transform3D(Basis(), Vector3(20, 100, 0))
         RenderingServer.instance_set_transform(instance, xform)
 
 Creating a 2D RigidBody and moving a sprite with it

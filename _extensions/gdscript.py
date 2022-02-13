@@ -265,7 +265,7 @@ class GDScriptLexer(RegexLexer):
                         "Plane",
                         "Quat",
                         "Basis",
-                        "Transform",
+                        "Transform3D",
                         "Color",
                         "RID",
                         "Object",

@@ -220,7 +220,7 @@ to loop over all the instances and set their transform to a random position.
 ::
 
   for i in range($School.multimesh.instance_count):
-    var position = Transform()
+    var position = Transform3D()
     position = position.translated(Vector3(randf() * 100 - 50, randf() * 50 - 25, randf() * 50 - 25))
     $School.multimesh.set_instance_transform(i, position)
 
