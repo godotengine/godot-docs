@@ -70,7 +70,7 @@ filled with a sub-array containing per-vertex information. For example, the arra
 
 The surface array can be indexed or non-indexed. Creating a non-indexed array is as easy as not assigning
 an array at the index ``ArrayMesh.ARRAY_INDEX``. A non-indexed array stores unique vertex information for
-every triangle, meaning that when two triangle share a vertex, the vertex is duplicated in the array. An
+every triangle, meaning that when two triangles share a vertex, the vertex is duplicated in the array. An
 indexed surface array only stores vertex information for each unique vertex and then also stores an array
 of indices which maps out how to construct the triangles from the vertex array. In general, using an indexed
 array is faster, but it means you have to share vertex data between triangles, which is not always desired
