@@ -177,10 +177,10 @@ clicked. For that, we'll need a script that extends from
     {
         public override void _EnterTree()
         {
-            Connect("pressed", clicked);
+            Connect("pressed", Clicked);
         }
 
-        public void clicked()
+        public void Clicked()
         {
             GD.Print("You clicked me!");
         }
