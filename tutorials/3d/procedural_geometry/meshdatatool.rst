@@ -33,7 +33,7 @@ An edge is a connection between any two vertices. Each edge in the edge array co
 the two vertices it is composed of, and up to two faces that it is contained within.
 
 A face is a triangle made up of three vertices and three corresponding edges. Each face in the face array contains
-a reference to the three triangles and three edges it is composed of.
+a reference to the three vertices and three edges it is composed of.
 
 The vertex array contains edges, faces, normals, color, tangent, uv, uv2, bones, and weight information connected
 with each vertex.
