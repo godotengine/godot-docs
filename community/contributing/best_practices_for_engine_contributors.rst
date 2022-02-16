@@ -16,7 +16,7 @@ Language
 --------
 
 The scope of this document is to be a list of best practices for contributors to
-follow, as well as to creating a language they can use to refer to common
+follow, as well as to create a language they can use to refer to common
 situations that arise in the process of submitting their contributions.
 
 While some may find it useful to extend this to general software development,
