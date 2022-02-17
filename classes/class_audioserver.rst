@@ -188,7 +188,7 @@ Number of available audio buses.
 | *Getter*  | get_device()      |
 +-----------+-------------------+
 
-Name of the current device for audio output (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`).
+Name of the current device for audio output (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 ----
 
@@ -229,7 +229,7 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 - :ref:`String<class_String>` **capture_get_device** **(** **)**
 
-Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`).
+Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`). The value ``"Default"`` means that the system-wide default audio input is currently used.
 
 ----
 
@@ -245,7 +245,7 @@ Returns the names of all audio input devices detected on the system.
 
 - void **capture_set_device** **(** :ref:`String<class_String>` name **)**
 
-Sets which audio input device is used for audio capture.
+Sets which audio input device is used for audio capture. On systems with multiple audio inputs (such as analog and USB), this can be used to select the audio input device. Setting the value ``"Default"`` will record audio from the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 ----
 

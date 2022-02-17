@@ -47,7 +47,7 @@ Properties
 +-------------------------------+----------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`     | :ref:`debug_shape_custom_color<class_RayCast_property_debug_shape_custom_color>` | ``Color( 0, 0, 0, 1 )`` |
 +-------------------------------+----------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`     | :ref:`debug_shape_thickness<class_RayCast_property_debug_shape_thickness>`       | ``2.0``                 |
+| :ref:`int<class_int>`         | :ref:`debug_shape_thickness<class_RayCast_property_debug_shape_thickness>`       | ``2``                   |
 +-------------------------------+----------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`       | :ref:`enabled<class_RayCast_property_enabled>`                                   | ``false``               |
 +-------------------------------+----------------------------------------------------------------------------------+-------------------------+
@@ -172,10 +172,10 @@ If set to ``Color(0.0, 0.0, 0.0)`` (by default), the color set in :ref:`ProjectS
 
 .. _class_RayCast_property_debug_shape_thickness:
 
-- :ref:`float<class_float>` **debug_shape_thickness**
+- :ref:`int<class_int>` **debug_shape_thickness**
 
 +-----------+----------------------------------+
-| *Default* | ``2.0``                          |
+| *Default* | ``2``                            |
 +-----------+----------------------------------+
 | *Setter*  | set_debug_shape_thickness(value) |
 +-----------+----------------------------------+

@@ -580,7 +580,7 @@ Removes a given entry from the object's metadata. See also :ref:`set_meta<class_
 
 - void **set** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
-Assigns a new value to the given property. If the ``property`` does not exist, nothing will happen.
+Assigns a new value to the given property. If the ``property`` does not exist or the given value's type doesn't match, nothing will happen.
 
 **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 

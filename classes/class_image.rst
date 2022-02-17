@@ -416,6 +416,8 @@ enum **CompressMode**:
 
 .. _class_Image_constant_COMPRESS_SOURCE_NORMAL:
 
+.. _class_Image_constant_COMPRESS_SOURCE_LAYERED:
+
 enum **CompressSource**:
 
 - **COMPRESS_SOURCE_GENERIC** = **0** --- Source texture (before compression) is a regular texture. Default for all textures.
@@ -423,6 +425,8 @@ enum **CompressSource**:
 - **COMPRESS_SOURCE_SRGB** = **1** --- Source texture (before compression) is in sRGB space.
 
 - **COMPRESS_SOURCE_NORMAL** = **2** --- Source texture (before compression) is a normal texture (e.g. it can be compressed into two channels).
+
+- **COMPRESS_SOURCE_LAYERED** = **3** --- Source texture (before compression) is a :ref:`TextureLayered<class_TextureLayered>`.
 
 Constants
 ---------

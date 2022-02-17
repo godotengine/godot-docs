@@ -18,6 +18,13 @@ Description
 
 An array of 2D points is extruded to quickly and easily create a variety of 3D meshes. See also :ref:`CSGMesh<class_CSGMesh>` for using 3D meshes as CSG nodes.
 
+**Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+
+Tutorials
+---------
+
+- `Prototyping levels with CSG <$DOCS_URL/tutorials/3d/csg_tools.html>`__
+
 Properties
 ----------
 

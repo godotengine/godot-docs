@@ -255,7 +255,7 @@ Method Descriptions
 
 - void **add_button** **(** :ref:`int<class_int>` column, :ref:`Texture<class_Texture>` button, :ref:`int<class_int>` button_idx=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)**
 
-Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
+Adds a button with :ref:`Texture<class_Texture>` ``button`` at column ``column``. The ``button_idx`` is used to identify the button. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately after this method. Optionally, the button can be ``disabled`` and have a ``tooltip``.
 
 ----
 
@@ -311,7 +311,7 @@ Returns the :ref:`Texture<class_Texture>` of the button at index ``button_idx`` 
 
 - :ref:`int<class_int>` **get_button_count** **(** :ref:`int<class_int>` column **)** |const|
 
-Returns the number of buttons in column ``column``. May be used to get the most recently added button's index, if no index was specified.
+Returns the number of buttons in column ``column``.
 
 ----
 

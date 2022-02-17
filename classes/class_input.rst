@@ -712,7 +712,9 @@ Vibrate Android and iOS devices.
 
 - void **warp_mouse_position** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Sets the mouse position to the specified vector.
+Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the game window.
+
+Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to :ref:`MOUSE_MODE_CONFINED<class_Input_constant_MOUSE_MODE_CONFINED>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

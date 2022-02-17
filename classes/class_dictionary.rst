@@ -223,7 +223,7 @@ Returns ``true`` if the dictionary has all the keys in the given array.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Returns a hashed integer value representing the dictionary contents. This can be used to compare dictionaries by value:
+Returns a hashed 32-bit integer value representing the dictionary contents. This can be used to compare dictionaries by value:
 
 ::
 
@@ -233,6 +233,8 @@ Returns a hashed integer value representing the dictionary contents. This can be
     print(dict1.hash() == dict2.hash())
 
 **Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
+
+**Note:** Dictionaries with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the dictionaries are equal, because different dictionaries can have identical hash values due to hash collisions.
 
 ----
 

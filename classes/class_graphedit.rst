@@ -108,7 +108,7 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`int<class_int>`           | :ref:`port_grab_distance_horizontal<class_GraphEdit_theme_constant_port_grab_distance_horizontal>` | ``24``                     |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
-| :ref:`int<class_int>`           | :ref:`port_grab_distance_vertical<class_GraphEdit_theme_constant_port_grab_distance_vertical>`     | ``6``                      |
+| :ref:`int<class_int>`           | :ref:`port_grab_distance_vertical<class_GraphEdit_theme_constant_port_grab_distance_vertical>`     | ``26``                     |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`minimap<class_GraphEdit_theme_icon_minimap>`                                                 |                            |
 +---------------------------------+----------------------------------------------------------------------------------------------------+----------------------------+
@@ -647,9 +647,9 @@ The horizontal range within which a port can be grabbed (on both sides).
 
 - :ref:`int<class_int>` **port_grab_distance_vertical**
 
-+-----------+-------+
-| *Default* | ``6`` |
-+-----------+-------+
++-----------+--------+
+| *Default* | ``26`` |
++-----------+--------+
 
 The vertical range within which a port can be grabbed (on both sides).
 

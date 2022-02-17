@@ -357,7 +357,9 @@ The color of shadows cast by this light.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Attempts to reduce :ref:`shadow_bias<class_Light_property_shadow_bias>` gap.
+Attempts to reduce :ref:`shadow_bias<class_Light_property_shadow_bias>` gap by rendering screen-space contact shadows. This has a performance impact, especially at higher values.
+
+**Note:** Contact shadows can look broken, so leaving this property to ``0.0`` is recommended.
 
 ----
 

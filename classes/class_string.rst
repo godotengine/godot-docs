@@ -584,7 +584,9 @@ If the string is a valid file path, returns the filename.
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Hashes the string and returns a 32-bit integer.
+Returns the 32-bit hash value representing the string's contents.
+
+**Note:** ``String``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
 
 ----
 

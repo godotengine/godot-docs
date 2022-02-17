@@ -1466,7 +1466,13 @@ enum **JoystickList**:
 
 - **JOY_BUTTON_22** = **22** --- Gamepad button 22.
 
-- **JOY_BUTTON_MAX** = **23** --- Represents the maximum number of joystick buttons supported.
+- **JOY_BUTTON_MAX** = **128** --- The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
+
+- Android: Up to 36 buttons.
+
+- Linux: Up to 80 buttons.
+
+- Windows and macOS: Up to 128 buttons.
 
 - **JOY_SONY_CIRCLE** = **1** --- DualShock circle button.
 
