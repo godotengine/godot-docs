@@ -294,8 +294,8 @@ Adding script categories
 For better visual distinguishing of properties, a special script category can be
 embedded into the inspector to act as a separator. ``Script Variables`` is one
 example of a built-in category.
-
 ::
+    
     func _get_property_list():
         var properties = []
         properties.append({
@@ -324,8 +324,8 @@ Grouping properties
 ~~~~~~~~~~~~~~~~~~~
 
 A list of properties with similar names can be grouped.
-
 ::
+    
     func _get_property_list():
         var properties = []
         properties.append({
