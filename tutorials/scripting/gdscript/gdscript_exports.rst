@@ -237,11 +237,13 @@ described in :ref:`doc_accessing_data_or_logic_from_object`.
              can work from within the editor.
 
 Properties
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+
 To understand how to better use the sections below, you should understand
 how to make properties with advanced exports.
+
 ::
-    
+
     func _get_property_list():
         var properties = [] 
         # Same as "export(int) var my_property"
@@ -262,7 +264,8 @@ how to make properties with advanced exports.
 .. note:: The ``float`` type is called a real (``TYPE_REAL``) in the ``Variant.Type`` enum.
 
 Attaching variables to properties
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 To attach variables to properties (allowing the value of the property to be used
 in scripts). You need to create a variable with the exact same name as the
 property or else you may need to override the 
@@ -270,7 +273,8 @@ property or else you may need to override the
 :ref:`_get() <class_Object_method__get_property_list>` methods. Attaching
 a variable to to a property also gives you the ability to give it a default state.
 ::
-    
+
+
     # This variable is determined by the function below.
     # This variable acts just like a regular gdscript export.
     var my_property = 5
@@ -292,7 +296,6 @@ embedded into the inspector to act as a separator. ``Script Variables`` is one
 example of a built-in category.
 
 ::
-    
     func _get_property_list():
         var properties = []
         properties.append({
@@ -323,7 +326,6 @@ Grouping properties
 A list of properties with similar names can be grouped.
 
 ::
-    
     func _get_property_list():
         var properties = []
         properties.append({
