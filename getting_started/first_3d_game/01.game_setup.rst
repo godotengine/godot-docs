@@ -9,7 +9,7 @@ importing the start assets and setting up the game scene.
 We've prepared a Godot project with the 3D models and sounds we'll use for this
 tutorial, linked in the index page. If you haven't done so yet, you can download
 the archive here: `Squash the Creeps assets
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.0.0>`__.
+<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
 Once you downloaded it, extract the .zip archive on your computer. Open the
 Godot project manager and click the *Import* button.
