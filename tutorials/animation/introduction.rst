@@ -320,3 +320,14 @@ You can tweak your animations this way until the movement "looks right."
 
 .. |Play from beginning| image:: img/animation_play_from_beginning.png
 .. |Add Animation| image:: img/animation_add.png
+
+Using reset tracks
+------------------
+
+You can set up a special *RESET* animation to contain the "default pose". Add an animation called "RESET", and add tracks for each property that you want to reset. The only keyframe should be at time 0, and give it the desired default value for each track.
+
+If "reset on save" is set to `true`, the scene will be saved with the effects of the reset animation applied (as if it had been seeked to time 0). This only affects the saved file - the property tracks in the editor stay where they were.
+
+If you want to reset the tracks in the editor, choose *apply reset* from the *Animation Properties* dropdown.
+
+When adding tracks on other animations, if you have *Create Reset Track(s)* checked and there's no reset animation, one will be automatically created.
