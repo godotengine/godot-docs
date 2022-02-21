@@ -329,7 +329,9 @@ This is used to ensure that the default pose is restored when you save
 the scene and open it again in the editor.
 
 For existing tracks, you can add an animation called "RESET" (case-sensitive),
-then add tracks for each property that you want to reset. The only keyframe should be at time 0, and give it the desired default value for each track.
+then add tracks for each property that you want to reset.
+The only keyframe should be at time 0, and give it the desired default value
+for each track.
 
 If AnimationPlayer's **Reset On Save** property is set to ``true``,
 the scene will be saved with the effects of the reset animation applied
