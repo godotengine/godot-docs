@@ -39,6 +39,8 @@ Properties
 ----------
 
 +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>`                           | :ref:`autowrap_mode<class_RichTextLabel_property_autowrap_mode>`                                                 | ``3``                                                                         |
++--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                        | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                                               | ``false``                                                                     |
 +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                                      | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                                               | ``[]``                                                                        |
@@ -90,11 +92,21 @@ Methods
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`clear<class_RichTextLabel_method_clear>` **(** **)**                                                                                                                                                                                                                                                                                                                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_character_line<class_RichTextLabel_method_get_character_line>` **(** :ref:`int<class_int>` character **)**                                                                                                                                                                                                                                                                   |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_character_paragraph<class_RichTextLabel_method_get_character_paragraph>` **(** :ref:`int<class_int>` character **)**                                                                                                                                                                                                                                                         |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)** |const|                                                                                                                                                                                                                                                                                           |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_content_width<class_RichTextLabel_method_get_content_width>` **(** **)** |const|                                                                                                                                                                                                                                                                                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_line_count<class_RichTextLabel_method_get_line_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                   |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_line_offset<class_RichTextLabel_method_get_line_offset>` **(** :ref:`int<class_int>` line **)**                                                                                                                                                                                                                                                                              |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_paragraph_count<class_RichTextLabel_method_get_paragraph_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                         |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_paragraph_offset<class_RichTextLabel_method_get_paragraph_offset>` **(** :ref:`int<class_int>` paragraph **)**                                                                                                                                                                                                                                                               |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_parsed_text<class_RichTextLabel_method_get_parsed_text>` **(** **)** |const|                                                                                                                                                                                                                                                                                                 |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,6 +282,28 @@ Triggers when the mouse enters a meta tag.
 Enumerations
 ------------
 
+.. _enum_RichTextLabel_AutowrapMode:
+
+.. _class_RichTextLabel_constant_AUTOWRAP_OFF:
+
+.. _class_RichTextLabel_constant_AUTOWRAP_ARBITRARY:
+
+.. _class_RichTextLabel_constant_AUTOWRAP_WORD:
+
+.. _class_RichTextLabel_constant_AUTOWRAP_WORD_SMART:
+
+enum **AutowrapMode**:
+
+- **AUTOWRAP_OFF** = **0** --- Autowrap is disabled.
+
+- **AUTOWRAP_ARBITRARY** = **1** --- Wraps the text inside the node's bounding rectangle by allowing to break lines at arbitrary positions, which is useful when very limited space is available.
+
+- **AUTOWRAP_WORD** = **2** --- Wraps the text inside the node's bounding rectangle by soft-breaking between words.
+
+- **AUTOWRAP_WORD_SMART** = **3** --- Behaves similarly to :ref:`AUTOWRAP_WORD<class_RichTextLabel_constant_AUTOWRAP_WORD>`, but force-breaks a word if that single word does not fit in one line.
+
+----
+
 .. _enum_RichTextLabel_ListType:
 
 .. _class_RichTextLabel_constant_LIST_NUMBERS:
@@ -428,6 +462,22 @@ enum **VisibleCharactersBehavior**:
 
 Property Descriptions
 ---------------------
+
+.. _class_RichTextLabel_property_autowrap_mode:
+
+- :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>` **autowrap_mode**
+
++-----------+--------------------------+
+| *Default* | ``3``                    |
++-----------+--------------------------+
+| *Setter*  | set_autowrap_mode(value) |
++-----------+--------------------------+
+| *Getter*  | get_autowrap_mode()      |
++-----------+--------------------------+
+
+If set to something other than :ref:`AUTOWRAP_OFF<class_RichTextLabel_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. To see how each mode behaves, see :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>`.
+
+----
 
 .. _class_RichTextLabel_property_bbcode_enabled:
 
@@ -764,11 +814,35 @@ Clears the tag stack and sets :ref:`text<class_RichTextLabel_property_text>` to 
 
 ----
 
+.. _class_RichTextLabel_method_get_character_line:
+
+- :ref:`int<class_int>` **get_character_line** **(** :ref:`int<class_int>` character **)**
+
+Returns the line number of the character position provided.
+
+----
+
+.. _class_RichTextLabel_method_get_character_paragraph:
+
+- :ref:`int<class_int>` **get_character_paragraph** **(** :ref:`int<class_int>` character **)**
+
+Returns the paragraph number of the character position provided.
+
+----
+
 .. _class_RichTextLabel_method_get_content_height:
 
 - :ref:`int<class_int>` **get_content_height** **(** **)** |const|
 
 Returns the height of the content.
+
+----
+
+.. _class_RichTextLabel_method_get_content_width:
+
+- :ref:`int<class_int>` **get_content_width** **(** **)** |const|
+
+Returns the width of the content.
 
 ----
 
@@ -780,11 +854,27 @@ Returns the total number of lines in the text. Wrapped text is counted as multip
 
 ----
 
+.. _class_RichTextLabel_method_get_line_offset:
+
+- :ref:`float<class_float>` **get_line_offset** **(** :ref:`int<class_int>` line **)**
+
+Returns the vertical offset of the line found at the provided index.
+
+----
+
 .. _class_RichTextLabel_method_get_paragraph_count:
 
 - :ref:`int<class_int>` **get_paragraph_count** **(** **)** |const|
 
 Returns the total number of paragraphs (newlines or ``p`` tags in the tag stack's text tags). Considers wrapped text as one paragraph.
+
+----
+
+.. _class_RichTextLabel_method_get_paragraph_offset:
+
+- :ref:`float<class_float>` **get_paragraph_offset** **(** :ref:`int<class_int>` paragraph **)**
+
+Returns the vertical offset of the paragraph found at the provided index.
 
 ----
 

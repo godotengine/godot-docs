@@ -16,7 +16,7 @@ PopupMenu displays a list of options.
 Description
 -----------
 
-``PopupMenu`` is a :ref:`Control<class_Control>` that displays a list of options. They are popular in toolbars or context menus.
+``PopupMenu`` is a modal window used to display a list of options. They are popular in toolbars or context menus.
 
 The size of a ``PopupMenu`` can be limited by using :ref:`Window.max_size<class_Window_property_max_size>`. If the height of the list of items is larger than the maximum height of the ``PopupMenu``, a :ref:`ScrollContainer<class_ScrollContainer>` within the popup will allow the user to scroll the contents.
 
@@ -116,6 +116,10 @@ Methods
 | :ref:`bool<class_bool>`                          | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`remove_item<class_PopupMenu_method_remove_item>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                        |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`scroll_to_item<class_PopupMenu_method_scroll_to_item>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                  |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_current_index<class_PopupMenu_method_set_current_index>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_accelerator<class_PopupMenu_method_set_item_accelerator>` **(** :ref:`int<class_int>` index, :ref:`Key<enum_@GlobalScope_Key>` accel **)**                                                                                                             |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -681,6 +685,22 @@ Returns ``true`` if the specified item's shortcut is disabled.
 Removes the item at the given ``index`` from the menu.
 
 \ **Note:** The indices of items after the removed item will be shifted by one.
+
+----
+
+.. _class_PopupMenu_method_scroll_to_item:
+
+- void **scroll_to_item** **(** :ref:`int<class_int>` index **)**
+
+Moves the scroll view to make the item at the given ``index`` visible.
+
+----
+
+.. _class_PopupMenu_method_set_current_index:
+
+- void **set_current_index** **(** :ref:`int<class_int>` index **)**
+
+Sets the currently focused item as the given ``index``.
 
 ----
 

@@ -280,7 +280,7 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_INDEX** = **4096** --- Mesh array uses indices.
 
-- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **2147475463**
+- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **7**
 
 - **ARRAY_FORMAT_CUSTOM_BASE** = **13**
 

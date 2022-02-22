@@ -118,7 +118,7 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_Button_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
 +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`icon_disabled_color<class_Button_theme_color_icon_disabled_color>`           | ``Color(1, 1, 1, 1)``               |
+| :ref:`Color<class_Color>`       | :ref:`icon_disabled_color<class_Button_theme_color_icon_disabled_color>`           | ``Color(1, 1, 1, 0.4)``             |
 +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`icon_focus_color<class_Button_theme_color_icon_focus_color>`                 | ``Color(1, 1, 1, 1)``               |
 +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
@@ -410,9 +410,9 @@ Text :ref:`Color<class_Color>` used when the ``Button`` is being pressed.
 
 - :ref:`Color<class_Color>` **icon_disabled_color**
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
++-----------+-------------------------+
+| *Default* | ``Color(1, 1, 1, 0.4)`` |
++-----------+-------------------------+
 
 Icon modulate :ref:`Color<class_Color>` used when the ``Button`` is disabled.
 

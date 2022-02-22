@@ -92,6 +92,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_processor_count<class_OS_method_get_processor_count>` **(** **)** |const|                                                                                                                                                                                           |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_processor_name<class_OS_method_get_processor_name>` **(** **)** |const|                                                                                                                                                                                             |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_static_memory_peak_usage<class_OS_method_get_static_memory_peak_usage>` **(** **)** |const|                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_static_memory_usage<class_OS_method_get_static_memory_usage>` **(** **)** |const|                                                                                                                                                                                   |
@@ -768,7 +770,17 @@ Returns the project's process ID.
 
 - :ref:`int<class_int>` **get_processor_count** **(** **)** |const|
 
-Returns the number of threads available on the host machine.
+Returns the number of *logical* CPU cores available on the host machine. On CPUs with HyperThreading enabled, this number will be greater than the number of *physical* CPU cores.
+
+----
+
+.. _class_OS_method_get_processor_name:
+
+- :ref:`String<class_String>` **get_processor_name** **(** **)** |const|
+
+Returns the name of the CPU model on the host machine (e.g. "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz").
+
+\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android, HTML5 and UWP, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
 
 ----
 

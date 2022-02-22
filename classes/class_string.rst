@@ -54,6 +54,8 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`chr<class_String_method_chr>` **(** :ref:`int<class_int>` char **)** |static|                                                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`contains<class_String_method_contains>` **(** :ref:`String<class_String>` what **)** |const|                                                                              |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`count<class_String_method_count>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`countn<class_String_method_countn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|                        |
@@ -77,6 +79,10 @@ Methods
 | :ref:`String<class_String>`                         | :ref:`get_file<class_String_method_get_file>` **(** **)** |const|                                                                                                               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_slice<class_String_method_get_slice>` **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)** |const|                                          |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_slice_count<class_String_method_get_slice_count>` **(** :ref:`String<class_String>` delimiter **)** |const|                                                           |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`get_slicec<class_String_method_get_slicec>` **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|                                              |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`hash<class_String_method_hash>` **(** **)** |const|                                                                                                                       |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -365,6 +371,14 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 ----
 
+.. _class_String_method_contains:
+
+- :ref:`bool<class_bool>` **contains** **(** :ref:`String<class_String>` what **)** |const|
+
+Returns ``true`` if the string contains the given string.
+
+----
+
 .. _class_String_method_count:
 
 - :ref:`int<class_int>` **count** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|
@@ -496,11 +510,31 @@ Example:
 
 ----
 
+.. _class_String_method_get_slice_count:
+
+- :ref:`int<class_int>` **get_slice_count** **(** :ref:`String<class_String>` delimiter **)** |const|
+
+Splits a string using a ``delimiter`` and returns a number of slices.
+
+----
+
+.. _class_String_method_get_slicec:
+
+- :ref:`String<class_String>` **get_slicec** **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|
+
+Splits a string using a Unicode character with code ``delimiter`` and returns a substring at index ``slice``. Returns an empty string if the index doesn't exist.
+
+This is a more performant alternative to :ref:`split<class_String_method_split>` for cases when you need only one element from the array at a fixed index.
+
+----
+
 .. _class_String_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)** |const|
 
-Hashes the string and returns a 32-bit integer.
+Returns the 32-bit hash value representing the string's contents.
+
+\ **Note:** ``String``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
 
 ----
 
@@ -727,7 +761,7 @@ Returns a copy of the string with characters removed from the left. The ``chars`
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -735,7 +769,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 

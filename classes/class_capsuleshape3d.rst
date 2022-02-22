@@ -27,9 +27,9 @@ Properties
 ----------
 
 +---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>` | ``3.0`` |
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>` | ``2.0`` |
 +---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>` | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>` | ``0.5`` |
 +---------------------------+-----------------------------------------------------+---------+
 
 Property Descriptions
@@ -40,7 +40,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | ``3.0``           |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -56,7 +56,7 @@ The capsule's height.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

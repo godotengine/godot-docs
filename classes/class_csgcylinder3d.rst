@@ -18,17 +18,24 @@ Description
 
 This node allows you to create a cylinder (or cone) for use with the CSG system.
 
+\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+
+Tutorials
+---------
+
+- :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
+
 Properties
 ----------
 
 +---------------------------------+----------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder3D_property_cone>`                 | ``false`` |
 +---------------------------------+----------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder3D_property_height>`             | ``1.0``   |
+| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder3D_property_height>`             | ``2.0``   |
 +---------------------------------+----------------------------------------------------------------+-----------+
 | :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder3D_property_material>`         |           |
 +---------------------------------+----------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder3D_property_radius>`             | ``1.0``   |
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder3D_property_radius>`             | ``0.5``   |
 +---------------------------------+----------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder3D_property_sides>`               | ``8``     |
 +---------------------------------+----------------------------------------------------------------+-----------+
@@ -59,7 +66,7 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder3D_property_rad
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -89,7 +96,7 @@ The material used to render the cylinder.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

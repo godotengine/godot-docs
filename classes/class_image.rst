@@ -56,6 +56,8 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress_from_channels<class_Image_method_compress_from_channels>` **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`UsedChannels<enum_Image_UsedChannels>` channels, :ref:`float<class_float>` lossy_quality=0.7 **)**                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`compute_image_metrics<class_Image_method_compute_image_metrics>` **(** :ref:`Image<class_Image>` compared_image, :ref:`bool<class_bool>` use_luma **)**                                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`convert<class_Image_method_convert>` **(** :ref:`Format<enum_Image_Format>` format **)**                                                                                                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`copy_from<class_Image_method_copy_from>` **(** :ref:`Image<class_Image>` src **)**                                                                                                                                                                             |
@@ -532,6 +534,16 @@ Compresses the image to use less memory. Can not directly access pixel data whil
 .. _class_Image_method_compress_from_channels:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels** **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`UsedChannels<enum_Image_UsedChannels>` channels, :ref:`float<class_float>` lossy_quality=0.7 **)**
+
+----
+
+.. _class_Image_method_compute_image_metrics:
+
+- :ref:`Dictionary<class_Dictionary>` **compute_image_metrics** **(** :ref:`Image<class_Image>` compared_image, :ref:`bool<class_bool>` use_luma **)**
+
+Compute image metrics on the current image and the compared image.
+
+The dictionary contains ``max``, ``mean``, ``mean_squared``, ``root_mean_squared`` and ``peak_snr``.
 
 ----
 

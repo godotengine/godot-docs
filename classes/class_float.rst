@@ -56,11 +56,11 @@ Operators
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_float_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`     | :ref:`operator *<class_float_operator_mul_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)**       |
+| :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_float_operator_mul_Vector2>` **(** :ref:`Vector2i<class_Vector2i>` right **)**        |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_float_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_float_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
+| :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_float_operator_mul_Vector3>` **(** :ref:`Vector3i<class_Vector3i>` right **)**        |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -181,13 +181,13 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``fl
 
 ----
 
-- :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
-Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float`` truncated to an integer.
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float``. Returns a :ref:`Vector2<class_Vector2>`.
 
 ::
 
-    print(0.9 * Vector2i(10, 20)) # Prints "(0, 0)"
+    print(0.9 * Vector2i(10, 15)) # Prints "(9, 13.5)"
 
 ----
 
@@ -197,13 +197,13 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``fl
 
 ----
 
-- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
-Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float`` truncated to an integer.
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float``. Returns a :ref:`Vector3<class_Vector3>`.
 
 ::
 
-    print(0.9 * Vector3i(10, 20, 30)) # Prints "(0, 0, 0)"
+    print(0.9 * Vector3i(10, 15, 20)) # Prints "(9, 13.5, 18)"
 
 ----
 

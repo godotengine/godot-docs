@@ -255,7 +255,9 @@ The points that form the lines. The line is drawn between every point set in thi
 | *Getter*  | get_round_precision()      |
 +-----------+----------------------------+
 
-The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
+The smoothness of the rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update. This is only used if a cap or joint is set as round.
+
+\ **Note:** The default value is tuned for lines with the default :ref:`width<class_Line2D_property_width>`. For thin lines, this value should be reduced to a number between ``2`` and ``4`` to improve performance.
 
 ----
 

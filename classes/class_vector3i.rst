@@ -86,7 +86,7 @@ Operators
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator *<class_Vector3i_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)** |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`operator *<class_Vector3i_operator_mul_Vector3i>` **(** :ref:`float<class_float>` right **)**       |
+| :ref:`Vector3<class_Vector3>`   | :ref:`operator *<class_Vector3i_operator_mul_Vector3>` **(** :ref:`float<class_float>` right **)**        |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator *<class_Vector3i_operator_mul_Vector3i>` **(** :ref:`int<class_int>` right **)**           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -96,7 +96,7 @@ Operators
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator /<class_Vector3i_operator_div_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)** |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`operator /<class_Vector3i_operator_div_Vector3i>` **(** :ref:`float<class_float>` right **)**       |
+| :ref:`Vector3<class_Vector3>`   | :ref:`operator /<class_Vector3i_operator_div_Vector3>` **(** :ref:`float<class_float>` right **)**        |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator /<class_Vector3i_operator_div_Vector3i>` **(** :ref:`int<class_int>` right **)**           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -237,6 +237,8 @@ Method Descriptions
 
 - :ref:`Vector3i<class_Vector3i>` **abs** **(** **)** |const|
 
+Returns a new vector with all components in absolute values (i.e. positive).
+
 ----
 
 .. _class_Vector3i_method_clamp:
@@ -336,13 +338,13 @@ Multiplies each component of the ``Vector3i`` by the components of the given ``V
 
 ----
 
-- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`float<class_float>` right **)**
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-Multiplies each component of the ``Vector3i`` by the given :ref:`float<class_float>` truncated to an integer.
+Multiplies each component of the ``Vector3i`` by the given :ref:`float<class_float>`. Returns a :ref:`Vector3<class_Vector3>`.
 
 ::
 
-    print(Vector3i(10, 20, 30) * 0.9) # Prints "(0, 0, 0)"
+    print(Vector3i(10, 15, 20) * 0.9) # Prints "(9, 13.5, 18)"
 
 ----
 
@@ -388,9 +390,9 @@ Divides each component of the ``Vector3i`` by the components of the given ``Vect
 
 ----
 
-- :ref:`Vector3i<class_Vector3i>` **operator /** **(** :ref:`float<class_float>` right **)**
+- :ref:`Vector3<class_Vector3>` **operator /** **(** :ref:`float<class_float>` right **)**
 
-Divides each component of the ``Vector3i`` by the given :ref:`float<class_float>` truncated to an integer.
+Divides each component of the ``Vector3i`` by the given :ref:`float<class_float>`. Returns a :ref:`Vector3<class_Vector3>`.
 
 ::
 

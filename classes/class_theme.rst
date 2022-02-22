@@ -11,19 +11,23 @@ Theme
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Theme for controls.
+Theme resource for styling/skinning :ref:`Control<class_Control>`\ s and :ref:`Window<class_Window>`\ s.
 
 Description
 -----------
 
-A theme for skinning controls. Controls can be skinned individually, but for complex applications, it's more practical to just create a global theme that defines everything. This theme can be applied to any :ref:`Control<class_Control>`; the Control and its children will automatically use it.
+A theme resource is used for styling/skinning :ref:`Control<class_Control>` and :ref:`Window<class_Window>` nodes. While individual controls can be styled using their local theme overrides (see :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>`), theme resources allow you to store and apply the same settings between all controls sharing the same type (e.g. style all :ref:`Button<class_Button>`\ s the same). One theme resource can be used for the entire project, but you can also set a separate theme resource to a branch of control nodes. A theme resources assigned to a control node applies to the control itself, as well as all of its direct and indirect children (as long as a chain of controls is uninterrupted).
 
-Theme resources can alternatively be loaded by writing them in a ``.theme`` file, see the documentation for more information.
+Use :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` to set up a project-scope theme that will be available to every control in your project.
+
+Use :ref:`Control.theme<class_Control_property_theme>` of any control node to set up a theme that will be available to that control and all of its direct and indirect children.
 
 Tutorials
 ---------
 
 - :doc:`GUI skinning <../tutorials/ui/gui_skinning>`
+
+- :doc:`Using the theme editor <../tutorials/ui/gui_using_theme_editor>`
 
 Properties
 ----------
@@ -39,6 +43,8 @@ Properties
 Methods
 -------
 
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_type<class_Theme_method_add_type>` **(** :ref:`StringName<class_StringName>` theme_type **)**                                                                                                                                                           |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`clear<class_Theme_method_clear>` **(** **)**                                                                                                                                                                                                                |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,6 +136,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`merge_with<class_Theme_method_merge_with>` **(** :ref:`Theme<class_Theme>` other **)**                                                                                                                                                                      |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`remove_type<class_Theme_method_remove_type>` **(** :ref:`StringName<class_StringName>` theme_type **)**                                                                                                                                                     |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`rename_color<class_Theme_method_rename_color>` **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**                                                           |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`rename_constant<class_Theme_method_rename_constant>` **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**                                                     |
@@ -211,7 +219,7 @@ Property Descriptions
 | *Getter*  | get_default_base_scale()      |
 +-----------+-------------------------------+
 
-The default base scale factor of this ``Theme`` resource. Used by some controls to scale their visual properties based on a global scale factor. If this value is set to ``0.0``, the global scale factor is used.
+The default base scale factor of this theme resource. Used by some controls to scale their visual properties based on the global scale factor. If this value is set to ``0.0``, the global scale factor is used.
 
 Use :ref:`has_default_base_scale<class_Theme_method_has_default_base_scale>` to check if this value is valid.
 
@@ -227,7 +235,7 @@ Use :ref:`has_default_base_scale<class_Theme_method_has_default_base_scale>` to 
 | *Getter* | get_default_font()      |
 +----------+-------------------------+
 
-The default font of this ``Theme`` resource. Used as a fallback value for font items defined in this theme, but having invalid values. If this value is also invalid, the global default value is used.
+The default font of this theme resource. Used as the default value when trying to fetch a font resource that doesn't exist in this theme or is in invalid state. If the default font is also missing or invalid, the engine fallback value is used.
 
 Use :ref:`has_default_font<class_Theme_method_has_default_font>` to check if this value is valid.
 
@@ -245,18 +253,28 @@ Use :ref:`has_default_font<class_Theme_method_has_default_font>` to check if thi
 | *Getter*  | get_default_font_size()      |
 +-----------+------------------------------+
 
-The default font size of this ``Theme`` resource. Used as a fallback value for font size items defined in this theme, but having invalid values. If this value is set to ``-1``, the global default value is used.
+The default font size of this theme resource. Used as the default value when trying to fetch a font size value that doesn't exist in this theme or is in invalid state. If the default font size is also missing or invalid, the engine fallback value is used.
 
-Use :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check if this value is valid.
+Values below ``0`` are invalid and can be used to unset the property. Use :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check if this value is valid.
 
 Method Descriptions
 -------------------
+
+.. _class_Theme_method_add_type:
+
+- void **add_type** **(** :ref:`StringName<class_StringName>` theme_type **)**
+
+Adds an empty theme type for every valid data type.
+
+\ **Note:** Empty types are not saved with the theme. This method only exists to perform in-memory changes to the resource. Use available ``set_*`` methods to add theme items.
+
+----
 
 .. _class_Theme_method_clear:
 
 - void **clear** **(** **)**
 
-Clears all values on the theme.
+Removes all the theme properties defined on the theme resource.
 
 ----
 
@@ -264,7 +282,9 @@ Clears all values on the theme.
 
 - void **clear_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
+Removes the :ref:`Color<class_Color>` property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_color<class_Theme_method_has_color>` to check for existence.
 
 ----
 
@@ -272,7 +292,9 @@ Clears the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``
 
 - void **clear_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the constant at ``name`` if the theme has ``theme_type``.
+Removes the constant property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_constant<class_Theme_method_has_constant>` to check for existence.
 
 ----
 
@@ -280,7 +302,9 @@ Clears the constant at ``name`` if the theme has ``theme_type``.
 
 - void **clear_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
+Removes the :ref:`Font<class_Font>` property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_font<class_Theme_method_has_font>` to check for existence.
 
 ----
 
@@ -288,7 +312,9 @@ Clears the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
 
 - void **clear_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the font size ``name`` if the theme has ``theme_type``.
+Removes the font size property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence.
 
 ----
 
@@ -296,7 +322,9 @@ Clears the font size ``name`` if the theme has ``theme_type``.
 
 - void **clear_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the icon at ``name`` if the theme has ``theme_type``.
+Removes the icon property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_icon<class_Theme_method_has_icon>` to check for existence.
 
 ----
 
@@ -304,7 +332,9 @@ Clears the icon at ``name`` if the theme has ``theme_type``.
 
 - void **clear_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
+Removes the :ref:`StyleBox<class_StyleBox>` property defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_stylebox<class_Theme_method_has_stylebox>` to check for existence.
 
 ----
 
@@ -312,7 +342,11 @@ Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type
 
 - void **clear_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Clears the theme item of ``data_type`` at ``name`` if the theme has ``theme_type``.
+Removes the theme property of ``data_type`` defined by ``name`` and ``theme_type``, if it exists.
+
+Fails if it doesn't exist. Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
+
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -320,7 +354,7 @@ Clears the theme item of ``data_type`` at ``name`` if the theme has ``theme_type
 
 - void **clear_type_variation** **(** :ref:`StringName<class_StringName>` theme_type **)**
 
-Unmarks ``theme_type`` as being a variation of any other type.
+Unmarks ``theme_type`` as being a variation of another theme type. See :ref:`set_type_variation<class_Theme_method_set_type_variation>`.
 
 ----
 
@@ -328,7 +362,9 @@ Unmarks ``theme_type`` as being a variation of any other type.
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
+Returns the :ref:`Color<class_Color>` property defined by ``name`` and ``theme_type``, if it exists.
+
+Returns the default color value if the property doesn't exist. Use :ref:`has_color<class_Theme_method_has_color>` to check for existence.
 
 ----
 
@@ -336,7 +372,7 @@ Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type`
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_color_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each :ref:`Color<class_Color>`'s name, for use in :ref:`get_color<class_Theme_method_get_color>`, if the theme has ``theme_type``.
+Returns a list of names for :ref:`Color<class_Color>` properties defined with ``theme_type``. Use :ref:`get_color_type_list<class_Theme_method_get_color_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -344,7 +380,7 @@ Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PackedStringArray<class_
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_color_type_list** **(** **)** |const|
 
-Returns all the :ref:`Color<class_Color>` types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_color<class_Theme_method_get_color>` and/or :ref:`get_color_list<class_Theme_method_get_color_list>`.
+Returns a list of all unique theme type names for :ref:`Color<class_Color>` properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -352,7 +388,9 @@ Returns all the :ref:`Color<class_Color>` types as a :ref:`PackedStringArray<cla
 
 - :ref:`int<class_int>` **get_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the constant at ``name`` if the theme has ``theme_type``.
+Returns the constant property defined by ``name`` and ``theme_type``, if it exists.
+
+Returns ``0`` if the property doesn't exist. Use :ref:`has_constant<class_Theme_method_has_constant>` to check for existence.
 
 ----
 
@@ -360,7 +398,7 @@ Returns the constant at ``name`` if the theme has ``theme_type``.
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_constant_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the constants as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each constant's name, for use in :ref:`get_constant<class_Theme_method_get_constant>`, if the theme has ``theme_type``.
+Returns a list of names for constant properties defined with ``theme_type``. Use :ref:`get_constant_type_list<class_Theme_method_get_constant_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -368,7 +406,7 @@ Returns all the constants as a :ref:`PackedStringArray<class_PackedStringArray>`
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_constant_type_list** **(** **)** |const|
 
-Returns all the constant types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_constant<class_Theme_method_get_constant>` and/or :ref:`get_constant_list<class_Theme_method_get_constant_list>`.
+Returns a list of all unique theme type names for constant properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -376,7 +414,11 @@ Returns all the constant types as a :ref:`PackedStringArray<class_PackedStringAr
 
 - :ref:`Font<class_Font>` **get_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
+Returns the :ref:`Font<class_Font>` property defined by ``name`` and ``theme_type``, if it exists.
+
+Returns the default theme font if the property doesn't exist and the default theme font is set up (see :ref:`default_font<class_Theme_property_default_font>`). Use :ref:`has_font<class_Theme_method_has_font>` to check for existence of the property and :ref:`has_default_font<class_Theme_method_has_default_font>` to check for existence of the default theme font.
+
+Returns the engine fallback font value, if neither exist.
 
 ----
 
@@ -384,7 +426,7 @@ Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_font_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each :ref:`Font<class_Font>`'s name, for use in :ref:`get_font<class_Theme_method_get_font>`, if the theme has ``theme_type``.
+Returns a list of names for :ref:`Font<class_Font>` properties defined with ``theme_type``. Use :ref:`get_font_type_list<class_Theme_method_get_font_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -392,7 +434,11 @@ Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PackedStringArray<class_Pa
 
 - :ref:`int<class_int>` **get_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the font size at ``name`` if the theme has ``theme_type``.
+Returns the font size property defined by ``name`` and ``theme_type``, if it exists.
+
+Returns the default theme font size if the property doesn't exist and the default theme font size is set up (see :ref:`default_font_size<class_Theme_property_default_font_size>`). Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence of the property and :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check for existence of the default theme font.
+
+Returns the engine fallback font size value, if neither exist.
 
 ----
 
@@ -400,7 +446,7 @@ Returns the font size at ``name`` if the theme has ``theme_type``.
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_font_size_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the font sizes as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each font size name, for use in :ref:`get_font_size<class_Theme_method_get_font_size>`, if the theme has ``theme_type``.
+Returns a list of names for font size properties defined with ``theme_type``. Use :ref:`get_font_size_type_list<class_Theme_method_get_font_size_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -408,7 +454,7 @@ Returns all the font sizes as a :ref:`PackedStringArray<class_PackedStringArray>
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_font_size_type_list** **(** **)** |const|
 
-Returns all the font size types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_font_size<class_Theme_method_get_font_size>` and/or :ref:`get_font_size_list<class_Theme_method_get_font_size_list>`.
+Returns a list of all unique theme type names for font size properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -416,7 +462,7 @@ Returns all the font size types as a :ref:`PackedStringArray<class_PackedStringA
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_font_type_list** **(** **)** |const|
 
-Returns all the :ref:`Font<class_Font>` types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_font<class_Theme_method_get_font>` and/or :ref:`get_font_list<class_Theme_method_get_font_list>`.
+Returns a list of all unique theme type names for :ref:`Font<class_Font>` properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -424,7 +470,9 @@ Returns all the :ref:`Font<class_Font>` types as a :ref:`PackedStringArray<class
 
 - :ref:`Texture2D<class_Texture2D>` **get_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the icon :ref:`Texture2D<class_Texture2D>` at ``name`` if the theme has ``theme_type``.
+Returns the icon property defined by ``name`` and ``theme_type``, if it exists.
+
+Returns the engine fallback icon value if the property doesn't exist. Use :ref:`has_icon<class_Theme_method_has_icon>` to check for existence.
 
 ----
 
@@ -432,7 +480,7 @@ Returns the icon :ref:`Texture2D<class_Texture2D>` at ``name`` if the theme has 
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_icon_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the icons as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each :ref:`Texture2D<class_Texture2D>`'s name, for use in :ref:`get_icon<class_Theme_method_get_icon>`, if the theme has ``theme_type``.
+Returns a list of names for icon properties defined with ``theme_type``. Use :ref:`get_icon_type_list<class_Theme_method_get_icon_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -440,7 +488,7 @@ Returns all the icons as a :ref:`PackedStringArray<class_PackedStringArray>` fil
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_icon_type_list** **(** **)** |const|
 
-Returns all the icon types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_icon<class_Theme_method_get_icon>` and/or :ref:`get_icon_list<class_Theme_method_get_icon_list>`.
+Returns a list of all unique theme type names for icon properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -448,9 +496,9 @@ Returns all the icon types as a :ref:`PackedStringArray<class_PackedStringArray>
 
 - :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
+Returns the :ref:`StyleBox<class_StyleBox>` property defined by ``name`` and ``theme_type``, if it exists.
 
-Valid ``name``\ s may be found using :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`. Valid ``theme_type``\ s may be found using :ref:`get_stylebox_type_list<class_Theme_method_get_stylebox_type_list>`.
+Returns the engine fallback stylebox value if the property doesn't exist. Use :ref:`has_stylebox<class_Theme_method_has_stylebox>` to check for existence.
 
 ----
 
@@ -458,9 +506,7 @@ Valid ``name``\ s may be found using :ref:`get_stylebox_list<class_Theme_method_
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_stylebox_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s name, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>`, if the theme has ``theme_type``.
-
-Valid ``theme_type``\ s may be found using :ref:`get_stylebox_type_list<class_Theme_method_get_stylebox_type_list>`.
+Returns a list of names for :ref:`StyleBox<class_StyleBox>` properties defined with ``theme_type``. Use :ref:`get_stylebox_type_list<class_Theme_method_get_stylebox_type_list>` to get a list of possible theme type names.
 
 ----
 
@@ -468,7 +514,7 @@ Valid ``theme_type``\ s may be found using :ref:`get_stylebox_type_list<class_Th
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_stylebox_type_list** **(** **)** |const|
 
-Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>` and/or :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`.
+Returns a list of all unique theme type names for :ref:`StyleBox<class_StyleBox>` properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
 
 ----
 
@@ -476,9 +522,11 @@ Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PackedStringArr
 
 - :ref:`Variant<class_Variant>` **get_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the theme item of ``data_type`` at ``name`` if the theme has ``theme_type``.
+Returns the theme property of ``data_type`` defined by ``name`` and ``theme_type``, if it exists.
 
-Valid ``name``\ s may be found using :ref:`get_theme_item_list<class_Theme_method_get_theme_item_list>` or a data type specific method. Valid ``theme_type``\ s may be found using :ref:`get_theme_item_type_list<class_Theme_method_get_theme_item_type_list>` or a data type specific method.
+Returns the engine fallback icon value if the property doesn't exist. Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
+
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -486,9 +534,9 @@ Valid ``name``\ s may be found using :ref:`get_theme_item_list<class_Theme_metho
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_theme_item_list** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the theme items of ``data_type`` as a :ref:`PackedStringArray<class_PackedStringArray>` filled with each theme items's name, for use in :ref:`get_theme_item<class_Theme_method_get_theme_item>` or a data type specific method, if the theme has ``theme_type``.
+Returns a list of names for properties of ``data_type`` defined with ``theme_type``. Use :ref:`get_theme_item_type_list<class_Theme_method_get_theme_item_type_list>` to get a list of possible theme type names.
 
-Valid ``theme_type``\ s may be found using :ref:`get_theme_item_type_list<class_Theme_method_get_theme_item_type_list>` or a data type specific method.
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -496,7 +544,9 @@ Valid ``theme_type``\ s may be found using :ref:`get_theme_item_type_list<class_
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_theme_item_type_list** **(** :ref:`DataType<enum_Theme_DataType>` data_type **)** |const|
 
-Returns all the theme items of ``data_type`` types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in :ref:`get_theme_item<class_Theme_method_get_theme_item>`, :ref:`get_theme_item_list<class_Theme_method_get_theme_item_list>` or data type specific methods.
+Returns a list of all unique theme type names for ``data_type`` properties. Use :ref:`get_type_list<class_Theme_method_get_type_list>` to get a list of all unique theme types.
+
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -504,7 +554,7 @@ Returns all the theme items of ``data_type`` types as a :ref:`PackedStringArray<
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_type_list** **(** **)** |const|
 
-Returns all the theme types as a :ref:`PackedStringArray<class_PackedStringArray>` filled with unique type names, for use in other ``get_*`` functions of this theme.
+Returns a list of all unique theme type names. Use the appropriate ``get_*_type_list`` method to get a list of unique theme types for a single data type.
 
 ----
 
@@ -512,7 +562,7 @@ Returns all the theme types as a :ref:`PackedStringArray<class_PackedStringArray
 
 - :ref:`StringName<class_StringName>` **get_type_variation_base** **(** :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns the base theme type if ``theme_type`` is a valid variation type. Returns an empty string otherwise.
+Returns the name of the base theme type if ``theme_type`` is a valid variation type. Returns an empty string otherwise.
 
 ----
 
@@ -520,7 +570,7 @@ Returns the base theme type if ``theme_type`` is a valid variation type. Returns
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_type_variation_list** **(** :ref:`StringName<class_StringName>` base_type **)** |const|
 
-Returns a list of all variation for the given ``base_type``.
+Returns a list of all type variations for the given ``base_type``.
 
 ----
 
@@ -528,9 +578,9 @@ Returns a list of all variation for the given ``base_type``.
 
 - :ref:`bool<class_bool>` **has_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``theme_type``.
+Returns ``true`` if the :ref:`Color<class_Color>` property defined by ``name`` and ``theme_type`` exists.
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if it doesn't exist. Use :ref:`set_color<class_Theme_method_set_color>` to define it.
 
 ----
 
@@ -538,9 +588,9 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if constant with ``name`` is in ``theme_type``.
+Returns ``true`` if the constant property defined by ``name`` and ``theme_type`` exists.
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if it doesn't exist. Use :ref:`set_constant<class_Theme_method_set_constant>` to define it.
 
 ----
 
@@ -548,7 +598,9 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_default_base_scale** **(** **)** |const|
 
-Returns ``true`` if this theme has a valid :ref:`default_base_scale<class_Theme_property_default_base_scale>` value.
+Returns ``true`` if :ref:`default_base_scale<class_Theme_property_default_base_scale>` has a valid value.
+
+Returns ``false`` if it doesn't. The value must be greater than ``0.0`` to be considered valid.
 
 ----
 
@@ -556,7 +608,9 @@ Returns ``true`` if this theme has a valid :ref:`default_base_scale<class_Theme_
 
 - :ref:`bool<class_bool>` **has_default_font** **(** **)** |const|
 
-Returns ``true`` if this theme has a valid :ref:`default_font<class_Theme_property_default_font>` value.
+Returns ``true`` if :ref:`default_font<class_Theme_property_default_font>` has a valid value.
+
+Returns ``false`` if it doesn't.
 
 ----
 
@@ -564,7 +618,9 @@ Returns ``true`` if this theme has a valid :ref:`default_font<class_Theme_proper
 
 - :ref:`bool<class_bool>` **has_default_font_size** **(** **)** |const|
 
-Returns ``true`` if this theme has a valid :ref:`default_font_size<class_Theme_property_default_font_size>` value.
+Returns ``true`` if :ref:`default_font_size<class_Theme_property_default_font_size>` has a valid value.
+
+Returns ``false`` if it doesn't. The value must be greater than ``0`` to be considered valid.
 
 ----
 
@@ -572,9 +628,9 @@ Returns ``true`` if this theme has a valid :ref:`default_font_size<class_Theme_p
 
 - :ref:`bool<class_bool>` **has_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``theme_type``.
+Returns ``true`` if the :ref:`Font<class_Font>` property defined by ``name`` and ``theme_type`` exists, or if the default theme font is set up (see :ref:`has_default_font<class_Theme_method_has_default_font>`).
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if neither exist. Use :ref:`set_font<class_Theme_method_set_font>` to define the property.
 
 ----
 
@@ -582,9 +638,9 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if font size with ``name`` is in ``theme_type``.
+Returns ``true`` if the font size property defined by ``name`` and ``theme_type`` exists, or if the default theme font size is set up (see :ref:`has_default_font_size<class_Theme_method_has_default_font_size>`).
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if neither exist. Use :ref:`set_font_size<class_Theme_method_set_font_size>` to define the property.
 
 ----
 
@@ -592,9 +648,9 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if icon :ref:`Texture2D<class_Texture2D>` with ``name`` is in ``theme_type``.
+Returns ``true`` if the icon property defined by ``name`` and ``theme_type`` exists.
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if it doesn't exist. Use :ref:`set_icon<class_Theme_method_set_icon>` to define it.
 
 ----
 
@@ -602,9 +658,9 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``theme_type``.
+Returns ``true`` if the :ref:`StyleBox<class_StyleBox>` property defined by ``name`` and ``theme_type`` exists.
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if it doesn't exist. Use :ref:`set_stylebox<class_Theme_method_set_stylebox>` to define it.
 
 ----
 
@@ -612,9 +668,11 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if a theme item of ``data_type`` with ``name`` is in ``theme_type``.
+Returns ``true`` if the theme property of ``data_type`` defined by ``name`` and ``theme_type`` exists.
 
-Returns ``false`` if the theme does not have ``theme_type``.
+Returns ``false`` if it doesn't exist. Use :ref:`set_theme_item<class_Theme_method_set_theme_item>` to define it.
+
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -622,7 +680,7 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **is_type_variation** **(** :ref:`StringName<class_StringName>` theme_type, :ref:`StringName<class_StringName>` base_type **)** |const|
 
-Returns ``true`` if ``theme_type`` is marked as a variation of ``base_type`` in this theme.
+Returns ``true`` if ``theme_type`` is marked as a variation of ``base_type``.
 
 ----
 
@@ -630,9 +688,17 @@ Returns ``true`` if ``theme_type`` is marked as a variation of ``base_type`` in 
 
 - void **merge_with** **(** :ref:`Theme<class_Theme>` other **)**
 
-Adds missing and overrides existing definitions with values from the ``other`` ``Theme``.
+Adds missing and overrides existing definitions with values from the ``other`` theme resource.
 
 \ **Note:** This modifies the current theme. If you want to merge two themes together without modifying either one, create a new empty theme and merge the other two into it one after another.
+
+----
+
+.. _class_Theme_method_remove_type:
+
+- void **remove_type** **(** :ref:`StringName<class_StringName>` theme_type **)**
+
+Removes the theme type, gracefully discarding defined theme items. If the type is a variation, this information is also erased. If the type is a base for type variations, those variations lose their base.
 
 ----
 
@@ -640,7 +706,9 @@ Adds missing and overrides existing definitions with values from the ``other`` `
 
 - void **rename_color** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the :ref:`Color<class_Color>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the :ref:`Color<class_Color>` property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_color<class_Theme_method_has_color>` to check for existence, and :ref:`clear_color<class_Theme_method_clear_color>` to remove the existing property.
 
 ----
 
@@ -648,7 +716,9 @@ Renames the :ref:`Color<class_Color>` at ``old_name`` to ``name`` if the theme h
 
 - void **rename_constant** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the constant at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the constant property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_constant<class_Theme_method_has_constant>` to check for existence, and :ref:`clear_constant<class_Theme_method_clear_constant>` to remove the existing property.
 
 ----
 
@@ -656,7 +726,9 @@ Renames the constant at ``old_name`` to ``name`` if the theme has ``theme_type``
 
 - void **rename_font** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the :ref:`Font<class_Font>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the :ref:`Font<class_Font>` property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font<class_Theme_method_has_font>` to check for existence, and :ref:`clear_font<class_Theme_method_clear_font>` to remove the existing property.
 
 ----
 
@@ -664,7 +736,9 @@ Renames the :ref:`Font<class_Font>` at ``old_name`` to ``name`` if the theme has
 
 - void **rename_font_size** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the font size ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the font size property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence, and :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the existing property.
 
 ----
 
@@ -672,7 +746,9 @@ Renames the font size ``old_name`` to ``name`` if the theme has ``theme_type``. 
 
 - void **rename_icon** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the icon at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the icon property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_icon<class_Theme_method_has_icon>` to check for existence, and :ref:`clear_icon<class_Theme_method_clear_icon>` to remove the existing property.
 
 ----
 
@@ -680,7 +756,9 @@ Renames the icon at ``old_name`` to ``name`` if the theme has ``theme_type``. If
 
 - void **rename_stylebox** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames :ref:`StyleBox<class_StyleBox>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the :ref:`StyleBox<class_StyleBox>` property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_stylebox<class_Theme_method_has_stylebox>` to check for existence, and :ref:`clear_stylebox<class_Theme_method_clear_stylebox>` to remove the existing property.
 
 ----
 
@@ -688,7 +766,11 @@ Renames :ref:`StyleBox<class_StyleBox>` at ``old_name`` to ``name`` if the theme
 
 - void **rename_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the theme item of ``data_type`` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
+Renames the theme property of ``data_type`` defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence, and :ref:`clear_theme_item<class_Theme_method_clear_theme_item>` to remove the existing property.
+
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -696,9 +778,7 @@ Renames the theme item of ``data_type`` at ``old_name`` to ``name`` if the theme
 
 - void **set_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`Color<class_Color>` color **)**
 
-Sets the theme's :ref:`Color<class_Color>` to ``color`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the :ref:`Color<class_Color>` property defined by ``name`` and ``theme_type``. Use :ref:`clear_color<class_Theme_method_clear_color>` to remove the property.
 
 ----
 
@@ -706,9 +786,7 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`int<class_int>` constant **)**
 
-Sets the theme's constant to ``constant`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the constant property defined by ``name`` and ``theme_type``. Use :ref:`clear_constant<class_Theme_method_clear_constant>` to remove the property.
 
 ----
 
@@ -716,9 +794,7 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`Font<class_Font>` font **)**
 
-Sets the theme's :ref:`Font<class_Font>` to ``font`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the :ref:`Font<class_Font>` property defined by ``name`` and ``theme_type``. Use :ref:`clear_font<class_Theme_method_clear_font>` to remove the property.
 
 ----
 
@@ -726,9 +802,7 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`int<class_int>` font_size **)**
 
-Sets the theme's font size to ``font_size`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the font size property defined by ``name`` and ``theme_type``. Use :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the property.
 
 ----
 
@@ -736,9 +810,7 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`Texture2D<class_Texture2D>` texture **)**
 
-Sets the theme's icon :ref:`Texture2D<class_Texture2D>` to ``texture`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the icon property defined by ``name`` and ``theme_type``. Use :ref:`clear_icon<class_Theme_method_clear_icon>` to remove the property.
 
 ----
 
@@ -746,9 +818,7 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`StyleBox<class_StyleBox>` texture **)**
 
-Sets theme's :ref:`StyleBox<class_StyleBox>` to ``stylebox`` at ``name`` in ``theme_type``.
-
-Creates ``theme_type`` if the theme does not have it.
+Creates or changes the value of the :ref:`StyleBox<class_StyleBox>` property defined by ``name`` and ``theme_type``. Use :ref:`clear_stylebox<class_Theme_method_clear_stylebox>` to remove the property.
 
 ----
 
@@ -756,11 +826,11 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`Variant<class_Variant>` value **)**
 
-Sets the theme item of ``data_type`` to ``value`` at ``name`` in ``theme_type``.
+Creates or changes the value of the theme property of ``data_type`` defined by ``name`` and ``theme_type``. Use :ref:`clear_theme_item<class_Theme_method_clear_theme_item>` to remove the property.
 
-Does nothing if the ``value`` type does not match ``data_type``.
+Fails if the ``value`` type is not accepted by ``data_type``.
 
-Creates ``theme_type`` if the theme does not have it.
+\ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
 ----
 
@@ -768,13 +838,13 @@ Creates ``theme_type`` if the theme does not have it.
 
 - void **set_type_variation** **(** :ref:`StringName<class_StringName>` theme_type, :ref:`StringName<class_StringName>` base_type **)**
 
-Marks ``theme_type`` as being a variation of ``base_type``.
+Marks ``theme_type`` as a variation of ``base_type``.
 
 This adds ``theme_type`` as a suggested option for :ref:`Control.theme_type_variation<class_Control_property_theme_type_variation>` on a :ref:`Control<class_Control>` that is of the ``base_type`` class.
 
-Variations can also be nested, i.e. ``base_type`` can be another variation. If a chain of variations ends with a ``base_type`` matching a class of a :ref:`Control<class_Control>`, the whole chain is going to be suggested as options.
+Variations can also be nested, i.e. ``base_type`` can be another variation. If a chain of variations ends with a ``base_type`` matching the class of the :ref:`Control<class_Control>`, the whole chain is going to be suggested as options.
 
-\ **Note:** Suggestions only show up if this ``Theme`` is set as the project default theme. See :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`.
+\ **Note:** Suggestions only show up if this theme resource is set as the project default theme. See :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

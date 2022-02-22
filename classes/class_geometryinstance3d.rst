@@ -296,7 +296,11 @@ If a material is assigned to this property, it will be used instead of any mater
 | *Getter*  | get_transparency()      |
 +-----------+-------------------------+
 
-Transparency applied to the whole geometry. In spatial shaders, transparency is set as the default value of the ``ALPHA`` built-in.
+The transparency applied to the whole geometry (as a multiplier of the materials' existing transparency). ``0.0`` is fully opaque, while ``1.0`` is fully transparent. Values greater than ``0.0`` (exclusive) will force the geometry's materials to go through the transparent pipeline, which is slower to render and can exhibit rendering issues due to incorrect transparency sorting. However, unlike using a transparent material, setting :ref:`transparency<class_GeometryInstance3D_property_transparency>` to a value greater than ``0.0`` (exclusive) will *not* disable shadow rendering.
+
+In spatial shaders, ``1.0 - transparency`` is set as the default value of the ``ALPHA`` built-in.
+
+\ **Note:** :ref:`transparency<class_GeometryInstance3D_property_transparency>` is clamped between ``0.0`` and ``1.0``, so this property cannot be used to make transparent materials more opaque than they originally are.
 
 ----
 

@@ -1211,7 +1211,7 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_INDEX** = **4096** --- Flag used to mark an index array.
 
-- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **2147475463**
+- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **7**
 
 - **ARRAY_FORMAT_CUSTOM_BASE** = **13**
 
@@ -2295,19 +2295,19 @@ enum **EnvironmentSSILQuality**:
 
 .. _enum_RenderingServer_EnvironmentSDFGIYScale:
 
-.. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_DISABLED:
+.. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_50_PERCENT:
 
 .. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_75_PERCENT:
 
-.. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_50_PERCENT:
+.. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_100_PERCENT:
 
 enum **EnvironmentSDFGIYScale**:
 
-- **ENV_SDFGI_Y_SCALE_DISABLED** = **0**
+- **ENV_SDFGI_Y_SCALE_50_PERCENT** = **0**
 
 - **ENV_SDFGI_Y_SCALE_75_PERCENT** = **1**
 
-- **ENV_SDFGI_Y_SCALE_50_PERCENT** = **2**
+- **ENV_SDFGI_Y_SCALE_100_PERCENT** = **2**
 
 ----
 
@@ -4331,6 +4331,12 @@ Sets a material that will override the material for all surfaces on the mesh ass
 - void **instance_geometry_set_transparency** **(** :ref:`RID<class_RID>` instance, :ref:`float<class_float>` transparency **)**
 
 Sets the transparency for the given geometry instance. Equivalent to :ref:`GeometryInstance3D.transparency<class_GeometryInstance3D_property_transparency>`.
+
+A transparency of ``0.0`` is fully opaque, while ``1.0`` is fully transparent. Values greater than ``0.0`` (exclusive) will force the geometry's materials to go through the transparent pipeline, which is slower to render and can exhibit rendering issues due to incorrect transparency sorting. However, unlike using a transparent material, setting ``transparency`` to a value greater than ``0.0`` (exclusive) will *not* disable shadow rendering.
+
+In spatial shaders, ``1.0 - transparency`` is set as the default value of the ``ALPHA`` built-in.
+
+\ **Note:** ``transparency`` is clamped between ``0.0`` and ``1.0``, so this property cannot be used to make transparent materials more opaque than they originally are.
 
 ----
 

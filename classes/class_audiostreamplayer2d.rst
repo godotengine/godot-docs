@@ -93,7 +93,7 @@ Property Descriptions
 | *Getter*  | get_area_mask()      |
 +-----------+----------------------+
 
-Areas in which this sound plays.
+Determines which :ref:`Area2D<class_Area2D>` layers affect the sound for reverb and audio bus effects. Areas can be used to redirect :ref:`AudioStream<class_AudioStream>`\ s so that they play in a certain audio bus. An example of how you might use this is making a "water" area so that sounds played in the water are redirected through an audio bus to make them sound like they are being played underwater.
 
 ----
 

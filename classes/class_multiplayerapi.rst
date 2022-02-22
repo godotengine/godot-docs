@@ -29,17 +29,15 @@ It is possible to override the MultiplayerAPI instance used by specific Nodes by
 Properties
 ----------
 
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                   | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`   | ``false`` |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`MultiplayerPeer<class_MultiplayerPeer>`             | :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`             |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                   | :ref:`refuse_new_connections<class_MultiplayerAPI_property_refuse_new_connections>` | ``false`` |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`MultiplayerReplicator<class_MultiplayerReplicator>` | :ref:`replicator<class_MultiplayerAPI_property_replicator>`                         |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`Node<class_Node>`                                   | :ref:`root_node<class_MultiplayerAPI_property_root_node>`                           |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                       | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`   | ``false``        |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`MultiplayerPeer<class_MultiplayerPeer>` | :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`             |                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                       | :ref:`refuse_new_connections<class_MultiplayerAPI_property_refuse_new_connections>` | ``false``        |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>`               | :ref:`root_path<class_MultiplayerAPI_property_root_path>`                           | ``NodePath("")`` |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -162,27 +160,19 @@ If ``true``, the MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_pr
 
 ----
 
-.. _class_MultiplayerAPI_property_replicator:
+.. _class_MultiplayerAPI_property_root_path:
 
-- :ref:`MultiplayerReplicator<class_MultiplayerReplicator>` **replicator**
+- :ref:`NodePath<class_NodePath>` **root_path**
 
-+----------+------------------+
-| *Getter* | get_replicator() |
-+----------+------------------+
++-----------+----------------------+
+| *Default* | ``NodePath("")``     |
++-----------+----------------------+
+| *Setter*  | set_root_path(value) |
++-----------+----------------------+
+| *Getter*  | get_root_path()      |
++-----------+----------------------+
 
-----
-
-.. _class_MultiplayerAPI_property_root_node:
-
-- :ref:`Node<class_Node>` **root_node**
-
-+----------+----------------------+
-| *Setter* | set_root_node(value) |
-+----------+----------------------+
-| *Getter* | get_root_node()      |
-+----------+----------------------+
-
-The root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
+The root path to use for RPCs and replication. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 

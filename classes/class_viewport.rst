@@ -156,9 +156,13 @@ Methods
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                             | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                        |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_Control>`                                             | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)**                                                                                                                                            |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** |const|                                                                                                                                            |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                      | :ref:`gui_release_focus<class_Viewport_method_gui_release_focus>` **(** **)**                                                                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`is_embedding_subwindows<class_Viewport_method_is_embedding_subwindows>` **(** **)** |const|                                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1076,6 +1080,10 @@ If ``true``, the viewport should render its background as transparent.
 | *Getter*  | is_using_occlusion_culling()     |
 +-----------+----------------------------------+
 
+If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D for this viewport. For the root viewport, :ref:`ProjectSettings.rendering/occlusion_culling/use_occlusion_culling<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>` must be set to ``true`` instead.
+
+\ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it, and think whether your scene can actually benefit from occlusion culling. Large, open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
 ----
 
 .. _class_Viewport_property_use_xr:
@@ -1167,7 +1175,7 @@ Returns the total transform of the viewport.
 
 - :ref:`Vector2<class_Vector2>` **get_mouse_position** **(** **)** |const|
 
-Returns the mouse position relative to the viewport.
+Returns the mouse's position in this ``Viewport`` using the coordinate system of this ``Viewport``.
 
 ----
 
@@ -1234,6 +1242,14 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 ----
 
+.. _class_Viewport_method_gui_get_focus_owner:
+
+- :ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)**
+
+Returns the :ref:`Control<class_Control>` having the focus within this viewport. If no :ref:`Control<class_Control>` has the focus, returns null.
+
+----
+
 .. _class_Viewport_method_gui_is_drag_successful:
 
 - :ref:`bool<class_bool>` **gui_is_drag_successful** **(** **)** |const|
@@ -1247,6 +1263,14 @@ Returns ``true`` if the drag operation is successful.
 - :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** |const|
 
 Returns ``true`` if the viewport is currently performing a drag operation.
+
+----
+
+.. _class_Viewport_method_gui_release_focus:
+
+- void **gui_release_focus** **(** **)**
+
+Removes the focus from the currently focused :ref:`Control<class_Control>` within this viewport. If no :ref:`Control<class_Control>` has the focus, does nothing.
 
 ----
 
@@ -1302,7 +1326,7 @@ Sets the number of subdivisions to use in the specified quadrant. A higher numbe
 
 - void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` to_position **)**
 
-Warps the mouse to a position relative to the viewport.
+Moves the mouse pointer to the specified position in this ``Viewport`` using the coordinate system of this ``Viewport``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

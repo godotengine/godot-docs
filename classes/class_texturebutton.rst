@@ -30,27 +30,27 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                            | :ref:`expand<class_TextureButton_property_expand>`                         | ``false`` |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                            | :ref:`flip_h<class_TextureButton_property_flip_h>`                         | ``false`` |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                            | :ref:`flip_v<class_TextureButton_property_flip_v>`                         | ``false`` |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`             | ``0``     |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>` |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`     |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_focused<class_TextureButton_property_texture_focused>`       |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_hover<class_TextureButton_property_texture_hover>`           |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_normal<class_TextureButton_property_texture_normal>`         |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`       |           |
-+----------------------------------------------------+----------------------------------------------------------------------------+-----------+
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_h<class_TextureButton_property_flip_h>`                           | ``false`` |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`flip_v<class_TextureButton_property_flip_v>`                           | ``false`` |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                            | :ref:`ignore_texture_size<class_TextureButton_property_ignore_texture_size>` | ``false`` |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`StretchMode<enum_TextureButton_StretchMode>` | :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`               | ``2``     |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`BitMap<class_BitMap>`                        | :ref:`texture_click_mask<class_TextureButton_property_texture_click_mask>`   |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_disabled<class_TextureButton_property_texture_disabled>`       |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_focused<class_TextureButton_property_texture_focused>`         |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_hover<class_TextureButton_property_texture_hover>`             |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_normal<class_TextureButton_property_texture_normal>`           |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                  | :ref:`texture_pressed<class_TextureButton_property_texture_pressed>`         |           |
++----------------------------------------------------+------------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -90,22 +90,6 @@ enum **StretchMode**:
 Property Descriptions
 ---------------------
 
-.. _class_TextureButton_property_expand:
-
-- :ref:`bool<class_bool>` **expand**
-
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_expand(value) |
-+-----------+-------------------+
-| *Getter*  | get_expand()      |
-+-----------+-------------------+
-
-If ``true``, the texture stretches to the edges of the node's bounding rectangle using the :ref:`stretch_mode<class_TextureButton_property_stretch_mode>`. If ``false``, the texture will not scale with the node.
-
-----
-
 .. _class_TextureButton_property_flip_h:
 
 - :ref:`bool<class_bool>` **flip_h**
@@ -138,19 +122,35 @@ If ``true``, texture is flipped vertically.
 
 ----
 
+.. _class_TextureButton_property_ignore_texture_size:
+
+- :ref:`bool<class_bool>` **ignore_texture_size**
+
++-----------+--------------------------------+
+| *Default* | ``false``                      |
++-----------+--------------------------------+
+| *Setter*  | set_ignore_texture_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_ignore_texture_size()      |
++-----------+--------------------------------+
+
+If ``true``, the size of the texture won't be considered for minimum size calculation, so the ``TextureButton`` can be shrunk down past the texture size.
+
+----
+
 .. _class_TextureButton_property_stretch_mode:
 
 - :ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode**
 
 +-----------+-------------------------+
-| *Default* | ``0``                   |
+| *Default* | ``2``                   |
 +-----------+-------------------------+
 | *Setter*  | set_stretch_mode(value) |
 +-----------+-------------------------+
 | *Getter*  | get_stretch_mode()      |
 +-----------+-------------------------+
 
-Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_property_expand>` is ``true``. Set it to one of the :ref:`StretchMode<enum_TextureButton_StretchMode>` constants. See the constants to learn more.
+Controls the texture's behavior when you resize the node's bounding rectangle. See the :ref:`StretchMode<enum_TextureButton_StretchMode>` constants for available options.
 
 ----
 

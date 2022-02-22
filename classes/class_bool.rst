@@ -80,7 +80,7 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
  .. code-tab:: gdscript
 
     var _can_shoot = true
-    onready var _cool_down = $CoolDownTimer
+    @onready var _cool_down = $CoolDownTimer
     
     func shoot():
         if _can_shoot and Input.is_action_pressed("shoot"):

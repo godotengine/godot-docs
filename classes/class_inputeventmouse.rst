@@ -67,7 +67,9 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`M
 | *Getter*  | get_global_position()      |
 +-----------+----------------------------+
 
-The global mouse position relative to the current :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>` and if the current :ref:`Control<class_Control>` is not under the mouse, moving it will not update this value.
+When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the root :ref:`Viewport<class_Viewport>` using the coordinate system of the root :ref:`Viewport<class_Viewport>`.
+
+When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that the :ref:`Control<class_Control>` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
 ----
 
@@ -83,7 +85,9 @@ The global mouse position relative to the current :ref:`Viewport<class_Viewport>
 | *Getter*  | get_position()      |
 +-----------+---------------------+
 
-The local mouse position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` which is under the mouse. If the current  :ref:`Control<class_Control>` is not under the mouse, moving it will not update this value.
+When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the :ref:`Viewport<class_Viewport>` this :ref:`Node<class_Node>` is in using the coordinate system of this :ref:`Viewport<class_Viewport>`.
+
+When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, returns the mouse's position in the :ref:`Control<class_Control>` using the local coordinate system of the :ref:`Control<class_Control>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

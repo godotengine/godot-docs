@@ -77,8 +77,6 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
-+-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`               |         |
@@ -374,12 +372,6 @@ The texture for the arrow grabber.
 - :ref:`Texture2D<class_Texture2D>` **color_hue**
 
 Custom texture for the hue selection slider on the right.
-
-----
-
-.. _class_ColorPicker_theme_icon_color_sample:
-
-- :ref:`Texture2D<class_Texture2D>` **color_sample**
 
 ----
 

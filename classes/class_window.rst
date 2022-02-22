@@ -271,6 +271,8 @@ Enumerations
 
 .. _class_Window_constant_MODE_FULLSCREEN:
 
+.. _class_Window_constant_MODE_EXCLUSIVE_FULLSCREEN:
+
 enum **Mode**:
 
 - **MODE_WINDOWED** = **0** --- Windowed mode.
@@ -280,6 +282,12 @@ enum **Mode**:
 - **MODE_MAXIMIZED** = **2** --- Maximized window mode.
 
 - **MODE_FULLSCREEN** = **3** --- Fullscreen window mode. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
+
+Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
+
+- **MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive fullscreen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`MODE_FULLSCREEN<class_Window_constant_MODE_FULLSCREEN>`.
+
+Only one window in exclusive fullscreen mode can be visible on a given screen at a time. If multiple windows are in exclusive fullscreen mode for the same screen, the last one being set to this mode takes precedence.
 
 Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
 
@@ -371,7 +379,7 @@ enum **ContentScaleAspect**:
 
 enum **LayoutDirection**:
 
-- **LAYOUT_DIRECTION_INHERITED** = **0** --- Automatic layout direction, determined from the parent control layout direction.
+- **LAYOUT_DIRECTION_INHERITED** = **0** --- Automatic layout direction, determined from the parent window layout direction.
 
 - **LAYOUT_DIRECTION_LOCALE** = **1** --- Automatic layout direction, determined from the current locale.
 

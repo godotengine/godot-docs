@@ -486,9 +486,9 @@ Returns ``true`` if the array contains the given value.
 
 - :ref:`int<class_int>` **hash** **(** **)** |const|
 
-Returns a hashed integer value representing the array and its contents.
+Returns a hashed 32-bit integer value representing the array and its contents.
 
-\ **Note:** Arrays with equal contents can still produce different hashes. Only the exact same arrays will produce the same hashed integer value.
+\ **Note:** ``Array``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the arrays are equal, because different arrays can have identical hash values due to hash collisions.
 
 ----
 

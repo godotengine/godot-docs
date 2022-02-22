@@ -96,6 +96,8 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`operator +<class_int_operator_sum_String>` **(** :ref:`String<class_String>` right **)**             |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator +<class_int_operator_sum_int>` **(** :ref:`int<class_int>` right **)**                      |
@@ -283,7 +285,13 @@ Multiplies two ``int``\ s.
 
 ----
 
-.. _class_int_operator_sum_float:
+.. _class_int_operator_sum_String:
+
+- :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
+
+Adds Unicode character with code ``int`` to the :ref:`String<class_String>`.
+
+----
 
 - :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
 

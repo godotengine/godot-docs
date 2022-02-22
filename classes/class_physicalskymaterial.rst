@@ -25,29 +25,29 @@ As it is based on a daylight model, the sky fades to black as the sunset ends. I
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`dither_strength<class_PhysicalSkyMaterial_property_dither_strength>`           | ``1.0``                        |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                        |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color(1, 1, 1, 1)``          |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`mie_coefficient<class_PhysicalSkyMaterial_property_mie_coefficient>`           | ``0.005``                      |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color(0.63, 0.77, 0.92, 1)`` |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`mie_eccentricity<class_PhysicalSkyMaterial_property_mie_eccentricity>`         | ``0.8``                        |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`night_sky<class_PhysicalSkyMaterial_property_night_sky>`                       |                                |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`rayleigh_coefficient<class_PhysicalSkyMaterial_property_rayleigh_coefficient>` | ``2.0``                        |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color(0.26, 0.41, 0.58, 1)`` |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`sun_disk_scale<class_PhysicalSkyMaterial_property_sun_disk_scale>`             | ``1.0``                        |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`float<class_float>`         | :ref:`turbidity<class_PhysicalSkyMaterial_property_turbidity>`                       | ``10.0``                       |
-+-----------------------------------+--------------------------------------------------------------------------------------+--------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`dither_strength<class_PhysicalSkyMaterial_property_dither_strength>`           | ``1.0``                          |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                          |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color(0.1, 0.07, 0.034, 1)``   |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`mie_coefficient<class_PhysicalSkyMaterial_property_mie_coefficient>`           | ``0.005``                        |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`mie_color<class_PhysicalSkyMaterial_property_mie_color>`                       | ``Color(0.69, 0.729, 0.812, 1)`` |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`mie_eccentricity<class_PhysicalSkyMaterial_property_mie_eccentricity>`         | ``0.8``                          |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`night_sky<class_PhysicalSkyMaterial_property_night_sky>`                       |                                  |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`rayleigh_coefficient<class_PhysicalSkyMaterial_property_rayleigh_coefficient>` | ``2.0``                          |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`rayleigh_color<class_PhysicalSkyMaterial_property_rayleigh_color>`             | ``Color(0.3, 0.405, 0.6, 1)``    |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`sun_disk_scale<class_PhysicalSkyMaterial_property_sun_disk_scale>`             | ``1.0``                          |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`float<class_float>`         | :ref:`turbidity<class_PhysicalSkyMaterial_property_turbidity>`                       | ``10.0``                         |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 
 Property Descriptions
 ---------------------
@@ -88,13 +88,13 @@ Sets the exposure of the sky. Higher exposure values make the entire sky brighte
 
 - :ref:`Color<class_Color>` **ground_color**
 
-+-----------+-------------------------+
-| *Default* | ``Color(1, 1, 1, 1)``   |
-+-----------+-------------------------+
-| *Setter*  | set_ground_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_ground_color()      |
-+-----------+-------------------------+
++-----------+--------------------------------+
+| *Default* | ``Color(0.1, 0.07, 0.034, 1)`` |
++-----------+--------------------------------+
+| *Setter*  | set_ground_color(value)        |
++-----------+--------------------------------+
+| *Getter*  | get_ground_color()             |
++-----------+--------------------------------+
 
 Modulates the :ref:`Color<class_Color>` on the bottom half of the sky to represent the ground.
 
@@ -120,15 +120,15 @@ Controls the strength of mie scattering for the sky. Mie scattering results from
 
 - :ref:`Color<class_Color>` **mie_color**
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.63, 0.77, 0.92, 1)`` |
-+-----------+--------------------------------+
-| *Setter*  | set_mie_color(value)           |
-+-----------+--------------------------------+
-| *Getter*  | get_mie_color()                |
-+-----------+--------------------------------+
++-----------+----------------------------------+
+| *Default* | ``Color(0.69, 0.729, 0.812, 1)`` |
++-----------+----------------------------------+
+| *Setter*  | set_mie_color(value)             |
++-----------+----------------------------------+
+| *Getter*  | get_mie_color()                  |
++-----------+----------------------------------+
 
-Controls the :ref:`Color<class_Color>` of the mie scattering effect. While not physically accurate, this allows for the creation of alien looking planets.
+Controls the :ref:`Color<class_Color>` of the mie scattering effect. While not physically accurate, this allows for the creation of alien-looking planets.
 
 ----
 
@@ -182,15 +182,15 @@ Controls the strength of the Rayleigh scattering. Rayleigh scattering results fr
 
 - :ref:`Color<class_Color>` **rayleigh_color**
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.26, 0.41, 0.58, 1)`` |
-+-----------+--------------------------------+
-| *Setter*  | set_rayleigh_color(value)      |
-+-----------+--------------------------------+
-| *Getter*  | get_rayleigh_color()           |
-+-----------+--------------------------------+
++-----------+-------------------------------+
+| *Default* | ``Color(0.3, 0.405, 0.6, 1)`` |
++-----------+-------------------------------+
+| *Setter*  | set_rayleigh_color(value)     |
++-----------+-------------------------------+
+| *Getter*  | get_rayleigh_color()          |
++-----------+-------------------------------+
 
-Controls the :ref:`Color<class_Color>` of the Rayleigh scattering. While not physically accurate, this allows for the creation of alien looking planets. For example, setting this to a red :ref:`Color<class_Color>` results in a Mars looking atmosphere with a corresponding blue sunset.
+Controls the :ref:`Color<class_Color>` of the Rayleigh scattering. While not physically accurate, this allows for the creation of alien-looking planets. For example, setting this to a red :ref:`Color<class_Color>` results in a Mars-looking atmosphere with a corresponding blue sunset.
 
 ----
 
@@ -222,7 +222,7 @@ Sets the size of the sun disk. Default value is based on Sol's perceived size fr
 | *Getter*  | get_turbidity()      |
 +-----------+----------------------+
 
-Sets the thickness of the atmosphere. High turbidity creates a foggy looking atmosphere, while a low turbidity results in a clearer atmosphere.
+Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atmosphere, while a low turbidity results in a clearer atmosphere.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

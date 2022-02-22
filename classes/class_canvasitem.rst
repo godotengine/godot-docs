@@ -757,7 +757,7 @@ Returns the transform matrix of this item's canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** |const|
 
-Returns the global position of the mouse.
+Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this ``CanvasItem`` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
 ----
 
@@ -781,7 +781,7 @@ Returns the global transform matrix of this item in relation to the canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** |const|
 
-Returns the mouse position relative to this item's position.
+Returns the mouse's position in this ``CanvasItem`` using the local coordinate system of this ``CanvasItem``.
 
 ----
 

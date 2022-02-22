@@ -22,7 +22,7 @@ Properties
 ----------
 
 +---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     | ``0.5`` |
 +---------------------------+---------------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`height<class_CylinderMesh_property_height>`                   | ``2.0`` |
 +---------------------------+---------------------------------------------------------------------+---------+
@@ -30,7 +30,7 @@ Properties
 +---------------------------+---------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`     | :ref:`rings<class_CylinderMesh_property_rings>`                     | ``4``   |
 +---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | ``0.5`` |
 +---------------------------+---------------------------------------------------------------------+---------+
 
 Property Descriptions
@@ -41,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **bottom_radius**
 
 +-----------+--------------------------+
-| *Default* | ``1.0``                  |
+| *Default* | ``0.5``                  |
 +-----------+--------------------------+
 | *Setter*  | set_bottom_radius(value) |
 +-----------+--------------------------+
@@ -105,7 +105,7 @@ Number of edge rings along the height of the cylinder. Changing :ref:`rings<clas
 - :ref:`float<class_float>` **top_radius**
 
 +-----------+-----------------------+
-| *Default* | ``1.0``               |
+| *Default* | ``0.5``               |
 +-----------+-----------------------+
 | *Setter*  | set_top_radius(value) |
 +-----------+-----------------------+

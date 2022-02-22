@@ -94,6 +94,8 @@ Methods
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`ensure_cursor_is_visible<class_Tree_method_ensure_cursor_is_visible>` **(** **)**                                                                                                              |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_button_id_at_position<class_Tree_method_get_button_id_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                             |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_column_at_position<class_Tree_method_get_column_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                                   |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_column_expand_ratio<class_Tree_method_get_column_expand_ratio>` **(** :ref:`int<class_int>` column **)** |const|                                                                           |
@@ -136,7 +138,7 @@ Methods
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`is_column_expanding<class_Tree_method_is_column_expanding>` **(** :ref:`int<class_int>` column **)** |const|                                                                                   |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`scroll_to_item<class_Tree_method_scroll_to_item>` **(** :ref:`TreeItem<class_TreeItem>` item **)**                                                                                             |
+| void                                             | :ref:`scroll_to_item<class_Tree_method_scroll_to_item>` **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`bool<class_bool>` center_on_item=false **)**                                               |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_column_clip_content<class_Tree_method_set_column_clip_content>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**                                                   |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -654,6 +656,14 @@ This will scroll the tree if necessary. In :ref:`SELECT_ROW<class_Tree_constant_
 
 ----
 
+.. _class_Tree_method_get_button_id_at_position:
+
+- :ref:`int<class_int>` **get_button_id_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
+
+Returns the button id at ``position``, or -1 if no button is there.
+
+----
+
 .. _class_Tree_method_get_column_at_position:
 
 - :ref:`int<class_int>` **get_column_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
@@ -857,7 +867,7 @@ To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<
 
 .. _class_Tree_method_scroll_to_item:
 
-- void **scroll_to_item** **(** :ref:`TreeItem<class_TreeItem>` item **)**
+- void **scroll_to_item** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`bool<class_bool>` center_on_item=false **)**
 
 Causes the ``Tree`` to jump to the specified :ref:`TreeItem<class_TreeItem>`.
 

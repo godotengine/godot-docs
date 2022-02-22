@@ -136,6 +136,8 @@ Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s
 
 \ **Note:** :ref:`bake<class_VoxelGI_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a ``VoxelGI`` node generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_VoxelGI_property_subdiv>` can speed up baking.
 
+\ **Note:** :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s and :ref:`Light3D<class_Light3D>`\ s must be fully ready before :ref:`bake<class_VoxelGI_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked ``VoxelGI``, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_VoxelGI_method_bake>` directly.
+
 ----
 
 .. _class_VoxelGI_method_debug_bake:

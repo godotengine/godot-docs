@@ -65,7 +65,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`get_joy_vibration_strength<class_Input_method_get_joy_vibration_strength>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                     | :ref:`get_last_mouse_velocity<class_Input_method_get_last_mouse_velocity>` **(** **)** |const|                                                                                                                                                                                                               |
+| :ref:`Vector2<class_Vector2>`                     | :ref:`get_last_mouse_velocity<class_Input_method_get_last_mouse_velocity>` **(** **)**                                                                                                                                                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                     | :ref:`get_magnetometer<class_Input_method_get_magnetometer>` **(** **)** |const|                                                                                                                                                                                                                             |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -397,9 +397,9 @@ Returns the strength of the joypad vibration: x is the strength of the weak moto
 
 .. _class_Input_method_get_last_mouse_velocity:
 
-- :ref:`Vector2<class_Vector2>` **get_last_mouse_velocity** **(** **)** |const|
+- :ref:`Vector2<class_Vector2>` **get_last_mouse_velocity** **(** **)**
 
-Returns the mouse velocity for the last time the cursor was moved, and this until the next frame where the mouse moves. This means that even if the mouse is not moving, this function will still return the value of the last motion.
+Returns the last mouse velocity. To provide a precise and jitter-free velocity, mouse velocity is only calculated every 0.1s. Therefore, mouse velocity will lag mouse movements.
 
 ----
 
@@ -688,7 +688,9 @@ Vibrate Android and iOS devices.
 
 - void **warp_mouse_position** **(** :ref:`Vector2<class_Vector2>` to **)**
 
-Sets the mouse position to the specified vector.
+Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the game window.
+
+Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to ``MOUSE_MODE_CONFINED`` or ``MOUSE_MODE_CONFINED_HIDDEN``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -18,15 +18,22 @@ Description
 
 This node allows you to create a torus for use with the CSG system.
 
+\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+
+Tutorials
+---------
+
+- :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
+
 Properties
 ----------
 
 +---------------------------------+-------------------------------------------------------------+----------+
-| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus3D_property_inner_radius>` | ``2.0``  |
+| :ref:`float<class_float>`       | :ref:`inner_radius<class_CSGTorus3D_property_inner_radius>` | ``0.5``  |
 +---------------------------------+-------------------------------------------------------------+----------+
 | :ref:`Material<class_Material>` | :ref:`material<class_CSGTorus3D_property_material>`         |          |
 +---------------------------------+-------------------------------------------------------------+----------+
-| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus3D_property_outer_radius>` | ``3.0``  |
+| :ref:`float<class_float>`       | :ref:`outer_radius<class_CSGTorus3D_property_outer_radius>` | ``1.0``  |
 +---------------------------------+-------------------------------------------------------------+----------+
 | :ref:`int<class_int>`           | :ref:`ring_sides<class_CSGTorus3D_property_ring_sides>`     | ``6``    |
 +---------------------------------+-------------------------------------------------------------+----------+
@@ -43,7 +50,7 @@ Property Descriptions
 - :ref:`float<class_float>` **inner_radius**
 
 +-----------+-------------------------+
-| *Default* | ``2.0``                 |
+| *Default* | ``0.5``                 |
 +-----------+-------------------------+
 | *Setter*  | set_inner_radius(value) |
 +-----------+-------------------------+
@@ -73,7 +80,7 @@ The material used to render the torus.
 - :ref:`float<class_float>` **outer_radius**
 
 +-----------+-------------------------+
-| *Default* | ``3.0``                 |
+| *Default* | ``1.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_outer_radius(value) |
 +-----------+-------------------------+

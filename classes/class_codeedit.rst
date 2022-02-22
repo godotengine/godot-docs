@@ -216,7 +216,7 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`completion_font_color<class_CodeEdit_theme_color_completion_font_color>`             | ``Color(0.67, 0.67, 0.67, 1)``      |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`completion_scroll_color<class_CodeEdit_theme_color_completion_scroll_color>`         | ``Color(1, 1, 1, 1)``               |
+| :ref:`Color<class_Color>`         | :ref:`completion_scroll_color<class_CodeEdit_theme_color_completion_scroll_color>`         | ``Color(1, 1, 1, 0.29)``            |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`completion_selected_color<class_CodeEdit_theme_color_completion_selected_color>`     | ``Color(0.26, 0.26, 0.27, 1)``      |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
@@ -250,7 +250,7 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`completion_max_width<class_CodeEdit_theme_constant_completion_max_width>`            | ``50``                              |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`completion_scroll_width<class_CodeEdit_theme_constant_completion_scroll_width>`      | ``3``                               |
+| :ref:`int<class_int>`             | :ref:`completion_scroll_width<class_CodeEdit_theme_constant_completion_scroll_width>`      | ``6``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`line_spacing<class_CodeEdit_theme_constant_line_spacing>`                            | ``4``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1314,9 +1314,9 @@ Font :ref:`Color<class_Color>` for the code completion popup.
 
 - :ref:`Color<class_Color>` **completion_scroll_color**
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
++-----------+--------------------------+
+| *Default* | ``Color(1, 1, 1, 0.29)`` |
++-----------+--------------------------+
 
 :ref:`Color<class_Color>` of the scrollbar in the code completion popup.
 
@@ -1519,7 +1519,7 @@ Max width of options in the code completion popup. Options longer then this will
 - :ref:`int<class_int>` **completion_scroll_width**
 
 +-----------+-------+
-| *Default* | ``3`` |
+| *Default* | ``6`` |
 +-----------+-------+
 
 Width of the scrollbar in the code completion popup.

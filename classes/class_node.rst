@@ -11,7 +11,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
+**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 Base class for all *scene* objects.
 
@@ -104,7 +104,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                           | :ref:`duplicate<class_Node_method_duplicate>` **(** :ref:`int<class_int>` flags=15 **)** |const|                                                                                                                                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                           | :ref:`find_node<class_Node_method_find_node>` **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                                                                                                                             |
+| :ref:`Node[]<class_Node>`                         | :ref:`find_nodes<class_Node_method_find_nodes>` **(** :ref:`String<class_String>` mask, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                                                                                      |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                           | :ref:`find_parent<class_Node_method_find_parent>` **(** :ref:`String<class_String>` mask **)** |const|                                                                                                                                                                                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -233,6 +233,22 @@ Methods
 
 Signals
 -------
+
+.. _class_Node_signal_child_entered_tree:
+
+- **child_entered_tree** **(** :ref:`Node<class_Node>` node **)**
+
+Emitted when a child node enters the scene tree, either because it entered on its own or because this node entered with it.
+
+----
+
+.. _class_Node_signal_child_exited_tree:
+
+- **child_exited_tree** **(** :ref:`Node<class_Node>` node **)**
+
+Emitted when a child node exits the scene tree, either because it exited on its own or because this node exited.
+
+----
 
 .. _class_Node_signal_ready:
 
@@ -400,6 +416,12 @@ Constants
 
 .. _class_Node_constant_NOTIFICATION_WM_SIZE_CHANGED:
 
+.. _class_Node_constant_NOTIFICATION_WM_DPI_CHANGE:
+
+.. _class_Node_constant_NOTIFICATION_VP_MOUSE_ENTER:
+
+.. _class_Node_constant_NOTIFICATION_VP_MOUSE_EXIT:
+
 .. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
 
 .. _class_Node_constant_NOTIFICATION_TRANSLATION_CHANGED:
@@ -485,6 +507,12 @@ Implemented on desktop platforms.
 Specific to the Android platform.
 
 - **NOTIFICATION_WM_SIZE_CHANGED** = **1008**
+
+- **NOTIFICATION_WM_DPI_CHANGE** = **1009**
+
+- **NOTIFICATION_VP_MOUSE_ENTER** = **1010** --- Notification received when the mouse enters the viewport.
+
+- **NOTIFICATION_VP_MOUSE_EXIT** = **1011** --- Notification received when the mouse leaves the viewport.
 
 - **NOTIFICATION_OS_MEMORY_WARNING** = **2009** --- Notification received from the OS when the application is exceeding its allocated memory.
 
@@ -688,7 +716,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, :ref:`_unhandled_input<class_Node_method__unhandled_input>` and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit as they allow the GUI to intercept the events first.
 
-\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
 ----
 
@@ -702,7 +730,7 @@ It is only called if physics processing is enabled, which is done automatically 
 
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
-\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
 ----
 
@@ -716,7 +744,7 @@ It is only called if processing is enabled, which is done automatically if this 
 
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
-\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
 ----
 
@@ -726,11 +754,11 @@ Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_P
 
 Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their :ref:`_ready<class_Node_method__ready>` callbacks get triggered first, and the parent node will receive the ready notification afterwards.
 
-Corresponds to the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification in :ref:`Object._notification<class_Object_method__notification>`. See also the ``onready`` keyword for variables.
+Corresponds to the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` notification in :ref:`Object._notification<class_Object_method__notification>`. See also the ``@onready`` annotation for variables.
 
 Usually used for initialization. For even earlier initialization, :ref:`Object._init<class_Object_method__init>` may be used. See also :ref:`_enter_tree<class_Node_method__enter_tree>`.
 
-\ **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding again, ``_ready`` will not be called for the second time. This can be bypassed with requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
+\ **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding it again, ``_ready`` will not be called a second time. This can be bypassed by requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
 
 ----
 
@@ -738,7 +766,7 @@ Usually used for initialization. For even earlier initialization, :ref:`Object._
 
 - void **_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when an :ref:`InputEvent<class_InputEvent>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI. The input event propagates up through the node tree until a node consumes it.
+Called when an :ref:`InputEvent<class_InputEvent>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
 
 It is only called if unhandled input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_input<class_Node_method_set_process_unhandled_input>`.
 
@@ -746,7 +774,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
-\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
 ----
 
@@ -754,7 +782,7 @@ For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhan
 
 - void **_unhandled_key_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShortcut<class_InputEventShortcut>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI. The input event propagates up through the node tree until a node consumes it.
+Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShortcut<class_InputEventShortcut>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
 
 It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>`.
 
@@ -762,7 +790,7 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
-\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
 ----
 
@@ -863,17 +891,21 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 ----
 
-.. _class_Node_method_find_node:
+.. _class_Node_method_find_nodes:
 
-- :ref:`Node<class_Node>` **find_node** **(** :ref:`String<class_String>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
+- :ref:`Node[]<class_Node>` **find_nodes** **(** :ref:`String<class_String>` mask, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``). Returns ``null`` if no matching ``Node`` is found.
+Finds descendants of this node whose, name matches ``mask`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
 
-\ **Note:** It does not match against the full path, just against individual node names.
+\ ``mask`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+
+\ ``type`` will check equality or inheritance. It is case-sensitive, ``"Object"`` will match a node whose type is ``"Node"`` but not the other way around.
 
 If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
-\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_node<class_Node_method_find_node>` too often, consider caching the node reference into a variable.
+Returns an empty array, if no matching nodes are found.
+
+\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get references to other nodes. To avoid using :ref:`find_nodes<class_Node_method_find_nodes>` too often, consider caching the node references into variables.
 
 ----
 

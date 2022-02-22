@@ -39,6 +39,19 @@ Methods
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScript_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                                   |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                           |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`pwa_update<class_JavaScript_method_pwa_update>` **(** **)**                                                                                                                                                               |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_JavaScript_signal_pwa_update_available:
+
+- **pwa_update_available** **(** **)**
+
+Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See :ref:`pwa_update<class_JavaScript_method_pwa_update>` to force the update to take place immediately.
 
 Method Descriptions
 -------------------
@@ -88,6 +101,28 @@ If ``use_global_execution_context`` is ``true``, the code will be evaluated in t
 - :ref:`JavaScriptObject<class_JavaScriptObject>` **get_interface** **(** :ref:`String<class_String>` interface **)**
 
 Returns an interface to a JavaScript object that can be used by scripts. The ``interface`` must be a valid property of the JavaScript ``window``. The callback must accept a single :ref:`Array<class_Array>` argument, which will contain the JavaScript ``arguments``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+----
+
+.. _class_JavaScript_method_pwa_needs_update:
+
+- :ref:`bool<class_bool>` **pwa_needs_update** **(** **)** |const|
+
+Returns ``true`` if a new version of the progressive web app is waiting to be activated.
+
+\ **Note:** Only relevant when exported as a Progressive Web App.
+
+----
+
+.. _class_JavaScript_method_pwa_update:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **pwa_update** **(** **)**
+
+Performs the live update of the progressive web app. Forcing the new version to be installed and the page to be reloaded.
+
+\ **Note:** Your application will be **reloaded in all browser tabs**.
+
+\ **Note:** Only relevant when exported as a Progressive Web App and :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` returns ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

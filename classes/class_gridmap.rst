@@ -88,6 +88,8 @@ Methods
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`       | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                         |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`       | :ref:`get_used_cells_by_item<class_GridMap_method_get_used_cells_by_item>` **(** :ref:`int<class_int>` item **)** |const|                                                              |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**       |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`   | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|                                                                |
@@ -392,6 +394,14 @@ Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_M
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** |const|
 
 Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
+
+----
+
+.. _class_GridMap_method_get_used_cells_by_item:
+
+- :ref:`Array<class_Array>` **get_used_cells_by_item** **(** :ref:`int<class_int>` item **)** |const|
+
+Returns an array of all cells with the given item index specified in ``item``.
 
 ----
 

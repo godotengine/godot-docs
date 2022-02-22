@@ -31,7 +31,7 @@ Properties
 ----------
 
 +-------------------------------+---------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxShape3D_property_size>` | ``Vector3(2, 2, 2)`` |
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxShape3D_property_size>` | ``Vector3(1, 1, 1)`` |
 +-------------------------------+---------------------------------------------+----------------------+
 
 Property Descriptions
@@ -42,7 +42,7 @@ Property Descriptions
 - :ref:`Vector3<class_Vector3>` **size**
 
 +-----------+----------------------+
-| *Default* | ``Vector3(2, 2, 2)`` |
+| *Default* | ``Vector3(1, 1, 1)`` |
 +-----------+----------------------+
 | *Setter*  | set_size(value)      |
 +-----------+----------------------+

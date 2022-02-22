@@ -481,7 +481,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** |const|
 
-If ``true``, the given area overlaps the Area2D.
+Returns ``true`` if the given ``Area2D`` intersects or overlaps this ``Area2D``, ``false`` otherwise.
 
 \ **Note:** The result of this test is not immediate after moving objects. For performance, the list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
@@ -491,11 +491,11 @@ If ``true``, the given area overlaps the Area2D.
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** |const|
 
-If ``true``, the given physics body overlaps the Area2D.
+Returns ``true`` if the given physics body intersects or overlaps this ``Area2D``, ``false`` otherwise.
 
 \ **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance (while TileMaps are not physics bodies themselves, they register their tiles with collision shapes as a virtual physics body).
+The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>` instance. While TileMaps are not physics bodies themselves, they register their tiles with collision shapes as a virtual physics body.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

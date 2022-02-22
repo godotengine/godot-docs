@@ -32,11 +32,15 @@ Properties
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_method__get_allowed_size_flags_horizontal>` **(** **)** |virtual| |const|                 |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_method__get_allowed_size_flags_vertical>` **(** **)** |virtual| |const|                     |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -68,6 +72,26 @@ Constants
 
 Method Descriptions
 -------------------
+
+.. _class_Container_method__get_allowed_size_flags_horizontal:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+
+\ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+----
+
+.. _class_Container_method__get_allowed_size_flags_vertical:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+
+\ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+----
 
 .. _class_Container_method_fit_child_in_rect:
 

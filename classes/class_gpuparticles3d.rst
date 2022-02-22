@@ -146,7 +146,7 @@ enum **EmitFlags**:
 
 - **EMIT_FLAG_COLOR** = **8** --- Particle starts with specified color.
 
-- **EMIT_FLAG_CUSTOM** = **16** --- Particle starts with specificed ``CUSTOM`` data.
+- **EMIT_FLAG_CUSTOM** = **16** --- Particle starts with specified ``CUSTOM`` data.
 
 ----
 

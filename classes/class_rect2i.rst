@@ -219,7 +219,7 @@ Returns a copy of this ``Rect2i`` expanded so that the borders align with the gi
 
 - :ref:`int<class_int>` **get_area** **(** **)** |const|
 
-Returns the area of the ``Rect2i``.
+Returns the area of the ``Rect2i``. See also :ref:`has_no_area<class_Rect2i_method_has_no_area>`.
 
 ----
 
@@ -261,7 +261,9 @@ Returns a copy of the ``Rect2i`` grown by the specified ``amount`` on the specif
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)** |const|
 
-Returns ``true`` if the ``Rect2i`` is flat or empty.
+Returns ``true`` if the ``Rect2i`` is flat or empty, ``false`` otherwise. See also :ref:`get_area<class_Rect2i_method_get_area>`.
+
+\ **Note:** If the ``Rect2i`` has a negative size and is not flat or empty, :ref:`has_no_area<class_Rect2i_method_has_no_area>` will return ``true``.
 
 ----
 

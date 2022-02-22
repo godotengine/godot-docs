@@ -1117,11 +1117,61 @@ This is useful when determining light or dark color. Colors with a luminance sma
 
 - :ref:`Color<class_Color>` **html** **(** :ref:`String<class_String>` rgba **)** |static|
 
+Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is not case sensitive, and may be prefixed with a '#' character.
+
+\ ``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied.
+
+If ``rgba`` is invalid a Color(0.0, 0.0, 0.0, 1.0) is returned.
+
+\ **Note:** This method is not implemented in C#, but the same functionality is provided in the class constructor.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var green = Color.html("#00FF00FF") # set green to Color(0.0, 1.0, 0.0, 1.0)
+    var blue = Color.html("#0000FF") # set blue to Color(0.0, 0.0, 1.0, 1.0)
+
+ .. code-tab:: csharp
+
+    var green = new Color("#00FF00FF"); // set green to Color(0.0, 1.0, 0.0, 1.0)
+    var blue = new Color("#0000FF"); // set blue to Color(0.0, 0.0, 1.0, 1.0)
+
+
+
 ----
 
 .. _class_Color_method_html_is_valid:
 
 - :ref:`bool<class_bool>` **html_is_valid** **(** :ref:`String<class_String>` color **)** |static|
+
+Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. ``color`` is not case sensitive, and may be prefixed with a '#' character.
+
+For a string to be valid it must be three-digit or six-digit hexadecimal, and may contain an alpha channel value.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var result = Color.html_is_valid("#55aaFF") # result is true
+    result = Color.html_is_valid("#55AAFF20") # result is true
+    result = Color.html_is_valid("55AAFF") # result is true
+    result = Color.html_is_valid("#F2C") # result is true
+    result = Color.html_is_valid("#AABBC) # result is false
+    result = Color.html_is_valid("#55aaFF5") # result is false
+
+ .. code-tab:: csharp
+
+    var result = Color.HtmlIsValid("#55AAFF"); // result is true
+    result = Color.HtmlIsValid("#55AAFF20"); // result is true
+    result = Color.HtmlIsValid("55AAFF); // result is true
+    result = Color.HtmlIsValid("#F2C"); // result is true
+    result = Color.HtmlIsValid("#AABBC"); // result is false
+    result = Color.HtmlIsValid("#55aaFF5"); // result is false
+
+
 
 ----
 

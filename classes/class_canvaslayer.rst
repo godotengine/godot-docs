@@ -49,6 +49,8 @@ Properties
 +---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CanvasLayer_property_transform>`                           | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
 +---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`visible<class_CanvasLayer_property_visible>`                               | ``true``                          |
++---------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
 
 Methods
 -------
@@ -56,6 +58,19 @@ Methods
 +-----------------------+----------------------------------------------------------------------------+
 | :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const| |
 +-----------------------+----------------------------------------------------------------------------+
+| void                  | :ref:`hide<class_CanvasLayer_method_hide>` **(** **)**                     |
++-----------------------+----------------------------------------------------------------------------+
+| void                  | :ref:`show<class_CanvasLayer_method_show>` **(** **)**                     |
++-----------------------+----------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_CanvasLayer_signal_visibility_changed:
+
+- **visibility_changed** **(** **)**
+
+Emitted when visibility of the layer is changed. See :ref:`visible<class_CanvasLayer_property_visible>`.
 
 Property Descriptions
 ---------------------
@@ -184,6 +199,24 @@ The layer's scale.
 
 The layer's transform.
 
+----
+
+.. _class_CanvasLayer_property_visible:
+
+- :ref:`bool<class_bool>` **visible**
+
++-----------+--------------------+
+| *Default* | ``true``           |
++-----------+--------------------+
+| *Setter*  | set_visible(value) |
++-----------+--------------------+
+| *Getter*  | is_visible()       |
++-----------+--------------------+
+
+If ``false``, any :ref:`CanvasItem<class_CanvasItem>` under this ``CanvasLayer`` will be hidden.
+
+Unlike :ref:`CanvasItem.visible<class_CanvasItem_property_visible>`, visibility of a ``CanvasLayer`` isn't propagated to underlying layers.
+
 Method Descriptions
 -------------------
 
@@ -192,6 +225,22 @@ Method Descriptions
 - :ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
 
 Returns the RID of the canvas used by this layer.
+
+----
+
+.. _class_CanvasLayer_method_hide:
+
+- void **hide** **(** **)**
+
+Hides any :ref:`CanvasItem<class_CanvasItem>` under this ``CanvasLayer``. This is equivalent to setting :ref:`visible<class_CanvasLayer_property_visible>` to ``false``.
+
+----
+
+.. _class_CanvasLayer_method_show:
+
+- void **show** **(** **)**
+
+Shows any :ref:`CanvasItem<class_CanvasItem>` under this ``CanvasLayer``. This is equivalent to setting :ref:`visible<class_CanvasLayer_property_visible>` to ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -551,8 +551,6 @@ Returns ``true`` if the body collided only with a wall on the last call of :ref:
 
 Moves the body based on :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>`. If the body collides with another, it will slide along the other body (by default only on floor) rather than stop immediately. If the other body is a ``CharacterBody2D`` or :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 
-This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
-
 Modifies :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody2D_method_get_last_slide_collision>`, for detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody2D_method_get_slide_collision>`.
 
 When the body touches a moving platform, the platform's velocity is automatically added to the body motion. If a collision occurs due to the platform's motion, it will always be first in the slide collisions.

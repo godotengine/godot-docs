@@ -137,6 +137,8 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                                                   | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/int_assigned_to_enum<class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum>`                                                                   | ``true``                                                                                        |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                           | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                                                   | ``true``                                                                                        |
@@ -266,6 +268,12 @@ Properties
 | :ref:`String<class_String>`                       | :ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`                                                                                                                           | ``""``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`                                                                                                                 | ``""``                                                                                          |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`gui/theme/default_font_antialiased<class_ProjectSettings_property_gui/theme/default_font_antialiased>`                                                                                       | ``true``                                                                                        |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`gui/theme/default_font_hinting<class_ProjectSettings_property_gui/theme/default_font_hinting>`                                                                                               | ``1``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`gui/theme/default_font_subpixel_positioning<class_ProjectSettings_property_gui/theme/default_font_subpixel_positioning>`                                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`gui/theme/default_theme_scale<class_ProjectSettings_property_gui/theme/default_theme_scale>`                                                                                                 | ``1.0``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1025,13 +1033,13 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>`                                                   | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/sdfgi/frames_to_converge<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>`                                               | ``4``                                                                                           |
+| :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/sdfgi/frames_to_converge<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>`                                               | ``5``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`                                     | ``2``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/sdfgi/probe_ray_count<class_ProjectSettings_property_rendering/global_illumination/sdfgi/probe_ray_count>`                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/voxel_gi/quality<class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality>`                                                               | ``1``                                                                                           |
+| :ref:`int<class_int>`                             | :ref:`rendering/global_illumination/voxel_gi/quality<class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality>`                                                               | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_rays_per_pass<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`                                         | ``32``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1085,9 +1093,9 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`                               | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>`                                                         | ``1024``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>`                                                         | ``32``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples.mobile<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples.mobile>`                                           | ``128``                                                                                         |
+| :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples.mobile<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples.mobile>`                                           | ``16``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`                                               | ``8``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1131,7 +1139,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/size.mobile<class_ProjectSettings_property_rendering/shadows/directional_shadow/size.mobile>`                                                           | ``2048``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality>`                                           | ``3``                                                                                           |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality>`                                           | ``2``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_quality.mobile<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality.mobile>`                             | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1149,7 +1157,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/size.mobile<class_ProjectSettings_property_rendering/shadows/shadow_atlas/size.mobile>`                                                                       | ``2048``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadows/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality>`                                                                 | ``3``                                                                                           |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadows/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality>`                                                                 | ``2``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadows/soft_shadow_quality.mobile<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality.mobile>`                                                   | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1845,6 +1853,16 @@ If ``true``, enables warnings when using a function as if it was a property.
 +-----------+----------+
 
 If ``true``, enables warnings when a ternary operator may emit values with incompatible types.
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/int_assigned_to_enum**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
 
 ----
 
@@ -2641,6 +2659,42 @@ Path to a custom :ref:`Theme<class_Theme>` resource file to use for the project 
 +-----------+--------+
 
 Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI elements of the project.
+
+----
+
+.. _class_ProjectSettings_property_gui/theme/default_font_antialiased:
+
+- :ref:`bool<class_bool>` **gui/theme/default_font_antialiased**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If set to ``true``, default font uses 8-bit anitialiased glyph rendering.  See :ref:`FontData.antialiased<class_FontData_property_antialiased>`.
+
+----
+
+.. _class_ProjectSettings_property_gui/theme/default_font_hinting:
+
+- :ref:`int<class_int>` **gui/theme/default_font_hinting**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Default font hinting mode. See :ref:`FontData.hinting<class_FontData_property_hinting>`.
+
+----
+
+.. _class_ProjectSettings_property_gui/theme/default_font_subpixel_positioning:
+
+- :ref:`int<class_int>` **gui/theme/default_font_subpixel_positioning**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Default font glyph sub-pixel positioning mode. See :ref:`FontData.subpixel_positioning<class_FontData_property_subpixel_positioning>`.
 
 ----
 
@@ -6883,7 +6937,7 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 - :ref:`int<class_int>` **rendering/global_illumination/sdfgi/frames_to_converge**
 
 +-----------+-------+
-| *Default* | ``4`` |
+| *Default* | ``5`` |
 +-----------+-------+
 
 ----
@@ -6913,7 +6967,7 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 - :ref:`int<class_int>` **rendering/global_illumination/voxel_gi/quality**
 
 +-----------+-------+
-| *Default* | ``1`` |
+| *Default* | ``0`` |
 +-----------+-------+
 
 ----
@@ -7122,6 +7176,8 @@ The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionPro
 | *Default* | ``2`` |
 +-----------+-------+
 
+The `BVH <https://en.wikipedia.org/wiki/Bounding_volume_hierarchy>`__ quality to use when rendering the occlusion culling buffer. Higher values will result in more accurate occlusion culling, at the cost of higher CPU usage.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/occlusion_culling/occlusion_rays_per_thread:
@@ -7132,6 +7188,8 @@ The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionPro
 | *Default* | ``512`` |
 +-----------+---------+
 
+Higher values will result in more accurate occlusion culling, at the cost of higher CPU usage. The occlusion culling buffer's pixel count is roughly equal to ``occlusion_rays_per_thread * number_of_logical_cpu_cores``, so it will depend on the system's CPU. Therefore, CPUs with fewer cores will use a lower resolution to attempt keeping performance costs even across devices.
+
 ----
 
 .. _class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling:
@@ -7141,6 +7199,10 @@ The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionPro
 +-----------+-----------+
 | *Default* | ``false`` |
 +-----------+-----------+
+
+If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D in the root viewport. In custom viewports, :ref:`Viewport.use_occlusion_culling<class_Viewport_property_use_occlusion_culling>` must be set to ``true`` instead.
+
+\ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it. Large open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
 
 ----
 
@@ -7196,9 +7258,9 @@ Use a higher quality variant of the fast filtering algorithm. Significantly slow
 
 - :ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples**
 
-+-----------+----------+
-| *Default* | ``1024`` |
-+-----------+----------+
++-----------+--------+
+| *Default* | ``32`` |
++-----------+--------+
 
 Sets the number of samples to take when using importance sampling for :ref:`Sky<class_Sky>`\ s and :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. A higher value will result in smoother, higher quality reflections, but increases time to calculate radiance maps. In general, fewer samples are needed for simpler, low dynamic range environments while more samples are needed for HDR environments and environments with a high level of detail.
 
@@ -7208,9 +7270,9 @@ Sets the number of samples to take when using importance sampling for :ref:`Sky<
 
 - :ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples.mobile**
 
-+-----------+---------+
-| *Default* | ``128`` |
-+-----------+---------+
++-----------+--------+
+| *Default* | ``16`` |
++-----------+--------+
 
 Lower-end override for :ref:`rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>` on mobile devices, due to performance concerns or driver support.
 
@@ -7461,7 +7523,7 @@ Lower-end override for :ref:`rendering/shadows/directional_shadow/size<class_Pro
 - :ref:`int<class_int>` **rendering/shadows/directional_shadow/soft_shadow_quality**
 
 +-----------+-------+
-| *Default* | ``3`` |
+| *Default* | ``2`` |
 +-----------+-------+
 
 Quality setting for shadows cast by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.
@@ -7571,7 +7633,7 @@ Lower-end override for :ref:`rendering/shadows/shadow_atlas/size<class_ProjectSe
 - :ref:`int<class_int>` **rendering/shadows/shadows/soft_shadow_quality**
 
 +-----------+-------+
-| *Default* | ``3`` |
+| *Default* | ``2`` |
 +-----------+-------+
 
 Quality setting for shadows cast by :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.

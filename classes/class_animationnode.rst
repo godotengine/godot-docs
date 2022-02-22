@@ -82,7 +82,7 @@ Signals
 
 - **removed_from_graph** **(** **)**
 
-Called when the node was removed from the graph.
+Emitted when the node was removed from the graph.
 
 ----
 
@@ -177,7 +177,7 @@ Gets the property information for parameter. Parameters are custom local memory 
 
 - :ref:`bool<class_bool>` **_has_filter** **(** **)** |virtual| |const|
 
-Returns ``true`` whether you want the blend tree editor to display filter editing on this node.
+Returns whether you want the blend tree editor to display filter editing on this node.
 
 ----
 
@@ -253,7 +253,7 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 - :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
-Returns ``true`` whether a given path is filtered.
+Returns whether the given path is filtered.
 
 ----
 
@@ -277,7 +277,7 @@ Adds or removes a path for the filter.
 
 - void **set_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
-Sets a custom parameter. These are used as local storage, because resources can be reused across the tree or scenes.
+Sets a custom parameter. These are used as local memory, because resources can be reused across the tree or scenes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -13,12 +13,12 @@ Popup
 
 **Inherited By:** :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`
 
-Base container control for popups and dialogs.
+Popup is a base window container for popup-like subwindows.
 
 Description
 -----------
 
-Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior.
+Popup is a base window container for popup-like subwindows. It's a modal by default (see :ref:`close_on_parent_focus<class_Popup_property_close_on_parent_focus>`) and has helpers for custom popup behavior.
 
 Properties
 ----------
@@ -44,7 +44,7 @@ Signals
 
 - **popup_hide** **(** **)**
 
-Emitted when a popup is hidden.
+Emitted when the popup is hidden.
 
 Property Descriptions
 ---------------------
@@ -61,7 +61,7 @@ Property Descriptions
 | *Getter*  | get_close_on_parent_focus()      |
 +-----------+----------------------------------+
 
-If ``true``, the ``Popup`` will close when its parent is focused.
+If true, the ``Popup`` will close when its parent :ref:`Window<class_Window>` is focused.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

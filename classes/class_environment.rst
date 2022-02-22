@@ -137,17 +137,17 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`ReflectionSource<enum_Environment_ReflectionSource>` | :ref:`reflected_light_source<class_Environment_property_reflected_light_source>`                                             | ``0``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>`                                               | ``0.0``                     |
+| :ref:`float<class_float>`                                  | :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>`                                               | ``0.5``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_cascade0_distance<class_Environment_property_sdfgi_cascade0_distance>`                                           | ``12.8``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`                                      | :ref:`sdfgi_cascades<class_Environment_property_sdfgi_cascades>`                                                             | ``6``                       |
+| :ref:`int<class_int>`                                      | :ref:`sdfgi_cascades<class_Environment_property_sdfgi_cascades>`                                                             | ``4``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`sdfgi_enabled<class_Environment_property_sdfgi_enabled>`                                                               | ``false``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_energy<class_Environment_property_sdfgi_energy>`                                                                 | ``1.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>`                                                     | ``819.2``                   |
+| :ref:`float<class_float>`                                  | :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>`                                                     | ``204.8``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_min_cell_size<class_Environment_property_sdfgi_min_cell_size>`                                                   | ``0.2``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -155,11 +155,11 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_probe_bias<class_Environment_property_sdfgi_probe_bias>`                                                         | ``1.1``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`sdfgi_read_sky_light<class_Environment_property_sdfgi_read_sky_light>`                                                 | ``false``                   |
+| :ref:`bool<class_bool>`                                    | :ref:`sdfgi_read_sky_light<class_Environment_property_sdfgi_read_sky_light>`                                                 | ``true``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`sdfgi_use_occlusion<class_Environment_property_sdfgi_use_occlusion>`                                                   | ``false``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>`           | :ref:`sdfgi_y_scale<class_Environment_property_sdfgi_y_scale>`                                                               | ``0``                       |
+| :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>`           | :ref:`sdfgi_y_scale<class_Environment_property_sdfgi_y_scale>`                                                               | ``1``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`Sky<class_Sky>`                                      | :ref:`sky<class_Environment_property_sky>`                                                                                   |                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -372,19 +372,19 @@ enum **GlowBlendMode**:
 
 .. _enum_Environment_SDFGIYScale:
 
-.. _class_Environment_constant_SDFGI_Y_SCALE_DISABLED:
+.. _class_Environment_constant_SDFGI_Y_SCALE_50_PERCENT:
 
 .. _class_Environment_constant_SDFGI_Y_SCALE_75_PERCENT:
 
-.. _class_Environment_constant_SDFGI_Y_SCALE_50_PERCENT:
+.. _class_Environment_constant_SDFGI_Y_SCALE_100_PERCENT:
 
 enum **SDFGIYScale**:
 
-- **SDFGI_Y_SCALE_DISABLED** = **0**
+- **SDFGI_Y_SCALE_50_PERCENT** = **0**
 
 - **SDFGI_Y_SCALE_75_PERCENT** = **1**
 
-- **SDFGI_Y_SCALE_50_PERCENT** = **2**
+- **SDFGI_Y_SCALE_100_PERCENT** = **2**
 
 Property Descriptions
 ---------------------
@@ -511,7 +511,9 @@ The ambient light's energy. The higher the value, the stronger the light.
 | *Getter*  | get_ambient_light_sky_contribution()      |
 +-----------+-------------------------------------------+
 
-Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+Defines the amount of light that the sky brings on the scene. A value of ``0.0`` means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of ``1.0`` means that *all* the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+
+\ **Note:** :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is internally clamped between ``0.0`` and ``1.0`` (inclusive).
 
 ----
 
@@ -1132,7 +1134,7 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 - :ref:`float<class_float>` **sdfgi_bounce_feedback**
 
 +-----------+----------------------------------+
-| *Default* | ``0.0``                          |
+| *Default* | ``0.5``                          |
 +-----------+----------------------------------+
 | *Setter*  | set_sdfgi_bounce_feedback(value) |
 +-----------+----------------------------------+
@@ -1160,7 +1162,7 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 - :ref:`int<class_int>` **sdfgi_cascades**
 
 +-----------+---------------------------+
-| *Default* | ``6``                     |
+| *Default* | ``4``                     |
 +-----------+---------------------------+
 | *Setter*  | set_sdfgi_cascades(value) |
 +-----------+---------------------------+
@@ -1210,7 +1212,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`float<class_float>` **sdfgi_max_distance**
 
 +-----------+-------------------------------+
-| *Default* | ``819.2``                     |
+| *Default* | ``204.8``                     |
 +-----------+-------------------------------+
 | *Setter*  | set_sdfgi_max_distance(value) |
 +-----------+-------------------------------+
@@ -1266,7 +1268,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`bool<class_bool>` **sdfgi_read_sky_light**
 
 +-----------+---------------------------------+
-| *Default* | ``false``                       |
+| *Default* | ``true``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_sdfgi_read_sky_light(value) |
 +-----------+---------------------------------+
@@ -1294,7 +1296,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>` **sdfgi_y_scale**
 
 +-----------+--------------------------+
-| *Default* | ``0``                    |
+| *Default* | ``1``                    |
 +-----------+--------------------------+
 | *Setter*  | set_sdfgi_y_scale(value) |
 +-----------+--------------------------+

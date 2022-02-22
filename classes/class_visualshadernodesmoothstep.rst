@@ -34,21 +34,29 @@ Enumerations
 
 .. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_SCALAR:
 
-.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR:
+.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR_2D:
 
-.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR_SCALAR:
+.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR_2D_SCALAR:
+
+.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR_3D:
+
+.. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_VECTOR_3D_SCALAR:
 
 .. _class_VisualShaderNodeSmoothStep_constant_OP_TYPE_MAX:
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0** --- A scalar type.
+- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar type.
 
-- **OP_TYPE_VECTOR** = **1** --- A vector type.
+- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
 
-- **OP_TYPE_VECTOR_SCALAR** = **2** --- A vector type. ``edge0`` and ``edge1`` are using a scalar type.
+- **OP_TYPE_VECTOR_2D_SCALAR** = **2** --- The ``x`` port uses a 2D vector type. The first two ports use a floating-point scalar type.
 
-- **OP_TYPE_MAX** = **3** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeSmoothStep_OpType>` enum.
+- **OP_TYPE_VECTOR_3D** = **3** --- A 3D vector type.
+
+- **OP_TYPE_VECTOR_3D_SCALAR** = **4** --- The ``x`` port uses a 3D vector type. The first two ports use a floating-point scalar type.
+
+- **OP_TYPE_MAX** = **5** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeSmoothStep_OpType>` enum.
 
 Property Descriptions
 ---------------------

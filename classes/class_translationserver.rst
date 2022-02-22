@@ -60,6 +60,8 @@ Methods
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_script_name<class_TranslationServer_method_get_script_name>` **(** :ref:`String<class_String>` script **)** |const|                                                                                                                                         |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_tool_locale<class_TranslationServer_method_get_tool_locale>` **(** **)**                                                                                                                                                                                    |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Translation<class_Translation>`             | :ref:`get_translation_object<class_TranslationServer_method_get_translation_object>` **(** :ref:`String<class_String>` locale **)**                                                                                                                                   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>`               | :ref:`pseudolocalize<class_TranslationServer_method_pseudolocalize>` **(** :ref:`StringName<class_StringName>` message **)** |const|                                                                                                                                  |
@@ -195,6 +197,16 @@ Returns readable script name for the ``script`` code.
 
 ----
 
+.. _class_TranslationServer_method_get_tool_locale:
+
+- :ref:`String<class_String>` **get_tool_locale** **(** **)**
+
+Returns the current locale of the editor.
+
+\ **Note:** When called from an exported project returns the same value as :ref:`get_locale<class_TranslationServer_method_get_locale>`.
+
+----
+
 .. _class_TranslationServer_method_get_translation_object:
 
 - :ref:`Translation<class_Translation>` **get_translation_object** **(** :ref:`String<class_String>` locale **)**
@@ -243,7 +255,7 @@ If translations have been loaded beforehand for the new locale, they will be app
 
 - :ref:`String<class_String>` **standardize_locale** **(** :ref:`String<class_String>` locale **)** |const|
 
-Retunrs ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
+Returns ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
 ----
 

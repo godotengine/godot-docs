@@ -27,17 +27,21 @@ Enumerations
 
 .. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_SCALAR:
 
-.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR:
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_2D:
+
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_3D:
 
 .. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_MAX:
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0**
+- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar.
 
-- **OP_TYPE_VECTOR** = **1**
+- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
 
-- **OP_TYPE_MAX** = **2** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` enum.
+- **OP_TYPE_VECTOR_3D** = **2** --- A 3D vector type.
+
+- **OP_TYPE_MAX** = **3** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` enum.
 
 Property Descriptions
 ---------------------
@@ -53,6 +57,8 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_op_type()      |
 +-----------+--------------------+
+
+A type of operands and returned value.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
