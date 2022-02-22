@@ -84,7 +84,7 @@ Clicking on the highlighted control opens it for editing on the right-hand side.
 Theme types and items
 ~~~~~~~~~~~~~~~~~~~~~
 
-The right-hand side of them theme editor provides a list of theme types available
+The right-hand side of the theme editor provides a list of theme types available
 in the edited theme resource, and the contents of the selected type. The list of
 type's items is divided into several tabs, corresponding to each data type available
 in the theme (colors, constants, styles, etc.). If the **Show Default** option is
