@@ -27,7 +27,7 @@ The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
     st.set_color(Color(1, 0, 0))
     st.set_uv(Vector2(0, 0))
-    st.set_vertex(Vector3(0, 0, 0))
+    st.add_vertex(Vector3(0, 0, 0))
 
  .. code-tab:: csharp
 
@@ -35,7 +35,7 @@ The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_Mesh>` by specifying
     st.Begin(Mesh.PrimitiveType.Triangles);
     st.SetColor(new Color(1, 0, 0));
     st.SetUv(new Vector2(0, 0));
-    st.SetVertex(new Vector3(0, 0, 0));
+    st.AddVertex(new Vector3(0, 0, 0));
 
 
 
