@@ -25,6 +25,12 @@ using this `ImageMagick <https://www.imagemagick.org/>`_ command:
 
     magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
 
+Depending on which version of ImageMagick you installed, you might need to leave out the ``magick`` and run this command instead:
+
+.. code-block:: none
+
+    convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
+
 .. warning::
 
     For the ICO file to effectively replace the default Godot icon, it must
