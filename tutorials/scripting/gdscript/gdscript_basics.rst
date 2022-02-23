@@ -395,6 +395,27 @@ considered a comment.
 
 .. _doc_gdscript_builtin_types:
 
+Line continuation
+~~~~~~~~~~~~~~~~~
+
+A line of code in GDScript can be continued on the next line by using a backslash
+(``\``). Add one at the end of a line and the code on the next line will act like
+it's where the backslash is. Here is an example:
+
+::
+
+    var a = 1 + \
+    2
+
+A line can be continued multiple times like this:
+
+::
+
+    var a = 1 + \
+    4 + \
+    10 + \
+    4
+
 Built-in types
 --------------
 
