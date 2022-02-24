@@ -17,4 +17,4 @@ sphinx-notfound-page==0.8
 sphinxext-opengraph==0.6.1
 
 # Full-page search UI for RTD: https://readthedocs-sphinx-search.readthedocs.io
-readthedocs-sphinx-search==0.1.0
+readthedocs-sphinx-search==0.1.1
