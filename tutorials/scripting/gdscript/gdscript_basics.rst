@@ -1792,8 +1792,9 @@ This also means that returning a signal from a function that isn't a coroutine w
         await get_signal()
         print("Button was pressed")
 
-.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object. This in spirit of
-          type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
+.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object.
+          This is done to ensure type safety.
+          With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
 
 .. _doc_gdscript_onready_annotation:
