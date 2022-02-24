@@ -140,12 +140,12 @@ Nodes likewise have an alternative access point: the SceneTree.
         print($Child)
 
     # Fastest. Doesn't break if node moves later.
-    # Note that `onready` keyword is GDScript only.
+    # Note that `@onready` annotation is GDScript only.
     # Other languages must do...
     #     var child
     #     func _ready():
     #         child = get_node("Child")
-    onready var child = $Child
+    @onready var child = $Child
     func lookup_and_cache_for_future_access():
         print(child)
 
@@ -469,7 +469,7 @@ accesses:
     # parent.gd
     extends Node
 
-    onready var child = $Child
+    @onready var child = $Child
 
     func _ready():
         child.fn = funcref(self, "print_me")

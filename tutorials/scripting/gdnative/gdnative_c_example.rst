@@ -543,7 +543,7 @@ Now we can implement our ``main.gd`` code:
     extends Control
 
     # load the Simple library
-    onready var data = preload("res://bin/simple.gdns").new()
+    @onready var data = preload("res://bin/simple.gdns").new()
 
     func _on_Button_pressed():
         $Label.text = "Data = " + data.get_data()
