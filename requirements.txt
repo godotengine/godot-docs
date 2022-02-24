@@ -14,4 +14,4 @@ sphinx-tabs==3.2.0
 sphinx-notfound-page==0.7.1
 
 # Adds Open Graph tags in the HTML `<head>` tag
-sphinxext-opengraph==0.5.1
+sphinxext-opengraph==0.6.1
