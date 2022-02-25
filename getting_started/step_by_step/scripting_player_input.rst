@@ -26,9 +26,8 @@ You have two main tools to process the player's input in Godot:
 We're going to use the ``Input`` singleton here as we need to know if the player
 wants to turn or move every frame.
 
-For turning, we should use a new variable: ``direction``. Update the top of the
-``_process()`` function like so, up to the line where we increment the sprite's
-``rotation``.
+For turning, we should use a new variable: ``direction``. Update the ``_process()``
+function like so.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -72,7 +71,7 @@ Moving when pressing "up"
 -------------------------
 
 To only move when pressing a key, we need to modify the code that calculates the
-velocity. Replace the line starting with ``var velocity`` with the code below.
+velocity. Replace the lines at the bottom of the ``_process()`` function starting with ``var velocity`` with the code below.
 
 .. tabs::
    .. code-tab:: gdscript GDScript
