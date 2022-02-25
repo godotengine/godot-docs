@@ -154,12 +154,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         rotation += rotation_dir * rotation_speed * delta
         velocity = move_and_slide(velocity)
 
- .. code-tab:: csharp
-
-    using Godot;
-    using System;
-
-    rotation += rotation_dir * rotation_speed * delta
+ 
 
 Here we've added two new variables to track our rotation direction and speed.
 Again, pressing both keys at once will cancel out and result in no rotation.
