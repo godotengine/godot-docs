@@ -159,41 +159,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
     using Godot;
     using System;
 
-    public class Movement : KinematicBody2D
-    {
-        [Export] public int speed = 200;
-        [Export] public float rotationSpeed = 1.5f;
-
-        public Vector2 velocity = new Vector2();
-        public int rotationDir = 0;
-
-        public void GetInput()
-        {
-            rotationDir = 0;
-            velocity = new Vector2();
-
-            if (Input.IsActionPressed("right"))
-                rotationDir += 1;
-
-            if (Input.IsActionPressed("left"))
-                rotationDir -= 1;
-
-            if (Input.IsActionPressed("down"))
-                velocity = new Vector2(-speed, 0).Rotated(Rotation);
-
-            if (Input.IsActionPressed("up"))
-                velocity = new Vector2(speed, 0).Rotated(Rotation);
-
-            velocity = velocity.Normalized() * speed;
-        }
-
-        public override void _PhysicsProcess(float delta)
-        {
-            GetInput();
-            Rotation += rotationDir * rotationSpeed * delta;
-            velocity = MoveAndSlide(velocity);
-        }
-    }
+    rotation += rotation_dir * rotation_speed * delta
 
 Here we've added two new variables to track our rotation direction and speed.
 Again, pressing both keys at once will cancel out and result in no rotation.
@@ -223,17 +189,24 @@ is set by the mouse position instead of the keyboard. The character will always
     var velocity = Vector2()
 
     func get_input():
-        look_at(get_global_mouse_position())
-        velocity = Vector2()
-        if Input.is_action_pressed("down"):
-            velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
-            velocity = Vector2(speed, 0).rotated(rotation)
+	    velocity = Vector2()
+	    rotation_dir = 0
+	    if Input.is_action_pressed("right"):
+		    velocity.x += 1
+		    rotation_dir += 1
+	    if Input.is_action_pressed("left"):
+		    velocity.x -= 1
+		    rotation_dir -= 1
+	    if Input.is_action_pressed("down"):
+		    velocity.y += 1
+	    if Input.is_action_pressed("up"):
+		    velocity.y -= 1
+        velocity = velocity.normalized() * speed
 
-    func _physics_process(delta):
-        get_input()
-        velocity = move_and_slide(velocity)
-
+        func _physics_process(delta):
+	        get_input()
+	        velocity = move_and_slide(velocity)
+	        rotation += rotation_dir * rotation_speed * delta
  .. code-tab:: csharp
 
     using Godot;
