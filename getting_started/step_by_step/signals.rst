@@ -261,6 +261,9 @@ The line ``visible = not visible`` toggles the value. If ``visible`` is
 Custom signals
 --------------
 
+.. note:: This section, "Custom signals" is reference, and no longer follows
+          along step by step with the previously created project.
+
 You can define custom signals in a script. Say, for example, that you want to
 show a game over screen when the player's health reaches zero. To do so, you
 could define a signal named "died" or "health_depleted" when their health
