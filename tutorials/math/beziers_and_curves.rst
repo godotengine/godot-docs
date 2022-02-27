@@ -56,7 +56,7 @@ along a curve.
         Vector2 r = q0.LinearInterpolate(q1, t);
         return r;
 
-This type of is called a *Quadratic Bezier* curve.
+This type of curve is called a *Quadratic Bezier* curve.
 
 .. image:: img/bezier_quadratic_points2.gif
 
