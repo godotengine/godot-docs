@@ -56,9 +56,15 @@ This means that pull requests should **not** use ``std::string``,
 ``std::vector`` and the like. Instead, use Godot's datatypes as described below:
 
 - Use ``String`` instead of ``std::string``.
-- Use ``Vector`` instead of ``std::vector``. In some cases, ``List`` or
-  ``LocalVector`` can be used as an alternative (ask core developers first).
+- Use ``Vector`` instead of ``std::vector``. In some cases, ``LocalVector``
+  can be used as an alternative (ask core developers first).
 - Use ``Array`` instead of ``std::array``.
+
+.. note::
+
+    Godot also has a List datatype (which is a linked list). While List is already used
+    in the codebase, it typically performs worse than other datatypes like Vector
+    and Array. Therefore, List should be avoided in new code unless necessary.
 
 ``auto`` keyword
 ^^^^^^^^^^^^^^^^
