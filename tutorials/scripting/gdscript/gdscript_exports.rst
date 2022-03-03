@@ -262,37 +262,37 @@ Default value must be a constant expression.
 
 ::
 
-    export var a = [1, 2, 3]
+    @export var a = [1, 2, 3]
 
 Exported arrays can specify type (using the same hints as before).
 
 ::
 
-    export(Array, int) var ints = [1, 2, 3]
-    export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
+    @export(Array, int) var ints = [1, 2, 3]
+    @export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
+    @export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
 
-You can omit the default value, but then it would be null if not assigned.
+You can omit the default value, but it would then be ``null`` if not assigned.
 
 ::
 
-    export(Array) var b
-    export(Array, PackedScene) var scenes
+    @export(Array) var b
+    @export(Array, PackedScene) var scenes
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
 
 ::
 
-    export(Array, Texture) var textures
-    export(Array, PackedScene) var scenes
+    @export(Array, Texture) var textures
+    @export(Array, PackedScene) var scenes
 
-Typed arrays also work, only initialized empty:
+Packed type arrays also work, but only initialized empty:
 
 ::
 
-    export var vector3s = PackedVector3Array()
-    export var strings = PackedStringArray()
+    @export var vector3s = PackedVector3Array()
+    @export var strings = PackedStringArray()
 
 Default value can include run-time values, but can't
 be exported.
