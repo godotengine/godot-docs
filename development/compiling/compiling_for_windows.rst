@@ -89,7 +89,7 @@ Downloading Godot's source
 --------------------------
 
 Godot's source code is `hosted on GitHub <https://github.com/godotengine/godot>`_.
-Downloading it (cloning) using `Git <https://git-scm.com/>`_ is recommended.
+Downloading it (`cloning <https://docs.godotengine.org/en/3.4/community/contributing/pr_workflow.html?highlight=cloning#forking-and-cloning>`_) using `Git <https://git-scm.com/>`_ is recommended.
 
 The tutorial will assume from now on that you placed the source code in
 ``C:\godot``.
