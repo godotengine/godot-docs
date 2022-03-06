@@ -19,7 +19,7 @@ For compiling under Windows, the following is required:
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later. Because
   MinGW has not officially released GCC 9 yet, you can get an alternate installer from
   `here <https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release>`_.
-- `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
+- `Python 3.5+ <https://www.python.org/downloads/windows/>`_ (see below).
 - `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
   you need at least SCons 3.1.1.
 
