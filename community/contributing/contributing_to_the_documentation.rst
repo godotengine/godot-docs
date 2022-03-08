@@ -80,6 +80,7 @@ Doing so takes you to the GitHub text editor. You need to have a GitHub account
 and to log in to use it. Once logged in, you can propose change like so:
 
 1. Click the **Edit on GitHub** button.
+   Docs writing guide `https://docs.godotengine.org/en/latest/community/contributing/index.html#writing-documentation`
 
 2. On the GitHub page you're taken to, click the pencil icon in the top-right
    corner near the **Raw**, **Blame**, and **Delete** buttons. It has the
