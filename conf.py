@@ -61,9 +61,6 @@ ogp_site_name = "Godot Engine documentation"
 if not os.getenv("SPHINX_NO_GDSCRIPT"):
     extensions.append("gdscript")
 
-if not os.getenv("SPHINX_NO_SEARCH"):
-    extensions.append("sphinx_search.extension")
-
 if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
     extensions.append("godot_descriptions")
 
