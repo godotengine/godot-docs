@@ -64,7 +64,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-learn-introduction
+   :name: toc-learn-first_2d_game
 
    01.project_setup
    02.player_scene
