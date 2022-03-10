@@ -16,7 +16,7 @@ Control for holding :ref:`SubViewport<class_SubViewport>`\ s.
 Description
 -----------
 
-A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`, automatically setting its size.
+A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`. It can be used to automatically manage the size of its contained :ref:`SubViewport<class_SubViewport>`\ s.
 
 \ **Note:** Changing a SubViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
 
