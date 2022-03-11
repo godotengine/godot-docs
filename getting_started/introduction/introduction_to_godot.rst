@@ -95,6 +95,8 @@ completely free and open-source.
              see :ref:`GDNative third-party bindings
              <doc_what_is_gdnative_third_party_bindings>`.
 
+.. doc_learning_programming
+
 What do I need to know to use Godot?
 ------------------------------------
 
