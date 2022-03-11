@@ -41,6 +41,8 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`_get_description<class_VisualShaderNodeCustom_method__get_description>` **(** **)** |virtual| |const|                                                                                                                                                     |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`_get_func_code<class_VisualShaderNodeCustom_method__get_func_code>` **(** :ref:`Mode<enum_Shader_Mode>` mode, :ref:`Type<enum_VisualShader_Type>` type **)** |virtual| |const|                                                                            |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`_get_global_code<class_VisualShaderNodeCustom_method__get_global_code>` **(** :ref:`Mode<enum_Shader_Mode>` mode **)** |virtual| |const|                                                                                                                  |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`       | :ref:`_get_input_port_count<class_VisualShaderNodeCustom_method__get_input_port_count>` **(** **)** |virtual| |const|                                                                                                                                           |
@@ -58,6 +60,8 @@ Methods
 | :ref:`int<class_int>`       | :ref:`_get_output_port_type<class_VisualShaderNodeCustom_method__get_output_port_type>` **(** :ref:`int<class_int>` port **)** |virtual| |const|                                                                                                                |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`       | :ref:`_get_return_icon_type<class_VisualShaderNodeCustom_method__get_return_icon_type>` **(** **)** |virtual| |const|                                                                                                                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`_is_available<class_VisualShaderNodeCustom_method__is_available>` **(** :ref:`Mode<enum_Shader_Mode>` mode, :ref:`Type<enum_VisualShader_Type>` type **)** |virtual| |const|                                                                              |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`_is_highend<class_VisualShaderNodeCustom_method__is_highend>` **(** **)** |virtual| |const|                                                                                                                                                               |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,6 +100,20 @@ Defining this method is **required**.
 - :ref:`String<class_String>` **_get_description** **(** **)** |virtual| |const|
 
 Override this method to define the description of the associated custom node in the Visual Shader Editor's members dialog.
+
+Defining this method is **optional**.
+
+----
+
+.. _class_VisualShaderNodeCustom_method__get_func_code:
+
+- :ref:`String<class_String>` **_get_func_code** **(** :ref:`Mode<enum_Shader_Mode>` mode, :ref:`Type<enum_VisualShader_Type>` type **)** |virtual| |const|
+
+Override this method to add a shader code to the beginning of each shader function (once). The shader code should be returned as a string, which can have multiple lines (the ``"""`` multiline string construct can be used for convenience).
+
+If there are multiple custom nodes of different types which use this feature the order of each insertion is undefined.
+
+You can customize the generated code based on the shader ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
 
 Defining this method is **optional**.
 
@@ -195,13 +213,23 @@ Defining this method is **optional**. If not overridden, no return icon is shown
 
 ----
 
+.. _class_VisualShaderNodeCustom_method__is_available:
+
+- :ref:`bool<class_bool>` **_is_available** **(** :ref:`Mode<enum_Shader_Mode>` mode, :ref:`Type<enum_VisualShader_Type>` type **)** |virtual| |const|
+
+Override this method to prevent the node to be visible in the member dialog for the certain ``mode`` (see :ref:`Mode<enum_Shader_Mode>`) and/or ``type`` (see :ref:`Type<enum_VisualShader_Type>`).
+
+Defining this method is **optional**. If not overridden, it's ``true``.
+
+----
+
 .. _class_VisualShaderNodeCustom_method__is_highend:
 
 - :ref:`bool<class_bool>` **_is_highend** **(** **)** |virtual| |const|
 
 Override this method to enable high-end mark in the Visual Shader Editor's members dialog.
 
-Defining this method is **optional**. If not overridden, it's false.
+Defining this method is **optional**. If not overridden, it's ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

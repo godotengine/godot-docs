@@ -31,6 +31,14 @@ Properties
 ----------
 
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`             | ``40.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                | :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`         | ``false``             |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`           | ``10.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`           | ``50.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                | :ref:`editor_only<class_Light3D_property_editor_only>`                             | ``false``             |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>`       | ``0.0``               |
@@ -56,8 +64,6 @@ Properties
 | :ref:`float<class_float>`              | :ref:`shadow_bias<class_Light3D_property_shadow_bias>`                             | ``0.2``               |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                             | ``1.0``               |
-+----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`              | :ref:`shadow_color<class_Light3D_property_shadow_color>`                           | ``Color(0, 0, 0, 1)`` |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                       | ``false``             |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
@@ -188,6 +194,80 @@ enum **BakeMode**:
 
 Property Descriptions
 ---------------------
+
+.. _class_Light3D_property_distance_fade_begin:
+
+- :ref:`float<class_float>` **distance_fade_begin**
+
++-----------+--------------------------------+
+| *Default* | ``40.0``                       |
++-----------+--------------------------------+
+| *Setter*  | set_distance_fade_begin(value) |
++-----------+--------------------------------+
+| *Getter*  | get_distance_fade_begin()      |
++-----------+--------------------------------+
+
+The distance from the camera at which the light begins to fade away (in 3D units).
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_enabled:
+
+- :ref:`bool<class_bool>` **distance_fade_enabled**
+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_enable_distance_fade(value) |
++-----------+---------------------------------+
+| *Getter*  | is_distance_fade_enabled()      |
++-----------+---------------------------------+
+
+If ``true``, the light will smoothly fade away when far from the active :ref:`Camera3D<class_Camera3D>` starting at :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`. This acts as a form of level of detail (LOD). The light will fade out over :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`, after which it will be culled and not sent to the shader at all. Use this to reduce the number of active lights in a scene and thus improve performance.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_length:
+
+- :ref:`float<class_float>` **distance_fade_length**
+
++-----------+---------------------------------+
+| *Default* | ``10.0``                        |
++-----------+---------------------------------+
+| *Setter*  | set_distance_fade_length(value) |
++-----------+---------------------------------+
+| *Getter*  | get_distance_fade_length()      |
++-----------+---------------------------------+
+
+Distance over which the light fades. The light's energy is progressively reduced over this distance and is completely invisible at the end.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_shadow:
+
+- :ref:`float<class_float>` **distance_fade_shadow**
+
++-----------+---------------------------------+
+| *Default* | ``50.0``                        |
++-----------+---------------------------------+
+| *Setter*  | set_distance_fade_shadow(value) |
++-----------+---------------------------------+
+| *Getter*  | get_distance_fade_shadow()      |
++-----------+---------------------------------+
+
+The distance from the camera at which the light's shadow cuts off (in 3D units). Set this to a value lower than :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>` to further improve performance, as shadow rendering is often more expensive than light rendering itself.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`, and only when :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>` is ``true``.
+
+\ **Note:** Due to a rendering engine limitation, shadows will be disabled instantly instead of fading smoothly according to :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`. This may result in visible pop-in depending on the scene topography.
+
+----
 
 .. _class_Light3D_property_editor_only:
 
@@ -399,22 +479,6 @@ Blurs the edges of the shadow. Can be used to hide pixel artifacts in low-resolu
 
 ----
 
-.. _class_Light3D_property_shadow_color:
-
-- :ref:`Color<class_Color>` **shadow_color**
-
-+-----------+-------------------------+
-| *Default* | ``Color(0, 0, 0, 1)``   |
-+-----------+-------------------------+
-| *Setter*  | set_shadow_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_shadow_color()      |
-+-----------+-------------------------+
-
-The color of shadows cast by this light.
-
-----
-
 .. _class_Light3D_property_shadow_enabled:
 
 - :ref:`bool<class_bool>` **shadow_enabled**
@@ -427,7 +491,7 @@ The color of shadows cast by this light.
 | *Getter*  | has_shadow()      |
 +-----------+-------------------+
 
-If ``true``, the light will cast shadows.
+If ``true``, the light will cast real-time shadows. This has a significant performance cost. Only enable shadow rendering when it makes a noticeable difference in the scene's appearance, and consider using :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>` to hide the light when far away from the :ref:`Camera3D<class_Camera3D>`.
 
 ----
 

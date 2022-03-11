@@ -11,7 +11,7 @@ Texture2D
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CameraTexture<class_CameraTexture>`, :ref:`CanvasTexture<class_CanvasTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`CurveXYZTexture<class_CurveXYZTexture>`, :ref:`GradientTexture1D<class_GradientTexture1D>`, :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture2D<class_StreamTexture2D>`, :ref:`ViewportTexture<class_ViewportTexture>`
+**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CameraTexture<class_CameraTexture>`, :ref:`CanvasTexture<class_CanvasTexture>`, :ref:`CompressedTexture2D<class_CompressedTexture2D>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`CurveXYZTexture<class_CurveXYZTexture>`, :ref:`GradientTexture1D<class_GradientTexture1D>`, :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
 
 Texture for 2D and 3D.
 
@@ -29,6 +29,20 @@ Textures are often created by loading them from a file. See :ref:`@GDScript.load
 Methods
 -------
 
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`_draw<class_Texture2D_method__draw>` **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`_draw_rect<class_Texture2D_method__draw_rect>` **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|                                                                    |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`_draw_rect_region<class_Texture2D_method__draw_rect_region>` **(** :ref:`RID<class_RID>` tp_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose, :ref:`bool<class_bool>` clip_uv **)** |virtual| |const|               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_height<class_Texture2D_method__get_height>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                            |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`_get_width<class_Texture2D_method__get_width>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`_has_alpha<class_Texture2D_method__has_alpha>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`_is_pixel_opaque<class_Texture2D_method__is_pixel_opaque>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |virtual| |const|                                                                                                                                                                                 |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`draw<class_Texture2D_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false **)** |const|                                                                                           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,6 +63,48 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_Texture2D_method__draw:
+
+- void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__draw_rect:
+
+- void **_draw_rect** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__draw_rect_region:
+
+- void **_draw_rect_region** **(** :ref:`RID<class_RID>` tp_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose, :ref:`bool<class_bool>` clip_uv **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__get_height:
+
+- :ref:`int<class_int>` **_get_height** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__get_width:
+
+- :ref:`int<class_int>` **_get_width** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__has_alpha:
+
+- :ref:`bool<class_bool>` **_has_alpha** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Texture2D_method__is_pixel_opaque:
+
+- :ref:`bool<class_bool>` **_is_pixel_opaque** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |virtual| |const|
+
+----
 
 .. _class_Texture2D_method_draw:
 

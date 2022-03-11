@@ -29,13 +29,6 @@ Tutorials
 
 - :doc:`VR documentation index <../tutorials/vr/index>`
 
-Properties
-----------
-
-+---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`rumble<class_XRController3D_property_rumble>` | ``0.0`` |
-+---------------------------+-----------------------------------------------------+---------+
-
 Methods
 -------
 
@@ -81,25 +74,6 @@ Emitted when a thumbstick or thumbpad on this controller is moved.
 - **input_value_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
 
 Emitted when a trigger or similar input on this controller changes value.
-
-Property Descriptions
----------------------
-
-.. _class_XRController3D_property_rumble:
-
-- :ref:`float<class_float>` **rumble**
-
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_rumble(value) |
-+-----------+-------------------+
-| *Getter*  | get_rumble()      |
-+-----------+-------------------+
-
-The degree to which the controller vibrates. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`XRPositionalTracker.rumble<class_XRPositionalTracker_property_rumble>` accordingly.
-
-This is a useful property to animate if you want the controller to vibrate for a limited duration.
 
 Method Descriptions
 -------------------

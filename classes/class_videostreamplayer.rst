@@ -18,7 +18,7 @@ Description
 
 Control node for playing video streams using :ref:`VideoStream<class_VideoStream>` resources.
 
-Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`) and any format exposed via a GDNative plugin using :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`.
+Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`) and any format exposed via a GDExtension plugin.
 
 \ **Note:** Due to a bug, VideoStreamPlayer does not support localization remapping yet.
 
@@ -198,7 +198,7 @@ The assigned video stream. See description for supported formats.
 
 The current position of the stream, in seconds.
 
-\ **Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDNative add-on.
+\ **Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDExtension add-on.
 
 ----
 

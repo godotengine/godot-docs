@@ -150,11 +150,9 @@ Emitted when one of this RigidDynamicBody3D's :ref:`Shape3D<class_Shape3D>`\ s c
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
-
-\ **Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. Don't use multiple :ref:`CollisionShape3D<class_CollisionShape3D>`\ s when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` with Bullet physics if you need shape indices.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -168,11 +166,9 @@ Emitted when the collision between one of this RigidDynamicBody3D's :ref:`Shape3
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
-
-\ **Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. Don't use multiple :ref:`CollisionShape3D<class_CollisionShape3D>`\ s when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` with Bullet physics if you need shape indices.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 

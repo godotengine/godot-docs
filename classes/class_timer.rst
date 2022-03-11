@@ -189,7 +189,7 @@ Returns ``true`` if the timer is stopped.
 
 - void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
 
-Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to ``wait_time``.
+Starts the timer. Sets :ref:`wait_time<class_Timer_property_wait_time>` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to :ref:`wait_time<class_Timer_property_wait_time>`.
 
 \ **Note:** This method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 

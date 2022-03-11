@@ -46,6 +46,8 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_descent<class_TextServer_method_font_get_descent>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                                                       |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                       | :ref:`font_get_embolden<class_TextServer_method_font_get_embolden>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                                 |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`font_get_fixed_size<class_TextServer_method_font_get_fixed_size>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_global_oversampling<class_TextServer_method_font_get_global_oversampling>` **(** **)** |const|                                                                                                                                                                                                                                                          |
@@ -110,6 +112,8 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`font_get_texture_offsets<class_TextServer_method_font_get_texture_offsets>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |const|                                                                                                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`                           | :ref:`font_get_transform<class_TextServer_method_font_get_transform>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                               |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_underline_position<class_TextServer_method_font_get_underline_position>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                                 |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_underline_thickness<class_TextServer_method_font_get_underline_thickness>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                               |
@@ -151,6 +155,8 @@ Methods
 | void                                                            | :ref:`font_set_data<class_TextServer_method_font_set_data>` **(** :ref:`RID<class_RID>` font_rid, :ref:`PackedByteArray<class_PackedByteArray>` data **)**                                                                                                                                                                                                             |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_descent<class_TextServer_method_font_set_descent>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)**                                                                                                                                                                                            |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                            | :ref:`font_set_embolden<class_TextServer_method_font_set_embolden>` **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` strength **)**                                                                                                                                                                                                                     |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_fixed_size<class_TextServer_method_font_set_fixed_size>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` fixed_size **)**                                                                                                                                                                                                                   |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,6 +207,8 @@ Methods
 | void                                                            | :ref:`font_set_texture_image<class_TextServer_method_font_set_texture_image>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`Image<class_Image>` image **)**                                                                                                                                   |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_texture_offsets<class_TextServer_method_font_set_texture_offsets>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`PackedInt32Array<class_PackedInt32Array>` offset **)**                                                                                                        |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                            | :ref:`font_set_transform<class_TextServer_method_font_set_transform>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                                                                      |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_underline_position<class_TextServer_method_font_set_underline_position>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_position **)**                                                                                                                                                           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -781,6 +789,14 @@ Returns the font descent (number of pixels below the baseline).
 
 ----
 
+.. _class_TextServer_method_font_get_embolden:
+
+- :ref:`float<class_float>` **font_get_embolden** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returns font embolden strength.
+
+----
+
 .. _class_TextServer_method_font_get_fixed_size:
 
 - :ref:`int<class_int>` **font_get_fixed_size** **(** :ref:`RID<class_RID>` font_rid **)** |const|
@@ -1045,6 +1061,14 @@ Returns array containing the first free pixel in the each column of texture. Sho
 
 ----
 
+.. _class_TextServer_method_font_get_transform:
+
+- :ref:`Transform2D<class_Transform2D>` **font_get_transform** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returns 2D transform applied to the font outlines.
+
+----
+
 .. _class_TextServer_method_font_get_underline_position:
 
 - :ref:`float<class_float>` **font_get_underline_position** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|
@@ -1214,6 +1238,14 @@ Sets font source data, e.g contents of the dynamic font source file.
 - void **font_set_descent** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)**
 
 Sets the font descent (number of pixels below the baseline).
+
+----
+
+.. _class_TextServer_method_font_set_embolden:
+
+- void **font_set_embolden** **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` strength **)**
+
+Sets font embolden strength. If ``strength`` is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
 ----
 
@@ -1420,6 +1452,16 @@ Sets font cache texture image data.
 - void **font_set_texture_offsets** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`PackedInt32Array<class_PackedInt32Array>` offset **)**
 
 Sets array containing the first free pixel in the each column of texture. Should be the same size as texture width or empty.
+
+----
+
+.. _class_TextServer_method_font_set_transform:
+
+- void **font_set_transform** **(** :ref:`RID<class_RID>` font_rid, :ref:`Transform2D<class_Transform2D>` transform **)**
+
+Sets 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
+
+For example, to simulate italic typeface by slanting, apply the following transform ``Transform2D(1.0, slant, 0.0, 1.0, 0.0, 0.0)``.
 
 ----
 

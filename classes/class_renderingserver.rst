@@ -452,6 +452,8 @@ Methods
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_set_cull_mask<class_RenderingServer_method_light_set_cull_mask>` **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` mask **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`light_set_distance_fade<class_RenderingServer_method_light_set_distance_fade>` **(** :ref:`RID<class_RID>` decal, :ref:`bool<class_bool>` enabled, :ref:`float<class_float>` begin, :ref:`float<class_float>` shadow, :ref:`float<class_float>` length **)**                                                                                                                                                                                                                                                                                                                                                                                                                 |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_set_max_sdfgi_cascade<class_RenderingServer_method_light_set_max_sdfgi_cascade>` **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` cascade **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_set_negative<class_RenderingServer_method_light_set_negative>` **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -463,8 +465,6 @@ Methods
 | void                                                               | :ref:`light_set_reverse_cull_face_mode<class_RenderingServer_method_light_set_reverse_cull_face_mode>` **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_set_shadow<class_RenderingServer_method_light_set_shadow>` **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`light_set_shadow_color<class_RenderingServer_method_light_set_shadow_color>` **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                              | :ref:`lightmap_create<class_RenderingServer_method_lightmap_create>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2221,23 +2221,23 @@ enum **EnvironmentToneMapper**:
 
 .. _enum_RenderingServer_EnvironmentSSRRoughnessQuality:
 
-.. _class_RenderingServer_constant_ENV_SSR_ROUGNESS_QUALITY_DISABLED:
+.. _class_RenderingServer_constant_ENV_SSR_ROUGHNESS_QUALITY_DISABLED:
 
-.. _class_RenderingServer_constant_ENV_SSR_ROUGNESS_QUALITY_LOW:
+.. _class_RenderingServer_constant_ENV_SSR_ROUGHNESS_QUALITY_LOW:
 
-.. _class_RenderingServer_constant_ENV_SSR_ROUGNESS_QUALITY_MEDIUM:
+.. _class_RenderingServer_constant_ENV_SSR_ROUGHNESS_QUALITY_MEDIUM:
 
-.. _class_RenderingServer_constant_ENV_SSR_ROUGNESS_QUALITY_HIGH:
+.. _class_RenderingServer_constant_ENV_SSR_ROUGHNESS_QUALITY_HIGH:
 
 enum **EnvironmentSSRRoughnessQuality**:
 
-- **ENV_SSR_ROUGNESS_QUALITY_DISABLED** = **0**
+- **ENV_SSR_ROUGHNESS_QUALITY_DISABLED** = **0** --- Lowest quality of roughness filter for screen-space reflections. Rough materials will not have blurrier screen-space reflections compared to smooth (non-rough) materials. This is the fastest option.
 
-- **ENV_SSR_ROUGNESS_QUALITY_LOW** = **1**
+- **ENV_SSR_ROUGHNESS_QUALITY_LOW** = **1** --- Low quality of roughness filter for screen-space reflections.
 
-- **ENV_SSR_ROUGNESS_QUALITY_MEDIUM** = **2**
+- **ENV_SSR_ROUGHNESS_QUALITY_MEDIUM** = **2** --- Medium quality of roughness filter for screen-space reflections.
 
-- **ENV_SSR_ROUGNESS_QUALITY_HIGH** = **3**
+- **ENV_SSR_ROUGHNESS_QUALITY_HIGH** = **3** --- High quality of roughness filter for screen-space reflections. This is the slowest option.
 
 ----
 
@@ -4524,6 +4524,14 @@ Sets the cull mask for this Light3D. Lights only affect objects in the selected 
 
 ----
 
+.. _class_RenderingServer_method_light_set_distance_fade:
+
+- void **light_set_distance_fade** **(** :ref:`RID<class_RID>` decal, :ref:`bool<class_bool>` enabled, :ref:`float<class_float>` begin, :ref:`float<class_float>` shadow, :ref:`float<class_float>` length **)**
+
+Sets the distance fade for this Light3D. This acts as a form of level of detail (LOD) and can be used to improve performance. Equivalent to :ref:`Light3D.distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`, :ref:`Light3D.distance_fade_begin<class_Light3D_property_distance_fade_begin>`, :ref:`Light3D.distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`, and :ref:`Light3D.distance_fade_length<class_Light3D_property_distance_fade_length>`.
+
+----
+
 .. _class_RenderingServer_method_light_set_max_sdfgi_cascade:
 
 - void **light_set_max_sdfgi_cascade** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` cascade **)**
@@ -4567,14 +4575,6 @@ If ``true``, reverses the backface culling of the mesh. This can be useful when 
 - void **light_set_shadow** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, light will cast shadows. Equivalent to :ref:`Light3D.shadow_enabled<class_Light3D_property_shadow_enabled>`.
-
-----
-
-.. _class_RenderingServer_method_light_set_shadow_color:
-
-- void **light_set_shadow_color** **(** :ref:`RID<class_RID>` light, :ref:`Color<class_Color>` color **)**
-
-Sets the color of the shadow cast by the light. Equivalent to :ref:`Light3D.shadow_color<class_Light3D_property_shadow_color>`.
 
 ----
 

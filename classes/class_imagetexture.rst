@@ -35,7 +35,7 @@ This way, textures can be created at run-time by loading images both from within
     var texture = load("res://icon.png")
     $Sprite2D.texture = texture
 
-This is because images have to be imported as a :ref:`StreamTexture2D<class_StreamTexture2D>` first to be loaded with :ref:`@GDScript.load<class_@GDScript_method_load>`. If you'd still like to load an image file just like any other :ref:`Resource<class_Resource>`, import it as an :ref:`Image<class_Image>` resource instead, and then load it normally using the :ref:`@GDScript.load<class_@GDScript_method_load>` method.
+This is because images have to be imported as a :ref:`CompressedTexture2D<class_CompressedTexture2D>` first to be loaded with :ref:`@GDScript.load<class_@GDScript_method_load>`. If you'd still like to load an image file just like any other :ref:`Resource<class_Resource>`, import it as an :ref:`Image<class_Image>` resource instead, and then load it normally using the :ref:`@GDScript.load<class_@GDScript_method_load>` method.
 
 \ **Note:** The image can be retrieved from an imported texture using the :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` method, which returns a copy of the image:
 

@@ -230,8 +230,6 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`range_lerp<class_@GlobalScope_method_range_lerp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**       |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`range_step_decimals<class_@GlobalScope_method_range_step_decimals>` **(** :ref:`float<class_float>` x **)**                                                                                                                               |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`rid_allocate_id<class_@GlobalScope_method_rid_allocate_id>` **(** **)**                                                                                                                                                                   |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`rid_from_int64<class_@GlobalScope_method_rid_from_int64>` **(** :ref:`int<class_int>` base **)**                                                                                                                                          |
@@ -455,6 +453,8 @@ enum **InlineAlignment**:
 ----
 
 .. _enum_@GlobalScope_Key:
+
+.. _class_@GlobalScope_constant_KEY_NONE:
 
 .. _class_@GlobalScope_constant_KEY_SPECIAL:
 
@@ -943,6 +943,8 @@ enum **InlineAlignment**:
 .. _class_@GlobalScope_constant_KEY_YDIAERESIS:
 
 enum **Key**:
+
+- **KEY_NONE** = **0** --- Enum value which doesn't correspond to any key. This is used to initialize :ref:`Key<enum_@GlobalScope_Key>` properties with a generic state.
 
 - **KEY_SPECIAL** = **16777216** --- Keycodes with this bit applied are non-printable.
 
@@ -1476,6 +1478,8 @@ enum **KeyModifierMask**:
 
 .. _enum_@GlobalScope_MouseButton:
 
+.. _class_@GlobalScope_constant_MOUSE_BUTTON_NONE:
+
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_LEFT:
 
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_RIGHT:
@@ -1505,6 +1509,8 @@ enum **KeyModifierMask**:
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_XBUTTON2:
 
 enum **MouseButton**:
+
+- **MOUSE_BUTTON_NONE** = **0** --- Enum value which doesn't correspond to any mouse button. This is used to initialize :ref:`MouseButton<enum_@GlobalScope_MouseButton>` properties with a generic state.
 
 - **MOUSE_BUTTON_LEFT** = **1** --- Left mouse button.
 
@@ -1688,6 +1694,8 @@ enum **JoyAxis**:
 
 .. _enum_@GlobalScope_MIDIMessage:
 
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_NONE:
+
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF:
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
@@ -1725,6 +1733,8 @@ enum **JoyAxis**:
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_RESET:
 
 enum **MIDIMessage**:
+
+- **MIDI_MESSAGE_NONE** = **0** --- Enum value which doesn't correspond to any MIDI message. This is used to initialize :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` properties with a generic state.
 
 - **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
@@ -2063,6 +2073,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALIZABLE_STRING:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
 
 enum **PropertyHint**:
@@ -2164,7 +2176,9 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_LOCALE_ID** = **41** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
 
-- **PROPERTY_HINT_MAX** = **42**
+- **PROPERTY_HINT_LOCALIZABLE_STRING** = **42** --- Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
+
+- **PROPERTY_HINT_MAX** = **43**
 
 ----
 
@@ -3818,12 +3832,6 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``.
 ::
 
     range_lerp(75, 0, 100, -1, 1) # Returns 0.5
-
-----
-
-.. _class_@GlobalScope_method_range_step_decimals:
-
-- :ref:`int<class_int>` **range_step_decimals** **(** :ref:`float<class_float>` x **)**
 
 ----
 

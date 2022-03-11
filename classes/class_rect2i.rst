@@ -293,8 +293,6 @@ If the rectangles do not intersect, an empty ``Rect2i`` is returned.
 
 Returns ``true`` if the ``Rect2i`` overlaps with ``b`` (i.e. they have at least one point in common).
 
-If ``include_borders`` is ``true``, they will also be considered overlapping if their borders touch, even without intersection.
-
 ----
 
 .. _class_Rect2i_method_merge:

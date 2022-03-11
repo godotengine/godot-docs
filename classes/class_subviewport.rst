@@ -13,6 +13,11 @@ SubViewport
 
 Creates a sub-view into the screen.
 
+Description
+-----------
+
+``SubViewport`` is a :ref:`Viewport<class_Viewport>` that isn't a :ref:`Window<class_Window>`, i.e. it doesn't draw anything by itself. To display something, ``SubViewport``'s :ref:`size<class_SubViewport_property_size>` must be non-zero and it should be either put inside a :ref:`SubViewportContainer<class_SubViewportContainer>` or assigned to a :ref:`ViewportTexture<class_ViewportTexture>`.
+
 Tutorials
 ---------
 

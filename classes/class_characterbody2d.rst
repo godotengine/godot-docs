@@ -53,8 +53,6 @@ Properties
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`MotionMode<enum_CharacterBody2D_MotionMode>`                                                 | :ref:`motion_mode<class_CharacterBody2D_property_motion_mode>`                                                         | ``0``              |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
-| :ref:`Vector2<class_Vector2>`                                                                      | :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>`                                                 | ``Vector2(0, 0)``  |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody2D_MovingPlatformApplyVelocityOnLeave>` | :ref:`moving_platform_apply_velocity_on_leave<class_CharacterBody2D_property_moving_platform_apply_velocity_on_leave>` | ``0``              |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`int<class_int>`                                                                              | :ref:`moving_platform_floor_layers<class_CharacterBody2D_property_moving_platform_floor_layers>`                       | ``4294967295``     |
@@ -64,6 +62,8 @@ Properties
 | :ref:`bool<class_bool>`                                                                            | :ref:`slide_on_ceiling<class_CharacterBody2D_property_slide_on_ceiling>`                                               | ``true``           |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`Vector2<class_Vector2>`                                                                      | :ref:`up_direction<class_CharacterBody2D_property_up_direction>`                                                       | ``Vector2(0, -1)`` |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`Vector2<class_Vector2>`                                                                      | :ref:`velocity<class_CharacterBody2D_property_velocity>`                                                               | ``Vector2(0, 0)``  |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`float<class_float>`                                                                          | :ref:`wall_min_slide_angle<class_CharacterBody2D_property_wall_min_slide_angle>`                                       | ``0.261799``       |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------------+
@@ -134,9 +134,9 @@ enum **MotionMode**:
 
 enum **MovingPlatformApplyVelocityOnLeave**:
 
-- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity to the :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` when you leave a moving platform.
+- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody2D_property_velocity>` when you leave a moving platform.
 
-- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity to the :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
+- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody2D_property_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
 
 - **PLATFORM_VEL_ON_LEAVE_NEVER** = **2** --- Do nothing when leaving a platform.
 
@@ -247,7 +247,7 @@ As long as the snapping vector is in contact with the ground and the body moves 
 
 If ``true``, the body will not slide on slopes when calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` when the body is standing still.
 
-If ``false``, the body will slide on floor's slopes when :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` applies a downward force.
+If ``false``, the body will slide on floor's slopes when :ref:`velocity<class_CharacterBody2D_property_velocity>` applies a downward force.
 
 ----
 
@@ -280,22 +280,6 @@ Maximum number of times the body can change direction before it stops when calli
 +-----------+------------------------+
 
 Sets the motion mode which defines the behavior of :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. See :ref:`MotionMode<enum_CharacterBody2D_MotionMode>` constants for available modes.
-
-----
-
-.. _class_CharacterBody2D_property_motion_velocity:
-
-- :ref:`Vector2<class_Vector2>` **motion_velocity**
-
-+-----------+----------------------------+
-| *Default* | ``Vector2(0, 0)``          |
-+-----------+----------------------------+
-| *Setter*  | set_motion_velocity(value) |
-+-----------+----------------------------+
-| *Getter*  | get_motion_velocity()      |
-+-----------+----------------------------+
-
-Current velocity vector in pixels per second, used and modified during calls to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`.
 
 ----
 
@@ -379,6 +363,22 @@ Direction vector used to determine what is a wall and what is a floor (or a ceil
 
 ----
 
+.. _class_CharacterBody2D_property_velocity:
+
+- :ref:`Vector2<class_Vector2>` **velocity**
+
++-----------+---------------------+
+| *Default* | ``Vector2(0, 0)``   |
++-----------+---------------------+
+| *Setter*  | set_velocity(value) |
++-----------+---------------------+
+| *Getter*  | get_velocity()      |
++-----------+---------------------+
+
+Current velocity vector in pixels per second, used and modified during calls to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`.
+
+----
+
 .. _class_CharacterBody2D_property_wall_min_slide_angle:
 
 - :ref:`float<class_float>` **wall_min_slide_angle**
@@ -448,7 +448,7 @@ Returns the travel (position delta) that occurred during the last call to :ref:`
 
 - :ref:`Vector2<class_Vector2>` **get_real_velocity** **(** **)** |const|
 
-Returns the current real velocity since the last call to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. For example, when you climb a slope, you will move diagonally even though the velocity is horizontal. This method returns the diagonal movement, as opposed to :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` which returns the requested velocity.
+Returns the current real velocity since the last call to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. For example, when you climb a slope, you will move diagonally even though the velocity is horizontal. This method returns the diagonal movement, as opposed to :ref:`velocity<class_CharacterBody2D_property_velocity>` which returns the requested velocity.
 
 ----
 
@@ -549,9 +549,9 @@ Returns ``true`` if the body collided only with a wall on the last call of :ref:
 
 - :ref:`bool<class_bool>` **move_and_slide** **(** **)**
 
-Moves the body based on :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>`. If the body collides with another, it will slide along the other body (by default only on floor) rather than stop immediately. If the other body is a ``CharacterBody2D`` or :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
+Moves the body based on :ref:`velocity<class_CharacterBody2D_property_velocity>`. If the body collides with another, it will slide along the other body (by default only on floor) rather than stop immediately. If the other body is a ``CharacterBody2D`` or :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 
-Modifies :ref:`motion_velocity<class_CharacterBody2D_property_motion_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody2D_method_get_last_slide_collision>`, for detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody2D_method_get_slide_collision>`.
+Modifies :ref:`velocity<class_CharacterBody2D_property_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody2D_method_get_last_slide_collision>`, for detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody2D_method_get_slide_collision>`.
 
 When the body touches a moving platform, the platform's velocity is automatically added to the body motion. If a collision occurs due to the platform's motion, it will always be first in the slide collisions.
 

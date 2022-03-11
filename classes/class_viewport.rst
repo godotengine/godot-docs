@@ -13,7 +13,7 @@ Viewport
 
 **Inherited By:** :ref:`SubViewport<class_SubViewport>`, :ref:`Window<class_Window>`
 
-Creates a sub-view into the screen.
+Base class for viewports.
 
 Description
 -----------
@@ -21,8 +21,6 @@ Description
 A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D 3D nodes will render on it too.
 
 Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
-
-If a viewport is a child of a :ref:`SubViewportContainer<class_SubViewportContainer>`, it will automatically take up its size, otherwise it must be set manually.
 
 Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
 

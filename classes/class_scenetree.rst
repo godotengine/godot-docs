@@ -100,14 +100,6 @@ Methods
 Signals
 -------
 
-.. _class_SceneTree_signal_files_dropped:
-
-- **files_dropped** **(** :ref:`PackedStringArray<class_PackedStringArray>` files, :ref:`int<class_int>` screen **)**
-
-Emitted when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
-
-----
-
 .. _class_SceneTree_signal_node_added:
 
 - **node_added** **(** :ref:`Node<class_Node>` node **)**

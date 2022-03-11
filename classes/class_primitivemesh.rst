@@ -34,9 +34,11 @@ Properties
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
-+---------------------------+----------------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_method__create_mesh_array>` **(** **)** |virtual| |const| |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                 |
++---------------------------+--------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -89,6 +91,12 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 
 Method Descriptions
 -------------------
+
+.. _class_PrimitiveMesh_method__create_mesh_array:
+
+- :ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
+
+----
 
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 

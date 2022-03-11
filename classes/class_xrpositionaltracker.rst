@@ -37,7 +37,7 @@ Properties
 +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
 | :ref:`StringName<class_StringName>`                      | :ref:`name<class_XRPositionalTracker_property_name>`               | ``&"Unknown"`` |
 +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-| :ref:`float<class_float>`                                | :ref:`rumble<class_XRPositionalTracker_property_rumble>`           | ``0.0``        |
+| :ref:`String<class_String>`                              | :ref:`profile<class_XRPositionalTracker_property_profile>`         | ``""``         |
 +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
 | :ref:`TrackerType<enum_XRServer_TrackerType>`            | :ref:`type<class_XRPositionalTracker_property_type>`               | ``128``        |
 +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
@@ -99,6 +99,14 @@ Emitted when a trigger or similar input on this tracker changes value.
 - **pose_changed** **(** :ref:`XRPose<class_XRPose>` pose **)**
 
 Emitted when the state of a pose tracked by this tracker changes.
+
+----
+
+.. _class_XRPositionalTracker_signal_profile_changed:
+
+- **profile_changed** **(** :ref:`String<class_String>` role **)**
+
+Emitted when the profile of our tracker changes.
 
 Enumerations
 ------------
@@ -174,19 +182,19 @@ The unique name of this tracker. The trackers that are available differ between 
 
 ----
 
-.. _class_XRPositionalTracker_property_rumble:
+.. _class_XRPositionalTracker_property_profile:
 
-- :ref:`float<class_float>` **rumble**
+- :ref:`String<class_String>` **profile**
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_rumble(value) |
-+-----------+-------------------+
-| *Getter*  | get_rumble()      |
-+-----------+-------------------+
++-----------+----------------------------+
+| *Default* | ``""``                     |
++-----------+----------------------------+
+| *Setter*  | set_tracker_profile(value) |
++-----------+----------------------------+
+| *Getter*  | get_tracker_profile()      |
++-----------+----------------------------+
 
-The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
+The profile associated with this tracker, interface dependent but will indicate the type of controller being tracked.
 
 ----
 

@@ -28,6 +28,8 @@ Properties
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                               | :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` | ``false`` |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                                 | :ref:`max_tab_width<class_TabBar_property_max_tab_width>`                         | ``0``     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                               | :ref:`scroll_to_selected<class_TabBar_property_scroll_to_selected>`               | ``true``  |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                               | :ref:`scrolling_enabled<class_TabBar_property_scrolling_enabled>`                 | ``true``  |
@@ -39,6 +41,8 @@ Properties
 | :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_TabBar_property_tab_close_display_policy>`   | ``0``     |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                                                 | :ref:`tab_count<class_TabBar_property_tab_count>`                                 | ``0``     |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                                 | :ref:`tabs_rearrange_group<class_TabBar_property_tabs_rearrange_group>`           | ``-1``    |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 
 Methods
@@ -59,6 +63,8 @@ Methods
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>`                | :ref:`get_tab_icon<class_TabBar_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                                |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_tab_idx_at_point<class_TabBar_method_get_tab_idx_at_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                          |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                      | :ref:`get_tab_language<class_TabBar_method_get_tab_language>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_tab_offset<class_TabBar_method_get_tab_offset>` **(** **)** |const|                                                                                                          |
@@ -70,8 +76,6 @@ Methods
 | :ref:`TextDirection<enum_Control_TextDirection>` | :ref:`get_tab_text_direction<class_TabBar_method_get_tab_text_direction>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                            |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                      | :ref:`get_tab_title<class_TabBar_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                              |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_tabs_rearrange_group<class_TabBar_method_get_tabs_rearrange_group>` **(** **)** |const|                                                                                      |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`is_tab_disabled<class_TabBar_method_is_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                          |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,8 +100,6 @@ Methods
 | void                                             | :ref:`set_tab_text_direction<class_TabBar_method_set_tab_text_direction>` **(** :ref:`int<class_int>` tab_idx, :ref:`TextDirection<enum_Control_TextDirection>` direction **)**        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_tab_title<class_TabBar_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_tabs_rearrange_group<class_TabBar_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                                                               |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -317,6 +319,22 @@ If ``true``, tabs can be rearranged with mouse drag.
 
 ----
 
+.. _class_TabBar_property_max_tab_width:
+
+- :ref:`int<class_int>` **max_tab_width**
+
++-----------+--------------------------+
+| *Default* | ``0``                    |
++-----------+--------------------------+
+| *Setter*  | set_max_tab_width(value) |
++-----------+--------------------------+
+| *Getter*  | get_max_tab_width()      |
++-----------+--------------------------+
+
+Sets the maximum width which all tabs should be limited to. Unlimited if set to ``0``.
+
+----
+
 .. _class_TabBar_property_scroll_to_selected:
 
 - :ref:`bool<class_bool>` **scroll_to_selected**
@@ -411,6 +429,24 @@ Sets when the close button will appear on the tabs. See :ref:`CloseButtonDisplay
 
 The number of tabs currently in the bar.
 
+----
+
+.. _class_TabBar_property_tabs_rearrange_group:
+
+- :ref:`int<class_int>` **tabs_rearrange_group**
+
++-----------+---------------------------------+
+| *Default* | ``-1``                          |
++-----------+---------------------------------+
+| *Setter*  | set_tabs_rearrange_group(value) |
++-----------+---------------------------------+
+| *Getter*  | get_tabs_rearrange_group()      |
++-----------+---------------------------------+
+
+``TabBar``\ s with the same rearrange group ID will allow dragging the tabs between them. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>`.
+
+Setting this to ``-1`` will disable rearranging between ``TabBar``\ s.
+
 Method Descriptions
 -------------------
 
@@ -470,6 +506,14 @@ Returns the :ref:`Texture2D<class_Texture2D>` for the tab at index ``tab_idx`` o
 
 ----
 
+.. _class_TabBar_method_get_tab_idx_at_point:
+
+- :ref:`int<class_int>` **get_tab_idx_at_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+
+Returns the index of the tab at local coordinates ``point``. Returns ``-1`` if the point is outside the control boundaries or if there's no tab at the queried position.
+
+----
+
 .. _class_TabBar_method_get_tab_language:
 
 - :ref:`String<class_String>` **get_tab_language** **(** :ref:`int<class_int>` tab_idx **)** |const|
@@ -515,14 +559,6 @@ Returns tab title text base writing direction.
 - :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the title of the tab at index ``tab_idx``.
-
-----
-
-.. _class_TabBar_method_get_tabs_rearrange_group:
-
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
-
-Returns the ``TabBar``'s rearrange group ID.
 
 ----
 
@@ -619,14 +655,6 @@ Sets tab title base writing direction.
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
 Sets a ``title`` for the tab at index ``tab_idx``.
-
-----
-
-.. _class_TabBar_method_set_tabs_rearrange_group:
-
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
-
-Defines the rearrange group ID. Choose for each ``TabBar`` the same value to dragging tabs between ``TabBar``. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>`.
 
 Theme Property Descriptions
 ---------------------------

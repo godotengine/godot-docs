@@ -48,6 +48,8 @@ Properties
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Mode<enum_Window_Mode>`                             | :ref:`mode<class_Window_property_mode>`                                 | ``0``                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`popup_window<class_Window_property_popup_window>`                 | ``false``              |
++-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Vector2i<class_Vector2i>`                           | :ref:`position<class_Window_property_position>`                         | ``Vector2i(0, 0)``     |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Vector2i<class_Vector2i>`                           | :ref:`size<class_Window_property_size>`                                 | ``Vector2i(100, 100)`` |
@@ -210,6 +212,8 @@ Signals
 
 - **files_dropped** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
 
+Emitted when files are dragged from the OS file manager and dropped in the game window. The argument is a list of file paths.
+
 ----
 
 .. _class_Window_signal_focus_entered:
@@ -305,6 +309,8 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 .. _class_Window_constant_FLAG_NO_FOCUS:
 
+.. _class_Window_constant_FLAG_POPUP:
+
 .. _class_Window_constant_FLAG_MAX:
 
 enum **Flags**:
@@ -319,7 +325,9 @@ enum **Flags**:
 
 - **FLAG_NO_FOCUS** = **4**
 
-- **FLAG_MAX** = **5**
+- **FLAG_POPUP** = **5**
+
+- **FLAG_MAX** = **6**
 
 ----
 
@@ -574,6 +582,20 @@ The screen the window is currently on.
 Set's the window's current mode.
 
 \ **Note:** Fullscreen mode is not exclusive fullscreen on Windows and Linux.
+
+----
+
+.. _class_Window_property_popup_window:
+
+- :ref:`bool<class_bool>` **popup_window**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
 
 ----
 

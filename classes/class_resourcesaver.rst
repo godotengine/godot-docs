@@ -23,16 +23,18 @@ It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes r
 Methods
 -------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                       |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)** |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                            |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)** |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
 
 .. _enum_ResourceSaver_SaverFlags:
+
+.. _class_ResourceSaver_constant_FLAG_NONE:
 
 .. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
 
@@ -49,6 +51,8 @@ Enumerations
 .. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
 
 enum **SaverFlags**:
+
+- **FLAG_NONE** = **0** --- No resource saving option.
 
 - **FLAG_RELATIVE_PATHS** = **1** --- Save the resource with a path relative to the scene which uses it.
 
@@ -77,11 +81,11 @@ Returns the list of extensions available for saving a resource of a given type.
 
 .. _class_ResourceSaver_method_save:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
 
 Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object.
 
-The ``flags`` bitmask can be specified to customize the save behavior.
+The ``flags`` bitmask can be specified to customize the save behavior using :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 

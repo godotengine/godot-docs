@@ -25,6 +25,20 @@ Tutorials
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 
+Methods
+-------
+
++-------------------------------------------------------+----------------------------------------------------------------------------------+
+| :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`_instantiate<class_AudioEffect_method__instantiate>` **(** **)** |virtual| |
++-------------------------------------------------------+----------------------------------------------------------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_AudioEffect_method__instantiate:
+
+- :ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate** **(** **)** |virtual|
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

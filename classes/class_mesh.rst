@@ -41,29 +41,57 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape3D<class_Shape3D>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const| |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                             | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                                     |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape3D<class_Shape3D>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                          |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>`             | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                                      |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`                             | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** |const|                                                                                                  |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** |const|                                                                                                |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** |const|                                                                                |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                               |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                       |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`                     | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                           |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`surface_set_material<class_Mesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**         |
-+-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`                             | :ref:`_get_aabb<class_Mesh_method__get_aabb>` **(** **)** |virtual| |const|                                                                                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_get_blend_shape_count<class_Mesh_method__get_blend_shape_count>` **(** **)** |virtual| |const|                                                             |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>`                 | :ref:`_get_blend_shape_name<class_Mesh_method__get_blend_shape_name>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_get_surface_count<class_Mesh_method__get_surface_count>` **(** **)** |virtual| |const|                                                                     |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`_set_blend_shape_name<class_Mesh_method__set_blend_shape_name>` **(** :ref:`int<class_int>` index, :ref:`StringName<class_StringName>` name **)** |virtual| |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_surface_get_array_index_len<class_Mesh_method__surface_get_array_index_len>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                     |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_surface_get_array_len<class_Mesh_method__surface_get_array_len>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                 |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                           | :ref:`_surface_get_arrays<class_Mesh_method__surface_get_arrays>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                           | :ref:`_surface_get_blend_shape_arrays<class_Mesh_method__surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` index **)** |virtual| |const|               |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_surface_get_format<class_Mesh_method__surface_get_format>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`                 | :ref:`_surface_get_lods<class_Mesh_method__surface_get_lods>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>`                     | :ref:`_surface_get_material<class_Mesh_method__surface_get_material>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`_surface_get_primitive_type<class_Mesh_method__surface_get_primitive_type>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`_surface_set_material<class_Mesh_method__surface_set_material>` **(** :ref:`int<class_int>` index, :ref:`Material<class_Material>` material **)** |virtual| |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape3D<class_Shape3D>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const|  |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                             | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                                      |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape3D<class_Shape3D>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                           |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TriangleMesh<class_TriangleMesh>`             | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`                             | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** |const|                                                                                                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** |const|                                                                                                 |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** |const|                                                                                 |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                           | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                                |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                           | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                        |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>`                     | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                            |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`surface_set_material<class_Mesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**          |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -337,6 +365,90 @@ Sets a hint to be used for lightmap resolution.
 
 Method Descriptions
 -------------------
+
+.. _class_Mesh_method__get_aabb:
+
+- :ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__get_blend_shape_count:
+
+- :ref:`int<class_int>` **_get_blend_shape_count** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__get_blend_shape_name:
+
+- :ref:`StringName<class_StringName>` **_get_blend_shape_name** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__get_surface_count:
+
+- :ref:`int<class_int>` **_get_surface_count** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__set_blend_shape_name:
+
+- void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringName<class_StringName>` name **)** |virtual|
+
+----
+
+.. _class_Mesh_method__surface_get_array_index_len:
+
+- :ref:`int<class_int>` **_surface_get_array_index_len** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_array_len:
+
+- :ref:`int<class_int>` **_surface_get_array_len** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_arrays:
+
+- :ref:`Array<class_Array>` **_surface_get_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_blend_shape_arrays:
+
+- :ref:`Array<class_Array>` **_surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_format:
+
+- :ref:`int<class_int>` **_surface_get_format** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_lods:
+
+- :ref:`Dictionary<class_Dictionary>` **_surface_get_lods** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_material:
+
+- :ref:`Material<class_Material>` **_surface_get_material** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_get_primitive_type:
+
+- :ref:`int<class_int>` **_surface_get_primitive_type** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+
+----
+
+.. _class_Mesh_method__surface_set_material:
+
+- void **_surface_set_material** **(** :ref:`int<class_int>` index, :ref:`Material<class_Material>` material **)** |virtual|
+
+----
 
 .. _class_Mesh_method_create_convex_shape:
 

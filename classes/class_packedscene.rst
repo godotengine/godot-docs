@@ -116,7 +116,7 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>` **(** **)** |const|                                                         |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                             |
+| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)** |const|                                                                     |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const| |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,7 +180,7 @@ Returns ``true`` if the scene file has nodes.
 
 .. _class_PackedScene_method_get_state:
 
-- :ref:`SceneState<class_SceneState>` **get_state** **(** **)**
+- :ref:`SceneState<class_SceneState>` **get_state** **(** **)** |const|
 
 Returns the ``SceneState`` representing the scene file contents.
 

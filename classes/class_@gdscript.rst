@@ -299,8 +299,8 @@ Returns an array with the given range. Range can be 1 argument ``N`` (0 to ``N``
 
 Returns an array with the given range. ``range()`` can have 1 argument N (``0`` to ``N - 1``), two arguments (``initial``, ``final - 1``) or three arguments (``initial``, ``final - 1``, ``increment``). ``increment`` can be negative. If ``increment`` is negative, ``final - 1`` will become ``final + 1``. Also, the initial value must be greater than the final value for the loop to run.
 
-::
-
+\ ``range()(/code] converts all arguments to :ref:`int<class_int>` before processing.
+[codeblock]
     print(range(4))
     print(range(2, 5))
     print(range(0, 6, 2))
@@ -330,6 +330,21 @@ Output:
     9
     6
     3
+
+To iterate over :ref:`float<class_float>`, convert them in the loop.
+
+::
+
+    for i in range (3, 0, -1):
+        print(i / 10.0)
+
+Output:
+
+::
+
+    0.3
+    0.2
+    0.1
 
 ----
 

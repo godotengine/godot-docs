@@ -538,7 +538,7 @@ True if the interaction with particle attractors is enabled.
 | *Getter*  | get_collision_bounce()      |
 +-----------+-----------------------------+
 
-Collision bouncyness.
+Collision bounciness.
 
 ----
 

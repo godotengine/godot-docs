@@ -64,6 +64,8 @@ Methods
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`clear_layer<class_TileMap_method_clear_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                                 |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`erase_cell<class_TileMap_method_erase_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)**                                                                                                                                           |
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`fix_invalid_tiles<class_TileMap_method_fix_invalid_tiles>` **(** **)**                                                                                                                                                                                                 |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`force_update<class_TileMap_method_force_update>` **(** :ref:`int<class_int>` layer=-1 **)**                                                                                                                                                                            |
@@ -108,7 +110,7 @@ Methods
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`remove_layer<class_TileMap_method_remove_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                               |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |
+| void                                        | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**  |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_cells_from_surrounding_terrains<class_TileMap_method_set_cells_from_surrounding_terrains>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` cells, :ref:`int<class_int>` terrain_set, :ref:`bool<class_bool>` ignore_empty_terrains=true **)** |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -286,6 +288,14 @@ Clears all cells.
 - void **clear_layer** **(** :ref:`int<class_int>` layer **)**
 
 Clears all cells on the given layer.
+
+----
+
+.. _class_TileMap_method_erase_cell:
+
+- void **erase_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)**
+
+Erases the cell on layer ``layer`` at coordinates ``coords``.
 
 ----
 
@@ -471,7 +481,7 @@ Removes the layer at index ``layer``.
 
 .. _class_TileMap_method_set_cell:
 
-- void **set_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)**
+- void **set_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**
 
 Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
 

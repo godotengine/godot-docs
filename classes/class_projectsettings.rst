@@ -57,6 +57,8 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/config/name<class_ProjectSettings_property_application/config/name>`                                                                                                             | ``""``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`application/config/name_localized<class_ProjectSettings_property_application/config/name_localized>`                                                                                         | ``{}``                                                                                          |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/config/project_settings_override<class_ProjectSettings_property_application/config/project_settings_override>`                                                                   | ``""``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`                                                                               | ``false``                                                                                       |
@@ -1121,10 +1123,6 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/shader_compiler/shader_cache/use_zstd_compression<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/use_zstd_compression>`                                     | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_blinn_over_ggx<class_ProjectSettings_property_rendering/shading/overrides/force_blinn_over_ggx>`                                                           | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_blinn_over_ggx.mobile<class_ProjectSettings_property_rendering/shading/overrides/force_blinn_over_ggx.mobile>`                                             | ``true``                                                                                        |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_lambert_over_burley<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley>`                                                 | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_lambert_over_burley.mobile<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley.mobile>`                                   | ``true``                                                                                        |
@@ -1193,7 +1191,17 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/vulkan/staging_buffer/texture_upload_region_size_px>`                                 | ``64``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/xr/enabled<class_ProjectSettings_property_rendering/xr/enabled>`                                                                                                                   | ``false``                                                                                       |
+| :ref:`String<class_String>`                       | :ref:`xr/openxr/default_action_map<class_ProjectSettings_property_xr/openxr/default_action_map>`                                                                                                   | ``"res://default_action_map.tres"``                                                             |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`xr/openxr/enabled<class_ProjectSettings_property_xr/openxr/enabled>`                                                                                                                         | ``false``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                 | ``"0"``                                                                                         |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                         | ``"1"``                                                                                         |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`xr/openxr/view_configuration<class_ProjectSettings_property_xr/openxr/view_configuration>`                                                                                                   | ``"1"``                                                                                         |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`xr/shaders/enabled<class_ProjectSettings_property_xr/shaders/enabled>`                                                                                                                       | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Methods
@@ -1357,6 +1365,18 @@ Icon set in ``.icns`` format used on macOS to set the game's icon. This is done 
 The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files. The window title will be set to match the project name automatically on startup.
 
 \ **Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See :doc:`Data paths <../tutorials/io/data_paths>` in the documentation for more information.
+
+----
+
+.. _class_ProjectSettings_property_application/config/name_localized:
+
+- :ref:`Dictionary<class_Dictionary>` **application/config/name_localized**
+
++-----------+--------+
+| *Default* | ``{}`` |
++-----------+--------+
+
+Translations of the project's name. This setting is used by OS tools to translate application name on Android, iOS and macOS.
 
 ----
 
@@ -6052,7 +6072,7 @@ The default linear damp in 3D.
 
 Sets which physics engine to use for 3D physics.
 
-"DEFAULT" is currently the `Bullet <https://bulletphysics.org>`__ physics engine. The "GodotPhysics3D" engine is still supported as an alternative.
+"DEFAULT" and "GodotPhysics3D" are the same, as there is currently no alternative 3D physics server implemented.
 
 ----
 
@@ -7412,30 +7432,6 @@ Scales the 3D render buffer based on the viewport size uses an image filter spec
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shading/overrides/force_blinn_over_ggx:
-
-- :ref:`bool<class_bool>` **rendering/shading/overrides/force_blinn_over_ggx**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-If ``true``, uses faster but lower-quality Blinn model to generate blurred reflections instead of the GGX model.
-
-----
-
-.. _class_ProjectSettings_property_rendering/shading/overrides/force_blinn_over_ggx.mobile:
-
-- :ref:`bool<class_bool>` **rendering/shading/overrides/force_blinn_over_ggx.mobile**
-
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
-
-Lower-end override for :ref:`rendering/shading/overrides/force_blinn_over_ggx<class_ProjectSettings_property_rendering/shading/overrides/force_blinn_over_ggx>` on mobile devices, due to performance concerns or driver support.
-
-----
-
 .. _class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley:
 
 - :ref:`bool<class_bool>` **rendering/shading/overrides/force_lambert_over_burley**
@@ -7844,15 +7840,75 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 ----
 
-.. _class_ProjectSettings_property_rendering/xr/enabled:
+.. _class_ProjectSettings_property_xr/openxr/default_action_map:
 
-- :ref:`bool<class_bool>` **rendering/xr/enabled**
+- :ref:`String<class_String>` **xr/openxr/default_action_map**
+
++-----------+-------------------------------------+
+| *Default* | ``"res://default_action_map.tres"`` |
++-----------+-------------------------------------+
+
+Action map configuration to load by default.
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/enabled:
+
+- :ref:`bool<class_bool>` **xr/openxr/enabled**
 
 +-----------+-----------+
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, XR support is enabled in Godot, this ensures required shaders are compiled.
+If ``true`` Godot will setup and initialise OpenXR on startup.
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/form_factor:
+
+- :ref:`int<class_int>` **xr/openxr/form_factor**
+
++-----------+---------+
+| *Default* | ``"0"`` |
++-----------+---------+
+
+Specify whether OpenXR should be configured for an HMD or a hand held device.
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/reference_space:
+
+- :ref:`int<class_int>` **xr/openxr/reference_space**
+
++-----------+---------+
+| *Default* | ``"1"`` |
++-----------+---------+
+
+Specify the default reference space.
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/view_configuration:
+
+- :ref:`int<class_int>` **xr/openxr/view_configuration**
+
++-----------+---------+
+| *Default* | ``"1"`` |
++-----------+---------+
+
+Specify the view configuration with which to configure OpenXR settting up either Mono or Stereo rendering.
+
+----
+
+.. _class_ProjectSettings_property_xr/shaders/enabled:
+
+- :ref:`bool<class_bool>` **xr/shaders/enabled**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, Godot will compile shaders required for XR.
 
 Method Descriptions
 -------------------

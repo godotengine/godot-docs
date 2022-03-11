@@ -124,9 +124,9 @@ enum **LineTextureMode**:
 
 - **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
 
-- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture must be imported with **Repeat** enabled for it to work properly.
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the ``Line2D`` node must be :ref:`CanvasItem.TEXTURE_REPEAT_ENABLED<class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED>` or :ref:`CanvasItem.TEXTURE_REPEAT_MIRROR<class_CanvasItem_constant_TEXTURE_REPEAT_MIRROR>` for it to work properly.
 
-- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with **Repeat** disabled for best results.
+- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the ``Line2D`` node must be :ref:`CanvasItem.TEXTURE_REPEAT_DISABLED<class_CanvasItem_constant_TEXTURE_REPEAT_DISABLED>` for best results.
 
 Property Descriptions
 ---------------------

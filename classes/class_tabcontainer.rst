@@ -25,19 +25,23 @@ Ignores non-:ref:`Control<class_Control>` children.
 Properties
 ----------
 
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                               | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                                 | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                               | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`AlignmentMode<enum_TabContainer_AlignmentMode>` | :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`                               | ``1``     |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                               | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                               | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | ``false`` |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`                                       | ``true``  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` | :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`                               | ``1``     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`tabs_rearrange_group<class_TabContainer_property_tabs_rearrange_group>`                 | ``-1``    |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -53,17 +57,17 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** |const|                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_tab_disabled<class_TabContainer_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                           |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_tab_hidden<class_TabContainer_method_get_tab_hidden>` **(** :ref:`int<class_int>` tab_idx **)** |const|                               |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_tab_idx_at_point<class_TabContainer_method_get_tab_idx_at_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|             |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_tab_idx_from_control<class_TabContainer_method_get_tab_idx_from_control>` **(** :ref:`Control<class_Control>` control **)** |const|   |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`       | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_tabs_rearrange_group<class_TabContainer_method_get_tabs_rearrange_group>` **(** **)** |const|                                         |
+| :ref:`bool<class_bool>`           | :ref:`is_tab_disabled<class_TabContainer_method_is_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                             |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_tab_hidden<class_TabContainer_method_is_tab_hidden>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_popup<class_TabContainer_method_set_popup>` **(** :ref:`Node<class_Node>` popup **)**                                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,8 +78,6 @@ Methods
 | void                              | :ref:`set_tab_icon<class_TabContainer_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**   |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**      |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tabs_rearrange_group<class_TabContainer_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -146,25 +148,6 @@ Emitted when switching to another tab.
 
 Emitted when a tab is selected, even if it is the current tab.
 
-Enumerations
-------------
-
-.. _enum_TabContainer_AlignmentMode:
-
-.. _class_TabContainer_constant_ALIGNMENT_LEFT:
-
-.. _class_TabContainer_constant_ALIGNMENT_CENTER:
-
-.. _class_TabContainer_constant_ALIGNMENT_RIGHT:
-
-enum **AlignmentMode**:
-
-- **ALIGNMENT_LEFT** = **0**
-
-- **ALIGNMENT_CENTER** = **1**
-
-- **ALIGNMENT_RIGHT** = **2**
-
 Property Descriptions
 ---------------------
 
@@ -181,6 +164,22 @@ Property Descriptions
 +-----------+------------------------------+
 
 If ``true``, all tabs are drawn in front of the panel. If ``false``, inactive tabs are drawn behind the panel.
+
+----
+
+.. _class_TabContainer_property_clip_tabs:
+
+- :ref:`bool<class_bool>` **clip_tabs**
+
++-----------+----------------------+
+| *Default* | ``true``             |
++-----------+----------------------+
+| *Setter*  | set_clip_tabs(value) |
++-----------+----------------------+
+| *Getter*  | get_clip_tabs()      |
++-----------+----------------------+
+
+If ``true``, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
 
 ----
 
@@ -218,7 +217,7 @@ If ``true``, tabs can be rearranged with mouse drag.
 
 .. _class_TabContainer_property_tab_alignment:
 
-- :ref:`AlignmentMode<enum_TabContainer_AlignmentMode>` **tab_alignment**
+- :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **tab_alignment**
 
 +-----------+--------------------------+
 | *Default* | ``1``                    |
@@ -227,6 +226,26 @@ If ``true``, tabs can be rearranged with mouse drag.
 +-----------+--------------------------+
 | *Getter*  | get_tab_alignment()      |
 +-----------+--------------------------+
+
+Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` for details.
+
+----
+
+.. _class_TabContainer_property_tabs_rearrange_group:
+
+- :ref:`int<class_int>` **tabs_rearrange_group**
+
++-----------+---------------------------------+
+| *Default* | ``-1``                          |
++-----------+---------------------------------+
+| *Setter*  | set_tabs_rearrange_group(value) |
++-----------+---------------------------------+
+| *Getter*  | get_tabs_rearrange_group()      |
++-----------+---------------------------------+
+
+``TabContainer``\ s with the same rearrange group ID will allow dragging the tabs between them. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`.
+
+Setting this to ``-1`` will disable rearranging between ``TabContainer``\ s.
 
 ----
 
@@ -305,22 +324,6 @@ Returns the number of tabs.
 
 ----
 
-.. _class_TabContainer_method_get_tab_disabled:
-
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
-
-Returns ``true`` if the tab at index ``tab_idx`` is disabled.
-
-----
-
-.. _class_TabContainer_method_get_tab_hidden:
-
-- :ref:`bool<class_bool>` **get_tab_hidden** **(** :ref:`int<class_int>` tab_idx **)** |const|
-
-Returns ``true`` if the tab at index ``tab_idx`` is hidden.
-
-----
-
 .. _class_TabContainer_method_get_tab_icon:
 
 - :ref:`Texture2D<class_Texture2D>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
@@ -337,6 +340,14 @@ Returns the index of the tab at local coordinates ``point``. Returns ``-1`` if t
 
 ----
 
+.. _class_TabContainer_method_get_tab_idx_from_control:
+
+- :ref:`int<class_int>` **get_tab_idx_from_control** **(** :ref:`Control<class_Control>` control **)** |const|
+
+Returns the index of the tab tied to the given ``control``. The control must be a child of the ``TabContainer``.
+
+----
+
 .. _class_TabContainer_method_get_tab_title:
 
 - :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
@@ -345,11 +356,19 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 ----
 
-.. _class_TabContainer_method_get_tabs_rearrange_group:
+.. _class_TabContainer_method_is_tab_disabled:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
+- :ref:`bool<class_bool>` **is_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
-Returns the ``TabContainer`` rearrange group id.
+Returns ``true`` if the tab at index ``tab_idx`` is disabled.
+
+----
+
+.. _class_TabContainer_method_is_tab_hidden:
+
+- :ref:`bool<class_bool>` **is_tab_hidden** **(** :ref:`int<class_int>` tab_idx **)** |const|
+
+Returns ``true`` if the tab at index ``tab_idx`` is hidden.
 
 ----
 
@@ -357,7 +376,7 @@ Returns the ``TabContainer`` rearrange group id.
 
 - void **set_popup** **(** :ref:`Node<class_Node>` popup **)**
 
-If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer``. Clicking it will expand the :ref:`Popup<class_Popup>` node.
+If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer`` (setting it to ``null`` will make it go away). Clicking it will expand the :ref:`Popup<class_Popup>` node.
 
 ----
 
@@ -389,15 +408,7 @@ Sets an icon for the tab at index ``tab_idx``.
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
-Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node.
-
-----
-
-.. _class_TabContainer_method_set_tabs_rearrange_group:
-
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
-
-Defines rearrange group id, choose for each ``TabContainer`` the same value to enable tab drag between ``TabContainer``. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`.
+Sets a custom title for the tab at index ``tab_idx`` (tab titles default to the name of the indexed child node). Set it back to the child's name to make the tab default to it again.
 
 Theme Property Descriptions
 ---------------------------
@@ -482,7 +493,9 @@ The size of the tab text outline.
 | *Default* | ``8`` |
 +-----------+-------+
 
-The space at the left and right edges of the tab bar.
+The space at the left or right edges of the tab bar, accordingly with the current :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`.
+
+The margin is ignored with ``ALIGNMENT_RIGHT`` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup<class_TabContainer_method_set_popup>`). The margin is always ignored with ``ALIGNMENT_CENTER``.
 
 ----
 

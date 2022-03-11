@@ -54,7 +54,7 @@ enum **StretchMode**:
 
 - **STRETCH_COVER** = **3** --- The width and height of child controls is automatically adjusted to make their bounding rectangle cover the entire area of the container while keeping the aspect ratio.
 
-When the bounding rectangle of child controls exceed the container's size and :ref:`Control.rect_clip_content<class_Control_property_rect_clip_content>` is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
+When the bounding rectangle of child controls exceed the container's size and :ref:`Control.clip_contents<class_Control_property_clip_contents>` is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
 
 ----
 

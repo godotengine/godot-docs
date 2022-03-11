@@ -75,7 +75,7 @@ Properties
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`clearcoat_enabled<class_BaseMaterial3D_property_clearcoat_enabled>`                                         | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                                       | :ref:`clearcoat_gloss<class_BaseMaterial3D_property_clearcoat_gloss>`                                             | ``0.5``               |
+| :ref:`float<class_float>`                                       | :ref:`clearcoat_roughness<class_BaseMaterial3D_property_clearcoat_roughness>`                                     | ``0.5``               |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Texture2D<class_Texture2D>`                               | :ref:`clearcoat_texture<class_BaseMaterial3D_property_clearcoat_texture>`                                         |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -706,10 +706,6 @@ enum **DiffuseMode**:
 
 .. _class_BaseMaterial3D_constant_SPECULAR_SCHLICK_GGX:
 
-.. _class_BaseMaterial3D_constant_SPECULAR_BLINN:
-
-.. _class_BaseMaterial3D_constant_SPECULAR_PHONG:
-
 .. _class_BaseMaterial3D_constant_SPECULAR_TOON:
 
 .. _class_BaseMaterial3D_constant_SPECULAR_DISABLED:
@@ -718,13 +714,9 @@ enum **SpecularMode**:
 
 - **SPECULAR_SCHLICK_GGX** = **0** --- Default specular blob.
 
-- **SPECULAR_BLINN** = **1** --- Older specular algorithm, included for compatibility.
+- **SPECULAR_TOON** = **1** --- Toon blob which changes size based on roughness.
 
-- **SPECULAR_PHONG** = **2** --- Older specular algorithm, included for compatibility.
-
-- **SPECULAR_TOON** = **3** --- Toon blob which changes size based on roughness.
-
-- **SPECULAR_DISABLED** = **4** --- No specular blob.
+- **SPECULAR_DISABLED** = **2** --- No specular blob.
 
 ----
 
@@ -1179,19 +1171,19 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 
 ----
 
-.. _class_BaseMaterial3D_property_clearcoat_gloss:
+.. _class_BaseMaterial3D_property_clearcoat_roughness:
 
-- :ref:`float<class_float>` **clearcoat_gloss**
+- :ref:`float<class_float>` **clearcoat_roughness**
 
-+-----------+----------------------------+
-| *Default* | ``0.5``                    |
-+-----------+----------------------------+
-| *Setter*  | set_clearcoat_gloss(value) |
-+-----------+----------------------------+
-| *Getter*  | get_clearcoat_gloss()      |
-+-----------+----------------------------+
++-----------+--------------------------------+
+| *Default* | ``0.5``                        |
++-----------+--------------------------------+
+| *Setter*  | set_clearcoat_roughness(value) |
++-----------+--------------------------------+
+| *Getter*  | get_clearcoat_roughness()      |
++-----------+--------------------------------+
 
-Sets the roughness of the clearcoat pass. A higher value results in a smoother clearcoat while a lower value results in a rougher clearcoat.
+Sets the roughness of the clearcoat pass. A higher value results in a rougher clearcoat while a lower value results in a smoother clearcoat.
 
 ----
 
@@ -2148,6 +2140,8 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 +-----------+--------------------------+
 
 The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`.
+
+\ **Note:** Only applies to the specular blob. Does not affect specular reflections from the Sky, SSR, or ReflectionProbes.
 
 ----
 

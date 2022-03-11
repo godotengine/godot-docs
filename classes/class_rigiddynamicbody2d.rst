@@ -148,9 +148,9 @@ Emitted when one of this RigidDynamicBody2D's :ref:`Shape2D<class_Shape2D>`\ s c
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -164,9 +164,9 @@ Emitted when the collision between one of this RigidDynamicBody2D's :ref:`Shape2
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 

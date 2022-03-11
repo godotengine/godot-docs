@@ -53,7 +53,11 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`add_property_info<class_EditorSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` info **)**                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`check_changed_settings_in_group<class_EditorSettings_method_check_changed_settings_in_group>` **(** :ref:`String<class_String>` setting_prefix **)** |const|                                                 |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`erase<class_EditorSettings_method_erase>` **(** :ref:`String<class_String>` property **)**                                                                                                                   |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                         | :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>` **(** **)** |const|                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_favorites<class_EditorSettings_method_get_favorites>` **(** **)** |const|                                                                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,6 +70,8 @@ Methods
 | :ref:`Variant<class_Variant>`                     | :ref:`get_setting<class_EditorSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_setting<class_EditorSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`mark_setting_changed<class_EditorSettings_method_mark_setting_changed>` **(** :ref:`String<class_String>` setting **)**                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`property_can_revert<class_EditorSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,11 +159,27 @@ Adds a custom property info to a property. The dictionary must contain:
 
 ----
 
+.. _class_EditorSettings_method_check_changed_settings_in_group:
+
+- :ref:`bool<class_bool>` **check_changed_settings_in_group** **(** :ref:`String<class_String>` setting_prefix **)** |const|
+
+Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`.
+
+----
+
 .. _class_EditorSettings_method_erase:
 
 - void **erase** **(** :ref:`String<class_String>` property **)**
 
 Erases the setting whose name is specified by ``property``.
+
+----
+
+.. _class_EditorSettings_method_get_changed_settings:
+
+- :ref:`Array<class_Array>` **get_changed_settings** **(** **)** |const|
+
+Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`
 
 ----
 
@@ -206,6 +228,14 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
+
+----
+
+.. _class_EditorSettings_method_mark_setting_changed:
+
+- void **mark_setting_changed** **(** :ref:`String<class_String>` setting **)**
+
+Marks the passed editor setting as being changed, see :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting<class_EditorSettings_method_has_setting>`) will be accepted.
 
 ----
 

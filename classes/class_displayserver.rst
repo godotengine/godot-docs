@@ -167,6 +167,8 @@ Methods
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`window_can_draw<class_DisplayServer_method_window_can_draw>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`window_get_active_popup<class_DisplayServer_method_window_get_active_popup>` **(** **)** |const|                                                                                                                                                                                                                                               |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`window_get_attached_instance_id<class_DisplayServer_method_window_get_attached_instance_id>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                             |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`window_get_current_screen<class_DisplayServer_method_window_get_current_screen>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                         |
@@ -180,6 +182,8 @@ Methods
 | :ref:`WindowMode<enum_DisplayServer_WindowMode>`               | :ref:`window_get_mode<class_DisplayServer_method_window_get_mode>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`window_get_native_handle<class_DisplayServer_method_window_get_native_handle>` **(** :ref:`HandleType<enum_DisplayServer_HandleType>` handle_type, :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                             |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2i<class_Rect2i>`                                    | :ref:`window_get_popup_safe_rect<class_DisplayServer_method_window_get_popup_safe_rect>` **(** :ref:`int<class_int>` window **)** |const|                                                                                                                                                                                                            |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_position<class_DisplayServer_method_window_get_position>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                     |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,6 +220,8 @@ Methods
 | void                                                           | :ref:`window_set_mode<class_DisplayServer_method_window_set_mode>` **(** :ref:`WindowMode<enum_DisplayServer_WindowMode>` mode, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                              |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`window_set_mouse_passthrough<class_DisplayServer_method_window_set_mouse_passthrough>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` region, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                               |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`window_set_popup_safe_rect<class_DisplayServer_method_window_set_popup_safe_rect>` **(** :ref:`int<class_int>` window, :ref:`Rect2i<class_Rect2i>` rect **)**                                                                                                                                                                                  |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`window_set_position<class_DisplayServer_method_window_set_position>` **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                                   |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -497,21 +503,25 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_NO_FOCUS:
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_POPUP:
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 enum **WindowFlags**:
 
-- **WINDOW_FLAG_RESIZE_DISABLED** = **0**
+- **WINDOW_FLAG_RESIZE_DISABLED** = **0** --- Window can't be resizing by dragging its resize grip. It's still possible to resize the window using :ref:`window_set_size<class_DisplayServer_method_window_set_size>`. This flag is ignored for full screen windows.
 
-- **WINDOW_FLAG_BORDERLESS** = **1**
+- **WINDOW_FLAG_BORDERLESS** = **1** --- Window do not have native title bar and other decorations. This flag is ignored for full-screen windows.
 
-- **WINDOW_FLAG_ALWAYS_ON_TOP** = **2**
+- **WINDOW_FLAG_ALWAYS_ON_TOP** = **2** --- Window is floating above other regular windows. This flag is ignored for full-screen windows.
 
-- **WINDOW_FLAG_TRANSPARENT** = **3**
+- **WINDOW_FLAG_TRANSPARENT** = **3** --- Window is will be destroyed with its transient parent and displayed on top of non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
-- **WINDOW_FLAG_NO_FOCUS** = **4**
+- **WINDOW_FLAG_NO_FOCUS** = **4** --- Window can't be focused. No-focus window will ignore all input, except mouse clicks.
 
-- **WINDOW_FLAG_MAX** = **5**
+- **WINDOW_FLAG_POPUP** = **5** --- Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when window is visible. An active popup window will exclusivly receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have :ref:`WINDOW_FLAG_TRANSPARENT<class_DisplayServer_constant_WINDOW_FLAG_TRANSPARENT>` set.
+
+- **WINDOW_FLAG_MAX** = **6**
 
 ----
 
@@ -1192,6 +1202,14 @@ Shows the virtual keyboard if the platform has one.
 
 ----
 
+.. _class_DisplayServer_method_window_get_active_popup:
+
+- :ref:`int<class_int>` **window_get_active_popup** **(** **)** |const|
+
+Returns ID of the active popup window, or :ref:`INVALID_WINDOW_ID<class_DisplayServer_constant_INVALID_WINDOW_ID>` if there is none.
+
+----
+
 .. _class_DisplayServer_method_window_get_attached_instance_id:
 
 - :ref:`int<class_int>` **window_get_attached_instance_id** **(** :ref:`int<class_int>` window_id=0 **)** |const|
@@ -1239,6 +1257,14 @@ Returns the mode of the given window.
 Returns internal structure pointers for use in plugins.
 
 \ **Note:** This method is implemented on Android, Linux, macOS and Windows.
+
+----
+
+.. _class_DisplayServer_method_window_get_popup_safe_rect:
+
+- :ref:`Rect2i<class_Rect2i>` **window_get_popup_safe_rect** **(** :ref:`int<class_int>` window **)** |const|
+
+Returns the bounding box of control, or menu item that was used to open the popup window, in the screen coordinate system.
 
 ----
 
@@ -1402,6 +1428,14 @@ Passing an empty array will disable passthrough support (all mouse events will b
 \ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux and macOS it is.
 
 \ **Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_DisplayServer_method_window_set_popup_safe_rect:
+
+- void **window_set_popup_safe_rect** **(** :ref:`int<class_int>` window, :ref:`Rect2i<class_Rect2i>` rect **)**
+
+Sets the bounding box of control, or menu item that was used to open the popup window, in the screen coordinate system. Clicking this area will not auto-close this popup.
 
 ----
 

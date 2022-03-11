@@ -16,9 +16,9 @@ Control for holding :ref:`SubViewport<class_SubViewport>`\ s.
 Description
 -----------
 
-A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`, automatically setting its size.
+A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`. It uses the :ref:`SubViewport<class_SubViewport>`'s size as minimum size, unless :ref:`stretch<class_SubViewportContainer_property_stretch>` is enabled.
 
-\ **Note:** Changing a SubViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
+\ **Note:** Changing a SubViewportContainer's :ref:`Control.scale<class_Control_property_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
 
 \ **Note:** The SubViewportContainer forwards mouse-enter and mouse-exit notifications to its sub-viewports.
 
@@ -46,7 +46,7 @@ Property Descriptions
 | *Getter*  | is_stretch_enabled() |
 +-----------+----------------------+
 
-If ``true``, the sub-viewport will be scaled to the control's size.
+If ``true``, the sub-viewport will be automatically resized to the control's size.
 
 ----
 

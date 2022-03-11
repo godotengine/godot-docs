@@ -39,6 +39,8 @@ Enumerations
 
 .. _class_NativeExtension_constant_INITIALIZATION_LEVEL_SCENE:
 
+.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_DRIVER:
+
 .. _class_NativeExtension_constant_INITIALIZATION_LEVEL_EDITOR:
 
 enum **InitializationLevel**:
@@ -49,7 +51,9 @@ enum **InitializationLevel**:
 
 - **INITIALIZATION_LEVEL_SCENE** = **2**
 
-- **INITIALIZATION_LEVEL_EDITOR** = **3**
+- **INITIALIZATION_LEVEL_DRIVER** = **3**
+
+- **INITIALIZATION_LEVEL_EDITOR** = **4**
 
 Method Descriptions
 -------------------

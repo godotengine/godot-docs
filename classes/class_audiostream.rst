@@ -45,6 +45,8 @@ Methods
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const|                           |
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`instance_playback<class_AudioStream_method_instance_playback>` **(** **)**                     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                     |
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
@@ -80,6 +82,14 @@ Method Descriptions
 - :ref:`float<class_float>` **get_length** **(** **)** |const|
 
 Returns the length of the audio stream in seconds.
+
+----
+
+.. _class_AudioStream_method_instance_playback:
+
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instance_playback** **(** **)**
+
+Returns an AudioStreamPlayback. Useful for when you want to extend `_instance_playback` but call `instance_playback` from an internally held AudioStream subresource. An example of this can be found in the source files for `AudioStreamRandomPitch::instance_playback`.
 
 ----
 

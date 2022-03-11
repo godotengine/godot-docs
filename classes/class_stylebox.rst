@@ -39,6 +39,16 @@ Methods
 -------
 
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`_draw<class_StyleBox_method__draw>` **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                 |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`       | :ref:`_get_center_size<class_StyleBox_method__get_center_size>` **(** **)** |virtual| |const|                                                                |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`           | :ref:`_get_draw_rect<class_StyleBox_method__get_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`_get_style_margin<class_StyleBox_method__get_style_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`_test_mask<class_StyleBox_method__test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|        |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`draw<class_StyleBox_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |const|                                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`get_center_size<class_StyleBox_method_get_center_size>` **(** **)** |const|                                                                            |
@@ -137,6 +147,36 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 Method Descriptions
 -------------------
+
+.. _class_StyleBox_method__draw:
+
+- void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_center_size:
+
+- :ref:`Vector2<class_Vector2>` **_get_center_size** **(** **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_draw_rect:
+
+- :ref:`Rect2<class_Rect2>` **_get_draw_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_style_margin:
+
+- :ref:`float<class_float>` **_get_style_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__test_mask:
+
+- :ref:`bool<class_bool>` **_test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
 
 .. _class_StyleBox_method_draw:
 

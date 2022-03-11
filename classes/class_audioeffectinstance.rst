@@ -15,6 +15,28 @@ AudioEffectInstance
 
 
 
+Methods
+-------
+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_process<class_AudioEffectInstance_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_method__process_silence>` **(** **)** |virtual| |const|                                                           |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_AudioEffectInstance_method__process:
+
+- void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
+
+----
+
+.. _class_AudioEffectInstance_method__process_silence:
+
+- :ref:`bool<class_bool>` **_process_silence** **(** **)** |virtual| |const|
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

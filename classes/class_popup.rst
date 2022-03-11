@@ -18,24 +18,24 @@ Popup is a base window container for popup-like subwindows.
 Description
 -----------
 
-Popup is a base window container for popup-like subwindows. It's a modal by default (see :ref:`close_on_parent_focus<class_Popup_property_close_on_parent_focus>`) and has helpers for custom popup behavior.
+Popup is a base window container for popup-like subwindows. It's a modal by default (see :ref:`popup_window<class_Popup_property_popup_window>`) and has helpers for custom popup behavior.
 
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | borderless                                                               | ``true`` (overrides :ref:`Window<class_Window_property_borderless>`)    |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`close_on_parent_focus<class_Popup_property_close_on_parent_focus>` | ``true``                                                                |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | transient                                                                | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | unresizable                                                              | ``true`` (overrides :ref:`Window<class_Window_property_unresizable>`)   |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | visible                                                                  | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)      |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | wrap_controls                                                            | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
-+-------------------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------+
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | borderless    | ``true`` (overrides :ref:`Window<class_Window_property_borderless>`)    |
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | popup_window  | ``true`` (overrides :ref:`Window<class_Window_property_popup_window>`)  |
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | transient     | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | unresizable   | ``true`` (overrides :ref:`Window<class_Window_property_unresizable>`)   |
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | visible       | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)      |
++-------------------------+---------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | wrap_controls | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
++-------------------------+---------------+-------------------------------------------------------------------------+
 
 Signals
 -------
@@ -45,23 +45,6 @@ Signals
 - **popup_hide** **(** **)**
 
 Emitted when the popup is hidden.
-
-Property Descriptions
----------------------
-
-.. _class_Popup_property_close_on_parent_focus:
-
-- :ref:`bool<class_bool>` **close_on_parent_focus**
-
-+-----------+----------------------------------+
-| *Default* | ``true``                         |
-+-----------+----------------------------------+
-| *Setter*  | set_close_on_parent_focus(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_close_on_parent_focus()      |
-+-----------+----------------------------------+
-
-If true, the ``Popup`` will close when its parent :ref:`Window<class_Window>` is focused.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

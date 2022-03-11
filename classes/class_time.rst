@@ -50,6 +50,8 @@ Methods
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_datetime_string_from_unix_time<class_Time_method_get_datetime_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val, :ref:`bool<class_bool>` use_space=false **)** |const| |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_offset_string_from_offset_minutes<class_Time_method_get_offset_string_from_offset_minutes>` **(** :ref:`int<class_int>` offset_minutes **)** |const|                                   |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` **(** **)** |const|                                                                                                                      |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` **(** **)** |const|                                                                                                                      |
@@ -260,6 +262,14 @@ If ``use_space`` is true, use a space instead of the letter T in the middle.
 Converts the given Unix timestamp to an ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS).
 
 If ``use_space`` is true, use a space instead of the letter T in the middle.
+
+----
+
+.. _class_Time_method_get_offset_string_from_offset_minutes:
+
+- :ref:`String<class_String>` **get_offset_string_from_offset_minutes** **(** :ref:`int<class_int>` offset_minutes **)** |const|
+
+Converts the given timezone offset in minutes to a timezone offset string. For example, -480 returns "-08:00", 345 returns "+05:45", and 0 returns "+00:00".
 
 ----
 

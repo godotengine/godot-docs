@@ -298,7 +298,11 @@ Returns ``true`` if the string begins with the given string.
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **bigrams** **(** **)** |const|
 
-Returns the bigrams (pairs of consecutive letters) of this string.
+Returns an array containing the bigrams (pairs of consecutive letters) of this string.
+
+::
+
+    print("Bigrams".bigrams()) # Prints "[Bi, ig, gr, ra, am, ms]"
 
 ----
 
@@ -368,6 +372,13 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 .. _class_String_method_chr:
 
 - :ref:`String<class_String>` **chr** **(** :ref:`int<class_int>` char **)** |static|
+
+Directly converts an decimal integer to a unicode character. Tables of these characters can be found in various locations, for example `here. <https://unicodelookup.com/>`__\ 
+
+::
+
+    print(String.chr(65)) # Prints "A"
+    print(String.chr(129302)) # Prints "🤖" (robot face emoji)
 
 ----
 
@@ -565,6 +576,10 @@ Converts a string containing a hexadecimal number into an integer. Hexadecimal s
 
 - :ref:`String<class_String>` **humanize_size** **(** :ref:`int<class_int>` size **)** |static|
 
+Converts an integer representing a number of bytes into a human-readable form.
+
+Note that this output is in `IEC prefix format <https://en.wikipedia.org/wiki/Binary_prefix#IEC_prefixes>`__, and includes ``B``, ``KiB``, ``MiB``, ``GiB``, ``TiB``, ``PiB``, and ``EiB``.
+
 ----
 
 .. _class_String_method_indent:
@@ -641,7 +656,15 @@ Returns ``true`` if this string is free from characters that aren't allowed in f
 
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)** |const|
 
-Returns ``true`` if this string contains a valid float.
+Returns ``true`` if this string contains a valid float. This is inclusive of integers, and also supports exponents:
+
+::
+
+    print("1.7".is_valid_float()) # Prints "true"
+    print("24".is_valid_float()) # Prints "true"
+    print("7e3".is_valid_float()) # Prints "true"
+    print("24".is_valid_float()) # Prints "true"
+    print("Hello".is_valid_float()) # Prints "false"
 
 ----
 
@@ -667,6 +690,12 @@ Returns ``true`` if this string contains a valid color in hexadecimal HTML notat
 
 Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``) and the first character may not be a digit.
 
+::
+
+    print("good_ident_1".is_valid_identifier()) # Prints "true"
+    print("1st_bad_ident".is_valid_identifier()) # Prints "false"
+    print("bad_ident_#2".is_valid_identifier()) # Prints "false"
+
 ----
 
 .. _class_String_method_is_valid_int:
@@ -674,6 +703,14 @@ Returns ``true`` if this string is a valid identifier. A valid identifier may co
 - :ref:`bool<class_bool>` **is_valid_int** **(** **)** |const|
 
 Returns ``true`` if this string contains a valid integer.
+
+::
+
+    print("7".is_valid_int()) # Prints "true"
+    print("14.6".is_valid_int()) # Prints "false"
+    print("L".is_valid_int()) # Prints "false"
+    print("+3".is_valid_int()) # Prints "true"
+    print("-12".is_valid_int()) # Prints "true"
 
 ----
 
@@ -1015,7 +1052,14 @@ Returns the SHA-256 hash of the string as a string.
 
 - :ref:`float<class_float>` **similarity** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
+Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) this string compared to another. 1.0 means totally similar and 0.0 means totally dissimilar.
+
+::
+
+    print("ABC123".similarity("ABC123")) # Prints "1"
+    print("ABC123".similarity("XYZ456")) # Prints "0"
+    print("ABC123".similarity("123ABC")) # Prints "0.8"
+    print("ABC123".similarity("abc123")) # Prints "0.4"
 
 ----
 
