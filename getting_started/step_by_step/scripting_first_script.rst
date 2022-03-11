@@ -3,7 +3,7 @@
 
     - Giving a *short* and sweet hands-on intro to GDScript. The page should
       focus on working in the code editor.
-    - We assume the reader has programming foundations. If you do not consider
+    - We assume the reader has programming foundations. If you don't, consider
       taking the course we recommend in the :ref:`introduction to Godot page <doc_learning_programming>`.
 
     Techniques:
