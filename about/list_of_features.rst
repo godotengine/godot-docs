@@ -392,7 +392,7 @@ Import
    - glTF 2.0 *(recommended)*.
    - `ESCN <https://github.com/godotengine/godot-blender-exporter>`__
      (direct export from Blender).
-   - FBX (experimental).
+   - FBX (experimental, static meshes only).
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh).
 
