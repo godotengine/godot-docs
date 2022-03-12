@@ -88,7 +88,7 @@ GPU
    optimizing_3d_performance
 
 Multi-threading
---
+---------------
 
 .. toctree::
    :maxdepth: 1
