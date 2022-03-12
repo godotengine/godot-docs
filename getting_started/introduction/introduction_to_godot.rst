@@ -125,4 +125,4 @@ In the next part, you will get an overview of the engine's essential concepts.
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
 .. _April 2020 desktop and console showcase: https://youtu.be/UEDEIksGEjQ
 .. _April 2020 mobile showcase: https://youtu.be/AIapugketbs
-.. _CS50 open courseware: https://cs50.harvard.edu/x/2020/
+.. _CS50 open courseware: https://cs50.harvard.edu/x
