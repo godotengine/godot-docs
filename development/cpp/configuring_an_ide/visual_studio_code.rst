@@ -161,10 +161,15 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     If you encounter issues with lldb, you may consider using gdb (see the LinuxBSD_gdb configuration).
 
-    Do note that lldb may work better with llvm-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
+    Do note that lldb may work better with LLVM-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
 
 The name under ``program`` depends on your build configuration,
 e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
+
+.. tip::
+
+    To get linting on class reference XML files, install the
+    `vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__.
