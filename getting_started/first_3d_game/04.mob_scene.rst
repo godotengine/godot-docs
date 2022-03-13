@@ -146,8 +146,8 @@ of motion and its velocity.
 The function will take a ``start_position``, the mob's spawn position, and the
 ``player_position`` as its arguments.
 
-We first position the mob at ``start_position``. Then, we turn it towards the
-player using the ``look_at()`` method and randomize the angle by rotating a
+We position the mob at ``start_position`` and turn it towards the player using
+the ``look_at_from_position()`` method, and randomize the angle by rotating a
 random amount around the Y axis. Below, ``rand_range()`` outputs a random value
 between ``-PI / 4`` radians and ``PI / 4`` radians.
 
@@ -156,9 +156,8 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
 
    # We will call this function from the Main scene.
    func initialize(start_position, player_position):
-       translation = start_position
-       # We turn the mob so it looks at the player.
-       look_at(player_position, Vector3.UP)
+       # We position the mob and turn it so that it looks at the player.
+       look_at_from_position(start_position, player_position, Vector3.UP)
        # And rotate it randomly so it doesn't move exactly toward the player.
        rotate_y(rand_range(-PI / 4, PI / 4))
 
@@ -167,9 +166,8 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
     // We will call this function from the Main scene
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
-        Translation = startPosition;
-        // We turn the mob so it looks at the player.
-        LookAt(playerPosition, Vector3.Up);
+        // We position the mob and turn it so that it looks at the player.
+        LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
         // And rotate it randomly so it doesn't move exactly toward the player.
         RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
     }
@@ -270,8 +268,7 @@ Here is the complete ``Mob.gd`` script for reference.
        move_and_slide(velocity)
 
    func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
+       look_at_from_position(start_position, player_position, Vector3.UP)
        rotate_y(rand_range(-PI / 4, PI / 4))
 
        var random_speed = rand_range(min_speed, max_speed)
@@ -303,8 +300,7 @@ Here is the complete ``Mob.gd`` script for reference.
         // We will call this function from the Main scene
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
-            Translation = startPosition;
-            LookAt(playerPosition, Vector3.Up);
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
             var randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);

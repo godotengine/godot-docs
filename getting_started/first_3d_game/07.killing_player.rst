@@ -165,18 +165,20 @@ Starting with ``Main.gd``.
 
 
    func _on_MobTimer_timeout():
-       # Create a Mob instance and add it to the scene.
+       # Create a new instance of the Mob scene.
        var mob = mob_scene.instance()
 
-       # Choose a random location on Path2D.
+       # Choose a random location on the SpawnPath.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        # And give it a random offset.
        mob_spawn_location.unit_offset = randf()
 
+       # Communicate the spawn location and the player's location to the mob.
        var player_position = $Player.transform.origin
-
-       add_child(mob)
        mob.initialize(mob_spawn_location.translation, player_position)
+
+       # Spawn the mob by adding it to the Main scene.
+       add_child(mob)
 
 
    func _on_Player_hit():
@@ -198,19 +200,21 @@ Starting with ``Main.gd``.
 
         public void OnMobTimerTimeout()
         {
-            // Create a mob instance and add it to the scene.
+            // Create a new instance of the Mob scene.
             var mob = (Mob)MobScene.Instance();
 
-            // Choose a random location on Path2D.
-            // We stire the reference to the SpawnLocation node.
+            // Choose a random location on the SpawnPath.
+            // We store the reference to the SpawnLocation node.
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             // And give it a random offset.
             mobSpawnLocation.UnitOffset = GD.Randf();
 
+            // Communicate the spawn location and the player's location to the mob.
             Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
-
-            AddChild(mob);
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+
+            // Spawn the mob by adding it to the Main scene.
+            AddChild(mob);
         }
 
         public void OnPlayerHit()
@@ -242,8 +246,7 @@ Next is ``Mob.gd``.
 
 
    func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
+       look_at_from_position(start_position, player_position, Vector3.UP)
        rotate_y(rand_range(-PI / 4, PI / 4))
 
        var random_speed = rand_range(min_speed, max_speed)
@@ -283,8 +286,7 @@ Next is ``Mob.gd``.
 
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
-            Translation = startPosition;
-            LookAt(playerPosition, Vector3.Up);
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
             float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
