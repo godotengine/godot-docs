@@ -7,7 +7,8 @@ Introduction
 ------------
 
 This tutorial aims to serve as a guide on how you can submit your own assets
-to the `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ and share them with the Godot community.
+to the `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
+and share them with the Godot community.
 
 As mentioned in the :ref:`doc_using_assetlib` document, in order to be able to
 submit assets to the AssetLib, you need to have a registered account, and be
