@@ -114,6 +114,12 @@ We recommend using a code editor that supports XML files like Vim, Atom, Visual 
 Notepad++, or another to comfortably edit the file. You can also use their
 search feature to find classes and properties quickly.
 
+.. tip::
+
+    If you use Visual Studio Code, you can install the
+    `vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__
+    to get linting for class reference XML files.
+
 .. _doc_class_reference_writing_guidelines_bbcode:
 
 Improve formatting with BBCode style tags
