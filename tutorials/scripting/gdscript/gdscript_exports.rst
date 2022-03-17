@@ -121,7 +121,7 @@ Examples
     export(NodePath) var node_path
     # Do take note that the node itself isn't being exported -
     # there is one more step to call the true node:
-    var node = get_node(node_path)
+    onready var node = get_node(node_path)
 
     # Resources
 
