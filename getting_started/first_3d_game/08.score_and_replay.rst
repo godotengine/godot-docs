@@ -24,7 +24,7 @@ In the *Inspector*, set the *Label*'s *Text* to a placeholder like "Score: 0".
 Also, the text is white by default, like our game's background. We need to
 change its color to see it at runtime.
 
-Scroll down to *Custom Colors* and click the black box next to *Font Color* to
+Scroll down to *Theme Overrides*, and expand *Colors* and click the black box next to *Font Color* to
 tint the text.
 
 |image2|
