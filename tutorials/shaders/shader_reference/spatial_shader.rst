@@ -247,13 +247,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space (``true`` in GLES2, ``false`` in GLES3).   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **WORLD_MATRIX**               | Model space to world space transform.                                                            |
+| in mat4 **MODEL_MATRIX**               | Model space to world space transform.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat3 **WORLD_NORMAL_MATRIX**        |                                                                                                  |
+| in mat3 **MODEL_NORMAL_MATRIX**        |                                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**          | World space to view space transform.                                                             |
+| in mat4 **VIEW_MATRIX**                | World space to view space transform.                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**              | View space to world space transform.                                                             |
+| in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**          | View space to clip space transform.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
