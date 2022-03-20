@@ -292,8 +292,12 @@ Instancing scenes
 -----------------
 
 You can instantiate packed scenes normally and add them to the scene currently
-opened in the editor. Be sure to set the scene root as the owner of all the
-nodes created this way or the nodes won't be visible in the editor.
+opened in the editor. By default, nodes or scenes added with
+:ref:`Node.add_child(node) <class_Node_method_add_child>` are **not** visible
+in the Scene tree dock and are **not** persisted to disk. If you wish the node
+or scene to be visible in the scene tree dock and persisted to disk when saving
+the scene, you need to set the child node's :ref:`owner <class_Node_property_owner>`
+property to the currently edited scene root.
 
 If you are using ``@tool``:
 
@@ -303,6 +307,9 @@ If you are using ``@tool``:
     func _ready():
         var node = Spatial.new()
         add_child(node) # Parent could be any node in the scene
+
+        # The line below is required to make the node visible in the Scene tree dock
+        # and persist changes made by the tool script to the saved scene file.
         node.set_owner(get_tree().edited_scene_root)
 
  .. code-tab:: csharp
@@ -311,6 +318,9 @@ If you are using ``@tool``:
     {
         var node = new Spatial();
         AddChild(node); // Parent could be any node in the scene
+
+        // The line below is required to make the node visible in the Scene tree dock
+        // and persist changes made by the tool script to the saved scene file.
         node.Owner = GetTree().EditedSceneRoot;
     }
 
@@ -324,6 +334,9 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
         var parent = get_scene().find_node("Parent")
         var node = Spatial.new()
         parent.add_child(node)
+
+        # The line below is required to make the node visible in the Scene tree dock
+        # and persist changes made by the tool script to the saved scene file.
         node.set_owner(get_scene())
 
  .. code-tab:: csharp
@@ -334,6 +347,9 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
         var parent = GetScene().FindNode("Parent");
         var node = new Spatial();
         parent.AddChild(node);
+
+        // The line below is required to make the node visible in the Scene tree dock
+        // and persist changes made by the tool script to the saved scene file.
         node.Owner = GetScene();
     }
 
