@@ -24,8 +24,8 @@ PackedInt32Array, etc.) for each type of information.
 - ``ARRAY_COLOR`` = 3 | PackedColorArray
 - ``ARRAY_TEX_UV`` = 4 | PackedVector2Array or PackedVector3Array
 - ``ARRAY_TEX_UV2`` = 5 | PackedVector2Array or PackedVector3Array
-- ``ARRAY_BONES`` = 6 | PackedFloat32Array of groups of 4 floats or PackedInt32Array of groups of 4 ints
-- ``ARRAY_WEIGHTS`` = 7 | PackedFloat32Array of groups of 4 floats
+- ``ARRAY_BONES`` = 6 | PackedFloat32Array of groups of 4 floats or PackedInt32Array of groups of 4 ints. Each group lists indexes of 4 bones that affects a given vertex.
+- ``ARRAY_WEIGHTS`` = 7 | PackedFloat32Array of groups of 4 floats. Each float lists the amount of weight an determined bone on ``ARRAY_BONES`` has on a given vertex.
 - ``ARRAY_INDEX`` = 8 | PackedInt32Array
 
 The Array of vertices is always required. All the others are optional and will only be used if included.
