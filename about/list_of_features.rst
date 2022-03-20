@@ -299,7 +299,7 @@ improve quality. This can be helpful when using Godot for offline rendering.
 
 **Collision detection:**
 
-- Built-in shapes: cuboid, sphere, capsule, cylinder (only with Bullet physics).
+- Built-in shapes: cuboid, sphere, capsule, cylinder.
 - Generate triangle collision shapes for any mesh from the editor.
 - Generate one or several convex collision shapes for any mesh from the editor.
 
