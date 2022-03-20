@@ -27,6 +27,8 @@ Importing the project
 
 .. figure:: img/vscode_create_tasksjson_others.png
    :align: center
+ 
+- If there is no such option as **Create tasks.json file from template** available, either delete the file if it already exists in your folder or create a ``.vscode/tasks.json`` file manually. See `Tasks in Visual Studio Code <https://code.visualstudio.com/docs/editor/tasks#_custom-tasks>`_ for more details on tasks.
 
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
