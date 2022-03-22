@@ -5,7 +5,7 @@ Localization using gettext
 
 In addition to :ref:`doc_importing_translations` in CSV format, Godot
 also supports loading translation files written in the GNU gettext
-(``.po``) format.
+format (text-based ``.po`` and compiled ``.mo`` since Godot 3.5).
 
 .. note:: For an introduction to gettext, check out
           `A Quick Gettext Tutorial <https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html>`_.
@@ -31,9 +31,8 @@ Disadvantages
 - gettext is a more complex format than CSV and can be harder to grasp for
   people new to software localization.
 - People who maintain localization files will have to install gettext tools
-  on their system. However, as Godot doesn't use compiled message object files
-  (``.mo``), translators can test their work without having to install
-  gettext tools.
+  on their system. However, as Godot supports using text-based message files
+  (``.po``), translators can test their work without having to install gettext tools.
 
 Caveats
 -------
@@ -144,7 +143,7 @@ Loading a messages file in Godot
 
 To register a messages file as a translation in a project, open the
 **Project Settings**, then go to the **Localization** tab.
-In **Translations**, click **Add…** then choose the ``.po`` file
+In **Translations**, click **Add…** then choose the ``.po`` or ``.mo`` file
 in the file dialog. The locale will be inferred from the
 ``"Language: <code>\n"`` property in the messages file.
 
@@ -189,3 +188,31 @@ the command below:
 
 If there are syntax errors or warnings, they will be displayed in the console.
 Otherwise, ``msgfmt`` won't output anything.
+
+Using binary MO files (useful for large projects only)
+------------------------------------------------------
+
+For large projects with several thousands of strings to translate or more,
+it can be worth it to use binary (compiled) MO message files instead of text-based
+PO files. Binary MO files are smaller and faster to read than the equivalent
+PO files.
+
+You can generate a MO file with the command below:
+
+.. code-block:: shell
+
+    msgfmt fr.po --no-hash -o fr.mo
+
+If the PO file is valid, this command will create a ``fr.mo`` file besides
+the PO file. This MO file can then be loaded in Godot as described below.
+
+The original PO file should be kept in version control so you can update
+your translation in the future. In case you lose the original PO file and
+wish to decompile a MO file into a text-based PO file, you can do so with:
+
+.. code-block:: shell
+
+    msgunfmt fr.mo > fr.po
+
+The decompiled file will not include comments or fuzzy strings, as these are
+never compiled in the MO file in the first place.
