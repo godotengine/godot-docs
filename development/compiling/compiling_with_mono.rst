@@ -62,8 +62,9 @@ This path must be ``modules/mono/glue`` in the Godot directory::
 
     <godot_binary> --generate-mono-glue modules/mono/glue
 
-This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``
-and the C# solution for the Godot API at ``modules/mono/glue/Managed/Generated``.
+This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``,
+the C# solution for the Godot API at ``modules/mono/glue/GodotSharp/GodotSharp/Generated``,
+and the C# solution for the editor tools at ``modules/mono/glue/GodotSharp/GodotSharpEditor/Generated``.
 Once these files are generated, you can build Godot for all the desired targets
 without having to repeat this process.
 
