@@ -67,7 +67,7 @@ To run this app, you can temporarily override Gatekeeper:
 Another option is to disable Gatekeeper entirely. Note that this does decrease
 the security of your computer by allowing you to run any software you want.
 To do this, run ``sudo spctl --master-disable`` in the Terminal, enter your
-password, and then the "Anywhere" option will be available:
+password, and then the **Anywhere** option will be available:
 
   .. image:: img/macos_allow_from_anywhere.png
 
