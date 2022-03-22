@@ -101,6 +101,8 @@ new functions:
 You can learn how to submit assets to the Library, and what the asset submission
 guidelines are, in the next part of this tutorial, :ref:`doc_submitting_to_assetlib`.
 
+.. _doc_using_assetlib_editor:
+
 In the editor
 -------------
 
