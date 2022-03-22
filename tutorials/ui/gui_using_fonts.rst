@@ -31,6 +31,7 @@ Dynamic Font supports the following formats:
 - TrueType (``.ttf``)
 - OpenType (``.otf``)
 - Web Open Font Format 1 (``.woff``)
+- Web Open Font Format 2 (``.woff2``, since Godot 4.0)
 
 If you are using one of these select **New Dynamic Font**.
 Click on it to open its settings in the inspector. From here
@@ -48,7 +49,7 @@ In addition, the font data has antialiasing and hinting settings you
 can see if you click on it. If you want to adjust either of these
 you need to make the font data resource unique, then save it to a
 ``.tres`` file. Adjusting the font file will not work because ``.ttf``/
-``.otf``/ ``.woff`` files can't contain metadata about antialiasing
+``.otf``/``.woff``/``.woff2`` files can't contain metadata about antialiasing
 or hinting.
 
 If you want to use the same font again but with different settings,
