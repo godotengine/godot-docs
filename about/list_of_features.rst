@@ -426,6 +426,9 @@ Import
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh).
 
+- 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
+  on import, which ensures consistency with other 3D applications such as Blender.
+
 Input
 ^^^^^
 
