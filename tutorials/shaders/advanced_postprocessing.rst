@@ -131,7 +131,7 @@ Because the camera is facing the negative ``z`` direction, the position will hav
 In order to get a usable depth value, we have to negate ``view.z``.
 
 The world position can be constructed from the depth buffer using the following code. Note
-that the ``CAMERA_MATRIX`` is needed to transform the position from view space into world space, so
+that the ``INV_VIEW_MATRIX`` is needed to transform the position from view space into world space, so
 it needs to be passed to the fragment shader with a varying.
 
 .. code-block:: glsl
@@ -139,7 +139,7 @@ it needs to be passed to the fragment shader with a varying.
   varying mat4 CAMERA;
 
   void vertex() {
-    CAMERA = CAMERA_MATRIX;
+    CAMERA = INV_VIEW_MATRIX;
   }
 
   void fragment() {
