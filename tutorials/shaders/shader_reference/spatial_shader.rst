@@ -156,9 +156,9 @@ shader, this value can be used as desired.
 +========================================+========================================================+
 | in vec2 **VIEWPORT_SIZE**              | Size of viewport (in pixels).                          |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**          | World space to view space transform.                   |
+| in mat4 **VIEW_MATRIX**                | World space to view space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**              | View space to world space transform.                   |
+| in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
@@ -199,7 +199,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **MODELVIEW_NORMAL_MATRIX** |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat4 **WORLD_MATRIX**            | Model space to world space transform.                  |
+| inout mat4 **MODEL_MATRIX**            | Model space to world space transform.                  |
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **WORLD_NORMAL_MATRIX**     |                                                        |
 +----------------------------------------+--------------------------------------------------------+
@@ -381,11 +381,11 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 |                                   | specifies fragment depth if ``DEPTH`` is not used. |
 |                                   | Origin is lower-left.                              |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **WORLD_MATRIX**          | Model space to world space transform.              |
+| in mat4 **MODEL_MATRIX**          | Model space to world space transform.              |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**         | View space to world space transform.               |
+| in mat4 **INV_VIEW_MATRIX**       | View space to world space transform.               |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**     | World space to view space transform.               |
+| in mat4 **VIEW_MATRIX**           | World space to view space transform.               |
 +-----------------------------------+----------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                |
 +-----------------------------------+----------------------------------------------------+

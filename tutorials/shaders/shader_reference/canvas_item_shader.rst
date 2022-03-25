@@ -83,10 +83,10 @@ it manually with the following code:
 
     void vertex() {
 
-        VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
+        VERTEX = (EXTRA_MATRIX * (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
 
-.. note:: ``WORLD_MATRIX`` is actually a modelview matrix. It takes input in local space and transforms it
+.. note:: ``MODEL_MATRIX`` is known as a modelview matrix. It takes input in local space and transforms it
           into view space.
 
 In order to get the world space coordinates of a vertex, you have to pass in a custom uniform like so:
@@ -121,7 +121,7 @@ is usually:
 +--------------------------------+---------------------------------------------------+
 | Built-in                       | Description                                       |
 +================================+===================================================+
-| in mat4 **WORLD_MATRIX**       | Image space to view space transform.              |
+| in mat4 **MODEL_MATRIX**       | Image space to view space transform.              |
 +--------------------------------+---------------------------------------------------+
 | in mat4 **CANVAS_MATRIX**      |                                                   |
 +--------------------------------+---------------------------------------------------+
