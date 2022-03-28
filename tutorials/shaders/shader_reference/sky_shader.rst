@@ -28,7 +28,7 @@ example:
 
     shader_type sky;
 
-    void fragment() {
+    void sky() {
         if (AT_CUBEMAP_PASS) {
             // Sets the radiance cubemap to a nice shade of blue instead of doing
             // expensive sky calculations
@@ -76,7 +76,7 @@ a lower resolution than the rest of the sky:
     shader_type sky;
     render_mode use_half_res_pass;
 
-    void fragment() {
+    void sky() {
         if (AT_HALF_RES_PASS) {
             // Run cloud calculation for 1/4 of the pixels
             vec4 color = generate_clouds(EYEDIR);
