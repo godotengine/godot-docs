@@ -97,7 +97,7 @@ Vulkan renderer.
 
    - Bitmap fonts can be exported using tools like BMFont.
    - Dynamic fonts support monochrome fonts as well as colored fonts (e.g. for emoji).
-     Supported formats are TTF, OTF and WOFF1.
+     Supported formats are TTF, OTF, WOFF1 and WOFF2.
    - Dynamic fonts support optional font outlines with adjustable width and color.
    - Dynamic fonts support variable fonts and OpenType features.
    - Dynamic fonts support oversampling to keep fonts sharp at higher resolutions.
