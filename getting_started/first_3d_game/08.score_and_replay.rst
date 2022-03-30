@@ -72,10 +72,15 @@ you will see an empty *Font Data* field.
 
 |image8|
 
-This one expects a font file like the ones you have on your computer. Two common
-font file formats are TrueType Font (TTF) and OpenType Font (OTF).
+This one expects a font file like the ones you have on your computer.
+DynamicFont supports the following formats:
 
-In the *FileSystem* dock, Expand the ``fonts`` directory and click and drag the
+- TrueType (``.ttf``)
+- OpenType (``.otf``)
+- Web Open Font Format 1 (``.woff``)
+- Web Open Font Format 2 (``.woff2``, since Godot 3.5)
+
+In the *FileSystem* dock, expand the ``fonts`` directory and click and drag the
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Font Data*.
 The text will reappear in the theme preview.
 

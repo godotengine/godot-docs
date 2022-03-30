@@ -8,7 +8,7 @@ This page aims to list all features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot (3.4). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
+    Godot (3.5). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
     are available in the latest development version (4.0).
 
 Features
@@ -65,6 +65,7 @@ Editor
 
    - Move the in-editor camera and see the result in the running project.
 
+- Built-in offline class reference documentation.
 - Use the editor in dozens of languages contributed by the community.
 
 **Plugins:**
@@ -72,7 +73,6 @@ Editor
 - Editor plugins can be downloaded from the
   :ref:`asset library <doc_what_is_assetlib>` to extend editor functionality.
 - :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
-- Download projects from the asset library in the project manager and import them directly.
   features or speed up your workflow.
 - :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
   in the project manager and import them directly.
@@ -109,7 +109,7 @@ Editor
 
    - Bitmap fonts can be exported using tools like BMFont.
    - DynamicFont supports monochrome fonts as well as colored fonts (e.g. for emoji).
-     Supported formats are TTF, OTF and WOFF1.
+     Supported formats are TTF, OTF, WOFF1 and WOFF2.
    - DynamicFont supports optional font outlines with adjustable width and color.
    - Support for font oversampling to keep fonts sharp at higher resolutions.
 
@@ -241,20 +241,20 @@ Editor
 
 **Particles:**
 
-- *GLES3:* GPU-based particles with support for custom particle shaders.
 - CPU-based particles.
+- *GLES3:* GPU-based particles with support for custom particle shaders.
 
 **Post-processing:**
 
 - Tonemapping (Linear, Reinhard, Filmic, ACES).
-- *GLES3:* Automatic exposure adjustments based on viewport brightness.
-- *GLES3:* Near and far depth of field.
-- *GLES3:* Screen-space ambient occlusion.
-- *GLES3:* Optional debanding to avoid color banding (effective when HDR rendering is enabled).
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace.
 - Color correction using an one-dimensional ramp.
 - Brightness, contrast and saturation adjustments.
+- *GLES3:* Automatic exposure adjustments based on viewport brightness.
+- *GLES3:* Near and far depth of field.
+- *GLES3:* Screen-space ambient occlusion (SSAO).
+- *GLES3:* Optional debanding to avoid color banding (effective when HDR rendering is enabled).
 
 **Texture filtering:**
 
@@ -278,7 +278,7 @@ Editor
 - Occlusion culling with :ref:`rooms and portals <doc_rooms_and_portals>`.
   Supports gameplay notifications with primary and secondary visibility to
   disable AI/physics processing for nodes that don't need it.
-- Real-time occluder spheres. Not as effective as rooms and portals
+- Real-time occluder shapes (sphere and polygon). Not as effective as rooms and portals
   (and doesn't support gameplay notifications), but easier to set up.
 
 .. note::
@@ -455,11 +455,8 @@ Navigation
 ^^^^^^^^^^
 
 - A* algorithm in 2D and 3D.
-- Navigation meshes.
-
-   - Support for dynamic obstacle avoidance planned in Godot 4.0.
-
-- Generate navigation meshes from the editor.
+- Navigation meshes with dynamic obstacle avoidance.
+- Generate navigation meshes from the editor or at run-time (including from an exported project).
 
 Networking
 ^^^^^^^^^^
