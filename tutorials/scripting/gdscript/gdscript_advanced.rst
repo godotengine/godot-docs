@@ -163,12 +163,59 @@ too. Some Examples:
         use_class(instance) # Passed as reference.
         # Will be unreferenced and deleted.
 
-In GDScript, only base types (int, float, string and the vector types)
+In GDScript, only base types (int, float, String and PoolArray types)
 are passed by value to functions (value is copied). Everything else
-(instances, arrays, dictionaries, etc) is passed as reference. Classes
+(instances, Arrays, Dictionaries, etc) is passed as reference. Classes
 that inherit :ref:`class_Reference` (the default if nothing is specified)
 will be freed when not used, but manual memory management is allowed too
 if inheriting manually from :ref:`class_Object`.
+
+.. note::
+
+    A value is **passed by value** when it is copied every time it's specified
+    as a function parameter. One consequence of this is that the function cannot
+    modify the parameter in a way that is visible from outside the function::
+
+        func greet(text):
+            text = "Hello " + text
+
+        func _ready():
+            # Create a String (passed by value and immutable).
+            var example = "Godot"
+
+            # Pass example as a parameter to `greet()`,
+            # which modifies the parameter and does not return any value.
+            greet(example)
+
+            print(example)  #  Godot
+
+    A value is **passed by reference** when it is *not* copied every time it's
+    specified as a function parameter. This allows modifying a function
+    parameter within a function body (and having the modified value accessible
+    outside the function). The downside is that the data passed as a function
+    parameter is no longer guaranteed to be immutable, which can cause
+    difficult-to-track bugs if not done carefully::
+
+        func greet(text):
+            text.push_front("Hello")
+
+        func _ready():
+            # Create an Array (passed by reference and mutable) containing a String,
+            # instead of a String (passed by value and immutable).
+            var example = ["Godot"]
+
+            # Pass example as a parameter to `greet()`,
+            # which modifies the parameter and does not return any value.
+            greet(example)
+
+            print(example)  #  [Hello, Godot] (Array with 2 String elements)
+
+    Compared to passing by value, passing by reference can perform better when
+    using large objects since copying large objects in memory can be slow.
+
+    Additionally, in Godot, base types such as String are **immutable**. This
+    means that modifying them will *always* return a copy of the original value,
+    rather than modifying the value in-place.
 
 Arrays
 ------
