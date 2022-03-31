@@ -9,3 +9,4 @@ Platform-specific
    ios/index
    platform_html5
    consoles
+   mobile_rendering_limitations

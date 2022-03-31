@@ -162,3 +162,12 @@ and ARMv8 is usually sufficient to cover most devices in use today.
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
 information.
+
+Troubleshooting rendering issues
+--------------------------------
+
+To improve out-of-the-box performance on mobile devices, Godot automatically
+uses low-end-friendly settings by default on both Android and iOS.
+
+This can cause rendering issues that do not occur when running the project on a
+desktop platform. See :ref:`doc_mobile_rendering_limitations` for more information.
