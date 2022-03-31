@@ -166,6 +166,16 @@ present in the PO template. This can be done automatically using the
 If you want to keep a backup of the original message file (which would be
 saved as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
 
+.. note::
+
+    After running ``msgmerge``, strings which were modified in the source language
+    will have a "fuzzy" comment added before them in the ``.po`` file. This comment
+    denotes that the translation should be updated to match the new source string,
+    as the translation will most likely be inaccurate until it's updated.
+
+    Strings with "fuzzy" comments hese strings will **not** be read by Godot
+    until the translation is updated and the "fuzzy" comment is removed.
+
 Checking the validity of a PO file or template
 ----------------------------------------------
 
