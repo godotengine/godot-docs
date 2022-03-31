@@ -173,8 +173,8 @@ saved as ``fr.po~`` in this example), remove the ``--backup=none`` argument.
     denotes that the translation should be updated to match the new source string,
     as the translation will most likely be inaccurate until it's updated.
 
-    Strings with "fuzzy" comments hese strings will **not** be read by Godot
-    until the translation is updated and the "fuzzy" comment is removed.
+    Strings with "fuzzy" comments will **not** be read by Godot until the
+    translation is updated and the "fuzzy" comment is removed.
 
 Checking the validity of a PO file or template
 ----------------------------------------------
