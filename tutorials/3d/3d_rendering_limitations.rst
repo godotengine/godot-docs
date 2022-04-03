@@ -96,6 +96,18 @@ this feature. There are still several ways to avoid this problem:
   This will allow the opaque part to cast shadows and may also improve
   performance.
 
+- If your texture mostly has fully opaque and fully transparent areas, you can
+  use alpha testing instead of alpha blending. This transparency mode is faster
+  to render and doesn't suffer from transparency issues. Enable
+  **Parameters > Use Alpha Scissor** in SpatialMaterial, and adjust
+  **Alpha Scissor Threshold** accordingly if needed. Note that MSAA will not
+  anti-alias the texture's edges, but FXAA will.
+
+- If you need to render semi-transparent areas of the texture, alpha scissor
+  isn't suitable. Instead, setting the SpatialMaterial's
+  **Parameters > Depth Draw Mode** property to **Opaque Pre-Pass** can sometimes
+  work (at a performance cost).
+
 - If you want a material to fade with distance, use the SpatialMaterial
   distance fade mode **Pixel Dither** or **Object Dither** instead of
   **PixelAlpha**. This will make the material opaque. This way, it can also
