@@ -129,7 +129,7 @@ the text. Here's the list of available tags:
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | [method methodname]        | Link to a method in this class       | Call [method hide].               | Call :ref:`hide <class_Spatial_method_hide>`.     |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname]  | Link to another class's method       | Call [method Node3D.hide].        | Call :ref:`hide <class_Spatial_method_hide>`.     |
+| [method Class.methodname]  | Link to another class's method       | Call [method Spatial.hide].       | Call :ref:`hide <class_Spatial_method_hide>`.     |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+
 | [member membername]        | Link to a member in this class       | Get [member scale].               | Get :ref:`scale <class_Node2D_property_scale>`.   |
 +----------------------------+--------------------------------------+-----------------------------------+---------------------------------------------------+

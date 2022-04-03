@@ -80,7 +80,7 @@ Transparency sorting
 --------------------
 
 In Godot, transparent materials are drawn after opaque materials. Transparent
-objects are sorted back to front before being drawn based on the Node3D's
+objects are sorted back to front before being drawn based on the Spatial's
 position, not the vertex position in world space. Due to this, overlapping
 objects may often be sorted out of order. To fix improperly sorted objects, tweak
 the material's :ref:`Render Priority <class_Material_property_render_priority>`
