@@ -139,14 +139,41 @@ Tonemap
 
 *This feature is only available when using the GLES3 backend.*
 
-Selects the tone-mapping curve that will be applied to the scene, from a short
-list of standard curves used in the film and game industry. Tone mapping can make
-light and dark areas more homogeneous, even though the result is not that strong.
-Tone mapping options are:
+Selects the tonemapping curve that will be applied to the scene, from a
+list of standard curves used in the film and game industry. Tonemapping operators
+other than Linear are used to make light and dark areas more homogeneous,
+while also avoiding clipping of bright highlights.
 
-- **Mode:** Tone mapping mode, which can be Linear, Reindhart, Filmic, or Aces.
-- **Exposure:** Tone mapping exposure which simulates amount of light received over time.
-- **White:** Tone mapping white, which simulates where in the scale white is located (by default 1.0).
+The tone mapping options are:
+
+- **Mode:** The tone mapping mode to use.
+
+  - **Linear:** The default tonemapping mode. This is the fastest and simplest
+    tonemapping operator, but it causes bright lighting to look blown out, with
+    noticeable clipping in the output colors.
+  - **Reinhardt:** Performs a variation on rendered pixels' colors by this
+    formula: ``color = color / (1 + color)``. This avoids clipping bright
+    highlights, but the resulting image can look a bit dull.
+  - **Filmic:** This avoids clipping bright highlights, with a resulting image
+    that usually looks more vivid than Reinhardt.
+  - **ACES Fitted:** Academy Color Encoding System tonemapper.
+    ACES Fitted is slightly more expensive than other options, but it handles
+    bright lighting in a more realistic fashion by desaturating it as it becomes brighter.
+    ACES typically has a more contrasted output compared to Reinhardt and Filmic.
+    ACES is the recommended option when aiming for photorealistic visuals.
+  - **ACES:** *Deprecated (will be removed in Godot 4.0).* Behaves like ACES,
+    but doesn't desaturate lighting as it becomes brighter (which is less realistic).
+    It's recommended to use ACES Fitted instead of ACES.
+
+- **Exposure:** Tone mapping exposure which simulates amount of light received
+  over time (default: ``1.0``). Higher values result in an overall brighter appearance.
+  If the scene appears too dark as a result of a tonemapping operator or whitepoint
+  change, try increasing this value slightly.
+
+- **White:** Tone mapping whitepoint, which simulates where in the scale white is
+  located (default: ``1.0``). For photorealistic lighting, recommended values are
+  between ``6.0`` and ``8.0``. Higher values result in less blown out highlights,
+  but make the scene appear slightly darker as a whole.
 
 Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
