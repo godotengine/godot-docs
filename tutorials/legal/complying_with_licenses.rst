@@ -16,6 +16,14 @@ distribute the software (and derivative projects, including games made with it).
 Your game or project can have a different license, but it still needs to comply
 with the original one.
 
+.. warning::
+
+    In your project's credits screen, remember to also list third-party notices
+    for assets you're using, such as textures, models, sounds, music and fonts.
+
+    Free assets in particular often come with licenses that require attribution.
+    Double-check their license before using those assets in a project.
+
 Requirements
 ------------
 
@@ -26,8 +34,8 @@ This text reads as follows:
 
     This game uses Godot Engine, available under the following license:
 
-    Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.
-    Copyright (c) 2014-2021 Godot Engine contributors.
+    Copyright (c) 2007-2022 Juan Linietsky, Ariel Manzur.
+    Copyright (c) 2014-2022 Godot Engine contributors.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -81,7 +89,7 @@ If the game includes printed manuals, license text can be included there.
 Link to the license
 ^^^^^^^^^^^^^^^^^^^
 
-The Godot Engine developers consider that a link to godotengine.org/license
+The Godot Engine developers consider that a link to ``godotengine.org/license``
 in your game documentation or credits would be an acceptable way to satisfy
 the license terms. 
 
@@ -125,12 +133,11 @@ high-level multiplayer. ENet has similar licensing terms as Godot:
 
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-MBedTLS
-^^^^^^^
+mbed TLS
+^^^^^^^^
 
-If the project is done with Godot 3.1 or above and it utilizes SSL (usually
-through HTTP requests), the `MBedTLS <https://tls.mbed.org>`_ Apache license
-needs to be complied by including the following text:
+If the project is exported with Godot 3.1 or later, it includes `mbed TLS <https://tls.mbed.org>`_.
+The Apache license needs to be complied to by including the following text:
 
     Copyright The Mbed TLS Contributors
 
@@ -146,5 +153,12 @@ needs to be complied by including the following text:
     See the License for the specific language governing permissions and
     limitations under the License.
 
-Keep in mind that Godot 2.x and 3.0 use `OpenSSL <https://www.openssl.org>`_
-instead.
+Keep in mind that Godot 2.x and 3.0 use `OpenSSL <https://www.openssl.org>`_ 1.x
+instead. This old OpenSSL version used the OpenSSL license, not the Apache 2 license
+as the latest version of OpenSSL currently uses (as of April 2022).
+
+.. note::
+
+    If you exported your project using a
+    :ref:`custom build with specific modules disabled <doc_optimizing_for_size>`,
+    you don't need to list the disabled modules' licenses in your exported project.
