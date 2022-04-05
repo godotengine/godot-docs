@@ -61,13 +61,10 @@ use the ``Icon`` setting.
 Changing the file icon
 ----------------------
 
-For Godot 3.5 beta 3+ and Godot 4 alpha 5+ you can change file icon with no
-external tools, just running two GDScript files from console. Files and detailed
-description can be found here:
-
-`Windows icon replacement scripts <https://github.com/pkowal1982/godoticon>`__
-
-Changing icon this way should work for executables containing embedded PCK.
+In Godot 3.5 and Godot 4.0, you can change the file icon without
+external tools using `godoticon <https://github.com/pkowal1982/godoticon>`__.
+Changing the file icon this way should work for executables containing
+an embedded PCK.
 
 .. warning::
 
