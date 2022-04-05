@@ -1041,7 +1041,7 @@ Reducing motion sickness
 
 To help reduce motion sickness while moving, we are going to add a vignette effect that will only be visible while the player moves.
 
-First, quickly switch back to ``Game.tscn```. Under the :ref:`ARVROrigin <class_ARVROrigin>` node there is a child node called ``Movement_Vignette``. This node is going to apply a simple
+First, quickly switch back to ``Game.tscn``. Under the :ref:`ARVROrigin <class_ARVROrigin>` node there is a child node called ``Movement_Vignette``. This node is going to apply a simple
 vignette to the VR headset when the player is moving using the VR controllers. This should help reduce motion sickness.
 
 Open up ``Movement_Vignette.tscn``, which you can find in the ``Scenes`` folder. The scene is just a :ref:`ColorRect <class_ColorRect>` node with a custom
