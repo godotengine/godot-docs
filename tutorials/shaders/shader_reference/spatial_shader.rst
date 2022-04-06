@@ -278,7 +278,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 
     Shaders going through the transparent pipeline when ``ALPHA`` is written to
     may exhibit transparency sorting issues. Read the
-    :ref:`section transparency sorting in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
+    :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
     for more information and ways to avoid issues.
 
 Light built-ins
