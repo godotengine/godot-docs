@@ -309,16 +309,21 @@ and compile them accordingly, including our "summator" module.
 Improving the build system for development
 ------------------------------------------
 
-So far we defined a clean and simple SCsub that allows us to add the sources
+.. warning::
+
+    This shared library support is not designed to support distributing a module
+    to other users without recompiling the engine. For that purpose, use
+    :ref:`GDNative <doc_what_is_gdnative>` instead.
+
+So far, we defined a clean SCsub that allows us to add the sources
 of our new module as part of the Godot binary.
 
 This static approach is fine when we want to build a release version of our
-game given we want all the modules in a single binary.
+game, given we want all the modules in a single binary.
 
-However, the trade-off is every single change means a full recompilation of the
-game. Even if SCons is able to detect and recompile only the file that have
-changed, finding such files and eventually linking the final binary is a
-long and costly part.
+However, the trade-off is that every single change requires a full recompilation of the
+game. Even though SCons is able to detect and recompile only the file that was
+changed, finding such files and eventually linking the final binary takes a long time.
 
 The solution to avoid such a cost is to build our own module as a shared
 library that will be dynamically loaded when starting our game's binary.
@@ -372,13 +377,13 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
     ./bin/godot*
 
 .. note::
-  You have to ``export`` the environment variable otherwise
-  you won't be able to play your project from within the editor.
+  You have to ``export`` the environment variable. Otherwise,
+  you won't be able to run your project from the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
-using the `ARGUMENT` command:
+using the ``ARGUMENT`` command:
 
 .. code-block:: python
 
