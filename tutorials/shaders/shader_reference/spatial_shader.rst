@@ -340,6 +340,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | out vec4 **IRRADIANCE**                | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 
+.. note::
+
+    Shaders going through the transparent pipeline when ``ALPHA`` is written to
+    may exhibit transparency sorting issues. Read the
+    :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
+    for more information and ways to avoid issues.
+
 Light built-ins
 ^^^^^^^^^^^^^^^
 
@@ -423,3 +430,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 | out float **ALPHA**               | Alpha (0..1); if written to, the material will go  |
 |                                   | to the transparent pipeline.                       |
 +-----------------------------------+----------------------------------------------------+
+
+.. note::
+
+    Shaders going through the transparent pipeline when ``ALPHA`` is written to
+    may exhibit transparency sorting issues. Read the
+    :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
+    for more information and ways to avoid issues.
