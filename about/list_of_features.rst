@@ -8,7 +8,7 @@ This page aims to list all features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot (3.3). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
+    Godot (3.4). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
     are available in the latest development version (4.0).
 
 Features
@@ -45,7 +45,7 @@ Editor
 **Features:**
 
 - Scene tree editor.
-- Script editor.
+- Built-in script editor.
 - Support for :ref:`external script editors <doc_external_editor>` such as
   Visual Studio Code or Vim.
 - GDScript :ref:`debugger <doc_debugger_panel>`.
@@ -71,8 +71,11 @@ Editor
 
 - Editor plugins can be downloaded from the
   :ref:`asset library <doc_what_is_assetlib>` to extend editor functionality.
-- Create your own plugins using GDScript to add new features or speed up your workflow.
+- :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
 - Download projects from the asset library in the project manager and import them directly.
+  features or speed up your workflow.
+- :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
+  in the project manager and import them directly.
 
 2D graphics
 ^^^^^^^^^^^
@@ -96,7 +99,7 @@ Editor
 - AnimatedSprite as a helper for creating animated sprites.
 - Parallax layers.
 
-   - Pseudo-3D support by automatically duplicating a layer several times.
+   - Pseudo-3D support including preview in the editor.
 
 - 2D lighting with normal maps.
 
@@ -149,7 +152,9 @@ Editor
 - OpenGL ES 3.0 renderer (uses OpenGL 3.3 on desktop platforms).
 
    - High-end visuals. Recommended on desktop platforms.
-   - HDR rendering with sRGB.
+   - Optional HDR rendering with sRGB (enabled by default).
+   - Uses an optional depth prepass (enabled by default) to reduce the cost of
+     overdraw, which speeds up complex scene rendering.
 
 - OpenGL ES 2.0 renderer (uses OpenGL 2.1 on desktop platforms).
 
@@ -162,23 +167,35 @@ Editor
 
 - Perspective, orthographic and frustum-offset cameras.
 
-**Physically-based rendering:**
+**Physically-based rendering (built-in material features):**
 
 - Follows the Disney PBR model.
+- Supports Lambert, Lambert Wrap (half-Lambert), Oren-Nayar and Toon diffuse shading modes.
+- Supports Schlick-GGX, Blinn, Phong, Toon and Disabled specular shading modes.
 - Uses a roughness-metallic workflow with support for ORM textures.
+- Uses horizon specular occlusion (Filament model) to improve material appearance
 - Normal mapping.
-- *GLES3:* Parallax/relief mapping with automatic level of detail based on distance.
-- *GLES3:* Sub-surface scattering and transmittance.
-- *GLES3:* Proximity fade (soft particles).
+- Detail mapping for the albedo and normal maps.
 - Distance fade which can use alpha blending or dithering to avoid going through
   the transparent pipeline.
 - Dithering can be determined on a per-pixel or per-object basis.
+- *GLES3:* Parallax/relief mapping with automatic level of detail based on distance.
+- *GLES3:* Sub-surface scattering and transmittance.
+- *GLES3:* Refraction with support for material roughness (resulting in blurry refraction).
+  On GLES2, refraction is still functional but lacks support for material roughness.
+- *GLES3:* Proximity fade (soft particles).
 
 **Real-time lighting:**
 
 - Directional lights (sun/moon). Up to 4 per scene.
 - Omnidirectional lights.
 - Spot lights with adjustable cone angle and attenuation.
+- Specular energy can be adjusted on a per-light basis.
+- *GLES3:* Lighting is done with a single-pass forward approach.
+  By default, up to 32 omni light and 32 spot lights can be displayed per mesh resource.
+  If needed, this limit can be increased at the cost of increased shader compilation times and lower performance.
+  GLES2 uses a multi-pass forward approach to lighting, which doesn't have a
+  limit on the number of lights but is slower with many lights.
 
 **Shadow mapping:**
 
@@ -203,11 +220,11 @@ Editor
 
 **Reflections:**
 
-- *GLES3:* Voxel-based reflections (when using GI probes).
 - Fast baked reflections or slow real-time reflections using ReflectionProbe.
-  Parallax correction can optionally be enabled.
-- *GLES3:* Screen-space reflections.
+  Parallax box correction can optionally be enabled.
 - Reflection techniques can be mixed together for greater accuracy or scalability.
+- *GLES3:* Voxel-based reflections (when using GI probes).
+- *GLES3:* Screen-space reflections.
 
 **Sky:**
 
@@ -245,18 +262,30 @@ Editor
 
 **Texture compression:**
 
+- Lossless or lossy WebP (does not save VRAM; only reduces storage size).
+- S3TC (only supported on desktop platforms).
+- ETC1 (recommended when using the GLES2 renderer).
 - *GLES3:* BPTC for high-quality compression (not supported on macOS).
 - *GLES3:* ETC2 (not supported on macOS).
-- ETC1 (recommended when using the GLES2 renderer).
-- *GLES3:* S3TC (not supported on mobile/Web platforms).
 
 **Anti-aliasing:**
 
 - Multi-sample antialiasing (MSAA).
 - Fast approximate antialiasing (FXAA).
 
-Most of these effects can be adjusted for better performance or to further
-improve quality. This can be helpful when using Godot for offline rendering.
+**Performance:**
+
+- Occlusion culling with :ref:`rooms and portals <doc_rooms_and_portals>`.
+  Supports gameplay notifications with primary and secondary visibility to
+  disable AI/physics processing for nodes that don't need it.
+- Real-time occluder spheres. Not as effective as rooms and portals
+  (and doesn't support gameplay notifications), but easier to set up.
+
+.. note::
+
+    Most of the effects listed above can be adjusted for better performance or
+    to further improve quality. This can be helpful when using Godot for
+    offline rendering.
 
 3D tools
 ^^^^^^^^
@@ -270,6 +299,7 @@ improve quality. This can be helpful when using Godot for offline rendering.
    - PathFollow3D node to make nodes follow a Path3D.
 
 - 3D geometry helper class.
+- Support for exporting the current scene as a glTF 2.0 file from the editor.
 
 3D physics
 ^^^^^^^^^^
@@ -361,7 +391,7 @@ Audio
 
 - Support for re-routable :ref:`audio buses <doc_audio_buses>` and effects
   with dozens of effects included.
-- Listener3D node to listen from a position different than the camera in 3D.
+- Listener2D and Listener3D nodes to listen from a position different than the camera.
 - Audio input to record microphones with real-time access using the AudioEffectCapture class.
 - MIDI input.
 
@@ -476,6 +506,10 @@ Windowing and OS integration
 - Execute commands in a blocking or non-blocking manner.
 - Open file paths and URLs using default or custom protocol handlers (if registered on the system).
 - Parse custom command line arguments.
+- :ref:`Headless/server binaries <doc_exporting_for_dedicated_servers>` can be
+  downloaded for Linux and :ref:`compiled for macOS <doc_compiling_for_osx>`.
+  Any binary can be used without a window using the ``--no-window``
+  :ref:`command line argument <doc_command_line_tutorial>`.
 
 Mobile
 ^^^^^^
@@ -489,9 +523,9 @@ XR support (AR and VR)
 
 - Support for ARKit on iOS out of the box.
 - Support for the OpenXR APIs.
-  
+
    - Includes support for popular headsets like the Meta Quest and the Valve Index.
-  
+
 - Support for the OpenVR APIs.
 
 GUI system
@@ -510,7 +544,8 @@ The editor UI can easily be extended in many ways using add-ons.
 - Labels.
 - RichTextLabel for :ref:`text formatted using BBCode <doc_bbcode_in_richtextlabel>`.
 - Trees (can also be used to represent tables).
-- Containers (horizontal, vertical, grid, center, margin, draggable splitter, ...).
+- Color picker with RGB and HSV modes.
+- Containers (horizontal, vertical, grid, flow, center, margin, aspect ratio, draggable splitter, ...).
 - Controls can be rotated and scaled.
 
 **Sizing:**
@@ -535,7 +570,7 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Procedural vector-based theming using :ref:`class_StyleBoxFlat`.
 
-   - Supports rounded/beveled corners, drop shadows and per-border widths.
+   - Supports rounded/beveled corners, drop shadows, per-border widths and antialiasing.
 
 - Texture-based theming using :ref:`class_StyleBoxTexture`.
 
@@ -546,6 +581,7 @@ Animation
 ^^^^^^^^^
 
 - Direct kinematics and inverse kinematics.
+- :ref:`Tween <class_Tween>` node to easily perform procedural animations by code.
 - Support for animating any property with customizable interpolation.
 - Support for calling methods in animation tracks.
 - Support for playing sounds in animation tracks.
@@ -566,7 +602,7 @@ File formats
 - Read and write :ref:`class_JSON` files.
 - Read and write INI-style configuration files using :ref:`class_ConfigFile`.
 
-   - Can (de)serialize any Godot datatype, including Vector, Color, ...
+   - Can (de)serialize any Godot datatype, including Vector2/3, Color, ...
 
 - Read XML files using :ref:`class_XMLParser`.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
@@ -579,10 +615,10 @@ Miscellaneous
 
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
-- Command line interface for automation.
+- :ref:`Command line interface <doc_command_line_tutorial>` for automation.
 
    - Export and deploy projects using continuous integration platforms.
-   - `Completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
+   - `Shell completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__
      are available for Bash, zsh and fish.
 
 - Support for :ref:`C++ modules <doc_custom_modules_in_c++>` statically linked
