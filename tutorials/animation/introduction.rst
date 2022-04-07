@@ -115,7 +115,7 @@ its child. We will animate the sprite to move between two points on the screen.
 
 .. warning::
 
-   AnimationPlayer inherits from Node instead of Node2D or Node3D, which means
+   AnimationPlayer inherits from Node instead of Node2D or Spatial, which means
    that the child nodes will not inherit the transform from the parent nodes
    due to a bare Node being present in the hierarchy.
 
