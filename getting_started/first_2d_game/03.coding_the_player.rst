@@ -267,11 +267,11 @@ diagonal movement.
 We also check whether the player is moving so we can call ``play()`` or
 ``stop()`` on the AnimatedSprite2D.
 
-         ``$`` is shorthand for ``get_node()``. So in the code above,
+.. tip:: ``$`` is shorthand for ``get_node()``. So in the code above,
          ``$AnimatedSprite2D.play()`` is the same as
          ``get_node("AnimatedSprite2D").play()``.
-
-.. tip:: In GDScript, ``$`` returns the node at the relative path from the
+         
+         In GDScript, ``$`` returns the node at the relative path from the
          current node, or returns ``null`` if the node is not found. Since
          AnimatedSprite2D is a child of the current node, we can use
          ``$AnimatedSprite2D``.
