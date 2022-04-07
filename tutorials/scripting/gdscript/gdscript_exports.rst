@@ -267,7 +267,7 @@ Attaching variables to properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To attach variables to properties (allowing the value of the property to be used
-in scripts). You need to create a variable with the exact same name as the
+in scripts), you need to create a variable with the exact same name as the
 property or else you may need to override the 
 :ref:`_set() <class_Object_method__get_property_list>` and 
 :ref:`_get() <class_Object_method__get_property_list>` methods. Attaching
