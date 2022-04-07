@@ -115,6 +115,7 @@ Godot license:
     Portions of this software are copyright © <year> The FreeType Project (www.freetype.org).  All rights reserved.
 
 .. note::
+
     <year> should correspond to the value from the FreeType version used 
     in your build. This information can be found in the editor by opening
     the **Help > About** dialog and going to the **Third-party Licenses**
