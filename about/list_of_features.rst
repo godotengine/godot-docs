@@ -484,6 +484,8 @@ Import
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh).
 
 - Support for loading glTF 2.0 scenes at run-time, including from an exported project.
+- 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
+  on import, which ensures consistency with other 3D applications such as Blender.
 
 Input
 ^^^^^

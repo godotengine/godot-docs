@@ -251,8 +251,8 @@ Ensure Tangents
 
 If textures with normal mapping are to be used, meshes need to have tangent arrays.
 This option ensures that these are generated if not present in the source scene.
-Godot uses Mikktspace for this, but it's always better to have them generated in
-the exporter.
+Godot uses `Mikktspace <http://www.mikktspace.com/>`__ for this,
+but it's always better to have them generated in the exporter.
 
 Storage
 ^^^^^^^
