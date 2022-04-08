@@ -53,7 +53,7 @@ Add five extra methods such that the script looks like this:
 
 
     func _get_plugin_icon():
-        return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
 
 The important part in this script is the ``_has_main_screen()`` function,
 which is overloaded so it returns ``true``. This function is automatically
@@ -108,7 +108,7 @@ Here is the full plugin script:
 
 
     func _enter_tree():
-        main_panel_instance = MainPanel.instance()
+        main_panel_instance = MainPanel.instantiate()
         # Add the main panel to the editor's main viewport.
         get_editor_interface().get_editor_main_control().add_child(main_panel_instance)
         # Hide the main panel. Very much required.
@@ -135,7 +135,7 @@ Here is the full plugin script:
 
     func _get_plugin_icon():
         # Must return some kind of Texture for the icon.
-        return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
 
 A couple of specific lines were added. ``MainPanel`` is a constant that holds
 a reference to the scene, and we instance it into `main_panel_instance`.
