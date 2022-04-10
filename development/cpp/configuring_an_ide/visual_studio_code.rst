@@ -41,7 +41,8 @@ Importing the project
       "type": "shell",
       "command": "scons",
       "args": [
-        "-j $(nproc)"
+        "-j",
+        "$(nproc)"
       ],
       "problemMatcher": "$msCompile"
     }
