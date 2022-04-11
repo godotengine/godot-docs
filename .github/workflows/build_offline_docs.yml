@@ -30,7 +30,7 @@ jobs:
         run: |
           sphinx-build --color -d _build/doctrees . _build/html
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: godot-docs-html-${{ matrix.branch }}
           path: _build/html
