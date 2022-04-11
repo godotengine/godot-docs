@@ -9,7 +9,7 @@ CLion
 Importing the project
 ---------------------
 
-CLion can import a project's `compilation database file <https://clang.llvm.org/docs/JSONCompilationDatabase.html>`, commonly named `compile_commands.json`. To generate the compilation database file, open the terminal, change to the Godot root directory, and run:
+CLion can import a project's `compilation database file <https://clang.llvm.org/docs/JSONCompilationDatabase.html>`, commonly named `compile_commands.json`__. To generate the compilation database file, open the terminal, change to the Godot root directory, and run:
 
 ::
 
@@ -25,7 +25,6 @@ CLion does not support compiling and debugging Godot via SCons out of the box. T
 ::
 
     scons
-
 
 To add a custom build target that invokes SCons for compilation:
 
