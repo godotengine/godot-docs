@@ -1,0 +1,50 @@
+Editor manual
+=============
+
+In this section, we cover the Godot editor in general, from its interface to
+using it with the command line.
+
+The editor's interface
+----------------------
+
+The following pages explain how to use the various windows, workspaces, and
+docks that make up the Godot editor. We cover some specific editors' interface
+in other sections where appropriate. For example, the :ref:`animation editor
+<doc_introduction_animation>`.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-interface
+
+   project_manager
+   inspector_dock
+   project_settings
+   default_key_mapping
+   customizing_editor
+
+Web editor
+----------
+
+Godot offers an HTML5 version of the editor running entirely in your browser. No
+download is required to use it, but it has a certain amount of caveats you
+should be aware of.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-web-editor
+
+   using_the_web_editor
+
+For developers
+--------------
+
+The articles below focus on features for developers, like calling Godot from the
+command lines and using an external text editor such as Visual Studio Code or
+Emacs.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-learn-editor
+
+   command_line_tutorial
+   external_editor
