@@ -332,8 +332,8 @@ it. However, we do not have to tell Godot about our constructor, destructor and
 
 The other method of note is our ``_process`` function, which simply keeps track
 of how much time has passed and calculates a new position for our sprite using a
-simple sine and cosine function. What stands out is calling
-``owner->set_position`` to call one of the build in methods of our Sprite. This
+sine and cosine function. What stands out is calling
+``owner->set_position`` to call one of the built-in methods of our Sprite. This
 is because our class is a container class; ``owner`` points to the actual Sprite
 node our script relates to. In the upcoming NativeScript 1.1, ``set_position``
 can be called directly on our class.
