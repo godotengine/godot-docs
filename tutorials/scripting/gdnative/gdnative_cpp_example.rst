@@ -251,7 +251,7 @@ it. However, we do not have to tell Godot about our constructor, destructor and
 The other method of note is our ``_process`` function, which simply keeps track
 of how much time has passed and calculates a new position for our sprite using a
 sine and cosine function. What stands out is calling
-``owner->set_position`` to call one of the build in methods of our Sprite. This
+``owner->set_position`` to call one of the built-in methods of our Sprite. This
 is because our class is a container class; ``owner`` points to the actual Sprite
 node our script relates to.
 
