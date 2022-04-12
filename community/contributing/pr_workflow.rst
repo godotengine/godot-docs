@@ -59,7 +59,7 @@ The branches on the Git repository are organized as follows:
    They are used to backport bugfixes and enhancements from the ``master``
    branch to the currently maintained stable release (e.g. 3.1.2 or 2.1.6).
    As a rule of thumb, the last stable branch is maintained until the next
-   major version (e.g. the ``3.0`` branch was maintained until the release of
+   minor version (e.g. the ``3.0`` branch was maintained until the release of
    Godot 3.1).
    If you want to make PRs against a maintained stable branch, please check
    first if your changes are also relevant for the ``master`` branch, and if so
@@ -449,7 +449,7 @@ the so-called ``HEAD``.
 
 While you can give any commit ID to ``git rebase -i`` and review everything in
 between, the most common and convenient workflow involves rebasing on the
-*upstream ``master`` branch*, which you can do with:
+upstream ``master`` branch, which you can do with:
 
 ::
 
