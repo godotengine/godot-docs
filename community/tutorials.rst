@@ -16,6 +16,8 @@ If you're interested in Visual Scripting, `Emilio's tutorials <https://www.youtu
 
 If you're interested in a complete introduction to programming using Godot and GDScript, the unofficial `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ YouTube channel is a good place to start.
 
+GDQuest's *Learn GDScript From Zero* is a free and open source interactive tutorial for absolute beginners to learn to program with Godot's GDScript language. It is available as a `desktop application <https://gdquest.itch.io/learn-godot-gdscript>`_  or `in the browser <https://gdquest.github.io/learn-gdscript>`_.
+
 Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or shaders.
 
 Video tutorials
