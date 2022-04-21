@@ -3,6 +3,12 @@
 3D rendering limitations
 ========================
 
+.. seealso::
+
+    In addition to the limitations below, mobile platforms have even more
+    limitations on 3D rendering compared to desktop platforms.
+    See :ref:`doc_mobile_rendering_limitations` for more information.
+
 Introduction
 ------------
 
