@@ -37,7 +37,7 @@ This example will show you how to create a WebSocket connection to a remote serv
     extends Node
 
     # The URL we will connect to
-    export var websocket_url = "ws://echo.websocket.org"
+    export var websocket_url = "ws://websocket-echo-service.glitch.me/"
 
     # Our WebSocketClient instance
     var _client = WebSocketClient.new()
@@ -52,8 +52,13 @@ This example will show you how to create a WebSocket connection to a remote serv
         # Alternatively, you could check get_peer(1).get_available_packets() in a loop.
         _client.connect("data_received", self, "_on_data")
 
+        # Set up custom headers needed by this particular echo service
+        var custom_headers = PoolStringArray([
+            "Connection: keep-alive",
+            "User-Agent: Websocket Demo",
+	      ])
         # Initiate connection to the given URL.
-        var err = _client.connect_to_url(websocket_url)
+        var err = _client.connect_to_url(websocket_url, [], false, custom_headers)
         if err != OK:
             print("Unable to connect")
             set_process(false)
