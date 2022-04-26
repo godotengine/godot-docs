@@ -172,7 +172,7 @@ would be as follows::
     0x000d
     # (This value can be shortened to 0xd)
 
-    # Decimal - Add the results of 2 to the power of (layer be enabled-1).
+    # Decimal - Add the results of 2 to the power of (layer to be enabled - 1).
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
     pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
