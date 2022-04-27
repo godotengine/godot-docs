@@ -65,7 +65,7 @@ library. Materials set on the node will be ignored.
 Exporting the MeshLibrary
 -------------------------
 
-To export the library, click on **Scene -> Export As... -> MeshLibrary...**, and save it
+To export the library, click on **Scene > Export As... > MeshLibrary...**, and save it
 as a resource.
 
 .. image:: img/gridmap_export.png
