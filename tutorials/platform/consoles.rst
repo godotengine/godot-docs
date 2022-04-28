@@ -16,13 +16,13 @@ official Linux export templates).
 The reason other consoles are not officially supported are:
 
 - To develop for consoles, one must be licensed as a company.
-  As an open source project, Godot does not have such a legal figure.
+  As an open source project, Godot has no legal structure to provide console ports.
 - Console SDKs are secret and covered by non-disclosure agreements.
-  Even if we could get access to them, we could not publish
-  the platform-specific code under an open source license.
+  Even if we could get access to them, we could not publish the platform-specific 
+  code under an open source license.
   
-As explained, it is possible to port your games to consoles thanks to services
-provided by third-party companies.
+As explained, however, it is possible to port your games to consoles thanks to 
+services provided by third-party companies.
 
 .. note::
 
@@ -52,8 +52,8 @@ to a console platform is as follows:
   in North America, and `PEGI <https://pegi.info/>`__ in Europe. Indie developers 
   can generally get a rating for cheaper compared to more established developers.
 
-Due to the complexity of the process, many studios and developers prefer to outsource
-console porting.
+Due to the complexity of the process, many studios and developers prefer to 
+outsource console porting.
 
 Third-party support
 -------------------
