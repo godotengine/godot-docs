@@ -192,14 +192,11 @@ Add and export a variable speed to the script. The function set_speed after
     extends Sprite2D
 
 
-    export var speed = 1 setget set_speed
-
-
-    # Update speed and reset the rotation.
-    func set_speed(new_speed):
-    	speed = new_speed
-    	rotation_degrees = 0
-
+    @export var speed = 1:
+        # Update speed and reset the rotation.
+        set(new_speed):
+            speed = new_speed
+            rotation_degrees = 0
 
     func _process(delta):
     	rotation_degrees += 180 * delta * speed
@@ -259,21 +256,16 @@ By default, the warning only updates when closing and reopening the scene.
  .. code-tab:: gdscript GDScript
 
     # Use setters to update the configuration warning automatically.
-    export var title = "" setget set_title
-    export var description = "" setget set_description
-
-
-    func set_title(p_title):
-        if p_title != title:
-            title = p_title
-            update_configuration_warning()
-
-
-    func set_description(p_description):
-        if p_description != description:
-            description = p_description
-            update_configuration_warning()
-
+    export var title = "":
+        set(p_title):
+            if p_title != title:
+                title = p_title
+                update_configuration_warning()
+    export var description = "":
+        set(p_description):
+            if p_description != description:
+                description = p_description
+                update_configuration_warning()
 
     func _get_configuration_warning():
         var warning = ""
