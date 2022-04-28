@@ -261,6 +261,7 @@ By default, the warning only updates when closing and reopening the scene.
             if p_title != title:
                 title = p_title
                 update_configuration_warning()
+
     export var description = "":
         set(p_description):
             if p_description != description:
