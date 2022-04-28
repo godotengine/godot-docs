@@ -40,9 +40,9 @@ scale.
 
 Unlike 2D, where loading image content and drawing is straightforward,
 3D is a little more difficult. The content needs to be created with
-special 3D tools (usually referred to as DCCs) and exported to an
-exchange file format in order to be imported in Godot (3D formats are
-not as standardized as images).
+special 3D tools (usually referred to as Digital Content Creation tools, or
+DCCs) and exported to an exchange file format to be imported in
+Godot. This is required since 3D formats are not as standardized as images.
 
 DCC-created models
 ------------------

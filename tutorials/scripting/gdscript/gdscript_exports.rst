@@ -258,7 +258,7 @@ If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files
 from the FileSystem dock at once.
 
-Default value must be a constant expression.
+The default value **must** be a constant expression.
 
 ::
 
@@ -268,24 +268,23 @@ Exported arrays can specify type (using the same hints as before).
 
 ::
 
-    @export(Array, int) var ints = [1, 2, 3]
-    @export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    @export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
+    @export var ints: Array[int] = [1, 2, 3]
+    @export var two_dimensional: Array[Array[float]] = [[1.0, 2.0], [3.0, 4.0]]
 
 You can omit the default value, but it would then be ``null`` if not assigned.
 
 ::
 
-    @export(Array) var b
-    @export(Array, PackedScene) var scenes
+    @export var b: Array
+    @export var scenes: Array[PackedScene]
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
 
 ::
 
-    @export(Array, Texture) var textures
-    @export(Array, PackedScene) var scenes
+    @export var textures: Array[Texture] = []
+    @export var scenes: Array[PackedScene] = []
 
 Packed type arrays also work, but only initialized empty:
 
@@ -293,13 +292,6 @@ Packed type arrays also work, but only initialized empty:
 
     @export var vector3s = PackedVector3Array()
     @export var strings = PackedStringArray()
-
-Default value can include run-time values, but can't
-be exported.
-
-::
-
-    var c = [a, 2, 3]
 
 Setting exported variables from a tool script
 ---------------------------------------------
