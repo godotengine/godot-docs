@@ -129,6 +129,23 @@ and ``get_slide_collision()``:
     for i in get_slide_count():
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
+        
+ .. code-tab:: csharp
+
+    // Using MoveAndCollide.
+    var collision = MoveAndCollide(velocity * delta);
+    if (collision != null)
+    {
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
+    }
+
+    // Using MoveAndSlide.
+    velocity = MoveAndSlide(velocity);
+    for (int i = 0; i < GetSlideCount(); i++)
+    {
+        var collision = GetSlideCollision(i);
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
+    }
 
 .. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
 
@@ -260,6 +277,7 @@ Attach a script to the KinematicBody2D and add the following code:
 
             if (Input.IsActionPressed("ui_up"))
                 _velocity.y -= 1;
+            _velocity = _velocity.Normalized() * Speed;
         }
 
         public override void _PhysicsProcess(float delta)
