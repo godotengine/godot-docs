@@ -43,7 +43,7 @@ a node exits the scene tree. This can be when you call :ref:`Node.remove_child()
         pass
 
     # Called when the node is about to leave the scene tree, after all its
-    children received the _exit_tree() callback.
+    # children received the _exit_tree() callback.
     func _exit_tree():
         pass
 
@@ -62,7 +62,7 @@ a node exits the scene tree. This can be when you call :ref:`Node.remove_child()
     }
 
     // Called when the node is about to leave the scene tree, after all its
-    children.
+    // children.
     public override void _ExitTree()
     {
         base._ExitTree();
@@ -117,7 +117,7 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
         pass
 
     # Called once for every event, before _unhandled_input(), allowing you to
-    consume some events.
+    # consume some events.
     func _input(event):
         pass
 
@@ -130,7 +130,7 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
     }
 
     // Called once for every event, before _unhandled_input(), allowing you to
-    consume some events.
+    // consume some events.
     public override void _Input(InputEvent @event)
     {
         base._Input(event);
