@@ -149,34 +149,38 @@ It is possible to rotate a transform, either by multiplying its basis by another
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Rotate the transform about the X axis
-    transform.basis = Basis(Vector3(1, 0, 0), PI) * transform.basis
+    var axis = Vector3(1, 0, 0) # Or Vector3.RIGHT
+    var rotation_amount = 0.1
+    # Rotate the transform around the X axis by 0.1 radians.
+    transform.basis = Basis(axis, rotation_amount) * transform.basis
     # shortened
-    transform.basis = transform.basis.rotated(Vector3(1, 0, 0), PI)
+    transform.basis = transform.basis.rotated(axis, rotation_amount)
 
  .. code-tab:: csharp
 
-    // rotate the transform about the X axis
-    transform.basis = new Basis(Vector3.Right, Mathf.Pi) * transform.basis;
+    Vector3 axis = new Vector3(1, 0, 0); // Or Vector3.Right
+    float rotationAmount = 0.1f;
+    // Rotate the transform around the X axis by 0.1 radians.
+    transform.basis = new Basis(axis, rotationAmount) * transform.basis;
     // shortened
-    transform.basis = transform.basis.Rotated(Vector3.Right, Mathf.Pi);
+    transform.basis = transform.basis.Rotated(axis, rotationAmount);
 
 A method in Spatial simplifies this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Rotate the transform in X axis
-    rotate(Vector3(1, 0, 0), PI)
+    # Rotate the transform around the X axis by 0.1 radians.
+    rotate(Vector3(1, 0, 0), 0.1)
     # shortened
-    rotate_x(PI)
+    rotate_x(0.1)
 
  .. code-tab:: csharp
 
-    // Rotate the transform about the X axis
-    Rotate(Vector3.Right, Mathf.Pi);
+    // Rotate the transform around the X axis by 0.1 radians.
+    Rotate(new Vector3(1, 0, 0), 0.1f);
     // shortened
-    RotateX(Mathf.Pi);
+    RotateX(0.1f);
 
 This rotates the node relative to the parent node.
 
@@ -185,13 +189,13 @@ To rotate relative to object space (the node's own transform), use the following
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Rotate locally
-    rotate_object_local(Vector3(1, 0, 0), PI)
+    # Rotate around the object's local X axis by 0.1 radians.
+    rotate_object_local(Vector3(1, 0, 0), 0.1)
 
  .. code-tab:: csharp
 
-    // Rotate locally
-    RotateObjectLocal(Vector3.Right, Mathf.Pi);
+    // Rotate around the object's local X axis by 0.1 radians.
+    RotateObjectLocal(new Vector3(1, 0, 0), 0.1f);
 
 Precision errors
 ================
