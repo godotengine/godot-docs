@@ -1,4 +1,4 @@
-Godot Docs – *3.4* branch
+Godot Docs – *3.5* branch
 =========================
 
 .. only:: not i18n
@@ -7,11 +7,11 @@ Godot Docs – *3.4* branch
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
-  .. tip:: This is the documentation for the stable 3.4 branch.
+  .. tip:: This is the documentation for the beta 3.5 branch.
            Looking for the documentation of the current **development** branch?
            `Have a look here <https://docs.godotengine.org/en/latest>`_.
            You can also browse the documentation for the current stable
-           `3.3 <https://docs.godotengine.org/en/3.3>`_ branch.
+           `3.4 <https://docs.godotengine.org/en/3.4>`_ branch.
 
 .. only:: i18n
 
