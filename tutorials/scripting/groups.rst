@@ -22,7 +22,8 @@ removed by removing all nodes from a given group.
 There are two ways to add/remove nodes to groups:
 
 - During design, by using the Node dock in the editor.
-- During execution, by calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>` or :ref:`Node.remove_from_group() <String>`.
+- During execution, by calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>`
+  or :ref:`Node.remove_from_group() <class_Node_method_remove_from_group>`.
 
 
 Using the Node dock
