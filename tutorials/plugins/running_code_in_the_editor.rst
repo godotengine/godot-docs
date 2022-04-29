@@ -38,19 +38,19 @@ How to use it
 
 To turn a script into a tool, add the keyword ``@tool`` at the top of your code.
 
-To check if you are currently in the editor, use: ``Engine.editor_hint``.
+To check if you are currently in the editor, use: ``Engine.is_editor_hint()``.
 
 For example, if you want to execute some code only in the editor, use:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    if Engine.editor_hint:
+    if Engine.is_editor_hint():
         # Code to execute when in editor.
 
  .. code-tab:: csharp
 
-    if (Engine.EditorHint)
+    if (Engine.IsEditorHint())
     {
         // Code to execute when in editor.
     }
@@ -61,12 +61,12 @@ same statement:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    if not Engine.editor_hint:
+    if not Engine.is_editor_hint():
         # Code to execute when in game.
 
  .. code-tab:: csharp
 
-    if (!Engine.EditorHint)
+    if (!Engine.IsEditorHint())
     {
         // Code to execute when in game.
     }
@@ -80,10 +80,10 @@ Here is how a ``_process()`` function might look for you:
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        if Engine.editor_hint:
+        if Engine.is_editor_hint():
             # Code to execute in editor.
 
-        if not Engine.editor_hint:
+        if not Engine.is_editor_hint():
             # Code to execute in game.
 
         # Code to execute both in editor and in game.
@@ -92,12 +92,12 @@ Here is how a ``_process()`` function might look for you:
 
     public override void _Process(float delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
             // Code to execute in editor.
         }
 
-        if (!Engine.EditorHint)
+        if (!Engine.IsEditorHint())
         {
             // Code to execute in game.
         }
@@ -156,7 +156,7 @@ look like this:
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        if Engine.editor_hint:
+        if Engine.is_editor_hint():
             rotation_degrees += 180 * delta
         else:
             rotation_degrees -= 180 * delta
@@ -165,7 +165,7 @@ look like this:
 
     public override void _Process(float delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
             RotationDegrees += 180 * delta;
         }
