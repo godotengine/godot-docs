@@ -285,7 +285,7 @@ Returns ``true`` if the array is empty.
 
 - void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
-Removes the first occurrence of a value from the array. To remove an element by index, use :ref:`remove<class_Array_method_remove>` instead.
+Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove<class_Array_method_remove>` instead.
 
 **Note:** This method acts in-place and doesn't return a value.
 

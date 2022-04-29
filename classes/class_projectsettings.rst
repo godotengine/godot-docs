@@ -5110,7 +5110,7 @@ Uses a simplified method of generating PVS (potentially visible set) data. The r
 | *Default* | ``true`` |
 +-----------+----------+
 
-If ``true``, allocates the main framebuffer with high dynamic range. High dynamic range allows the use of :ref:`Color<class_Color>` values greater than 1.
+If ``true``, allocates the root :ref:`Viewport<class_Viewport>`'s framebuffer with high dynamic range. High dynamic range allows the use of :ref:`Color<class_Color>` values greater than 1. This must be set to ``true`` for glow rendering to work if :ref:`Environment.glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is greater than or equal to ``1.0``.
 
 **Note:** Only available on the GLES3 backend.
 
@@ -5124,7 +5124,9 @@ If ``true``, allocates the main framebuffer with high dynamic range. High dynami
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Lower-end override for :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` on mobile devices, due to performance concerns or driver support.
+Lower-end override for :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` on mobile devices, due to performance concerns or driver support. This must be set to ``true`` for glow rendering to work if :ref:`Environment.glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is greater than or equal to ``1.0``.
+
+**Note:** Only available on the GLES3 backend.
 
 ----
 
@@ -5290,7 +5292,7 @@ If ``true``, uses nearest-neighbor mipmap filtering when using mipmaps (also cal
 | *Default* | ``2`` |
 +-----------+-------+
 
-Strategy used for framebuffer allocation. The simpler it is, the less resources it uses (but the less features it supports). If set to "2D Without Sampling" or "3D Without Effects", sample buffers will not be allocated. This means ``SCREEN_TEXTURE`` and ``DEPTH_TEXTURE`` will not be available in shaders and post-processing effects will not be available in the :ref:`Environment<class_Environment>`.
+Strategy used for framebuffer allocation. The simpler it is, the less resources it uses (but the less features it supports). If set to "2D Without Sampling" or "3D Without Effects", sample buffers will not be allocated. This means ``SCREEN_TEXTURE`` and ``DEPTH_TEXTURE`` will not be available in shaders and post-processing effects such as glow will not be available in :ref:`Environment<class_Environment>`.
 
 ----
 
@@ -5472,7 +5474,11 @@ Lower-end override for :ref:`rendering/quality/shading/force_lambert_over_burley
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
+If ``true``, forces vertex shading for all 3D :ref:`SpatialMaterial<class_SpatialMaterial>` and :ref:`ShaderMaterial<class_ShaderMaterial>` rendering. This can be used to improve performance on low-end mobile devices. The downside is that shading becomes much less accurate, with visible linear interpolation between vertices that are joined together. This can be compensated by ensuring meshes have a sufficient level of subdivision (but not too much, to avoid reducing performance). Some material features are also not supported when vertex shading is enabled.
+
+See also :ref:`SpatialMaterial.flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>` which can be used to enable vertex shading on specific materials only.
+
+**Note:** This setting does not affect unshaded materials.
 
 ----
 
@@ -5484,7 +5490,7 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 | *Default* | ``true`` |
 +-----------+----------+
 
-Lower-end override for :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
+Lower-end override for :ref:`rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` on mobile devices, due to performance concerns or driver support. If lighting looks broken after exporting the project to a mobile platform, try disabling this setting.
 
 ----
 

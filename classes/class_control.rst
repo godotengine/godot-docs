@@ -1062,7 +1062,7 @@ The minimum size of the node's bounding rectangle. If you set it to a value grea
 | *Getter*  | get_pivot_offset()      |
 +-----------+-------------------------+
 
-By default, the node's pivot is its top-left corner. When you change its :ref:`rect_scale<class_Control_property_rect_scale>`, it will scale around this pivot. Set this property to :ref:`rect_size<class_Control_property_rect_size>` / 2 to center the pivot in the node's rectangle.
+By default, the node's pivot is its top-left corner. When you change its :ref:`rect_rotation<class_Control_property_rect_rotation>` or :ref:`rect_scale<class_Control_property_rect_scale>`, it will rotate or scale around this pivot. Set this property to :ref:`rect_size<class_Control_property_rect_size>` / 2 to pivot around the Control's center.
 
 ----
 

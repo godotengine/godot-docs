@@ -220,7 +220,9 @@ Each property's :ref:`Dictionary<class_Dictionary>` must contain at least ``name
 
 - void **_init** **(** **)** |virtual|
 
-Called when the object is initialized.
+Called when the object is initialized in memory. Can be defined to take in parameters, that are passed in when constructing.
+
+**Note:** If :ref:`_init<class_Object_method__init>` is defined with required parameters, then explicit construction is the only valid means of creating an Object of the class. If any other means (such as :ref:`PackedScene.instance<class_PackedScene_method_instance>`) is used, then initialization will fail.
 
 ----
 

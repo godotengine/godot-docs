@@ -1895,7 +1895,9 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that a float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,or_greater"``.
 
-- **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+- **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
+
+The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
 - **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"inout"`` to also include in/out easing.
 

@@ -405,7 +405,11 @@ Returns ``true`` if the string begins with the given string.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **bigrams** **(** **)**
 
-Returns the bigrams (pairs of consecutive letters) of this string.
+Returns an array containing the bigrams (pairs of consecutive letters) of this string.
+
+::
+
+    print("Bigrams".bigrams()) # Prints "[Bi, ig, gr, ra, am, ms]"
 
 ----
 
@@ -706,7 +710,14 @@ Returns ``true`` if this string is free from characters that aren't allowed in f
 
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)**
 
-Returns ``true`` if this string contains a valid float.
+Returns ``true`` if this string contains a valid float. This is inclusive of integers, and also supports exponents:
+
+::
+
+    print("1.7".is_valid_float()) # Prints "True"
+    print("24".is_valid_float()) # Prints "True"
+    print("7e3".is_valid_float()) # Prints "True"
+    print("Hello".is_valid_float()) # Prints "False"
 
 ----
 
@@ -732,6 +743,12 @@ Returns ``true`` if this string contains a valid color in hexadecimal HTML notat
 
 Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``) and the first character may not be a digit.
 
+::
+
+    print("good_ident_1".is_valid_identifier()) # Prints "True"
+    print("1st_bad_ident".is_valid_identifier()) # Prints "False"
+    print("bad_ident_#2".is_valid_identifier()) # Prints "False"
+
 ----
 
 .. _class_String_method_is_valid_integer:
@@ -739,6 +756,14 @@ Returns ``true`` if this string is a valid identifier. A valid identifier may co
 - :ref:`bool<class_bool>` **is_valid_integer** **(** **)**
 
 Returns ``true`` if this string contains a valid integer.
+
+::
+
+    print("7".is_valid_int()) # Prints "True"
+    print("14.6".is_valid_int()) # Prints "False"
+    print("L".is_valid_int()) # Prints "False"
+    print("+3".is_valid_int()) # Prints "True"
+    print("-12".is_valid_int()) # Prints "True"
 
 ----
 
@@ -788,7 +813,7 @@ Returns a copy of the string with characters removed from the left. The ``chars`
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -796,7 +821,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -959,8 +984,8 @@ Example:
     var some_string = "One,Two,Three,Four"
     var some_array = some_string.rsplit(",", true, 1)
     print(some_array.size()) # Prints 2
-    print(some_array[0]) # Prints "Four"
-    print(some_array[1]) # Prints "Three,Two,One"
+    print(some_array[0]) # Prints "One,Two,Three"
+    print(some_array[1]) # Prints "Four"
 
 ----
 
@@ -1010,7 +1035,14 @@ Returns the SHA-256 hash of the string as a string.
 
 - :ref:`float<class_float>` **similarity** **(** :ref:`String<class_String>` text **)**
 
-Returns the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
+Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of 1.0 means totally similar, while 0.0 means totally dissimilar.
+
+::
+
+    print("ABC123".similarity("ABC123")) # Prints "1"
+    print("ABC123".similarity("XYZ456")) # Prints "0"
+    print("ABC123".similarity("123ABC")) # Prints "0.8"
+    print("ABC123".similarity("abc123")) # Prints "0.4"
 
 ----
 

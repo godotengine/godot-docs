@@ -268,6 +268,8 @@ Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s mar
 
 **Note:** :ref:`bake<class_GIProbe_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a ``GIProbe`` generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_GIProbe_property_subdiv>` can speed up baking.
 
+**Note:** :ref:`GeometryInstance<class_GeometryInstance>`\ s and :ref:`Light<class_Light>`\ s must be fully ready before :ref:`bake<class_GIProbe_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked ``GIProbe``, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_GIProbe_method_bake>` directly.
+
 ----
 
 .. _class_GIProbe_method_debug_bake:

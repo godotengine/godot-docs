@@ -718,7 +718,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, the node won't inherit its transform from parent canvas items.
+If ``enable`` is ``true``, this ``CanvasItem`` will *not* inherit its transform from parent ``CanvasItem``\ s. Its draw order will also be changed to make it draw on top of other ``CanvasItem``\ s that are not set as top-level. The ``CanvasItem`` will effectively act as if it was placed as a child of a bare :ref:`Node<class_Node>`. See also :ref:`is_set_as_toplevel<class_CanvasItem_method_is_set_as_toplevel>`.
 
 ----
 

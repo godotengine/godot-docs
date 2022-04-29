@@ -1407,7 +1407,13 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, lighting is calculated per vertex rather than per pixel. This may increase performance on low-end devices.
+If ``true``, lighting is calculated per vertex rather than per pixel. This may increase performance on low-end devices, especially for meshes with a lower polygon count. The downside is that shading becomes much less accurate, with visible linear interpolation between vertices that are joined together. This can be compensated by ensuring meshes have a sufficient level of subdivision (but not too much, to avoid reducing performance). Some material features are also not supported when vertex shading is enabled.
+
+See also :ref:`ProjectSettings.rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` which can globally enable vertex shading on all materials.
+
+**Note:** By default, vertex shading is enforced on mobile platforms by :ref:`ProjectSettings.rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`'s ``mobile`` override.
+
+**Note:** :ref:`flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>` has no effect if :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` is ``true``.
 
 ----
 

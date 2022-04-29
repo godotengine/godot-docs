@@ -1525,7 +1525,7 @@ Sets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_Physics
 
 - :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` process_info **)**
 
-Returns an Info defined by the :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` input given.
+Returns information about the current state of the 3D physics engine. See :ref:`ProcessInfo<enum_PhysicsServer_ProcessInfo>` for a list of available states. Only implemented for Godot Physics.
 
 ----
 

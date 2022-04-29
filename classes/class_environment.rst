@@ -256,7 +256,9 @@ Enumerations
 
 enum **BGMode**:
 
-- **BG_KEEP** = **5** --- Keeps on screen every pixel drawn in the background. This is the fastest background mode, but it can only be safely used in fully-interior scenes (no visible sky or sky reflections). If enabled in a scene where the background is visible, "ghost trail" artifacts will be visible when moving the camera.
+- **BG_KEEP** = **5** --- Keeps on screen every pixel drawn in the background. Only select this mode if you really need to keep the old data. On modern GPUs it will generally not be faster than clearing the background, and can be significantly slower, particularly on mobile.
+
+It can only be safely used in fully-interior scenes (no visible sky or sky reflections). If enabled in a scene where the background is visible, "ghost trail" artifacts will be visible when moving the camera.
 
 - **BG_CLEAR_COLOR** = **0** --- Clears the background using the clear color defined in :ref:`ProjectSettings.rendering/environment/default_clear_color<class_ProjectSettings_property_rendering/environment/default_clear_color>`.
 
@@ -1194,6 +1196,10 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 +-----------+-------------------------+
 
 If ``true``, the glow effect is enabled.
+
+**Note:** Only effective if :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` is **3D** (*not* **3D Without Effects**). On mobile, :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` defaults to **3D Without Effects** by default, so its ``.mobile`` override needs to be changed to **3D**.
+
+**Note:** When using GLES3 on mobile, HDR rendering is disabled by default for performance reasons. This means glow will only be visible if :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is decreased below ``1.0`` or if :ref:`glow_bloom<class_Environment_property_glow_bloom>` is increased above ``0.0``. Also consider increasing :ref:`glow_intensity<class_Environment_property_glow_intensity>` to ``1.5``. If you want glow to behave on mobile like it does on desktop (at a performance cost), enable :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`'s ``.mobile`` override.
 
 ----
 

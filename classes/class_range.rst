@@ -69,7 +69,9 @@ Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<c
 
 - **value_changed** **(** :ref:`float<class_float>` value **)**
 
-Emitted when :ref:`value<class_Range_property_value>` changes.
+Emitted when :ref:`value<class_Range_property_value>` changes. When used on a :ref:`Slider<class_Slider>`, this is called continuously while dragging (potentially every frame). If you are performing an expensive operation in a function connected to :ref:`value_changed<class_Range_signal_value_changed>`, consider using a *debouncing* :ref:`Timer<class_Timer>` to call the function less often.
+
+**Note:** Unlike signals such as :ref:`LineEdit.text_changed<class_LineEdit_signal_text_changed>`, :ref:`value_changed<class_Range_signal_value_changed>` is also emitted when ``value`` is set directly via code.
 
 Property Descriptions
 ---------------------
@@ -237,7 +239,7 @@ Method Descriptions
 
 - void **share** **(** :ref:`Node<class_Node>` with **)**
 
-Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
+Binds two ``Range``\ s together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
 ----
 
@@ -245,7 +247,7 @@ Binds two ranges together along with any ranges previously grouped with either o
 
 - void **unshare** **(** **)**
 
-Stops range from sharing its member variables with any other.
+Stops the ``Range`` from sharing its member variables with any other.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

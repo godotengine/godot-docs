@@ -468,7 +468,7 @@ Triangulates the area specified by discrete set of ``points`` such that no point
 
 - :ref:`PoolIntArray<class_PoolIntArray>` **triangulate_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` polygon **)**
 
-Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_PoolIntArray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_PoolIntArray>` is returned.
+Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_PoolIntArray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). Output triangles will always be counter clockwise, and the contour will be flipped if it's clockwise. If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_PoolIntArray>` is returned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
