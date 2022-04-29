@@ -445,6 +445,9 @@ Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
 when the game launches. Press the "Play" button and select ``Main.tscn`` when
 prompted.
 
+.. tip:: If you had already set another scene as the "Main Scene", you can right
+         click ``Main.tscn`` in the FileSystem dock and select "Set As Main Scene".
+
 You should be able to move the player around, see mobs spawning, and see the
 player disappear when hit by a mob.
 
