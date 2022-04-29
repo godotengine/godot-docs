@@ -14,3 +14,4 @@ other sections where appropriate. For example, the :ref:`animation editor
    external_editor
    default_key_mapping
    using_the_web_editor
+   managing_editor_features

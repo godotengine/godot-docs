@@ -1,5 +1,7 @@
+.. _doc_optimization:
+
 Optimization
-=============
+============
 
 Introduction
 ------------
