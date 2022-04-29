@@ -41,8 +41,8 @@ click the Other Node button.
 
 .. image:: img/scripting_first_script_click_other_node.png
 
-Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D to
-create the node.
+Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
+to create the node.
 
 .. image:: img/scripting_first_script_add_sprite_node.png
 
@@ -50,16 +50,17 @@ Your Scene tab should now only have a Sprite2D node.
 
 .. image:: img/scripting_first_script_scene_tree.png
 
-A Sprite2D node needs a texture to display. In the Inspector on the right, you can
-see that the Texture property says "[empty]". To display the Godot icon, click
-and drag the file ``icon.png`` from the FileSystem dock onto the Texture slot.
+A Sprite2D node needs a texture to display. In the Inspector on the right, you
+can see that the Texture property says "[empty]". To display the Godot icon,
+click and drag the file ``icon.png`` from the FileSystem dock onto the Texture
+slot.
 
 .. image:: img/scripting_first_script_setting_texture.png
 
 .. note::
 
-    You can create Sprite2D nodes automatically by dragging and dropping images on
-    the viewport.
+    You can create Sprite2D nodes automatically by dragging and dropping images
+    on the viewport.
 
     .. image:: img/scripting_first_script_dragging_sprite.png
 
@@ -75,7 +76,7 @@ scene dock and select "Attach Script".
 
 .. image:: img/scripting_first_script_attach_script.png
 
-The Attach node Script window appears. It allows you to select the script's
+The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
 Change the Template from Default to Empty to start with a clean file. Leave the
@@ -83,8 +84,8 @@ other options by default and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.png
 
-The Script workspace should appear with your new file open and the following
-line of code:
+The Script workspace should appear with your new ``Sprite2D.gd`` file open and
+the following line of code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -207,8 +208,8 @@ instructions.
 
 The line inside the function, ``rotation += angular_speed * delta``, increments
 our sprite's rotation every frame. Here, ``rotation`` is a property inherited
-from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation of
-our node and works with radians.
+from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation
+of our node and works with radians.
 
 .. tip:: In the code editor, you can ctrl-click on any built-in property or
          function like ``position``, ``rotation``, or ``_process`` to open the
@@ -229,6 +230,7 @@ them.
  .. code-tab:: gdscript GDScript
 
     var velocity = Vector2.UP.rotated(rotation) * speed
+
     position += velocity * delta
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
@@ -254,4 +256,26 @@ Run the scene to see the Godot head run in circles.
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
-Our node currently moves by itself. In the next part, we'll use player input to control it.
+Our node currently moves by itself. In the next part
+:ref:`doc_scripting_player_input`, we'll use player input to control it.
+
+Complete script
+---------------
+
+Here is the complete ``Sprite2D.gd`` file for reference.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite2D
+
+    var speed = 400
+    var angular_speed = PI
+
+
+    func _process(delta):
+        rotation += angular_speed * delta
+
+        var velocity = Vector2.UP.rotated(rotation) * speed
+
+        position += velocity * delta
