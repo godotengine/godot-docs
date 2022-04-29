@@ -73,15 +73,16 @@ Your scene should look like this:
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script, we use ``export
-(PackedScene)`` to allow us to choose the Mob scene we want to instance.
+Add a script to ``Main``. At the top of the script, we use 
+``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
+ to instance.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Node
 
-    export(PackedScene) var mob_scene
+    @export var mob_scene: PackedScene
     var score
 
  .. code-tab:: csharp
@@ -323,7 +324,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
     func _on_MobTimer_timeout():
         # Create a new instance of the Mob scene.
-        var mob = mob_scene.instance()
+        var mob = mob_scene.instantiate()
 
         # Choose a random location on Path2D.
         var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
@@ -336,11 +337,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.position = mob_spawn_location.position
 
         # Add some randomness to the direction.
-        direction += rand_range(-PI / 4, PI / 4)
+        direction += randf_range(-PI / 4, PI / 4)
         mob.rotation = direction
 
         # Choose the velocity for the mob.
-        var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+        var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
 
         # Spawn the mob by adding it to the Main scene.
