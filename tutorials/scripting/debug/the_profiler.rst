@@ -33,7 +33,7 @@ or during gameplay, depending on if you want.
 .. note::
 
     The profiler does not currently support C# scripts. C# scripts can be profiled
-    using JetBrains Rider and JetBrains dotTrace with the Godot support plugin
+    using JetBrains Rider and JetBrains dotTrace with the Godot support plugin.
 
 You can clear the data by clicking the **Clear** button anytime. Use the
 **Measure** drop-down menu to change the type of data you measure. The
