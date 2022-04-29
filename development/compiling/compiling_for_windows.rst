@@ -34,7 +34,10 @@ For compiling under Windows, the following is required:
           For each MSYS2 MinGW subsystem, you should then run
           `pip3 install scons` in its shell.
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 Setting up Python
@@ -85,8 +88,7 @@ a **Repair** option, which won't let you install C++ tools.
 Downloading Godot's source
 --------------------------
 
-Godot's source code is `hosted on GitHub <https://github.com/godotengine/godot>`_.
-Downloading it (cloning) using `Git <https://git-scm.com/>`_ is recommended.
+Refer to :ref:`doc_getting_source` for detailed instructions.
 
 The tutorial will assume from now on that you placed the source code in
 ``C:\godot``.
