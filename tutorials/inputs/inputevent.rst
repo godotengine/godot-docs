@@ -62,14 +62,9 @@ How does it work?
 Every input event is originated from the user/player (though it's
 possible to generate an InputEvent and feed them back to the engine,
 which is useful for gestures). The OS object for each platform will read
-events from the device, then feed them to MainLoop. As :ref:`SceneTree <class_SceneTree>`
-is the default MainLoop implementation, events are fed to it. Godot
-provides a function to get the current SceneTree object :
-**get_tree()**.
+events from the device, then feed them to the :ref:`Window <class_Window>`.
 
-But SceneTree does not know what to do with the event, so it will give
-it to the viewports, starting by the "root" :ref:`Viewport <class_Viewport>` (the first
-node of the scene tree). Viewport does quite a lot of stuff with the
+The window's :ref:`Viewport <class_Viewport>` does quite a lot of stuff with the
 received input, in order:
 
 .. image:: img/input_event_flow.png
