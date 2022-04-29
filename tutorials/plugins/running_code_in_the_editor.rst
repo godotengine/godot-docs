@@ -198,6 +198,7 @@ Add and export a variable speed to the script. The function set_speed after
             speed = new_speed
             rotation_degrees = 0
 
+
     func _process(delta):
     	rotation_degrees += 180 * delta * speed
 
@@ -267,6 +268,7 @@ By default, the warning only updates when closing and reopening the scene.
             if p_description != description:
                 description = p_description
                 update_configuration_warning()
+
 
     func _get_configuration_warning():
         var warning = ""
