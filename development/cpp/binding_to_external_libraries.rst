@@ -26,10 +26,10 @@ Next, you will create a header file with a TTS class:
     #ifndef GODOT_TTS_H
     #define GODOT_TTS_H
 
-    #include "core/reference.h"
+    #include "core/object/ref_counted.h"
 
-    class TTS : public Reference {
-        GDCLASS(TTS, Reference);
+    class TTS : public RefCounted {
+        GDCLASS(TTS, RefCounted);
 
     protected:
         static void _bind_methods();
@@ -95,7 +95,7 @@ These files should contain the following:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "tts.h"
 
     void register_tts_types() {

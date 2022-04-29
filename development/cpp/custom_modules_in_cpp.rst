@@ -51,10 +51,10 @@ Inside we will create a summator class:
     #ifndef SUMMATOR_H
     #define SUMMATOR_H
 
-    #include "core/reference.h"
+    #include "core/object/ref_counted.h"
 
-    class Summator : public Reference {
-        GDCLASS(Summator, Reference);
+    class Summator : public RefCounted {
+        GDCLASS(Summator, RefCounted);
 
         int count;
 
@@ -129,7 +129,7 @@ These files should contain the following:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void register_summator_types() {
@@ -366,7 +366,7 @@ We now need to add this method to ``register_types`` header and source files:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void preregister_summator_types() {

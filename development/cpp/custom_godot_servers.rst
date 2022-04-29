@@ -43,13 +43,13 @@ an initialization state and a cleanup procedure.
 	#ifndef HILBERT_HOTEL_H
 	#define HILBERT_HOTEL_H
 
-	#include "core/list.h"
-	#include "core/object.h"
+	#include "core/object/object.h"
 	#include "core/os/thread.h"
 	#include "core/os/mutex.h"
-	#include "core/rid.h"
-	#include "core/set.h"
-	#include "core/variant.h"
+	#include "core/templates/list.h"
+	#include "core/templates/rid.h"
+	#include "core/templates/set.h"
+	#include "core/variant/variant.h"
 
 	class HilbertHotel : public Object {
 		GDCLASS(HilbertHotel, Object);
@@ -96,10 +96,8 @@ an initialization state and a cleanup procedure.
 
 	#include "hilbert_hotel.h"
 
-	#include "core/dictionary.h"
-	#include "core/list.h"
+	#include "core/variant/dictionary.h"
 	#include "core/os/os.h"
-	#include "core/variant.h"
 
 	#include "prime_225.h"
 
@@ -240,8 +238,6 @@ an initialization state and a cleanup procedure.
 
 	/* prime_225.h */
 
-	#include "core/int_types.h"
-
 	const uint64_t PRIME[225] = {
 			2,3,5,7,11,13,17,19,23,
 			29,31,37,41,43,47,53,59,61,
@@ -338,8 +334,8 @@ is used to register the dummy class in GDScript.
 
 	#include "register_types.h"
 
-	#include "core/class_db.h"
-	#include "core/engine.h"
+	#include "core/object/class_db.h"
+	#include "core/config/engine.h"
 
 	#include "hilbert_hotel.h"
 
