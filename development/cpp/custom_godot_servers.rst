@@ -43,10 +43,10 @@ an initialization state and a cleanup procedure.
 	#ifndef HILBERT_HOTEL_H
 	#define HILBERT_HOTEL_H
 
-	#include "core/templates/list.h"
 	#include "core/object/object.h"
 	#include "core/os/thread.h"
 	#include "core/os/mutex.h"
+	#include "core/templates/list.h"
 	#include "core/templates/rid.h"
 	#include "core/templates/set.h"
 	#include "core/variant/variant.h"
