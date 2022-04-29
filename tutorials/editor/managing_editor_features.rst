@@ -15,7 +15,7 @@ With feature profiles, major features and nodes can be hidden from the editor.
 This only hides parts of the interface and does not actually remove support for
 these features, so scenes and scripts relying on those features will still work fine.
 This also means feature profiles are not an optimization technique. For
-information on how to optimize Godot see :ref:`_doc_performance`.
+information on how to optimize Godot see :ref:`doc_performance`.
 
 Creating a profile
 ------------------
