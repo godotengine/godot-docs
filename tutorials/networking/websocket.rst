@@ -44,13 +44,13 @@ This example will show you how to create a WebSocket connection to a remote serv
 
     func _ready():
         # Connect base signals to get notified of connection open, close, and errors.
-        _client.connection_closed.connect(self._closed)
-        _client.connection_error.connect(self._closed)
-        _client.connection_established.connect(self._connected)
+        _client.connection_closed.connect(_closed)
+        _client.connection_error.connect(_closed)
+        _client.connection_established.connect(_connected)
         # This signal is emitted when not using the Multiplayer API every time
         # a full packet is received.
         # Alternatively, you could check get_peer(1).get_available_packets() in a loop.
-        _client.data_received.connect(self._on_data)
+        _client.data_received.connect(_on_data)
 
         # Initiate connection to the given URL.
         var err = _client.connect_to_url(websocket_url)
@@ -107,14 +107,14 @@ This example will show you how to create a WebSocket server that listens for rem
     func _ready():
         # Connect base signals to get notified of new client connections,
         # disconnections, and disconnect requests.
-        _server.client_connected.connect(self._connected)
-        _server.client_disconnected.connect(self._disconnected)
-        _server.client_close_request.connect(self._close_request)
+        _server.client_connected.connect(_connected)
+        _server.client_disconnected.connect(_disconnected)
+        _server.client_close_request.connect(_close_request)
         # This signal is emitted when not using the Multiplayer API every time a
         # full packet is received.
         # Alternatively, you could check get_peer(PEER_ID).get_available_packets()
         # in a loop for each connected peer.
-        _server.data_received.connect(self._on_data)
+        _server.data_received.connect(_on_data)
         # Start listening on the given port.
         var err = _server.listen(PORT)
         if err != OK:
