@@ -16,12 +16,11 @@ For compiling under Windows, the following is required:
   will have to run/download the installer again.**
 - `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
-  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later. Because
-  MinGW has not officially released GCC 9 yet, you can get an alternate installer from
-  `here <https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release>`_.
+  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
-- `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
-  you need at least SCons 3.1.1.
+  **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
+- `SCons <https://www.scons.org/>`_ build system. Using the latest release is
+  recommended, especially for proper support of recent Visual Studio releases.
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
@@ -39,13 +38,6 @@ For compiling under Windows, the following is required:
 
 .. seealso:: For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
-
-Setting up Python
------------------
-
-First you need to install Python 3.5 or newer. Make sure to enable the option
-to add Python to the ``PATH`` in the Python installer. The SCons installer
-should then detect and use the existing Python installation.
 
 Setting up SCons
 ----------------
@@ -68,6 +60,10 @@ If the commands above don't work, make sure to add Python to your ``PATH``
 environment variable after installing it, then check again.
 You can do so by running the Python installer again and enabling the option
 to add Python to the ``PATH``.
+
+If SCons cannot detect your Visual Studio installation, it might be that your
+SCons version is too old. Update it to the latest version with
+``python -m pip install --upgrade scons``.
 
 .. _doc_compiling_for_windows_install_vs:
 
