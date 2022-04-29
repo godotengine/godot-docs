@@ -49,7 +49,7 @@ Emacs.
    command_line_tutorial
    external_editor
 
-Managing Editor Features
+Managing editor features
 ------------------------
 
 Godot allows you to remove features from the editor. This may be useful if you're
