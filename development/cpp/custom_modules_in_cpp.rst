@@ -129,7 +129,7 @@ These files should contain the following:
 
     #include "register_types.h"
 
-    #include "core/object/class_db.h
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void register_summator_types() {
@@ -366,7 +366,7 @@ We now need to add this method to ``register_types`` header and source files:
 
     #include "register_types.h"
 
-    #include "core/object/class_db.h
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void preregister_summator_types() {
