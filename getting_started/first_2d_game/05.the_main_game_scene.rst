@@ -83,7 +83,6 @@ Add a script to ``Main``. At the top of the script, we use
     extends Node
 
     @export var mob_scene: PackedScene
-    export(PackedScene) var mob_scene
     var score
 
  .. code-tab:: csharp
@@ -343,7 +342,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.rotation = direction
 
         # Choose the velocity.
-        var velocity = Vector2(randi_range(150, 250), 0.0)
+        var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
 
  .. code-tab:: csharp
