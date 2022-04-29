@@ -3,6 +3,13 @@
 Exporting for Android
 =====================
 
+
+.. seealso::
+
+    This page describes how to export a Godot project to Android.
+    If you're looking to compile export template binaries from source instead,
+    read :ref:`doc_compiling_for_android`.
+
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
