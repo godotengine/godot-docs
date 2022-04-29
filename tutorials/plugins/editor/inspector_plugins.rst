@@ -156,7 +156,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
         add_focusable(property_control)
         # Setup the initial state and connect to the signal to track changes.
         property_control.text = "Value: " + str(current_value)
-        property_control.connect("pressed", self, "_on_button_pressed")
+        property_control.pressed.connect(_on_button_pressed)
 
 
     func _on_button_pressed():
