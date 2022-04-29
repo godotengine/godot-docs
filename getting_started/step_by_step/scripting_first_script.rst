@@ -75,7 +75,7 @@ scene dock and select "Attach Script".
 
 .. image:: img/scripting_first_script_attach_script.png
 
-The Attach node Script window appears. It allows you to select the script's
+The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
 Change the Template from Default to Empty to start with a clean file. Leave the
@@ -83,8 +83,8 @@ other options by default and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.png
 
-The Script workspace should appear with your new file open and the following
-line of code:
+The Script workspace should appear with your new ``Sprite.gd`` file open and the
+following line of code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -229,6 +229,7 @@ them.
  .. code-tab:: gdscript GDScript
 
     var velocity = Vector2.UP.rotated(rotation) * speed
+
     position += velocity * delta
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
@@ -254,4 +255,26 @@ Run the scene to see the Godot head run in circles.
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
-Our node currently moves by itself. In the next part, we'll use player input to control it.
+Our node currently moves by itself. In the next part
+:ref:`doc_scripting_player_input`, we'll use player input to control it.
+
+Complete script
+---------------
+
+Here is the complete ``Sprite.gd`` file for reference.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite
+
+    var speed = 400
+    var angular_speed = PI
+
+
+    func _process(delta):
+        rotation += angular_speed * delta
+
+        var velocity = Vector2.UP.rotated(rotation) * speed
+
+        position += velocity * delta
