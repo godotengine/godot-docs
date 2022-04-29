@@ -50,19 +50,19 @@ Operators
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_float_operator_neq_bool>` **(** :ref:`int<class_int>` right **)**                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
+| :ref:`Color<class_Color>`           | :ref:`operator *<class_float_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`operator *<class_float_operator_mul_Quaternion>` **(** :ref:`Quaternion<class_Quaternion>` right **)** |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_float_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`     | :ref:`operator *<class_float_operator_mul_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)**       |
+| :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_float_operator_mul_Vector2>` **(** :ref:`Vector2i<class_Vector2i>` right **)**        |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_float_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_float_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
+| :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_float_operator_mul_Vector3>` **(** :ref:`Vector3i<class_Vector3i>` right **)**        |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`           | :ref:`operator *<class_float_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
+| :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`int<class_int>` right **)**                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -153,11 +153,15 @@ Returns ``true`` if the integer has different value than the float.
 
 ----
 
-.. _class_float_operator_mul_float:
+.. _class_float_operator_mul_Color:
 
-- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
+- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
-Multiplies two ``float``\ s.
+Multiplies each component of the :ref:`Color<class_Color>` by the given ``float``.
+
+::
+
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
 
 ----
 
@@ -177,13 +181,13 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``fl
 
 ----
 
-- :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
+- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
-Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float`` truncated to an integer.
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``float``. Returns a :ref:`Vector2<class_Vector2>`.
 
 ::
 
-    print(0.9 * Vector2i(10, 20)) # Prints "(0, 0)"
+    print(0.9 * Vector2i(10, 15)) # Prints "(9, 13.5)"
 
 ----
 
@@ -193,23 +197,19 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``fl
 
 ----
 
-- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
+- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
-Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float`` truncated to an integer.
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``float``. Returns a :ref:`Vector3<class_Vector3>`.
 
 ::
 
-    print(0.9 * Vector3i(10, 20, 30)) # Prints "(0, 0, 0)"
+    print(0.9 * Vector3i(10, 15, 20)) # Prints "(9, 13.5, 18)"
 
 ----
 
-- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
+- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-Multiplies each component of the :ref:`Color<class_Color>` by the given ``float``.
-
-::
-
-    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
+Multiplies two ``float``\ s.
 
 ----
 
@@ -299,7 +299,7 @@ Returns ``true`` if this ``float`` is less than or equal to the given :ref:`int<
 
 Returns ``true`` if both floats are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
 
 ----
 

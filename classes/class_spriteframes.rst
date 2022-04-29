@@ -11,14 +11,14 @@ SpriteFrames
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Sprite frame library for AnimatedSprite2D.
+Sprite frame library for AnimatedSprite2D and AnimatedSprite3D.
 
 Description
 -----------
 
-Sprite frame library for :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`. Contains frames and animation data for playback.
+Sprite frame library for an :ref:`AnimatedSprite2D<class_AnimatedSprite2D>` or :ref:`AnimatedSprite3D<class_AnimatedSprite3D>` node. Contains frames and animation data for playback.
 
-**Note:** You can associate a set of normal or specular maps by creating additional ``SpriteFrames`` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 ``SpriteFrames`` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
+\ **Note:** You can associate a set of normal or specular maps by creating additional ``SpriteFrames`` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 ``SpriteFrames`` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
 Properties
 ----------

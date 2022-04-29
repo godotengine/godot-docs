@@ -59,47 +59,61 @@ Properties
 Methods
 -------
 
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_central_force<class_PhysicsDirectBodyState3D_method_add_central_force>` **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**                                      |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_force<class_PhysicsDirectBodyState3D_method_add_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**              |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`add_torque<class_PhysicsDirectBodyState3D_method_add_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                                    |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_central_impulse<class_PhysicsDirectBodyState3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse=Vector3(0, 0, 0) **)**                            |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_impulse<class_PhysicsDirectBodyState3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**    |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`apply_torque_impulse<class_PhysicsDirectBodyState3D_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                               |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`get_contact_collider<class_PhysicsDirectBodyState3D_method_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                           |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_id<class_PhysicsDirectBodyState3D_method_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                                       | :ref:`get_contact_collider_object<class_PhysicsDirectBodyState3D_method_get_contact_collider_object>` **(** :ref:`int<class_int>` contact_idx **)** |const|                             |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_collider_position<class_PhysicsDirectBodyState3D_method_get_contact_collider_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                         |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_shape<class_PhysicsDirectBodyState3D_method_get_contact_collider_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                               |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_collider_velocity_at_position<class_PhysicsDirectBodyState3D_method_get_contact_collider_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |const| |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_PhysicsDirectBodyState3D_method_get_contact_count>` **(** **)** |const|                                                                                   |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                         | :ref:`get_contact_impulse<class_PhysicsDirectBodyState3D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                             |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState3D_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                   |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_position<class_PhysicsDirectBodyState3D_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                               |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_PhysicsDirectBodyState3D_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` | :ref:`get_space_state<class_PhysicsDirectBodyState3D_method_get_space_state>` **(** **)**                                                                                               |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_velocity_at_local_position<class_PhysicsDirectBodyState3D_method_get_velocity_at_local_position>` **(** :ref:`Vector3<class_Vector3>` local_position **)** |const|            |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`integrate_forces<class_PhysicsDirectBodyState3D_method_integrate_forces>` **(** **)**                                                                                             |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_constant_central_force<class_PhysicsDirectBodyState3D_method_add_constant_central_force>` **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**                         |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_constant_force<class_PhysicsDirectBodyState3D_method_add_constant_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)** |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`add_constant_torque<class_PhysicsDirectBodyState3D_method_add_constant_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                       |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_central_force<class_PhysicsDirectBodyState3D_method_apply_central_force>` **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**                                       |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_central_impulse<class_PhysicsDirectBodyState3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse=Vector3(0, 0, 0) **)**                                 |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_force<class_PhysicsDirectBodyState3D_method_apply_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**               |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_impulse<class_PhysicsDirectBodyState3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**         |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_torque<class_PhysicsDirectBodyState3D_method_apply_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                                     |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`apply_torque_impulse<class_PhysicsDirectBodyState3D_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                                    |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_constant_force<class_PhysicsDirectBodyState3D_method_get_constant_force>` **(** **)** |const|                                                                                      |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_constant_torque<class_PhysicsDirectBodyState3D_method_get_constant_torque>` **(** **)** |const|                                                                                    |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`get_contact_collider<class_PhysicsDirectBodyState3D_method_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                                |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_id<class_PhysicsDirectBodyState3D_method_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                          |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                                       | :ref:`get_contact_collider_object<class_PhysicsDirectBodyState3D_method_get_contact_collider_object>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                  |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_collider_position<class_PhysicsDirectBodyState3D_method_get_contact_collider_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                              |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_collider_shape<class_PhysicsDirectBodyState3D_method_get_contact_collider_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                    |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_collider_velocity_at_position<class_PhysicsDirectBodyState3D_method_get_contact_collider_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|      |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_PhysicsDirectBodyState3D_method_get_contact_count>` **(** **)** |const|                                                                                        |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                         | :ref:`get_contact_impulse<class_PhysicsDirectBodyState3D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                                  |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState3D_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                        |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_position<class_PhysicsDirectBodyState3D_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                    |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_PhysicsDirectBodyState3D_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                          |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` | :ref:`get_space_state<class_PhysicsDirectBodyState3D_method_get_space_state>` **(** **)**                                                                                                    |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`get_velocity_at_local_position<class_PhysicsDirectBodyState3D_method_get_velocity_at_local_position>` **(** :ref:`Vector3<class_Vector3>` local_position **)** |const|                 |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`integrate_forces<class_PhysicsDirectBodyState3D_method_integrate_forces>` **(** **)**                                                                                                  |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_constant_force<class_PhysicsDirectBodyState3D_method_set_constant_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                                          |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_constant_torque<class_PhysicsDirectBodyState3D_method_set_constant_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                       |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -114,7 +128,7 @@ Property Descriptions
 | *Getter* | get_angular_velocity()      |
 +----------+-----------------------------+
 
-The body's rotational velocity.
+The body's rotational velocity in *radians* per second.
 
 ----
 
@@ -176,7 +190,7 @@ The inverse of the mass of the body.
 | *Getter* | get_linear_velocity()      |
 +----------+----------------------------+
 
-The body's linear velocity.
+The body's linear velocity in units per second.
 
 ----
 
@@ -267,29 +281,41 @@ The body's transformation matrix.
 Method Descriptions
 -------------------
 
-.. _class_PhysicsDirectBodyState3D_method_add_central_force:
+.. _class_PhysicsDirectBodyState3D_method_add_constant_central_force:
 
-- void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**
+- void **add_constant_central_force** **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**
 
-Adds a constant directional force without affecting rotation.
+Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
 
-This is equivalent to ``add_force(force, Vector3(0,0,0))``.
-
-----
-
-.. _class_PhysicsDirectBodyState3D_method_add_force:
-
-- void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
-
-Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
+This is equivalent to using :ref:`add_constant_force<class_PhysicsDirectBodyState3D_method_add_constant_force>` at the body's center of mass.
 
 ----
 
-.. _class_PhysicsDirectBodyState3D_method_add_torque:
+.. _class_PhysicsDirectBodyState3D_method_add_constant_force:
 
-- void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+- void **add_constant_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
 
-Adds a constant rotational force without affecting position.
+Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_add_constant_torque:
+
+- void **add_constant_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``constant_torque = Vector3(0, 0, 0)``.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_apply_central_force:
+
+- void **apply_central_force** **(** :ref:`Vector3<class_Vector3>` force=Vector3(0, 0, 0) **)**
+
+Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+
+This is equivalent to using :ref:`apply_force<class_PhysicsDirectBodyState3D_method_apply_force>` at the body's center of mass.
 
 ----
 
@@ -297,9 +323,21 @@ Adds a constant rotational force without affecting position.
 
 - void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse=Vector3(0, 0, 0) **)**
 
-Applies a single directional impulse without affecting rotation.
+Applies a directional impulse without affecting rotation.
 
-This is equivalent to ``apply_impulse(Vector3(0, 0, 0), impulse)``.
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+This is equivalent to using :ref:`apply_impulse<class_PhysicsDirectBodyState3D_method_apply_impulse>` at the body's center of mass.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_apply_force:
+
+- void **apply_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+
+Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -307,7 +345,19 @@ This is equivalent to ``apply_impulse(Vector3(0, 0, 0), impulse)``.
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
 
-Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+Applies a positioned impulse to the body.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_apply_torque:
+
+- void **apply_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
 ----
 
@@ -315,7 +365,29 @@ Applies a positioned impulse to the body. An impulse is time-independent! Applyi
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
-Apply a torque impulse (which will be affected by the body mass and shape). This will rotate the body around the vector ``j`` passed as parameter.
+Applies a rotational impulse to the body without affecting the position.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_get_constant_force:
+
+- :ref:`Vector3<class_Vector3>` **get_constant_force** **(** **)** |const|
+
+Returns the body's total constant positional forces applied during each physics update.
+
+See :ref:`add_constant_force<class_PhysicsDirectBodyState3D_method_add_constant_force>` and :ref:`add_constant_central_force<class_PhysicsDirectBodyState3D_method_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_get_constant_torque:
+
+- :ref:`Vector3<class_Vector3>` **get_constant_torque** **(** **)** |const|
+
+Returns the body's total constant rotational forces applied during each physics update.
+
+See :ref:`add_constant_torque<class_PhysicsDirectBodyState3D_method_add_constant_torque>`.
 
 ----
 
@@ -373,7 +445,7 @@ Returns the linear velocity vector at the collider's contact point.
 
 Returns the number of contacts this body has with other bodies.
 
-**Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidDynamicBody3D.contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>`.
+\ **Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidDynamicBody3D.contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>`.
 
 ----
 
@@ -430,6 +502,26 @@ Returns the body's velocity at the given relative position, including both trans
 - void **integrate_forces** **(** **)**
 
 Calls the built-in force integration code.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_set_constant_force:
+
+- void **set_constant_force** **(** :ref:`Vector3<class_Vector3>` force **)**
+
+Sets the body's total constant positional forces applied during each physics update.
+
+See :ref:`add_constant_force<class_PhysicsDirectBodyState3D_method_add_constant_force>` and :ref:`add_constant_central_force<class_PhysicsDirectBodyState3D_method_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_set_constant_torque:
+
+- void **set_constant_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Sets the body's total constant rotational forces applied during each physics update.
+
+See :ref:`add_constant_torque<class_PhysicsDirectBodyState3D_method_add_constant_torque>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

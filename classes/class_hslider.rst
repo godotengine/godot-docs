@@ -18,7 +18,7 @@ Description
 
 Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
 
-**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
 Theme Properties
 ----------------
@@ -26,17 +26,17 @@ Theme Properties
 +-----------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |
 +-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
-+-----------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |
 +-----------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |
 +-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
-+-----------------------------------+---------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |
++-----------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
++-----------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
++-----------------------------------+---------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
 +-----------------------------------+---------------------------------------------------------------------------------+
 
 Theme Property Descriptions
@@ -47,20 +47,6 @@ Theme Property Descriptions
 - :ref:`Texture2D<class_Texture2D>` **grabber**
 
 The texture for the grabber (the draggable element).
-
-----
-
-.. _class_HSlider_theme_style_grabber_area:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_area**
-
-The background of the area to the left of the grabber.
-
-----
-
-.. _class_HSlider_theme_style_grabber_area_highlight:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
 
 ----
 
@@ -80,19 +66,33 @@ The texture for the grabber when it's focused.
 
 ----
 
-.. _class_HSlider_theme_style_slider:
-
-- :ref:`StyleBox<class_StyleBox>` **slider**
-
-The background for the whole slider. Determines the height of the ``grabber_area``.
-
-----
-
 .. _class_HSlider_theme_icon_tick:
 
 - :ref:`Texture2D<class_Texture2D>` **tick**
 
 The texture for the ticks, visible when :ref:`Slider.tick_count<class_Slider_property_tick_count>` is greater than 0.
+
+----
+
+.. _class_HSlider_theme_style_grabber_area:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_area**
+
+The background of the area to the left of the grabber.
+
+----
+
+.. _class_HSlider_theme_style_grabber_area_highlight:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
+
+----
+
+.. _class_HSlider_theme_style_slider:
+
+- :ref:`StyleBox<class_StyleBox>` **slider**
+
+The background for the whole slider. Determines the height of the ``grabber_area``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

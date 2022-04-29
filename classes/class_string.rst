@@ -54,6 +54,8 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`chr<class_String_method_chr>` **(** :ref:`int<class_int>` char **)** |static|                                                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`contains<class_String_method_contains>` **(** :ref:`String<class_String>` what **)** |const|                                                                              |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`count<class_String_method_count>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`countn<class_String_method_countn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|                        |
@@ -78,11 +80,17 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_slice<class_String_method_get_slice>` **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)** |const|                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`get_slice_count<class_String_method_get_slice_count>` **(** :ref:`String<class_String>` delimiter **)** |const|                                                           |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`get_slicec<class_String_method_get_slicec>` **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|                                              |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`hash<class_String_method_hash>` **(** **)** |const|                                                                                                                       |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`hex_to_int<class_String_method_hex_to_int>` **(** **)** |const|                                                                                                           |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`humanize_size<class_String_method_humanize_size>` **(** :ref:`int<class_int>` size **)** |static|                                                                         |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`indent<class_String_method_indent>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                                |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`insert<class_String_method_insert>` **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)** |const|                                                  |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +102,7 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_subsequence_of<class_String_method_is_subsequence_of>` **(** :ref:`String<class_String>` text **)** |const|                                                            |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofi<class_String_method_is_subsequence_ofi>` **(** :ref:`String<class_String>` text **)** |const|                                                          |
+| :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofn<class_String_method_is_subsequence_ofn>` **(** :ref:`String<class_String>` text **)** |const|                                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_valid_filename<class_String_method_is_valid_filename>` **(** **)** |const|                                                                                             |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -290,7 +298,11 @@ Returns ``true`` if the string begins with the given string.
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **bigrams** **(** **)** |const|
 
-Returns the bigrams (pairs of consecutive letters) of this string.
+Returns an array containing the bigrams (pairs of consecutive letters) of this string.
+
+::
+
+    print("Bigrams".bigrams()) # Prints "[Bi, ig, gr, ra, am, ms]"
 
 ----
 
@@ -331,7 +343,7 @@ Returns a copy of the string with special characters escaped using the C languag
 
 Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\?``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
 
-**Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
+\ **Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
 
 ----
 
@@ -349,9 +361,9 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
@@ -360,6 +372,21 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 .. _class_String_method_chr:
 
 - :ref:`String<class_String>` **chr** **(** :ref:`int<class_int>` char **)** |static|
+
+Directly converts an decimal integer to a unicode character. Tables of these characters can be found in various locations, for example `here. <https://unicodelookup.com/>`__\ 
+
+::
+
+    print(String.chr(65)) # Prints "A"
+    print(String.chr(129302)) # Prints "🤖" (robot face emoji)
+
+----
+
+.. _class_String_method_contains:
+
+- :ref:`bool<class_bool>` **contains** **(** :ref:`String<class_String>` what **)** |const|
+
+Returns ``true`` if the string contains the given string.
 
 ----
 
@@ -383,7 +410,7 @@ Returns the number of occurrences of substring ``what`` (ignoring case) between 
 
 - :ref:`String<class_String>` **dedent** **(** **)** |const|
 
-Returns a copy of the string with indentation (leading tabs and spaces) removed.
+Returns a copy of the string with indentation (leading tabs and spaces) removed. See also :ref:`indent<class_String_method_indent>` to add indentation.
 
 ----
 
@@ -401,7 +428,7 @@ Returns ``true`` if the string ends with the given string.
 
 Returns the index of the **first** case-sensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the end of the string.
 
-**Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
+\ **Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
 
 
 .. tabs::
@@ -494,11 +521,31 @@ Example:
 
 ----
 
+.. _class_String_method_get_slice_count:
+
+- :ref:`int<class_int>` **get_slice_count** **(** :ref:`String<class_String>` delimiter **)** |const|
+
+Splits a string using a ``delimiter`` and returns a number of slices.
+
+----
+
+.. _class_String_method_get_slicec:
+
+- :ref:`String<class_String>` **get_slicec** **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|
+
+Splits a string using a Unicode character with code ``delimiter`` and returns a substring at index ``slice``. Returns an empty string if the index doesn't exist.
+
+This is a more performant alternative to :ref:`split<class_String_method_split>` for cases when you need only one element from the array at a fixed index.
+
+----
+
 .. _class_String_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)** |const|
 
-Hashes the string and returns a 32-bit integer.
+Returns the 32-bit hash value representing the string's contents.
+
+\ **Note:** ``String``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
 
 ----
 
@@ -528,6 +575,22 @@ Converts a string containing a hexadecimal number into an integer. Hexadecimal s
 .. _class_String_method_humanize_size:
 
 - :ref:`String<class_String>` **humanize_size** **(** :ref:`int<class_int>` size **)** |static|
+
+Converts an integer representing a number of bytes into a human-readable form.
+
+Note that this output is in `IEC prefix format <https://en.wikipedia.org/wiki/Binary_prefix#IEC_prefixes>`__, and includes ``B``, ``KiB``, ``MiB``, ``GiB``, ``TiB``, ``PiB``, and ``EiB``.
+
+----
+
+.. _class_String_method_indent:
+
+- :ref:`String<class_String>` **indent** **(** :ref:`String<class_String>` prefix **)** |const|
+
+Returns a copy of the string with lines indented with ``prefix``.
+
+For example, the string can be indented with two tabs using ``"\t\t"``, or four spaces using ``"    "``. The prefix can be any string so it can also be used to comment out strings with e.g. ``"# "``. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
+
+\ **Note:** Empty lines are kept empty.
 
 ----
 
@@ -571,9 +634,9 @@ Returns ``true`` if this string is a subsequence of the given string.
 
 ----
 
-.. _class_String_method_is_subsequence_ofi:
+.. _class_String_method_is_subsequence_ofn:
 
-- :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_String>` text **)** |const|
+- :ref:`bool<class_bool>` **is_subsequence_ofn** **(** :ref:`String<class_String>` text **)** |const|
 
 Returns ``true`` if this string is a subsequence of the given string, without considering case.
 
@@ -585,7 +648,7 @@ Returns ``true`` if this string is a subsequence of the given string, without co
 
 Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
 
-``: / \ ? * " | % < >``
+\ ``: / \ ? * " | % < >``
 
 ----
 
@@ -593,7 +656,15 @@ Returns ``true`` if this string is free from characters that aren't allowed in f
 
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)** |const|
 
-Returns ``true`` if this string contains a valid float.
+Returns ``true`` if this string contains a valid float. This is inclusive of integers, and also supports exponents:
+
+::
+
+    print("1.7".is_valid_float()) # Prints "true"
+    print("24".is_valid_float()) # Prints "true"
+    print("7e3".is_valid_float()) # Prints "true"
+    print("24".is_valid_float()) # Prints "true"
+    print("Hello".is_valid_float()) # Prints "false"
 
 ----
 
@@ -619,6 +690,12 @@ Returns ``true`` if this string contains a valid color in hexadecimal HTML notat
 
 Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``) and the first character may not be a digit.
 
+::
+
+    print("good_ident_1".is_valid_identifier()) # Prints "true"
+    print("1st_bad_ident".is_valid_identifier()) # Prints "false"
+    print("bad_ident_#2".is_valid_identifier()) # Prints "false"
+
 ----
 
 .. _class_String_method_is_valid_int:
@@ -626,6 +703,14 @@ Returns ``true`` if this string is a valid identifier. A valid identifier may co
 - :ref:`bool<class_bool>` **is_valid_int** **(** **)** |const|
 
 Returns ``true`` if this string contains a valid integer.
+
+::
+
+    print("7".is_valid_int()) # Prints "true"
+    print("14.6".is_valid_int()) # Prints "false"
+    print("L".is_valid_int()) # Prints "false"
+    print("+3".is_valid_int()) # Prints "true"
+    print("-12".is_valid_int()) # Prints "true"
 
 ----
 
@@ -641,7 +726,7 @@ Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 addr
 
 - :ref:`String<class_String>` **join** **(** :ref:`PackedStringArray<class_PackedStringArray>` parts **)** |const|
 
-Return a ``String`` which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
+Returns a ``String`` which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
 
 Example:
 
@@ -705,7 +790,7 @@ Formats a string to be at least ``min_length`` long by adding ``character``\ s t
 
 Returns a copy of the string with characters removed from the left. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
 
 ----
 
@@ -713,7 +798,7 @@ Returns a copy of the string with characters removed from the left. The ``chars`
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -721,7 +806,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``).
+Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -749,9 +834,9 @@ Performs a case-insensitive *natural order* comparison to another string. Return
 
 When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get ``[1, 2, 3, ...]`` instead of ``[1, 10, 2, 3, ...]``.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
@@ -763,9 +848,9 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
@@ -927,7 +1012,7 @@ Example:
 
 Returns a copy of the string with characters removed from the right. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
 
 ----
 
@@ -967,7 +1052,14 @@ Returns the SHA-256 hash of the string as a string.
 
 - :ref:`float<class_float>` **similarity** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
+Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) this string compared to another. 1.0 means totally similar and 0.0 means totally dissimilar.
+
+::
+
+    print("ABC123".similarity("ABC123")) # Prints "1"
+    print("ABC123".similarity("XYZ456")) # Prints "0"
+    print("ABC123".similarity("123ABC")) # Prints "0.8"
+    print("ABC123".similarity("abc123")) # Prints "0.4"
 
 ----
 
@@ -1061,7 +1153,14 @@ Converts the String (which is a character array) to ASCII/Latin-1 encoded :ref:`
 
 - :ref:`float<class_float>` **to_float** **(** **)** |const|
 
-Converts a string containing a decimal number into a ``float``.
+Converts a string containing a decimal number into a ``float``. The method will stop on the first non-number character except the first ``.`` (decimal point), and ``e`` which is used for exponential.
+
+::
+
+    print("12.3".to_float()) # 12.3
+    print("1.2.3".to_float()) # 1.2
+    print("12ab3".to_float()) # 12
+    print("1e3".to_float()) # 1000
 
 ----
 
@@ -1069,7 +1168,13 @@ Converts a string containing a decimal number into a ``float``.
 
 - :ref:`int<class_int>` **to_int** **(** **)** |const|
 
-Converts a string containing an integer number into an ``int``.
+Converts a string containing an integer number into an ``int``. The method will remove any non-number character and stop if it encounters a ``.``.
+
+::
+
+    print("123".to_int()) # 123
+    print("a1b2c3".to_int()) # 123
+    print("1.2.3".to_int()) # 1
 
 ----
 

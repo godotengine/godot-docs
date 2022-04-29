@@ -38,7 +38,9 @@ Enumerations
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_SCALAR_INT:
 
-.. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR:
+.. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_2D:
+
+.. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_3D:
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_BOOLEAN:
 
@@ -52,13 +54,15 @@ enum **ComparisonType**:
 
 - **CTYPE_SCALAR_INT** = **1** --- An integer scalar.
 
-- **CTYPE_VECTOR** = **2** --- A 3D vector type.
+- **CTYPE_VECTOR_2D** = **2** --- A 2D vector type.
 
-- **CTYPE_BOOLEAN** = **3** --- A boolean type.
+- **CTYPE_VECTOR_3D** = **3** --- A 3D vector type.
 
-- **CTYPE_TRANSFORM** = **4** --- A transform (``mat4``) type.
+- **CTYPE_BOOLEAN** = **4** --- A boolean type.
 
-- **CTYPE_MAX** = **5** --- Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
+- **CTYPE_TRANSFORM** = **5** --- A transform (``mat4``) type.
+
+- **CTYPE_MAX** = **6** --- Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
 
 ----
 
@@ -127,7 +131,7 @@ Property Descriptions
 | *Getter*  | get_condition()      |
 +-----------+----------------------+
 
-Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_property_type>` is set to :ref:`CTYPE_VECTOR<class_VisualShaderNodeCompare_constant_CTYPE_VECTOR>`.
+Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_property_type>` is set to :ref:`CTYPE_VECTOR_3D<class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_3D>`.
 
 ----
 

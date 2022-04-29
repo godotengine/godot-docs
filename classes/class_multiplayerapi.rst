@@ -22,24 +22,22 @@ By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that
 
 It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
 
-**Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
+\ **Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Properties
 ----------
 
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                   | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`   | ``false`` |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`MultiplayerPeer<class_MultiplayerPeer>`             | :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`             |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                   | :ref:`refuse_new_connections<class_MultiplayerAPI_property_refuse_new_connections>` | ``false`` |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`MultiplayerReplicator<class_MultiplayerReplicator>` | :ref:`replicator<class_MultiplayerAPI_property_replicator>`                         |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`Node<class_Node>`                                   | :ref:`root_node<class_MultiplayerAPI_property_root_node>`                           |           |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                       | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`   | ``false``        |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`MultiplayerPeer<class_MultiplayerPeer>` | :ref:`multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`             |                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                       | :ref:`refuse_new_connections<class_MultiplayerAPI_property_refuse_new_connections>` | ``false``        |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>`               | :ref:`root_path<class_MultiplayerAPI_property_root_path>`                           | ``NodePath("")`` |
++-----------------------------------------------+-------------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -128,7 +126,7 @@ Property Descriptions
 
 If ``true``, the MultiplayerAPI will allow encoding and decoding of object during RPCs.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 
@@ -162,27 +160,19 @@ If ``true``, the MultiplayerAPI's :ref:`multiplayer_peer<class_MultiplayerAPI_pr
 
 ----
 
-.. _class_MultiplayerAPI_property_replicator:
+.. _class_MultiplayerAPI_property_root_path:
 
-- :ref:`MultiplayerReplicator<class_MultiplayerReplicator>` **replicator**
+- :ref:`NodePath<class_NodePath>` **root_path**
 
-+----------+------------------+
-| *Getter* | get_replicator() |
-+----------+------------------+
++-----------+----------------------+
+| *Default* | ``NodePath("")``     |
++-----------+----------------------+
+| *Setter*  | set_root_path(value) |
++-----------+----------------------+
+| *Getter*  | get_root_path()      |
++-----------+----------------------+
 
-----
-
-.. _class_MultiplayerAPI_property_root_node:
-
-- :ref:`Node<class_Node>` **root_node**
-
-+----------+----------------------+
-| *Setter* | set_root_node(value) |
-+----------+----------------------+
-| *Getter* | get_root_node()      |
-+----------+----------------------+
-
-The root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
+The root path to use for RPCs and replication. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
@@ -211,7 +201,7 @@ Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`multi
 
 Returns the sender's peer ID for the RPC currently being executed.
 
-**Note:** If not inside an RPC this method will return 0.
+\ **Note:** If not inside an RPC this method will return 0.
 
 ----
 
@@ -245,7 +235,7 @@ Returns ``true`` if this MultiplayerAPI's :ref:`multiplayer_peer<class_Multiplay
 
 Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
 
-**Note:** This method results in RPCs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
+\ **Note:** This method results in RPCs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
 
 ----
 

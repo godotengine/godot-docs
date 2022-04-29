@@ -20,7 +20,7 @@ A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBa
 
 This node's children will be affected by its scroll offset.
 
-**Note:** Any changes to this node's position and scale made after it enters the scene will be ignored.
+\ **Note:** Any changes to this node's position and scale made after it enters the scene will be ignored.
 
 Properties
 ----------

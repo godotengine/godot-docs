@@ -20,6 +20,8 @@ It uses floating-point coordinates. If you need integer coordinates, use :ref:`R
 
 The 3D counterpart to ``Rect2`` is :ref:`AABB<class_AABB>`.
 
+Negative values for :ref:`size<class_Rect2_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_Rect2_method_abs>` to get a Rect2 with a positive size.
+
 Tutorials
 ---------
 
@@ -200,7 +202,7 @@ Returns ``true`` if this ``Rect2`` completely encloses another one.
 
 Returns a copy of this ``Rect2`` expanded to include a given point.
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::
@@ -227,7 +229,7 @@ Returns a copy of this ``Rect2`` expanded to include a given point.
 
 - :ref:`float<class_float>` **get_area** **(** **)** |const|
 
-Returns the area of the ``Rect2``.
+Returns the area of the ``Rect2``. See also :ref:`has_no_area<class_Rect2_method_has_no_area>`.
 
 ----
 
@@ -267,7 +269,9 @@ Returns a copy of the ``Rect2`` grown by the specified ``amount`` on the specifi
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)** |const|
 
-Returns ``true`` if the ``Rect2`` is flat or empty.
+Returns ``true`` if the ``Rect2`` is flat or empty, ``false`` otherwise. See also :ref:`get_area<class_Rect2_method_get_area>`.
+
+\ **Note:** If the ``Rect2`` has a negative size and is not flat or empty, :ref:`has_no_area<class_Rect2_method_has_no_area>` will return ``true``.
 
 ----
 
@@ -277,7 +281,7 @@ Returns ``true`` if the ``Rect2`` is flat or empty.
 
 Returns ``true`` if the ``Rect2`` contains a point. By convention, the right and bottom edges of the ``Rect2`` are considered exclusive, so points on these edges are **not** included.
 
-**Note:** This method is not reliable for ``Rect2`` with a *negative size*. Use :ref:`abs<class_Rect2_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
+\ **Note:** This method is not reliable for ``Rect2`` with a *negative size*. Use :ref:`abs<class_Rect2_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
 
 ----
 
@@ -328,7 +332,7 @@ Operator Descriptions
 
 Returns ``true`` if the rectangles are not equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
 
 ----
 
@@ -350,7 +354,7 @@ Inversely transforms (multiplies) the ``Rect2`` by the given :ref:`Transform2D<c
 
 Returns ``true`` if the rectangles are exactly equal.
 
-**Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
+\ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

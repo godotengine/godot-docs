@@ -138,15 +138,15 @@ enum **DrawOrder**:
 
 enum **EmitFlags**:
 
-- **EMIT_FLAG_POSITION** = **1**
+- **EMIT_FLAG_POSITION** = **1** --- Particle starts at the specified position.
 
-- **EMIT_FLAG_ROTATION_SCALE** = **2**
+- **EMIT_FLAG_ROTATION_SCALE** = **2** --- Particle starts with specified rotation and scale.
 
-- **EMIT_FLAG_VELOCITY** = **4**
+- **EMIT_FLAG_VELOCITY** = **4** --- Particle starts with the specified velocity vector, which defines the emission direction and speed.
 
-- **EMIT_FLAG_COLOR** = **8**
+- **EMIT_FLAG_COLOR** = **8** --- Particle starts with specified color.
 
-- **EMIT_FLAG_CUSTOM** = **16**
+- **EMIT_FLAG_CUSTOM** = **16** --- Particle starts with specified ``CUSTOM`` data.
 
 ----
 
@@ -584,6 +584,8 @@ Returns the axis-aligned bounding box that contains all the particles that are a
 .. _class_GPUParticles3D_method_emit_particle:
 
 - void **emit_particle** **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`Vector3<class_Vector3>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` flags **)**
+
+Emits a single particle. Whether ``xform``, ``velocity``, ``color`` and ``custom`` are applied depends on the value of ``flags``. See :ref:`EmitFlags<enum_GPUParticles3D_EmitFlags>`.
 
 ----
 

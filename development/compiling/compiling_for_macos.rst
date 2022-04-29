@@ -5,6 +5,11 @@ Compiling for macOS
 
 .. highlight:: shell
 
+.. note::
+
+    This page describes how to compile macOS editor and export template binaries from source.
+    If you're looking to export your project to macOS instead, read :ref:`doc_exporting_for_macos`.
+
 Requirements
 ------------
 
@@ -15,10 +20,12 @@ For compiling under macOS, the following is required:
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
 
-.. important::
+.. warning::
 
     If you are building the ``master`` branch, download and install the
-    `Vulkan SDK for macOS <https://vulkan.lunarg.com/sdk/home>`__.
+    `Vulkan SDK for macOS <https://vulkan.lunarg.com/sdk/home>`__. This
+    is **required** to compile Godot 4.x, as MoltenVK is used to translate Vulkan
+    to Metal (macOS doesn't support Vulkan out of the box).
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
           install SCons using the following command::
@@ -34,7 +41,10 @@ For compiling under macOS, the following is required:
 
               sudo port install scons
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 Compiling
@@ -81,7 +91,7 @@ editor binary built with ``target=release_debug``::
     dynamic library in your ``.app`` bundle::
 
         mkdir -p Godot.app/Contents/Frameworks
-        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
+        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
 
 Compiling a headless/server build
 ---------------------------------

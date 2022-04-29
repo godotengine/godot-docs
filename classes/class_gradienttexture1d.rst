@@ -26,7 +26,7 @@ Properties
 +---------------------------------+------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`         | :ref:`use_hdr<class_GradientTexture1D_property_use_hdr>`   | ``false`` |
 +---------------------------------+------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture1D_property_width>`       | ``2048``  |
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture1D_property_width>`       | ``256``   |
 +---------------------------------+------------------------------------------------------------+-----------+
 
 Property Descriptions
@@ -67,7 +67,7 @@ If ``true``, the generated texture will support high dynamic range (:ref:`Image.
 - :ref:`int<class_int>` **width**
 
 +-----------+------------------+
-| *Default* | ``2048``         |
+| *Default* | ``256``          |
 +-----------+------------------+
 | *Setter*  | set_width(value) |
 +-----------+------------------+

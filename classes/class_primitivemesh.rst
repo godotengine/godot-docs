@@ -34,9 +34,11 @@ Properties
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
-+---------------------------+----------------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_method__create_mesh_array>` **(** **)** |virtual| |const| |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                 |
++---------------------------+--------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -71,7 +73,7 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
-This gives the same result as using :ref:`BaseMaterial3D.CULL_BACK<class_BaseMaterial3D_constant_CULL_BACK>` in :ref:`BaseMaterial3D.cull_mode<class_BaseMaterial3D_property_cull_mode>`.
+This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMaterial3D_constant_CULL_FRONT>` in :ref:`BaseMaterial3D.cull_mode<class_BaseMaterial3D_property_cull_mode>`.
 
 ----
 
@@ -89,6 +91,12 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 
 Method Descriptions
 -------------------
+
+.. _class_PrimitiveMesh_method__create_mesh_array:
+
+- :ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
+
+----
 
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 

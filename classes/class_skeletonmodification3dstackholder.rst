@@ -18,7 +18,7 @@ Description
 
 This :ref:`SkeletonModification3D<class_SkeletonModification3D>` holds a reference to a :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>`, allowing you to use multiple modification stacks on a single :ref:`Skeleton3D<class_Skeleton3D>`.
 
-**Note:** The modifications in the held :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` will only be executed if their execution mode matches the execution mode of the SkeletonModification3DStackHolder.
+\ **Note:** The modifications in the held :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` will only be executed if their execution mode matches the execution mode of the SkeletonModification3DStackHolder.
 
 Methods
 -------

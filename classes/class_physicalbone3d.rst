@@ -21,11 +21,15 @@ Properties
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`DampMode<enum_PhysicalBone3D_DampMode>`   | :ref:`angular_damp_mode<class_PhysicalBone3D_property_angular_damp_mode>` | ``0``                                               |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`angular_velocity<class_PhysicalBone3D_property_angular_velocity>`   | ``Vector3(0, 0, 0)``                                |
++-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`           | :ref:`body_offset<class_PhysicalBone3D_property_body_offset>`             | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`bounce<class_PhysicalBone3D_property_bounce>`                       | ``0.0``                                             |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`can_sleep<class_PhysicalBone3D_property_can_sleep>`                 | ``true``                                            |
++-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`custom_integrator<class_PhysicalBone3D_property_custom_integrator>` | ``false``                                           |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`friction<class_PhysicalBone3D_property_friction>`                   | ``1.0``                                             |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
@@ -41,12 +45,16 @@ Properties
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`DampMode<enum_PhysicalBone3D_DampMode>`   | :ref:`linear_damp_mode<class_PhysicalBone3D_property_linear_damp_mode>`   | ``0``                                               |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`linear_velocity<class_PhysicalBone3D_property_linear_velocity>`     | ``Vector3(0, 0, 0)``                                |
++-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`mass<class_PhysicalBone3D_property_mass>`                           | ``1.0``                                             |
 +-------------------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
 
 Methods
 -------
 
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|        |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`apply_central_impulse<class_PhysicalBone3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -141,6 +149,22 @@ Defines how :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` is a
 
 ----
 
+.. _class_PhysicalBone3D_property_angular_velocity:
+
+- :ref:`Vector3<class_Vector3>` **angular_velocity**
+
++-----------+-----------------------------+
+| *Default* | ``Vector3(0, 0, 0)``        |
++-----------+-----------------------------+
+| *Setter*  | set_angular_velocity(value) |
++-----------+-----------------------------+
+| *Getter*  | get_angular_velocity()      |
++-----------+-----------------------------+
+
+The PhysicalBone3D's rotational velocity in *radians* per second.
+
+----
+
 .. _class_PhysicalBone3D_property_body_offset:
 
 - :ref:`Transform3D<class_Transform3D>` **body_offset**
@@ -186,6 +210,22 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 +-----------+----------------------+
 
 If ``true``, the body is deactivated when there is no movement, so it will not take part in the simulation until it is awakened by an external force.
+
+----
+
+.. _class_PhysicalBone3D_property_custom_integrator:
+
+- :ref:`bool<class_bool>` **custom_integrator**
+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_use_custom_integrator(value) |
++-----------+----------------------------------+
+| *Getter*  | is_using_custom_integrator()     |
++-----------+----------------------------------+
+
+If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` function, if defined.
 
 ----
 
@@ -303,6 +343,22 @@ Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is app
 
 ----
 
+.. _class_PhysicalBone3D_property_linear_velocity:
+
+- :ref:`Vector3<class_Vector3>` **linear_velocity**
+
++-----------+----------------------------+
+| *Default* | ``Vector3(0, 0, 0)``       |
++-----------+----------------------------+
+| *Setter*  | set_linear_velocity(value) |
++-----------+----------------------------+
+| *Getter*  | get_linear_velocity()      |
++-----------+----------------------------+
+
+The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` as your process loop for precise control of the body state.
+
+----
+
 .. _class_PhysicalBone3D_property_mass:
 
 - :ref:`float<class_float>` **mass**
@@ -319,6 +375,14 @@ The body's mass.
 
 Method Descriptions
 -------------------
+
+.. _class_PhysicalBone3D_method__integrate_forces:
+
+- void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|
+
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but the :ref:`custom_integrator<class_PhysicalBone3D_property_custom_integrator>` property allows you to disable the default behavior and do fully custom force integration for a body.
+
+----
 
 .. _class_PhysicalBone3D_method_apply_central_impulse:
 

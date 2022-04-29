@@ -21,15 +21,15 @@ Arranges child controls in a way to preserve their aspect ratio automatically wh
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`AlignMode<enum_AspectRatioContainer_AlignMode>`     | :ref:`alignment_horizontal<class_AspectRatioContainer_property_alignment_horizontal>` | ``1``   |
-+-----------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`AlignMode<enum_AspectRatioContainer_AlignMode>`     | :ref:`alignment_vertical<class_AspectRatioContainer_property_alignment_vertical>`     | ``1``   |
-+-----------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                                 | :ref:`ratio<class_AspectRatioContainer_property_ratio>`                               | ``1.0`` |
-+-----------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` | :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`                 | ``2``   |
-+-----------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+| :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_horizontal<class_AspectRatioContainer_property_alignment_horizontal>` | ``1``   |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+| :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_vertical<class_AspectRatioContainer_property_alignment_vertical>`     | ``1``   |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>`                                     | :ref:`ratio<class_AspectRatioContainer_property_ratio>`                               | ``1.0`` |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+| :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>`     | :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`                 | ``2``   |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 Enumerations
 ------------
@@ -54,32 +54,32 @@ enum **StretchMode**:
 
 - **STRETCH_COVER** = **3** --- The width and height of child controls is automatically adjusted to make their bounding rectangle cover the entire area of the container while keeping the aspect ratio.
 
-When the bounding rectangle of child controls exceed the container's size and :ref:`Control.rect_clip_content<class_Control_property_rect_clip_content>` is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
+When the bounding rectangle of child controls exceed the container's size and :ref:`Control.clip_contents<class_Control_property_clip_contents>` is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
 
 ----
 
-.. _enum_AspectRatioContainer_AlignMode:
+.. _enum_AspectRatioContainer_AlignmentMode:
 
-.. _class_AspectRatioContainer_constant_ALIGN_BEGIN:
+.. _class_AspectRatioContainer_constant_ALIGNMENT_BEGIN:
 
-.. _class_AspectRatioContainer_constant_ALIGN_CENTER:
+.. _class_AspectRatioContainer_constant_ALIGNMENT_CENTER:
 
-.. _class_AspectRatioContainer_constant_ALIGN_END:
+.. _class_AspectRatioContainer_constant_ALIGNMENT_END:
 
-enum **AlignMode**:
+enum **AlignmentMode**:
 
-- **ALIGN_BEGIN** = **0** --- Aligns child controls with the beginning (left or top) of the container.
+- **ALIGNMENT_BEGIN** = **0** --- Aligns child controls with the beginning (left or top) of the container.
 
-- **ALIGN_CENTER** = **1** --- Aligns child controls with the center of the container.
+- **ALIGNMENT_CENTER** = **1** --- Aligns child controls with the center of the container.
 
-- **ALIGN_END** = **2** --- Aligns child controls with the end (right or bottom) of the container.
+- **ALIGNMENT_END** = **2** --- Aligns child controls with the end (right or bottom) of the container.
 
 Property Descriptions
 ---------------------
 
 .. _class_AspectRatioContainer_property_alignment_horizontal:
 
-- :ref:`AlignMode<enum_AspectRatioContainer_AlignMode>` **alignment_horizontal**
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_horizontal**
 
 +-----------+---------------------------------+
 | *Default* | ``1``                           |
@@ -95,7 +95,7 @@ Specifies the horizontal relative position of child controls.
 
 .. _class_AspectRatioContainer_property_alignment_vertical:
 
-- :ref:`AlignMode<enum_AspectRatioContainer_AlignMode>` **alignment_vertical**
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_vertical**
 
 +-----------+-------------------------------+
 | *Default* | ``1``                         |

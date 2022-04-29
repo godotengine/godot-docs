@@ -29,7 +29,7 @@ node for everything 3D.
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
 Spatial). This transform can be accessed as a 4×3
-:ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
+:ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
@@ -40,9 +40,9 @@ scale.
 
 Unlike 2D, where loading image content and drawing is straightforward,
 3D is a little more difficult. The content needs to be created with
-special 3D tools (usually referred to as DCCs) and exported to an
-exchange file format in order to be imported in Godot (3D formats are
-not as standardized as images).
+special 3D tools (usually referred to as Digital Content Creation tools, or
+DCCs) and exported to an exchange file format to be imported in
+Godot. This is required since 3D formats are not as standardized as images.
 
 DCC-created models
 ------------------

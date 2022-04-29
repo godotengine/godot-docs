@@ -36,6 +36,8 @@ Properties
 +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                                       | :ref:`lod_bias<class_GeometryInstance3D_property_lod_bias>`                                           | ``1.0``   |
 +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Material<class_Material>`                                                 | :ref:`material_overlay<class_GeometryInstance3D_property_material_overlay>`                           |           |
++---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`Material<class_Material>`                                                 | :ref:`material_override<class_GeometryInstance3D_property_material_override>`                         |           |
 +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                                       | :ref:`transparency<class_GeometryInstance3D_property_transparency>`                                   | ``0.0``   |
@@ -97,17 +99,17 @@ In other words, the actual mesh will not be visible, only the shadows casted fro
 
 .. _class_GeometryInstance3D_constant_GI_MODE_DISABLED:
 
-.. _class_GeometryInstance3D_constant_GI_MODE_BAKED:
+.. _class_GeometryInstance3D_constant_GI_MODE_STATIC:
 
 .. _class_GeometryInstance3D_constant_GI_MODE_DYNAMIC:
 
 enum **GIMode**:
 
-- **GI_MODE_DISABLED** = **0** --- Disabled global illumination mode. Use for dynamic objects that do not contribute to global illumination (such as characters). When using :ref:`VoxelGI<class_VoxelGI>` and SDFGI, the geometry will *receive* indirect lighting and reflections but will not be considered in GI baking. When using :ref:`LightmapGI<class_LightmapGI>`, the object will receive indirect lighting using lightmap probes instead of using the lightmap texture.
+- **GI_MODE_DISABLED** = **0** --- Disabled global illumination mode. Use for dynamic objects that do not contribute to global illumination (such as characters). When using :ref:`VoxelGI<class_VoxelGI>` and SDFGI, the geometry will *receive* indirect lighting and reflections but the geometry will not be considered in GI baking. When using :ref:`LightmapGI<class_LightmapGI>`, the object will receive indirect lighting using lightmap probes instead of using the baked lightmap texture.
 
-- **GI_MODE_BAKED** = **1** --- Baked global illumination mode. Use for static objects that contribute to global illumination (such as level geometry). This GI mode is effective when using :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>`.
+- **GI_MODE_STATIC** = **1** --- Baked global illumination mode. Use for static objects that contribute to global illumination (such as level geometry). This GI mode is effective when using :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>`.
 
-- **GI_MODE_DYNAMIC** = **2** --- Dynamic global illumination mode. Use for dynamic objects that contribute to global illumination. This GI mode is only effective when using :ref:`VoxelGI<class_VoxelGI>`, but it has a higher performance impact than :ref:`GI_MODE_BAKED<class_GeometryInstance3D_constant_GI_MODE_BAKED>`.
+- **GI_MODE_DYNAMIC** = **2** --- Dynamic global illumination mode. Use for dynamic objects that contribute to global illumination. This GI mode is only effective when using :ref:`VoxelGI<class_VoxelGI>`, but it has a higher performance impact than :ref:`GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. When using other GI methods, this will act the same as :ref:`GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>`.
 
 ----
 
@@ -147,11 +149,11 @@ enum **LightmapScale**:
 
 enum **VisibilityRangeFadeMode**:
 
-- **VISIBILITY_RANGE_FADE_DISABLED** = **0** --- Will not fade itself nor its visibility dependencies, hysteresis will be used instead. See :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>` for more information.
+- **VISIBILITY_RANGE_FADE_DISABLED** = **0** --- Will not fade itself nor its visibility dependencies, hysteresis will be used instead. This is the fastest approach to manual LOD, but it can result in noticeable LOD transitions depending on how the LOD meshes are authored. See :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>` for more information.
 
-- **VISIBILITY_RANGE_FADE_SELF** = **1** --- Will fade-out itself when reaching the limits of its own visibility range. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+- **VISIBILITY_RANGE_FADE_SELF** = **1** --- Will fade-out itself when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
 
-- **VISIBILITY_RANGE_FADE_DEPENDENCIES** = **2** --- Will fade-in its visibility dependencies (see :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>`) when reaching the limits of its own visibility range.  The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+- **VISIBILITY_RANGE_FADE_DEPENDENCIES** = **2** --- Will fade-in its visibility dependencies (see :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>`) when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
 
 Property Descriptions
 ---------------------
@@ -216,7 +218,9 @@ The texel density to use for lightmapping in :ref:`LightmapGI<class_LightmapGI>`
 | *Getter*  | get_gi_mode()      |
 +-----------+--------------------+
 
-The global illumination mode to use for the whole geometry. Use a mode that matches the purpose
+The global illumination mode to use for the whole geometry. To avoid inconsistent results, use a mode that matches the purpose of the mesh during gameplay (static/dynamic).
+
+\ **Note:** Lights' bake mode will also affect the global illumination rendering. See :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>`.
 
 ----
 
@@ -248,6 +252,22 @@ The global illumination mode to use for the whole geometry. Use a mode that matc
 
 ----
 
+.. _class_GeometryInstance3D_property_material_overlay:
+
+- :ref:`Material<class_Material>` **material_overlay**
+
++----------+-----------------------------+
+| *Setter* | set_material_overlay(value) |
++----------+-----------------------------+
+| *Getter* | get_material_overlay()      |
++----------+-----------------------------+
+
+The material overlay for the whole geometry.
+
+If a material is assigned to this property, it will be rendered on top of any other active material for all the surfaces.
+
+----
+
 .. _class_GeometryInstance3D_property_material_override:
 
 - :ref:`Material<class_Material>` **material_override**
@@ -276,7 +296,11 @@ If a material is assigned to this property, it will be used instead of any mater
 | *Getter*  | get_transparency()      |
 +-----------+-------------------------+
 
-Transparency applied to the whole geometry. In spatial shaders, transparency is set as the default value of the ``ALPHA`` built-in.
+The transparency applied to the whole geometry (as a multiplier of the materials' existing transparency). ``0.0`` is fully opaque, while ``1.0`` is fully transparent. Values greater than ``0.0`` (exclusive) will force the geometry's materials to go through the transparent pipeline, which is slower to render and can exhibit rendering issues due to incorrect transparency sorting. However, unlike using a transparent material, setting :ref:`transparency<class_GeometryInstance3D_property_transparency>` to a value greater than ``0.0`` (exclusive) will *not* disable shadow rendering.
+
+In spatial shaders, ``1.0 - transparency`` is set as the default value of the ``ALPHA`` built-in.
+
+\ **Note:** :ref:`transparency<class_GeometryInstance3D_property_transparency>` is clamped between ``0.0`` and ``1.0``, so this property cannot be used to make transparent materials more opaque than they originally are.
 
 ----
 
@@ -310,6 +334,8 @@ Starting distance from which the GeometryInstance3D will be visible, taking :ref
 
 Margin for the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold by this amount.
 
+If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
+
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_end:
@@ -341,6 +367,8 @@ Distance from which the GeometryInstance3D will be hidden, taking :ref:`visibili
 +-----------+----------------------------------------+
 
 Margin for the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold by this amount.
+
+If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
 
 ----
 

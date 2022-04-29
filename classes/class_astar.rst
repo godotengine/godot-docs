@@ -52,7 +52,7 @@ It is also possible to use non-Euclidean distances. To do so, create a class tha
 
 
 
-:ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
+\ :ref:`_estimate_cost<class_AStar_method__estimate_cost>` should return a lower bound of the distance, i.e. ``_estimate_cost(u, v) <= _compute_cost(u, v)``. This serves as a hint to the algorithm because the custom ``_compute_cost`` might be computation-heavy. If this is not the case, make :ref:`_estimate_cost<class_AStar_method__estimate_cost>` return the same value as :ref:`_compute_cost<class_AStar_method__compute_cost>` to provide the algorithm with the most accurate information.
 
 If the default :ref:`_estimate_cost<class_AStar_method__estimate_cost>` and :ref:`_compute_cost<class_AStar_method__compute_cost>` methods are used, or if the supplied :ref:`_estimate_cost<class_AStar_method__estimate_cost>` method returns a lower bound of the cost, then the paths returned by A\* will be the lowest-cost paths. Here, the cost of a path equals the sum of the :ref:`_compute_cost<class_AStar_method__compute_cost>` results of all segments in the path multiplied by the ``weight_scale``\ s of the endpoints of the respective segments. If the default methods are used and the ``weight_scale``\ s of all points are set to ``1.0``, then this equals the sum of Euclidean distances of all segments in the path.
 
@@ -88,13 +88,13 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`get_point_count<class_AStar_method_get_point_count>` **(** **)** |const|                                                                                                             |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                           | :ref:`get_point_ids<class_AStar_method_get_point_ids>` **(** **)**                                                                                                                         |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_point_path<class_AStar_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                            |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_position<class_AStar_method_get_point_position>` **(** :ref:`int<class_int>` id **)** |const|                                                                              |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`get_point_weight_scale<class_AStar_method_get_point_weight_scale>` **(** :ref:`int<class_int>` id **)** |const|                                                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`get_points<class_AStar_method_get_points>` **(** **)**                                                                                                                               |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has_point<class_AStar_method_has_point>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,7 +226,7 @@ Returns the next available point ID with no point associated to it.
 
 Returns the ID of the closest point to ``to_position``, optionally taking disabled points into account. Returns ``-1`` if there are no points in the points pool.
 
-**Note:** If several points are the closest to ``to_position``, the one with the smallest ID will be returned, ensuring a deterministic result.
+\ **Note:** If several points are the closest to ``to_position``, the one with the smallest ID will be returned, ensuring a deterministic result.
 
 ----
 
@@ -358,13 +358,21 @@ Returns the number of points currently in the points pool.
 
 ----
 
+.. _class_AStar_method_get_point_ids:
+
+- :ref:`Array<class_Array>` **get_point_ids** **(** **)**
+
+Returns an array of all point IDs.
+
+----
+
 .. _class_AStar_method_get_point_path:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_point_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
 Returns an array with the points that are in the path found by AStar between the given points. The array is ordered from the starting point to the ending point of the path.
 
-**Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
 
 ----
 
@@ -381,14 +389,6 @@ Returns the position of the point associated with the given ``id``.
 - :ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the weight scale of the point associated with the given ``id``.
-
-----
-
-.. _class_AStar_method_get_points:
-
-- :ref:`Array<class_Array>` **get_points** **(** **)**
-
-Returns an array of all points.
 
 ----
 

@@ -28,9 +28,11 @@ Constructors
 Methods
 -------
 
-+-----------------------+------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_id<class_RID_method_get_id>` **(** **)** |const| |
-+-----------------------+------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_id<class_RID_method_get_id>` **(** **)** |const|     |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_valid<class_RID_method_is_valid>` **(** **)** |const| |
++-------------------------+----------------------------------------------------------------+
 
 Operators
 ---------
@@ -76,6 +78,14 @@ Method Descriptions
 - :ref:`int<class_int>` **get_id** **(** **)** |const|
 
 Returns the ID of the referenced resource.
+
+----
+
+.. _class_RID_method_is_valid:
+
+- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+
+Returns ``true`` if ``RID`` is valid.
 
 Operator Descriptions
 ---------------------

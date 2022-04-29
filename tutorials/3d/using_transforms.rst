@@ -9,7 +9,7 @@ Introduction
 If you have never made 3D games before, working with rotations in three dimensions can be confusing at first.
 Coming from 2D, the natural way of thinking is along the lines of *"Oh, it's just like rotating in 2D, except now rotations happen in X, Y and Z"*.
 
-At first this seems easy, and for simple games, this way of thinking may even be enough. Unfortunately, it's often incorrect.
+At first, this seems easy. For simple games, this way of thinking may even be enough. Unfortunately, it's often incorrect.
 
 Angles in three dimensions are most commonly referred to as "Euler Angles".
 
@@ -341,7 +341,7 @@ Example of looking around, FPS style:
             _rotationY += mouseMotion.Relative.y * LookAroundSpeed;
 
             // reset rotation
-            Transform transform = Transform;
+            Transform3D transform = Transform;
             transform.basis = Basis.Identity;
             Transform = transform;
 

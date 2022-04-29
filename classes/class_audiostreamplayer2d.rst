@@ -20,7 +20,7 @@ Plays audio that dampens with distance from screen center.
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-**Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------
@@ -93,7 +93,7 @@ Property Descriptions
 | *Getter*  | get_area_mask()      |
 +-----------+----------------------+
 
-Areas in which this sound plays.
+Determines which :ref:`Area2D<class_Area2D>` layers affect the sound for reverb and audio bus effects. Areas can be used to redirect :ref:`AudioStream<class_AudioStream>`\ s so that they play in a certain audio bus. An example of how you might use this is making a "water" area so that sounds played in the water are redirected through an audio bus to make them sound like they are being played underwater.
 
 ----
 

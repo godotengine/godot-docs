@@ -20,7 +20,7 @@ Description
 
 StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
 
-**Note:** For children of :ref:`Control<class_Control>` that have *Theme Properties*, the ``focus`` ``StyleBox`` is displayed over the ``normal``, ``hover`` or ``pressed`` ``StyleBox``. This makes the ``focus`` ``StyleBox`` more reusable across different nodes.
+\ **Note:** For children of :ref:`Control<class_Control>` that have *Theme Properties*, the ``focus`` ``StyleBox`` is displayed over the ``normal``, ``hover`` or ``pressed`` ``StyleBox``. This makes the ``focus`` ``StyleBox`` more reusable across different nodes.
 
 Properties
 ----------
@@ -38,6 +38,16 @@ Properties
 Methods
 -------
 
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`_draw<class_StyleBox_method__draw>` **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                 |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`       | :ref:`_get_center_size<class_StyleBox_method__get_center_size>` **(** **)** |virtual| |const|                                                                |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`           | :ref:`_get_draw_rect<class_StyleBox_method__get_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`_get_style_margin<class_StyleBox_method__get_style_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`_test_mask<class_StyleBox_method__test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|        |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`draw<class_StyleBox_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |const|                                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +89,7 @@ If this value is negative, it is ignored and a child-specific margin is used ins
 
 It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
 
-:ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
+\ :ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
 
 ----
 
@@ -137,6 +147,36 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 Method Descriptions
 -------------------
+
+.. _class_StyleBox_method__draw:
+
+- void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_center_size:
+
+- :ref:`Vector2<class_Vector2>` **_get_center_size** **(** **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_draw_rect:
+
+- :ref:`Rect2<class_Rect2>` **_get_draw_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__get_style_margin:
+
+- :ref:`float<class_float>` **_get_style_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|
+
+----
+
+.. _class_StyleBox_method__test_mask:
+
+- :ref:`bool<class_bool>` **_test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+----
 
 .. _class_StyleBox_method_draw:
 

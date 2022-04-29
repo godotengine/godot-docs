@@ -69,13 +69,13 @@ The script file
 
 Upon creation of the plugin, the dialog will automatically open the
 EditorPlugin script for you. The script has two requirements that you cannot
-change: it must be a ``tool`` script, or else it will not load properly in the
+change: it must be a ``@tool`` script, or else it will not load properly in the
 editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 .. warning::
 
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool. Any GDScript without ``tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``@tool`` imported into the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.
@@ -89,7 +89,7 @@ like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -146,7 +146,7 @@ To create a new node type, you can use the function
 :ref:`class_EditorPlugin` class. This function can add new types to the editor
 (nodes or resources). However, before you can create the type, you need a script
 that will act as the logic for the type. While that script doesn't have to use
-the ``tool`` keyword, it can be added so the script runs in the editor.
+the ``@tool`` keyword, it can be added so the script runs in the editor.
 
 For this tutorial, we'll create a button that prints a message when
 clicked. For that, we'll need a script that extends from
@@ -156,12 +156,12 @@ clicked. For that, we'll need a script that extends from
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends Button
 
 
     func _enter_tree():
-        connect("pressed", self, "clicked")
+        pressed.connect(clicked)
 
 
     func clicked():
@@ -177,10 +177,10 @@ clicked. For that, we'll need a script that extends from
     {
         public override void _EnterTree()
         {
-            Connect("pressed", this, "clicked");
+            Connect("pressed", Clicked);
         }
 
-        public void clicked()
+        public void Clicked()
         {
             GD.Print("You clicked me!");
         }
@@ -200,7 +200,7 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -316,7 +316,7 @@ The script could look like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    tool
+    @tool
     extends EditorPlugin
 
 

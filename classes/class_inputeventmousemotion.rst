@@ -16,9 +16,9 @@ Input event type for mouse motion events.
 Description
 -----------
 
-Contains mouse and pen motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
+Contains mouse and pen motion information. Supports relative, absolute positions and velocity. See :ref:`Node._input<class_Node_method__input>`.
 
-**Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, call :ref:`Input.set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` with ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
+\ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, call :ref:`Input.set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` with ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
 
 Tutorials
 ---------
@@ -35,9 +35,9 @@ Properties
 +-------------------------------+----------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` | ``Vector2(0, 0)`` |
 +-------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       | ``Vector2(0, 0)`` |
-+-------------------------------+----------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`         | ``Vector2(0, 0)`` |
++-------------------------------+----------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventMouseMotion_property_velocity>` | ``Vector2(0, 0)`` |
 +-------------------------------+----------------------------------------------------------------+-------------------+
 
 Property Descriptions
@@ -73,23 +73,7 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 
 The mouse position relative to the previous position (position at the last frame).
 
-**Note:** Since ``InputEventMouseMotion`` is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
-
-----
-
-.. _class_InputEventMouseMotion_property_speed:
-
-- :ref:`Vector2<class_Vector2>` **speed**
-
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_speed(value)  |
-+-----------+-------------------+
-| *Getter*  | get_speed()       |
-+-----------+-------------------+
-
-The mouse speed in pixels per second.
+\ **Note:** Since ``InputEventMouseMotion`` is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
 
 ----
 
@@ -106,6 +90,22 @@ The mouse speed in pixels per second.
 +-----------+-------------------+
 
 Represents the angles of tilt of the pen. Positive X-coordinate value indicates a tilt to the right. Positive Y-coordinate value indicates a tilt toward the user. Ranges from ``-1.0`` to ``1.0`` for both axes.
+
+----
+
+.. _class_InputEventMouseMotion_property_velocity:
+
+- :ref:`Vector2<class_Vector2>` **velocity**
+
++-----------+---------------------+
+| *Default* | ``Vector2(0, 0)``   |
++-----------+---------------------+
+| *Setter*  | set_velocity(value) |
++-----------+---------------------+
+| *Getter*  | get_velocity()      |
++-----------+---------------------+
+
+The mouse velocity in pixels per second.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

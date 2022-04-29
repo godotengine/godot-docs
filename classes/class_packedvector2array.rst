@@ -54,7 +54,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`push_back<class_PackedVector2Array_method_push_back>` **(** :ref:`Vector2<class_Vector2>` value **)**                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove<class_PackedVector2Array_method_remove>` **(** :ref:`int<class_int>` index **)**                                                |
+| void                                                | :ref:`remove_at<class_PackedVector2Array_method_remove_at>` **(** :ref:`int<class_int>` index **)**                                          |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`resize<class_PackedVector2Array_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -64,9 +64,9 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`size<class_PackedVector2Array_method_size>` **(** **)** |const|                                                                        |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`sort<class_PackedVector2Array_method_sort>` **(** **)**                                                                                |
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`slice<class_PackedVector2Array_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|    |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`subarray<class_PackedVector2Array_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)** |const|           |
+| void                                                | :ref:`sort<class_PackedVector2Array_method_sort>` **(** **)**                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_byte_array<class_PackedVector2Array_method_to_byte_array>` **(** **)** |const|                                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -136,7 +136,7 @@ Appends a ``PackedVector2Array`` at the end of this array.
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-**Note:** Calling :ref:`bsearch<class_PackedVector2Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch<class_PackedVector2Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -188,9 +188,9 @@ Inserts a :ref:`Vector2<class_Vector2>` at the end.
 
 ----
 
-.. _class_PackedVector2Array_method_remove:
+.. _class_PackedVector2Array_method_remove_at:
 
-- void **remove** **(** :ref:`int<class_int>` index **)**
+- void **remove_at** **(** :ref:`int<class_int>` index **)**
 
 Removes an element from the array by index.
 
@@ -224,7 +224,19 @@ Changes the :ref:`Vector2<class_Vector2>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)** |const|
 
-Returns the size of the array.
+Returns the number of elements in the array.
+
+----
+
+.. _class_PackedVector2Array_method_slice:
+
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|
+
+Returns the slice of the ``PackedVector2Array``, from ``begin`` (inclusive) to ``end`` (exclusive), as a new ``PackedVector2Array``.
+
+The absolute value of ``begin`` and ``end`` will be clamped to the array size, so the default value for ``end`` makes it slice to the size of the array by default (i.e. ``arr.slice(1)`` is a shorthand for ``arr.slice(1, arr.size())``).
+
+If either ``begin`` or ``end`` are negative, they will be relative to the end of the array (i.e. ``arr.slice(0, -2)`` is a shorthand for ``arr.slice(0, arr.size() - 2)``).
 
 ----
 
@@ -233,12 +245,6 @@ Returns the size of the array.
 - void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
-
-----
-
-.. _class_PackedVector2Array_method_subarray:
-
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **subarray** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)** |const|
 
 ----
 

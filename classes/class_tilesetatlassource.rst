@@ -75,7 +75,7 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_tile_at_coords<class_TileSetAtlasSource_method_get_tile_at_coords>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|                                                                                                                                                                                                                                       |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                         | :ref:`get_tile_data<class_TileSetAtlasSource_method_get_tile_data>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const|                                                                                                                                                                                                         |
+| :ref:`TileData<class_TileData>`                     | :ref:`get_tile_data<class_TileSetAtlasSource_method_get_tile_data>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const|                                                                                                                                                                                                         |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_tile_size_in_atlas<class_TileSetAtlasSource_method_get_tile_size_in_atlas>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|                                                                                                                                                                                                                               |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,7 +236,7 @@ If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_paddi
 
 Returns the region of the tile at coordinates ``atlas_coords`` for frame ``frame`` inside the texture returned by :ref:`get_runtime_texture<class_TileSetAtlasSource_method_get_runtime_texture>`.
 
-**Note:** If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns the same as :ref:`get_tile_texture_region<class_TileSetAtlasSource_method_get_tile_texture_region>`.
+\ **Note:** If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns the same as :ref:`get_tile_texture_region<class_TileSetAtlasSource_method_get_tile_texture_region>`.
 
 ----
 
@@ -298,7 +298,7 @@ If there is a tile covering the ``atlas_coords`` coordinates, returns the top-le
 
 .. _class_TileSetAtlasSource_method_get_tile_data:
 
-- :ref:`Object<class_Object>` **get_tile_data** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const|
+- :ref:`TileData<class_TileData>` **get_tile_data** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const|
 
 Returns the :ref:`TileData<class_TileData>` object for the given atlas coordinates and alternative ID.
 

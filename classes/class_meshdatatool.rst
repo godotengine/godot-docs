@@ -67,7 +67,7 @@ Below is an example of how MeshDataTool may be used.
 
 See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateMesh>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
 
-**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
+\ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
 Methods
 -------
@@ -227,7 +227,7 @@ Returns the number of faces in this :ref:`Mesh<class_Mesh>`.
 
 Returns specified edge associated with given face.
 
-Edge argument must 2 or less because a face only has three edges.
+Edge argument must be either 0, 1, or 2 because a face only has three edges.
 
 ----
 
@@ -253,7 +253,7 @@ Calculates and returns the face normal of the given face.
 
 Returns the specified vertex of the given face.
 
-Vertex argument must be 2 or less because faces contain three vertices.
+Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
 
 ----
 

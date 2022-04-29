@@ -79,7 +79,7 @@ When true, the modification's :ref:`_execute<class_SkeletonModification3D_method
 | *Getter*  | get_execution_mode()      |
 +-----------+---------------------------+
 
-The execution mode for the modification. This tells the modification stack when to execute the modification. Some modifications have settings that are only availible in certain execution modes.
+The execution mode for the modification. This tells the modification stack when to execute the modification. Some modifications have settings that are only available in certain execution modes.
 
 Method Descriptions
 -------------------

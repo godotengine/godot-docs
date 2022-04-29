@@ -31,11 +31,19 @@ Properties
 ----------
 
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`             | ``40.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                | :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`         | ``false``             |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`           | ``10.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`           | ``50.0``              |
++----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                | :ref:`editor_only<class_Light3D_property_editor_only>`                             | ``false``             |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>`       | ``0.0``               |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
-| :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                     | ``1``                 |
+| :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                     | ``2``                 |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Color<class_Color>`              | :ref:`light_color<class_Light3D_property_light_color>`                             | ``Color(1, 1, 1, 1)`` |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
@@ -56,8 +64,6 @@ Properties
 | :ref:`float<class_float>`              | :ref:`shadow_bias<class_Light3D_property_shadow_bias>`                             | ``0.2``               |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                             | ``1.0``               |
-+----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`              | :ref:`shadow_color<class_Light3D_property_shadow_color>`                           | ``Color(0, 0, 0, 1)`` |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                       | ``false``             |
 +----------------------------------------+------------------------------------------------------------------------------------+-----------------------+
@@ -172,22 +178,96 @@ enum **Param**:
 
 .. _class_Light3D_constant_BAKE_DISABLED:
 
-.. _class_Light3D_constant_BAKE_DYNAMIC:
-
 .. _class_Light3D_constant_BAKE_STATIC:
+
+.. _class_Light3D_constant_BAKE_DYNAMIC:
 
 enum **BakeMode**:
 
-- **BAKE_DISABLED** = **0** --- Light is ignored when baking.
+- **BAKE_DISABLED** = **0** --- Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
 
-**Note:** Hiding a light does *not* affect baking.
+\ **Note:** Hiding a light does *not* affect baking :ref:`LightmapGI<class_LightmapGI>`. Hiding a light will still affect baking :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see [member Environment.sdfgi_enabled).
 
-- **BAKE_DYNAMIC** = **1**
+- **BAKE_STATIC** = **1** --- Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time. This is suitable for subtle changes (such as flickering torches), but generally not large changes such as toggling a light on and off.
 
-- **BAKE_STATIC** = **2**
+- **BAKE_DYNAMIC** = **2** --- Light is taken into account in dynamic baking (:ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) only). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. This has a greater performance cost compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`.
 
 Property Descriptions
 ---------------------
+
+.. _class_Light3D_property_distance_fade_begin:
+
+- :ref:`float<class_float>` **distance_fade_begin**
+
++-----------+--------------------------------+
+| *Default* | ``40.0``                       |
++-----------+--------------------------------+
+| *Setter*  | set_distance_fade_begin(value) |
++-----------+--------------------------------+
+| *Getter*  | get_distance_fade_begin()      |
++-----------+--------------------------------+
+
+The distance from the camera at which the light begins to fade away (in 3D units).
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_enabled:
+
+- :ref:`bool<class_bool>` **distance_fade_enabled**
+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_enable_distance_fade(value) |
++-----------+---------------------------------+
+| *Getter*  | is_distance_fade_enabled()      |
++-----------+---------------------------------+
+
+If ``true``, the light will smoothly fade away when far from the active :ref:`Camera3D<class_Camera3D>` starting at :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`. This acts as a form of level of detail (LOD). The light will fade out over :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`, after which it will be culled and not sent to the shader at all. Use this to reduce the number of active lights in a scene and thus improve performance.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_length:
+
+- :ref:`float<class_float>` **distance_fade_length**
+
++-----------+---------------------------------+
+| *Default* | ``10.0``                        |
++-----------+---------------------------------+
+| *Setter*  | set_distance_fade_length(value) |
++-----------+---------------------------------+
+| *Getter*  | get_distance_fade_length()      |
++-----------+---------------------------------+
+
+Distance over which the light fades. The light's energy is progressively reduced over this distance and is completely invisible at the end.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`.
+
+----
+
+.. _class_Light3D_property_distance_fade_shadow:
+
+- :ref:`float<class_float>` **distance_fade_shadow**
+
++-----------+---------------------------------+
+| *Default* | ``50.0``                        |
++-----------+---------------------------------+
+| *Setter*  | set_distance_fade_shadow(value) |
++-----------+---------------------------------+
+| *Getter*  | get_distance_fade_shadow()      |
++-----------+---------------------------------+
+
+The distance from the camera at which the light's shadow cuts off (in 3D units). Set this to a value lower than :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>` to further improve performance, as shadow rendering is often more expensive than light rendering itself.
+
+\ **Note:** Only effective for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`, and only when :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>` is ``true``.
+
+\ **Note:** Due to a rendering engine limitation, shadows will be disabled instantly instead of fading smoothly according to :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`. This may result in visible pop-in depending on the scene topography.
+
+----
 
 .. _class_Light3D_property_editor_only:
 
@@ -226,14 +306,16 @@ The light's angular size in degrees. Increasing this will make shadows softer at
 - :ref:`BakeMode<enum_Light3D_BakeMode>` **light_bake_mode**
 
 +-----------+----------------------+
-| *Default* | ``1``                |
+| *Default* | ``2``                |
 +-----------+----------------------+
 | *Setter*  | set_bake_mode(value) |
 +-----------+----------------------+
 | *Getter*  | get_bake_mode()      |
 +-----------+----------------------+
 
-The light's bake mode. See :ref:`BakeMode<enum_Light3D_BakeMode>`.
+The light's bake mode. This will affect the global illumination techniques that have an effect on the light's rendering. See :ref:`BakeMode<enum_Light3D_BakeMode>`.
+
+\ **Note:** Meshes' global illumination mode will also affect the global illumination rendering. See :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
 
 ----
 
@@ -299,7 +381,7 @@ The light's strength multiplier (this is not a physical unit). For :ref:`OmniLig
 
 Secondary multiplier used with indirect light (light bounces). Used with :ref:`VoxelGI<class_VoxelGI>` and SDFGI (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 
-**Note:** This property is ignored if :ref:`light_energy<class_Light3D_property_light_energy>` is equal to ``0.0``, as the light won't be present at all in the GI shader.
+\ **Note:** This property is ignored if :ref:`light_energy<class_Light3D_property_light_energy>` is equal to ``0.0``, as the light won't be present at all in the GI shader.
 
 ----
 
@@ -397,22 +479,6 @@ Blurs the edges of the shadow. Can be used to hide pixel artifacts in low-resolu
 
 ----
 
-.. _class_Light3D_property_shadow_color:
-
-- :ref:`Color<class_Color>` **shadow_color**
-
-+-----------+-------------------------+
-| *Default* | ``Color(0, 0, 0, 1)``   |
-+-----------+-------------------------+
-| *Setter*  | set_shadow_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_shadow_color()      |
-+-----------+-------------------------+
-
-The color of shadows cast by this light.
-
-----
-
 .. _class_Light3D_property_shadow_enabled:
 
 - :ref:`bool<class_bool>` **shadow_enabled**
@@ -425,7 +491,7 @@ The color of shadows cast by this light.
 | *Getter*  | has_shadow()      |
 +-----------+-------------------+
 
-If ``true``, the light will cast shadows.
+If ``true``, the light will cast real-time shadows. This has a significant performance cost. Only enable shadow rendering when it makes a noticeable difference in the scene's appearance, and consider using :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>` to hide the light when far away from the :ref:`Camera3D<class_Camera3D>`.
 
 ----
 

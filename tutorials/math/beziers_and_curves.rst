@@ -43,7 +43,7 @@ along a curve.
         var r = q0.linear_interpolate(q1, t)
         return r
 
-This type of is called a *Quadratic Bezier* curve.
+This type of curve is called a *Quadratic Bezier* curve.
 
 .. image:: img/bezier_quadratic_points2.gif
 

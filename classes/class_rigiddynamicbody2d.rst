@@ -22,7 +22,7 @@ This node implements simulated 2D physics. You do not control a RigidDynamicBody
 
 You can switch the body's behavior using :ref:`lock_rotation<class_RigidDynamicBody2D_property_lock_rotation>`, :ref:`freeze<class_RigidDynamicBody2D_property_freeze>`, and :ref:`freeze_mode<class_RigidDynamicBody2D_property_freeze_mode>`.
 
-**Note:** You should not change a RigidDynamicBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
+\ **Note:** You should not change a RigidDynamicBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
 
 Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
 
@@ -45,15 +45,15 @@ Properties
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`float<class_float>`                                         | :ref:`angular_velocity<class_RigidDynamicBody2D_property_angular_velocity>`                   | ``0.0``           |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>`                                     | :ref:`applied_force<class_RigidDynamicBody2D_property_applied_force>`                         | ``Vector2(0, 0)`` |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                                         | :ref:`applied_torque<class_RigidDynamicBody2D_property_applied_torque>`                       | ``0.0``           |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`can_sleep<class_RigidDynamicBody2D_property_can_sleep>`                                 | ``true``          |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>`                                     | :ref:`center_of_mass<class_RigidDynamicBody2D_property_center_of_mass>`                       | ``Vector2(0, 0)`` |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`CenterOfMassMode<enum_RigidDynamicBody2D_CenterOfMassMode>` | :ref:`center_of_mass_mode<class_RigidDynamicBody2D_property_center_of_mass_mode>`             | ``0``             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`constant_force<class_RigidDynamicBody2D_property_constant_force>`                       | ``Vector2(0, 0)`` |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                         | :ref:`constant_torque<class_RigidDynamicBody2D_property_constant_torque>`                     | ``0.0``           |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>`                     | ``false``         |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------+
@@ -89,25 +89,31 @@ Properties
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|     |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_central_force<class_RigidDynamicBody2D_method_add_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_force<class_RigidDynamicBody2D_method_add_force>` **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_torque<class_RigidDynamicBody2D_method_add_torque>` **(** :ref:`float<class_float>` torque **)**                                                                  |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`apply_central_impulse<class_RigidDynamicBody2D_method_apply_central_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse=Vector2(0, 0) **)**                         |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`apply_impulse<class_RigidDynamicBody2D_method_apply_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`apply_torque_impulse<class_RigidDynamicBody2D_method_apply_torque_impulse>` **(** :ref:`float<class_float>` torque **)**                                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node2D[]<class_Node2D>` | :ref:`get_colliding_bodies<class_RigidDynamicBody2D_method_get_colliding_bodies>` **(** **)** |const|                                                                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_axis_velocity<class_RigidDynamicBody2D_method_set_axis_velocity>` **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**                                         |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`_integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_constant_central_force<class_RigidDynamicBody2D_method_add_constant_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                       |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_constant_force<class_RigidDynamicBody2D_method_add_constant_force>` **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)** |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_constant_torque<class_RigidDynamicBody2D_method_add_constant_torque>` **(** :ref:`float<class_float>` torque **)**                                                        |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_central_force<class_RigidDynamicBody2D_method_apply_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                     |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_central_impulse<class_RigidDynamicBody2D_method_apply_central_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse=Vector2(0, 0) **)**                                 |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_force<class_RigidDynamicBody2D_method_apply_force>` **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**               |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_impulse<class_RigidDynamicBody2D_method_apply_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**         |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_torque<class_RigidDynamicBody2D_method_apply_torque>` **(** :ref:`float<class_float>` torque **)**                                                                      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`apply_torque_impulse<class_RigidDynamicBody2D_method_apply_torque_impulse>` **(** :ref:`float<class_float>` torque **)**                                                      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node2D[]<class_Node2D>` | :ref:`get_colliding_bodies<class_RigidDynamicBody2D_method_get_colliding_bodies>` **(** **)** |const|                                                                               |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_axis_velocity<class_RigidDynamicBody2D_method_set_axis_velocity>` **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**                                                 |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -118,7 +124,7 @@ Signals
 
 Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` occurs. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -128,7 +134,7 @@ Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 
 Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` ends. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -138,13 +144,13 @@ Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>
 
 Emitted when one of this RigidDynamicBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -154,13 +160,13 @@ Emitted when one of this RigidDynamicBody2D's :ref:`Shape2D<class_Shape2D>`\ s c
 
 Emitted when the collision between one of this RigidDynamicBody2D's :ref:`Shape2D<class_Shape2D>`\ s and another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s ends. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidDynamicBody2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -170,7 +176,7 @@ Emitted when the collision between one of this RigidDynamicBody2D's :ref:`Shape2
 
 Emitted when the physics engine changes the body's sleeping state.
 
-**Note:** Changing the value :ref:`sleeping<class_RigidDynamicBody2D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
+\ **Note:** Changing the value :ref:`sleeping<class_RigidDynamicBody2D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -282,39 +288,7 @@ Defines how :ref:`angular_damp<class_RigidDynamicBody2D_property_angular_damp>` 
 | *Getter*  | get_angular_velocity()      |
 +-----------+-----------------------------+
 
-The body's rotational velocity.
-
-----
-
-.. _class_RigidDynamicBody2D_property_applied_force:
-
-- :ref:`Vector2<class_Vector2>` **applied_force**
-
-+-----------+--------------------------+
-| *Default* | ``Vector2(0, 0)``        |
-+-----------+--------------------------+
-| *Setter*  | set_applied_force(value) |
-+-----------+--------------------------+
-| *Getter*  | get_applied_force()      |
-+-----------+--------------------------+
-
-The body's total applied force.
-
-----
-
-.. _class_RigidDynamicBody2D_property_applied_torque:
-
-- :ref:`float<class_float>` **applied_torque**
-
-+-----------+---------------------------+
-| *Default* | ``0.0``                   |
-+-----------+---------------------------+
-| *Setter*  | set_applied_torque(value) |
-+-----------+---------------------------+
-| *Getter*  | get_applied_torque()      |
-+-----------+---------------------------+
-
-The body's total applied torque.
+The body's rotational velocity in *radians* per second.
 
 ----
 
@@ -368,6 +342,42 @@ Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enu
 
 ----
 
+.. _class_RigidDynamicBody2D_property_constant_force:
+
+- :ref:`Vector2<class_Vector2>` **constant_force**
+
++-----------+---------------------------+
+| *Default* | ``Vector2(0, 0)``         |
++-----------+---------------------------+
+| *Setter*  | set_constant_force(value) |
++-----------+---------------------------+
+| *Getter*  | get_constant_force()      |
++-----------+---------------------------+
+
+The body's total constant positional forces applied during each physics update.
+
+See :ref:`add_constant_force<class_RigidDynamicBody2D_method_add_constant_force>` and :ref:`add_constant_central_force<class_RigidDynamicBody2D_method_add_constant_central_force>`.
+
+----
+
+.. _class_RigidDynamicBody2D_property_constant_torque:
+
+- :ref:`float<class_float>` **constant_torque**
+
++-----------+----------------------------+
+| *Default* | ``0.0``                    |
++-----------+----------------------------+
+| *Setter*  | set_constant_torque(value) |
++-----------+----------------------------+
+| *Getter*  | get_constant_torque()      |
++-----------+----------------------------+
+
+The body's total constant rotational forces applied during each physics update.
+
+See :ref:`add_constant_torque<class_RigidDynamicBody2D_method_add_constant_torque>`.
+
+----
+
 .. _class_RigidDynamicBody2D_property_contact_monitor:
 
 - :ref:`bool<class_bool>` **contact_monitor**
@@ -398,7 +408,7 @@ If ``true``, the body will emit signals when it collides with another RigidDynam
 
 The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true``.
 
-**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end).
+\ **Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end).
 
 ----
 
@@ -554,7 +564,7 @@ Defines how :ref:`linear_damp<class_RigidDynamicBody2D_property_linear_damp>` is
 | *Getter*  | get_linear_velocity()      |
 +-----------+----------------------------+
 
-The body's linear velocity.
+The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>` as your process loop for precise control of the body state.
 
 ----
 
@@ -618,7 +628,7 @@ If a material is assigned to this property, it will be used instead of any other
 | *Getter*  | is_sleeping()       |
 +-----------+---------------------+
 
-If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidDynamicBody2D_method_apply_impulse>` or :ref:`add_force<class_RigidDynamicBody2D_method_add_force>` methods.
+If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidDynamicBody2D_method_apply_impulse>` or :ref:`apply_force<class_RigidDynamicBody2D_method_apply_force>` methods.
 
 Method Descriptions
 -------------------
@@ -631,27 +641,41 @@ Allows you to read and safely modify the simulation state for the object. Use th
 
 ----
 
-.. _class_RigidDynamicBody2D_method_add_central_force:
+.. _class_RigidDynamicBody2D_method_add_constant_central_force:
 
-- void **add_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
+- void **add_constant_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
 
-Adds a constant directional force without affecting rotation.
+Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
-----
-
-.. _class_RigidDynamicBody2D_method_add_force:
-
-- void **add_force** **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
-
-Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
+This is equivalent to using :ref:`add_constant_force<class_RigidDynamicBody2D_method_add_constant_force>` at the body's center of mass.
 
 ----
 
-.. _class_RigidDynamicBody2D_method_add_torque:
+.. _class_RigidDynamicBody2D_method_add_constant_force:
 
-- void **add_torque** **(** :ref:`float<class_float>` torque **)**
+- void **add_constant_force** **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Adds a constant rotational force.
+Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_RigidDynamicBody2D_method_add_constant_torque:
+
+- void **add_constant_torque** **(** :ref:`float<class_float>` torque **)**
+
+Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``constant_torque = 0``.
+
+----
+
+.. _class_RigidDynamicBody2D_method_apply_central_force:
+
+- void **apply_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
+
+Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+
+This is equivalent to using :ref:`apply_force<class_RigidDynamicBody2D_method_apply_force>` at the body's center of mass.
 
 ----
 
@@ -661,13 +685,39 @@ Adds a constant rotational force.
 
 Applies a directional impulse without affecting rotation.
 
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+This is equivalent to using :ref:`apply_impulse<class_RigidDynamicBody2D_method_apply_impulse>` at the body's center of mass.
+
+----
+
+.. _class_RigidDynamicBody2D_method_apply_force:
+
+- void **apply_force** **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+
+Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
 ----
 
 .. _class_RigidDynamicBody2D_method_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+Applies a positioned impulse to the body.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_RigidDynamicBody2D_method_apply_torque:
+
+- void **apply_torque** **(** :ref:`float<class_float>` torque **)**
+
+Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
 ----
 
@@ -675,7 +725,9 @@ Applies a positioned impulse to the body. An impulse is time-independent! Applyi
 
 - void **apply_torque_impulse** **(** :ref:`float<class_float>` torque **)**
 
-Applies a rotational impulse to the body.
+Applies a rotational impulse to the body without affecting the position.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
 ----
 
@@ -685,7 +737,7 @@ Applies a rotational impulse to the body.
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 ----
 

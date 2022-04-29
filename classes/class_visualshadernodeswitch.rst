@@ -34,7 +34,9 @@ Enumerations
 
 .. _class_VisualShaderNodeSwitch_constant_OP_TYPE_INT:
 
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR:
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_2D:
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_3D:
 
 .. _class_VisualShaderNodeSwitch_constant_OP_TYPE_BOOLEAN:
 
@@ -48,13 +50,15 @@ enum **OpType**:
 
 - **OP_TYPE_INT** = **1** --- An integer scalar.
 
-- **OP_TYPE_VECTOR** = **2** --- A vector type.
+- **OP_TYPE_VECTOR_2D** = **2** --- A 2D vector type.
 
-- **OP_TYPE_BOOLEAN** = **3** --- A boolean type.
+- **OP_TYPE_VECTOR_3D** = **3** --- A 3D vector type.
 
-- **OP_TYPE_TRANSFORM** = **4** --- A transform type.
+- **OP_TYPE_BOOLEAN** = **4** --- A boolean type.
 
-- **OP_TYPE_MAX** = **5** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` enum.
+- **OP_TYPE_TRANSFORM** = **5** --- A transform type.
+
+- **OP_TYPE_MAX** = **6** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` enum.
 
 Property Descriptions
 ---------------------

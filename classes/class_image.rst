@@ -20,7 +20,7 @@ Native image datatype. Contains image data which can be converted to an :ref:`Im
 
 An ``Image`` cannot be assigned to a ``texture`` property of an object directly (such as :ref:`Sprite2D<class_Sprite2D>`), and has to be converted manually to an :ref:`ImageTexture<class_ImageTexture>` first.
 
-**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
+\ **Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
 
 Tutorials
 ---------
@@ -30,9 +30,9 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------+----------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_Image_property_data>` | ``{"data": PackedByteArray(),"format": "Lum8","height": 0,"mipmaps": false,"width": 0}`` |
-+-------------------------------------+----------------------------------------+------------------------------------------------------------------------------------------+
++-------------------------------------+----------------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_Image_property_data>` | ``{ "data": PackedByteArray(), "format": "Lum8", "height": 0, "mipmaps": false, "width": 0 }`` |
++-------------------------------------+----------------------------------------+------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -56,6 +56,8 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress_from_channels<class_Image_method_compress_from_channels>` **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`UsedChannels<enum_Image_UsedChannels>` channels, :ref:`float<class_float>` lossy_quality=0.7 **)**                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`compute_image_metrics<class_Image_method_compute_image_metrics>` **(** :ref:`Image<class_Image>` compared_image, :ref:`bool<class_bool>` use_luma **)**                                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`convert<class_Image_method_convert>` **(** :ref:`Format<enum_Image_Format>` format **)**                                                                                                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`copy_from<class_Image_method_copy_from>` **(** :ref:`Image<class_Image>` src **)**                                                                                                                                                                             |
@@ -73,6 +75,8 @@ Methods
 | :ref:`UsedChannels<enum_Image_UsedChannels>`  | :ref:`detect_used_channels<class_Image_method_detect_used_channels>` **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)**                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fill<class_Image_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`fill_rect<class_Image_method_fill_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**                                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fix_alpha_edges<class_Image_method_fix_alpha_edges>` **(** **)**                                                                                                                                                                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,14 +206,6 @@ Enumerations
 
 .. _class_Image_constant_FORMAT_BPTC_RGBFU:
 
-.. _class_Image_constant_FORMAT_PVRTC1_2:
-
-.. _class_Image_constant_FORMAT_PVRTC1_2A:
-
-.. _class_Image_constant_FORMAT_PVRTC1_4:
-
-.. _class_Image_constant_FORMAT_PVRTC1_4A:
-
 .. _class_Image_constant_FORMAT_ETC:
 
 .. _class_Image_constant_FORMAT_ETC2_R11:
@@ -244,11 +240,11 @@ enum **Format**:
 
 - **FORMAT_RGB8** = **4** --- OpenGL texture format ``RGB`` with three components, each with a bitdepth of 8.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGBA8** = **5** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 8.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGBA4444** = **6** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 4.
 
@@ -274,15 +270,15 @@ enum **Format**:
 
 - **FORMAT_DXT1** = **17** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 1, and is the smallest variation of S3TC, only providing 1 bit of alpha and color data being premultiplied with alpha.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_DXT3** = **18** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 2, and color data is interpreted as not having been premultiplied by alpha. Well suited for images with sharp alpha transitions between translucent and opaque areas.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_DXT5** = **19** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format also known as Block Compression 3 or BC3 that contains 64 bits of alpha channel data followed by 64 bits of DXT1-encoded color data. Color data is not premultiplied by alpha, same as DXT3. DXT5 generally produces superior results for transparent gradients compared to DXT3.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGTC_R** = **20** --- Texture format that uses `Red Green Texture Compression <https://www.khronos.org/opengl/wiki/Red_Green_Texture_Compression>`__, normalizing the red channel data using the same compression algorithm that DXT5 uses for the alpha channel.
 
@@ -290,51 +286,39 @@ enum **Format**:
 
 - **FORMAT_BPTC_RGBA** = **22** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with unsigned normalized RGBA components.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_BPTC_RGBF** = **23** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with signed floating-point RGB components.
 
 - **FORMAT_BPTC_RGBFU** = **24** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with unsigned floating-point RGB components.
 
-- **FORMAT_PVRTC1_2** = **25** --- Texture format used on PowerVR-supported mobile platforms, uses 2-bit color depth with no alpha. More information can be found `here <https://en.wikipedia.org/wiki/PVRTC>`__.
+- **FORMAT_ETC** = **25** --- `Ericsson Texture Compression format 1 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC1>`__, also referred to as "ETC1", and is part of the OpenGL ES graphics standard. This format cannot store an alpha channel.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_ETC2_R11** = **26** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``R11_EAC`` variant), which provides one channel of unsigned data.
 
-- **FORMAT_PVRTC1_2A** = **26** --- Same as :ref:`FORMAT_PVRTC1_2<class_Image_constant_FORMAT_PVRTC1_2>`, but with an alpha component.
+- **FORMAT_ETC2_R11S** = **27** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``SIGNED_R11_EAC`` variant), which provides one channel of signed data.
 
-- **FORMAT_PVRTC1_4** = **27** --- Texture format used on PowerVR-supported mobile platforms, uses 4-bit color depth with no alpha. More information can be found `here <https://en.wikipedia.org/wiki/PVRTC>`__.
+- **FORMAT_ETC2_RG11** = **28** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RG11_EAC`` variant), which provides two channels of unsigned data.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_ETC2_RG11S** = **29** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``SIGNED_RG11_EAC`` variant), which provides two channels of signed data.
 
-- **FORMAT_PVRTC1_4A** = **28** --- Same as :ref:`FORMAT_PVRTC1_4<class_Image_constant_FORMAT_PVRTC1_4>`, but with an alpha component.
+- **FORMAT_ETC2_RGB8** = **30** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8`` variant), which is a follow-up of ETC1 and compresses RGB888 data.
 
-- **FORMAT_ETC** = **29** --- `Ericsson Texture Compression format 1 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC1>`__, also referred to as "ETC1", and is part of the OpenGL ES graphics standard. This format cannot store an alpha channel.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_ETC2_R11** = **30** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``R11_EAC`` variant), which provides one channel of unsigned data.
+- **FORMAT_ETC2_RGBA8** = **31** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGBA8``\ variant), which compresses RGBA8888 data with full alpha support.
 
-- **FORMAT_ETC2_R11S** = **31** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``SIGNED_R11_EAC`` variant), which provides one channel of signed data.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_ETC2_RG11** = **32** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RG11_EAC`` variant), which provides two channels of unsigned data.
+- **FORMAT_ETC2_RGB8A1** = **32** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8_PUNCHTHROUGH_ALPHA1`` variant), which compresses RGBA data to make alpha either fully transparent or fully opaque.
 
-- **FORMAT_ETC2_RG11S** = **33** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``SIGNED_RG11_EAC`` variant), which provides two channels of signed data.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
-- **FORMAT_ETC2_RGB8** = **34** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8`` variant), which is a follow-up of ETC1 and compresses RGB888 data.
+- **FORMAT_ETC2_RA_AS_RG** = **33**
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+- **FORMAT_DXT5_RA_AS_RG** = **34**
 
-- **FORMAT_ETC2_RGBA8** = **35** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGBA8``\ variant), which compresses RGBA8888 data with full alpha support.
-
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
-
-- **FORMAT_ETC2_RGB8A1** = **36** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8_PUNCHTHROUGH_ALPHA1`` variant), which compresses RGBA data to make alpha either fully transparent or fully opaque.
-
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
-
-- **FORMAT_ETC2_RA_AS_RG** = **37**
-
-- **FORMAT_DXT5_RA_AS_RG** = **38**
-
-- **FORMAT_MAX** = **39** --- Represents the size of the :ref:`Format<enum_Image_Format>` enum.
+- **FORMAT_MAX** = **35** --- Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
 ----
 
@@ -364,7 +348,7 @@ It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BIL
 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
 
-**Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
+\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
@@ -394,8 +378,6 @@ enum **AlphaMode**:
 
 .. _class_Image_constant_COMPRESS_S3TC:
 
-.. _class_Image_constant_COMPRESS_PVRTC1_4:
-
 .. _class_Image_constant_COMPRESS_ETC:
 
 .. _class_Image_constant_COMPRESS_ETC2:
@@ -406,13 +388,11 @@ enum **CompressMode**:
 
 - **COMPRESS_S3TC** = **0** --- Use S3TC compression.
 
-- **COMPRESS_PVRTC1_4** = **1** --- Use PVRTC1 4-bpp compression.
+- **COMPRESS_ETC** = **1** --- Use ETC compression.
 
-- **COMPRESS_ETC** = **2** --- Use ETC compression.
+- **COMPRESS_ETC2** = **2** --- Use ETC2 compression.
 
-- **COMPRESS_ETC2** = **3** --- Use ETC2 compression.
-
-- **COMPRESS_BPTC** = **4** --- Use BPTC compression.
+- **COMPRESS_BPTC** = **3** --- Use BPTC compression.
 
 ----
 
@@ -480,9 +460,9 @@ Property Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **data**
 
-+-----------+------------------------------------------------------------------------------------------+
-| *Default* | ``{"data": PackedByteArray(),"format": "Lum8","height": 0,"mipmaps": false,"width": 0}`` |
-+-----------+------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------------------------------------------+
+| *Default* | ``{ "data": PackedByteArray(), "format": "Lum8", "height": 0, "mipmaps": false, "width": 0 }`` |
++-----------+------------------------------------------------------------------------------------------------+
 
 Holds all the image's color data in a given format. See :ref:`Format<enum_Image_Format>` constants.
 
@@ -557,6 +537,16 @@ Compresses the image to use less memory. Can not directly access pixel data whil
 
 ----
 
+.. _class_Image_method_compute_image_metrics:
+
+- :ref:`Dictionary<class_Dictionary>` **compute_image_metrics** **(** :ref:`Image<class_Image>` compared_image, :ref:`bool<class_bool>` use_luma **)**
+
+Compute image metrics on the current image and the compared image.
+
+The dictionary contains ``max``, ``mean``, ``mean_squared``, ``root_mean_squared`` and ``peak_snr``.
+
+----
+
 .. _class_Image_method_convert:
 
 - void **convert** **(** :ref:`Format<enum_Image_Format>` format **)**
@@ -603,7 +593,7 @@ Crops the image to the given ``width`` and ``height``. If the specified size is 
 
 Decompresses the image if it is VRAM compressed in a supported format. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the format is supported, otherwise :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`.
 
-**Note:** The following formats can be decompressed: DXT, RGTC, BPTC, PVRTC1. The formats ETC1 and ETC2 are not supported.
+\ **Note:** The following formats can be decompressed: DXT, RGTC, BPTC. The formats ETC1 and ETC2 are not supported.
 
 ----
 
@@ -625,7 +615,15 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 
 - void **fill** **(** :ref:`Color<class_Color>` color **)**
 
-Fills the image with a given :ref:`Color<class_Color>`.
+Fills the image with ``color``.
+
+----
+
+.. _class_Image_method_fill_rect:
+
+- void **fill_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**
+
+Fills ``rect`` with ``color``.
 
 ----
 
@@ -659,7 +657,7 @@ Flips the image vertically.
 
 Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``.
 
-**Note:** Mipmap generation is done on the CPU, is single-threaded and is *always* done on the main thread. This means generating mipmaps will result in noticeable stuttering during gameplay, even if :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` is called from a :ref:`Thread<class_Thread>`.
+\ **Note:** Mipmap generation is done on the CPU, is single-threaded and is *always* done on the main thread. This means generating mipmaps will result in noticeable stuttering during gameplay, even if :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` is called from a :ref:`Thread<class_Thread>`.
 
 ----
 
@@ -783,9 +781,9 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads an image from file ``path``. See `Supported image formats <../getting_started/workflow/assets/importing_images.html#supported-image-formats>`__ for a list of supported image formats and limitations.
+Loads an image from file ``path``. See `Supported image formats <../tutorials/assets_pipeline/importing_images.html#supported-image-formats>`__ for a list of supported image formats and limitations.
 
-**Warning:** This method should only be used in the editor or in cases when you need to load external images at run-time, such as images located at the ``user://`` directory, and may not work in exported projects.
+\ **Warning:** This method should only be used in the editor or in cases when you need to load external images at run-time, such as images located at the ``user://`` directory, and may not work in exported projects.
 
 See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 
@@ -797,7 +795,7 @@ See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 
 Loads an image from the binary contents of a BMP file.
 
-**Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
+\ **Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
 
 ----
 
@@ -879,7 +877,7 @@ Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
-**Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
 
 ----
 

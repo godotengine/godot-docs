@@ -21,11 +21,11 @@ Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from top (min)
 Properties
 ----------
 
-+-----------------------+-----------------------+---------------------------+
-| :ref:`int<class_int>` | size_flags_horizontal | ``0`` *(parent override)* |
-+-----------------------+-----------------------+---------------------------+
-| :ref:`int<class_int>` | size_flags_vertical   | ``1`` *(parent override)* |
-+-----------------------+-----------------------+---------------------------+
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -37,17 +37,17 @@ Theme Properties
 +-----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_pressed<class_VScrollBar_theme_icon_decrement_pressed>`     |
 +-----------------------------------+-----------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber<class_VScrollBar_theme_style_grabber>`                        |
-+-----------------------------------+-----------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_highlight<class_VScrollBar_theme_style_grabber_highlight>`    |
-+-----------------------------------+-----------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_VScrollBar_theme_style_grabber_pressed>`        |
-+-----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_VScrollBar_theme_icon_increment>`                     |
 +-----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_VScrollBar_theme_icon_increment_highlight>` |
 +-----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_pressed<class_VScrollBar_theme_icon_increment_pressed>`     |
++-----------------------------------+-----------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber<class_VScrollBar_theme_style_grabber>`                        |
++-----------------------------------+-----------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_highlight<class_VScrollBar_theme_style_grabber_highlight>`    |
++-----------------------------------+-----------------------------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_VScrollBar_theme_style_grabber_pressed>`        |
 +-----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll<class_VScrollBar_theme_style_scroll>`                          |
 +-----------------------------------+-----------------------------------------------------------------------------+
@@ -81,30 +81,6 @@ Displayed when the decrement button is being pressed.
 
 ----
 
-.. _class_VScrollBar_theme_style_grabber:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber**
-
-Used as texture for the grabber, the draggable element representing current scroll.
-
-----
-
-.. _class_VScrollBar_theme_style_grabber_highlight:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_highlight**
-
-Used when the mouse hovers over the grabber.
-
-----
-
-.. _class_VScrollBar_theme_style_grabber_pressed:
-
-- :ref:`StyleBox<class_StyleBox>` **grabber_pressed**
-
-Used when the grabber is being dragged.
-
-----
-
 .. _class_VScrollBar_theme_icon_increment:
 
 - :ref:`Texture2D<class_Texture2D>` **increment**
@@ -126,6 +102,30 @@ Displayed when the mouse cursor hovers over the increment button.
 - :ref:`Texture2D<class_Texture2D>` **increment_pressed**
 
 Displayed when the increment button is being pressed.
+
+----
+
+.. _class_VScrollBar_theme_style_grabber:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber**
+
+Used as texture for the grabber, the draggable element representing current scroll.
+
+----
+
+.. _class_VScrollBar_theme_style_grabber_highlight:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_highlight**
+
+Used when the mouse hovers over the grabber.
+
+----
+
+.. _class_VScrollBar_theme_style_grabber_pressed:
+
+- :ref:`StyleBox<class_StyleBox>` **grabber_pressed**
+
+Used when the grabber is being dragged.
 
 ----
 

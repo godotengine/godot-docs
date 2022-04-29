@@ -327,11 +327,11 @@ between parentheses and separated by commas.
 
 Both of these are the same::
 
-    @export_file("*.png")
-    @remote
-    var x
+    @onready
+    @export_node_path(TextEdit, LineEdit)
+    var input_field
 
-    @export_file("*.png") @remote var x
+    @onready @export_node_path(TextEdit, LineEdit) var input_field
 
 
 Here's the list of available annotations:
@@ -346,17 +346,7 @@ Here's the list of available annotations:
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@master``                  | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-|                              |                                                                                                   |
-| ``@puppet``                  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@remote``                  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@mastersync``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@puppetsync``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@remotesync``              |                                                                                                   |
+| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
 |                              |                                                                                                   |
@@ -404,6 +394,27 @@ considered a comment.
     # This is a comment.
 
 .. _doc_gdscript_builtin_types:
+
+Line continuation
+~~~~~~~~~~~~~~~~~
+
+A line of code in GDScript can be continued on the next line by using a backslash
+(``\``). Add one at the end of a line and the code on the next line will act like
+it's where the backslash is. Here is an example:
+
+::
+
+    var a = 1 + \
+    2
+
+A line can be continued multiple times like this:
+
+::
+
+    var a = 1 + \
+    4 + \
+    10 + \
+    4
 
 Built-in types
 --------------
@@ -559,7 +570,7 @@ and ``size``. Also contains an ``end`` field which is
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
-:ref:`Transform <class_Transform>`
+:ref:`Transform3D <class_Transform3D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Basis field ``basis`` and a Vector3 field
@@ -1781,8 +1792,9 @@ This also means that returning a signal from a function that isn't a coroutine w
         await get_signal()
         print("Button was pressed")
 
-.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object. This in spirit of
-          type-safety, because a function cannot say that returns an ``int`` but actually give a function state object
+.. note:: Unlike ``yield`` in previous Godot versions, you cannot obtain the function state object.
+          This is done to ensure type safety.
+          With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
 
 .. _doc_gdscript_onready_annotation:

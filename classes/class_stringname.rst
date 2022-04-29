@@ -37,11 +37,19 @@ Operators
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator <<class_StringName_operator_lt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
++-------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator <=<class_StringName_operator_lte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
++-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** **)**                                            |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**          |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
++-------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator ><class_StringName_operator_gt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
++-------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator >=<class_StringName_operator_gte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Constructor Descriptions
@@ -82,6 +90,18 @@ Operator Descriptions
 
 ----
 
+.. _class_StringName_operator_lt_bool:
+
+- :ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
+
+----
+
+.. _class_StringName_operator_lte_bool:
+
+- :ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
+
+----
+
 .. _class_StringName_operator_eq_bool:
 
 - :ref:`bool<class_bool>` **operator ==** **(** **)**
@@ -93,6 +113,18 @@ Operator Descriptions
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)**
+
+----
+
+.. _class_StringName_operator_gt_bool:
+
+- :ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
+
+----
+
+.. _class_StringName_operator_gte_bool:
+
+- :ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

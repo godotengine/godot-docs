@@ -27,6 +27,8 @@ Importing the project
 
 .. figure:: img/vscode_create_tasksjson_others.png
    :align: center
+ 
+- If there is no such option as **Create tasks.json file from template** available, either delete the file if it already exists in your folder or create a ``.vscode/tasks.json`` file manually. See `Tasks in Visual Studio Code <https://code.visualstudio.com/docs/editor/tasks#_custom-tasks>`_ for more details on tasks.
 
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
@@ -39,7 +41,8 @@ Importing the project
       "type": "shell",
       "command": "scons",
       "args": [
-        "-j $(nproc)"
+        "-j",
+        "$(nproc)"
       ],
       "problemMatcher": "$msCompile"
     }
@@ -161,10 +164,15 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     If you encounter issues with lldb, you may consider using gdb (see the LinuxBSD_gdb configuration).
 
-    Do note that lldb may work better with llvm-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
+    Do note that lldb may work better with LLVM-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
 
 The name under ``program`` depends on your build configuration,
 e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
+
+.. tip::
+
+    To get linting on class reference XML files, install the
+    `vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__.

@@ -235,7 +235,7 @@ If ``true``, the camera only moves when reaching the horizontal (left and right)
 
 The relative horizontal drag offset of the camera between the right (``-1``) and left (``1``) drag margins.
 
-**Note:** Used to set the initial horizontal drag offset; determine the current offset; or force the current offset. It's not automatically updated when the horizontal drag margin is enabled or the drag margins are changed.
+\ **Note:** Used to set the initial horizontal drag offset; determine the current offset; or force the current offset. It's not automatically updated when :ref:`drag_horizontal_enabled<class_Camera2D_property_drag_horizontal_enabled>` is ``true`` or the drag margins are changed.
 
 ----
 
@@ -317,7 +317,7 @@ If ``true``, the camera only moves when reaching the vertical (top and bottom) d
 
 The relative vertical drag offset of the camera between the bottom (``-1``) and top (``1``) drag margins.
 
-**Note:** Used to set the initial vertical drag offset; determine the current offset; or force the current offset. It's not automatically updated when the vertical drag margin is enabled or the drag margins are changed.
+\ **Note:** Used to set the initial vertical drag offset; determine the current offset; or force the current offset. It's not automatically updated when :ref:`drag_vertical_enabled<class_Camera2D_property_drag_vertical_enabled>` is ``true`` or the drag margins are changed.
 
 ----
 
@@ -381,7 +381,7 @@ If ``true``, draws the camera's screen rectangle in the editor.
 | *Getter*  | get_limit()      |
 +-----------+------------------+
 
-Bottom scroll limit in pixels. The camera stops moving when reaching this value.
+Bottom scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
 ----
 
@@ -397,7 +397,7 @@ Bottom scroll limit in pixels. The camera stops moving when reaching this value.
 | *Getter*  | get_limit()      |
 +-----------+------------------+
 
-Left scroll limit in pixels. The camera stops moving when reaching this value.
+Left scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
 ----
 
@@ -413,7 +413,7 @@ Left scroll limit in pixels. The camera stops moving when reaching this value.
 | *Getter*  | get_limit()      |
 +-----------+------------------+
 
-Right scroll limit in pixels. The camera stops moving when reaching this value.
+Right scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
 ----
 
@@ -431,9 +431,9 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
-This has no effect if smoothing is disabled.
+This property has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
 
-**Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
+\ **Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
 
 ----
 
@@ -449,7 +449,7 @@ This has no effect if smoothing is disabled.
 | *Getter*  | get_limit()      |
 +-----------+------------------+
 
-Top scroll limit in pixels. The camera stops moving when reaching this value.
+Top scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
 ----
 
@@ -465,7 +465,7 @@ Top scroll limit in pixels. The camera stops moving when reaching this value.
 | *Getter*  | get_offset()      |
 +-----------+-------------------+
 
-The camera's offset, useful for looking around or camera shake animations.
+The camera's relative offset. Useful for looking around or camera shake animations. The offsetted camera can go past the limits defined in :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_left<class_Camera2D_property_limit_left>` and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
 ----
 
@@ -497,7 +497,7 @@ The camera's process callback. See :ref:`Camera2DProcessCallback<enum_Camera2D_C
 | *Getter*  | is_rotating()       |
 +-----------+---------------------+
 
-If ``true``, the camera rotates with the target.
+If ``true``, the camera view rotates with the target.
 
 ----
 
@@ -570,7 +570,9 @@ Forces the camera to update scroll immediately.
 
 - :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** |const|
 
-Returns the camera position.
+Returns the camera's ``position`` (the tracked point the camera attempts to follow), relative to the origin.
+
+\ **Note:** The returned value is not the same as :ref:`Node2D.position<class_Node2D_property_position>` or :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the ``drag`` properties.
 
 ----
 
@@ -579,6 +581,8 @@ Returns the camera position.
 - :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** |const|
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
+
+\ **Note:** The real ``position`` of the camera may be different, see :ref:`get_camera_position<class_Camera2D_method_get_camera_position>`.
 
 ----
 
@@ -604,7 +608,7 @@ Returns the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. 
 
 Sets the camera's position immediately to its current smoothing destination.
 
-This has no effect if smoothing is disabled.
+This method has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
 
 ----
 

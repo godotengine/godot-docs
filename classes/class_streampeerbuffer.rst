@@ -11,7 +11,14 @@ StreamPeerBuffer
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Data buffer stream peer.
 
+Description
+-----------
+
+Data buffer stream peer that uses a byte array as the stream. This object can be used to handle binary data from network sessions. To handle binary data stored in files, :ref:`File<class_File>` can be used directly.
+
+A ``StreamPeerBuffer`` object keeps an internal cursor which is the offset in bytes to the start of the buffer. Get and put operations are performed at the cursor position and will move the cursor accordingly.
 
 Properties
 ----------
@@ -52,6 +59,8 @@ Property Descriptions
 | *Getter*  | get_data_array()      |
 +-----------+-----------------------+
 
+The underlying data buffer. Setting this value resets the cursor.
+
 Method Descriptions
 -------------------
 
@@ -59,11 +68,15 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+Clears the :ref:`data_array<class_StreamPeerBuffer_property_data_array>` and resets the cursor.
+
 ----
 
 .. _class_StreamPeerBuffer_method_duplicate:
 
 - :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** |const|
+
+Returns a new ``StreamPeerBuffer`` with the same :ref:`data_array<class_StreamPeerBuffer_property_data_array>` content.
 
 ----
 
@@ -71,11 +84,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_position** **(** **)** |const|
 
+Returns the current cursor position.
+
 ----
 
 .. _class_StreamPeerBuffer_method_get_size:
 
 - :ref:`int<class_int>` **get_size** **(** **)** |const|
+
+Returns the size of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
 
 ----
 
@@ -83,11 +100,15 @@ Method Descriptions
 
 - void **resize** **(** :ref:`int<class_int>` size **)**
 
+Resizes the :ref:`data_array<class_StreamPeerBuffer_property_data_array>`. This *doesn't* update the cursor.
+
 ----
 
 .. _class_StreamPeerBuffer_method_seek:
 
 - void **seek** **(** :ref:`int<class_int>` position **)**
+
+Moves the cursor to the specified position. ``position`` must be a valid index of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

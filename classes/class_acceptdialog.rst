@@ -23,23 +23,23 @@ This dialog is useful for small notifications to the user about an event. It can
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``                        |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``                         |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``                           |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | exclusive                                                               | ``true`` *(parent override)*     |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`String<class_String>` | title                                                                   | ``"Alert!"`` *(parent override)* |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | transient                                                               | ``true`` *(parent override)*     |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | visible                                                                 | ``false`` *(parent override)*    |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
-| :ref:`bool<class_bool>`     | wrap_controls                                                           | ``true`` *(parent override)*     |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------+
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``                                                               |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``                                                                |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``                                                                  |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | exclusive                                                               | ``true`` (overrides :ref:`Window<class_Window_property_exclusive>`)     |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`String<class_String>` | title                                                                   | ``"Alert!"`` (overrides :ref:`Window<class_Window_property_title>`)     |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | transient                                                               | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | visible                                                                 | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)      |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | wrap_controls                                                           | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
++-----------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Methods
 -------
@@ -123,7 +123,7 @@ Sets autowrapping for the text in the dialog.
 
 If ``true``, the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` signal, and handle hiding the dialog in your own logic.
 
-**Note:** Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such, this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
+\ **Note:** Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such, this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
 
 ----
 
@@ -172,7 +172,7 @@ You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method
 
 Returns the label used for built-in text.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -182,7 +182,7 @@ Returns the label used for built-in text.
 
 Returns the OK :ref:`Button<class_Button>` instance.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 

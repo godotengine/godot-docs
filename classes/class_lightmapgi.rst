@@ -18,9 +18,9 @@ Description
 
 The ``LightmapGI`` node is used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking. ``LightmapGI`` can also provide rough reflections using spherical harmonics if :ref:`directional<class_LightmapGI_property_directional>` is enabled. Dynamic objects can receive indirect lighting thanks to *light probes*, which can be automatically placed by setting :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`. Additional lightmap probes can also be added by creating :ref:`LightmapProbe<class_LightmapProbe>` nodes. The downside is that lightmaps are fully static and cannot be baked in an exported project. Baking a ``LightmapGI`` node is also slower compared to :ref:`VoxelGI<class_VoxelGI>`.
 
-**Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``LightmapGI`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`VoxelGI<class_VoxelGI>` or SDFGI instead (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
+\ **Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``LightmapGI`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`VoxelGI<class_VoxelGI>` or SDFGI instead (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 
-**Performance:** ``LightmapGI`` provides the best possible run-time performance for global illumination. It is suitable for low-end hardware including integrated graphics and mobile devices.
+\ **Performance:** ``LightmapGI`` provides the best possible run-time performance for global illumination. It is suitable for low-end hardware including integrated graphics and mobile devices.
 
 Properties
 ----------

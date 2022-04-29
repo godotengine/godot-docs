@@ -18,7 +18,7 @@ Description
 
 This :ref:`SkeletonModification2D<class_SkeletonModification2D>` holds a reference to a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, allowing you to use multiple modification stacks on a single :ref:`Skeleton2D<class_Skeleton2D>`.
 
-**Note:** The modifications in the held :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` will only be executed if their execution mode matches the execution mode of the SkeletonModification2DStackHolder.
+\ **Note:** The modifications in the held :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` will only be executed if their execution mode matches the execution mode of the SkeletonModification2DStackHolder.
 
 Methods
 -------

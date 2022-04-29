@@ -97,7 +97,7 @@ Methods
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`framebuffer_get_format<class_RenderingDevice_method_framebuffer_get_format>` **(** :ref:`RID<class_RID>` framebuffer **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`free<class_RenderingDevice_method_free>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| void                                                       | :ref:`free_rid<class_RenderingDevice_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`full_barrier<class_RenderingDevice_method_full_barrier>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -169,7 +169,7 @@ Methods
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared<class_RenderingDevice_method_texture_create_shared>` **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared_from_slice<class_RenderingDevice_method_texture_create_shared_from_slice>` **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared_from_slice<class_RenderingDevice_method_texture_create_shared_from_slice>` **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` mipmaps=1, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`              | :ref:`texture_get_data<class_RenderingDevice_method_texture_get_data>` **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -196,6 +196,36 @@ Methods
 
 Enumerations
 ------------
+
+.. _enum_RenderingDevice_DeviceType:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_OTHER:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_INTEGRATED_GPU:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_DISCRETE_GPU:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_VIRTUAL_GPU:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_CPU:
+
+.. _class_RenderingDevice_constant_DEVICE_TYPE_MAX:
+
+enum **DeviceType**:
+
+- **DEVICE_TYPE_OTHER** = **0** --- Rendering device type does not match any of the other enum values or is unknown.
+
+- **DEVICE_TYPE_INTEGRATED_GPU** = **1** --- Rendering device is an integrated GPU, which is typically *(but not always)* slower than dedicated GPUs (:ref:`DEVICE_TYPE_DISCRETE_GPU<class_RenderingDevice_constant_DEVICE_TYPE_DISCRETE_GPU>`). On Android and iOS, the rendering device type is always considered to be :ref:`DEVICE_TYPE_INTEGRATED_GPU<class_RenderingDevice_constant_DEVICE_TYPE_INTEGRATED_GPU>`.
+
+- **DEVICE_TYPE_DISCRETE_GPU** = **2** --- Rendering device is a dedicated GPU, which is typically *(but not always)* faster than integrated GPUs (:ref:`DEVICE_TYPE_INTEGRATED_GPU<class_RenderingDevice_constant_DEVICE_TYPE_INTEGRATED_GPU>`).
+
+- **DEVICE_TYPE_VIRTUAL_GPU** = **3** --- Rendering device is an emulated GPU in a virtual environment. This is typically much slower than the host GPU, which means the expected performance level on a dedicated GPU will be roughly equivalent to :ref:`DEVICE_TYPE_INTEGRATED_GPU<class_RenderingDevice_constant_DEVICE_TYPE_INTEGRATED_GPU>`. Virtual machine GPU passthrough (such as VFIO) will not report the device type as :ref:`DEVICE_TYPE_VIRTUAL_GPU<class_RenderingDevice_constant_DEVICE_TYPE_VIRTUAL_GPU>`. Instead, the host GPU's device type will be reported as if the GPU was not emulated.
+
+- **DEVICE_TYPE_CPU** = **4** --- Rendering device is provided by software emulation (such as Lavapipe or `SwiftShader <https://github.com/google/swiftshader>`__). This is the slowest kind of rendering device available; it's typically much slower than :ref:`DEVICE_TYPE_INTEGRATED_GPU<class_RenderingDevice_constant_DEVICE_TYPE_INTEGRATED_GPU>`.
+
+- **DEVICE_TYPE_MAX** = **5** --- Represents the size of the :ref:`DeviceType<enum_RenderingDevice_DeviceType>` enum.
+
+----
 
 .. _enum_RenderingDevice_DriverResource:
 
@@ -693,22 +723,6 @@ enum **DriverResource**:
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16_R16_3PLANE_444_UNORM:
 
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG:
-
-.. _class_RenderingDevice_constant_DATA_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG:
-
 .. _class_RenderingDevice_constant_DATA_FORMAT_MAX:
 
 enum **DataFormat**:
@@ -1149,23 +1163,7 @@ enum **DataFormat**:
 
 - **DATA_FORMAT_G16_B16_R16_3PLANE_444_UNORM** = **217**
 
-- **DATA_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG** = **218**
-
-- **DATA_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG** = **219**
-
-- **DATA_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG** = **220**
-
-- **DATA_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG** = **221**
-
-- **DATA_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG** = **222**
-
-- **DATA_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG** = **223**
-
-- **DATA_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG** = **224**
-
-- **DATA_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG** = **225**
-
-- **DATA_FORMAT_MAX** = **226**
+- **DATA_FORMAT_MAX** = **218**
 
 ----
 
@@ -2481,9 +2479,9 @@ Method Descriptions
 
 ----
 
-.. _class_RenderingDevice_method_free:
+.. _class_RenderingDevice_method_free_rid:
 
-- void **free** **(** :ref:`RID<class_RID>` rid **)**
+- void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 ----
 
@@ -2699,7 +2697,7 @@ Method Descriptions
 
 .. _class_RenderingDevice_method_texture_create_shared_from_slice:
 
-- :ref:`RID<class_RID>` **texture_create_shared_from_slice** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**
+- :ref:`RID<class_RID>` **texture_create_shared_from_slice** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` mipmaps=1, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**
 
 ----
 

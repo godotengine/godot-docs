@@ -17,7 +17,7 @@ Properties
 ----------
 
 +------------------------------------------------------------+----------------------------------------------------------------------+---------+
-| :ref:`DataFormat<enum_RenderingDevice_DataFormat>`         | :ref:`format_override<class_RDTextureView_property_format_override>` | ``226`` |
+| :ref:`DataFormat<enum_RenderingDevice_DataFormat>`         | :ref:`format_override<class_RDTextureView_property_format_override>` | ``218`` |
 +------------------------------------------------------------+----------------------------------------------------------------------+---------+
 | :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` | :ref:`swizzle_a<class_RDTextureView_property_swizzle_a>`             | ``6``   |
 +------------------------------------------------------------+----------------------------------------------------------------------+---------+
@@ -36,7 +36,7 @@ Property Descriptions
 - :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override**
 
 +-----------+----------------------------+
-| *Default* | ``226``                    |
+| *Default* | ``218``                    |
 +-----------+----------------------------+
 | *Setter*  | set_format_override(value) |
 +-----------+----------------------------+

@@ -18,9 +18,9 @@ Description
 
 Character bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a rigid body, these are the same as a :ref:`AnimatableBody3D<class_AnimatableBody3D>`. However, they have two main uses:
 
-**Kinematic characters:** Character bodies have an API for moving objects with walls and slopes detection (:ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` method), in addition to collision detection (also done with :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`). This makes them really useful to implement characters that move in specific ways and collide with the world, but don't require advanced physics.
+\ **Kinematic characters:** Character bodies have an API for moving objects with walls and slopes detection (:ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` method), in addition to collision detection (also done with :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`). This makes them really useful to implement characters that move in specific ways and collide with the world, but don't require advanced physics.
 
-**Kinematic motion:** Character bodies can also be used for kinematic motion (same functionality as :ref:`AnimatableBody3D<class_AnimatableBody3D>`), which allows them to be moved by code and push other bodies on their path.
+\ **Kinematic motion:** Character bodies can also be used for kinematic motion (same functionality as :ref:`AnimatableBody3D<class_AnimatableBody3D>`), which allows them to be moved by code and push other bodies on their path.
 
 Tutorials
 ---------
@@ -55,8 +55,6 @@ Properties
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
 | :ref:`MotionMode<enum_CharacterBody3D_MotionMode>`                                                 | :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`                                                         | ``0``                |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                                                      | :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>`                                                 | ``Vector3(0, 0, 0)`` |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
 | :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` | :ref:`moving_platform_apply_velocity_on_leave<class_CharacterBody3D_property_moving_platform_apply_velocity_on_leave>` | ``0``                |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
 | :ref:`int<class_int>`                                                                              | :ref:`moving_platform_floor_layers<class_CharacterBody3D_property_moving_platform_floor_layers>`                       | ``4294967295``       |
@@ -66,6 +64,8 @@ Properties
 | :ref:`bool<class_bool>`                                                                            | :ref:`slide_on_ceiling<class_CharacterBody3D_property_slide_on_ceiling>`                                               | ``true``             |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
 | :ref:`Vector3<class_Vector3>`                                                                      | :ref:`up_direction<class_CharacterBody3D_property_up_direction>`                                                       | ``Vector3(0, 1, 0)`` |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                                                                      | :ref:`velocity<class_CharacterBody3D_property_velocity>`                                                               | ``Vector3(0, 0, 0)`` |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
 | :ref:`float<class_float>`                                                                          | :ref:`wall_min_slide_angle<class_CharacterBody3D_property_wall_min_slide_angle>`                                       | ``0.261799``         |
 +----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
@@ -116,13 +116,13 @@ Enumerations
 
 .. _class_CharacterBody3D_constant_MOTION_MODE_GROUNDED:
 
-.. _class_CharacterBody3D_constant_MOTION_MODE_FREE:
+.. _class_CharacterBody3D_constant_MOTION_MODE_FLOATING:
 
 enum **MotionMode**:
 
 - **MOTION_MODE_GROUNDED** = **0** --- Apply when notions of walls, ceiling and floor are relevant. In this mode the body motion will react to slopes (acceleration/slowdown). This mode is suitable for grounded games like platformers.
 
-- **MOTION_MODE_FREE** = **1** --- Apply when there is no notion of floor or ceiling. All collisions will be reported as ``on_wall``. In this mode, when you slide, the speed will always be constant. This mode is suitable for games without ground like space games.
+- **MOTION_MODE_FLOATING** = **1** --- Apply when there is no notion of floor or ceiling. All collisions will be reported as ``on_wall``. In this mode, when you slide, the speed will always be constant. This mode is suitable for games without ground like space games.
 
 ----
 
@@ -136,9 +136,9 @@ enum **MotionMode**:
 
 enum **MovingPlatformApplyVelocityOnLeave**:
 
-- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity to the :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>` when you leave a moving platform.
+- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform.
 
-- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity to the :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
+- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
 
 - **PLATFORM_VEL_ON_LEAVE_NEVER** = **2** --- Do nothing when leaving a platform.
 
@@ -249,7 +249,7 @@ As long as the snapping vector is in contact with the ground and the body moves 
 
 If ``true``, the body will not slide on slopes when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` when the body is standing still.
 
-If ``false``, the body will slide on floor's slopes when :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>` applies a downward force.
+If ``false``, the body will slide on floor's slopes when :ref:`velocity<class_CharacterBody3D_property_velocity>` applies a downward force.
 
 ----
 
@@ -281,23 +281,7 @@ Maximum number of times the body can change direction before it stops when calli
 | *Getter*  | get_motion_mode()      |
 +-----------+------------------------+
 
-Sets the motion mode which defines the behaviour of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. See :ref:`MotionMode<enum_CharacterBody3D_MotionMode>` constants for available modes.
-
-----
-
-.. _class_CharacterBody3D_property_motion_velocity:
-
-- :ref:`Vector3<class_Vector3>` **motion_velocity**
-
-+-----------+----------------------------+
-| *Default* | ``Vector3(0, 0, 0)``       |
-+-----------+----------------------------+
-| *Setter*  | set_motion_velocity(value) |
-+-----------+----------------------------+
-| *Getter*  | get_motion_velocity()      |
-+-----------+----------------------------+
-
-Current velocity vector (typically meters per second), used and modified during calls to :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`.
+Sets the motion mode which defines the behavior of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. See :ref:`MotionMode<enum_CharacterBody3D_MotionMode>` constants for available modes.
 
 ----
 
@@ -313,7 +297,7 @@ Current velocity vector (typically meters per second), used and modified during 
 | *Getter*  | get_moving_platform_apply_velocity_on_leave()      |
 +-----------+----------------------------------------------------+
 
-Sets the behaviour to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` constants for available behaviour.
+Sets the behavior to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` constants for available behavior.
 
 ----
 
@@ -381,6 +365,22 @@ Direction vector used to determine what is a wall and what is a floor (or a ceil
 
 ----
 
+.. _class_CharacterBody3D_property_velocity:
+
+- :ref:`Vector3<class_Vector3>` **velocity**
+
++-----------+----------------------+
+| *Default* | ``Vector3(0, 0, 0)`` |
++-----------+----------------------+
+| *Setter*  | set_velocity(value)  |
++-----------+----------------------+
+| *Getter*  | get_velocity()       |
++-----------+----------------------+
+
+Current velocity vector (typically meters per second), used and modified during calls to :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`.
+
+----
+
 .. _class_CharacterBody3D_property_wall_min_slide_angle:
 
 - :ref:`float<class_float>` **wall_min_slide_angle**
@@ -393,7 +393,7 @@ Direction vector used to determine what is a wall and what is a floor (or a ceil
 | *Getter*  | get_wall_min_slide_angle()      |
 +-----------+---------------------------------+
 
-Minimum angle (in radians) where the body is allowed to slide when it encounters a slope. The default value equals 15 degrees. In ``MOTION_MODE_GROUNDED``, it works only when :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>` is ``true``.
+Minimum angle (in radians) where the body is allowed to slide when it encounters a slope. The default value equals 15 degrees. When :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>` is :ref:`MOTION_MODE_GROUNDED<class_CharacterBody3D_constant_MOTION_MODE_GROUNDED>`, it only affects movement if :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>` is ``true``.
 
 Method Descriptions
 -------------------
@@ -450,7 +450,7 @@ Returns the travel (position delta) that occurred during the last call to :ref:`
 
 - :ref:`Vector3<class_Vector3>` **get_real_velocity** **(** **)** |const|
 
-Returns the current real velocity since the last call to :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. For example, when you climb a slope, you will move diagonally even though the velocity is horizontal. This method returns the diagonal movement, as opposed to :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>` which returns the requested velocity.
+Returns the current real velocity since the last call to :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. For example, when you climb a slope, you will move diagonally even though the velocity is horizontal. This method returns the diagonal movement, as opposed to :ref:`velocity<class_CharacterBody3D_property_velocity>` which returns the requested velocity.
 
 ----
 
@@ -482,7 +482,7 @@ Returns the surface normal of the wall at the last collision point. Only valid a
 
 - :ref:`bool<class_bool>` **is_on_ceiling** **(** **)** |const|
 
-Returns ``true`` if the body collided with the ceiling on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided with the ceiling on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "ceiling" or not.
 
 ----
 
@@ -490,7 +490,7 @@ Returns ``true`` if the body collided with the ceiling on the last call of :ref:
 
 - :ref:`bool<class_bool>` **is_on_ceiling_only** **(** **)** |const|
 
-Returns ``true`` if the body collided only with the ceiling on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided only with the ceiling on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "ceiling" or not.
 
 ----
 
@@ -498,7 +498,7 @@ Returns ``true`` if the body collided only with the ceiling on the last call of 
 
 - :ref:`bool<class_bool>` **is_on_floor** **(** **)** |const|
 
-Returns ``true`` if the body collided with the floor on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided with the floor on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "floor" or not.
 
 ----
 
@@ -506,7 +506,7 @@ Returns ``true`` if the body collided with the floor on the last call of :ref:`m
 
 - :ref:`bool<class_bool>` **is_on_floor_only** **(** **)** |const|
 
-Returns ``true`` if the body collided only with the floor on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided only with the floor on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "floor" or not.
 
 ----
 
@@ -514,7 +514,7 @@ Returns ``true`` if the body collided only with the floor on the last call of :r
 
 - :ref:`bool<class_bool>` **is_on_wall** **(** **)** |const|
 
-Returns ``true`` if the body collided with a wall on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided with a wall on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "wall" or not.
 
 ----
 
@@ -522,7 +522,7 @@ Returns ``true`` if the body collided with a wall on the last call of :ref:`move
 
 - :ref:`bool<class_bool>` **is_on_wall_only** **(** **)** |const|
 
-Returns ``true`` if the body collided only with a wall on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``.
+Returns ``true`` if the body collided only with a wall on the last call of :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Otherwise, returns ``false``. The :ref:`up_direction<class_CharacterBody3D_property_up_direction>` and :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>` are used to determine whether a surface is "wall" or not.
 
 ----
 
@@ -530,11 +530,9 @@ Returns ``true`` if the body collided only with a wall on the last call of :ref:
 
 - :ref:`bool<class_bool>` **move_and_slide** **(** **)**
 
-Moves the body based on :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>`. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``CharacterBody3D`` or :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
+Moves the body based on :ref:`velocity<class_CharacterBody3D_property_velocity>`. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``CharacterBody3D`` or :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 
-This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
-
-Modifies :ref:`motion_velocity<class_CharacterBody3D_property_motion_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody3D_method_get_last_slide_collision>`, for more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody3D_method_get_slide_collision>`.
+Modifies :ref:`velocity<class_CharacterBody3D_property_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody3D_method_get_last_slide_collision>`, for more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody3D_method_get_slide_collision>`.
 
 When the body touches a moving platform, the platform's velocity is automatically added to the body motion. If a collision occurs due to the platform's motion, it will always be first in the slide collisions.
 

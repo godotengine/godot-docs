@@ -64,6 +64,8 @@ Methods
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`clear_layer<class_TileMap_method_clear_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                                 |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`erase_cell<class_TileMap_method_erase_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)**                                                                                                                                           |
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`fix_invalid_tiles<class_TileMap_method_fix_invalid_tiles>` **(** **)**                                                                                                                                                                                                 |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`force_update<class_TileMap_method_force_update>` **(** :ref:`int<class_int>` layer=-1 **)**                                                                                                                                                                            |
@@ -108,7 +110,7 @@ Methods
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`remove_layer<class_TileMap_method_remove_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                               |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |
+| void                                        | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**  |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_cells_from_surrounding_terrains<class_TileMap_method_set_cells_from_surrounding_terrains>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` cells, :ref:`int<class_int>` terrain_set, :ref:`bool<class_bool>` ignore_empty_terrains=true **)** |
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -190,7 +192,7 @@ The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this
 
 If enabled, the TileMap will see its collisions synced to the physics tick and change its collision type from static to kinematic. This is required to create TileMap-based moving platform.
 
-**Note:** Enabling ``collision_animatable`` may have a small performance impact, only do it if the TileMap is moving and has colliding tiles.
+\ **Note:** Enabling ``collision_animatable`` may have a small performance impact, only do it if the TileMap is moving and has colliding tiles.
 
 ----
 
@@ -249,9 +251,9 @@ Called with a TileData object about to be used internally by the TileMap, allowi
 
 This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords[/coords] and [code]layer``.
 
-**Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
+\ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
 
-**Note:** If the properties of ``tile_data`` object should change over time, use :ref:`force_update<class_TileMap_method_force_update>` to trigger a TileMap update.
+\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`force_update<class_TileMap_method_force_update>` to trigger a TileMap update.
 
 ----
 
@@ -261,7 +263,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 
 Should return ``true`` if the tile at coordinates ``coords[/coords] on layer [code]layer`` requires a runtime update.
 
-**Warning:** Make sure this function only return ``true`` when needed. Any tile processed at runtime without a need for it will imply a significant performance penalty.
+\ **Warning:** Make sure this function only return ``true`` when needed. Any tile processed at runtime without a need for it will imply a significant performance penalty.
 
 ----
 
@@ -289,6 +291,14 @@ Clears all cells on the given layer.
 
 ----
 
+.. _class_TileMap_method_erase_cell:
+
+- void **erase_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)**
+
+Erases the cell on layer ``layer`` at coordinates ``coords``.
+
+----
+
 .. _class_TileMap_method_fix_invalid_tiles:
 
 - void **fix_invalid_tiles** **(** **)**
@@ -303,9 +313,9 @@ Clears cells that do not exist in the tileset.
 
 Triggers an update of the TileMap. If ``layer`` is provided, only updates the given layer.
 
-**Note:** The TileMap node updates automatically when one of its properties is modified. A manual update is only needed if runtime modifications (implemented in :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>`) need to be applied.
+\ **Note:** The TileMap node updates automatically when one of its properties is modified. A manual update is only needed if runtime modifications (implemented in :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>`) need to be applied.
 
-**Warning:** Updating the TileMap is a performance demanding task. Limit occurences of those updates to the minimum and limit the amount tiles they impact (by segregating tiles updated often to a dedicated layer for example).
+\ **Warning:** Updating the TileMap is a performance demanding task. Limit occurrences of those updates to the minimum and limit the amount tiles they impact (by segregating tiles updated often to a dedicated layer for example).
 
 ----
 
@@ -337,7 +347,7 @@ Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coord
 
 - :ref:`Vector2i<class_Vector2i>` **get_coords_for_body_rid** **(** :ref:`RID<class_RID>` body **)**
 
-Returns the coodinates of the tile for given physics body RID. Such RID can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
+Returns the coordinates of the tile for given physics body RID. Such RID can be retrieved from :ref:`KinematicCollision2D.get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`, when colliding with a tile.
 
 ----
 
@@ -383,7 +393,7 @@ Returns a TileMap layer's Z-index value.
 
 - :ref:`Vector2i<class_Vector2i>` **get_neighbor_cell** **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` neighbor **)** |const|
 
-Returns the neighboring cell to the one at coordinates ``coords``, indentified by the ``neighbor`` direction. This method takes into account the different layouts a TileMap can take.
+Returns the neighboring cell to the one at coordinates ``coords``, identified by the ``neighbor`` direction. This method takes into account the different layouts a TileMap can take.
 
 ----
 
@@ -439,7 +449,7 @@ Returns if a layer Y-sorts its tiles.
 
 - :ref:`Vector2i<class_Vector2i>` **map_pattern** **(** :ref:`Vector2i<class_Vector2i>` position_in_tilemap, :ref:`Vector2i<class_Vector2i>` coords_in_pattern, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**
 
-Returns for the given coodinate ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMap_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``
+Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMap_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``
 
 ----
 
@@ -447,7 +457,9 @@ Returns for the given coodinate ``coords_in_pattern`` in a :ref:`TileMapPattern<
 
 - :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2i<class_Vector2i>` map_position **)** |const|
 
-Returns the local position corresponding to the given tilemap (grid-based) coordinates.
+Returns a local position of the center of the cell at the given tilemap (grid-based) coordinates.
+
+\ **Note:** This doesn't correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_offset<class_TileData_property_texture_offset>` property of individual tiles.
 
 ----
 
@@ -463,17 +475,17 @@ Moves the layer at index ``layer_index`` to the given position ``to_position`` i
 
 - void **remove_layer** **(** :ref:`int<class_int>` layer **)**
 
-Moves the layer at index ``layer_index`` to the given position ``to_position`` in the array.
+Removes the layer at index ``layer``.
 
 ----
 
 .. _class_TileMap_method_set_cell:
 
-- void **set_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)**
+- void **set_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**
 
 Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
 
-- The source indentifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
+- The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
 
 - The atlas coordinates identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`. For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should be 0),
 

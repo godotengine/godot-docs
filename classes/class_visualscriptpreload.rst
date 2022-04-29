@@ -18,11 +18,11 @@ Description
 
 Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (object): ``res``
 

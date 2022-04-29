@@ -27,13 +27,6 @@ Tutorials
 
 - `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
 
-Properties
-----------
-
-+------------------------------+----------------------------------------+-------+
-| :ref:`Mode<enum_Panel_Mode>` | :ref:`mode<class_Panel_property_mode>` | ``0`` |
-+------------------------------+----------------------------------------+-------+
-
 Theme Properties
 ----------------
 
@@ -42,36 +35,6 @@ Theme Properties
 +---------------------------------+---------------------------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`panel_fg<class_Panel_theme_style_panel_fg>` |
 +---------------------------------+---------------------------------------------------+
-
-Enumerations
-------------
-
-.. _enum_Panel_Mode:
-
-.. _class_Panel_constant_MODE_BACKGROUND:
-
-.. _class_Panel_constant_MODE_FOREGROUND:
-
-enum **Mode**:
-
-- **MODE_BACKGROUND** = **0**
-
-- **MODE_FOREGROUND** = **1**
-
-Property Descriptions
----------------------
-
-.. _class_Panel_property_mode:
-
-- :ref:`Mode<enum_Panel_Mode>` **mode**
-
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_mode(value) |
-+-----------+-----------------+
-| *Getter*  | get_mode()      |
-+-----------+-----------------+
 
 Theme Property Descriptions
 ---------------------------

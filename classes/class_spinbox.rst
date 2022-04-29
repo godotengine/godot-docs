@@ -18,7 +18,7 @@ Description
 
 SpinBox is a numerical input text field. It allows entering integers and floats.
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::
@@ -29,7 +29,7 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
     add_child(spin_box)
     var line_edit = spin_box.get_line_edit()
     line_edit.context_menu_enabled = false
-    spin_box.align = LineEdit.ALIGN_RIGHT
+    spin_box.horizontal_alignment = LineEdit.HORIZONTAL_ALIGNMENT_RIGHT
 
  .. code-tab:: csharp
 
@@ -37,7 +37,7 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
     AddChild(spinBox);
     var lineEdit = spinBox.GetLineEdit();
     lineEdit.ContextMenuEnabled = false;
-    spinBox.Align = LineEdit.AlignEnum.Right;
+    spinBox.AlignHorizontal = LineEdit.HorizontalAlignEnum.Right;
 
 
 
@@ -45,22 +45,22 @@ The above code will create a ``SpinBox``, disable context menu on it and set the
 
 See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
 
-**Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+\ **Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
 
 Properties
 ----------
 
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`                                   | ``0``     |
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``  |
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``    |
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`                                 | ``""``    |
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>` | ``false`` |
-+-----------------------------------+------------------------------------------------------------------------------+-----------+
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_SpinBox_property_alignment>`                           | ``0``     |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``  |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``    |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                       | :ref:`suffix<class_SpinBox_property_suffix>`                                 | ``""``    |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>` | ``false`` |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -81,19 +81,17 @@ Theme Properties
 Property Descriptions
 ---------------------
 
-.. _class_SpinBox_property_align:
+.. _class_SpinBox_property_alignment:
 
-- :ref:`Align<enum_LineEdit_Align>` **align**
+- :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment**
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_align(value) |
-+-----------+------------------+
-| *Getter*  | get_align()      |
-+-----------+------------------+
-
-Sets the text alignment of the ``SpinBox``.
++-----------+---------------------------------+
+| *Default* | ``0``                           |
++-----------+---------------------------------+
+| *Setter*  | set_horizontal_alignment(value) |
++-----------+---------------------------------+
+| *Getter*  | get_horizontal_alignment()      |
++-----------+---------------------------------+
 
 ----
 
@@ -176,7 +174,7 @@ Applies the current value of this ``SpinBox``.
 
 Returns the :ref:`LineEdit<class_LineEdit>` instance from this ``SpinBox``. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 Theme Property Descriptions
 ---------------------------

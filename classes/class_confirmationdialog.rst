@@ -38,13 +38,13 @@ To get cancel action, you can use:
 Properties
 ----------
 
-+---------------------------------+----------+---------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>` | min_size | ``Vector2i(200, 70)`` *(parent override)*   |
-+---------------------------------+----------+---------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>` | size     | ``Vector2i(200, 100)`` *(parent override)*  |
-+---------------------------------+----------+---------------------------------------------+
-| :ref:`String<class_String>`     | title    | ``"Please Confirm..."`` *(parent override)* |
-+---------------------------------+----------+---------------------------------------------+
++---------------------------------+----------+---------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | min_size | ``Vector2i(200, 70)`` (overrides :ref:`Window<class_Window_property_min_size>`) |
++---------------------------------+----------+---------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | size     | ``Vector2i(200, 100)`` (overrides :ref:`Window<class_Window_property_size>`)    |
++---------------------------------+----------+---------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | title    | ``"Please Confirm..."`` (overrides :ref:`Window<class_Window_property_title>`)  |
++---------------------------------+----------+---------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -62,7 +62,7 @@ Method Descriptions
 
 Returns the cancel button.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

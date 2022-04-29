@@ -18,6 +18,13 @@ Description
 
 This node allows you to create a sphere for use with the CSG system.
 
+\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+
+Tutorials
+---------
+
+- :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
+
 Properties
 ----------
 

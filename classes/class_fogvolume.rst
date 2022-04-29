@@ -48,6 +48,8 @@ Property Descriptions
 
 Sets the size of the ``FogVolume`` when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
 
+\ **Note:** Thin fog volumes may appear to flicker when the camera moves or rotates. This can be alleviated by increasing :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>` (at a performance cost) or by decreasing :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>` (at no performance cost, but at the cost of lower fog range). Alternatively, the ``FogVolume`` can be made thicker and use a lower density in the :ref:`material<class_FogVolume_property_material>`.
+
 ----
 
 .. _class_FogVolume_property_material:

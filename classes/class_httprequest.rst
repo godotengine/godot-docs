@@ -20,11 +20,11 @@ A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPC
 
 Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
 
-**Warning:** See the notes and warnings on :ref:`HTTPClient<class_HTTPClient>` for limitations, especially regarding SSL security.
+\ **Warning:** See the notes and warnings on :ref:`HTTPClient<class_HTTPClient>` for limitations, especially regarding SSL security.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-**Example of contacting a REST API and printing one of its returned fields:**
+\ **Example of contacting a REST API and printing one of its returned fields:**\ 
 
 
 .. tabs::
@@ -98,7 +98,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-**Example of loading and displaying an image using HTTPRequest:**
+\ **Example of loading and displaying an image using HTTPRequest:**\ 
 
 
 .. tabs::
@@ -178,7 +178,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-**Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 Tutorials
 ---------
@@ -221,6 +221,10 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                                                                        |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_https_proxy<class_HTTPRequest_method_set_https_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                                                                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -431,7 +435,7 @@ Cancels the current request.
 
 Returns the response body length.
 
-**Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
+\ **Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
 
 ----
 
@@ -459,9 +463,9 @@ Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there 
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
 
-**Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode<class_String_method_uri_encode>` for an example).
+\ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode<class_String_method_uri_encode>` for an example).
 
-**Note:** It's recommended to use transport encryption (SSL/TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
+\ **Note:** It's recommended to use transport encryption (SSL/TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
 ----
 
@@ -472,6 +476,26 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is successfully created. (Does not imply that the server has responded), :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if not in the tree, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` if still processing previous request, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if given string is not a valid URL format, or :ref:`@GlobalScope.ERR_CANT_CONNECT<class_@GlobalScope_constant_ERR_CANT_CONNECT>` if not using thread and the :ref:`HTTPClient<class_HTTPClient>` cannot connect to host.
+
+----
+
+.. _class_HTTPRequest_method_set_http_proxy:
+
+- void **set_http_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+
+Sets the proxy server for HTTP requests.
+
+The proxy server is unset if ``host`` is empty or ``port`` is -1.
+
+----
+
+.. _class_HTTPRequest_method_set_https_proxy:
+
+- void **set_https_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+
+Sets the proxy server for HTTPS requests.
+
+The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

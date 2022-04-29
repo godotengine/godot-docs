@@ -83,10 +83,10 @@ it manually with the following code:
 
     void vertex() {
 
-        VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
+        VERTEX = (EXTRA_MATRIX * (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
 
-.. note:: ``WORLD_MATRIX`` is actually a modelview matrix. It takes input in local space and transforms it
+.. note:: ``MODEL_MATRIX`` is known as a modelview matrix. It takes input in local space and transforms it
           into view space.
 
 In order to get the world space coordinates of a vertex, you have to pass in a custom uniform like so:
@@ -121,7 +121,7 @@ is usually:
 +--------------------------------+---------------------------------------------------+
 | Built-in                       | Description                                       |
 +================================+===================================================+
-| in mat4 **WORLD_MATRIX**       | Image space to view space transform.              |
+| in mat4 **MODEL_MATRIX**       | Image space to view space transform.              |
 +--------------------------------+---------------------------------------------------+
 | in mat4 **CANVAS_MATRIX**      |                                                   |
 +--------------------------------+---------------------------------------------------+
@@ -172,15 +172,9 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 |                                             | position in window, ``z`` specifies fragment depth if         |
 |                                             | ``DEPTH`` is not used. Origin is lower-left.                  |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **UV**                              | UV from vertex function.                                      |
-+---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **SCREEN_UV**                       | Screen UV for use with **SCREEN_TEXTURE**.                    |
-+---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **POINT_COORD**                     | Coordinate for drawing points.                                |
-+---------------------------------------------+---------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**                   | ``true`` if this is a light pass.                             |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **TEXTURE**                       | Default 2D texture.                                           |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -188,15 +182,21 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
 |                                             | **TEXTURE_PIXEL_SIZE** = :code`vec2(1/64, 1/32)`              |
 +---------------------------------------------+---------------------------------------------------------------+
+| in bool **AT_LIGHT_PASS**                   | ``true`` if this is a light pass.                             |
++---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **SPECULAR_SHININESS_TEXTURE**    |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec4 **SPECULAR_SHININESS**              |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **UV**                              | UV from vertex function.                                      |
++---------------------------------------------+---------------------------------------------------------------+
+| in vec2 **SCREEN_UV**                       | Screen UV for use with **SCREEN_TEXTURE**.                    |
++---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **SCREEN_TEXTURE**                | Screen texture, mipmaps contain gaussian blurred versions.    |
 +---------------------------------------------+---------------------------------------------------------------+
-| sampler2D **NORMAL_TEXTURE**                | Default 2D normal texture.                                    |
-+---------------------------------------------+---------------------------------------------------------------+
 | inout vec3 **NORMAL**                       | Normal read from **NORMAL_TEXTURE**. Writable.                |
++---------------------------------------------+---------------------------------------------------------------+
+| sampler2D **NORMAL_TEXTURE**                | Default 2D normal texture.                                    |
 +---------------------------------------------+---------------------------------------------------------------+
 | out vec3 **NORMAL_MAP**                     | Configures normal maps meant for 3D for use in 2D. If used,   |
 |                                             | overrides **NORMAL**.                                         |
@@ -239,8 +239,6 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec2 **UV**                 | UV from vertex function, equivalent to the UV in the fragment function.      |
 +--------------------------------+------------------------------------------------------------------------------+
-| in vec4 **SPECULAR_SHININESS** |                                                                              |
-+--------------------------------+------------------------------------------------------------------------------+
 | sampler2D **TEXTURE**          | Current texture in use for CanvasItem.                                       |
 +--------------------------------+------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                                 |
@@ -259,6 +257,8 @@ When the shader is on a light pass, the ``AT_LIGHT_PASS`` variable will be ``tru
 +--------------------------------+------------------------------------------------------------------------------+
 | inout vec4 **LIGHT**           | Value from the Light texture and output color. Can be modified. If not used, |
 |                                | the light function is ignored.                                               |
++--------------------------------+------------------------------------------------------------------------------+
+| in vec4 **SPECULAR_SHININESS** |                                                                              |
 +--------------------------------+------------------------------------------------------------------------------+
 | out vec4 **SHADOW_MODULATE**   |                                                                              |
 +--------------------------------+------------------------------------------------------------------------------+

@@ -125,6 +125,10 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`glow_levels/7<class_Environment_property_glow_levels/7>`                                                               | ``0.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`glow_map<class_Environment_property_glow_map>`                                                                         |                             |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`glow_map_strength<class_Environment_property_glow_map_strength>`                                                       | ``0.8``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`glow_mix<class_Environment_property_glow_mix>`                                                                         | ``0.05``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`glow_normalized<class_Environment_property_glow_normalized>`                                                           | ``false``                   |
@@ -133,17 +137,17 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`ReflectionSource<enum_Environment_ReflectionSource>` | :ref:`reflected_light_source<class_Environment_property_reflected_light_source>`                                             | ``0``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>`                                               | ``0.0``                     |
+| :ref:`float<class_float>`                                  | :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>`                                               | ``0.5``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_cascade0_distance<class_Environment_property_sdfgi_cascade0_distance>`                                           | ``12.8``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`SDFGICascades<enum_Environment_SDFGICascades>`       | :ref:`sdfgi_cascades<class_Environment_property_sdfgi_cascades>`                                                             | ``1``                       |
+| :ref:`int<class_int>`                                      | :ref:`sdfgi_cascades<class_Environment_property_sdfgi_cascades>`                                                             | ``4``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`sdfgi_enabled<class_Environment_property_sdfgi_enabled>`                                                               | ``false``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_energy<class_Environment_property_sdfgi_energy>`                                                                 | ``1.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>`                                                     | ``819.2``                   |
+| :ref:`float<class_float>`                                  | :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>`                                                     | ``204.8``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_min_cell_size<class_Environment_property_sdfgi_min_cell_size>`                                                   | ``0.2``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -151,11 +155,11 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`sdfgi_probe_bias<class_Environment_property_sdfgi_probe_bias>`                                                         | ``1.1``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`sdfgi_read_sky_light<class_Environment_property_sdfgi_read_sky_light>`                                                 | ``false``                   |
+| :ref:`bool<class_bool>`                                    | :ref:`sdfgi_read_sky_light<class_Environment_property_sdfgi_read_sky_light>`                                                 | ``true``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`sdfgi_use_occlusion<class_Environment_property_sdfgi_use_occlusion>`                                                   | ``false``                   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>`           | :ref:`sdfgi_y_scale<class_Environment_property_sdfgi_y_scale>`                                                               | ``0``                       |
+| :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>`           | :ref:`sdfgi_y_scale<class_Environment_property_sdfgi_y_scale>`                                                               | ``1``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`Sky<class_Sky>`                                      | :ref:`sky<class_Environment_property_sky>`                                                                                   |                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -190,6 +194,16 @@ Properties
 | :ref:`float<class_float>`                                  | :ref:`ssao_radius<class_Environment_property_ssao_radius>`                                                                   | ``1.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`ssao_sharpness<class_Environment_property_ssao_sharpness>`                                                             | ``0.98``                    |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`ssil_enabled<class_Environment_property_ssil_enabled>`                                                                 | ``false``                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssil_intensity<class_Environment_property_ssil_intensity>`                                                             | ``1.0``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssil_normal_rejection<class_Environment_property_ssil_normal_rejection>`                                               | ``1.0``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssil_radius<class_Environment_property_ssil_radius>`                                                                   | ``5.0``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssil_sharpness<class_Environment_property_ssil_sharpness>`                                                             | ``0.98``                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`                                                         | ``1.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -356,39 +370,21 @@ enum **GlowBlendMode**:
 
 ----
 
-.. _enum_Environment_SDFGICascades:
-
-.. _class_Environment_constant_SDFGI_CASCADES_4:
-
-.. _class_Environment_constant_SDFGI_CASCADES_6:
-
-.. _class_Environment_constant_SDFGI_CASCADES_8:
-
-enum **SDFGICascades**:
-
-- **SDFGI_CASCADES_4** = **0**
-
-- **SDFGI_CASCADES_6** = **1**
-
-- **SDFGI_CASCADES_8** = **2**
-
-----
-
 .. _enum_Environment_SDFGIYScale:
-
-.. _class_Environment_constant_SDFGI_Y_SCALE_DISABLED:
-
-.. _class_Environment_constant_SDFGI_Y_SCALE_75_PERCENT:
 
 .. _class_Environment_constant_SDFGI_Y_SCALE_50_PERCENT:
 
+.. _class_Environment_constant_SDFGI_Y_SCALE_75_PERCENT:
+
+.. _class_Environment_constant_SDFGI_Y_SCALE_100_PERCENT:
+
 enum **SDFGIYScale**:
 
-- **SDFGI_Y_SCALE_DISABLED** = **0**
+- **SDFGI_Y_SCALE_50_PERCENT** = **0**
 
 - **SDFGI_Y_SCALE_75_PERCENT** = **1**
 
-- **SDFGI_Y_SCALE_50_PERCENT** = **2**
+- **SDFGI_Y_SCALE_100_PERCENT** = **2**
 
 Property Descriptions
 ---------------------
@@ -515,7 +511,9 @@ The ambient light's energy. The higher the value, the stronger the light.
 | *Getter*  | get_ambient_light_sky_contribution()      |
 +-----------+-------------------------------------------+
 
-Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+Defines the amount of light that the sky brings on the scene. A value of ``0.0`` means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of ``1.0`` means that *all* the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+
+\ **Note:** :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is internally clamped between ``0.0`` and ``1.0`` (inclusive).
 
 ----
 
@@ -1039,6 +1037,38 @@ The intensity of the 7th level of glow. This is the most "global" level (blurrie
 
 ----
 
+.. _class_Environment_property_glow_map:
+
+- :ref:`Texture<class_Texture>` **glow_map**
+
++----------+---------------------+
+| *Setter* | set_glow_map(value) |
++----------+---------------------+
+| *Getter* | get_glow_map()      |
++----------+---------------------+
+
+The texture that should be used as a glow map to *multiply* the resulting glow color according to :ref:`glow_map_strength<class_Environment_property_glow_map_strength>`. This can be used to create a "lens dirt" effect. The texture's RGB color channels are used for modulation, but the alpha channel is ignored.
+
+\ **Note:** The texture will be stretched to fit the screen. Therefore, it's recommended to use a texture with an aspect ratio that matches your project's base aspect ratio (typically 16:9).
+
+----
+
+.. _class_Environment_property_glow_map_strength:
+
+- :ref:`float<class_float>` **glow_map_strength**
+
++-----------+------------------------------+
+| *Default* | ``0.8``                      |
++-----------+------------------------------+
+| *Setter*  | set_glow_map_strength(value) |
++-----------+------------------------------+
+| *Getter*  | get_glow_map_strength()      |
++-----------+------------------------------+
+
+How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no effect on the overall glow effect. A strength of ``1.0`` means the glow has a full effect on the overall glow effect (and can turn off glow entirely in specific areas of the screen if the glow map has black areas).
+
+----
+
 .. _class_Environment_property_glow_mix:
 
 - :ref:`float<class_float>` **glow_mix**
@@ -1104,7 +1134,7 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 - :ref:`float<class_float>` **sdfgi_bounce_feedback**
 
 +-----------+----------------------------------+
-| *Default* | ``0.0``                          |
+| *Default* | ``0.5``                          |
 +-----------+----------------------------------+
 | *Setter*  | set_sdfgi_bounce_feedback(value) |
 +-----------+----------------------------------+
@@ -1129,15 +1159,17 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 
 .. _class_Environment_property_sdfgi_cascades:
 
-- :ref:`SDFGICascades<enum_Environment_SDFGICascades>` **sdfgi_cascades**
+- :ref:`int<class_int>` **sdfgi_cascades**
 
 +-----------+---------------------------+
-| *Default* | ``1``                     |
+| *Default* | ``4``                     |
 +-----------+---------------------------+
 | *Setter*  | set_sdfgi_cascades(value) |
 +-----------+---------------------------+
 | *Getter*  | get_sdfgi_cascades()      |
 +-----------+---------------------------+
+
+The number of cascades to use for SDFGI (between 1 and 8). A higher number of cascades allows displaying SDFGI further away while preserving detail up close, at the cost of performance. When using SDFGI on small-scale levels, :ref:`sdfgi_cascades<class_Environment_property_sdfgi_cascades>` can often be decreased between ``1`` and ``4`` to improve performance.
 
 ----
 
@@ -1153,11 +1185,11 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 | *Getter*  | is_sdfgi_enabled()       |
 +-----------+--------------------------+
 
-If ``true``, enables signed distance field global illumination for meshes that have their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` set to :ref:`GeometryInstance3D.GI_MODE_BAKED<class_GeometryInstance3D_constant_GI_MODE_BAKED>`. SDFGI is a real-time global illumination technique that works well with procedurally generated and user-built levels, including in situations where geometry is created during gameplay. The signed distance field is automatically generated around the camera as it moves. Dynamic lights are supported, but dynamic occluders and emissive surfaces are not.
+If ``true``, enables signed distance field global illumination for meshes that have their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` set to :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. SDFGI is a real-time global illumination technique that works well with procedurally generated and user-built levels, including in situations where geometry is created during gameplay. The signed distance field is automatically generated around the camera as it moves. Dynamic lights are supported, but dynamic occluders and emissive surfaces are not.
 
-**Performance:** SDFGI is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`LightmapGI<class_LightmapGI>` instead). To improve SDFGI performance, enable :ref:`ProjectSettings.rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>` in the Project Settings.
+\ **Performance:** SDFGI is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`LightmapGI<class_LightmapGI>` instead). To improve SDFGI performance, enable :ref:`ProjectSettings.rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>` in the Project Settings.
 
-**Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh.
+\ **Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh.
 
 ----
 
@@ -1180,7 +1212,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`float<class_float>` **sdfgi_max_distance**
 
 +-----------+-------------------------------+
-| *Default* | ``819.2``                     |
+| *Default* | ``204.8``                     |
 +-----------+-------------------------------+
 | *Setter*  | set_sdfgi_max_distance(value) |
 +-----------+-------------------------------+
@@ -1236,7 +1268,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`bool<class_bool>` **sdfgi_read_sky_light**
 
 +-----------+---------------------------------+
-| *Default* | ``false``                       |
+| *Default* | ``true``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_sdfgi_read_sky_light(value) |
 +-----------+---------------------------------+
@@ -1264,7 +1296,7 @@ If ``true``, enables signed distance field global illumination for meshes that h
 - :ref:`SDFGIYScale<enum_Environment_SDFGIYScale>` **sdfgi_y_scale**
 
 +-----------+--------------------------+
-| *Default* | ``0``                    |
+| *Default* | ``1``                    |
 +-----------+--------------------------+
 | *Setter*  | set_sdfgi_y_scale(value) |
 +-----------+--------------------------+
@@ -1535,7 +1567,87 @@ The distance at which objects can occlude each other when calculating screen-spa
 | *Getter*  | get_ssao_sharpness()      |
 +-----------+---------------------------+
 
-Sharpness refers to the amount that the screen-space ambient occlusion effect is allowed to blur over the edges of objects. Setting too high will result in aliasing around the edges of objects. Setting too low will make object edges appear blurry.
+The amount that the screen-space ambient occlusion effect is allowed to blur over the edges of objects. Setting too high will result in aliasing around the edges of objects. Setting too low will make object edges appear blurry.
+
+----
+
+.. _class_Environment_property_ssil_enabled:
+
+- :ref:`bool<class_bool>` **ssil_enabled**
+
++-----------+-------------------------+
+| *Default* | ``false``               |
++-----------+-------------------------+
+| *Setter*  | set_ssil_enabled(value) |
++-----------+-------------------------+
+| *Getter*  | is_ssil_enabled()       |
++-----------+-------------------------+
+
+If ``true``, the screen-space indirect lighting effect is enabled. Screen space indirect lighting is a form of indirect lighting that allows diffuse light to bounce between nearby objects. Screen-space indirect lighting works very similarly to screen-space ambient occlusion, in that it only affects a limited range. It is intended to be used along with a form of proper global illumination like SDFGI or :ref:`VoxelGI<class_VoxelGI>`. Screen-space indirect lighting is not affected by individual light's :ref:`Light3D.light_indirect_energy<class_Light3D_property_light_indirect_energy>`.
+
+----
+
+.. _class_Environment_property_ssil_intensity:
+
+- :ref:`float<class_float>` **ssil_intensity**
+
++-----------+---------------------------+
+| *Default* | ``1.0``                   |
++-----------+---------------------------+
+| *Setter*  | set_ssil_intensity(value) |
++-----------+---------------------------+
+| *Getter*  | get_ssil_intensity()      |
++-----------+---------------------------+
+
+The brightness multiplier for the screen-space indirect lighting effect. A higher value will result in brighter light.
+
+----
+
+.. _class_Environment_property_ssil_normal_rejection:
+
+- :ref:`float<class_float>` **ssil_normal_rejection**
+
++-----------+----------------------------------+
+| *Default* | ``1.0``                          |
++-----------+----------------------------------+
+| *Setter*  | set_ssil_normal_rejection(value) |
++-----------+----------------------------------+
+| *Getter*  | get_ssil_normal_rejection()      |
++-----------+----------------------------------+
+
+Amount of normal rejection used when calculating screen-space indirect lighting. Normal rejection uses the normal of a given sample point to reject samples that are facing away from the current pixel. Normal rejection is necessary to avoid light leaking when only one side of an object is illuminated. However, normal rejection can be disabled if light leaking is desirable, such as when the scene mostly contains emissive objects that emit light from faces that cannot be seen from the camera.
+
+----
+
+.. _class_Environment_property_ssil_radius:
+
+- :ref:`float<class_float>` **ssil_radius**
+
++-----------+------------------------+
+| *Default* | ``5.0``                |
++-----------+------------------------+
+| *Setter*  | set_ssil_radius(value) |
++-----------+------------------------+
+| *Getter*  | get_ssil_radius()      |
++-----------+------------------------+
+
+The distance that bounced lighting can travel when using the screen space indirect lighting effect. A larger value will result in light bouncing further in a scene, but may result in under-sampling artifacts which look like long spikes surrounding light sources.
+
+----
+
+.. _class_Environment_property_ssil_sharpness:
+
+- :ref:`float<class_float>` **ssil_sharpness**
+
++-----------+---------------------------+
+| *Default* | ``0.98``                  |
++-----------+---------------------------+
+| *Setter*  | set_ssil_sharpness(value) |
++-----------+---------------------------+
+| *Getter*  | get_ssil_sharpness()      |
++-----------+---------------------------+
+
+The amount that the screen-space indirect lighting effect is allowed to blur over the edges of objects. Setting too high will result in aliasing around the edges of objects. Setting too low will make object edges appear blurry.
 
 ----
 

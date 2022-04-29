@@ -67,7 +67,7 @@ The touch index in the case of a multi-touch event. One index = one finger.
 | *Getter*  | get_position()      |
 +-----------+---------------------+
 
-The touch position.
+The touch position, in screen (global) coordinates.
 
 ----
 

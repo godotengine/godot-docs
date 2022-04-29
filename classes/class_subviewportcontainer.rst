@@ -16,9 +16,11 @@ Control for holding :ref:`SubViewport<class_SubViewport>`\ s.
 Description
 -----------
 
-A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`, automatically setting its size.
+A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_SubViewport>`. It uses the :ref:`SubViewport<class_SubViewport>`'s size as minimum size, unless :ref:`stretch<class_SubViewportContainer_property_stretch>` is enabled.
 
-**Note:** Changing a SubViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
+\ **Note:** Changing a SubViewportContainer's :ref:`Control.scale<class_Control_property_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
+
+\ **Note:** The SubViewportContainer forwards mouse-enter and mouse-exit notifications to its sub-viewports.
 
 Properties
 ----------
@@ -44,7 +46,7 @@ Property Descriptions
 | *Getter*  | is_stretch_enabled() |
 +-----------+----------------------+
 
-If ``true``, the sub-viewport will be scaled to the control's size.
+If ``true``, the sub-viewport will be automatically resized to the control's size.
 
 ----
 
@@ -64,7 +66,7 @@ Divides the sub-viewport's effective resolution by this value while preserving i
 
 For example, a 1280×720 sub-viewport with :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
 
-**Note:** :ref:`stretch<class_SubViewportContainer_property_stretch>` must be ``true`` for this property to work.
+\ **Note:** :ref:`stretch<class_SubViewportContainer_property_stretch>` must be ``true`` for this property to work.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -23,7 +23,7 @@ Tutorials
 
 - `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
 
-- `https://godotengine.org/article/godot-32-will-get-new-audio-features <Godot 3.2 will get new audio features>`__
+- `Godot 3.2 will get new audio features <https://godotengine.org/article/godot-32-will-get-new-audio-features>`__
 
 Methods
 -------
@@ -79,7 +79,7 @@ Returns the number of audio data frames left to play. If this returned number re
 
 - :ref:`bool<class_bool>` **push_buffer** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` frames **)**
 
-Pushes several audio data frames to the buffer. This is usually more efficient than :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` in C# and compiled languages via GDNative, but :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` may be *less* efficient in GDScript.
+Pushes several audio data frames to the buffer. This is usually more efficient than :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` in C# and compiled languages via GDExtension, but :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` may be *less* efficient in GDScript.
 
 ----
 
@@ -87,7 +87,7 @@ Pushes several audio data frames to the buffer. This is usually more efficient t
 
 - :ref:`bool<class_bool>` **push_frame** **(** :ref:`Vector2<class_Vector2>` frame **)**
 
-Pushes a single audio data frame to the buffer. This is usually less efficient than :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` in C# and compiled languages via GDNative, but :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` may be *more* efficient in GDScript.
+Pushes a single audio data frame to the buffer. This is usually less efficient than :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` in C# and compiled languages via GDExtension, but :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` may be *more* efficient in GDScript.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -18,15 +18,15 @@ Description
 
 Chooses between two input values based on a Boolean condition.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Data (boolean): ``cond``
+- Data (boolean): ``cond``\ 
 
-- Data (variant): ``a``
+- Data (variant): ``a``\ 
 
-- Data (variant): ``b``
+- Data (variant): ``b``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (variant): ``out``
 

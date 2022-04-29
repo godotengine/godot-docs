@@ -93,3 +93,13 @@ The bindings below are developed and maintained by the community:
     research options thoroughly before starting a project with one of those.
     Also, double-check whether the binding is compatible with the Godot version
     you're using.
+
+Version compatibility
+---------------------
+
+:ref:`Unlike Godot itself <doc_release_policy>`, GDNative has stricter version
+compatibility requirements as it relies on low-level *ptrcalls* to function.
+
+GDNative add-ons compiled for a given Godot version are only guaranteed to work
+with the same minor release series. For example, a GDNative add-on compiled for
+Godot 3.4 will only work with Godot 3.4, 3.4.1, 3.4.2… but not Godot 3.3 or 3.5.

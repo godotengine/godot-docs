@@ -156,9 +156,9 @@ shader, this value can be used as desired.
 +========================================+========================================================+
 | in vec2 **VIEWPORT_SIZE**              | Size of viewport (in pixels).                          |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**          | World space to view space transform.                   |
+| in mat4 **VIEW_MATRIX**                | World space to view space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**              | View space to world space transform.                   |
+| in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
@@ -199,7 +199,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **MODELVIEW_NORMAL_MATRIX** |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat4 **WORLD_MATRIX**            | Model space to world space transform.                  |
+| inout mat4 **MODEL_MATRIX**            | Model space to world space transform.                  |
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **WORLD_NORMAL_MATRIX**     |                                                        |
 +----------------------------------------+--------------------------------------------------------+
@@ -247,13 +247,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space (``true`` in GLES2, ``false`` in GLES3).   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **WORLD_MATRIX**               | Model space to world space transform.                                                            |
+| in mat4 **MODEL_MATRIX**               | Model space to world space transform.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat3 **WORLD_NORMAL_MATRIX**        |                                                                                                  |
+| in mat3 **MODEL_NORMAL_MATRIX**        |                                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**          | World space to view space transform.                                                             |
+| in mat4 **VIEW_MATRIX**                | World space to view space transform.                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**              | View space to world space transform.                                                             |
+| in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**          | View space to clip space transform.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -340,6 +340,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | out vec4 **IRRADIANCE**                | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 
+.. note::
+
+    Shaders going through the transparent pipeline when ``ALPHA`` is written to
+    may exhibit transparency sorting issues. Read the
+    :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
+    for more information and ways to avoid issues.
+
 Light built-ins
 ^^^^^^^^^^^^^^^
 
@@ -381,11 +388,11 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 |                                   | specifies fragment depth if ``DEPTH`` is not used. |
 |                                   | Origin is lower-left.                              |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **WORLD_MATRIX**          | Model space to world space transform.              |
+| in mat4 **MODEL_MATRIX**          | Model space to world space transform.              |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **CAMERA_MATRIX**         | View space to world space transform.               |
+| in mat4 **INV_VIEW_MATRIX**       | View space to world space transform.               |
 +-----------------------------------+----------------------------------------------------+
-| in mat4 **INV_CAMERA_MATRIX**     | World space to view space transform.               |
+| in mat4 **VIEW_MATRIX**           | World space to view space transform.               |
 +-----------------------------------+----------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                |
 +-----------------------------------+----------------------------------------------------+
@@ -405,8 +412,6 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in float **ATTENUATION**          | Attenuation based on distance or shadow.           |
 +-----------------------------------+----------------------------------------------------+
-| in vec3 **SHADOW_ATTENUATION**    |                                                    |
-+-----------------------------------+----------------------------------------------------+
 | in vec3 **ALBEDO**                | Base albedo.                                       |
 +-----------------------------------+----------------------------------------------------+
 | in vec3 **BACKLIGHT**             |                                                    |
@@ -425,3 +430,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 | out float **ALPHA**               | Alpha (0..1); if written to, the material will go  |
 |                                   | to the transparent pipeline.                       |
 +-----------------------------------+----------------------------------------------------+
+
+.. note::
+
+    Shaders going through the transparent pipeline when ``ALPHA`` is written to
+    may exhibit transparency sorting issues. Read the
+    :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
+    for more information and ways to avoid issues.

@@ -237,12 +237,14 @@ has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``const ELEMENT_WIND = 8`` and so on).
 
-Export annotations are also provided for the physics and render layers defined in the project settings::
+Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
 
     @export_flags_2d_physics var layers_2d_physics
     @export_flags_2d_render var layers_2d_render
+    @export_flags_2d_navigation var layers_2d_navigation
     @export_flags_3d_physics var layers_3d_physics
     @export_flags_3d_render var layers_3d_render
+    @export_flags_3d_navigation var layers_3d_navigation
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
@@ -256,48 +258,40 @@ If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files
 from the FileSystem dock at once.
 
-Default value must be a constant expression.
+The default value **must** be a constant expression.
 
 ::
 
-    export var a = [1, 2, 3]
+    @export var a = [1, 2, 3]
 
 Exported arrays can specify type (using the same hints as before).
 
 ::
 
-    export(Array, int) var ints = [1, 2, 3]
-    export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
+    @export var ints: Array[int] = [1, 2, 3]
+    @export var two_dimensional: Array[Array[float]] = [[1.0, 2.0], [3.0, 4.0]]
 
-You can omit the default value, but then it would be null if not assigned.
+You can omit the default value, but it would then be ``null`` if not assigned.
 
 ::
 
-    export(Array) var b
-    export(Array, PackedScene) var scenes
+    @export var b: Array
+    @export var scenes: Array[PackedScene]
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
 
 ::
 
-    export(Array, Texture) var textures
-    export(Array, PackedScene) var scenes
+    @export var textures: Array[Texture] = []
+    @export var scenes: Array[PackedScene] = []
 
-Typed arrays also work, only initialized empty:
-
-::
-
-    export var vector3s = PackedVector3Array()
-    export var strings = PackedStringArray()
-
-Default value can include run-time values, but can't
-be exported.
+Packed type arrays also work, but only initialized empty:
 
 ::
 
-    var c = [a, 2, 3]
+    @export var vector3s = PackedVector3Array()
+    @export var strings = PackedStringArray()
 
 Setting exported variables from a tool script
 ---------------------------------------------

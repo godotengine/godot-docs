@@ -50,6 +50,8 @@ Property Descriptions
 
 When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint.
 
+When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solver/default_constraint_bias<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>` is used.
+
 ----
 
 .. _class_Joint2D_property_disable_collision:

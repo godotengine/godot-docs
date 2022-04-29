@@ -243,7 +243,7 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
 
-**Note:** The lines are specified using direction vectors, not end points.
+\ **Note:** The lines are specified using direction vectors, not end points.
 
 ----
 
@@ -275,7 +275,7 @@ Each polygon's vertices will be rounded as determined by ``join_type``, see :ref
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`.
 
-**Note:** To translate the polygon's vertices specifically, multiply them to a :ref:`Transform2D<class_Transform2D>`:
+\ **Note:** To translate the polygon's vertices specifically, multiply them to a :ref:`Transform2D<class_Transform2D>`:
 
 
 .. tabs::
@@ -341,7 +341,7 @@ Triangulates the area specified by discrete set of ``points`` such that no point
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **triangulate_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
 
-Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
+Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). Output triangles will always be counter clockwise, and the contour will be flipped if it's clockwise. If the triangulation did not succeed, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -35,6 +35,8 @@ Properties
 +-----------------------------+------------------------------------------------------------------------------+---------------+
 | :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                       | ``1``         |
 +-----------------------------+------------------------------------------------------------------------------+---------------+
+| :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`             | ``"Default"`` |
++-----------------------------+------------------------------------------------------------------------------+---------------+
 | :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                             | ``"Default"`` |
 +-----------------------------+------------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`   | :ref:`playback_speed_scale<class_AudioServer_property_playback_speed_scale>` | ``1.0``       |
@@ -48,11 +50,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`add_bus_effect<class_AudioServer_method_add_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`capture_get_device<class_AudioServer_method_capture_get_device>` **(** **)**                                                                                                            |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                             | :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>` **(** **)**                                                                                                  |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`capture_set_device<class_AudioServer_method_capture_set_device>` **(** :ref:`String<class_String>` name **)**                                                                           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** |const|                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,6 +174,22 @@ Number of available audio buses.
 
 ----
 
+.. _class_AudioServer_property_capture_device:
+
+- :ref:`String<class_String>` **capture_device**
+
++-----------+---------------------------+
+| *Default* | ``"Default"``             |
++-----------+---------------------------+
+| *Setter*  | capture_set_device(value) |
++-----------+---------------------------+
+| *Getter*  | capture_get_device()      |
++-----------+---------------------------+
+
+Name of the current device for audio input (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+
+----
+
 .. _class_AudioServer_property_device:
 
 - :ref:`String<class_String>` **device**
@@ -188,7 +202,7 @@ Number of available audio buses.
 | *Getter*  | get_device()      |
 +-----------+-------------------+
 
-Name of the current device for audio output (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`).
+Name of the current device for audio output (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 ----
 
@@ -225,27 +239,11 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 ----
 
-.. _class_AudioServer_method_capture_get_device:
-
-- :ref:`String<class_String>` **capture_get_device** **(** **)**
-
-Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`).
-
-----
-
 .. _class_AudioServer_method_capture_get_device_list:
 
 - :ref:`Array<class_Array>` **capture_get_device_list** **(** **)**
 
 Returns the names of all audio input devices detected on the system.
-
-----
-
-.. _class_AudioServer_method_capture_set_device:
-
-- void **capture_set_device** **(** :ref:`String<class_String>` name **)**
-
-Sets which audio input device is used for audio capture.
 
 ----
 
@@ -423,7 +421,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 Locks the audio driver's main loop.
 
-**Note:** Remember to unlock it afterwards.
+\ **Note:** Remember to unlock it afterwards.
 
 ----
 

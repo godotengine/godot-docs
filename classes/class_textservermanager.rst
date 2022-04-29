@@ -18,7 +18,7 @@ Description
 
 ``TextServerManager`` is the API backend for loading, enumeration and switching :ref:`TextServer<class_TextServer>`\ s.
 
-**Note:** Switching text server at runtime is possible, but will invalidate all fonts and text buffers. Make sure to unload all controls, fonts, and themes before doing so.
+\ **Note:** Switching text server at runtime is possible, but will invalidate all fonts and text buffers. Make sure to unload all controls, fonts, and themes before doing so.
 
 Methods
 -------

@@ -47,7 +47,7 @@ see some new buttons at the top of the editor:
 
 Select the middle one ("Add Point") and draw the path by clicking to add the
 points at the corners shown. To have the points snap to the grid, make sure "Use
-Grid Snap" and "Use Snap" are both selected. These options can be found to the
+Grid Snap" and "Use Smart Snap" are both selected. These options can be found to the
 left of the "Lock" button, appearing as a magnet next to some dots and
 intersecting lines, respectively.
 
@@ -323,13 +323,12 @@ Note that a new instance must be added to the scene using ``add_child()``.
  .. code-tab:: gdscript GDScript
 
     func _on_MobTimer_timeout():
-        # Choose a random location on Path2D.
-        var mob_spawn_location = get_node("MobPath/MobSpawnLocation");
-        mob_spawn_location.offset = randi()
-
-        # Create a Mob instance and add it to the scene.
+        # Create a new instance of the Mob scene.
         var mob = mob_scene.instantiate()
-        add_child(mob)
+
+        # Choose a random location on Path2D.
+        var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
+        mob_spawn_location.offset = randi()
 
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
@@ -341,9 +340,12 @@ Note that a new instance must be added to the scene using ``add_child()``.
         direction += randf_range(-PI / 4, PI / 4)
         mob.rotation = direction
 
-        # Choose the velocity.
+        # Choose the velocity for the mob.
         var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
+
+        # Spawn the mob by adding it to the Main scene.
+        add_child(mob)
 
  .. code-tab:: csharp
 
@@ -351,15 +353,14 @@ Note that a new instance must be added to the scene using ``add_child()``.
     {
         // Note: Normally it is best to use explicit types rather than the `var`
         // keyword. However, var is acceptable to use here because the types are
-        // obviously PathFollow2D and Mob, since they appear later on the line.
+        // obviously Mob and PathFollow2D, since they appear later on the line.
+
+        // Create a new instance of the Mob scene.
+        var mob = (Mob)MobScene.Instance();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
         mobSpawnLocation.Offset = GD.Randi();
-
-        // Create a Mob instance and add it to the scene.
-        var mob = (Mob)MobScene.Instance();
-        AddChild(mob);
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
@@ -374,18 +375,20 @@ Note that a new instance must be added to the scene using ``add_child()``.
         // Choose the velocity.
         var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
         mob.LinearVelocity = velocity.Rotated(direction);
+
+        // Spawn the mob by adding it to the Main scene.
+        AddChild(mob);
     }
 
  .. code-tab:: cpp
 
     // This code goes in `main.cpp`.
     void Main::_on_MobTimer_timeout() {
+        // Create a new instance of the Mob scene.
+        godot::Node *mob = mob_scene->instance();
+
         // Choose a random location on Path2D.
         _mob_spawn_location->set_offset((real_t)_random->randi());
-
-        // Create a Mob instance and add it to the scene.
-        godot::Node *mob = mob_scene->instance();
-        add_child(mob);
 
         // Set the mob's direction perpendicular to the path direction.
         real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;
@@ -400,6 +403,9 @@ Note that a new instance must be added to the scene using ``add_child()``.
         // Choose the velocity for the mob.
         godot::Vector2 velocity = godot::Vector2(_random->randf_range(150.0, 250.0), 0.0);
         mob->set("linear_velocity", velocity.rotated(direction));
+
+        // Spawn the mob by adding it to the Main scene.
+        add_child(mob);
     }
 
 .. important:: Why ``PI``? In functions requiring angles, Godot uses *radians*,
@@ -439,6 +445,9 @@ call to ``_ready()``:
 Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
 when the game launches. Press the "Play" button and select ``Main.tscn`` when
 prompted.
+
+.. tip:: If you had already set another scene as the "Main Scene", you can right
+         click ``Main.tscn`` in the FileSystem dock and select "Set As Main Scene".
 
 You should be able to move the player around, see mobs spawning, and see the
 player disappear when hit by a mob.

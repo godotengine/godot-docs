@@ -84,7 +84,7 @@ Method Descriptions
 
 If ``true``, the bounding rectangle is on the screen.
 
-**Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
+\ **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

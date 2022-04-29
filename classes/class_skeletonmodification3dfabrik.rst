@@ -22,7 +22,7 @@ FABRIK works by knowing the positions and lengths of a series of bones, typicall
 
 Because of how FABRIK works, it often gives more natural results than those seen in :ref:`SkeletonModification3DCCDIK<class_SkeletonModification3DCCDIK>`, though FABRIK currently does not support joint constraints.
 
-**Note:** The FABRIK modifier has ``fabrik_joints``, which are the data objects that hold the data for each joint in the FABRIK chain. This is different from a bone! FABRIK joints hold the data needed for each bone in the bone chain used by FABRIK.
+\ **Note:** The FABRIK modifier has ``fabrik_joints``, which are the data objects that hold the data for each joint in the FABRIK chain. This is different from a bone! FABRIK joints hold the data needed for each bone in the bone chain used by FABRIK.
 
 To help control how the FABRIK joints move, a magnet vector can be passed, which can nudge the bones in a certain direction prior to solving, giving a level of control over the final result.
 
@@ -158,7 +158,7 @@ Will attempt to automatically calculate the length of the bone assigned to the F
 
 - :ref:`bool<class_bool>` **get_fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
-Returns a boolean that indiciates whether this modification will attempt to autocalculate the length of the bone assigned to the FABRIK joint at ``joint_idx``.
+Returns a boolean that indicates whether this modification will attempt to autocalculate the length of the bone assigned to the FABRIK joint at ``joint_idx``.
 
 ----
 
@@ -206,9 +206,9 @@ Returns the :ref:`Node3D<class_Node3D>`-based node placed at the tip of the FABR
 
 - :ref:`bool<class_bool>` **get_fabrik_joint_use_target_basis** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
-Returns a boolean indiciating whether the FABRIK joint uses the target's :ref:`Basis<class_Basis>` for its rotation.
+Returns a boolean indicating whether the FABRIK joint uses the target's :ref:`Basis<class_Basis>` for its rotation.
 
-**Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
+\ **Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
 
 ----
 
@@ -266,7 +266,7 @@ Sets the magenet position to ``magnet_position`` for the joint at ``joint_idx``.
 
 Sets the nodepath of the FARIK joint at ``joint_idx`` to ``tip_node``. The tip node is used to calculate the length of the FABRIK joint when set to automatically calculate joint length.
 
-**Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the bone that this FABRIK joint operates on, with the child node being offset so it is at the end of the bone.
+\ **Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the bone that this FABRIK joint operates on, with the child node being offset so it is at the end of the bone.
 
 ----
 
@@ -276,7 +276,7 @@ Sets the nodepath of the FARIK joint at ``joint_idx`` to ``tip_node``. The tip n
 
 Sets whether the FABRIK joint at ``joint_idx`` uses the target's :ref:`Basis<class_Basis>` for its rotation.
 
-**Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
+\ **Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
 
 ----
 

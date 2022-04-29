@@ -16,7 +16,7 @@ Description
 
 ``Callable`` is a first class object which can be held in variables and passed to functions. It represents a given method in an :ref:`Object<class_Object>`, and is typically used for signal callbacks.
 
-**Example:**
+\ **Example:**\ 
 
 
 .. tabs::
@@ -182,7 +182,9 @@ Returns the ID of this ``Callable``'s object (see :ref:`Object.get_instance_id<c
 
 - :ref:`int<class_int>` **hash** **(** **)** |const|
 
-Returns the hash value of this ``Callable``'s object.
+Returns the 32-bit hash value of this ``Callable``'s object.
+
+\ **Note:** ``Callable``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the callables are equal, because different callables can have identical hash values due to hash collisions. The engine uses a 32-bit hash algorithm for :ref:`hash<class_Callable_method_hash>`.
 
 ----
 

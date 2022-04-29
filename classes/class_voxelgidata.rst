@@ -11,7 +11,14 @@ VoxelGIData
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Contains baked voxel global illumination data for use in a :ref:`VoxelGI<class_VoxelGI>` node.
 
+Description
+-----------
+
+``VoxelGIData`` contains baked voxel global illumination for use in a :ref:`VoxelGI<class_VoxelGI>` node. ``VoxelGIData`` also offers several properties to adjust the final appearance of the global illumination. These properties can be adjusted at run-time without having to bake the :ref:`VoxelGI<class_VoxelGI>` node again.
+
+\ **Note:** To prevent text-based scene files (``.tscn``) from growing too much and becoming slow to load and save, always save ``VoxelGIData`` to an external binary resource file (``.res``) instead of embedding it within the scene. This can be done by clicking the dropdown arrow next to the ``VoxelGIData`` resource, choosing **Edit**, clicking the floppy disk icon at the top of the inspector then choosing **Save As...**.
 
 Tutorials
 ---------
@@ -24,7 +31,7 @@ Properties
 +---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`bias<class_VoxelGIData_property_bias>`                       | ``1.5``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dynamic_range<class_VoxelGIData_property_dynamic_range>`     | ``4.0``   |
+| :ref:`float<class_float>` | :ref:`dynamic_range<class_VoxelGIData_property_dynamic_range>`     | ``2.0``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`energy<class_VoxelGIData_property_energy>`                   | ``1.0``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
@@ -71,6 +78,8 @@ Property Descriptions
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
+The normal bias to use for indirect lighting and reflections. Higher values reduce self-reflections visible in non-rough materials, at the cost of more visible light leaking and flatter-looking indirect lighting. To prioritize hiding self-reflections over lighting quality, set :ref:`bias<class_VoxelGIData_property_bias>` to ``0.0`` and :ref:`normal_bias<class_VoxelGIData_property_normal_bias>` to a value between ``1.0`` and ``2.0``.
+
 ----
 
 .. _class_VoxelGIData_property_dynamic_range:
@@ -78,12 +87,14 @@ Property Descriptions
 - :ref:`float<class_float>` **dynamic_range**
 
 +-----------+--------------------------+
-| *Default* | ``4.0``                  |
+| *Default* | ``2.0``                  |
 +-----------+--------------------------+
 | *Setter*  | set_dynamic_range(value) |
 +-----------+--------------------------+
 | *Getter*  | get_dynamic_range()      |
 +-----------+--------------------------+
+
+The dynamic range to use (``1.0`` represents a low dynamic range scene brightness). Higher values can be used to provide brighter indirect lighting, at the cost of more visible color banding in dark areas (both in indirect lighting and reflections). To avoid color banding, it's recommended to use the lowest value that does not result in visible light clipping.
 
 ----
 
@@ -99,6 +110,8 @@ Property Descriptions
 | *Getter*  | get_energy()      |
 +-----------+-------------------+
 
+The energy of the indirect lighting and reflections produced by the :ref:`VoxelGI<class_VoxelGI>` node. Higher values result in brighter indirect lighting. If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
+
 ----
 
 .. _class_VoxelGIData_property_interior:
@@ -112,6 +125,8 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | is_interior()       |
 +-----------+---------------------+
+
+If ``true``, :ref:`Environment<class_Environment>` lighting is ignored by the :ref:`VoxelGI<class_VoxelGI>` node. If ``false``, :ref:`Environment<class_Environment>` lighting is taken into account by the :ref:`VoxelGI<class_VoxelGI>` node. :ref:`Environment<class_Environment>` lighting updates in real-time, which means it can be changed without having to bake the :ref:`VoxelGI<class_VoxelGI>` node again.
 
 ----
 
@@ -127,6 +142,8 @@ Property Descriptions
 | *Getter*  | get_normal_bias()      |
 +-----------+------------------------+
 
+The normal bias to use for indirect lighting and reflections. Higher values reduce self-reflections visible in non-rough materials, at the cost of more visible light leaking and flatter-looking indirect lighting. See also :ref:`bias<class_VoxelGIData_property_bias>`. To prioritize hiding self-reflections over lighting quality, set :ref:`bias<class_VoxelGIData_property_bias>` to ``0.0`` and :ref:`normal_bias<class_VoxelGIData_property_normal_bias>` to a value between ``1.0`` and ``2.0``.
+
 ----
 
 .. _class_VoxelGIData_property_propagation:
@@ -140,6 +157,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
+
+If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
 
 ----
 
@@ -155,6 +174,8 @@ Property Descriptions
 | *Getter*  | is_using_two_bounces()     |
 +-----------+----------------------------+
 
+If ``true``, performs two bounces of indirect lighting instead of one. This makes indirect lighting look more natural and brighter at a small performance cost. The second bounce is also visible in reflections. If the scene appears too bright after enabling :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>`, adjust :ref:`propagation<class_VoxelGIData_property_propagation>` and :ref:`energy<class_VoxelGIData_property_energy>`.
+
 Method Descriptions
 -------------------
 
@@ -167,6 +188,10 @@ Method Descriptions
 .. _class_VoxelGIData_method_get_bounds:
 
 - :ref:`AABB<class_AABB>` **get_bounds** **(** **)** |const|
+
+Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which should match :ref:`VoxelGI.extents<class_VoxelGI_property_extents>` after being baked (which only contains the size as a :ref:`Vector3<class_Vector3>`).
+
+\ **Note:** If the extents were modified without baking the VoxelGI data, then the value of :ref:`get_bounds<class_VoxelGIData_method_get_bounds>` and :ref:`VoxelGI.extents<class_VoxelGI_property_extents>` will not match.
 
 ----
 

@@ -11,7 +11,7 @@ GPUParticlesAttractor3D
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GPUParticlesAttractorBox<class_GPUParticlesAttractorBox>`, :ref:`GPUParticlesAttractorSphere<class_GPUParticlesAttractorSphere>`, :ref:`GPUParticlesAttractorVectorField<class_GPUParticlesAttractorVectorField>`
+**Inherited By:** :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`, :ref:`GPUParticlesAttractorSphere3D<class_GPUParticlesAttractorSphere3D>`, :ref:`GPUParticlesAttractorVectorField3D<class_GPUParticlesAttractorVectorField3D>`
 
 
 

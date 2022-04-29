@@ -20,13 +20,13 @@ Generate an axis-aligned box :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 The box's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``.
 
-**Note:** When using a large textured ``BoxMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_BoxMesh_property_subdivide_depth>`, :ref:`subdivide_height<class_BoxMesh_property_subdivide_height>` and :ref:`subdivide_width<class_BoxMesh_property_subdivide_width>` until you no longer notice UV jittering.
+\ **Note:** When using a large textured ``BoxMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_BoxMesh_property_subdivide_depth>`, :ref:`subdivide_height<class_BoxMesh_property_subdivide_height>` and :ref:`subdivide_width<class_BoxMesh_property_subdivide_width>` until you no longer notice UV jittering.
 
 Properties
 ----------
 
 +-------------------------------+------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxMesh_property_size>`                         | ``Vector3(2, 2, 2)`` |
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxMesh_property_size>`                         | ``Vector3(1, 1, 1)`` |
 +-------------------------------+------------------------------------------------------------------+----------------------+
 | :ref:`int<class_int>`         | :ref:`subdivide_depth<class_BoxMesh_property_subdivide_depth>`   | ``0``                |
 +-------------------------------+------------------------------------------------------------------+----------------------+
@@ -43,7 +43,7 @@ Property Descriptions
 - :ref:`Vector3<class_Vector3>` **size**
 
 +-----------+----------------------+
-| *Default* | ``Vector3(2, 2, 2)`` |
+| *Default* | ``Vector3(1, 1, 1)`` |
 +-----------+----------------------+
 | *Setter*  | set_size(value)      |
 +-----------+----------------------+

@@ -19,7 +19,7 @@ Methods
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`add_id<class_ResourceUID_method_add_id>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` path **)** |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`create_id<class_ResourceUID_method_create_id>` **(** **)** |const|                                              |
+| :ref:`int<class_int>`       | :ref:`create_id<class_ResourceUID_method_create_id>` **(** **)**                                                      |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`get_id_path<class_ResourceUID_method_get_id_path>` **(** :ref:`int<class_int>` id **)** |const|                 |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ Method Descriptions
 
 .. _class_ResourceUID_method_create_id:
 
-- :ref:`int<class_int>` **create_id** **(** **)** |const|
+- :ref:`int<class_int>` **create_id** **(** **)**
 
 ----
 

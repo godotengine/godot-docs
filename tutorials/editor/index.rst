@@ -48,3 +48,16 @@ Emacs.
 
    command_line_tutorial
    external_editor
+
+Managing editor features
+------------------------
+
+Godot allows you to remove features from the editor. This may be useful if you're
+an educator trying to ease students into the editor slowly, or if you're working on
+a project that's only 2D or only 3D and don't want to see what you don't need.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-features
+
+   managing_editor_features

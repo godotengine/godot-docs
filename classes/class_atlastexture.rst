@@ -18,7 +18,7 @@ Description
 
 :ref:`Texture2D<class_Texture2D>` resource that crops out one part of the :ref:`atlas<class_AtlasTexture_property_atlas>` texture, defined by :ref:`region<class_AtlasTexture_property_region>`. The main use case is cropping out textures from a texture atlas, which is a big texture file that packs multiple smaller textures. Consists of a :ref:`Texture2D<class_Texture2D>` for the :ref:`atlas<class_AtlasTexture_property_atlas>`, a :ref:`region<class_AtlasTexture_property_region>` that defines the area of :ref:`atlas<class_AtlasTexture_property_atlas>` to use, and a :ref:`margin<class_AtlasTexture_property_margin>` that defines the border width.
 
-``AtlasTexture`` cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, cannot be tiled in nodes such as :ref:`TextureRect<class_TextureRect>`, and does not work properly if used inside of other ``AtlasTexture`` resources. Multiple ``AtlasTexture`` resources can be used to crop multiple textures from the atlas. Using a texture atlas helps to optimize video memory costs and render calls compared to using multiple small files.
+\ ``AtlasTexture`` cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, cannot be tiled in nodes such as :ref:`TextureRect<class_TextureRect>`, and does not work properly if used inside of other ``AtlasTexture`` resources. Multiple ``AtlasTexture`` resources can be used to crop multiple textures from the atlas. Using a texture atlas helps to optimize video memory costs and render calls compared to using multiple small files.
 
 Properties
 ----------

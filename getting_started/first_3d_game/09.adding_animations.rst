@@ -245,10 +245,10 @@ node structure, you can copy them to different scenes.
 For example, both the *Mob* and the *Player* scenes have a *Pivot* and a
 *Character* node, so we can reuse animations between them.
 
-Open the *Mob* scene, select the animation player node and open the float animation.
-Next, click on *Animation -> Copy*. Then Open ``Player.tscn`` and open its animation
-player. Click *Animation -> Paste*. That's it; all monsters will now play the float
-animation.
+Open the *Player* scene, select the animation player node and open the "float" animation.
+Next, click on **Animation > Copy**. Then open ``Mob.tscn`` and open its animation
+player (add an AnimationPlayer child node to Mob it not already done).
+Click **Animation > Paste**. That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open
 the *Mob*'s script and at the end of the ``initialize()`` function, add the
@@ -467,8 +467,7 @@ And the *Mob*'s script.
 
 
    func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
+       look_at_from_position(start_position, player_position, Vector3.UP)
        rotate_y(rand_range(-PI / 4, PI / 4))
 
        var random_speed = rand_range(min_speed, max_speed)
@@ -510,8 +509,7 @@ And the *Mob*'s script.
 
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
-            Translation = startPosition;
-            LookAt(playerPosition, Vector3.Up);
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
             float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);

@@ -22,7 +22,7 @@ This is the node that implements full 3D physics. This means that you do not con
 
 You can switch the body's behavior using :ref:`lock_rotation<class_RigidDynamicBody3D_property_lock_rotation>`, :ref:`freeze<class_RigidDynamicBody3D_property_freeze>`, and :ref:`freeze_mode<class_RigidDynamicBody3D_property_freeze_mode>`.
 
-**Note:** Don't change a RigidDynamicBody3D's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>`, which allows you to directly access the physics state.
+\ **Note:** Don't change a RigidDynamicBody3D's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>`, which allows you to directly access the physics state.
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidDynamicBody3D_property_custom_integrator>`.
 
@@ -50,6 +50,10 @@ Properties
 | :ref:`Vector3<class_Vector3>`                                     | :ref:`center_of_mass<class_RigidDynamicBody3D_property_center_of_mass>`                       | ``Vector3(0, 0, 0)`` |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | :ref:`CenterOfMassMode<enum_RigidDynamicBody3D_CenterOfMassMode>` | :ref:`center_of_mass_mode<class_RigidDynamicBody3D_property_center_of_mass_mode>`             | ``0``                |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`constant_force<class_RigidDynamicBody3D_property_constant_force>`                       | ``Vector3(0, 0, 0)`` |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                                     | :ref:`constant_torque<class_RigidDynamicBody3D_property_constant_torque>`                     | ``Vector3(0, 0, 0)`` |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>`                     | ``false``            |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------------------+
@@ -85,27 +89,33 @@ Properties
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|        |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_central_force<class_RigidDynamicBody3D_method_add_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                                    |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_force<class_RigidDynamicBody3D_method_add_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**           |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_torque<class_RigidDynamicBody3D_method_add_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                                 |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_central_impulse<class_RigidDynamicBody3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                          |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_impulse<class_RigidDynamicBody3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)** |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`apply_torque_impulse<class_RigidDynamicBody3D_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                            |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidDynamicBody3D_method_get_colliding_bodies>` **(** **)** |const|                                                                          |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>` | :ref:`get_inverse_inertia_tensor<class_RigidDynamicBody3D_method_get_inverse_inertia_tensor>` **(** **)** |const|                                                              |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_axis_velocity<class_RigidDynamicBody3D_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                                            |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|                |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_constant_central_force<class_RigidDynamicBody3D_method_add_constant_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                          |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_constant_force<class_RigidDynamicBody3D_method_add_constant_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`add_constant_torque<class_RigidDynamicBody3D_method_add_constant_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                       |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_central_force<class_RigidDynamicBody3D_method_apply_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                                        |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_central_impulse<class_RigidDynamicBody3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_force<class_RigidDynamicBody3D_method_apply_force>` **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**               |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_impulse<class_RigidDynamicBody3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**         |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_torque<class_RigidDynamicBody3D_method_apply_torque>` **(** :ref:`Vector3<class_Vector3>` torque **)**                                                                     |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`apply_torque_impulse<class_RigidDynamicBody3D_method_apply_torque_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_colliding_bodies<class_RigidDynamicBody3D_method_get_colliding_bodies>` **(** **)** |const|                                                                                  |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>` | :ref:`get_inverse_inertia_tensor<class_RigidDynamicBody3D_method_get_inverse_inertia_tensor>` **(** **)** |const|                                                                      |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_axis_velocity<class_RigidDynamicBody3D_method_set_axis_velocity>` **(** :ref:`Vector3<class_Vector3>` axis_velocity **)**                                                    |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -116,7 +126,7 @@ Signals
 
 Emitted when a collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` occurs. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody3D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -126,7 +136,7 @@ Emitted when a collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` 
 
 Emitted when the collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` ends. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody3D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -136,15 +146,13 @@ Emitted when the collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>
 
 Emitted when one of this RigidDynamicBody3D's :ref:`Shape3D<class_Shape3D>`\ s collides with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody3D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
-
-**Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. Don't use multiple :ref:`CollisionShape3D<class_CollisionShape3D>`\ s when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` with Bullet physics if you need shape indices.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -154,15 +162,13 @@ Emitted when one of this RigidDynamicBody3D's :ref:`Shape3D<class_Shape3D>`\ s c
 
 Emitted when the collision between one of this RigidDynamicBody3D's :ref:`Shape3D<class_Shape3D>`\ s and another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s ends. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody3D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape3D<class_Shape3D>`\ s.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
-
-**Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. Don't use multiple :ref:`CollisionShape3D<class_CollisionShape3D>`\ s when using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` with Bullet physics if you need shape indices.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidDynamicBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -172,7 +178,7 @@ Emitted when the collision between one of this RigidDynamicBody3D's :ref:`Shape3
 
 Emitted when the physics engine changes the body's sleeping state.
 
-**Note:** Changing the value :ref:`sleeping<class_RigidDynamicBody3D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
+\ **Note:** Changing the value :ref:`sleeping<class_RigidDynamicBody3D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -266,7 +272,7 @@ Defines how :ref:`angular_damp<class_RigidDynamicBody3D_property_angular_damp>` 
 | *Getter*  | get_angular_velocity()      |
 +-----------+-----------------------------+
 
-RigidDynamicBody3D's rotational velocity.
+The RigidDynamicBody3D's rotational velocity in *radians* per second.
 
 ----
 
@@ -320,6 +326,42 @@ Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enu
 
 ----
 
+.. _class_RigidDynamicBody3D_property_constant_force:
+
+- :ref:`Vector3<class_Vector3>` **constant_force**
+
++-----------+---------------------------+
+| *Default* | ``Vector3(0, 0, 0)``      |
++-----------+---------------------------+
+| *Setter*  | set_constant_force(value) |
++-----------+---------------------------+
+| *Getter*  | get_constant_force()      |
++-----------+---------------------------+
+
+The body's total constant positional forces applied during each physics update.
+
+See :ref:`add_constant_force<class_RigidDynamicBody3D_method_add_constant_force>` and :ref:`add_constant_central_force<class_RigidDynamicBody3D_method_add_constant_central_force>`.
+
+----
+
+.. _class_RigidDynamicBody3D_property_constant_torque:
+
+- :ref:`Vector3<class_Vector3>` **constant_torque**
+
++-----------+----------------------------+
+| *Default* | ``Vector3(0, 0, 0)``       |
++-----------+----------------------------+
+| *Setter*  | set_constant_torque(value) |
++-----------+----------------------------+
+| *Getter*  | get_constant_torque()      |
++-----------+----------------------------+
+
+The body's total constant rotational forces applied during each physics update.
+
+See :ref:`add_constant_torque<class_RigidDynamicBody3D_method_add_constant_torque>`.
+
+----
+
 .. _class_RigidDynamicBody3D_property_contact_monitor:
 
 - :ref:`bool<class_bool>` **contact_monitor**
@@ -350,7 +392,7 @@ If ``true``, the RigidDynamicBody3D will emit signals when it collides with anot
 
 The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true``.
 
-**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
+\ **Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
 ----
 
@@ -506,7 +548,7 @@ Defines how :ref:`linear_damp<class_RigidDynamicBody3D_property_linear_damp>` is
 | *Getter*  | get_linear_velocity()      |
 +-----------+----------------------------+
 
-The body's linear velocity. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidDynamicBody3D_method__integrate_forces>` as your process loop for precise control of the body state.
 
 ----
 
@@ -570,7 +612,7 @@ If a material is assigned to this property, it will be used instead of any other
 | *Getter*  | is_sleeping()       |
 +-----------+---------------------+
 
-If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidDynamicBody3D_method_apply_impulse>` or :ref:`add_force<class_RigidDynamicBody3D_method_add_force>` methods.
+If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidDynamicBody3D_method_apply_impulse>` or :ref:`apply_force<class_RigidDynamicBody3D_method_apply_force>` methods.
 
 Method Descriptions
 -------------------
@@ -583,31 +625,41 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 ----
 
-.. _class_RigidDynamicBody3D_method_add_central_force:
+.. _class_RigidDynamicBody3D_method_add_constant_central_force:
 
-- void **add_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
+- void **add_constant_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
 
-Adds a constant directional force (i.e. acceleration) without affecting rotation.
+Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
 
-This is equivalent to ``add_force(force, Vector3(0,0,0))``.
-
-----
-
-.. _class_RigidDynamicBody3D_method_add_force:
-
-- void **add_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
-
-Adds a constant directional force (i.e. acceleration).
-
-The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+This is equivalent to using :ref:`add_constant_force<class_RigidDynamicBody3D_method_add_constant_force>` at the body's center of mass.
 
 ----
 
-.. _class_RigidDynamicBody3D_method_add_torque:
+.. _class_RigidDynamicBody3D_method_add_constant_force:
 
-- void **add_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+- void **add_constant_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
 
-Adds a constant rotational force (i.e. a motor) without affecting position.
+Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_RigidDynamicBody3D_method_add_constant_torque:
+
+- void **add_constant_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``constant_torque = Vector3(0, 0, 0)``.
+
+----
+
+.. _class_RigidDynamicBody3D_method_apply_central_force:
+
+- void **apply_central_force** **(** :ref:`Vector3<class_Vector3>` force **)**
+
+Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+
+This is equivalent to using :ref:`apply_force<class_RigidDynamicBody3D_method_apply_force>` at the body's center of mass.
 
 ----
 
@@ -617,7 +669,19 @@ Adds a constant rotational force (i.e. a motor) without affecting position.
 
 Applies a directional impulse without affecting rotation.
 
-This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+This is equivalent to using :ref:`apply_impulse<class_RigidDynamicBody3D_method_apply_impulse>` at the body's center of mass.
+
+----
+
+.. _class_RigidDynamicBody3D_method_apply_force:
+
+- void **apply_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+
+Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -625,7 +689,19 @@ This is equivalent to ``apply_impulse(Vector3(0,0,0), impulse)``.
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
 
-Applies a positioned impulse to the body. An impulse is time independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason it should only be used when simulating one-time impacts. The position uses the rotation of the global coordinate system, but is centered at the object's origin.
+Applies a positioned impulse to the body.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_RigidDynamicBody3D_method_apply_torque:
+
+- void **apply_torque** **(** :ref:`Vector3<class_Vector3>` torque **)**
+
+Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
 ----
 
@@ -633,7 +709,9 @@ Applies a positioned impulse to the body. An impulse is time independent! Applyi
 
 - void **apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
-Applies a torque impulse which will be affected by the body mass and shape. This will rotate the body around the ``impulse`` vector passed.
+Applies a rotational impulse to the body without affecting the position.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
 ----
 
@@ -643,7 +721,7 @@ Applies a torque impulse which will be affected by the body mass and shape. This
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidDynamicBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidDynamicBody3D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 ----
 

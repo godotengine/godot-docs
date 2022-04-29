@@ -209,8 +209,9 @@ In the end, the best approach is to consider the following:
     .. code-tab:: gdscript GDScript
 
       # game.gd
-      extends Reference
       class_name Game # extends Reference, so it won't show up in the node creation dialog
+      extends Reference
+
       const MyScene = preload("my_scene.tscn")
 
       # main.gd

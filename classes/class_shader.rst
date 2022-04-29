@@ -98,9 +98,9 @@ Method Descriptions
 
 Returns the texture that is set as default for the specified parameter.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
-**Note:** If the sampler array is used use ``index`` to access the specified texture.
+\ **Note:** If the sampler array is used use ``index`` to access the specified texture.
 
 ----
 
@@ -118,7 +118,7 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 ----
 
@@ -128,9 +128,9 @@ Returns ``true`` if the shader has this param defined as a uniform in its code.
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
-**Note:** If the sampler array is used use ``index`` to access the specified texture.
+\ **Note:** If the sampler array is used use ``index`` to access the specified texture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -146,9 +146,9 @@ enum **DopplerTracking**:
 
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ simulation (default).
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
 
 Property Descriptions
 ---------------------
@@ -438,7 +438,7 @@ Returns the RID of a pyramid shape encompassing the camera's view frustum, ignor
 
 Returns ``true`` if the given position is behind the camera (the blue part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
 
-**Note:** A position which returns ``false`` may still be outside the camera's field of view.
+\ **Note:** A position which returns ``false`` may still be outside the camera's field of view.
 
 ----
 
@@ -528,7 +528,7 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in world space.
 
-**Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera3D_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
+\ **Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera3D_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
 
 ::
 

@@ -33,7 +33,7 @@ Properties
 +---------------------------+------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`height<class_CylinderShape3D_property_height>` | ``2.0`` |
 +---------------------------+------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape3D_property_radius>` | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape3D_property_radius>` | ``0.5`` |
 +---------------------------+------------------------------------------------------+---------+
 
 Property Descriptions
@@ -60,7 +60,7 @@ The cylinder's height.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

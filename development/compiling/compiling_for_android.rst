@@ -5,6 +5,11 @@ Compiling for Android
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile Android export template binaries from source.
+    If you're looking to export your project to Android instead, read :ref:`doc_exporting_for_android`.
+
 Note
 ----
 
@@ -35,7 +40,10 @@ For compiling under Windows, Linux or macOS, the following is required:
 
    -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 .. _doc_android_setting_up_the_buildsystem:

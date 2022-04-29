@@ -22,11 +22,11 @@ Properties
 ----------
 
 +---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleMesh_property_height>`                   | ``3.0`` |
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleMesh_property_height>`                   | ``2.0`` |
 +---------------------------+--------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`     | :ref:`radial_segments<class_CapsuleMesh_property_radial_segments>` | ``64``  |
 +---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   | ``0.5`` |
 +---------------------------+--------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     | ``8``   |
 +---------------------------+--------------------------------------------------------------------+---------+
@@ -39,7 +39,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | ``3.0``           |
+| *Default* | ``2.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -71,7 +71,7 @@ Number of radial segments on the capsule mesh.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

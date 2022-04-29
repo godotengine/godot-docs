@@ -28,24 +28,24 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+----------------+-------------------------------+
-| :ref:`bool<class_bool>` | input_pickable | ``false`` *(parent override)* |
-+-------------------------+----------------+-------------------------------+
++-------------------------+----------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | input_pickable | ``false`` (overrides :ref:`CollisionObject2D<class_CollisionObject2D_property_input_pickable>`) |
++-------------------------+----------------+-------------------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                            |
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsBody2D[]<class_PhysicsBody2D>`             | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                                 |
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**                                                              |
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                      |
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`test_move<class_PhysicsBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)** |
-+---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                     |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsBody2D[]<class_PhysicsBody2D>`             | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                          |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` distance, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**                                                              |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                               |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`test_move<class_PhysicsBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` distance, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)** |
++---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -68,15 +68,15 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 .. _class_PhysicsBody2D_method_move_and_collide:
 
-- :ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide** **(** :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**
+- :ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide** **(** :ref:`Vector2<class_Vector2>` distance, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08 **)**
 
-Moves the body along the vector ``linear_velocity``. This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
+Moves the body along the vector ``distance``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_method__physics_process>` or :ref:`Node._process<class_Node_method__process>`, ``distance`` should be computed using ``delta``.
 
-The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision when stopped, or when touching another body along the motion.
+Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about the collision when stopped, or when touching another body along the motion.
 
 If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
 
-``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
+\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
 
 ----
 
@@ -90,15 +90,15 @@ Removes a body from the list of bodies that this body can't collide with.
 
 .. _class_PhysicsBody2D_method_test_move:
 
-- :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` linear_velocity, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)**
+- :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` distance, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08 **)**
 
-Checks for collisions without moving the body. This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
+Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_method__physics_process>` or :ref:`Node._process<class_Node_method__process>`, ``distance`` should be computed using ``delta``.
 
-Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``linear_velocity``. Returns ``true`` if a collision would stop the body from moving along the whole path.
+Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``distance``. Returns ``true`` if a collision would stop the body from moving along the whole path.
 
-``collision`` is an optional object of type :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
+\ ``collision`` is an optional object of type :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
 
-``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
+\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

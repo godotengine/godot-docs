@@ -25,6 +25,12 @@ using this `ImageMagick <https://www.imagemagick.org/>`_ command:
 
     magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
 
+Depending on which version of ImageMagick you installed, you might need to leave out the ``magick`` and run this command instead:
+
+.. code-block:: none
+
+    convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
+
 .. warning::
 
     For the ICO file to effectively replace the default Godot icon, it must
@@ -54,6 +60,11 @@ use the ``Icon`` setting.
 
 Changing the file icon
 ----------------------
+
+In Godot 3.5 and later, you can change the file icon without
+external tools using `godoticon <https://github.com/pkowal1982/godoticon>`__.
+Changing the file icon this way should work for executables containing
+an embedded PCK.
 
 .. warning::
 

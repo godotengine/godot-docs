@@ -52,7 +52,7 @@ What a Mesh is
 
 A Mesh is composed of one or more surfaces. A surface is an array composed of multiple sub-arrays
 containing vertices, normals, UVs, etc. Normally the process of constructing surfaces and meshes is
-hidden from the user in the :ref:`VisualServer <class_VisualServer>`, but with ArrayMeshes, the user can construct a Mesh
+hidden from the user in the :ref:`RenderingServer <class_RenderingServer>`, but with ArrayMeshes, the user can construct a Mesh
 manually by passing in an array containing the surface information.
 
 Surfaces
@@ -70,7 +70,7 @@ filled with a sub-array containing per-vertex information. For example, the arra
 
 The surface array can be indexed or non-indexed. Creating a non-indexed array is as easy as not assigning
 an array at the index ``ArrayMesh.ARRAY_INDEX``. A non-indexed array stores unique vertex information for
-every triangle, meaning that when two triangle share a vertex, the vertex is duplicated in the array. An
+every triangle, meaning that when two triangles share a vertex, the vertex is duplicated in the array. An
 indexed surface array only stores vertex information for each unique vertex and then also stores an array
 of indices which maps out how to construct the triangles from the vertex array. In general, using an indexed
 array is faster, but it means you have to share vertex data between triangles, which is not always desired

@@ -11,7 +11,7 @@ Container
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AspectRatioContainer<class_AspectRatioContainer>`, :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`SubViewportContainer<class_SubViewportContainer>`, :ref:`TabContainer<class_TabContainer>`
+**Inherited By:** :ref:`AspectRatioContainer<class_AspectRatioContainer>`, :ref:`BoxContainer<class_BoxContainer>`, :ref:`CenterContainer<class_CenterContainer>`, :ref:`EditorProperty<class_EditorProperty>`, :ref:`FlowContainer<class_FlowContainer>`, :ref:`GraphNode<class_GraphNode>`, :ref:`GridContainer<class_GridContainer>`, :ref:`MarginContainer<class_MarginContainer>`, :ref:`PanelContainer<class_PanelContainer>`, :ref:`ScrollContainer<class_ScrollContainer>`, :ref:`SplitContainer<class_SplitContainer>`, :ref:`SubViewportContainer<class_SubViewportContainer>`, :ref:`TabContainer<class_TabContainer>`
 
 Base node for containers.
 
@@ -25,18 +25,22 @@ A Control can inherit this to create custom container classes.
 Properties
 ----------
 
-+----------------------------------------------+--------------+---------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``1`` *(parent override)* |
-+----------------------------------------------+--------------+---------------------------+
++----------------------------------------------+--------------+-----------------------------------------------------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
++----------------------------------------------+--------------+-----------------------------------------------------------------------+
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_method__get_allowed_size_flags_horizontal>` **(** **)** |virtual| |const|                 |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_method__get_allowed_size_flags_vertical>` **(** **)** |virtual| |const|                     |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -68,6 +72,26 @@ Constants
 
 Method Descriptions
 -------------------
+
+.. _class_Container_method__get_allowed_size_flags_horizontal:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+
+\ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+----
+
+.. _class_Container_method__get_allowed_size_flags_vertical:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+
+\ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+----
 
 .. _class_Container_method_fit_child_in_rect:
 

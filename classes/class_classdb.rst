@@ -144,7 +144,7 @@ Returns an array with the names all the integer constants of ``class`` or its an
 
 Returns an array with all the methods of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
 
-**Note:** In exported release builds the debug info is not available, so the returned dictionaries will contain only method names.
+\ **Note:** In exported release builds the debug info is not available, so the returned dictionaries will contain only method names.
 
 ----
 

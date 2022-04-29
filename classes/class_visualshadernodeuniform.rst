@@ -11,7 +11,7 @@ VisualShaderNodeUniform
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBooleanUniform<class_VisualShaderNodeBooleanUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeFloatUniform<class_VisualShaderNodeFloatUniform>`, :ref:`VisualShaderNodeIntUniform<class_VisualShaderNodeIntUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
+**Inherited By:** :ref:`VisualShaderNodeBooleanUniform<class_VisualShaderNodeBooleanUniform>`, :ref:`VisualShaderNodeColorUniform<class_VisualShaderNodeColorUniform>`, :ref:`VisualShaderNodeFloatUniform<class_VisualShaderNodeFloatUniform>`, :ref:`VisualShaderNodeIntUniform<class_VisualShaderNodeIntUniform>`, :ref:`VisualShaderNodeTextureUniform<class_VisualShaderNodeTextureUniform>`, :ref:`VisualShaderNodeTransformUniform<class_VisualShaderNodeTransformUniform>`, :ref:`VisualShaderNodeVec2Uniform<class_VisualShaderNodeVec2Uniform>`, :ref:`VisualShaderNodeVec3Uniform<class_VisualShaderNodeVec3Uniform>`
 
 A base type for the uniforms within the visual shader graph.
 

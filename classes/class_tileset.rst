@@ -224,7 +224,7 @@ enum **TileShape**:
 
 - **TILE_SHAPE_ISOMETRIC** = **1** --- Diamond tile shape (for isometric look).
 
-- **TILE_SHAPE_HALF_OFFSET_SQUARE** = **2** --- Rectangular tile shape with one row/colum out of two offset by half a tile.
+- **TILE_SHAPE_HALF_OFFSET_SQUARE** = **2** --- Rectangular tile shape with one row/column out of two offset by half a tile.
 
 - **TILE_SHAPE_HEXAGON** = **3** --- Hexagonal tile shape.
 
@@ -478,7 +478,7 @@ Occlusion layers allow assigning occlusion polygons to atlas tiles.
 
 - :ref:`int<class_int>` **add_pattern** **(** :ref:`TileMapPattern<class_TileMapPattern>` pattern, :ref:`int<class_int>` index=-1 **)**
 
-Adds a :ref:`TileMapPattern<class_TileMapPattern>` to be stored in the TileSet resouce. If provided, insert it at the given ``index``.
+Adds a :ref:`TileMapPattern<class_TileMapPattern>` to be stored in the TileSet resource. If provided, insert it at the given ``index``.
 
 ----
 

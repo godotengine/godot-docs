@@ -8,7 +8,7 @@
 
 .. _doc_signals:
 
-Using Signals
+Using signals
 =============
 
 In this lesson, we will look at signals. They are messages that nodes emit when
@@ -29,13 +29,17 @@ the bar to reflect the change. To do so, in Godot, you would use signals.
           observer pattern. You can learn more about it here:
           https://gameprogrammingpatterns.com/observer.html
 
-We will now use a signal to make our Godot icon from last part move and stop
-by pressing a button.
+We will now use a signal to make our Godot icon from the previous lesson
+(:ref:`doc_scripting_player_input`) move and stop by pressing a button.
 
 .. Example
 
 Scene setup
 -----------
+
+To add a button to our game, we will create a new main scene which will include
+both a button and the ``Sprite2D.tscn`` scene that we scripted in previous
+lessons.
 
 Create a new scene by going to the menu Scene -> New Scene.
 
@@ -46,14 +50,13 @@ root.
 
 .. image:: img/signals_02_2d_scene.png
 
-
 In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
 .. image:: img/signals_03_dragging_scene.png
 
-We want to add another node as a sibling of the Sprite2D. To do so, right-click on
-Node2D and select Add Child Node.
+We want to add another node as a sibling of the Sprite2D. To do so, right-click
+on Node2D and select Add Child Node.
 
 .. image:: img/signals_04_add_child_node.png
 
@@ -81,12 +84,15 @@ Your scene tree and viewport should look like this.
 
 .. image:: img/signals_09_scene_setup.png
 
+Save your newly created scene. You can then run it with :kbd:`F6`.
+
 Connecting a signal in the editor
 ---------------------------------
 
 Here, we want to connect the Button's "pressed" signal to our Sprite2D, and we
 want to call a new function that will toggle its motion on and off. We need to
-have a script attached to the Sprite2D node, which we do from the previous lesson.
+have a script attached to the Sprite2D node, which we do from the previous
+lesson.
 
 You can connect signals in the Node dock. Select the Button node and, on the
 right side of the editor, click on the tab named "Node" next to the Inspector.
@@ -101,10 +107,10 @@ Double-click the "pressed" signal to open the node connection window.
 
 .. image:: img/signals_12_node_connection.png
 
-There, you can connect the signal to the Sprite2D node. The node needs a receiver
-method, a function that Godot will call when the Button emits the signal. The
-editor generates one for you. By convention, we name these callback methods
-"_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
+There, you can connect the signal to the Sprite2D node. The node needs a
+receiver method, a function that Godot will call when the Button emits the
+signal. The editor generates one for you. By convention, we name these callback
+methods "_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
 
 .. note::
 
@@ -133,8 +139,8 @@ connection. This feature is only available when connecting nodes in the editor.
 Let's replace the line with the ``pass`` keyword with code that'll toggle the
 node's motion.
 
-Our Sprite2D moves thanks to code in the ``_process()`` function. Godot provides a
-method to toggle processing on and off: :ref:`Node.set_process()
+Our Sprite2D moves thanks to code in the ``_process()`` function. Godot provides
+a method to toggle processing on and off: :ref:`Node.set_process()
 <class_Node_method_set_process>`. Another method of the Node class,
 ``is_processing()``, returns ``true`` if idle processing is active. We can use
 the ``not`` keyword to invert the value.
@@ -155,7 +161,7 @@ following code, which we saw two lessons ago:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _process(delta: float) -> void:
+    func _process(delta):
         rotation += angular_speed * delta
         var velocity = Vector2.UP.rotated(rotation) * speed
         position += velocity * delta
@@ -170,10 +176,12 @@ Your complete ``Sprite2D.gd`` code should look like the following.
     var speed = 400
     var angular_speed = PI
 
-    func _process(delta: float) -> void:
+
+    func _process(delta):
         rotation += angular_speed * delta
         var velocity = Vector2.UP.rotated(rotation) * speed
         position += velocity * delta
+
 
     func _on_Button_pressed():
         set_process(not is_processing())
@@ -190,14 +198,16 @@ Let's use a different node here. Godot has a :ref:`Timer <class_Timer>` node
 that's useful to implement skill cooldown times, weapon reloading, and more.
 
 Head back to the 2D workspace. You can either click the "2D" text at the top of
-the window or press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
+the window or press :kbd:`Ctrl + F1` (:kbd:`Alt + 1` on macOS).
 
-In the Scene dock, right-click on the Sprite2D node and add a new node. Search for
-Timer and add the corresponding node. Your scene should now look like this.
+In the Scene dock, right-click on the Sprite2D node and add a new child node.
+Search for Timer and add the corresponding node. Your scene should now look like
+this.
 
 .. image:: img/signals_15_scene_tree.png
 
-With the Timer node selected, go to the Inspector and check the **Autostart** property.
+With the Timer node selected, go to the Inspector and check the **Autostart**
+property.
 
 .. image:: img/signals_18_timer_autostart.png
 
@@ -214,16 +224,16 @@ We need to do two operations to connect the nodes via code:
           method of the node you want to listen to. In this case, we want to
           listen to the Timer's "timeout" signal.
 
+We want to connect the signal when the scene is intantiated, and we can do that
+using the :ref:`Node._ready() <class_Node_method__ready>` built-in function,
+which is called automatically by the engine when a node is fully instantiated.
+
 To get a reference to a node relative to the current one, we use the method
 :ref:`Node.get_node() <class_Node_method_get_node>`. We can store the reference
 in a variable.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-
-    extends Sprite2D
-
-    #...
 
     func _ready():
         var timer = get_node("Timer")
@@ -241,12 +251,12 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.connect("timeout", self, "_on_Timer_timeout")
+        timer.timeout.connect(_on_Timer_timeout)
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
-which the script is attached (``self``). When the Timer emits "timeout", we want
-to call the function "_on_Timer_timeout", that we need to define. Let's add it
-at the bottom of our script and use it to toggle our sprite's visibility.
+which the script is attached. When the Timer emits ``timeout``, we want to call
+the function ``_on_Timer_timeout()``, that we need to define. Let's add it at the
+bottom of our script and use it to toggle our sprite's visibility.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -258,8 +268,44 @@ The ``visible`` property is a boolean that controls the visibility of our node.
 The line ``visible = not visible`` toggles the value. If ``visible`` is
 ``true``, it becomes ``false``, and vice-versa.
 
+Complete script
+---------------
+
+That's it for our little moving and blinking Godot icon demo!
+Here is the complete ``Sprite2D.gd`` file for reference.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite2D
+
+    var speed = 400
+    var angular_speed = PI
+
+
+    func _ready():
+        var timer = get_node("Timer")
+        timer.connect("timeout", self, "_on_Timer_timeout")
+
+
+    func _process(delta):
+        rotation += angular_speed * delta
+        var velocity = Vector2.UP.rotated(rotation) * speed
+        position += velocity * delta
+
+
+    func _on_Button_pressed():
+        set_process(not is_processing())
+
+
+    func _on_Timer_timeout():
+        visible = not visible
+
 Custom signals
 --------------
+
+.. note:: This section is a reference on how to define and use your own signals,
+          and does not build upon the project created in previous lessons.
 
 You can define custom signals in a script. Say, for example, that you want to
 show a game over screen when the player's health reaches zero. To do so, you

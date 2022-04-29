@@ -11,45 +11,42 @@ Occluder3D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`ArrayOccluder3D<class_ArrayOccluder3D>`, :ref:`BoxOccluder3D<class_BoxOccluder3D>`, :ref:`PolygonOccluder3D<class_PolygonOccluder3D>`, :ref:`QuadOccluder3D<class_QuadOccluder3D>`, :ref:`SphereOccluder3D<class_SphereOccluder3D>`
 
+Occluder shape resource for use with occlusion culling in :ref:`OccluderInstance3D<class_OccluderInstance3D>`.
 
-Properties
-----------
+Description
+-----------
 
-+-----------------------------------------------------+-----------------------------------------------------+--------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`indices<class_Occluder3D_property_indices>`   | ``PackedInt32Array()``   |
-+-----------------------------------------------------+-----------------------------------------------------+--------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`vertices<class_Occluder3D_property_vertices>` | ``PackedVector3Array()`` |
-+-----------------------------------------------------+-----------------------------------------------------+--------------------------+
+``Occluder3D`` stores an occluder shape that can be used by the engine's occlusion culling system.
 
-Property Descriptions
----------------------
+See :ref:`OccluderInstance3D<class_OccluderInstance3D>`'s documentation for instructions on setting up occlusion culling.
 
-.. _class_Occluder3D_property_indices:
+Methods
+-------
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **indices**
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_indices<class_Occluder3D_method_get_indices>` **(** **)** |const|   |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_vertices<class_Occluder3D_method_get_vertices>` **(** **)** |const| |
++-----------------------------------------------------+-------------------------------------------------------------------------------+
 
-+-----------+------------------------+
-| *Default* | ``PackedInt32Array()`` |
-+-----------+------------------------+
-| *Setter*  | set_indices(value)     |
-+-----------+------------------------+
-| *Getter*  | get_indices()          |
-+-----------+------------------------+
+Method Descriptions
+-------------------
+
+.. _class_Occluder3D_method_get_indices:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices** **(** **)** |const|
+
+Returns the occluder shape's vertex indices.
 
 ----
 
-.. _class_Occluder3D_property_vertices:
+.. _class_Occluder3D_method_get_vertices:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **vertices**
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)** |const|
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector3Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_vertices(value)      |
-+-----------+--------------------------+
-| *Getter*  | get_vertices()           |
-+-----------+--------------------------+
+Returns the occluder shape's vertex positions.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

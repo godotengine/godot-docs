@@ -97,20 +97,20 @@ Syntactic sugar
 ~~~~~~~~~~~~~~~
 
 You can use two shorthands to shorten your code in GDScript. Firstly, putting the
-``onready`` keyword before a member variable makes it initialize right before
+``@onready`` annotation before a member variable makes it initialize right before
 the ``_ready()`` callback.
 
 .. code-block:: gdscript
 
-    onready var sprite2d = get_node("Sprite2D")
+    @onready var sprite2d = get_node("Sprite2D")
 
 There is also a short notation for ``get_node()``: the dollar sign, "$". You
 place it before the name or path of the node you want to get.
 
 .. code-block:: gdscript
 
-    onready var sprite2d = $Sprite2D
-    onready var tween = $ShieldBar/Tween
+    @onready var sprite2d = $Sprite2D
+    @onready var tween = $ShieldBar/Tween
 
 Creating nodes
 --------------

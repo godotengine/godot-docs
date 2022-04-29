@@ -30,8 +30,7 @@ Godot provides the following primitive collision shape types:
 - :ref:`class_BoxShape`
 - :ref:`class_SphereShape`
 - :ref:`class_CapsuleShape`
-- :ref:`class_CylinderShape`. It is only available when using the Bullet physics
-  engine.
+- :ref:`class_CylinderShape`
 
 You can represent the collision of most smaller objects using one or more
 primitive shapes. However, for more complex objects, such as a large ship or a

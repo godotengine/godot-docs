@@ -24,7 +24,7 @@ Conversion methods assume "the same timezone", and do not handle timezone conver
 
 When getting time information from the system, the time can either be in the local timezone or UTC depending on the ``utc`` parameter. However, the :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` method always returns the time in UTC.
 
-**Important:** The ``_from_system`` methods use the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are subject to automatic adjustments by the user or the operating system. **Always use** :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
+\ **Important:** The ``_from_system`` methods use the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are subject to automatic adjustments by the user or the operating system. **Always use** :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
 Methods
 -------
@@ -49,6 +49,8 @@ Methods
 | :ref:`String<class_String>`         | :ref:`get_datetime_string_from_system<class_Time_method_get_datetime_string_from_system>` **(** :ref:`bool<class_bool>` utc=false, :ref:`bool<class_bool>` use_space=false **)** |const|         |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_datetime_string_from_unix_time<class_Time_method_get_datetime_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val, :ref:`bool<class_bool>` use_space=false **)** |const| |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_offset_string_from_offset_minutes<class_Time_method_get_offset_string_from_offset_minutes>` **(** :ref:`int<class_int>` offset_minutes **)** |const|                                   |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` **(** **)** |const|                                                                                                                      |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,6 +265,14 @@ If ``use_space`` is true, use a space instead of the letter T in the middle.
 
 ----
 
+.. _class_Time_method_get_offset_string_from_offset_minutes:
+
+- :ref:`String<class_String>` **get_offset_string_from_offset_minutes** **(** :ref:`int<class_int>` offset_minutes **)** |const|
+
+Converts the given timezone offset in minutes to a timezone offset string. For example, -480 returns "-08:00", 345 returns "+05:45", and 0 returns "+00:00".
+
+----
+
 .. _class_Time_method_get_ticks_msec:
 
 - :ref:`int<class_int>` **get_ticks_msec** **(** **)** |const|
@@ -339,7 +349,7 @@ If the dictionary is empty, ``0`` is returned. If some keys are omitted, they de
 
 You can pass the output from :ref:`get_datetime_dict_from_unix_time<class_Time_method_get_datetime_dict_from_unix_time>` directly into this function and get the same as what was put in.
 
-**Note:** Unix timestamps are often in UTC. This method does not do any timezone conversion, so the timestamp will be in the same timezone as the given datetime dictionary.
+\ **Note:** Unix timestamps are often in UTC. This method does not do any timezone conversion, so the timestamp will be in the same timezone as the given datetime dictionary.
 
 ----
 
@@ -349,7 +359,7 @@ You can pass the output from :ref:`get_datetime_dict_from_unix_time<class_Time_m
 
 Converts the given ISO 8601 date and/or time string to a Unix timestamp. The string can contain a date only, a time only, or both.
 
-**Note:** Unix timestamps are often in UTC. This method does not do any timezone conversion, so the timestamp will be in the same timezone as the given datetime string.
+\ **Note:** Unix timestamps are often in UTC. This method does not do any timezone conversion, so the timestamp will be in the same timezone as the given datetime string.
 
 ----
 

@@ -31,6 +31,8 @@ Methods
 -------
 
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`_get_aabb<class_VisualInstance3D_method__get_aabb>` **(** **)** |virtual| |const|                                                                       |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance3D_method_get_aabb>` **(** **)** |const|                                                                                   |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance3D_method_get_base>` **(** **)** |const|                                                                                   |
@@ -67,6 +69,12 @@ This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cu
 
 Method Descriptions
 -------------------
+
+.. _class_VisualInstance3D_method__get_aabb:
+
+- :ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
+
+----
 
 .. _class_VisualInstance3D_method_get_aabb:
 

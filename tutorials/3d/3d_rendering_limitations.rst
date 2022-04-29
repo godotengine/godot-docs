@@ -76,6 +76,8 @@ Depending on the scene and viewing conditions, you may also be able to move the
 Z-fighting objects further apart without the difference being visible to the
 player.
 
+.. _doc_3d_rendering_limitations_transparency_sorting:
+
 Transparency sorting
 --------------------
 
@@ -95,6 +97,18 @@ this feature. There are still several ways to avoid this problem:
   has a small transparent part, consider splitting it into a separate material.
   This will allow the opaque part to cast shadows and may also improve
   performance.
+
+- If your texture mostly has fully opaque and fully transparent areas, you can
+  use alpha testing instead of alpha blending. This transparency mode is faster
+  to render and doesn't suffer from transparency issues. Enable
+  **Transparency > Transparency** to **Alpha Scissor** in StandardMaterial3D,
+  and adjust **Transparency > Alpha Scissor Threshold** accordingly if needed.
+  Note that MSAA will not anti-alias the texture's edges, but FXAA will.
+
+- If you need to render semi-transparent areas of the texture, alpha scissor
+  isn't suitable. Instead, setting the StandardMaterial3D's
+  **Transparency > Transparency** property to **Depth Pre-Pass** can sometimes
+  work (at a performance cost).
 
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of

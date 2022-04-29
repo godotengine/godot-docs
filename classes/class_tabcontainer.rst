@@ -16,26 +16,32 @@ Tabbed container.
 Description
 -----------
 
-Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
+Arranges :ref:`Control<class_Control>` children into a tabbed view, creating a tab for each one. The active tab's corresponding :ref:`Control<class_Control>` has its ``visible`` property set to ``true``, and all other children's to ``false``.
 
 Ignores non-:ref:`Control<class_Control>` children.
+
+\ **Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`TabBar<class_TabBar>`\ s as children is not needed.
 
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                     | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                       | ``1``     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                     | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | ``false`` |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`                                       | ``true``  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` | :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`                               | ``1``     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                           | :ref:`tabs_rearrange_group<class_TabContainer_property_tabs_rearrange_group>`                 | ``-1``    |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                         | :ref:`use_hidden_tabs_for_min_size<class_TabContainer_property_use_hidden_tabs_for_min_size>` | ``false`` |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -51,17 +57,17 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** |const|                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_tab_disabled<class_TabContainer_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                           |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`get_tab_hidden<class_TabContainer_method_get_tab_hidden>` **(** :ref:`int<class_int>` tab_idx **)** |const|                               |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_tab_idx_at_point<class_TabContainer_method_get_tab_idx_at_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|             |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_tab_idx_from_control<class_TabContainer_method_get_tab_idx_from_control>` **(** :ref:`Control<class_Control>` control **)** |const|   |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`       | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_tabs_rearrange_group<class_TabContainer_method_get_tabs_rearrange_group>` **(** **)** |const|                                         |
+| :ref:`bool<class_bool>`           | :ref:`is_tab_disabled<class_TabContainer_method_is_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                             |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_tab_hidden<class_TabContainer_method_is_tab_hidden>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_popup<class_TabContainer_method_set_popup>` **(** :ref:`Node<class_Node>` popup **)**                                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,51 +79,49 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**      |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_tabs_rearrange_group<class_TabContainer_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
 
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_TabContainer_theme_icon_decrement>`                          |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_TabContainer_theme_icon_decrement_highlight>`      |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Font<class_Font>`           | :ref:`font<class_TabContainer_theme_font_font>`                                    |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_TabContainer_theme_color_font_disabled_color>`     | ``Color(0.9, 0.9, 0.9, 0.2)``  |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_TabContainer_theme_color_font_outline_color>`       | ``Color(1, 1, 1, 1)``          |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_TabContainer_theme_color_font_selected_color>`     | ``Color(0.94, 0.94, 0.94, 1)`` |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`             | :ref:`font_size<class_TabContainer_theme_font_size_font_size>`                     |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabContainer_theme_color_font_unselected_color>` | ``Color(0.69, 0.69, 0.69, 1)`` |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`             | :ref:`icon_separation<class_TabContainer_theme_constant_icon_separation>`          | ``4``                          |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_TabContainer_theme_icon_increment>`                          |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_TabContainer_theme_icon_increment_highlight>`      |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`menu<class_TabContainer_theme_icon_menu>`                                    |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`menu_highlight<class_TabContainer_theme_icon_menu_highlight>`                |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`             | :ref:`outline_size<class_TabContainer_theme_constant_outline_size>`                | ``0``                          |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_TabContainer_theme_style_panel>`                                 |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`             | :ref:`side_margin<class_TabContainer_theme_constant_side_margin>`                  | ``8``                          |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_TabContainer_theme_style_tab_disabled>`                   |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_selected<class_TabContainer_theme_style_tab_selected>`                   |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_unselected<class_TabContainer_theme_style_tab_unselected>`               |                                |
-+-----------------------------------+------------------------------------------------------------------------------------+--------------------------------+
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_TabContainer_theme_color_font_disabled_color>`     | ``Color(0.875, 0.875, 0.875, 0.5)`` |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_TabContainer_theme_color_font_outline_color>`       | ``Color(1, 1, 1, 1)``               |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_TabContainer_theme_color_font_selected_color>`     | ``Color(0.95, 0.95, 0.95, 1)``      |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabContainer_theme_color_font_unselected_color>` | ``Color(0.7, 0.7, 0.7, 1)``         |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`icon_separation<class_TabContainer_theme_constant_icon_separation>`          | ``4``                               |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`outline_size<class_TabContainer_theme_constant_outline_size>`                | ``0``                               |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`side_margin<class_TabContainer_theme_constant_side_margin>`                  | ``8``                               |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font<class_TabContainer_theme_font_font>`                                    |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_size<class_TabContainer_theme_font_size_font_size>`                     |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_TabContainer_theme_icon_decrement>`                          |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_TabContainer_theme_icon_decrement_highlight>`      |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_TabContainer_theme_icon_increment>`                          |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_TabContainer_theme_icon_increment_highlight>`      |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`menu<class_TabContainer_theme_icon_menu>`                                    |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`menu_highlight<class_TabContainer_theme_icon_menu_highlight>`                |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_TabContainer_theme_style_panel>`                                 |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_TabContainer_theme_style_tab_disabled>`                   |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_selected<class_TabContainer_theme_style_tab_selected>`                   |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_unselected<class_TabContainer_theme_style_tab_unselected>`               |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 
 Signals
 -------
@@ -144,25 +148,6 @@ Emitted when switching to another tab.
 
 Emitted when a tab is selected, even if it is the current tab.
 
-Enumerations
-------------
-
-.. _enum_TabContainer_TabAlign:
-
-.. _class_TabContainer_constant_ALIGN_LEFT:
-
-.. _class_TabContainer_constant_ALIGN_CENTER:
-
-.. _class_TabContainer_constant_ALIGN_RIGHT:
-
-enum **TabAlign**:
-
-- **ALIGN_LEFT** = **0** --- Align the tabs to the left.
-
-- **ALIGN_CENTER** = **1** --- Align the tabs to the center.
-
-- **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
-
 Property Descriptions
 ---------------------
 
@@ -179,6 +164,22 @@ Property Descriptions
 +-----------+------------------------------+
 
 If ``true``, all tabs are drawn in front of the panel. If ``false``, inactive tabs are drawn behind the panel.
+
+----
+
+.. _class_TabContainer_property_clip_tabs:
+
+- :ref:`bool<class_bool>` **clip_tabs**
+
++-----------+----------------------+
+| *Default* | ``true``             |
++-----------+----------------------+
+| *Setter*  | set_clip_tabs(value) |
++-----------+----------------------+
+| *Getter*  | get_clip_tabs()      |
++-----------+----------------------+
+
+If ``true``, tabs overflowing this node's width will be hidden, displaying two navigation buttons instead. Otherwise, this node's minimum size is updated so that all tabs are visible.
 
 ----
 
@@ -214,19 +215,37 @@ If ``true``, tabs can be rearranged with mouse drag.
 
 ----
 
-.. _class_TabContainer_property_tab_align:
+.. _class_TabContainer_property_tab_alignment:
 
-- :ref:`TabAlign<enum_TabContainer_TabAlign>` **tab_align**
+- :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **tab_alignment**
 
-+-----------+----------------------+
-| *Default* | ``1``                |
-+-----------+----------------------+
-| *Setter*  | set_tab_align(value) |
-+-----------+----------------------+
-| *Getter*  | get_tab_align()      |
-+-----------+----------------------+
++-----------+--------------------------+
+| *Default* | ``1``                    |
++-----------+--------------------------+
+| *Setter*  | set_tab_alignment(value) |
++-----------+--------------------------+
+| *Getter*  | get_tab_alignment()      |
++-----------+--------------------------+
 
-The alignment of all tabs in the tab container. See the :ref:`TabAlign<enum_TabContainer_TabAlign>` constants for details.
+Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` for details.
+
+----
+
+.. _class_TabContainer_property_tabs_rearrange_group:
+
+- :ref:`int<class_int>` **tabs_rearrange_group**
+
++-----------+---------------------------------+
+| *Default* | ``-1``                          |
++-----------+---------------------------------+
+| *Setter*  | set_tabs_rearrange_group(value) |
++-----------+---------------------------------+
+| *Getter*  | get_tabs_rearrange_group()      |
++-----------+---------------------------------+
+
+``TabContainer``\ s with the same rearrange group ID will allow dragging the tabs between them. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`.
+
+Setting this to ``-1`` will disable rearranging between ``TabContainer``\ s.
 
 ----
 
@@ -277,7 +296,7 @@ Returns the child :ref:`Control<class_Control>` node located at the active tab i
 
 Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
 
 ----
 
@@ -305,22 +324,6 @@ Returns the number of tabs.
 
 ----
 
-.. _class_TabContainer_method_get_tab_disabled:
-
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
-
-Returns ``true`` if the tab at index ``tab_idx`` is disabled.
-
-----
-
-.. _class_TabContainer_method_get_tab_hidden:
-
-- :ref:`bool<class_bool>` **get_tab_hidden** **(** :ref:`int<class_int>` tab_idx **)** |const|
-
-Returns ``true`` if the tab at index ``tab_idx`` is hidden.
-
-----
-
 .. _class_TabContainer_method_get_tab_icon:
 
 - :ref:`Texture2D<class_Texture2D>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
@@ -337,6 +340,14 @@ Returns the index of the tab at local coordinates ``point``. Returns ``-1`` if t
 
 ----
 
+.. _class_TabContainer_method_get_tab_idx_from_control:
+
+- :ref:`int<class_int>` **get_tab_idx_from_control** **(** :ref:`Control<class_Control>` control **)** |const|
+
+Returns the index of the tab tied to the given ``control``. The control must be a child of the ``TabContainer``.
+
+----
+
 .. _class_TabContainer_method_get_tab_title:
 
 - :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
@@ -345,11 +356,19 @@ Returns the title of the tab at index ``tab_idx``. Tab titles default to the nam
 
 ----
 
-.. _class_TabContainer_method_get_tabs_rearrange_group:
+.. _class_TabContainer_method_is_tab_disabled:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
+- :ref:`bool<class_bool>` **is_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
-Returns the ``TabContainer`` rearrange group id.
+Returns ``true`` if the tab at index ``tab_idx`` is disabled.
+
+----
+
+.. _class_TabContainer_method_is_tab_hidden:
+
+- :ref:`bool<class_bool>` **is_tab_hidden** **(** :ref:`int<class_int>` tab_idx **)** |const|
+
+Returns ``true`` if the tab at index ``tab_idx`` is hidden.
 
 ----
 
@@ -357,7 +376,7 @@ Returns the ``TabContainer`` rearrange group id.
 
 - void **set_popup** **(** :ref:`Node<class_Node>` popup **)**
 
-If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer``. Clicking it will expand the :ref:`Popup<class_Popup>` node.
+If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer`` (setting it to ``null`` will make it go away). Clicking it will expand the :ref:`Popup<class_Popup>` node.
 
 ----
 
@@ -389,50 +408,18 @@ Sets an icon for the tab at index ``tab_idx``.
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
-Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node.
-
-----
-
-.. _class_TabContainer_method_set_tabs_rearrange_group:
-
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
-
-Defines rearrange group id, choose for each ``TabContainer`` the same value to enable tab drag between ``TabContainer``. Enable drag with :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`.
+Sets a custom title for the tab at index ``tab_idx`` (tab titles default to the name of the indexed child node). Set it back to the child's name to make the tab default to it again.
 
 Theme Property Descriptions
 ---------------------------
-
-.. _class_TabContainer_theme_icon_decrement:
-
-- :ref:`Texture2D<class_Texture2D>` **decrement**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
-
-----
-
-.. _class_TabContainer_theme_icon_decrement_highlight:
-
-- :ref:`Texture2D<class_Texture2D>` **decrement_highlight**
-
-Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
-
-----
-
-.. _class_TabContainer_theme_font_font:
-
-- :ref:`Font<class_Font>` **font**
-
-The font used to draw tab names.
-
-----
 
 .. _class_TabContainer_theme_color_font_disabled_color:
 
 - :ref:`Color<class_Color>` **font_disabled_color**
 
-+-----------+-------------------------------+
-| *Default* | ``Color(0.9, 0.9, 0.9, 0.2)`` |
-+-----------+-------------------------------+
++-----------+-------------------------------------+
+| *Default* | ``Color(0.875, 0.875, 0.875, 0.5)`` |
++-----------+-------------------------------------+
 
 Font color of disabled tabs.
 
@@ -455,18 +442,10 @@ The tint of text outline of the tab name.
 - :ref:`Color<class_Color>` **font_selected_color**
 
 +-----------+--------------------------------+
-| *Default* | ``Color(0.94, 0.94, 0.94, 1)`` |
+| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
 +-----------+--------------------------------+
 
 Font color of the currently selected tab.
-
-----
-
-.. _class_TabContainer_theme_font_size_font_size:
-
-- :ref:`int<class_int>` **font_size**
-
-Font size of the tab names.
 
 ----
 
@@ -474,9 +453,9 @@ Font size of the tab names.
 
 - :ref:`Color<class_Color>` **font_unselected_color**
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.69, 0.69, 0.69, 1)`` |
-+-----------+--------------------------------+
++-----------+-----------------------------+
+| *Default* | ``Color(0.7, 0.7, 0.7, 1)`` |
++-----------+-----------------------------+
 
 Font color of the other, unselected tabs.
 
@@ -491,6 +470,64 @@ Font color of the other, unselected tabs.
 +-----------+-------+
 
 Space between tab's name and its icon.
+
+----
+
+.. _class_TabContainer_theme_constant_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the tab text outline.
+
+----
+
+.. _class_TabContainer_theme_constant_side_margin:
+
+- :ref:`int<class_int>` **side_margin**
+
++-----------+-------+
+| *Default* | ``8`` |
++-----------+-------+
+
+The space at the left or right edges of the tab bar, accordingly with the current :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`.
+
+The margin is ignored with ``ALIGNMENT_RIGHT`` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup<class_TabContainer_method_set_popup>`). The margin is always ignored with ``ALIGNMENT_CENTER``.
+
+----
+
+.. _class_TabContainer_theme_font_font:
+
+- :ref:`Font<class_Font>` **font**
+
+The font used to draw tab names.
+
+----
+
+.. _class_TabContainer_theme_font_size_font_size:
+
+- :ref:`int<class_int>` **font_size**
+
+Font size of the tab names.
+
+----
+
+.. _class_TabContainer_theme_icon_decrement:
+
+- :ref:`Texture2D<class_Texture2D>` **decrement**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
+
+----
+
+.. _class_TabContainer_theme_icon_decrement_highlight:
+
+- :ref:`Texture2D<class_Texture2D>` **decrement_highlight**
+
+Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
 
 ----
 
@@ -526,35 +563,11 @@ The icon for the menu button (see :ref:`set_popup<class_TabContainer_method_set_
 
 ----
 
-.. _class_TabContainer_theme_constant_outline_size:
-
-- :ref:`int<class_int>` **outline_size**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-The size of the tab text outline.
-
-----
-
 .. _class_TabContainer_theme_style_panel:
 
 - :ref:`StyleBox<class_StyleBox>` **panel**
 
 The style for the background fill.
-
-----
-
-.. _class_TabContainer_theme_constant_side_margin:
-
-- :ref:`int<class_int>` **side_margin**
-
-+-----------+-------+
-| *Default* | ``8`` |
-+-----------+-------+
-
-The space at the left and right edges of the tab bar.
 
 ----
 

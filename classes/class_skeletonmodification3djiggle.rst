@@ -20,7 +20,7 @@ This modification moves a series of bones, typically called a bone chain, toward
 
 This modification is useful for adding additional motion to things like hair, the edges of clothing, and more. It has several settings to that allow control over how the joint moves when the target moves.
 
-**Note:** The Jiggle modifier has ``jiggle_joints``, which are the data objects that hold the data for each joint in the Jiggle chain. This is different from a bone! Jiggle joints hold the data needed for each bone in the bone chain used by the Jiggle modification.
+\ **Note:** The Jiggle modifier has ``jiggle_joints``, which are the data objects that hold the data for each joint in the Jiggle chain. This is different from a bone! Jiggle joints hold the data needed for each bone in the bone chain used by the Jiggle modification.
 
 Properties
 ----------
@@ -258,7 +258,7 @@ Returns the amount of mass of the Jiggle joint at ``joint_idx``.
 
 - :ref:`bool<class_bool>` **get_jiggle_joint_override** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
-Returns a boolean that indiciates whether the joint at ``joint_idx`` is overriding the default jiggle joint data defined in the modification.
+Returns a boolean that indicates whether the joint at ``joint_idx`` is overriding the default jiggle joint data defined in the modification.
 
 ----
 
@@ -282,7 +282,7 @@ Returns the stiffness of the Jiggle joint at ``joint_idx``.
 
 - :ref:`bool<class_bool>` **get_jiggle_joint_use_gravity** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
-Returns a boolean that indiciates whether the joint at ``joint_idx`` is using gravity or not.
+Returns a boolean that indicates whether the joint at ``joint_idx`` is using gravity or not.
 
 ----
 

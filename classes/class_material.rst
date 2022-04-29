@@ -30,18 +30,26 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |       |
-+---------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
-+---------------------------------+-----------------------------------------------------------------+-------+
++---------------------------------+-----------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |
++---------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` |
++---------------------------------+-----------------------------------------------------------------+
 
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------+
-| void | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)** |
-+------+-------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Mode<enum_Shader_Mode>` | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`         | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -69,7 +77,7 @@ Property Descriptions
 
 Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
 
-**Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+\ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
 ----
 
@@ -77,22 +85,44 @@ Sets the ``Material`` to be used for the next pass. This renders the object agai
 
 - :ref:`int<class_int>` **render_priority**
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_render_priority(value) |
-+-----------+----------------------------+
-| *Getter*  | get_render_priority()      |
-+-----------+----------------------------+
++----------+----------------------------+
+| *Setter* | set_render_priority(value) |
++----------+----------------------------+
+| *Getter* | get_render_priority()      |
++----------+----------------------------+
 
 Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
 
-**Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+\ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
-**Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
+\ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
 Method Descriptions
 -------------------
+
+.. _class_Material_method__can_do_next_pass:
+
+- :ref:`bool<class_bool>` **_can_do_next_pass** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Material_method__can_use_render_priority:
+
+- :ref:`bool<class_bool>` **_can_use_render_priority** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Material_method__get_shader_mode:
+
+- :ref:`Mode<enum_Shader_Mode>` **_get_shader_mode** **(** **)** |virtual| |const|
+
+----
+
+.. _class_Material_method__get_shader_rid:
+
+- :ref:`RID<class_RID>` **_get_shader_rid** **(** **)** |virtual| |const|
+
+----
 
 .. _class_Material_method_inspect_native_shader_code:
 

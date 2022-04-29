@@ -20,32 +20,28 @@ Description
 
 A ScrollContainer node meant to contain a :ref:`Control<class_Control>` child.
 
-ScrollContainers will automatically create a scrollbar child (:ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`, or both) when needed and will only draw the Control within the ScrollContainer area. Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer. Scrollbars will also automatically resize the grabber based on the :ref:`Control.rect_min_size<class_Control_property_rect_min_size>` of the Control relative to the ScrollContainer.
+ScrollContainers will automatically create a scrollbar child (:ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`, or both) when needed and will only draw the Control within the ScrollContainer area. Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer. Scrollbars will also automatically resize the grabber based on the :ref:`Control.minimum_size<class_Control_property_minimum_size>` of the Control relative to the ScrollContainer.
 
 Works great with a :ref:`Panel<class_Panel>` control. You can set ``EXPAND`` on the children's size flags, so they will upscale to the ScrollContainer's size if it's larger (scroll is invisible for the chosen dimension).
 
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``                    |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | rect_clip_content                                                                          | ``true`` *(parent override)* |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_visible<class_ScrollContainer_property_scroll_horizontal_visible>` | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_visible<class_ScrollContainer_property_scroll_vertical_visible>`     | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | clip_contents                                                                        | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                     | ``false``                                                                 |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`horizontal_scroll_mode<class_ScrollContainer_property_horizontal_scroll_mode>` | ``1``                                                                     |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`               | ``0``                                                                     |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`           | ``0``                                                                     |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`               | ``0``                                                                     |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`vertical_scroll_mode<class_ScrollContainer_property_vertical_scroll_mode>`     | ``1``                                                                     |
++----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Methods
 -------
@@ -53,9 +49,9 @@ Methods
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`ensure_control_visible<class_ScrollContainer_method_ensure_control_visible>` **(** :ref:`Control<class_Control>` control **)** |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scrollbar<class_ScrollContainer_method_get_h_scrollbar>` **(** **)**                                                     |
+| :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scroll_bar<class_ScrollContainer_method_get_h_scroll_bar>` **(** **)**                                                   |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scrollbar<class_ScrollContainer_method_get_v_scrollbar>` **(** **)**                                                     |
+| :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scroll_bar<class_ScrollContainer_method_get_v_scroll_bar>` **(** **)**                                                   |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -82,6 +78,29 @@ Emitted when scrolling stops.
 
 Emitted when scrolling is started.
 
+Enumerations
+------------
+
+.. _enum_ScrollContainer_ScrollMode:
+
+.. _class_ScrollContainer_constant_SCROLL_MODE_DISABLED:
+
+.. _class_ScrollContainer_constant_SCROLL_MODE_AUTO:
+
+.. _class_ScrollContainer_constant_SCROLL_MODE_SHOW_ALWAYS:
+
+.. _class_ScrollContainer_constant_SCROLL_MODE_SHOW_NEVER:
+
+enum **ScrollMode**:
+
+- **SCROLL_MODE_DISABLED** = **0** --- Scrolling disabled, scrollbar will be invisible.
+
+- **SCROLL_MODE_AUTO** = **1** --- Scrolling enabled, scrollbar will be visible only if necessary, i.e. container's content is bigger than the container.
+
+- **SCROLL_MODE_SHOW_ALWAYS** = **2** --- Scrolling enabled, scrollbar will be always visible.
+
+- **SCROLL_MODE_SHOW_NEVER** = **3** --- Scrolling enabled, scrollbar will be hidden.
+
 Property Descriptions
 ---------------------
 
@@ -98,6 +117,22 @@ Property Descriptions
 +-----------+-------------------------+
 
 If ``true``, the ScrollContainer will automatically scroll to focused children (including indirect children) to make sure they are fully visible.
+
+----
+
+.. _class_ScrollContainer_property_horizontal_scroll_mode:
+
+- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **horizontal_scroll_mode**
+
++-----------+-----------------------------------+
+| *Default* | ``1``                             |
++-----------+-----------------------------------+
+| *Setter*  | set_horizontal_scroll_mode(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_horizontal_scroll_mode()      |
++-----------+-----------------------------------+
+
+Controls whether horizontal scrollbar can be used and when it should be visible. See :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` for options.
 
 ----
 
@@ -131,38 +166,6 @@ The current horizontal scroll value.
 
 ----
 
-.. _class_ScrollContainer_property_scroll_horizontal_enabled:
-
-- :ref:`bool<class_bool>` **scroll_horizontal_enabled**
-
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_enable_h_scroll(value) |
-+-----------+----------------------------+
-| *Getter*  | is_h_scroll_enabled()      |
-+-----------+----------------------------+
-
-If ``true``, enables horizontal scrolling.
-
-----
-
-.. _class_ScrollContainer_property_scroll_horizontal_visible:
-
-- :ref:`bool<class_bool>` **scroll_horizontal_visible**
-
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_h_scroll_visible(value) |
-+-----------+-----------------------------+
-| *Getter*  | is_h_scroll_visible()       |
-+-----------+-----------------------------+
-
-If ``false``, hides the horizontal scrollbar.
-
-----
-
 .. _class_ScrollContainer_property_scroll_vertical:
 
 - :ref:`int<class_int>` **scroll_vertical**
@@ -179,35 +182,19 @@ The current vertical scroll value.
 
 ----
 
-.. _class_ScrollContainer_property_scroll_vertical_enabled:
+.. _class_ScrollContainer_property_vertical_scroll_mode:
 
-- :ref:`bool<class_bool>` **scroll_vertical_enabled**
+- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **vertical_scroll_mode**
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_enable_v_scroll(value) |
-+-----------+----------------------------+
-| *Getter*  | is_v_scroll_enabled()      |
-+-----------+----------------------------+
++-----------+---------------------------------+
+| *Default* | ``1``                           |
++-----------+---------------------------------+
+| *Setter*  | set_vertical_scroll_mode(value) |
++-----------+---------------------------------+
+| *Getter*  | get_vertical_scroll_mode()      |
++-----------+---------------------------------+
 
-If ``true``, enables vertical scrolling.
-
-----
-
-.. _class_ScrollContainer_property_scroll_vertical_visible:
-
-- :ref:`bool<class_bool>` **scroll_vertical_visible**
-
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_v_scroll_visible(value) |
-+-----------+-----------------------------+
-| *Getter*  | is_v_scroll_visible()       |
-+-----------+-----------------------------+
-
-If ``false``, hides the vertical scrollbar.
+Controls whether vertical scrollbar can be used and when it should be visible. See :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` for options.
 
 Method Descriptions
 -------------------
@@ -218,25 +205,33 @@ Method Descriptions
 
 Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
 
+\ **Note:** This will not work on a node that was just added during the same frame. If you want to scroll to a newly added child, you must wait until the next frame using :ref:`SceneTree.process_frame<class_SceneTree_signal_process_frame>`:
+
+::
+
+    add_child(child_node)
+    await get_tree().process_frame
+    ensure_control_visible(child_node)
+
 ----
 
-.. _class_ScrollContainer_method_get_h_scrollbar:
+.. _class_ScrollContainer_method_get_h_scroll_bar:
 
-- :ref:`HScrollBar<class_HScrollBar>` **get_h_scrollbar** **(** **)**
+- :ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar** **(** **)**
 
 Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this ``ScrollContainer``.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the horizontal scrollbar, use :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>`. If you want to only hide it instead, use :ref:`scroll_horizontal_visible<class_ScrollContainer_property_scroll_horizontal_visible>`.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable or hide a scrollbar, you can use :ref:`horizontal_scroll_mode<class_ScrollContainer_property_horizontal_scroll_mode>`.
 
 ----
 
-.. _class_ScrollContainer_method_get_v_scrollbar:
+.. _class_ScrollContainer_method_get_v_scroll_bar:
 
-- :ref:`VScrollBar<class_VScrollBar>` **get_v_scrollbar** **(** **)**
+- :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar** **(** **)**
 
 Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this ``ScrollContainer``.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the vertical scrollbar, use :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`. If you want to only hide it instead, use :ref:`scroll_vertical_visible<class_ScrollContainer_property_scroll_vertical_visible>`.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable or hide a scrollbar, you can use :ref:`vertical_scroll_mode<class_ScrollContainer_property_vertical_scroll_mode>`.
 
 Theme Property Descriptions
 ---------------------------

@@ -72,19 +72,25 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` **(** :ref:`RID<class_RID>` area, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_central_force<class_PhysicsServer2D_method_body_add_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                         |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_add_collision_exception<class_PhysicsServer2D_method_body_add_collision_exception>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**                                                                                                                             |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_force<class_PhysicsServer2D_method_body_add_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**                                                                                                   |
+| void                                                              | :ref:`body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                       |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**                                                                                 |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**                                                                                                                                        |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`bool<class_bool>` disabled=false **)**                                          |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`body_add_torque<class_PhysicsServer2D_method_body_add_torque>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**                                                                                                                                                          |
+| void                                                              | :ref:`body_apply_central_force<class_PhysicsServer2D_method_body_apply_central_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_central_impulse<class_PhysicsServer2D_method_body_apply_central_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)**                                                                                                                               |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_apply_force<class_PhysicsServer2D_method_body_apply_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**                                                                                               |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_impulse<class_PhysicsServer2D_method_body_apply_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**                                                                                         |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_apply_torque<class_PhysicsServer2D_method_body_apply_torque>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**                                                                                                                                                      |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_apply_torque_impulse<class_PhysicsServer2D_method_body_apply_torque_impulse>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)**                                                                                                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +107,10 @@ Methods
 | :ref:`int<class_int>`                                             | :ref:`body_get_collision_layer<class_PhysicsServer2D_method_body_get_collision_layer>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                  |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`body_get_collision_mask<class_PhysicsServer2D_method_body_get_collision_mask>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                    |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                     | :ref:`body_get_constant_force<class_PhysicsServer2D_method_body_get_constant_force>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                    |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                         | :ref:`body_get_constant_torque<class_PhysicsServer2D_method_body_get_constant_torque>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                  |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`                      | :ref:`body_get_continuous_collision_detection_mode<class_PhysicsServer2D_method_body_get_continuous_collision_detection_mode>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                          |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,6 +147,10 @@ Methods
 | void                                                              | :ref:`body_set_collision_layer<class_PhysicsServer2D_method_body_set_collision_layer>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**                                                                                                                                             |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_collision_mask<class_PhysicsServer2D_method_body_set_collision_mask>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**                                                                                                                                                |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_set_constant_force<class_PhysicsServer2D_method_body_set_constant_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**                                                                                                                                       |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_set_constant_torque<class_PhysicsServer2D_method_body_set_constant_torque>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**                                                                                                                                        |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_continuous_collision_detection_mode<class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode>` **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` mode **)**                                                                               |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,8 +218,6 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_active<class_PhysicsServer2D_method_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                  |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_collision_iterations<class_PhysicsServer2D_method_set_collision_iterations>` **(** :ref:`int<class_int>` iterations **)**                                                                                                                                                                    |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                     | :ref:`shape_get_data<class_PhysicsServer2D_method_shape_get_data>` **(** :ref:`RID<class_RID>` shape **)** |const|                                                                                                                                                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>`                  | :ref:`shape_get_type<class_PhysicsServer2D_method_shape_get_type>` **(** :ref:`RID<class_RID>` shape **)** |const|                                                                                                                                                                                     |
@@ -236,7 +248,9 @@ Enumerations
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION:
 
-.. _class_PhysicsServer2D_constant_SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION:
+.. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION:
+
+.. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_DEFAULT_BIAS:
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD:
 
@@ -246,21 +260,27 @@ Enumerations
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS:
 
+.. _class_PhysicsServer2D_constant_SPACE_PARAM_SOLVER_ITERATIONS:
+
 enum **SpaceParameter**:
 
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
 
-- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
+- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated and the contact is discarded.
 
-- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+- **SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
 
-- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_CONTACT_DEFAULT_BIAS** = **3** --- Constant to set/get the default solver bias for all physics contacts. A solver bias is a factor controlling how much two objects "rebound", after overlapping, to avoid leaving them in that state because of numerical imprecision.
 
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **5** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
-- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **6** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+
+- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+
+- **SPACE_PARAM_SOLVER_ITERATIONS** = **8** --- Constant to set/get the number of solver iterations for all contacts and constraints. The greater the amount of iterations, the more accurate the collisions will be. However, a greater amount of iterations requires more CPU power, which can decrease performance.
 
 ----
 
@@ -805,12 +825,6 @@ Sets the transform matrix for an area.
 
 ----
 
-.. _class_PhysicsServer2D_method_body_add_central_force:
-
-- void **body_add_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
-
-----
-
 .. _class_PhysicsServer2D_method_body_add_collision_exception:
 
 - void **body_add_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
@@ -819,11 +833,31 @@ Adds a body to the list of bodies exempt from collisions.
 
 ----
 
-.. _class_PhysicsServer2D_method_body_add_force:
+.. _class_PhysicsServer2D_method_body_add_constant_central_force:
 
-- void **body_add_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+- void **body_add_constant_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
 
-Adds a positioned force to the applied force and torque. As with :ref:`body_apply_impulse<class_PhysicsServer2D_method_body_apply_impulse>`, both the force and the offset from the body origin are in global coordinates. A force differs from an impulse in that, while the two are forces, the impulse clears itself after being applied.
+Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector2(0, 0))``.
+
+This is equivalent to using :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` at the body's center of mass.
+
+----
+
+.. _class_PhysicsServer2D_method_body_add_constant_force:
+
+- void **body_add_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+
+Adds a constant positioned force to the body that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector2(0, 0))``.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsServer2D_method_body_add_constant_torque:
+
+- void **body_add_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
+
+Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``body_set_constant_torque(body, 0)``.
 
 ----
 
@@ -835,9 +869,13 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 ----
 
-.. _class_PhysicsServer2D_method_body_add_torque:
+.. _class_PhysicsServer2D_method_body_apply_central_force:
 
-- void **body_add_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
+- void **body_apply_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
+
+Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+
+This is equivalent to using :ref:`body_apply_force<class_PhysicsServer2D_method_body_apply_force>` at the body's center of mass.
 
 ----
 
@@ -845,19 +883,51 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 - void **body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)**
 
+Applies a directional impulse without affecting rotation.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+This is equivalent to using :ref:`body_apply_impulse<class_PhysicsServer2D_method_body_apply_impulse>` at the body's center of mass.
+
+----
+
+.. _class_PhysicsServer2D_method_body_apply_force:
+
+- void **body_apply_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+
+Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
 ----
 
 .. _class_PhysicsServer2D_method_body_apply_impulse:
 
 - void **body_apply_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Adds a positioned impulse to the applied force and torque. Both the force and the offset from the body origin are in global coordinates.
+Applies a positioned impulse to the body.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ ``position`` is the offset from the body origin in global coordinates.
+
+----
+
+.. _class_PhysicsServer2D_method_body_apply_torque:
+
+- void **body_apply_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
+
+Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
 ----
 
 .. _class_PhysicsServer2D_method_body_apply_torque_impulse:
 
 - void **body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)**
+
+Applies a rotational impulse to the body without affecting the position.
+
+An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
 ----
 
@@ -910,6 +980,26 @@ Returns the physics layer or layers a body belongs to.
 - :ref:`int<class_int>` **body_get_collision_mask** **(** :ref:`RID<class_RID>` body **)** |const|
 
 Returns the physics layer or layers a body can collide with.
+
+----
+
+.. _class_PhysicsServer2D_method_body_get_constant_force:
+
+- :ref:`Vector2<class_Vector2>` **body_get_constant_force** **(** :ref:`RID<class_RID>` body **)** |const|
+
+Returns the body's total constant positional forces applied during each physics update.
+
+See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsServer2D_method_body_get_constant_torque:
+
+- :ref:`float<class_float>` **body_get_constant_torque** **(** :ref:`RID<class_RID>` body **)** |const|
+
+Returns the body's total constant rotational forces applied during each physics update.
+
+See :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>`.
 
 ----
 
@@ -1057,6 +1147,26 @@ Sets the physics layer or layers a body can collide with.
 
 ----
 
+.. _class_PhysicsServer2D_method_body_set_constant_force:
+
+- void **body_set_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
+
+Sets the body's total constant positional forces applied during each physics update.
+
+See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>`.
+
+----
+
+.. _class_PhysicsServer2D_method_body_set_constant_torque:
+
+- void **body_set_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
+
+Sets the body's total constant rotational forces applied during each physics update.
+
+See :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>`.
+
+----
+
 .. _class_PhysicsServer2D_method_body_set_continuous_collision_detection_mode:
 
 - void **body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` mode **)**
@@ -1075,9 +1185,9 @@ Sets the function used to calculate physics for an object, if that object allows
 
 The force integration function takes 2 arguments:
 
-``state:`` :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` used to retrieve and modify the body's state.
+\ ``state:`` :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` used to retrieve and modify the body's state.
 
-``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
+\ ``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
 
 ----
 
@@ -1304,14 +1414,6 @@ Sets a joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` f
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activates or deactivates the 2D physics engine.
-
-----
-
-.. _class_PhysicsServer2D_method_set_collision_iterations:
-
-- void **set_collision_iterations** **(** :ref:`int<class_int>` iterations **)**
-
-Sets the amount of iterations for calculating velocities of colliding bodies. The greater the amount of iterations, the more accurate the collisions will be. However, a greater amount of iterations requires more CPU power, which can decrease performance. The default value is ``8``.
 
 ----
 

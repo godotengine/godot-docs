@@ -86,6 +86,8 @@ Enumerations
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_LERP:
 
+.. _class_VisualScriptBuiltinFunc_constant_MATH_CUBIC_INTERPOLATE:
+
 .. _class_VisualScriptBuiltinFunc_constant_MATH_INVERSE_LERP:
 
 .. _class_VisualScriptBuiltinFunc_constant_MATH_RANGE_LERP:
@@ -170,146 +172,148 @@ Enumerations
 
 enum **BuiltinFunc**:
 
-- **MATH_SIN** = **0** --- Return the sine of the input.
+- **MATH_SIN** = **0** --- Returns the sine of the input.
 
-- **MATH_COS** = **1** --- Return the cosine of the input.
+- **MATH_COS** = **1** --- Returns the cosine of the input.
 
-- **MATH_TAN** = **2** --- Return the tangent of the input.
+- **MATH_TAN** = **2** --- Returns the tangent of the input.
 
-- **MATH_SINH** = **3** --- Return the hyperbolic sine of the input.
+- **MATH_SINH** = **3** --- Returns the hyperbolic sine of the input.
 
-- **MATH_COSH** = **4** --- Return the hyperbolic cosine of the input.
+- **MATH_COSH** = **4** --- Returns the hyperbolic cosine of the input.
 
-- **MATH_TANH** = **5** --- Return the hyperbolic tangent of the input.
+- **MATH_TANH** = **5** --- Returns the hyperbolic tangent of the input.
 
-- **MATH_ASIN** = **6** --- Return the arc sine of the input.
+- **MATH_ASIN** = **6** --- Returns the arc sine of the input.
 
-- **MATH_ACOS** = **7** --- Return the arc cosine of the input.
+- **MATH_ACOS** = **7** --- Returns the arc cosine of the input.
 
-- **MATH_ATAN** = **8** --- Return the arc tangent of the input.
+- **MATH_ATAN** = **8** --- Returns the arc tangent of the input.
 
-- **MATH_ATAN2** = **9** --- Return the arc tangent of the input, using the signs of both parameters to determine the exact angle.
+- **MATH_ATAN2** = **9** --- Returns the arc tangent of the input, using the signs of both parameters to determine the exact angle.
 
-- **MATH_SQRT** = **10** --- Return the square root of the input.
+- **MATH_SQRT** = **10** --- Returns the square root of the input.
 
-- **MATH_FMOD** = **11** --- Return the remainder of one input divided by the other, using floating-point numbers.
+- **MATH_FMOD** = **11** --- Returns the remainder of one input divided by the other, using floating-point numbers.
 
-- **MATH_FPOSMOD** = **12** --- Return the positive remainder of one input divided by the other, using floating-point numbers.
+- **MATH_FPOSMOD** = **12** --- Returns the positive remainder of one input divided by the other, using floating-point numbers.
 
-- **MATH_FLOOR** = **13** --- Return the input rounded down.
+- **MATH_FLOOR** = **13** --- Returns the input rounded down.
 
-- **MATH_CEIL** = **14** --- Return the input rounded up.
+- **MATH_CEIL** = **14** --- Returns the input rounded up.
 
-- **MATH_ROUND** = **15** --- Return the input rounded to the nearest integer.
+- **MATH_ROUND** = **15** --- Returns the input rounded to the nearest integer.
 
-- **MATH_ABS** = **16** --- Return the absolute value of the input.
+- **MATH_ABS** = **16** --- Returns the absolute value of the input.
 
-- **MATH_SIGN** = **17** --- Return the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
+- **MATH_SIGN** = **17** --- Returns the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
 
-- **MATH_POW** = **18** --- Return the input raised to a given power.
+- **MATH_POW** = **18** --- Returns the input raised to a given power.
 
-- **MATH_LOG** = **19** --- Return the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
+- **MATH_LOG** = **19** --- Returns the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
 
-- **MATH_EXP** = **20** --- Return the mathematical constant **e** raised to the specified power of the input. **e** has an approximate value of 2.71828.
+- **MATH_EXP** = **20** --- Returns the mathematical constant **e** raised to the specified power of the input. **e** has an approximate value of 2.71828.
 
-- **MATH_ISNAN** = **21** --- Return whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
+- **MATH_ISNAN** = **21** --- Returns whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
 
-- **MATH_ISINF** = **22** --- Return whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
+- **MATH_ISINF** = **22** --- Returns whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
 
 - **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
 
-- **MATH_STEP_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
+- **MATH_STEP_DECIMALS** = **24** --- Returns the number of digit places after the decimal that the first non-zero digit occurs.
 
-- **MATH_SNAPPED** = **25** --- Return the input snapped to a given step.
+- **MATH_SNAPPED** = **25** --- Returns the input snapped to a given step.
 
-- **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
+- **MATH_LERP** = **26** --- Returns a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
 
-- **MATH_INVERSE_LERP** = **27**
+- **MATH_CUBIC_INTERPOLATE** = **27**
 
-- **MATH_RANGE_LERP** = **28**
+- **MATH_INVERSE_LERP** = **28**
 
-- **MATH_MOVE_TOWARD** = **29** --- Moves the number toward a value, based on the third input.
+- **MATH_RANGE_LERP** = **29**
 
-- **MATH_RANDOMIZE** = **30** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+- **MATH_MOVE_TOWARD** = **30** --- Moves the number toward a value, based on the third input.
 
-- **MATH_RANDI** = **31** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+- **MATH_RANDOMIZE** = **31** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
-- **MATH_RANDF** = **32** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+- **MATH_RANDI** = **32** --- Returns a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
 
-- **MATH_RANDI_RANGE** = **33** --- Return a random 32-bit integer value between the two inputs.
+- **MATH_RANDF** = **33** --- Returns a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
 
-- **MATH_RANDF_RANGE** = **34** --- Return a random floating-point value between the two inputs.
+- **MATH_RANDI_RANGE** = **34** --- Returns a random 32-bit integer value between the two inputs.
 
-- **MATH_RANDFN** = **35** --- Returns a normally-distributed pseudo-random number, using Box-Muller transform with the specified mean and a standard deviation. This is also called Gaussian distribution.
+- **MATH_RANDF_RANGE** = **35** --- Returns a random floating-point value between the two inputs.
 
-- **MATH_SEED** = **36** --- Set the seed for the random number generator.
+- **MATH_RANDFN** = **36** --- Returns a normally-distributed pseudo-random number, using Box-Muller transform with the specified mean and a standard deviation. This is also called Gaussian distribution.
 
-- **MATH_RANDSEED** = **37** --- Return a random value from the given seed, along with the new seed.
+- **MATH_SEED** = **37** --- Set the seed for the random number generator.
 
-- **MATH_DEG2RAD** = **38** --- Convert the input from degrees to radians.
+- **MATH_RANDSEED** = **38** --- Returns a random value from the given seed, along with the new seed.
 
-- **MATH_RAD2DEG** = **39** --- Convert the input from radians to degrees.
+- **MATH_DEG2RAD** = **39** --- Convert the input from degrees to radians.
 
-- **MATH_LINEAR2DB** = **40** --- Convert the input from linear volume to decibel volume.
+- **MATH_RAD2DEG** = **40** --- Convert the input from radians to degrees.
 
-- **MATH_DB2LINEAR** = **41** --- Convert the input from decibel volume to linear volume.
+- **MATH_LINEAR2DB** = **41** --- Convert the input from linear volume to decibel volume.
 
-- **MATH_WRAP** = **42**
+- **MATH_DB2LINEAR** = **42** --- Convert the input from decibel volume to linear volume.
 
-- **MATH_WRAPF** = **43**
+- **MATH_WRAP** = **43**
 
-- **MATH_PINGPONG** = **44** --- Return the ``value`` wrapped between ``0`` and the ``length``. If the limit is reached, the next value the function returned is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
+- **MATH_WRAPF** = **44**
 
-- **LOGIC_MAX** = **45** --- Return the greater of the two numbers, also known as their maximum.
+- **MATH_PINGPONG** = **45** --- Returns the ``value`` wrapped between ``0`` and the ``length``. If the limit is reached, the next value the function returned is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
 
-- **LOGIC_MIN** = **46** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_MAX** = **46** --- Returns the greater of the two numbers, also known as their maximum.
 
-- **LOGIC_CLAMP** = **47** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+- **LOGIC_MIN** = **47** --- Returns the lesser of the two numbers, also known as their minimum.
 
-- **LOGIC_NEAREST_PO2** = **48** --- Return the nearest power of 2 to the input.
+- **LOGIC_CLAMP** = **48** --- Returns the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
 
-- **OBJ_WEAKREF** = **49** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+- **LOGIC_NEAREST_PO2** = **49** --- Returns the nearest power of 2 to the input.
 
-- **TYPE_CONVERT** = **50** --- Convert between types.
+- **OBJ_WEAKREF** = **50** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
 
-- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+- **TYPE_CONVERT** = **51** --- Convert between types.
 
-- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+- **TYPE_OF** = **52** --- Returns the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
 
-- **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
+- **TYPE_EXISTS** = **53** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
 
-- **TEXT_STR** = **54** --- Convert the input to a string.
+- **TEXT_CHAR** = **54** --- Returns a character with the given ascii value.
 
-- **TEXT_PRINT** = **55** --- Print the given string to the output window.
+- **TEXT_STR** = **55** --- Convert the input to a string.
 
-- **TEXT_PRINTERR** = **56** --- Print the given string to the standard error output.
+- **TEXT_PRINT** = **56** --- Print the given string to the output window.
 
-- **TEXT_PRINTRAW** = **57** --- Print the given string to the standard output, without adding a newline.
+- **TEXT_PRINTERR** = **57** --- Print the given string to the standard error output.
 
-- **TEXT_PRINT_VERBOSE** = **58**
+- **TEXT_PRINTRAW** = **58** --- Print the given string to the standard output, without adding a newline.
 
-- **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+- **TEXT_PRINT_VERBOSE** = **59**
 
-- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
+- **VAR_TO_STR** = **60** --- Serialize a :ref:`Variant<class_Variant>` to a string.
 
-- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
+- **STR_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
 
-- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+- **VAR_TO_BYTES** = **62** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **MATH_SMOOTHSTEP** = **63** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+- **BYTES_TO_VAR** = **63** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PackedByteArray<class_PackedByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+
+- **MATH_SMOOTHSTEP** = **64** --- Returns a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **MATH_POSMOD** = **64**
+- **MATH_POSMOD** = **65**
 
-- **MATH_LERP_ANGLE** = **65**
+- **MATH_LERP_ANGLE** = **66**
 
-- **TEXT_ORD** = **66**
+- **TEXT_ORD** = **67**
 
-- **FUNC_MAX** = **67** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+- **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
 
 Property Descriptions
 ---------------------

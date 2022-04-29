@@ -11,7 +11,7 @@ Resource
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Animation<class_Animation>`, :ref:`AnimationNode<class_AnimationNode>`, :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>`, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>`, :ref:`AudioBusLayout<class_AudioBusLayout>`, :ref:`AudioEffect<class_AudioEffect>`, :ref:`AudioStream<class_AudioStream>`, :ref:`BitMap<class_BitMap>`, :ref:`ButtonGroup<class_ButtonGroup>`, :ref:`CameraEffects<class_CameraEffects>`, :ref:`CryptoKey<class_CryptoKey>`, :ref:`Curve<class_Curve>`, :ref:`Curve2D<class_Curve2D>`, :ref:`Curve3D<class_Curve3D>`, :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>`, :ref:`EditorSettings<class_EditorSettings>`, :ref:`Environment<class_Environment>`, :ref:`Font<class_Font>`, :ref:`FontData<class_FontData>`, :ref:`GDNativeLibrary<class_GDNativeLibrary>`, :ref:`GLTFAccessor<class_GLTFAccessor>`, :ref:`GLTFAnimation<class_GLTFAnimation>`, :ref:`GLTFBufferView<class_GLTFBufferView>`, :ref:`GLTFCamera<class_GLTFCamera>`, :ref:`GLTFDocument<class_GLTFDocument>`, :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, :ref:`GLTFLight<class_GLTFLight>`, :ref:`GLTFMesh<class_GLTFMesh>`, :ref:`GLTFNode<class_GLTFNode>`, :ref:`GLTFSkeleton<class_GLTFSkeleton>`, :ref:`GLTFSkin<class_GLTFSkin>`, :ref:`GLTFSpecGloss<class_GLTFSpecGloss>`, :ref:`GLTFState<class_GLTFState>`, :ref:`GLTFTexture<class_GLTFTexture>`, :ref:`Gradient<class_Gradient>`, :ref:`Image<class_Image>`, :ref:`ImporterMesh<class_ImporterMesh>`, :ref:`InputEvent<class_InputEvent>`, :ref:`LightmapGIData<class_LightmapGIData>`, :ref:`Material<class_Material>`, :ref:`Mesh<class_Mesh>`, :ref:`MeshLibrary<class_MeshLibrary>`, :ref:`MultiMesh<class_MultiMesh>`, :ref:`NativeExtension<class_NativeExtension>`, :ref:`NavigationMesh<class_NavigationMesh>`, :ref:`NavigationPolygon<class_NavigationPolygon>`, :ref:`OGGPacketSequence<class_OGGPacketSequence>`, :ref:`Occluder3D<class_Occluder3D>`, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`, :ref:`OpenSimplexNoise<class_OpenSimplexNoise>`, :ref:`PackedDataContainer<class_PackedDataContainer>`, :ref:`PackedScene<class_PackedScene>`, :ref:`PhysicsMaterial<class_PhysicsMaterial>`, :ref:`PolygonPathFinder<class_PolygonPathFinder>`, :ref:`RDShaderFile<class_RDShaderFile>`, :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, :ref:`RichTextEffect<class_RichTextEffect>`, :ref:`Script<class_Script>`, :ref:`Shader<class_Shader>`, :ref:`Shape2D<class_Shape2D>`, :ref:`Shape3D<class_Shape3D>`, :ref:`Shortcut<class_Shortcut>`, :ref:`SkeletonModification2D<class_SkeletonModification2D>`, :ref:`SkeletonModification3D<class_SkeletonModification3D>`, :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>`, :ref:`Skin<class_Skin>`, :ref:`Sky<class_Sky>`, :ref:`SpriteFrames<class_SpriteFrames>`, :ref:`StyleBox<class_StyleBox>`, :ref:`SyntaxHighlighter<class_SyntaxHighlighter>`, :ref:`Texture<class_Texture>`, :ref:`Theme<class_Theme>`, :ref:`TileMapPattern<class_TileMapPattern>`, :ref:`TileSet<class_TileSet>`, :ref:`TileSetSource<class_TileSetSource>`, :ref:`Translation<class_Translation>`, :ref:`VideoStream<class_VideoStream>`, :ref:`VisualScriptNode<class_VisualScriptNode>`, :ref:`VisualShaderNode<class_VisualShaderNode>`, :ref:`VoxelGIData<class_VoxelGIData>`, :ref:`World2D<class_World2D>`, :ref:`World3D<class_World3D>`, :ref:`X509Certificate<class_X509Certificate>`
+**Inherited By:** :ref:`Animation<class_Animation>`, :ref:`AnimationNode<class_AnimationNode>`, :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>`, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>`, :ref:`AudioBusLayout<class_AudioBusLayout>`, :ref:`AudioEffect<class_AudioEffect>`, :ref:`AudioStream<class_AudioStream>`, :ref:`BitMap<class_BitMap>`, :ref:`ButtonGroup<class_ButtonGroup>`, :ref:`CameraEffects<class_CameraEffects>`, :ref:`CryptoKey<class_CryptoKey>`, :ref:`Curve<class_Curve>`, :ref:`Curve2D<class_Curve2D>`, :ref:`Curve3D<class_Curve3D>`, :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>`, :ref:`EditorSettings<class_EditorSettings>`, :ref:`Environment<class_Environment>`, :ref:`Font<class_Font>`, :ref:`FontData<class_FontData>`, :ref:`GLTFAccessor<class_GLTFAccessor>`, :ref:`GLTFAnimation<class_GLTFAnimation>`, :ref:`GLTFBufferView<class_GLTFBufferView>`, :ref:`GLTFCamera<class_GLTFCamera>`, :ref:`GLTFDocument<class_GLTFDocument>`, :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, :ref:`GLTFLight<class_GLTFLight>`, :ref:`GLTFMesh<class_GLTFMesh>`, :ref:`GLTFNode<class_GLTFNode>`, :ref:`GLTFSkeleton<class_GLTFSkeleton>`, :ref:`GLTFSkin<class_GLTFSkin>`, :ref:`GLTFSpecGloss<class_GLTFSpecGloss>`, :ref:`GLTFState<class_GLTFState>`, :ref:`GLTFTexture<class_GLTFTexture>`, :ref:`Gradient<class_Gradient>`, :ref:`Image<class_Image>`, :ref:`ImporterMesh<class_ImporterMesh>`, :ref:`InputEvent<class_InputEvent>`, :ref:`LightmapGIData<class_LightmapGIData>`, :ref:`Material<class_Material>`, :ref:`Mesh<class_Mesh>`, :ref:`MeshLibrary<class_MeshLibrary>`, :ref:`MultiMesh<class_MultiMesh>`, :ref:`NativeExtension<class_NativeExtension>`, :ref:`NavigationMesh<class_NavigationMesh>`, :ref:`NavigationPolygon<class_NavigationPolygon>`, :ref:`OGGPacketSequence<class_OGGPacketSequence>`, :ref:`Occluder3D<class_Occluder3D>`, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`, :ref:`OpenSimplexNoise<class_OpenSimplexNoise>`, :ref:`OpenXRAction<class_OpenXRAction>`, :ref:`OpenXRActionMap<class_OpenXRActionMap>`, :ref:`OpenXRActionSet<class_OpenXRActionSet>`, :ref:`OpenXRIPBinding<class_OpenXRIPBinding>`, :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`, :ref:`PackedDataContainer<class_PackedDataContainer>`, :ref:`PackedScene<class_PackedScene>`, :ref:`PhysicsMaterial<class_PhysicsMaterial>`, :ref:`PolygonPathFinder<class_PolygonPathFinder>`, :ref:`RDShaderFile<class_RDShaderFile>`, :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, :ref:`RichTextEffect<class_RichTextEffect>`, :ref:`SceneReplicationConfig<class_SceneReplicationConfig>`, :ref:`Script<class_Script>`, :ref:`Shader<class_Shader>`, :ref:`Shape2D<class_Shape2D>`, :ref:`Shape3D<class_Shape3D>`, :ref:`Shortcut<class_Shortcut>`, :ref:`SkeletonModification2D<class_SkeletonModification2D>`, :ref:`SkeletonModification3D<class_SkeletonModification3D>`, :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>`, :ref:`Skin<class_Skin>`, :ref:`Sky<class_Sky>`, :ref:`SpriteFrames<class_SpriteFrames>`, :ref:`StyleBox<class_StyleBox>`, :ref:`SyntaxHighlighter<class_SyntaxHighlighter>`, :ref:`Texture<class_Texture>`, :ref:`Theme<class_Theme>`, :ref:`TileMapPattern<class_TileMapPattern>`, :ref:`TileSet<class_TileSet>`, :ref:`TileSetSource<class_TileSetSource>`, :ref:`Translation<class_Translation>`, :ref:`VideoStream<class_VideoStream>`, :ref:`VisualScriptNode<class_VisualScriptNode>`, :ref:`VisualShaderNode<class_VisualShaderNode>`, :ref:`VoxelGIData<class_VoxelGIData>`, :ref:`World2D<class_World2D>`, :ref:`World3D<class_World3D>`, :ref:`X509Certificate<class_X509Certificate>`
 
 Base class for all resources.
 
@@ -20,7 +20,7 @@ Description
 
 Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`RefCounted<class_RefCounted>`, resources are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instantiated from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
 
-**Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
+\ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
 
 Tutorials
 ---------
@@ -44,6 +44,8 @@ Methods
 -------
 
 +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_method__get_rid>` **(** **)** |virtual|                                            |
++---------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
 +---------------------------------+------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`emit_changed<class_Resource_method_emit_changed>` **(** **)**                                              |
@@ -66,7 +68,7 @@ Signals
 
 Emitted whenever the resource changes.
 
-**Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
+\ **Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
 
 ----
 
@@ -126,6 +128,12 @@ The path to the resource. In case it has its own file, it will return its filepa
 Method Descriptions
 -------------------
 
+.. _class_Resource_method__get_rid:
+
+- :ref:`RID<class_RID>` **_get_rid** **(** **)** |virtual|
+
+----
+
 .. _class_Resource_method_duplicate:
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** |const|
@@ -134,9 +142,9 @@ Duplicates the resource, returning a new resource with the exported members copi
 
 By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
 
-**Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
+\ **Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
 
-**Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
+\ **Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
 
 ----
 
@@ -154,7 +162,7 @@ The method is equivalent to:
 
     emit_signal("changed")
 
-**Note:** This method is called automatically for built-in resources.
+\ **Note:** This method is called automatically for built-in resources.
 
 ----
 

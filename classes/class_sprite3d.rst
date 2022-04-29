@@ -46,6 +46,14 @@ Signals
 
 Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
 
+----
+
+.. _class_Sprite3D_signal_texture_changed:
+
+- **texture_changed** **(** **)**
+
+Emitted when the :ref:`texture<class_Sprite3D_property_texture>` changes.
+
 Property Descriptions
 ---------------------
 

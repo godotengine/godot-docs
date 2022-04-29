@@ -22,18 +22,6 @@ Recommended profilers
 These profilers may not be the most powerful or flexible options, but their
 standalone operation and limited feature set tends to make them easier to use.
 
-.. note::
-
-    In its latest stable release (0.90 as of writing), VerySleepy will freeze
-    when loading debug symbols. To solve this, exit VerySleepy then save
-    `this dbghelpms.dll file <https://github.com/AlanIWBFT/verysleepy/raw/0523fde86f24139fd4a041319f8b59ace12f602b/dbghelp_x64/dbghelpms.dll>`__
-    at the root of the VerySleepy installation folder.
-    This folder is generally located at ``C:\Program Files\Very Sleepy CS``.
-
-    If you are debugging a 32-bit application instead of 64-bit, save
-    `this dbghelpms.dll file <https://github.com/AlanIWBFT/verysleepy/raw/0523fde86f24139fd4a041319f8b59ace12f602b/dbghelp_x86/dbghelpms.dll>`__
-    in the ``32`` folder of the VerySleepy installation folder.
-
 Setting up Godot
 ----------------
 

@@ -20,9 +20,9 @@ This class constructs a full mesh of :ref:`WebRTCPeerConnection<class_WebRTCPeer
 
 You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :ref:`add_peer<class_WebRTCMultiplayerPeer_method_add_peer>` or remove them via :ref:`remove_peer<class_WebRTCMultiplayerPeer_method_remove_peer>`. Peers must be added in :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>` state to allow it to create the appropriate channels. This class will not create offers nor set descriptions, it will only poll them, and notify connections and disconnections.
 
-:ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>` and :ref:`MultiplayerPeer.server_disconnected<class_MultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayerPeer_method_initialize>`. Beside that data transfer works like in a :ref:`MultiplayerPeer<class_MultiplayerPeer>`.
+\ :ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>` and :ref:`MultiplayerPeer.server_disconnected<class_MultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayerPeer_method_initialize>`. Beside that data transfer works like in a :ref:`MultiplayerPeer<class_MultiplayerPeer>`.
 
-**Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 Methods
 -------
@@ -68,7 +68,7 @@ Close all the add peer connections and channels, freeing all resources.
 
 - :ref:`Dictionary<class_Dictionary>` **get_peer** **(** :ref:`int<class_int>` peer_id **)**
 
-Return a dictionary representation of the peer with given ``peer_id`` with three keys. ``connection`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``channels`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``connected`` a boolean representing if the peer connection is currently connected (all three channels are open).
+Returns a dictionary representation of the peer with given ``peer_id`` with three keys. ``connection`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``channels`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``connected`` a boolean representing if the peer connection is currently connected (all three channels are open).
 
 ----
 

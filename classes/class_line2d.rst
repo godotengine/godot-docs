@@ -124,9 +124,9 @@ enum **LineTextureMode**:
 
 - **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
 
-- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture must be imported with **Repeat** enabled for it to work properly.
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the ``Line2D`` node must be :ref:`CanvasItem.TEXTURE_REPEAT_ENABLED<class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED>` or :ref:`CanvasItem.TEXTURE_REPEAT_MIRROR<class_CanvasItem_constant_TEXTURE_REPEAT_MIRROR>` for it to work properly.
 
-- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with **Repeat** disabled for best results.
+- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the ``Line2D`` node must be :ref:`CanvasItem.TEXTURE_REPEAT_DISABLED<class_CanvasItem_constant_TEXTURE_REPEAT_DISABLED>` for best results.
 
 Property Descriptions
 ---------------------
@@ -145,7 +145,7 @@ Property Descriptions
 
 If ``true``, the line's border will be anti-aliased.
 
-**Note:** Line2D is not accelerated by batching when being anti-aliased.
+\ **Note:** Line2D is not accelerated by batching when being anti-aliased.
 
 ----
 
@@ -255,7 +255,9 @@ The points that form the lines. The line is drawn between every point set in thi
 | *Getter*  | get_round_precision()      |
 +-----------+----------------------------+
 
-The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
+The smoothness of the rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update. This is only used if a cap or joint is set as round.
+
+\ **Note:** The default value is tuned for lines with the default :ref:`width<class_Line2D_property_width>`. For thin lines, this value should be reduced to a number between ``2`` and ``4`` to improve performance.
 
 ----
 
@@ -271,7 +273,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 | *Getter*  | get_sharp_limit()      |
 +-----------+------------------------+
 
-The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
+The direction difference in radians between vector points. This value is only used if :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
 
 ----
 
