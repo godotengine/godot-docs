@@ -9,14 +9,14 @@
 PoolVector2Array
 ================
 
-A pooled :ref:`Array<class_Array>` of :ref:`Vector2<class_Vector2>`.
+A pooled array of :ref:`Vector2<class_Vector2>`.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector2<class_Vector2>`. Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold :ref:`Vector2<class_Vector2>`. Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
 Tutorials
 ---------
@@ -34,6 +34,8 @@ Methods
 | void                                            | :ref:`append_array<class_PoolVector2Array_method_append_array>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`empty<class_PoolVector2Array_method_empty>` **(** **)**                                                                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`fill<class_PoolVector2Array_method_fill>` **(** :ref:`Vector2<class_Vector2>` vector2 **)**                                 |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`insert<class_PoolVector2Array_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_Vector2>` vector2 **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -82,6 +84,14 @@ Appends a ``PoolVector2Array`` at the end of this array.
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+----
+
+.. _class_PoolVector2Array_method_fill:
+
+- void **fill** **(** :ref:`Vector2<class_Vector2>` vector2 **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolVector2Array_method_resize>` to create an array with a given size and initialized elements.
 
 ----
 
@@ -137,7 +147,7 @@ Changes the :ref:`Vector2<class_Vector2>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the array.
+Returns the number of elements in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

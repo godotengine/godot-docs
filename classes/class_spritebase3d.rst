@@ -230,7 +230,7 @@ If ``true``, texture is flipped vertically.
 
 A color value used to *multiply* the texture's colors. Can be used for mood-coloring or to simulate the color of light.
 
-**Note:** If a :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is defined on the ``SpriteBase3D``, the material override must be configured to take vertex colors into account for albedo. Otherwise, the color defined in :ref:`modulate<class_SpriteBase3D_property_modulate>` will be ignored. For a :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` must be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;[/color] must be inserted in the shader's [code]fragment()`` function.
+\ **Note:** If a :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is defined on the ``SpriteBase3D``, the material override must be configured to take vertex colors into account for albedo. Otherwise, the color defined in :ref:`modulate<class_SpriteBase3D_property_modulate>` will be ignored. For a :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` must be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function.
 
 ----
 
@@ -264,7 +264,7 @@ The texture's drawing offset.
 
 The texture's visibility on a scale from ``0`` (fully invisible) to ``1`` (fully visible). :ref:`opacity<class_SpriteBase3D_property_opacity>` is a multiplier for the :ref:`modulate<class_SpriteBase3D_property_modulate>` color's alpha channel.
 
-**Note:** If a :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is defined on the ``SpriteBase3D``, the material override must be configured to take vertex colors into account for albedo. Otherwise, the opacity defined in :ref:`opacity<class_SpriteBase3D_property_opacity>` will be ignored. For a :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` must be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALPHA *= COLOR.a;[/color] must be inserted in the shader's [code]fragment()`` function.
+\ **Note:** If a :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is defined on the ``SpriteBase3D``, the material override must be configured to take vertex colors into account for albedo. Otherwise, the opacity defined in :ref:`opacity<class_SpriteBase3D_property_opacity>` will be ignored. For a :ref:`SpatialMaterial<class_SpatialMaterial>`, :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` must be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALPHA *= COLOR.a;`` must be inserted in the shader's ``fragment()`` function.
 
 ----
 

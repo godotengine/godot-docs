@@ -29,7 +29,7 @@ RayCast calculates intersection every physics frame (see :ref:`Node<class_Node>`
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
@@ -148,7 +148,7 @@ If ``true``, collision with :ref:`PhysicsBody<class_PhysicsBody>`\ s will be rep
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -247,11 +247,9 @@ Removes all collision exceptions for this ray.
 
 - void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray.
+Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
 
-Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
-
-**Note:** ``enabled`` is not required for this to work.
+\ **Note:** ``enabled`` is not required for this to work.
 
 ----
 
@@ -277,7 +275,7 @@ Returns the shape ID of the first object that the ray intersects, or ``0`` if no
 
 Returns ``true`` if the bit index passed is turned on.
 
-**Note:** Bit indices range from 0-19.
+\ **Note:** Bit indices range from 0-19.
 
 ----
 
@@ -295,7 +293,7 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 Returns the collision point at which the ray intersects the closest object.
 
-**Note:** This point is in the **global** coordinate system.
+\ **Note:** This point is in the **global** coordinate system.
 
 ----
 
@@ -329,7 +327,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 Sets the bit index passed to the ``value`` passed.
 
-**Note:** Bit indexes range from 0-19.
+\ **Note:** Bit indexes range from 0-19.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

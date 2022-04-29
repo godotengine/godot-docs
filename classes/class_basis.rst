@@ -25,11 +25,11 @@ For more information, read the "Matrices and transforms" documentation article.
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/matrices_and_transforms`
+- :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
 
-- :doc:`../tutorials/3d/using_transforms`
+- :doc:`Using 3D transforms <../tutorials/3d/using_transforms>`
 
 - `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
 
@@ -244,7 +244,7 @@ Returns the inverse of the matrix.
 
 Returns ``true`` if this basis and ``b`` are approximately equal, by calling ``is_equal_approx`` on each component.
 
-**Note:** For complicated reasons, the epsilon argument is always discarded. Don't use the epsilon argument, it does nothing.
+\ **Note:** For complicated reasons, the epsilon argument is always discarded. Don't use the epsilon argument, it does nothing.
 
 ----
 
@@ -326,7 +326,7 @@ Returns a vector transformed (multiplied) by the matrix.
 
 Returns a vector transformed (multiplied) by the transposed basis matrix.
 
-**Note:** This results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
+\ **Note:** This results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

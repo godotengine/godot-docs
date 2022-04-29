@@ -21,11 +21,11 @@ For more information, read the "Matrices and transforms" documentation article.
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/matrices_and_transforms`
+- :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
 
-- :doc:`../tutorials/3d/using_transforms`
+- :doc:`Using 3D transforms <../tutorials/3d/using_transforms>`
 
 - `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
 
@@ -170,7 +170,7 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 - :ref:`Transform<class_Transform>` **interpolate_with** **(** :ref:`Transform<class_Transform>` transform, :ref:`float<class_float>` weight **)**
 
-Interpolates the transform to other Transform by weight amount (on the range of 0.0 to 1.0).
+Returns a transform interpolated between this transform and another by a given ``weight`` (on the range of 0.0 to 1.0).
 
 ----
 
@@ -178,7 +178,7 @@ Interpolates the transform to other Transform by weight amount (on the range of 
 
 - :ref:`Transform<class_Transform>` **inverse** **(** **)**
 
-Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
+Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use :ref:`affine_inverse<class_Transform_method_affine_inverse>` for transforms with scaling).
 
 ----
 
@@ -206,7 +206,7 @@ Operations take place in global space.
 
 - :ref:`Transform<class_Transform>` **orthonormalized** **(** **)**
 
-Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
+Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors (scale of 1 or -1).
 
 ----
 

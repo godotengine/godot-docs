@@ -240,7 +240,7 @@ Gets an UTF-8 string with byte-length ``bytes`` from the stream (this decodes th
 
 Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 
@@ -314,7 +314,7 @@ Sends a chunk of data through the connection. If all the data could not be sent 
 
 Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsigned integer representing its size.
 
-**Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put an ASCII string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
 ::
 
@@ -360,7 +360,7 @@ Puts an unsigned byte into the stream.
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
-**Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
 ::
 

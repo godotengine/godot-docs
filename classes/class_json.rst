@@ -44,11 +44,11 @@ Parses a JSON-encoded string and returns a :ref:`JSONParseResult<class_JSONParse
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
-**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+\ **Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
 The ``indent`` parameter controls if and how something is indented, the string used for this parameter will be used where there should be an indent in the output, even spaces like ``"   "`` will work. ``\t`` and ``\n`` can also be used for a tab indent, or to make a newline for each indent respectively.
 
-**Example output:**
+\ **Example output:**\ 
 
 ::
 

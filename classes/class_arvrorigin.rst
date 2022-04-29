@@ -53,7 +53,7 @@ Property Descriptions
 
 Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
 
-**Note:** This method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
+\ **Note:** This method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

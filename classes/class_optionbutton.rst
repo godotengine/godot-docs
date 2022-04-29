@@ -23,15 +23,15 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------+------------------------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | ``0`` *(parent override)*    |
-+-----------------------------------------------+-------------------------------------------------------+------------------------------+
-| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | ``0`` *(parent override)*    |
-+-----------------------------------------------+-------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | ``-1``                       |
-+-----------------------------------------------+-------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                           | ``true`` *(parent override)* |
-+-----------------------------------------------+-------------------------------------------------------+------------------------------+
++-----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                           | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
++-----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`TextAlign<enum_Button_TextAlign>`       | align                                                 | ``0`` (overrides :ref:`Button<class_Button_property_align>`)                  |
++-----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`selected<class_OptionButton_property_selected>` | ``-1``                                                                        |
++-----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                           | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
++-----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -57,6 +57,8 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`       | :ref:`get_item_text<class_OptionButton_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                     |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`get_item_tooltip<class_OptionButton_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** |const|                                                               |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_OptionButton_method_get_popup>` **(** **)** |const|                                                                                                       |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_selected_id<class_OptionButton_method_get_selected_id>` **(** **)** |const|                                                                                           |
@@ -78,6 +80,8 @@ Methods
 | void                              | :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**                             |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_item_text<class_OptionButton_method_set_item_text>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_item_tooltip<class_OptionButton_method_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**                                  |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -228,13 +232,21 @@ Returns the text of the item at index ``idx``.
 
 ----
 
+.. _class_OptionButton_method_get_item_tooltip:
+
+- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** |const|
+
+Returns the tooltip of the item at index ``idx``.
+
+----
+
 .. _class_OptionButton_method_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -317,6 +329,14 @@ Sets the metadata of an item. Metadata may be of any type and can be used to sto
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
 Sets the text of the item at index ``idx``.
+
+----
+
+.. _class_OptionButton_method_set_item_tooltip:
+
+- void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
+
+Sets the tooltip of the item at index ``idx``.
 
 Theme Property Descriptions
 ---------------------------

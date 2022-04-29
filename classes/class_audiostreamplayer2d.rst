@@ -20,7 +20,7 @@ Plays audio that dampens with distance from screen center.
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-**Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an ``AudioStreamPlayer2D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer2D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------

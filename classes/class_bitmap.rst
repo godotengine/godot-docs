@@ -22,6 +22,8 @@ Methods
 -------
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>`     | :ref:`convert_to_image<class_BitMap_method_convert_to_image>` **(** **)** |const|                                                                                |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`create<class_BitMap_method_create>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                         |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`create_from_image_alpha<class_BitMap_method_create_from_image_alpha>` **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
@@ -36,6 +38,8 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`     | :ref:`opaque_to_polygons<class_BitMap_method_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|      |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`resize<class_BitMap_method_resize>` **(** :ref:`Vector2<class_Vector2>` new_size **)**                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_bit<class_BitMap_method_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_bit_rect<class_BitMap_method_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**                                    |
@@ -43,6 +47,14 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_BitMap_method_convert_to_image:
+
+- :ref:`Image<class_Image>` **convert_to_image** **(** **)** |const|
+
+Returns an image of the same size as the bitmap and with a :ref:`Format<enum_Image_Format>` of type ``FORMAT_L8``. ``true`` bits of the bitmap are being converted into white pixels, and ``false`` bits into black.
+
+----
 
 .. _class_BitMap_method_create:
 
@@ -95,6 +107,14 @@ Applies morphological dilation or erosion to the bitmap. If ``pixels`` is positi
 .. _class_BitMap_method_opaque_to_polygons:
 
 - :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|
+
+----
+
+.. _class_BitMap_method_resize:
+
+- void **resize** **(** :ref:`Vector2<class_Vector2>` new_size **)**
+
+Resizes the image to ``new_size``.
 
 ----
 

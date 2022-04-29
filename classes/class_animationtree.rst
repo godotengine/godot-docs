@@ -18,12 +18,12 @@ Description
 
 A node to be used for advanced animation transitions in an :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
-**Note:** When linked with an :ref:`AnimationPlayer<class_AnimationPlayer>`, several properties and methods of the corresponding :ref:`AnimationPlayer<class_AnimationPlayer>` will not function as expected. Playback and transitions should be handled using only the ``AnimationTree`` and its constituent :ref:`AnimationNode<class_AnimationNode>`\ (s). The :ref:`AnimationPlayer<class_AnimationPlayer>` node should be used solely for adding, deleting, and editing animations.
+\ **Note:** When linked with an :ref:`AnimationPlayer<class_AnimationPlayer>`, several properties and methods of the corresponding :ref:`AnimationPlayer<class_AnimationPlayer>` will not function as expected. Playback and transitions should be handled using only the ``AnimationTree`` and its constituent :ref:`AnimationNode<class_AnimationNode>`\ (s). The :ref:`AnimationPlayer<class_AnimationPlayer>` node should be used solely for adding, deleting, and editing animations.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

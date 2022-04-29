@@ -20,7 +20,7 @@ You can define a dictionary by placing a comma-separated list of ``key: value`` 
 
 Erasing elements while iterating over them **is not supported** and will result in undefined behavior.
 
-**Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
 
 Creating a dictionary:
 
@@ -84,7 +84,7 @@ Finally, dictionaries can contain different types of keys and values in the same
         "sub_dict": {"sub_key": "Nested value"},
     }
 
-**Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
+\ **Note:** Unlike :ref:`Array<class_Array>`\ s, you can't compare dictionaries directly:
 
 ::
 
@@ -110,12 +110,12 @@ You need to first calculate the dictionary's hash with :ref:`hash<class_Dictiona
     func compare_dictionaries():
         print(dict1.hash() == dict2.hash()) # Will print true.
 
-**Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
+\ **Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Tutorials
 ---------
 
-- `#dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`_ in :doc:`../tutorials/scripting/gdscript/gdscript_basics`
+- `GDScript basics: Dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`__
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
@@ -181,7 +181,7 @@ Returns ``true`` if the dictionary is empty.
 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise.
 
-**Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
+\ **Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
 
 ----
 
@@ -199,7 +199,7 @@ Returns the current value for the specified key in the ``Dictionary``. If the ke
 
 Returns ``true`` if the dictionary has a given key.
 
-**Note:** This is equivalent to using the ``in`` operator as follows:
+\ **Note:** This is equivalent to using the ``in`` operator as follows:
 
 ::
 
@@ -232,9 +232,9 @@ Returns a hashed 32-bit integer value representing the dictionary contents. This
     # The line below prints `true`, whereas it would have printed `false` if both variables were compared directly.
     print(dict1.hash() == dict2.hash())
 
-**Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
+\ **Note:** Dictionaries with the same keys/values but in a different order will have a different hash.
 
-**Note:** Dictionaries with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the dictionaries are equal, because different dictionaries can have identical hash values due to hash collisions.
+\ **Note:** Dictionaries with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the dictionaries are equal, because different dictionaries can have identical hash values due to hash collisions.
 
 ----
 

@@ -14,18 +14,18 @@ Vector used for 3D math.
 Description
 -----------
 
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+3-element structure that can be used to represent positions in 3D space or any other triplet of numeric values.
 
-**Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
-- :doc:`../tutorials/math/vectors_advanced`
+- :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 
@@ -81,6 +81,8 @@ Methods
 | :ref:`float<class_float>`     | :ref:`length<class_Vector3_method_length>` **(** **)**                                                                                                                                                                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`length_squared<class_Vector3_method_length_squared>` **(** **)**                                                                                                                                                    |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`limit_length<class_Vector3_method_limit_length>` **(** :ref:`float<class_float>` length=1.0 **)**                                                                                                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`linear_interpolate<class_Vector3_method_linear_interpolate>` **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` weight **)**                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -262,7 +264,7 @@ Returns the cross product of this vector and ``b``.
 
 - :ref:`Vector3<class_Vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` pre_a, :ref:`Vector3<class_Vector3>` post_b, :ref:`float<class_float>` weight **)**
 
-Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 ----
 
@@ -302,7 +304,7 @@ The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 
 
 When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
 
-**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
+\ **Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -356,6 +358,14 @@ This method runs faster than :ref:`length<class_Vector3_method_length>`, so pref
 
 ----
 
+.. _class_Vector3_method_limit_length:
+
+- :ref:`Vector3<class_Vector3>` **limit_length** **(** :ref:`float<class_float>` length=1.0 **)**
+
+Returns the vector with a maximum length by limiting its length to ``length``.
+
+----
+
 .. _class_Vector3_method_linear_interpolate:
 
 - :ref:`Vector3<class_Vector3>` **linear_interpolate** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` weight **)**
@@ -384,7 +394,7 @@ Returns the axis of the vector's smallest value. See ``AXIS_*`` constants. If al
 
 - :ref:`Vector3<class_Vector3>` **move_toward** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` delta **)**
 
-Moves this vector toward ``to`` by the fixed ``delta`` amount.
+Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not go past the final value.
 
 ----
 
@@ -424,7 +434,7 @@ Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_
 
 - :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` b **)**
 
-Returns this vector projected onto another vector ``b``.
+Returns this vector projected onto the vector ``b``.
 
 ----
 
@@ -448,7 +458,7 @@ Rotates this vector around a given axis by ``phi`` radians. The axis must be a n
 
 - :ref:`Vector3<class_Vector3>` **round** **(** **)**
 
-Returns this vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 ----
 
@@ -456,7 +466,7 @@ Returns this vector with all components rounded to the nearest integer, with hal
 
 - :ref:`Vector3<class_Vector3>` **sign** **(** **)**
 
-Returns a vector with each component set to one or negative one, depending on the signs of this vector's components. If a component is zero, it returns positive one.
+Returns a new vector with each component set to one or negative one, depending on the signs of the components. If a component is zero, it returns positive one.
 
 ----
 
@@ -474,7 +484,7 @@ Returns the signed angle to the given vector, in radians. The sign of the angle 
 
 Returns the result of spherical linear interpolation between this vector and ``to``, by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-**Note:** Both vectors must be normalized.
+\ **Note:** Both vectors must be normalized.
 
 ----
 

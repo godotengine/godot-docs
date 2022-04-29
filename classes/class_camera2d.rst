@@ -395,9 +395,9 @@ Right scroll limit in pixels. The camera stops moving when reaching this value.
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
-This has no effect if smoothing is disabled.
+This property has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
 
-**Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
+\ **Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
 
 ----
 
@@ -447,7 +447,7 @@ The camera's offset, useful for looking around or camera shake animations.
 
 The horizontal offset of the camera, relative to the drag margins.
 
-**Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set initial offset.
+\ **Note:** Offset H is used only to force offset relative to margins. It's not updated in any way if drag margins are enabled and can be used to set initial offset.
 
 ----
 
@@ -465,7 +465,7 @@ The horizontal offset of the camera, relative to the drag margins.
 
 The vertical offset of the camera, relative to the drag margins.
 
-**Note:** Used the same as :ref:`offset_h<class_Camera2D_property_offset_h>`.
+\ **Note:** Used the same as :ref:`offset_h<class_Camera2D_property_offset_h>`.
 
 ----
 
@@ -497,7 +497,7 @@ The camera's process callback. See :ref:`Camera2DProcessMode<enum_Camera2D_Camer
 | *Getter*  | is_rotating()       |
 +-----------+---------------------+
 
-If ``true``, the camera rotates with the target.
+If ``true``, the camera view rotates with the target.
 
 ----
 
@@ -578,7 +578,9 @@ Forces the camera to update scroll immediately.
 
 - :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** |const|
 
-Returns the camera position.
+Returns the camera's ``position`` (the tracked point the camera attempts to follow), relative to the origin.
+
+\ **Note:** The returned value is not the same as :ref:`Node2D.position<class_Node2D_property_position>` or :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the ``drag`` properties.
 
 ----
 
@@ -587,6 +589,8 @@ Returns the camera position.
 - :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** |const|
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
+
+\ **Note:** The real ``position`` of the camera may be different, see :ref:`get_camera_position<class_Camera2D_method_get_camera_position>`.
 
 ----
 
@@ -620,7 +624,7 @@ Make this the current 2D camera for the scene (viewport and layer), in case ther
 
 Sets the camera's position immediately to its current smoothing destination.
 
-This has no effect if smoothing is disabled.
+This method has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
 
 ----
 

@@ -18,7 +18,7 @@ Description
 
 Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines created with :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Retrieve with ``$AnimationTree.get("parameters/playback")``.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -33,9 +33,9 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+-------------------------+------------------------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` *(parent override)* |
-+-------------------------+-------------------------+------------------------------+
++-------------------------+-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++-------------------------+-------------------------+---------------------------------------------------------------------------------------+
 
 Methods
 -------

@@ -11,7 +11,7 @@ OccluderShape
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`OccluderShapeSphere<class_OccluderShapeSphere>`
+**Inherited By:** :ref:`OccluderShapePolygon<class_OccluderShapePolygon>`, :ref:`OccluderShapeSphere<class_OccluderShapeSphere>`
 
 Base class for shapes used for occlusion culling by the :ref:`Occluder<class_Occluder>` node.
 

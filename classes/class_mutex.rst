@@ -43,7 +43,7 @@ Method Descriptions
 
 Locks this ``Mutex``, blocks until it is unlocked by the current owner.
 
-**Note:** This function returns without blocking if the thread already has ownership of the mutex.
+\ **Note:** This function returns without blocking if the thread already has ownership of the mutex.
 
 ----
 
@@ -53,7 +53,7 @@ Locks this ``Mutex``, blocks until it is unlocked by the current owner.
 
 Tries locking this ``Mutex``, but does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
 
-**Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
+\ **Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
 
 ----
 
@@ -63,7 +63,7 @@ Tries locking this ``Mutex``, but does not block. Returns :ref:`@GlobalScope.OK<
 
 Unlocks this ``Mutex``, leaving it to other threads.
 
-**Note:** If a thread called :ref:`lock<class_Mutex_method_lock>` or :ref:`try_lock<class_Mutex_method_try_lock>` multiple times while already having ownership of the mutex, it must also call :ref:`unlock<class_Mutex_method_unlock>` the same number of times in order to unlock it correctly.
+\ **Note:** If a thread called :ref:`lock<class_Mutex_method_lock>` or :ref:`try_lock<class_Mutex_method_try_lock>` multiple times while already having ownership of the mutex, it must also call :ref:`unlock<class_Mutex_method_unlock>` the same number of times in order to unlock it correctly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

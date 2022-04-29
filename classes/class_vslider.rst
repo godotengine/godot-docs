@@ -18,16 +18,16 @@ Description
 
 Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
 
-**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
 Properties
 ----------
 
-+-----------------------+-----------------------+---------------------------+
-| :ref:`int<class_int>` | size_flags_horizontal | ``0`` *(parent override)* |
-+-----------------------+-----------------------+---------------------------+
-| :ref:`int<class_int>` | size_flags_vertical   | ``1`` *(parent override)* |
-+-----------------------+-----------------------+---------------------------+
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
++-----------------------+-----------------------+--------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------

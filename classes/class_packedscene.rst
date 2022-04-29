@@ -22,9 +22,9 @@ A simplified interface to a scene file. Provides access to operations and checks
 
 Can be used to save a node to a file. When saving, the node as well as all the nodes it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`).
 
-**Note:** The node doesn't need to own itself.
+\ **Note:** The node doesn't need to own itself.
 
-**Example of loading a saved scene:**
+\ **Example of loading a saved scene:**\ 
 
 ::
 
@@ -33,7 +33,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
     # Add the node as a child of the node the script is attached to.
     add_child(scene)
 
-**Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+\ **Example of saving a node with different owners:** The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
 ::
 
@@ -93,17 +93,23 @@ Enumerations
 
 .. _class_PackedScene_constant_GEN_EDIT_STATE_MAIN:
 
+.. _class_PackedScene_constant_GEN_EDIT_STATE_MAIN_INHERITED:
+
 enum **GenEditState**:
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
 
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
+
+- **GEN_EDIT_STATE_MAIN_INHERITED** = **3** --- It's similar to :ref:`GEN_EDIT_STATE_MAIN<class_PackedScene_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
+
+\ **Note:** Only available in editor builds.
 
 Property Descriptions
 ---------------------

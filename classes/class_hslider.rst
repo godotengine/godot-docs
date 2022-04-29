@@ -18,7 +18,7 @@ Description
 
 Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
 
-**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
 Theme Properties
 ----------------

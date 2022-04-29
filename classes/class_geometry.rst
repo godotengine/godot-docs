@@ -335,7 +335,7 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
 
-**Note:** The lines are specified using direction vectors, not end points.
+\ **Note:** The lines are specified using direction vectors, not end points.
 
 ----
 
@@ -367,7 +367,7 @@ Each polygon's vertices will be rounded as determined by ``join_type``, see :ref
 
 The operation may result in an outer polygon (boundary) and inner polygon (hole) produced which could be distinguished by calling :ref:`is_polygon_clockwise<class_Geometry_method_is_polygon_clockwise>`.
 
-**Note:** To translate the polygon's vertices specifically, use the :ref:`Transform2D.xform<class_Transform2D_method_xform>` method:
+\ **Note:** To translate the polygon's vertices specifically, use the :ref:`Transform2D.xform<class_Transform2D_method_xform>` method:
 
 ::
 

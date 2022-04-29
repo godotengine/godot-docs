@@ -47,23 +47,27 @@ Properties
 Methods
 -------
 
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                                |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance_method_create_multiple_convex_collisions>` **(** **)**                                                        |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                          |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                              |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                            |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                              |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**          |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**                                                |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                                                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance_method_create_multiple_convex_collisions>` **(** **)**                                                                                                       |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                                                                         |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                             |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                           |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                                                                             |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>` **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|                                                                                   |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)** |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**                                                         |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -188,6 +192,34 @@ Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<clas
 - :ref:`int<class_int>` **get_surface_material_count** **(** **)** |const|
 
 Returns the number of surface materials.
+
+----
+
+.. _class_MeshInstance_method_is_mergeable_with:
+
+- :ref:`bool<class_bool>` **is_mergeable_with** **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|
+
+Returns ``true`` if this ``MeshInstance`` can be merged with the specified ``other_mesh_instance``, using the :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` function.
+
+In order to be mergeable, properties of the ``MeshInstance`` must match, and each surface must match, in terms of material, attributes and vertex format.
+
+----
+
+.. _class_MeshInstance_method_merge_meshes:
+
+- :ref:`bool<class_bool>` **merge_meshes** **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)**
+
+This function can merge together the data from several source ``MeshInstance``\ s into a single destination ``MeshInstance`` (the MeshInstance the function is called from). This is primarily useful for improving performance by reducing the number of drawcalls and :ref:`Node<class_Node>`\ s.
+
+Merging should only be attempted for simple meshes that do not contain animation.
+
+The final vertices can either be returned in global space, or in local space relative to the destination ``MeshInstance`` global transform (the destination Node must be inside the :ref:`SceneTree<class_SceneTree>` for local space to work).
+
+The function will make a final check for compatibility between the ``MeshInstance``\ s by default, this should always be used unless you have previously checked for compatibility using :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>`. If the compatibility check is omitted and the meshes are merged, you may see rendering errors.
+
+\ **Note:** The requirements for similarity between meshes are quite stringent. They can be checked using the :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>` function prior to calling :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>`.
+
+Also note that any initial data in the destination ``MeshInstance`` data will be discarded.
 
 ----
 

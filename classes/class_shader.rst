@@ -101,7 +101,7 @@ Returns the shader's code as the user has written it, not the full generated cod
 
 Returns the shader's custom defines. Custom defines can be used in Godot to add GLSL preprocessor directives (e.g: extensions) required for the shader logic.
 
-**Note:** Custom defines are not validated by the Godot shader parser, so care should be taken when using them.
+\ **Note:** Custom defines are not validated by the Godot shader parser, so care should be taken when using them.
 
 Method Descriptions
 -------------------
@@ -112,7 +112,7 @@ Method Descriptions
 
 Returns the texture that is set as default for the specified parameter.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 ----
 
@@ -130,7 +130,7 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 ----
 
@@ -140,7 +140,7 @@ Returns ``true`` if the shader has this param defined as a uniform in its code.
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

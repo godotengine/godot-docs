@@ -18,17 +18,17 @@ Description
 
 This node steps through each item in a given input. Input can be any sequence data type, such as an :ref:`Array<class_Array>` or :ref:`String<class_String>`. When each item has been processed, execution passed out the ``exit`` Sequence port.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``for (elem) in (input)``
+- Sequence: ``for (elem) in (input)``\ 
 
-- Data (variant): ``input``
+- Data (variant): ``input``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
-- Sequence: ``each``
+- Sequence: ``each``\ 
 
-- Sequence: ``exit``
+- Sequence: ``exit``\ 
 
 - Data (variant): ``elem``
 

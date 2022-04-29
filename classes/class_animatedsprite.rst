@@ -18,12 +18,12 @@ Description
 
 Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
-**Note:** You can associate a set of normal maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` suffix. For example, having 2 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
+\ **Note:** You can associate a set of normal maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` suffix. For example, having 2 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_sprite_animation`
+- :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
@@ -53,13 +53,11 @@ Properties
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** |const|                                                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite_method_stop>` **(** **)**                                                                              |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="", :ref:`bool<class_bool>` backwards=false **)** |
++------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`stop<class_AnimatedSprite_method_stop>` **(** **)**                                                                              |
++------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -195,9 +193,13 @@ The texture's drawing offset.
 
 - :ref:`bool<class_bool>` **playing**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_playing(value) |
++-----------+--------------------+
+| *Getter*  | is_playing()       |
++-----------+--------------------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite_property_animation>` is currently playing.
 
@@ -219,14 +221,6 @@ The animation speed is multiplied by this value.
 
 Method Descriptions
 -------------------
-
-.. _class_AnimatedSprite_method_is_playing:
-
-- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
-
-Returns ``true`` if an animation is currently being played.
-
-----
 
 .. _class_AnimatedSprite_method_play:
 

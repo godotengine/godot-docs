@@ -16,13 +16,13 @@ Groups :ref:`Room<class_Room>`\ s together to allow common functionality.
 Description
 -----------
 
-Although :ref:`Room<class_Room>` behaviour can be specified individually, sometimes it is faster and more convenient to write functionality for a group of rooms.
+Although :ref:`Room<class_Room>` behavior can be specified individually, sometimes it is faster and more convenient to write functionality for a group of rooms.
 
-``RoomGroup``\ s should be placed as children of the **room list** (the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s), and :ref:`Room<class_Room>`\ s should be placed in turn as children of a ``RoomGroup`` in order to assign them to the RoomGroup.
+\ ``RoomGroup``\ s should be placed as children of the **room list** (the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s), and :ref:`Room<class_Room>`\ s should be placed in turn as children of a ``RoomGroup`` in order to assign them to the RoomGroup.
 
 A ``RoomGroup`` can for example be used to specify :ref:`Room<class_Room>`\ s that are **outside**, and switch on or off a directional light, sky, or rain effect as the player enters / exits the area.
 
-``RoomGroup``\ s receive **gameplay callbacks** when the ``gameplay_monitor`` is switched on, as ``signal``\ s or ``notification``\ s as they enter and exit the **gameplay area** (see :ref:`RoomManager<class_RoomManager>` for details).
+\ ``RoomGroup``\ s receive **gameplay callbacks** when the ``gameplay_monitor`` is switched on, as ``signal``\ s or ``notification``\ s as they enter and exit the **gameplay area** (see :ref:`RoomManager<class_RoomManager>` for details).
 
 Properties
 ----------

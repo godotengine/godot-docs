@@ -20,7 +20,7 @@ Description
 
 StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
 
-**Note:** For children of :ref:`Control<class_Control>` that have *Theme Properties*, the ``focus`` ``StyleBox`` is displayed over the ``normal``, ``hover`` or ``pressed`` ``StyleBox``. This makes the ``focus`` ``StyleBox`` more reusable across different nodes.
+\ **Note:** For children of :ref:`Control<class_Control>` that have *Theme Properties*, the ``focus`` ``StyleBox`` is displayed over the ``normal``, ``hover`` or ``pressed`` ``StyleBox``. This makes the ``focus`` ``StyleBox`` more reusable across different nodes.
 
 Properties
 ----------
@@ -79,7 +79,7 @@ If this value is negative, it is ignored and a child-specific margin is used ins
 
 It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
 
-:ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
+\ :ref:`get_margin<class_StyleBox_method_get_margin>` should be used to fetch this value as consumer instead of reading these properties directly. This is because it correctly respects negative values and the fallback mentioned above.
 
 ----
 

@@ -20,9 +20,9 @@ Contains global variables accessible from everywhere. Use :ref:`get_setting<clas
 
 When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
-**Feature tags:** Project settings can be overridden for specific platforms and configurations (debug, release, ...) using `feature tags <https://docs.godotengine.org/en/3.4/tutorials/export/feature_tags.html>`__.
+\ **Feature tags:** Project settings can be overridden for specific platforms and configurations (debug, release, ...) using :doc:`feature tags <../tutorials/export/feature_tags>`.
 
-**Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' `feature tags <https://docs.godotengine.org/en/3.4/tutorials/export/feature_tags.html>`__ in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
+\ **Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' :doc:`feature tags <../tutorials/export/feature_tags>` in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
 
 Tutorials
 ---------
@@ -44,6 +44,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                             | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                   | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>`                                                         | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/use_filter<class_ProjectSettings_property_application/boot_splash/use_filter>`                                                         | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -125,6 +127,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/exclude_addons<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`                                                 | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/export_hint_type_mistmatch<class_ProjectSettings_property_debug/gdscript/warnings/export_hint_type_mistmatch>`                         | ``true``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_conflicts_constant<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_constant>`                       | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`debug/gdscript/warnings/function_conflicts_variable<class_ProjectSettings_property_debug/gdscript/warnings/function_conflicts_variable>`                       | ``true``                                                                                        |
@@ -182,6 +186,8 @@ Properties
 | :ref:`int<class_int>`                         | :ref:`debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`                                                                     | ``0``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`debug/settings/gdscript/max_call_stack<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`                                                 | ``1024``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`debug/settings/physics_interpolation/enable_warnings<class_ProjectSettings_property_debug/settings/physics_interpolation/enable_warnings>`                     | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                   | ``16384``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -249,7 +255,13 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`editor/search_in_file_extensions<class_ProjectSettings_property_editor/search_in_file_extensions>`                                                             | ``PoolStringArray( "gd", "gdshader", "shader" )``                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`editor/version_control/autoload_on_startup<class_ProjectSettings_property_editor/version_control/autoload_on_startup>`                                         | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`editor/version_control/plugin_name<class_ProjectSettings_property_editor/version_control/plugin_name>`                                                         | ``""``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                         | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`gui/common/drop_mouse_on_gui_input_disabled<class_ProjectSettings_property_gui/common/drop_mouse_on_gui_input_disabled>`                                       | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`gui/common/swap_ok_cancel<class_ProjectSettings_property_gui/common/swap_ok_cancel>`                                                                           |                                                                                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -527,6 +539,18 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                     | ``60``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`mono/debugger_agent/port<class_ProjectSettings_property_mono/debugger_agent/port>`                                                                             | ``23685``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`mono/debugger_agent/wait_for_debugger<class_ProjectSettings_property_mono/debugger_agent/wait_for_debugger>`                                                   | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`mono/debugger_agent/wait_timeout<class_ProjectSettings_property_mono/debugger_agent/wait_timeout>`                                                             | ``3000``                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`mono/profiler/args<class_ProjectSettings_property_mono/profiler/args>`                                                                                         | ``"log:calls,alloc,sample,output=output.mlpd"``                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`mono/profiler/enabled<class_ProjectSettings_property_mono/profiler/enabled>`                                                                                   | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`mono/runtime/unhandled_exception_policy<class_ProjectSettings_property_mono/runtime/unhandled_exception_policy>`                                               | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`network/limits/debugger_stdout/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger_stdout/max_chars_per_second>`                       | ``2048``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`network/limits/debugger_stdout/max_errors_per_second<class_ProjectSettings_property_network/limits/debugger_stdout/max_errors_per_second>`                     | ``100``                                                                                         |
@@ -611,11 +635,15 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`                                                                           | ``"DEFAULT"``                                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`physics/3d/smooth_trimesh_collision<class_ProjectSettings_property_physics/3d/smooth_trimesh_collision>`                                                       | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`physics/common/enable_object_picking<class_ProjectSettings_property_physics/common/enable_object_picking>`                                                     | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`physics/common/enable_pause_aware_picking<class_ProjectSettings_property_physics/common/enable_pause_aware_picking>`                                           | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`                                                                         | ``60``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`                                                     | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                           | ``0.5``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -679,6 +707,20 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/gles2/compatibility/enable_high_float.Android<class_ProjectSettings_property_rendering/gles2/compatibility/enable_high_float.Android>`               | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/gles3/shaders/log_active_async_compiles_count<class_ProjectSettings_property_rendering/gles3/shaders/log_active_async_compiles_count>`               | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/max_simultaneous_compiles<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles>`                           | ``2``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/max_simultaneous_compiles.mobile<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles.mobile>`             | ``1``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_cache_size_mb<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb>`                                     | ``512``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_cache_size_mb.mobile<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb.mobile>`                       | ``128``                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>`                               | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode.mobile<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode.mobile>`                 | ``0``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               | ``4096``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>`                 | ``128``                                                                                         |
@@ -703,6 +745,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/misc/mesh_storage/split_stream<class_ProjectSettings_property_rendering/misc/mesh_storage/split_stream>`                                             | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/misc/occlusion_culling/max_active_polygons<class_ProjectSettings_property_rendering/misc/occlusion_culling/max_active_polygons>`                     | ``8``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/misc/occlusion_culling/max_active_spheres<class_ProjectSettings_property_rendering/misc/occlusion_culling/max_active_spheres>`                       | ``8``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/portals/advanced/flip_imported_portals<class_ProjectSettings_property_rendering/portals/advanced/flip_imported_portals>`                             | ``false``                                                                                       |
@@ -720,6 +764,8 @@ Properties
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`                                                                       | ``true``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/hdr.mobile<class_ProjectSettings_property_rendering/quality/depth/hdr.mobile>`                                                         | ``false``                                                                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`rendering/quality/depth/use_32_bpc_depth<class_ProjectSettings_property_rendering/quality/depth/use_32_bpc_depth>`                                             | ``false``                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`rendering/quality/depth_prepass/disable_for_vendors<class_ProjectSettings_property_rendering/quality/depth_prepass/disable_for_vendors>`                       | ``"PowerVR,Mali,Adreno,Apple"``                                                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -871,6 +917,15 @@ Methods
 | void                                  | :ref:`set_setting<class_ProjectSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                      |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_ProjectSettings_signal_project_settings_changed:
+
+- **project_settings_changed** **(** **)**
+
+Objects can use this signal to restrict reading of settings only to situations where a change has been made.
+
 Property Descriptions
 ---------------------
 
@@ -884,7 +939,7 @@ Property Descriptions
 
 Comma-separated list of custom Android modules (which must have been built in the Android export templates) using their Java package path, e.g. ``"org/godotengine/godot/MyCustomSingleton,com/example/foo/FrenchFriesFactory"``.
 
-**Note:** Since Godot 3.2.2, the ``org/godotengine/godot/GodotPaymentV3`` module was deprecated and replaced by the ``GodotPayment`` plugin which should be enabled in the Android export preset under ``Plugins`` section. The singleton to access in code was also renamed to ``GodotPayment``.
+\ **Note:** Since Godot 3.2.2, the ``org/godotengine/godot/GodotPaymentV3`` module was deprecated and replaced by the ``GodotPayment`` plugin which should be enabled in the Android export preset under ``Plugins`` section. The singleton to access in code was also renamed to ``GodotPayment``.
 
 ----
 
@@ -908,7 +963,7 @@ Background color for the boot splash.
 | *Default* | ``true`` |
 +-----------+----------+
 
-If ``true``, scale the boot splash image to the full window length when engine starts. If ``false``, the engine will leave it at the default pixel size.
+If ``true``, scale the boot splash image to the full window size (preserving the aspect ratio) when the engine starts. If ``false``, the engine will leave it at the default pixel size.
 
 ----
 
@@ -920,7 +975,21 @@ If ``true``, scale the boot splash image to the full window length when engine s
 | *Default* | ``""`` |
 +-----------+--------+
 
-Path to an image used as the boot splash.
+Path to an image used as the boot splash. If left empty, the default Godot Engine splash will be displayed instead.
+
+\ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
+
+----
+
+.. _class_ProjectSettings_property_application/boot_splash/show_image:
+
+- :ref:`bool<class_bool>` **application/boot_splash/show_image**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, displays the image specified in :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>` when the engine starts. If ``false``, only displays the plain color specified in :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`.
 
 ----
 
@@ -932,7 +1001,7 @@ Path to an image used as the boot splash.
 | *Default* | ``true`` |
 +-----------+----------+
 
-If ``true``, applies linear filtering when scaling the image (recommended for high resolution artwork). If ``false``, uses nearest-neighbor interpolation (recommended for pixel art).
+If ``true``, applies linear filtering when scaling the image (recommended for high-resolution artwork). If ``false``, uses nearest-neighbor interpolation (recommended for pixel art).
 
 ----
 
@@ -996,7 +1065,7 @@ Icon set in ``.icns`` format used on macOS to set the game's icon. This is done 
 
 The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files. The window title will be set to match the project name automatically on startup.
 
-**Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See `Data paths <https://docs.godotengine.org/en/3.4/tutorials/io/data_paths.html>`__ in the documentation for more information.
+\ **Note:** Changing this value will also change the user data folder's path if :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` is ``false``. After renaming the project, you will no longer be able to access existing data in ``user://`` unless you rename the old folder to match the new project name. See :doc:`Data paths <../tutorials/io/data_paths>` in the documentation for more information.
 
 ----
 
@@ -1010,7 +1079,7 @@ The project's name. It is used both by the Project Manager and by exporters. The
 
 Specifies a file to override project settings. For example: ``user://custom_settings.cfg``. See "Overriding" in the ``ProjectSettings`` class description at the top for more information.
 
-**Note:** Regardless of this setting's value, ``res://override.cfg`` will still be read to override the project settings.
+\ **Note:** Regardless of this setting's value, ``res://override.cfg`` will still be read to override the project settings.
 
 ----
 
@@ -1038,9 +1107,9 @@ If ``true``, the project will use a hidden directory (``.import``) for storing p
 
 If ``false``, a non-hidden directory (``import``) will be used instead.
 
-**Note:** Restart the application after changing this setting.
+\ **Note:** Restart the application after changing this setting.
 
-**Note:** Changing this value can help on platforms or with third-party tools where hidden directory patterns are disallowed. Only modify this setting if you know that your environment requires it, as changing the default can impact compatibility with some external tools or plugins which expect the default ``.import`` folder.
+\ **Note:** Changing this value can help on platforms or with third-party tools where hidden directory patterns are disallowed. Only modify this setting if you know that your environment requires it, as changing the default can impact compatibility with some external tools or plugins which expect the default ``.import`` folder.
 
 ----
 
@@ -1066,7 +1135,7 @@ Icon set in ``.ico`` format used on Windows to set the game's icon. This is done
 
 Time samples for frame deltas are subject to random variation introduced by the platform, even when frames are displayed at regular intervals thanks to V-Sync. This can lead to jitter. Delta smoothing can often give a better result by filtering the input deltas to correct for minor fluctuations from the refresh rate.
 
-**Note:** Delta smoothing is only attempted when :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>` is switched on, as it does not work well without V-Sync.
+\ **Note:** Delta smoothing is only attempted when :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/window/vsync/use_vsync>` is switched on, as it does not work well without V-Sync.
 
 It may take several seconds at a stable frame rate before the smoothing is initially activated. It will only be active on machines where performance is adequate to render frames at the refresh rate.
 
@@ -1124,7 +1193,7 @@ If ``true``, flushes the standard output stream every time a line is printed. Th
 
 When running a project, this setting must be enabled if you want logs to be collected by service managers such as systemd/journalctl. This setting is disabled by default on release builds, since flushing on every printed line will negatively affect performance if lots of lines are printed in a rapid succession. Also, if this setting is enabled, logged files will still be written successfully if the application crashes or is otherwise killed by the user (without being closed "normally").
 
-**Note:** Regardless of this setting, the standard error stream (``stderr``) is always flushed when a line is printed to it.
+\ **Note:** Regardless of this setting, the standard error stream (``stderr``) is always flushed when a line is printed to it.
 
 Changes to this setting will only be applied upon restarting the application.
 
@@ -1284,7 +1353,7 @@ Specifies the preferred output latency in milliseconds for audio. Lower values w
 
 Audio output latency may be constrained by the host operating system and audio hardware drivers. If the host can not provide the specified audio output latency then Godot will attempt to use the nearest latency allowed by the host. As such you should always use :ref:`AudioServer.get_output_latency<class_AudioServer_method_get_output_latency>` to determine the actual audio output latency.
 
-**Note:** This setting is ignored on Windows.
+\ **Note:** This setting is ignored on Windows.
 
 ----
 
@@ -1429,6 +1498,18 @@ If ``true``, enables specific GDScript warnings (see ``debug/gdscript/warnings/*
 +-----------+----------+
 
 If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/export_hint_type_mistmatch:
+
+- :ref:`bool<class_bool>` **debug/gdscript/warnings/export_hint_type_mistmatch**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, enables warnings when the type of the default value set to an exported variable is different than the specified export type.
 
 ----
 
@@ -1770,7 +1851,7 @@ If :ref:`display/window/vsync/use_vsync<class_ProjectSettings_property_display/w
 
 This setting is therefore mostly relevant for lowering the maximum FPS below VSync, e.g. to perform non-real-time rendering of static frames, or test the project under lag conditions.
 
-**Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.target_fps<class_Engine_property_target_fps>` instead.
+\ **Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.target_fps<class_Engine_property_target_fps>` instead.
 
 ----
 
@@ -1783,6 +1864,20 @@ This setting is therefore mostly relevant for lowering the maximum FPS below VSy
 +-----------+----------+
 
 Maximum call stack allowed for debugging GDScript.
+
+----
+
+.. _class_ProjectSettings_property_debug/settings/physics_interpolation/enable_warnings:
+
+- :ref:`bool<class_bool>` **debug/settings/physics_interpolation/enable_warnings**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, enables warnings which can help pinpoint where nodes are being incorrectly updated, which will result in incorrect interpolation and visual glitches.
+
+When a node is being interpolated, it is essential that the transform is set during :ref:`Node._physics_process<class_Node_method__physics_process>` (during a physics tick) rather than :ref:`Node._process<class_Node_method__process>` (during a frame).
 
 ----
 
@@ -1976,7 +2071,7 @@ If ``true``, keeps the screen on (even in case of inactivity), so the screensave
 
 The default screen orientation to use on mobile devices.
 
-**Note:** When set to a portrait orientation, this project setting does not flip the project resolution's width and height automatically. Instead, you have to set :ref:`display/window/size/width<class_ProjectSettings_property_display/window/size/width>` and :ref:`display/window/size/height<class_ProjectSettings_property_display/window/size/height>` accordingly.
+\ **Note:** When set to a portrait orientation, this project setting does not flip the project resolution's width and height automatically. Instead, you have to set :ref:`display/window/size/width<class_ProjectSettings_property_display/window/size/width>` and :ref:`display/window/size/height<class_ProjectSettings_property_display/window/size/height>` accordingly.
 
 ----
 
@@ -2004,7 +2099,7 @@ If ``true``, allows per-pixel transparency for the window background. This affec
 
 See :ref:`OS.window_per_pixel_transparency_enabled<class_OS_property_window_per_pixel_transparency_enabled>` for more details.
 
-**Note:** This feature is implemented on HTML5, Linux, macOS, Windows, and Android.
+\ **Note:** This feature is implemented on HTML5, Linux, macOS, Windows, and Android.
 
 ----
 
@@ -2020,7 +2115,7 @@ Sets the window background to transparent when it starts.
 
 See :ref:`OS.window_per_pixel_transparency_enabled<class_OS_property_window_per_pixel_transparency_enabled>` for more details.
 
-**Note:** This feature is implemented on HTML5, Linux, macOS, Windows, and Android.
+\ **Note:** This feature is implemented on HTML5, Linux, macOS, Windows, and Android.
 
 ----
 
@@ -2034,7 +2129,7 @@ See :ref:`OS.window_per_pixel_transparency_enabled<class_OS_property_window_per_
 
 Forces the main window to be always on top.
 
-**Note:** This setting is ignored on iOS, Android, and HTML5.
+\ **Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -2048,7 +2143,7 @@ Forces the main window to be always on top.
 
 Forces the main window to be borderless.
 
-**Note:** This setting is ignored on iOS, Android, and HTML5.
+\ **Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -2062,9 +2157,9 @@ Forces the main window to be borderless.
 
 Sets the main window to full screen when the project starts. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports `multiple resolutions <https://docs.godotengine.org/en/3.4/tutorials/rendering/multiple_resolutions.html>`__ when enabling fullscreen mode.
+Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
 
-**Note:** This setting is ignored on iOS, Android, and HTML5.
+\ **Note:** This setting is ignored on iOS, Android, and HTML5.
 
 ----
 
@@ -2090,7 +2185,7 @@ Sets the game's main viewport height. On desktop platforms, this is the default 
 
 Allows the window to be resizable by default.
 
-**Note:** This setting is ignored on iOS and Android.
+\ **Note:** This setting is ignored on iOS.
 
 ----
 
@@ -2160,7 +2255,7 @@ If ``true``, enables vertical synchronization. This eliminates tearing that may 
 
 If ``Use Vsync`` is enabled and this setting is ``true``, enables vertical synchronization via the operating system's window compositor when in windowed mode and the compositor is enabled. This will prevent stutter in certain situations. (Windows only.)
 
-**Note:** This option is experimental and meant to alleviate stutter experienced by some users. However, some users have experienced a Vsync framerate halving (e.g. from 60 FPS to 30 FPS) when using it.
+\ **Note:** This option is experimental and meant to alleviate stutter experienced by some users. However, some users have experienced a Vsync framerate halving (e.g. from 60 FPS to 30 FPS) when using it.
 
 ----
 
@@ -2208,6 +2303,30 @@ Text-based file extensions to include in the script editor's "Find in Files" fea
 
 ----
 
+.. _class_ProjectSettings_property_editor/version_control/autoload_on_startup:
+
+- :ref:`bool<class_bool>` **editor/version_control/autoload_on_startup**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Load the previously opened VCS plugin when the editor starts up. This is set to ``true`` whenever a new VCS plugin is initialized.
+
+----
+
+.. _class_ProjectSettings_property_editor/version_control/plugin_name:
+
+- :ref:`String<class_String>` **editor/version_control/plugin_name**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+Last loaded VCS plugin name. Used to autoload the plugin when the editor starts up.
+
+----
+
 .. _class_ProjectSettings_property_gui/common/default_scroll_deadzone:
 
 - :ref:`int<class_int>` **gui/common/default_scroll_deadzone**
@@ -2217,6 +2336,24 @@ Text-based file extensions to include in the script editor's "Find in Files" fea
 +-----------+-------+
 
 Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`, which will be used for all :ref:`ScrollContainer<class_ScrollContainer>`\ s unless overridden.
+
+----
+
+.. _class_ProjectSettings_property_gui/common/drop_mouse_on_gui_input_disabled:
+
+- :ref:`bool<class_bool>` **gui/common/drop_mouse_on_gui_input_disabled**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If enabled, the moment :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is set to ``false`` to disable GUI input in a viewport, current mouse over and mouse focus will be dropped.
+
+That behavior helps to keep a robust GUI state, with no surprises when input is resumed regardless what has happened in the meantime.
+
+If disabled, the legacy behavior is used, which consists in just not doing anything besides the GUI input disable itself.
+
+\ **Note:** This is set to ``true`` by default for new projects and is the recommended setting.
 
 ----
 
@@ -2316,7 +2453,7 @@ Default delay for tooltips (in seconds).
 
 Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused button, menu or list item, or validate input.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2326,7 +2463,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused but
 
 Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pending input.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2336,7 +2473,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pe
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2346,7 +2483,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go to the end position of a :ref:`Control<class_Control>` (e.g. last item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_END<class_@GlobalScope_constant_KEY_END>` on typical desktop UI systems.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2356,7 +2493,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go to the end positio
 
 Default :ref:`InputEventAction<class_InputEventAction>` to focus the next :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_next<class_Control_property_focus_next>`.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2366,7 +2503,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to focus the next :ref:`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_previous<class_Control_property_focus_previous>`.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2376,7 +2513,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :r
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go to the start position of a :ref:`Control<class_Control>` (e.g. first item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_HOME<class_@GlobalScope_constant_KEY_HOME>` on typical desktop UI systems.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2386,7 +2523,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go to the start posit
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move left in the UI.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2396,7 +2533,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move left in the UI.
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go down a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEDOWN<class_@GlobalScope_constant_KEY_PAGEDOWN>` on typical desktop UI systems.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2406,7 +2543,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go down a page in a :
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go up a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEUP<class_@GlobalScope_constant_KEY_PAGEUP>` on typical desktop UI systems.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2416,7 +2553,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go up a page in a :re
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move right in the UI.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2426,7 +2563,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move right in the UI.
 
 Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`).
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2436,7 +2573,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move up in the UI.
 
-**Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -2454,7 +2591,7 @@ If ``false``, such events will be flushed only once per idle frame, between iter
 
 Enabling this can greatly improve the responsiveness to input, specially in devices that need to run multiple physics frames per visible (idle) frame, because they can't run at the target frame rate.
 
-**Note:** Currently implemented only in Android.
+\ **Note:** Currently implemented only in Android.
 
 ----
 
@@ -3570,7 +3707,7 @@ Optional name for the 3D render layer 13.
 | *Default* | ``""`` |
 +-----------+--------+
 
-Optional name for the 3D render layer 14
+Optional name for the 3D render layer 14.
 
 ----
 
@@ -3848,6 +3985,70 @@ This is used by servers when used in multi-threading mode (servers and visual). 
 
 ----
 
+.. _class_ProjectSettings_property_mono/debugger_agent/port:
+
+- :ref:`int<class_int>` **mono/debugger_agent/port**
+
++-----------+-----------+
+| *Default* | ``23685`` |
++-----------+-----------+
+
+----
+
+.. _class_ProjectSettings_property_mono/debugger_agent/wait_for_debugger:
+
+- :ref:`bool<class_bool>` **mono/debugger_agent/wait_for_debugger**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+----
+
+.. _class_ProjectSettings_property_mono/debugger_agent/wait_timeout:
+
+- :ref:`int<class_int>` **mono/debugger_agent/wait_timeout**
+
++-----------+----------+
+| *Default* | ``3000`` |
++-----------+----------+
+
+----
+
+.. _class_ProjectSettings_property_mono/profiler/args:
+
+- :ref:`String<class_String>` **mono/profiler/args**
+
++-----------+-------------------------------------------------+
+| *Default* | ``"log:calls,alloc,sample,output=output.mlpd"`` |
++-----------+-------------------------------------------------+
+
+----
+
+.. _class_ProjectSettings_property_mono/profiler/enabled:
+
+- :ref:`bool<class_bool>` **mono/profiler/enabled**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+----
+
+.. _class_ProjectSettings_property_mono/runtime/unhandled_exception_policy:
+
+- :ref:`int<class_int>` **mono/runtime/unhandled_exception_policy**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The policy to use for unhandled Mono (C#) exceptions. The default "Terminate Application" exits the project as soon as an unhandled exception is thrown. "Log Error" logs an error message to the console instead, and will not interrupt the project execution when an unhandled exception is thrown.
+
+\ **Note:** The unhandled exception policy is always set to "Log Error" in the editor, which also includes C# ``tool`` scripts running within the editor as well as editor plugin code.
+
+----
+
 .. _class_ProjectSettings_property_network/limits/debugger_stdout/max_chars_per_second:
 
 - :ref:`int<class_int>` **network/limits/debugger_stdout/max_chars_per_second**
@@ -4100,7 +4301,7 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 Size of the hash table used for the broad-phase 2D hash grid algorithm.
 
-**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+\ **Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
 
 ----
 
@@ -4116,7 +4317,7 @@ Additional expansion applied to object bounds in the 2D physics bounding volume 
 
 The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
 
-**Note:** Used only if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+\ **Note:** Used only if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
 
 ----
 
@@ -4130,7 +4331,7 @@ The default value will work well in most situations. A value of 0.0 will turn th
 
 Cell size used for the broad-phase 2D hash grid algorithm (in pixels).
 
-**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+\ **Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
 
 ----
 
@@ -4144,7 +4345,7 @@ Cell size used for the broad-phase 2D hash grid algorithm (in pixels).
 
 The default angular damp in 2D.
 
-**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -4158,7 +4359,7 @@ The default angular damp in 2D.
 
 The default gravity strength in 2D (in pixels per second squared).
 
-**Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
+\ **Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
 
 ::
 
@@ -4177,7 +4378,7 @@ The default gravity strength in 2D (in pixels per second squared).
 
 The default gravity direction in 2D.
 
-**Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
+\ **Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
 
 ::
 
@@ -4196,7 +4397,7 @@ The default gravity direction in 2D.
 
 The default linear damp in 2D.
 
-**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -4210,7 +4411,7 @@ The default linear damp in 2D.
 
 Threshold defining the surface size that constitutes a large object with regard to cells in the broad-phase 2D hash grid algorithm.
 
-**Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
+\ **Note:** Not used if :ref:`physics/2d/use_bvh<class_ProjectSettings_property_physics/2d/use_bvh>` is enabled.
 
 ----
 
@@ -4262,7 +4463,7 @@ Threshold linear velocity under which a 2D physics body will be considered inact
 
 Sets whether physics is run on the main thread or a separate one. Running the server on a thread increases performance, but restricts API access to only physics process.
 
-**Warning:** As of Godot 3.2, there are mixed reports about the use of a Multi-Threaded thread model for physics. Be sure to assess whether it does give you extra performance and no regressions when using it.
+\ **Warning:** As of Godot 3.2, there are mixed reports about the use of a Multi-Threaded thread model for physics. Be sure to assess whether it does give you extra performance and no regressions when using it.
 
 ----
 
@@ -4312,7 +4513,7 @@ Sets whether the 3D physics world will be created with support for :ref:`SoftBod
 
 The default angular damp in 3D.
 
-**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -4326,7 +4527,7 @@ The default angular damp in 3D.
 
 The default gravity strength in 3D (in meters per second squared).
 
-**Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
+\ **Note:** This property is only read when the project starts. To change the default gravity at runtime, use the following code sample:
 
 ::
 
@@ -4345,7 +4546,7 @@ The default gravity strength in 3D (in meters per second squared).
 
 The default gravity direction in 3D.
 
-**Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
+\ **Note:** This property is only read when the project starts. To change the default gravity vector at runtime, use the following code sample:
 
 ::
 
@@ -4364,7 +4565,7 @@ The default gravity direction in 3D.
 
 The default linear damp in 3D.
 
-**Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
+\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`, ``60`` by default) will bring the object to a stop in one iteration.
 
 ----
 
@@ -4380,7 +4581,7 @@ Additional expansion applied to object bounds in the 3D physics bounding volume 
 
 The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
 
-**Note:** Used only if :ref:`physics/3d/godot_physics/use_bvh<class_ProjectSettings_property_physics/3d/godot_physics/use_bvh>` is enabled.
+\ **Note:** Used only if :ref:`physics/3d/godot_physics/use_bvh<class_ProjectSettings_property_physics/3d/godot_physics/use_bvh>` is enabled.
 
 ----
 
@@ -4407,6 +4608,20 @@ Enables the use of bounding volume hierarchy instead of octree for 3D physics sp
 Sets which physics engine to use for 3D physics.
 
 "DEFAULT" is currently the `Bullet <https://bulletphysics.org>`__ physics engine. The "GodotPhysics" engine is still supported as an alternative.
+
+----
+
+.. _class_ProjectSettings_property_physics/3d/smooth_trimesh_collision:
+
+- :ref:`bool<class_bool>` **physics/3d/smooth_trimesh_collision**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, smooths out collision with trimesh shapes (:ref:`ConcavePolygonShape<class_ConcavePolygonShape>`) by telling the Bullet physics engine to generate internal edge information for every trimesh shape created.
+
+\ **Note:** Only effective if :ref:`physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>` is set to ``DEFAULT`` or ``Bullet``, *not* ``GodotPhysics``.
 
 ----
 
@@ -4450,9 +4665,23 @@ If disabled, the legacy behavior is used, which consists in queuing the picking 
 
 The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. See also :ref:`debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`.
 
-**Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>` instead.
+\ **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.iterations_per_second<class_Engine_property_iterations_per_second>` instead.
 
-**Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
+\ **Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
+
+----
+
+.. _class_ProjectSettings_property_physics/common/physics_interpolation:
+
+- :ref:`bool<class_bool>` **physics/common/physics_interpolation**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, such that smooth motion is seen when physics ticks do not coincide with rendered frames.
+
+\ **Note:** When moving objects to new positions (rather than the usual physics motion) you may want to temporarily turn off interpolation to prevent a visible glitch. You can do this using the :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>` function.
 
 ----
 
@@ -4466,9 +4695,11 @@ The number of fixed iterations per second. This controls how often physics simul
 
 Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
-**Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
+\ **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
 
-**Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
+\ **Note:** Jitter fix is automatically disabled at runtime when :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` is enabled.
+
+\ **Note:** This property is only read when the project starts. To change the value at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 
 ----
 
@@ -4482,7 +4713,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 **Experimental.** Calls ``glBufferData`` with NULL data prior to uploading batching data. This may not be necessary but can be used for safety.
 
-**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+\ **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
 ----
 
@@ -4496,7 +4727,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 **Experimental.** If set to on, uses the ``GL_STREAM_DRAW`` flag for batching buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
 
-**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+\ **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
 ----
 
@@ -4510,7 +4741,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 **Experimental.** If set to on, this applies buffer orphaning - ``glBufferData`` is called with NULL data and the full buffer size prior to uploading new data. This can be important to avoid stalling on some hardware.
 
-**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+\ **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
 ----
 
@@ -4524,7 +4755,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 **Experimental.** If set to on, uses the ``GL_STREAM_DRAW`` flag for legacy buffer uploads. If off, uses the ``GL_DYNAMIC_DRAW`` flag.
 
-**Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
+\ **Note:** Use with care. You are advised to leave this as default for exports. A non-default setting that works better on your machine may adversely affect performance for end users.
 
 ----
 
@@ -4568,9 +4799,9 @@ If ``true``, performs 2D skinning on the CPU rather than the GPU. This provides 
 
 Currently only available when :ref:`rendering/batching/options/use_batching<class_ProjectSettings_property_rendering/batching/options/use_batching>` is active.
 
-**Note:** Antialiased software skinned polys are not supported, and will be rendered without antialiasing.
+\ **Note:** Antialiased software skinned polys are not supported, and will be rendered without antialiasing.
 
-**Note:** Custom shaders that use the ``VERTEX`` built-in operate with ``VERTEX`` position *after* skinning, whereas with hardware skinning, ``VERTEX`` is the position *before* skinning.
+\ **Note:** Custom shaders that use the ``VERTEX`` built-in operate with ``VERTEX`` position *after* skinning, whereas with hardware skinning, ``VERTEX`` is the position *before* skinning.
 
 ----
 
@@ -4856,7 +5087,123 @@ iOS specific override for :ref:`rendering/gles2/compatibility/disable_half_float
 
 If ``true`` and available on the target Android device, enables high floating point precision for all shader computations in GLES2.
 
-**Warning:** High floating point precision can be extremely slow on older devices and is often not available at all. Use with caution.
+\ **Warning:** High floating point precision can be extremely slow on older devices and is often not available at all. Use with caution.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/log_active_async_compiles_count:
+
+- :ref:`bool<class_bool>` **rendering/gles3/shaders/log_active_async_compiles_count**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, every time an asynchronous shader compilation or an asynchronous shader reconstruction from cache starts or finishes, a line will be logged telling how many of those are happening.
+
+If the platform doesn't support parallel shader compile, but only the compile queue via a secondary GL context, what the message will tell is the number of shader compiles currently queued.
+
+\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is **not** ``Synchronous``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/max_simultaneous_compiles**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+This is the maximum number of shaders that can be compiled (or reconstructed from cache) at the same time.
+
+At runtime, while that count is reached, other shaders that can be asynchronously compiled will just use their fallback, without their setup being started until the count gets lower.
+
+This is a way to balance the CPU work between running the game and compiling the shaders. The goal is to have as many asynchronous compiles in flight as possible without impacting the responsiveness of the game, which beyond some point would destroy the benefits of asynchronous compilation. In other words, you may be able to afford that the FPS lowers a bit, and that will already be better than the stalling that synchronous compilation could cause.
+
+The default value is a conservative one, so you are advised to tweak it according to the hardware you are targeting.
+
+\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is **not** ``Synchronous``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles.mobile:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/max_simultaneous_compiles.mobile**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+The default is a very conservative override for ``rendering/gles3/shaders/max_concurrent_compiles``.
+
+Depending on the specific devices you are targeting, you may want to raise it.
+
+\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is **not** ``Synchronous``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_cache_size_mb**
+
++-----------+---------+
+| *Default* | ``512`` |
++-----------+---------+
+
+The maximum size, in megabytes, that the ubershader cache can grow up to. On startup, the least recently used entries will be deleted until the total size is within bounds.
+
+\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is set to ``Asynchronous + Cache``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb.mobile:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_cache_size_mb.mobile**
+
++-----------+---------+
+| *Default* | ``128`` |
++-----------+---------+
+
+An override for ``rendering/gles3/shaders/ubershader_cache_size_mb``, so a smaller maximum size can be configured for mobile platforms, where storage space is more limited.
+
+\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is set to ``Asynchronous + Cache``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_compilation_mode**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+If set to ``Asynchronous`` and available on the target device, asynchronous compilation of shaders is enabled (in contrast to ``Asynchronous``).
+
+That means that when a shader is first used under some new rendering situation, the game won't stall while such shader is being compiled. Instead, a fallback will be used and the real shader will be compiled in the background. Once the actual shader is compiled, it will be used the next times it's used to draw a frame.
+
+Depending on the async mode configured for a given material/shader, the fallback will be an "ubershader" (the default) or just skip rendering any item it is applied to.
+
+An ubershader is a very complex shader, slow but suited to any rendering situation, that the engine generates internally so it can be used from the beginning while the traditional conditioned, optimized version of it is being compiled.
+
+To reduce loading times after the project has been launched at least once, you can use ``Asynchronous + Cache``. This also causes the ubershaders to be cached into storage so they can be ready faster next time they are used (provided the platform provides support for it).
+
+\ **Note:** Asynchronous compilation is currently only supported for spatial (3D) and particle materials/shaders. CanvasItem (2D) shaders will not use asynchronous compilation even if this setting is set to ``Asynchronous`` or ``Asynchronous + Cache``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode.mobile:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_compilation_mode.mobile**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+An override for ``rendering/gles3/shaders/shader_compilation_mode``, so asynchronous compilation can be disabled for mobile.
+
+You may want to do that since mobile GPUs generally won't support ubershaders due to their complexity.
 
 ----
 
@@ -5004,6 +5351,22 @@ On import, mesh vertex data will be split into two streams within a single verte
 
 ----
 
+.. _class_ProjectSettings_property_rendering/misc/occlusion_culling/max_active_polygons:
+
+- :ref:`int<class_int>` **rendering/misc/occlusion_culling/max_active_polygons**
+
++-----------+-------+
+| *Default* | ``8`` |
++-----------+-------+
+
+Determines the maximum number of polygon occluders that will be used at any one time.
+
+Although you can have many occluders in a scene, each frame the system will choose from these the most relevant based on a screen space metric, in order to give the best overall performance.
+
+A greater number of polygons can potentially cull more objects, however the cost of culling calculations scales with the number of occluders.
+
+----
+
 .. _class_ProjectSettings_property_rendering/misc/occlusion_culling/max_active_spheres:
 
 - :ref:`int<class_int>` **rendering/misc/occlusion_culling/max_active_spheres**
@@ -5044,7 +5407,7 @@ It will flip named portal meshes (i.e. ``-portal``) on the initial conversion to
 
 Show conversion logs.
 
-**Note:** This will automatically be disabled in exports.
+\ **Note:** This will automatically be disabled in exports.
 
 ----
 
@@ -5084,7 +5447,7 @@ Reducing the number of :ref:`Node<class_Node>`\ s in the scene tree can make tra
 
 Show logs during PVS generation.
 
-**Note:** This will automatically be disabled in exports.
+\ **Note:** This will automatically be disabled in exports.
 
 ----
 
@@ -5098,7 +5461,7 @@ Show logs during PVS generation.
 
 Uses a simplified method of generating PVS (potentially visible set) data. The results may not be accurate where more than one portal join adjacent rooms.
 
-**Note:** Generally you should only use this option if you encounter bugs when it is set to ``false``, i.e. there are problems with the default method.
+\ **Note:** Generally you should only use this option if you encounter bugs when it is set to ``false``, i.e. there are problems with the default method.
 
 ----
 
@@ -5112,7 +5475,7 @@ Uses a simplified method of generating PVS (potentially visible set) data. The r
 
 If ``true``, allocates the root :ref:`Viewport<class_Viewport>`'s framebuffer with high dynamic range. High dynamic range allows the use of :ref:`Color<class_Color>` values greater than 1. This must be set to ``true`` for glow rendering to work if :ref:`Environment.glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is greater than or equal to ``1.0``.
 
-**Note:** Only available on the GLES3 backend.
+\ **Note:** Only available on the GLES3 backend.
 
 ----
 
@@ -5126,7 +5489,23 @@ If ``true``, allocates the root :ref:`Viewport<class_Viewport>`'s framebuffer wi
 
 Lower-end override for :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` on mobile devices, due to performance concerns or driver support. This must be set to ``true`` for glow rendering to work if :ref:`Environment.glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is greater than or equal to ``1.0``.
 
-**Note:** Only available on the GLES3 backend.
+\ **Note:** Only available on the GLES3 backend.
+
+----
+
+.. _class_ProjectSettings_property_rendering/quality/depth/use_32_bpc_depth:
+
+- :ref:`bool<class_bool>` **rendering/quality/depth/use_32_bpc_depth**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, allocates the root :ref:`Viewport<class_Viewport>`'s framebuffer with full floating-point precision (32-bit) instead of half floating-point precision (16-bit). Only effective when :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` is also enabled.
+
+\ **Note:** Enabling this setting does not improve rendering quality. Using full floating-point precision is slower, and is generally only needed for advanced shaders that require a high level of precision. To reduce banding, enable :ref:`rendering/quality/filters/use_debanding<class_ProjectSettings_property_rendering/quality/filters/use_debanding>` instead.
+
+\ **Note:** Only available on the GLES3 backend.
 
 ----
 
@@ -5162,7 +5541,7 @@ If ``true``, performs a previous depth pass before rendering materials. This inc
 | *Default* | ``4096`` |
 +-----------+----------+
 
-The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance. The value will be rounded up to the nearest power of 2.
+The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance. The value will be rounded up to the nearest power of 2. This setting can be changed at run-time; the change will be applied immediately.
 
 ----
 
@@ -5188,7 +5567,7 @@ Lower-end override for :ref:`rendering/quality/directional_shadow/size<class_Pro
 
 The video driver to use ("GLES2" or "GLES3").
 
-**Note:** The backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at run-time.
+\ **Note:** The backend in use can be overridden at runtime via the ``--video-driver`` command line argument, or by the :ref:`rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` option if the target system does not support GLES3 and falls back to GLES2. In such cases, this property is not updated, so use :ref:`OS.get_current_video_driver<class_OS_method_get_current_video_driver>` to query it at run-time.
 
 ----
 
@@ -5202,7 +5581,7 @@ The video driver to use ("GLES2" or "GLES3").
 
 If ``true``, allows falling back to the GLES2 driver if the GLES3 driver is not supported.
 
-**Note:** The two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the data pack's size.
+\ **Note:** The two video drivers are not drop-in replacements for each other, so a game designed for GLES3 might not work properly when falling back to GLES2. In particular, some features of the GLES3 backend are not available in GLES2. Enabling this setting also means that both ETC and ETC2 VRAM-compressed textures will be exported on Android and iOS, increasing the data pack's size.
 
 ----
 
@@ -5228,7 +5607,7 @@ Maximum anisotropic filter level used for textures with anisotropy enabled. High
 
 Sets the number of MSAA samples to use. MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware.
 
-**Note:** MSAA is not available on HTML5 export using the GLES2 backend.
+\ **Note:** MSAA is not available on HTML5 export using the GLES2 backend.
 
 ----
 
@@ -5254,9 +5633,9 @@ If set to a value greater than ``0.0``, contrast-adaptive sharpening will be app
 
 If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
-**Note:** Only available on the GLES3 backend. :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` must also be ``true`` for debanding to be effective.
+\ **Note:** Only available on the GLES3 backend. :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` must also be ``true`` for debanding to be effective.
 
-**Note:** There are known issues with debanding breaking rendering on mobile platforms. Due to this, it is recommended to leave this option disabled when targeting mobile platforms.
+\ **Note:** There are known issues with debanding breaking rendering on mobile platforms. Due to this, it is recommended to leave this option disabled when targeting mobile platforms.
 
 ----
 
@@ -5390,7 +5769,7 @@ Lower-end override for :ref:`rendering/quality/reflections/high_quality_ggx<clas
 
 Limits the size of the irradiance map which is normally determined by :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`. A higher size results in a higher quality irradiance map similarly to :ref:`rendering/quality/reflections/high_quality_ggx<class_ProjectSettings_property_rendering/quality/reflections/high_quality_ggx>`. Use a higher value when using high-frequency HDRI maps, otherwise keep this as low as possible.
 
-**Note:** Low and mid range hardware do not support complex irradiance maps well and may crash if this is set too high.
+\ **Note:** Low and mid range hardware do not support complex irradiance maps well and may crash if this is set too high.
 
 ----
 
@@ -5478,7 +5857,7 @@ If ``true``, forces vertex shading for all 3D :ref:`SpatialMaterial<class_Spatia
 
 See also :ref:`SpatialMaterial.flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>` which can be used to enable vertex shading on specific materials only.
 
-**Note:** This setting does not affect unshaded materials.
+\ **Note:** This setting does not affect unshaded materials.
 
 ----
 
@@ -5602,7 +5981,7 @@ Lower-end override for :ref:`rendering/quality/shadow_atlas/size<class_ProjectSe
 
 Shadow filter mode. Higher-quality settings result in smoother shadows that flicker less when moving. "Disabled" is the fastest option, but also has the lowest quality. "PCF5" is smoother but is also slower. "PCF13" is the smoothest option, but is also the slowest.
 
-**Note:** When using the GLES2 backend, the "PCF13" option actually uses 16 samples to emulate linear filtering in the shader. This results in a shadow appearance similar to the one produced by the GLES3 backend.
+\ **Note:** When using the GLES2 backend, the "PCF13" option actually uses 16 samples to emulate linear filtering in the shader. This results in a shadow appearance similar to the one produced by the GLES3 backend.
 
 ----
 
@@ -5646,7 +6025,7 @@ If ``false``, an alternative skinning process on the GPU is used in this case (s
 
 See also :ref:`rendering/quality/skinning/force_software_skinning<class_ProjectSettings_property_rendering/quality/skinning/force_software_skinning>`.
 
-**Note:** When the software skinning fallback is triggered, custom vertex shaders will behave in a different way, because the bone transform will be already applied to the modelview matrix.
+\ **Note:** When the software skinning fallback is triggered, custom vertex shaders will behave in a different way, because the bone transform will be already applied to the modelview matrix.
 
 ----
 
@@ -5662,7 +6041,7 @@ Additional expansion applied to object bounds in the 3D rendering bounding volum
 
 The default value will work well in most situations. A value of 0.0 will turn this optimization off, and larger values may work better for larger, faster moving objects.
 
-**Note:** Used only if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
+\ **Note:** Used only if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
 
 ----
 
@@ -5678,7 +6057,7 @@ The rendering octree balance can be changed to favor smaller (``0``), or larger 
 
 Larger branches can increase performance significantly in some projects.
 
-**Note:** Not used if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
+\ **Note:** Not used if :ref:`rendering/quality/spatial_partitioning/use_bvh<class_ProjectSettings_property_rendering/quality/spatial_partitioning/use_bvh>` is enabled.
 
 ----
 
@@ -5790,7 +6169,7 @@ Try enabling this option if you see any visual anomalies in 3D (such as incorrec
 
 If ``true``, the texture importer will import VRAM-compressed textures using the BPTC algorithm. This texture compression algorithm is only supported on desktop platforms, and only when using the GLES3 renderer.
 
-**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
+\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
 ----
 
@@ -5804,7 +6183,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression algorithm. This algorithm doesn't support alpha channels in textures.
 
-**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
+\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
 ----
 
@@ -5818,7 +6197,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm. This texture compression algorithm is only supported when using the GLES3 renderer.
 
-**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
+\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
 ----
 
@@ -5832,7 +6211,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the PowerVR Texture Compression algorithm. This texture compression algorithm is only supported on iOS.
 
-**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
+\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
 ----
 
@@ -5846,7 +6225,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm. This algorithm is only supported on desktop platforms and consoles.
 
-**Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
+\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.import/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
 ----
 
@@ -5873,9 +6252,9 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`
+- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -5914,7 +6293,7 @@ Returns the order of a configuration value (influences when saved to the config 
 
 Returns the value of a setting.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -5926,9 +6305,9 @@ Returns the value of a setting.
 
 - :ref:`String<class_String>` **globalize_path** **(** :ref:`String<class_String>` path **)** |const|
 
-Returns the absolute, native OS path corresponding to the localized ``path`` (starting with ``res://`` or ``user://``). The returned path will vary depending on the operating system and user preferences. See `File paths in Godot projects <https://docs.godotengine.org/en/3.4/tutorials/io/data_paths.html>`__ to see what those paths convert to. See also :ref:`localize_path<class_ProjectSettings_method_localize_path>`.
+Returns the absolute, native OS path corresponding to the localized ``path`` (starting with ``res://`` or ``user://``). The returned path will vary depending on the operating system and user preferences. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` to see what those paths convert to. See also :ref:`localize_path<class_ProjectSettings_method_localize_path>`.
 
-**Note:** :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` with ``res://`` will not work in an exported project. Instead, prepend the executable's base directory to the path when running from an exported project:
+\ **Note:** :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` with ``res://`` will not work in an exported project. Instead, prepend the executable's base directory to the path when running from an exported project:
 
 ::
 
@@ -5960,9 +6339,9 @@ Returns ``true`` if a configuration value is present.
 
 Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
-**Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack`` unless ``replace_files`` is set to ``false``.
+\ **Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack`` unless ``replace_files`` is set to ``false``.
 
-**Note:** The optional ``offset`` parameter can be used to specify the offset in bytes to the start of the resource pack. This is only supported for .pck files.
+\ **Note:** The optional ``offset`` parameter can be used to specify the offset in bytes to the start of the resource pack. This is only supported for .pck files.
 
 ----
 
@@ -5996,7 +6375,7 @@ Returns the specified property's initial value. Returns ``null`` if the property
 
 Saves the configuration to the ``project.godot`` file.
 
-**Note:** This method is intended to be used by editor plugins, as modified ``ProjectSettings`` can't be loaded back in the running app. If you want to change project settings in exported projects, use :ref:`save_custom<class_ProjectSettings_method_save_custom>` to save ``override.cfg`` file.
+\ **Note:** This method is intended to be used by editor plugins, as modified ``ProjectSettings`` can't be loaded back in the running app. If you want to change project settings in exported projects, use :ref:`save_custom<class_ProjectSettings_method_save_custom>` to save ``override.cfg`` file.
 
 ----
 
@@ -6030,7 +6409,7 @@ Sets the order of a configuration value (influences when saved to the config fil
 
 Sets the value of a setting.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 

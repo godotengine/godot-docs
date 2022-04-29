@@ -18,7 +18,7 @@ Description
 
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
 
-**Note:** When using a large textured ``PlaneMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
+\ **Note:** When using a large textured ``PlaneMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
 
 Properties
 ----------

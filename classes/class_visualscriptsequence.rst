@@ -18,13 +18,13 @@ Description
 
 Steps through a series of one or more output Sequence ports. The ``current`` data port outputs the currently executing item.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``in order``
+- Sequence: ``in order``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
-- Sequence: ``1``
+- Sequence: ``1``\ 
 
 - Sequence: ``2 - n`` (optional)
 

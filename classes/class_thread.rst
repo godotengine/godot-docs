@@ -18,14 +18,14 @@ Description
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
-**Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
+\ **Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/threads/using_multiple_threads`
+- :doc:`Using multiple threads <../tutorials/performance/threads/using_multiple_threads>`
 
-- :doc:`../tutorials/performance/threads/thread_safe_apis`
+- :doc:`Thread-safe APIs <../tutorials/performance/threads/thread_safe_apis>`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
@@ -112,7 +112,7 @@ Should either be used when you want to retrieve the value returned from the meth
 
 To determine if this can be called without blocking the calling thread, check if :ref:`is_alive<class_Thread_method_is_alive>` is ``false``.
 
-**Note:** After the ``Thread`` finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
+\ **Note:** After the ``Thread`` finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

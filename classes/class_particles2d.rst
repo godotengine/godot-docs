@@ -20,18 +20,18 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
-**Note:** ``Particles2D`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert ``Particles2D`` to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
+\ **Note:** ``Particles2D`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert ``Particles2D`` to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
 
-**Note:** On macOS, ``Particles2D`` rendering is much slower than :ref:`CPUParticles2D<class_CPUParticles2D>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles2D<class_CPUParticles2D>` instead when targeting macOS.
+\ **Note:** On macOS, ``Particles2D`` rendering is much slower than :ref:`CPUParticles2D<class_CPUParticles2D>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles2D<class_CPUParticles2D>` instead when targeting macOS.
 
-**Note:** After working on a Particles node, remember to update its :ref:`visibility_rect<class_Particles2D_property_visibility_rect>` by selecting it, clicking the **Particles** menu at the top of the 2D editor viewport then choose **Generate Visibility Rect**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
+\ **Note:** After working on a Particles node, remember to update its :ref:`visibility_rect<class_Particles2D_property_visibility_rect>` by selecting it, clicking the **Particles** menu at the top of the 2D editor viewport then choose **Generate Visibility Rect**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
 
-**Note:** Unlike :ref:`CPUParticles2D<class_CPUParticles2D>`, ``Particles2D`` currently ignore the texture region defined in :ref:`AtlasTexture<class_AtlasTexture>`\ s.
+\ **Note:** Unlike :ref:`CPUParticles2D<class_CPUParticles2D>`, ``Particles2D`` currently ignore the texture region defined in :ref:`AtlasTexture<class_AtlasTexture>`\ s.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/particle_systems_2d`
+- :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
@@ -113,7 +113,7 @@ Property Descriptions
 
 The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_Particles2D_property_lifetime>`).
 
-**Note:** Changing :ref:`amount<class_Particles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles2D_property_amount>`.
+\ **Note:** Changing :ref:`amount<class_Particles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles2D_property_amount>`.
 
 ----
 
@@ -241,7 +241,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

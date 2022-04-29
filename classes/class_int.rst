@@ -18,7 +18,7 @@ Signed 64-bit integer type.
 
 It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around.
 
-``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
+\ ``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
 
 ::
 

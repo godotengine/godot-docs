@@ -18,16 +18,16 @@ Description
 
 Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on usage.
 
-**Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
+\ **Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+---------------------------------------------------+
-| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |                                                   |
-+-------------------------------+-------------------------------------------+---------------------------------------------------+
-| :ref:`Color<class_Color>`     | self_modulate                             | ``Color( 0.5, 0.6, 1, 0.7 )`` *(parent override)* |
-+-------------------------------+-------------------------------------------+---------------------------------------------------+
++-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |                                                                                                      |
++-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | self_modulate                             | ``Color( 0.5, 0.6, 1, 0.7 )`` (overrides :ref:`CanvasItem<class_CanvasItem_property_self_modulate>`) |
++-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------

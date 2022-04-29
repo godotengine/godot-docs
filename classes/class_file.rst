@@ -35,16 +35,16 @@ Here's a sample on how to write and read from a file:
         file.close()
         return content
 
-In the example above, the file will be saved in the user data folder as specified in the `Data paths <https://docs.godotengine.org/en/3.4/tutorials/io/data_paths.html>`__ documentation.
+In the example above, the file will be saved in the user data folder as specified in the :doc:`Data paths <../tutorials/io/data_paths>` documentation.
 
-**Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of the ``File`` API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
+\ **Note:** To access project resources once exported, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of the ``File`` API, as some files are converted to engine-specific formats and their original source files might not be present in the exported PCK package.
 
-**Note:** Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing **Alt + F4**). If you stop the project execution by pressing **F8** while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling :ref:`flush<class_File_method_flush>` at regular intervals.
+\ **Note:** Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing **Alt + F4**). If you stop the project execution by pressing **F8** while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling :ref:`flush<class_File_method_flush>` at regular intervals.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/scripting/filesystem`
+- :doc:`File system <../tutorials/scripting/filesystem>`
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
@@ -212,9 +212,9 @@ Property Descriptions
 
 If ``true``, the file is read with big-endian `endianness <https://en.wikipedia.org/wiki/Endianness>`__. If ``false``, the file is read with little-endian endianness. If in doubt, leave this to ``false`` as most files are written with little-endian endianness.
 
-**Note:** :ref:`endian_swap<class_File_property_endian_swap>` is only about the file format, not the CPU type. The CPU endianness doesn't affect the default endianness for files written.
+\ **Note:** :ref:`endian_swap<class_File_property_endian_swap>` is only about the file format, not the CPU type. The CPU endianness doesn't affect the default endianness for files written.
 
-**Note:** This is always reset to ``false`` whenever you open the file. Therefore, you must set :ref:`endian_swap<class_File_property_endian_swap>` *after* opening the file, not before.
+\ **Note:** This is always reset to ``false`` whenever you open the file. Therefore, you must set :ref:`endian_swap<class_File_property_endian_swap>` *after* opening the file, not before.
 
 Method Descriptions
 -------------------
@@ -233,7 +233,7 @@ Closes the currently opened file and prevents subsequent read/write operations. 
 
 Returns ``true`` if the file cursor has already read past the end of the file.
 
-**Note:** ``eof_reached() == false`` cannot be used to check whether there is more data available. To loop while there is more data available, use:
+\ **Note:** ``eof_reached() == false`` cannot be used to check whether there is more data available. To loop while there is more data available, use:
 
 ::
 
@@ -248,7 +248,7 @@ Returns ``true`` if the file cursor has already read past the end of the file.
 
 Returns ``true`` if the file exists in the given path.
 
-**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>` for an alternative approach that takes resource remapping into account.
+\ **Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>` for an alternative approach that takes resource remapping into account.
 
 ----
 
@@ -258,7 +258,7 @@ Returns ``true`` if the file exists in the given path.
 
 Writes the file's buffer to disk. Flushing is automatically performed when the file is closed. This means you don't need to call :ref:`flush<class_File_method_flush>` manually before closing a file using :ref:`close<class_File_method_close>`. Still, calling :ref:`flush<class_File_method_flush>` can be used to ensure the data is safe even if the project crashes instead of being closed gracefully.
 
-**Note:** Only call :ref:`flush<class_File_method_flush>` when you actually need it. Otherwise, it will decrease performance due to constant disk writes.
+\ **Note:** Only call :ref:`flush<class_File_method_flush>` when you actually need it. Otherwise, it will decrease performance due to constant disk writes.
 
 ----
 
@@ -446,7 +446,7 @@ Returns a SHA-256 :ref:`String<class_String>` representing the file at the given
 
 Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 
@@ -472,7 +472,7 @@ Opens the file for writing or reading, depending on the flags.
 
 Opens a compressed file for reading or writing.
 
-**Note:** :ref:`open_compressed<class_File_method_open_compressed>` can only read files that were saved by Godot, not third-party compression formats. See `GitHub issue #28999 <https://github.com/godotengine/godot/issues/28999>`__ for a workaround.
+\ **Note:** :ref:`open_compressed<class_File_method_open_compressed>` can only read files that were saved by Godot, not third-party compression formats. See `GitHub issue #28999 <https://github.com/godotengine/godot/issues/28999>`__ for a workaround.
 
 ----
 
@@ -482,7 +482,7 @@ Opens a compressed file for reading or writing.
 
 Opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
-**Note:** The provided key must be 32 bytes long.
+\ **Note:** The provided key must be 32 bytes long.
 
 ----
 
@@ -508,7 +508,7 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 Changes the file reading/writing cursor to the specified position (in bytes from the end of the file).
 
-**Note:** This is an offset, so you should use negative numbers or the cursor will be at the end of the file.
+\ **Note:** This is an offset, so you should use negative numbers or the cursor will be at the end of the file.
 
 ----
 
@@ -518,7 +518,7 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 Stores an integer as 16 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``. Any other value will overflow and wrap around.
+\ **Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``. Any other value will overflow and wrap around.
 
 To store a signed integer, use :ref:`store_64<class_File_method_store_64>` or store a signed integer from the interval ``[-2^15, 2^15 - 1]`` (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:
 
@@ -549,7 +549,7 @@ To store a signed integer, use :ref:`store_64<class_File_method_store_64>` or st
 
 Stores an integer as 32 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``. Any other value will overflow and wrap around.
+\ **Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``. Any other value will overflow and wrap around.
 
 To store a signed integer, use :ref:`store_64<class_File_method_store_64>`, or convert it manually (see :ref:`store_16<class_File_method_store_16>` for an example).
 
@@ -561,7 +561,7 @@ To store a signed integer, use :ref:`store_64<class_File_method_store_64>`, or c
 
 Stores an integer as 64 bits in the file.
 
-**Note:** The ``value`` must lie in the interval ``[-2^63, 2^63 - 1]`` (i.e. be a valid :ref:`int<class_int>` value).
+\ **Note:** The ``value`` must lie in the interval ``[-2^63, 2^63 - 1]`` (i.e. be a valid :ref:`int<class_int>` value).
 
 ----
 
@@ -571,7 +571,7 @@ Stores an integer as 64 bits in the file.
 
 Stores an integer as 8 bits in the file.
 
-**Note:** The ``value`` should lie in the interval ``[0, 255]``. Any other value will overflow and wrap around.
+\ **Note:** The ``value`` should lie in the interval ``[0, 255]``. Any other value will overflow and wrap around.
 
 To store a signed integer, use :ref:`store_64<class_File_method_store_64>`, or convert it manually (see :ref:`store_16<class_File_method_store_16>` for an example).
 
@@ -643,7 +643,7 @@ Stores a floating-point number in the file.
 
 Appends ``string`` to the file without a line return, encoding the text as UTF-8.
 
-**Note:** This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using :ref:`store_pascal_string<class_File_method_store_pascal_string>` instead. For retrieving strings from a text file, you can use ``get_buffer(length).get_string_from_utf8()`` (if you know the length) or :ref:`get_as_text<class_File_method_get_as_text>`.
+\ **Note:** This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using :ref:`store_pascal_string<class_File_method_store_pascal_string>` instead. For retrieving strings from a text file, you can use ``get_buffer(length).get_string_from_utf8()`` (if you know the length) or :ref:`get_as_text<class_File_method_get_as_text>`.
 
 ----
 
@@ -653,7 +653,7 @@ Appends ``string`` to the file without a line return, encoding the text as UTF-8
 
 Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
-**Note:** Not all properties are included. Only properties that are configured with the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag set will be serialized. You can add a new usage flag to a property by overriding the :ref:`Object._get_property_list<class_Object_method__get_property_list>` method in your class. You can also check how property usage is configured by calling :ref:`Object._get_property_list<class_Object_method__get_property_list>`. See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the possible usage flags.
+\ **Note:** Not all properties are included. Only properties that are configured with the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag set will be serialized. You can add a new usage flag to a property by overriding the :ref:`Object._get_property_list<class_Object_method__get_property_list>` method in your class. You can also check how property usage is configured by calling :ref:`Object._get_property_list<class_Object_method__get_property_list>`. See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the possible usage flags.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

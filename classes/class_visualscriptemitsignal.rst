@@ -18,11 +18,11 @@ Description
 
 Emits a specified signal when it is executed.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``emit``
+- Sequence: ``emit``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Sequence
 

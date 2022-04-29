@@ -40,6 +40,8 @@ Properties
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                               | :ref:`lod_min_hysteresis<class_GeometryInstance_property_lod_min_hysteresis>` | ``0.0``   |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+| :ref:`Material<class_Material>`                                         | :ref:`material_overlay<class_GeometryInstance_property_material_overlay>`     |           |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   |           |
 +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` | ``false`` |
@@ -210,7 +212,7 @@ Scale factor for the generated baked lightmap. Useful for adding detail to certa
 
 The GeometryInstance's max LOD distance.
 
-**Note:** This property currently has no effect.
+\ **Note:** This property currently has no effect.
 
 ----
 
@@ -228,7 +230,7 @@ The GeometryInstance's max LOD distance.
 
 The GeometryInstance's max LOD margin.
 
-**Note:** This property currently has no effect.
+\ **Note:** This property currently has no effect.
 
 ----
 
@@ -246,7 +248,7 @@ The GeometryInstance's max LOD margin.
 
 The GeometryInstance's min LOD distance.
 
-**Note:** This property currently has no effect.
+\ **Note:** This property currently has no effect.
 
 ----
 
@@ -264,7 +266,23 @@ The GeometryInstance's min LOD distance.
 
 The GeometryInstance's min LOD margin.
 
-**Note:** This property currently has no effect.
+\ **Note:** This property currently has no effect.
+
+----
+
+.. _class_GeometryInstance_property_material_overlay:
+
+- :ref:`Material<class_Material>` **material_overlay**
+
++----------+-----------------------------+
+| *Setter* | set_material_overlay(value) |
++----------+-----------------------------+
+| *Getter* | get_material_overlay()      |
++----------+-----------------------------+
+
+The material overlay for the whole geometry.
+
+If a material is assigned to this property, it will be rendered on top of any other active material for all the surfaces.
 
 ----
 

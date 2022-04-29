@@ -23,11 +23,11 @@ Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. I
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | ``false``                     |
-+-------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>` | visible                                                      | ``false`` *(parent override)* |
-+-------------------------+--------------------------------------------------------------+-------------------------------+
++-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | ``false``                                                                  |
++-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | visible                                                      | ``false`` (overrides :ref:`CanvasItem<class_CanvasItem_property_visible>`) |
++-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Methods
 -------
@@ -91,7 +91,7 @@ Property Descriptions
 
 If ``true``, the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 
-**Note:** Enabling this property doesn't affect the Close or Cancel buttons' behavior in dialogs that inherit from this class. As a workaround, you can use :ref:`WindowDialog.get_close_button<class_WindowDialog_method_get_close_button>` or :ref:`ConfirmationDialog.get_cancel<class_ConfirmationDialog_method_get_cancel>` and hide the buttons in question by setting their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property to ``false``.
+\ **Note:** Enabling this property doesn't affect the Close or Cancel buttons' behavior in dialogs that inherit from this class. As a workaround, you can use :ref:`WindowDialog.get_close_button<class_WindowDialog_method_get_close_button>` or :ref:`ConfirmationDialog.get_cancel<class_ConfirmationDialog_method_get_cancel>` and hide the buttons in question by setting their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property to ``false``.
 
 Method Descriptions
 -------------------

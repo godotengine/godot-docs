@@ -23,21 +23,21 @@ A ScrollContainer node meant to contain a :ref:`Control<class_Control>` child. S
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``                    |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | rect_clip_content                                                                          | ``true`` *(parent override)* |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``                        |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``                     |
-+-------------------------+--------------------------------------------------------------------------------------------+------------------------------+
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                           | ``false``                                                                     |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | rect_clip_content                                                                          | ``true`` (overrides :ref:`Control<class_Control_property_rect_clip_content>`) |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                     | ``0``                                                                         |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                 | ``0``                                                                         |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>` | ``true``                                                                      |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                     | ``0``                                                                         |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`     | ``true``                                                                      |
++-------------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -178,7 +178,7 @@ Method Descriptions
 
 Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
 
-**Note:** This will not work on a node that was just added during the same frame. If you want to scroll to a newly added child, you must wait until the next frame using :ref:`SceneTree.idle_frame<class_SceneTree_signal_idle_frame>`:
+\ **Note:** This will not work on a node that was just added during the same frame. If you want to scroll to a newly added child, you must wait until the next frame using :ref:`SceneTree.idle_frame<class_SceneTree_signal_idle_frame>`:
 
 ::
 
@@ -194,7 +194,7 @@ Ensures the given ``control`` is visible (must be a direct or indirect child of 
 
 Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this ``ScrollContainer``.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the horizontal scrollbar, use :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>`. If you want to only hide it instead, use its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the horizontal scrollbar, use :ref:`scroll_horizontal_enabled<class_ScrollContainer_property_scroll_horizontal_enabled>`. If you want to only hide it instead, use its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -204,7 +204,7 @@ Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this ``S
 
 Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this ``ScrollContainer``.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the vertical scrollbar, use :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`. If you want to only hide it instead, use its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to disable the vertical scrollbar, use :ref:`scroll_vertical_enabled<class_ScrollContainer_property_scroll_vertical_enabled>`. If you want to only hide it instead, use its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 Theme Property Descriptions
 ---------------------------

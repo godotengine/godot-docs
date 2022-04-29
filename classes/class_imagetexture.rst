@@ -28,7 +28,7 @@ A :ref:`Texture<class_Texture>` based on an :ref:`Image<class_Image>`. For an im
 
 This way, textures can be created at run-time by loading images both from within the editor and externally.
 
-**Warning:** Prefer to load imported textures with :ref:`@GDScript.load<class_@GDScript_method_load>` over loading them from within the filesystem dynamically with :ref:`Image.load<class_Image_method_load>`, as it may not work in exported projects:
+\ **Warning:** Prefer to load imported textures with :ref:`@GDScript.load<class_@GDScript_method_load>` over loading them from within the filesystem dynamically with :ref:`Image.load<class_Image_method_load>`, as it may not work in exported projects:
 
 ::
 
@@ -46,23 +46,23 @@ But do note that the image data can still be retrieved from an imported texture 
 
 An ``ImageTexture`` is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
-**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations.
+\ **Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/assets_pipeline/importing_images`
+- :doc:`Importing images <../tutorials/assets_pipeline/importing_images>`
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                     | flags                                                           | ``7`` *(parent override)* |
-+-------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` | ``0.7``                   |
-+-------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             | ``0``                     |
-+-------------------------------------------+-----------------------------------------------------------------+---------------------------+
++-------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                     | flags                                                           | ``7`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
++-------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`lossy_quality<class_ImageTexture_property_lossy_quality>` | ``0.7``                                                        |
++-------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`Storage<enum_ImageTexture_Storage>` | :ref:`storage<class_ImageTexture_property_storage>`             | ``0``                                                          |
++-------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
 
 Methods
 -------
@@ -142,7 +142,7 @@ Method Descriptions
 
 Create a new ``ImageTexture`` with ``width`` and ``height``.
 
-``format`` is a value from :ref:`Format<enum_Image_Format>`, ``flags`` is any combination of :ref:`Flags<enum_Texture_Flags>`.
+\ ``format`` is a value from :ref:`Format<enum_Image_Format>`, ``flags`` is any combination of :ref:`Flags<enum_Texture_Flags>`.
 
 ----
 
@@ -168,7 +168,7 @@ Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 Loads an image from a file path and creates a texture from it.
 
-**Note:** This method is deprecated and will be removed in Godot 4.0, use :ref:`Image.load<class_Image_method_load>` and :ref:`create_from_image<class_ImageTexture_method_create_from_image>` instead.
+\ **Note:** This method is deprecated and will be removed in Godot 4.0, use :ref:`Image.load<class_Image_method_load>` and :ref:`create_from_image<class_ImageTexture_method_create_from_image>` instead.
 
 ----
 
@@ -178,7 +178,7 @@ Loads an image from a file path and creates a texture from it.
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`.
 
-**Note:** The texture has to be initialized first with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration, otherwise it has to be re-created with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method.
+\ **Note:** The texture has to be initialized first with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration, otherwise it has to be re-created with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method.
 
 Use this method over :ref:`create_from_image<class_ImageTexture_method_create_from_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
 

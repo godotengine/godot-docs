@@ -20,24 +20,41 @@ Description
 
 Base class for GUI sliders.
 
-**Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``                  |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` *(parent override)* |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                  |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                    | size_flags_vertical                                             | ``0`` *(parent override)* |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                     |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                 |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------+
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``                                                                     |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)          |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                                                                     |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | size_flags_vertical                                             | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                                                                        |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                                                                    |
++------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_Slider_signal_drag_ended:
+
+- **drag_ended** **(** :ref:`bool<class_bool>` value_changed **)**
+
+Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<class_Range_property_value>` is different from the value when you started the dragging.
+
+----
+
+.. _class_Slider_signal_drag_started:
+
+- **drag_started** **(** **)**
+
+Emitted when dragging is started.
 
 Property Descriptions
 ---------------------

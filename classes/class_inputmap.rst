@@ -21,7 +21,7 @@ Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created
 Tutorials
 ---------
 
-- `#inputmap <../tutorials/inputs/inputevent.html#inputmap>`_ in :doc:`../tutorials/inputs/inputevent`
+- `#inputmap <../tutorials/inputs/inputevent.html#inputmap>`__ in :doc:`../tutorials/inputs/inputevent`
 
 Methods
 -------
@@ -129,7 +129,7 @@ Removes an action from the ``InputMap``.
 
 Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_method_action_has_event>` if you don't want this behavior.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 

@@ -18,16 +18,16 @@ Description
 
 An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
 
-``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>` node, but it requires doing everything by code.
+\ ``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>` node, but it requires doing everything by code.
 
 Updating the target properties of animations occurs at process time.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/index`
+- :doc:`Animation tutorial index <../tutorials/animation/index>`
 
-- :doc:`../tutorials/2d/2d_sprite_animation`
+- :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -118,7 +118,7 @@ Signals
 
 Emitted when a queued animation plays after the previous animation was finished. See :ref:`queue<class_AnimationPlayer_method_queue>`.
 
-**Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or from :ref:`AnimationTree<class_AnimationTree>`.
+\ **Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or from :ref:`AnimationTree<class_AnimationTree>`.
 
 ----
 
@@ -224,7 +224,7 @@ The name of the animation to play when the scene loads.
 
 The name of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
 
-**Note:** While this property appears in the inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
+\ **Note:** While this property appears in the inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
 
 ----
 
@@ -485,7 +485,7 @@ Plays the animation with key ``name``. Custom blend times and speed can be set. 
 
 The ``AnimationPlayer`` keeps track of its current or last played animation with :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`. If this method is called with that same animation ``name``, or with no ``name`` parameter, the assigned animation will resume playing if it was paused, or restart if it was stopped (see :ref:`stop<class_AnimationPlayer_method_stop>` for both pause and stop). If the animation was already playing, it will keep playing.
 
-**Note:** The animation will be updated the next time the ``AnimationPlayer`` is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
+\ **Note:** The animation will be updated the next time the ``AnimationPlayer`` is processed. If other variables are updated at the same time this is called, they may be updated too early. To perform the update immediately, call ``advance(0)``.
 
 ----
 
@@ -505,7 +505,7 @@ This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` wi
 
 Queues an animation for playback once the current one is done.
 
-**Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
+\ **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 
 ----
 

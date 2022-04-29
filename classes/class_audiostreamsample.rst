@@ -104,7 +104,7 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
-**Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
+\ **Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
 
 ----
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 Saves the AudioStreamSample as a WAV file to ``path``. Samples with IMA ADPCM format can't be saved.
 
-**Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
+\ **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

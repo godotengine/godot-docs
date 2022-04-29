@@ -21,37 +21,37 @@ In order to utilize the portal occlusion culling system, you must build your lev
 Properties
 ----------
 
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`active<class_RoomManager_property_active>`                                       | ``true``                      |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`debug_sprawl<class_RoomManager_property_debug_sprawl>`                           | ``false``                     |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>`                | :ref:`default_portal_margin<class_RoomManager_property_default_portal_margin>`         | ``1.0``                       |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`gameplay_monitor<class_RoomManager_property_gameplay_monitor>`                   | ``false``                     |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`merge_meshes<class_RoomManager_property_merge_meshes>`                           | ``false``                     |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`                    | :ref:`overlap_warning_threshold<class_RoomManager_property_overlap_warning_threshold>` | ``1``                         |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`                    | :ref:`portal_depth_limit<class_RoomManager_property_portal_depth_limit>`               | ``16``                        |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`NodePath<class_NodePath>`          | :ref:`preview_camera<class_RoomManager_property_preview_camera>`                       | ``NodePath("")``              |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`                    | process_priority                                                                       | ``10000`` *(parent override)* |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`PVSMode<enum_RoomManager_PVSMode>` | :ref:`pvs_mode<class_RoomManager_property_pvs_mode>`                                   | ``1``                         |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>`                | :ref:`roaming_expansion_margin<class_RoomManager_property_roaming_expansion_margin>`   | ``1.0``                       |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>`                | :ref:`room_simplify<class_RoomManager_property_room_simplify>`                         | ``0.5``                       |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`NodePath<class_NodePath>`          | :ref:`roomlist<class_RoomManager_property_roomlist>`                                   | ``NodePath("")``              |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`show_margins<class_RoomManager_property_show_margins>`                           | ``true``                      |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`use_secondary_pvs<class_RoomManager_property_use_secondary_pvs>`                 | ``false``                     |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------+
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`active<class_RoomManager_property_active>`                                       | ``true``                                                                |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`debug_sprawl<class_RoomManager_property_debug_sprawl>`                           | ``false``                                                               |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`default_portal_margin<class_RoomManager_property_default_portal_margin>`         | ``1.0``                                                                 |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`gameplay_monitor<class_RoomManager_property_gameplay_monitor>`                   | ``false``                                                               |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`merge_meshes<class_RoomManager_property_merge_meshes>`                           | ``false``                                                               |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`overlap_warning_threshold<class_RoomManager_property_overlap_warning_threshold>` | ``1``                                                                   |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`portal_depth_limit<class_RoomManager_property_portal_depth_limit>`               | ``16``                                                                  |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`          | :ref:`preview_camera<class_RoomManager_property_preview_camera>`                       | ``NodePath("")``                                                        |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | process_priority                                                                       | ``10000`` (overrides :ref:`Node<class_Node_property_process_priority>`) |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`PVSMode<enum_RoomManager_PVSMode>` | :ref:`pvs_mode<class_RoomManager_property_pvs_mode>`                                   | ``1``                                                                   |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`roaming_expansion_margin<class_RoomManager_property_roaming_expansion_margin>`   | ``1.0``                                                                 |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`room_simplify<class_RoomManager_property_room_simplify>`                         | ``0.5``                                                                 |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`          | :ref:`roomlist<class_RoomManager_property_roomlist>`                                   | ``NodePath("")``                                                        |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`show_margins<class_RoomManager_property_show_margins>`                           | ``true``                                                                |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`use_secondary_pvs<class_RoomManager_property_use_secondary_pvs>`                 | ``false``                                                               |
++------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Methods
 -------
@@ -158,9 +158,9 @@ These callbacks allow you to, for example, reduce processing for objects that ar
 
 You can either choose to receive callbacks as notifications through the ``_notification`` function, or as signals.
 
-``NOTIFICATION_ENTER_GAMEPLAY``
+\ ``NOTIFICATION_ENTER_GAMEPLAY``\ 
 
-``NOTIFICATION_EXIT_GAMEPLAY``
+\ ``NOTIFICATION_EXIT_GAMEPLAY``\ 
 
 Signals: ``"gameplay_entered"``, ``"gameplay_exited"``
 
@@ -180,7 +180,7 @@ Signals: ``"gameplay_entered"``, ``"gameplay_exited"``
 
 If enabled, the system will attempt to merge similar meshes (particularly in terms of materials) within :ref:`Room<class_Room>`\ s during conversion. This can significantly reduce the number of drawcalls and state changes required during rendering, albeit at a cost of reduced culling granularity.
 
-**Note:** This operates at runtime during the conversion process, and will only operate on exported or running projects, in order to prevent accidental alteration to the scene and loss of data.
+\ **Note:** This operates at runtime during the conversion process, and will only operate on exported or running projects, in order to prevent accidental alteration to the scene and loss of data.
 
 ----
 
@@ -214,7 +214,7 @@ When converting rooms, the editor will warn you if overlap is detected between r
 
 Portal rendering is recursive - each time a portal is seen through an earlier portal there is some cost. For this reason, and to prevent the possibility of infinite loops, this setting provides a hard limit on the recursion depth.
 
-**Note:** This value is unused when using ``Full`` PVS mode.
+\ **Note:** This value is unused when using ``Full`` PVS mode.
 
 ----
 
@@ -230,7 +230,7 @@ Portal rendering is recursive - each time a portal is seen through an earlier po
 | *Getter*  | get_preview_camera_path()      |
 +-----------+--------------------------------+
 
-Portal culling normally operates using the current :ref:`Camera<class_Camera>` / :ref:`Camera<class_Camera>`\ s, however for debugging purposes within the editor, you can use this setting to override this behaviour and force it to use a particular camera to get a better idea of what the occlusion culling is doing.
+Portal culling normally operates using the current :ref:`Camera<class_Camera>` / :ref:`Camera<class_Camera>`\ s, however for debugging purposes within the editor, you can use this setting to override this behavior and force it to use a particular camera to get a better idea of what the occlusion culling is doing.
 
 ----
 
@@ -371,7 +371,7 @@ The conversion will usually use the geometry of these :ref:`VisualInstance<class
 
 By definition, :ref:`Camera<class_Camera>`\ s within a room can see everything else within the room (that is one advantage to using convex hulls). However, in order to see from one room into adjacent rooms, you must place :ref:`Portal<class_Portal>`\ s, which represent openings that the camera can see through, like windows and doors.
 
-:ref:`Portal<class_Portal>`\ s are really just specialized :ref:`MeshInstance<class_MeshInstance>`\ s. In fact you will usually first create a portal by creating a :ref:`MeshInstance<class_MeshInstance>`, especially a ``plane`` mesh instance. You would move the plane in the editor to cover a window or doorway, with the front face pointing outward from the room. To let the conversion process know you want this mesh to be a portal, again we use a special naming convention. :ref:`MeshInstance<class_MeshInstance>`\ s to be converted to a :ref:`Portal<class_Portal>` should start with the prefix *'Portal\_'*.
+\ :ref:`Portal<class_Portal>`\ s are really just specialized :ref:`MeshInstance<class_MeshInstance>`\ s. In fact you will usually first create a portal by creating a :ref:`MeshInstance<class_MeshInstance>`, especially a ``plane`` mesh instance. You would move the plane in the editor to cover a window or doorway, with the front face pointing outward from the room. To let the conversion process know you want this mesh to be a portal, again we use a special naming convention. :ref:`MeshInstance<class_MeshInstance>`\ s to be converted to a :ref:`Portal<class_Portal>` should start with the prefix *'Portal\_'*.
 
 You now have a choice - you can leave the name as *'Portal\_'* and allow the system to automatically detect the nearest :ref:`Room<class_Room>` to link. In most cases this will work fine.
 

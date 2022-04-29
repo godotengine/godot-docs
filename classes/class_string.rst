@@ -113,6 +113,8 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_file<class_String_method_get_file>` **(** **)**                                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_slice<class_String_method_get_slice>` **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)**                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`hash<class_String_method_hash>` **(** **)**                                                                                                                       |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`hex_to_int<class_String_method_hex_to_int>` **(** **)**                                                                                                           |
@@ -148,6 +150,8 @@ Methods
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_integer<class_String_method_is_valid_integer>` **(** **)**                                                                                               |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_valid_ip_address<class_String_method_is_valid_ip_address>` **(** **)**                                                                                         |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`join<class_String_method_join>` **(** :ref:`PoolStringArray<class_PoolStringArray>` parts **)**                                                                   |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`json_escape<class_String_method_json_escape>` **(** **)**                                                                                                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -427,7 +431,7 @@ Returns a copy of the string with special characters escaped using the C languag
 
 Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\?``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
 
-**Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
+\ **Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
 
 ----
 
@@ -445,9 +449,9 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>`.
 
@@ -507,7 +511,7 @@ Erases ``chars`` characters from the string starting from ``position``.
 
 Finds the first occurrence of a substring. Returns the starting position of the substring or ``-1`` if not found. Optionally, the initial search index can be passed.
 
-**Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
+\ **Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
 
 ::
 
@@ -584,13 +588,29 @@ If the string is a valid file path, returns the filename.
 
 ----
 
+.. _class_String_method_get_slice:
+
+- :ref:`String<class_String>` **get_slice** **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)**
+
+Splits a string using a ``delimiter`` and returns a substring at index ``slice``. Returns an empty string if the index doesn't exist.
+
+This is a more performant alternative to :ref:`split<class_String_method_split>` for cases when you need only one element from the array at a fixed index.
+
+Example:
+
+::
+
+    print("i/am/example/string".get_slice("/", 2)) # Prints 'example'.
+
+----
+
 .. _class_String_method_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
 Returns the 32-bit hash value representing the string's contents.
 
-**Note:** ``String``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
+\ **Note:** ``String``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
 
 ----
 
@@ -652,7 +672,7 @@ Returns a copy of the string with lines indented with ``prefix``.
 
 For example, the string can be indented with two tabs using ``"\t\t"``, or four spaces using ``"    "``. The prefix can be any string so it can also be used to comment out strings with e.g. ``"# "``. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
 
-**Note:** Empty lines are kept empty.
+\ **Note:** Empty lines are kept empty.
 
 ----
 
@@ -702,7 +722,7 @@ Returns ``true`` if this string is a subsequence of the given string, without co
 
 Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
 
-``: / \ ? * " | % < >``
+\ ``: / \ ? * " | % < >``
 
 ----
 
@@ -775,6 +795,20 @@ Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 addr
 
 ----
 
+.. _class_String_method_join:
+
+- :ref:`String<class_String>` **join** **(** :ref:`PoolStringArray<class_PoolStringArray>` parts **)**
+
+Return a ``String`` which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
+
+Example:
+
+::
+
+    print(", ".join(["One", "Two", "Three", "Four"]))
+
+----
+
 .. _class_String_method_json_escape:
 
 - :ref:`String<class_String>` **json_escape** **(** **)**
@@ -805,7 +839,7 @@ Returns the string's amount of characters.
 
 Returns a copy of the string with characters removed from the left. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
 
 ----
 
@@ -849,9 +883,9 @@ Performs a case-insensitive *natural order* comparison to another string. Return
 
 When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get ``[1, 2, 3, ...]`` instead of ``[1, 10, 2, 3, ...]``.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
@@ -863,9 +897,9 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
 
-**Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
 
-**Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
+\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
 
 To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
@@ -995,7 +1029,7 @@ Example:
 
 Returns a copy of the string with characters removed from the right. The ``chars`` argument is a string specifying the set of characters to be removed.
 
-**Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
+\ **Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
 
 ----
 
@@ -1061,6 +1095,8 @@ Returns a simplified canonical path.
 Splits the string by a ``delimiter`` string and returns an array of the substrings. The ``delimiter`` can be of any length.
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of ``0`` means that all items are split.
+
+If you need only one element from the array at a specific index, :ref:`get_slice<class_String_method_get_slice>` is a more performant option.
 
 Example:
 

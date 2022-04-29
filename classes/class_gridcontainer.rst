@@ -20,7 +20,7 @@ GridContainer will arrange its Control-derived children in a grid like structure
 
 Notice that grid layout will preserve the columns and rows for every size of the container, and that empty columns will be expanded automatically.
 
-**Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
+\ **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
 
 Tutorials
 ---------
@@ -30,11 +30,11 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------+------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`columns<class_GridContainer_property_columns>` | ``1``                     |
-+----------------------------------------------+------------------------------------------------------+---------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                         | ``1`` *(parent override)* |
-+----------------------------------------------+------------------------------------------------------+---------------------------+
++----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`columns<class_GridContainer_property_columns>` | ``1``                                                                 |
++----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                         | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
++----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
 
 Theme Properties
 ----------------

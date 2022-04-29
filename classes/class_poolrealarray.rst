@@ -9,16 +9,16 @@
 PoolRealArray
 =============
 
-A pooled :ref:`Array<class_Array>` of reals (:ref:`float<class_float>`).
+A pooled array of reals (:ref:`float<class_float>`).
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold floating-point values. Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold floating-point values. Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
-**Note:** Unlike primitive :ref:`float<class_float>`\ s which are 64-bit, numbers stored in ``PoolRealArray`` are 32-bit floats. This means values stored in ``PoolRealArray`` have lower precision compared to primitive :ref:`float<class_float>`\ s. If you need to store 64-bit floats in an array, use a generic :ref:`Array<class_Array>` with :ref:`float<class_float>` elements as these will still be 64-bit. However, using a generic :ref:`Array<class_Array>` to store :ref:`float<class_float>`\ s will use roughly 6 times more memory compared to a ``PoolRealArray``.
+\ **Note:** Unlike primitive :ref:`float<class_float>`\ s which are 64-bit, numbers stored in ``PoolRealArray`` are 32-bit floats. This means values stored in ``PoolRealArray`` have lower precision compared to primitive :ref:`float<class_float>`\ s. If you need to store 64-bit floats in an array, use a generic :ref:`Array<class_Array>` with :ref:`float<class_float>` elements as these will still be 64-bit. However, using a generic :ref:`Array<class_Array>` to store :ref:`float<class_float>`\ s will use roughly 6 times more memory compared to a ``PoolRealArray``.
 
 Methods
 -------
@@ -31,6 +31,8 @@ Methods
 | void                                      | :ref:`append_array<class_PoolRealArray_method_append_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)** |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolRealArray_method_empty>` **(** **)**                                                               |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`fill<class_PoolRealArray_method_fill>` **(** :ref:`float<class_float>` value **)**                                 |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`insert<class_PoolRealArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**  |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -82,6 +84,14 @@ Returns ``true`` if the array is empty.
 
 ----
 
+.. _class_PoolRealArray_method_fill:
+
+- void **fill** **(** :ref:`float<class_float>` value **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolRealArray_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
 .. _class_PoolRealArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
@@ -120,7 +130,7 @@ Removes an element from the array by index.
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
-**Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
+\ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
 ----
 
@@ -136,7 +146,7 @@ Changes the float at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the array.
+Returns the number of elements in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

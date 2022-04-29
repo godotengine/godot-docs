@@ -65,7 +65,7 @@ Property Descriptions
 
 If ``true``, the PacketPeer will allow encoding and decoding of object via :ref:`get_var<class_PacketPeer_method_get_var>` and :ref:`put_var<class_PacketPeer_method_put_var>`.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 
@@ -118,7 +118,7 @@ Returns the error state of the last packet received (via :ref:`get_packet<class_
 
 Gets a Variant. If ``allow_objects`` (or :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>`) is ``true``, decoding objects is allowed.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 

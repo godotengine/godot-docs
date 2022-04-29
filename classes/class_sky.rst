@@ -62,11 +62,11 @@ enum **RadianceSize**:
 
 - **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024×1024 pixels.
 
-**Note:** :ref:`RADIANCE_SIZE_1024<class_Sky_constant_RADIANCE_SIZE_1024>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
+\ **Note:** :ref:`RADIANCE_SIZE_1024<class_Sky_constant_RADIANCE_SIZE_1024>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
 
 - **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048×2048 pixels.
 
-**Note:** :ref:`RADIANCE_SIZE_2048<class_Sky_constant_RADIANCE_SIZE_2048>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
+\ **Note:** :ref:`RADIANCE_SIZE_2048<class_Sky_constant_RADIANCE_SIZE_2048>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
 
 - **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
 
@@ -89,7 +89,7 @@ The ``Sky``'s radiance map size. The higher the radiance map size, the more deta
 
 See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
-**Note:** You will only benefit from high radiance sizes if you have perfectly sharp reflective surfaces in your project and are not using :ref:`ReflectionProbe<class_ReflectionProbe>`\ s or :ref:`GIProbe<class_GIProbe>`\ s. For most projects, keeping :ref:`radiance_size<class_Sky_property_radiance_size>` to the default value is the best compromise between visuals and performance. Be careful when using high radiance size values as these can cause crashes on low-end GPUs.
+\ **Note:** You will only benefit from high radiance sizes if you have perfectly sharp reflective surfaces in your project and are not using :ref:`ReflectionProbe<class_ReflectionProbe>`\ s or :ref:`GIProbe<class_GIProbe>`\ s. For most projects, keeping :ref:`radiance_size<class_Sky_property_radiance_size>` to the default value is the best compromise between visuals and performance. Be careful when using high radiance size values as these can cause crashes on low-end GPUs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -18,7 +18,7 @@ Description
 
 Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the ``MarginContainer``'s margin, use the ``margin_*`` theme properties listed below.
 
-**Note:** Be careful, :ref:`Control<class_Control>` margin values are different than the constant margin values. If you want to change the custom margin values of the ``MarginContainer`` by code, you should use the following examples:
+\ **Note:** Be careful, :ref:`Control<class_Control>` margin values are different than the constant margin values. If you want to change the custom margin values of the ``MarginContainer`` by code, you should use the following examples:
 
 ::
 

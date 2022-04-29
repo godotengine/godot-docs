@@ -18,14 +18,14 @@ Description
 
 A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
 
-**Note:** For a ``RichTextEffect`` to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
+\ **Note:** For a ``RichTextEffect`` to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
 
 ::
 
     # The RichTextEffect will be usable like this: `[example]Some text[/example]`
     var bbcode = "example"
 
-**Note:** As soon as a :ref:`RichTextLabel<class_RichTextLabel>` contains at least one ``RichTextEffect``, it will continuously process the effect unless the project is paused. This may impact battery life negatively.
+\ **Note:** As soon as a :ref:`RichTextLabel<class_RichTextLabel>` contains at least one ``RichTextEffect``, it will continuously process the effect unless the project is paused. This may impact battery life negatively.
 
 Tutorials
 ---------

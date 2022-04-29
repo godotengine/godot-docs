@@ -18,7 +18,7 @@ Description
 
 ``TextureArray``\ s store an array of :ref:`Image<class_Image>`\ s in a single :ref:`Texture<class_Texture>` primitive. Each layer of the texture array has its own mipmap chain. This makes it is a good alternative to texture atlases. See also :ref:`Texture3D<class_Texture3D>`.
 
-``TextureArray``\ s must be displayed using shaders. After importing your file as a ``TextureArray`` and setting the appropriate Horizontal and Vertical Slices, display it by setting it as a uniform to a shader, for example (2D):
+\ ``TextureArray``\ s must be displayed using shaders. After importing your file as a ``TextureArray`` and setting the appropriate Horizontal and Vertical Slices, display it by setting it as a uniform to a shader, for example (2D):
 
 ::
 
@@ -33,7 +33,7 @@ Description
 
 Set the integer uniform "index" to show a particular part of the texture as defined by the Horizontal and Vertical Slices in the importer.
 
-**Note:** When sampling an albedo texture from a texture array in 3D, the sRGB -> linear conversion hint (``hint_albedo``) should be used to prevent colors from looking washed out:
+\ **Note:** When sampling an albedo texture from a texture array in 3D, the sRGB -> linear conversion hint (``hint_albedo``) should be used to prevent colors from looking washed out:
 
 ::
 
@@ -46,7 +46,7 @@ Set the integer uniform "index" to show a particular part of the texture as defi
         ALBEDO = texture(tex, vec3(UV.x, UV.y, float(index)));
     }
 
-**Note:** ``TextureArray``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+\ **Note:** ``TextureArray``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
 
 Methods
 -------

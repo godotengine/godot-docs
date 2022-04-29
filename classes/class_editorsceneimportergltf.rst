@@ -13,6 +13,11 @@ EditorSceneImporterGLTF
 
 
 
+Description
+-----------
+
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``EditorSceneImporterGLTF`` within a script will cause an error in an exported project.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

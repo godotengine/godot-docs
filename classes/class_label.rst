@@ -18,9 +18,9 @@ Description
 
 Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics, or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
-**Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.hint_tooltip<class_Control_property_hint_tooltip>`, unless you change its mouse filter.
+\ **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.hint_tooltip<class_Control_property_hint_tooltip>`, unless you change its mouse filter.
 
-**Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
+\ **Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
 
 Tutorials
 ---------
@@ -30,31 +30,31 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | ``0``                     |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | ``false``                 |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | ``false``                 |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | ``0``                     |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | ``-1``                    |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | ``2`` *(parent override)* |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | ``1.0``                   |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | size_flags_vertical                                                | ``4`` *(parent override)* |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ``""``                    |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | ``false``                 |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | ``0``                     |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | ``-1``                    |
-+----------------------------------------------+--------------------------------------------------------------------+---------------------------+
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | ``0``                                                                        |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | ``false``                                                                    |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | ``false``                                                                    |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | ``0``                                                                        |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | ``-1``                                                                       |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | ``1.0``                                                                      |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | size_flags_vertical                                                | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ``""``                                                                       |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | ``false``                                                                    |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | ``0``                                                                        |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | ``-1``                                                                       |
++----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Methods
 -------

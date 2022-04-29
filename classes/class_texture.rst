@@ -11,7 +11,7 @@ Texture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CameraTexture<class_CameraTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`ExternalTexture<class_ExternalTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
+**Inherited By:** :ref:`AnimatedTexture<class_AnimatedTexture>`, :ref:`AtlasTexture<class_AtlasTexture>`, :ref:`CameraTexture<class_CameraTexture>`, :ref:`CurveTexture<class_CurveTexture>`, :ref:`ExternalTexture<class_ExternalTexture>`, :ref:`GradientTexture<class_GradientTexture>`, :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`ImageTexture<class_ImageTexture>`, :ref:`LargeTexture<class_LargeTexture>`, :ref:`MeshTexture<class_MeshTexture>`, :ref:`NoiseTexture<class_NoiseTexture>`, :ref:`ProxyTexture<class_ProxyTexture>`, :ref:`StreamTexture<class_StreamTexture>`, :ref:`ViewportTexture<class_ViewportTexture>`
 
 Texture for 2D and 3D.
 
@@ -22,9 +22,9 @@ A texture works by registering an image in the video hardware, which then can be
 
 Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
 
-``Texture`` is a base for other resources. It cannot be used directly.
+\ ``Texture`` is a base for other resources. It cannot be used directly.
 
-**Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
+\ **Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
 
 Properties
 ----------
@@ -83,7 +83,7 @@ enum **Flags**:
 
 - **FLAG_REPEAT** = **2** --- Repeats the texture (instead of clamp to edge).
 
-**Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
+\ **Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
 
 - **FLAG_FILTER** = **4** --- Uses a magnifying filter, to enable smooth zooming in of the texture.
 
@@ -95,7 +95,7 @@ This results in better-looking textures when viewed from oblique angles.
 
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats the texture with alternate sections mirrored.
 
-**Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
+\ **Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
 
 - **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
 

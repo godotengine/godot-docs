@@ -16,7 +16,7 @@ Generic output node to be added to :ref:`AnimationNodeBlendTree<class_AnimationN
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 

@@ -9,14 +9,14 @@
 PoolStringArray
 ===============
 
-A pooled :ref:`Array<class_Array>` of :ref:`String<class_String>`.
+A pooled array of :ref:`String<class_String>`.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
 Tutorials
 ---------
@@ -34,6 +34,8 @@ Methods
 | void                                          | :ref:`append_array<class_PoolStringArray_method_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`empty<class_PoolStringArray_method_empty>` **(** **)**                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`fill<class_PoolStringArray_method_fill>` **(** :ref:`String<class_String>` string **)**                                  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`insert<class_PoolStringArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**   |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -84,6 +86,14 @@ Appends a ``PoolStringArray`` at the end of this array.
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+----
+
+.. _class_PoolStringArray_method_fill:
+
+- void **fill** **(** :ref:`String<class_String>` string **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolStringArray_method_resize>` to create an array with a given size and initialized elements.
 
 ----
 
@@ -147,7 +157,7 @@ Changes the :ref:`String<class_String>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the array.
+Returns the number of elements in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

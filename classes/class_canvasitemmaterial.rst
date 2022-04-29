@@ -127,7 +127,7 @@ The manner in which material reacts to lighting.
 
 The number of columns in the spritesheet assigned as :ref:`Texture<class_Texture>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
 
-**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+\ **Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
 
 ----
 
@@ -143,7 +143,7 @@ The number of columns in the spritesheet assigned as :ref:`Texture<class_Texture
 
 If ``true``, the particles animation will loop.
 
-**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+\ **Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
 
 ----
 
@@ -159,7 +159,7 @@ If ``true``, the particles animation will loop.
 
 The number of rows in the spritesheet assigned as :ref:`Texture<class_Texture>` for a :ref:`Particles2D<class_Particles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
 
-**Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
+\ **Note:** This property is only used and visible in the editor if :ref:`particles_animation<class_CanvasItemMaterial_property_particles_animation>` is ``true``.
 
 ----
 

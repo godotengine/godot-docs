@@ -66,7 +66,7 @@ Full height of the sphere.
 
 If ``true``, a hemisphere is created rather than a full sphere.
 
-**Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
+\ **Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
 
 ----
 

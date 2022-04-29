@@ -18,16 +18,16 @@ Description
 
 Texture3D is a 3-dimensional :ref:`Texture<class_Texture>` that has a width, height, and depth. See also :ref:`TextureArray<class_TextureArray>`.
 
-**Note:** ``Texture3D``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+\ **Note:** ``Texture3D``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
 
 Properties
 ----------
 
-+-------------------------------------+-------+----------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | data  | ``{"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0}`` *(parent override)* |
-+-------------------------------------+-------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | flags | ``4`` *(parent override)*                                                                          |
-+-------------------------------------+-------+----------------------------------------------------------------------------------------------------+
++-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | data  | ``{"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0}`` (overrides :ref:`TextureLayered<class_TextureLayered_property_data>`) |
++-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | flags | ``4`` (overrides :ref:`TextureLayered<class_TextureLayered_property_flags>`)                                                                         |
++-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------

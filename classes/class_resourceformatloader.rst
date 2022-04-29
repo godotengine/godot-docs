@@ -20,7 +20,7 @@ Godot loads resources in the editor or in exported games using ResourceFormatLoa
 
 Extending this class allows you to define your own loader. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatLoaders, it will be called automatically when loading resources of its handled type(s). You may also implement a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
-**Note:** You can also extend :ref:`EditorImportPlugin<class_EditorImportPlugin>` if the resource type you need exists but Godot is unable to load its format. Choosing one way over another depends on if the format is suitable or not for the final exported game. For example, it's better to import ``.png`` textures as ``.stex`` (:ref:`StreamTexture<class_StreamTexture>`) first, so they can be loaded with better efficiency on the graphics card.
+\ **Note:** You can also extend :ref:`EditorImportPlugin<class_EditorImportPlugin>` if the resource type you need exists but Godot is unable to load its format. Choosing one way over another depends on if the format is suitable or not for the final exported game. For example, it's better to import ``.png`` textures as ``.stex`` (:ref:`StreamTexture<class_StreamTexture>`) first, so they can be loaded with better efficiency on the graphics card.
 
 Methods
 -------
@@ -48,7 +48,7 @@ Method Descriptions
 
 If implemented, gets the dependencies of a given resource. If ``add_types`` is ``true``, paths should be appended ``::TypeName``, where ``TypeName`` is the class name of the dependency.
 
-**Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
+\ **Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
 ----
 
@@ -66,7 +66,7 @@ Gets the list of extensions for files this loader is able to read.
 
 Gets the class name of the resource associated with the given path. If the loader cannot handle it, it should return ``""``.
 
-**Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
+\ **Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just return ``"Resource"`` for them.
 
 ----
 
@@ -76,7 +76,7 @@ Gets the class name of the resource associated with the given path. If the loade
 
 Tells which resource class this loader can load.
 
-**Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just handle ``"Resource"`` for them.
+\ **Note:** Custom resource types defined by scripts aren't known by the :ref:`ClassDB<class_ClassDB>`, so you might just handle ``"Resource"`` for them.
 
 ----
 

@@ -36,6 +36,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reload_scripts<class_ScriptEditor_method_reload_scripts>` **(** **)**                                                                                                                         |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -104,6 +106,14 @@ Goes to the specified line in the current script.
 - void **open_script_create_dialog** **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**
 
 Opens the script create dialog. The script will extend ``base_name``. The file extension can be omitted from ``base_path``. It will be added based on the selected scripting language.
+
+----
+
+.. _class_ScriptEditor_method_reload_scripts:
+
+- void **reload_scripts** **(** **)**
+
+Reload all currently opened scripts from disk in case the file contents are newer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

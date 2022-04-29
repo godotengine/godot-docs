@@ -40,6 +40,9 @@ Here's the minimum code required to start an immersive VR session:
     
         webxr_interface = ARVRServer.find_interface("WebXR")
         if webxr_interface:
+            # Map to the standard button/axis ids when possible.
+            webxr_interface.xr_standard_mapping = true
+    
             # WebXR uses a lot of asynchronous callbacks, so we connect to various
             # signals in order to receive them.
             webxr_interface.connect("session_supported", self, "_webxr_session_supported")
@@ -110,7 +113,7 @@ There are several ways to handle "controller" input:
 
 - Using the :ref:`select<class_WebXRInterface_signal_select>`, :ref:`squeeze<class_WebXRInterface_signal_squeeze>` and related signals. This method will work for both advanced VR controllers, and non-traditional "controllers" like a tap on the screen, a spoken voice command or a button press on the device itself. The ``controller_id`` passed to these signals is the same id as used in :ref:`ARVRController.controller_id<class_ARVRController_property_controller_id>`.
 
-You can use one or all of these methods to allow your game or app to support a wider or narrower set of devices and input methods, or to allow more advanced interations with more advanced devices.
+You can use one or all of these methods to allow your game or app to support a wider or narrower set of devices and input methods, or to allow more advanced interactions with more advanced devices.
 
 Tutorials
 ---------
@@ -135,15 +138,19 @@ Properties
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                     | :ref:`visibility_state<class_WebXRInterface_property_visibility_state>`                               |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`xr_standard_mapping<class_WebXRInterface_property_xr_standard_mapping>`                         |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_controller<class_WebXRInterface_method_get_controller>` **(** :ref:`int<class_int>` controller_id **)** |const|          |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)** |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_controller<class_WebXRInterface_method_get_controller>` **(** :ref:`int<class_int>` controller_id **)** |const|                                 |
++-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>`   | :ref:`get_controller_target_ray_mode<class_WebXRInterface_method_get_controller_target_ray_mode>` **(** :ref:`int<class_int>` controller_id **)** |const| |
++-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)**                        |
++-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -206,7 +213,7 @@ At this point, you should do ``get_viewport().arvr = false`` to instruct Godot t
 
 Emitted by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` if the session fails to start.
 
-``message`` may optionally contain an error message from WebXR, or an empty string if no message is available.
+\ ``message`` may optionally contain an error message from WebXR, or an empty string if no message is available.
 
 ----
 
@@ -263,6 +270,29 @@ Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get mor
 - **visibility_state_changed** **(** **)**
 
 Emitted when :ref:`visibility_state<class_WebXRInterface_property_visibility_state>` has changed.
+
+Enumerations
+------------
+
+.. _enum_WebXRInterface_TargetRayMode:
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_UNKNOWN:
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_GAZE:
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_TRACKED_POINTER:
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_SCREEN:
+
+enum **TargetRayMode**:
+
+- **TARGET_RAY_MODE_UNKNOWN** = **0** --- We don't know the the target ray mode.
+
+- **TARGET_RAY_MODE_GAZE** = **1** --- Target ray originates at the viewer's eyes and points in the direction they are looking.
+
+- **TARGET_RAY_MODE_TRACKED_POINTER** = **2** --- Target ray from a handheld pointer, most likely a VR touch controller.
+
+- **TARGET_RAY_MODE_SCREEN** = **3** --- Target ray from touch screen, mouse or other tactile input device.
 
 Property Descriptions
 ---------------------
@@ -387,6 +417,22 @@ Indicates if the WebXR session's imagery is visible to the user.
 
 Possible values come from `WebXR's XRVisibilityState <https://developer.mozilla.org/en-US/docs/Web/API/XRVisibilityState>`__, including ``"hidden"``, ``"visible"``, and ``"visible-blurred"``.
 
+----
+
+.. _class_WebXRInterface_property_xr_standard_mapping:
+
+- :ref:`bool<class_bool>` **xr_standard_mapping**
+
++----------+--------------------------------+
+| *Setter* | set_xr_standard_mapping(value) |
++----------+--------------------------------+
+| *Getter* | get_xr_standard_mapping()      |
++----------+--------------------------------+
+
+If set to true, the button and axes ids will be converted to match the standard ids used by other AR/VR interfaces, when possible.
+
+Otherwise, the ids will be passed through unaltered from WebXR.
+
 Method Descriptions
 -------------------
 
@@ -400,17 +446,27 @@ In the context of WebXR, a "controller" can be an advanced VR controller like th
 
 Use this method to get information about the controller that triggered one of these signals:
 
-- :ref:`selectstart<class_WebXRInterface_signal_selectstart>`
+- :ref:`selectstart<class_WebXRInterface_signal_selectstart>`\ 
 
-- :ref:`select<class_WebXRInterface_signal_select>`
+- :ref:`select<class_WebXRInterface_signal_select>`\ 
 
-- :ref:`selectend<class_WebXRInterface_signal_selectend>`
+- :ref:`selectend<class_WebXRInterface_signal_selectend>`\ 
+
+- :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`\ 
+
+- :ref:`squeeze<class_WebXRInterface_signal_squeeze>`\ 
 
 - :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`
 
-- :ref:`squeeze<class_WebXRInterface_signal_squeeze>`
+----
 
-- :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`
+.. _class_WebXRInterface_method_get_controller_target_ray_mode:
+
+- :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_controller_target_ray_mode** **(** :ref:`int<class_int>` controller_id **)** |const|
+
+Returns the target ray mode for the given ``controller_id``.
+
+This can help interpret the input coming from that controller. See `XRInputSource.targetRayMode <https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/targetRayMode>`__ for more information.
 
 ----
 

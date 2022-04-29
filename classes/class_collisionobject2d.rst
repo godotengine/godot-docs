@@ -20,7 +20,7 @@ Description
 
 CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_Shape2D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
-**Note:** Only collisions between objects within the same canvas (:ref:`Viewport<class_Viewport>` canvas or :ref:`CanvasLayer<class_CanvasLayer>`) are supported. The behavior of collisions between objects in different canvases is undefined.
+\ **Note:** Only collisions between objects within the same canvas (:ref:`Viewport<class_Viewport>` canvas or :ref:`CanvasLayer<class_CanvasLayer>`) are supported. The behavior of collisions between objects in different canvases is undefined.
 
 Properties
 ----------
@@ -130,7 +130,7 @@ Property Descriptions
 
 The physics layers this CollisionObject2D is in. Collision objects can exist in one or more of 32 different layers. See also :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`.
 
-**Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -148,7 +148,7 @@ The physics layers this CollisionObject2D is in. Collision objects can exist in 
 
 The physics layers this CollisionObject2D scans. Collision objects can scan one or more of 32 different layers. See also :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>`.
 
-**Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <https://docs.godotengine.org/en/latest/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+\ **Note:** A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 

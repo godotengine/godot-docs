@@ -18,11 +18,11 @@ Description
 
 Provides a reference to the node running the visual script.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (object): ``instance``
 

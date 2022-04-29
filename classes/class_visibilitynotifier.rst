@@ -22,7 +22,7 @@ The VisibilityNotifier detects when it is visible on the screen. It also notifie
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibilityEnabler<class_VisibilityEnabler>` instead.
 
-**Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account (unless you are using :ref:`Portal<class_Portal>`\ s). The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
+\ **Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account (unless you are using :ref:`Portal<class_Portal>`\ s). The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
 Properties
 ----------
@@ -97,7 +97,7 @@ Method Descriptions
 
 If ``true``, the bounding box is on the screen.
 
-**Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
+\ **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

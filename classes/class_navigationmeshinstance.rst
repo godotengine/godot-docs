@@ -11,12 +11,12 @@ NavigationMeshInstance
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that instances navigation meshes into a scenario.
+An instance of a :ref:`NavigationMesh<class_NavigationMesh>`.
 
 Description
 -----------
 
-NavigationMeshInstance is a node that takes a :ref:`NavigationMesh<class_NavigationMesh>` resource and adds it to the current scenario by creating an instance of it.
+An instance of a :ref:`NavigationMesh<class_NavigationMesh>`. It tells the :ref:`Navigation<class_Navigation>` node what can be navigated and what cannot, based on the :ref:`NavigationMesh<class_NavigationMesh>` resource. This should be a child of a :ref:`Navigation<class_Navigation>` node.
 
 Properties
 ----------
@@ -26,6 +26,30 @@ Properties
 +---------------------------------------------+---------------------------------------------------------------+----------+
 | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |          |
 +---------------------------------------------+---------------------------------------------------------------+----------+
+
+Methods
+-------
+
++------+---------------------------------------------------------------------------------------------------+
+| void | :ref:`bake_navigation_mesh<class_NavigationMeshInstance_method_bake_navigation_mesh>` **(** **)** |
++------+---------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_NavigationMeshInstance_signal_bake_finished:
+
+- **bake_finished** **(** **)**
+
+Notifies when the navigation mesh bake operation is completed.
+
+----
+
+.. _class_NavigationMeshInstance_signal_navigation_mesh_changed:
+
+- **navigation_mesh_changed** **(** **)**
+
+Notifies when the :ref:`NavigationMesh<class_NavigationMesh>` has changed.
 
 Property Descriptions
 ---------------------
@@ -42,7 +66,7 @@ Property Descriptions
 | *Getter*  | is_enabled()       |
 +-----------+--------------------+
 
-If ``true``, the navigation mesh will be used by :ref:`Navigation<class_Navigation>`.
+Determines if the ``NavigationMeshInstance`` is enabled or disabled.
 
 ----
 
@@ -56,7 +80,16 @@ If ``true``, the navigation mesh will be used by :ref:`Navigation<class_Navigati
 | *Getter* | get_navigation_mesh()      |
 +----------+----------------------------+
 
-The :ref:`NavigationMesh<class_NavigationMesh>` resource for the instance.
+The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
+
+Method Descriptions
+-------------------
+
+.. _class_NavigationMeshInstance_method_bake_navigation_mesh:
+
+- void **bake_navigation_mesh** **(** **)**
+
+Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. The baking is done in a separate thread because navigation baking is not a cheap operation. This can be done at runtime. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

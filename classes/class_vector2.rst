@@ -16,16 +16,16 @@ Description
 
 2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
 
-**Note:** In a boolean context, a Vector2 will evaluate to ``false`` if it's equal to ``Vector2(0, 0)``. Otherwise, a Vector2 will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Vector2 will evaluate to ``false`` if it's equal to ``Vector2(0, 0)``. Otherwise, a Vector2 will always evaluate to ``true``.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
-- :doc:`../tutorials/math/vectors_advanced`
+- :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 
@@ -85,6 +85,8 @@ Methods
 | :ref:`float<class_float>`     | :ref:`length<class_Vector2_method_length>` **(** **)**                                                                                                                                                                    |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`length_squared<class_Vector2_method_length_squared>` **(** **)**                                                                                                                                                    |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`limit_length<class_Vector2_method_limit_length>` **(** :ref:`float<class_float>` length=1.0 **)**                                                                                                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`linear_interpolate<class_Vector2_method_linear_interpolate>` **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` weight **)**                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,7 +208,7 @@ Returns this vector's angle with respect to the positive X axis, or ``(1, 0)`` v
 
 For example, ``Vector2.RIGHT.angle()`` will return zero, ``Vector2.DOWN.angle()`` will return ``PI / 2`` (a quarter turn, or 90 degrees), and ``Vector2(1, -1).angle()`` will return ``-PI / 4`` (a negative eighth turn, or -45 degrees).
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png>`__\ 
 
 Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
@@ -218,7 +220,7 @@ Equivalent to the result of :ref:`@GDScript.atan2<class_@GDScript_method_atan2>`
 
 Returns the angle to the given vector, in radians.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png>`__
 
 ----
 
@@ -228,7 +230,7 @@ Returns the angle to the given vector, in radians.
 
 Returns the angle between the line connecting the two points and the X axis, in radians.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/stable/img/vector2_angle_to_point.png>`__
 
 ----
 
@@ -252,13 +254,15 @@ Returns the vector "bounced off" from a plane defined by the given normal.
 
 - :ref:`Vector2<class_Vector2>` **ceil** **(** **)**
 
-Returns the vector with all components rounded up (towards positive infinity).
+Returns a new vector with all components rounded up (towards positive infinity).
 
 ----
 
 .. _class_Vector2_method_clamped:
 
 - :ref:`Vector2<class_Vector2>` **clamped** **(** :ref:`float<class_float>` length **)**
+
+Deprecated, please use :ref:`limit_length<class_Vector2_method_limit_length>` instead.
 
 Returns the vector with a maximum length by limiting its length to ``length``.
 
@@ -268,7 +272,11 @@ Returns the vector with a maximum length by limiting its length to ``length``.
 
 - :ref:`float<class_float>` **cross** **(** :ref:`Vector2<class_Vector2>` with **)**
 
-Returns the cross product of this vector and ``with``.
+Returns the 2D analog of the cross product for this vector and ``with``.
+
+This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area.
+
+\ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 
 ----
 
@@ -316,7 +324,7 @@ The dot product will be ``0`` for a straight angle (90 degrees), greater than 0 
 
 When using unit (normalized) vectors, the result will always be between ``-1.0`` (180 degree angle) when the vectors are facing opposite directions, and ``1.0`` (0 degree angle) when the vectors are aligned.
 
-**Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
+\ **Note:** ``a.dot(b)`` is equivalent to ``b.dot(a)``.
 
 ----
 
@@ -324,7 +332,7 @@ When using unit (normalized) vectors, the result will always be between ``-1.0``
 
 - :ref:`Vector2<class_Vector2>` **floor** **(** **)**
 
-Returns the vector with all components rounded down (towards negative infinity).
+Returns a new vector with all components rounded down (towards negative infinity).
 
 ----
 
@@ -362,6 +370,14 @@ This method runs faster than :ref:`length<class_Vector2_method_length>`, so pref
 
 ----
 
+.. _class_Vector2_method_limit_length:
+
+- :ref:`Vector2<class_Vector2>` **limit_length** **(** :ref:`float<class_float>` length=1.0 **)**
+
+Returns the vector with a maximum length by limiting its length to ``length``.
+
+----
+
 .. _class_Vector2_method_linear_interpolate:
 
 - :ref:`Vector2<class_Vector2>` **linear_interpolate** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` weight **)**
@@ -374,7 +390,7 @@ Returns the result of the linear interpolation between this vector and ``to`` by
 
 - :ref:`Vector2<class_Vector2>` **move_toward** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` delta **)**
 
-Moves the vector toward ``to`` by the fixed ``delta`` amount.
+Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not go past the final value.
 
 ----
 
@@ -406,7 +422,7 @@ Returns a vector composed of the :ref:`@GDScript.fposmod<class_@GDScript_method_
 
 - :ref:`Vector2<class_Vector2>` **project** **(** :ref:`Vector2<class_Vector2>` b **)**
 
-Returns the vector projected onto the vector ``b``.
+Returns this vector projected onto the vector ``b``.
 
 ----
 
@@ -430,7 +446,7 @@ Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<
 
 - :ref:`Vector2<class_Vector2>` **round** **(** **)**
 
-Returns the vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
+Returns a new vector with all components rounded to the nearest integer, with halfway cases rounded away from zero.
 
 ----
 
@@ -438,7 +454,7 @@ Returns the vector with all components rounded to the nearest integer, with half
 
 - :ref:`Vector2<class_Vector2>` **sign** **(** **)**
 
-Returns the vector with each component set to one or negative one, depending on the signs of the components. If a component is zero, it returns positive one.
+Returns a new vector with each component set to one or negative one, depending on the signs of the components. If a component is zero, it returns positive one.
 
 ----
 
@@ -448,7 +464,7 @@ Returns the vector with each component set to one or negative one, depending on 
 
 Returns the result of spherical linear interpolation between this vector and ``to``, by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-**Note:** Both vectors must be normalized.
+\ **Note:** Both vectors must be normalized.
 
 ----
 

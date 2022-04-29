@@ -32,7 +32,7 @@ Accessing the settings can be done using the following methods, such as:
     
     var list_of_settings = settings.get_property_list()
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
 
 Methods
 -------
@@ -100,9 +100,9 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`
+- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -173,9 +173,9 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 
 Gets the global settings path for the engine. Inside this path, you can find some standard paths such as:
 
-``settings/tmp`` - Used for temporary storage of files
+\ ``settings/tmp`` - Used for temporary storage of files
 
-``settings/templates`` - Where export templates are located
+\ ``settings/templates`` - Where export templates are located
 
 ----
 

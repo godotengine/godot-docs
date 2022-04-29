@@ -116,7 +116,7 @@ If ``true``, the camera stops on contact with :ref:`PhysicsBody<class_PhysicsBod
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The camera's collision mask. Only objects in at least one collision layer matching the mask will be detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -191,7 +191,7 @@ Returns the distance the camera has been offset due to a collision.
 
 Returns ``true`` if the specified bit index is on.
 
-**Note:** Bit indices range from 0-19.
+\ **Note:** Bit indices range from 0-19.
 
 ----
 
@@ -217,7 +217,7 @@ Removes a collision exception with the specified :ref:`RID<class_RID>`.
 
 Sets the specified bit index to the ``value``.
 
-**Note:** Bit indices range from 0-19.
+\ **Note:** Bit indices range from 0-19.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

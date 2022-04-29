@@ -84,7 +84,7 @@ Signals
 
 Emitted when another Area enters this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
-``area`` the other Area.
+\ ``area`` the other Area.
 
 ----
 
@@ -94,7 +94,7 @@ Emitted when another Area enters this Area. Requires :ref:`monitoring<class_Area
 
 Emitted when another Area exits this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
-``area`` the other Area.
+\ ``area`` the other Area.
 
 ----
 
@@ -104,13 +104,13 @@ Emitted when another Area exits this Area. Requires :ref:`monitoring<class_Area_
 
 Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
-``area_rid`` the :ref:`RID<class_RID>` of the other Area's :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area's :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
-``area`` the other Area.
+\ ``area`` the other Area.
 
-``area_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``area.shape_owner_get_owner(area_shape_index)``.
+\ ``area_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``area.shape_owner_get_owner(area_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 ----
 
@@ -120,13 +120,13 @@ Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of th
 
 Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
-``area_rid`` the :ref:`RID<class_RID>` of the other Area's :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area's :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
-``area`` the other Area.
+\ ``area`` the other Area.
 
-``area_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``area.shape_owner_get_owner(area_shape_index)``.
+\ ``area_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``area.shape_owner_get_owner(area_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 ----
 
@@ -136,7 +136,7 @@ Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of th
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` enters this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -146,7 +146,7 @@ Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_Grid
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` exits this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -156,13 +156,13 @@ Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_Grid
 
 Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 ----
 
@@ -172,13 +172,13 @@ Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<cla
 
 Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 Enumerations
 ------------
@@ -497,7 +497,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 If ``true``, the given area overlaps the Area.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 ----
 
@@ -507,7 +507,7 @@ If ``true``, the given area overlaps the Area.
 
 If ``true``, the given physics body overlaps the Area.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a :ref:`GridMap<class_GridMap>` instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
 

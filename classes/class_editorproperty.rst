@@ -83,7 +83,7 @@ Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_metho
 
 .. _class_EditorProperty_signal_property_checked:
 
-- **property_checked** **(** :ref:`String<class_String>` property, :ref:`String<class_String>` bool **)**
+- **property_checked** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
 Emitted when a property was checked. Used internally.
 
@@ -102,6 +102,16 @@ Emit it if you want to add this value as an animation key (check for keying bein
 - **property_keyed_with_value** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
 
 Emit it if you want to key a property with a single value.
+
+----
+
+.. _class_EditorProperty_signal_property_pinned:
+
+- **property_pinned** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` pinned **)**
+
+Emit it if you want to mark (or unmark) the value of a property for being saved regardless of being equal to the default value.
+
+The default value is the one the property will get when the node is just instantiated and can come from an ancestor scene in the inheritance/instancing chain, a script or a builtin class.
 
 ----
 

@@ -31,23 +31,23 @@ The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data inter
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false``                 |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``                   |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                           | flags                                                           | ``7`` *(parent override)* |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``                   |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |                           |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`noise_offset<class_NoiseTexture_property_noise_offset>`   | ``Vector2( 0, 0 )``       |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``                 |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``                   |
-+-------------------------------------------------+-----------------------------------------------------------------+---------------------------+
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false``                                                      |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``                                                        |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                           | flags                                                           | ``7`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``                                                        |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |                                                                |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`noise_offset<class_NoiseTexture_property_noise_offset>`   | ``Vector2( 0, 0 )``                                            |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``                                                      |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``                                                        |
++-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -144,7 +144,7 @@ An offset used to specify the noise space coordinate of the top left corner of t
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
-**Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
+\ **Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
 
 ----
 

@@ -21,9 +21,9 @@ For more information, read the "Matrices and transforms" documentation article.
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/matrices_and_transforms`
+- :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
 
 - `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
 

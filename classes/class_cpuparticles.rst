@@ -20,7 +20,7 @@ CPU-based 3D particle node used to create a variety of particle systems and effe
 
 See also :ref:`Particles<class_Particles>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
-**Note:** Unlike :ref:`Particles<class_Particles>`, the visibility rect is generated on-the-fly and doesn't need to be configured by the user.
+\ **Note:** Unlike :ref:`Particles<class_Particles>`, the visibility rect is generated on-the-fly and doesn't need to be configured by the user.
 
 Properties
 ----------
@@ -53,6 +53,8 @@ Properties
 | :ref:`float<class_float>`                             | :ref:`anim_speed_random<class_CPUParticles_property_anim_speed_random>`                   | ``0.0``                   |
 +-------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`Color<class_Color>`                             | :ref:`color<class_CPUParticles_property_color>`                                           | ``Color( 1, 1, 1, 1 )``   |
++-------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`Gradient<class_Gradient>`                       | :ref:`color_initial_ramp<class_CPUParticles_property_color_initial_ramp>`                 |                           |
 +-------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`Gradient<class_Gradient>`                       | :ref:`color_ramp<class_CPUParticles_property_color_ramp>`                                 |                           |
 +-------------------------------------------------------+-------------------------------------------------------------------------------------------+---------------------------+
@@ -338,7 +340,7 @@ Property Descriptions
 
 The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_CPUParticles_property_lifetime>`).
 
-**Note:** Changing :ref:`amount<class_CPUParticles_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_CPUParticles_property_amount>`.
+\ **Note:** Changing :ref:`amount<class_CPUParticles_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_CPUParticles_property_amount>`.
 
 ----
 
@@ -539,6 +541,20 @@ Animation speed randomness ratio.
 +-----------+-------------------------+
 
 Each particle's initial color. To have particle display color in a :ref:`SpatialMaterial<class_SpatialMaterial>` make sure to set :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` to ``true``.
+
+----
+
+.. _class_CPUParticles_property_color_initial_ramp:
+
+- :ref:`Gradient<class_Gradient>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture<class_GradientTexture>` (multiplied with :ref:`color<class_CPUParticles_property_color>`).
 
 ----
 

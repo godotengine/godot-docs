@@ -23,7 +23,7 @@ A 2D game object, with a transform (position, rotation, and scale). All 2D nodes
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
+- :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
 - `All 2D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/2d>`__
 
@@ -281,7 +281,7 @@ Multiplies the current scale by the ``ratio`` vector.
 
 Returns the angle between the node and the ``point`` in radians.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/node2d_get_angle_to.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/node2d_get_angle_to.png>`__
 
 ----
 

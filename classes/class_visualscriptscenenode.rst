@@ -18,11 +18,11 @@ Description
 
 A direct reference to a node.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
 none
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data: ``node`` (obj)
 

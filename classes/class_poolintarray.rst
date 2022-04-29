@@ -9,16 +9,16 @@
 PoolIntArray
 ============
 
-A pooled :ref:`Array<class_Array>` of integers (:ref:`int<class_int>`).
+A pooled array of integers (:ref:`int<class_int>`).
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
-**Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
+\ **Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
 Methods
 -------
@@ -31,6 +31,8 @@ Methods
 | void                                    | :ref:`append_array<class_PoolIntArray_method_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`empty<class_PoolIntArray_method_empty>` **(** **)**                                                             |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`fill<class_PoolIntArray_method_fill>` **(** :ref:`int<class_int>` integer **)**                                 |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                   | :ref:`insert<class_PoolIntArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -82,6 +84,14 @@ Returns ``true`` if the array is empty.
 
 ----
 
+.. _class_PoolIntArray_method_fill:
+
+- void **fill** **(** :ref:`int<class_int>` integer **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolIntArray_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
 .. _class_PoolIntArray_method_insert:
 
 - :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
@@ -120,7 +130,7 @@ Removes an element from the array by index.
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
-**Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
+\ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
 ----
 
@@ -136,7 +146,7 @@ Changes the int at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the array size.
+Returns the number of elements in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

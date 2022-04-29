@@ -9,14 +9,14 @@
 PoolByteArray
 =============
 
-A pooled :ref:`Array<class_Array>` of bytes.
+A pooled array of bytes.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
 Methods
 -------
@@ -35,6 +35,8 @@ Methods
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress_dynamic<class_PoolByteArray_method_decompress_dynamic>` **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                                           |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`fill<class_PoolByteArray_method_fill>` **(** :ref:`int<class_int>` byte **)**                                                                                  |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                                           |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -106,7 +108,7 @@ Returns a new ``PoolByteArray`` with the data decompressed. Set ``buffer_size`` 
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)**
 
-Returns a new ``PoolByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**
+Returns a new ``PoolByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
 
 This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, where as ``decompress`` knows its output buffer size from the beginning.
 
@@ -121,6 +123,14 @@ GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+----
+
+.. _class_PoolByteArray_method_fill:
+
+- void **fill** **(** :ref:`int<class_int>` byte **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolByteArray_method_resize>` to create an array with a given size and initialized elements.
 
 ----
 
@@ -191,7 +201,7 @@ Removes an element from the array by index.
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
-**Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
+\ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
 ----
 
@@ -207,7 +217,7 @@ Changes the byte at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the array.
+Returns the number of elements in the array.
 
 ----
 

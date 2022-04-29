@@ -56,7 +56,7 @@ Returns the listener's global orthonormalized :ref:`Transform<class_Transform>`.
 
 Returns ``true`` if the listener was made current using :ref:`make_current<class_Listener_method_make_current>`, ``false`` otherwise.
 
-**Note:** There may be more than one Listener marked as "current" in the scene tree, but only the one that was made current last will be used.
+\ **Note:** There may be more than one Listener marked as "current" in the scene tree, but only the one that was made current last will be used.
 
 ----
 

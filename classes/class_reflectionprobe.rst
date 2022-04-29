@@ -20,11 +20,11 @@ Capture its surroundings as a dual paraboloid image, and stores versions of it w
 
 The ``ReflectionProbe`` is used to create high-quality reflections at a low performance cost (when :ref:`update_mode<class_ReflectionProbe_property_update_mode>` is :ref:`UPDATE_ONCE<class_ReflectionProbe_constant_UPDATE_ONCE>`). ``ReflectionProbe``\ s can be blended together and with the rest of the scene smoothly. ``ReflectionProbe``\ s can also be combined with :ref:`GIProbe<class_GIProbe>` and screen-space reflections (:ref:`Environment.ss_reflections_enabled<class_Environment_property_ss_reflections_enabled>`) to get more accurate reflections in specific areas. ``ReflectionProbe``\ s render all objects within their :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`, so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them as-is.
 
-**Note:** Unlike :ref:`GIProbe<class_GIProbe>`, ``ReflectionProbe``\ s only source their environment from a :ref:`WorldEnvironment<class_WorldEnvironment>` node. If you specify an :ref:`Environment<class_Environment>` resource within a :ref:`Camera<class_Camera>` node, it will be ignored by the ``ReflectionProbe``. This can lead to incorrect lighting within the ``ReflectionProbe``.
+\ **Note:** Unlike :ref:`GIProbe<class_GIProbe>`, ``ReflectionProbe``\ s only source their environment from a :ref:`WorldEnvironment<class_WorldEnvironment>` node. If you specify an :ref:`Environment<class_Environment>` resource within a :ref:`Camera<class_Camera>` node, it will be ignored by the ``ReflectionProbe``. This can lead to incorrect lighting within the ``ReflectionProbe``.
 
-**Note:** By default, Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in :ref:`ProjectSettings.rendering/quality/reflections/atlas_subdiv<class_ProjectSettings_property_rendering/quality/reflections/atlas_subdiv>`.
+\ **Note:** By default, Godot will only render 16 reflection probes. If you need more, increase the number of atlas subdivisions. This setting can be found in :ref:`ProjectSettings.rendering/quality/reflections/atlas_subdiv<class_ProjectSettings_property_rendering/quality/reflections/atlas_subdiv>`.
 
-**Note:** The GLES2 backend will only display two reflection probes at the same time for a single mesh. If possible, split up large meshes that span over multiple reflection probes into smaller ones.
+\ **Note:** The GLES2 backend will only display two reflection probes at the same time for a single mesh. If possible, split up large meshes that span over multiple reflection probes into smaller ones.
 
 Tutorials
 ---------
@@ -92,7 +92,7 @@ Property Descriptions
 
 If ``true``, enables box projection. This makes reflections look more correct in rectangle-shaped rooms by offsetting the reflection center depending on the camera's location.
 
-**Note:** To better fit rectangle-shaped rooms that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
+\ **Note:** To better fit rectangle-shaped rooms that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
 
 ----
 
@@ -142,7 +142,7 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 The size of the reflection probe. The larger the extents the more space covered by the probe which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
 
-**Note:** To better fit areas that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
+\ **Note:** To better fit areas that are not aligned to the grid, you can rotate the ``ReflectionProbe`` node.
 
 ----
 
@@ -240,7 +240,7 @@ If ``true``, reflections will ignore sky contribution. Ambient lighting is then 
 
 The maximum distance away from the ``ReflectionProbe`` an object can be before it is culled. Decrease this to improve performance, especially when using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
 
-**Note:** The maximum reflection distance is always at least equal to the :ref:`extents<class_ReflectionProbe_property_extents>`. This means that decreasing :ref:`max_distance<class_ReflectionProbe_property_max_distance>` will not always cull objects from reflections, especially if the reflection probe's :ref:`extents<class_ReflectionProbe_property_extents>` are already large.
+\ **Note:** The maximum reflection distance is always at least equal to the :ref:`extents<class_ReflectionProbe_property_extents>`. This means that decreasing :ref:`max_distance<class_ReflectionProbe_property_max_distance>` will not always cull objects from reflections, especially if the reflection probe's :ref:`extents<class_ReflectionProbe_property_extents>` are already large.
 
 ----
 

@@ -72,7 +72,7 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
-**Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

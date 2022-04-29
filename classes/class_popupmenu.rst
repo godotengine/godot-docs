@@ -21,19 +21,19 @@ Description
 Properties
 ----------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``false``                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | ``2`` *(parent override)* |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``                  |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``                  |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``                   |
-+------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------+
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``false``                                                           |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                                         | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``                                                            |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``                                                            |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``                                                           |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``                                                             |
++------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Methods
 -------
@@ -108,6 +108,8 @@ Methods
 | :ref:`bool<class_bool>`         | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                          |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`remove_item<class_PopupMenu_method_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                              |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`set_current_index<class_PopupMenu_method_set_current_index>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_hide_on_window_lose_focus<class_PopupMenu_method_set_hide_on_window_lose_focus>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -306,7 +308,7 @@ Adds a new checkable item with text ``label``.
 
 An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -318,7 +320,7 @@ Adds a new checkable item and assigns the specified :ref:`ShortCut<class_ShortCu
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -330,7 +332,7 @@ Adds a new checkable item with text ``label`` and icon ``texture``.
 
 An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -342,7 +344,7 @@ Adds a new checkable item and assigns the specified :ref:`ShortCut<class_ShortCu
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -412,7 +414,7 @@ Adds a new radio check button with text ``label``.
 
 An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -424,7 +426,7 @@ Adds a new radio check button and assigns a :ref:`ShortCut<class_ShortCut>` to i
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
 ----
 
@@ -568,7 +570,7 @@ Returns ``true`` if the popup will be hidden when the window loses focus or not.
 
 Returns ``true`` if the item at index ``idx`` is checkable in some way, i.e. if it has a checkbox or radio button.
 
-**Note:** Checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
+\ **Note:** Checkable items just display a checkmark or radio button, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 ----
 
@@ -596,7 +598,7 @@ See :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` for more 
 
 Returns ``true`` if the item at index ``idx`` has radio button-style checkability.
 
-**Note:** This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.
+\ **Note:** This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.
 
 ----
 
@@ -622,7 +624,15 @@ Returns ``true`` if the specified item's shortcut is disabled.
 
 Removes the item at index ``idx`` from the menu.
 
-**Note:** The indices of items after the removed item will be shifted by one.
+\ **Note:** The indices of items after the removed item will be shifted by one.
+
+----
+
+.. _class_PopupMenu_method_set_current_index:
+
+- void **set_current_index** **(** :ref:`int<class_int>` index **)**
+
+Sets the currently focused item as the given ``index``.
 
 ----
 
@@ -648,7 +658,7 @@ Sets the accelerator of the item at index ``idx``. Accelerators are special comb
 
 Sets whether the item at index ``idx`` has a checkbox. If ``false``, sets the type of the item to plain text.
 
-**Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+\ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 ----
 

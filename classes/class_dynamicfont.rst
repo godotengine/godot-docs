@@ -18,7 +18,7 @@ Description
 
 DynamicFont renders vector font files dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths. DynamicFont also supports defining one or more fallback fonts, which will be used when displaying a character not supported by the main font.
 
-DynamicFont uses the `FreeType <https://www.freetype.org/>`__ library for rasterization. Supported formats are TrueType (``.ttf``), OpenType (``.otf``) and Web Open Font Format 1 (``.woff``). Web Open Font Format 2 (``.woff2``) is *not* supported.
+DynamicFont uses the `FreeType <https://www.freetype.org/>`__ library for rasterization. Supported formats are TrueType (``.ttf``), OpenType (``.otf``), Web Open Font Format 1 (``.woff``), and  Web Open Font Format 2 (``.woff2``).
 
 ::
 
@@ -27,7 +27,7 @@ DynamicFont uses the `FreeType <https://www.freetype.org/>`__ library for raster
     dynamic_font.size = 64
     $"Label".set("custom_fonts/font", dynamic_font)
 
-**Note:** DynamicFont doesn't support features such as kerning, right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`__ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
+\ **Note:** DynamicFont doesn't support features such as kerning, right-to-left typesetting, ligatures, text shaping, variable fonts and optional font features yet. If you wish to "bake" an optional font feature into a TTF font file, you can use `FontForge <https://fontforge.org/>`__ to do so. In FontForge, use **File > Generate Fonts**, click **Options**, choose the desired features then generate the font.
 
 Tutorials
 ---------
@@ -202,7 +202,7 @@ The font data.
 
 The font outline's color.
 
-**Note:** It's recommended to leave this at the default value so that you can adjust it in individual controls. For example, if the outline is made black here, it won't be possible to change its color using a Label's font outline modulate theme item.
+\ **Note:** It's recommended to leave this at the default value so that you can adjust it in individual controls. For example, if the outline is made black here, it won't be possible to change its color using a Label's font outline modulate theme item.
 
 ----
 

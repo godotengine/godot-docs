@@ -28,14 +28,14 @@ A ``CanvasItem`` can also be hidden, which will also hide its children. It provi
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
-**Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
+\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
+- :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
 - `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
 
@@ -226,6 +226,8 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED:
 
+.. _class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
+
 .. _class_CanvasItem_constant_NOTIFICATION_DRAW:
 
 .. _class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED:
@@ -234,7 +236,9 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_EXIT_CANVAS:
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The ``CanvasItem``'s transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The ``CanvasItem``'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>`.
+
+- **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = **35** --- The ``CanvasItem``'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
 - **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw.
 
@@ -363,7 +367,7 @@ If ``true``, the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_propert
 
 If ``true``, this ``CanvasItem`` is drawn. The node is only visible if all of its antecedents are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
 
-**Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
+\ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
 Method Descriptions
 -------------------
@@ -430,7 +434,7 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 Draws multiple disconnected lines with a uniform ``color``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` instead.
 
-**Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
+\ **Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
 ----
 
@@ -440,7 +444,7 @@ Draws multiple disconnected lines with a uniform ``color``. When drawing large a
 
 Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Colors assigned to line segments match by index between ``points`` and ``colors``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>` instead.
 
-**Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
+\ **Note:** ``width`` and ``antialiased`` are currently not implemented and have no effect.
 
 ----
 
@@ -490,7 +494,7 @@ Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for
 
 Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. If ``antialiased`` is ``true``, the lines will be antialiased.
 
-**Note:** ``width`` and ``antialiased`` are only effective if ``filled`` is ``false``.
+\ **Note:** ``width`` and ``antialiased`` are only effective if ``filled`` is ``false``.
 
 ----
 
@@ -516,7 +520,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 Draws ``text`` using the specified ``font`` at the ``position`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
-**Example using the default project font:**
+\ **Example using the default project font:**\ 
 
 ::
 
@@ -598,7 +602,7 @@ Returns the transform matrix of this item's canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** |const|
 
-Returns the global position of the mouse.
+Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this ``CanvasItem`` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
 ----
 
@@ -622,7 +626,7 @@ Returns the global transform matrix of this item in relation to the canvas.
 
 - :ref:`Vector2<class_Vector2>` **get_local_mouse_position** **(** **)** |const|
 
-Returns the mouse position relative to this item's position.
+Returns the mouse's position in this ``CanvasItem`` using the local coordinate system of this ``CanvasItem``.
 
 ----
 
@@ -726,7 +730,7 @@ If ``enable`` is ``true``, this ``CanvasItem`` will *not* inherit its transform 
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, children will be updated with local transform data.
+If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` when its local transform changes.
 
 ----
 
@@ -734,7 +738,7 @@ If ``enable`` is ``true``, children will be updated with local transform data.
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, children will be updated with global transform data.
+If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` when its global transform changes.
 
 ----
 

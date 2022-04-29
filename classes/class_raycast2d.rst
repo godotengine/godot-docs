@@ -142,7 +142,7 @@ If ``true``, collision with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The ray's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -209,7 +209,7 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
 
-**Note:** ``enabled`` is not required for this to work.
+\ **Note:** ``enabled`` is not required for this to work.
 
 ----
 
@@ -251,7 +251,7 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 Returns the collision point at which the ray intersects the closest object.
 
-**Note:** This point is in the **global** coordinate system.
+\ **Note:** This point is in the **global** coordinate system.
 
 ----
 

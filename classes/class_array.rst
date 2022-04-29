@@ -16,7 +16,7 @@ Description
 
 A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -35,11 +35,11 @@ Arrays can be concatenated using the ``+`` operator:
     var array2 = [3, "Four"]
     print(array1 + array2) # ["One", 2, 3, "Four"]
 
-**Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
+\ **Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
 
-**Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
+\ **Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
-**Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
+\ **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 Methods
 -------
@@ -78,6 +78,8 @@ Methods
 | :ref:`bool<class_bool>`       | :ref:`empty<class_Array_method_empty>` **(** **)**                                                                                                                                                               |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`erase<class_Array_method_erase>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                                           |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`fill<class_Array_method_fill>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                                             |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`find<class_Array_method_find>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)**                                                                                                |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -200,7 +202,7 @@ Appends another array at the end of this array.
 
 Returns the last element of the array. Prints an error and returns ``null`` if the array is empty.
 
-**Note:** Calling this function is not the same as writing ``array[-1]``. If the array is empty, accessing by index will pause project execution when running from the editor.
+\ **Note:** Calling this function is not the same as writing ``array[-1]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -210,7 +212,7 @@ Returns the last element of the array. Prints an error and returns ``null`` if t
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
-**Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -243,7 +245,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
         # `compare` is defined in this object, so we use `self` as the `obj` parameter.
         print(a.bsearch_custom("three", self, "compare", true)) # Expected value is 2.
 
-**Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
+\ **Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
 
 ----
 
@@ -287,9 +289,23 @@ Returns ``true`` if the array is empty.
 
 Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove<class_Array_method_remove>` instead.
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+
+----
+
+.. _class_Array_method_fill:
+
+- void **fill** **(** :ref:`Variant<class_Variant>` value **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_Array_method_resize>` to create an array with a given size and initialized elements:
+
+::
+
+    var array = []
+    array.resize(10)
+    array.fill(0) # Initialize the 10 elements to 0.
 
 ----
 
@@ -315,7 +331,7 @@ Searches the array in reverse order for a value and returns its index or ``-1`` 
 
 Returns the first element of the array. Prints an error and returns ``null`` if the array is empty.
 
-**Note:** Calling this function is not the same as writing ``array[0]``. If the array is empty, accessing by index will pause project execution when running from the editor.
+\ **Note:** Calling this function is not the same as writing ``array[0]``. If the array is empty, accessing by index will pause project execution when running from the editor.
 
 ----
 
@@ -332,7 +348,7 @@ Returns ``true`` if the array contains the given value.
     ["inside", 7].has(7) # True
     ["inside", 7].has("7") # False
 
-**Note:** This is equivalent to using the ``in`` operator as follows:
+\ **Note:** This is equivalent to using the ``in`` operator as follows:
 
 ::
 
@@ -348,7 +364,7 @@ Returns ``true`` if the array contains the given value.
 
 Returns a hashed 32-bit integer value representing the array and its contents.
 
-**Note:** ``Array``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the arrays are equal, because different arrays can have identical hash values due to hash collisions.
+\ **Note:** ``Array``\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the arrays are equal, because different arrays can have identical hash values due to hash collisions.
 
 ----
 
@@ -358,9 +374,9 @@ Returns a hashed 32-bit integer value representing the array and its contents.
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
 
 ----
 
@@ -394,7 +410,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 Removes and returns the element of the array at index ``position``. If negative, ``position`` is considered relative to the end of the array. Leaves the array untouched and returns ``null`` if the array is empty or if it's accessed out of bounds. An error message is printed when the array is accessed out of bounds, but not when the array is empty.
 
-**Note:** On large arrays, this method can be slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower :ref:`pop_at<class_Array_method_pop_at>` will be.
+\ **Note:** On large arrays, this method can be slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower :ref:`pop_at<class_Array_method_pop_at>` will be.
 
 ----
 
@@ -412,7 +428,7 @@ Removes and returns the last element of the array. Returns ``null`` if the array
 
 Removes and returns the first element of the array. Returns ``null`` if the array is empty, without printing an error message. See also :ref:`pop_back<class_Array_method_pop_back>`.
 
-**Note:** On large arrays, this method is much slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`pop_front<class_Array_method_pop_front>` will be.
+\ **Note:** On large arrays, this method is much slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`pop_front<class_Array_method_pop_front>` will be.
 
 ----
 
@@ -430,7 +446,7 @@ Appends an element at the end of the array. See also :ref:`push_front<class_Arra
 
 Adds an element at the beginning of the array. See also :ref:`push_back<class_Array_method_push_back>`.
 
-**Note:** On large arrays, this method is much slower than :ref:`push_back<class_Array_method_push_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`push_front<class_Array_method_push_front>` will be.
+\ **Note:** On large arrays, this method is much slower than :ref:`push_back<class_Array_method_push_back>` as it will reindex all the array's elements every time it's called. The larger the array, the slower :ref:`push_front<class_Array_method_push_front>` will be.
 
 ----
 
@@ -440,9 +456,9 @@ Adds an element at the beginning of the array. See also :ref:`push_back<class_Ar
 
 Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use :ref:`erase<class_Array_method_erase>` instead.
 
-**Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a value.
 
-**Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+\ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
 ----
 
@@ -492,7 +508,7 @@ Duplicates the subset described in the function and returns it in an array, deep
 
 Sorts the array.
 
-**Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
+\ **Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
 
 ::
 
@@ -510,7 +526,7 @@ Sorts the array using a custom method. The arguments are an object that holds th
 
 For two elements ``a`` and ``b``, if the given method returns ``true``, element ``b`` will be after element ``a`` in the array.
 
-**Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
+\ **Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
 ::
 

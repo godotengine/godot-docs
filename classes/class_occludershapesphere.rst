@@ -23,9 +23,9 @@ This shape can include multiple spheres. These can be created and deleted either
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+----------+
-| :ref:`Array<class_Array>` | :ref:`spheres<class_OccluderShapeSphere_property_spheres>` | ``[  ]`` |
-+---------------------------+------------------------------------------------------------+----------+
++---------------------------+------------------------------------------------------------+-----------------------------+
+| :ref:`Array<class_Array>` | :ref:`spheres<class_OccluderShapeSphere_property_spheres>` | ``[ Plane( 0, 0, 0, 1 ) ]`` |
++---------------------------+------------------------------------------------------------+-----------------------------+
 
 Methods
 -------
@@ -43,13 +43,13 @@ Property Descriptions
 
 - :ref:`Array<class_Array>` **spheres**
 
-+-----------+--------------------+
-| *Default* | ``[  ]``           |
-+-----------+--------------------+
-| *Setter*  | set_spheres(value) |
-+-----------+--------------------+
-| *Getter*  | get_spheres()      |
-+-----------+--------------------+
++-----------+-----------------------------+
+| *Default* | ``[ Plane( 0, 0, 0, 1 ) ]`` |
++-----------+-----------------------------+
+| *Setter*  | set_spheres(value)          |
++-----------+-----------------------------+
+| *Getter*  | get_spheres()               |
++-----------+-----------------------------+
 
 The sphere data can be accessed as an array of :ref:`Plane<class_Plane>`\ s. The position of each sphere is stored in the ``normal``, and the radius is stored in the ``d`` value of the plane.
 

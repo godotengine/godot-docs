@@ -23,11 +23,11 @@ Base class for WebSocket server and client, allowing them to be used as network 
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` *(parent override)* |
-+-----------------------------------------------------------------+------------------------+-------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` *(parent override)*     |
-+-----------------------------------------------------------------+------------------------+-------------------------------+
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)              |
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -47,7 +47,7 @@ Signals
 
 Emitted when a packet is received from a peer.
 
-**Note:** This signal is only emitted when the client or server is configured to use Godot multiplayer API.
+\ **Note:** This signal is only emitted when the client or server is configured to use Godot multiplayer API.
 
 Method Descriptions
 -------------------
@@ -70,7 +70,7 @@ The first two parameters define the size and queued packets limits of the input 
 
 Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters will be rounded up to the nearest power of two.
 
-**Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
+\ **Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -40,7 +40,7 @@ The :ref:`MeshInstance<class_MeshInstance>` is ready to be added to the :ref:`Sc
 
 See also :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`MeshDataTool<class_MeshDataTool>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
 
-**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
+\ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
 Tutorials
 ---------
@@ -379,7 +379,7 @@ Sets a name for a given surface.
 
 Updates a specified region of mesh arrays on the GPU.
 
-**Warning:** Only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.
+\ **Warning:** Only use if you know what you are doing. You can easily cause crashes by calling this function with improper arguments.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -21,9 +21,9 @@ Provides direct access to a physics body in the :ref:`Physics2DServer<class_Phys
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 Properties
 ----------
@@ -337,7 +337,7 @@ Returns the linear velocity vector at the collider's contact point.
 
 Returns the number of contacts this body has with other bodies.
 
-**Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidBody2D.contact_monitor<class_RigidBody2D_property_contact_monitor>`.
+\ **Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidBody2D.contact_monitor<class_RigidBody2D_property_contact_monitor>`.
 
 ----
 

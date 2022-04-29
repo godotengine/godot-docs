@@ -76,17 +76,23 @@ Enumerations
 
 .. _class_SceneState_constant_GEN_EDIT_STATE_MAIN:
 
+.. _class_SceneState_constant_GEN_EDIT_STATE_MAIN_INHERITED:
+
 enum **GenEditState**:
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
 
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides inherited scene resources to the local scene.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
 
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state.
 
-**Note:** Only available in editor builds.
+\ **Note:** Only available in editor builds.
+
+- **GEN_EDIT_STATE_MAIN_INHERITED** = **3** --- If passed to :ref:`PackedScene.instance<class_PackedScene_method_instance>`, it's similar to :ref:`GEN_EDIT_STATE_MAIN<class_SceneState_constant_GEN_EDIT_STATE_MAIN>`, but for the case where the scene is being instantiated to be the base of another one.
+
+\ **Note:** Only available in editor builds.
 
 Method Descriptions
 -------------------

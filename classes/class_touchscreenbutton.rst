@@ -145,7 +145,7 @@ The button's texture for the normal state.
 
 If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref:`released<class_TouchScreenButton_signal_released>` signals are emitted whenever a pressed finger goes in and out of the button, even if the pressure started outside the active area of the button.
 
-**Note:** This is a "pass-by" (not "bypass") press mode.
+\ **Note:** This is a "pass-by" (not "bypass") press mode.
 
 ----
 

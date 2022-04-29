@@ -18,16 +18,16 @@ Description
 
 Enable support for the OpenGL ES external texture extension as defined by `OES_EGL_image_external <https://www.khronos.org/registry/OpenGL/extensions/OES/OES_EGL_image_external.txt>`__.
 
-**Note:** This is only supported for Android platforms.
+\ **Note:** This is only supported for Android platforms.
 
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`         | flags                                            | ``2048`` *(parent override)* |
-+-------------------------------+--------------------------------------------------+------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_ExternalTexture_property_size>` | ``Vector2( 1, 1 )``          |
-+-------------------------------+--------------------------------------------------+------------------------------+
++-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`int<class_int>`         | flags                                            | ``2048`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
++-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_ExternalTexture_property_size>` | ``Vector2( 1, 1 )``                                               |
++-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
 
 Methods
 -------

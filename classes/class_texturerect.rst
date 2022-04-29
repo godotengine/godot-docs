@@ -18,7 +18,7 @@ Description
 
 Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
-**Note:** You should enable :ref:`flip_v<class_TextureRect_property_flip_v>` when using a TextureRect to display a :ref:`ViewportTexture<class_ViewportTexture>`. Alternatively, you can enable :ref:`Viewport.render_target_v_flip<class_Viewport_property_render_target_v_flip>` on the Viewport. Otherwise, the image will appear upside down.
+\ **Note:** You should enable :ref:`flip_v<class_TextureRect_property_flip_v>` when using a TextureRect to display a :ref:`ViewportTexture<class_ViewportTexture>`. Alternatively, you can enable :ref:`Viewport.render_target_v_flip<class_Viewport_property_render_target_v_flip>` on the Viewport. Otherwise, the image will appear upside down.
 
 Tutorials
 ---------
@@ -28,19 +28,19 @@ Tutorials
 Properties
 ----------
 
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``                 |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | ``1`` *(parent override)* |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``                     |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
-| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |                           |
-+--------------------------------------------------+--------------------------------------------------------------+---------------------------+
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             | ``false``                                                             |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``                                                             |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``                                                             |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``                                                                 |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |                                                                       |
++--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enumerations
 ------------

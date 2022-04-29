@@ -140,9 +140,9 @@ enum **DopplerTracking**:
 
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ simulation (default).
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
 
 Property Descriptions
 ---------------------
@@ -193,7 +193,7 @@ If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using thi
 
 If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ for objects changed in particular ``_process`` methods. The Doppler effect is only simulated for :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` nodes that have :ref:`AudioStreamPlayer3D.doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>` set to a value other than :ref:`AudioStreamPlayer3D.DOPPLER_TRACKING_DISABLED<class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_DISABLED>`.
 
-**Note:** To toggle the Doppler effect preview in the editor, use the Perspective menu in the top-left corner of the 3D viewport and toggle **Enable Doppler**.
+\ **Note:** To toggle the Doppler effect preview in the editor, use the Perspective menu in the top-left corner of the 3D viewport and toggle **Enable Doppler**.
 
 ----
 
@@ -345,7 +345,7 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_const
 | *Getter*  | get_size()      |
 +-----------+-----------------+
 
-The camera's size measured as 1/2 the width or height. Only applicable in orthogonal mode. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
+The camera's size measured as 1/2 the width or height. Only applicable in orthogonal and frustum modes. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
 
 ----
 
@@ -412,7 +412,7 @@ Returns the camera's frustum planes in world space units as an array of :ref:`Pl
 
 Returns ``true`` if the given position is behind the camera.
 
-**Note:** A position which returns ``false`` may still be outside the camera's field of view.
+\ **Note:** A position which returns ``false`` may still be outside the camera's field of view.
 
 ----
 
@@ -494,7 +494,7 @@ Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in world space.
 
-**Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
+\ **Note:** When using this to position GUI elements over a 3D viewport, use :ref:`is_position_behind<class_Camera_method_is_position_behind>` to prevent them from appearing if the 3D point is behind the camera:
 
 ::
 

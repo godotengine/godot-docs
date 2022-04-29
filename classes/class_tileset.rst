@@ -23,7 +23,7 @@ Tiles are referenced by a unique integer ID.
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/using_tilemaps`
+- :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
 
 - `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
 
@@ -278,7 +278,7 @@ Method Descriptions
 
 Determines when the auto-tiler should consider two different auto-tile IDs to be bound together.
 
-**Note:** ``neighbor_id`` will be ``-1`` (:ref:`TileMap.INVALID_CELL<class_TileMap_constant_INVALID_CELL>`) when checking a tile against an empty neighbor tile.
+\ **Note:** ``neighbor_id`` will be ``-1`` (:ref:`TileMap.INVALID_CELL<class_TileMap_constant_INVALID_CELL>`) when checking a tile against an empty neighbor tile.
 
 ----
 
@@ -626,7 +626,7 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a tile's shape.
 
 Returns an array of dictionaries describing the tile's shapes.
 
-**Dictionary structure in the array returned by this method:**
+\ **Dictionary structure in the array returned by this method:**\ 
 
 ::
 
@@ -694,7 +694,7 @@ Sets the tile's material.
 
 Sets the tile's modulation color.
 
-**Note:** Modulation is performed by setting the tile's vertex color. To access this in a shader, use ``COLOR`` rather than ``MODULATE`` (which instead accesses the :ref:`TileMap<class_TileMap>`'s :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>` property).
+\ **Note:** Modulation is performed by setting the tile's vertex color. To access this in a shader, use ``COLOR`` rather than ``MODULATE`` (which instead accesses the :ref:`TileMap<class_TileMap>`'s :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>` property).
 
 ----
 
@@ -728,7 +728,7 @@ Sets an offset for the tile's navigation polygon.
 
 Sets the tile's normal map texture.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

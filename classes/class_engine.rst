@@ -94,9 +94,9 @@ If ``true``, the script is currently running inside the editor. This is useful f
     else:
         simulate_physics()
 
-See `Running code in the editor <https://docs.godotengine.org/en/3.4/tutorials/misc/running_code_in_the_editor.html>`__ in the documentation for more information.
+See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>` in the documentation for more information.
 
-**Note:** To detect whether the script is run from an editor *build* (e.g. when pressing ``F5``), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` will evaluate to ``true`` both when the code is running in the editor and when running the project from the editor, but it will evaluate to ``false`` when the code is run from an exported project.
+\ **Note:** To detect whether the script is run from an editor *build* (e.g. when pressing ``F5``), use :ref:`OS.has_feature<class_OS_method_has_feature>` with the ``"editor"`` argument instead. ``OS.has_feature("editor")`` will evaluate to ``true`` both when the code is running in the editor and when running the project from the editor, but it will evaluate to ``false`` when the code is run from an exported project.
 
 ----
 
@@ -114,7 +114,7 @@ See `Running code in the editor <https://docs.godotengine.org/en/3.4/tutorials/m
 
 The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`target_fps<class_Engine_property_target_fps>` and :ref:`ProjectSettings.physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>`.
 
-**Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
+\ **Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`iterations_per_second<class_Engine_property_iterations_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
 
 ----
 
@@ -132,7 +132,7 @@ The number of fixed iterations per second. This controls how often physics simul
 
 Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of the in-game clock and real clock but smooth out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
-**Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>` to ``0``.
+\ **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>` to ``0``.
 
 ----
 
@@ -150,9 +150,9 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 If ``false``, stops printing error and warning messages to the console and editor Output log. This can be used to hide error and warning messages during unit test suite runs. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>` project setting.
 
-**Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
+\ **Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
 
-**Note:** This property does not impact the editor's Errors tab when running a project from the editor.
+\ **Note:** This property does not impact the editor's Errors tab when running a project from the editor.
 
 ----
 
@@ -195,13 +195,13 @@ Method Descriptions
 
 Returns engine author information in a Dictionary.
 
-``lead_developers``    - Array of Strings, lead developer names
+\ ``lead_developers``    - Array of Strings, lead developer names
 
-``founders``           - Array of Strings, founder names
+\ ``founders``           - Array of Strings, founder names
 
-``project_managers``   - Array of Strings, project manager names
+\ ``project_managers``   - Array of Strings, project manager names
 
-``developers``         - Array of Strings, developer names
+\ ``developers``         - Array of Strings, developer names
 
 ----
 
@@ -211,9 +211,9 @@ Returns engine author information in a Dictionary.
 
 Returns an Array of copyright information Dictionaries.
 
-``name``    - String, component name
+\ ``name``    - String, component name
 
-``parts``   - Array of Dictionaries {``files``, ``copyright``, ``license``} describing subsections of the component
+\ ``parts``   - Array of Dictionaries {``files``, ``copyright``, ``license``} describing subsections of the component
 
 ----
 
@@ -249,7 +249,7 @@ Returns the frames per second of the running game.
 
 Returns the total number of frames passed since engine initialization which is advanced on each **idle frame**, regardless of whether the render loop is enabled. See also :ref:`get_frames_drawn<class_Engine_method_get_frames_drawn>` and :ref:`get_physics_frames<class_Engine_method_get_physics_frames>`.
 
-:ref:`get_idle_frames<class_Engine_method_get_idle_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
+\ :ref:`get_idle_frames<class_Engine_method_get_idle_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
 ::
 
@@ -289,7 +289,7 @@ Returns the main loop object (see :ref:`MainLoop<class_MainLoop>` and :ref:`Scen
 
 Returns the total number of frames passed since engine initialization which is advanced on each **physics frame**. See also :ref:`get_idle_frames<class_Engine_method_get_idle_frames>`.
 
-:ref:`get_physics_frames<class_Engine_method_get_physics_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
+\ :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
 ::
 
@@ -321,23 +321,23 @@ Returns a global singleton with given ``name``. Often used for plugins, e.g. ``G
 
 Returns the current engine version information in a Dictionary.
 
-``major``    - Holds the major version number as an int
+\ ``major``    - Holds the major version number as an int
 
-``minor``    - Holds the minor version number as an int
+\ ``minor``    - Holds the minor version number as an int
 
-``patch``    - Holds the patch version number as an int
+\ ``patch``    - Holds the patch version number as an int
 
-``hex``      - Holds the full version number encoded as a hexadecimal int with one byte (2 places) per number (see example below)
+\ ``hex``      - Holds the full version number encoded as a hexadecimal int with one byte (2 places) per number (see example below)
 
-``status``   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
+\ ``status``   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
 
-``build``    - Holds the build name (e.g. "custom_build") as a String
+\ ``build``    - Holds the build name (e.g. "custom_build") as a String
 
-``hash``     - Holds the full Git commit hash as a String
+\ ``hash``     - Holds the full Git commit hash as a String
 
-``year``     - Holds the year the version was released in as an int
+\ ``year``     - Holds the year the version was released in as an int
 
-``string``   - ``major`` + ``minor`` + ``patch`` + ``status`` + ``build`` in a single String
+\ ``string``   - ``major`` + ``minor`` + ``patch`` + ``status`` + ``build`` in a single String
 
 The ``hex`` value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. **Note:** It's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:
 

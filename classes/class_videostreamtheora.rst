@@ -18,7 +18,7 @@ Description
 
 :ref:`VideoStream<class_VideoStream>` resource handling the `Ogg Theora <https://www.theora.org/>`__ video format with ``.ogv`` extension. The Theora codec is less efficient than :ref:`VideoStreamWebm<class_VideoStreamWebm>`'s VP8 and VP9, but it requires less CPU resources to decode. The Theora codec is decoded on the CPU.
 
-**Note:** While Ogg Theora videos can also have an ``.ogg`` extension, you will have to rename the extension to ``.ogv`` to use those videos within Godot.
+\ **Note:** While Ogg Theora videos can also have an ``.ogg`` extension, you will have to rename the extension to ``.ogv`` to use those videos within Godot.
 
 Methods
 -------

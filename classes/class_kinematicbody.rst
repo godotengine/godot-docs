@@ -18,14 +18,14 @@ Description
 
 Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
 
-**Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+\ **Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-**Kinematic characters:** KinematicBody also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but don't require advanced physics.
+\ **Kinematic characters:** KinematicBody also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but don't require advanced physics.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/kinematic_character_2d`
+- :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
 - `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
 
@@ -38,23 +38,25 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`axis_lock_motion_x<class_KinematicBody_property_axis_lock_motion_x>`         | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`axis_lock_motion_y<class_KinematicBody_property_axis_lock_motion_y>`         | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`axis_lock_motion_z<class_KinematicBody_property_axis_lock_motion_z>`         | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>`   | ``0.001`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody_property_motion/sync_to_physics>` | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                       | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                       | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                       | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------+-----------+
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`axis_lock_motion_x<class_KinematicBody_property_axis_lock_motion_x>`                                           | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`axis_lock_motion_y<class_KinematicBody_property_axis_lock_motion_y>`                                           | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`axis_lock_motion_z<class_KinematicBody_property_axis_lock_motion_z>`                                           | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                                        | :ref:`collision/safe_margin<class_KinematicBody_property_collision/safe_margin>`                                     | ``0.001`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`motion/sync_to_physics<class_KinematicBody_property_motion/sync_to_physics>`                                   | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`move_lock_x<class_KinematicBody_property_move_lock_x>`                                                         | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`move_lock_y<class_KinematicBody_property_move_lock_y>`                                                         | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                          | :ref:`move_lock_z<class_KinematicBody_property_move_lock_z>`                                                         | ``false`` |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody_MovingPlatformApplyVelocityOnLeave>` | :ref:`moving_platform_apply_velocity_on_leave<class_KinematicBody_property_moving_platform_apply_velocity_on_leave>` | ``0``     |
++--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -90,6 +92,25 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`test_move<class_KinematicBody_method_test_move>` **(** :ref:`Transform<class_Transform>` from, :ref:`Vector3<class_Vector3>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                                                                                                                                                                                                       |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_KinematicBody_MovingPlatformApplyVelocityOnLeave:
+
+.. _class_KinematicBody_constant_PLATFORM_VEL_ON_LEAVE_ALWAYS:
+
+.. _class_KinematicBody_constant_PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY:
+
+.. _class_KinematicBody_constant_PLATFORM_VEL_ON_LEAVE_NEVER:
+
+enum **MovingPlatformApplyVelocityOnLeave**:
+
+- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity when you leave a moving platform.
+
+- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
+
+- **PLATFORM_VEL_ON_LEAVE_NEVER** = **2** --- Do nothing when leaving a platform.
 
 Property Descriptions
 ---------------------
@@ -226,6 +247,22 @@ Lock the body's Y axis movement. Deprecated alias for :ref:`axis_lock_motion_y<c
 
 Lock the body's Z axis movement. Deprecated alias for :ref:`axis_lock_motion_z<class_KinematicBody_property_axis_lock_motion_z>`.
 
+----
+
+.. _class_KinematicBody_property_moving_platform_apply_velocity_on_leave:
+
+- :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody_MovingPlatformApplyVelocityOnLeave>` **moving_platform_apply_velocity_on_leave**
+
++-----------+----------------------------------------------------+
+| *Default* | ``0``                                              |
++-----------+----------------------------------------------------+
+| *Setter*  | set_moving_platform_apply_velocity_on_leave(value) |
++-----------+----------------------------------------------------+
+| *Getter*  | get_moving_platform_apply_velocity_on_leave()      |
++-----------+----------------------------------------------------+
+
+Sets the behavior to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody_MovingPlatformApplyVelocityOnLeave>` constants for available behavior.
+
 Method Descriptions
 -------------------
 
@@ -327,15 +364,15 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
 
-``linear_velocity`` is the velocity vector (typically meters per second). Unlike in :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
+\ ``linear_velocity`` is the velocity vector (typically meters per second). Unlike in :ref:`move_and_collide<class_KinematicBody_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
 
-``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall.
+\ ``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall.
 
 If ``stop_on_slope`` is ``true``, body will not slide on slopes when you include gravity in ``linear_velocity`` and the body is standing still.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
-``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
+\ ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
 If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody<class_RigidBody>` nodes, but it won't also detect any collisions with them. If ``false``, it will interact with :ref:`RigidBody<class_RigidBody>` nodes like with :ref:`StaticBody<class_StaticBody>`.
 

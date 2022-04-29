@@ -20,7 +20,7 @@ Directory type. It is used to manage directories and their content (not restrict
 
 When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
 
-**Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
+\ **Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
 
 Here is an example on how to iterate through the files of a directory:
 
@@ -153,7 +153,13 @@ Returns the currently opened directory's drive index. See :ref:`get_drive<class_
 
 - :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
-On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not exist, the method returns an empty String.
+On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``).
+
+On macOS, returns the path to the mounted volume passed as an argument.
+
+On Linux, returns the path to the mounted volume or GTK 3 bookmark passed as an argument.
+
+On other platforms, or if the requested drive does not exist, the method returns an empty String.
 
 ----
 
@@ -161,7 +167,13 @@ On Windows, returns the name of the drive (partition) passed as an argument (e.g
 
 - :ref:`int<class_int>` **get_drive_count** **(** **)**
 
-On Windows, returns the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
+On Windows, returns the number of drives (partitions) mounted on the current filesystem.
+
+On macOS, returns the number of mounted volumes.
+
+On Linux, returns the number of mounted volumes and GTK 3 bookmarks.
+
+On other platforms, the method returns 0.
 
 ----
 
@@ -237,7 +249,9 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
 
-Deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
+Permanently deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
+
+If you don't want to delete the file/directory permanently, use :ref:`OS.move_to_trash<class_OS_method_move_to_trash>` instead.
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 

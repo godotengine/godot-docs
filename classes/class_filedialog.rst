@@ -21,27 +21,27 @@ FileDialog is a preset dialog used to choose files and directories in the filesy
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_property_current_dir>`                   | ``"res://"``                          |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_property_current_file>`                 | ``""``                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_property_current_path>`                 | ``"res://"``                          |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                       | dialog_hide_on_ok                                                           | ``false`` *(parent override)*         |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PoolStringArray(  )``               |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_property_mode>`                                 | ``4``                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                              |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
-| :ref:`String<class_String>`                   | window_title                                                                | ``"Save a File"`` *(parent override)* |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                                                                       |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_property_current_dir>`                   |                                                                                             |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_property_current_file>`                 |                                                                                             |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_property_current_path>`                 |                                                                                             |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | dialog_hide_on_ok                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`)    |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PoolStringArray(  )``                                                                     |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_property_mode>`                                 | ``4``                                                                                       |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                    |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | window_title                                                                | ``"Save a File"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -168,7 +168,7 @@ Property Descriptions
 
 The file system access scope. See enum ``Access`` constants.
 
-**Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
+\ **Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
 
 ----
 
@@ -176,13 +176,11 @@ The file system access scope. See enum ``Access`` constants.
 
 - :ref:`String<class_String>` **current_dir**
 
-+-----------+------------------------+
-| *Default* | ``"res://"``           |
-+-----------+------------------------+
-| *Setter*  | set_current_dir(value) |
-+-----------+------------------------+
-| *Getter*  | get_current_dir()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_current_dir(value) |
++----------+------------------------+
+| *Getter* | get_current_dir()      |
++----------+------------------------+
 
 The current working directory of the file dialog.
 
@@ -192,13 +190,11 @@ The current working directory of the file dialog.
 
 - :ref:`String<class_String>` **current_file**
 
-+-----------+-------------------------+
-| *Default* | ``""``                  |
-+-----------+-------------------------+
-| *Setter*  | set_current_file(value) |
-+-----------+-------------------------+
-| *Getter*  | get_current_file()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_current_file(value) |
++----------+-------------------------+
+| *Getter* | get_current_file()      |
++----------+-------------------------+
 
 The currently selected file of the file dialog.
 
@@ -208,13 +204,11 @@ The currently selected file of the file dialog.
 
 - :ref:`String<class_String>` **current_path**
 
-+-----------+-------------------------+
-| *Default* | ``"res://"``            |
-+-----------+-------------------------+
-| *Setter*  | set_current_path(value) |
-+-----------+-------------------------+
-| *Getter*  | get_current_path()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_current_path(value) |
++----------+-------------------------+
+| *Getter* | get_current_path()      |
++----------+-------------------------+
 
 The currently selected file path of the file dialog.
 
@@ -319,7 +313,7 @@ Clear currently selected items in the dialog.
 
 Returns the LineEdit for the selected file.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -329,7 +323,7 @@ Returns the LineEdit for the selected file.
 
 Returns the vertical box container of the dialog, custom controls can be added to it.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 

@@ -18,7 +18,7 @@ Description
 
 Displays a color picker widget. Useful for selecting a color from an RGB/RGBA colorspace.
 
-**Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a ``ColorPicker`` in a pop-up.
+\ **Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a ``ColorPicker`` in a pop-up.
 
 Tutorials
 ---------
@@ -172,7 +172,7 @@ If ``true``, shows an alpha channel slider (opacity).
 
 If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
-**Note:** Cannot be enabled if raw mode is on.
+\ **Note:** Cannot be enabled if raw mode is on.
 
 ----
 
@@ -222,7 +222,7 @@ If ``true``, saved color presets are visible.
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
-**Note:** Cannot be enabled if HSV mode is on.
+\ **Note:** Cannot be enabled if HSV mode is on.
 
 Method Descriptions
 -------------------
@@ -233,7 +233,7 @@ Method Descriptions
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
 
-**Note:** The presets list is only for *this* color picker.
+\ **Note:** The presets list is only for *this* color picker.
 
 ----
 

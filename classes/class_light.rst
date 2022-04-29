@@ -23,7 +23,7 @@ Light is the *abstract* base class for light nodes. As it can't be instanced, it
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/lights_and_shadows`
+- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -158,13 +158,13 @@ enum **BakeMode**:
 
 - **BAKE_DISABLED** = **0** --- Light is ignored when baking.
 
-**Note:** Hiding a light does *not* affect baking.
+\ **Note:** Hiding a light does *not* affect baking.
 
 - **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked (default).
 
 - **BAKE_ALL** = **2** --- Both direct and indirect light will be baked.
 
-**Note:** You should hide the light if you don't want it to appear twice (dynamic and baked).
+\ **Note:** You should hide the light if you don't want it to appear twice (dynamic and baked).
 
 Property Descriptions
 ---------------------
@@ -359,7 +359,7 @@ The color of shadows cast by this light.
 
 Attempts to reduce :ref:`shadow_bias<class_Light_property_shadow_bias>` gap by rendering screen-space contact shadows. This has a performance impact, especially at higher values.
 
-**Note:** Contact shadows can look broken, so leaving this property to ``0.0`` is recommended.
+\ **Note:** Contact shadows can look broken, so leaving this property to ``0.0`` is recommended.
 
 ----
 

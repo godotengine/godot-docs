@@ -98,7 +98,7 @@ If ``false``, Godot loads a separate copy of the library into memory for each sc
 
 If ``true``, the editor will temporarily unload the library whenever the user switches away from the editor window, allowing the user to recompile the library without restarting Godot.
 
-**Note:** If the library defines tool scripts that run inside the editor, ``reloadable`` must be ``false``. Otherwise, the editor will attempt to unload the tool scripts while they're in use and crash.
+\ **Note:** If the library defines tool scripts that run inside the editor, ``reloadable`` must be ``false``. Otherwise, the editor will attempt to unload the tool scripts while they're in use and crash.
 
 ----
 
@@ -116,7 +116,7 @@ If ``true``, the editor will temporarily unload the library whenever the user sw
 
 If ``true``, Godot loads the library at startup rather than the first time a script uses the library, calling ``{prefix}gdnative_singleton`` after initializing the library (where ``{prefix}`` is the value of :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>`). The library remains loaded as long as Godot is running.
 
-**Note:** A singleton library cannot be :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`.
+\ **Note:** A singleton library cannot be :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`.
 
 ----
 

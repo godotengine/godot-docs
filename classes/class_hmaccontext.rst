@@ -63,7 +63,7 @@ And in C# we can use the following.
         }
     }
 
-**Note:** Not available in HTML5 exports.
+\ **Note:** Not available in HTML5 exports.
 
 Methods
 -------

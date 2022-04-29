@@ -22,7 +22,7 @@ By default, audio is heard from the camera position. This can be changed by addi
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-**Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------
@@ -264,7 +264,7 @@ The bus on which this audio is playing.
 
 Decides in which step the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ should be calculated.
 
-**Note:** Only effective if the current :ref:`Camera<class_Camera>`'s :ref:`Camera.doppler_tracking<class_Camera_property_doppler_tracking>` property is set to a value other than :ref:`Camera.DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`.
+\ **Note:** Only effective if the current :ref:`Camera<class_Camera>`'s :ref:`Camera.doppler_tracking<class_Camera_property_doppler_tracking>` property is set to a value other than :ref:`Camera.DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`.
 
 ----
 

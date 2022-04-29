@@ -18,7 +18,7 @@ Description
 
 This node needs to be used as a child node of :ref:`VehicleBody<class_VehicleBody>` and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
 
-**Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
+\ **Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
 
 Tutorials
 ---------
@@ -61,13 +61,15 @@ Properties
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** |const|             |
-+---------------------------+-----------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** |const|   |
-+---------------------------+-----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** |const| |
-+---------------------------+-----------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Spatial<class_Spatial>` | :ref:`get_contact_body<class_VehicleWheel_method_get_contact_body>` **(** **)** |const| |
++-------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_rpm<class_VehicleWheel_method_get_rpm>` **(** **)** |const|                   |
++-------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_skidinfo<class_VehicleWheel_method_get_skidinfo>` **(** **)** |const|         |
++-------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_in_contact<class_VehicleWheel_method_is_in_contact>` **(** **)** |const|       |
++-------------------------------+-----------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -134,7 +136,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 
 Accelerates the wheel by applying an engine force. The wheel is only speed up if it is in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
-**Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
+\ **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 
 A negative value will result in the wheel reversing.
 
@@ -302,6 +304,16 @@ This value affects the roll of your vehicle. If set to 1.0 for all wheels, your 
 
 Method Descriptions
 -------------------
+
+.. _class_VehicleWheel_method_get_contact_body:
+
+- :ref:`Spatial<class_Spatial>` **get_contact_body** **(** **)** |const|
+
+Returns the contacting body node if valid in the tree, as :ref:`Spatial<class_Spatial>`. At the moment, :ref:`GridMap<class_GridMap>` is not supported so the node will be always of type :ref:`PhysicsBody<class_PhysicsBody>`.
+
+Returns ``null`` if the wheel is not in contact with a surface, or the contact body is not a :ref:`PhysicsBody<class_PhysicsBody>`.
+
+----
 
 .. _class_VehicleWheel_method_get_rpm:
 

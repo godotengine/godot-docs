@@ -18,7 +18,7 @@ Description
 
 SpinBox is a numerical input text field. It allows entering integers and floats.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -32,7 +32,9 @@ The above code will create a ``SpinBox``, disable context menu on it and set the
 
 See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
 
-**Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+\ **Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+
+\ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.
 
 Properties
 ----------
@@ -145,7 +147,7 @@ Applies the current value of this ``SpinBox``.
 
 Returns the :ref:`LineEdit<class_LineEdit>` instance from this ``SpinBox``. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 Theme Property Descriptions
 ---------------------------

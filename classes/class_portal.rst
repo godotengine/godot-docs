@@ -83,7 +83,7 @@ The points defining the shape of the ``Portal`` polygon (which should be convex)
 
 These are defined in 2D, with ``0,0`` being the origin of the ``Portal`` node's :ref:`Spatial.global_transform<class_Spatial_property_global_transform>`.
 
-**Note:** These raw points are sanitized for winding order internally.
+\ **Note:** These raw points are sanitized for winding order internally.
 
 ----
 

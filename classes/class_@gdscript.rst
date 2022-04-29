@@ -58,6 +58,8 @@ Methods
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`dectime<class_@GDScript_method_dectime>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step **)**                                                                           |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`deep_equal<class_@GDScript_method_deep_equal>` **(** :ref:`Variant<class_Variant>` a, :ref:`Variant<class_Variant>` b **)**                                                                                                      |
++-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                 | :ref:`deg2rad<class_@GDScript_method_deg2rad>` **(** :ref:`float<class_float>` deg **)**                                                                                                                                               |
 +-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`                               | :ref:`dict2inst<class_@GDScript_method_dict2inst>` **(** :ref:`Dictionary<class_Dictionary>` dict **)**                                                                                                                                |
@@ -224,11 +226,11 @@ Constants
 
 - **INF** = **inf** --- Positive floating-point infinity. This is the result of floating-point division when the divisor is ``0.0``. For negative infinity, use ``-INF``. Dividing by ``-0.0`` will result in negative infinity if the numerator is positive, so dividing by ``0.0`` is not the same as dividing by ``-0.0`` (despite ``0.0 == -0.0`` returning ``true``).
 
-**Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
+\ **Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
 
 - **NAN** = **nan** --- "Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
-**Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
+\ **Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
 Method Descriptions
 -------------------
@@ -239,13 +241,13 @@ Method Descriptions
 
 Returns a color constructed from integer red, green, blue, and alpha channels. Each channel should have 8 bits of information ranging from 0 to 255.
 
-``r8`` red channel
+\ ``r8`` red channel
 
-``g8`` green channel
+\ ``g8`` green channel
 
-``b8`` blue channel
+\ ``b8`` blue channel
 
-``a8`` alpha channel
+\ ``a8`` alpha channel
 
 ::
 
@@ -311,7 +313,7 @@ Returns the arc sine of ``s`` in radians. Use to get the angle of sine ``s``. ``
 
 Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of :ref:`push_error<class_@GDScript_method_push_error>` for reporting errors to project developers or add-on users.
 
-**Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
+\ **Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
 
 The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
 
@@ -360,7 +362,7 @@ Important note: The Y coordinate comes first, by convention.
 
 Decodes a byte array back to a value. When ``allow_objects`` is ``true`` decoding objects is allowed.
 
-**WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
+\ **WARNING:** Deserialized object can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats (remote code execution).
 
 ----
 
@@ -489,6 +491,24 @@ Returns the result of ``value`` decreased by ``step`` \* ``amount``.
 
 ----
 
+.. _class_@GDScript_method_deep_equal:
+
+- :ref:`bool<class_bool>` **deep_equal** **(** :ref:`Variant<class_Variant>` a, :ref:`Variant<class_Variant>` b **)**
+
+Compares two values by checking their actual contents, recursing into any `Array` or `Dictionary` up to its deepest level.
+
+This compares to ``==`` in a number of ways:
+
+- For ``null``, ``int``, ``float``, ``String``, ``Object`` and ``RID`` both ``deep_equal`` and ``==`` work the same.
+
+- For ``Dictionary``, ``==`` considers equality if, and only if, both variables point to the very same ``Dictionary``, with no recursion or awareness of the contents at all.
+
+- For ``Array``, ``==`` considers equality if, and only if, each item in the first ``Array`` is equal to its counterpart in the second ``Array``, as told by ``==`` itself. That implies that ``==`` recurses into ``Array``, but not into ``Dictionary``.
+
+In short, whenever a ``Dictionary`` is potentially involved, if you want a true content-aware comparison, you have to use ``deep_equal``.
+
+----
+
 .. _class_@GDScript_method_deg2rad:
 
 - :ref:`float<class_float>` **deg2rad** **(** :ref:`float<class_float>` deg **)**
@@ -525,7 +545,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
     - 1.0: Linear
     - Greater than 1.0 (exclusive): Ease in
 
-`ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/ease_cheatsheet.png>`__
+\ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/ease_cheatsheet.png>`__\ 
 
 See also :ref:`smoothstep<class_@GDScript_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
@@ -537,7 +557,7 @@ See also :ref:`smoothstep<class_@GDScript_method_smoothstep>`. If you need to pe
 
 The natural exponential function. It raises the mathematical constant **e** to the power of ``s`` and returns it.
 
-**e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
+\ **e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
 For exponents to other bases use the method :ref:`pow<class_@GDScript_method_pow>`.
 
@@ -561,7 +581,7 @@ Rounds ``s`` downward (towards negative infinity), returning the largest whole n
 
 See also :ref:`ceil<class_@GDScript_method_ceil>`, :ref:`round<class_@GDScript_method_round>`, :ref:`stepify<class_@GDScript_method_stepify>`, and :ref:`int<class_int>`.
 
-**Note:** This method returns a float. If you need an integer and ``s`` is a non-negative number, you can use ``int(s)`` directly.
+\ **Note:** This method returns a float. If you need an integer and ``s`` is a non-negative number, you can use ``int(s)`` directly.
 
 ----
 
@@ -768,7 +788,7 @@ This method is faster than using :ref:`is_equal_approx<class_@GDScript_method_is
 
 Returns length of Variant ``var``. Length is the character count of String, element count of Array, size of Dictionary, etc.
 
-**Note:** Generates a fatal error if Variant can not provide a length.
+\ **Note:** Generates a fatal error if Variant can not provide a length.
 
 ::
 
@@ -837,14 +857,14 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 Loads a resource from the filesystem located at ``path``. The resource is loaded on the method call (unless it's referenced already elsewhere, e.g. in another script or in the scene), which might cause slight delay, especially when loading scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
 
-**Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
     # Load a scene called main located in the root of the project directory and cache it in a variable.
     var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
-**Important:** The path must be absolute, a local path will just return ``null``.
+\ **Important:** The path must be absolute, a local path will just return ``null``.
 
 This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 
@@ -856,13 +876,13 @@ This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceL
 
 Natural logarithm. The amount of time needed to reach a certain level of continuous growth.
 
-**Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
+\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
 
 ::
 
     log(10) # Returns 2.302585
 
-**Note:** The logarithm of ``0`` returns ``-inf``, while negative values return ``-nan``.
+\ **Note:** The logarithm of ``0`` returns ``-inf``, while negative values return ``-nan``.
 
 ----
 
@@ -925,7 +945,7 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(0) # Returns 0 (this may not be what you expect)
     nearest_po2(-1) # Returns 0 (this may not be what you expect)
 
-**WARNING:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for non-positive values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **WARNING:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for non-positive values of ``value`` (in reality, 1 is the smallest integer power of 2).
 
 ----
 
@@ -951,9 +971,9 @@ This is the inverse of :ref:`char<class_@GDScript_method_char>`.
 
 Parse JSON text to a Variant. (Use :ref:`typeof<class_@GDScript_method_typeof>` to check if the Variant's type is what you expect.)
 
-**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
+\ **Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
-**Note:** JSON objects do not preserve key order like Godot dictionaries, thus, you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
+\ **Note:** JSON objects do not preserve key order like Godot dictionaries, thus, you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
 
 ::
 
@@ -1018,7 +1038,7 @@ Returns the result of ``base`` raised to the power of ``exp``.
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. The resource is loaded during script parsing, i.e. is loaded with the script and :ref:`preload<class_@GDScript_method_preload>` effectively acts as a reference to that resource. Note that the method requires a constant path. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
-**Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
@@ -1038,7 +1058,7 @@ Converts one or more arguments of any type to string in the best way possible an
     a = [1, 2, 3]
     print("a", "=", a) # Prints a=[1, 2, 3]
 
-**Note:** Consider using :ref:`push_error<class_@GDScript_method_push_error>` and :ref:`push_warning<class_@GDScript_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GDScript_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+\ **Note:** Consider using :ref:`push_error<class_@GDScript_method_push_error>` and :ref:`push_warning<class_@GDScript_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GDScript_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
 ----
 
@@ -1088,7 +1108,7 @@ Prints one or more arguments to strings in the best way possible to console. No 
     printraw("B")
     # Prints AB
 
-**Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GDScript_method_print>`.
+\ **Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GDScript_method_print>`.
 
 ----
 
@@ -1126,7 +1146,7 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
     push_error("test error") # Prints "test error" to debugger and terminal as error call
 
-**Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
+\ **Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
 
 ----
 
@@ -1355,7 +1375,7 @@ This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 -
 
 Compared to :ref:`ease<class_@GDScript_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep<class_@GDScript_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
-`Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/smoothstep_ease_comparison.png>`__
+\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/smoothstep_ease_comparison.png>`__
 
 ----
 
@@ -1369,7 +1389,7 @@ Returns the square root of ``s``, where ``s`` is a non-negative number.
 
     sqrt(9) # Returns 3
 
-**Note:** Negative values of ``s`` return NaN. If you need negative inputs, use ``System.Numerics.Complex`` in C#.
+\ **Note:** Negative values of ``s`` return NaN. If you need negative inputs, use ``System.Numerics.Complex`` in C#.
 
 ----
 
@@ -1470,7 +1490,7 @@ Converts a :ref:`Variant<class_Variant>` ``var`` to JSON text and return the res
     print(b) # {"a":1, "b":2}
     # Both numbers above are floats, even if they display without any decimal places.
 
-**Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a :ref:`Variant<class_Variant>` to JSON text will convert all numerical values to :ref:`float<class_float>` types.
+\ **Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a :ref:`Variant<class_Variant>` to JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
 See also :ref:`JSON<class_JSON>` for an alternative way to convert a :ref:`Variant<class_Variant>` to JSON text.
 
@@ -1585,9 +1605,9 @@ Usable for creating loop-alike behavior or infinite surfaces.
     # Infinite rotation (in radians)
     angle = wrapf(angle + 0.1, -PI, PI)
 
-**Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GDScript_method_fposmod>`, so prefer using that instead.
+\ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GDScript_method_fposmod>`, so prefer using that instead.
 
-``wrapf`` is more flexible than using the :ref:`fposmod<class_@GDScript_method_fposmod>` approach by giving the user control over the minimum value.
+\ ``wrapf`` is more flexible than using the :ref:`fposmod<class_@GDScript_method_fposmod>` approach by giving the user control over the minimum value.
 
 ----
 
@@ -1609,9 +1629,9 @@ Usable for creating loop-alike behavior or infinite surfaces.
     # result is -2
     var result = wrapi(-6, -5, -1)
 
-**Note:** If ``min`` is ``0``, this is equivalent to :ref:`posmod<class_@GDScript_method_posmod>`, so prefer using that instead.
+\ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`posmod<class_@GDScript_method_posmod>`, so prefer using that instead.
 
-``wrapi`` is more flexible than using the :ref:`posmod<class_@GDScript_method_posmod>` approach by giving the user control over the minimum value.
+\ ``wrapi`` is more flexible than using the :ref:`posmod<class_@GDScript_method_posmod>` approach by giving the user control over the minimum value.
 
 ----
 

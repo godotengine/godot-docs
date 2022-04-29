@@ -18,7 +18,7 @@ Description
 
 Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
 
-**Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+\ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
 
 Tutorials
 ---------
@@ -94,7 +94,7 @@ Property Descriptions
 
 If ``true``, the timer will automatically start when entering the scene tree.
 
-**Note:** This property is automatically set to ``false`` after the timer enters the scene tree and starts.
+\ **Note:** This property is automatically set to ``false`` after the timer enters the scene tree and starts.
 
 ----
 
@@ -154,7 +154,7 @@ Processing mode. See :ref:`TimerProcessMode<enum_Timer_TimerProcessMode>`.
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
-**Note:** You cannot set this value. To change the timer's remaining time, use :ref:`start<class_Timer_method_start>`.
+\ **Note:** You cannot set this value. To change the timer's remaining time, use :ref:`start<class_Timer_method_start>`.
 
 ----
 
@@ -172,7 +172,7 @@ The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
 The wait time in seconds.
 
-**Note:** Timers can only emit once per rendered frame at most (or once per physics frame if :ref:`process_mode<class_Timer_property_process_mode>` is :ref:`TIMER_PROCESS_PHYSICS<class_Timer_constant_TIMER_PROCESS_PHYSICS>`). This means very low wait times (lower than 0.05 seconds) will behave in significantly different ways depending on the rendered framerate. For very low wait times, it is recommended to use a process loop in a script instead of using a Timer node.
+\ **Note:** Timers can only emit once per rendered frame at most (or once per physics frame if :ref:`process_mode<class_Timer_property_process_mode>` is :ref:`TIMER_PROCESS_PHYSICS<class_Timer_constant_TIMER_PROCESS_PHYSICS>`). This means very low wait times (lower than 0.05 seconds) will behave in significantly different ways depending on the rendered framerate. For very low wait times, it is recommended to use a process loop in a script instead of using a Timer node.
 
 Method Descriptions
 -------------------
@@ -191,7 +191,7 @@ Returns ``true`` if the timer is stopped.
 
 Starts the timer. Sets ``wait_time`` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to ``wait_time``.
 
-**Note:** This method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
+\ **Note:** This method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
 ----
 

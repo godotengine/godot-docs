@@ -20,9 +20,9 @@ Control node for playing video streams using :ref:`VideoStream<class_VideoStream
 
 Supported video formats are `WebM <https://www.webmproject.org/>`__ (``.webm``, :ref:`VideoStreamWebm<class_VideoStreamWebm>`), `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`), and any format exposed via a GDNative plugin using :ref:`VideoStreamGDNative<class_VideoStreamGDNative>`.
 
-**Note:** Due to a bug, VideoPlayer does not support localization remapping yet.
+\ **Note:** Due to a bug, VideoPlayer does not support localization remapping yet.
 
-**Warning:** On HTML5, video playback *will* perform poorly due to missing architecture-specific assembly optimizations, especially for VP8/VP9.
+\ **Warning:** On HTML5, video playback *will* perform poorly due to missing architecture-specific assembly optimizations, especially for VP8/VP9.
 
 Properties
 ----------
@@ -198,7 +198,7 @@ The assigned video stream. See description for supported formats.
 
 The current position of the stream, in seconds.
 
-**Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDNative add-on.
+\ **Note:** Changing this value won't have any effect as seeking is not implemented yet, except in video formats implemented by a GDNative add-on.
 
 ----
 
@@ -255,7 +255,7 @@ Returns the current frame as a :ref:`Texture<class_Texture>`.
 
 Returns ``true`` if the video is playing.
 
-**Note:** The video is still considered playing if paused during playback.
+\ **Note:** The video is still considered playing if paused during playback.
 
 ----
 
@@ -273,7 +273,7 @@ Starts the video playback from the beginning. If the video is paused, this will 
 
 Stops the video playback and sets the stream position to 0.
 
-**Note:** Although the stream position will be set to 0, the first frame of the video stream won't become the current frame.
+\ **Note:** Although the stream position will be set to 0, the first frame of the video stream won't become the current frame.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -20,7 +20,7 @@ CPU-based 2D particle node used to create a variety of particle systems and effe
 
 See also :ref:`Particles2D<class_Particles2D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
-**Note:** Unlike :ref:`Particles2D<class_Particles2D>`, the visibility rect is generated on-the-fly and doesn't need to be configured by the user.
+\ **Note:** Unlike :ref:`Particles2D<class_Particles2D>`, the visibility rect is generated on-the-fly and doesn't need to be configured by the user.
 
 Tutorials
 ---------
@@ -58,6 +58,8 @@ Properties
 | :ref:`float<class_float>`                               | :ref:`anim_speed_random<class_CPUParticles2D_property_anim_speed_random>`             | ``0.0``                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Color<class_Color>`                               | :ref:`color<class_CPUParticles2D_property_color>`                                     | ``Color( 1, 1, 1, 1 )`` |
++---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Gradient<class_Gradient>`                         | :ref:`color_initial_ramp<class_CPUParticles2D_property_color_initial_ramp>`           |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Gradient<class_Gradient>`                         | :ref:`color_ramp<class_CPUParticles2D_property_color_ramp>`                           |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------------+
@@ -323,7 +325,7 @@ Property Descriptions
 
 The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_CPUParticles2D_property_lifetime>`).
 
-**Note:** Changing :ref:`amount<class_CPUParticles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_CPUParticles2D_property_amount>`.
+\ **Note:** Changing :ref:`amount<class_CPUParticles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_CPUParticles2D_property_amount>`.
 
 ----
 
@@ -524,6 +526,20 @@ Animation speed randomness ratio.
 +-----------+-------------------------+
 
 Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_texture>` is defined, it will be multiplied by this color.
+
+----
+
+.. _class_CPUParticles2D_property_color_initial_ramp:
+
+- :ref:`Gradient<class_Gradient>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture<class_GradientTexture>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
 ----
 
@@ -985,7 +1001,7 @@ If ``true``, particles use the parent node's coordinate space. If ``false``, the
 
 Normal map to be used for the :ref:`texture<class_CPUParticles2D_property_texture>` property.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 

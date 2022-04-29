@@ -20,7 +20,7 @@ The ``CameraServer`` keeps track of different cameras accessible in Godot. These
 
 It is notably used to provide AR modules with a video feed from the camera.
 
-**Note:** This class is currently only implemented on macOS and iOS. On other platforms, no :ref:`CameraFeed<class_CameraFeed>`\ s will be available.
+\ **Note:** This class is currently only implemented on macOS and iOS. On other platforms, no :ref:`CameraFeed<class_CameraFeed>`\ s will be available.
 
 Methods
 -------

@@ -21,7 +21,7 @@ The JNISingleton is implemented only in the Android export. It's used to call me
 Tutorials
 ---------
 
-- :doc:`../tutorials/platform/android/android_plugin`
+- :doc:`Creating Android plugins <../tutorials/platform/android/android_plugin>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

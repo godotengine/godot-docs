@@ -23,7 +23,7 @@ This is the base class for the resource importers implemented in core. To implem
 Tutorials
 ---------
 
-- :doc:`../tutorials/plugins/editor/import_plugins`
+- :doc:`Import plugins <../tutorials/plugins/editor/import_plugins>`
 
 Enumerations
 ------------

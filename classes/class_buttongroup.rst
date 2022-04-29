@@ -18,14 +18,14 @@ Description
 
 Group of :ref:`Button<class_Button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
 
-:ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
+\ :ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
 
 Properties
 ----------
 
-+-------------------------+-------------------------+------------------------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` *(parent override)* |
-+-------------------------+-------------------------+------------------------------+
++-------------------------+-------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++-------------------------+-------------------------+---------------------------------------------------------------------------------------+
 
 Methods
 -------

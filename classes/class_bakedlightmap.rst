@@ -18,9 +18,9 @@ Description
 
 Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_GIProbe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
 
-**Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``BakedLightmap`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`GIProbe<class_GIProbe>` instead.
+\ **Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``BakedLightmap`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`GIProbe<class_GIProbe>` instead.
 
-**Note:** Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.
+\ **Note:** Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.
 
 Tutorials
 ---------
@@ -187,7 +187,9 @@ Property Descriptions
 | *Getter*  | is_generate_atlas_enabled() |
 +-----------+-----------------------------+
 
-When enabled, the lightmapper will merge the textures for all meshes into a single large layered texture. Not supported in GLES2.
+If ``true``, the lightmapper will merge the textures for all meshes into one or several large layered textures. If ``false``, every mesh will get its own lightmap texture, which is less efficient.
+
+\ **Note:** Atlas lightmap rendering is only supported in GLES3, *not* GLES2. Non-atlas lightmap rendering is supported by both GLES3 and GLES2. If :ref:`ProjectSettings.rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` is ``true``, consider baking lightmaps with :ref:`atlas_generate<class_BakedLightmap_property_atlas_generate>` set to ``false`` so that the resulting lightmap is visible in both GLES3 and GLES2.
 
 ----
 
@@ -237,7 +239,7 @@ Raycasting bias used during baking to avoid floating point precision issues.
 
 The energy multiplier for each bounce. Higher values will make indirect lighting brighter. A value of ``1.0`` represents physically accurate behavior, but higher values can be used to make indirect lighting propagate more visibly when using a low number of bounces. This can be used to speed up bake times by lowering the number of :ref:`bounces<class_BakedLightmap_property_bounces>` then increasing :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`. Unlike :ref:`BakedLightmapData.energy<class_BakedLightmapData_property_energy>`, this property does not affect direct lighting emitted by light nodes, emissive materials and the environment.
 
-**Note:** :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` only has an effect if :ref:`bounces<class_BakedLightmap_property_bounces>` is set to a value greater than or equal to ``1``.
+\ **Note:** :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` only has an effect if :ref:`bounces<class_BakedLightmap_property_bounces>` is set to a value greater than or equal to ``1``.
 
 ----
 
@@ -481,7 +483,7 @@ The calculated light data.
 | *Getter*  | get_bake_quality()      |
 +-----------+-------------------------+
 
-Determines the amount of samples per texel used in indrect light baking. The amount of samples for each quality level can be configured in the project settings.
+Determines the amount of samples per texel used in indirect light baking. The amount of samples for each quality level can be configured in the project settings.
 
 ----
 
@@ -531,7 +533,7 @@ When enabled, a lightmap denoiser will be used to reduce the noise inherent to M
 
 If ``true``, stores the lightmap textures in a high dynamic range format (EXR). If ``false``, stores the lightmap texture in a low dynamic range PNG image. This can be set to ``false`` to reduce disk usage, but light values over 1.0 will be clamped and you may see banding caused by the reduced precision.
 
-**Note:** Setting :ref:`use_hdr<class_BakedLightmap_property_use_hdr>` to ``true`` will decrease lightmap banding even when using the GLES2 backend or if :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` is ``false``.
+\ **Note:** Setting :ref:`use_hdr<class_BakedLightmap_property_use_hdr>` to ``true`` will decrease lightmap banding even when using the GLES2 backend or if :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` is ``false``.
 
 Method Descriptions
 -------------------

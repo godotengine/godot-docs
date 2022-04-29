@@ -33,7 +33,7 @@ To use ``EditorInspectorPlugin``, register it using the :ref:`EditorPlugin.add_i
 Tutorials
 ---------
 
-- :doc:`../tutorials/plugins/editor/inspector_plugins`
+- :doc:`Inspector plugins <../tutorials/plugins/editor/inspector_plugins>`
 
 Methods
 -------

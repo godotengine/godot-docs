@@ -166,7 +166,7 @@ Returns the next available point ID with no point associated to it.
 
 Returns the ID of the closest point to ``to_position``, optionally taking disabled points into account. Returns ``-1`` if there are no points in the points pool.
 
-**Note:** If several points are the closest to ``to_position``, the one with the smallest ID will be returned, ensuring a deterministic result.
+\ **Note:** If several points are the closest to ``to_position``, the one with the smallest ID will be returned, ensuring a deterministic result.
 
 ----
 
@@ -256,7 +256,7 @@ Returns the number of points currently in the points pool.
 
 Returns an array with the points that are in the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
-**Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PoolVector2Array<class_PoolVector2Array>` and will print an error message.
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PoolVector2Array<class_PoolVector2Array>` and will print an error message.
 
 ----
 

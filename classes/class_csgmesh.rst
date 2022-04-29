@@ -18,12 +18,12 @@ Description
 
 This CSG node allows you to use any mesh resource as a CSG shape, provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more than two faces. See also :ref:`CSGPolygon<class_CSGPolygon>` for drawing 2D extruded polygons to be used as CSG nodes.
 
-**Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
 Tutorials
 ---------
 
-- `Prototyping levels with CSG <$DOCS_URL/tutorials/3d/csg_tools.html>`__
+- :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
 Properties
 ----------
@@ -63,7 +63,7 @@ The :ref:`Material<class_Material>` used in drawing the CSG shape.
 
 The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 
-**Note:** When using an :ref:`ArrayMesh<class_ArrayMesh>`, avoid meshes with vertex normals unless a flat shader is required. By default, CSGMesh will ignore the mesh's vertex normals and use a smooth shader calculated using the faces' normals. If a flat shader is required, ensure that all faces' vertex normals are parallel.
+\ **Note:** When using an :ref:`ArrayMesh<class_ArrayMesh>`, avoid meshes with vertex normals unless a flat shader is required. By default, CSGMesh will ignore the mesh's vertex normals and use a smooth shader calculated using the faces' normals. If a flat shader is required, ensure that all faces' vertex normals are parallel.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -13,6 +13,143 @@ VisualShaderNodeScalarUniform
 
 
 
+Properties
+----------
+
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`default_value<class_VisualShaderNodeScalarUniform_property_default_value>`                 | ``0.0``   |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                              | :ref:`default_value_enabled<class_VisualShaderNodeScalarUniform_property_default_value_enabled>` | ``false`` |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Hint<enum_VisualShaderNodeScalarUniform_Hint>` | :ref:`hint<class_VisualShaderNodeScalarUniform_property_hint>`                                   | ``0``     |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`max<class_VisualShaderNodeScalarUniform_property_max>`                                     | ``1.0``   |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`min<class_VisualShaderNodeScalarUniform_property_min>`                                     | ``0.0``   |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                            | :ref:`step<class_VisualShaderNodeScalarUniform_property_step>`                                   | ``0.1``   |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+
+Enumerations
+------------
+
+.. _enum_VisualShaderNodeScalarUniform_Hint:
+
+.. _class_VisualShaderNodeScalarUniform_constant_HINT_NONE:
+
+.. _class_VisualShaderNodeScalarUniform_constant_HINT_RANGE:
+
+.. _class_VisualShaderNodeScalarUniform_constant_HINT_RANGE_STEP:
+
+.. _class_VisualShaderNodeScalarUniform_constant_HINT_MAX:
+
+enum **Hint**:
+
+- **HINT_NONE** = **0** --- No hint used.
+
+- **HINT_RANGE** = **1** --- A range hint for scalar value, which limits possible input values between :ref:`min<class_VisualShaderNodeScalarUniform_property_min>` and :ref:`max<class_VisualShaderNodeScalarUniform_property_max>`. Translated to ``hint_range(min, max)`` in shader code.
+
+- **HINT_RANGE_STEP** = **2** --- A range hint for scalar value with step, which limits possible input values between :ref:`min<class_VisualShaderNodeScalarUniform_property_min>` and :ref:`max<class_VisualShaderNodeScalarUniform_property_max>`, with a step (increment) of :ref:`step<class_VisualShaderNodeScalarUniform_property_step>`). Translated to ``hint_range(min, max, step)`` in shader code.
+
+- **HINT_MAX** = **3** --- Represents the size of the :ref:`Hint<enum_VisualShaderNodeScalarUniform_Hint>` enum.
+
+Property Descriptions
+---------------------
+
+.. _class_VisualShaderNodeScalarUniform_property_default_value:
+
+- :ref:`float<class_float>` **default_value**
+
++-----------+--------------------------+
+| *Default* | ``0.0``                  |
++-----------+--------------------------+
+| *Setter*  | set_default_value(value) |
++-----------+--------------------------+
+| *Getter*  | get_default_value()      |
++-----------+--------------------------+
+
+A default value to be assigned within the shader.
+
+----
+
+.. _class_VisualShaderNodeScalarUniform_property_default_value_enabled:
+
+- :ref:`bool<class_bool>` **default_value_enabled**
+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_default_value_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_default_value_enabled()       |
++-----------+----------------------------------+
+
+Enables usage of the :ref:`default_value<class_VisualShaderNodeScalarUniform_property_default_value>`.
+
+----
+
+.. _class_VisualShaderNodeScalarUniform_property_hint:
+
+- :ref:`Hint<enum_VisualShaderNodeScalarUniform_Hint>` **hint**
+
++-----------+-----------------+
+| *Default* | ``0``           |
++-----------+-----------------+
+| *Setter*  | set_hint(value) |
++-----------+-----------------+
+| *Getter*  | get_hint()      |
++-----------+-----------------+
+
+A hint applied to the uniform, which controls the values it can take when set through the inspector.
+
+----
+
+.. _class_VisualShaderNodeScalarUniform_property_max:
+
+- :ref:`float<class_float>` **max**
+
++-----------+----------------+
+| *Default* | ``1.0``        |
++-----------+----------------+
+| *Setter*  | set_max(value) |
++-----------+----------------+
+| *Getter*  | get_max()      |
++-----------+----------------+
+
+Minimum value for range hints. Used if :ref:`hint<class_VisualShaderNodeScalarUniform_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeScalarUniform_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeScalarUniform_constant_HINT_RANGE_STEP>`.
+
+----
+
+.. _class_VisualShaderNodeScalarUniform_property_min:
+
+- :ref:`float<class_float>` **min**
+
++-----------+----------------+
+| *Default* | ``0.0``        |
++-----------+----------------+
+| *Setter*  | set_min(value) |
++-----------+----------------+
+| *Getter*  | get_min()      |
++-----------+----------------+
+
+Maximum value for range hints. Used if :ref:`hint<class_VisualShaderNodeScalarUniform_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeScalarUniform_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeScalarUniform_constant_HINT_RANGE_STEP>`.
+
+----
+
+.. _class_VisualShaderNodeScalarUniform_property_step:
+
+- :ref:`float<class_float>` **step**
+
++-----------+-----------------+
+| *Default* | ``0.1``         |
++-----------+-----------------+
+| *Setter*  | set_step(value) |
++-----------+-----------------+
+| *Getter*  | get_step()      |
++-----------+-----------------+
+
+Step (increment) value for the range hint with step. Used if :ref:`hint<class_VisualShaderNodeScalarUniform_property_hint>` is set to :ref:`HINT_RANGE_STEP<class_VisualShaderNodeScalarUniform_constant_HINT_RANGE_STEP>`.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

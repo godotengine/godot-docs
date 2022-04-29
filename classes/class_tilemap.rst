@@ -23,7 +23,7 @@ When doing physics queries against the tilemap, the cell coordinates are encoded
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/using_tilemaps`
+- :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
 
 - `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
 
@@ -385,7 +385,7 @@ Friction value for static body collisions (see ``collision_use_kinematic``).
 | *Getter*  | get_collision_layer()      |
 +-----------+----------------------------+
 
-The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The collision layer(s) for all colliders in the TileMap. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -401,7 +401,7 @@ The collision layer(s) for all colliders in the TileMap. See `Collision layers a
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <https://docs.godotengine.org/en/3.4/tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The collision mask(s) for all colliders in the TileMap. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -651,7 +651,7 @@ An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped, transposed, or given autotile coordinates. The autotile coordinate refers to the column and row of the subtile.
 
-**Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+\ **Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>`.
 
@@ -676,7 +676,7 @@ An index of ``-1`` clears the cell.
 
 Optionally, the tile can also be flipped, transposed, or given autotile coordinates. The autotile coordinate refers to the column and row of the subtile.
 
-**Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
+\ **Note:** Data such as navigation polygons and collision shapes are not immediately updated for performance reasons.
 
 If you need these to be immediately updated, you can call :ref:`update_dirty_quadrants<class_TileMap_method_update_dirty_quadrants>`.
 

@@ -18,15 +18,15 @@ Description
 
 Loops while a condition is ``true``. Execution continues out the ``exit`` Sequence port when the loop terminates.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``while(cond)``
+- Sequence: ``while(cond)``\ 
 
-- Data (bool): ``cond``
+- Data (bool): ``cond``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
-- Sequence: ``repeat``
+- Sequence: ``repeat``\ 
 
 - Sequence: ``exit``
 

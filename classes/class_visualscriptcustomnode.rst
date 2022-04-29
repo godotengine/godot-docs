@@ -252,11 +252,11 @@ Execute the custom node's logic, returning the index of the output sequence port
 
 The ``inputs`` array contains the values of the input ports.
 
-``outputs`` is an array whose indices should be set to the respective outputs.
+\ ``outputs`` is an array whose indices should be set to the respective outputs.
 
 The ``start_mode`` is usually :ref:`START_MODE_BEGIN_SEQUENCE<class_VisualScriptCustomNode_constant_START_MODE_BEGIN_SEQUENCE>`, unless you have used the ``STEP_*`` constants.
 
-``working_mem`` is an array which can be used to persist information between runs of the custom node. The size needs to be predefined using :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>`.
+\ ``working_mem`` is an array which can be used to persist information between runs of the custom node. The size needs to be predefined using :ref:`_get_working_memory_size<class_VisualScriptCustomNode_method__get_working_memory_size>`.
 
 When returning, you can mask the returned value with one of the ``STEP_*`` constants.
 

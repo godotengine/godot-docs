@@ -18,7 +18,7 @@ Description
 
 A line through several points in 2D space.
 
-**Note:** By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>` and :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`.
+\ **Note:** By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>` and :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`.
 
 Tutorials
 ---------
@@ -147,7 +147,7 @@ Property Descriptions
 
 If ``true``, the line's border will be anti-aliased.
 
-**Note:** Line2D is not accelerated by batching when being anti-aliased.
+\ **Note:** Line2D is not accelerated by batching when being anti-aliased.
 
 ----
 
@@ -257,7 +257,9 @@ The points that form the lines. The line is drawn between every point set in thi
 | *Getter*  | get_round_precision()      |
 +-----------+----------------------------+
 
-The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
+The smoothness of the rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update. This is only used if a cap or joint is set as round.
+
+\ **Note:** The default value is tuned for lines with the default :ref:`width<class_Line2D_property_width>`. For thin lines, this value should be reduced to a number between ``2`` and ``4`` to improve performance.
 
 ----
 
@@ -273,7 +275,7 @@ The smoothness of the rounded joints and caps. This is only used if a cap or joi
 | *Getter*  | get_sharp_limit()      |
 +-----------+------------------------+
 
-The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
+The direction difference in radians between vector points. This value is only used if :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
 
 ----
 

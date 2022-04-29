@@ -78,7 +78,7 @@ A Variant:
 
 - Can be used for dictionaries, arrays, parsers, etc.
 
-**Containers (Array and Dictionary):** Both are implemented using variants. A :ref:`Dictionary<class_Dictionary>` can match any datatype used as key to any other datatype. An :ref:`Array<class_Array>` just holds an array of Variants. Of course, a Variant can also hold a :ref:`Dictionary<class_Dictionary>` and an :ref:`Array<class_Array>` inside, making it even more flexible.
+\ **Containers (Array and Dictionary):** Both are implemented using variants. A :ref:`Dictionary<class_Dictionary>` can match any datatype used as key to any other datatype. An :ref:`Array<class_Array>` just holds an array of Variants. Of course, a Variant can also hold a :ref:`Dictionary<class_Dictionary>` and an :ref:`Array<class_Array>` inside, making it even more flexible.
 
 Modifications to a container will modify all references to it. A :ref:`Mutex<class_Mutex>` should be created to lock it if multi-threaded access is desired.
 

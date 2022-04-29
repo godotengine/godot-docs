@@ -79,7 +79,7 @@ Emitted when a connection with the server is established, ``protocol`` will cont
 
 Emitted when a WebSocket message is received.
 
-**Note:** This signal is *not* emitted when used as high-level multiplayer peer.
+\ **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
 ----
 
@@ -104,7 +104,7 @@ Property Descriptions
 
 If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the only one accepted when connecting to an SSL host. Any other certificate provided by the server will be regarded as invalid.
 
-**Note:** Specifying a custom ``trusted_ssl_certificate`` is not supported in HTML5 exports due to browsers restrictions.
+\ **Note:** Specifying a custom ``trusted_ssl_certificate`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 
@@ -120,7 +120,7 @@ If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the onl
 
 If ``true``, SSL certificate verification is enabled.
 
-**Note:** You must specify the certificates to be used in the Project Settings for it to work when exported.
+\ **Note:** You must specify the certificates to be used in the Project Settings for it to work when exported.
 
 Method Descriptions
 -------------------
@@ -137,9 +137,9 @@ If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_P
 
 You can optionally pass a list of ``custom_headers`` to be added to the handshake HTTP request.
 
-**Note:** To avoid mixed content warnings or errors in HTML5, you may have to use a ``url`` that starts with ``wss://`` (secure) instead of ``ws://``. When doing so, make sure to use the fully qualified domain name that matches the one defined in the server's SSL certificate. Do not connect directly via the IP address for ``wss://`` connections, as it won't match with the SSL certificate.
+\ **Note:** To avoid mixed content warnings or errors in HTML5, you may have to use a ``url`` that starts with ``wss://`` (secure) instead of ``ws://``. When doing so, make sure to use the fully qualified domain name that matches the one defined in the server's SSL certificate. Do not connect directly via the IP address for ``wss://`` connections, as it won't match with the SSL certificate.
 
-**Note:** Specifying ``custom_headers`` is not supported in HTML5 exports due to browsers restrictions.
+\ **Note:** Specifying ``custom_headers`` is not supported in HTML5 exports due to browsers restrictions.
 
 ----
 

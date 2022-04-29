@@ -9,14 +9,14 @@
 PoolVector3Array
 ================
 
-A pooled :ref:`Array<class_Array>` of :ref:`Vector3<class_Vector3>`.
+A pooled array of :ref:`Vector3<class_Vector3>`.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector3<class_Vector3>`. Optimized for memory usage, does not fragment the memory.
+An array specifically designed to hold :ref:`Vector3<class_Vector3>`. Optimized for memory usage, does not fragment the memory.
 
-**Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference.
 
 Methods
 -------
@@ -29,6 +29,8 @@ Methods
 | void                                            | :ref:`append_array<class_PoolVector3Array_method_append_array>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` array **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`empty<class_PoolVector3Array_method_empty>` **(** **)**                                                                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`fill<class_PoolVector3Array_method_fill>` **(** :ref:`Vector3<class_Vector3>` vector3 **)**                                 |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`insert<class_PoolVector3Array_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_Vector3>` vector3 **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -77,6 +79,14 @@ Appends a ``PoolVector3Array`` at the end of this array.
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+----
+
+.. _class_PoolVector3Array_method_fill:
+
+- void **fill** **(** :ref:`Vector3<class_Vector3>` vector3 **)**
+
+Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolVector3Array_method_resize>` to create an array with a given size and initialized elements.
 
 ----
 
@@ -132,7 +142,7 @@ Changes the :ref:`Vector3<class_Vector3>` at the given index.
 
 - :ref:`int<class_int>` **size** **(** **)**
 
-Returns the size of the array.
+Returns the number of elements in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

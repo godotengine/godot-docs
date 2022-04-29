@@ -34,7 +34,7 @@ Additionally, the attributes used before the first vertex is added determine the
 
 See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>` and :ref:`MeshDataTool<class_MeshDataTool>` for procedural geometry generation.
 
-**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
+\ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
 Tutorials
 ---------
@@ -109,7 +109,7 @@ Specifies an array of bones to use for the *next* vertex. ``bones`` must contain
 
 Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
-**Note:** The material must have :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
+\ **Note:** The material must have :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` enabled for the vertex color to be visible.
 
 ----
 
@@ -193,7 +193,7 @@ Specifies weight values to use for the *next* vertex. ``weights`` must contain 4
 
 Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current vertex array with specified :ref:`Transform<class_Transform>`.
 
-**Note:** Using :ref:`append_from<class_SurfaceTool_method_append_from>` on a :ref:`Thread<class_Thread>` is much slower as the GPU must communicate data back to the CPU, while also causing the main thread to stall (as OpenGL is not thread-safe). Consider requesting a copy of the mesh, converting it to an :ref:`ArrayMesh<class_ArrayMesh>` and adding vertices manually instead.
+\ **Note:** Using :ref:`append_from<class_SurfaceTool_method_append_from>` on a :ref:`Thread<class_Thread>` is much slower as the GPU must communicate data back to the CPU, while also causing the main thread to stall (as OpenGL is not thread-safe). Consider requesting a copy of the mesh, converting it to an :ref:`ArrayMesh<class_ArrayMesh>` and adding vertices manually instead.
 
 ----
 
@@ -261,7 +261,7 @@ Removes the index array by expanding the vertex array.
 
 Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
 
-**Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 ----
 

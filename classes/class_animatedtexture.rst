@@ -20,26 +20,26 @@ Description
 
 The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
-``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
+\ ``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
 
-**Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture<class_Texture>`.
+\ **Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture<class_Texture>`.
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |                           |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | flags                                                              | ``0`` *(parent override)* |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`                     | ``4.0``                   |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``                     |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`   | :ref:`oneshot<class_AnimatedTexture_property_oneshot>`             | ``false``                 |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false``                 |
-+---------------------------+--------------------------------------------------------------------+---------------------------+
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |                                                                |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`     | flags                                                              | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`                     | ``4.0``                                                        |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``                                                          |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`oneshot<class_AnimatedTexture_property_oneshot>`             | ``false``                                                      |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false``                                                      |
++---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------+
 
 Methods
 -------

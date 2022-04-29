@@ -22,7 +22,7 @@ This is the node that implements full 3D physics. This means that you do not con
 
 A RigidBody has 4 behavior :ref:`mode<class_RigidBody_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
 
-**Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>`, which allows you to directly access the physics state.
+\ **Note:** Don't change a RigidBody's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody_method__integrate_forces>`, which allows you to directly access the physics state.
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody_property_custom_integrator>`.
 
@@ -31,7 +31,7 @@ With Bullet physics (the default), the center of mass is the RigidBody3D center.
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
 - `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
 
@@ -126,7 +126,7 @@ Signals
 
 Emitted when a collision with another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` occurs. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -136,7 +136,7 @@ Emitted when a collision with another :ref:`PhysicsBody<class_PhysicsBody>` or :
 
 Emitted when the collision with another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` ends. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -146,15 +146,15 @@ Emitted when the collision with another :ref:`PhysicsBody<class_PhysicsBody>` or
 
 Emitted when one of this RigidBody's :ref:`Shape<class_Shape>`\ s collides with another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this RigidBody used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this RigidBody used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
-**Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`. Don't use multiple :ref:`CollisionShape<class_CollisionShape>`\ s when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` with Bullet physics if you need shape indices.
+\ **Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`. Don't use multiple :ref:`CollisionShape<class_CollisionShape>`\ s when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` with Bullet physics if you need shape indices.
 
 ----
 
@@ -164,15 +164,15 @@ Emitted when one of this RigidBody's :ref:`Shape<class_Shape>`\ s collides with 
 
 Emitted when the collision between one of this RigidBody's :ref:`Shape<class_Shape>`\ s and another :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape<class_Shape>`\ s.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject<class_CollisionObject>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape<class_Shape>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this RigidBody used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this RigidBody used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
-**Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`. Don't use multiple :ref:`CollisionShape<class_CollisionShape>`\ s when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` with Bullet physics if you need shape indices.
+\ **Note:** Bullet physics cannot identify the shape index when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>`. Don't use multiple :ref:`CollisionShape<class_CollisionShape>`\ s when using a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` with Bullet physics if you need shape indices.
 
 ----
 
@@ -182,7 +182,7 @@ Emitted when the collision between one of this RigidBody's :ref:`Shape<class_Sha
 
 Emitted when the physics engine changes the body's sleeping state.
 
-**Note:** Changing the value :ref:`sleeping<class_RigidBody_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
+\ **Note:** Changing the value :ref:`sleeping<class_RigidBody_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -370,7 +370,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 
 If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody_property_sleeping>`.
 
-**Note:** A RigidBody3D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody_property_sleeping>` property to ``true``.
+\ **Note:** A RigidBody3D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody_property_sleeping>` property to ``true``.
 
 ----
 
@@ -404,7 +404,7 @@ If ``true``, the RigidBody will emit signals when it collides with another Rigid
 
 The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true``.
 
-**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
+\ **Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end), and collisions between parallel faces will result in four contacts (one at each corner).
 
 ----
 
@@ -665,7 +665,7 @@ Returns ``true`` if the specified linear or rotational axis is locked.
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody_property_contacts_reported>` to be set high enough to detect all the collisions.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 ----
 

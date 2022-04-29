@@ -20,9 +20,9 @@ You can also create a color from standardized color names by using :ref:`@GDScri
 
 If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`.
 
-**Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
-`Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
+\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
 Tutorials
 ---------
@@ -79,6 +79,8 @@ Methods
 | :ref:`Color<class_Color>`   | :ref:`darkened<class_Color_method_darkened>` **(** :ref:`float<class_float>` amount **)**                                                                                       |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`from_hsv<class_Color_method_from_hsv>` **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` a=1.0 **)** |
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`get_luminance<class_Color_method_get_luminance>` **(** **)**                                                                                                              |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`   | :ref:`gray<class_Color_method_gray>` **(** **)**                                                                                                                                |
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -400,297 +402,297 @@ Constants
 
 .. _class_Color_constant_yellowgreen:
 
-- **aliceblue** = **Color( 0.94, 0.97, 1, 1 )** --- Alice blue color.
+- **aliceblue** = **Color( 0.941176, 0.972549, 1, 1 )** --- Alice blue color.
 
-- **antiquewhite** = **Color( 0.98, 0.92, 0.84, 1 )** --- Antique white color.
+- **antiquewhite** = **Color( 0.980392, 0.921569, 0.843137, 1 )** --- Antique white color.
 
 - **aqua** = **Color( 0, 1, 1, 1 )** --- Aqua color.
 
-- **aquamarine** = **Color( 0.5, 1, 0.83, 1 )** --- Aquamarine color.
+- **aquamarine** = **Color( 0.498039, 1, 0.831373, 1 )** --- Aquamarine color.
 
-- **azure** = **Color( 0.94, 1, 1, 1 )** --- Azure color.
+- **azure** = **Color( 0.941176, 1, 1, 1 )** --- Azure color.
 
-- **beige** = **Color( 0.96, 0.96, 0.86, 1 )** --- Beige color.
+- **beige** = **Color( 0.960784, 0.960784, 0.862745, 1 )** --- Beige color.
 
-- **bisque** = **Color( 1, 0.89, 0.77, 1 )** --- Bisque color.
+- **bisque** = **Color( 1, 0.894118, 0.768627, 1 )** --- Bisque color.
 
 - **black** = **Color( 0, 0, 0, 1 )** --- Black color.
 
-- **blanchedalmond** = **Color( 1, 0.92, 0.8, 1 )** --- Blanche almond color.
+- **blanchedalmond** = **Color( 1, 0.921569, 0.803922, 1 )** --- Blanche almond color.
 
 - **blue** = **Color( 0, 0, 1, 1 )** --- Blue color.
 
-- **blueviolet** = **Color( 0.54, 0.17, 0.89, 1 )** --- Blue violet color.
+- **blueviolet** = **Color( 0.541176, 0.168627, 0.886275, 1 )** --- Blue violet color.
 
-- **brown** = **Color( 0.65, 0.16, 0.16, 1 )** --- Brown color.
+- **brown** = **Color( 0.647059, 0.164706, 0.164706, 1 )** --- Brown color.
 
-- **burlywood** = **Color( 0.87, 0.72, 0.53, 1 )** --- Burly wood color.
+- **burlywood** = **Color( 0.870588, 0.721569, 0.529412, 1 )** --- Burly wood color.
 
-- **cadetblue** = **Color( 0.37, 0.62, 0.63, 1 )** --- Cadet blue color.
+- **cadetblue** = **Color( 0.372549, 0.619608, 0.627451, 1 )** --- Cadet blue color.
 
-- **chartreuse** = **Color( 0.5, 1, 0, 1 )** --- Chartreuse color.
+- **chartreuse** = **Color( 0.498039, 1, 0, 1 )** --- Chartreuse color.
 
-- **chocolate** = **Color( 0.82, 0.41, 0.12, 1 )** --- Chocolate color.
+- **chocolate** = **Color( 0.823529, 0.411765, 0.117647, 1 )** --- Chocolate color.
 
-- **coral** = **Color( 1, 0.5, 0.31, 1 )** --- Coral color.
+- **coral** = **Color( 1, 0.498039, 0.313726, 1 )** --- Coral color.
 
-- **cornflower** = **Color( 0.39, 0.58, 0.93, 1 )** --- Cornflower color.
+- **cornflower** = **Color( 0.392157, 0.584314, 0.929412, 1 )** --- Cornflower color.
 
-- **cornsilk** = **Color( 1, 0.97, 0.86, 1 )** --- Corn silk color.
+- **cornsilk** = **Color( 1, 0.972549, 0.862745, 1 )** --- Corn silk color.
 
-- **crimson** = **Color( 0.86, 0.08, 0.24, 1 )** --- Crimson color.
+- **crimson** = **Color( 0.862745, 0.0784314, 0.235294, 1 )** --- Crimson color.
 
 - **cyan** = **Color( 0, 1, 1, 1 )** --- Cyan color.
 
-- **darkblue** = **Color( 0, 0, 0.55, 1 )** --- Dark blue color.
+- **darkblue** = **Color( 0, 0, 0.545098, 1 )** --- Dark blue color.
 
-- **darkcyan** = **Color( 0, 0.55, 0.55, 1 )** --- Dark cyan color.
+- **darkcyan** = **Color( 0, 0.545098, 0.545098, 1 )** --- Dark cyan color.
 
-- **darkgoldenrod** = **Color( 0.72, 0.53, 0.04, 1 )** --- Dark goldenrod color.
+- **darkgoldenrod** = **Color( 0.721569, 0.52549, 0.0431373, 1 )** --- Dark goldenrod color.
 
-- **darkgray** = **Color( 0.66, 0.66, 0.66, 1 )** --- Dark gray color.
+- **darkgray** = **Color( 0.662745, 0.662745, 0.662745, 1 )** --- Dark gray color.
 
-- **darkgreen** = **Color( 0, 0.39, 0, 1 )** --- Dark green color.
+- **darkgreen** = **Color( 0, 0.392157, 0, 1 )** --- Dark green color.
 
-- **darkkhaki** = **Color( 0.74, 0.72, 0.42, 1 )** --- Dark khaki color.
+- **darkkhaki** = **Color( 0.741176, 0.717647, 0.419608, 1 )** --- Dark khaki color.
 
-- **darkmagenta** = **Color( 0.55, 0, 0.55, 1 )** --- Dark magenta color.
+- **darkmagenta** = **Color( 0.545098, 0, 0.545098, 1 )** --- Dark magenta color.
 
-- **darkolivegreen** = **Color( 0.33, 0.42, 0.18, 1 )** --- Dark olive green color.
+- **darkolivegreen** = **Color( 0.333333, 0.419608, 0.184314, 1 )** --- Dark olive green color.
 
-- **darkorange** = **Color( 1, 0.55, 0, 1 )** --- Dark orange color.
+- **darkorange** = **Color( 1, 0.54902, 0, 1 )** --- Dark orange color.
 
-- **darkorchid** = **Color( 0.6, 0.2, 0.8, 1 )** --- Dark orchid color.
+- **darkorchid** = **Color( 0.6, 0.196078, 0.8, 1 )** --- Dark orchid color.
 
-- **darkred** = **Color( 0.55, 0, 0, 1 )** --- Dark red color.
+- **darkred** = **Color( 0.545098, 0, 0, 1 )** --- Dark red color.
 
-- **darksalmon** = **Color( 0.91, 0.59, 0.48, 1 )** --- Dark salmon color.
+- **darksalmon** = **Color( 0.913725, 0.588235, 0.478431, 1 )** --- Dark salmon color.
 
-- **darkseagreen** = **Color( 0.56, 0.74, 0.56, 1 )** --- Dark sea green color.
+- **darkseagreen** = **Color( 0.560784, 0.737255, 0.560784, 1 )** --- Dark sea green color.
 
-- **darkslateblue** = **Color( 0.28, 0.24, 0.55, 1 )** --- Dark slate blue color.
+- **darkslateblue** = **Color( 0.282353, 0.239216, 0.545098, 1 )** --- Dark slate blue color.
 
-- **darkslategray** = **Color( 0.18, 0.31, 0.31, 1 )** --- Dark slate gray color.
+- **darkslategray** = **Color( 0.184314, 0.309804, 0.309804, 1 )** --- Dark slate gray color.
 
-- **darkturquoise** = **Color( 0, 0.81, 0.82, 1 )** --- Dark turquoise color.
+- **darkturquoise** = **Color( 0, 0.807843, 0.819608, 1 )** --- Dark turquoise color.
 
-- **darkviolet** = **Color( 0.58, 0, 0.83, 1 )** --- Dark violet color.
+- **darkviolet** = **Color( 0.580392, 0, 0.827451, 1 )** --- Dark violet color.
 
-- **deeppink** = **Color( 1, 0.08, 0.58, 1 )** --- Deep pink color.
+- **deeppink** = **Color( 1, 0.0784314, 0.576471, 1 )** --- Deep pink color.
 
-- **deepskyblue** = **Color( 0, 0.75, 1, 1 )** --- Deep sky blue color.
+- **deepskyblue** = **Color( 0, 0.74902, 1, 1 )** --- Deep sky blue color.
 
-- **dimgray** = **Color( 0.41, 0.41, 0.41, 1 )** --- Dim gray color.
+- **dimgray** = **Color( 0.411765, 0.411765, 0.411765, 1 )** --- Dim gray color.
 
-- **dodgerblue** = **Color( 0.12, 0.56, 1, 1 )** --- Dodger blue color.
+- **dodgerblue** = **Color( 0.117647, 0.564706, 1, 1 )** --- Dodger blue color.
 
-- **firebrick** = **Color( 0.7, 0.13, 0.13, 1 )** --- Firebrick color.
+- **firebrick** = **Color( 0.698039, 0.133333, 0.133333, 1 )** --- Firebrick color.
 
-- **floralwhite** = **Color( 1, 0.98, 0.94, 1 )** --- Floral white color.
+- **floralwhite** = **Color( 1, 0.980392, 0.941176, 1 )** --- Floral white color.
 
-- **forestgreen** = **Color( 0.13, 0.55, 0.13, 1 )** --- Forest green color.
+- **forestgreen** = **Color( 0.133333, 0.545098, 0.133333, 1 )** --- Forest green color.
 
 - **fuchsia** = **Color( 1, 0, 1, 1 )** --- Fuchsia color.
 
-- **gainsboro** = **Color( 0.86, 0.86, 0.86, 1 )** --- Gainsboro color.
+- **gainsboro** = **Color( 0.862745, 0.862745, 0.862745, 1 )** --- Gainsboro color.
 
-- **ghostwhite** = **Color( 0.97, 0.97, 1, 1 )** --- Ghost white color.
+- **ghostwhite** = **Color( 0.972549, 0.972549, 1, 1 )** --- Ghost white color.
 
-- **gold** = **Color( 1, 0.84, 0, 1 )** --- Gold color.
+- **gold** = **Color( 1, 0.843137, 0, 1 )** --- Gold color.
 
-- **goldenrod** = **Color( 0.85, 0.65, 0.13, 1 )** --- Goldenrod color.
+- **goldenrod** = **Color( 0.854902, 0.647059, 0.12549, 1 )** --- Goldenrod color.
 
-- **gray** = **Color( 0.75, 0.75, 0.75, 1 )** --- Gray color.
+- **gray** = **Color( 0.745098, 0.745098, 0.745098, 1 )** --- Gray color.
 
 - **green** = **Color( 0, 1, 0, 1 )** --- Green color.
 
-- **greenyellow** = **Color( 0.68, 1, 0.18, 1 )** --- Green yellow color.
+- **greenyellow** = **Color( 0.678431, 1, 0.184314, 1 )** --- Green yellow color.
 
-- **honeydew** = **Color( 0.94, 1, 0.94, 1 )** --- Honeydew color.
+- **honeydew** = **Color( 0.941176, 1, 0.941176, 1 )** --- Honeydew color.
 
-- **hotpink** = **Color( 1, 0.41, 0.71, 1 )** --- Hot pink color.
+- **hotpink** = **Color( 1, 0.411765, 0.705882, 1 )** --- Hot pink color.
 
-- **indianred** = **Color( 0.8, 0.36, 0.36, 1 )** --- Indian red color.
+- **indianred** = **Color( 0.803922, 0.360784, 0.360784, 1 )** --- Indian red color.
 
-- **indigo** = **Color( 0.29, 0, 0.51, 1 )** --- Indigo color.
+- **indigo** = **Color( 0.294118, 0, 0.509804, 1 )** --- Indigo color.
 
-- **ivory** = **Color( 1, 1, 0.94, 1 )** --- Ivory color.
+- **ivory** = **Color( 1, 1, 0.941176, 1 )** --- Ivory color.
 
-- **khaki** = **Color( 0.94, 0.9, 0.55, 1 )** --- Khaki color.
+- **khaki** = **Color( 0.941176, 0.901961, 0.54902, 1 )** --- Khaki color.
 
-- **lavender** = **Color( 0.9, 0.9, 0.98, 1 )** --- Lavender color.
+- **lavender** = **Color( 0.901961, 0.901961, 0.980392, 1 )** --- Lavender color.
 
-- **lavenderblush** = **Color( 1, 0.94, 0.96, 1 )** --- Lavender blush color.
+- **lavenderblush** = **Color( 1, 0.941176, 0.960784, 1 )** --- Lavender blush color.
 
-- **lawngreen** = **Color( 0.49, 0.99, 0, 1 )** --- Lawn green color.
+- **lawngreen** = **Color( 0.486275, 0.988235, 0, 1 )** --- Lawn green color.
 
-- **lemonchiffon** = **Color( 1, 0.98, 0.8, 1 )** --- Lemon chiffon color.
+- **lemonchiffon** = **Color( 1, 0.980392, 0.803922, 1 )** --- Lemon chiffon color.
 
-- **lightblue** = **Color( 0.68, 0.85, 0.9, 1 )** --- Light blue color.
+- **lightblue** = **Color( 0.678431, 0.847059, 0.901961, 1 )** --- Light blue color.
 
-- **lightcoral** = **Color( 0.94, 0.5, 0.5, 1 )** --- Light coral color.
+- **lightcoral** = **Color( 0.941176, 0.501961, 0.501961, 1 )** --- Light coral color.
 
-- **lightcyan** = **Color( 0.88, 1, 1, 1 )** --- Light cyan color.
+- **lightcyan** = **Color( 0.878431, 1, 1, 1 )** --- Light cyan color.
 
-- **lightgoldenrod** = **Color( 0.98, 0.98, 0.82, 1 )** --- Light goldenrod color.
+- **lightgoldenrod** = **Color( 0.980392, 0.980392, 0.823529, 1 )** --- Light goldenrod color.
 
-- **lightgray** = **Color( 0.83, 0.83, 0.83, 1 )** --- Light gray color.
+- **lightgray** = **Color( 0.827451, 0.827451, 0.827451, 1 )** --- Light gray color.
 
-- **lightgreen** = **Color( 0.56, 0.93, 0.56, 1 )** --- Light green color.
+- **lightgreen** = **Color( 0.564706, 0.933333, 0.564706, 1 )** --- Light green color.
 
-- **lightpink** = **Color( 1, 0.71, 0.76, 1 )** --- Light pink color.
+- **lightpink** = **Color( 1, 0.713726, 0.756863, 1 )** --- Light pink color.
 
-- **lightsalmon** = **Color( 1, 0.63, 0.48, 1 )** --- Light salmon color.
+- **lightsalmon** = **Color( 1, 0.627451, 0.478431, 1 )** --- Light salmon color.
 
-- **lightseagreen** = **Color( 0.13, 0.7, 0.67, 1 )** --- Light sea green color.
+- **lightseagreen** = **Color( 0.12549, 0.698039, 0.666667, 1 )** --- Light sea green color.
 
-- **lightskyblue** = **Color( 0.53, 0.81, 0.98, 1 )** --- Light sky blue color.
+- **lightskyblue** = **Color( 0.529412, 0.807843, 0.980392, 1 )** --- Light sky blue color.
 
-- **lightslategray** = **Color( 0.47, 0.53, 0.6, 1 )** --- Light slate gray color.
+- **lightslategray** = **Color( 0.466667, 0.533333, 0.6, 1 )** --- Light slate gray color.
 
-- **lightsteelblue** = **Color( 0.69, 0.77, 0.87, 1 )** --- Light steel blue color.
+- **lightsteelblue** = **Color( 0.690196, 0.768627, 0.870588, 1 )** --- Light steel blue color.
 
-- **lightyellow** = **Color( 1, 1, 0.88, 1 )** --- Light yellow color.
+- **lightyellow** = **Color( 1, 1, 0.878431, 1 )** --- Light yellow color.
 
 - **lime** = **Color( 0, 1, 0, 1 )** --- Lime color.
 
-- **limegreen** = **Color( 0.2, 0.8, 0.2, 1 )** --- Lime green color.
+- **limegreen** = **Color( 0.196078, 0.803922, 0.196078, 1 )** --- Lime green color.
 
-- **linen** = **Color( 0.98, 0.94, 0.9, 1 )** --- Linen color.
+- **linen** = **Color( 0.980392, 0.941176, 0.901961, 1 )** --- Linen color.
 
 - **magenta** = **Color( 1, 0, 1, 1 )** --- Magenta color.
 
-- **maroon** = **Color( 0.69, 0.19, 0.38, 1 )** --- Maroon color.
+- **maroon** = **Color( 0.690196, 0.188235, 0.376471, 1 )** --- Maroon color.
 
-- **mediumaquamarine** = **Color( 0.4, 0.8, 0.67, 1 )** --- Medium aquamarine color.
+- **mediumaquamarine** = **Color( 0.4, 0.803922, 0.666667, 1 )** --- Medium aquamarine color.
 
-- **mediumblue** = **Color( 0, 0, 0.8, 1 )** --- Medium blue color.
+- **mediumblue** = **Color( 0, 0, 0.803922, 1 )** --- Medium blue color.
 
-- **mediumorchid** = **Color( 0.73, 0.33, 0.83, 1 )** --- Medium orchid color.
+- **mediumorchid** = **Color( 0.729412, 0.333333, 0.827451, 1 )** --- Medium orchid color.
 
-- **mediumpurple** = **Color( 0.58, 0.44, 0.86, 1 )** --- Medium purple color.
+- **mediumpurple** = **Color( 0.576471, 0.439216, 0.858824, 1 )** --- Medium purple color.
 
-- **mediumseagreen** = **Color( 0.24, 0.7, 0.44, 1 )** --- Medium sea green color.
+- **mediumseagreen** = **Color( 0.235294, 0.701961, 0.443137, 1 )** --- Medium sea green color.
 
-- **mediumslateblue** = **Color( 0.48, 0.41, 0.93, 1 )** --- Medium slate blue color.
+- **mediumslateblue** = **Color( 0.482353, 0.407843, 0.933333, 1 )** --- Medium slate blue color.
 
-- **mediumspringgreen** = **Color( 0, 0.98, 0.6, 1 )** --- Medium spring green color.
+- **mediumspringgreen** = **Color( 0, 0.980392, 0.603922, 1 )** --- Medium spring green color.
 
-- **mediumturquoise** = **Color( 0.28, 0.82, 0.8, 1 )** --- Medium turquoise color.
+- **mediumturquoise** = **Color( 0.282353, 0.819608, 0.8, 1 )** --- Medium turquoise color.
 
-- **mediumvioletred** = **Color( 0.78, 0.08, 0.52, 1 )** --- Medium violet red color.
+- **mediumvioletred** = **Color( 0.780392, 0.0823529, 0.521569, 1 )** --- Medium violet red color.
 
-- **midnightblue** = **Color( 0.1, 0.1, 0.44, 1 )** --- Midnight blue color.
+- **midnightblue** = **Color( 0.0980392, 0.0980392, 0.439216, 1 )** --- Midnight blue color.
 
-- **mintcream** = **Color( 0.96, 1, 0.98, 1 )** --- Mint cream color.
+- **mintcream** = **Color( 0.960784, 1, 0.980392, 1 )** --- Mint cream color.
 
-- **mistyrose** = **Color( 1, 0.89, 0.88, 1 )** --- Misty rose color.
+- **mistyrose** = **Color( 1, 0.894118, 0.882353, 1 )** --- Misty rose color.
 
-- **moccasin** = **Color( 1, 0.89, 0.71, 1 )** --- Moccasin color.
+- **moccasin** = **Color( 1, 0.894118, 0.709804, 1 )** --- Moccasin color.
 
-- **navajowhite** = **Color( 1, 0.87, 0.68, 1 )** --- Navajo white color.
+- **navajowhite** = **Color( 1, 0.870588, 0.678431, 1 )** --- Navajo white color.
 
-- **navyblue** = **Color( 0, 0, 0.5, 1 )** --- Navy blue color.
+- **navyblue** = **Color( 0, 0, 0.501961, 1 )** --- Navy blue color.
 
-- **oldlace** = **Color( 0.99, 0.96, 0.9, 1 )** --- Old lace color.
+- **oldlace** = **Color( 0.992157, 0.960784, 0.901961, 1 )** --- Old lace color.
 
-- **olive** = **Color( 0.5, 0.5, 0, 1 )** --- Olive color.
+- **olive** = **Color( 0.501961, 0.501961, 0, 1 )** --- Olive color.
 
-- **olivedrab** = **Color( 0.42, 0.56, 0.14, 1 )** --- Olive drab color.
+- **olivedrab** = **Color( 0.419608, 0.556863, 0.137255, 1 )** --- Olive drab color.
 
-- **orange** = **Color( 1, 0.65, 0, 1 )** --- Orange color.
+- **orange** = **Color( 1, 0.647059, 0, 1 )** --- Orange color.
 
-- **orangered** = **Color( 1, 0.27, 0, 1 )** --- Orange red color.
+- **orangered** = **Color( 1, 0.270588, 0, 1 )** --- Orange red color.
 
-- **orchid** = **Color( 0.85, 0.44, 0.84, 1 )** --- Orchid color.
+- **orchid** = **Color( 0.854902, 0.439216, 0.839216, 1 )** --- Orchid color.
 
-- **palegoldenrod** = **Color( 0.93, 0.91, 0.67, 1 )** --- Pale goldenrod color.
+- **palegoldenrod** = **Color( 0.933333, 0.909804, 0.666667, 1 )** --- Pale goldenrod color.
 
-- **palegreen** = **Color( 0.6, 0.98, 0.6, 1 )** --- Pale green color.
+- **palegreen** = **Color( 0.596078, 0.984314, 0.596078, 1 )** --- Pale green color.
 
-- **paleturquoise** = **Color( 0.69, 0.93, 0.93, 1 )** --- Pale turquoise color.
+- **paleturquoise** = **Color( 0.686275, 0.933333, 0.933333, 1 )** --- Pale turquoise color.
 
-- **palevioletred** = **Color( 0.86, 0.44, 0.58, 1 )** --- Pale violet red color.
+- **palevioletred** = **Color( 0.858824, 0.439216, 0.576471, 1 )** --- Pale violet red color.
 
-- **papayawhip** = **Color( 1, 0.94, 0.84, 1 )** --- Papaya whip color.
+- **papayawhip** = **Color( 1, 0.937255, 0.835294, 1 )** --- Papaya whip color.
 
-- **peachpuff** = **Color( 1, 0.85, 0.73, 1 )** --- Peach puff color.
+- **peachpuff** = **Color( 1, 0.854902, 0.72549, 1 )** --- Peach puff color.
 
-- **peru** = **Color( 0.8, 0.52, 0.25, 1 )** --- Peru color.
+- **peru** = **Color( 0.803922, 0.521569, 0.247059, 1 )** --- Peru color.
 
-- **pink** = **Color( 1, 0.75, 0.8, 1 )** --- Pink color.
+- **pink** = **Color( 1, 0.752941, 0.796078, 1 )** --- Pink color.
 
-- **plum** = **Color( 0.87, 0.63, 0.87, 1 )** --- Plum color.
+- **plum** = **Color( 0.866667, 0.627451, 0.866667, 1 )** --- Plum color.
 
-- **powderblue** = **Color( 0.69, 0.88, 0.9, 1 )** --- Powder blue color.
+- **powderblue** = **Color( 0.690196, 0.878431, 0.901961, 1 )** --- Powder blue color.
 
-- **purple** = **Color( 0.63, 0.13, 0.94, 1 )** --- Purple color.
+- **purple** = **Color( 0.627451, 0.12549, 0.941176, 1 )** --- Purple color.
 
 - **rebeccapurple** = **Color( 0.4, 0.2, 0.6, 1 )** --- Rebecca purple color.
 
 - **red** = **Color( 1, 0, 0, 1 )** --- Red color.
 
-- **rosybrown** = **Color( 0.74, 0.56, 0.56, 1 )** --- Rosy brown color.
+- **rosybrown** = **Color( 0.737255, 0.560784, 0.560784, 1 )** --- Rosy brown color.
 
-- **royalblue** = **Color( 0.25, 0.41, 0.88, 1 )** --- Royal blue color.
+- **royalblue** = **Color( 0.254902, 0.411765, 0.882353, 1 )** --- Royal blue color.
 
-- **saddlebrown** = **Color( 0.55, 0.27, 0.07, 1 )** --- Saddle brown color.
+- **saddlebrown** = **Color( 0.545098, 0.270588, 0.0745098, 1 )** --- Saddle brown color.
 
-- **salmon** = **Color( 0.98, 0.5, 0.45, 1 )** --- Salmon color.
+- **salmon** = **Color( 0.980392, 0.501961, 0.447059, 1 )** --- Salmon color.
 
-- **sandybrown** = **Color( 0.96, 0.64, 0.38, 1 )** --- Sandy brown color.
+- **sandybrown** = **Color( 0.956863, 0.643137, 0.376471, 1 )** --- Sandy brown color.
 
-- **seagreen** = **Color( 0.18, 0.55, 0.34, 1 )** --- Sea green color.
+- **seagreen** = **Color( 0.180392, 0.545098, 0.341176, 1 )** --- Sea green color.
 
-- **seashell** = **Color( 1, 0.96, 0.93, 1 )** --- Seashell color.
+- **seashell** = **Color( 1, 0.960784, 0.933333, 1 )** --- Seashell color.
 
-- **sienna** = **Color( 0.63, 0.32, 0.18, 1 )** --- Sienna color.
+- **sienna** = **Color( 0.627451, 0.321569, 0.176471, 1 )** --- Sienna color.
 
-- **silver** = **Color( 0.75, 0.75, 0.75, 1 )** --- Silver color.
+- **silver** = **Color( 0.752941, 0.752941, 0.752941, 1 )** --- Silver color.
 
-- **skyblue** = **Color( 0.53, 0.81, 0.92, 1 )** --- Sky blue color.
+- **skyblue** = **Color( 0.529412, 0.807843, 0.921569, 1 )** --- Sky blue color.
 
-- **slateblue** = **Color( 0.42, 0.35, 0.8, 1 )** --- Slate blue color.
+- **slateblue** = **Color( 0.415686, 0.352941, 0.803922, 1 )** --- Slate blue color.
 
-- **slategray** = **Color( 0.44, 0.5, 0.56, 1 )** --- Slate gray color.
+- **slategray** = **Color( 0.439216, 0.501961, 0.564706, 1 )** --- Slate gray color.
 
-- **snow** = **Color( 1, 0.98, 0.98, 1 )** --- Snow color.
+- **snow** = **Color( 1, 0.980392, 0.980392, 1 )** --- Snow color.
 
-- **springgreen** = **Color( 0, 1, 0.5, 1 )** --- Spring green color.
+- **springgreen** = **Color( 0, 1, 0.498039, 1 )** --- Spring green color.
 
-- **steelblue** = **Color( 0.27, 0.51, 0.71, 1 )** --- Steel blue color.
+- **steelblue** = **Color( 0.27451, 0.509804, 0.705882, 1 )** --- Steel blue color.
 
-- **tan** = **Color( 0.82, 0.71, 0.55, 1 )** --- Tan color.
+- **tan** = **Color( 0.823529, 0.705882, 0.54902, 1 )** --- Tan color.
 
-- **teal** = **Color( 0, 0.5, 0.5, 1 )** --- Teal color.
+- **teal** = **Color( 0, 0.501961, 0.501961, 1 )** --- Teal color.
 
-- **thistle** = **Color( 0.85, 0.75, 0.85, 1 )** --- Thistle color.
+- **thistle** = **Color( 0.847059, 0.74902, 0.847059, 1 )** --- Thistle color.
 
-- **tomato** = **Color( 1, 0.39, 0.28, 1 )** --- Tomato color.
+- **tomato** = **Color( 1, 0.388235, 0.278431, 1 )** --- Tomato color.
 
 - **transparent** = **Color( 1, 1, 1, 0 )** --- Transparent color (white with no alpha).
 
-- **turquoise** = **Color( 0.25, 0.88, 0.82, 1 )** --- Turquoise color.
+- **turquoise** = **Color( 0.25098, 0.878431, 0.815686, 1 )** --- Turquoise color.
 
-- **violet** = **Color( 0.93, 0.51, 0.93, 1 )** --- Violet color.
+- **violet** = **Color( 0.933333, 0.509804, 0.933333, 1 )** --- Violet color.
 
-- **webgray** = **Color( 0.5, 0.5, 0.5, 1 )** --- Web gray color.
+- **webgray** = **Color( 0.501961, 0.501961, 0.501961, 1 )** --- Web gray color.
 
-- **webgreen** = **Color( 0, 0.5, 0, 1 )** --- Web green color.
+- **webgreen** = **Color( 0, 0.501961, 0, 1 )** --- Web green color.
 
-- **webmaroon** = **Color( 0.5, 0, 0, 1 )** --- Web maroon color.
+- **webmaroon** = **Color( 0.501961, 0, 0, 1 )** --- Web maroon color.
 
-- **webpurple** = **Color( 0.5, 0, 0.5, 1 )** --- Web purple color.
+- **webpurple** = **Color( 0.501961, 0, 0.501961, 1 )** --- Web purple color.
 
-- **wheat** = **Color( 0.96, 0.87, 0.7, 1 )** --- Wheat color.
+- **wheat** = **Color( 0.960784, 0.870588, 0.701961, 1 )** --- Wheat color.
 
 - **white** = **Color( 1, 1, 1, 1 )** --- White color.
 
-- **whitesmoke** = **Color( 0.96, 0.96, 0.96, 1 )** --- White smoke color.
+- **whitesmoke** = **Color( 0.960784, 0.960784, 0.960784, 1 )** --- White smoke color.
 
 - **yellow** = **Color( 1, 1, 0, 1 )** --- Yellow color.
 
-- **yellowgreen** = **Color( 0.6, 0.8, 0.2, 1 )** --- Yellow green color.
+- **yellowgreen** = **Color( 0.603922, 0.803922, 0.196078, 1 )** --- Yellow green color.
 
 Property Descriptions
 ---------------------
@@ -923,6 +925,16 @@ Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values betwe
 ::
 
     var c = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # Equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
+
+----
+
+.. _class_Color_method_get_luminance:
+
+- :ref:`float<class_float>` **get_luminance** **(** **)**
+
+Returns the luminance of the color in the ``[0.0, 1.0]`` range.
+
+This is useful when determining light or dark color. Colors with a luminance smaller than 0.5 can be generally considered dark.
 
 ----
 

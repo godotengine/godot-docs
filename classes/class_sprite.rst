@@ -191,7 +191,7 @@ The number of columns in the sprite sheet.
 
 The normal map gives depth to the Sprite.
 
-**Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -311,7 +311,7 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local 
 
 Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
 
-**Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
+\ **Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -18,6 +18,48 @@ Description
 
 Translated to ``uniform vec4`` in the shader language.
 
+Properties
+----------
+
++---------------------------+-------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Color<class_Color>` | :ref:`default_value<class_VisualShaderNodeColorUniform_property_default_value>`                 | ``Color( 1, 1, 1, 1 )`` |
++---------------------------+-------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`   | :ref:`default_value_enabled<class_VisualShaderNodeColorUniform_property_default_value_enabled>` | ``false``               |
++---------------------------+-------------------------------------------------------------------------------------------------+-------------------------+
+
+Property Descriptions
+---------------------
+
+.. _class_VisualShaderNodeColorUniform_property_default_value:
+
+- :ref:`Color<class_Color>` **default_value**
+
++-----------+--------------------------+
+| *Default* | ``Color( 1, 1, 1, 1 )``  |
++-----------+--------------------------+
+| *Setter*  | set_default_value(value) |
++-----------+--------------------------+
+| *Getter*  | get_default_value()      |
++-----------+--------------------------+
+
+A default value to be assigned within the shader.
+
+----
+
+.. _class_VisualShaderNodeColorUniform_property_default_value_enabled:
+
+- :ref:`bool<class_bool>` **default_value_enabled**
+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_default_value_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_default_value_enabled()       |
++-----------+----------------------------------+
+
+Enables usage of the :ref:`default_value<class_VisualShaderNodeColorUniform_property_default_value>`.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

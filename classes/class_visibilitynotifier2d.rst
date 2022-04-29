@@ -22,7 +22,7 @@ The VisibilityNotifier2D detects when it is visible on the screen. It also notif
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibilityEnabler2D<class_VisibilityEnabler2D>` instead.
 
-**Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
+\ **Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
 Tutorials
 ---------
@@ -102,7 +102,7 @@ Method Descriptions
 
 If ``true``, the bounding rectangle is on the screen.
 
-**Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
+\ **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

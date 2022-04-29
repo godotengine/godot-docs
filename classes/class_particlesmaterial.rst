@@ -52,6 +52,8 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`Color<class_Color>`                                  | :ref:`color<class_ParticlesMaterial_property_color>`                                           | ``Color( 1, 1, 1, 1 )``   |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
+| :ref:`Texture<class_Texture>`                              | :ref:`color_initial_ramp<class_ParticlesMaterial_property_color_initial_ramp>`                 |                           |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`Texture<class_Texture>`                              | :ref:`color_ramp<class_ParticlesMaterial_property_color_ramp>`                                 |                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------------+
 | :ref:`float<class_float>`                                  | :ref:`damping<class_ParticlesMaterial_property_damping>`                                       | ``0.0``                   |
@@ -298,7 +300,7 @@ Property Descriptions
 
 Initial rotation applied to each particle, in degrees.
 
-**Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
+\ **Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 ----
 
@@ -346,7 +348,7 @@ Rotation randomness ratio.
 
 Initial angular velocity applied to each particle in *degrees* per second. Sets the speed of rotation of the particle.
 
-**Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
+\ **Note:** Only applied when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` or :ref:`flag_rotate_y<class_ParticlesMaterial_property_flag_rotate_y>` are ``true`` or the :ref:`SpatialMaterial<class_SpatialMaterial>` being used to draw the particle is using :ref:`SpatialMaterial.BILLBOARD_PARTICLES<class_SpatialMaterial_constant_BILLBOARD_PARTICLES>`.
 
 ----
 
@@ -485,6 +487,20 @@ Animation speed randomness ratio.
 +-----------+-------------------------+
 
 Each particle's initial color. If the :ref:`Particles2D<class_Particles2D>`'s ``texture`` is defined, it will be multiplied by this color. To have particle display color in a :ref:`SpatialMaterial<class_SpatialMaterial>` make sure to set :ref:`SpatialMaterial.vertex_color_use_as_albedo<class_SpatialMaterial_property_vertex_color_use_as_albedo>` to ``true``.
+
+----
+
+.. _class_ParticlesMaterial_property_color_initial_ramp:
+
+- :ref:`Texture<class_Texture>` **color_initial_ramp**
+
++----------+-------------------------------+
+| *Setter* | set_color_initial_ramp(value) |
++----------+-------------------------------+
+| *Getter* | get_color_initial_ramp()      |
++----------+-------------------------------+
+
+Each particle's initial color will vary along this :ref:`GradientTexture<class_GradientTexture>` (multiplied with :ref:`color<class_ParticlesMaterial_property_color>`).
 
 ----
 
@@ -952,7 +968,7 @@ Linear acceleration randomness ratio.
 
 Orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
 
-**Note:** Only available when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` is ``true``.
+\ **Note:** Only available when :ref:`flag_disable_z<class_ParticlesMaterial_property_flag_disable_z>` is ``true``.
 
 ----
 

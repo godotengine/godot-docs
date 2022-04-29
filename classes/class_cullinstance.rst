@@ -20,17 +20,19 @@ Description
 
 Provides common functionality to nodes that can be culled by the :ref:`Portal<class_Portal>` system.
 
-``Static`` and ``Dynamic`` objects are the most efficiently managed objects in the system, but there are some caveats. They are expected to be present initially when :ref:`Room<class_Room>`\ s are converted using the :ref:`RoomManager<class_RoomManager>` ``rooms_convert`` function, and their lifetime should be the same as the game level (i.e. present until you call ``rooms_clear`` on the :ref:`RoomManager<class_RoomManager>`. Although you shouldn't create / delete these objects during gameplay, you can manage their visibility with the standard ``hide`` and ``show`` commands.
+\ ``Static`` and ``Dynamic`` objects are the most efficiently managed objects in the system, but there are some caveats. They are expected to be present initially when :ref:`Room<class_Room>`\ s are converted using the :ref:`RoomManager<class_RoomManager>` ``rooms_convert`` function, and their lifetime should be the same as the game level (i.e. present until you call ``rooms_clear`` on the :ref:`RoomManager<class_RoomManager>`. Although you shouldn't create / delete these objects during gameplay, you can manage their visibility with the standard ``hide`` and ``show`` commands.
 
-``Roaming`` objects on the other hand, require extra processing to keep track of which :ref:`Room<class_Room>` they are within. This enables them to be culled effectively, wherever they are.
+\ ``Roaming`` objects on the other hand, require extra processing to keep track of which :ref:`Room<class_Room>` they are within. This enables them to be culled effectively, wherever they are.
 
-``Global`` objects are not culled by the portal system, and use view frustum culling only.
+\ ``Global`` objects are not culled by the portal system, and use view frustum culling only.
 
 Objects that are not ``Static`` or ``Dynamic`` can be freely created and deleted during the lifetime of the game level.
 
 Properties
 ----------
 
++-------------------------------------------------+---------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                         | :ref:`allow_merging<class_CullInstance_property_allow_merging>`           | ``true`` |
 +-------------------------------------------------+---------------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`                           | :ref:`autoplace_priority<class_CullInstance_property_autoplace_priority>` | ``0``    |
 +-------------------------------------------------+---------------------------------------------------------------------------+----------+
@@ -58,11 +60,11 @@ enum **PortalMode**:
 
 - **PORTAL_MODE_STATIC** = **0** --- Use for instances within :ref:`Room<class_Room>`\ s that will **not move** - e.g. walls, floors.
 
-**Note:** If you attempt to delete a ``PORTAL_MODE_STATIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
+\ **Note:** If you attempt to delete a ``PORTAL_MODE_STATIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
 
 - **PORTAL_MODE_DYNAMIC** = **1** --- Use for instances within rooms that will move but **not change room** - e.g. moving platforms.
 
-**Note:** If you attempt to delete a ``PORTAL_MODE_DYNAMIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
+\ **Note:** If you attempt to delete a ``PORTAL_MODE_DYNAMIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
 
 - **PORTAL_MODE_ROAMING** = **2** --- Use for instances that will move **between** :ref:`Room<class_Room>`\ s - e.g. players.
 
@@ -72,6 +74,24 @@ enum **PortalMode**:
 
 Property Descriptions
 ---------------------
+
+.. _class_CullInstance_property_allow_merging:
+
+- :ref:`bool<class_bool>` **allow_merging**
+
++-----------+--------------------------+
+| *Default* | ``true``                 |
++-----------+--------------------------+
+| *Setter*  | set_allow_merging(value) |
++-----------+--------------------------+
+| *Getter*  | get_allow_merging()      |
++-----------+--------------------------+
+
+This allows fine control over the mesh merging feature in the :ref:`RoomManager<class_RoomManager>`.
+
+Setting this option to ``false`` can be used to prevent an instance being merged.
+
+----
 
 .. _class_CullInstance_property_autoplace_priority:
 
@@ -107,7 +127,7 @@ This can be used to control autoplacement of building exteriors in an outer :ref
 
 When a manual bound has not been explicitly specified for a :ref:`Room<class_Room>`, the convex hull bound will be estimated from the geometry of the objects within the room. This setting determines whether the geometry of an object is included in this estimate of the room bound.
 
-**Note:** This setting is only relevant when the object is set to ``PORTAL_MODE_STATIC`` or ``PORTAL_MODE_DYNAMIC``, and for :ref:`Portal<class_Portal>`\ s.
+\ **Note:** This setting is only relevant when the object is set to ``PORTAL_MODE_STATIC`` or ``PORTAL_MODE_DYNAMIC``, and for :ref:`Portal<class_Portal>`\ s.
 
 ----
 

@@ -18,7 +18,7 @@ Description
 
 A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
 
-**Note:** Due to a renderer limitation, emissive ``ShaderMaterial``\ s cannot emit light when used in a :ref:`GIProbe<class_GIProbe>`. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a :ref:`GIProbe<class_GIProbe>`.
+\ **Note:** Due to a renderer limitation, emissive ``ShaderMaterial``\ s cannot emit light when used in a :ref:`GIProbe<class_GIProbe>`. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a :ref:`GIProbe<class_GIProbe>`.
 
 Tutorials
 ---------
@@ -93,7 +93,7 @@ Returns the default value of the material property with given ``name``.
 
 Changes the value set for this material of a uniform in the shader.
 
-**Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -60,7 +60,7 @@ Returns a decoded string corresponding to the Base64-encoded string ``base64_str
 
 Returns a decoded :ref:`Variant<class_Variant>` corresponding to the Base64-encoded string ``base64_str``. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
-**Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+\ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 ----
 

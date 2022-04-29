@@ -42,7 +42,7 @@ Below is an example of how MeshDataTool may be used.
 
 See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>` and :ref:`SurfaceTool<class_SurfaceTool>` for procedural geometry generation.
 
-**Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
+\ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
 Methods
 -------

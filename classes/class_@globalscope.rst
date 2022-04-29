@@ -21,55 +21,61 @@ Singletons are also documented here, since they can be accessed from anywhere.
 Properties
 ----------
 
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ARVRServer<class_ARVRServer>`                                       | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`AudioServer<class_AudioServer>`                                     | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`CameraServer<class_CameraServer>`                                   | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                       |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ClassDB<class_ClassDB>`                                             | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Engine<class_Engine>`                                               | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Geometry<class_Geometry>`                                           | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`IP<class_IP>`                                                       | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Input<class_Input>`                                                 | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`InputMap<class_InputMap>`                                           | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JSON<class_JSON>`                                                   | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JavaClassWrapper<class_JavaClassWrapper>`                           | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JavaScript<class_JavaScript>`                                       | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Marshalls<class_Marshalls>`                                         | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`OS<class_OS>`                                                       | :ref:`OS<class_@GlobalScope_property_OS>`                                           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Performance<class_Performance>`                                     | :ref:`Performance<class_@GlobalScope_property_Performance>`                         |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Physics2DServer<class_Physics2DServer>`                             | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`                 |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`PhysicsServer<class_PhysicsServer>`                                 | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`                     |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ProjectSettings<class_ProjectSettings>`                             | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ResourceLoader<class_ResourceLoader>`                               | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`                   |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ResourceSaver<class_ResourceSaver>`                                 | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`                     |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`TranslationServer<class_TranslationServer>`                         | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`             |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`VisualScriptEditor<class_VisualScriptEditor>`                       | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>`           |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`VisualServer<class_VisualServer>`                                   | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`                       |
-+---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ARVRServer<class_ARVRServer>`                           | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`AudioServer<class_AudioServer>`                         | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`CameraServer<class_CameraServer>`                       | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                       |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ClassDB<class_ClassDB>`                                 | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Geometry<class_Geometry>`                               | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`IP<class_IP>`                                           | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Input<class_Input>`                                     | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`InputMap<class_InputMap>`                               | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JSON<class_JSON>`                                       | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JavaClassWrapper<class_JavaClassWrapper>`               | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`JavaScript<class_JavaScript>`                           | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Navigation2DServer<class_Navigation2DServer>`           | :ref:`Navigation2DServer<class_@GlobalScope_property_Navigation2DServer>`           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`NavigationServer<class_NavigationServer>`               | :ref:`NavigationServer<class_@GlobalScope_property_NavigationServer>`               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`OS<class_OS>`                                           | :ref:`OS<class_@GlobalScope_property_OS>`                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Performance<class_Performance>`                         | :ref:`Performance<class_@GlobalScope_property_Performance>`                         |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Physics2DServer<class_Physics2DServer>`                 | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`                 |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`PhysicsServer<class_PhysicsServer>`                     | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`                     |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ProjectSettings<class_ProjectSettings>`                 | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ResourceLoader<class_ResourceLoader>`                   | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`                   |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`ResourceSaver<class_ResourceSaver>`                     | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`                     |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Time<class_Time>`                                       | :ref:`Time<class_@GlobalScope_property_Time>`                                       |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`TranslationServer<class_TranslationServer>`             | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`             |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`VisualScriptEditor<class_VisualScriptEditor>`           | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>`           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`VisualServer<class_VisualServer>`                       | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`                       |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -1610,21 +1616,65 @@ enum **JoystickList**:
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_PITCH_BEND:
 
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_EXCLUSIVE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_QUARTER_FRAME:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_POSITION_POINTER:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_SELECT:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TUNE_REQUEST:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TIMING_CLOCK:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_START:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTINUE:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_STOP:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_ACTIVE_SENSING:
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_RESET:
+
 enum **MidiMessageList**:
 
-- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message.
+- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message.
+- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message.
+- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message. This message is most often sent by pressing down on the key after it "bottoms out".
 
-- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message.
+- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message. This message is sent when a controller value changes. Controllers include devices such as pedals and levers.
 
-- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message.
+- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message. This message sent when the program patch number changes.
 
-- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message.
+- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message. This message is most often sent by pressing down on the key after it "bottoms out". This message is different from polyphonic after-touch as it indicates the highest pressure across all keys.
 
-- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message.
+- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message. This message is sent to indicate a change in the pitch bender (wheel or lever, typically).
+
+- **MIDI_MESSAGE_SYSTEM_EXCLUSIVE** = **240** --- MIDI system exclusive message. This has behavior exclusive to the device you're receiving input from. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_QUARTER_FRAME** = **241** --- MIDI quarter frame message. Contains timing information that is used to synchronize MIDI devices. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_SONG_POSITION_POINTER** = **242** --- MIDI song position pointer message. Gives the number of 16th notes since the start of the song. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_SONG_SELECT** = **243** --- MIDI song select message. Specifies which sequence or song is to be played. Getting this data is not implemented in Godot.
+
+- **MIDI_MESSAGE_TUNE_REQUEST** = **246** --- MIDI tune request message. Upon receiving a tune request, all analog synthesizers should tune their oscillators.
+
+- **MIDI_MESSAGE_TIMING_CLOCK** = **248** --- MIDI timing clock message. Sent 24 times per quarter note when synchronization is required.
+
+- **MIDI_MESSAGE_START** = **250** --- MIDI start message. Start the current sequence playing. This message will be followed with Timing Clocks.
+
+- **MIDI_MESSAGE_CONTINUE** = **251** --- MIDI continue message. Continue at the point the sequence was stopped.
+
+- **MIDI_MESSAGE_STOP** = **252** --- MIDI stop message. Stop the current sequence.
+
+- **MIDI_MESSAGE_ACTIVE_SENSING** = **254** --- MIDI active sensing message. This message is intended to be sent repeatedly to tell the receiver that a connection is alive.
+
+- **MIDI_MESSAGE_SYSTEM_RESET** = **255** --- MIDI system reset message. Reset all receivers in the system to power-up status. It should not be sent on power-up itself.
 
 ----
 
@@ -1851,6 +1901,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM_SUGGESTION:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_EASING:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LENGTH:
@@ -1898,6 +1950,10 @@ enum **PropertyHint**:
 - **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
 
 The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
+
+- **PROPERTY_HINT_ENUM_SUGGESTION** = **37** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+
+Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>` a property with this hint still accepts arbitrary values and can be empty. The list of values serves to suggest possible values.
 
 - **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"inout"`` to also include in/out easing.
 
@@ -1985,7 +2041,7 @@ enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_INTERNATIONALIZED** = **64** --- The property is a translatable string.
 
-- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor.
+- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor. See :ref:`EditorInspector<class_EditorInspector>`.
 
 - **PROPERTY_USAGE_CATEGORY** = **256** --- Used to categorize properties together in the editor.
 
@@ -2363,7 +2419,7 @@ The :ref:`JSON<class_JSON>` singleton.
 
 The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
-**Note:** Only implemented on Android.
+\ **Note:** Only implemented on Android.
 
 ----
 
@@ -2373,7 +2429,7 @@ The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
 The :ref:`JavaScript<class_JavaScript>` singleton.
 
-**Note:** Only implemented on HTML5.
+\ **Note:** Only implemented on HTML5.
 
 ----
 
@@ -2385,11 +2441,27 @@ The :ref:`Marshalls<class_Marshalls>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_Navigation2DServer:
+
+- :ref:`Navigation2DServer<class_Navigation2DServer>` **Navigation2DServer**
+
+The :ref:`Navigation2DServer<class_Navigation2DServer>` singleton.
+
+----
+
 .. _class_@GlobalScope_property_NavigationMeshGenerator:
 
-- :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` **NavigationMeshGenerator**
+- :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` **NavigationMeshGenerator**
 
-The :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>` singleton.
+The :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` singleton.
+
+----
+
+.. _class_@GlobalScope_property_NavigationServer:
+
+- :ref:`NavigationServer<class_NavigationServer>` **NavigationServer**
+
+The :ref:`NavigationServer<class_NavigationServer>` singleton.
 
 ----
 
@@ -2446,6 +2518,14 @@ The :ref:`ResourceLoader<class_ResourceLoader>` singleton.
 - :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
 
 The :ref:`ResourceSaver<class_ResourceSaver>` singleton.
+
+----
+
+.. _class_@GlobalScope_property_Time:
+
+- :ref:`Time<class_Time>` **Time**
+
+The :ref:`Time<class_Time>` singleton.
 
 ----
 

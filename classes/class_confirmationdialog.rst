@@ -29,11 +29,11 @@ To get cancel action, you can use:
 Properties
 ----------
 
-+-------------------------------+---------------+---------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_min_size | ``Vector2( 200, 70 )`` *(parent override)*  |
-+-------------------------------+---------------+---------------------------------------------+
-| :ref:`String<class_String>`   | window_title  | ``"Please Confirm..."`` *(parent override)* |
-+-------------------------------+---------------+---------------------------------------------+
++-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | rect_min_size | ``Vector2( 200, 70 )`` (overrides :ref:`Control<class_Control_property_rect_min_size>`)           |
++-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | window_title  | ``"Please Confirm..."`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
++-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -51,7 +51,7 @@ Method Descriptions
 
 Returns the cancel button.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

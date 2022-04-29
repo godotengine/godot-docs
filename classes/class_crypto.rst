@@ -49,7 +49,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
         assert(verified)
         assert(data.to_utf8() == decrypted)
 
-**Note:** Not available in HTML5 exports.
+\ **Note:** Not available in HTML5 exports.
 
 Methods
 -------
@@ -93,7 +93,7 @@ See `this blog post <https://paragonie.com/blog/2015/11/preventing-timing-attack
 
 Decrypt the given ``ciphertext`` with the provided private ``key``.
 
-**Note:** The maximum size of accepted ciphertext is limited by the key size.
+\ **Note:** The maximum size of accepted ciphertext is limited by the key size.
 
 ----
 
@@ -103,7 +103,7 @@ Decrypt the given ``ciphertext`` with the provided private ``key``.
 
 Encrypt the given ``plaintext`` with the provided public ``key``.
 
-**Note:** The maximum size of accepted plaintext is limited by the key size.
+\ **Note:** The maximum size of accepted plaintext is limited by the key size.
 
 ----
 

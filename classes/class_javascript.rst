@@ -18,12 +18,12 @@ Description
 
 The JavaScript singleton is implemented only in the HTML5 export. It's used to access the browser's JavaScript context. This allows interaction with embedding pages or calling third-party JavaScript APIs.
 
-**Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See `Compiling for the Web <https://docs.godotengine.org/en/3.4/development/compiling/compiling_for_web.html>`__ in the documentation for more information.
+\ **Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See :doc:`Compiling for the Web <../development/compiling/compiling_for_web>` in the documentation for more information.
 
 Tutorials
 ---------
 
-- `#calling-javascript-from-script <../tutorials/export/exporting_for_web.html#calling-javascript-from-script>`_ in :doc:`../tutorials/export/exporting_for_web`
+- `#calling-javascript-from-script <../tutorials/export/exporting_for_web.html#calling-javascript-from-script>`__ in :doc:`../tutorials/export/exporting_for_web`
 
 Methods
 -------
@@ -39,6 +39,19 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScript_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                               |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                       |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`pwa_update<class_JavaScript_method_pwa_update>` **(** **)**                                                                                                                                                           |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_JavaScript_signal_pwa_update_available:
+
+- **pwa_update_available** **(** **)**
+
+Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See :ref:`pwa_update<class_JavaScript_method_pwa_update>` to force the update to take place immediately.
 
 Method Descriptions
 -------------------
@@ -65,11 +78,11 @@ Creates a new JavaScript object using the ``new`` constructor. The ``object`` mu
 
 Prompts the user to download a file containing the specified ``buffer``. The file will have the given ``name`` and ``mime`` type.
 
-**Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`__ provided based on the file ``name``'s extension.
+\ **Note:** The browser may override the `MIME type <https://en.wikipedia.org/wiki/Media_type>`__ provided based on the file ``name``'s extension.
 
-**Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScript_method_download_buffer>` is not being called from a user interaction (e.g. button click).
+\ **Note:** Browsers might block the download if :ref:`download_buffer<class_JavaScript_method_download_buffer>` is not being called from a user interaction (e.g. button click).
 
-**Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
+\ **Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
 
 ----
 
@@ -88,6 +101,28 @@ If ``use_global_execution_context`` is ``true``, the code will be evaluated in t
 - :ref:`JavaScriptObject<class_JavaScriptObject>` **get_interface** **(** :ref:`String<class_String>` interface **)**
 
 Returns an interface to a JavaScript object that can be used by scripts. The ``interface`` must be a valid property of the JavaScript ``window``. The callback must accept a single :ref:`Array<class_Array>` argument, which will contain the JavaScript ``arguments``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+----
+
+.. _class_JavaScript_method_pwa_needs_update:
+
+- :ref:`bool<class_bool>` **pwa_needs_update** **(** **)** |const|
+
+Returns ``true`` if a new version of the progressive web app is waiting to be activated.
+
+\ **Note:** Only relevant when exported as a Progressive Web App.
+
+----
+
+.. _class_JavaScript_method_pwa_update:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **pwa_update** **(** **)**
+
+Performs the live update of the progressive web app. Forcing the new version to be installed and the page to be reloaded.
+
+\ **Note:** Your application will be **reloaded in all browser tabs**.
+
+\ **Note:** Only relevant when exported as a Progressive Web App and :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` returns ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

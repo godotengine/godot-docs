@@ -21,9 +21,9 @@ Direct access object to a space in the :ref:`Physics2DServer<class_Physics2DServ
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 Methods
 -------
@@ -55,7 +55,7 @@ Checks how far a :ref:`Shape2D<class_Shape2D>` can move without colliding. All t
 
 Returns an array with the safe and unsafe proportions (between 0 and 1) of the motion. The safe proportion is the maximum fraction of the motion that can be made without a collision. The unsafe proportion is the minimum fraction of the distance that must be moved for a collision. If no collision is detected a result of ``[1.0, 1.0]`` will be returned.
 
-**Note:** Any :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with e.g. inside of, will be ignored. Use :ref:`collide_shape<class_Physics2DDirectSpaceState_method_collide_shape>` to determine the :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with.
+\ **Note:** Any :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with e.g. inside of, will be ignored. Use :ref:`collide_shape<class_Physics2DDirectSpaceState_method_collide_shape>` to determine the :ref:`Shape2D<class_Shape2D>`\ s that the shape is already colliding with.
 
 ----
 
@@ -73,21 +73,21 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. If the shape did not intersect anything, then an empty dictionary is returned instead.
 
-**Note:** This method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
+\ **Note:** This method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``linear_velocity``: The colliding object's velocity :ref:`Vector2<class_Vector2>`. If the object is an :ref:`Area2D<class_Area2D>`, the result is ``(0, 0)``.
+\ ``linear_velocity``: The colliding object's velocity :ref:`Vector2<class_Vector2>`. If the object is an :ref:`Area2D<class_Area2D>`, the result is ``(0, 0)``.
 
-``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+\ ``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
-``normal``: The object's surface normal at the intersection point.
+\ ``normal``: The object's surface normal at the intersection point.
 
-``point``: The intersection point.
+\ ``point``: The intersection point.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 ----
 
@@ -97,21 +97,21 @@ Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryPa
 
 Checks whether a point is inside any solid shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+\ ``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s or :ref:`Area2D<class_Area2D>`\ s, respectively.
 
-**Note:** :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`\ s and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`\ s in ``Segments`` build mode are not solid shapes. Therefore, they will not be detected.
+\ **Note:** :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`\ s and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`\ s in ``Segments`` build mode are not solid shapes. Therefore, they will not be detected.
 
 ----
 
@@ -121,21 +121,21 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 Checks whether a point is inside any solid shape, in a specific canvas layer given by ``canvas_instance_id``. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+\ ``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 
 Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<class_RID>`\ s that are to be excluded from collisions, a ``collision_mask`` bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s or :ref:`Area2D<class_Area2D>`\ s, respectively.
 
-**Note:** :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`\ s and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`\ s in ``Segments`` build mode are not solid shapes. Therefore, they will not be detected.
+\ **Note:** :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`\ s and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`\ s in ``Segments`` build mode are not solid shapes. Therefore, they will not be detected.
 
 ----
 
@@ -145,19 +145,19 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 Intersects a ray in a given space. The returned object is a dictionary with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+\ ``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
-``normal``: The object's surface normal at the intersection point.
+\ ``normal``: The object's surface normal at the intersection point.
 
-``position``: The intersection point.
+\ ``position``: The intersection point.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 If the ray did not intersect anything, then an empty dictionary is returned instead.
 
@@ -169,19 +169,17 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 - :ref:`Array<class_Array>` **intersect_shape** **(** :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
-Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space.
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>` object, against the space. The intersected shapes are returned in an array containing dictionaries with the following fields:
 
-**Note:** This method does not take into account the ``motion`` property of the object. The intersected shapes are returned in an array containing dictionaries with the following fields:
+\ ``collider``: The colliding object.
 
-``collider``: The colliding object.
+\ ``collider_id``: The colliding object's ID.
 
-``collider_id``: The colliding object's ID.
+\ ``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
 
-``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_method_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_method_shape_set_data>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
-
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 

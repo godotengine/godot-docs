@@ -36,31 +36,31 @@ To iterate over all the :ref:`TreeItem<class_TreeItem>` objects in a ``Tree`` ob
 Properties
 ----------
 
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_reselect<class_Tree_property_allow_reselect>`     | ``false``                    |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`allow_rmb_select<class_Tree_property_allow_rmb_select>` | ``false``                    |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`                    | :ref:`columns<class_Tree_property_columns>`                   | ``1``                        |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`   | ``0``                        |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                    | ``2`` *(parent override)*    |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_folding<class_Tree_property_hide_folding>`         | ``false``                    |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_root<class_Tree_property_hide_root>`               | ``false``                    |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                  | rect_clip_content                                             | ``true`` *(parent override)* |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
-| :ref:`SelectMode<enum_Tree_SelectMode>`  | :ref:`select_mode<class_Tree_property_select_mode>`           | ``0``                        |
-+------------------------------------------+---------------------------------------------------------------+------------------------------+
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_reselect<class_Tree_property_allow_reselect>`               | ``false``                                                                     |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`allow_rmb_select<class_Tree_property_allow_rmb_select>`           | ``false``                                                                     |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`column_titles_visible<class_Tree_property_column_titles_visible>` | ``false``                                                                     |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`columns<class_Tree_property_columns>`                             | ``1``                                                                         |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`             | ``0``                                                                         |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                              | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)           |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_folding<class_Tree_property_hide_folding>`                   | ``false``                                                                     |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`hide_root<class_Tree_property_hide_root>`                         | ``false``                                                                     |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | rect_clip_content                                                       | ``true`` (overrides :ref:`Control<class_Control_property_rect_clip_content>`) |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`SelectMode<enum_Tree_SelectMode>`  | :ref:`select_mode<class_Tree_property_select_mode>`                     | ``0``                                                                         |
++------------------------------------------+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
 
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`are_column_titles_visible<class_Tree_method_are_column_titles_visible>` **(** **)** |const|                                                     |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`clear<class_Tree_method_clear>` **(** **)**                                                                                                     |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,6 +69,8 @@ Methods
 | :ref:`bool<class_bool>`         | :ref:`edit_selected<class_Tree_method_edit_selected>` **(** **)**                                                                                     |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`ensure_cursor_is_visible<class_Tree_method_ensure_cursor_is_visible>` **(** **)**                                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_button_id_at_position<class_Tree_method_get_button_id_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|              |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`           | :ref:`get_column_at_position<class_Tree_method_get_column_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                    |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -107,8 +109,6 @@ Methods
 | void                            | :ref:`set_column_min_width<class_Tree_method_set_column_min_width>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**         |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_column_title<class_Tree_method_set_column_title>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` title **)**               |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_column_titles_visible<class_Tree_method_set_column_titles_visible>` **(** :ref:`bool<class_bool>` visible **)**                             |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -356,7 +356,7 @@ enum **DropModeFlags**:
 
 - **DROP_MODE_DISABLED** = **0** --- Disables all drop sections, but still allows to detect the "on item" drop section by :ref:`get_drop_section_at_position<class_Tree_method_get_drop_section_at_position>`.
 
-**Note:** This is the default flag, it has no effect when combined with other flags.
+\ **Note:** This is the default flag, it has no effect when combined with other flags.
 
 - **DROP_MODE_ON_ITEM** = **1** --- Enables the "on item" drop section. This drop section covers the entire item.
 
@@ -398,6 +398,22 @@ If ``true``, the currently selected cell may be selected again.
 +-----------+-----------------------------+
 
 If ``true``, a right mouse button click can select items.
+
+----
+
+.. _class_Tree_property_column_titles_visible:
+
+- :ref:`bool<class_bool>` **column_titles_visible**
+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_column_titles_visible(value) |
++-----------+----------------------------------+
+| *Getter*  | are_column_titles_visible()      |
++-----------+----------------------------------+
+
+If ``true``, column titles are visible.
 
 ----
 
@@ -484,14 +500,6 @@ Allows single or multiple selection. See the :ref:`SelectMode<enum_Tree_SelectMo
 Method Descriptions
 -------------------
 
-.. _class_Tree_method_are_column_titles_visible:
-
-- :ref:`bool<class_bool>` **are_column_titles_visible** **(** **)** |const|
-
-Returns ``true`` if the column titles are being shown.
-
-----
-
 .. _class_Tree_method_clear:
 
 - void **clear** **(** **)**
@@ -528,7 +536,15 @@ Makes the currently focused cell visible.
 
 This will scroll the tree if necessary. In :ref:`SELECT_ROW<class_Tree_constant_SELECT_ROW>` mode, this will not do horizontal scrolling, as all the cells in the selected row is focused logically.
 
-**Note:** Despite the name of this method, the focus cursor itself is only visible in :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode.
+\ **Note:** Despite the name of this method, the focus cursor itself is only visible in :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode.
+
+----
+
+.. _class_Tree_method_get_button_id_at_position:
+
+- :ref:`int<class_int>` **get_button_id_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
+
+Returns the button id at ``position``, or -1 if no button is there.
 
 ----
 
@@ -703,14 +719,6 @@ Sets the minimum width of a column. Columns that have the "Expand" flag will use
 - void **set_column_title** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` title **)**
 
 Sets the title of a column.
-
-----
-
-.. _class_Tree_method_set_column_titles_visible:
-
-- void **set_column_titles_visible** **(** :ref:`bool<class_bool>` visible **)**
-
-If ``true``, column titles are visible.
 
 Theme Property Descriptions
 ---------------------------

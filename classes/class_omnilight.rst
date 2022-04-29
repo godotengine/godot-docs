@@ -18,7 +18,7 @@ Description
 
 An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
 
-**Note:** By default, only 32 OmniLights may affect a single mesh *resource* at once. Consider splitting your level into several meshes to decrease the likelihood that more than 32 lights will affect the same mesh resource. Splitting the level mesh will also improve frustum culling effectiveness, leading to greater performance. If you need to use more lights per mesh, you can increase :ref:`ProjectSettings.rendering/limits/rendering/max_lights_per_object<class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object>` at the cost of shader compilation times.
+\ **Note:** By default, only 32 OmniLights may affect a single mesh *resource* at once. Consider splitting your level into several meshes to decrease the likelihood that more than 32 lights will affect the same mesh resource. Splitting the level mesh will also improve frustum culling effectiveness, leading to greater performance. If you need to use more lights per mesh, you can increase :ref:`ProjectSettings.rendering/limits/rendering/max_lights_per_object<class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object>` at the cost of shader compilation times.
 
 Tutorials
 ---------

@@ -572,13 +572,13 @@ enum **G6DOFJointAxisParam**:
 
 enum **G6DOFJointAxisFlag**:
 
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If set, linear motion is possible within the given limits.
 
-- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If set, rotational motion is possible.
 
-- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If ``set`` there is a rotational motor across these axes.
+- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **4** --- If set, there is a rotational motor across these axes.
 
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If ``set`` there is a linear motor on this axis that targets a specific velocity.
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = **5** --- If set, there is a linear motor on this axis that targets a specific velocity.
 
 ----
 
@@ -1687,7 +1687,7 @@ Activates or deactivates the 3D physics engine.
 
 Sets the amount of iterations for calculating velocities of colliding bodies. The greater the amount of iterations, the more accurate the collisions will be. However, a greater amount of iterations requires more CPU power, which can decrease performance. The default value is ``8``.
 
-**Note:** Only has an effect when using the GodotPhysics engine, not the default Bullet physics engine.
+\ **Note:** Only has an effect when using the GodotPhysics engine, not the default Bullet physics engine.
 
 ----
 

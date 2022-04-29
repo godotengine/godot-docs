@@ -20,7 +20,7 @@ A PacketPeer implementation that should be passed to :ref:`SceneTree.network_pee
 
 ENet's purpose is to provide a relatively thin, simple and robust network communication layer on top of UDP (User Datagram Protocol).
 
-**Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
+\ **Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
 
 Tutorials
 ---------
@@ -32,27 +32,27 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false``                     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``                         |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``1``                         |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`String<class_String>`                                           | :ref:`dtls_hostname<class_NetworkedMultiplayerENet_property_dtls_hostname>`       | ``""``                        |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>`           | ``true``                      |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | ``false`` *(parent override)* |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``                      |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``                        |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | ``2`` *(parent override)*     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>`                 | ``false``                     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------------------------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false``                                                                                                             |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``                                                                                                                 |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``1``                                                                                                                 |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                           | :ref:`dtls_hostname<class_NetworkedMultiplayerENet_property_dtls_hostname>`       | ``""``                                                                                                                |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>`           | ``true``                                                                                                              |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                               | refuse_new_connections                                                            | ``false`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``                                                                                                              |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``                                                                                                                |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`       | transfer_mode                                                                     | ``2`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)              |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>`                 | ``false``                                                                                                             |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -159,9 +159,9 @@ The number of channels to be used by ENet. Channels are used to separate differe
 
 The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
-**Note:** Most games' network design involve sending many small packets frequently (smaller than 4 KB each). If in doubt, it is recommended to keep the default compression algorithm as it works best on these small packets.
+\ **Note:** Most games' network design involve sending many small packets frequently (smaller than 4 KB each). If in doubt, it is recommended to keep the default compression algorithm as it works best on these small packets.
 
-**Note:** :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` must be set to the same value on both the server and all its clients. Clients will fail to connect if the :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` set on the client differs from the one set on the server. Prior to Godot 3.4, the default :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` was :ref:`COMPRESS_NONE<class_NetworkedMultiplayerENet_constant_COMPRESS_NONE>`. Nonetheless, mixing engine versions between clients and server is not recommended and not officially supported.
+\ **Note:** :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` must be set to the same value on both the server and all its clients. Clients will fail to connect if the :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` set on the client differs from the one set on the server. Prior to Godot 3.4, the default :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` was :ref:`COMPRESS_NONE<class_NetworkedMultiplayerENet_constant_COMPRESS_NONE>`. Nonetheless, mixing engine versions between clients and server is not recommended and not officially supported.
 
 ----
 
@@ -245,7 +245,7 @@ Set the default channel to be used to transfer data. By default, this value is `
 
 When enabled, the client or server created by this peer, will use :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` instead of raw UDP sockets for communicating with the remote peer. This will make the communication encrypted with DTLS at the cost of higher resource usage and potentially larger packet size.
 
-**Note:** When creating a DTLS server, make sure you setup the key/certificate pair via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` and :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`. For DTLS clients, have a look at the :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>` option, and configure the certificate accordingly via :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`.
+\ **Note:** When creating a DTLS server, make sure you setup the key/certificate pair via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` and :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`. For DTLS clients, have a look at the :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>` option, and configure the certificate accordingly via :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`.
 
 Method Descriptions
 -------------------

@@ -18,7 +18,7 @@ Description
 
 This object holds information of all resources in the filesystem, their types, etc.
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>`.
 
 Methods
 -------

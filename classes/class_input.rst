@@ -21,7 +21,7 @@ A singleton that deals with inputs. This includes key presses, mouse buttons and
 Tutorials
 ---------
 
-- :doc:`../tutorials/inputs/index`
+- :doc:`Inputs tutorial index <../tutorials/inputs/index>`
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
@@ -160,7 +160,7 @@ enum **MouseMode**:
 
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and its position locked at the center of the screen.
 
-**Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
+\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
 
 - **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
 
@@ -249,7 +249,7 @@ This will simulate pressing the specified action.
 
 The strength can be used for non-boolean actions, it's ranged between 0 and 1 representing the intensity of the given action.
 
-**Note:** This method will not cause any :ref:`Node._input<class_Node_method__input>` calls. It is intended to be used with :ref:`is_action_pressed<class_Input_method_is_action_pressed>` and :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>`. If you want to simulate ``_input``, use :ref:`parse_input_event<class_Input_method_parse_input_event>` instead.
+\ **Note:** This method will not cause any :ref:`Node._input<class_Node_method__input>` calls. It is intended to be used with :ref:`is_action_pressed<class_Input_method_is_action_pressed>` and :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>`. If you want to simulate ``_input``, use :ref:`parse_input_event<class_Input_method_parse_input_event>` instead.
 
 ----
 
@@ -287,7 +287,7 @@ Returns the acceleration of the device's accelerometer sensor, if the device has
 
 Note this method returns an empty :ref:`Vector3<class_Vector3>` when running from the editor even when your device has an accelerometer. You must export your project to a supported device to read values from the accelerometer.
 
-**Note:** This method only works on iOS, Android, and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`. On Android the unit of measurement for each axis is m/s² while on iOS and UWP it's a multiple of the Earth's gravitational acceleration ``g`` (~9.81 m/s²).
+\ **Note:** This method only works on iOS, Android, and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`. On Android the unit of measurement for each axis is m/s² while on iOS and UWP it's a multiple of the Earth's gravitational acceleration ``g`` (~9.81 m/s²).
 
 ----
 
@@ -297,7 +297,7 @@ Note this method returns an empty :ref:`Vector3<class_Vector3>` when running fro
 
 Returns a value between 0 and 1 representing the raw intensity of the given action, ignoring the action's deadzone. In most cases, you should use :ref:`get_action_strength<class_Input_method_get_action_strength>` instead.
 
-If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -307,7 +307,7 @@ If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKe
 
 Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.
 
-If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -343,7 +343,7 @@ Returns the currently assigned cursor shape (see :ref:`CursorShape<enum_Input_Cu
 
 Returns the gravity of the device's accelerometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-**Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`. On Android the unit of measurement for each axis is m/s² while on iOS it's a multiple of the Earth's gravitational acceleration ``g`` (~9.81 m/s²).
+\ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`. On Android the unit of measurement for each axis is m/s² while on iOS it's a multiple of the Earth's gravitational acceleration ``g`` (~9.81 m/s²).
 
 ----
 
@@ -353,7 +353,7 @@ Returns the gravity of the device's accelerometer sensor, if the device has one.
 
 Returns the rotation rate in rad/s around a device's X, Y, and Z axes of the gyroscope sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-**Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+\ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 ----
 
@@ -443,7 +443,7 @@ Returns the mouse speed for the last time the cursor was moved, and this until t
 
 Returns the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-**Note:** This method only works on Android, iOS and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+\ **Note:** This method only works on Android, iOS and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 ----
 
@@ -483,9 +483,9 @@ Returns ``true`` when the user starts pressing the action event, meaning it's ``
 
 This is useful for code that needs to run only once when an action is pressed, instead of every frame while it's pressed.
 
-If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
-**Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -495,7 +495,7 @@ If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKe
 
 Returns ``true`` when the user stops pressing the action event, meaning it's ``true`` only on the frame that the user released the button.
 
-If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -505,9 +505,9 @@ If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKe
 
 Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
-If ``exact`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
-**Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_Input_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_Input_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -533,9 +533,9 @@ Returns ``true`` if the system knows the specified device. This means that it se
 
 Returns ``true`` if you are pressing the key in the current keyboard layout. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
 
-:ref:`is_key_pressed<class_Input_method_is_key_pressed>` is only recommended over :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` in non-game applications. This ensures that shortcut keys behave as expected depending on the user's keyboard layout, as keyboard shortcuts are generally dependent on the keyboard layout in non-game applications. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
+\ :ref:`is_key_pressed<class_Input_method_is_key_pressed>` is only recommended over :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` in non-game applications. This ensures that shortcut keys behave as expected depending on the user's keyboard layout, as keyboard shortcuts are generally dependent on the keyboard layout in non-game applications. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
 
-**Note:** Due to keyboard ghosting, :ref:`is_key_pressed<class_Input_method_is_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_key_pressed<class_Input_method_is_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -553,9 +553,9 @@ Returns ``true`` if you are pressing the mouse button specified with :ref:`Butto
 
 Returns ``true`` if you are pressing the key in the physical location on the 101/102-key US QWERTY keyboard. You can pass a :ref:`KeyList<enum_@GlobalScope_KeyList>` constant.
 
-:ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` is recommended over :ref:`is_key_pressed<class_Input_method_is_key_pressed>` for in-game actions, as it will make W/A/S/D layouts work regardless of the user's keyboard layout. :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` will also ensure that the top row number keys work on any keyboard layout. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
+\ :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` is recommended over :ref:`is_key_pressed<class_Input_method_is_key_pressed>` for in-game actions, as it will make W/A/S/D layouts work regardless of the user's keyboard layout. :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` will also ensure that the top row number keys work on any keyboard layout. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
 
-**Note:** Due to keyboard ghosting, :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <https://docs.godotengine.org/en/3.4/tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+\ **Note:** Due to keyboard ghosting, :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
 ----
 
@@ -600,7 +600,7 @@ Removes all mappings from the internal database that match the given GUID.
 
 Sets the acceleration value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
-**Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
+\ **Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
 ----
 
@@ -610,13 +610,13 @@ Sets the acceleration value of the accelerometer sensor. Can be used for debuggi
 
 Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
 
-``image``'s size must be lower than 256×256.
+\ ``image``'s size must be lower than 256×256.
 
-``hotspot`` must be within ``image``'s size.
+\ ``hotspot`` must be within ``image``'s size.
 
-**Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
+\ **Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
 
-**Note:** Only images imported with the **Lossless**, **Lossy** or **Uncompressed** compression modes are supported. The **Video RAM** compression mode can't be used for custom cursors.
+\ **Note:** Only images imported with the **Lossless**, **Lossy** or **Uncompressed** compression modes are supported. The **Video RAM** compression mode can't be used for custom cursors.
 
 ----
 
@@ -626,9 +626,9 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 
 Sets the default cursor shape to be used in the viewport instead of :ref:`CURSOR_ARROW<class_Input_constant_CURSOR_ARROW>`.
 
-**Note:** If you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` instead.
+\ **Note:** If you want to change the default cursor shape for :ref:`Control<class_Control>`'s nodes, use :ref:`Control.mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>` instead.
 
-**Note:** This method generates an :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to update cursor immediately.
+\ **Note:** This method generates an :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` to update cursor immediately.
 
 ----
 
@@ -638,7 +638,7 @@ Sets the default cursor shape to be used in the viewport instead of :ref:`CURSOR
 
 Sets the gravity value of the accelerometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
-**Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
+\ **Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
 ----
 
@@ -648,7 +648,7 @@ Sets the gravity value of the accelerometer sensor. Can be used for debugging on
 
 Sets the value of the rotation rate of the gyroscope sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
-**Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
+\ **Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
 ----
 
@@ -658,7 +658,7 @@ Sets the value of the rotation rate of the gyroscope sensor. Can be used for deb
 
 Sets the value of the magnetic field of the magnetometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
-**Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
+\ **Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
 
 ----
 
@@ -686,7 +686,7 @@ Input accumulation is enabled by default. It can be disabled to get slightly mor
 
 Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. ``weak_magnitude`` is the strength of the weak motor (between 0 and 1) and ``strong_magnitude`` is the strength of the strong motor (between 0 and 1). ``duration`` is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).
 
-**Note:** Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.
+\ **Note:** Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.
 
 ----
 
@@ -704,7 +704,9 @@ Stops the vibration of the joypad.
 
 Vibrate Android and iOS devices.
 
-**Note:** It needs ``VIBRATE`` permission for Android at export settings. iOS does not support duration.
+\ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
+
+\ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
 
 ----
 

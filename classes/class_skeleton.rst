@@ -195,7 +195,7 @@ Returns the name of the bone at index ``index``.
 
 Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
-**Note:** The parent bone returned will always be less than ``bone_idx``.
+\ **Note:** The parent bone returned will always be less than ``bone_idx``.
 
 ----
 
@@ -295,7 +295,7 @@ Returns the rest transform for a bone ``bone_idx``.
 
 Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
-**Note:** ``parent_idx`` must be less than ``bone_idx``.
+\ **Note:** ``parent_idx`` must be less than ``bone_idx``.
 
 ----
 

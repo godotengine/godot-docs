@@ -20,16 +20,16 @@ Description
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
-**Note:** ``Particles`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles<class_CPUParticles>` instead. You can convert ``Particles`` to :ref:`CPUParticles<class_CPUParticles>` by selecting the node, clicking the **Particles** menu at the top of the 3D editor viewport then choosing **Convert to CPUParticles**.
+\ **Note:** ``Particles`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles<class_CPUParticles>` instead. You can convert ``Particles`` to :ref:`CPUParticles<class_CPUParticles>` by selecting the node, clicking the **Particles** menu at the top of the 3D editor viewport then choosing **Convert to CPUParticles**.
 
-**Note:** On macOS, ``Particles`` rendering is much slower than :ref:`CPUParticles<class_CPUParticles>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles<class_CPUParticles>` instead when targeting macOS.
+\ **Note:** On macOS, ``Particles`` rendering is much slower than :ref:`CPUParticles<class_CPUParticles>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles<class_CPUParticles>` instead when targeting macOS.
 
-**Note:** After working on a Particles node, remember to update its :ref:`visibility_aabb<class_Particles_property_visibility_aabb>` by selecting it, clicking the **Particles** menu at the top of the 3D editor viewport then choose **Generate Visibility AABB**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
+\ **Note:** After working on a Particles node, remember to update its :ref:`visibility_aabb<class_Particles_property_visibility_aabb>` by selecting it, clicking the **Particles** menu at the top of the 3D editor viewport then choose **Generate Visibility AABB**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/performance/vertex_animation/controlling_thousands_of_fish`
+- :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -132,7 +132,7 @@ Property Descriptions
 
 The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_Particles_property_lifetime>`).
 
-**Note:** Changing :ref:`amount<class_Particles_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles_property_amount>`.
+\ **Note:** Changing :ref:`amount<class_Particles_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles_property_amount>`.
 
 ----
 
@@ -414,7 +414,7 @@ The :ref:`AABB<class_AABB>` that determines the node's region which needs to be 
 
 Grow the box if particles suddenly appear/disappear when the node enters/exits the screen. The :ref:`AABB<class_AABB>` can be grown via code or with the **Particles → Generate AABB** editor tool.
 
-**Note:** If the :ref:`ParticlesMaterial<class_ParticlesMaterial>` in use is configured to cast shadows, you may want to enlarge this AABB to ensure the shadow is updated when particles are off-screen.
+\ **Note:** If the :ref:`ParticlesMaterial<class_ParticlesMaterial>` in use is configured to cast shadows, you may want to enlarge this AABB to ensure the shadow is updated when particles are off-screen.
 
 Method Descriptions
 -------------------

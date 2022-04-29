@@ -25,7 +25,7 @@ It sets and gets the format in which the audio file will be recorded (8-bit, 16-
 Tutorials
 ---------
 
-- :doc:`../tutorials/audio/recording_with_microphone`
+- :doc:`Recording with microphone <../tutorials/audio/recording_with_microphone>`
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 

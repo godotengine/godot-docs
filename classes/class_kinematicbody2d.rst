@@ -18,16 +18,16 @@ Description
 
 Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses:
 
-**Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+\ **Simulated motion:** When these bodies are moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-**Kinematic characters:** KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but don't require advanced physics.
+\ **Kinematic characters:** KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but don't require advanced physics.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/kinematic_character_2d`
+- :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
-- :doc:`../tutorials/physics/using_kinematic_body_2d`
+- :doc:`Using KinematicBody2D <../tutorials/physics/using_kinematic_body_2d>`
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
 
@@ -36,11 +36,13 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`   | ``0.08``  |
-+---------------------------+--------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>` | ``false`` |
-+---------------------------+--------------------------------------------------------------------------------------+-----------+
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                                          | :ref:`collision/safe_margin<class_KinematicBody2D_property_collision/safe_margin>`                                     | ``0.08``  |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                                            | :ref:`motion/sync_to_physics<class_KinematicBody2D_property_motion/sync_to_physics>`                                   | ``false`` |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody2D_MovingPlatformApplyVelocityOnLeave>` | :ref:`moving_platform_apply_velocity_on_leave<class_KinematicBody2D_property_moving_platform_apply_velocity_on_leave>` | ``0``     |
++----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -72,6 +74,25 @@ Methods
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`test_move<class_KinematicBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` rel_vec, :ref:`bool<class_bool>` infinite_inertia=true **)**                                                                                                                                                                                                                                |
 +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_KinematicBody2D_MovingPlatformApplyVelocityOnLeave:
+
+.. _class_KinematicBody2D_constant_PLATFORM_VEL_ON_LEAVE_ALWAYS:
+
+.. _class_KinematicBody2D_constant_PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY:
+
+.. _class_KinematicBody2D_constant_PLATFORM_VEL_ON_LEAVE_NEVER:
+
+enum **MovingPlatformApplyVelocityOnLeave**:
+
+- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity when you leave a moving platform.
+
+- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
+
+- **PLATFORM_VEL_ON_LEAVE_NEVER** = **2** --- Do nothing when leaving a platform.
 
 Property Descriptions
 ---------------------
@@ -111,6 +132,22 @@ A lower value forces the collision algorithm to use more exact detection, so it 
 +-----------+------------------------------+
 
 If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>` functions.
+
+----
+
+.. _class_KinematicBody2D_property_moving_platform_apply_velocity_on_leave:
+
+- :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody2D_MovingPlatformApplyVelocityOnLeave>` **moving_platform_apply_velocity_on_leave**
+
++-----------+----------------------------------------------------+
+| *Default* | ``0``                                              |
++-----------+----------------------------------------------------+
+| *Setter*  | set_moving_platform_apply_velocity_on_leave(value) |
++-----------+----------------------------------------------------+
+| *Getter*  | get_moving_platform_apply_velocity_on_leave()      |
++-----------+----------------------------------------------------+
+
+Sets the behavior to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`MovingPlatformApplyVelocityOnLeave<enum_KinematicBody2D_MovingPlatformApplyVelocityOnLeave>` constants for available behavior.
 
 Method Descriptions
 -------------------
@@ -153,7 +190,7 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
 
 Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about a collision that occurred during the last call to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>` or :ref:`move_and_slide_with_snap<class_KinematicBody2D_method_move_and_slide_with_snap>`. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_method_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_method_get_slide_count>` - 1).
 
-**Example usage:**
+\ **Example usage:**\ 
 
 ::
 
@@ -213,15 +250,15 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 This method should be used in :ref:`Node._physics_process<class_Node_method__physics_process>` (or in a method called by :ref:`Node._physics_process<class_Node_method__physics_process>`), as it uses the physics step's ``delta`` value automatically in calculations. Otherwise, the simulation will run at an incorrect speed.
 
-``linear_velocity`` is the velocity vector in pixels per second. Unlike in :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
+\ ``linear_velocity`` is the velocity vector in pixels per second. Unlike in :ref:`move_and_collide<class_KinematicBody2D_method_move_and_collide>`, you should *not* multiply it by ``delta`` — the physics engine handles applying the velocity.
 
-``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
+\ ``up_direction`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
 
 If ``stop_on_slope`` is ``true``, body will not slide on slopes when you include gravity in ``linear_velocity`` and the body is standing still.
 
 If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
-``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
+\ ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
 If ``infinite_inertia`` is ``true``, body will be able to push :ref:`RigidBody2D<class_RigidBody2D>` nodes, but it won't also detect any collisions with them. If ``false``, it will interact with :ref:`RigidBody2D<class_RigidBody2D>` nodes like with :ref:`StaticBody2D<class_StaticBody2D>`.
 

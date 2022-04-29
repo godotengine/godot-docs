@@ -26,9 +26,9 @@ This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:
 Properties
 ----------
 
-+-------------------------+------+------------------------------+
-| :ref:`bool<class_bool>` | flat | ``true`` *(parent override)* |
-+-------------------------+------+------------------------------+
++-------------------------+------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | flat | ``true`` (overrides :ref:`Button<class_Button_property_flat>`) |
++-------------------------+------+----------------------------------------------------------------+
 
 Theme Properties
 ----------------

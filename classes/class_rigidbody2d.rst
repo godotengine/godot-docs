@@ -20,7 +20,7 @@ This node implements simulated 2D physics. You do not control a RigidBody2D dire
 
 A RigidBody2D has 4 behavior :ref:`mode<class_RigidBody2D_property_mode>`\ s: Rigid, Static, Character, and Kinematic.
 
-**Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
+\ **Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
 
 Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
 
@@ -114,7 +114,7 @@ Signals
 
 Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` occurs. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -124,7 +124,7 @@ Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 
 Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` ends. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -134,13 +134,13 @@ Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>
 
 Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidBody2D used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidBody2D used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 ----
 
@@ -150,13 +150,13 @@ Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides
 
 Emitted when the collision between one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s and another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`Physics2DServer<class_Physics2DServer>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidBody2D used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this RigidBody2D used by the :ref:`Physics2DServer<class_Physics2DServer>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
 ----
 
@@ -166,7 +166,7 @@ Emitted when the collision between one of this RigidBody2D's :ref:`Shape2D<class
 
 Emitted when the physics engine changes the body's sleeping state.
 
-**Note:** Changing the value :ref:`sleeping<class_RigidBody2D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
+\ **Note:** Changing the value :ref:`sleeping<class_RigidBody2D_property_sleeping>` will not trigger this signal. It is only emitted if the sleeping state is changed by the physics engine or ``emit_signal("sleeping_state_changed")`` is used.
 
 Enumerations
 ------------
@@ -308,7 +308,7 @@ Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_boun
 
 If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody2D_property_sleeping>`.
 
-**Note:** A RigidBody2D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody2D_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody2D_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody2D_property_sleeping>` property to ``true``.
+\ **Note:** A RigidBody2D will never enter sleep mode automatically if its :ref:`mode<class_RigidBody2D_property_mode>` is :ref:`MODE_CHARACTER<class_RigidBody2D_constant_MODE_CHARACTER>`. It can still be put to sleep manually by setting its :ref:`sleeping<class_RigidBody2D_property_sleeping>` property to ``true``.
 
 ----
 
@@ -342,7 +342,7 @@ If ``true``, the body will emit signals when it collides with another RigidBody2
 
 The maximum number of contacts that will be recorded. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true``.
 
-**Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end).
+\ **Note:** The number of contacts is different from the number of collisions. Collisions between parallel edges will result in two contacts (one at each end).
 
 ----
 
@@ -603,7 +603,7 @@ Applies a rotational impulse to the body.
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`contacts_reported<class_RigidBody2D_property_contacts_reported>` to be set high enough to detect all the collisions.
 
-**Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+\ **Note:** The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 ----
 

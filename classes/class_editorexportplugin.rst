@@ -46,6 +46,8 @@ Methods
 +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_ios_project_static_lib<class_EditorExportPlugin_method_add_ios_project_static_lib>` **(** :ref:`String<class_String>` path **)**                                                                                                        |
 +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`add_osx_plugin_file<class_EditorExportPlugin_method_add_osx_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                      |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**                                                                      |
 +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                     |
@@ -110,7 +112,7 @@ Adds a C++ code to the iOS export. The final code is created from the code appen
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-**Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
+\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
 
 This method should not be used for System libraries as they are already present on the device.
 
@@ -148,11 +150,25 @@ Adds a static lib from the given ``path`` to the iOS project.
 
 ----
 
+.. _class_EditorExportPlugin_method_add_osx_plugin_file:
+
+- void **add_osx_plugin_file** **(** :ref:`String<class_String>` path **)**
+
+Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app bundle.
+
+\ **Note:** This is useful only for macOS exports.
+
+----
+
 .. _class_EditorExportPlugin_method_add_shared_object:
 
 - void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PoolStringArray<class_PoolStringArray>` tags **)**
 
-Adds a shared object with the given ``tags`` and destination ``path``.
+Adds a shared object or a directory containing only shared objects with the given ``tags`` and destination ``path``.
+
+\ **Note:** In case of macOS exports, those shared objects will be added to ``Frameworks`` directory of app bundle.
+
+In case of a directory code-sign will error if you place non code object in directory.
 
 ----
 

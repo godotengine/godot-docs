@@ -20,16 +20,16 @@ This class constructs a full mesh of :ref:`WebRTCPeerConnection<class_WebRTCPeer
 
 You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :ref:`add_peer<class_WebRTCMultiplayer_method_add_peer>` or remove them via :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>`. Peers must be added in :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>` state to allow it to create the appropriate channels. This class will not create offers nor set descriptions, it will only poll them, and notify connections and disconnections.
 
-:ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
+\ :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+------------------------+-------------------------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` *(parent override)* |
-+-----------------------------------------------------------------+------------------------+-------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` *(parent override)*     |
-+-----------------------------------------------------------------+------------------------+-------------------------------+
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)              |
++-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Methods
 -------

@@ -42,7 +42,7 @@ The :ref:`post_import<class_EditorScenePostImport_method_post_import>` callback 
 Tutorials
 ---------
 
-- `#custom-script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`_ in :doc:`../tutorials/assets_pipeline/importing_scenes`
+- `#custom-script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`__ in :doc:`../tutorials/assets_pipeline/importing_scenes`
 
 Methods
 -------

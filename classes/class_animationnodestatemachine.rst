@@ -18,7 +18,7 @@ Description
 
 Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 

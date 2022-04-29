@@ -22,7 +22,7 @@ Base class for all UI-related nodes. ``Control`` features a bounding rectangle t
 
 For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from ``Control`` and :ref:`Container<class_Container>` nodes.
 
-**User Interface nodes and input**
+\ **User Interface nodes and input**\ 
 
 Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop_method__input_event>`. Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
 
@@ -30,18 +30,18 @@ Only one ``Control`` node can be in keyboard focus. Only the node in focus will 
 
 Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
-:ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
+\ :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_method_add_font_override>`. You can override the theme with the inspector.
 
-**Note:** Theme items are *not* :ref:`Object<class_Object>` properties. This means you can't access their values using :ref:`Object.get<class_Object_method_get>` and :ref:`Object.set<class_Object_method_set>`. Instead, use :ref:`get_color<class_Control_method_get_color>`, :ref:`get_constant<class_Control_method_get_constant>`, :ref:`get_font<class_Control_method_get_font>`, :ref:`get_icon<class_Control_method_get_icon>`, :ref:`get_stylebox<class_Control_method_get_stylebox>`, and the ``add_*_override`` methods provided by this class.
+\ **Note:** Theme items are *not* :ref:`Object<class_Object>` properties. This means you can't access their values using :ref:`Object.get<class_Object_method_get>` and :ref:`Object.set<class_Object_method_set>`. Instead, use :ref:`get_color<class_Control_method_get_color>`, :ref:`get_constant<class_Control_method_get_constant>`, :ref:`get_font<class_Control_method_get_font>`, :ref:`get_icon<class_Control_method_get_icon>`, :ref:`get_stylebox<class_Control_method_get_stylebox>`, and the ``add_*_override`` methods provided by this class.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/ui/index`
+- :doc:`GUI tutorial index <../tutorials/ui/index>`
 
-- :doc:`../tutorials/2d/custom_drawing_in_2d`
+- :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
-- :doc:`../tutorials/ui/control_node_gallery`
+- :doc:`Control node gallery <../tutorials/ui/control_node_gallery>`
 
 - `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`__
 
@@ -114,6 +114,8 @@ Properties
 | :ref:`int<class_int>`                            | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`                         | ``1``               |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------+
 | :ref:`Theme<class_Theme>`                        | :ref:`theme<class_Control_property_theme>`                                                     |                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------+
+| :ref:`String<class_String>`                      | :ref:`theme_type_variation<class_Control_property_theme_type_variation>`                       | ``""``              |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------+---------------------+
 
 Methods
@@ -226,9 +228,23 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_stylebox_override<class_Control_method_has_stylebox_override>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`is_drag_successful<class_Control_method_is_drag_successful>` **(** **)** |const|                                                                                                                                                                             |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`minimum_size_changed<class_Control_method_minimum_size_changed>` **(** **)**                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`release_focus<class_Control_method_release_focus>` **(** **)**                                                                                                                                                                                               |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_color_override<class_Control_method_remove_color_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                              |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_constant_override<class_Control_method_remove_constant_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                        |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_font_override<class_Control_method_remove_font_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_icon_override<class_Control_method_remove_icon_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_shader_override<class_Control_method_remove_shader_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                            |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`remove_stylebox_override<class_Control_method_remove_stylebox_override>` **(** :ref:`String<class_String>` name **)**                                                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_anchor<class_Control_method_set_anchor>` **(** :ref:`Margin<enum_@GlobalScope_Margin>` margin, :ref:`float<class_float>` anchor, :ref:`bool<class_bool>` keep_margin=false, :ref:`bool<class_bool>` push_opposite_anchor=true **)**                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -314,7 +330,7 @@ Emitted when a modal ``Control`` is closed. See :ref:`show_modal<class_Control_m
 
 Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
 
-**Note:** :ref:`mouse_entered<class_Control_signal_mouse_entered>` will not be emitted if the mouse enters a child ``Control`` node before entering the parent's ``Rect`` area, at least until the mouse is moved to reach the parent's ``Rect`` area.
+\ **Note:** :ref:`mouse_entered<class_Control_signal_mouse_entered>` will not be emitted if the mouse enters a child ``Control`` node before entering the parent's ``Rect`` area, at least until the mouse is moved to reach the parent's ``Rect`` area.
 
 ----
 
@@ -324,7 +340,7 @@ Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mo
 
 Emitted when the mouse leaves the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it.
 
-**Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
+\ **Note:** :ref:`mouse_exited<class_Control_signal_mouse_exited>` will be emitted if the mouse enters a child ``Control`` node, even if the mouse cursor is still inside the parent's ``Rect`` area.
 
 If you want to check whether the mouse truly left the area, ignoring any top nodes, you can use code like this:
 
@@ -986,7 +1002,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_Con
 
 The default cursor shape for this control. Useful for Godot plugins and applications or games that use the system's mouse cursors.
 
-**Note:** On Linux, shapes may vary depending on the cursor theme of the system.
+\ **Note:** On Linux, shapes may vary depending on the cursor theme of the system.
 
 ----
 
@@ -1110,9 +1126,9 @@ The node's rotation around its pivot, in degrees. See :ref:`rect_pivot_offset<cl
 
 The node's scale, relative to its :ref:`rect_size<class_Control_property_rect_size>`. Change this property to scale the node around its :ref:`rect_pivot_offset<class_Control_property_rect_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
 
-**Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the `documentation <https://docs.godotengine.org/en/3.4/tutorials/rendering/multiple_resolutions.html>`__ instead of scaling Controls individually.
+\ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/rendering/multiple_resolutions>` instead of scaling Controls individually.
 
-**Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instanced. To set the Control's scale when it's instanced, wait for one frame using ``yield(get_tree(), "idle_frame")`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
+\ **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instanced. To set the Control's scale when it's instanced, wait for one frame using ``yield(get_tree(), "idle_frame")`` then set its :ref:`rect_scale<class_Control_property_rect_scale>` property.
 
 ----
 
@@ -1190,6 +1206,28 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 
 Changing this property replaces the current :ref:`Theme<class_Theme>` resource this node and all its ``Control`` children use.
 
+----
+
+.. _class_Control_property_theme_type_variation:
+
+- :ref:`String<class_String>` **theme_type_variation**
+
++-----------+---------------------------------+
+| *Default* | ``""``                          |
++-----------+---------------------------------+
+| *Setter*  | set_theme_type_variation(value) |
++-----------+---------------------------------+
+| *Getter*  | get_theme_type_variation()      |
++-----------+---------------------------------+
+
+The name of a theme type variation used by this ``Control`` to look up its own theme items. When empty, the class name of the node is used (e.g. ``Button`` for the :ref:`Button<class_Button>` control), as well as the class names of all parent classes (in order of inheritance).
+
+When set, this property gives the highest priority to the type of the specified name. This type can in turn extend another type, forming a dependency chain. See :ref:`Theme.set_type_variation<class_Theme_method_set_type_variation>`. If the theme item cannot be found using this type or its base types, lookup falls back on the class names.
+
+\ **Note:** To look up ``Control``'s own items use various ``get_*`` methods without specifying ``theme_type``.
+
+\ **Note:** Theme items are looked for in the tree order, from branch to root, where each ``Control`` node is checked for its :ref:`theme<class_Control_property_theme>` property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
+
 Method Descriptions
 -------------------
 
@@ -1210,6 +1248,8 @@ If not overridden, defaults to ``false``.
 Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`rect_min_size<class_Control_property_rect_min_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
 
 If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
+
+\ **Note:** This method will not be called when the script is attached to a ``Control`` node that already overrides its minimum size (e.g. :ref:`Label<class_Label>`, :ref:`Button<class_Button>`, :ref:`PanelContainer<class_PanelContainer>` etc.). It can only be used with most basic GUI nodes, like ``Control``, :ref:`Container<class_Container>`, :ref:`Panel<class_Panel>` etc.
 
 ----
 
@@ -1240,7 +1280,7 @@ The event won't trigger if:
 
 \* it happens outside the parent's rectangle and the parent has either :ref:`rect_clip_content<class_Control_property_rect_clip_content>` or :ref:`_clips_input<class_Control_method__clips_input>` enabled.
 
-**Note:** Event position is relative to the control origin.
+\ **Note:** Event position is relative to the control origin.
 
 ----
 
@@ -1254,7 +1294,7 @@ The returned node must be of type ``Control`` or Control-derived. It can have ch
 
 The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
 
-**Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
+\ **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`rect_min_size<class_Control_property_rect_min_size>` to some non-zero value.
 
 Example of usage with a custom-constructed node:
 
@@ -1288,11 +1328,11 @@ Marks an input event as handled. Once you accept an input event, it stops propag
 
 - void **add_color_override** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
 
-Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override cannot be removed, but it can be overridden with the corresponding default value.
+Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
 
-See also :ref:`get_color<class_Control_method_get_color>`.
+See also :ref:`get_color<class_Control_method_get_color>`, :ref:`remove_color_override<class_Control_method_remove_color_override>`.
 
-**Example of overriding a label's color and resetting it later:**
+\ **Example of overriding a label's color and resetting it later:**\ 
 
 ::
 
@@ -1307,9 +1347,9 @@ See also :ref:`get_color<class_Control_method_get_color>`.
 
 - void **add_constant_override** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` constant **)**
 
-Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override cannot be removed, but it can be overridden with the corresponding default value.
+Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
 
-See also :ref:`get_constant<class_Control_method_get_constant>`.
+See also :ref:`get_constant<class_Control_method_get_constant>`, :ref:`remove_constant_override<class_Control_method_remove_constant_override>`.
 
 ----
 
@@ -1317,7 +1357,9 @@ See also :ref:`get_constant<class_Control_method_get_constant>`.
 
 - void **add_font_override** **(** :ref:`String<class_String>` name, :ref:`Font<class_Font>` font **)**
 
-Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed by assigning it a ``null`` value.
+Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
+
+\ **Note:** An override can be removed by assigning it a ``null`` value. This behavior is deprecated and will be removed in 4.0, use :ref:`remove_font_override<class_Control_method_remove_font_override>` instead.
 
 See also :ref:`get_font<class_Control_method_get_font>`.
 
@@ -1327,7 +1369,9 @@ See also :ref:`get_font<class_Control_method_get_font>`.
 
 - void **add_icon_override** **(** :ref:`String<class_String>` name, :ref:`Texture<class_Texture>` texture **)**
 
-Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed by assigning it a ``null`` value.
+Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
+
+\ **Note:** An override can be removed by assigning it a ``null`` value. This behavior is deprecated and will be removed in 4.0, use :ref:`remove_icon_override<class_Control_method_remove_icon_override>` instead.
 
 See also :ref:`get_icon<class_Control_method_get_icon>`.
 
@@ -1337,7 +1381,9 @@ See also :ref:`get_icon<class_Control_method_get_icon>`.
 
 - void **add_shader_override** **(** :ref:`String<class_String>` name, :ref:`Shader<class_Shader>` shader **)**
 
-Creates a local override for a theme shader with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed by assigning it a ``null`` value.
+Creates a local override for a theme shader with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
+
+\ **Note:** An override can be removed by assigning it a ``null`` value. This behavior is deprecated and will be removed in 4.0, use :ref:`remove_shader_override<class_Control_method_remove_shader_override>` instead.
 
 ----
 
@@ -1345,11 +1391,13 @@ Creates a local override for a theme shader with the specified ``name``. Local o
 
 - void **add_stylebox_override** **(** :ref:`String<class_String>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
 
-Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed by assigning it a ``null`` value.
+Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control.
+
+\ **Note:** An override can be removed by assigning it a ``null`` value. This behavior is deprecated and will be removed in 4.0, use :ref:`remove_stylebox_override<class_Control_method_remove_stylebox_override>` instead.
 
 See also :ref:`get_stylebox<class_Control_method_get_stylebox>`.
 
-**Example of modifying a property in a StyleBox by duplicating it:**
+\ **Example of modifying a property in a StyleBox by duplicating it:**\ 
 
 ::
 
@@ -1444,7 +1492,7 @@ Returns :ref:`margin_left<class_Control_property_margin_left>` and :ref:`margin_
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type="" **)** |const|
 
-Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``. If ``theme_type`` is omitted the class name of the current control is used as the type. If the type is a class name its parent classes are also checked, in order of inheritance.
+Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``. If ``theme_type`` is omitted the class name of the current control is used as the type, or :ref:`theme_type_variation<class_Control_property_theme_type_variation>` if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance.
 
 For the current control its local overrides are considered first (see :ref:`add_color_override<class_Control_method_add_color_override>`), then its assigned :ref:`theme<class_Control_property_theme>`. After the current control, each parent control and its assigned :ref:`theme<class_Control_property_theme>` are considered; controls without a :ref:`theme<class_Control_property_theme>` assigned are skipped. If no matching :ref:`Theme<class_Theme>` is found in the tree, a custom project :ref:`Theme<class_Theme>` (see :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`) and the default :ref:`Theme<class_Theme>` are used.
 
@@ -1746,7 +1794,7 @@ Virtual method to be implemented by the user. Returns whether the given ``point`
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
-**Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+\ **Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
 
 ----
 
@@ -1780,6 +1828,16 @@ See :ref:`add_stylebox_override<class_Control_method_add_stylebox_override>`.
 
 ----
 
+.. _class_Control_method_is_drag_successful:
+
+- :ref:`bool<class_bool>` **is_drag_successful** **(** **)** |const|
+
+Returns ``true`` if a drag operation is successful. Alternative to :ref:`Viewport.gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>`.
+
+Best used with :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION_DRAG_END>`.
+
+----
+
 .. _class_Control_method_minimum_size_changed:
 
 - void **minimum_size_changed** **(** **)**
@@ -1793,6 +1851,54 @@ Invalidates the size cache in this node and in parent nodes up to toplevel. Inte
 - void **release_focus** **(** **)**
 
 Give up the focus. No other control will be able to receive keyboard input.
+
+----
+
+.. _class_Control_method_remove_color_override:
+
+- void **remove_color_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for a :ref:`Color<class_Color>` with the given ``name``.
+
+----
+
+.. _class_Control_method_remove_constant_override:
+
+- void **remove_constant_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for a constant with the given ``name``.
+
+----
+
+.. _class_Control_method_remove_font_override:
+
+- void **remove_font_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for a :ref:`Font<class_Font>` with the given ``name``.
+
+----
+
+.. _class_Control_method_remove_icon_override:
+
+- void **remove_icon_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for an icon with the given ``name``.
+
+----
+
+.. _class_Control_method_remove_shader_override:
+
+- void **remove_shader_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for a shader with the given ``name``.
+
+----
+
+.. _class_Control_method_remove_stylebox_override:
+
+- void **remove_stylebox_override** **(** :ref:`String<class_String>` name **)**
+
+Removes a theme override for a :ref:`StyleBox<class_StyleBox>` with the given ``name``.
 
 ----
 
@@ -1850,7 +1956,7 @@ Forwards the handling of this control's drag and drop to ``target`` control.
 
 Forwarding can be implemented in the target control similar to the methods :ref:`get_drag_data<class_Control_method_get_drag_data>`, :ref:`can_drop_data<class_Control_method_can_drop_data>`, and :ref:`drop_data<class_Control_method_drop_data>` but with two differences:
 
-1. The function name must be suffixed with **_fw**
+1. The function name must be suffixed with **_fw**\ 
 
 2. The function must take an extra argument that is the control doing the forwarding
 

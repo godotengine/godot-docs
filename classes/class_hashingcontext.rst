@@ -42,7 +42,7 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Print the result as hex string and array.
         printt(res.hex_encode(), Array(res))
 
-**Note:** Not available in HTML5 exports.
+\ **Note:** Not available in HTML5 exports.
 
 Methods
 -------

@@ -18,12 +18,12 @@ Description
 
 This node allows you to create a torus for use with the CSG system.
 
-**Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
 Tutorials
 ---------
 
-- `Prototyping levels with CSG <$DOCS_URL/tutorials/3d/csg_tools.html>`__
+- :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
 Properties
 ----------

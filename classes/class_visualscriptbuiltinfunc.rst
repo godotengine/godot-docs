@@ -300,7 +300,7 @@ enum **BuiltinFunc**:
 
 - **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1.
 
-**Note:** Names are defined in ``color_names.inc``.
+\ **Note:** Names are defined in ``color_names.inc``.
 
 - **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 

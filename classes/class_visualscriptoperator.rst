@@ -16,13 +16,13 @@ A Visual Script node that performs an operation on two values.
 Description
 -----------
 
-**Input Ports:**
+**Input Ports:**\ 
 
-- Data (variant): ``A``
+- Data (variant): ``A``\ 
 
-- Data (variant): ``B``
+- Data (variant): ``B``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Data (variant): ``result``
 

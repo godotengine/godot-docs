@@ -18,17 +18,17 @@ Description
 
 Branches the flow based on an input's value. Use **Case Count** in the Inspector to set the number of branches and each comparison's optional type.
 
-**Input Ports:**
+\ **Input Ports:**\ 
 
-- Sequence: ``'input' is``
+- Sequence: ``'input' is``\ 
 
-- Data (variant): ``=``
+- Data (variant): ``=``\ 
 
 - Data (variant): ``=`` (optional)
 
-- Data (variant): ``input``
+- Data (variant): ``input``\ 
 
-**Output Ports:**
+\ **Output Ports:**\ 
 
 - Sequence
 

@@ -26,13 +26,15 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------+----------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` | ``true`` |
-+----------------------------------------------+----------------------------------------------------------------+----------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     | ``""``   |
-+----------------------------------------------+----------------------------------------------------------------+----------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         | ``2``    |
-+----------------------------------------------+----------------------------------------------------------------+----------+
++----------------------------------------------+------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>`                     | ``true`` |
++----------------------------------------------+------------------------------------------------------------------------------------+----------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`                         | ``""``   |
++----------------------------------------------+------------------------------------------------------------------------------------+----------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`                             | ``2``    |
++----------------------------------------------+------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                    | :ref:`override_oversampling<class_DynamicFontData_property_override_oversampling>` | ``0.0``  |
++----------------------------------------------+------------------------------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -101,6 +103,22 @@ The path to the vector font file.
 +-----------+--------------------+
 
 The font hinting mode used by FreeType. See :ref:`Hinting<enum_DynamicFontData_Hinting>` for options.
+
+----
+
+.. _class_DynamicFontData_property_override_oversampling:
+
+- :ref:`float<class_float>` **override_oversampling**
+
++-----------+----------------------------------+
+| *Default* | ``0.0``                          |
++-----------+----------------------------------+
+| *Setter*  | set_override_oversampling(value) |
++-----------+----------------------------------+
+| *Getter*  | get_override_oversampling()      |
++-----------+----------------------------------+
+
+If set to a value greater than ``0.0``, it will override default font oversampling, ignoring :ref:`SceneTree.use_font_oversampling<class_SceneTree_property_use_font_oversampling>` value and viewport stretch mode.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

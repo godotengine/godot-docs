@@ -20,12 +20,12 @@ Native image datatype. Contains image data which can be converted to an :ref:`Im
 
 An ``Image`` cannot be assigned to a ``texture`` property of an object directly (such as :ref:`Sprite<class_Sprite>`), and has to be converted manually to an :ref:`ImageTexture<class_ImageTexture>` first.
 
-**Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
+\ **Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/assets_pipeline/importing_images`
+- :doc:`Importing images <../tutorials/assets_pipeline/importing_images>`
 
 Properties
 ----------
@@ -69,6 +69,8 @@ Methods
 | void                                      | :ref:`expand_x2_hq2x<class_Image_method_expand_x2_hq2x>` **(** **)**                                                                                                                                                                                             |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`fill<class_Image_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                 |
++-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`fill_rect<class_Image_method_fill_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**                                                                                                                                       |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`fix_alpha_edges<class_Image_method_fix_alpha_edges>` **(** **)**                                                                                                                                                                                           |
 +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -236,17 +238,17 @@ enum **Format**:
 
 - **FORMAT_R8** = **2** --- OpenGL texture format ``RED`` with a single component and a bitdepth of 8.
 
-**Note:** When using the GLES2 backend, this uses the alpha channel instead of the red channel for storage.
+\ **Note:** When using the GLES2 backend, this uses the alpha channel instead of the red channel for storage.
 
 - **FORMAT_RG8** = **3** --- OpenGL texture format ``RG`` with two components and a bitdepth of 8 for each.
 
 - **FORMAT_RGB8** = **4** --- OpenGL texture format ``RGB`` with three components, each with a bitdepth of 8.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGBA8** = **5** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 8.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGBA4444** = **6** --- OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 4.
 
@@ -272,15 +274,15 @@ enum **Format**:
 
 - **FORMAT_DXT1** = **17** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 1, and is the smallest variation of S3TC, only providing 1 bit of alpha and color data being premultiplied with alpha.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_DXT3** = **18** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format that uses Block Compression 2, and color data is interpreted as not having been premultiplied by alpha. Well suited for images with sharp alpha transitions between translucent and opaque areas.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_DXT5** = **19** --- The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format also known as Block Compression 3 or BC3 that contains 64 bits of alpha channel data followed by 64 bits of DXT1-encoded color data. Color data is not premultiplied by alpha, same as DXT3. DXT5 generally produces superior results for transparent gradients compared to DXT3.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_RGTC_R** = **20** --- Texture format that uses `Red Green Texture Compression <https://www.khronos.org/opengl/wiki/Red_Green_Texture_Compression>`__, normalizing the red channel data using the same compression algorithm that DXT5 uses for the alpha channel.
 
@@ -288,7 +290,7 @@ enum **Format**:
 
 - **FORMAT_BPTC_RGBA** = **22** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with unsigned normalized RGBA components.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_BPTC_RGBF** = **23** --- Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture_Compression>`__ compression with signed floating-point RGB components.
 
@@ -296,7 +298,7 @@ enum **Format**:
 
 - **FORMAT_PVRTC2** = **25** --- Texture format used on PowerVR-supported mobile platforms, uses 2-bit color depth with no alpha. More information can be found `here <https://en.wikipedia.org/wiki/PVRTC>`__.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_PVRTC2A** = **26** --- Same as `PVRTC2 <https://en.wikipedia.org/wiki/PVRTC>`__, but with an alpha component.
 
@@ -316,15 +318,15 @@ enum **Format**:
 
 - **FORMAT_ETC2_RGB8** = **34** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8`` variant), which is a follow-up of ETC1 and compresses RGB888 data.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_ETC2_RGBA8** = **35** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGBA8``\ variant), which compresses RGBA8888 data with full alpha support.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_ETC2_RGB8A1** = **36** --- `Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGB8_PUNCHTHROUGH_ALPHA1`` variant), which compresses RGBA data to make alpha either fully transparent or fully opaque.
 
-**Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
+\ **Note:** When creating an :ref:`ImageTexture<class_ImageTexture>`, an sRGB to linear color space conversion is performed.
 
 - **FORMAT_MAX** = **37** --- Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
@@ -356,7 +358,7 @@ It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BIL
 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
 
-**Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
+\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
@@ -459,7 +461,7 @@ Method Descriptions
 
 - void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``.
+Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -467,7 +469,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest
 
 - void **blend_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
+Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``, clipped accordingly to both image bounds. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -475,7 +477,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 - void **blit_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
+Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -483,7 +485,7 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
 
 - void **blit_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
+Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``, clipped accordingly to both image bounds. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -579,7 +581,15 @@ Stretches the image and enlarges it by a factor of 2. No interpolation is done.
 
 - void **fill** **(** :ref:`Color<class_Color>` color **)**
 
-Fills the image with a given :ref:`Color<class_Color>`.
+Fills the image with ``color``.
+
+----
+
+.. _class_Image_method_fill_rect:
+
+- void **fill_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**
+
+Fills ``rect`` with ``color``.
 
 ----
 
@@ -613,7 +623,7 @@ Flips the image vertically.
 
 Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``.
 
-**Note:** Mipmap generation is done on the CPU, is single-threaded and is *always* done on the main thread. This means generating mipmaps will result in noticeable stuttering during gameplay, even if :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` is called from a :ref:`Thread<class_Thread>`.
+\ **Note:** Mipmap generation is done on the CPU, is single-threaded and is *always* done on the main thread. This means generating mipmaps will result in noticeable stuttering during gameplay, even if :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` is called from a :ref:`Thread<class_Thread>`.
 
 ----
 
@@ -733,9 +743,9 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads an image from file ``path``. See `Supported image formats <https://docs.godotengine.org/en/3.4/tutorials/assets_pipeline/importing_images.html#supported-image-formats>`__ for a list of supported image formats and limitations.
+Loads an image from file ``path``. See `Supported image formats <../tutorials/assets_pipeline/importing_images.html#supported-image-formats>`__ for a list of supported image formats and limitations.
 
-**Warning:** This method should only be used in the editor or in cases when you need to load external images at run-time, such as images located at the ``user://`` directory, and may not work in exported projects.
+\ **Warning:** This method should only be used in the editor or in cases when you need to load external images at run-time, such as images located at the ``user://`` directory, and may not work in exported projects.
 
 See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 
@@ -747,7 +757,7 @@ See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 
 Loads an image from the binary contents of a BMP file.
 
-**Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
+\ **Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
 
 ----
 
@@ -837,7 +847,7 @@ Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
-**Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` when it is called from an exported project.
 
 ----
 

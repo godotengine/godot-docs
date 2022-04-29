@@ -18,7 +18,7 @@ Description
 
 Sprite frame library for an :ref:`AnimatedSprite<class_AnimatedSprite>` or :ref:`AnimatedSprite3D<class_AnimatedSprite3D>` node. Contains frames and animation data for playback.
 
-**Note:** You can associate a set of normal maps by creating additional ``SpriteFrames`` resources with a ``_normal`` suffix. For example, having 2 ``SpriteFrames`` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
+\ **Note:** You can associate a set of normal maps by creating additional ``SpriteFrames`` resources with a ``_normal`` suffix. For example, having 2 ``SpriteFrames`` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
 
 Properties
 ----------

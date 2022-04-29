@@ -25,7 +25,7 @@ You can add vertices to the blend space with :ref:`add_blend_point<class_Animati
 Tutorials
 ---------
 
-- :doc:`../tutorials/animation/animation_tree`
+- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

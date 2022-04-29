@@ -41,7 +41,7 @@ Here's an example on how to add an action to the Godot editor's own ``UndoRedo``
         undo_redo.add_undo_property(node, "position", node.position)
         undo_redo.commit_action()
 
-:ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
+\ :ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
 
 If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
 

@@ -20,7 +20,7 @@ The CryptoKey class represents a cryptographic key. Keys can be loaded and saved
 
 They can be used to generate a self-signed :ref:`X509Certificate<class_X509Certificate>` via :ref:`Crypto.generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` and as private key in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` along with the appropriate certificate.
 
-**Note:** Not available in HTML5 exports.
+\ **Note:** Not available in HTML5 exports.
 
 Methods
 -------
@@ -54,7 +54,7 @@ Return ``true`` if this CryptoKey only has the public part, and not the private 
 
 Loads a key from ``path``. If ``public_only`` is ``true``, only the public key will be loaded.
 
-**Note:** ``path`` should be a "\*.pub" file if ``public_only`` is ``true``, a "\*.key" file otherwise.
+\ **Note:** ``path`` should be a "\*.pub" file if ``public_only`` is ``true``, a "\*.key" file otherwise.
 
 ----
 
@@ -72,7 +72,7 @@ Loads a key from the given ``string``. If ``public_only`` is ``true``, only the 
 
 Saves a key to the given ``path``. If ``public_only`` is ``true``, only the public key will be saved.
 
-**Note:** ``path`` should be a "\*.pub" file if ``public_only`` is ``true``, a "\*.key" file otherwise.
+\ **Note:** ``path`` should be a "\*.pub" file if ``public_only`` is ``true``, a "\*.key" file otherwise.
 
 ----
 

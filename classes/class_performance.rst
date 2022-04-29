@@ -18,9 +18,9 @@ Description
 
 This class provides access to a number of different monitors related to performance, such as memory usage, draw calls, and FPS. These are the same as the values displayed in the **Monitor** tab in the editor's **Debugger** panel. By using the :ref:`get_monitor<class_Performance_method_get_monitor>` method of this class, you can access this data from your code.
 
-**Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+\ **Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
 
-**Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
+\ **Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
 Methods
 -------

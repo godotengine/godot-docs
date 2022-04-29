@@ -20,18 +20,18 @@ Description
 
 Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
 
-**Procedural generation:** ``GIProbe`` can be baked in an exported project, which makes it suitable for procedurally generated or user-built levels as long as all the geometry is generated in advance.
+\ **Procedural generation:** ``GIProbe`` can be baked in an exported project, which makes it suitable for procedurally generated or user-built levels as long as all the geometry is generated in advance.
 
-**Performance:** ``GIProbe`` is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`BakedLightmap<class_BakedLightmap>` instead). To provide a fallback for low-end hardware, consider adding an option to disable ``GIProbe`` in your project's options menus. A ``GIProbe`` node can be disabled by hiding it.
+\ **Performance:** ``GIProbe`` is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`BakedLightmap<class_BakedLightmap>` instead). To provide a fallback for low-end hardware, consider adding an option to disable ``GIProbe`` in your project's options menus. A ``GIProbe`` node can be disabled by hiding it.
 
-**Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh. To further prevent light leaks, you can also strategically place temporary :ref:`MeshInstance<class_MeshInstance>` nodes with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` enabled. These temporary nodes can then be hidden after baking the ``GIProbe`` node.
+\ **Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh. To further prevent light leaks, you can also strategically place temporary :ref:`MeshInstance<class_MeshInstance>` nodes with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` enabled. These temporary nodes can then be hidden after baking the ``GIProbe`` node.
 
-**Note:** Due to a renderer limitation, emissive :ref:`ShaderMaterial<class_ShaderMaterial>`\ s cannot emit light when used in a ``GIProbe``. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a ``GIProbe``.
+\ **Note:** Due to a renderer limitation, emissive :ref:`ShaderMaterial<class_ShaderMaterial>`\ s cannot emit light when used in a ``GIProbe``. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a ``GIProbe``.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/gi_probes`
+- :doc:`GI probes <../tutorials/3d/gi_probes>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -113,7 +113,7 @@ Property Descriptions
 
 Offsets the lookup of the light contribution from the ``GIProbe``. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and :ref:`normal_bias<class_GIProbe_property_normal_bias>` should be played around with to minimize self-shadowing and light leaking.
 
-**Note:** ``bias`` should usually be above 1.0 as that is the size of the voxels.
+\ **Note:** ``bias`` should usually be above 1.0 as that is the size of the voxels.
 
 ----
 
@@ -266,9 +266,9 @@ Method Descriptions
 
 Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s marked with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` and :ref:`Light<class_Light>`\ s marked with either :ref:`Light.BAKE_INDIRECT<class_Light_constant_BAKE_INDIRECT>` or :ref:`Light.BAKE_ALL<class_Light_constant_BAKE_ALL>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the ``GIProbe``'s data and debug any issues that may be occurring.
 
-**Note:** :ref:`bake<class_GIProbe_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a ``GIProbe`` generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_GIProbe_property_subdiv>` can speed up baking.
+\ **Note:** :ref:`bake<class_GIProbe_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a ``GIProbe`` generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_GIProbe_property_subdiv>` can speed up baking.
 
-**Note:** :ref:`GeometryInstance<class_GeometryInstance>`\ s and :ref:`Light<class_Light>`\ s must be fully ready before :ref:`bake<class_GIProbe_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked ``GIProbe``, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_GIProbe_method_bake>` directly.
+\ **Note:** :ref:`GeometryInstance<class_GeometryInstance>`\ s and :ref:`Light<class_Light>`\ s must be fully ready before :ref:`bake<class_GIProbe_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked ``GIProbe``, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_GIProbe_method_bake>` directly.
 
 ----
 

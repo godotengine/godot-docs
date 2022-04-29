@@ -16,19 +16,19 @@ Low-level hyper-text transfer protocol client.
 Description
 -----------
 
-Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases. **See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternative.**
+Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases. **See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternative.**\ 
 
-**Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
+\ **Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
 
 A ``HTTPClient`` should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports SSL and SSL server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
 
 For more information on HTTP, see https://developer.mozilla.org/en-US/docs/Web/HTTP (or read RFC 2616 to get it straight from the source: https://tools.ietf.org/html/rfc2616).
 
-**Note:** When performing HTTP requests from a project exported to HTML5, keep in mind the remote server may not allow requests from foreign origins due to `CORS <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`__. If you host the server in question, you should modify its backend to allow requests from foreign origins by adding the ``Access-Control-Allow-Origin: *`` HTTP header.
+\ **Note:** When performing HTTP requests from a project exported to HTML5, keep in mind the remote server may not allow requests from foreign origins due to `CORS <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`__. If you host the server in question, you should modify its backend to allow requests from foreign origins by adding the ``Access-Control-Allow-Origin: *`` HTTP header.
 
-**Note:** SSL/TLS support is currently limited to TLS 1.0, TLS 1.1, and TLS 1.2. Attempting to connect to a TLS 1.3-only server will return an error.
+\ **Note:** SSL/TLS support is currently limited to TLS 1.0, TLS 1.1, and TLS 1.2. Attempting to connect to a TLS 1.3-only server will return an error.
 
-**Warning:** SSL/TLS certificate revocation and certificate pinning are currently not supported. Revoked certificates are accepted as long as they are otherwise valid. If this is a concern, you may want to use automatically managed certificates with a short validity period.
+\ **Warning:** SSL/TLS certificate revocation and certificate pinning are currently not supported. Revoked certificates are accepted as long as they are otherwise valid. If this is a concern, you may want to use automatically managed certificates with a short validity period.
 
 Tutorials
 ---------
@@ -79,6 +79,10 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request<class_HTTPClient_method_request>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`String<class_String>` body="" **)**                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`request_raw<class_HTTPClient_method_request_raw>` **(** :ref:`Method<enum_HTTPClient_Method>` method, :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` headers, :ref:`PoolByteArray<class_PoolByteArray>` body **)** |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_http_proxy<class_HTTPClient_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_https_proxy<class_HTTPClient_method_set_https_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -492,7 +496,7 @@ The host should not have http:// prepended but will strip the protocol identifie
 
 If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS (if ``use_ssl`` is enabled).
 
-``verify_host`` will check the SSL identity of the host if set to ``true``.
+\ ``verify_host`` will check the SSL identity of the host if set to ``true``.
 
 ----
 
@@ -502,7 +506,7 @@ If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 f
 
 Returns the response's body length.
 
-**Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
+\ **Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
 
 ----
 
@@ -528,7 +532,7 @@ Returns the response headers.
 
 Returns all response headers as a Dictionary of structure ``{ "key": "value1; value2" }`` where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -620,7 +624,7 @@ To create a POST request with query strings to push to the server, do:
     var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(query_string.length())]
     var result = http_client.request(http_client.METHOD_POST, "/index.php", headers, query_string)
 
-**Note:** The ``request_data`` parameter is ignored if ``method`` is :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.http_escape<class_String_method_http_escape>` for an example.
+\ **Note:** The ``request_data`` parameter is ignored if ``method`` is :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`. This is because GET methods can't contain request data. As a workaround, you can pass request data as a query string in the URL. See :ref:`String.http_escape<class_String_method_http_escape>` for an example.
 
 ----
 
@@ -635,6 +639,26 @@ The URL parameter is usually just the part after the host, so for ``http://someh
 Headers are HTTP request headers. For available HTTP methods, see :ref:`Method<enum_HTTPClient_Method>`.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
+
+----
+
+.. _class_HTTPClient_method_set_http_proxy:
+
+- void **set_http_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+
+Sets the proxy server for HTTP requests.
+
+The proxy server is unset if ``host`` is empty or ``port`` is -1.
+
+----
+
+.. _class_HTTPClient_method_set_https_proxy:
+
+- void **set_https_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+
+Sets the proxy server for HTTPS requests.
+
+The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

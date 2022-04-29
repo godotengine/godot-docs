@@ -59,47 +59,51 @@ On macOS, some extra keyboard shortcuts are available:
 Properties
 ----------
 
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`Align<enum_LineEdit_Align>`            | :ref:`align<class_LineEdit_property_align>`                                       | ``0``                     |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                           | ``false``                 |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`               | ``0.65``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`caret_position<class_LineEdit_property_caret_position>`                     | ``0``                     |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`         | ``false``                 |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`         | ``true``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`editable<class_LineEdit_property_editable>`                                 | ``true``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>`       | ``false``                 |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                        | ``2`` *(parent override)* |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                        | :ref:`max_length<class_LineEdit_property_max_length>`                             | ``0``                     |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                        | ``1`` *(parent override)* |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                    | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`               | ``0.6``                   |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                  | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`                 | ``""``                    |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`right_icon<class_LineEdit_property_right_icon>`                             |                           |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`secret<class_LineEdit_property_secret>`                                     | ``false``                 |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                  | :ref:`secret_character<class_LineEdit_property_secret_character>`                 | ``"*"``                   |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`               | ``true``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`       | ``true``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                  | :ref:`text<class_LineEdit_property_text>`                                         | ``""``                    |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`virtual_keyboard_enabled<class_LineEdit_property_virtual_keyboard_enabled>` | ``true``                  |
-+----------------------------------------------+-----------------------------------------------------------------------------------+---------------------------+
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Align<enum_LineEdit_Align>`            | :ref:`align<class_LineEdit_property_align>`                                                   | ``0``                                                                               |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`caret_blink<class_LineEdit_property_caret_blink>`                                       | ``false``                                                                           |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`caret_blink_speed<class_LineEdit_property_caret_blink_speed>`                           | ``0.65``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`caret_position<class_LineEdit_property_caret_position>`                                 | ``0``                                                                               |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`                     | ``false``                                                                           |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`                     | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`deselect_on_focus_loss_enabled<class_LineEdit_property_deselect_on_focus_loss_enabled>` | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`editable<class_LineEdit_property_editable>`                                             | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>`                   | ``false``                                                                           |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`     | focus_mode                                                                                    | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`max_length<class_LineEdit_property_max_length>`                                         | ``0``                                                                               |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`middle_mouse_paste_enabled<class_LineEdit_property_middle_mouse_paste_enabled>`         | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`CursorShape<enum_Control_CursorShape>` | mouse_default_cursor_shape                                                                    | ``1`` (overrides :ref:`Control<class_Control_property_mouse_default_cursor_shape>`) |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                    | :ref:`placeholder_alpha<class_LineEdit_property_placeholder_alpha>`                           | ``0.6``                                                                             |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`placeholder_text<class_LineEdit_property_placeholder_text>`                             | ``""``                                                                              |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                | :ref:`right_icon<class_LineEdit_property_right_icon>`                                         |                                                                                     |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`secret<class_LineEdit_property_secret>`                                                 | ``false``                                                                           |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`secret_character<class_LineEdit_property_secret_character>`                             | ``"*"``                                                                             |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`                           | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`                   | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`text<class_LineEdit_property_text>`                                                     | ``""``                                                                              |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`virtual_keyboard_enabled<class_LineEdit_property_virtual_keyboard_enabled>`             | ``true``                                                                            |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -118,6 +122,12 @@ Methods
 | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** |const|                                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_selection_from_column<class_LineEdit_method_get_selection_from_column>` **(** **)** |const|                                |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_selection_to_column<class_LineEdit_method_get_selection_to_column>` **(** **)** |const|                                    |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`has_selection<class_LineEdit_method_has_selection>` **(** **)** |const|                                                        |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`menu_option<class_LineEdit_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                       |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -344,6 +354,22 @@ If ``true``, the context menu will appear when right-clicked.
 
 ----
 
+.. _class_LineEdit_property_deselect_on_focus_loss_enabled:
+
+- :ref:`bool<class_bool>` **deselect_on_focus_loss_enabled**
+
++-----------+-------------------------------------------+
+| *Default* | ``true``                                  |
++-----------+-------------------------------------------+
+| *Setter*  | set_deselect_on_focus_loss_enabled(value) |
++-----------+-------------------------------------------+
+| *Getter*  | is_deselect_on_focus_loss_enabled()       |
++-----------+-------------------------------------------+
+
+If ``true``, the selected text will be deselected when focus is lost.
+
+----
+
 .. _class_LineEdit_property_editable:
 
 - :ref:`bool<class_bool>` **editable**
@@ -392,7 +418,7 @@ Maximum amount of characters that can be entered inside the ``LineEdit``. If ``0
 
 When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the ``LineEdit``, including pasting. If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -403,6 +429,24 @@ When a limit is defined, characters that would exceed :ref:`max_length<class_Lin
     text += " goodbye"
     # `text` becomes "Hello good".
     # `text_change_rejected` is emitted with "bye" as parameter.
+
+----
+
+.. _class_LineEdit_property_middle_mouse_paste_enabled:
+
+- :ref:`bool<class_bool>` **middle_mouse_paste_enabled**
+
++-----------+---------------------------------------+
+| *Default* | ``true``                              |
++-----------+---------------------------------------+
+| *Setter*  | set_middle_mouse_paste_enabled(value) |
++-----------+---------------------------------------+
+| *Getter*  | is_middle_mouse_paste_enabled()       |
++-----------+---------------------------------------+
+
+If ``false``, using middle mouse button to paste clipboard will be disabled.
+
+\ **Note:** This method is only implemented on Linux.
 
 ----
 
@@ -530,7 +574,7 @@ If ``false``, using shortcuts will be disabled.
 
 String value of the ``LineEdit``.
 
-**Note:** Changing text using this property won't emit the :ref:`text_changed<class_LineEdit_signal_text_changed>` signal.
+\ **Note:** Changing text using this property won't emit the :ref:`text_changed<class_LineEdit_signal_text_changed>` signal.
 
 ----
 
@@ -597,7 +641,7 @@ Clears the current selection.
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the ``LineEdit``.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -606,6 +650,30 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, 
 - :ref:`int<class_int>` **get_scroll_offset** **(** **)** |const|
 
 Returns the scroll offset due to :ref:`caret_position<class_LineEdit_property_caret_position>`, as a number of characters.
+
+----
+
+.. _class_LineEdit_method_get_selection_from_column:
+
+- :ref:`int<class_int>` **get_selection_from_column** **(** **)** |const|
+
+Returns the selection begin column.
+
+----
+
+.. _class_LineEdit_method_get_selection_to_column:
+
+- :ref:`int<class_int>` **get_selection_to_column** **(** **)** |const|
+
+Returns the selection end column.
+
+----
+
+.. _class_LineEdit_method_has_selection:
+
+- :ref:`bool<class_bool>` **has_selection** **(** **)** |const|
+
+Returns ``true`` if the user has selected text.
 
 ----
 

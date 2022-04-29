@@ -18,16 +18,16 @@ Description
 
 It uses floating-point coordinates. The 2D counterpart to ``AABB`` is :ref:`Rect2<class_Rect2>`.
 
-**Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
+\ **Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/math/index`
+- :doc:`Math tutorial index <../tutorials/math/index>`
 
-- :doc:`../tutorials/math/vector_math`
+- :doc:`Vector math <../tutorials/math/vector_math>`
 
-- :doc:`../tutorials/math/vectors_advanced`
+- :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
 Properties
 ----------
@@ -53,6 +53,8 @@ Methods
 | :ref:`AABB<class_AABB>`       | :ref:`expand<class_AABB_method_expand>` **(** :ref:`Vector3<class_Vector3>` to_point **)**                                                       |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`get_area<class_AABB_method_get_area>` **(** **)**                                                                                          |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`get_center<class_AABB_method_get_center>` **(** **)**                                                                                      |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_endpoint<class_AABB_method_get_endpoint>` **(** :ref:`int<class_int>` idx **)**                                                        |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -163,7 +165,7 @@ Returns ``true`` if this ``AABB`` completely encloses another one.
 
 Returns a copy of this ``AABB`` expanded to include a given point.
 
-**Example:**
+\ **Example:**\ 
 
 ::
 
@@ -179,6 +181,14 @@ Returns a copy of this ``AABB`` expanded to include a given point.
 - :ref:`float<class_float>` **get_area** **(** **)**
 
 Returns the volume of the ``AABB``.
+
+----
+
+.. _class_AABB_method_get_center:
+
+- :ref:`Vector3<class_Vector3>` **get_center** **(** **)**
+
+Returns the center of the ``AABB``, which is equal to :ref:`position<class_AABB_property_position>` + (:ref:`size<class_AABB_property_size>` / 2).
 
 ----
 

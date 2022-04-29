@@ -20,11 +20,11 @@ Description
 
 Font contains a Unicode-compatible character set, as well as the ability to draw it with variable width, ascent, descent and kerning. For creating fonts from TTF files (or other font formats), see the editor support for fonts.
 
-**Note:** If a :ref:`DynamicFont<class_DynamicFont>` doesn't contain a character used in a string, the character in question will be replaced with codepoint ``0xfffd`` if it's available in the :ref:`DynamicFont<class_DynamicFont>`. If this replacement character isn't available in the DynamicFont, the character will be hidden without displaying any replacement character in the string.
+\ **Note:** If a :ref:`DynamicFont<class_DynamicFont>` doesn't contain a character used in a string, the character in question will be replaced with codepoint ``0xfffd`` if it's available in the :ref:`DynamicFont<class_DynamicFont>`. If this replacement character isn't available in the DynamicFont, the character will be hidden without displaying any replacement character in the string.
 
-**Note:** If a :ref:`BitmapFont<class_BitmapFont>` doesn't contain a character used in a string, the character in question will be hidden without displaying any replacement character in the string.
+\ **Note:** If a :ref:`BitmapFont<class_BitmapFont>` doesn't contain a character used in a string, the character in question will be hidden without displaying any replacement character in the string.
 
-**Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
+\ **Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
 
 Methods
 -------

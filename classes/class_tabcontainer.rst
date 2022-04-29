@@ -20,7 +20,7 @@ Arranges :ref:`Control<class_Control>` children into a tabbed view, creating a t
 
 Ignores non-:ref:`Control<class_Control>` children.
 
-**Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`Tabs<class_Tabs>` as children is not needed.
+\ **Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`Tabs<class_Tabs>` as children is not needed.
 
 Properties
 ----------
@@ -279,7 +279,7 @@ Returns the child :ref:`Control<class_Control>` node located at the active tab i
 
 Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 

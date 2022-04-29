@@ -28,7 +28,7 @@ Booleans can be directly used in ``if`` statements. The code below demonstrates 
 
 The following code will only create a bullet if both conditions are met: action "shoot" is pressed and if ``can_shoot`` is ``true``.
 
-**Note:** ``Input.is_action_pressed("shoot")`` is also a boolean that is ``true`` when "shoot" is pressed and ``false`` when "shoot" isn't pressed.
+\ **Note:** ``Input.is_action_pressed("shoot")`` is also a boolean that is ``true`` when "shoot" is pressed and ``false`` when "shoot" isn't pressed.
 
 ::
 

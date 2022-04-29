@@ -20,7 +20,7 @@ Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pre
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-**Note:** By default, the button may not be wide enough for the color preview swatch to be visible. Make sure to set :ref:`Control.rect_min_size<class_Control_property_rect_min_size>` to a big enough value to give the button enough space.
+\ **Note:** By default, the button may not be wide enough for the color preview swatch to be visible. Make sure to set :ref:`Control.rect_min_size<class_Control_property_rect_min_size>` to a big enough value to give the button enough space.
 
 Tutorials
 ---------
@@ -32,13 +32,13 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+------------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           | ``Color( 0, 0, 0, 1 )``      |
-+---------------------------+----------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | ``true``                     |
-+---------------------------+----------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`   | toggle_mode                                                    | ``true`` *(parent override)* |
-+---------------------------+----------------------------------------------------------------+------------------------------+
++---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorPickerButton_property_color>`           | ``Color( 0, 0, 0, 1 )``                                                       |
++---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPickerButton_property_edit_alpha>` | ``true``                                                                      |
++---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | toggle_mode                                                    | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
++---------------------------+----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -147,7 +147,7 @@ Method Descriptions
 
 Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 
@@ -157,7 +157,7 @@ Returns the :ref:`ColorPicker<class_ColorPicker>` that this node toggles.
 
 Returns the control's :ref:`PopupPanel<class_PopupPanel>` which allows you to connect to popup signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 Theme Property Descriptions
 ---------------------------

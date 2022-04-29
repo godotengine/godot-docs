@@ -18,7 +18,7 @@ Description
 
 This object is used to generate previews for resources of files.
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_previewer<class_EditorInterface_method_get_resource_previewer>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_previewer<class_EditorInterface_method_get_resource_previewer>`.
 
 Methods
 -------
@@ -69,7 +69,7 @@ Check if the resource changed, if so, it will be invalidated and the correspondi
 
 Queue the ``resource`` being edited for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture<class_Texture>` preview, :ref:`Texture<class_Texture>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
 
-**Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
+\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
 
 ----
 
@@ -79,7 +79,7 @@ Queue the ``resource`` being edited for preview. Once the preview is ready, the 
 
 Queue a resource file located at ``path`` for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture<class_Texture>` preview, :ref:`Texture<class_Texture>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
 
-**Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
+\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
 
 ----
 

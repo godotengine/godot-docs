@@ -117,7 +117,7 @@ Returns ``true`` if this peer is currently connected or is connecting to a host,
 
 If ``enabled`` is ``true``, packets will be sent immediately. If ``enabled`` is ``false`` (the default), packet transfers will be delayed and combined using `Nagle's algorithm <https://en.wikipedia.org/wiki/Nagle%27s_algorithm>`__.
 
-**Note:** It's recommended to leave this disabled for applications that send large packets or need to transfer a lot of data, as enabling this can decrease the total available bandwidth.
+\ **Note:** It's recommended to leave this disabled for applications that send large packets or need to transfer a lot of data, as enabling this can decrease the total available bandwidth.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -236,7 +236,7 @@ If ``true``, the GraphNode is a comment node.
 
 The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdit<class_GraphEdit>`.
 
-**Note:** You cannot use position directly, as :ref:`GraphEdit<class_GraphEdit>` is a :ref:`Container<class_Container>`.
+\ **Note:** You cannot use position directly, as :ref:`GraphEdit<class_GraphEdit>` is a :ref:`Container<class_Container>`.
 
 ----
 
@@ -270,7 +270,7 @@ Sets the overlay shown above the GraphNode. See :ref:`Overlay<enum_GraphNode_Ove
 
 If ``true``, the user can resize the GraphNode.
 
-**Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
+\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
 
 ----
 
@@ -304,7 +304,7 @@ If ``true``, the GraphNode is selected.
 
 If ``true``, the close button will be visible.
 
-**Note:** Pressing it will only emit the :ref:`close_request<class_GraphNode_signal_close_request>` signal, the GraphNode needs to be removed manually.
+\ **Note:** Pressing it will only emit the :ref:`close_request<class_GraphNode_signal_close_request>` signal, the GraphNode needs to be removed manually.
 
 ----
 
@@ -461,13 +461,13 @@ Sets properties of the slot with ID ``idx``.
 
 If ``enable_left``/``right``, a port will appear and the slot will be able to be connected from this side.
 
-``type_left``/``right`` is an arbitrary type of the port. Only ports with the same type values can be connected.
+\ ``type_left``/``right`` is an arbitrary type of the port. Only ports with the same type values can be connected.
 
-``color_left``/``right`` is the tint of the port's icon on this side.
+\ ``color_left``/``right`` is the tint of the port's icon on this side.
 
-``custom_left``/``right`` is a custom texture for this side's port.
+\ ``custom_left``/``right`` is a custom texture for this side's port.
 
-**Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
+\ **Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
 
 Individual properties can be set using one of the ``set_slot_*`` methods. You must enable at least one side of the slot to do so.
 

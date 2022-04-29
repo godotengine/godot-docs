@@ -20,7 +20,7 @@ Description
 
 Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
 
-**Example of creating a button and assigning an action when pressed by code:**
+\ **Example of creating a button and assigning an action when pressed by code:**\ 
 
 ::
 
@@ -37,7 +37,7 @@ Buttons (like all Control nodes) can also be created in the editor, but some sit
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-**Note:** Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use :ref:`TouchScreenButton<class_TouchScreenButton>` for buttons that trigger gameplay movement or actions, as :ref:`TouchScreenButton<class_TouchScreenButton>` supports multitouch.
+\ **Note:** Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use :ref:`TouchScreenButton<class_TouchScreenButton>` for buttons that trigger gameplay movement or actions, as :ref:`TouchScreenButton<class_TouchScreenButton>` supports multitouch.
 
 Tutorials
 ---------
@@ -59,6 +59,8 @@ Properties
 | :ref:`bool<class_bool>`                 | :ref:`flat<class_Button_property_flat>`               | ``false`` |
 +-----------------------------------------+-------------------------------------------------------+-----------+
 | :ref:`Texture<class_Texture>`           | :ref:`icon<class_Button_property_icon>`               |           |
++-----------------------------------------+-------------------------------------------------------+-----------+
+| :ref:`TextAlign<enum_Button_TextAlign>` | :ref:`icon_align<class_Button_property_icon_align>`   | ``0``     |
 +-----------------------------------------+-------------------------------------------------------+-----------+
 | :ref:`String<class_String>`             | :ref:`text<class_Button_property_text>`               | ``""``    |
 +-----------------------------------------+-------------------------------------------------------+-----------+
@@ -191,6 +193,22 @@ Flat buttons don't display decoration.
 Button's icon, if text is present the icon will be placed before the text.
 
 To edit margin and spacing of the icon, use ``hseparation`` theme property of ``Button`` and ``content_margin_*`` properties of the used :ref:`StyleBox<class_StyleBox>`\ es.
+
+----
+
+.. _class_Button_property_icon_align:
+
+- :ref:`TextAlign<enum_Button_TextAlign>` **icon_align**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_icon_align(value) |
++-----------+-----------------------+
+| *Getter*  | get_icon_align()      |
++-----------+-----------------------+
+
+Specifies if the icon should be aligned to the left, right, or center of a button. Uses the same :ref:`TextAlign<enum_Button_TextAlign>` constants as the text alignment. If centered, text will draw on top of the icon.
 
 ----
 

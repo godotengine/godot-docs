@@ -137,7 +137,7 @@ Returns the documentation string that was previously set with ``godot_nativescri
 
 Constructs a new object of the base type with a script of this type already attached.
 
-**Note:** Any arguments passed to this function will be ignored and not passed to the native constructor function. This will change with in a future API extension.
+\ **Note:** Any arguments passed to this function will be ignored and not passed to the native constructor function. This will change with in a future API extension.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

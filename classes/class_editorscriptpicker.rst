@@ -18,7 +18,7 @@ Description
 
 Similar to :ref:`EditorResourcePicker<class_EditorResourcePicker>` this :ref:`Control<class_Control>` node is used in the editor's Inspector dock, but only to edit the ``script`` property of a :ref:`Node<class_Node>`. Default options for creating new resources of all possible subtypes are replaced with dedicated buttons that open the "Attach Node Script" dialog. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
-**Note:** You must set the :ref:`script_owner<class_EditorScriptPicker_property_script_owner>` for the custom context menu items to work.
+\ **Note:** You must set the :ref:`script_owner<class_EditorScriptPicker_property_script_owner>` for the custom context menu items to work.
 
 Properties
 ----------

@@ -266,7 +266,7 @@ Property Descriptions
 
 The total length of the animation (in seconds).
 
-**Note:** Length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
+\ **Note:** Length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
 
 ----
 
@@ -369,7 +369,7 @@ Returns the audio stream of the key identified by ``key_idx``. The ``track_idx``
 
 Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of an Audio Track.
 
-``stream`` is the :ref:`AudioStream<class_AudioStream>` resource to play. ``start_offset`` is the number of seconds cut off at the beginning of the audio stream, while ``end_offset`` is at the ending.
+\ ``stream`` is the :ref:`AudioStream<class_AudioStream>` resource to play. ``start_offset`` is the number of seconds cut off at the beginning of the audio stream, while ``end_offset`` is at the ending.
 
 ----
 
@@ -427,7 +427,7 @@ Returns the value of the key identified by ``key_idx``. The ``track_idx`` must b
 
 Inserts a Bezier Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of a Bezier Track.
 
-``in_handle`` is the left-side weight of the added Bezier curve point, ``out_handle`` is the right-side one, while ``value`` is the actual value at this point.
+\ ``in_handle`` is the left-side weight of the added Bezier curve point, ``out_handle`` is the right-side one, while ``value`` is the actual value at this point.
 
 ----
 

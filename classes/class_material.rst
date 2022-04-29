@@ -62,7 +62,7 @@ Property Descriptions
 
 Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
 
-**Note:** This only applies to :ref:`SpatialMaterial<class_SpatialMaterial>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+\ **Note:** This only applies to :ref:`SpatialMaterial<class_SpatialMaterial>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
 ----
 
@@ -80,7 +80,7 @@ Sets the ``Material`` to be used for the next pass. This renders the object agai
 
 Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
 
-**Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
+\ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

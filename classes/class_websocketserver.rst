@@ -20,7 +20,7 @@ This class implements a WebSocket server that can also support the high-level mu
 
 After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`NetworkedMultiplayerPeer.poll<class_NetworkedMultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
 
-**Note:** Not available in HTML5 exports.
+\ **Note:** Not available in HTML5 exports.
 
 Properties
 ----------
@@ -52,6 +52,8 @@ Methods
 | :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_extra_headers<class_WebSocketServer_method_set_extra_headers>` **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**                                                  |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                      |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +91,7 @@ Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the c
 
 Emitted when a new message is received.
 
-**Note:** This signal is *not* emitted when used as high-level multiplayer peer.
+\ **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
 Property Descriptions
 ---------------------
@@ -220,6 +222,14 @@ You can specify the desired subprotocols via the "protocols" array. If the list 
 If ``true`` is passed as ``gd_mp_api``, the server will behave like a network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
+
+----
+
+.. _class_WebSocketServer_method_set_extra_headers:
+
+- void **set_extra_headers** **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**
+
+Sets additional headers to be sent to clients during the HTTP handshake.
 
 ----
 

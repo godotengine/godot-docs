@@ -21,9 +21,9 @@ Direct access object to a space in the :ref:`PhysicsServer<class_PhysicsServer>`
 Tutorials
 ---------
 
-- :doc:`../tutorials/physics/physics_introduction`
+- :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- :doc:`../tutorials/physics/ray-casting`
+- :doc:`Ray-casting <../tutorials/physics/ray-casting>`
 
 Methods
 -------
@@ -53,7 +53,7 @@ Checks how far a :ref:`Shape<class_Shape>` can move without colliding. All the p
 
 Returns an array with the safe and unsafe proportions (between 0 and 1) of the motion. The safe proportion is the maximum fraction of the motion that can be made without a collision. The unsafe proportion is the minimum fraction of the distance that must be moved for a collision. If no collision is detected a result of ``[1.0, 1.0]`` will be returned.
 
-**Note:** Any :ref:`Shape<class_Shape>`\ s that the shape is already colliding with e.g. inside of, will be ignored. Use :ref:`collide_shape<class_PhysicsDirectSpaceState_method_collide_shape>` to determine the :ref:`Shape<class_Shape>`\ s that the shape is already colliding with.
+\ **Note:** Any :ref:`Shape<class_Shape>`\ s that the shape is already colliding with e.g. inside of, will be ignored. Use :ref:`collide_shape<class_PhysicsDirectSpaceState_method_collide_shape>` to determine the :ref:`Shape<class_Shape>`\ s that the shape is already colliding with.
 
 ----
 
@@ -71,17 +71,17 @@ Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryPara
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. The returned object is a dictionary containing the following fields:
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``linear_velocity``: The colliding object's velocity :ref:`Vector3<class_Vector3>`. If the object is an :ref:`Area<class_Area>`, the result is ``(0, 0, 0)``.
+\ ``linear_velocity``: The colliding object's velocity :ref:`Vector3<class_Vector3>`. If the object is an :ref:`Area<class_Area>`, the result is ``(0, 0, 0)``.
 
-``normal``: The object's surface normal at the intersection point.
+\ ``normal``: The object's surface normal at the intersection point.
 
-``point``: The intersection point.
+\ ``point``: The intersection point.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 If the shape did not intersect anything, then an empty dictionary is returned instead.
 
@@ -93,13 +93,13 @@ If the shape did not intersect anything, then an empty dictionary is returned in
 
 Checks whether a point is inside any solid shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 
@@ -113,17 +113,17 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 Intersects a ray in a given space. The returned object is a dictionary with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``normal``: The object's surface normal at the intersection point.
+\ ``normal``: The object's surface normal at the intersection point.
 
-``position``: The intersection point.
+\ ``position``: The intersection point.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 If the ray did not intersect anything, then an empty dictionary is returned instead.
 
@@ -137,13 +137,13 @@ Additionally, the method can take an ``exclude`` array of objects or :ref:`RID<c
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>` object, against the space. The intersected shapes are returned in an array containing dictionaries with the following fields:
 
-``collider``: The colliding object.
+\ ``collider``: The colliding object.
 
-``collider_id``: The colliding object's ID.
+\ ``collider_id``: The colliding object's ID.
 
-``rid``: The intersecting object's :ref:`RID<class_RID>`.
+\ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
-``shape``: The shape index of the colliding shape.
+\ ``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the ``max_results`` parameter, to reduce the processing time.
 

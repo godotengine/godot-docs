@@ -18,7 +18,7 @@ Description
 
 A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
 
-**Note:** Changing a ViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
+\ **Note:** Changing a ViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
 
 Properties
 ----------
@@ -64,7 +64,7 @@ Divides the viewport's effective resolution by this value while preserving its s
 
 For example, a 1280×720 viewport with :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
 
-**Note:** :ref:`stretch<class_ViewportContainer_property_stretch>` must be ``true`` for this property to work.
+\ **Note:** :ref:`stretch<class_ViewportContainer_property_stretch>` must be ``true`` for this property to work.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

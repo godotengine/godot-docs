@@ -314,7 +314,7 @@ Methods
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`gi_probe_set_to_cell_xform<class_VisualServer_method_gi_probe_set_to_cell_xform>` **(** :ref:`RID<class_RID>` probe, :ref:`Transform<class_Transform>` xform **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`has_changed<class_VisualServer_method_has_changed>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| :ref:`bool<class_bool>`                                 | :ref:`has_changed<class_VisualServer_method_has_changed>` **(** :ref:`ChangedPriority<enum_VisualServer_ChangedPriority>` queried_priority=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`has_feature<class_VisualServer_method_has_feature>` **(** :ref:`Features<enum_VisualServer_Features>` feature **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -363,6 +363,8 @@ Methods
 | void                                                    | :ref:`instance_geometry_set_draw_range<class_VisualServer_method_instance_geometry_set_draw_range>` **(** :ref:`RID<class_RID>` instance, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` min_margin, :ref:`float<class_float>` max_margin **)**                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`instance_geometry_set_flag<class_VisualServer_method_instance_geometry_set_flag>` **(** :ref:`RID<class_RID>` instance, :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>` flag, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`instance_geometry_set_material_overlay<class_VisualServer_method_instance_geometry_set_material_overlay>` **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` material **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`instance_geometry_set_material_override<class_VisualServer_method_instance_geometry_set_material_override>` **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` material **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -648,6 +650,8 @@ Methods
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`set_default_clear_color<class_VisualServer_method_set_default_clear_color>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`set_shader_async_hidden_forbidden<class_VisualServer_method_set_shader_async_hidden_forbidden>` **(** :ref:`bool<class_bool>` forbidden **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`set_shader_time_scale<class_VisualServer_method_set_shader_time_scale>` **(** :ref:`float<class_float>` scale **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`set_use_occlusion_culling<class_VisualServer_method_set_use_occlusion_culling>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -721,6 +725,8 @@ Methods
 | void                                                    | :ref:`texture_set_flags<class_VisualServer_method_texture_set_flags>` **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` flags **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`texture_set_path<class_VisualServer_method_texture_set_path>` **(** :ref:`RID<class_RID>` texture, :ref:`String<class_String>` path **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
++---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                    | :ref:`texture_set_proxy<class_VisualServer_method_texture_set_proxy>` **(** :ref:`RID<class_RID>` proxy, :ref:`RID<class_RID>` base **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                    | :ref:`texture_set_shrink_all_x2_on_set_data<class_VisualServer_method_texture_set_shrink_all_x2_on_set_data>` **(** :ref:`bool<class_bool>` shrink **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1941,6 +1947,24 @@ enum **EnvironmentSSAOBlur**:
 
 - **ENV_SSAO_BLUR_3x3** = **3** --- Performs a 3x3 blur on the SSAO output. Use this for smoothest SSAO.
 
+----
+
+.. _enum_VisualServer_ChangedPriority:
+
+.. _class_VisualServer_constant_CHANGED_PRIORITY_ANY:
+
+.. _class_VisualServer_constant_CHANGED_PRIORITY_LOW:
+
+.. _class_VisualServer_constant_CHANGED_PRIORITY_HIGH:
+
+enum **ChangedPriority**:
+
+- **CHANGED_PRIORITY_ANY** = **0** --- Used to query for any changes that request a redraw, whatever the priority.
+
+- **CHANGED_PRIORITY_LOW** = **1** --- Registered changes which have low priority can be optionally prevented from causing editor redraws. Examples might include dynamic shaders (typically using the ``TIME`` built-in).
+
+- **CHANGED_PRIORITY_HIGH** = **2** --- Registered changes which can cause a redraw default to high priority.
+
 Constants
 ---------
 
@@ -2870,7 +2894,7 @@ Returns the id of the test texture. Creates one if none exists.
 
 Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2").
 
-**Note:** When running a headless or server binary, this function returns an empty string.
+\ **Note:** When running a headless or server binary, this function returns an empty string.
 
 ----
 
@@ -2880,7 +2904,7 @@ Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2").
 
 Returns the vendor of the video adapter (e.g. "NVIDIA Corporation").
 
-**Note:** When running a headless or server binary, this function returns an empty string.
+\ **Note:** When running a headless or server binary, this function returns an empty string.
 
 ----
 
@@ -3082,9 +3106,11 @@ Sets the to cell :ref:`Transform<class_Transform>` for this GI probe.
 
 .. _class_VisualServer_method_has_changed:
 
-- :ref:`bool<class_bool>` **has_changed** **(** **)** |const|
+- :ref:`bool<class_bool>` **has_changed** **(** :ref:`ChangedPriority<enum_VisualServer_ChangedPriority>` queried_priority=0 **)** |const|
 
 Returns ``true`` if changes have been made to the VisualServer's data. :ref:`draw<class_VisualServer_method_draw>` is usually called if this happens.
+
+As changes are registered as either high or low priority (e.g. dynamic shaders), this function takes an optional argument to query either low or high priority changes, or any changes.
 
 ----
 
@@ -3292,6 +3318,14 @@ Sets the flag for a given :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
 
 ----
 
+.. _class_VisualServer_method_instance_geometry_set_material_overlay:
+
+- void **instance_geometry_set_material_overlay** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` material **)**
+
+Sets a material that will be rendered for all surfaces on top of active materials for the mesh associated with this instance. Equivalent to :ref:`GeometryInstance.material_overlay<class_GeometryInstance_property_material_overlay>`.
+
+----
+
 .. _class_VisualServer_method_instance_geometry_set_material_override:
 
 - void **instance_geometry_set_material_override** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` material **)**
@@ -3394,7 +3428,7 @@ Sets whether an instance is drawn or not. Equivalent to :ref:`Spatial.visible<cl
 
 Returns an array of object IDs intersecting with the provided AABB. Only visual 3D nodes are considered, such as :ref:`MeshInstance<class_MeshInstance>` or :ref:`DirectionalLight<class_DirectionalLight>`. Use :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World<class_World>` you want to query. This forces an update for all resources queued to update.
 
-**Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
+\ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
 ----
 
@@ -3404,7 +3438,7 @@ Returns an array of object IDs intersecting with the provided AABB. Only visual 
 
 Returns an array of object IDs intersecting with the provided convex shape. Only visual 3D nodes are considered, such as :ref:`MeshInstance<class_MeshInstance>` or :ref:`DirectionalLight<class_DirectionalLight>`. Use :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World<class_World>` you want to query. This forces an update for all resources queued to update.
 
-**Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
+\ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
 ----
 
@@ -3414,7 +3448,7 @@ Returns an array of object IDs intersecting with the provided convex shape. Only
 
 Returns an array of object IDs intersecting with the provided 3D ray. Only visual 3D nodes are considered, such as :ref:`MeshInstance<class_MeshInstance>` or :ref:`DirectionalLight<class_DirectionalLight>`. Use :ref:`@GDScript.instance_from_id<class_@GDScript_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World<class_World>` you want to query. This forces an update for all resources queued to update.
 
-**Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
+\ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
 ----
 
@@ -4066,7 +4100,7 @@ All data is packed in one large float array. An array may look like this: Transf
 
 
 
-:ref:`Transform<class_Transform>` is stored as 12 floats, :ref:`Transform2D<class_Transform2D>` is stored as 8 floats, ``COLOR_8BIT`` / ``CUSTOM_DATA_8BIT`` is stored as 1 float (4 bytes as is) and ``COLOR_FLOAT`` / ``CUSTOM_DATA_FLOAT`` is stored as 4 floats.
+\ :ref:`Transform<class_Transform>` is stored as 12 floats, :ref:`Transform2D<class_Transform2D>` is stored as 8 floats, ``COLOR_8BIT`` / ``CUSTOM_DATA_8BIT`` is stored as 1 float (4 bytes as is) and ``COLOR_FLOAT`` / ``CUSTOM_DATA_FLOAT`` is stored as 4 floats.
 
 ----
 
@@ -4260,7 +4294,7 @@ Sets the preprocess time for the particles' animation. This lets you delay start
 
 Sets the material for processing the particles.
 
-**Note:** This is not the material used to draw the materials. Equivalent to :ref:`Particles.process_material<class_Particles_property_process_material>`.
+\ **Note:** This is not the material used to draw the materials. Equivalent to :ref:`Particles.process_material<class_Particles_property_process_material>`.
 
 ----
 
@@ -4471,6 +4505,18 @@ If ``true``, the engine will generate wireframes for use with the wireframe debu
 - void **set_default_clear_color** **(** :ref:`Color<class_Color>` color **)**
 
 Sets the default clear color which is used when a specific clear color has not been selected.
+
+----
+
+.. _class_VisualServer_method_set_shader_async_hidden_forbidden:
+
+- void **set_shader_async_hidden_forbidden** **(** :ref:`bool<class_bool>` forbidden **)**
+
+If asynchronous shader compilation is enabled, this controls whether :ref:`SpatialMaterial.ASYNC_MODE_HIDDEN<class_SpatialMaterial_constant_ASYNC_MODE_HIDDEN>` is obeyed.
+
+For instance, you may want to enable this temporarily before taking a screenshot. This ensures everything is visible even if shaders with async mode *hidden* are not ready yet.
+
+Reflection probes use this internally to ensure they capture everything regardless the shaders are ready or not.
 
 ----
 
@@ -4784,6 +4830,31 @@ Sets the texture's path.
 
 ----
 
+.. _class_VisualServer_method_texture_set_proxy:
+
+- void **texture_set_proxy** **(** :ref:`RID<class_RID>` proxy, :ref:`RID<class_RID>` base **)**
+
+Creates an update link between two textures, similar to how :ref:`ViewportTexture<class_ViewportTexture>`\ s operate. When the base texture is the texture of a :ref:`Viewport<class_Viewport>`, every time the viewport renders a new frame, the proxy texture automatically receives an update.
+
+For example, this code links a generic :ref:`ImageTexture<class_ImageTexture>` to the texture output of the :ref:`Viewport<class_Viewport>` using the VisualServer API:
+
+::
+
+    func _ready():
+        var viewport_rid = get_viewport().get_viewport_rid()
+        var viewport_texture_rid = VisualServer.viewport_get_texture(viewport_rid)
+    
+        var proxy_texture = ImageTexture.new()
+        var viewport_texture_image_data = VisualServer.texture_get_data(viewport_texture_rid)
+    
+        proxy_texture.create_from_image(viewport_texture_image_data)
+        var proxy_texture_rid = proxy_texture.get_rid()
+        VisualServer.texture_set_proxy(proxy_texture_rid, viewport_texture_rid)
+    
+        $TextureRect.texture = proxy_texture
+
+----
+
 .. _class_VisualServer_method_texture_set_shrink_all_x2_on_set_data:
 
 - void **texture_set_shrink_all_x2_on_set_data** **(** :ref:`bool<class_bool>` shrink **)**
@@ -4898,7 +4969,7 @@ If ``true``, sets the viewport active, else sets it inactive.
 
 Sets the stacking order for a viewport's canvas.
 
-``layer`` is the actual canvas layer, while ``sublayer`` specifies the stacking order of the canvas among those in the same layer.
+\ ``layer`` is the actual canvas layer, while ``sublayer`` specifies the stacking order of the canvas among those in the same layer.
 
 ----
 
@@ -5078,7 +5149,7 @@ If ``true``, the viewport uses augmented or virtual reality technologies. See :r
 
 If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
-**Note:** Only available on the GLES3 backend. :ref:`Viewport.hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
+\ **Note:** Only available on the GLES3 backend. :ref:`Viewport.hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
 
 ----
 

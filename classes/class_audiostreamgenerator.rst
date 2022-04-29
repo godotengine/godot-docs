@@ -20,7 +20,7 @@ This audio stream does not play back sounds, but expects a script to generate au
 
 See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` for performing real-time audio spectrum analysis.
 
-**Note:** Due to performance constraints, this class is best used from C# or from a compiled language via GDNative. If you still want to use this class from GDScript, consider using a lower :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>` such as 11,025 Hz or 22,050 Hz.
+\ **Note:** Due to performance constraints, this class is best used from C# or from a compiled language via GDNative. If you still want to use this class from GDScript, consider using a lower :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>` such as 11,025 Hz or 22,050 Hz.
 
 Tutorials
 ---------

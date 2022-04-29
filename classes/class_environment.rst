@@ -39,9 +39,9 @@ Note that :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_all
 Tutorials
 ---------
 
-- :doc:`../tutorials/3d/environment_and_post_processing`
+- :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- :doc:`../tutorials/3d/high_dynamic_range`
+- :doc:`Light transport in game engines <../tutorials/3d/high_dynamic_range>`
 
 - `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
 
@@ -507,7 +507,7 @@ The ambient light's energy. The higher the value, the stronger the light.
 
 Defines the amount of light that the sky brings on the scene. A value of ``0.0`` means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of ``1.0`` means that *all* the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
 
-**Note:** :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is internally clamped between ``0.0`` and ``1.0`` (inclusive).
+\ **Note:** :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is internally clamped between ``0.0`` and ``1.0`` (inclusive).
 
 ----
 
@@ -1147,7 +1147,7 @@ Enables fog's light transmission effect. If ``true``, light will be more visible
 
 Smooths out the blockiness created by sampling higher levels, at the cost of performance.
 
-**Note:** When using the GLES2 renderer, this is only available if the GPU supports the ``GL_EXT_gpu_shader4`` extension.
+\ **Note:** When using the GLES2 renderer, this is only available if the GPU supports the ``GL_EXT_gpu_shader4`` extension.
 
 ----
 
@@ -1197,9 +1197,9 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 
 If ``true``, the glow effect is enabled.
 
-**Note:** Only effective if :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` is **3D** (*not* **3D Without Effects**). On mobile, :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` defaults to **3D Without Effects** by default, so its ``.mobile`` override needs to be changed to **3D**.
+\ **Note:** Only effective if :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` is **3D** (*not* **3D Without Effects**). On mobile, :ref:`ProjectSettings.rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` defaults to **3D Without Effects** by default, so its ``.mobile`` override needs to be changed to **3D**.
 
-**Note:** When using GLES3 on mobile, HDR rendering is disabled by default for performance reasons. This means glow will only be visible if :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is decreased below ``1.0`` or if :ref:`glow_bloom<class_Environment_property_glow_bloom>` is increased above ``0.0``. Also consider increasing :ref:`glow_intensity<class_Environment_property_glow_intensity>` to ``1.5``. If you want glow to behave on mobile like it does on desktop (at a performance cost), enable :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`'s ``.mobile`` override.
+\ **Note:** When using GLES3 on mobile, HDR rendering is disabled by default for performance reasons. This means glow will only be visible if :ref:`glow_hdr_threshold<class_Environment_property_glow_hdr_threshold>` is decreased below ``1.0`` or if :ref:`glow_bloom<class_Environment_property_glow_bloom>` is increased above ``0.0``. Also consider increasing :ref:`glow_intensity<class_Environment_property_glow_intensity>` to ``1.5``. If you want glow to behave on mobile like it does on desktop (at a performance cost), enable :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>`'s ``.mobile`` override.
 
 ----
 

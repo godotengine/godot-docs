@@ -28,14 +28,14 @@ Also, viewports can be assigned to different screens in case the devices have mu
 
 Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
 
-**Note:** By default, a newly created Viewport in Godot 3.x will appear to be upside down. Enabling :ref:`render_target_v_flip<class_Viewport_property_render_target_v_flip>` will display the Viewport with the correct orientation.
+\ **Note:** By default, a newly created Viewport in Godot 3.x will appear to be upside down. Enabling :ref:`render_target_v_flip<class_Viewport_property_render_target_v_flip>` will display the Viewport with the correct orientation.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/2d/2d_transforms`
+- :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- :doc:`../tutorials/rendering/index`
+- :doc:`Viewports tutorial index <../tutorials/rendering/index>`
 
 - `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
 
@@ -115,6 +115,8 @@ Properties
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`Usage<enum_Viewport_Usage>`                                         | :ref:`usage<class_Viewport_property_usage>`                                             | ``2``               |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`                                                   | :ref:`use_32_bpc_depth<class_Viewport_property_use_32_bpc_depth>`                       | ``false``           |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`World<class_World>`                                                 | :ref:`world<class_Viewport_property_world>`                                             |                     |
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
 | :ref:`World2D<class_World2D>`                                             | :ref:`world_2d<class_Viewport_property_world_2d>`                                       |                     |
@@ -151,6 +153,8 @@ Methods
 | :ref:`Variant<class_Variant>`                                             | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                        |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`gui_has_modal_stack<class_Viewport_method_gui_has_modal_stack>` **(** **)** |const|                                                                                                                                    |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                   | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                              |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** |const|                                                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -462,7 +466,7 @@ The canvas transform of the viewport, useful for changing the on-screen position
 
 If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
-**Note:** Only available on the GLES3 backend. :ref:`hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
+\ **Note:** Only available on the GLES3 backend. :ref:`hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
 
 ----
 
@@ -586,9 +590,11 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 | *Getter*  | get_hdr()      |
 +-----------+----------------+
 
-If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. High Dynamic Range allows the viewport to receive values that are outside the 0-1 range. In Godot HDR uses 16 bits, meaning it does not store the full range of a floating point number.
+If ``true``, the viewport rendering will receive benefits from High Dynamic Range algorithm. High Dynamic Range allows the viewport to receive values that are outside the 0-1 range. In Godot, HDR uses half floating-point precision (16-bit) by default. To use full floating-point precision (32-bit), enable :ref:`use_32_bpc_depth<class_Viewport_property_use_32_bpc_depth>`.
 
-**Note:** Requires :ref:`usage<class_Viewport_property_usage>` to be set to :ref:`USAGE_3D<class_Viewport_constant_USAGE_3D>` or :ref:`USAGE_3D_NO_EFFECTS<class_Viewport_constant_USAGE_3D_NO_EFFECTS>`, since HDR is not supported for 2D.
+\ **Note:** Requires :ref:`usage<class_Viewport_property_usage>` to be set to :ref:`USAGE_3D<class_Viewport_constant_USAGE_3D>` or :ref:`USAGE_3D_NO_EFFECTS<class_Viewport_constant_USAGE_3D_NO_EFFECTS>`, since HDR is not supported for 2D.
+
+\ **Note:** Only available on the GLES3 backend.
 
 ----
 
@@ -686,7 +692,7 @@ If ``true``, renders the Viewport directly to the screen instead of to the root 
 
 The clear mode when viewport used as a render target.
 
-**Note:** This property is intended for 2D usage.
+\ **Note:** This property is intended for 2D usage.
 
 ----
 
@@ -800,7 +806,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 
 The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
 
-**Note:** If this is set to 0, shadows won't be visible. Since user-created viewports default to a value of 0, this value must be set above 0 manually.
+\ **Note:** If this is set to 0, shadows won't be visible. Since user-created viewports default to a value of 0, this value must be set above 0 manually.
 
 ----
 
@@ -884,6 +890,26 @@ The rendering mode of viewport.
 
 ----
 
+.. _class_Viewport_property_use_32_bpc_depth:
+
+- :ref:`bool<class_bool>` **use_32_bpc_depth**
+
++-----------+-----------------------------+
+| *Default* | ``false``                   |
++-----------+-----------------------------+
+| *Setter*  | set_use_32_bpc_depth(value) |
++-----------+-----------------------------+
+| *Getter*  | get_use_32_bpc_depth()      |
++-----------+-----------------------------+
+
+If ``true``, allocates the viewport's framebuffer with full floating-point precision (32-bit) instead of half floating-point precision (16-bit). Only effective when :ref:`hdr<class_Viewport_property_hdr>` is also enabled.
+
+\ **Note:** Enabling this setting does not improve rendering quality. Using full floating-point precision is slower, and is generally only needed for advanced shaders that require a high level of precision. To reduce banding, enable :ref:`debanding<class_Viewport_property_debanding>` instead.
+
+\ **Note:** Only available on the GLES3 backend.
+
+----
+
 .. _class_Viewport_property_world:
 
 - :ref:`World<class_World>` **world**
@@ -957,7 +983,7 @@ Returns the topmost modal in the stack.
 
 - :ref:`Vector2<class_Vector2>` **get_mouse_position** **(** **)** |const|
 
-Returns the mouse position relative to the viewport.
+Returns the mouse's position in this ``Viewport`` using the coordinate system of this ``Viewport``.
 
 ----
 
@@ -991,7 +1017,7 @@ Returns the size override set with :ref:`set_size_override<class_Viewport_method
 
 Returns the viewport's texture.
 
-**Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
+\ **Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture.get_data<class_Texture_method_get_data>` to flip it back, for example:
 
 ::
 
@@ -1032,11 +1058,21 @@ Returns ``true`` if there are visible modals on-screen.
 
 ----
 
+.. _class_Viewport_method_gui_is_drag_successful:
+
+- :ref:`bool<class_bool>` **gui_is_drag_successful** **(** **)** |const|
+
+Returns ``true`` if the drag operation is successful.
+
+----
+
 .. _class_Viewport_method_gui_is_dragging:
 
 - :ref:`bool<class_bool>` **gui_is_dragging** **(** **)** |const|
 
 Returns ``true`` if the viewport is currently performing a drag operation.
+
+Alternative to :ref:`Node.NOTIFICATION_DRAG_BEGIN<class_Node_constant_NOTIFICATION_DRAG_BEGIN>` and :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION_DRAG_END>` when you prefer polling the value.
 
 ----
 
@@ -1110,7 +1146,7 @@ Forces update of the 2D and 3D worlds.
 
 - void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` to_position **)**
 
-Warps the mouse to a position relative to the viewport.
+Moves the mouse pointer to the specified position in this ``Viewport`` using the coordinate system of this ``Viewport``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

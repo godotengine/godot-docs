@@ -25,17 +25,17 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | ``0`` *(parent override)*    |
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                       | flat                                                              | ``true`` *(parent override)* |
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | ``0`` *(parent override)*    |
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``                    |
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                                       | ``true`` *(parent override)* |
-+-----------------------------------------------+-------------------------------------------------------------------+------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | flat                                                              | ``true`` (overrides :ref:`Button<class_Button_property_flat>`)                |
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | ``0`` (overrides :ref:`Control<class_Control_property_focus_mode>`)           |
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``                                                                     |
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | toggle_mode                                                       | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
++-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -110,7 +110,7 @@ Method Descriptions
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 

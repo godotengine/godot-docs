@@ -18,7 +18,7 @@ Description
 
 EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to :ref:`EditorSettings<class_EditorSettings>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`ScriptEditor<class_ScriptEditor>`, the editor viewport, and information about scenes.
 
-**Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorPlugin.get_editor_interface<class_EditorPlugin_method_get_editor_interface>`.
+\ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorPlugin.get_editor_interface<class_EditorPlugin_method_get_editor_interface>`.
 
 Properties
 ----------
@@ -146,7 +146,7 @@ Edits the given :ref:`Script<class_Script>`. The line and column on which to ope
 
 Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 
-**Warning:** Removing and freeing this node will render the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render the editor useless and may cause a crash.
 
 ----
 
@@ -172,7 +172,7 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.
 
-**Note:** This value is set via the ``interface/editor/display_scale`` and ``interface/editor/custom_display_scale`` editor settings. Editor must be restarted for changes to be properly applied.
+\ **Note:** This value is set via the ``interface/editor/display_scale`` and ``interface/editor/custom_display_scale`` editor settings. Editor must be restarted for changes to be properly applied.
 
 ----
 
@@ -190,9 +190,9 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
 Returns the main editor control. Use this as a parent for main screens.
 
-**Note:** This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.
+\ **Note:** This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.
 
-**Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 ----
 
@@ -202,7 +202,7 @@ Returns the main editor control. Use this as a parent for main screens.
 
 Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
 
-**Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 ----
 
@@ -212,7 +212,7 @@ Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
 
 Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
-**Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 ----
 
@@ -254,7 +254,7 @@ Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` i
 
 Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
-**Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+\ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 ----
 

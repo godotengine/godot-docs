@@ -47,6 +47,8 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`TextureChannel<enum_SpatialMaterial_TextureChannel>`     | :ref:`ao_texture_channel<class_SpatialMaterial_property_ao_texture_channel>`                         |                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`AsyncMode<enum_SpatialMaterial_AsyncMode>`               | :ref:`async_mode<class_SpatialMaterial_property_async_mode>`                                         | ``0``                   |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`                                      | :ref:`clearcoat<class_SpatialMaterial_property_clearcoat>`                                           |                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`clearcoat_enabled<class_SpatialMaterial_property_clearcoat_enabled>`                           | ``false``               |
@@ -680,6 +682,22 @@ enum **DistanceFadeMode**:
 
 - **DISTANCE_FADE_OBJECT_DITHER** = **3** --- Smoothly fades the object out based on the object's distance from the camera using a dither approach. Dithering discards pixels based on a set pattern to smoothly fade without enabling transparency. On certain hardware this can be faster than :ref:`DISTANCE_FADE_PIXEL_ALPHA<class_SpatialMaterial_constant_DISTANCE_FADE_PIXEL_ALPHA>`.
 
+----
+
+.. _enum_SpatialMaterial_AsyncMode:
+
+.. _class_SpatialMaterial_constant_ASYNC_MODE_VISIBLE:
+
+.. _class_SpatialMaterial_constant_ASYNC_MODE_HIDDEN:
+
+enum **AsyncMode**:
+
+- **ASYNC_MODE_VISIBLE** = **0** --- The real conditioned shader needed on each situation will be sent for background compilation. In the meantime, a very complex shader that adapts to every situation will be used ("ubershader"). This ubershader is much slower to render, but will keep the game running without stalling to compile. Once shader compilation is done, the ubershader is replaced by the traditional optimized shader.
+
+- **ASYNC_MODE_HIDDEN** = **1** --- Anything with this material applied won't be rendered while this material's shader is being compiled.
+
+This is useful for optimization, in cases where the visuals won't suffer from having certain non-essential elements missing during the short time their shaders are being compiled.
+
 Property Descriptions
 ---------------------
 
@@ -741,9 +759,9 @@ The strength of the anisotropy effect. This is multiplied by :ref:`anisotropy_fl
 
 If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular blob and aligns it to tangent space. This is useful for brushed aluminium and hair reflections.
 
-**Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
+\ **Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
 
-**Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**.
+\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**.
 
 ----
 
@@ -835,6 +853,24 @@ Specifies the channel of the :ref:`ao_texture<class_SpatialMaterial_property_ao_
 
 ----
 
+.. _class_SpatialMaterial_property_async_mode:
+
+- :ref:`AsyncMode<enum_SpatialMaterial_AsyncMode>` **async_mode**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_async_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_async_mode()      |
++-----------+-----------------------+
+
+If :ref:`ProjectSettings.rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is ``Synchronous`` (with or without cache), this determines how this material must behave in regards to asynchronous shader compilation.
+
+\ :ref:`ASYNC_MODE_VISIBLE<class_SpatialMaterial_constant_ASYNC_MODE_VISIBLE>` is the default and the best for most cases.
+
+----
+
 .. _class_SpatialMaterial_property_clearcoat:
 
 - :ref:`float<class_float>` **clearcoat**
@@ -863,7 +899,7 @@ Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as di
 
 If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can be either glossy or rough.
 
-**Note:** Clearcoat rendering is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
+\ **Note:** Clearcoat rendering is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
 
 ----
 
@@ -923,7 +959,7 @@ If ``true``, the shader will read depth texture at multiple points along the vie
 
 If ``true``, depth mapping is enabled (also called "parallax mapping" or "height mapping"). See also :ref:`normal_enabled<class_SpatialMaterial_property_normal_enabled>`.
 
-**Note:** Depth mapping is not supported if triplanar mapping is used on the same material. The value of :ref:`depth_enabled<class_SpatialMaterial_property_depth_enabled>` will be ignored if :ref:`uv1_triplanar<class_SpatialMaterial_property_uv1_triplanar>` is enabled.
+\ **Note:** Depth mapping is not supported if triplanar mapping is used on the same material. The value of :ref:`depth_enabled<class_SpatialMaterial_property_depth_enabled>` will be ignored if :ref:`uv1_triplanar<class_SpatialMaterial_property_uv1_triplanar>` is enabled.
 
 ----
 
@@ -1081,7 +1117,7 @@ Texture used to specify how the detail textures get blended with the base textur
 
 Texture that specifies the per-pixel normal of the detail overlay.
 
-**Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -1111,7 +1147,7 @@ Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`Detai
 
 Distance at which the object appears fully opaque.
 
-**Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
 
 ----
 
@@ -1127,7 +1163,7 @@ Distance at which the object appears fully opaque.
 
 Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
 
-**Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
 
 ----
 
@@ -1375,7 +1411,7 @@ If ``true``, the object is unaffected by lighting.
 
 If ``true``, render point size can be changed.
 
-**Note:** This is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
+\ **Note:** This is only effective for objects whose geometry is point-based rather than triangle-based. See also :ref:`params_point_size<class_SpatialMaterial_property_params_point_size>`.
 
 ----
 
@@ -1411,9 +1447,9 @@ If ``true``, lighting is calculated per vertex rather than per pixel. This may i
 
 See also :ref:`ProjectSettings.rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>` which can globally enable vertex shading on all materials.
 
-**Note:** By default, vertex shading is enforced on mobile platforms by :ref:`ProjectSettings.rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`'s ``mobile`` override.
+\ **Note:** By default, vertex shading is enforced on mobile platforms by :ref:`ProjectSettings.rendering/quality/shading/force_vertex_shading<class_ProjectSettings_property_rendering/quality/shading/force_vertex_shading>`'s ``mobile`` override.
 
-**Note:** :ref:`flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>` has no effect if :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` is ``true``.
+\ **Note:** :ref:`flags_vertex_lighting<class_SpatialMaterial_property_flags_vertex_lighting>` has no effect if :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` is ``true``.
 
 ----
 
@@ -1463,7 +1499,7 @@ A high value makes the material appear more like a metal. Non-metals use their a
 
 Sets the size of the specular lobe. The specular lobe is the bright spot that is reflected from light sources.
 
-**Note:** Unlike :ref:`metallic<class_SpatialMaterial_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_SpatialMaterial_property_roughness>`.
+\ **Note:** Unlike :ref:`metallic<class_SpatialMaterial_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_SpatialMaterial_property_roughness>`.
 
 ----
 
@@ -1539,9 +1575,9 @@ The strength of the normal map's effect.
 
 Texture used to specify the normal at a given pixel. The ``normal_texture`` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from ``normal_texture`` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
-**Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
+\ **Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
 
-**Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 ----
 
@@ -1589,7 +1625,7 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise the scal
 
 Controls how the object faces the camera. See :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>`.
 
-**Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
+\ **Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
 
 ----
 
@@ -1607,7 +1643,7 @@ Controls how the object faces the camera. See :ref:`BillboardMode<enum_SpatialMa
 
 The material's blend mode.
 
-**Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`.
+\ **Note:** Values other than ``Mix`` force the object into the transparent pipeline. See :ref:`BlendMode<enum_SpatialMaterial_BlendMode>`.
 
 ----
 
@@ -1911,7 +1947,7 @@ Sets the strength of the rim lighting effect.
 
 If ``true``, rim effect is enabled. Rim lighting increases the brightness at glancing angles on an object.
 
-**Note:** Rim lighting is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
+\ **Note:** Rim lighting is not visible if the material has :ref:`flags_unshaded<class_SpatialMaterial_property_flags_unshaded>` set to ``true``.
 
 ----
 
@@ -2274,7 +2310,7 @@ If ``true``, enables the specified :ref:`Feature<enum_SpatialMaterial_Feature>`.
 
 - void **set_flag** **(** :ref:`Flags<enum_SpatialMaterial_Flags>` flag, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, enables the specified flag. Flags are optional behaviour that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``. See :ref:`Flags<enum_SpatialMaterial_Flags>` enumerator for options.
+If ``true``, enables the specified flag. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``. See :ref:`Flags<enum_SpatialMaterial_Flags>` enumerator for options.
 
 ----
 

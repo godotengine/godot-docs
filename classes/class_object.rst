@@ -9,7 +9,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorNavigationMeshGenerator<class_EditorNavigationMeshGenerator>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSON<class_JSON>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
+**Inherited By:** :ref:`ARVRServer<class_ARVRServer>`, :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`Geometry<class_Geometry>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSON<class_JSON>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`Navigation2DServer<class_Navigation2DServer>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer<class_NavigationServer>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`Physics2DDirectBodyState<class_Physics2DDirectBodyState>`, :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>`, :ref:`Physics2DServer<class_Physics2DServer>`, :ref:`PhysicsDirectBodyState<class_PhysicsDirectBodyState>`, :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>`, :ref:`PhysicsServer<class_PhysicsServer>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`Reference<class_Reference>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptEditor<class_VisualScriptEditor>`, :ref:`VisualServer<class_VisualServer>`
 
 Base class for all non-built-in types.
 
@@ -38,16 +38,16 @@ The ``in`` operator will evaluate to ``true`` as long as the key exists, even if
 
 Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See :ref:`_notification<class_Object_method__notification>`.
 
-**Note:** Unlike references to a :ref:`Reference<class_Reference>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`Reference<class_Reference>` for data classes instead of ``Object``.
+\ **Note:** Unlike references to a :ref:`Reference<class_Reference>`, references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use :ref:`Reference<class_Reference>` for data classes instead of ``Object``.
 
-**Note:** Due to a bug, you can't create a "plain" Object using ``Object.new()``. Instead, use ``ClassDB.instance("Object")``. This bug only applies to Object itself, not any of its descendents like :ref:`Reference<class_Reference>`.
+\ **Note:** Due to a bug, you can't create a "plain" Object using ``Object.new()``. Instead, use ``ClassDB.instance("Object")``. This bug only applies to Object itself, not any of its descendents like :ref:`Reference<class_Reference>`.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/best_practices/node_alternatives`
+- :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
-- `#advanced-exports <../tutorials/scripting/gdscript/gdscript_exports.html#advanced-exports>`_ in :doc:`../tutorials/scripting/gdscript/gdscript_exports`
+- `Advanced exports using _get_property_list() <../tutorials/scripting/gdscript/gdscript_exports.html#advanced-exports>`__
 
 Methods
 -------
@@ -93,7 +93,7 @@ Methods
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_instance_id<class_Object_method_get_instance_id>` **(** **)** |const|                                                                                                                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_meta<class_Object_method_get_meta>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                      |
+| :ref:`Variant<class_Variant>`                 | :ref:`get_meta<class_Object_method_get_meta>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default=null **)** |const|                                                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_meta_list<class_Object_method_get_meta_list>` **(** **)** |const|                                                                                                                                                             |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -222,7 +222,7 @@ Each property's :ref:`Dictionary<class_Dictionary>` must contain at least ``name
 
 Called when the object is initialized in memory. Can be defined to take in parameters, that are passed in when constructing.
 
-**Note:** If :ref:`_init<class_Object_method__init>` is defined with required parameters, then explicit construction is the only valid means of creating an Object of the class. If any other means (such as :ref:`PackedScene.instance<class_PackedScene_method_instance>`) is used, then initialization will fail.
+\ **Note:** If :ref:`_init<class_Object_method__init>` is defined with required parameters, then explicit construction is the only valid means of creating an Object of the class. If any other means (such as :ref:`PackedScene.instance<class_PackedScene_method_instance>`) is used, then initialization will fail.
 
 ----
 
@@ -272,7 +272,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
     call("set", "position", Vector2(42.0, 0.0))
 
-**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -286,7 +286,7 @@ Calls the ``method`` on the object during idle time. This method supports a vari
 
     call_deferred("set", "position", Vector2(42.0, 0.0))
 
-**Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -368,7 +368,7 @@ Emits the given ``signal``. The signal must exist, so it should be a built-in si
 
 Deletes the object from memory immediately. For :ref:`Node<class_Node>`\ s, you may want to use :ref:`Node.queue_free<class_Node_method_queue_free>` to queue the node for safe deletion at the end of the current frame.
 
-**Important:** If you have a variable pointing to an object, it will *not* be assigned to ``null`` once the object is freed. Instead, it will point to a *previously freed instance* and you should validate it with :ref:`@GDScript.is_instance_valid<class_@GDScript_method_is_instance_valid>` before attempting to call its methods or access its properties.
+\ **Important:** If you have a variable pointing to an object, it will *not* be assigned to ``null`` once the object is freed. Instead, it will point to a *previously freed instance* and you should validate it with :ref:`@GDScript.is_instance_valid<class_@GDScript_method_is_instance_valid>` before attempting to call its methods or access its properties.
 
 ----
 
@@ -378,7 +378,7 @@ Deletes the object from memory immediately. For :ref:`Node<class_Node>`\ s, you 
 
 Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If the ``property`` doesn't exist, this will return ``null``.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -388,7 +388,7 @@ Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If th
 
 Returns the object's class as a :ref:`String<class_String>`. See also :ref:`is_class<class_Object_method_is_class>`.
 
-**Note:** :ref:`get_class<class_Object_method_get_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, the base class name will be returned instead.
+\ **Note:** :ref:`get_class<class_Object_method_get_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, the base class name will be returned instead.
 
 ----
 
@@ -414,7 +414,7 @@ Each :ref:`Dictionary<class_Dictionary>` contains three String entries:
 
 Gets the object's property indexed by the given :ref:`NodePath<class_NodePath>`. The node path should be relative to the current object and can use the colon character (``:``) to access nested properties. Examples: ``"position:x"`` or ``"material:next_pass:blend_mode"``.
 
-**Note:** Even though the method takes :ref:`NodePath<class_NodePath>` argument, it doesn't support actual paths to :ref:`Node<class_Node>`\ s in the scene tree, only colon-separated sub-property paths. For the purpose of nodes, use :ref:`Node.get_node_and_resource<class_Node_method_get_node_and_resource>` instead.
+\ **Note:** Even though the method takes :ref:`NodePath<class_NodePath>` argument, it doesn't support actual paths to :ref:`Node<class_Node>`\ s in the scene tree, only colon-separated sub-property paths. For the purpose of nodes, use :ref:`Node.get_node_and_resource<class_Node_method_get_node_and_resource>` instead.
 
 ----
 
@@ -430,9 +430,11 @@ This ID can be saved in :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, and c
 
 .. _class_Object_method_get_meta:
 
-- :ref:`Variant<class_Variant>` **get_meta** **(** :ref:`String<class_String>` name **)** |const|
+- :ref:`Variant<class_Variant>` **get_meta** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns the object's metadata entry for the given ``name``.
+
+Throws error if the entry does not exist, unless ``default`` is not ``null`` (in which case the default value will be returned).
 
 ----
 
@@ -532,7 +534,7 @@ Returns ``true`` if signal emission blocking is enabled.
 
 Returns ``true`` if the object inherits from the given ``class``. See also :ref:`get_class<class_Object_method_get_class>`.
 
-**Note:** :ref:`is_class<class_Object_method_is_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, :ref:`is_class<class_Object_method_is_class>` will return ``false`` for that name.
+\ **Note:** :ref:`is_class<class_Object_method_is_class>` does not take ``class_name`` declarations into account. If the object has a ``class_name`` defined, :ref:`is_class<class_Object_method_is_class>` will return ``false`` for that name.
 
 ----
 
@@ -584,7 +586,7 @@ Removes a given entry from the object's metadata. See also :ref:`set_meta<class_
 
 Assigns a new value to the given property. If the ``property`` does not exist or the given value's type doesn't match, nothing will happen.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 
@@ -602,7 +604,7 @@ If set to ``true``, signal emission is blocked.
 
 Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` via :ref:`call_deferred<class_Object_method_call_deferred>`, i.e. ``call_deferred("set", property, value)``.
 
-**Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
+\ **Note:** In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 
 ----
 

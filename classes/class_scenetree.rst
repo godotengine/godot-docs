@@ -20,7 +20,7 @@ As one of the most important classes, the ``SceneTree`` manages the hierarchy of
 
 You can also use the ``SceneTree`` to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. an "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
 
-``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
+\ ``SceneTree`` is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
 
 Tutorials
 ---------
@@ -49,6 +49,8 @@ Properties
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | ``false`` |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`physics_interpolation<class_SceneTree_property_physics_interpolation>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | ``false`` |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`Viewport<class_Viewport>`                                 | :ref:`root<class_SceneTree_property_root>`                                                     |           |
@@ -70,6 +72,8 @@ Methods
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SceneTreeTimer<class_SceneTreeTimer>` | :ref:`create_timer<class_SceneTree_method_create_timer>` **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**                                                                                                                  |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneTreeTween<class_SceneTreeTween>` | :ref:`create_tween<class_SceneTree_method_create_tween>` **(** **)**                                                                                                                                                                                                      |
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`get_frame<class_SceneTree_method_get_frame>` **(** **)** |const|                                                                                                                                                                                                    |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_PoolIntArray>`     | :ref:`get_network_connected_peers<class_SceneTree_method_get_network_connected_peers>` **(** **)** |const|                                                                                                                                                                |
@@ -79,6 +83,8 @@ Methods
 | :ref:`int<class_int>`                       | :ref:`get_node_count<class_SceneTree_method_get_node_count>` **(** **)** |const|                                                                                                                                                                                          |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                   | :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>` **(** :ref:`String<class_String>` group **)**                                                                                                                                                        |
++---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                   | :ref:`get_processed_tweens<class_SceneTree_method_get_processed_tweens>` **(** **)**                                                                                                                                                                                      |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`get_rpc_sender_id<class_SceneTree_method_get_rpc_sender_id>` **(** **)** |const|                                                                                                                                                                                    |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -430,6 +436,22 @@ If ``true``, the ``SceneTree`` is paused. Doing so will have the following behav
 
 ----
 
+.. _class_SceneTree_property_physics_interpolation:
+
+- :ref:`bool<class_bool>` **physics_interpolation**
+
++-----------+------------------------------------------+
+| *Default* | ``false``                                |
++-----------+------------------------------------------+
+| *Setter*  | set_physics_interpolation_enabled(value) |
++-----------+------------------------------------------+
+| *Getter*  | is_physics_interpolation_enabled()       |
++-----------+------------------------------------------+
+
+Although physics interpolation would normally be globally turned on and off using :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`, this property allows control over interpolation at runtime.
+
+----
+
 .. _class_SceneTree_property_refuse_new_network_connections:
 
 - :ref:`bool<class_bool>` **refuse_new_network_connections**
@@ -472,9 +494,9 @@ The ``SceneTree``'s root :ref:`Viewport<class_Viewport>`.
 
 If ``true``, font oversampling is enabled. This means that :ref:`DynamicFont<class_DynamicFont>`\ s will be rendered at higher or lower size than configured based on the viewport's scaling ratio. For example, in a viewport scaled with a factor 1.5, a font configured with size 14 would be rendered with size 21 (``14 * 1.5``).
 
-**Note:** Font oversampling is only used if the viewport stretch mode is :ref:`STRETCH_MODE_VIEWPORT<class_SceneTree_constant_STRETCH_MODE_VIEWPORT>`, and if the stretch aspect mode is different from :ref:`STRETCH_ASPECT_IGNORE<class_SceneTree_constant_STRETCH_ASPECT_IGNORE>`.
+\ **Note:** Font oversampling is only used if the viewport stretch mode is :ref:`STRETCH_MODE_VIEWPORT<class_SceneTree_constant_STRETCH_MODE_VIEWPORT>`, and if the stretch aspect mode is different from :ref:`STRETCH_ASPECT_IGNORE<class_SceneTree_constant_STRETCH_ASPECT_IGNORE>`.
 
-**Note:** This property is set automatically for the active ``SceneTree`` when the project starts based on the configuration of ``rendering/quality/dynamic_fonts/use_oversampling`` in :ref:`ProjectSettings<class_ProjectSettings>`. The property can however be overridden at runtime as needed.
+\ **Note:** This property is set automatically for the active ``SceneTree`` when the project starts based on the configuration of ``rendering/quality/dynamic_fonts/use_oversampling`` in :ref:`ProjectSettings<class_ProjectSettings>`. The property can however be overridden at runtime as needed.
 
 Method Descriptions
 -------------------
@@ -485,11 +507,11 @@ Method Descriptions
 
 Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call. This method is equivalent of calling :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with :ref:`GROUP_CALL_DEFAULT<class_SceneTree_constant_GROUP_CALL_DEFAULT>` flag.
 
-**Note:** ``method`` may only have 5 arguments at most (7 arguments passed to this method in total).
+\ **Note:** ``method`` may only have 5 arguments at most (7 arguments passed to this method in total).
 
-**Note:** Due to design limitations, :ref:`call_group<class_SceneTree_method_call_group>` will fail silently if one of the arguments is ``null``.
+\ **Note:** Due to design limitations, :ref:`call_group<class_SceneTree_method_call_group>` will fail silently if one of the arguments is ``null``.
 
-**Note:** :ref:`call_group<class_SceneTree_method_call_group>` will always call methods with an one-frame delay, in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`. To call methods immediately, use :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with the :ref:`GROUP_CALL_REALTIME<class_SceneTree_constant_GROUP_CALL_REALTIME>` flag.
+\ **Note:** :ref:`call_group<class_SceneTree_method_call_group>` will always call methods with an one-frame delay, in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`. To call methods immediately, use :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with the :ref:`GROUP_CALL_REALTIME<class_SceneTree_constant_GROUP_CALL_REALTIME>` flag.
 
 ----
 
@@ -499,9 +521,9 @@ Calls ``method`` on each member of the given group. You can pass arguments to ``
 
 Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call.
 
-**Note:** ``method`` may only have 5 arguments at most (8 arguments passed to this method in total).
+\ **Note:** ``method`` may only have 5 arguments at most (8 arguments passed to this method in total).
 
-**Note:** Due to design limitations, :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` will fail silently if one of the arguments is ``null``.
+\ **Note:** Due to design limitations, :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` will fail silently if one of the arguments is ``null``.
 
 ::
 
@@ -518,7 +540,7 @@ Changes the running scene to the one at the given ``path``, after loading it int
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if the ``path`` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if that scene cannot be instantiated.
 
-**Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene<class_SceneTree_method_change_scene>` call.
+\ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene<class_SceneTree_method_change_scene>` call.
 
 ----
 
@@ -530,7 +552,7 @@ Changes the running scene to a new instance of the given :ref:`PackedScene<class
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
 
-**Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to<class_SceneTree_method_change_scene_to>` call.
+\ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to<class_SceneTree_method_change_scene_to>` call.
 
 ----
 
@@ -550,6 +572,14 @@ Commonly used to create a one-shot delay timer as in the following example:
         print("end")
 
 The timer will be automatically freed after its time elapses.
+
+----
+
+.. _class_SceneTree_method_create_tween:
+
+- :ref:`SceneTreeTween<class_SceneTreeTween>` **create_tween** **(** **)**
+
+Creates and returns a new :ref:`SceneTreeTween<class_SceneTreeTween>`.
 
 ----
 
@@ -590,6 +620,14 @@ Returns the number of nodes in this ``SceneTree``.
 - :ref:`Array<class_Array>` **get_nodes_in_group** **(** :ref:`String<class_String>` group **)**
 
 Returns a list of all nodes assigned to the given group.
+
+----
+
+.. _class_SceneTree_method_get_processed_tweens:
+
+- :ref:`Array<class_Array>` **get_processed_tweens** **(** **)**
+
+Returns an array of currently existing :ref:`SceneTreeTween<class_SceneTreeTween>`\ s in the ``SceneTree`` (both running and paused).
 
 ----
 
@@ -663,7 +701,7 @@ Queues the given object for deletion, delaying the call to :ref:`Object.free<cla
 
 Quits the application at the end of the current iteration. A process ``exit_code`` can optionally be passed as an argument. If this argument is ``0`` or greater, it will override the :ref:`OS.exit_code<class_OS_property_exit_code>` defined before quitting the application.
 
-**Note:** On iOS this method doesn't work. Instead, as recommended by the iOS Human Interface Guidelines, the user is expected to close apps via the Home button.
+\ **Note:** On iOS this method doesn't work. Instead, as recommended by the iOS Human Interface Guidelines, the user is expected to close apps via the Home button.
 
 ----
 

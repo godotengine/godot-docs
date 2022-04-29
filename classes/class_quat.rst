@@ -23,7 +23,7 @@ Due to its compactness and the way it is stored in memory, certain operations (o
 Tutorials
 ---------
 
-- `#interpolating-with-quaternions <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`_ in :doc:`../tutorials/3d/using_transforms`
+- `Using 3D transforms <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`__
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -182,7 +182,7 @@ Constructs a quaternion defined by the given values.
 
 Returns the angle between this quaternion and ``to``. This is the magnitude of the angle you would need to rotate by to get from one to the other.
 
-**Note:** This method has an abnormally high amount of floating-point error, so methods such as :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` will not work reliably.
+\ **Note:** This method has an abnormally high amount of floating-point error, so methods such as :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` will not work reliably.
 
 ----
 
@@ -280,7 +280,7 @@ Sets the quaternion to a rotation specified by Euler angles (in the YXZ conventi
 
 Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``.
 
-**Note:** Both quaternions must be normalized.
+\ **Note:** Both quaternions must be normalized.
 
 ----
 

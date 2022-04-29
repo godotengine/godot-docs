@@ -18,20 +18,20 @@ Description
 
 Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
 
-**Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
+\ **Note:** Assignments to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
 
-**Note:** RichTextLabel doesn't support entangled BBCode tags. For example, instead of using ``[b]bold[i]bold italic[/b]italic[/i]``, use ``[b]bold[i]bold italic[/i][/b][i]italic[/i]``.
+\ **Note:** RichTextLabel doesn't support entangled BBCode tags. For example, instead of using ``[b]bold[i]bold italic[/b]italic[/i]``, use ``[b]bold[i]bold italic[/i][/b][i]italic[/i]``.
 
-**Note:** ``push_*/pop`` functions won't affect BBCode.
+\ **Note:** ``push_*/pop`` functions won't affect BBCode.
 
-**Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>` property.
+\ **Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>` property.
 
-**Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
+\ **Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
 
 Tutorials
 ---------
 
-- :doc:`../tutorials/ui/bbcode_in_richtextlabel`
+- :doc:`BBCode in RichTextLabel <../tutorials/ui/bbcode_in_richtextlabel>`
 
 - `GUI Rich Text/BBcode Demo <https://godotengine.org/asset-library/asset/132>`__
 
@@ -40,35 +40,37 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                             | ``false``                    |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                   | ``""``                       |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                             | ``[  ]``                     |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                     | ``false``                    |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                           | ``true``                     |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>` | ``false``                    |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                           | ``1.0``                      |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | rect_clip_content                                                                              | ``true`` *(parent override)* |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                               | ``true``                     |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                         | ``false``                    |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                       | ``false``                    |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                         | ``4``                        |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                 | ``""``                       |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
-| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                     | ``-1``                       |
-+-----------------------------+------------------------------------------------------------------------------------------------+------------------------------+
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                                 | ``false``                                                                     |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>`                                       | ``""``                                                                        |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                                 | ``[  ]``                                                                      |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`deselect_on_focus_loss_enabled<class_RichTextLabel_property_deselect_on_focus_loss_enabled>` | ``true``                                                                      |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                         | ``false``                                                                     |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                               | ``true``                                                                      |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>`     | ``false``                                                                     |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`float<class_float>`   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                               | ``1.0``                                                                       |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | rect_clip_content                                                                                  | ``true`` (overrides :ref:`Control<class_Control_property_rect_clip_content>`) |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                   | ``true``                                                                      |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                             | ``false``                                                                     |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                           | ``false``                                                                     |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                             | ``4``                                                                         |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`text<class_RichTextLabel_property_text>`                                                     | ``""``                                                                        |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                         | ``-1``                                                                        |
++-----------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -82,9 +84,13 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`clear<class_RichTextLabel_method_clear>` **(** **)**                                                                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`deselect<class_RichTextLabel_method_deselect>` **(** **)**                                                                                                                         |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_content_height<class_RichTextLabel_method_get_content_height>` **(** **)** |const|                                                                                             |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_line_count<class_RichTextLabel_method_get_line_count>` **(** **)** |const|                                                                                                     |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_selected_text<class_RichTextLabel_method_get_selected_text>` **(** **)**                                                                                                       |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                 | :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>` **(** **)** |const|                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -343,7 +349,7 @@ Property Descriptions
 
 If ``true``, the label uses BBCode formatting.
 
-**Note:** Trying to alter the ``RichTextLabel``'s text with :ref:`add_text<class_RichTextLabel_method_add_text>` will reset this to ``false``. Use instead :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` to preserve BBCode formatting.
+\ **Note:** Trying to alter the ``RichTextLabel``'s text with :ref:`add_text<class_RichTextLabel_method_add_text>` will reset this to ``false``. Use instead :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` to preserve BBCode formatting.
 
 ----
 
@@ -361,7 +367,7 @@ If ``true``, the label uses BBCode formatting.
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
-**Note:** It is unadvised to use the ``+=`` operator with ``bbcode_text`` (e.g. ``bbcode_text += "some string"``) as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using ``push_*`` methods. Use :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
+\ **Note:** It is unadvised to use the ``+=`` operator with ``bbcode_text`` (e.g. ``bbcode_text += "some string"``) as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using ``push_*`` methods. Use :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
 
 ----
 
@@ -383,6 +389,22 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 
 ----
 
+.. _class_RichTextLabel_property_deselect_on_focus_loss_enabled:
+
+- :ref:`bool<class_bool>` **deselect_on_focus_loss_enabled**
+
++-----------+-------------------------------------------+
+| *Default* | ``true``                                  |
++-----------+-------------------------------------------+
+| *Setter*  | set_deselect_on_focus_loss_enabled(value) |
++-----------+-------------------------------------------+
+| *Getter*  | is_deselect_on_focus_loss_enabled()       |
++-----------+-------------------------------------------+
+
+If ``true``, the selected text will be deselected when focus is lost.
+
+----
+
 .. _class_RichTextLabel_property_fit_content_height:
 
 - :ref:`bool<class_bool>` **fit_content_height**
@@ -397,7 +419,7 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 
 If ``true``, the label's height will be automatically updated to fit its content.
 
-**Note:** This property is used as a workaround to fix issues with ``RichTextLabel`` in :ref:`Container<class_Container>`\ s, but it's unreliable in some cases and will be removed in future versions.
+\ **Note:** This property is used as a workaround to fix issues with ``RichTextLabel`` in :ref:`Container<class_Container>`\ s, but it's unreliable in some cases and will be removed in future versions.
 
 ----
 
@@ -447,7 +469,7 @@ If ``true``, the label uses the custom font color.
 
 The range of characters to display, as a :ref:`float<class_float>` between 0.0 and 1.0. When assigned an out of range value, it's the same as assigning 1.0.
 
-**Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
+\ **Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
 
 ----
 
@@ -547,7 +569,7 @@ When set, clears the tag stack and adds a raw text tag to the top of it. Does no
 
 The restricted number of characters to display in the label. If ``-1``, all characters will be displayed.
 
-**Note:** Setting this property updates :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
+\ **Note:** Setting this property updates :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
 
 Method Descriptions
 -------------------
@@ -576,7 +598,7 @@ Adds raw non-BBCode-parsed text to the tag stack.
 
 Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful.
 
-**Note:** Using this method, you can't close a tag that was opened in a previous :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` call. This is done to improve performance, especially when updating large RichTextLabels since rebuilding the whole BBCode every time would be slower. If you absolutely need to close a tag in a future method call, append the :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` instead of using :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`.
+\ **Note:** Using this method, you can't close a tag that was opened in a previous :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` call. This is done to improve performance, especially when updating large RichTextLabels since rebuilding the whole BBCode every time would be slower. If you absolutely need to close a tag in a future method call, append the :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` instead of using :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`.
 
 ----
 
@@ -585,6 +607,14 @@ Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result o
 - void **clear** **(** **)**
 
 Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` to an empty string.
+
+----
+
+.. _class_RichTextLabel_method_deselect:
+
+- void **deselect** **(** **)**
+
+Clears the current selection.
 
 ----
 
@@ -604,6 +634,14 @@ Returns the total number of newlines in the tag stack's text tags. Considers wra
 
 ----
 
+.. _class_RichTextLabel_method_get_selected_text:
+
+- :ref:`String<class_String>` **get_selected_text** **(** **)**
+
+Returns the current selection text. Does not include BBCodes.
+
+----
+
 .. _class_RichTextLabel_method_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
@@ -618,7 +656,7 @@ Returns the total number of characters from text tags. Does not include BBCodes.
 
 Returns the vertical scrollbar.
 
-**Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 ----
 

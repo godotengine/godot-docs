@@ -18,9 +18,9 @@ Description
 
 This node implements all the physics logic needed to simulate a car. It is based on the raycast vehicle system commonly found in physics engines. You will need to add a :ref:`CollisionShape<class_CollisionShape>` for the main body of your vehicle and add :ref:`VehicleWheel<class_VehicleWheel>` nodes for the wheels. You should also add a :ref:`MeshInstance<class_MeshInstance>` to this node for the 3D model of your car but this model should not include meshes for the wheels. You should control the vehicle by using the :ref:`brake<class_VehicleBody_property_brake>`, :ref:`engine_force<class_VehicleBody_property_engine_force>`, and :ref:`steering<class_VehicleBody_property_steering>` properties and not change the position or orientation of this node directly.
 
-**Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
+\ **Note:** The origin point of your VehicleBody will determine the center of gravity of your vehicle so it is better to keep this low and move the :ref:`CollisionShape<class_CollisionShape>` and :ref:`MeshInstance<class_MeshInstance>` upwards.
 
-**Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
+\ **Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody<class_PhysicsBody>` class.
 
 Tutorials
 ---------
@@ -30,17 +30,17 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | ``0.0``                       |
-+---------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | ``0.0``                       |
-+---------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>` | mass                                                         | ``40.0`` *(parent override)*  |
-+---------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | ``0.0``                       |
-+---------------------------+--------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>` | weight                                                       | ``392.0`` *(parent override)* |
-+---------------------------+--------------------------------------------------------------+-------------------------------+
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody_property_brake>`               | ``0.0``                                                                 |
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody_property_engine_force>` | ``0.0``                                                                 |
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | mass                                                         | ``40.0`` (overrides :ref:`RigidBody<class_RigidBody_property_mass>`)    |
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody_property_steering>`         | ``0.0``                                                                 |
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | weight                                                       | ``392.0`` (overrides :ref:`RigidBody<class_RigidBody_property_weight>`) |
++---------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -75,7 +75,7 @@ Slows down the vehicle by applying a braking force. The vehicle is only slowed d
 
 Accelerates the vehicle by applying an engine force. The vehicle is only speed up if the wheels that have :ref:`VehicleWheel.use_as_traction<class_VehicleWheel_property_use_as_traction>` set to ``true`` and are in contact with a surface. The :ref:`RigidBody.mass<class_RigidBody_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
-**Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
+\ **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 
 A negative value will result in the vehicle reversing.
 
