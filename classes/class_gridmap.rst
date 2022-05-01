@@ -413,7 +413,7 @@ Returns an array of all cells with the given item index specified in ``item``.
 
 - :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|
 
-Returns the position of a grid cell in the GridMap's local coordinate space.
+Returns the world position for the given grid cell coordinates.
 
 ----
 
@@ -455,9 +455,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 - :ref:`Vector3i<class_Vector3i>` **world_to_map** **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|
 
-Returns the coordinates of the grid cell containing the given point.
-
-\ ``pos`` should be in the GridMap's local coordinate space.
+Returns the grid coordinates of the grid cell located at the given world position.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
