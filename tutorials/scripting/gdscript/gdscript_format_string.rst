@@ -134,8 +134,9 @@ conditions.
 | ``+``   | In number specifiers, **show + sign** if positive.                |
 +---------+-------------------------------------------------------------------+
 | Integer | Set **padding**. Padded with spaces or with zeroes if integer     |
-|         | starts with ``0`` in an integer placeholder. When used after      |
-|         | ``.``, see ``.``.                                                 |
+|         | starts with ``0`` in an integer or real number placeholder.       |
+|         | The leading ``0`` is ignored if ``-`` is present.                 |
+|         | When used after ``.``, see ``.``.                                 |
 +---------+-------------------------------------------------------------------+
 | ``.``   | Before ``f``, set **precision** to 0 decimal places. Can be       |
 |         | followed up with numbers to change. Padded with zeroes.           |
