@@ -1029,6 +1029,7 @@ kbd.compound > .kbd,
     background-color: transparent;
     font-weight: inherit;
     padding: 0;
+    box-shadow: 0 0 0 0px #f1c40f;
 }
 
 /* Allows the scrollbar to be shown in the sidebar */
