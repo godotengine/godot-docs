@@ -114,7 +114,7 @@ Individual scalar members of vector types are accessed via the "x", "y", "z" and
 "w" members. Alternatively, using "r", "g", "b" and "a" also works and is
 equivalent. Use whatever fits best for your needs.
 
-For matrices, use the ``m[row][column]`` indexing syntax to access each scalar,
+For matrices, use the ``m[column][row]`` indexing syntax to access each scalar,
 or ``m[idx]`` to access a vector by row index. For example, for accessing the y
 position of an object in a mat4 you use ``m[3][1]``.
 
