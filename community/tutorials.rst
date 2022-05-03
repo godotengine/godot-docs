@@ -33,7 +33,7 @@ Video tutorials
 - `HeartBeast <https://www.youtube.com/watch?v=wETY5_9kFtA&list=PL9FzW-m48fn2jlBu_0DRh7PvAt-GULEmd>`_ (2D, GDScript).
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript and VisualScript).
 - `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_ (2D, GDScript).
-- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qN6AyjG245_Pdak4MXKUx88>`_ (2D and 3D, GDScript).
+- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qNyt0WHVnac1f5IFzG-7grN>`_ (2D and 3D, GDScript).
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript and VisualScript).
