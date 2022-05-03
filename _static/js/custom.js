@@ -241,11 +241,11 @@ $(document).ready(() => {
  
   let currentState = history.state;
   // Remove domain and 'highlight' tag from URL
-  let newURL = window.location.href.replace("https://docs.godotengine.org","");
+  let newURL = window.location.href.replace("https://docs.godotengine.org", "");
   const reg = new RegExp('[?]highlight=([^?]*)');
-  newURL = newURL.replace(reg,"");
+  newURL = newURL.replace(reg, "");
 
   // Replace URL without reloading page
-  history.replaceState(currentState,"",newURL);
+  history.replaceState(currentState, "", newURL);
 
 });
