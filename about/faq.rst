@@ -183,6 +183,73 @@ free and open-source integration, consider starting the integration work yoursel
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
 
+How do I install the Godot editor on my system (for desktop integration)?
+-------------------------------------------------------------------------
+
+Since you don't need to actually install Godot on your system to run it,
+this means desktop integration is not performed automatically.
+There are two ways to overcome this. You can install Godot from
+`Steam <https://store.steampowered.com/app/404790/Godot_Engine/>`__ (all platforms),
+`Scoop <https://scoop.sh/>`__ (Windows), `Homebrew <https://brew.sh/>`__ (macOS)
+or `Flathub <https://flathub.org/apps/details/org.godotengine.Godot>`__ (Linux).
+This will automatically perform the required steps for desktop integration.
+
+Alternatively, you can manually perform the steps that an installer would do for you:
+
+Windows
+^^^^^^^
+
+- Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
+  so you don't accidentally move it and break the shortcut in the future.
+- Right-click the Godot executable and choose **Create Shortcut**.
+- Move the created shortcut to ``%LOCALAPPDATA%\Microsoft\Windows\Start Menu\Programs``.
+  This is the user-wide location for shortcuts that will appear in the Start menu.
+  You can also pin Godot in the task bar by right-clicking the executable and choosing
+  **Pin to Task Bar**.
+
+macOS
+^^^^^
+
+Drag the extracted Godot application to `/Applications/Godot.app`, then drag it
+to the Dock if desired. Spotlight will be able to find Godot as long as it's in
+`/Applications` or `~/Applications`.
+
+Linux
+^^^^^
+
+- Move the Godot binary to a stable location (i.e. outside of your Downloads folder),
+  so you don't accidentally move it and break the shortcut in the future.
+- Rename and move the Godot binary to a location present in your ``PATH`` environment variable.
+  This is typically ``/usr/local/bin/godot`` or ``/usr/bin/godot``.
+  Doing this requires administrator privileges,
+  but this also allows you to
+  :ref:`run the Godot editor from a terminal <doc_command_line_tutorial>` by entering ``godot``.
+
+  - If you cannot move the Godot editor binary to a protected location, you can
+    keep the binary somewhere in your home directory, and modify the ``Path=``
+    line in the ``.desktop`` file linked below to contain the full *absolute* path
+    to the Godot binary.
+
+- Save `this .desktop file <https://raw.githubusercontent.com/godotengine/godot/3.x/misc/dist/linux/org.godotengine.Godot.desktop>`__
+  to `$HOME/.local/share/applications/`. If you have administrator privileges,
+  you can also save the ``.desktop`` file to `/usr/local/share/applications`
+  to make the shortcut available for all users.
+
+Is the Godot editor a portable application?
+-------------------------------------------
+
+In its default configuration, Godot is *semi-portable*. Its executable can run
+from any location (including non-writable locations) and never requires
+administrator privileges.
+
+However, configuration files will be written to the user-wide configuration or
+data directory. This is usually a good approach, but this means configuration files
+will not carry across machines if you copy the folder containing the Godot executable.
+See :ref:`doc_data_paths` for more information.
+
+If *true* portable operation is desired (e.g. for use on an USB stick),
+follow the steps in :ref:`doc_data_paths_self_contained_mode`.
+
 Why does Godot use Vulkan or OpenGL instead of Direct3D?
 --------------------------------------------------------
 
