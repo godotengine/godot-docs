@@ -210,9 +210,9 @@ Windows
 macOS
 ^^^^^
 
-Drag the extracted Godot application to `/Applications/Godot.app`, then drag it
+Drag the extracted Godot application to ``/Applications/Godot.app``, then drag it
 to the Dock if desired. Spotlight will be able to find Godot as long as it's in
-`/Applications` or `~/Applications`.
+``/Applications`` or ``~/Applications``.
 
 Linux
 ^^^^^
@@ -231,8 +231,8 @@ Linux
     to the Godot binary.
 
 - Save `this .desktop file <https://raw.githubusercontent.com/godotengine/godot/3.x/misc/dist/linux/org.godotengine.Godot.desktop>`__
-  to `$HOME/.local/share/applications/`. If you have administrator privileges,
-  you can also save the ``.desktop`` file to `/usr/local/share/applications`
+  to ``$HOME/.local/share/applications/``. If you have administrator privileges,
+  you can also save the ``.desktop`` file to ``/usr/local/share/applications``
   to make the shortcut available for all users.
 
 Is the Godot editor a portable application?
