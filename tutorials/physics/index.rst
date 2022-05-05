@@ -14,3 +14,4 @@ Physics
    kinematic_character_2d
    soft_body
    collision_shapes_3d
+   interpolation/index
