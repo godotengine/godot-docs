@@ -275,7 +275,7 @@ Several more options are present for baking:
 Tweaks
 ^^^^^^
 
-- **Quality:** Three bake quality modes are provided: Low, Medium, High, and Ultra.
+- **Quality:** Four bake quality modes are provided: Low, Medium, High, and Ultra.
   Higher quality takes more time, but result in a better-looking lightmap with
   less noise. The difference is especially noticeable with emissive materials or
   areas that get little to no direct lighting.
