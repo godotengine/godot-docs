@@ -66,25 +66,25 @@ Editor data paths
 The editor uses different paths for user data, user settings, and cache,
 depending on the platform. By default, these paths are:
 
-+-------------------------------+----------------------------------------------------------------+
-| Type                          | Location                                                       |
-+===============================+================================================================+
-| User data                     | - Windows: ``%APPDATA%\Godot\app_userdata\[project_name]``     |
-|                               | - macOS: ``~/Library/Application Support/Godot/[project_name]``|
-|                               | - Linux: ``~/.local/share/godot/[project_name]``               |
-+-------------------------------+----------------------------------------------------------------+
-| User data                     | - Windows: ``%APPDATA%\[project_name]``                        |
-| (when ``use_custom_user_dir`` | - macOS: ``~/Library/Application Support/[project_name]``      |
-| project setting is ``true``)  | - Linux: ``~/.local/share/[project_name]``                     |
-+-------------------------------+----------------------------------------------------------------+
-| User settings                 | - Windows: ``%APPDATA%\Godot\``                                |
-|                               | - macOS: ``~/Library/Application Support/Godot/``              |
-|                               | - Linux: ``~/.config/godot/``                                  |
-+-------------------------------+----------------------------------------------------------------+
-| Cache                         | - Windows: ``%TEMP%\Godot\``                                   |
-|                               | - macOS: ``~/Library/Caches/Godot/``                           |
-|                               | - Linux: ``~/.cache/godot/``                                   |
-+-------------------------------+----------------------------------------------------------------+
++-------------------------------+-----------------------------------------------------------------------------+
+| Type                          | Location                                                                    |
++===============================+=============================================================================+
+| User data                     | - Windows: ``%APPDATA%\Godot\app_userdata\[project_name]``                  |
+|                               | - macOS: ``~/Library/Application Support/Godot/app_userdata/[project_name]``|
+|                               | - Linux: ``~/.local/share/godot/[project_name]``                            |
++-------------------------------+-----------------------------------------------------------------------------+
+| User data                     | - Windows: ``%APPDATA%\[project_name]``                                     |
+| (when ``use_custom_user_dir`` | - macOS: ``~/Library/Application Support/[project_name]``                   |
+| project setting is ``true``)  | - Linux: ``~/.local/share/[project_name]``                                  |
++-------------------------------+-----------------------------------------------------------------------------+
+| User settings                 | - Windows: ``%APPDATA%\Godot\``                                             |
+|                               | - macOS: ``~/Library/Application Support/Godot/``                           |
+|                               | - Linux: ``~/.config/godot/``                                               |
++-------------------------------+-----------------------------------------------------------------------------+
+| Cache                         | - Windows: ``%TEMP%\Godot\``                                                |
+|                               | - macOS: ``~/Library/Caches/Godot/``                                        |
+|                               | - Linux: ``~/.cache/godot/``                                                |
++-------------------------------+-----------------------------------------------------------------------------+
 
 - **User data** contains export templates and project-specific data.
 - **User settings** contains editor settings, text editor themes, script
