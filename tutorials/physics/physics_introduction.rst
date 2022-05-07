@@ -493,7 +493,7 @@ the ground (including slopes) and jump when standing on the ground:
         {
             _velocity.y += _gravity * delta;
             GetInput();
-            _velocity = MoveAndSlide(velocity, new Vector2(0,-1));
+            _velocity = MoveAndSlide(_velocity, new Vector2(0,-1));
         }
     }
 
