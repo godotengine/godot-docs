@@ -349,3 +349,12 @@ Properties
 
       :param * var_args:
          A variadic number of arguments to be printed as errors.
+         
+         
+Typescript
+------
+
+If you are including the generated javascript file in a typescript project. You can import types with 
+
+``npm install @types/godot`` or ``yarn add @types/godot``
+
