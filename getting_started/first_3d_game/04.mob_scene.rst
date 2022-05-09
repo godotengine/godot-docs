@@ -139,6 +139,13 @@ Similarly to the player, we move the mob every frame by calling
 the ``velocity`` every frame: we want the monster to move at a constant speed
 and leave the screen, even if it were to hit an obstacle.
 
+You may see a warning in GDScript that the return value from
+``move_and_slide()`` is unused. This is expected. You can simply ignore the
+warning or, if you want to hide it entirely, add the comment
+``# warning-ignore:return_value_discarded`` just above the
+``move_and_slide(velocity)`` line. To read more about the GDScript warning
+system, see :ref:`doc_gdscript_warning_system`.
+
 We need to define another function to calculate the start velocity. This
 function will turn the monster towards the player and randomize both its angle
 of motion and its velocity.
