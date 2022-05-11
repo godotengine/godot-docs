@@ -10,8 +10,10 @@ Controllers are supported on Windows, macOS, Linux, Android, iOS, and HTML5.
 
 Note that more specialized devices such as steering wheels, rudder pedals and
 `HOTAS <https://en.wikipedia.org/wiki/HOTAS>`__ are less tested and may not
-always work as expected. If you have access to one of those devices, don't hesitate to
-`report bugs on GitHub <https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#reporting-bugs>`__.
+always work as expected. Overriding force feedback for those devices is also not
+implemented yet. If you have access to one of those devices, don't hesitate to
+`report bugs on GitHub
+<https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#reporting-bugs>`__.
 
 In this guide, you will learn:
 
@@ -244,16 +246,10 @@ as early as possible in a script's ``_ready()`` function.
 My controller works on a given platform, but not on another platform.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-macOS
-~~~~~
-
-Controllers are currently only supported on x86-based Macs. This means
-controllers won't work on Macs featuring ARM processors such as the Apple M1.
-
 Linux
 ~~~~~
 
-Prior to Godot 3.2.4, official Godot binaries were compiled with udev support
+Prior to Godot 3.3, official Godot binaries were compiled with udev support
 but self-compiled binaries were compiled *without* udev support unless
 ``udev=yes`` was passed on the SCons command line. This made controller
 hotplugging support unavailable in self-compiled binaries.
@@ -268,4 +264,4 @@ can't get their controller to work.
 
 Also, note that
 `controller support was significantly improved <https://github.com/godotengine/godot/pull/45078>`__
-in Godot 3.2.4 and later.
+in Godot 3.3 and later.
