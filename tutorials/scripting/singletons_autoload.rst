@@ -99,6 +99,11 @@ you'll see the autoloaded nodes appear:
 
 .. image:: img/autoload_runtime.png
 
+.. warning::
+
+    Autoloads must **not** be removed using ``free()`` or ``queue_free()`` at
+    runtime, or the engine will crash.
+
 Custom scene switcher
 ---------------------
 
