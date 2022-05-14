@@ -83,7 +83,7 @@ advantages and disadvantages (|good| = best, |bad| = worst):
 +----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
 |                | Uncompressed           | Compress Lossless             | Compress Lossy       | Compress VRAM                                        |
 +================+========================+===============================+======================+======================================================+
-| Description    | Stored as raw pixels   | Stored as Lossless WebP / PNG | Stored as Lossy WebP | Stored as S3TC/BC or PVRTC/ETC depending on platform |
+| Description    | Stored as raw pixels   | Stored as Lossless WebP / PNG | Stored as Lossy WebP | Stored as S3TC, BPTC or ETC2 depending on platform   |
 +----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
 | Size on Disk   | |bad| Large            | |regular| Small               | |good| Very Small    | |regular| Small                                      |
 +----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
