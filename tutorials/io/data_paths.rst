@@ -19,9 +19,10 @@ As mentioned in the :ref:`doc_command_line_tutorial`, Godot considers that
 a project exists in any given folder that contains a ``project.godot``
 text file, even if such file is empty.
 
-Accessing project files can be done by opening any path with ``res://``
-as a base. For example, a texture located in the root of the project
-folder may be opened from the following path: ``res://some_texture.png``.
+You can access any file relative to it by writing paths starting with
+``res://``, which stands for resources. For example, you can access an image
+file ``character.png`` located in the project's root folder in code with the
+following path: ``res://character.png``.
 
 User path (persistent data)
 ---------------------------
