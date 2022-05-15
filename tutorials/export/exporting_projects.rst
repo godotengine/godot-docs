@@ -51,8 +51,7 @@ There is also another problem with this approach: different devices
 prefer some data in different formats to run. The main example of this
 is texture compression. All PC hardware uses S3TC (BC) compression and
 that has been standardized for more than a decade, but mobile devices
-use different formats for texture compression, such as PVRTC (iOS) or
-ETC (Android).
+use different formats for texture compression, such as ETC1 and ETC2.
 
 Export menu
 -----------

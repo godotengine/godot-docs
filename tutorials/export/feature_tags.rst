@@ -85,8 +85,6 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+--------------------------------------------------------+
 | **s3tc**        | Textures using S3TC (DXT/BC) compression are supported |
 +-----------------+--------------------------------------------------------+
-| **pvrtc**       | Textures using PVRTC compression are supported         |
-+-----------------+--------------------------------------------------------+
 
 Custom features
 ---------------
