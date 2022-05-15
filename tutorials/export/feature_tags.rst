@@ -86,6 +86,17 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 | **pvrtc**       | Textures using PVRTC compression are supported         |
 +-----------------+--------------------------------------------------------+
 
+.. warning::
+
+    With the exception of texture compression feature tags, default feature tags
+    are **immutable**. This means that they will *not* change depending on
+    run-time conditions. For example, ``OS.has_feature("mobile")`` will return
+    ``false`` when running a project exported to HTML5 on a mobile device.
+
+    To check whether a project exported to HTML5 is running on a mobile device,
+    :ref:`call JavaScript code <doc_javascript_eval>` that reads the browser's
+    user agent.
+
 Custom features
 ---------------
 
