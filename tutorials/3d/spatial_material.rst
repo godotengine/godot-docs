@@ -12,10 +12,10 @@ it can be converted to shader code if additional functionality is needed.
 
 This tutorial explains most parameters present in ``SpatialMaterial``.
 
-There are four ways to add a ``SpatialMaterial`` to an object. It can be added in
+There are 4 ways to add a ``SpatialMaterial`` to an object. It can be added in
 the *Material* property of the mesh. It can be added in the *Material* property of
 the node using the mesh (such as a MeshInstance node), the *Material Override* property
-of the node using the mesh, and the *Material Overlay*
+of the node using the mesh, and the *Material Overlay*.
 
 .. image:: img/add_material.png
 
@@ -26,8 +26,8 @@ added in the *Material Override* property of the node, it will only be used by t
 It will also override the regular material property of the node and the material property of
 the mesh.
 
-The *Material Overlay* property will render a material over the current one being used by the
-mesh. As an example this could be used to put a transparent shield effect on a mesh.
+The *Material Overlay* property will render a material **over** the current one being used by the
+mesh. As an example, this can be used to put a transparent shield effect on a mesh.
 
 Flags
 -----
