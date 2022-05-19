@@ -10,7 +10,7 @@ Exceptions to automatic physics interpolation
 
 Even with physics interpolation active, there may be some local situations where you would benefit from disabling automatic interpolation for a :ref:`Node<class_Node>` (or branch of the :ref:`SceneTree<class_SceneTree>`), and have the finer control of performing interpolation manually.
 
-This is possible using the :ref:`Node.set_physics_interpolated<class_Node_method_set_physics_interpolated>` function which is present in all Nodes. If you for example, set this interpolated flag to false for a Node, the children will recursively also be affected. This means you can easily disable interpolation for an entire subscene.
+This is possible using the :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` property which is present in all Nodes. If you for example, turn off interpolation for a Node, the children will recursively also be affected (as they default to inheriting the parent setting). This means you can easily disable interpolation for an entire subscene.
 
 The most common situation where you may want to perform your own interpolation is Cameras.
 
@@ -76,7 +76,7 @@ Here is an example of a simple fixed Camera which follows an interpolated target
 		
 		# Turn off automatic physics interpolation for the Camera,
 		# we will be doing this manually
-		set_physics_interpolated(false)
+		set_physics_interpolation_mode(Node.PHYSICS_INTERPOLATION_MODE_OFF)
 		
 	func _process(delta: float) -> void:
 		# Find the current interpolated transform of the target
@@ -93,7 +93,7 @@ Mouse look
 
 Mouse look is a very common way of controlling Cameras. But there is a problem. Unlike keyboard input which can be sampled periodically on the physics tick, mouse move events can come in continuously. The Camera will be expected to react and follow these mouse movements on the next frame, rather than waiting until the next physics tick.
 
-In this situation, it can be better to disable physics interpolation for the Camera node (using :ref:`Node.set_physics_interpolated<class_Node_method_set_physics_interpolated>`) and directly apply the mouse input to the Camera rotation, rather than apply it in ``_physics_process``.
+In this situation, it can be better to disable physics interpolation for the Camera node (using :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`) and directly apply the mouse input to the Camera rotation, rather than apply it in ``_physics_process``.
 
 Sometimes, especially with Cameras, you will want to use a combination of interpolation and non-interpolation:
 
