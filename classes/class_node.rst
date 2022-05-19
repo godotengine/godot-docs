@@ -50,21 +50,25 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |       |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`                 | :ref:`filename<class_Node_property_filename>`                     |       |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |       |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`                 | :ref:`name<class_Node_property_name>`                             |       |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |       |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`PauseMode<enum_Node_PauseMode>`       | :ref:`pause_mode<class_Node_property_pause_mode>`                 | ``0`` |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | ``0`` |
-+---------------------------------------------+-------------------------------------------------------------------+-------+
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                         | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>`                 |           |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                         | :ref:`filename<class_Node_property_filename>`                                     |           |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>`                         | :ref:`multiplayer<class_Node_property_multiplayer>`                               |           |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                         | :ref:`name<class_Node_property_name>`                                             |           |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                                             | :ref:`owner<class_Node_property_owner>`                                           |           |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`PauseMode<enum_Node_PauseMode>`                               | :ref:`pause_mode<class_Node_property_pause_mode>`                                 | ``0``     |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` | :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` | ``0``     |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                               | :ref:`process_priority<class_Node_property_process_priority>`                     | ``0``     |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                             | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`             | ``false`` |
++---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -226,8 +230,6 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_network_master<class_Node_method_set_network_master>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_physics_interpolated<class_Node_method_set_physics_interpolated>` **(** :ref:`bool<class_bool>` enable **)**                                                                              |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_physics_process<class_Node_method_set_physics_process>` **(** :ref:`bool<class_bool>` enable **)**                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_physics_process_internal<class_Node_method_set_physics_process_internal>` **(** :ref:`bool<class_bool>` enable **)**                                                                      |
@@ -322,6 +324,24 @@ enum **PauseMode**:
 - **PAUSE_MODE_STOP** = **1** --- Stops processing when the :ref:`SceneTree<class_SceneTree>` is paused.
 
 - **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of the :ref:`SceneTree<class_SceneTree>` pause state.
+
+----
+
+.. _enum_Node_PhysicsInterpolationMode:
+
+.. _class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT:
+
+.. _class_Node_constant_PHYSICS_INTERPOLATION_MODE_OFF:
+
+.. _class_Node_constant_PHYSICS_INTERPOLATION_MODE_ON:
+
+enum **PhysicsInterpolationMode**:
+
+- **PHYSICS_INTERPOLATION_MODE_INHERIT** = **0** --- Inherits physics interpolation mode from the node's parent. For the root node, it is equivalent to :ref:`PHYSICS_INTERPOLATION_MODE_ON<class_Node_constant_PHYSICS_INTERPOLATION_MODE_ON>`. Default.
+
+- **PHYSICS_INTERPOLATION_MODE_OFF** = **1** --- Turn off physics interpolation in this node and children set to :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>`.
+
+- **PHYSICS_INTERPOLATION_MODE_ON** = **2** --- Turn on physics interpolation in this node and children set to :ref:`PHYSICS_INTERPOLATION_MODE_INHERIT<class_Node_constant_PHYSICS_INTERPOLATION_MODE_INHERIT>`.
 
 ----
 
@@ -603,6 +623,24 @@ Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is
 
 ----
 
+.. _class_Node_property_physics_interpolation_mode:
+
+- :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` **physics_interpolation_mode**
+
++-----------+---------------------------------------+
+| *Default* | ``0``                                 |
++-----------+---------------------------------------+
+| *Setter*  | set_physics_interpolation_mode(value) |
++-----------+---------------------------------------+
+| *Getter*  | get_physics_interpolation_mode()      |
++-----------+---------------------------------------+
+
+Allows enabling or disabling physics interpolation per node, offering a finer grain of control than turning physics interpolation on and off globally.
+
+\ **Note:** This can be especially useful for :ref:`Camera<class_Camera>`\ s, where custom interpolation can sometimes give superior results.
+
+----
+
 .. _class_Node_property_process_priority:
 
 - :ref:`int<class_int>` **process_priority**
@@ -616,6 +654,24 @@ Pause mode. How the node will behave if the :ref:`SceneTree<class_SceneTree>` is
 +-----------+-----------------------------+
 
 The node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes whose process priority value is *lower* will have their processing callbacks executed first.
+
+----
+
+.. _class_Node_property_unique_name_in_owner:
+
+- :ref:`bool<class_bool>` **unique_name_in_owner**
+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_unique_name_in_owner(value) |
++-----------+---------------------------------+
+| *Getter*  | is_unique_name_in_owner()       |
++-----------+---------------------------------+
+
+Sets this node's name as a unique name in its :ref:`owner<class_Node_property_owner>`. This allows the node to be accessed as ``%Name`` instead of the full path, from any node within that scene.
+
+If another node with the same owner already had that name declared as unique, that other node's name will no longer be set as having a unique name.
 
 Method Descriptions
 -------------------
@@ -1102,7 +1158,7 @@ Returns ``true`` if the local system is the master of this node.
 
 - :ref:`bool<class_bool>` **is_physics_interpolated** **(** **)** |const|
 
-Returns ``true`` if the physics interpolated flag is set for this Node (see :ref:`set_physics_interpolated<class_Node_method_set_physics_interpolated>`).
+Returns ``true`` if the physics interpolated flag is set for this Node (see :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`).
 
 \ **Note:** Interpolation will only be active is both the flag is set **and** physics interpolation is enabled within the :ref:`SceneTree<class_SceneTree>`. This can be tested using :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>`.
 
@@ -1112,7 +1168,7 @@ Returns ``true`` if the physics interpolated flag is set for this Node (see :ref
 
 - :ref:`bool<class_bool>` **is_physics_interpolated_and_enabled** **(** **)** |const|
 
-Returns ``true`` if physics interpolation is enabled (see :ref:`set_physics_interpolated<class_Node_method_set_physics_interpolated>`) **and** enabled in the :ref:`SceneTree<class_SceneTree>`.
+Returns ``true`` if physics interpolation is enabled (see :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`) **and** enabled in the :ref:`SceneTree<class_SceneTree>`.
 
 This is a convenience version of :ref:`is_physics_interpolated<class_Node_method_is_physics_interpolated>` that also checks whether physics interpolation is enabled globally.
 
@@ -1419,16 +1475,6 @@ Sets the folded state of the node in the Scene dock.
 - void **set_network_master** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**
 
 Sets the node's network master to the peer with the given peer ID. The network master is the peer that has authority over the node on the network. Useful in conjunction with the ``master`` and ``puppet`` keywords. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the master for all children of this node.
-
-----
-
-.. _class_Node_method_set_physics_interpolated:
-
-- void **set_physics_interpolated** **(** :ref:`bool<class_bool>` enable **)**
-
-Enables or disables physics interpolation per node, offering a finer grain of control than turning physics interpolation on and off globally.
-
-\ **Note:** This can be especially useful for :ref:`Camera<class_Camera>`\ s, where custom interpolation can sometimes give superior results.
 
 ----
 
