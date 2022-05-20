@@ -59,6 +59,28 @@ you should remove the instance you have added by calling
     func _exit_tree():
         remove_inspector_plugin(plugin)
 
+  .. code-tab:: csharp
+
+    # Plugin.cs
+    using Godot;
+
+    [Tool]
+    public class Plugin : EditorPlugin
+    {
+        private MyInspectorPlugin _plugin;
+
+        public override void _EnterTree()
+        {
+            _plugin = new MyInspectorPlugin();
+            AddInspectorPlugin(_plugin);
+        }
+
+        public override void _ExitTree()
+        {
+            RemoveInspectorPlugin(_plugin);
+        }
+    }
+
 
 Interacting with the inspector
 ------------------------------
@@ -110,6 +132,36 @@ specifically add :ref:`class_EditorProperty`-based controls.
             return true
         else:
             return false
+            
+ .. code-tab:: csharp
+ 
+    # MyInspectorPlugin.cs
+    using Godot;
+
+    public class MyInspectorPlugin : EditorInspectorPlugin
+    {
+        public override bool CanHandle(Object @object)
+        {
+            // We support all objects in this example.
+            return true;
+        }
+
+        public override bool ParseProperty(Object @object, int type, string path, int hint, string hintText, int usage)
+        {
+            // We handle properties of type integer.
+            if (type == (int)Variant.Type.Int)
+            {
+                // Create an instance of the custom property editor and register
+                // it to a specific property path.
+                AddPropertyEditor(path, new RandomIntEditor());
+                // Inform the editor to remove the default property editor for
+                // this property type.
+                return true;
+            }
+
+            return false;
+        }
+    }
 
 Adding an interface to edit properties
 --------------------------------------
@@ -155,7 +207,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
         # Make sure the control is able to retain the focus.
         add_focusable(property_control)
         # Setup the initial state and connect to the signal to track changes.
-        property_control.text = "Value: " + str(current_value)
+        refresh_control_text()
         property_control.pressed.connect(_on_button_pressed)
 
 
@@ -166,7 +218,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
 
         # Generate a new random integer between 0 and 99.
         current_value = randi() % 100
-        property_control.text = "Value: " + str(current_value)
+        refresh_control_text()
         emit_changed(get_edited_property(), current_value)
 
 
@@ -179,8 +231,72 @@ followed by ``set_bottom_editor()`` to position it below the name.
         # Update the control with the new value.
         updating = true
         current_value = new_value
-        property_control.text = "Value: " + str(current_value)
+        refresh_control_text()
         updating = false
+    
+    func refresh_control_text():
+        property_control.text = "Value: " + str(current_value)
+
+ .. code-tab:: csharp
+
+    # RandomIntEditor.cs
+    using Godot;
+
+    public class RandomIntEditor : EditorProperty
+    {
+        // The main control for editing the property.
+        private Button _propertyControl = new Button();
+        // An internal value of the property.
+        private int _currentValue = 0;
+        // A guard against internal changes when the property is updated.
+        private bool _updating = false;
+
+        public RandomIntEditor()
+        {
+            // Add the control as a direct child of EditorProperty node.
+            AddChild(_propertyControl);
+            // Make sure the control is able to retain the focus.
+            AddFocusable(_propertyControl);
+            // Setup the initial state and connect to the signal to track changes.
+            RefreshControlText();
+            _propertyControl.Connect("pressed", this, nameof(OnButtonPressed));
+        }
+
+        private void OnButtonPressed()
+        {
+            // Ignore the signal if the property is currently being updated.
+            if (_updating)
+            {
+                return;
+            }
+
+            // Generate a new random integer between 0 and 99.
+            _currentValue = (int)GD.Randi() % 100;
+            RefreshControlText();
+            EmitChanged(GetEditedProperty(), _currentValue);
+        }
+
+        public override void UpdateProperty()
+        {
+            // Read the current value from the property.
+            var newValue = (int)GetEditedObject().Get(GetEditedProperty());
+            if (newValue == _currentValue)
+            {
+                return;
+            }
+
+            // Update the control with the new value.
+            _updating = true;
+            _currentValue = newValue;
+            RefreshControlText();
+            _updating = false;
+        }
+
+        private void RefreshControlText()
+        {
+            _propertyControl.Text = $"Value: {_currentValue}";;
+        }
+    }
 
 Using the example code above you should be able to make a custom widget that
 replaces the default :ref:`class_SpinBox` control for integers with a
