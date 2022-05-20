@@ -61,7 +61,7 @@ you should remove the instance you have added by calling
 
   .. code-tab:: csharp
 
-    # Plugin.cs
+    // Plugin.cs
     using Godot;
 
     [Tool]
@@ -135,7 +135,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
             
  .. code-tab:: csharp
  
-    # MyInspectorPlugin.cs
+    // MyInspectorPlugin.cs
     using Godot;
 
     public class MyInspectorPlugin : EditorInspectorPlugin
@@ -239,7 +239,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
 
  .. code-tab:: csharp
 
-    # RandomIntEditor.cs
+    // RandomIntEditor.cs
     using Godot;
 
     public class RandomIntEditor : EditorProperty
