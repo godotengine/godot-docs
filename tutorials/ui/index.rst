@@ -52,6 +52,7 @@ explain the benefits of that system and how to set it up in your projects.
 
    gui_skinning
    gui_using_theme_editor
+   gui_theme_type_variations
    gui_using_fonts
 
 Control node tutorials
