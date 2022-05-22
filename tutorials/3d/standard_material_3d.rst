@@ -317,6 +317,8 @@ The *Clearcoat* parameter is used to add a secondary pass of transparent coat
 to the material. This is common in car paint and toys. In practice, it's a
 smaller specular blob added on top of the existing material.
 
+.. image:: img/clearcoat_comparison.png
+
 Anisotropy
 ----------
 
