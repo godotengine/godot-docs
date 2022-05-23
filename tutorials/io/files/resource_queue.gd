@@ -3,7 +3,7 @@ extends Node
 var thread
 var mutex
 var semaphore
-var exit_thread := false
+var exit_thread = false
 
 var time_max = 100 # Milliseconds.
 
