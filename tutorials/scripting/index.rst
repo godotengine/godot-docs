@@ -51,3 +51,4 @@ below will help you make the most of Godot.
    resources
    singletons_autoload
    scene_tree
+   scene_unique_nodes
