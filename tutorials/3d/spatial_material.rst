@@ -411,6 +411,15 @@ The *Clearcoat* parameter is used to add a secondary pass of transparent coat
 to the material. This is common in car paint and toys. In practice, it's a
 smaller specular blob added on top of the existing material.
 
+The effect is extremely subtle in Godot 3 releases, and may require specific
+lighting or looking at a material a specific way to notice a difference.
+This can be seen in the image below where clearcoat is turned on in the
+right.
+
+.. image:: img/clearcoat_comparison.png
+
+.. note:: The effect will be more noticeable in Godot 4.
+
 Anisotropy
 ~~~~~~~~~~
 
