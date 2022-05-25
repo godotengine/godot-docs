@@ -54,8 +54,9 @@ GDNative isn't enough:
   limited to what the scripting API exposes.
 - You can use C++ modules to provide additional features in a project without
   carrying native library files around. This extends to exported projects.
-- C++ modules are supported on all platforms. In contrast, GDNative isn't
-  supported on HTML5 and the Universal Windows Platform (UWP) yet.
+- C++ modules are supported on all platforms. In contrast, GDNative has only
+  limited support on HTML5 (cannot be used together with multi-threading), and
+  is not supported on Universal Windows Platform (UWP).
 - C++ modules can be faster than GDNative, especially when the code requires a
   lot of communication through the scripting API.
 
