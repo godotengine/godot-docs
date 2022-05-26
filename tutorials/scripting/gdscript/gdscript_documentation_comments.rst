@@ -32,8 +32,8 @@ Tags
 | Brief description | No tag and lives at the very beginning of              |
 |                   | the documentation section.                             |
 +-------------------+--------------------------------------------------------+
-| Description       | ``@desc:``                                             |
-|                   |                                                        |
+| Description       | Use one blank line to separate the description from    |
+|                   | the brief.                                             |
 +-------------------+--------------------------------------------------------+
 | Tutorial          | ``@tutorial[( The Title Here )]:``                     |
 |                   |                                                        |
@@ -45,24 +45,19 @@ Tags
 
     extends Node2D
 
-    ##
     ## A brief description of your script.
     ##
-    ## @desc:
-    ##     A more detailed description of the script.
+    ## A more detailed description of the script.
     ##
     ## @tutorial:            http://the/tutorial1/url.com
     ## @tutorial(Tutorial2): http://the/tutorial2/url.com
-    ##
 
 .. warning:: If there is any space in between the tag name and colon, for example
-             ``@desc  :``, it won't treated as a valid tag and will be ignored.
-
+             ``@tutorial  :``, it won't treated as a valid tag and will be ignored.
 
 .. note:: When the description spans multiple lines, the preceding and trailing white
           spaces will be stripped and joined with a single space. To preserve the line
-          break (or any other alignment), use
-          :ref:`BBCode <doc_bbcode_in_richtextlabel>`.
+          break use ``[br]``. See also `BBCode and class reference`_ below.
 
 Documenting script members
 --------------------------
@@ -94,16 +89,13 @@ Examples
 
     extends Node2D
 
-    ##
     ## A brief description of your script.
     ##
-    ## @desc:
-    ##     The description of the script, what it
-    ##     can do, and any further detail.
+    ## The description of the script, what it can do,
+    ## and any further detail.
     ##
     ## @tutorial:            http://the/tutorial1/url.com
     ## @tutorial(Tutorial2): http://the/tutorial2/url.com
-    ##
 
     ## The description of the variable v1.
     var v1
@@ -145,8 +137,8 @@ Examples
 
     ## Documenting an inner class.
     ##
-    ## @desc: The same rules apply apply here. The documentation must
-    ##        immediately precede the class definition.
+    ## The same rules apply apply here. The documentation must
+    ## immediately precede the class definition.
     ##
     ## @tutorial: http://the/tutorial/url.com
     class Inner:
@@ -184,6 +176,9 @@ be used in the documentation. Here's the list of available tags:
 | [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [br]                      | Line break                     | | Line 1.[br]                     | | Line 1.                                         |
+|                           |                                | | Line 2.                         | | Line 2.                                         |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 | [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
 +---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
