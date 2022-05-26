@@ -143,13 +143,23 @@ the export parameters. A basic invocation of the command would be:
 
 .. code-block:: shell
 
-    godot --export "Windows Desktop" some_name
+    godot --export "Windows Desktop" some_name.exe
 
 This will export to ``some_name.exe``, assuming there is a preset
 called "Windows Desktop" and the template can be found. (The export preset name
 must be written within quotes if it contains spaces or special characters.)
-The output path is relative to the project path or absolute;
-it does not respect the directory the command was invoked from.
+The output path is *relative to the project path* or *absolute*;
+**it does not respect the directory the command was invoked from**.
+
+The output file extension should match the one used by the Godot export process:
+
+- Windows: ``.exe``
+- macOS: ``.zip`` (from all platforms) or ``.dmg`` (only when exporting *from* macOS).
+  ``.app`` is not supported directly, although the generated ZIP archive contains an ``.app`` bundle.
+- Linux: Any extension (including none). ``.x86_64`` is typically used for 64-bit x86 binaries.
+- HTML5: ``.zip``
+- Android: ``.apk``
+- iOS: ``.zip``
 
 You can also configure it to export *only* the PCK or ZIP file, allowing
 a single exported main pack file to be used with multiple Godot executables.
