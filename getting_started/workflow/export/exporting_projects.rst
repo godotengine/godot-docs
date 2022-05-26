@@ -171,7 +171,7 @@ the command:
 
 .. code-block:: shell
 
-    godot --path /path/to/project --export "Windows Desktop" some_name
+    godot --path /path/to/project --export "Windows Desktop" some_name.exe
 
 .. seealso::
 
