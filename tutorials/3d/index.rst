@@ -21,3 +21,4 @@
    procedural_geometry/index
    occluders
    portals/index
+   3d_text
