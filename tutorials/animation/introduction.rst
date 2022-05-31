@@ -6,24 +6,27 @@ Introduction to the animation features
 The :ref:`class_AnimationPlayer` node allows you to create anything
 from simple to complex animations.
 
-In this guide you learn to:
-
--  Work with the Animation Panel
--  Animate any property of any node
--  Create a simple animation
-
 In Godot, you can animate anything available in the Inspector, such as
 Node transforms, sprites, UI elements, particles, visibility and color
 of materials, and so on. You can also modify values of script variables
 and even call functions.
 
-Create an AnimationPlayer node
-------------------------------
+The AnimationPlayer node
+------------------------
 
 To use the animation tools we first have to create an
 :ref:`class_AnimationPlayer` node.
 
-The AnimationPlayer node type is the data container for your animations.
+.. warning::
+
+   AnimationPlayer inherits from Node instead of Node2D or Node3D, which means
+   that the child nodes will not inherit the transform from the parent nodes
+   due to a bare Node being present in the hierarchy.
+
+   Therefore, it is not recommended to add nodes that have a 2D/3D transform
+   as a child of an AnimationPlayer node.
+
+The AnimationPlayer node is the data container for your animations.
 One AnimationPlayer node can hold multiple animations, which can
 automatically transition to one another.
 
@@ -89,11 +92,6 @@ a node and its affected property. For example, the position track
 in the illustration refers to to the ``position`` property of the Sprite2D
 node.
 
-.. figure:: img/animation_normal_track.png
-   :alt: Example of Normal animation tracks
-
-   Example of Normal animation tracks
-
 .. tip::
 
    If you animate the wrong property, you can edit a track's path at any time
@@ -101,121 +99,102 @@ node.
    "Play from beginning" button |Play from beginning| (or pressing
    :kbd:`Shift + D` on keyboard) to see the changes instantly.
 
-Tutorial: Creating a simple animation
--------------------------------------
+Creating an animation
+---------------------
 
-Scene setup
-~~~~~~~~~~~
-
-For this tutorial, we'll create a Sprite node with an AnimationPlayer as
-its child. We will animate the sprite to move between two points on the screen.
-
-.. figure:: img/animation_animation_player_tree.png
-   :alt: Our scene setup
-
-   Our scene setup
-
-.. warning::
-
-   AnimationPlayer inherits from Node instead of Node2D or Node3D, which means
-   that the child nodes will not inherit the transform from the parent nodes
-   due to a bare Node being present in the hierarchy.
-
-   Therefore, it is not recommended to add nodes that have a 2D/3D transform
-   as a child of an AnimationPlayer node.
-
-The sprite holds an image texture. For this tutorial, select the Sprite2D node,
-click Texture in the Inspector, and then click Load. Select the default Godot
-icon for the sprite's texture.
-
-Select the AnimationPlayer node and click the "Animation" button in the
-animation editor. From the list, select "New" (|Add Animation|) to add a new
-animation. Enter a name for the animation in the dialog box.
+To create an animation click the "Animation" button in the animation editor. From
+the list, select "New" (|Add Animation|) to add a new animation. Enter a name for
+the animation in the dialog box.
 
 .. figure:: img/animation_create_new_animation.png
    :alt: Add a new animation
 
    Add a new animation
 
-Adding a track
-~~~~~~~~~~~~~~
+Adding property tracks
+~~~~~~~~~~~~~~~~~~~~~~
 
-To add a new track for our sprite, select it and take a look at the
-toolbar:
+Before an animation keyframe can be created a track needs to be made.
+The most common is a property track which is used to keyframe a nodes
+properties.
+
+.. note:: Information on other track types is found :ref:`here <doc_animation_track_types>`.
+
+There are three ways to add a property track to an animation with
+Godot's editor. 
+
+The first is with key icons in the inspector. When the animation editor
+is open, and an animation is open, the properties of nodes in the
+inspector will have key icons next to them.
+
+.. figure:: img/animation_properties_keyframe.png
+   :alt: Keyframes for other properties
+
+   Keyframes for other properties
+
+Clicking on them will give you the option to use bezier curves and create a reset
+track (more on these later), after clicking **Create** it will then create a keyframe
+in the animation for that property. subresource properties can also be keyframed like
+this, such as the albedo texture of a material for a mesh instance node.
+
+The second method is the convenience buttons. These will appear in the top toolbar
+when an animation is open and the editor is in 2D mode.
 
 .. figure:: img/animation_convenience_buttons.png
    :alt: Convenience buttons
 
    Convenience buttons
 
-These switches and buttons allow you to add keyframes for the selected
-node's location, rotation, and scale. Since we are only animating the sprite's
-position, make sure that only the location switch is selected. The selected
-switches are blue.
+These are a way to quickly create keyframes for a node while moving it around in
+the scene. The loc rot and scl buttons control which properties a keyframe will
+be created for. Click on the key button to create the first keyframe. Since tracks
+haven't been set up for the properties yet, Godot will offer to create them.
 
-Click on the key button to create the first keyframe. Since we don't have a
-track set up for the Position property yet, Godot will offer to
-create it for us. Click **Create**.
+After adjusting the current time of the animation and changing one of the
+selected properties of the node the Key button will create a keyframe for those
+properties based on their current value. The Rec button can also be selected,
+turning this on makes it so that keyframes are created automatically when one of
+the selected properties is changed.
 
-Godot will create a new track and insert our first keyframe at the beginning of
-the timeline:
+The dropdown menu for this, which can be opened by clicking the 3 dots, gives the
+option to create a keyframe and copy a pose.
 
 .. figure:: img/animation_track.png
    :alt: The sprite track
 
    The sprite track
 
-The second keyframe
-~~~~~~~~~~~~~~~~~~~
+The last way to add a property track is with the **Add Track** button in the
+top left of the animation editor. Clicking on this opens a list of all the
+track types that can be added to an animation.
 
-We need to set our sprite's end location and how long it will take for it to get there.
+.. note:: Again, information on those track types is found :ref:`here <doc_animation_track_types>`.
 
-Let's say we want it to take two seconds to move between the points. By
-default, the animation is set to last only one second, so change the animation
-length to 2 in the controls on the right side of the animation panel's timeline
-header.
+After clicking on property track select the node to make a track for, then from
+the next list select the property to animate. This method is mentioned last
+because it has two major drawbacks for property tracks. A track for the property
+of a nodes subresource can't be created from here, and the option to use bezier
+curves or create a RESET track is not given.
 
-.. figure:: img/animation_set_length.png
-   :alt: Animation length
+Edit keyframes
+--------------
 
-   Animation length
+You can click on a keyframe in the animation timeline to display and
+edit its value in the *Inspector*.
 
-Now, move the sprite right, to its final position. You can use the *Move tool* in the
-toolbar or set the *Position*'s X value in the *Inspector*.
+.. figure:: img/animation_keyframe_editor_key.png
+   :alt: Keyframe editor editing a key
 
-Click on the timeline header near the two-second mark in the animation panel
-and then click the key button in the toolbar to create the second keyframe.
+   Keyframe editor editing a key
 
-Run the animation
-~~~~~~~~~~~~~~~~~
+You can also edit the easing value for a keyframe here by clicking and dragging
+its easing curve. This tells Godot how to interpolate the animated property when it
+reaches this keyframe.
 
-Click on the "Play from beginning" (|Play from beginning|) button.
+You can tweak your animations this way until the movement "looks right."
 
-Yay! Our animation runs:
-
-.. figure:: img/animation_simple.gif
-   :alt: The animation
-
-   The animation
-
-Back and forth
-~~~~~~~~~~~~~~
-
-Godot has an interesting feature that we can use in animations. When Animation
-Looping is set but there's no keyframe specified at the end of the animation,
-the first keyframe is also the last.
-
-This means we can extend the animation length to four seconds now, and Godot
-will also calculate the frames from the last keyframe to the first, moving
-our sprite back and forth.
-
-.. figure:: img/animation_loop.png
-   :alt: Animation loop
-
-   Animation loop
-
-You can change this behavior by changing the track's loop mode. This is covered
-in the next chapter.
+.. |Play from beginning| image:: img/animation_play_from_beginning.png
+.. |Add Animation| image:: img/animation_add.png
 
 Track settings
 ~~~~~~~~~~~~~~
@@ -285,42 +264,6 @@ loop:
    animation after the last keyframe to reach the values of the first
    keyframe again.
 
-Keyframes for other properties
-------------------------------
-
-Godot's animation system isn't restricted to position, rotation, and scale.
-You can animate any property.
-
-If you select your sprite while the animation panel is visible, Godot will
-display a small keyframe button in the *Inspector* for each of the sprite's
-properties. Click on one of these buttons to add a track and keyframe to
-the current animation.
-
-.. figure:: img/animation_properties_keyframe.png
-   :alt: Keyframes for other properties
-
-   Keyframes for other properties
-
-Edit keyframes
---------------
-
-You can click on a keyframe in the animation timeline to display and
-edit its value in the *Inspector*.
-
-.. figure:: img/animation_keyframe_editor_key.png
-   :alt: Keyframe editor editing a key
-
-   Keyframe editor editing a key
-
-You can also edit the easing value for a keyframe here by clicking and dragging
-its easing curve. This tells Godot how to interpolate the animated property when it
-reaches this keyframe.
-
-You can tweak your animations this way until the movement "looks right."
-
-.. |Play from beginning| image:: img/animation_play_from_beginning.png
-.. |Add Animation| image:: img/animation_add.png
-
 Using RESET tracks
 ------------------
 
@@ -343,7 +286,16 @@ If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
 animation editor's **Animation** dropdown menu.
 
-When adding tracks on new animations, the editor will ask you to automatically
-create a RESET track when using the keyframe icon next to a property in the inspector.
-This does not apply on tracks created with Godot versions prior to 3.4,
-as the animation reset track feature was added in 3.4.
+Onion Skinning
+--------------
+
+Godot's animation editor allows you use onion skinning while creating an
+animation. To turn this feature on click on the onion icon in the top right
+of the animation editor. Now there will be transparent red copies of what
+is being animated in its previous positions in the animation.
+
+.. image:: img/onion_skin.png
+
+The three dots button next to the onion skinning button opens a dropdown
+menu that lets you adjust how it works, including the ability to use
+onion skinning for future frames.
