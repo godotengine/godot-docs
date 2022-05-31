@@ -433,9 +433,9 @@ enum **CursorShape**:
 
 - **CURSOR_CROSS** = **3** --- Show the system's cross mouse cursor when the user hovers the node.
 
-- **CURSOR_WAIT** = **4** --- Show the system's wait mouse cursor, often an hourglass, when the user hovers the node.
+- **CURSOR_WAIT** = **4** --- Show the system's wait mouse cursor when the user hovers the node. Often an hourglass.
 
-- **CURSOR_BUSY** = **5** --- Show the system's busy mouse cursor when the user hovers the node. Often an hourglass.
+- **CURSOR_BUSY** = **5** --- Show the system's busy mouse cursor when the user hovers the node. Often an arrow with a small hourglass.
 
 - **CURSOR_DRAG** = **6** --- Show the system's drag mouse cursor, often a closed fist or a cross symbol, when the user hovers the node. It tells the user they're currently dragging an item, like a node in the Scene dock.
 

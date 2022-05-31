@@ -105,6 +105,8 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_albedo_tex_force_srgb<class_SpatialMaterial_property_flags_albedo_tex_force_srgb>`       | ``false``               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`flags_albedo_tex_msdf<class_SpatialMaterial_property_flags_albedo_tex_msdf>`                   | ``false``               |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_disable_ambient_light<class_SpatialMaterial_property_flags_disable_ambient_light>`       | ``false``               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`flags_do_not_receive_shadows<class_SpatialMaterial_property_flags_do_not_receive_shadows>`     | ``false``               |
@@ -500,6 +502,8 @@ enum **CullMode**:
 
 .. _class_SpatialMaterial_constant_FLAG_USE_SHADOW_TO_OPACITY:
 
+.. _class_SpatialMaterial_constant_FLAG_ALBEDO_TEXTURE_SDF:
+
 .. _class_SpatialMaterial_constant_FLAG_MAX:
 
 enum **Flags**:
@@ -542,7 +546,9 @@ enum **Flags**:
 
 - **FLAG_USE_SHADOW_TO_OPACITY** = **18** --- Enables the shadow to opacity feature.
 
-- **FLAG_MAX** = **19** --- Represents the size of the :ref:`Flags<enum_SpatialMaterial_Flags>` enum.
+- **FLAG_ALBEDO_TEXTURE_SDF** = **19** --- Enables signed distance field rendering shader.
+
+- **FLAG_MAX** = **20** --- Represents the size of the :ref:`Flags<enum_SpatialMaterial_Flags>` enum.
 
 ----
 
@@ -1282,6 +1288,22 @@ Texture that specifies how much surface emits light at a given point.
 +-----------+-----------------+
 
 Forces a conversion of the :ref:`albedo_texture<class_SpatialMaterial_property_albedo_texture>` from sRGB space to linear space.
+
+----
+
+.. _class_SpatialMaterial_property_flags_albedo_tex_msdf:
+
+- :ref:`bool<class_bool>` **flags_albedo_tex_msdf**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
+
+Enables signed distance field rendering shader.
 
 ----
 

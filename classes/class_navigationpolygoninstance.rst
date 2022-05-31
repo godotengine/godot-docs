@@ -22,6 +22,13 @@ Properties
 | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` |          |
 +---------------------------------------------------+------------------------------------------------------------------+----------+
 
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationPolygonInstance_method_get_region_rid>` **(** **)** |const| |
++-----------------------+--------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -48,6 +55,15 @@ Property Descriptions
 +----------+-------------------------------+
 | *Getter* | get_navigation_polygon()      |
 +----------+-------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_NavigationPolygonInstance_method_get_region_rid:
+
+- :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`Navigation2DServer<class_Navigation2DServer>`. Combined with :ref:`Navigation2DServer.map_get_closest_point_owner<class_Navigation2DServer_method_map_get_closest_point_owner>` can be used to identify the ``NavigationPolygonInstance`` closest to a point on the merged navigation map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

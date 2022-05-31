@@ -102,7 +102,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)**                                                                                                                                  |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                                                                    |
+| :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` angle **)**                                                                                                                                  |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`round<class_Vector2_method_round>` **(** **)**                                                                                                                                                                      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -436,9 +436,9 @@ Returns the vector reflected (i.e. mirrored, or symmetric) over a line defined b
 
 .. _class_Vector2_method_rotated:
 
-- :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` phi **)**
+- :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` angle **)**
 
-Returns the vector rotated by ``phi`` radians. See also :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
+Returns the vector rotated by ``angle`` (in radians). See also :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
 ----
 

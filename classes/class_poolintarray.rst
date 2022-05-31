@@ -16,7 +16,23 @@ Description
 
 An array specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolIntArray`` or mutating a ``PoolIntArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+
+::
+
+    var array = [PoolIntArray()]
+    array[0].push_back(1234)
+    print(array)  # [[]] (empty PoolIntArray within an empty Array)
+
+Instead, the entire ``PoolIntArray`` property must be *reassigned* with ``=`` for it to be changed:
+
+::
+
+    var array = [PoolIntArray()]
+    var pool_array = array[0]
+    pool_array.push_back(1234)
+    array[0] = pool_array
+    print(array)  # [[1234]] (PoolIntArray with 1 element inside an Array)
 
 \ **Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
@@ -30,9 +46,15 @@ Methods
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`append_array<class_PoolIntArray_method_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`count<class_PoolIntArray_method_count>` **(** :ref:`int<class_int>` value **)**                                 |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`empty<class_PoolIntArray_method_empty>` **(** **)**                                                             |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`fill<class_PoolIntArray_method_fill>` **(** :ref:`int<class_int>` integer **)**                                 |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`find<class_PoolIntArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**     |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`has<class_PoolIntArray_method_has>` **(** :ref:`int<class_int>` value **)**                                     |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                   | :ref:`insert<class_PoolIntArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -43,6 +65,8 @@ Methods
 | void                                    | :ref:`remove<class_PoolIntArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                 |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`resize<class_PoolIntArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                 |
++-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`rfind<class_PoolIntArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**  |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set<class_PoolIntArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**        |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -76,6 +100,14 @@ Appends a ``PoolIntArray`` at the end of this array.
 
 ----
 
+.. _class_PoolIntArray_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PoolIntArray_method_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
@@ -89,6 +121,24 @@ Returns ``true`` if the array is empty.
 - void **fill** **(** :ref:`int<class_int>` integer **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolIntArray_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PoolIntArray_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+----
+
+.. _class_PoolIntArray_method_has:
+
+- :ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
+
+Returns ``true`` if the array contains the given value.
+
+\ **Note:** This is equivalent to using the ``in`` operator.
 
 ----
 
@@ -131,6 +181,14 @@ Removes an element from the array by index.
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 \ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
+
+----
+
+.. _class_PoolIntArray_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
 
 ----
 

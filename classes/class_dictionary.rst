@@ -49,7 +49,7 @@ You can access a dictionary's values by referencing the appropriate key. In the 
 
 ::
 
-    export(string, "White", "Yellow", "Orange") var my_color
+    export(String, "White", "Yellow", "Orange") var my_color
     var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
     func _ready():
         # We can't use dot syntax here as `my_color` is a variable.

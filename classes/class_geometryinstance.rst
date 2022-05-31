@@ -11,7 +11,7 @@ GeometryInstance
 
 **Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CPUParticles<class_CPUParticles>`, :ref:`CSGShape<class_CSGShape>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`SpriteBase3D<class_SpriteBase3D>`
+**Inherited By:** :ref:`CPUParticles<class_CPUParticles>`, :ref:`CSGShape<class_CSGShape>`, :ref:`ImmediateGeometry<class_ImmediateGeometry>`, :ref:`Label3D<class_Label3D>`, :ref:`MeshInstance<class_MeshInstance>`, :ref:`MultiMeshInstance<class_MultiMeshInstance>`, :ref:`Particles<class_Particles>`, :ref:`SpriteBase3D<class_SpriteBase3D>`
 
 Base node for geometry-based visual instances.
 

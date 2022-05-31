@@ -68,7 +68,7 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`orthonormalized<class_Transform_method_orthonormalized>` **(** **)**                                                                                                                                            |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`rotated<class_Transform_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                          |
+| :ref:`Transform<class_Transform>` | :ref:`rotated<class_Transform_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                                        |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_Transform>` | :ref:`scaled<class_Transform_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                                                                          |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,9 +212,9 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 .. _class_Transform_method_rotated:
 
-- :ref:`Transform<class_Transform>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Transform<class_Transform>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates the transform around the given axis by the given angle (in radians), using matrix multiplication. The axis must be a normalized vector.
+Returns a copy of the transform rotated around the given ``axis`` by the given ``angle`` (in radians), using matrix multiplication. The ``axis`` must be a normalized vector.
 
 ----
 
@@ -222,7 +222,7 @@ Rotates the transform around the given axis by the given angle (in radians), usi
 
 - :ref:`Transform<class_Transform>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
-Scales basis and origin of the transform by the given scale factor, using matrix multiplication.
+Returns a copy of the transform with its basis and origin scaled by the given ``scale`` factor, using matrix multiplication.
 
 ----
 
@@ -230,7 +230,7 @@ Scales basis and origin of the transform by the given scale factor, using matrix
 
 - :ref:`Transform<class_Transform>` **translated** **(** :ref:`Vector3<class_Vector3>` offset **)**
 
-Translates the transform by the given offset, relative to the transform's basis vectors.
+Returns a copy of the transform translated by the given ``offset``, relative to the transform's basis vectors.
 
 Unlike :ref:`rotated<class_Transform_method_rotated>` and :ref:`scaled<class_Transform_method_scaled>`, this does not use matrix multiplication.
 

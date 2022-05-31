@@ -11,12 +11,46 @@ ProximityGroup
 
 **Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-General-purpose proximity detection node.
+General-purpose 3D proximity detection node.
 
 Description
 -----------
 
-General-purpose proximity detection node.
+General-purpose proximity detection node. ``ProximityGroup`` can be used for *approximate* distance checks, which are faster than exact distance checks using :ref:`Vector3.distance_to<class_Vector3_method_distance_to>` or :ref:`Vector3.distance_squared_to<class_Vector3_method_distance_squared_to>`.
+
+\ ``ProximityGroup`` nodes are automatically grouped together, as long as they share the same :ref:`group_name<class_ProximityGroup_property_group_name>` and intersect with each other. By calling the :ref:`broadcast<class_ProximityGroup_method_broadcast>`, you can invoke a specified method with various parameters to all intersecting members.
+
+\ ``ProximityGroup`` is cuboid-shaped and consists of a cluster of :ref:`Vector3<class_Vector3>` coordinates. The coordinates are automatically calculated by calling :ref:`grid_radius<class_ProximityGroup_property_grid_radius>`. To allow ``ProximityGroup`` to find its peers (and perform automatic grouping), you need to define its :ref:`group_name<class_ProximityGroup_property_group_name>` to a non-empty :ref:`String<class_String>`. As soon as this object's shape intersects with another ``ProximityGroup`` object' shape, and both share the same :ref:`group_name<class_ProximityGroup_property_group_name>`, they will belong together for as long as they intersect.
+
+Since ``ProximityGroup`` doesn't rely the physics engine, you don't need to add any other node as a child (unlike :ref:`PhysicsBody<class_PhysicsBody>`).
+
+The ``ProximityGroup`` uses the :ref:`SceneTree<class_SceneTree>` groups in the background by calling the method :ref:`Node.add_to_group<class_Node_method_add_to_group>` internally. The :ref:`SceneTree<class_SceneTree>` group names are constructed by combining the :ref:`group_name<class_ProximityGroup_property_group_name>` with its coordinates, which are calculated using the :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` you defined beforehand.
+
+\ **Example:** A ``ProximityGroup`` node named ``"PlanetEarth"`` at position ``Vector3(6, 6, 6)`` with a :ref:`group_name<class_ProximityGroup_property_group_name>` set to ``"planets"`` and a :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` of ``Vector3(1, 2, 3)`` will create the following :ref:`SceneTree<class_SceneTree>` group names:
+
+::
+
+    - "planets|5|4|3"
+    - "planets|5|4|4"
+    - "planets|5|4|5"
+    - "planets|5|4|6"
+    - "planets|5|4|7"
+    - "planets|5|4|8"
+    - "planets|5|4|9"
+    - ...
+
+If there is another ``ProximityGroup`` named ``"PlanetMars"`` with group name ``"planets"``, and one of its coordinates is ``Vector3(5, 4, 7)``, it would normally create the :ref:`SceneTree<class_SceneTree>` group called ``"planets|5|4|7"``. However, since this group name already exists, this ``ProximityGroup`` object will be *added* to the existing one. ``"PlanetEarth"`` is already in this group. As long as both nodes don't change their transform and stop intersecting (or exit the scene tree), they are grouped together. As long as this intersection exists, any call to :ref:`broadcast<class_ProximityGroup_method_broadcast>` will affect *both* ``ProximityGroup`` nodes.
+
+There are 3 caveats to keep in mind when using ``ProximityGroup``:
+
+- The larger the grid radius, the more coordinates and the more :ref:`SceneTree<class_SceneTree>` groups are created. This can have a performance impact if too many groups are created.
+
+- If the ``ProximityGroup`` node is transformed in any way (or is removed from the scene tree), the groupings will have to be recalculated. This can also have a performance impact.
+
+- If your :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` is smaller than ``Vector3(1, 1, 1)``, it will be rounded up to ``Vector3(1, 1, 1)``. Therefore, small grid radius values may lead to unwanted groupings.
+
+
+\ **Note:** ``ProximityGroup`` will be removed in Godot 4.0 in favor of more effective and faster :ref:`VisibilityNotifier<class_VisibilityNotifier>` functionality. For most use cases, :ref:`Vector3.distance_to<class_Vector3_method_distance_to>` or :ref:`Vector3.distance_squared_to<class_Vector3_method_distance_squared_to>` are fast enough too, especially if you call them less often using a :ref:`Timer<class_Timer>` node.
 
 Properties
 ----------
@@ -43,6 +77,12 @@ Signals
 
 - **broadcast** **(** :ref:`String<class_String>` method, :ref:`Array<class_Array>` parameters **)**
 
+Emitted when the user calls the :ref:`broadcast<class_ProximityGroup_method_broadcast>` method and has set :ref:`dispatch_mode<class_ProximityGroup_property_dispatch_mode>` to :ref:`MODE_SIGNAL<class_ProximityGroup_constant_MODE_SIGNAL>`.
+
+The given method and its parameters are passed on to the listeners who connected to this signal of this object, as well as any ``ProximityGroup`` node this node is grouped together with.
+
+\ **Note:** This signal is *not* emitted by default, as the default :ref:`dispatch_mode<class_ProximityGroup_property_dispatch_mode>` is :ref:`MODE_PROXY<class_ProximityGroup_constant_MODE_PROXY>`.
+
 Enumerations
 ------------
 
@@ -54,9 +94,9 @@ Enumerations
 
 enum **DispatchMode**:
 
-- **MODE_PROXY** = **0**
+- **MODE_PROXY** = **0** --- This ``ProximityGroup``'s parent will be target of :ref:`broadcast<class_ProximityGroup_method_broadcast>`.
 
-- **MODE_SIGNAL** = **1**
+- **MODE_SIGNAL** = **1** --- This ``ProximityGroup`` will emit the :ref:`broadcast<class_ProximityGroup_signal_broadcast>` *signal* when calling the :ref:`broadcast<class_ProximityGroup_method_broadcast>` *method*.
 
 Property Descriptions
 ---------------------
@@ -73,6 +113,8 @@ Property Descriptions
 | *Getter*  | get_dispatch_mode()      |
 +-----------+--------------------------+
 
+Specifies which node gets contacted on a call of method :ref:`broadcast<class_ProximityGroup_method_broadcast>`.
+
 ----
 
 .. _class_ProximityGroup_property_grid_radius:
@@ -86,6 +128,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_grid_radius()      |
 +-----------+------------------------+
+
+The size of the space in 3D units. This also sets the amount of coordinates required to calculate whether two ``ProximityGroup`` nodes are intersecting or not. Smaller :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` values can be used for more precise proximity checks at the cost of performance, since more groups will be created.
 
 ----
 
@@ -101,12 +145,20 @@ Property Descriptions
 | *Getter*  | get_group_name()      |
 +-----------+-----------------------+
 
+Specify the common group name, to let other ``ProximityGroup`` nodes know, if they should be auto-grouped with this node in case they intersect with each other.
+
+For example, if you have a ``ProximityGroup`` node named ``"Earth"`` and another called ``"Mars"``, with both nodes having ``"planet"`` as their :ref:`group_name<class_ProximityGroup_property_group_name>`. Give both planets a significantly larger :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` than their actual radius, position them close enough and they'll be automatically grouped.
+
 Method Descriptions
 -------------------
 
 .. _class_ProximityGroup_method_broadcast:
 
 - void **broadcast** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` parameters **)**
+
+Calls on all intersecting ``ProximityGroup`` the given method and parameters.
+
+If the :ref:`dispatch_mode<class_ProximityGroup_property_dispatch_mode>` is set to :ref:`MODE_PROXY<class_ProximityGroup_constant_MODE_PROXY>` (the default), all calls are delegated to their respective parent :ref:`Node<class_Node>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

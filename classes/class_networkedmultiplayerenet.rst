@@ -195,7 +195,7 @@ When set to an empty string, the ``address`` parameter passed to :ref:`create_cl
 | *Getter*  | is_dtls_verify_enabled()       |
 +-----------+--------------------------------+
 
-Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` ``true``.
+Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``.
 
 ----
 

@@ -9,14 +9,30 @@
 PoolStringArray
 ===============
 
-A pooled array of :ref:`String<class_String>`.
+A pooled array of :ref:`String<class_String>`\ s.
 
 Description
 -----------
 
 An array specifically designed to hold :ref:`String<class_String>`\ s. Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolStringArray`` or mutating a ``PoolStringArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+
+::
+
+    var array = [PoolStringArray()]
+    array[0].push_back("hello")
+    print(array)  # [[]] (empty PoolStringArray within an empty Array)
+
+Instead, the entire ``PoolStringArray`` property must be *reassigned* with ``=`` for it to be changed:
+
+::
+
+    var array = [PoolStringArray()]
+    var pool_array = array[0]
+    pool_array.push_back("hello")
+    array[0] = pool_array
+    print(array)  # [[hello]] (PoolStringArray with 1 element inside an Array)
 
 Tutorials
 ---------
@@ -33,9 +49,15 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`append_array<class_PoolStringArray_method_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`count<class_PoolStringArray_method_count>` **(** :ref:`String<class_String>` value **)**                                 |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`empty<class_PoolStringArray_method_empty>` **(** **)**                                                                   |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fill<class_PoolStringArray_method_fill>` **(** :ref:`String<class_String>` string **)**                                  |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`find<class_PoolStringArray_method_find>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)**     |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`has<class_PoolStringArray_method_has>` **(** :ref:`String<class_String>` value **)**                                     |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`insert<class_PoolStringArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**   |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -48,6 +70,8 @@ Methods
 | void                                          | :ref:`remove<class_PoolStringArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                       |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`resize<class_PoolStringArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                       |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rfind<class_PoolStringArray_method_rfind>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)**  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set<class_PoolStringArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` string **)**         |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -81,6 +105,14 @@ Appends a ``PoolStringArray`` at the end of this array.
 
 ----
 
+.. _class_PoolStringArray_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`String<class_String>` value **)**
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PoolStringArray_method_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
@@ -94,6 +126,24 @@ Returns ``true`` if the array is empty.
 - void **fill** **(** :ref:`String<class_String>` string **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolStringArray_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PoolStringArray_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)**
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+----
+
+.. _class_PoolStringArray_method_has:
+
+- :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` value **)**
+
+Returns ``true`` if the array contains the given value.
+
+\ **Note:** This is equivalent to using the ``in`` operator.
 
 ----
 
@@ -142,6 +192,14 @@ Removes an element from the array by index.
 - void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+
+----
+
+.. _class_PoolStringArray_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)**
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
 
 ----
 

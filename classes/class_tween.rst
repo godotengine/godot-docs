@@ -366,7 +366,7 @@ Stops animation and removes all tweens.
 
 - :ref:`bool<class_bool>` **reset** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` key="" **)**
 
-Resets a tween to its initial value (the one given, not the one before the tween), given its object and property/method pair. By default, all tweens are removed, unless ``key`` is specified.
+Resets a tween to its initial value (the one given, not the one before the tween), given its object and property/method pair. By default, all tweens are reset, unless ``key`` is specified.
 
 ----
 

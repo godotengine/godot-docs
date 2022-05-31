@@ -37,6 +37,8 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`agent_create<class_Navigation2DServer_method_agent_create>` **(** **)** |const|                                                                                                                                                                |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`agent_get_map<class_Navigation2DServer_method_agent_get_map>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                  |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`agent_is_map_changed<class_Navigation2DServer_method_agent_is_map_changed>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`agent_set_callback<class_Navigation2DServer_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const| |
@@ -63,6 +65,8 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`map_create<class_Navigation2DServer_method_map_create>` **(** **)** |const|                                                                                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`map_get_agents<class_Navigation2DServer_method_map_get_agents>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                  |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`map_get_cell_size<class_Navigation2DServer_method_map_get_cell_size>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                            |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                   | :ref:`map_get_closest_point<class_Navigation2DServer_method_map_get_closest_point>` **(** :ref:`RID<class_RID>` map, :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                            |
@@ -73,6 +77,8 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`map_get_path<class_Navigation2DServer_method_map_get_path>` **(** :ref:`RID<class_RID>` map, :ref:`Vector2<class_Vector2>` origin, :ref:`Vector2<class_Vector2>` destination, :ref:`bool<class_bool>` optimize **)** |const|                   |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`map_get_regions<class_Navigation2DServer_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`map_is_active<class_Navigation2DServer_method_map_is_active>` **(** :ref:`RID<class_RID>` nap **)** |const|                                                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`map_set_active<class_Navigation2DServer_method_map_set_active>` **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` active **)** |const|                                                                                                  |
@@ -82,6 +88,8 @@ Methods
 | void                                            | :ref:`map_set_edge_connection_margin<class_Navigation2DServer_method_map_set_edge_connection_margin>` **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` margin **)** |const|                                                                |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`region_create<class_Navigation2DServer_method_region_create>` **(** **)** |const|                                                                                                                                                              |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`region_get_map<class_Navigation2DServer_method_region_get_map>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                               |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`region_set_map<class_Navigation2DServer_method_region_set_map>` **(** :ref:`RID<class_RID>` region, :ref:`RID<class_RID>` map **)** |const|                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,6 +106,14 @@ Method Descriptions
 - :ref:`RID<class_RID>` **agent_create** **(** **)** |const|
 
 Creates the agent.
+
+----
+
+.. _class_Navigation2DServer_method_agent_get_map:
+
+- :ref:`RID<class_RID>` **agent_get_map** **(** :ref:`RID<class_RID>` agent **)** |const|
+
+Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is currently assigned to.
 
 ----
 
@@ -205,6 +221,14 @@ Create a new map.
 
 ----
 
+.. _class_Navigation2DServer_method_map_get_agents:
+
+- :ref:`Array<class_Array>` **map_get_agents** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+----
+
 .. _class_Navigation2DServer_method_map_get_cell_size:
 
 - :ref:`float<class_float>` **map_get_cell_size** **(** :ref:`RID<class_RID>` map **)** |const|
@@ -245,6 +269,14 @@ Returns the navigation path to reach the destination from the origin.
 
 ----
 
+.. _class_Navigation2DServer_method_map_get_regions:
+
+- :ref:`Array<class_Array>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+----
+
 .. _class_Navigation2DServer_method_map_is_active:
 
 - :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` nap **)** |const|
@@ -282,6 +314,14 @@ Set the map edge connection margin used to weld the compatible region edges.
 - :ref:`RID<class_RID>` **region_create** **(** **)** |const|
 
 Creates a new region.
+
+----
+
+.. _class_Navigation2DServer_method_region_get_map:
+
+- :ref:`RID<class_RID>` **region_get_map** **(** :ref:`RID<class_RID>` region **)** |const|
+
+Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is currently assigned to.
 
 ----
 

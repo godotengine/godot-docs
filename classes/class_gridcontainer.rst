@@ -25,6 +25,8 @@ Notice that grid layout will preserve the columns and rows for every size of the
 Tutorials
 ---------
 
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
 Properties

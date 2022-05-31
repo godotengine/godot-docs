@@ -195,7 +195,7 @@ Constants
 
 .. _class_ArrayMesh_constant_ARRAY_WEIGHTS_SIZE:
 
-- **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
+- **NO_INDEX_ARRAY** = **-1** --- Value used internally when no indices are present.
 
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
 

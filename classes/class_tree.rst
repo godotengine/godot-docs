@@ -601,7 +601,7 @@ Returns the currently edited item. Can be used with :ref:`item_edited<class_Tree
 ::
 
     func _ready():
-        $Tree.item_edited.connect(on_Tree_item_edited)
+        $Tree.connect("item_edited", self, "on_Tree_item_edited")
     
     func on_Tree_item_edited():
         print($Tree.get_edited()) # This item just got edited (e.g. checked).

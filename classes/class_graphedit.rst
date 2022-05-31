@@ -176,9 +176,9 @@ Emitted when the user presses ``Ctrl + C``.
 
 .. _class_GraphEdit_signal_delete_nodes_request:
 
-- **delete_nodes_request** **(** **)**
+- **delete_nodes_request** **(** :ref:`Array<class_Array>` nodes **)**
 
-Emitted when a GraphNode is attempted to be removed from the GraphEdit.
+Emitted when a GraphNode is attempted to be removed from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
 
 ----
 

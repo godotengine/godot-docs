@@ -21,11 +21,13 @@ Given a set of colors, this resource will interpolate them in order. This means 
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`colors<class_Gradient_property_colors>`   | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>`   | :ref:`offsets<class_Gradient_property_offsets>` | ``PoolRealArray( 0, 1 )``                    |
-+---------------------------------------------+-------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+| :ref:`PoolColorArray<class_PoolColorArray>`               | :ref:`colors<class_Gradient_property_colors>`                         | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
++-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+| :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` | ``0``                                        |
++-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+| :ref:`PoolRealArray<class_PoolRealArray>`                 | :ref:`offsets<class_Gradient_property_offsets>`                       | ``PoolRealArray( 0, 1 )``                    |
++-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
 
 Methods
 -------
@@ -48,6 +50,25 @@ Methods
 | void                      | :ref:`set_offset<class_Gradient_method_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
+Enumerations
+------------
+
+.. _enum_Gradient_InterpolationMode:
+
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_LINEAR:
+
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT:
+
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CUBIC:
+
+enum **InterpolationMode**:
+
+- **GRADIENT_INTERPOLATE_LINEAR** = **0** --- Linear interpolation.
+
+- **GRADIENT_INTERPOLATE_CONSTANT** = **1** --- Constant interpolation, color changes abruptly at each point and stays uniform between. This might cause visible aliasing when used for a gradient texture in some cases.
+
+- **GRADIENT_INTERPOLATE_CUBIC** = **2** --- Cubic interpolation.
+
 Property Descriptions
 ---------------------
 
@@ -64,6 +85,22 @@ Property Descriptions
 +-----------+----------------------------------------------+
 
 Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
+
+----
+
+.. _class_Gradient_property_interpolation_mode:
+
+- :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **interpolation_mode**
+
++-----------+-------------------------------+
+| *Default* | ``0``                         |
++-----------+-------------------------------+
+| *Setter*  | set_interpolation_mode(value) |
++-----------+-------------------------------+
+| *Getter*  | get_interpolation_mode()      |
++-----------+-------------------------------+
+
+Defines how the colors between points of the gradient are interpolated. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
 
 ----
 

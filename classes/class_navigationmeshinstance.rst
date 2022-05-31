@@ -30,9 +30,11 @@ Properties
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------+
-| void | :ref:`bake_navigation_mesh<class_NavigationMeshInstance_method_bake_navigation_mesh>` **(** **)** |
-+------+---------------------------------------------------------------------------------------------------+
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`bake_navigation_mesh<class_NavigationMeshInstance_method_bake_navigation_mesh>` **(** :ref:`bool<class_bool>` on_thread=true **)** |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationMeshInstance_method_get_region_rid>` **(** **)** |const|                                            |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -87,9 +89,17 @@ Method Descriptions
 
 .. _class_NavigationMeshInstance_method_bake_navigation_mesh:
 
-- void **bake_navigation_mesh** **(** **)**
+- void **bake_navigation_mesh** **(** :ref:`bool<class_bool>` on_thread=true **)**
 
-Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. The baking is done in a separate thread because navigation baking is not a cheap operation. This can be done at runtime. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`.
+Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. If ``on_thread`` is set to ``true`` (default), the baking is done on a separate thread. Baking on separate thread is useful because navigation baking is not a cheap operation. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`. Please note that baking on separate thread may be very slow if geometry is parsed from meshes as async access to each mesh involves heavy synchronization. Also, please note that baking on a separate thread is automatically disabled on operating systems that cannot use threads (such as HTML5 with threads disabled).
+
+----
+
+.. _class_NavigationMeshInstance_method_get_region_rid:
+
+- :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer<class_NavigationServer>`. Combined with :ref:`NavigationServer.map_get_closest_point_owner<class_NavigationServer_method_map_get_closest_point_owner>` can be used to identify the ``NavigationMeshInstance`` closest to a point on the merged navigation map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

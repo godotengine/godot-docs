@@ -58,7 +58,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` from **)**                                                                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                |
+| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +78,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                            |
+| :ref:`Basis<class_Basis>`     | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`scaled<class_Basis_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,9 +174,9 @@ Consider using the :ref:`Quat<class_Quat>` constructor instead, which uses a qua
 
 ----
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``phi``, in radians. The axis must be a normalized vector.
+Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 
@@ -258,9 +258,9 @@ Returns the orthonormalized version of the matrix (useful to call from time to t
 
 .. _class_Basis_method_rotated:
 
-- :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Introduce an additional rotation around the given axis by phi (radians). The axis must be a normalized vector.
+Introduce an additional rotation around the given axis by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 

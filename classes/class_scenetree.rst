@@ -33,6 +33,8 @@ Properties
 ----------
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`auto_accept_quit<class_SceneTree_property_auto_accept_quit>`                             | ``true``  |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`Node<class_Node>`                                         | :ref:`current_scene<class_SceneTree_property_current_scene>`                                   |           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>`                   | ``false`` |
@@ -50,6 +52,8 @@ Properties
 | :ref:`bool<class_bool>`                                         | :ref:`paused<class_SceneTree_property_paused>`                                                 | ``false`` |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`physics_interpolation<class_SceneTree_property_physics_interpolation>`                   | ``false`` |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`                               | ``true``  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_SceneTree_property_refuse_new_network_connections>` | ``false`` |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------+-----------+
@@ -106,15 +110,11 @@ Methods
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`reload_current_scene<class_SceneTree_method_reload_current_scene>` **(** **)**                                                                                                                                                                                      |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_auto_accept_quit<class_SceneTree_method_set_auto_accept_quit>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                      |
-+---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_group<class_SceneTree_method_set_group>` **(** :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                                                               |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_group_flags<class_SceneTree_method_set_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**                                                 |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_input_as_handled<class_SceneTree_method_set_input_as_handled>` **(** **)**                                                                                                                                                                                      |
-+---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_quit_on_go_back<class_SceneTree_method_set_quit_on_go_back>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                        |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_screen_stretch<class_SceneTree_method_set_screen_stretch>` **(** :ref:`StretchMode<enum_SceneTree_StretchMode>` mode, :ref:`StretchAspect<enum_SceneTree_StretchAspect>` aspect, :ref:`Vector2<class_Vector2>` minsize, :ref:`float<class_float>` scale=1 **)** |
 +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -310,6 +310,24 @@ enum **StretchAspect**:
 Property Descriptions
 ---------------------
 
+.. _class_SceneTree_property_auto_accept_quit:
+
+- :ref:`bool<class_bool>` **auto_accept_quit**
+
++-----------+-----------------------------+
+| *Default* | ``true``                    |
++-----------+-----------------------------+
+| *Setter*  | set_auto_accept_quit(value) |
++-----------+-----------------------------+
+| *Getter*  | is_auto_accept_quit()       |
++-----------+-----------------------------+
+
+If ``true``, the application automatically accepts quitting.
+
+For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`.
+
+----
+
 .. _class_SceneTree_property_current_scene:
 
 - :ref:`Node<class_Node>` **current_scene**
@@ -449,6 +467,24 @@ If ``true``, the ``SceneTree`` is paused. Doing so will have the following behav
 +-----------+------------------------------------------+
 
 Although physics interpolation would normally be globally turned on and off using :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`, this property allows control over interpolation at runtime.
+
+----
+
+.. _class_SceneTree_property_quit_on_go_back:
+
+- :ref:`bool<class_bool>` **quit_on_go_back**
+
++-----------+----------------------------+
+| *Default* | ``true``                   |
++-----------+----------------------------+
+| *Setter*  | set_quit_on_go_back(value) |
++-----------+----------------------------+
+| *Getter*  | is_quit_on_go_back()       |
++-----------+----------------------------+
+
+If ``true``, the application quits automatically on going back (e.g. on Android).
+
+To handle 'Go Back' button when this option is disabled, use :ref:`MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST<class_MainLoop_constant_NOTIFICATION_WM_GO_BACK_REQUEST>`.
 
 ----
 
@@ -715,16 +751,6 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 ----
 
-.. _class_SceneTree_method_set_auto_accept_quit:
-
-- void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
-
-If ``true``, the application automatically accepts quitting. Enabled by default.
-
-For mobile platforms, see :ref:`set_quit_on_go_back<class_SceneTree_method_set_quit_on_go_back>`.
-
-----
-
 .. _class_SceneTree_method_set_group:
 
 - void **set_group** **(** :ref:`String<class_String>` group, :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
@@ -746,16 +772,6 @@ Sets the given ``property`` to ``value`` on all members of the given group, resp
 - void **set_input_as_handled** **(** **)**
 
 Marks the most recent :ref:`InputEvent<class_InputEvent>` as handled.
-
-----
-
-.. _class_SceneTree_method_set_quit_on_go_back:
-
-- void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
-
-If ``true``, the application quits automatically on going back (e.g. on Android). Enabled by default.
-
-To handle 'Go Back' button when this option is disabled, use :ref:`MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST<class_MainLoop_constant_NOTIFICATION_WM_GO_BACK_REQUEST>`.
 
 ----
 

@@ -29,6 +29,11 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
     add_constant_override("margin_bottom", margin_value)
     add_constant_override("margin_right", margin_value)
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Theme Properties
 ----------------
 

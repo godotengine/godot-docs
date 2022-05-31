@@ -224,7 +224,7 @@ Property Descriptions
 | *Getter*  | get_angular_damp()      |
 +-----------+-------------------------+
 
-Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**.
+Damps the body's :ref:`angular_velocity<class_RigidBody2D_property_angular_velocity>`. If ``-1``, the body will use the **Default Angular Damp** defined in **Project > Project Settings > Physics > 2d**. If greater than ``-1`` it will be added to the default project value.
 
 See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>` for more details about damping.
 
@@ -438,7 +438,7 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 | *Getter*  | get_linear_damp()      |
 +-----------+------------------------+
 
-Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**.
+Damps the body's :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>`. If ``-1``, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d**. If greater than ``-1`` it will be added to the default project value.
 
 See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_property_physics/2d/default_linear_damp>` for more details about damping.
 

@@ -531,6 +531,8 @@ Renames an existing animation with key ``name`` to ``newname``.
 
 Seeks the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time. Events between the current frame and ``seconds`` are skipped.
 
+\ **Note:** Seeking to the end of the animation doesn't emit :ref:`animation_finished<class_AnimationPlayer_signal_animation_finished>`. If you want to skip animation and emit the signal, use :ref:`advance<class_AnimationPlayer_method_advance>`.
+
 ----
 
 .. _class_AnimationPlayer_method_set_blend_time:

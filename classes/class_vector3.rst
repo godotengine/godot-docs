@@ -104,7 +104,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`reflect<class_Vector3_method_reflect>` **(** :ref:`Vector3<class_Vector3>` n **)**                                                                                                                                  |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                                |
+| :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                                              |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`round<class_Vector3_method_round>` **(** **)**                                                                                                                                                                      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -448,9 +448,9 @@ Returns this vector reflected from a plane defined by the given normal.
 
 .. _class_Vector3_method_rotated:
 
-- :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Rotates this vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
+Rotates this vector around a given axis by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 

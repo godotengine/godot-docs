@@ -444,7 +444,7 @@ Returns the 3D point in world space that maps to the given 2D coordinate in the 
 
 - :ref:`Vector3<class_Vector3>` **project_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 
@@ -452,7 +452,7 @@ Returns a normal vector in world space, that is the result of projecting a point
 
 - :ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 

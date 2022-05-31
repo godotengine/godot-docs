@@ -834,6 +834,8 @@ Similar to :ref:`lerp<class_@GDScript_method_lerp>`, but interpolates correctly 
         rotation = lerp_angle(min_angle, max_angle, elapsed)
         elapsed += delta
 
+\ **Note:** This method lerps through the shortest path between ``from`` and ``to``. However, when these two angles are approximately ``PI + k * TAU`` apart for any integer ``k``, it's not obvious which way they lerp due to floating-point precision errors. For example, ``lerp_angle(0, PI, weight)`` lerps counter-clockwise, while ``lerp_angle(0, PI + 5 * TAU, weight)`` lerps clockwise.
+
 ----
 
 .. _class_@GDScript_method_linear2db:
@@ -1178,11 +1180,13 @@ Converts an angle expressed in radians to degrees.
 
 - :ref:`float<class_float>` **rand_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
-Random range, any floating point value between ``from`` and ``to``.
+Returns a random floating point value between ``from`` and ``to`` (both endpoints inclusive).
 
 ::
 
     prints(rand_range(0, 1), rand_range(0, 1)) # Prints e.g. 0.135591 0.405263
+
+\ **Note:** This is equivalent to ``randf() * (to - from) + from``.
 
 ----
 
@@ -1238,33 +1242,34 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
 
 - :ref:`Array<class_Array>` **range** **(** ... **)** |vararg|
 
-Returns an array with the given range. Range can be 1 argument ``N`` (0 to ``N`` - 1), two arguments (``initial``, ``final - 1``) or three arguments (``initial``, ``final - 1``, ``increment``). Returns an empty array if the range isn't valid (e.g. ``range(2, 5, -1)`` or ``range(5, 5, 1)``).
+Returns an array with the given range. :ref:`range<class_@GDScript_method_range>` can be called in three ways:
 
-Returns an array with the given range. ``range()`` can have 1 argument N (``0`` to ``N - 1``), two arguments (``initial``, ``final - 1``) or three arguments (``initial``, ``final - 1``, ``increment``). ``increment`` can be negative. If ``increment`` is negative, ``final - 1`` will become ``final + 1``. Also, the initial value must be greater than the final value for the loop to run.
+\ ``range(n: int)``: Starts from 0, increases by steps of 1, and stops *before* ``n``. The argument ``n`` is **exclusive**.
+
+\ ``range(b: int, n: int)``: Starts from ``b``, increases by steps of 1, and stops *before* ``n``. The arguments ``b`` and ``n`` are **inclusive** and **exclusive**, respectively.
+
+\ ``range(b: int, n: int, s: int)``: Starts from ``b``, increases/decreases by steps of ``s``, and stops *before* ``n``. The arguments ``b`` and ``n`` are **inclusive** and **exclusive**, respectively. The argument ``s`` **can** be negative, but not ``0``. If ``s`` is ``0``, an error message is printed.
+
+\ :ref:`range<class_@GDScript_method_range>` converts all arguments to :ref:`int<class_int>` before processing.
+
+\ **Note:** Returns an empty array if no value meets the value constraint (e.g. ``range(2, 5, -1)`` or ``range(5, 5, 1)``).
+
+Examples:
 
 ::
 
-    print(range(4))
-    print(range(2, 5))
-    print(range(0, 6, 2))
-
-Output:
-
-::
-
-    [0, 1, 2, 3]
-    [2, 3, 4]
-    [0, 2, 4]
+    print(range(4))        # Prints [0, 1, 2, 3]
+    print(range(2, 5))     # Prints [2, 3, 4]
+    print(range(0, 6, 2))  # Prints [0, 2, 4]
+    print(range(4, 1, -1)) # Prints [4, 3, 2]
 
 To iterate over an :ref:`Array<class_Array>` backwards, use:
 
 ::
 
     var array = [3, 6, 9]
-    var i := array.size() - 1
-    while i >= 0:
-        print(array[i])
-        i -= 1
+    for i in range(array.size(), 0, -1):
+        print(array[i - 1])
 
 Output:
 

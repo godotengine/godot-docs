@@ -11,14 +11,14 @@ AnimatedSprite
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Sprite node that can use multiple textures for animation.
+Sprite node that contains multiple textures as frames to play for animation.
 
 Description
 -----------
 
-Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
+``AnimatedSprite`` is similar to the :ref:`Sprite<class_Sprite>` node, except it carries multiple textures as animation frames. Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which allows you to import image files (or a folder containing said files) to provide the animation frames for the sprite. The :ref:`SpriteFrames<class_SpriteFrames>` resource can be configured in the editor via the SpriteFrames bottom panel.
 
-\ **Note:** You can associate a set of normal maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` suffix. For example, having 2 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run`` and ``run_normal`` will make it so the ``run`` animation uses the normal map.
+\ **Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
 Tutorials
 ---------
@@ -91,7 +91,7 @@ Property Descriptions
 | *Getter*  | get_animation()      |
 +-----------+----------------------+
 
-The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
+The current animation from the :ref:`frames<class_AnimatedSprite_property_frames>` resource. If this value changes, the ``frame`` counter is reset.
 
 ----
 
@@ -169,7 +169,7 @@ The displayed animation frame's index.
 | *Getter* | get_sprite_frames()      |
 +----------+--------------------------+
 
-The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s). Allows you the option to load, edit, clear, make unique and save the states of the :ref:`SpriteFrames<class_SpriteFrames>` resource.
 
 ----
 

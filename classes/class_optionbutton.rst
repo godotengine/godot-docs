@@ -254,7 +254,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 - :ref:`int<class_int>` **get_selected_id** **(** **)** |const|
 
-Returns the ID of the selected item, or ``0`` if no item is selected.
+Returns the ID of the selected item, or ``-1`` if no item is selected.
 
 ----
 
@@ -287,6 +287,8 @@ Removes the item at index ``idx``.
 - void **select** **(** :ref:`int<class_int>` idx **)**
 
 Selects an item by index and makes it the current item. This will work even if the item is disabled.
+
+Passing ``-1`` as the index deselects any currently selected item.
 
 ----
 

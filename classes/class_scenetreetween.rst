@@ -125,6 +125,10 @@ Signals
 
 - **finished** **(** **)**
 
+Emitted when the ``SceneTreeTween`` has finished all tweening. Never emitted when the ``SceneTreeTween`` is set to infinite looping (see :ref:`set_loops<class_SceneTreeTween_method_set_loops>`).
+
+\ **Note:** The ``SceneTreeTween`` is removed (invalidated) after this signal is emitted, but it doesn't happen immediately, but on the next processing frame. Calling :ref:`stop<class_SceneTreeTween_method_stop>` inside the signal callback will preserve the ``SceneTreeTween``.
+
 ----
 
 .. _class_SceneTreeTween_signal_loop_finished:

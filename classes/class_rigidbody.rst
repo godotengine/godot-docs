@@ -222,7 +222,7 @@ Property Descriptions
 | *Getter*  | get_angular_damp()      |
 +-----------+-------------------------+
 
-Damps RigidBody's rotational forces.
+Damps RigidBody's rotational forces. If this value is different from -1.0 it will be added to any linear damp derived from the world or areas.
 
 See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_property_physics/3d/default_angular_damp>` for more details about damping.
 
@@ -486,7 +486,7 @@ This is multiplied by the global 3D gravity setting found in **Project > Project
 | *Getter*  | get_linear_damp()      |
 +-----------+------------------------+
 
-The body's linear damp. Cannot be less than -1.0. If this value is different from -1.0, any linear damp derived from the world or areas will be overridden.
+The body's linear damp. Cannot be less than -1.0. If this value is different from -1.0 it will be added to any linear damp derived from the world or areas.
 
 See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_property_physics/3d/default_linear_damp>` for more details about damping.
 

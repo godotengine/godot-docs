@@ -103,7 +103,7 @@ Properties
 +-----------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | ``8``     |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0``     |
+| :ref:`float<class_float>`   | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0.0``   |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | ``false`` |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
@@ -212,7 +212,7 @@ Property Descriptions
 | *Getter*  | get_body_size_limit()      |
 +-----------+----------------------------+
 
-Maximum allowed size for response bodies.
+Maximum allowed size for response bodies (``-1`` means no limit). When only small files are expected, this can be used to prevent disallow receiving files that are too large, preventing potential denial of service attacks.
 
 ----
 
@@ -246,7 +246,9 @@ Set this to a lower value (e.g. 4096 for 4 KiB) when downloading small files to 
 | *Getter*  | get_download_file()      |
 +-----------+--------------------------+
 
-The file to download into. Will output any received file into it.
+The file to download into. If set to a non-empty string, the request output will be written to the file located at the path. If a file already exists at the specified location, it will be overwritten as soon as body data begins to be received.
+
+\ **Note:** Folders are not automatically created when the file is created. If :ref:`download_file<class_HTTPRequest_property_download_file>` points to a subfolder, it's recommended to create the necessary folders beforehand using :ref:`Directory.make_dir_recursive<class_Directory_method_make_dir_recursive>` to ensure the file can be written.
 
 ----
 
@@ -262,21 +264,23 @@ The file to download into. Will output any received file into it.
 | *Getter*  | get_max_redirects()      |
 +-----------+--------------------------+
 
-Maximum number of allowed redirects.
+Maximum number of allowed redirects. This is used to prevent endless redirect loops.
 
 ----
 
 .. _class_HTTPRequest_property_timeout:
 
-- :ref:`int<class_int>` **timeout**
+- :ref:`float<class_float>` **timeout**
 
 +-----------+--------------------+
-| *Default* | ``0``              |
+| *Default* | ``0.0``            |
 +-----------+--------------------+
 | *Setter*  | set_timeout(value) |
 +-----------+--------------------+
 | *Getter*  | get_timeout()      |
 +-----------+--------------------+
+
+If set to a value greater than ``0.0``, the HTTP request will time out after ``timeout`` seconds have passed and the request is not *completed* yet. For small HTTP requests such as REST API usage, set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value greater than ``0.0`` to prevent the application from getting stuck if the request fails to get a response in a timely manner. For file downloads, leave this to ``0.0`` to prevent the download from failing if it takes too much time.
 
 ----
 

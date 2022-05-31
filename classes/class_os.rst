@@ -120,6 +120,8 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`           | :ref:`get_datetime_from_unix_time<class_OS_method_get_datetime_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                                                                                                                                            |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                     | :ref:`get_display_cutouts<class_OS_method_get_display_cutouts>` **(** **)** |const|                                                                                                                                                                                                                                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_dynamic_memory_usage<class_OS_method_get_dynamic_memory_usage>` **(** **)** |const|                                                                                                                                                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`get_environment<class_OS_method_get_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                                                                   |
@@ -241,6 +243,8 @@ Methods
 | :ref:`bool<class_bool>`                       | :ref:`is_debug_build<class_OS_method_is_debug_build>` **(** **)** |const|                                                                                                                                                                                                                                          |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_ok_left_and_cancel_right<class_OS_method_is_ok_left_and_cancel_right>` **(** **)** |const|                                                                                                                                                                                                                |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`is_process_running<class_OS_method_is_process_running>` **(** :ref:`int<class_int>` pid **)** |const|                                                                                                                                                                                                        |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`is_scancode_unicode<class_OS_method_is_scancode_unicode>` **(** :ref:`int<class_int>` code **)** |const|                                                                                                                                                                                                     |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -442,39 +446,39 @@ enum **HandleType**:
 
 - **APPLICATION_HANDLE** = **0** --- Application handle:
 
-- Windows: ``HINSTANCE`` of the application
+	- Windows: ``HINSTANCE`` of the application
 
-- MacOS: ``NSApplication*`` of the application (not yet implemented)
+	- MacOS: ``NSApplication*`` of the application (not yet implemented)
 
-- Android: ``JNIEnv*`` of the application (not yet implemented)
+	- Android: ``JNIEnv*`` of the application (not yet implemented)
 
 - **DISPLAY_HANDLE** = **1** --- Display handle:
 
-- Linux: ``X11::Display*`` for the display
+	- Linux: ``X11::Display*`` for the display
 
 - **WINDOW_HANDLE** = **2** --- Window handle:
 
-- Windows: ``HWND`` of the main window
+	- Windows: ``HWND`` of the main window
 
-- Linux: ``X11::Window*`` of the main window
+	- Linux: ``X11::Window*`` of the main window
 
-- MacOS: ``NSWindow*`` of the main window (not yet implemented)
+	- MacOS: ``NSWindow*`` of the main window (not yet implemented)
 
-- Android: ``jObject`` the main android activity (not yet implemented)
+	- Android: ``jObject`` the main android activity (not yet implemented)
 
 - **WINDOW_VIEW** = **3** --- Window view:
 
-- Windows: ``HDC`` of the main window drawing context
+	- Windows: ``HDC`` of the main window drawing context
 
-- MacOS: ``NSView*`` of the main windows view (not yet implemented)
+	- MacOS: ``NSView*`` of the main windows view (not yet implemented)
 
 - **OPENGL_CONTEXT** = **4** --- OpenGL Context:
 
-- Windows: ``HGLRC``\ 
+	- Windows: ``HGLRC``\ 
 
-- Linux: ``X11::GLXContext``\ 
+	- Linux: ``X11::GLXContext``\ 
 
-- MacOS: ``NSOpenGLContext*`` (not yet implemented)
+	- MacOS: ``NSOpenGLContext*`` (not yet implemented)
 
 ----
 
@@ -1203,6 +1207,16 @@ The returned Dictionary's values will be the same as :ref:`get_datetime<class_OS
 
 ----
 
+.. _class_OS_method_get_display_cutouts:
+
+- :ref:`Array<class_Array>` **get_display_cutouts** **(** **)** |const|
+
+Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which is the bounding rectangle for a display cutout or notch. These are non-functional areas on edge-to-edge screens used by cameras and sensors. Returns an empty array if the device does not have cutouts. See also :ref:`get_window_safe_area<class_OS_method_get_window_safe_area>`.
+
+\ **Note:** Currently only implemented on Android. Other platforms will return an empty array even if they do have display cutouts or notches.
+
+----
+
 .. _class_OS_method_get_dynamic_memory_usage:
 
 - :ref:`int<class_int>` **get_dynamic_memory_usage** **(** **)** |const|
@@ -1821,6 +1835,18 @@ To check whether the Godot binary used to run the project is an export template 
 - :ref:`bool<class_bool>` **is_ok_left_and_cancel_right** **(** **)** |const|
 
 Returns ``true`` if the **OK** button should appear on the left and **Cancel** on the right.
+
+----
+
+.. _class_OS_method_is_process_running:
+
+- :ref:`bool<class_bool>` **is_process_running** **(** :ref:`int<class_int>` pid **)** |const|
+
+Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated.
+
+Must be a valid ID generated from :ref:`execute<class_OS_method_execute>`.
+
+\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
 
 ----
 

@@ -91,7 +91,7 @@ Sets the time in seconds after which the ``PropertyTweener`` will start interpol
 
 - :ref:`PropertyTweener<class_PropertyTweener>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
 
-Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not set, the default easing is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
+Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not set, the default easing is used from the :ref:`SceneTreeTween<class_SceneTreeTween>` that contains this Tweener.
 
 ----
 
@@ -99,7 +99,7 @@ Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not s
 
 - :ref:`PropertyTweener<class_PropertyTweener>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
 
-Sets the type of used transition from :ref:`TransitionType<enum_Tween_TransitionType>`. If not set, the default transition is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
+Sets the type of used transition from :ref:`TransitionType<enum_Tween_TransitionType>`. If not set, the default transition is used from the :ref:`SceneTreeTween<class_SceneTreeTween>` that contains this Tweener.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

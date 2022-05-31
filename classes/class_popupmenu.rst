@@ -168,6 +168,8 @@ Theme Properties
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Font<class_Font>`         | :ref:`font<class_PopupMenu_theme_font_font>`                                        |                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`Font<class_Font>`         | :ref:`font_separator<class_PopupMenu_theme_font_font_separator>`                    |                                  |
++---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                  |                                  |
 +---------------------------------+-------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Texture<class_Texture>`   | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                      |                                  |
@@ -552,7 +554,7 @@ Returns the text of the item at index ``idx``.
 
 - :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the tooltip associated with the specified index index ``idx``.
+Returns the tooltip associated with the specified index ``idx``.
 
 ----
 
@@ -872,6 +874,14 @@ The vertical space between each menu item.
 - :ref:`Font<class_Font>` **font**
 
 :ref:`Font<class_Font>` used for the menu items.
+
+----
+
+.. _class_PopupMenu_theme_font_font_separator:
+
+- :ref:`Font<class_Font>` **font_separator**
+
+:ref:`Font<class_Font>` used for the labeled separator.
 
 ----
 

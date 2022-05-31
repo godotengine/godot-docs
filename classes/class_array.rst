@@ -313,7 +313,7 @@ Assigns the given value to all elements in the array. This can typically be used
 
 - :ref:`int<class_int>` **find** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=0 **)**
 
-Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
 
 ----
 
@@ -474,7 +474,7 @@ Resizes the array to contain a different number of elements. If the array size i
 
 - :ref:`int<class_int>` **rfind** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)**
 
-Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
 
 ----
 

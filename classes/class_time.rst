@@ -29,49 +29,49 @@ When getting time information from the system, the time can either be in the loc
 Methods
 -------
 
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_date_dict_from_system<class_Time_method_get_date_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                              |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_date_dict_from_unix_time<class_Time_method_get_date_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_date_string_from_system<class_Time_method_get_date_string_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_date_string_from_unix_time<class_Time_method_get_date_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                  |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_string<class_Time_method_get_datetime_dict_from_string>` **(** :ref:`String<class_String>` datetime, :ref:`bool<class_bool>` weekday **)** |const|                  |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_system<class_Time_method_get_datetime_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_unix_time<class_Time_method_get_datetime_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                              |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_dict<class_Time_method_get_datetime_string_from_dict>` **(** :ref:`Dictionary<class_Dictionary>` datetime, :ref:`bool<class_bool>` use_space **)** |const|        |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_system<class_Time_method_get_datetime_string_from_system>` **(** :ref:`bool<class_bool>` utc=false, :ref:`bool<class_bool>` use_space=false **)** |const|         |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_unix_time<class_Time_method_get_datetime_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val, :ref:`bool<class_bool>` use_space=false **)** |const| |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_offset_string_from_offset_minutes<class_Time_method_get_offset_string_from_offset_minutes>` **(** :ref:`int<class_int>` offset_minutes **)** |const|                                   |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` **(** **)** |const|                                                                                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` **(** **)** |const|                                                                                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_dict_from_system<class_Time_method_get_time_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                              |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_dict_from_unix_time<class_Time_method_get_time_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_time_string_from_system<class_Time_method_get_time_string_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_time_string_from_unix_time<class_Time_method_get_time_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                  |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_zone_from_system<class_Time_method_get_time_zone_from_system>` **(** **)** |const|                                                                                                |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_unix_time_from_datetime_dict<class_Time_method_get_unix_time_from_datetime_dict>` **(** :ref:`Dictionary<class_Dictionary>` datetime **)** |const|                                     |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_unix_time_from_datetime_string<class_Time_method_get_unix_time_from_datetime_string>` **(** :ref:`String<class_String>` datetime **)** |const|                                         |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` **(** **)** |const|                                                                                                |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_date_dict_from_system<class_Time_method_get_date_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_date_dict_from_unix_time<class_Time_method_get_date_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_date_string_from_system<class_Time_method_get_date_string_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_date_string_from_unix_time<class_Time_method_get_date_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_datetime_string<class_Time_method_get_datetime_dict_from_datetime_string>` **(** :ref:`String<class_String>` datetime, :ref:`bool<class_bool>` weekday **)** |const|           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_system<class_Time_method_get_datetime_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_datetime_dict_from_unix_time<class_Time_method_get_datetime_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_datetime_dict<class_Time_method_get_datetime_string_from_datetime_dict>` **(** :ref:`Dictionary<class_Dictionary>` datetime, :ref:`bool<class_bool>` use_space **)** |const| |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_system<class_Time_method_get_datetime_string_from_system>` **(** :ref:`bool<class_bool>` utc=false, :ref:`bool<class_bool>` use_space=false **)** |const|                    |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_datetime_string_from_unix_time<class_Time_method_get_datetime_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val, :ref:`bool<class_bool>` use_space=false **)** |const|            |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_offset_string_from_offset_minutes<class_Time_method_get_offset_string_from_offset_minutes>` **(** :ref:`int<class_int>` offset_minutes **)** |const|                                              |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` **(** **)** |const|                                                                                                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` **(** **)** |const|                                                                                                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_dict_from_system<class_Time_method_get_time_dict_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                         |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_dict_from_unix_time<class_Time_method_get_time_dict_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                                 |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_time_string_from_system<class_Time_method_get_time_string_from_system>` **(** :ref:`bool<class_bool>` utc=false **)** |const|                                                                     |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`         | :ref:`get_time_string_from_unix_time<class_Time_method_get_time_string_from_unix_time>` **(** :ref:`int<class_int>` unix_time_val **)** |const|                                                             |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`get_time_zone_from_system<class_Time_method_get_time_zone_from_system>` **(** **)** |const|                                                                                                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_unix_time_from_datetime_dict<class_Time_method_get_unix_time_from_datetime_dict>` **(** :ref:`Dictionary<class_Dictionary>` datetime **)** |const|                                                |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`get_unix_time_from_datetime_string<class_Time_method_get_unix_time_from_datetime_string>` **(** :ref:`String<class_String>` datetime **)** |const|                                                    |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` **(** **)** |const|                                                                                                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -201,9 +201,9 @@ Converts the given Unix timestamp to an ISO 8601 date string (YYYY-MM-DD).
 
 ----
 
-.. _class_Time_method_get_datetime_dict_from_string:
+.. _class_Time_method_get_datetime_dict_from_datetime_string:
 
-- :ref:`Dictionary<class_Dictionary>` **get_datetime_dict_from_string** **(** :ref:`String<class_String>` datetime, :ref:`bool<class_bool>` weekday **)** |const|
+- :ref:`Dictionary<class_Dictionary>` **get_datetime_dict_from_datetime_string** **(** :ref:`String<class_String>` datetime, :ref:`bool<class_bool>` weekday **)** |const|
 
 Converts the given ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS) to a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``hour``, ``minute``, and ``second``.
 
@@ -231,9 +231,9 @@ The returned Dictionary's values will be the same as the :ref:`get_datetime_dict
 
 ----
 
-.. _class_Time_method_get_datetime_string_from_dict:
+.. _class_Time_method_get_datetime_string_from_datetime_dict:
 
-- :ref:`String<class_String>` **get_datetime_string_from_dict** **(** :ref:`Dictionary<class_Dictionary>` datetime, :ref:`bool<class_bool>` use_space **)** |const|
+- :ref:`String<class_String>` **get_datetime_string_from_datetime_dict** **(** :ref:`Dictionary<class_Dictionary>` datetime, :ref:`bool<class_bool>` use_space **)** |const|
 
 Converts the given dictionary of keys to an ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS).
 

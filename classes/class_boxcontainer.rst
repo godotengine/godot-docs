@@ -20,6 +20,11 @@ Description
 
 Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

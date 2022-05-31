@@ -596,9 +596,11 @@ Adds raw non-BBCode-parsed text to the tag stack.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **append_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
-Parses ``bbcode`` and adds tags to the tag stack as needed. Returns the result of the parsing, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful.
+Parses ``bbcode`` and adds tags to the tag stack as needed.
 
 \ **Note:** Using this method, you can't close a tag that was opened in a previous :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>` call. This is done to improve performance, especially when updating large RichTextLabels since rebuilding the whole BBCode every time would be slower. If you absolutely need to close a tag in a future method call, append the :ref:`bbcode_text<class_RichTextLabel_property_bbcode_text>` instead of using :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`.
+
+\ **Note:** This method internals' can't possibly fail, but an error code is returned for backwards compatibility, which will always be :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
 
 ----
 
@@ -688,7 +690,9 @@ Adds a newline tag to the tag stack.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **parse_bbcode** **(** :ref:`String<class_String>` bbcode **)**
 
-The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if parses ``bbcode`` successfully.
+The assignment version of :ref:`append_bbcode<class_RichTextLabel_method_append_bbcode>`. Clears the tag stack and inserts the new content.
+
+\ **Note:** This method internals' can't possibly fail, but an error code is returned for backwards compatibility, which will always be :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
 
 ----
 
@@ -1023,7 +1027,7 @@ The default text font.
 
 - :ref:`StyleBox<class_StyleBox>` **focus**
 
-The background The background used when the ``RichTextLabel`` is focused.
+The background used when the ``RichTextLabel`` is focused.
 
 ----
 

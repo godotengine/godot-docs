@@ -22,6 +22,11 @@ Ignores non-:ref:`Control<class_Control>` children.
 
 \ **Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`Tabs<class_Tabs>` as children is not needed.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

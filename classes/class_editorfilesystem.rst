@@ -115,7 +115,7 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 - :ref:`bool<class_bool>` **is_scanning** **(** **)** |const|
 
-Returns ``true`` of the filesystem is being scanned.
+Returns ``true`` if the filesystem is being scanned.
 
 ----
 

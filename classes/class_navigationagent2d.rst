@@ -22,6 +22,8 @@ Properties
 ----------
 
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`             | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``    |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0`` |
@@ -105,6 +107,22 @@ Notifies when the collision avoidance velocity is calculated after a call to :re
 
 Property Descriptions
 ---------------------
+
+.. _class_NavigationAgent2D_property_avoidance_enabled:
+
+- :ref:`bool<class_bool>` **avoidance_enabled**
+
++-----------+------------------------------+
+| *Default* | ``false``                    |
++-----------+------------------------------+
+| *Setter*  | set_avoidance_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | get_avoidance_enabled()      |
++-----------+------------------------------+
+
+If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`Navigation2DServer<class_Navigation2DServer>`. When :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>` is used and the processing is completed a ``safe_velocity`` Vector2 is received with a signal connection to :ref:`velocity_computed<class_NavigationAgent2D_signal_velocity_computed>`. Avoidance processing with many registered agents has a significant performance cost and should only be enabled on agents that currently require it.
+
+----
 
 .. _class_NavigationAgent2D_property_max_neighbors:
 
@@ -271,7 +289,7 @@ Returns a :ref:`Vector2<class_Vector2>` in global coordinates, that can be moved
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
-Returns the object's :ref:`RID<class_RID>`.
+Returns the :ref:`RID<class_RID>` of this agent on the :ref:`Navigation2DServer<class_Navigation2DServer>`.
 
 ----
 

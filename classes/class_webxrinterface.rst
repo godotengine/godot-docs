@@ -286,7 +286,7 @@ Enumerations
 
 enum **TargetRayMode**:
 
-- **TARGET_RAY_MODE_UNKNOWN** = **0** --- We don't know the the target ray mode.
+- **TARGET_RAY_MODE_UNKNOWN** = **0** --- We don't know the target ray mode.
 
 - **TARGET_RAY_MODE_GAZE** = **1** --- Target ray originates at the viewer's eyes and points in the direction they are looking.
 

@@ -33,6 +33,8 @@ Methods
 +-------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>` | :ref:`get_navigation<class_NavigationObstacle_method_get_navigation>` **(** **)** |const|                            |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationObstacle_method_get_rid>` **(** **)** |const|                                          |
++-------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_navigation<class_NavigationObstacle_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)** |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------+
 
@@ -77,6 +79,14 @@ Method Descriptions
 - :ref:`Node<class_Node>` **get_navigation** **(** **)** |const|
 
 Returns the :ref:`Navigation<class_Navigation>` node that the obstacle is using for its navigation system.
+
+----
+
+.. _class_NavigationObstacle_method_get_rid:
+
+- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer<class_NavigationServer>`.
 
 ----
 

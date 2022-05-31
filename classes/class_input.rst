@@ -212,9 +212,9 @@ enum **CursorShape**:
 
 - **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performed or for selections.
 
-- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
+- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
 
-- **CURSOR_BUSY** = **5** --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
+- **CURSOR_BUSY** = **5** --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
 
 - **CURSOR_DRAG** = **6** --- Drag cursor. Usually displayed when dragging something.
 

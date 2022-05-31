@@ -16,7 +16,23 @@ Description
 
 An array specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference.
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolByteArray`` or mutating a ``PoolByteArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+
+::
+
+    var array = [PoolByteArray()]
+    array[0].push_back(123)
+    print(array)  # [[]] (empty PoolByteArray within an empty Array)
+
+Instead, the entire ``PoolByteArray`` property must be *reassigned* with ``=`` for it to be changed:
+
+::
+
+    var array = [PoolByteArray()]
+    var pool_array = array[0]
+    pool_array.push_back(123)
+    array[0] = pool_array
+    print(array)  # [[123]] (PoolByteArray with 1 element inside an Array)
 
 Methods
 -------
@@ -30,6 +46,8 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                                            |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`count<class_PoolByteArray_method_count>` **(** :ref:`int<class_int>` value **)**                                                                               |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**                     |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress_dynamic<class_PoolByteArray_method_decompress_dynamic>` **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |
@@ -38,9 +56,13 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`fill<class_PoolByteArray_method_fill>` **(** :ref:`int<class_int>` byte **)**                                                                                  |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`find<class_PoolByteArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**                                                   |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                                           |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                                             |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`has<class_PoolByteArray_method_has>` **(** :ref:`int<class_int>` value **)**                                                                                   |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                                                 |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -53,6 +75,8 @@ Methods
 | void                                      | :ref:`remove<class_PoolByteArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                                                               |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                                               |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`rfind<class_PoolByteArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**                                                |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                         |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,6 +120,14 @@ Returns a new ``PoolByteArray`` with the data compressed. Set the compression mo
 
 ----
 
+.. _class_PoolByteArray_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PoolByteArray_method_decompress:
 
 - :ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
@@ -134,6 +166,14 @@ Assigns the given value to all elements in the array. This can typically be used
 
 ----
 
+.. _class_PoolByteArray_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+----
+
 .. _class_PoolByteArray_method_get_string_from_ascii:
 
 - :ref:`String<class_String>` **get_string_from_ascii** **(** **)**
@@ -147,6 +187,16 @@ Returns a copy of the array's contents as :ref:`String<class_String>`. Fast alte
 - :ref:`String<class_String>` **get_string_from_utf8** **(** **)**
 
 Returns a copy of the array's contents as :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred.
+
+----
+
+.. _class_PoolByteArray_method_has:
+
+- :ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
+
+Returns ``true`` if the array contains the given value.
+
+\ **Note:** This is equivalent to using the ``in`` operator.
 
 ----
 
@@ -202,6 +252,14 @@ Removes an element from the array by index.
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 \ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
+
+----
+
+.. _class_PoolByteArray_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
 
 ----
 

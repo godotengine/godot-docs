@@ -97,6 +97,8 @@ If ``true``, no collisions will be detected.
 
 If ``true``, only edges that face up, relative to ``CollisionPolygon2D``'s rotation, will collide with other objects.
 
+\ **Note:** This property has no effect if this ``CollisionPolygon2D`` is a child of an :ref:`Area2D<class_Area2D>` node.
+
 ----
 
 .. _class_CollisionPolygon2D_property_one_way_collision_margin:

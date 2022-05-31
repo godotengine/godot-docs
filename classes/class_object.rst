@@ -316,7 +316,7 @@ Returns ``true`` if the object can translate strings. See :ref:`set_message_tran
 
 Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call as an :ref:`Array<class_Array>` of parameters. These parameters will be passed to the method after any parameter used in the call to :ref:`emit_signal<class_Object_method_emit_signal>`. Use ``flags`` to set deferred or one-shot connections. See :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants.
 
-A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
+A ``signal`` can only be connected once to a ``method``. It will print an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
 
 If the ``target`` is destroyed in the game's lifecycle, the connection will be lost.
 
@@ -345,7 +345,7 @@ An example of the relationship between ``binds`` passed to :ref:`connect<class_O
 
 Disconnects a ``signal`` from a ``method`` on the given ``target``.
 
-If you try to disconnect a connection that does not exist, the method will throw an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
+If you try to disconnect a connection that does not exist, the method will print an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
 
 ----
 

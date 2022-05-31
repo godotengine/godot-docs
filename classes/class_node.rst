@@ -1160,7 +1160,7 @@ Returns ``true`` if the local system is the master of this node.
 
 Returns ``true`` if the physics interpolated flag is set for this Node (see :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`).
 
-\ **Note:** Interpolation will only be active is both the flag is set **and** physics interpolation is enabled within the :ref:`SceneTree<class_SceneTree>`. This can be tested using :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>`.
+\ **Note:** Interpolation will only be active if both the flag is set **and** physics interpolation is enabled within the :ref:`SceneTree<class_SceneTree>`. This can be tested using :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>`.
 
 ----
 
@@ -1384,7 +1384,7 @@ This glitch can be prevented by calling ``reset_physics_interpolation``, which t
 
 - :ref:`Variant<class_Variant>` **rpc** **(** :ref:`String<class_String>` method, ... **)** |vararg|
 
-Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns an empty :ref:`Variant<class_Variant>`.
+Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. See also :ref:`rset<class_Node_method_rset>` and :ref:`rset_config<class_Node_method_rset_config>` for properties. Returns ``null``.
 
 \ **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`SceneTree<class_SceneTree>`. You also need to keep track of the connection state, either by the :ref:`SceneTree<class_SceneTree>` signals like ``server_disconnected`` or by checking ``SceneTree.network_peer.get_connection_status() == CONNECTION_CONNECTED``.
 
@@ -1402,7 +1402,7 @@ Changes the RPC mode for the given ``method`` to the given ``mode``. See :ref:`R
 
 - :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|
 
-Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
+Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns ``null``.
 
 ----
 
@@ -1410,7 +1410,7 @@ Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``pee
 
 - :ref:`Variant<class_Variant>` **rpc_unreliable** **(** :ref:`String<class_String>` method, ... **)** |vararg|
 
-Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns an empty :ref:`Variant<class_Variant>`.
+Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns ``null``.
 
 ----
 
@@ -1418,7 +1418,7 @@ Sends a :ref:`rpc<class_Node_method_rpc>` using an unreliable protocol. Returns 
 
 - :ref:`Variant<class_Variant>` **rpc_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_String>` method, ... **)** |vararg|
 
-Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
+Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` using an unreliable protocol (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Returns ``null``.
 
 ----
 

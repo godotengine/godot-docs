@@ -18,6 +18,11 @@ Description
 
 CenterContainer keeps children controls centered. This container keeps all children to their minimum size, in the center.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

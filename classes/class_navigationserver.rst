@@ -37,6 +37,8 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`agent_create<class_NavigationServer_method_agent_create>` **(** **)** |const|                                                                                                                                                                                        |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`agent_get_map<class_NavigationServer_method_agent_get_map>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                                          |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`agent_is_map_changed<class_NavigationServer_method_agent_is_map_changed>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                            |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`agent_set_callback<class_NavigationServer_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Object<class_Object>` receiver, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const|                         |
@@ -63,6 +65,8 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`map_create<class_NavigationServer_method_map_create>` **(** **)** |const|                                                                                                                                                                                            |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`map_get_agents<class_NavigationServer_method_map_get_agents>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                          |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`map_get_cell_height<class_NavigationServer_method_map_get_cell_height>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`map_get_cell_size<class_NavigationServer_method_map_get_cell_size>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                    |
@@ -78,6 +82,8 @@ Methods
 | :ref:`float<class_float>`                       | :ref:`map_get_edge_connection_margin<class_NavigationServer_method_map_get_edge_connection_margin>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                          |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`map_get_path<class_NavigationServer_method_map_get_path>` **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` origin, :ref:`Vector3<class_Vector3>` destination, :ref:`bool<class_bool>` optimize **)** |const|                                           |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`map_get_regions<class_NavigationServer_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                        |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                   | :ref:`map_get_up<class_NavigationServer_method_map_get_up>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                                  |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +105,8 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`region_create<class_NavigationServer_method_region_create>` **(** **)** |const|                                                                                                                                                                                      |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`region_get_map<class_NavigationServer_method_region_get_map>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                       |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`region_set_map<class_NavigationServer_method_region_set_map>` **(** :ref:`RID<class_RID>` region, :ref:`RID<class_RID>` map **)** |const|                                                                                                                            |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`region_set_navmesh<class_NavigationServer_method_region_set_navmesh>` **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)** |const|                                                                                         |
@@ -116,6 +124,14 @@ Method Descriptions
 - :ref:`RID<class_RID>` **agent_create** **(** **)** |const|
 
 Creates the agent.
+
+----
+
+.. _class_NavigationServer_method_agent_get_map:
+
+- :ref:`RID<class_RID>` **agent_get_map** **(** :ref:`RID<class_RID>` agent **)** |const|
+
+Returns the navigation map :ref:`RID<class_RID>` the requested ``agent`` is currently assigned to.
 
 ----
 
@@ -223,6 +239,14 @@ Create a new map.
 
 ----
 
+.. _class_NavigationServer_method_map_get_agents:
+
+- :ref:`Array<class_Array>` **map_get_agents** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+----
+
 .. _class_NavigationServer_method_map_get_cell_height:
 
 - :ref:`float<class_float>` **map_get_cell_height** **(** :ref:`RID<class_RID>` map **)** |const|
@@ -284,6 +308,14 @@ Returns the edge connection margin of the map. This distance is the minimum vert
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **map_get_path** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` origin, :ref:`Vector3<class_Vector3>` destination, :ref:`bool<class_bool>` optimize **)** |const|
 
 Returns the navigation path to reach the destination from the origin.
+
+----
+
+.. _class_NavigationServer_method_map_get_regions:
+
+- :ref:`Array<class_Array>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
 ----
 
@@ -368,6 +400,14 @@ Bakes the navigation mesh.
 - :ref:`RID<class_RID>` **region_create** **(** **)** |const|
 
 Creates a new region.
+
+----
+
+.. _class_NavigationServer_method_region_get_map:
+
+- :ref:`RID<class_RID>` **region_get_map** **(** :ref:`RID<class_RID>` region **)** |const|
+
+Returns the navigation map :ref:`RID<class_RID>` the requested ``region`` is currently assigned to.
 
 ----
 

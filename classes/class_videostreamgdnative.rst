@@ -11,12 +11,12 @@ VideoStreamGDNative
 
 **Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-:ref:`VideoStream<class_VideoStream>` resource for for video formats implemented via GDNative.
+:ref:`VideoStream<class_VideoStream>` resource for video formats implemented via GDNative.
 
 Description
 -----------
 
-:ref:`VideoStream<class_VideoStream>` resource for for video formats implemented via GDNative.
+:ref:`VideoStream<class_VideoStream>` resource for video formats implemented via GDNative.
 
 It can be used via `godot-videodecoder <https://github.com/KidRigger/godot-videodecoder>`__ which uses the `FFmpeg <https://ffmpeg.org>`__ library.
 
