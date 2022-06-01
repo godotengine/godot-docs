@@ -62,6 +62,7 @@ you should remove the instance you have added by calling
   .. code-tab:: csharp
 
     // Plugin.cs
+    #if TOOLS
     using Godot;
 
     [Tool]
@@ -80,6 +81,7 @@ you should remove the instance you have added by calling
             RemoveInspectorPlugin(_plugin);
         }
     }
+    #endif
 
 
 Interacting with the inspector
@@ -136,6 +138,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
  .. code-tab:: csharp
  
     // MyInspectorPlugin.cs
+    #if TOOLS
     using Godot;
 
     public class MyInspectorPlugin : EditorInspectorPlugin
@@ -162,6 +165,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
             return false;
         }
     }
+    #endif
 
 Adding an interface to edit properties
 --------------------------------------
@@ -240,6 +244,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
  .. code-tab:: csharp
 
     // RandomIntEditor.cs
+    #if TOOLS
     using Godot;
 
     public class RandomIntEditor : EditorProperty
@@ -259,7 +264,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
             AddFocusable(_propertyControl);
             // Setup the initial state and connect to the signal to track changes.
             RefreshControlText();
-            _propertyControl.Connect("pressed", this, nameof(OnButtonPressed));
+            _propertyControl.Pressed += OnButtonPressed;
         }
 
         private void OnButtonPressed()
@@ -294,9 +299,10 @@ followed by ``set_bottom_editor()`` to position it below the name.
 
         private void RefreshControlText()
         {
-            _propertyControl.Text = $"Value: {_currentValue}";;
+            _propertyControl.Text = $"Value: {_currentValue}";
         }
     }
+    #endif
 
 Using the example code above you should be able to make a custom widget that
 replaces the default :ref:`class_SpinBox` control for integers with a
