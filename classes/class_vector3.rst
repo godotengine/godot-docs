@@ -19,6 +19,8 @@ Description
 It uses floating-point coordinates. See :ref:`Vector3i<class_Vector3i>` for its integer counterpart.
 
 \ **Note:** In a boolean context, a Vector3 will evaluate to ``false`` if it's equal to ``Vector3(0, 0, 0)``. Otherwise, a Vector3 will always evaluate to ``true``.
+\ **Note 2:** Because Vector3 store values with float number you can observe various imprecision in the numbers stored. If you store a value like 3.45 in a Vector3 position, the real value stored can be 3.458978. Then if you observe errors in your game object collisions or something similar, try to increase the scale of the world so that your object movements in a large position variation above the float imprecision variation.
+Example:If your character have 1.0 width and will travel to a house, and the house position in the map is 5.0 many possible collisions can occur in the way. And this collisions or calculations will use the imprecision of the float numbers. But if your character have 100.0 width and the house is in positon 500.0 for the human player the distance is the same in the screen but for the calculations the imprecision will not affect the collisions or movements. 
 
 Tutorials
 ---------
