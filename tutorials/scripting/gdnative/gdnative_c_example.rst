@@ -61,7 +61,7 @@ example project, open a terminal in that folder and execute:
 
 .. code-block:: none
 
-    git clone https://github.com/godotengine/godot-headers.git
+    git clone https://github.com/godotengine/godot-headers.git --branch=3.4
 
 This will download the required files into that folder.
 
@@ -75,8 +75,8 @@ This will download the required files into that folder.
     The ``godot-headers`` repository has different branches. As Godot evolves,
     so does GDNative. While we try to preserve compatibility between version,
     you should always build your GDNative module against headers matching the
-    Godot stable branch (e.g. ``3.1``) and ideally actual release (e.g.
-    ``3.1.1-stable``) that you use.
+    Godot stable branch (e.g. ``3.4``) and ideally actual release (e.g.
+    ``3.4.4-stable``) that you use.
     GDNative modules built against older versions of the Godot headers *may*
     work with newer versions of the engine, but not the other way around.
 
@@ -87,16 +87,16 @@ structure definitions that will work with the latest development builds.
 If you want to write a GDNative module for a stable version of Godot, look at
 the available Git tags (with ``git tags``) for the one matching your engine
 version. In the ``godot-headers`` repository, such tags are prefixed with
-``godot-``, so you can e.g. checkout the ``godot-3.1.1-stable`` tag for use with
-Godot 3.1.1. In your cloned repository, you can do:
+``godot-``, so you can e.g. checkout the ``godot-3.4.4-stable`` tag for use with
+Godot 3.4.4. In your cloned repository, you can do:
 
 .. code-block:: none
 
-    git checkout godot-3.1.1-stable
+    git checkout godot-3.4.4-stable
 
 If a tag matching your stable release is missing for any reason, you can fall
-back to the matching stable branch (e.g. ``3.1``), which you would also check
-out with ``git checkout 3.1``.
+back to the matching stable branch (e.g. ``3.4``), which you would also check
+out with ``git checkout 3.4``.
 
 If you are building Godot from source with your own changes that impact
 GDNative, you can find the updated class and structure definition in
