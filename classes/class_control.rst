@@ -2346,7 +2346,7 @@ Forwarding can be implemented in the target object similar to the methods :ref:`
 
 - void **set_drag_preview** **(** :ref:`Control<class_Control>` control **)**
 
-Shows the given control at the mouse pointer. A good time to call this method is in :ref:`_get_drag_data<class_Control_method__get_drag_data>`. The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
+Shows the given control at the mouse pointer. A good time to call this method is in :ref:`_get_drag_data<class_Control_method__get_drag_data>`. The control must not be in the scene tree before being set as the drag preview. The control will be made a child of this node. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
 
 
 .. tabs::
