@@ -742,9 +742,9 @@ used.
 
     shader_type spatial;
 
-    uniform vec4 color : hint_color;
+    uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
-    uniform vec4 other_color : hint_color = vec4(1.0);
+    uniform vec4 other_color : source_color = vec4(1.0);
 
 It's important to understand that textures that are supplied as color require
 hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
@@ -811,7 +811,7 @@ Uniforms can also be assigned default values:
     shader_type spatial;
 
     uniform vec4 some_vector = vec4(0.0);
-    uniform vec4 some_color : hint_color = vec4(1.0);
+    uniform vec4 some_color : source_color = vec4(1.0);
 
 Built-in variables
 ------------------
