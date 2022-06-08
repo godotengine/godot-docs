@@ -22,7 +22,7 @@ An array specifically designed to hold :ref:`Color<class_Color>`. Optimized for 
 
     var array = [PoolColorArray()]
     array[0].push_back(Color(0.1, 0.2, 0.3, 0.4))
-    print(array)  # [[]] (empty PoolColorArray within an empty Array)
+    print(array)  # [[]] (empty PoolColorArray within an Array)
 
 Instead, the entire ``PoolColorArray`` property must be *reassigned* with ``=`` for it to be changed:
 

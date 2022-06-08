@@ -852,7 +852,7 @@ Constructs a color from a 32-bit integer in RGBA format (each byte represents a 
 
 ::
 
-    var c = Color(274) # Similar to Color(0.0, 0.0, 0.004, 0.07)
+    var color = Color(274) # Similar to Color(0.0, 0.0, 0.004, 0.07)
 
 ----
 
@@ -898,8 +898,8 @@ Returns the most contrasting color.
 
 ::
 
-    var c = Color(0.3, 0.4, 0.9)
-    var contrasted_color = c.contrasted() # Equivalent to RGBA(204, 229, 102, 255)
+    var color = Color(0.3, 0.4, 0.9)
+    var contrasted_color = color.contrasted() # Equivalent to RGBA(204, 229, 102, 255)
 
 ----
 
@@ -924,7 +924,7 @@ Constructs a color from an HSV profile. ``h``, ``s``, and ``v`` are values betwe
 
 ::
 
-    var c = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # Equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
+    var color = Color.from_hsv(0.58, 0.5, 0.79, 0.8) # Equivalent to HSV(210, 50, 79, 0.8) or Color8(100, 151, 201, 0.8)
 
 ----
 
@@ -948,8 +948,8 @@ The gray value is calculated as ``(r + g + b) / 3``.
 
 ::
 
-    var c = Color(0.2, 0.45, 0.82)
-    var gray = c.gray() # A value of 0.466667
+    var color = Color(0.2, 0.45, 0.82)
+    var gray = color.gray() # A value of 0.466667
 
 ----
 
@@ -1063,9 +1063,9 @@ Setting ``with_alpha`` to ``false`` excludes alpha from the hexadecimal string.
 
 ::
 
-    var c = Color(1, 1, 1, 0.5)
-    var s1 = c.to_html() # Returns "7fffffff"
-    var s2 = c.to_html(false) # Returns "ffffff"
+    var color = Color(1, 1, 1, 0.5)
+    var s1 = color.to_html() # Returns "7fffffff"
+    var s2 = color.to_html(false) # Returns "ffffff"
 
 ----
 

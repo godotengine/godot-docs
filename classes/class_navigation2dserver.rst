@@ -18,7 +18,11 @@ Description
 
 Navigation2DServer is the server responsible for all 2D navigation. It handles several objects, namely maps, regions and agents.
 
-Maps are made up of regions, which are made of navigation polygons. Together, they define the navigable areas in the 2D world. For two regions to be connected to each other, they must share a similar edge. An edge is considered connected to another if both of its two vertices are at a distance less than :ref:`Navigation.edge_connection_margin<class_Navigation_property_edge_connection_margin>` to the respective other edge's vertex.
+Maps are made up of regions, which are made of navigation polygons. Together, they define the navigable areas in the 2D world.
+
+\ **Note:** Most NavigationServer changes take effect after the next physics frame and not immediately. This includes all changes made to maps, regions or agents by navigation related Nodes in the SceneTree or made through scripts.
+
+For two regions to be connected to each other, they must share a similar edge. An edge is considered connected to another if both of its two vertices are at a distance less than :ref:`Navigation.edge_connection_margin<class_Navigation_property_edge_connection_margin>` to the respective other edge's vertex.
 
 To use the collision avoidance system, you may use agents. You can set an agent's target velocity, then the servers will emit a callback with a modified velocity.
 

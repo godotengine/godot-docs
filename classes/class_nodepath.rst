@@ -128,7 +128,7 @@ Returns all subnames concatenated with a colon character (``:``) as separator, i
 
 - :ref:`String<class_String>` **get_name** **(** :ref:`int<class_int>` idx **)**
 
-Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_method_get_name_count>`).
+Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_method_get_name_count>` - 1).
 
 ::
 

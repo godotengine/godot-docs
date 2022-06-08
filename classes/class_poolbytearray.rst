@@ -22,7 +22,7 @@ An array specifically designed to hold bytes. Optimized for memory usage, does n
 
     var array = [PoolByteArray()]
     array[0].push_back(123)
-    print(array)  # [[]] (empty PoolByteArray within an empty Array)
+    print(array)  # [[]] (empty PoolByteArray within an Array)
 
 Instead, the entire ``PoolByteArray`` property must be *reassigned* with ``=`` for it to be changed:
 

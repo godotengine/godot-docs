@@ -378,9 +378,9 @@ enum **SSAOQuality**:
 
 - **SSAO_QUALITY_LOW** = **0** --- Low quality for the screen-space ambient occlusion effect (fastest).
 
-- **SSAO_QUALITY_MEDIUM** = **1** --- Low quality for the screen-space ambient occlusion effect.
+- **SSAO_QUALITY_MEDIUM** = **1** --- Medium quality for the screen-space ambient occlusion effect.
 
-- **SSAO_QUALITY_HIGH** = **2** --- Low quality for the screen-space ambient occlusion effect (slowest).
+- **SSAO_QUALITY_HIGH** = **2** --- High quality for the screen-space ambient occlusion effect (slowest).
 
 Property Descriptions
 ---------------------

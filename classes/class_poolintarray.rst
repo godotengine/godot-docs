@@ -22,7 +22,7 @@ An array specifically designed to hold integer values (:ref:`int<class_int>`). O
 
     var array = [PoolIntArray()]
     array[0].push_back(1234)
-    print(array)  # [[]] (empty PoolIntArray within an empty Array)
+    print(array)  # [[]] (empty PoolIntArray within an Array)
 
 Instead, the entire ``PoolIntArray`` property must be *reassigned* with ``=`` for it to be changed:
 

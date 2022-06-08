@@ -18,7 +18,7 @@ Abstract base class for range-based controls.
 Description
 -----------
 
-Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
+Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point :ref:`value<class_Range_property_value>` between a :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`, using a configured :ref:`step<class_Range_property_step>` and :ref:`page<class_Range_property_page>` size. See e.g. :ref:`ScrollBar<class_ScrollBar>` and :ref:`Slider<class_Slider>` for examples of higher level nodes using Range.
 
 Properties
 ----------

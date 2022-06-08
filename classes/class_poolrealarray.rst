@@ -22,7 +22,7 @@ An array specifically designed to hold floating-point values. Optimized for memo
 
     var array = [PoolRealArray()]
     array[0].push_back(12.34)
-    print(array)  # [[]] (empty PoolRealArray within an empty Array)
+    print(array)  # [[]] (empty PoolRealArray within an Array)
 
 Instead, the entire ``PoolRealArray`` property must be *reassigned* with ``=`` for it to be changed:
 

@@ -22,7 +22,7 @@ An array specifically designed to hold :ref:`String<class_String>`\ s. Optimized
 
     var array = [PoolStringArray()]
     array[0].push_back("hello")
-    print(array)  # [[]] (empty PoolStringArray within an empty Array)
+    print(array)  # [[]] (empty PoolStringArray within an Array)
 
 Instead, the entire ``PoolStringArray`` property must be *reassigned* with ``=`` for it to be changed:
 

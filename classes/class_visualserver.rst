@@ -4911,7 +4911,7 @@ For example, you can set the root viewport to not render at all with the followi
         get_viewport().set_attach_to_screen_rect(Rect2())
         $Viewport.set_attach_to_screen_rect(Rect2(0, 0, 600, 600))
 
-Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For a further optimization see, :ref:`viewport_set_render_direct_to_screen<class_VisualServer_method_viewport_set_render_direct_to_screen>`.
+Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see :ref:`viewport_set_render_direct_to_screen<class_VisualServer_method_viewport_set_render_direct_to_screen>`.
 
 ----
 

@@ -642,7 +642,7 @@ The multisample anti-aliasing mode. A higher number results in smoother edges at
 | *Getter*  | is_using_own_world()     |
 +-----------+--------------------------+
 
-If ``true``, the viewport will use :ref:`World<class_World>` defined in ``world`` property.
+If ``true``, the viewport will use a unique copy of the :ref:`World<class_World>` defined in :ref:`world<class_Viewport_property_world>`.
 
 ----
 

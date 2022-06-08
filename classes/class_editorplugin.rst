@@ -616,7 +616,7 @@ For main screen plugins, this appears at the top of the screen, to the right of 
 
 - :ref:`ScriptCreateDialog<class_ScriptCreateDialog>` **get_script_create_dialog** **(** **)**
 
-Gets the Editor's dialogue used for making scripts.
+Gets the Editor's dialog used for making scripts.
 
 \ **Note:** Users can configure it before use.
 

@@ -22,7 +22,7 @@ An array specifically designed to hold :ref:`Vector3<class_Vector3>`. Optimized 
 
     var array = [PoolVector3Array()]
     array[0].push_back(Vector3(12, 34, 56))
-    print(array)  # [[]] (empty PoolVector3Array within an empty Array)
+    print(array)  # [[]] (empty PoolVector3Array within an Array)
 
 Instead, the entire ``PoolVector3Array`` property must be *reassigned* with ``=`` for it to be changed:
 
