@@ -264,7 +264,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
             AddFocusable(_propertyControl);
             // Setup the initial state and connect to the signal to track changes.
             RefreshControlText();
-            _propertyControl.Pressed += OnButtonPressed;
+            _propertyControl.Connect("pressed", this, nameof(OnButtonPressed));
         }
 
         private void OnButtonPressed()
