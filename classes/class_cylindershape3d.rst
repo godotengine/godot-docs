@@ -11,12 +11,14 @@ CylinderShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Cylinder shape for collisions.
+Cylinder shape for 3D collisions.
 
 Description
 -----------
 
-Cylinder shape for collisions.
+Cylinder shape for collisions. Like :ref:`CapsuleShape3D<class_CapsuleShape3D>`, but without hemispheres at the cylinder's ends.
+
+\ **Performance:** Being a primitive collision shape, ``CylinderShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). ``CylinderShape3D`` is also more demanding compared to :ref:`CapsuleShape3D<class_CapsuleShape3D>`.
 
 Tutorials
 ---------

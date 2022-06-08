@@ -11,12 +11,14 @@ SphereShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Sphere shape for 3D collisions.
+Sphere shape resource for 3D collisions.
 
 Description
 -----------
 
-Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>`. This shape is useful for modeling sphere-like 3D objects.
+3D sphere shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is useful for modeling sphere-like 3D objects.
+
+\ **Performance:** Being a primitive collision shape, ``SphereShape3D`` is the fastest collision shape to check collisions against, as it only requires a distance check with the shape's origin.
 
 Tutorials
 ---------
@@ -27,7 +29,7 @@ Properties
 ----------
 
 +---------------------------+----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_SphereShape3D_property_radius>` | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`radius<class_SphereShape3D_property_radius>` | ``0.5`` |
 +---------------------------+----------------------------------------------------+---------+
 
 Property Descriptions
@@ -38,7 +40,7 @@ Property Descriptions
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

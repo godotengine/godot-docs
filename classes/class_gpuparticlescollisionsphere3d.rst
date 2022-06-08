@@ -11,7 +11,16 @@ GPUParticlesCollisionSphere3D
 
 **Inherits:** :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Sphere-shaped 3D particle collision shape affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+Description
+-----------
+
+Sphere-shaped 3D particle collision shape affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+
+\ **Note:** :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
+
+\ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 Properties
 ----------
@@ -34,6 +43,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_radius()      |
 +-----------+-------------------+
+
+The collision sphere's radius in 3D units.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

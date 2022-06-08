@@ -118,7 +118,7 @@ Methods
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_edited_column<class_Tree_method_get_edited_column>` **(** **)** |const|                                                                                                                    |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                        | :ref:`get_item_area_rect<class_Tree_method_get_item_area_rect>` **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column=-1 **)** |const|                                            |
+| :ref:`Rect2<class_Rect2>`                        | :ref:`get_item_area_rect<class_Tree_method_get_item_area_rect>` **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column=-1, :ref:`int<class_int>` button_index=-1 **)** |const|     |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                  | :ref:`get_item_at_position<class_Tree_method_get_item_at_position>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                                       |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -189,7 +189,7 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`draw_relationship_lines<class_Tree_theme_constant_draw_relationship_lines>`        | ``0``                             |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_Tree_theme_constant_hseparation>`                                | ``4``                             |
+| :ref:`int<class_int>`             | :ref:`h_separation<class_Tree_theme_constant_h_separation>`                              | ``4``                             |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`item_margin<class_Tree_theme_constant_item_margin>`                                | ``16``                            |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
@@ -205,7 +205,7 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`scroll_speed<class_Tree_theme_constant_scroll_speed>`                              | ``12``                            |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`vseparation<class_Tree_theme_constant_vseparation>`                                | ``4``                             |
+| :ref:`int<class_int>`             | :ref:`v_separation<class_Tree_theme_constant_v_separation>`                              | ``4``                             |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Font<class_Font>`           | :ref:`font<class_Tree_theme_font_font>`                                                  |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
@@ -259,9 +259,9 @@ Theme Properties
 Signals
 -------
 
-.. _class_Tree_signal_button_pressed:
+.. _class_Tree_signal_button_clicked:
 
-- **button_pressed** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id **)**
+- **button_clicked** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id, :ref:`int<class_int>` mouse_button_index **)**
 
 Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<class_TreeItem_method_add_button>`).
 
@@ -291,6 +291,14 @@ Emitted when a column's title is pressed.
 
 ----
 
+.. _class_Tree_signal_custom_item_clicked:
+
+- **custom_item_clicked** **(** :ref:`int<class_int>` mouse_button_index **)**
+
+Emitted when an item with :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` is clicked with a mouse button.
+
+----
+
 .. _class_Tree_signal_custom_popup_edited:
 
 - **custom_popup_edited** **(** :ref:`bool<class_bool>` arrow_clicked **)**
@@ -299,19 +307,11 @@ Emitted when a cell with the :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_cons
 
 ----
 
-.. _class_Tree_signal_empty_rmb:
+.. _class_Tree_signal_empty_clicked:
 
-- **empty_rmb** **(** :ref:`Vector2<class_Vector2>` position **)**
+- **empty_clicked** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` mouse_button_index **)**
 
-Emitted when the right mouse button is pressed in the empty space of the tree.
-
-----
-
-.. _class_Tree_signal_empty_tree_rmb_selected:
-
-- **empty_tree_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**
-
-Emitted when the right mouse button is pressed if right mouse button selection is active and the tree is empty.
+Emitted when a mouse button is clicked in the empty space of the tree.
 
 ----
 
@@ -355,19 +355,11 @@ Emitted when an item is edited.
 
 ----
 
-.. _class_Tree_signal_item_rmb_edited:
+.. _class_Tree_signal_item_mouse_selected:
 
-- **item_rmb_edited** **(** **)**
+- **item_mouse_selected** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` mouse_button_index **)**
 
-Emitted when an item is edited using the right mouse button.
-
-----
-
-.. _class_Tree_signal_item_rmb_selected:
-
-- **item_rmb_selected** **(** :ref:`Vector2<class_Vector2>` position **)**
-
-Emitted when an item is selected with the right mouse button.
+Emitted when an item is selected with a mouse button.
 
 ----
 
@@ -781,9 +773,9 @@ Returns the column for the currently edited item.
 
 .. _class_Tree_method_get_item_area_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_item_area_rect** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column=-1 **)** |const|
+- :ref:`Rect2<class_Rect2>` **get_item_area_rect** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column=-1, :ref:`int<class_int>` button_index=-1 **)** |const|
 
-Returns the rectangle area for the specified :ref:`TreeItem<class_TreeItem>`. If ``column`` is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
+Returns the rectangle area for the specified :ref:`TreeItem<class_TreeItem>`. If ``column`` is specified, only get the position and size of that column, otherwise get the rectangle containing all columns. If a button index is specified, the rectangle of that button will be returned.
 
 ----
 
@@ -1102,9 +1094,9 @@ Draws the relationship lines if not zero, this acts as a boolean. Relationship l
 
 ----
 
-.. _class_Tree_theme_constant_hseparation:
+.. _class_Tree_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -1198,9 +1190,9 @@ The speed of border scrolling.
 
 ----
 
-.. _class_Tree_theme_constant_vseparation:
+.. _class_Tree_theme_constant_v_separation:
 
-- :ref:`int<class_int>` **vseparation**
+- :ref:`int<class_int>` **v_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |

@@ -36,9 +36,9 @@ Methods
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_local_port<class_StreamPeerTCP_method_get_local_port>` **(** **)** |const|                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Status<enum_StreamPeerTCP_Status>` | :ref:`get_status<class_StreamPeerTCP_method_get_status>` **(** **)**                                                                        |
+| :ref:`Status<enum_StreamPeerTCP_Status>` | :ref:`get_status<class_StreamPeerTCP_method_get_status>` **(** **)** |const|                                                                |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_connected_to_host<class_StreamPeerTCP_method_is_connected_to_host>` **(** **)** |const|                                            |
+| :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`poll<class_StreamPeerTCP_method_poll>` **(** **)**                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_no_delay<class_StreamPeerTCP_method_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,17 +121,17 @@ Returns the local port to which this peer is bound.
 
 .. _class_StreamPeerTCP_method_get_status:
 
-- :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)**
+- :ref:`Status<enum_StreamPeerTCP_Status>` **get_status** **(** **)** |const|
 
 Returns the status of the connection, see :ref:`Status<enum_StreamPeerTCP_Status>`.
 
 ----
 
-.. _class_StreamPeerTCP_method_is_connected_to_host:
+.. _class_StreamPeerTCP_method_poll:
 
-- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** |const|
+- :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-Returns ``true`` if this peer is currently connected or is connecting to a host, ``false`` otherwise.
+Poll the socket, updating its state. See :ref:`get_status<class_StreamPeerTCP_method_get_status>`.
 
 ----
 

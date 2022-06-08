@@ -33,6 +33,13 @@ Properties
 | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationRegion2D_property_navpoly>` |          |
 +---------------------------------------------------+-----------------------------------------------------------+----------+
 
+Methods
+-------
+
++-----------------------+-------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationRegion2D_method_get_region_rid>` **(** **)** |const| |
++-----------------------+-------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -79,6 +86,15 @@ A bitfield determining all layers the region belongs to. These layers can be che
 +----------+-------------------------------+
 
 The :ref:`NavigationPolygon<class_NavigationPolygon>` resource to use.
+
+Method Descriptions
+-------------------
+
+.. _class_NavigationRegion2D_method_get_region_rid:
+
+- :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`. Combined with :ref:`NavigationServer2D.map_get_closest_point_owner<class_NavigationServer2D_method_map_get_closest_point_owner>` can be used to identify the ``NavigationRegion2D`` closest to a point on the merged navigation map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

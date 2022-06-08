@@ -11,7 +11,7 @@ TextServer
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`TextServerAdvanced<class_TextServerAdvanced>`, :ref:`TextServerExtension<class_TextServerExtension>`, :ref:`TextServerFallback<class_TextServerFallback>`
+**Inherited By:** :ref:`TextServerExtension<class_TextServerExtension>`
 
 Interface for the fonts and complex text layouts.
 
@@ -50,6 +50,8 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`font_get_fixed_size<class_TextServer_method_font_get_fixed_size>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`font_get_generate_mipmaps<class_TextServer_method_font_get_generate_mipmaps>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                 |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_global_oversampling<class_TextServer_method_font_get_global_oversampling>` **(** **)** |const|                                                                                                                                                                                                                                                          |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                                   | :ref:`font_get_glyph_advance<class_TextServer_method_font_get_glyph_advance>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                                              |
@@ -65,6 +67,10 @@ Methods
 | :ref:`Vector2<class_Vector2>`                                   | :ref:`font_get_glyph_size<class_TextServer_method_font_get_glyph_size>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                                          |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`font_get_glyph_texture_idx<class_TextServer_method_font_get_glyph_texture_idx>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                            |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                           | :ref:`font_get_glyph_texture_rid<class_TextServer_method_font_get_glyph_texture_rid>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                            |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                                   | :ref:`font_get_glyph_texture_size<class_TextServer_method_font_get_glyph_texture_size>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                          |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`                                       | :ref:`font_get_glyph_uv_rect<class_TextServer_method_font_get_glyph_uv_rect>` **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -162,6 +168,8 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_force_autohinter<class_TextServer_method_font_set_force_autohinter>` **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` force_autohinter **)**                                                                                                                                                                                               |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                            | :ref:`font_set_generate_mipmaps<class_TextServer_method_font_set_generate_mipmaps>` **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` generate_mipmaps **)**                                                                                                                                                                                               |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_global_oversampling<class_TextServer_method_font_set_global_oversampling>` **(** :ref:`float<class_float>` oversampling **)**                                                                                                                                                                                                                           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_glyph_advance<class_TextServer_method_font_set_glyph_advance>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph, :ref:`Vector2<class_Vector2>` advance **)**                                                                                                                                               |
@@ -246,6 +254,8 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                     | :ref:`parse_number<class_TextServer_method_parse_number>` **(** :ref:`String<class_String>` number, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                                       | :ref:`parse_structured_text<class_TextServer_method_parse_structured_text>` **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|                                                                                                                        |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                     | :ref:`percent_sign<class_TextServer_method_percent_sign>` **(** :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                                                                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`save_support_data<class_TextServer_method_save_support_data>` **(** :ref:`String<class_String>` filename **)** |const|                                                                                                                                                                                                                                           |
@@ -324,7 +334,7 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`shaped_text_get_width<class_TextServer_method_shaped_text_get_width>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                                           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`shaped_text_get_word_breaks<class_TextServer_method_shaped_text_get_word_breaks>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` grapheme_flags **)** |const|                                                                                                                                                                                         |
+| :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`shaped_text_get_word_breaks<class_TextServer_method_shaped_text_get_word_breaks>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` grapheme_flags=264 **)** |const|                                                                                                                                                                                     |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`shaped_text_hit_test_grapheme<class_TextServer_method_shaped_text_hit_test_grapheme>` **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` coords **)** |const|                                                                                                                                                                                         |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -359,6 +369,8 @@ Methods
 | :ref:`RID<class_RID>`                                           | :ref:`shaped_text_substr<class_TextServer_method_shaped_text_substr>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` start, :ref:`int<class_int>` length **)** |const|                                                                                                                                                                                      |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`shaped_text_tab_align<class_TextServer_method_shaped_text_tab_align>` **(** :ref:`RID<class_RID>` shaped, :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)**                                                                                                                                                                                    |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`string_get_word_breaks<class_TextServer_method_string_get_word_breaks>` **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                          |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                     | :ref:`string_to_lower<class_TextServer_method_string_to_lower>` **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -570,25 +582,35 @@ enum **Hinting**:
 
 .. _class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_QUARTER:
 
+.. _class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_HALF_MAX_SIZE:
+
+.. _class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE:
+
 enum **SubpixelPositioning**:
 
 - **SUBPIXEL_POSITIONING_DISABLED** = **0** --- Glyph horizontal position is rounded to the whole pixel size, each glyph is rasterized once.
 
 - **SUBPIXEL_POSITIONING_AUTO** = **1** --- Glyph horizontal position is rounded based on font size.
 
-- To one quarter of the pixel size if font size is smaller or equal to ``16``.
+	- To one quarter of the pixel size if font size is smaller or equal to :ref:`SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE<class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE>`.
 
-- To one half of the pixel size if font size is smaller or equal to ``20``.
+	- To one half of the pixel size if font size is smaller or equal to :ref:`SUBPIXEL_POSITIONING_ONE_HALF_MAX_SIZE<class_TextServer_constant_SUBPIXEL_POSITIONING_ONE_HALF_MAX_SIZE>`.
 
-- To the whole pixel size for larger fonts.
+	- To the whole pixel size for larger fonts.
 
 - **SUBPIXEL_POSITIONING_ONE_HALF** = **2** --- Glyph horizontal position is rounded to one half of the pixel size, each glyph is rasterized up to two times.
 
 - **SUBPIXEL_POSITIONING_ONE_QUARTER** = **3** --- Glyph horizontal position is rounded to one quarter of the pixel size, each glyph is rasterized up to four times.
 
+- **SUBPIXEL_POSITIONING_ONE_HALF_MAX_SIZE** = **20** --- Maximum font size which will use one half of the pixel subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
+
+- **SUBPIXEL_POSITIONING_ONE_QUARTER_MAX_SIZE** = **16** --- Maximum font size which will use one quarter of the pixel subpixel positioning in :ref:`SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` mode.
+
 ----
 
 .. _enum_TextServer_Feature:
+
+.. _class_TextServer_constant_FEATURE_SIMPLE_LAYOUT:
 
 .. _class_TextServer_constant_FEATURE_BIDI_LAYOUT:
 
@@ -600,6 +622,12 @@ enum **SubpixelPositioning**:
 
 .. _class_TextServer_constant_FEATURE_BREAK_ITERATORS:
 
+.. _class_TextServer_constant_FEATURE_FONT_BITMAP:
+
+.. _class_TextServer_constant_FEATURE_FONT_DYNAMIC:
+
+.. _class_TextServer_constant_FEATURE_FONT_MSDF:
+
 .. _class_TextServer_constant_FEATURE_FONT_SYSTEM:
 
 .. _class_TextServer_constant_FEATURE_FONT_VARIABLE:
@@ -610,23 +638,31 @@ enum **SubpixelPositioning**:
 
 enum **Feature**:
 
-- **FEATURE_BIDI_LAYOUT** = **1** --- TextServer supports bidirectional layouts.
+- **FEATURE_SIMPLE_LAYOUT** = **1** --- TextServer supports simple text layouts.
 
-- **FEATURE_VERTICAL_LAYOUT** = **2** --- TextServer supports vertical layouts.
+- **FEATURE_BIDI_LAYOUT** = **2** --- TextServer supports bidirectional text layouts.
 
-- **FEATURE_SHAPING** = **4** --- TextServer supports complex text shaping.
+- **FEATURE_VERTICAL_LAYOUT** = **4** --- TextServer supports vertical layouts.
 
-- **FEATURE_KASHIDA_JUSTIFICATION** = **8** --- TextServer supports justification using kashidas.
+- **FEATURE_SHAPING** = **8** --- TextServer supports complex text shaping.
 
-- **FEATURE_BREAK_ITERATORS** = **16** --- TextServer supports complex line/word breaking rules (e.g. dictionary based).
+- **FEATURE_KASHIDA_JUSTIFICATION** = **16** --- TextServer supports justification using kashidas.
 
-- **FEATURE_FONT_SYSTEM** = **32** --- TextServer supports loading system fonts.
+- **FEATURE_BREAK_ITERATORS** = **32** --- TextServer supports complex line/word breaking rules (e.g. dictionary based).
 
-- **FEATURE_FONT_VARIABLE** = **64** --- TextServer supports variable fonts.
+- **FEATURE_FONT_BITMAP** = **64** --- TextServer supports loading bitmap fonts.
 
-- **FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION** = **128** --- TextServer supports locale dependent and context sensitive case conversion.
+- **FEATURE_FONT_DYNAMIC** = **128** --- TextServer supports loading dynamic (TrueType, OpeType, etc.) fonts.
 
-- **FEATURE_USE_SUPPORT_DATA** = **256** --- TextServer require external data file for some features.
+- **FEATURE_FONT_MSDF** = **256** --- TextServer supports multichannel signed distance field dynamic font rendering.
+
+- **FEATURE_FONT_SYSTEM** = **512** --- TextServer supports loading system fonts.
+
+- **FEATURE_FONT_VARIABLE** = **1024** --- TextServer supports variable fonts.
+
+- **FEATURE_CONTEXT_SENSITIVE_CASE_CONVERSION** = **2048** --- TextServer supports locale dependent and context sensitive case conversion.
+
+- **FEATURE_USE_SUPPORT_DATA** = **4096** --- TextServer require external data file for some features.
 
 ----
 
@@ -686,6 +722,42 @@ enum **FontStyle**:
 
 - **FONT_FIXED_WIDTH** = **4** --- Font have fixed-width characters.
 
+----
+
+.. _enum_TextServer_StructuredTextParser:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_DEFAULT:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_URI:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_FILE:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_EMAIL:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_LIST:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_NONE:
+
+.. _class_TextServer_constant_STRUCTURED_TEXT_CUSTOM:
+
+enum **StructuredTextParser**:
+
+- **STRUCTURED_TEXT_DEFAULT** = **0** --- Use default behavior. Same as ``STRUCTURED_TEXT_NONE`` unless specified otherwise in the control description.
+
+- **STRUCTURED_TEXT_URI** = **1** --- BiDi override for URI.
+
+- **STRUCTURED_TEXT_FILE** = **2** --- BiDi override for file path.
+
+- **STRUCTURED_TEXT_EMAIL** = **3** --- BiDi override for email.
+
+- **STRUCTURED_TEXT_LIST** = **4** --- BiDi override for lists.
+
+Structured text options: list separator ``String``.
+
+- **STRUCTURED_TEXT_NONE** = **5** --- Use default Unicode BiDi algorithm.
+
+- **STRUCTURED_TEXT_CUSTOM** = **6** --- User defined structured text BiDi override function.
+
 Method Descriptions
 -------------------
 
@@ -739,7 +811,7 @@ Removes all kerning overrides.
 
 - void **font_clear_size_cache** **(** :ref:`RID<class_RID>` font_rid **)**
 
-Removes all font sizes from the cache entry
+Removes all font sizes from the cache entry.
 
 ----
 
@@ -761,6 +833,8 @@ Draws single glyph into a canvas item at the position, using ``font_rid`` at the
 
 \ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
 
+\ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
+
 ----
 
 .. _class_TextServer_method_font_draw_glyph_outline:
@@ -770,6 +844,8 @@ Draws single glyph into a canvas item at the position, using ``font_rid`` at the
 Draws single glyph outline of size ``outline_size`` into a canvas item at the position, using ``font_rid`` at the size ``size``.
 
 \ **Note:** Glyph index is specific to the font, use glyphs indices returned by :ref:`shaped_text_get_glyphs<class_TextServer_method_shaped_text_get_glyphs>` or :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
+
+\ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
 
 ----
 
@@ -802,6 +878,14 @@ Returns font embolden strength.
 - :ref:`int<class_int>` **font_get_fixed_size** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
 Returns bitmap font fixed size.
+
+----
+
+.. _class_TextServer_method_font_get_generate_mipmaps:
+
+- :ref:`bool<class_bool>` **font_get_generate_mipmaps** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returns ``true`` if font texture mipmap generation is enabled.
 
 ----
 
@@ -874,6 +958,26 @@ Returns size of the glyph.
 - :ref:`int<class_int>` **font_get_glyph_texture_idx** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|
 
 Returns index of the cache texture containing the glyph.
+
+----
+
+.. _class_TextServer_method_font_get_glyph_texture_rid:
+
+- :ref:`RID<class_RID>` **font_get_glyph_texture_rid** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|
+
+Returns resource id of the cache texture containing the glyph.
+
+\ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
+
+----
+
+.. _class_TextServer_method_font_get_glyph_texture_size:
+
+- :ref:`Vector2<class_Vector2>` **font_get_glyph_texture_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|
+
+Returns size of the cache texture containing the glyph.
+
+\ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
 
 ----
 
@@ -1197,7 +1301,7 @@ Removes specified texture from font cache entry.
 
 - void **font_render_glyph** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` index **)**
 
-Renders specified glyph the the font cache texture.
+Renders specified glyph to the font cache texture.
 
 ----
 
@@ -1262,6 +1366,14 @@ Sets bitmap font fixed size. If set to value greater than zero, same cache entry
 - void **font_set_force_autohinter** **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` force_autohinter **)**
 
 If set to ``true`` auto-hinting is preferred over font built-in hinting.
+
+----
+
+.. _class_TextServer_method_font_set_generate_mipmaps:
+
+- void **font_set_generate_mipmaps** **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` generate_mipmaps **)**
+
+If set to ``true`` font texture mipmap generation is enabled.
 
 ----
 
@@ -1611,6 +1723,14 @@ Converts a number from the numeral systems used in ``language`` to Western Arabi
 
 ----
 
+.. _class_TextServer_method_parse_structured_text:
+
+- :ref:`Array<class_Array>` **parse_structured_text** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|
+
+Default implementation of the BiDi algorithm override function. See :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` for more info.
+
+----
+
 .. _class_TextServer_method_percent_sign:
 
 - :ref:`String<class_String>` **percent_sign** **(** :ref:`String<class_String>` language="" **)** |const|
@@ -1789,7 +1909,7 @@ Returns number of glyphs in the buffer.
 
 - :ref:`Array<class_Array>` **shaped_text_get_glyphs** **(** :ref:`RID<class_RID>` shaped **)** |const|
 
-Returns text glyphs in the visual order.
+Returns an array of glyphs in the visual order.
 
 ----
 
@@ -1853,7 +1973,7 @@ Returns text orientation.
 
 - :ref:`RID<class_RID>` **shaped_text_get_parent** **(** :ref:`RID<class_RID>` shaped **)** |const|
 
-Sets text orientation.
+Returns the parent buffer from which the substring originates.
 
 ----
 
@@ -1903,7 +2023,7 @@ Returns size of the text.
 
 - :ref:`int<class_int>` **shaped_text_get_trim_pos** **(** :ref:`RID<class_RID>` shaped **)** |const|
 
-Returns position of the trim.
+Returns the position of the overrun trim.
 
 ----
 
@@ -1933,9 +2053,9 @@ Returns width (for horizontal layout) or height (for vertical) of the text.
 
 .. _class_TextServer_method_shaped_text_get_word_breaks:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **shaped_text_get_word_breaks** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` grapheme_flags **)** |const|
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **shaped_text_get_word_breaks** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` grapheme_flags=264 **)** |const|
 
-Breaks text into words and returns array of character ranges.
+Breaks text into words and returns array of character ranges. Use ``grapheme_flags`` to set what characters are used for breaking (see :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`).
 
 ----
 
@@ -2083,6 +2203,14 @@ Aligns shaped text to the given tab-stops.
 
 ----
 
+.. _class_TextServer_method_string_get_word_breaks:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **string_get_word_breaks** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|
+
+Returns array of the word break character offsets.
+
+----
+
 .. _class_TextServer_method_string_to_lower:
 
 - :ref:`String<class_String>` **string_to_lower** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|
@@ -2112,6 +2240,8 @@ Returns the string converted to uppercase.
 - :ref:`String<class_String>` **strip_diacritics** **(** :ref:`String<class_String>` string **)** |const|
 
 Strips diacritics from the string.
+
+\ **Note:** The result may be longer or shorter than the original.
 
 ----
 

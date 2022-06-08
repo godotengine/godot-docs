@@ -11,12 +11,14 @@ CapsuleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Capsule shape for 2D collisions.
+Capsule shape resource for 2D physics.
 
 Description
 -----------
 
-Capsule shape for 2D collisions.
+2D capsule shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. In 2D, a capsule is a rectangle shape with half-circles at both ends.
+
+\ **Performance:** Being a primitive collision shape, ``CapsuleShape2D`` is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
 
 Properties
 ----------

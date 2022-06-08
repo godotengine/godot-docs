@@ -11,12 +11,14 @@ WorldBoundaryShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-World boundary shape for 2D collisions.
+World boundary (infinite plane) shape resource for 2D physics.
 
 Description
 -----------
 
-World boundary shape for 2D collisions. It works like a 2D plane and will not allow any physics body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
+2D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. ``WorldBoundaryShape2D`` works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`normal<class_WorldBoundaryShape2D_property_normal>` matters; anything "below" the plane will collide with it. If the ``WorldBoundaryShape2D`` is used in a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+
+\ **Performance:** Being a primitive collision shape, ``WorldBoundaryShape2D`` is fast to check collisions against.
 
 Properties
 ----------

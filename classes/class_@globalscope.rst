@@ -1458,7 +1458,7 @@ enum **KeyModifierMask**:
 
 - **KEY_CODE_MASK** = **33554431** --- Key Code mask.
 
-- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier key mask.
+- **KEY_MODIFIER_MASK** = **2130706432** --- Modifier key mask.
 
 - **KEY_MASK_SHIFT** = **33554432** --- Shift key mask.
 
@@ -1642,11 +1642,11 @@ enum **JoyButton**:
 
 - **JOY_BUTTON_MAX** = **128** --- The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
 
-- Android: Up to 36 buttons.
+	- Android: Up to 36 buttons.
 
-- Linux: Up to 80 buttons.
+	- Linux: Up to 80 buttons.
 
-- Windows and macOS: Up to 128 buttons.
+	- Windows and macOS: Up to 128 buttons.
 
 ----
 
@@ -2085,7 +2085,9 @@ enum **PropertyHint**:
 
 Additionally, other keywords can be included: "exp" for exponential range editing, "radians" for editing radian angles in degrees, "degrees" to hint at an angle and "noslider" to hide the slider.
 
-- **PROPERTY_HINT_ENUM** = **2** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+- **PROPERTY_HINT_ENUM** = **2** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
+
+The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
 - **PROPERTY_HINT_ENUM_SUGGESTION** = **3** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
@@ -2268,11 +2270,11 @@ enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_INTERNATIONALIZED** = **64** --- The property is a translatable string.
 
-- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor.
+- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor. See :ref:`EditorInspector<class_EditorInspector>`.
 
 - **PROPERTY_USAGE_CATEGORY** = **256** --- Used to categorize properties together in the editor.
 
-- **PROPERTY_USAGE_SUBGROUP** = **512** --- Used to group properties together in the editor in a subgroup (under a group).
+- **PROPERTY_USAGE_SUBGROUP** = **512** --- Used to group properties together in the editor in a subgroup (under a group). See :ref:`EditorInspector<class_EditorInspector>`.
 
 - **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048** --- The property does not save its state in :ref:`PackedScene<class_PackedScene>`.
 
@@ -2336,6 +2338,8 @@ enum **PropertyUsageFlags**:
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_FROM_SCRIPT:
 
+.. _class_@GlobalScope_constant_METHOD_FLAG_VARARG:
+
 .. _class_@GlobalScope_constant_METHOD_FLAG_STATIC:
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_OBJECT_CORE:
@@ -2358,6 +2362,8 @@ enum **MethodFlags**:
 
 - **METHOD_FLAG_FROM_SCRIPT** = **64** --- Deprecated method flag, unused.
 
+- **METHOD_FLAG_VARARG** = **128**
+
 - **METHOD_FLAG_STATIC** = **256**
 
 - **METHOD_FLAG_OBJECT_CORE** = **512** --- Used internally. Allows to not dump core virtuals such as ``_notification`` to the JSON API.
@@ -2372,7 +2378,7 @@ enum **MethodFlags**:
 
 .. _class_@GlobalScope_constant_RPC_MODE_ANY_PEER:
 
-.. _class_@GlobalScope_constant_RPC_MODE_AUTH:
+.. _class_@GlobalScope_constant_RPC_MODE_AUTHORITY:
 
 enum **RPCMode**:
 
@@ -2380,7 +2386,7 @@ enum **RPCMode**:
 
 - **RPC_MODE_ANY_PEER** = **1** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc(any)`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
 
-- **RPC_MODE_AUTH** = **2** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc(auth)`` annotation. See :ref:`Node.set_multiplayer_authority<class_Node_method_set_multiplayer_authority>`.
+- **RPC_MODE_AUTHORITY** = **2** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc(authority)`` annotation. See :ref:`Node.set_multiplayer_authority<class_Node_method_set_multiplayer_authority>`.
 
 ----
 
@@ -2580,6 +2586,8 @@ enum **Variant.Type**:
 
 .. _class_@GlobalScope_constant_OP_MODULE:
 
+.. _class_@GlobalScope_constant_OP_POWER:
+
 .. _class_@GlobalScope_constant_OP_SHIFT_LEFT:
 
 .. _class_@GlobalScope_constant_OP_SHIFT_RIGHT:
@@ -2632,29 +2640,31 @@ enum **Variant.Operator**:
 
 - **OP_MODULE** = **12** --- Remainder/modulo operator (``%``).
 
-- **OP_SHIFT_LEFT** = **13** --- Left shift operator (``<<``).
+- **OP_POWER** = **13** --- Power operator (``**``).
 
-- **OP_SHIFT_RIGHT** = **14** --- Right shift operator (``>>``).
+- **OP_SHIFT_LEFT** = **14** --- Left shift operator (``<<``).
 
-- **OP_BIT_AND** = **15** --- Bitwise AND operator (``&``).
+- **OP_SHIFT_RIGHT** = **15** --- Right shift operator (``>>``).
 
-- **OP_BIT_OR** = **16** --- Bitwise OR operator (``|``).
+- **OP_BIT_AND** = **16** --- Bitwise AND operator (``&``).
 
-- **OP_BIT_XOR** = **17** --- Bitwise XOR operator (``^``).
+- **OP_BIT_OR** = **17** --- Bitwise OR operator (``|``).
 
-- **OP_BIT_NEGATE** = **18** --- Bitwise NOT operator (``~``).
+- **OP_BIT_XOR** = **18** --- Bitwise XOR operator (``^``).
 
-- **OP_AND** = **19** --- Logical AND operator (``and`` or ``&&``).
+- **OP_BIT_NEGATE** = **19** --- Bitwise NOT operator (``~``).
 
-- **OP_OR** = **20** --- Logical OR operator (``or`` or ``||``).
+- **OP_AND** = **20** --- Logical AND operator (``and`` or ``&&``).
 
-- **OP_XOR** = **21** --- Logical XOR operator (not implemented in GDScript).
+- **OP_OR** = **21** --- Logical OR operator (``or`` or ``||``).
 
-- **OP_NOT** = **22** --- Logical NOT operator (``not`` or ``!``).
+- **OP_XOR** = **22** --- Logical XOR operator (not implemented in GDScript).
 
-- **OP_IN** = **23** --- Logical IN operator (``in``).
+- **OP_NOT** = **23** --- Logical NOT operator (``not`` or ``!``).
 
-- **OP_MAX** = **24** --- Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` enum.
+- **OP_IN** = **24** --- Logical IN operator (``in``).
+
+- **OP_MAX** = **25** --- Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` enum.
 
 Property Descriptions
 ---------------------
@@ -3207,7 +3217,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
 
 \ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/ease_cheatsheet.png>`__\ 
 
-See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
+See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween.interpolate_value<class_Tween_method_interpolate_value>`.
 
 ----
 
@@ -3427,6 +3437,8 @@ Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correct
         var max_angle = deg2rad(90.0)
         rotation = lerp_angle(min_angle, max_angle, elapsed)
         elapsed += delta
+
+\ **Note:** This method lerps through the shortest path between ``from`` and ``to``. However, when these two angles are approximately ``PI + k * TAU`` apart for any integer ``k``, it's not obvious which way they lerp due to floating-point precision errors. For example, ``lerp_angle(0, PI, weight)`` lerps counter-clockwise, while ``lerp_angle(0, PI + 5 * TAU, weight)`` lerps clockwise.
 
 ----
 

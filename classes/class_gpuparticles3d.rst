@@ -386,6 +386,8 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 | *Getter*  | get_interpolate()      |
 +-----------+------------------------+
 
+Enables particle interpolation, which makes the particle movement smoother when their :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>` is lower than the screen refresh rate.
+
 ----
 
 .. _class_GPUParticles3D_property_lifetime:

@@ -14,7 +14,7 @@ Vector used for 3D math using floating point coordinates.
 Description
 -----------
 
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+3-element structure that can be used to represent positions in 3D space or any other triplet of numeric values.
 
 It uses floating-point coordinates. See :ref:`Vector3i<class_Vector3i>` for its integer counterpart.
 
@@ -123,7 +123,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`reflect<class_Vector3_method_reflect>` **(** :ref:`Vector3<class_Vector3>` n **)** |const|                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>` **(** :ref:`Vector3<class_Vector3>` by_axis, :ref:`float<class_float>` phi **)** |const|                                                                                             |
+| :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                                                                                              |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`round<class_Vector3_method_round>` **(** **)** |const|                                                                                                                                                                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -141,8 +141,6 @@ Methods
 Operators
 ---------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector3_operator_neq_bool>` **(** **)**                                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector3_operator_neq_bool>` **(** :ref:`Vector3<class_Vector3>` right **)**           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -171,8 +169,6 @@ Operators
 | :ref:`bool<class_bool>`       | :ref:`operator <<class_Vector3_operator_lt_bool>` **(** :ref:`Vector3<class_Vector3>` right **)**             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator <=<class_Vector3_operator_lte_bool>` **(** :ref:`Vector3<class_Vector3>` right **)**           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator ==<class_Vector3_operator_eq_bool>` **(** **)**                                                |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Vector3_operator_eq_bool>` **(** :ref:`Vector3<class_Vector3>` right **)**            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -553,9 +549,9 @@ Returns this vector reflected from a plane defined by the given normal.
 
 .. _class_Vector3_method_rotated:
 
-- :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` by_axis, :ref:`float<class_float>` phi **)** |const|
+- :ref:`Vector3<class_Vector3>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
-Rotates this vector around a given axis by ``phi`` radians. The axis must be a normalized vector.
+Rotates this vector around a given axis by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 
@@ -611,10 +607,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_Vector3_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector3<class_Vector3>` right **)**
 
@@ -731,10 +723,6 @@ Compares two ``Vector3`` vectors by first checking if the X value of the left ve
 ----
 
 .. _class_Vector3_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector3<class_Vector3>` right **)**
 

@@ -47,9 +47,9 @@ Theme Properties
 +-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_CheckButton_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
 +-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`check_vadjust<class_CheckButton_theme_constant_check_vadjust>`                    | ``0``                               |
+| :ref:`int<class_int>`             | :ref:`check_v_adjust<class_CheckButton_theme_constant_check_v_adjust>`                  | ``0``                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_CheckButton_theme_constant_hseparation>`                        | ``4``                               |
+| :ref:`int<class_int>`             | :ref:`h_separation<class_CheckButton_theme_constant_h_separation>`                      | ``4``                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`outline_size<class_CheckButton_theme_constant_outline_size>`                      | ``0``                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
@@ -173,9 +173,9 @@ The ``CheckButton`` text's font color when it's pressed.
 
 ----
 
-.. _class_CheckButton_theme_constant_check_vadjust:
+.. _class_CheckButton_theme_constant_check_v_adjust:
 
-- :ref:`int<class_int>` **check_vadjust**
+- :ref:`int<class_int>` **check_v_adjust**
 
 +-----------+-------+
 | *Default* | ``0`` |
@@ -185,9 +185,9 @@ The vertical offset used when rendering the toggle icons (in pixels).
 
 ----
 
-.. _class_CheckButton_theme_constant_hseparation:
+.. _class_CheckButton_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |

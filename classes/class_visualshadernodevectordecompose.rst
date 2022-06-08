@@ -11,12 +11,12 @@ VisualShaderNodeVectorDecompose
 
 **Inherits:** :ref:`VisualShaderNodeVectorBase<class_VisualShaderNodeVectorBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Decomposes a :ref:`Vector3<class_Vector3>` into three scalars within the visual shader graph.
+Decomposes a :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>` or 4D vector (represented as a :ref:`Quaternion<class_Quaternion>`) into scalars within the visual shader graph.
 
 Description
 -----------
 
-Takes a ``vec3`` and decomposes it into three scalar values that can be used as separate inputs.
+Takes a ``vec2``, ``vec3`` or ``vec4`` and decomposes it into scalar values that can be used as separate outputs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

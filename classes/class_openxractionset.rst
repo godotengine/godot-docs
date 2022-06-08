@@ -18,9 +18,7 @@ Description
 
 Action sets in OpenXR define a collection of actions that can be activated in unison. This allows games to easily change between different states that require different inputs or need to reinterpret inputs. For instance we could have an action set that is active when a menu is open, an action set that is active when the player is freely walking around and an action set that is active when the player is controlling a vehicle.
 
-Action sets can contain the same actions, or actions with the same name, if such action sets are active at the same time the action set with the highest priority defines which binding is active.
-
-Note that the name of the resource is used to identify the action set within OpenXR.
+Action sets can contain the same action with the same name, if such action sets are active at the same time the action set with the highest priority defines which binding is active.
 
 Properties
 ----------
@@ -36,11 +34,13 @@ Properties
 Methods
 -------
 
-+------+-----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_action<class_OpenXRActionSet_method_add_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**       |
-+------+-----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)** |
-+------+-----------------------------------------------------------------------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`add_action<class_OpenXRActionSet_method_add_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**       |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_action_count<class_OpenXRActionSet_method_get_action_count>` **(** **)** |const|                                  |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)** |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -99,6 +99,14 @@ Method Descriptions
 - void **add_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
 
 Add an action to this action set.
+
+----
+
+.. _class_OpenXRActionSet_method_get_action_count:
+
+- :ref:`int<class_int>` **get_action_count** **(** **)** |const|
+
+Retrieve the number of actions in our action set.
 
 ----
 

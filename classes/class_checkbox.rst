@@ -47,9 +47,9 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_CheckBox_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`check_vadjust<class_CheckBox_theme_constant_check_vadjust>`                    | ``0``                               |
+| :ref:`int<class_int>`             | :ref:`check_v_adjust<class_CheckBox_theme_constant_check_v_adjust>`                  | ``0``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_CheckBox_theme_constant_hseparation>`                        | ``4``                               |
+| :ref:`int<class_int>`             | :ref:`h_separation<class_CheckBox_theme_constant_h_separation>`                      | ``4``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`outline_size<class_CheckBox_theme_constant_outline_size>`                      | ``0``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
@@ -173,9 +173,9 @@ The ``CheckBox`` text's font color when it's pressed.
 
 ----
 
-.. _class_CheckBox_theme_constant_check_vadjust:
+.. _class_CheckBox_theme_constant_check_v_adjust:
 
-- :ref:`int<class_int>` **check_vadjust**
+- :ref:`int<class_int>` **check_v_adjust**
 
 +-----------+-------+
 | *Default* | ``0`` |
@@ -185,9 +185,9 @@ The vertical offset used when rendering the check icons (in pixels).
 
 ----
 
-.. _class_CheckBox_theme_constant_hseparation:
+.. _class_CheckBox_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -237,7 +237,7 @@ The check icon to display when the ``CheckBox`` is checked.
 
 - :ref:`Texture2D<class_Texture2D>` **checked_disabled**
 
-The check icon to display when the ``CheckBox`` is checked and disabled.
+The check icon to display when the ``CheckBox`` is checked and is disabled.
 
 ----
 
@@ -245,7 +245,7 @@ The check icon to display when the ``CheckBox`` is checked and disabled.
 
 - :ref:`Texture2D<class_Texture2D>` **radio_checked**
 
-If the ``CheckBox`` is configured as a radio button, the icon to display when the ``CheckBox`` is checked.
+The check icon to display when the ``CheckBox`` is configured as a radio button and is checked.
 
 ----
 
@@ -253,19 +253,23 @@ If the ``CheckBox`` is configured as a radio button, the icon to display when th
 
 - :ref:`Texture2D<class_Texture2D>` **radio_checked_disabled**
 
+The check icon to display when the ``CheckBox`` is configured as a radio button, is disabled, and is unchecked.
+
 ----
 
 .. _class_CheckBox_theme_icon_radio_unchecked:
 
 - :ref:`Texture2D<class_Texture2D>` **radio_unchecked**
 
-If the ``CheckBox`` is configured as a radio button, the icon to display when the ``CheckBox`` is unchecked.
+The check icon to display when the ``CheckBox`` is configured as a radio button and is unchecked.
 
 ----
 
 .. _class_CheckBox_theme_icon_radio_unchecked_disabled:
 
 - :ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled**
+
+The check icon to display when the ``CheckBox`` is configured as a radio button, is disabled, and is unchecked.
 
 ----
 
@@ -281,7 +285,7 @@ The check icon to display when the ``CheckBox`` is unchecked.
 
 - :ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
 
-The check icon to display when the ``CheckBox`` is unchecked and disabled.
+The check icon to display when the ``CheckBox`` is unchecked and is disabled.
 
 ----
 

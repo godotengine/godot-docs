@@ -23,6 +23,8 @@ Panel container type. This container fits controls inside of the delimited area 
 Tutorials
 ---------
 
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 - `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
 
 Properties

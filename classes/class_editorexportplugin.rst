@@ -48,7 +48,7 @@ Methods
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_osx_plugin_file<class_EditorExportPlugin_method_add_osx_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                          |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags **)**                                                                      |
+| void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**                                  |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                         |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -162,7 +162,7 @@ Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app b
 
 .. _class_EditorExportPlugin_method_add_shared_object:
 
-- void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags **)**
+- void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**
 
 Adds a shared object or a directory containing only shared objects with the given ``tags`` and destination ``path``.
 

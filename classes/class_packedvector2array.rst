@@ -9,12 +9,12 @@
 PackedVector2Array
 ==================
 
-A packed :ref:`Array<class_Array>` of :ref:`Vector2<class_Vector2>`\ s.
+A packed array of :ref:`Vector2<class_Vector2>`\ s.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector2<class_Vector2>`. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold :ref:`Vector2<class_Vector2>`. Packs data tightly, so it saves memory for large array sizes.
 
 Tutorials
 ---------
@@ -42,9 +42,13 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedVector2Array_method_bsearch>` **(** :ref:`Vector2<class_Vector2>` value, :ref:`bool<class_bool>` before=true **)** |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`count<class_PackedVector2Array_method_count>` **(** :ref:`Vector2<class_Vector2>` value **)** |const|                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`duplicate<class_PackedVector2Array_method_duplicate>` **(** **)**                                                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`fill<class_PackedVector2Array_method_fill>` **(** :ref:`Vector2<class_Vector2>` value **)**                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`find<class_PackedVector2Array_method_find>` **(** :ref:`Vector2<class_Vector2>` value, :ref:`int<class_int>` from=0 **)** |const|      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedVector2Array_method_has>` **(** :ref:`Vector2<class_Vector2>` value **)** |const|                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,6 +63,8 @@ Methods
 | :ref:`int<class_int>`                               | :ref:`resize<class_PackedVector2Array_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`reverse<class_PackedVector2Array_method_reverse>` **(** **)**                                                                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`rfind<class_PackedVector2Array_method_rfind>` **(** :ref:`Vector2<class_Vector2>` value, :ref:`int<class_int>` from=-1 **)** |const|   |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set<class_PackedVector2Array_method_set>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` value **)**                 |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,15 +81,11 @@ Operators
 ---------
 
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedVector2Array_operator_neq_bool>` **(** **)**                                                                        |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedVector2Array_operator_neq_bool>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)**              |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`operator *<class_PackedVector2Array_operator_mul_PackedVector2Array>` **(** :ref:`Transform2D<class_Transform2D>` right **)**               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`operator +<class_PackedVector2Array_operator_sum_PackedVector2Array>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)** |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedVector2Array_operator_eq_bool>` **(** **)**                                                                         |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedVector2Array_operator_eq_bool>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)**               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,6 +142,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 ----
 
+.. _class_PackedVector2Array_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`Vector2<class_Vector2>` value **)** |const|
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PackedVector2Array_method_duplicate:
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **duplicate** **(** **)**
@@ -153,6 +163,14 @@ Creates a copy of the array, and returns it.
 - void **fill** **(** :ref:`Vector2<class_Vector2>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedVector2Array_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PackedVector2Array_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`Vector2<class_Vector2>` value, :ref:`int<class_int>` from=0 **)** |const|
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -212,6 +230,14 @@ Reverses the order of the elements in the array.
 
 ----
 
+.. _class_PackedVector2Array_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`Vector2<class_Vector2>` value, :ref:`int<class_int>` from=-1 **)** |const|
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+----
+
 .. _class_PackedVector2Array_method_set:
 
 - void **set** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` value **)**
@@ -257,10 +283,6 @@ Operator Descriptions
 
 .. _class_PackedVector2Array_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)**
 
 ----
@@ -278,10 +300,6 @@ Operator Descriptions
 ----
 
 .. _class_PackedVector2Array_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)**
 

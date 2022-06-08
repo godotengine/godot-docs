@@ -9,12 +9,12 @@
 PackedColorArray
 ================
 
-A packed :ref:`Array<class_Array>` of :ref:`Color<class_Color>`\ s.
+A packed array of :ref:`Color<class_Color>`\ s.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`Color<class_Color>`. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold :ref:`Color<class_Color>`. Packs data tightly, so it saves memory for large array sizes.
 
 Constructors
 ------------
@@ -37,9 +37,13 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`bsearch<class_PackedColorArray_method_bsearch>` **(** :ref:`Color<class_Color>` value, :ref:`bool<class_bool>` before=true **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`count<class_PackedColorArray_method_count>` **(** :ref:`Color<class_Color>` value **)** |const|                                   |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`duplicate<class_PackedColorArray_method_duplicate>` **(** **)**                                                                   |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`fill<class_PackedColorArray_method_fill>` **(** :ref:`Color<class_Color>` value **)**                                             |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`find<class_PackedColorArray_method_find>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)** |const|       |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`has<class_PackedColorArray_method_has>` **(** :ref:`Color<class_Color>` value **)** |const|                                       |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,6 +58,8 @@ Methods
 | :ref:`int<class_int>`                           | :ref:`resize<class_PackedColorArray_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                          |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`reverse<class_PackedColorArray_method_reverse>` **(** **)**                                                                       |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`rfind<class_PackedColorArray_method_rfind>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)** |const|    |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set<class_PackedColorArray_method_set>` **(** :ref:`int<class_int>` index, :ref:`Color<class_Color>` value **)**                  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,13 +76,9 @@ Operators
 ---------
 
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`operator !=<class_PackedColorArray_operator_neq_bool>` **(** **)**                                                                  |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`operator !=<class_PackedColorArray_operator_neq_bool>` **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**            |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`operator +<class_PackedColorArray_operator_sum_PackedColorArray>` **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)** |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`operator ==<class_PackedColorArray_operator_eq_bool>` **(** **)**                                                                   |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`operator ==<class_PackedColorArray_operator_eq_bool>` **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**             |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,6 +135,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 ----
 
+.. _class_PackedColorArray_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`Color<class_Color>` value **)** |const|
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PackedColorArray_method_duplicate:
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **duplicate** **(** **)**
@@ -146,6 +156,14 @@ Creates a copy of the array, and returns it.
 - void **fill** **(** :ref:`Color<class_Color>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedColorArray_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PackedColorArray_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)** |const|
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -205,6 +223,14 @@ Reverses the order of the elements in the array.
 
 ----
 
+.. _class_PackedColorArray_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)** |const|
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+----
+
 .. _class_PackedColorArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` index, :ref:`Color<class_Color>` value **)**
@@ -250,10 +276,6 @@ Operator Descriptions
 
 .. _class_PackedColorArray_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**
 
 ----
@@ -265,10 +287,6 @@ Operator Descriptions
 ----
 
 .. _class_PackedColorArray_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**
 

@@ -20,6 +20,11 @@ Description
 
 Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally, and rearranges them automatically when their minimum size changes.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

@@ -83,7 +83,7 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`orthonormalized<class_Transform2D_method_orthonormalized>` **(** **)** |const|                                                                                 |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`rotated<class_Transform2D_method_rotated>` **(** :ref:`float<class_float>` phi **)** |const|                                                                   |
+| :ref:`Transform2D<class_Transform2D>` | :ref:`rotated<class_Transform2D_method_rotated>` **(** :ref:`float<class_float>` angle **)** |const|                                                                 |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`scaled<class_Transform2D_method_scaled>` **(** :ref:`Vector2<class_Vector2>` scale **)** |const|                                                               |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,8 +100,6 @@ Operators
 ---------
 
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform2D_operator_neq_bool>` **(** **)**                                                                        |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform2D_operator_neq_bool>` **(** :ref:`Transform2D<class_Transform2D>` right **)**                            |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`operator *<class_Transform2D_operator_mul_PackedVector2Array>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` right **)** |
@@ -115,8 +113,6 @@ Operators
 | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator *<class_Transform2D_operator_mul_Transform2D>` **(** :ref:`float<class_float>` right **)**                                  |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator *<class_Transform2D_operator_mul_Transform2D>` **(** :ref:`int<class_int>` right **)**                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform2D_operator_eq_bool>` **(** **)**                                                                         |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform2D_operator_eq_bool>` **(** :ref:`Transform2D<class_Transform2D>` right **)**                             |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -315,9 +311,9 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 .. _class_Transform2D_method_rotated:
 
-- :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` phi **)** |const|
+- :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` angle **)** |const|
 
-Rotates the transform by the given angle (in radians), using matrix multiplication.
+Returns a copy of the transform rotated by the given ``angle`` (in radians), using matrix multiplication.
 
 ----
 
@@ -325,7 +321,7 @@ Rotates the transform by the given angle (in radians), using matrix multiplicati
 
 - :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)** |const|
 
-Scales the transform by the given scale factor, using matrix multiplication.
+Returns a copy of the transform scaled by the given ``scale`` factor, using matrix multiplication.
 
 ----
 
@@ -357,7 +353,7 @@ Sets the transform's skew (in radians).
 
 - :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)** |const|
 
-Translates the transform by the given offset, relative to the transform's basis vectors.
+Returns a copy of the transform translated by the given ``offset``, relative to the transform's basis vectors.
 
 Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_Transform2D_method_scaled>`, this does not use matrix multiplication.
 
@@ -365,10 +361,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_Transform2D_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
@@ -417,10 +409,6 @@ This operator multiplies all components of the ``Transform2D``, including the or
 ----
 
 .. _class_Transform2D_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 

@@ -23,13 +23,13 @@ See :ref:`EngineDebugger<class_EngineDebugger>` and :ref:`EditorDebuggerPlugin<c
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_add_frame<class_EngineProfiler_method__add_frame>` **(** :ref:`Array<class_Array>` data **)** |virtual|                                                                                                                        |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_tick<class_EngineProfiler_method__tick>` **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` idle_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual| |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_toggle<class_EngineProfiler_method__toggle>` **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|                                                                                           |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_add_frame<class_EngineProfiler_method__add_frame>` **(** :ref:`Array<class_Array>` data **)** |virtual|                                                                                                                           |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_tick<class_EngineProfiler_method__tick>` **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual| |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`_toggle<class_EngineProfiler_method__toggle>` **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|                                                                                              |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -44,9 +44,9 @@ Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_fr
 
 .. _class_EngineProfiler_method__tick:
 
-- void **_tick** **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` idle_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual|
+- void **_tick** **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual|
 
-Called once every engine iteration when the profiler is active with information about the current frame.
+Called once every engine iteration when the profiler is active with information about the current frame. All time values are in seconds. Lower values represent faster processing times and are therefore considered better.
 
 ----
 

@@ -107,6 +107,8 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInterface<class_EditorInterface>`       | :ref:`get_editor_interface<class_EditorPlugin_method_get_editor_interface>` **(** **)**                                                                                                                                                               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PopupMenu<class_PopupMenu>`                   | :ref:`get_export_as_menu<class_EditorPlugin_method_get_export_as_menu>` **(** **)**                                                                                                                                                                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ScriptCreateDialog<class_ScriptCreateDialog>` | :ref:`get_script_create_dialog<class_EditorPlugin_method_get_script_create_dialog>` **(** **)**                                                                                                                                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`UndoRedo<class_UndoRedo>`                     | :ref:`get_undo_redo<class_EditorPlugin_method_get_undo_redo>` **(** **)**                                                                                                                                                                             |
@@ -855,11 +857,19 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you 
 
 ----
 
+.. _class_EditorPlugin_method_get_export_as_menu:
+
+- :ref:`PopupMenu<class_PopupMenu>` **get_export_as_menu** **(** **)**
+
+Returns the :ref:`PopupMenu<class_PopupMenu>` under **Scene > Export As...**.
+
+----
+
 .. _class_EditorPlugin_method_get_script_create_dialog:
 
 - :ref:`ScriptCreateDialog<class_ScriptCreateDialog>` **get_script_create_dialog** **(** **)**
 
-Gets the Editor's dialogue used for making scripts.
+Gets the Editor's dialog used for making scripts.
 
 \ **Note:** Users can configure it before use.
 

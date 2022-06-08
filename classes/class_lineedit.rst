@@ -114,7 +114,7 @@ Properties
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`                                 | ``true``                                                                            |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>`    | :ref:`structured_text_bidi_override<class_LineEdit_property_structured_text_bidi_override>`                 | ``0``                                                                               |
+| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` | :ref:`structured_text_bidi_override<class_LineEdit_property_structured_text_bidi_override>`                 | ``0``                                                                               |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                         | :ref:`structured_text_bidi_override_options<class_LineEdit_property_structured_text_bidi_override_options>` | ``[]``                                                                              |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -743,7 +743,7 @@ If ``false``, using shortcuts will be disabled.
 
 .. _class_LineEdit_property_structured_text_bidi_override:
 
-- :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` **structured_text_bidi_override**
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override**
 
 +-----------+------------------------------------------+
 | *Default* | ``0``                                    |

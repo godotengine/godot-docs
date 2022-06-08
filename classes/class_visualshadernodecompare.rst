@@ -42,6 +42,8 @@ Enumerations
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_3D:
 
+.. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_4D:
+
 .. _class_VisualShaderNodeCompare_constant_CTYPE_BOOLEAN:
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_TRANSFORM:
@@ -58,11 +60,13 @@ enum **ComparisonType**:
 
 - **CTYPE_VECTOR_3D** = **3** --- A 3D vector type.
 
-- **CTYPE_BOOLEAN** = **4** --- A boolean type.
+- **CTYPE_VECTOR_4D** = **4** --- A 4D vector type.
 
-- **CTYPE_TRANSFORM** = **5** --- A transform (``mat4``) type.
+- **CTYPE_BOOLEAN** = **5** --- A boolean type.
 
-- **CTYPE_MAX** = **6** --- Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
+- **CTYPE_TRANSFORM** = **6** --- A transform (``mat4``) type.
+
+- **CTYPE_MAX** = **7** --- Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
 
 ----
 

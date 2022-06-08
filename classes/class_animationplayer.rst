@@ -64,7 +64,7 @@ Methods
 -------
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`add_animation<class_AnimationPlayer_method_add_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**                                                                    |
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`add_animation_library<class_AnimationPlayer_method_add_animation_library>` **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationLibrary<class_AnimationLibrary>` library **)**                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`advance<class_AnimationPlayer_method_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                      |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +78,13 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>`               | :ref:`find_animation<class_AnimationPlayer_method_find_animation>` **(** :ref:`Animation<class_Animation>` animation **)** |const|                                                                                                    |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>`               | :ref:`find_animation_library<class_AnimationPlayer_method_find_animation_library>` **(** :ref:`Animation<class_Animation>` animation **)** |const|                                                                                    |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Animation<class_Animation>`                 | :ref:`get_animation<class_AnimationPlayer_method_get_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                         |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AnimationLibrary<class_AnimationLibrary>`   | :ref:`get_animation_library<class_AnimationPlayer_method_get_animation_library>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                         |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName[]<class_StringName>`             | :ref:`get_animation_library_list<class_AnimationPlayer_method_get_animation_library_list>` **(** **)** |const|                                                                                                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_animation_list<class_AnimationPlayer_method_get_animation_list>` **(** **)** |const|                                                                                                                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,6 +96,8 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_animation<class_AnimationPlayer_method_has_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                         |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`has_animation_library<class_AnimationPlayer_method_has_animation_library>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                         |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_playing<class_AnimationPlayer_method_is_playing>` **(** **)** |const|                                                                                                                                                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`play<class_AnimationPlayer_method_play>` **(** :ref:`StringName<class_StringName>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)** |
@@ -98,9 +106,9 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`queue<class_AnimationPlayer_method_queue>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                                 |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`remove_animation<class_AnimationPlayer_method_remove_animation>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                           |
+| void                                              | :ref:`remove_animation_library<class_AnimationPlayer_method_remove_animation_library>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                           |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`rename_animation<class_AnimationPlayer_method_rename_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**                                                              |
+| void                                              | :ref:`rename_animation_library<class_AnimationPlayer_method_rename_animation_library>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**                                              |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`seek<class_AnimationPlayer_method_seek>` **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false **)**                                                                                                    |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -365,11 +373,9 @@ The node from which node path references will travel.
 Method Descriptions
 -------------------
 
-.. _class_AnimationPlayer_method_add_animation:
+.. _class_AnimationPlayer_method_add_animation_library:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**
-
-Adds ``animation`` to the player accessible with the key ``name``.
+- :ref:`Error<enum_@GlobalScope_Error>` **add_animation_library** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationLibrary<class_AnimationLibrary>` library **)**
 
 ----
 
@@ -421,11 +427,29 @@ Returns the name of ``animation`` or an empty string if not found.
 
 ----
 
+.. _class_AnimationPlayer_method_find_animation_library:
+
+- :ref:`StringName<class_StringName>` **find_animation_library** **(** :ref:`Animation<class_Animation>` animation **)** |const|
+
+----
+
 .. _class_AnimationPlayer_method_get_animation:
 
 - :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if not found.
+
+----
+
+.. _class_AnimationPlayer_method_get_animation_library:
+
+- :ref:`AnimationLibrary<class_AnimationLibrary>` **get_animation_library** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+----
+
+.. _class_AnimationPlayer_method_get_animation_library_list:
+
+- :ref:`StringName[]<class_StringName>` **get_animation_library_list** **(** **)** |const|
 
 ----
 
@@ -469,6 +493,12 @@ Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`Animation<class_Anim
 
 ----
 
+.. _class_AnimationPlayer_method_has_animation_library:
+
+- :ref:`bool<class_bool>` **has_animation_library** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+----
+
 .. _class_AnimationPlayer_method_is_playing:
 
 - :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
@@ -509,19 +539,15 @@ Queues an animation for playback once the current one is done.
 
 ----
 
-.. _class_AnimationPlayer_method_remove_animation:
+.. _class_AnimationPlayer_method_remove_animation_library:
 
-- void **remove_animation** **(** :ref:`StringName<class_StringName>` name **)**
-
-Removes the animation with key ``name``.
+- void **remove_animation_library** **(** :ref:`StringName<class_StringName>` name **)**
 
 ----
 
-.. _class_AnimationPlayer_method_rename_animation:
+.. _class_AnimationPlayer_method_rename_animation_library:
 
-- void **rename_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
-
-Renames an existing animation with key ``name`` to ``newname``.
+- void **rename_animation_library** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
 
 ----
 
@@ -530,6 +556,8 @@ Renames an existing animation with key ``name`` to ``newname``.
 - void **seek** **(** :ref:`float<class_float>` seconds, :ref:`bool<class_bool>` update=false **)**
 
 Seeks the animation to the ``seconds`` point in time (in seconds). If ``update`` is ``true``, the animation updates too, otherwise it updates at process time. Events between the current frame and ``seconds`` are skipped.
+
+\ **Note:** Seeking to the end of the animation doesn't emit :ref:`animation_finished<class_AnimationPlayer_signal_animation_finished>`. If you want to skip animation and emit the signal, use :ref:`advance<class_AnimationPlayer_method_advance>`.
 
 ----
 

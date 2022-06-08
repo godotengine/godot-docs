@@ -27,6 +27,15 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+Properties
+----------
+
++----------------------------------------+--------------------------------------------------------------------------+
+| :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                       |
++----------------------------------------+--------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>` |
++----------------------------------------+--------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -47,7 +56,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`get_axis<class_Input_method_get_axis>` **(** :ref:`StringName<class_StringName>` negative_action, :ref:`StringName<class_StringName>` positive_action **)** |const|                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_connected_joypads<class_Input_method_get_connected_joypads>` **(** **)**                                                                                                                                                                                                                           |
+| :ref:`int[]<class_int>`                           | :ref:`get_connected_joypads<class_Input_method_get_connected_joypads>` **(** **)**                                                                                                                                                                                                                           |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_Input_CursorShape>`        | :ref:`get_current_cursor_shape<class_Input_method_get_current_cursor_shape>` **(** **)** |const|                                                                                                                                                                                                             |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,8 +79,6 @@ Methods
 | :ref:`Vector3<class_Vector3>`                     | :ref:`get_magnetometer<class_Input_method_get_magnetometer>` **(** **)** |const|                                                                                                                                                                                                                             |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`MouseButton<enum_@GlobalScope_MouseButton>` | :ref:`get_mouse_button_mask<class_Input_method_get_mouse_button_mask>` **(** **)** |const|                                                                                                                                                                                                                   |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MouseMode<enum_Input_MouseMode>`            | :ref:`get_mouse_mode<class_Input_method_get_mouse_mode>` **(** **)** |const|                                                                                                                                                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`get_vector<class_Input_method_get_vector>` **(** :ref:`StringName<class_StringName>` negative_x, :ref:`StringName<class_StringName>` positive_x, :ref:`StringName<class_StringName>` negative_y, :ref:`StringName<class_StringName>` positive_y, :ref:`float<class_float>` deadzone=-1.0 **)** |const| |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,17 +116,13 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_magnetometer<class_Input_method_set_magnetometer>` **(** :ref:`Vector3<class_Vector3>` value **)**                                                                                                                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_mouse_mode<class_Input_method_set_mouse_mode>` **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**                                                                                                                                                                                             |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                    |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`start_joy_vibration<class_Input_method_start_joy_vibration>` **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` **(** :ref:`int<class_int>` duration_ms=500 **)**                                                                                                                                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`warp_mouse_position<class_Input_method_warp_mouse_position>` **(** :ref:`Vector2<class_Vector2>` to **)**                                                                                                                                                                                              |
+| void                                              | :ref:`warp_mouse<class_Input_method_warp_mouse>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -208,9 +211,9 @@ enum **CursorShape**:
 
 - **CURSOR_CROSS** = **3** --- Cross cursor. Typically appears over regions in which a drawing operation can be performed or for selections.
 
-- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
+- **CURSOR_WAIT** = **4** --- Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
 
-- **CURSOR_BUSY** = **5** --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
+- **CURSOR_BUSY** = **5** --- Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
 
 - **CURSOR_DRAG** = **6** --- Drag cursor. Usually displayed when dragging something.
 
@@ -235,6 +238,37 @@ enum **CursorShape**:
 - **CURSOR_HSPLIT** = **15** --- Horizontal split mouse cursor. On Windows, it's the same as :ref:`CURSOR_HSIZE<class_Input_constant_CURSOR_HSIZE>`.
 
 - **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
+
+Property Descriptions
+---------------------
+
+.. _class_Input_property_mouse_mode:
+
+- :ref:`MouseMode<enum_Input_MouseMode>` **mouse_mode**
+
++----------+-----------------------+
+| *Setter* | set_mouse_mode(value) |
++----------+-----------------------+
+| *Getter* | get_mouse_mode()      |
++----------+-----------------------+
+
+Controls the mouse mode. See :ref:`MouseMode<enum_Input_MouseMode>` for more information.
+
+----
+
+.. _class_Input_property_use_accumulated_input:
+
+- :ref:`bool<class_bool>` **use_accumulated_input**
+
++----------+----------------------------------+
+| *Setter* | set_use_accumulated_input(value) |
++----------+----------------------------------+
+| *Getter* | is_using_accumulated_input()     |
++----------+----------------------------------+
+
+If ``true``, similar input events sent by the operating system are accumulated. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
+
+Input accumulation can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
 
 Method Descriptions
 -------------------
@@ -271,7 +305,7 @@ Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally up
 
 - void **flush_buffered_events** **(** **)**
 
-Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (:ref:`set_use_accumulated_input<class_Input_method_set_use_accumulated_input>`) or agile input flushing (:ref:`ProjectSettings.input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`).
+Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (:ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`) or agile input flushing (:ref:`ProjectSettings.input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`).
 
 The engine will already do this itself at key execution points (at least once per frame). However, this can be useful in advanced cases where you want precise control over the timing of event handling.
 
@@ -295,7 +329,7 @@ Note this method returns an empty :ref:`Vector3<class_Vector3>` when running fro
 
 Returns a value between 0 and 1 representing the raw intensity of the given action, ignoring the action's deadzone. In most cases, you should use :ref:`get_action_strength<class_Input_method_get_action_strength>` instead.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -305,7 +339,7 @@ If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputE
 
 Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -321,7 +355,7 @@ This is a shorthand for writing ``Input.get_action_strength("positive_action") -
 
 .. _class_Input_method_get_connected_joypads:
 
-- :ref:`Array<class_Array>` **get_connected_joypads** **(** **)**
+- :ref:`int[]<class_int>` **get_connected_joypads** **(** **)**
 
 Returns an :ref:`Array<class_Array>` containing the device IDs of all currently connected joypads.
 
@@ -421,14 +455,6 @@ Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the
 
 ----
 
-.. _class_Input_method_get_mouse_mode:
-
-- :ref:`MouseMode<enum_Input_MouseMode>` **get_mouse_mode** **(** **)** |const|
-
-Returns the mouse mode. See the constants for more information.
-
-----
-
 .. _class_Input_method_get_vector:
 
 - :ref:`Vector2<class_Vector2>` **get_vector** **(** :ref:`StringName<class_StringName>` negative_x, :ref:`StringName<class_StringName>` positive_x, :ref:`StringName<class_StringName>` negative_y, :ref:`StringName<class_StringName>` positive_y, :ref:`float<class_float>` deadzone=-1.0 **)** |const|
@@ -449,7 +475,7 @@ Returns ``true`` when the user starts pressing the action event, meaning it's ``
 
 This is useful for code that needs to run only once when an action is pressed, instead of every frame while it's pressed.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
@@ -461,7 +487,7 @@ If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputE
 
 Returns ``true`` when the user stops pressing the action event, meaning it's ``true`` only on the frame that the user released the button.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 
@@ -471,7 +497,7 @@ If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputE
 
 Returns ``true`` if you are pressing the action event. Note that if an action has multiple buttons assigned and more than one of them is pressed, releasing one button will release the action, even if some other button assigned to this action is still pressed.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_action_pressed<class_Input_method_is_action_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
@@ -638,24 +664,6 @@ Sets the value of the magnetic field of the magnetometer sensor. Can be used for
 
 ----
 
-.. _class_Input_method_set_mouse_mode:
-
-- void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
-
-Sets the mouse mode. See the constants for more information.
-
-----
-
-.. _class_Input_method_set_use_accumulated_input:
-
-- void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
-
-Enables or disables the accumulation of similar input events sent by the operating system. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
-
-Input accumulation is enabled by default. It can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
-
-----
-
 .. _class_Input_method_start_joy_vibration:
 
 - void **start_joy_vibration** **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**
@@ -680,15 +688,17 @@ Stops the vibration of the joypad.
 
 Vibrate Android and iOS devices.
 
-\ **Note:** It needs ``VIBRATE`` permission for Android at export settings. iOS does not support duration.
+\ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
+
+\ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
 
 ----
 
-.. _class_Input_method_warp_mouse_position:
+.. _class_Input_method_warp_mouse:
 
-- void **warp_mouse_position** **(** :ref:`Vector2<class_Vector2>` to **)**
+- void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the game window.
+Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the currently focused Window Manager game window.
 
 Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to ``MOUSE_MODE_CONFINED`` or ``MOUSE_MODE_CONFINED_HIDDEN``.
 

@@ -82,11 +82,13 @@ Methods
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                              | :ref:`canvas_create<class_RenderingServer_method_canvas_create>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`canvas_item_add_animation_slice<class_RenderingServer_method_canvas_item_add_animation_slice>` **(** :ref:`RID<class_RID>` item, :ref:`float<class_float>` animation_length, :ref:`float<class_float>` slice_begin, :ref:`float<class_float>` slice_end, :ref:`float<class_float>` offset=0.0 **)**                                                                                                                                                                                                                                                                                                                                                                          |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`canvas_item_add_circle<class_RenderingServer_method_canvas_item_add_circle>` **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`canvas_item_add_clip_ignore<class_RenderingServer_method_canvas_item_add_clip_ignore>` **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` ignore **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`canvas_item_add_line<class_RenderingServer_method_canvas_item_add_line>` **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| void                                                               | :ref:`canvas_item_add_line<class_RenderingServer_method_canvas_item_add_line>` **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                                                                                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`canvas_item_add_mesh<class_RenderingServer_method_canvas_item_add_mesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                              |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -346,6 +348,8 @@ Methods
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                              | :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                        | :ref:`get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                        | :ref:`get_video_adapter_name<class_RenderingServer_method_get_video_adapter_name>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`DeviceType<enum_RenderingDevice_DeviceType>`                 | :ref:`get_video_adapter_type<class_RenderingServer_method_get_video_adapter_type>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -440,7 +444,7 @@ Methods
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_directional_set_shadow_mode<class_RenderingServer_method_light_directional_set_shadow_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightDirectionalShadowMode<enum_RenderingServer_LightDirectionalShadowMode>` mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`light_directional_set_sky_only<class_RenderingServer_method_light_directional_set_sky_only>` **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| void                                                               | :ref:`light_directional_set_sky_mode<class_RenderingServer_method_light_directional_set_sky_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightDirectionalSkyMode<enum_RenderingServer_LightDirectionalSkyMode>` mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`light_omni_set_shadow_mode<class_RenderingServer_method_light_omni_set_shadow_mode>` **(** :ref:`RID<class_RID>` light, :ref:`LightOmniShadowMode<enum_RenderingServer_LightOmniShadowMode>` mode **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -887,6 +891,8 @@ Methods
 | void                                                               | :ref:`viewport_set_use_debanding<class_RenderingServer_method_viewport_set_use_debanding>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`viewport_set_use_occlusion_culling<class_RenderingServer_method_viewport_set_use_occlusion_culling>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`viewport_set_use_taa<class_RenderingServer_method_viewport_set_use_taa>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`viewport_set_use_xr<class_RenderingServer_method_viewport_set_use_xr>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` use_xr **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1475,6 +1481,24 @@ enum **LightDirectionalShadowMode**:
 
 ----
 
+.. _enum_RenderingServer_LightDirectionalSkyMode:
+
+.. _class_RenderingServer_constant_LIGHT_DIRECTIONAL_SKY_MODE_LIGHT_AND_SKY:
+
+.. _class_RenderingServer_constant_LIGHT_DIRECTIONAL_SKY_MODE_LIGHT_ONLY:
+
+.. _class_RenderingServer_constant_LIGHT_DIRECTIONAL_SKY_MODE_SKY_ONLY:
+
+enum **LightDirectionalSkyMode**:
+
+- **LIGHT_DIRECTIONAL_SKY_MODE_LIGHT_AND_SKY** = **0** --- Use DirectionalLight3D in both sky rendering and scene lighting.
+
+- **LIGHT_DIRECTIONAL_SKY_MODE_LIGHT_ONLY** = **1** --- Only use DirectionalLight3D in scene lighting.
+
+- **LIGHT_DIRECTIONAL_SKY_MODE_SKY_ONLY** = **2** --- Only use DirectionalLight3D in sky rendering.
+
+----
+
 .. _enum_RenderingServer_ShadowQuality:
 
 .. _class_RenderingServer_constant_SHADOW_QUALITY_HARD:
@@ -1739,17 +1763,29 @@ enum **ParticlesCollisionHeightfieldResolution**:
 
 .. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID:
 
+.. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE:
+
+.. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER:
+
 .. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX:
 
 .. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD:
 
+.. _class_RenderingServer_constant_FOG_VOLUME_SHAPE_MAX:
+
 enum **FogVolumeShape**:
 
-- **FOG_VOLUME_SHAPE_ELLIPSOID** = **0** --- :ref:`FogVolume<class_FogVolume>` will be shaped like an ellipsoid.
+- **FOG_VOLUME_SHAPE_ELLIPSOID** = **0** --- :ref:`FogVolume<class_FogVolume>` will be shaped like an ellipsoid (stretched sphere).
 
-- **FOG_VOLUME_SHAPE_BOX** = **1** --- :ref:`FogVolume<class_FogVolume>` will be shaped like a box.
+- **FOG_VOLUME_SHAPE_CONE** = **1** --- :ref:`FogVolume<class_FogVolume>` will be shaped like a cone pointing upwards (in local coordinates). The cone's angle is set automatically to fill the extents. The cone will be adjusted to fit within the extents. Rotate the :ref:`FogVolume<class_FogVolume>` node to reorient the cone. Non-uniform scaling via extents is not supported (scale the :ref:`FogVolume<class_FogVolume>` node instead).
 
-- **FOG_VOLUME_SHAPE_WORLD** = **2** --- :ref:`FogVolume<class_FogVolume>` will have no shape, will cover the whole world and will not be culled.
+- **FOG_VOLUME_SHAPE_CYLINDER** = **2** --- :ref:`FogVolume<class_FogVolume>` will be shaped like an upright cylinder (in local coordinates). Rotate the :ref:`FogVolume<class_FogVolume>` node to reorient the cylinder. The cylinder will be adjusted to fit within the extents. Non-uniform scaling via extents is not supported (scale the :ref:`FogVolume<class_FogVolume>` node instead).
+
+- **FOG_VOLUME_SHAPE_BOX** = **3** --- :ref:`FogVolume<class_FogVolume>` will be shaped like a box.
+
+- **FOG_VOLUME_SHAPE_WORLD** = **4** --- :ref:`FogVolume<class_FogVolume>` will have no shape, will cover the whole world and will not be culled.
+
+- **FOG_VOLUME_SHAPE_MAX** = **5**
 
 ----
 
@@ -1763,9 +1799,9 @@ enum **FogVolumeShape**:
 
 enum **ViewportScaling3DMode**:
 
-- **VIEWPORT_SCALING_3D_MODE_BILINEAR** = **0** --- Enables bilinear scaling on 3D viewports. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+- **VIEWPORT_SCALING_3D_MODE_BILINEAR** = **0** --- Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
-- **VIEWPORT_SCALING_3D_MODE_FSR** = **1** --- Enables FSR upscaling on 3D viewports. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear supersampling will be used instead. A value of ``1.0`` disables scaling.
+- **VIEWPORT_SCALING_3D_MODE_FSR** = **1** --- Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 - **VIEWPORT_SCALING_3D_MODE_MAX** = **2**
 
@@ -2017,6 +2053,8 @@ enum **ViewportRenderInfoType**:
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_OCCLUDERS:
 
+.. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_MOTION_VECTORS:
+
 enum **ViewportDebugDraw**:
 
 - **VIEWPORT_DEBUG_DRAW_DISABLED** = **0** --- Debug draw is disabled. Default setting.
@@ -2070,6 +2108,8 @@ enum **ViewportDebugDraw**:
 - **VIEWPORT_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = **23**
 
 - **VIEWPORT_DEBUG_DRAW_OCCLUDERS** = **24**
+
+- **VIEWPORT_DEBUG_DRAW_MOTION_VECTORS** = **25**
 
 ----
 
@@ -2209,13 +2249,15 @@ enum **EnvironmentGlowBlendMode**:
 
 enum **EnvironmentToneMapper**:
 
-- **ENV_TONE_MAPPER_LINEAR** = **0** --- Output color as they came in.
+- **ENV_TONE_MAPPER_LINEAR** = **0** --- Output color as they came in. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
 
-- **ENV_TONE_MAPPER_REINHARD** = **1** --- Use the Reinhard tonemapper.
+- **ENV_TONE_MAPPER_REINHARD** = **1** --- Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
 
-- **ENV_TONE_MAPPER_FILMIC** = **2** --- Use the filmic tonemapper.
+- **ENV_TONE_MAPPER_FILMIC** = **2** --- Use the filmic tonemapper. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`.
 
-- **ENV_TONE_MAPPER_ACES** = **3** --- Use the ACES tonemapper.
+- **ENV_TONE_MAPPER_ACES** = **3** --- Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>` and :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>`.
+
+\ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
 
 ----
 
@@ -3182,6 +3224,14 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 ----
 
+.. _class_RenderingServer_method_canvas_item_add_animation_slice:
+
+- void **canvas_item_add_animation_slice** **(** :ref:`RID<class_RID>` item, :ref:`float<class_float>` animation_length, :ref:`float<class_float>` slice_begin, :ref:`float<class_float>` slice_end, :ref:`float<class_float>` offset=0.0 **)**
+
+Subsequent drawing commands will be ignored unless they fall within the specified animation slice. This is a faster way to implement animations that loop on background rather than redrawing constantly.
+
+----
+
 .. _class_RenderingServer_method_canvas_item_add_circle:
 
 - void **canvas_item_add_circle** **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
@@ -3196,7 +3246,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 .. _class_RenderingServer_method_canvas_item_add_line:
 
-- void **canvas_item_add_line** **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0 **)**
+- void **canvas_item_add_line** **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
 ----
 
@@ -4034,7 +4084,7 @@ Creates a new fog volume and allocates an RID.
 
 - void **fog_volume_set_extents** **(** :ref:`RID<class_RID>` fog_volume, :ref:`Vector3<class_Vector3>` extents **)**
 
-Sets the size of the fog volume when shape is :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>` or :ref:`FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
+Sets the size of the fog volume when shape is :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
 
 ----
 
@@ -4050,7 +4100,7 @@ Sets the :ref:`Material<class_Material>` of the fog volume. Can be either a :ref
 
 - void **fog_volume_set_shape** **(** :ref:`RID<class_RID>` fog_volume, :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` shape **)**
 
-Sets the shape of the fog volume to either :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`, or :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>` or :ref:`FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
+Sets the shape of the fog volume to either :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, :ref:`FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>` or :ref:`FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
 
 ----
 
@@ -4105,6 +4155,16 @@ Returns the id of the test cube. Creates one if none exists.
 - :ref:`RID<class_RID>` **get_test_texture** **(** **)**
 
 Returns the id of the test texture. Creates one if none exists.
+
+----
+
+.. _class_RenderingServer_method_get_video_adapter_api_version:
+
+- :ref:`String<class_String>` **get_video_adapter_api_version** **(** **)** |const|
+
+Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version.
+
+\ **Note:** When running a headless or server binary, this function returns an empty string.
 
 ----
 
@@ -4480,9 +4540,9 @@ Sets the shadow mode for this directional light. Equivalent to :ref:`Directional
 
 ----
 
-.. _class_RenderingServer_method_light_directional_set_sky_only:
+.. _class_RenderingServer_method_light_directional_set_sky_mode:
 
-- void **light_directional_set_sky_only** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enable **)**
+- void **light_directional_set_sky_mode** **(** :ref:`RID<class_RID>` light, :ref:`LightDirectionalSkyMode<enum_RenderingServer_LightDirectionalSkyMode>` mode **)**
 
 If ``true``, this light will not be used for anything except sky shaders. Use this for lights that impact your sky shader that you may want to hide from affecting the rest of the scene. For example, you may want to enable this when the sun in your sky shader falls below the horizon.
 
@@ -5849,7 +5909,7 @@ FIXME: The method seems to be non-existent.
 
 
 
-Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For a further optimization see, :ref:`viewport_set_render_direct_to_screen<class_RenderingServer_method_viewport_set_render_direct_to_screen>`.
+Using this can result in significant optimization, especially on lower-end devices. However, it comes at the cost of having to manage your viewports manually. For further optimization, see :ref:`viewport_set_render_direct_to_screen<class_RenderingServer_method_viewport_set_render_direct_to_screen>`.
 
 ----
 
@@ -6140,6 +6200,14 @@ Sets when the viewport should be updated. See :ref:`ViewportUpdateMode<enum_Rend
 .. _class_RenderingServer_method_viewport_set_use_occlusion_culling:
 
 - void **viewport_set_use_occlusion_culling** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
+
+----
+
+.. _class_RenderingServer_method_viewport_set_use_taa:
+
+- void **viewport_set_use_taa** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
+
+If ``true``, use Temporal Anti-Aliasing.
 
 ----
 

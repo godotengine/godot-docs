@@ -20,6 +20,11 @@ Description
 
 Container for splitting two :ref:`Control<class_Control>`\ s vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

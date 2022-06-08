@@ -14,7 +14,11 @@ An optimized string type for unique names.
 Description
 -----------
 
-``StringName``\ s are immutable strings designed for general-purpose representation of unique names. ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+``StringName``\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+
+You will usually just pass a :ref:`String<class_String>` to methods expecting a ``StringName`` and it will be automatically converted, but you may occasionally want to construct a ``StringName`` ahead of time with ``StringName`` or the literal syntax ``&"example"``.
+
+See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed node paths.
 
 Constructors
 ------------
@@ -27,11 +31,16 @@ Constructors
 | :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** :ref:`String<class_String>` from **)**         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
+Methods
+-------
+
++-----------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`hash<class_StringName_method_hash>` **(** **)** |const| |
++-----------------------+---------------------------------------------------------------+
+
 Operators
 ---------
 
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** **)**                                           |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`String<class_String>` right **)**         |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -40,8 +49,6 @@ Operators
 | :ref:`bool<class_bool>` | :ref:`operator <<class_StringName_operator_lt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator <=<class_StringName_operator_lte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** **)**                                            |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**          |
 +-------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -71,16 +78,21 @@ Constructs a ``StringName`` as a copy of the given ``StringName``.
 
 - :ref:`StringName<class_StringName>` **StringName** **(** :ref:`String<class_String>` from **)**
 
-Creates a new ``StringName`` from the given :ref:`String<class_String>`.
+Creates a new ``StringName`` from the given :ref:`String<class_String>`. ``StringName("example")`` is equivalent to ``&"example"``.
+
+Method Descriptions
+-------------------
+
+.. _class_StringName_method_hash:
+
+- :ref:`int<class_int>` **hash** **(** **)** |const|
+
+Returns the 32-bit hash value representing the ``StringName``'s contents.
 
 Operator Descriptions
 ---------------------
 
 .. _class_StringName_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)**
 
@@ -103,10 +115,6 @@ Operator Descriptions
 ----
 
 .. _class_StringName_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)**
 

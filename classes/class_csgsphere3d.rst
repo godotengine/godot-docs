@@ -33,7 +33,7 @@ Properties
 +---------------------------------+--------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`           | :ref:`radial_segments<class_CSGSphere3D_property_radial_segments>` | ``12``   |
 +---------------------------------+--------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere3D_property_radius>`                   | ``1.0``  |
+| :ref:`float<class_float>`       | :ref:`radius<class_CSGSphere3D_property_radius>`                   | ``0.5``  |
 +---------------------------------+--------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`           | :ref:`rings<class_CSGSphere3D_property_rings>`                     | ``6``    |
 +---------------------------------+--------------------------------------------------------------------+----------+
@@ -78,7 +78,7 @@ Number of vertical slices for the sphere.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

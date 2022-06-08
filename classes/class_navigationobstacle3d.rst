@@ -18,6 +18,8 @@ Description
 
 3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. ``NavigationObstacle3D`` is physics safe.
 
+\ **Note:** Obstacles are intended as a last resort option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently.
+
 Properties
 ----------
 
@@ -26,6 +28,13 @@ Properties
 +---------------------------+-----------------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`radius<class_NavigationObstacle3D_property_radius>`                   | ``1.0``  |
 +---------------------------+-----------------------------------------------------------------------------+----------+
+
+Methods
+-------
+
++-----------------------+-------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle3D_method_get_rid>` **(** **)** |const| |
++-----------------------+-------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -59,6 +68,15 @@ Enables radius estimation algorithm which uses parent's collision shapes to dete
 +-----------+-------------------+
 
 The radius of the agent. Used only if :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` is set to false.
+
+Method Descriptions
+-------------------
+
+.. _class_NavigationObstacle3D_method_get_rid:
+
+- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

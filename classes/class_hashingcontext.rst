@@ -76,8 +76,6 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
 
 
 
-\ **Note:** Not available in HTML5 exports.
-
 Methods
 -------
 

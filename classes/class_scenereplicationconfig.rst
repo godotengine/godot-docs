@@ -21,6 +21,8 @@ Methods
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath[]<class_NodePath>` | :ref:`get_properties<class_SceneReplicationConfig_method_get_properties>` **(** **)** |const|                                                                       |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`has_property<class_SceneReplicationConfig_method_has_property>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                      |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`property_get_index<class_SceneReplicationConfig_method_property_get_index>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                          |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`property_get_spawn<class_SceneReplicationConfig_method_property_get_spawn>` **(** :ref:`NodePath<class_NodePath>` path **)**                                  |
@@ -46,6 +48,12 @@ Method Descriptions
 .. _class_SceneReplicationConfig_method_get_properties:
 
 - :ref:`NodePath[]<class_NodePath>` **get_properties** **(** **)** |const|
+
+----
+
+.. _class_SceneReplicationConfig_method_has_property:
+
+- :ref:`bool<class_bool>` **has_property** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 ----
 

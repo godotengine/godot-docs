@@ -14,7 +14,7 @@ Vector used for 3D math using integer coordinates.
 Description
 -----------
 
-3-element structure that can be used to represent positions in 3D space or any other pair of numeric values.
+3-element structure that can be used to represent positions in 3D space or any other triplet of numeric values.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector3<class_Vector3>` when exact precision is required.
 
@@ -76,8 +76,6 @@ Operators
 ---------
 
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector3i_operator_neq_bool>` **(** **)**                                          |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector3i_operator_neq_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**    |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator %<class_Vector3i_operator_mod_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)** |
@@ -103,8 +101,6 @@ Operators
 | :ref:`bool<class_bool>`         | :ref:`operator <<class_Vector3i_operator_lt_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**      |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator <=<class_Vector3i_operator_lte_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**    |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector3i_operator_eq_bool>` **(** **)**                                           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector3i_operator_eq_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -294,10 +290,6 @@ Operator Descriptions
 
 .. _class_Vector3i_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
 Returns ``true`` if the vectors are not equal.
@@ -322,7 +314,7 @@ Gets the remainder of each component of the ``Vector3i`` with the the given :ref
 
 ::
 
-    print(Vector2i(10, -20, 30) % 7) # Prints "(3, -6, 2)"
+    print(Vector3i(10, -20, 30) % 7) # Prints "(3, -6, 2)"
 
 ----
 
@@ -423,10 +415,6 @@ Compares two ``Vector3i`` vectors by first checking if the X value of the left v
 ----
 
 .. _class_Vector3i_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 

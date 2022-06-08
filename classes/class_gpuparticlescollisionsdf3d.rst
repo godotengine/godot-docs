@@ -11,7 +11,22 @@ GPUParticlesCollisionSDF3D
 
 **Inherits:** :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Baked signed distance field 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+Description
+-----------
+
+Baked signed distance field 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+
+Signed distance fields (SDF) allow for efficiently representing approximate collision shapes for convex and concave objects of any shape. This is more flexible than :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`, but it requires a baking step.
+
+\ **Baking:** The signed distance field texture can be baked by selecting the ``GPUParticlesCollisionSDF3D`` node in the editor, then clicking **Bake SDF** at the top of the 3D viewport. Any *visible* :ref:`MeshInstance3D<class_MeshInstance3D>`\ s touching the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` will be taken into account for baking, regardless of their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
+
+\ **Note:** Baking a ``GPUParticlesCollisionSDF3D``'s :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` is only possible within the editor, as there is no bake method exposed for use in exported projects. However, it's still possible to load pre-baked :ref:`Texture3D<class_Texture3D>`\ s into its :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` property in an exported project.
+
+\ **Note:** :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
+
+\ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 Properties
 ----------
@@ -47,19 +62,19 @@ Enumerations
 
 enum **Resolution**:
 
-- **RESOLUTION_16** = **0**
+- **RESOLUTION_16** = **0** --- Bake a 16×16×16 signed distance field. This is the fastest option, but also the least precise.
 
-- **RESOLUTION_32** = **1**
+- **RESOLUTION_32** = **1** --- Bake a 32×32×32 signed distance field.
 
-- **RESOLUTION_64** = **2**
+- **RESOLUTION_64** = **2** --- Bake a 64×64×64 signed distance field.
 
-- **RESOLUTION_128** = **3**
+- **RESOLUTION_128** = **3** --- Bake a 128×128×128 signed distance field.
 
-- **RESOLUTION_256** = **4**
+- **RESOLUTION_256** = **4** --- Bake a 256×256×256 signed distance field.
 
-- **RESOLUTION_512** = **5**
+- **RESOLUTION_512** = **5** --- Bake a 512×512×512 signed distance field. This is the slowest option, but also the most precise.
 
-- **RESOLUTION_MAX** = **6**
+- **RESOLUTION_MAX** = **6** --- Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` enum.
 
 Property Descriptions
 ---------------------
@@ -76,6 +91,8 @@ Property Descriptions
 | *Getter*  | get_extents()        |
 +-----------+----------------------+
 
+The collision SDF's extents in 3D units. To improve SDF quality, the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` should be set as small as possible while covering the parts of the scene you need.
+
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_resolution:
@@ -90,6 +107,8 @@ Property Descriptions
 | *Getter*  | get_resolution()      |
 +-----------+-----------------------+
 
+The bake resolution to use for the signed distance field :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`. The texture must be baked again for changes to the :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` property to be effective. Higher resolutions have a greater performance cost and take more time to bake. Higher resolutions also result in larger baked textures, leading to increased VRAM and storage space requirements. To improve performance and reduce bake times, use the lowest resolution possible for the object you're representing the collision of.
+
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_texture:
@@ -101,6 +120,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The 3D texture representing the signed distance field.
 
 ----
 
@@ -115,6 +136,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_thickness()      |
 +-----------+----------------------+
+
+The collision shape's thickness. Unlike other particle colliders, ``GPUParticlesCollisionSDF3D`` is actually hollow on the inside. :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>` can be increased to prevent particles from tunneling through the collision shape at high speeds, or when the ``GPUParticlesCollisionSDF3D`` is moved.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

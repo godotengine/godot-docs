@@ -36,6 +36,8 @@ Properties
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`         | :ref:`motion<class_PhysicsTestMotionParameters3D_property_motion>`                                 | ``Vector3(0, 0, 0)``                                |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`recovery_as_collision<class_PhysicsTestMotionParameters3D_property_recovery_as_collision>`   | ``false``                                           |
++---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -151,6 +153,24 @@ Maximum number of returned collisions, between ``1`` and ``32``. Always returns 
 +-----------+----------------------+
 
 Motion vector to define the length and direction of the motion to test.
+
+----
+
+.. _class_PhysicsTestMotionParameters3D_property_recovery_as_collision:
+
+- :ref:`bool<class_bool>` **recovery_as_collision**
+
++-----------+------------------------------------------+
+| *Default* | ``false``                                |
++-----------+------------------------------------------+
+| *Setter*  | set_recovery_as_collision_enabled(value) |
++-----------+------------------------------------------+
+| *Getter*  | is_recovery_as_collision_enabled()       |
++-----------+------------------------------------------+
+
+If set to ``true``, any depenetration from the recovery phase is reported as a collision; this is used e.g. by :ref:`CharacterBody3D.move_and_slide<class_CharacterBody3D_method_move_and_slide>` for improving floor detection when floor snapping is disabled.
+
+If set to ``false``, only collisions resulting from the motion are detected; this is used e.g. by :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -18,6 +18,11 @@ Description
 
 Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from top to bottom.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Theme Properties
 ----------------
 

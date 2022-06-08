@@ -94,13 +94,9 @@ Operators
 ---------
 
 +---------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Rect2_operator_neq_bool>` **(** **)**                                             |
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator !=<class_Rect2_operator_neq_bool>` **(** :ref:`Rect2<class_Rect2>` right **)**             |
 +---------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>` | :ref:`operator *<class_Rect2_operator_mul_Rect2>` **(** :ref:`Transform2D<class_Transform2D>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Rect2_operator_eq_bool>` **(** **)**                                              |
 +---------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator ==<class_Rect2_operator_eq_bool>` **(** :ref:`Rect2<class_Rect2>` right **)**              |
 +---------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -324,10 +320,6 @@ Operator Descriptions
 
 .. _class_Rect2_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2<class_Rect2>` right **)**
 
 Returns ``true`` if the rectangles are not equal.
@@ -345,10 +337,6 @@ Inversely transforms (multiplies) the ``Rect2`` by the given :ref:`Transform2D<c
 ----
 
 .. _class_Rect2_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2<class_Rect2>` right **)**
 

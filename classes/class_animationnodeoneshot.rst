@@ -35,9 +35,9 @@ Properties
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                         | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                         | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.1``   |
+| :ref:`float<class_float>`                         | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.0``   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                         | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.1``   |
+| :ref:`float<class_float>`                         | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.0``   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 | :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`mix_mode<class_AnimationNodeOneShot_property_mix_mode>`                                 | ``0``     |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
@@ -115,7 +115,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - :ref:`float<class_float>` **fadein_time**
 
 +-----------+------------------------+
-| *Default* | ``0.1``                |
+| *Default* | ``0.0``                |
 +-----------+------------------------+
 | *Setter*  | set_fadein_time(value) |
 +-----------+------------------------+
@@ -129,7 +129,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - :ref:`float<class_float>` **fadeout_time**
 
 +-----------+-------------------------+
-| *Default* | ``0.1``                 |
+| *Default* | ``0.0``                 |
 +-----------+-------------------------+
 | *Setter*  | set_fadeout_time(value) |
 +-----------+-------------------------+

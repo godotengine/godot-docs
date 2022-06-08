@@ -123,7 +123,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>` **(** :ref:`Vector2<class_Vector2>` n **)** |const|                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` phi **)** |const|                                                                                                                                    |
+| :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>` **(** :ref:`float<class_float>` angle **)** |const|                                                                                                                                  |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`round<class_Vector2_method_round>` **(** **)** |const|                                                                                                                                                                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,8 +139,6 @@ Methods
 Operators
 ---------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector2_operator_neq_bool>` **(** **)**                                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Vector2_operator_neq_bool>` **(** :ref:`Vector2<class_Vector2>` right **)**           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -165,8 +163,6 @@ Operators
 | :ref:`bool<class_bool>`       | :ref:`operator <<class_Vector2_operator_lt_bool>` **(** :ref:`Vector2<class_Vector2>` right **)**             |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator <=<class_Vector2_operator_lte_bool>` **(** :ref:`Vector2<class_Vector2>` right **)**           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator ==<class_Vector2_operator_eq_bool>` **(** **)**                                                |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Vector2_operator_eq_bool>` **(** :ref:`Vector2<class_Vector2>` right **)**            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -557,9 +553,9 @@ Returns the vector reflected (i.e. mirrored, or symmetric) over a line defined b
 
 .. _class_Vector2_method_rotated:
 
-- :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` phi **)** |const|
+- :ref:`Vector2<class_Vector2>` **rotated** **(** :ref:`float<class_float>` angle **)** |const|
 
-Returns the vector rotated by ``phi`` radians. See also :ref:`@GlobalScope.deg2rad<class_@GlobalScope_method_deg2rad>`.
+Returns the vector rotated by ``angle`` (in radians). See also :ref:`@GlobalScope.deg2rad<class_@GlobalScope_method_deg2rad>`.
 
 ----
 
@@ -607,10 +603,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_Vector2_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
@@ -715,10 +707,6 @@ Compares two ``Vector2`` vectors by first checking if the X value of the left ve
 ----
 
 .. _class_Vector2_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector2<class_Vector2>` right **)**
 

@@ -30,6 +30,8 @@ Properties
 +-------------------------+-----------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`disable_folding<class_TreeItem_property_disable_folding>`             |
 +-------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`visible<class_TreeItem_property_visible>`                             |
++-------------------------+-----------------------------------------------------------------------------+
 
 Methods
 -------
@@ -37,7 +39,7 @@ Methods
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`add_button<class_TreeItem_method_add_button>` **(** :ref:`int<class_int>` column, :ref:`Texture2D<class_Texture2D>` button, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip="" **)** |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                                     | :ref:`call_recursive<class_TreeItem_method_call_recursive>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                    |
+| void                                                              | :ref:`call_recursive<class_TreeItem_method_call_recursive>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                    |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`clear_custom_bg_color<class_TreeItem_method_clear_custom_bg_color>` **(** :ref:`int<class_int>` column **)**                                                                                                                                  |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -111,7 +113,7 @@ Methods
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`                               | :ref:`get_range_config<class_TreeItem_method_get_range_config>` **(** :ref:`int<class_int>` column **)**                                                                                                                                            |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>`    | :ref:`get_structured_text_bidi_override<class_TreeItem_method_get_structured_text_bidi_override>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                  |
+| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` | :ref:`get_structured_text_bidi_override<class_TreeItem_method_get_structured_text_bidi_override>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                  |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                         | :ref:`get_structured_text_bidi_override_options<class_TreeItem_method_get_structured_text_bidi_override_options>` **(** :ref:`int<class_int>` column **)** |const|                                                                                  |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,7 +199,7 @@ Methods
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_selectable<class_TreeItem_method_set_selectable>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**                                                                                                            |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_structured_text_bidi_override<class_TreeItem_method_set_structured_text_bidi_override>` **(** :ref:`int<class_int>` column, :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` parser **)**                                   |
+| void                                                              | :ref:`set_structured_text_bidi_override<class_TreeItem_method_set_structured_text_bidi_override>` **(** :ref:`int<class_int>` column, :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser **)**                                |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_structured_text_bidi_override_options<class_TreeItem_method_set_structured_text_bidi_override_options>` **(** :ref:`int<class_int>` column, :ref:`Array<class_Array>` args **)**                                                          |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -284,6 +286,22 @@ The custom minimum height.
 
 If ``true``, folding is disabled for this TreeItem.
 
+----
+
+.. _class_TreeItem_property_visible:
+
+- :ref:`bool<class_bool>` **visible**
+
++----------+--------------------+
+| *Setter* | set_visible(value) |
++----------+--------------------+
+| *Getter* | is_visible()       |
++----------+--------------------+
+
+If ``true``, the ``TreeItem`` is visible (default).
+
+Note that if a ``TreeItem`` is set to not be visible, none of its children will be visible either.
+
 Method Descriptions
 -------------------
 
@@ -297,7 +315,7 @@ Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` at column ``colu
 
 .. _class_TreeItem_method_call_recursive:
 
-- :ref:`Variant<class_Variant>` **call_recursive** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- void **call_recursive** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
 Calls the ``method`` on the actual TreeItem and its children recursively. Pass parameters as a comma separated list.
 
@@ -601,7 +619,7 @@ Returns a dictionary containing the range parameters for a given column. The key
 
 .. _class_TreeItem_method_get_structured_text_bidi_override:
 
-- :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` **get_structured_text_bidi_override** **(** :ref:`int<class_int>` column **)** |const|
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** :ref:`int<class_int>` column **)** |const|
 
 ----
 
@@ -947,7 +965,7 @@ If ``true``, the given column is selectable.
 
 .. _class_TreeItem_method_set_structured_text_bidi_override:
 
-- void **set_structured_text_bidi_override** **(** :ref:`int<class_int>` column, :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` parser **)**
+- void **set_structured_text_bidi_override** **(** :ref:`int<class_int>` column, :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser **)**
 
 ----
 

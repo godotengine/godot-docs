@@ -72,7 +72,7 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AlphaMode<enum_Image_AlphaMode>`        | :ref:`detect_alpha<class_Image_method_detect_alpha>` **(** **)** |const|                                                                                                                                                                                             |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`UsedChannels<enum_Image_UsedChannels>`  | :ref:`detect_used_channels<class_Image_method_detect_used_channels>` **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)**                                                                                                                           |
+| :ref:`UsedChannels<enum_Image_UsedChannels>`  | :ref:`detect_used_channels<class_Image_method_detect_used_channels>` **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)** |const|                                                                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fill<class_Image_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -479,7 +479,7 @@ Method Descriptions
 
 - void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``.
+Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -487,7 +487,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest
 
 - void **blend_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
+Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``, clipped accordingly to both image bounds. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -495,7 +495,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 - void **blit_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
+Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -503,7 +503,7 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
 
 - void **blit_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
 
-Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
+Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``, clipped accordingly to both image bounds. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -607,7 +607,7 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 
 .. _class_Image_method_detect_used_channels:
 
-- :ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels** **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)**
+- :ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels** **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)** |const|
 
 ----
 

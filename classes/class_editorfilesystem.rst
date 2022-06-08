@@ -23,25 +23,27 @@ This object holds information of all resources in the filesystem, their types, e
 Methods
 -------
 
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** |const|     |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>` **(** **)**                                            |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>` **(** :ref:`String<class_String>` path **)** |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** |const|                      |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** |const|                                          |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`scan<class_EditorFileSystem_method_scan>` **(** **)**                                                                |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`scan_sources<class_EditorFileSystem_method_scan_sources>` **(** **)**                                                |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`update_file<class_EditorFileSystem_method_update_file>` **(** :ref:`String<class_String>` path **)**                 |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`update_script_classes<class_EditorFileSystem_method_update_script_classes>` **(** **)**                              |
-+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** |const|                  |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>` **(** **)**                                                         |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>` **(** :ref:`String<class_String>` path **)**              |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** |const|                                   |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** |const|                                                       |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)** |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`scan<class_EditorFileSystem_method_scan>` **(** **)**                                                                             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`scan_sources<class_EditorFileSystem_method_scan_sources>` **(** **)**                                                             |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`update_file<class_EditorFileSystem_method_update_file>` **(** :ref:`String<class_String>` path **)**                              |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`update_script_classes<class_EditorFileSystem_method_update_script_classes>` **(** **)**                                           |
++-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -115,7 +117,19 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 - :ref:`bool<class_bool>` **is_scanning** **(** **)** |const|
 
-Returns ``true`` of the filesystem is being scanned.
+Returns ``true`` if the filesystem is being scanned.
+
+----
+
+.. _class_EditorFileSystem_method_reimport_files:
+
+- void **reimport_files** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
+
+Reimports a set of files. Call this if these files or their ``.import`` files were directly edited by script or an external program.
+
+If the file type changed or the file was newly created, use :ref:`update_file<class_EditorFileSystem_method_update_file>` or :ref:`scan<class_EditorFileSystem_method_scan>`.
+
+\ **Note:** This function blocks until the import is finished. However, the main loop iteration, including timers and :ref:`Node._process<class_Node_method__process>`, will occur during the import process due to progress bar updates. Avoid calls to :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` or :ref:`scan<class_EditorFileSystem_method_scan>` while an import is in progress.
 
 ----
 
@@ -139,7 +153,9 @@ Check if the source of any imported resource changed.
 
 - void **update_file** **(** :ref:`String<class_String>` path **)**
 
-Update a file information. Call this if an external program (not Godot) modified the file.
+Add a file in an existing directory, or schedule file information to be updated on editor restart. Can be used to update text files saved by an external program.
+
+This will not import the file. To reimport, call :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` or :ref:`scan<class_EditorFileSystem_method_scan>` methods.
 
 ----
 

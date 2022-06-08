@@ -11,6 +11,13 @@ Signal
 
 Class representing a signal defined in an object.
 
+Tutorials
+---------
+
+- :doc:`Using Signals <../getting_started/step_by_step/signals>`
+
+- `GDScript Basics <../tutorials/scripting/gdscript/gdscript_basics.html#signals>`__
+
 Constructors
 ------------
 
@@ -49,11 +56,7 @@ Operators
 ---------
 
 +-------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_Signal_operator_neq_bool>` **(** **)**                                   |
-+-------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_Signal_operator_neq_bool>` **(** :ref:`Signal<class_Signal>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_Signal_operator_eq_bool>` **(** **)**                                    |
 +-------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_Signal_operator_eq_bool>` **(** :ref:`Signal<class_Signal>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------------+
@@ -163,19 +166,11 @@ Operator Descriptions
 
 .. _class_Signal_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Signal<class_Signal>` right **)**
 
 ----
 
 .. _class_Signal_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Signal<class_Signal>` right **)**
 

@@ -9,12 +9,12 @@
 PackedFloat32Array
 ==================
 
-A packed :ref:`Array<class_Array>` of 32-bit floating-point values.
+A packed array of 32-bit floating-point values.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold 32-bit floating-point values. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold 32-bit floating-point values. Packs data tightly, so it saves memory for large array sizes.
 
 If you need to pack 64-bit floats tightly, see :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
@@ -39,9 +39,13 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedFloat32Array_method_bsearch>` **(** :ref:`float<class_float>` value, :ref:`bool<class_bool>` before=true **)**  |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`count<class_PackedFloat32Array_method_count>` **(** :ref:`float<class_float>` value **)** |const|                                   |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`duplicate<class_PackedFloat32Array_method_duplicate>` **(** **)**                                                                   |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`fill<class_PackedFloat32Array_method_fill>` **(** :ref:`float<class_float>` value **)**                                             |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`find<class_PackedFloat32Array_method_find>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)** |const|       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedFloat32Array_method_has>` **(** :ref:`float<class_float>` value **)** |const|                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -56,6 +60,8 @@ Methods
 | :ref:`int<class_int>`                               | :ref:`resize<class_PackedFloat32Array_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                          |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`reverse<class_PackedFloat32Array_method_reverse>` **(** **)**                                                                       |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`rfind<class_PackedFloat32Array_method_rfind>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)** |const|    |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set<class_PackedFloat32Array_method_set>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` value **)**                  |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,13 +78,9 @@ Operators
 ---------
 
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedFloat32Array_operator_neq_bool>` **(** **)**                                                                        |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedFloat32Array_operator_neq_bool>` **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` right **)**              |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`operator +<class_PackedFloat32Array_operator_sum_PackedFloat32Array>` **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` right **)** |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedFloat32Array_operator_eq_bool>` **(** **)**                                                                         |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedFloat32Array_operator_eq_bool>` **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` right **)**               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +137,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 ----
 
+.. _class_PackedFloat32Array_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`float<class_float>` value **)** |const|
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PackedFloat32Array_method_duplicate:
 
 - :ref:`PackedFloat32Array<class_PackedFloat32Array>` **duplicate** **(** **)**
@@ -148,6 +158,14 @@ Creates a copy of the array, and returns it.
 - void **fill** **(** :ref:`float<class_float>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedFloat32Array_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PackedFloat32Array_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)** |const|
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -207,6 +225,14 @@ Reverses the order of the elements in the array.
 
 ----
 
+.. _class_PackedFloat32Array_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)** |const|
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+----
+
 .. _class_PackedFloat32Array_method_set:
 
 - void **set** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` value **)**
@@ -256,10 +282,6 @@ Operator Descriptions
 
 .. _class_PackedFloat32Array_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` right **)**
 
 ----
@@ -271,10 +293,6 @@ Operator Descriptions
 ----
 
 .. _class_PackedFloat32Array_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` right **)**
 

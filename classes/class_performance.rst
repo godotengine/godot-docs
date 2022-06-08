@@ -20,9 +20,9 @@ This class provides access to a number of different monitors related to performa
 
 You can add custom monitors using the :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` method. Custom monitors are available in **Monitor** tab in the editor's **Debugger** panel together with built-in monitors.
 
-\ **Note:** A few of these monitors are only available in debug mode and will always return 0 when used in a release build.
+\ **Note:** Some of the built-in monitors are only available in debug mode and will always return ``0`` when used in a project exported in release mode.
 
-\ **Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
+\ **Note:** Some of the built-in monitors are not updated in real-time for performance reasons, so there may be a delay of up to 1 second between changes.
 
 \ **Note:** Custom monitors do not support negative values. Negative values are clamped to 0.
 
@@ -100,51 +100,51 @@ Enumerations
 
 enum **Monitor**:
 
-- **TIME_FPS** = **0** --- Number of frames per second.
+- **TIME_FPS** = **0** --- The number of frames rendered in the last second. This metric is only updated once per second, even if queried more often. *Higher is better.*
 
-- **TIME_PROCESS** = **1** --- Time it took to complete one frame, in seconds.
+- **TIME_PROCESS** = **1** --- Time it took to complete one frame, in seconds. *Lower is better.*
 
-- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame, in seconds.
+- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame, in seconds. *Lower is better.*
 
-- **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds.
+- **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds. *Lower is better.*
 
-- **MEMORY_STATIC_MAX** = **4** --- Available static memory. Not available in release builds.
+- **MEMORY_STATIC_MAX** = **4** --- Available static memory. Not available in release builds. *Lower is better.*
 
-- **MEMORY_MESSAGE_BUFFER_MAX** = **5** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
+- **MEMORY_MESSAGE_BUFFER_MAX** = **5** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications. *Lower is better.*
 
-- **OBJECT_COUNT** = **6** --- Number of objects currently instantiated (including nodes).
+- **OBJECT_COUNT** = **6** --- Number of objects currently instantiated (including nodes). *Lower is better.*
 
-- **OBJECT_RESOURCE_COUNT** = **7** --- Number of resources currently used.
+- **OBJECT_RESOURCE_COUNT** = **7** --- Number of resources currently used. *Lower is better.*
 
-- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instantiated in the scene tree. This also includes the root node.
+- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instantiated in the scene tree. This also includes the root node. *Lower is better.*
 
-- **OBJECT_ORPHAN_NODE_COUNT** = **9** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
+- **OBJECT_ORPHAN_NODE_COUNT** = **9** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*
 
-- **RENDER_TOTAL_OBJECTS_IN_FRAME** = **10**
+- **RENDER_TOTAL_OBJECTS_IN_FRAME** = **10** --- The total number of objects in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling). *Lower is better.*
 
-- **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = **11**
+- **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = **11** --- The total number of vertices or indices rendered in the last rendered frame. This metric doesn't include primitives from culled objects (either via hiding nodes, frustum culling or occlusion culling). Due to the depth prepass and shadow passes, the number of primitives is always higher than the actual number of vertices in the scene (typically double or triple the original vertex count). *Lower is better.*
 
-- **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = **12**
+- **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = **12** --- The total number of draw calls performed in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling), since they do not result in draw calls. *Lower is better.*
 
-- **RENDER_VIDEO_MEM_USED** = **13** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **RENDER_VIDEO_MEM_USED** = **13** --- The amount of video memory used (texture and vertex memory combined, in bytes). Since this metric also includes miscellaneous allocations, this value is always greater than the sum of :ref:`RENDER_TEXTURE_MEM_USED<class_Performance_constant_RENDER_TEXTURE_MEM_USED>` and :ref:`RENDER_BUFFER_MEM_USED<class_Performance_constant_RENDER_BUFFER_MEM_USED>`. *Lower is better.*
 
-- **RENDER_TEXTURE_MEM_USED** = **14** --- The amount of texture memory used.
+- **RENDER_TEXTURE_MEM_USED** = **14** --- The amount of texture memory used (in bytes). *Lower is better.*
 
-- **RENDER_BUFFER_MEM_USED** = **15**
+- **RENDER_BUFFER_MEM_USED** = **15** --- The amount of render buffer memory used (in bytes). *Lower is better.*
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` nodes in the game.
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` nodes in the game. *Lower is better.*
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **17** --- Number of collision pairs in the 2D physics engine.
+- **PHYSICS_2D_COLLISION_PAIRS** = **17** --- Number of collision pairs in the 2D physics engine. *Lower is better.*
 
-- **PHYSICS_2D_ISLAND_COUNT** = **18** --- Number of islands in the 2D physics engine.
+- **PHYSICS_2D_ISLAND_COUNT** = **18** --- Number of islands in the 2D physics engine. *Lower is better.*
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game.
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **20** --- Number of collision pairs in the 3D physics engine.
+- **PHYSICS_3D_COLLISION_PAIRS** = **20** --- Number of collision pairs in the 3D physics engine. *Lower is better.*
 
-- **PHYSICS_3D_ISLAND_COUNT** = **21** --- Number of islands in the 3D physics engine.
+- **PHYSICS_3D_ISLAND_COUNT** = **21** --- Number of islands in the 3D physics engine. *Lower is better.*
 
-- **AUDIO_OUTPUT_LATENCY** = **22** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
+- **AUDIO_OUTPUT_LATENCY** = **22** --- Output latency of the :ref:`AudioServer<class_AudioServer>`. *Lower is better.*
 
 - **MONITOR_MAX** = **23** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
@@ -155,7 +155,7 @@ Method Descriptions
 
 - void **add_custom_monitor** **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)**
 
-Adds a custom monitor with name same as id. You can specify the category of monitor using '/' in id. If there are more than one '/' then default category is used. Default category is "Custom".
+Adds a custom monitor with the name ``id``. You can specify the category of the monitor using slash delimiters in ``id`` (for example: ``"Game/NumberOfNPCs"``). If there is more than one slash delimiter, then the default category is used. The default category is ``"Custom"``. Prints an error if given ``id`` is already present.
 
 
 .. tabs::
@@ -169,11 +169,11 @@ Adds a custom monitor with name same as id. You can specify the category of moni
         Performance.add_custom_monitor("MyCategory/MyMonitor", monitor_value)
     
         # Adds monitor with name "MyName" to category "Custom".
-        # Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different ids so the code is valid.
+        # Note: "MyCategory/MyMonitor" and "MyMonitor" have same name but different IDs, so the code is valid.
         Performance.add_custom_monitor("MyMonitor", monitor_value)
     
         # Adds monitor with name "MyName" to category "Custom".
-        # Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different ids so the code is valid.
+        # Note: "MyMonitor" and "Custom/MyMonitor" have same name and same category but different IDs, so the code is valid.
         Performance.add_custom_monitor("Custom/MyMonitor", monitor_value)
     
         # Adds monitor with name "MyCategoryOne/MyCategoryTwo/MyMonitor" to category "Custom".
@@ -209,11 +209,9 @@ Adds a custom monitor with name same as id. You can specify the category of moni
 
 
 
-The debugger calls the callable to get the value of custom monitor. The callable must return a number.
+The debugger calls the callable to get the value of custom monitor. The callable must return a zero or positive integer or floating-point number.
 
 Callables are called with arguments supplied in argument array.
-
-\ **Note:** It throws an error if given id is already present.
 
 ----
 
@@ -221,9 +219,7 @@ Callables are called with arguments supplied in argument array.
 
 - :ref:`Variant<class_Variant>` **get_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
-Returns the value of custom monitor with given id. The callable is called to get the value of custom monitor.
-
-\ **Note:** It throws an error if the given id is absent.
+Returns the value of custom monitor with given ``id``. The callable is called to get the value of custom monitor. See also :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>`. Prints an error if the given ``id`` is absent.
 
 ----
 
@@ -231,7 +227,7 @@ Returns the value of custom monitor with given id. The callable is called to get
 
 - :ref:`Array<class_Array>` **get_custom_monitor_names** **(** **)**
 
-Returns the names of active custom monitors in an array.
+Returns the names of active custom monitors in an :ref:`Array<class_Array>`.
 
 ----
 
@@ -239,7 +235,7 @@ Returns the names of active custom monitors in an array.
 
 - :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
 
-Returns the value of one of the available monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
+Returns the value of one of the available built-in monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
 
 .. tabs::
@@ -254,13 +250,15 @@ Returns the value of one of the available monitors. You should provide one of th
 
 
 
+See :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` to query custom performance monitors' values.
+
 ----
 
 .. _class_Performance_method_get_monitor_modification_time:
 
 - :ref:`int<class_int>` **get_monitor_modification_time** **(** **)**
 
-Returns the last tick in which custom monitor was added/removed.
+Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>` when the monitor is updated.
 
 ----
 
@@ -268,7 +266,7 @@ Returns the last tick in which custom monitor was added/removed.
 
 - :ref:`bool<class_bool>` **has_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
-Returns true if custom monitor with the given id is present otherwise returns false.
+Returns ``true`` if custom monitor with the given ``id`` is present, ``false`` otherwise.
 
 ----
 
@@ -276,9 +274,7 @@ Returns true if custom monitor with the given id is present otherwise returns fa
 
 - void **remove_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
-Removes the custom monitor with given id.
-
-\ **Note:** It throws an error if the given id is already absent.
+Removes the custom monitor with given ``id``. Prints an error if the given ``id`` is already absent.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

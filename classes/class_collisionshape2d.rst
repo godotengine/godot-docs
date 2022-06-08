@@ -75,6 +75,8 @@ A disabled collision shape has no effect in the world. This property should be c
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
+\ **Note:** This property has no effect if this ``CollisionShape2D`` is a child of an :ref:`Area2D<class_Area2D>` node.
+
 ----
 
 .. _class_CollisionShape2D_property_one_way_collision_margin:

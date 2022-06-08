@@ -208,7 +208,7 @@ If enabled, the TileMap will see its collisions synced to the physics tick and c
 | *Getter*  | get_collision_visibility_mode()      |
 +-----------+--------------------------------------+
 
-Show or hide the TileMap's collision shapes. If set to ``VISIBILITY_MODE_DEFAULT``, this depends on the show collision debug settings.
+Show or hide the TileMap's collision shapes. If set to :ref:`VISIBILITY_MODE_DEFAULT<class_TileMap_constant_VISIBILITY_MODE_DEFAULT>`, this depends on the show collision debug settings.
 
 ----
 
@@ -224,7 +224,7 @@ Show or hide the TileMap's collision shapes. If set to ``VISIBILITY_MODE_DEFAULT
 | *Getter*  | get_navigation_visibility_mode()      |
 +-----------+---------------------------------------+
 
-Show or hide the TileMap's collision shapes. If set to ``VISIBILITY_MODE_DEFAULT``, this depends on the show navigation debug settings.
+Show or hide the TileMap's collision shapes. If set to :ref:`VISIBILITY_MODE_DEFAULT<class_TileMap_constant_VISIBILITY_MODE_DEFAULT>`, this depends on the show navigation debug settings.
 
 ----
 

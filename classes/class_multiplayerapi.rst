@@ -20,7 +20,7 @@ This class implements the high-level multiplayer API. See also :ref:`Multiplayer
 
 By default, :ref:`SceneTree<class_SceneTree>` has a reference to this class that is used to provide multiplayer capabilities (i.e. RPCs) across the whole scene.
 
-It is possible to override the MultiplayerAPI instance used by specific Nodes by setting the :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` property, effectively allowing to run both client and server in the same scene.
+It is possible to override the MultiplayerAPI instance used by specific tree branches by calling the :ref:`SceneTree.set_multiplayer<class_SceneTree_method_set_multiplayer>` method, effectively allowing to run both client and server in the same scene.
 
 \ **Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
 
@@ -233,7 +233,7 @@ Returns ``true`` if this MultiplayerAPI's :ref:`multiplayer_peer<class_Multiplay
 
 - void **poll** **(** **)**
 
-Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
+Method used for polling the MultiplayerAPI. You only need to worry about this if you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI(s) for you.
 
 \ **Note:** This method results in RPCs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
 

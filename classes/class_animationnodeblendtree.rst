@@ -16,7 +16,9 @@ AnimationNodeBlendTree
 Description
 -----------
 
-This node may contain a sub-tree of any other blend type nodes, such as mix, blend2, blend3, one shot, etc. This is one of the most commonly used roots.
+This node may contain a sub-tree of any other blend type nodes, such as :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, etc. This is one of the most commonly used roots.
+
+An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` is created by default.
 
 Tutorials
 ---------

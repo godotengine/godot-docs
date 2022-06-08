@@ -51,6 +51,8 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/config/description<class_ProjectSettings_property_application/config/description>`                                                                                               | ``""``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`application/config/features<class_ProjectSettings_property_application/config/features>`                                                                                                     |                                                                                                 |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/config/icon<class_ProjectSettings_property_application/config/icon>`                                                                                                             | ``""``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`                                                                                   | ``""``                                                                                          |
@@ -121,75 +123,75 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`debug/file_logging/max_log_files<class_ProjectSettings_property_debug/file_logging/max_log_files>`                                                                                           | ``5``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/assert_always_false<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`                                                                     | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_false<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`                                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`                                                                       | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`                                                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                                                         | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                                                         | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                       | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/empty_file<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`                                                                                       | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/empty_file<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`                                                                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/enable<class_ProjectSettings_property_debug/gdscript/warnings/enable>`                                                                                               | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/exclude_addons<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`                                                                               | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                                                         | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                                                         | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                                                   | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                                                   | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/int_assigned_to_enum<class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum>`                                                                   | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_assigned_to_enum<class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum>`                                                                   | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                           | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                           | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                                                   | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                                                   | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                         | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                         | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                             | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                             | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                                               | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                                               | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/shadowed_global_identifier<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`                                                       | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/shadowed_global_identifier<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`                                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`                                                                         | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/shadowed_variable<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`                                                                         | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/shadowed_variable_base_class<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`                                                   | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/shadowed_variable_base_class<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`                                                   | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                                                 | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/standalone_expression<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`                                                                 | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/standalone_ternary<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`                                                                       | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/standalone_ternary<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`                                                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                                                           | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                                                     | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`                                                 | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`                                                 | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unreachable_code<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`                                                                           | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unreachable_code<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`                                                                           | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unreachable_pattern<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`                                                                     | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unreachable_pattern<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`                                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unsafe_call_argument<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`                                                                   | ``false``                                                                                       |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_call_argument<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`                                                                   | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unsafe_cast<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`                                                                                     | ``false``                                                                                       |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_cast<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`                                                                                     | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unsafe_method_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`                                                                   | ``false``                                                                                       |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_method_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`                                                                   | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                                               | ``false``                                                                                       |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                                               | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`                                                                 | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`                                                                 | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unused_parameter<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`                                                                           | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_parameter<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`                                                                           | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unused_private_class_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_private_class_variable>`                                                 | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_private_class_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_private_class_variable>`                                                 | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unused_signal<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`                                                                                 | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_signal<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`                                                                                 | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                                                             | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                                                             | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                                                             | ``true``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                                                             | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`                                                                                   | ``"Please include this when reporting the bug on https://github.com/godotengine/godot/issues"`` |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -261,6 +263,10 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`editor/script/templates_search_path<class_ProjectSettings_property_editor/script/templates_search_path>`                                                                                     | ``"res://script_templates"``                                                                    |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`                                                                                         | ``true``                                                                                        |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`                                                                                                 | ``true``                                                                                        |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                                                       | ``0``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`                                                                                                         |                                                                                                 |
@@ -273,7 +279,11 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`gui/theme/default_font_antialiased<class_ProjectSettings_property_gui/theme/default_font_antialiased>`                                                                                       | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>`                                                                             | ``false``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`gui/theme/default_font_hinting<class_ProjectSettings_property_gui/theme/default_font_hinting>`                                                                                               | ``1``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`gui/theme/default_font_multichannel_signed_distance_field<class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field>`                                         | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`gui/theme/default_font_subpixel_positioning<class_ProjectSettings_property_gui/theme/default_font_subpixel_positioning>`                                                                     | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -440,6 +450,10 @@ Properties
 | :ref:`bool<class_bool>`                           | :ref:`internationalization/locale/include_text_server_data<class_ProjectSettings_property_internationalization/locale/include_text_server_data>`                                                   | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`internationalization/locale/test<class_ProjectSettings_property_internationalization/locale/test>`                                                                                           | ``""``                                                                                          |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`internationalization/locale/translation_remaps<class_ProjectSettings_property_internationalization/locale/translation_remaps>`                                                               |                                                                                                 |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`internationalization/locale/translations<class_ProjectSettings_property_internationalization/locale/translations>`                                                                           |                                                                                                 |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`internationalization/pseudolocalization/double_vowels<class_ProjectSettings_property_internationalization/pseudolocalization/double_vowels>`                                                 | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -907,18 +921,6 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`                                                                             | ``60``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/2d/opengl/batching_send_null<class_ProjectSettings_property_rendering/2d/opengl/batching_send_null>`                                                                               | ``0``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/2d/opengl/batching_stream<class_ProjectSettings_property_rendering/2d/opengl/batching_stream>`                                                                                     | ``0``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/2d/opengl/legacy_orphan_buffers<class_ProjectSettings_property_rendering/2d/opengl/legacy_orphan_buffers>`                                                                         | ``0``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/2d/opengl/legacy_stream<class_ProjectSettings_property_rendering/2d/opengl/legacy_stream>`                                                                                         | ``0``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/2d/options/ninepatch_mode<class_ProjectSettings_property_rendering/2d/options/ninepatch_mode>`                                                                                     | ``1``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/2d/options/use_software_skinning<class_ProjectSettings_property_rendering/2d/options/use_software_skinning>`                                                                       | ``true``                                                                                        |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/2d/sdf/oversize<class_ProjectSettings_property_rendering/2d/sdf/oversize>`                                                                                                         | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/2d/sdf/scale<class_ProjectSettings_property_rendering/2d/sdf/scale>`                                                                                                               | ``1``                                                                                           |
@@ -935,43 +937,21 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`                                                                 | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`                                                                             | ``false``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`rendering/anti_aliasing/screen_space_roughness_limiter/amount<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/amount>`                                 | ``0.25``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/anti_aliasing/screen_space_roughness_limiter/enabled<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled>`                               | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`rendering/anti_aliasing/screen_space_roughness_limiter/limit<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/limit>`                                   | ``0.18``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/debug/diagnose_frame<class_ProjectSettings_property_rendering/batching/debug/diagnose_frame>`                                                                             | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/debug/flash_batching<class_ProjectSettings_property_rendering/batching/debug/flash_batching>`                                                                             | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/batching/lights/max_join_items<class_ProjectSettings_property_rendering/batching/lights/max_join_items>`                                                                           | ``32``                                                                                          |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`rendering/batching/lights/scissor_area_threshold<class_ProjectSettings_property_rendering/batching/lights/scissor_area_threshold>`                                                           | ``1.0``                                                                                         |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/options/single_rect_fallback<class_ProjectSettings_property_rendering/batching/options/single_rect_fallback>`                                                             | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/options/use_batching<class_ProjectSettings_property_rendering/batching/options/use_batching>`                                                                             | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/options/use_batching_in_editor<class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor>`                                                         | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/batching/parameters/batch_buffer_size<class_ProjectSettings_property_rendering/batching/parameters/batch_buffer_size>`                                                             | ``16384``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`rendering/batching/parameters/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/batching/parameters/colored_vertex_format_threshold>`                                 | ``0.25``                                                                                        |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/batching/parameters/item_reordering_lookahead<class_ProjectSettings_property_rendering/batching/parameters/item_reordering_lookahead>`                                             | ``4``                                                                                           |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/batching/parameters/max_join_item_commands<class_ProjectSettings_property_rendering/batching/parameters/max_join_item_commands>`                                                   | ``16``                                                                                          |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/batching/precision/uv_contract<class_ProjectSettings_property_rendering/batching/precision/uv_contract>`                                                                           | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/batching/precision/uv_contract_amount<class_ProjectSettings_property_rendering/batching/precision/uv_contract_amount>`                                                             | ``100``                                                                                         |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/camera/depth_of_field/depth_of_field_bokeh_quality<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_bokeh_quality>`                                   | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/camera/depth_of_field/depth_of_field_bokeh_shape<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_bokeh_shape>`                                       | ``1``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/camera/depth_of_field/depth_of_field_use_jitter<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_use_jitter>`                                         | ``false``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`rendering/driver/depth_prepass/disable_for_vendors<class_ProjectSettings_property_rendering/driver/depth_prepass/disable_for_vendors>`                                                       | ``"PowerVR,Mali,Adreno,Apple"``                                                                 |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/driver/depth_prepass/enable<class_ProjectSettings_property_rendering/driver/depth_prepass/enable>`                                                                                 | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -999,9 +979,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`rendering/environment/ssao/fadeout_to<class_ProjectSettings_property_rendering/environment/ssao/fadeout_to>`                                                                                 | ``300.0``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/environment/ssao/half_size<class_ProjectSettings_property_rendering/environment/ssao/half_size>`                                                                                   | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/environment/ssao/half_size.mobile<class_ProjectSettings_property_rendering/environment/ssao/half_size.mobile>`                                                                     | ``true``                                                                                        |
+| :ref:`bool<class_bool>`                           | :ref:`rendering/environment/ssao/half_size<class_ProjectSettings_property_rendering/environment/ssao/half_size>`                                                                                   | ``true``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/environment/ssao/quality<class_ProjectSettings_property_rendering/environment/ssao/quality>`                                                                                       | ``2``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1028,10 +1006,6 @@ Properties
 | :ref:`int<class_int>`                             | :ref:`rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>`                                                         | ``64``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/environment/volumetric_fog/volume_size<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_size>`                                                           | ``64``                                                                                          |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/gles2/compatibility/disable_half_float<class_ProjectSettings_property_rendering/gles2/compatibility/disable_half_float>`                                                           | ``false``                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/gles2/compatibility/enable_high_float.Android<class_ProjectSettings_property_rendering/gles2/compatibility/enable_high_float.Android>`                                             | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>`                                                   | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1072,6 +1046,12 @@ Properties
 | :ref:`int<class_int>`                             | :ref:`rendering/limits/forward_renderer/threaded_render_minimum_instances<class_ProjectSettings_property_rendering/limits/forward_renderer/threaded_render_minimum_instances>`                     | ``500``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/limits/global_shader_variables/buffer_size<class_ProjectSettings_property_rendering/limits/global_shader_variables/buffer_size>`                                                   | ``65536``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/limits/opengl/max_lights_per_object<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>`                                                                 | ``8``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/limits/opengl/max_renderable_elements<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_elements>`                                                             | ``65536``                                                                                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/limits/opengl/max_renderable_lights<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights>`                                                                 | ``32``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/limits/spatial_indexer/threaded_cull_minimum_instances<class_ProjectSettings_property_rendering/limits/spatial_indexer/threaded_cull_minimum_instances>`                           | ``1000``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1191,7 +1171,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/vulkan/staging_buffer/texture_upload_region_size_px>`                                 | ``64``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`xr/openxr/default_action_map<class_ProjectSettings_property_xr/openxr/default_action_map>`                                                                                                   | ``"res://default_action_map.tres"``                                                             |
+| :ref:`String<class_String>`                       | :ref:`xr/openxr/default_action_map<class_ProjectSettings_property_xr/openxr/default_action_map>`                                                                                                   | ``"res://openxr_action_map.tres"``                                                              |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/enabled<class_ProjectSettings_property_xr/openxr/enabled>`                                                                                                                         | ``false``                                                                                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
@@ -1327,6 +1307,14 @@ The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_
 +-----------+--------+
 
 The project's description, displayed as a tooltip in the Project Manager when hovering the project.
+
+----
+
+.. _class_ProjectSettings_property_application/config/features:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **application/config/features**
+
+List of internal features associated with the project, like ``Double Precision`` or ``C#``. Not to be confused with feature tags.
 
 ----
 
@@ -1774,57 +1762,61 @@ Specifies the maximum amount of log files allowed (used for rotation).
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/assert_always_false**
+- :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_false**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when an ``assert`` call always returns false.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/assert_always_true**
+- :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when an ``assert`` call always returns true.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/constant_used_as_function**
+- :ref:`int<class_int>` **debug/gdscript/warnings/constant_used_as_function**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when a constant is used as a function.
+If ``enabled``, prints a warning or an error when a constant is used as a function.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/deprecated_keyword**
+- :ref:`int<class_int>` **debug/gdscript/warnings/deprecated_keyword**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when deprecated keywords are used.
+If ``enabled``, prints a warning or an error when deprecated keywords are used.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/empty_file:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/empty_file**
+- :ref:`int<class_int>` **debug/gdscript/warnings/empty_file**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when an empty file is parsed.
+If ``enabled``, prints a warning or an error when an empty file is parsed.
 
 ----
 
@@ -1854,151 +1846,155 @@ If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/function_used_as_property**
+- :ref:`int<class_int>` **debug/gdscript/warnings/function_used_as_property**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when using a function as if it was a property.
+If ``enabled``, prints a warning or an error when using a function as if it was a property.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/incompatible_ternary**
+- :ref:`int<class_int>` **debug/gdscript/warnings/incompatible_ternary**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when a ternary operator may emit values with incompatible types.
+If ``enabled``, prints a warning or an error when a ternary operator may emit values with incompatible types.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/int_assigned_to_enum**
+- :ref:`int<class_int>` **debug/gdscript/warnings/int_assigned_to_enum**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when trying to assign an integer to a variable that expects an enum value.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/integer_division:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/integer_division**
+- :ref:`int<class_int>` **debug/gdscript/warnings/integer_division**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when dividing an integer by another integer (the decimal part will be discarded).
+If ``enabled``, prints a warning or an error when dividing an integer by another integer (the decimal part will be discarded).
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/narrowing_conversion**
+- :ref:`int<class_int>` **debug/gdscript/warnings/narrowing_conversion**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
+If ``enabled``, prints a warning or an error when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/property_used_as_function**
+- :ref:`int<class_int>` **debug/gdscript/warnings/property_used_as_function**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when using a property as if it was a function.
+If ``enabled``, prints a warning or an error when using a property as if it was a function.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_await:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/redundant_await**
+- :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when a function that is not a coroutine is called with await.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/return_value_discarded**
+- :ref:`int<class_int>` **debug/gdscript/warnings/return_value_discarded**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when calling a function without using its return value (by assigning it to a variable or using it as a function argument). Such return values are sometimes used to denote possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
+If ``enabled``, prints a warning or an error when calling a function without using its return value (by assigning it to a variable or using it as a function argument). Such return values are sometimes used to denote possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/shadowed_global_identifier**
+- :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_global_identifier**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when defining a local or subclass member variable, signal, or enum that would have the same name as a built-in function or global class name, which possibly shadow it.
+If ``enabled``, prints a warning or an error when defining a local or subclass member variable, signal, or enum that would have the same name as a built-in function or global class name, which possibly shadow it.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/shadowed_variable**
+- :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when defining a local or subclass member variable that would shadow a variable at an upper level (such as a member variable).
+If ``enabled``, prints a warning or an error when defining a local or subclass member variable that would shadow a variable at an upper level (such as a member variable).
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/shadowed_variable_base_class**
+- :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/standalone_expression**
+- :ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+If ``enabled``, prints a warning or an error when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/standalone_ternary**
+- :ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+If ``enabled``, prints a warning or an error when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
 
 ----
 
@@ -2016,161 +2012,169 @@ If ``true``, all warnings will be reported as if they were errors.
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unassigned_variable**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when using a variable that wasn't previously assigned.
+If ``enabled``, prints a warning or an error when using a variable that wasn't previously assigned.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unassigned_variable_op_assign**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable_op_assign**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
+If ``enabled``, prints a warning or an error when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unreachable_code**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unreachable_code**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when unreachable code is detected (such as after a ``return`` statement that will always be executed).
+If ``enabled``, prints a warning or an error when unreachable code is detected (such as after a ``return`` statement that will always be executed).
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unreachable_pattern**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unreachable_pattern**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when an unreachable ``match`` pattern is detected.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_call_argument**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_call_argument**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
-If ``true``, enables warnings when using an expression whose type may not be compatible with the function parameter expected.
+If ``enabled``, prints a warning or an error when using an expression whose type may not be compatible with the function parameter expected.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_cast**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_cast**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
-If ``true``, enables warnings when performing an unsafe cast.
+If ``enabled``, prints a warning or an error when performing an unsafe cast.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_method_access**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_method_access**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
-If ``true``, enables warnings when calling a method whose presence is not guaranteed at compile-time in the class.
+If ``enabled``, prints a warning or an error when calling a method whose presence is not guaranteed at compile-time in the class.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unsafe_property_access**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_property_access**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
 
-If ``true``, enables warnings when accessing a property whose presence is not guaranteed at compile-time in the class.
+If ``enabled``, prints a warning or an error when accessing a property whose presence is not guaranteed at compile-time in the class.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_local_constant**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unused_local_constant**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when a local constant is never used.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_parameter**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unused_parameter**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when a function parameter is never used.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_private_class_variable:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_private_class_variable**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unused_private_class_variable**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+If ``enabled``, prints a warning or an error when a class variable is never used.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_signal:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_signal**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unused_signal**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when a signal is unused.
+If ``enabled``, prints a warning or an error when a signal is unused.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_variable:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/unused_variable**
+- :ref:`int<class_int>` **debug/gdscript/warnings/unused_variable**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when a local variable is unused.
+If ``enabled``, prints a warning or an error when a local variable is unused.
 
 ----
 
 .. _class_ProjectSettings_property_debug/gdscript/warnings/void_assignment:
 
-- :ref:`bool<class_bool>` **debug/gdscript/warnings/void_assignment**
+- :ref:`int<class_int>` **debug/gdscript/warnings/void_assignment**
 
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
 
-If ``true``, enables warnings when assigning the result of a function that returns ``void`` to a variable.
+If ``enabled``, prints a warning or an error when assigning the result of a function that returns ``void`` to a variable.
 
 ----
 
@@ -2488,7 +2492,7 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 Allows the window to be resizable by default.
 
-\ **Note:** This setting is ignored on iOS and Android.
+\ **Note:** This setting is ignored on iOS.
 
 ----
 
@@ -2628,6 +2632,34 @@ Search path for project-specific script templates. Godot will search for script 
 
 ----
 
+.. _class_ProjectSettings_property_filesystem/import/blender/enabled:
+
+- :ref:`bool<class_bool>` **filesystem/import/blender/enabled**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, Blender 3D scene files with the ``.blend`` extension will be imported by converting them to glTF 2.0.
+
+This requires configuring a path to a Blender executable in the editor settings at ``filesystem/import/blender/blender3_path``. Blender 3.0 or later is required.
+
+----
+
+.. _class_ProjectSettings_property_filesystem/import/fbx/enabled:
+
+- :ref:`bool<class_bool>` **filesystem/import/fbx/enabled**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, Autodesk FBX 3D scene files with the ``.fbx`` extension will be imported by converting them to glTF 2.0.
+
+This requires configuring a path to a FBX2glTF executable in the editor settings at ``filesystem/import/fbx/fbx2gltf_path``.
+
+----
+
 .. _class_ProjectSettings_property_gui/common/default_scroll_deadzone:
 
 - :ref:`int<class_int>` **gui/common/default_scroll_deadzone**
@@ -2694,6 +2726,22 @@ If set to ``true``, default font uses 8-bit anitialiased glyph rendering.  See :
 
 ----
 
+.. _class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps:
+
+- :ref:`bool<class_bool>` **gui/theme/default_font_generate_mipmaps**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If set to ``true``, the default font will have mipmaps generated. This prevents text from looking grainy when a :ref:`Control<class_Control>` is scaled down, or when a :ref:`Label3D<class_Label3D>` is viewed from a long distance (if :ref:`Label3D.texture_filter<class_Label3D_property_texture_filter>` is set to a mode that displays mipmaps).
+
+Enabling :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>` increases font generation time and memory usage. Only enable this setting if you actually need it.
+
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project.
+
+----
+
 .. _class_ProjectSettings_property_gui/theme/default_font_hinting:
 
 - :ref:`int<class_int>` **gui/theme/default_font_hinting**
@@ -2703,6 +2751,22 @@ If set to ``true``, default font uses 8-bit anitialiased glyph rendering.  See :
 +-----------+-------+
 
 Default font hinting mode. See :ref:`FontData.hinting<class_FontData_property_hinting>`.
+
+----
+
+.. _class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field:
+
+- :ref:`bool<class_bool>` **gui/theme/default_font_multichannel_signed_distance_field**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If set to ``true``, the default font will use multichannel signed distance field (MSDF) for crisp rendering at any size. Since this approach does not rely on rasterizing the font every time its size changes, this allows for resizing the font in real-time without any performance penalty. Text will also not look grainy for :ref:`Control<class_Control>`\ s that are scaled down (or for :ref:`Label3D<class_Label3D>`\ s viewed from a long distance).
+
+MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>` to further improve font rendering quality when scaled down.
+
+\ **Note:** This setting does not affect custom :ref:`Font<class_Font>`\ s used within the project.
 
 ----
 
@@ -3341,6 +3405,22 @@ If ``true``, text server break iteration rule sets, dictionaries and other optio
 +-----------+--------+
 
 If non-empty, this locale will be used when running the project from the editor.
+
+----
+
+.. _class_ProjectSettings_property_internationalization/locale/translation_remaps:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **internationalization/locale/translation_remaps**
+
+Locale-dependent resource remaps. Edit them in the "Localization" tab of Project Settings editor.
+
+----
+
+.. _class_ProjectSettings_property_internationalization/locale/translations:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **internationalization/locale/translations**
+
+List of translation files available in the project. Edit them in the "Localization" tab of Project Settings editor.
 
 ----
 
@@ -6230,66 +6310,6 @@ The number of fixed iterations per second. This controls how often physics simul
 
 ----
 
-.. _class_ProjectSettings_property_rendering/2d/opengl/batching_send_null:
-
-- :ref:`int<class_int>` **rendering/2d/opengl/batching_send_null**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/2d/opengl/batching_stream:
-
-- :ref:`int<class_int>` **rendering/2d/opengl/batching_stream**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/2d/opengl/legacy_orphan_buffers:
-
-- :ref:`int<class_int>` **rendering/2d/opengl/legacy_orphan_buffers**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/2d/opengl/legacy_stream:
-
-- :ref:`int<class_int>` **rendering/2d/opengl/legacy_stream**
-
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/2d/options/ninepatch_mode:
-
-- :ref:`int<class_int>` **rendering/2d/options/ninepatch_mode**
-
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/2d/options/use_software_skinning:
-
-- :ref:`bool<class_bool>` **rendering/2d/options/use_software_skinning**
-
-+-----------+----------+
-| *Default* | ``true`` |
-+-----------+----------+
-
-----
-
 .. _class_ProjectSettings_property_rendering/2d/sdf/oversize:
 
 - :ref:`int<class_int>` **rendering/2d/sdf/oversize**
@@ -6376,6 +6396,20 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 
 ----
 
+.. _class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa:
+
+- :ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_taa**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewport>`. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
+
+\ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
+
+----
+
 .. _class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/amount:
 
 - :ref:`float<class_float>` **rendering/anti_aliasing/screen_space_roughness_limiter/amount**
@@ -6403,136 +6437,6 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 +-----------+----------+
 | *Default* | ``0.18`` |
 +-----------+----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/debug/diagnose_frame:
-
-- :ref:`bool<class_bool>` **rendering/batching/debug/diagnose_frame**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/debug/flash_batching:
-
-- :ref:`bool<class_bool>` **rendering/batching/debug/flash_batching**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/lights/max_join_items:
-
-- :ref:`int<class_int>` **rendering/batching/lights/max_join_items**
-
-+-----------+--------+
-| *Default* | ``32`` |
-+-----------+--------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/lights/scissor_area_threshold:
-
-- :ref:`float<class_float>` **rendering/batching/lights/scissor_area_threshold**
-
-+-----------+---------+
-| *Default* | ``1.0`` |
-+-----------+---------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/options/single_rect_fallback:
-
-- :ref:`bool<class_bool>` **rendering/batching/options/single_rect_fallback**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/options/use_batching:
-
-- :ref:`bool<class_bool>` **rendering/batching/options/use_batching**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor:
-
-- :ref:`bool<class_bool>` **rendering/batching/options/use_batching_in_editor**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/parameters/batch_buffer_size:
-
-- :ref:`int<class_int>` **rendering/batching/parameters/batch_buffer_size**
-
-+-----------+-----------+
-| *Default* | ``16384`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/parameters/colored_vertex_format_threshold:
-
-- :ref:`float<class_float>` **rendering/batching/parameters/colored_vertex_format_threshold**
-
-+-----------+----------+
-| *Default* | ``0.25`` |
-+-----------+----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/parameters/item_reordering_lookahead:
-
-- :ref:`int<class_int>` **rendering/batching/parameters/item_reordering_lookahead**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/parameters/max_join_item_commands:
-
-- :ref:`int<class_int>` **rendering/batching/parameters/max_join_item_commands**
-
-+-----------+--------+
-| *Default* | ``16`` |
-+-----------+--------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/precision/uv_contract:
-
-- :ref:`bool<class_bool>` **rendering/batching/precision/uv_contract**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/batching/precision/uv_contract_amount:
-
-- :ref:`int<class_int>` **rendering/batching/precision/uv_contract_amount**
-
-+-----------+---------+
-| *Default* | ``100`` |
-+-----------+---------+
 
 ----
 
@@ -6572,6 +6476,18 @@ If ``true``, jitters DOF samples to make effect slightly blurrier and hide lines
 
 ----
 
+.. _class_ProjectSettings_property_rendering/driver/depth_prepass/disable_for_vendors:
+
+- :ref:`String<class_String>` **rendering/driver/depth_prepass/disable_for_vendors**
+
++-----------+---------------------------------+
+| *Default* | ``"PowerVR,Mali,Adreno,Apple"`` |
++-----------+---------------------------------+
+
+Disables :ref:`rendering/driver/depth_prepass/enable<class_ProjectSettings_property_rendering/driver/depth_prepass/enable>` conditionally for certain vendors. By default, disables the depth prepass for mobile devices as mobile devices do not benefit from the depth prepass due to their unique architecture.
+
+----
+
 .. _class_ProjectSettings_property_rendering/driver/depth_prepass/enable:
 
 - :ref:`bool<class_bool>` **rendering/driver/depth_prepass/enable**
@@ -6582,7 +6498,7 @@ If ``true``, jitters DOF samples to make effect slightly blurrier and hide lines
 
 If ``true``, performs a previous depth pass before rendering 3D materials. This increases performance significantly in scenes with high overdraw, when complex materials and lighting are used. However, in scenes with few occluded surfaces, the depth prepass may reduce performance. If your game is viewed from a fixed angle that makes it easy to avoid overdraw (such as top-down or side-scrolling perspective), consider disabling the depth prepass to improve performance. This setting can be changed at run-time to optimize performance depending on the scene currently being viewed.
 
-\ **Note:** Only supported when using the Vulkan Clustered backend (not Vulkan Mobile or OpenGL). When using Vulkan Mobile or OpenGL, there is no depth prepass performed.
+\ **Note:** Only supported when using the Vulkan Clustered backend or the OpenGL backend. When using Vulkan Mobile there is no depth prepass performed.
 
 ----
 
@@ -6596,7 +6512,7 @@ If ``true``, performs a previous depth pass before rendering 3D materials. This 
 
 The video driver to use.
 
-\ **Note:** OpenGL support is currently incomplete. Only basic 2D rendering is supported, and single-window mode is required for correct operation.
+\ **Note:** OpenGL support is currently incomplete. Only basic rendering is supported.
 
 \ **Note:** The backend in use can be overridden at runtime via the ``--rendering-driver`` command line argument.
 
@@ -6742,23 +6658,11 @@ Distance at which the screen-space ambient occlusion is fully faded out. Use thi
 
 - :ref:`bool<class_bool>` **rendering/environment/ssao/half_size**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-If ``true``, screen-space ambient occlusion will be rendered at half size and then upscaled before being added to the scene. This is significantly faster but may miss small details.
-
-----
-
-.. _class_ProjectSettings_property_rendering/environment/ssao/half_size.mobile:
-
-- :ref:`bool<class_bool>` **rendering/environment/ssao/half_size.mobile**
-
 +-----------+----------+
 | *Default* | ``true`` |
 +-----------+----------+
 
-Lower-end override for :ref:`rendering/environment/ssao/half_size<class_ProjectSettings_property_rendering/environment/ssao/half_size>` on mobile devices, due to performance concerns.
+If ``true``, screen-space ambient occlusion will be rendered at half size and then upscaled before being added to the scene. This is significantly faster but may miss small details. If ``false``, screen-space ambient occlusion will be rendered at full size.
 
 ----
 
@@ -6915,26 +6819,6 @@ Number of slices to use along the depth of the froxel buffer for volumetric fog.
 +-----------+--------+
 
 Base size used to determine size of froxel buffer in the camera X-axis and Y-axis. The final size is scaled by the aspect ratio of the screen, so actual values may differ from what is set. Set a larger size for more detailed fog, set a smaller size for better performance.
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/compatibility/disable_half_float:
-
-- :ref:`bool<class_bool>` **rendering/gles2/compatibility/disable_half_float**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
-
-----
-
-.. _class_ProjectSettings_property_rendering/gles2/compatibility/enable_high_float.Android:
-
-- :ref:`bool<class_bool>` **rendering/gles2/compatibility/enable_high_float.Android**
-
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
 
 ----
 
@@ -7139,6 +7023,42 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 +-----------+-----------+
 | *Default* | ``65536`` |
 +-----------+-----------+
+
+----
+
+.. _class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object:
+
+- :ref:`int<class_int>` **rendering/limits/opengl/max_lights_per_object**
+
++-----------+-------+
+| *Default* | ``8`` |
++-----------+-------+
+
+Max number of omnilights and spotlights renderable per object. At the default value of 8, this means that each surface can be affected by up to 8 omnilights and 8 spotlights. This is further limited by hardware support and :ref:`rendering/limits/opengl/max_renderable_lights<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights>`. Setting this low will slightly reduce memory usage, may decrease shader compile times, and may result in faster rendering on low-end, mobile, or web devices.
+
+----
+
+.. _class_ProjectSettings_property_rendering/limits/opengl/max_renderable_elements:
+
+- :ref:`int<class_int>` **rendering/limits/opengl/max_renderable_elements**
+
++-----------+-----------+
+| *Default* | ``65536`` |
++-----------+-----------+
+
+Max amount of elements renderable in a frame. If more elements than this are visible per frame, they will not be drawn. Keep in mind elements refer to mesh surfaces and not meshes themselves. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
+
+----
+
+.. _class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights:
+
+- :ref:`int<class_int>` **rendering/limits/opengl/max_renderable_lights**
+
++-----------+--------+
+| *Default* | ``32`` |
++-----------+--------+
+
+Max number of positional lights renderable in a frame. If more lights than this number are used, they will be ignored. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
 ----
 
@@ -7844,9 +7764,9 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 - :ref:`String<class_String>` **xr/openxr/default_action_map**
 
-+-----------+-------------------------------------+
-| *Default* | ``"res://default_action_map.tres"`` |
-+-----------+-------------------------------------+
++-----------+------------------------------------+
+| *Default* | ``"res://openxr_action_map.tres"`` |
++-----------+------------------------------------+
 
 Action map configuration to load by default.
 
@@ -7896,7 +7816,7 @@ Specify the default reference space.
 | *Default* | ``"1"`` |
 +-----------+---------+
 
-Specify the view configuration with which to configure OpenXR settting up either Mono or Stereo rendering.
+Specify the view configuration with which to configure OpenXR setting up either Mono or Stereo rendering.
 
 ----
 

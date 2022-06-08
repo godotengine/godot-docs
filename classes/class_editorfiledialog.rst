@@ -19,11 +19,11 @@ Properties
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`Access<enum_EditorFileDialog_Access>`           | :ref:`access<class_EditorFileDialog_property_access>`                                       | ``0``                                                                                    |
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_dir<class_EditorFileDialog_property_current_dir>`                             | ``"res://"``                                                                             |
+| :ref:`String<class_String>`                           | :ref:`current_dir<class_EditorFileDialog_property_current_dir>`                             |                                                                                          |
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_file<class_EditorFileDialog_property_current_file>`                           | ``""``                                                                                   |
+| :ref:`String<class_String>`                           | :ref:`current_file<class_EditorFileDialog_property_current_file>`                           |                                                                                          |
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`current_path<class_EditorFileDialog_property_current_path>`                           | ``"res://"``                                                                             |
+| :ref:`String<class_String>`                           | :ref:`current_path<class_EditorFileDialog_property_current_path>`                           |                                                                                          |
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                               | dialog_hide_on_ok                                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
 +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
@@ -158,13 +158,11 @@ The location from which the user may select a file, including ``res://``, ``user
 
 - :ref:`String<class_String>` **current_dir**
 
-+-----------+------------------------+
-| *Default* | ``"res://"``           |
-+-----------+------------------------+
-| *Setter*  | set_current_dir(value) |
-+-----------+------------------------+
-| *Getter*  | get_current_dir()      |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_current_dir(value) |
++----------+------------------------+
+| *Getter* | get_current_dir()      |
++----------+------------------------+
 
 The currently occupied directory.
 
@@ -174,13 +172,11 @@ The currently occupied directory.
 
 - :ref:`String<class_String>` **current_file**
 
-+-----------+-------------------------+
-| *Default* | ``""``                  |
-+-----------+-------------------------+
-| *Setter*  | set_current_file(value) |
-+-----------+-------------------------+
-| *Getter*  | get_current_file()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_current_file(value) |
++----------+-------------------------+
+| *Getter* | get_current_file()      |
++----------+-------------------------+
 
 The currently selected file.
 
@@ -190,13 +186,11 @@ The currently selected file.
 
 - :ref:`String<class_String>` **current_path**
 
-+-----------+-------------------------+
-| *Default* | ``"res://"``            |
-+-----------+-------------------------+
-| *Setter*  | set_current_path(value) |
-+-----------+-------------------------+
-| *Getter*  | get_current_path()      |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Setter* | set_current_path(value) |
++----------+-------------------------+
+| *Getter* | get_current_path()      |
++----------+-------------------------+
 
 The file system path in the address bar.
 

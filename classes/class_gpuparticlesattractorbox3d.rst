@@ -11,7 +11,14 @@ GPUParticlesAttractorBox3D
 
 **Inherits:** :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+Description
+-----------
+
+Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+
+\ **Note:** Particle attractors only affect :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 Properties
 ----------
@@ -34,6 +41,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_extents()        |
 +-----------+----------------------+
+
+The attractor box's extents in 3D units.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

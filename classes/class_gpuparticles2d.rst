@@ -45,6 +45,8 @@ Properties
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`fract_delta<class_GPUParticles2D_property_fract_delta>`                               | ``true``                        |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`interpolate<class_GPUParticles2D_property_interpolate>`                               | ``true``                        |
++-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`float<class_float>`                       | :ref:`lifetime<class_GPUParticles2D_property_lifetime>`                                     | ``1.0``                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`local_coords<class_GPUParticles2D_property_local_coords>`                             | ``true``                        |
@@ -240,6 +242,22 @@ The particle system's frame rate is fixed to a value. For instance, changing the
 +-----------+-----------------------------+
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
+
+----
+
+.. _class_GPUParticles2D_property_interpolate:
+
+- :ref:`bool<class_bool>` **interpolate**
+
++-----------+------------------------+
+| *Default* | ``true``               |
++-----------+------------------------+
+| *Setter*  | set_interpolate(value) |
++-----------+------------------------+
+| *Getter*  | get_interpolate()      |
++-----------+------------------------+
+
+Enables particle interpolation, which makes the particle movement smoother when their :ref:`fixed_fps<class_GPUParticles2D_property_fixed_fps>` is lower than the screen refresh rate.
 
 ----
 

@@ -89,6 +89,8 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`int<class_int>`         | :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>`                               | ``0``                       |
 +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`skew<class_StyleBoxFlat_property_skew>`                                             | ``Vector2(0, 0)``           |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
 
 Methods
 -------
@@ -134,7 +136,7 @@ Property Descriptions
 | *Getter*  | is_anti_aliased()       |
 +-----------+-------------------------+
 
-Antialiasing draws a small ring around the edges, which fades to transparency. As a result, edges look much smoother. This is only noticeable when using rounded corners.
+Antialiasing draws a small ring around the edges, which fades to transparency. As a result, edges look much smoother. This is only noticeable when using rounded corners or :ref:`skew<class_StyleBoxFlat_property_skew>`.
 
 \ **Note:** When using beveled corners with 45-degree angles (:ref:`corner_detail<class_StyleBoxFlat_property_corner_detail>` = 1), it is recommended to set :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>` to ``false`` to ensure crisp visuals and avoid possible visual glitches.
 
@@ -382,6 +384,8 @@ Toggles drawing of the inner part of the stylebox.
 
 Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>` to draw a border outside the control rect.
 
+\ **Note:** Unlike :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>`, :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
+
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_left:
@@ -397,6 +401,8 @@ Expands the stylebox outside of the control rect on the bottom edge. Useful in c
 +-----------+--------------------------+
 
 Expands the stylebox outside of the control rect on the left edge. Useful in combination with :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>` to draw a border outside the control rect.
+
+\ **Note:** Unlike :ref:`StyleBox.content_margin_left<class_StyleBox_property_content_margin_left>`, :ref:`expand_margin_left<class_StyleBoxFlat_property_expand_margin_left>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
 ----
 
@@ -414,6 +420,8 @@ Expands the stylebox outside of the control rect on the left edge. Useful in com
 
 Expands the stylebox outside of the control rect on the right edge. Useful in combination with :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>` to draw a border outside the control rect.
 
+\ **Note:** Unlike :ref:`StyleBox.content_margin_right<class_StyleBox_property_content_margin_right>`, :ref:`expand_margin_right<class_StyleBoxFlat_property_expand_margin_right>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
+
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_top:
@@ -429,6 +437,8 @@ Expands the stylebox outside of the control rect on the right edge. Useful in co
 +-----------+--------------------------+
 
 Expands the stylebox outside of the control rect on the top edge. Useful in combination with :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>` to draw a border outside the control rect.
+
+\ **Note:** Unlike :ref:`StyleBox.content_margin_top<class_StyleBox_property_content_margin_top>`, :ref:`expand_margin_top<class_StyleBoxFlat_property_expand_margin_top>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
 ----
 
@@ -477,6 +487,24 @@ The shadow offset in pixels. Adjusts the position of the shadow relatively to th
 +-----------+------------------------+
 
 The shadow size in pixels.
+
+----
+
+.. _class_StyleBoxFlat_property_skew:
+
+- :ref:`Vector2<class_Vector2>` **skew**
+
++-----------+-------------------+
+| *Default* | ``Vector2(0, 0)`` |
++-----------+-------------------+
+| *Setter*  | set_skew(value)   |
++-----------+-------------------+
+| *Getter*  | get_skew()        |
++-----------+-------------------+
+
+If set to a non-zero value on either axis, :ref:`skew<class_StyleBoxFlat_property_skew>` distorts the StyleBox horizontally and/or vertically. This can be used for "futuristic"-style UIs. Positive values skew the StyleBox towards the right (X axis) and upwards (Y axis), while negative values skew the StyleBox towards the left (X axis) and downwards (Y axis).
+
+\ **Note:** To ensure text does not touch the StyleBox's edges, consider increasing the :ref:`StyleBox<class_StyleBox>`'s content margin (see :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>`). It is preferable to increase the content margin instead of the expand margin (see :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>`), as increasing the expand margin does not increase the size of the clickable area for :ref:`Control<class_Control>`\ s.
 
 Method Descriptions
 -------------------

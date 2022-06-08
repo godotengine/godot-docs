@@ -36,7 +36,7 @@ Properties
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                               | :ref:`select_with_rmb<class_TabBar_property_select_with_rmb>`                     | ``false`` |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`                       | :ref:`tab_alignment<class_TabBar_property_tab_alignment>`                         | ``1``     |
+| :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`                       | :ref:`tab_alignment<class_TabBar_property_tab_alignment>`                         | ``0``     |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 | :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_TabBar_property_tab_close_display_policy>`   | ``0``     |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
@@ -106,6 +106,8 @@ Theme Properties
 ----------------
 
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`drop_mark_color<class_TabBar_theme_color_drop_mark_color>`             | ``Color(1, 1, 1, 1)``               |
++-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_TabBar_theme_color_font_disabled_color>`     | ``Color(0.875, 0.875, 0.875, 0.5)`` |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_TabBar_theme_color_font_outline_color>`       | ``Color(1, 1, 1, 1)``               |
@@ -114,7 +116,7 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabBar_theme_color_font_unselected_color>` | ``Color(0.7, 0.7, 0.7, 1)``         |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_TabBar_theme_constant_hseparation>`                  | ``4``                               |
+| :ref:`int<class_int>`             | :ref:`h_separation<class_TabBar_theme_constant_h_separation>`                | ``4``                               |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`outline_size<class_TabBar_theme_constant_outline_size>`                | ``0``                               |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
@@ -127,6 +129,8 @@ Theme Properties
 | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_TabBar_theme_icon_decrement>`                          |                                     |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_TabBar_theme_icon_decrement_highlight>`      |                                     |
++-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`drop_mark<class_TabBar_theme_icon_drop_mark>`                          |                                     |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_TabBar_theme_icon_increment>`                          |                                     |
 +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
@@ -388,7 +392,7 @@ If ``true``, enables selecting a tab with the right mouse button.
 - :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` **tab_alignment**
 
 +-----------+--------------------------+
-| *Default* | ``1``                    |
+| *Default* | ``0``                    |
 +-----------+--------------------------+
 | *Setter*  | set_tab_alignment(value) |
 +-----------+--------------------------+
@@ -659,6 +663,18 @@ Sets a ``title`` for the tab at index ``tab_idx``.
 Theme Property Descriptions
 ---------------------------
 
+.. _class_TabBar_theme_color_drop_mark_color:
+
+- :ref:`Color<class_Color>` **drop_mark_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+Modulation color for the :ref:`drop_mark<class_TabBar_theme_icon_drop_mark>` icon.
+
+----
+
 .. _class_TabBar_theme_color_font_disabled_color:
 
 - :ref:`Color<class_Color>` **font_disabled_color**
@@ -707,9 +723,9 @@ Font color of the other, unselected tabs.
 
 ----
 
-.. _class_TabBar_theme_constant_hseparation:
+.. _class_TabBar_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -768,6 +784,14 @@ Icon for the left arrow button that appears when there are too many tabs to fit 
 - :ref:`Texture2D<class_Texture2D>` **decrement_highlight**
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+----
+
+.. _class_TabBar_theme_icon_drop_mark:
+
+- :ref:`Texture2D<class_Texture2D>` **drop_mark**
+
+Icon shown to indicate where a dragged tab is gonna be dropped (see :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>`).
 
 ----
 

@@ -119,6 +119,8 @@ Properties
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`use_occlusion_culling<class_Viewport_property_use_occlusion_culling>`                           | ``false`` |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                             | :ref:`use_taa<class_Viewport_property_use_taa>`                                                       | ``false`` |
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                             | :ref:`use_xr<class_Viewport_property_use_xr>`                                                         | ``false`` |
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`World2D<class_World2D>`                                                       | :ref:`world_2d<class_Viewport_property_world_2d>`                                                     |           |
@@ -162,8 +164,6 @@ Methods
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`gui_release_focus<class_Viewport_method_gui_release_focus>` **(** **)**                                                                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                   | :ref:`is_embedding_subwindows<class_Viewport_method_is_embedding_subwindows>` **(** **)** |const|                                                                                                                            |
-+---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                   | :ref:`is_input_handled<class_Viewport_method_is_input_handled>` **(** **)** |const|                                                                                                                                          |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`push_input<class_Viewport_method_push_input>` **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` in_local_coords=false **)**                                                                     |
@@ -176,7 +176,7 @@ Methods
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                      | :ref:`set_shadow_atlas_quadrant_subdiv<class_Viewport_method_set_shadow_atlas_quadrant_subdiv>` **(** :ref:`int<class_int>` quadrant, :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSubdiv>` subdiv **)** |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                      | :ref:`warp_mouse<class_Viewport_method_warp_mouse>` **(** :ref:`Vector2<class_Vector2>` to_position **)**                                                                                                                    |
+| void                                                                      | :ref:`warp_mouse<class_Viewport_method_warp_mouse>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                       |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -247,9 +247,9 @@ enum **ShadowAtlasQuadrantSubdiv**:
 
 enum **Scaling3DMode**:
 
-- **SCALING_3D_MODE_BILINEAR** = **0** --- Enables bilinear scaling on 3D viewports. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+- **SCALING_3D_MODE_BILINEAR** = **0** --- Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
-- **SCALING_3D_MODE_FSR** = **1** --- Enables FSR upscaling on 3D viewports. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear supersampling will be used instead. A value of ``1.0`` disables scaling.
+- **SCALING_3D_MODE_FSR** = **1** --- Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 - **SCALING_3D_MODE_MAX** = **2** --- Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
@@ -391,6 +391,8 @@ enum **RenderInfoType**:
 
 .. _class_Viewport_constant_DEBUG_DRAW_OCCLUDERS:
 
+.. _class_Viewport_constant_DEBUG_DRAW_MOTION_VECTORS:
+
 enum **DebugDraw**:
 
 - **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
@@ -442,6 +444,8 @@ enum **DebugDraw**:
 - **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = **23**
 
 - **DEBUG_DRAW_OCCLUDERS** = **24**
+
+- **DEBUG_DRAW_MOTION_VECTORS** = **25**
 
 ----
 
@@ -722,13 +726,15 @@ If ``true``, the viewport will not receive input events.
 
 - :ref:`bool<class_bool>` **gui_embed_subwindows**
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_embed_subwindows_hint(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_embed_subwindows_hint()      |
-+-----------+----------------------------------+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_embedding_subwindows(value) |
++-----------+---------------------------------+
+| *Getter*  | is_embedding_subwindows()       |
++-----------+---------------------------------+
+
+If ``true``, sub-windows (popups and dialogs) will be embedded inside application window as control-like nodes. If ``false``, they will appear as separate windows handled by the operating system.
 
 ----
 
@@ -810,7 +816,7 @@ The multisample anti-aliasing mode. A higher number results in smoother edges at
 | *Getter*  | is_using_own_world_3d()     |
 +-----------+-----------------------------+
 
-If ``true``, the viewport will use the :ref:`World3D<class_World3D>` defined in :ref:`world_3d<class_Viewport_property_world_3d>`.
+If ``true``, the viewport will use a unique copy of the :ref:`World3D<class_World3D>` defined in :ref:`world_3d<class_Viewport_property_world_3d>`.
 
 ----
 
@@ -1084,6 +1090,24 @@ If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be u
 
 ----
 
+.. _class_Viewport_property_use_taa:
+
+- :ref:`bool<class_bool>` **use_taa**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_use_taa(value) |
++-----------+--------------------+
+| *Getter*  | is_using_taa()     |
++-----------+--------------------+
+
+Enables Temporal Anti-Aliasing for this viewport. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
+
+\ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
+
+----
+
 .. _class_Viewport_property_use_xr:
 
 - :ref:`bool<class_bool>` **use_xr**
@@ -1197,22 +1221,13 @@ Returns the :ref:`ShadowAtlasQuadrantSubdiv<enum_Viewport_ShadowAtlasQuadrantSub
 
 Returns the viewport's texture.
 
-\ **Note:** Due to the way OpenGL works, the resulting :ref:`ViewportTexture<class_ViewportTexture>` is flipped vertically. You can use :ref:`Image.flip_y<class_Image_method_flip_y>` on the result of :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` to flip it back, for example:
+\ **Note:** When trying to store the current texture (e.g. in a file), it might be completely black or outdated if used too early, especially when used in e.g. :ref:`Node._ready<class_Node_method__ready>`. To make sure the texture you get is correct, you can await :ref:`RenderingServer.frame_post_draw<class_RenderingServer_signal_frame_post_draw>` signal.
 
+::
 
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var img = get_viewport().get_texture().get_image()
-    img.flip_y()
-
- .. code-tab:: csharp
-
-    Image img = GetViewport().GetTexture().GetImage();
-    img.FlipY();
-
-
+    func _ready():
+        await RenderingServer.frame_post_draw
+        $Viewport.get_texture().get_image().save_png("user://Screenshot.png")
 
 ----
 
@@ -1262,6 +1277,8 @@ Returns ``true`` if the drag operation is successful.
 
 Returns ``true`` if the viewport is currently performing a drag operation.
 
+Alternative to :ref:`Node.NOTIFICATION_DRAG_BEGIN<class_Node_constant_NOTIFICATION_DRAG_BEGIN>` and :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION_DRAG_END>` when you prefer polling the value.
+
 ----
 
 .. _class_Viewport_method_gui_release_focus:
@@ -1269,12 +1286,6 @@ Returns ``true`` if the viewport is currently performing a drag operation.
 - void **gui_release_focus** **(** **)**
 
 Removes the focus from the currently focused :ref:`Control<class_Control>` within this viewport. If no :ref:`Control<class_Control>` has the focus, does nothing.
-
-----
-
-.. _class_Viewport_method_is_embedding_subwindows:
-
-- :ref:`bool<class_bool>` **is_embedding_subwindows** **(** **)** |const|
 
 ----
 
@@ -1322,7 +1333,7 @@ Sets the number of subdivisions to use in the specified quadrant. A higher numbe
 
 .. _class_Viewport_method_warp_mouse:
 
-- void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` to_position **)**
+- void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Moves the mouse pointer to the specified position in this ``Viewport`` using the coordinate system of this ``Viewport``.
 

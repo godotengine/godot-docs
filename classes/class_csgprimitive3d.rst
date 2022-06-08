@@ -30,26 +30,26 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive3D_property_invert_faces>` | ``false`` |
-+-------------------------+-----------------------------------------------------------------+-----------+
++-------------------------+-------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`flip_faces<class_CSGPrimitive3D_property_flip_faces>` | ``false`` |
++-------------------------+-------------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
 
-.. _class_CSGPrimitive3D_property_invert_faces:
+.. _class_CSGPrimitive3D_property_flip_faces:
 
-- :ref:`bool<class_bool>` **invert_faces**
+- :ref:`bool<class_bool>` **flip_faces**
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_invert_faces(value) |
-+-----------+-------------------------+
-| *Getter*  | is_inverting_faces()    |
-+-----------+-------------------------+
++-----------+-----------------------+
+| *Default* | ``false``             |
++-----------+-----------------------+
+| *Setter*  | set_flip_faces(value) |
++-----------+-----------------------+
+| *Getter*  | get_flip_faces()      |
++-----------+-----------------------+
 
-Invert the faces of the mesh.
+If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

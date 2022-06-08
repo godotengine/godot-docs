@@ -97,11 +97,7 @@ Operators
 ---------
 
 +-------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_Callable_operator_neq_bool>` **(** **)**                                       |
-+-------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_Callable_operator_neq_bool>` **(** :ref:`Callable<class_Callable>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_Callable_operator_eq_bool>` **(** **)**                                        |
 +-------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_Callable_operator_eq_bool>` **(** :ref:`Callable<class_Callable>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------------------+
@@ -247,10 +243,6 @@ Operator Descriptions
 
 .. _class_Callable_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Callable<class_Callable>` right **)**
 
 Returns ``true`` if both ``Callable``\ s invoke different targets.
@@ -258,10 +250,6 @@ Returns ``true`` if both ``Callable``\ s invoke different targets.
 ----
 
 .. _class_Callable_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Callable<class_Callable>` right **)**
 

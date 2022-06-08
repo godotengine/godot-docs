@@ -9,12 +9,12 @@
 PackedVector3Array
 ==================
 
-A packed :ref:`Array<class_Array>` of :ref:`Vector3<class_Vector3>`\ s.
+A packed array of :ref:`Vector3<class_Vector3>`\ s.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold :ref:`Vector3<class_Vector3>`. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold :ref:`Vector3<class_Vector3>`. Packs data tightly, so it saves memory for large array sizes.
 
 Constructors
 ------------
@@ -37,9 +37,13 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedVector3Array_method_bsearch>` **(** :ref:`Vector3<class_Vector3>` value, :ref:`bool<class_bool>` before=true **)** |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`count<class_PackedVector3Array_method_count>` **(** :ref:`Vector3<class_Vector3>` value **)** |const|                                  |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`duplicate<class_PackedVector3Array_method_duplicate>` **(** **)**                                                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`fill<class_PackedVector3Array_method_fill>` **(** :ref:`Vector3<class_Vector3>` value **)**                                            |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`find<class_PackedVector3Array_method_find>` **(** :ref:`Vector3<class_Vector3>` value, :ref:`int<class_int>` from=0 **)** |const|      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedVector3Array_method_has>` **(** :ref:`Vector3<class_Vector3>` value **)** |const|                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,6 +58,8 @@ Methods
 | :ref:`int<class_int>`                               | :ref:`resize<class_PackedVector3Array_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`reverse<class_PackedVector3Array_method_reverse>` **(** **)**                                                                          |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`rfind<class_PackedVector3Array_method_rfind>` **(** :ref:`Vector3<class_Vector3>` value, :ref:`int<class_int>` from=-1 **)** |const|   |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set<class_PackedVector3Array_method_set>` **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` value **)**                 |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,15 +76,11 @@ Operators
 ---------
 
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedVector3Array_operator_neq_bool>` **(** **)**                                                                        |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_PackedVector3Array_operator_neq_bool>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**              |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`operator *<class_PackedVector3Array_operator_mul_PackedVector3Array>` **(** :ref:`Transform3D<class_Transform3D>` right **)**               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`operator +<class_PackedVector3Array_operator_sum_PackedVector3Array>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)** |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedVector3Array_operator_eq_bool>` **(** **)**                                                                         |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_PackedVector3Array_operator_eq_bool>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +137,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 ----
 
+.. _class_PackedVector3Array_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`Vector3<class_Vector3>` value **)** |const|
+
+Returns the number of times an element is in the array.
+
+----
+
 .. _class_PackedVector3Array_method_duplicate:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **duplicate** **(** **)**
@@ -148,6 +158,14 @@ Creates a copy of the array, and returns it.
 - void **fill** **(** :ref:`Vector3<class_Vector3>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedVector3Array_method_resize>` to create an array with a given size and initialized elements.
+
+----
+
+.. _class_PackedVector3Array_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`Vector3<class_Vector3>` value, :ref:`int<class_int>` from=0 **)** |const|
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 ----
 
@@ -207,6 +225,14 @@ Reverses the order of the elements in the array.
 
 ----
 
+.. _class_PackedVector3Array_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`Vector3<class_Vector3>` value, :ref:`int<class_int>` from=-1 **)** |const|
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+----
+
 .. _class_PackedVector3Array_method_set:
 
 - void **set** **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` value **)**
@@ -252,10 +278,6 @@ Operator Descriptions
 
 .. _class_PackedVector3Array_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 
 ----
@@ -273,10 +295,6 @@ Operator Descriptions
 ----
 
 .. _class_PackedVector3Array_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 

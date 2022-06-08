@@ -58,7 +58,7 @@ Constructors
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>` | :ref:`Basis<class_Basis_constructor_Basis>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                   |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>` | :ref:`Basis<class_Basis_constructor_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**                                                |
+| :ref:`Basis<class_Basis>` | :ref:`Basis<class_Basis_constructor_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                              |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>` | :ref:`Basis<class_Basis_constructor_Basis>` **(** :ref:`Quaternion<class_Quaternion>` from **)**                                                                         |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,7 +91,7 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`           | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)** |const|                                                                                |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`           | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)** |const|                              |
+| :ref:`Basis<class_Basis>`           | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                            |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`           | :ref:`scaled<class_Basis_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                              |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,8 +110,6 @@ Operators
 ---------
 
 +-------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator !=<class_Basis_operator_neq_bool>` **(** **)**                                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Basis_operator_neq_bool>` **(** :ref:`Basis<class_Basis>` right **)**       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`operator *<class_Basis_operator_mul_Basis>` **(** :ref:`Basis<class_Basis>` right **)**       |
@@ -121,8 +119,6 @@ Operators
 | :ref:`Basis<class_Basis>`     | :ref:`operator *<class_Basis_operator_mul_Basis>` **(** :ref:`float<class_float>` right **)**       |
 +-------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`     | :ref:`operator *<class_Basis_operator_mul_Basis>` **(** :ref:`int<class_int>` right **)**           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator ==<class_Basis_operator_eq_bool>` **(** **)**                                        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Basis_operator_eq_bool>` **(** :ref:`Basis<class_Basis>` right **)**        |
 +-------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -228,9 +224,9 @@ Constructs a ``Basis`` as a copy of the given ``Basis``.
 
 ----
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)**
+- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
-Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``phi``, in radians. The axis must be a normalized vector.
+Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 
@@ -341,9 +337,9 @@ Returns the orthonormalized version of the matrix (useful to call from time to t
 
 .. _class_Basis_method_rotated:
 
-- :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)** |const|
+- :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
-Introduce an additional rotation around the given axis by phi (radians). The axis must be a normalized vector.
+Introduce an additional rotation around the given axis by ``angle`` (in radians). The axis must be a normalized vector.
 
 ----
 
@@ -398,10 +394,6 @@ Operator Descriptions
 
 .. _class_Basis_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Basis<class_Basis>` right **)**
 
 Returns ``true`` if the ``Basis`` matrices are not equal.
@@ -437,10 +429,6 @@ This operator multiplies all components of the ``Basis``, which scales it unifor
 ----
 
 .. _class_Basis_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Basis<class_Basis>` right **)**
 

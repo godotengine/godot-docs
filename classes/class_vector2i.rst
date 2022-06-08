@@ -76,8 +76,6 @@ Operators
 ---------
 
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector2i_operator_neq_bool>` **(** **)**                                          |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector2i_operator_neq_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**    |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>` | :ref:`operator %<class_Vector2i_operator_mod_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)** |
@@ -103,8 +101,6 @@ Operators
 | :ref:`bool<class_bool>`         | :ref:`operator <<class_Vector2i_operator_lt_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**      |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator <=<class_Vector2i_operator_lte_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**    |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector2i_operator_eq_bool>` **(** **)**                                           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector2i_operator_eq_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -278,10 +274,6 @@ Operator Descriptions
 
 .. _class_Vector2i_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
 Returns ``true`` if the vectors are not equal.
@@ -407,10 +399,6 @@ Compares two ``Vector2i`` vectors by first checking if the X value of the left v
 ----
 
 .. _class_Vector2i_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 

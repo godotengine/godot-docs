@@ -26,6 +26,8 @@ Properties
 +---------------------------+--------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``  |
 +---------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`point_count<class_Curve3D_property_point_count>`             | ``0``    |
++---------------------------+--------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true`` |
 +---------------------------+--------------------------------------------------------------------+----------+
 
@@ -48,8 +50,6 @@ Methods
 | :ref:`float<class_float>`                           | :ref:`get_closest_offset<class_Curve3D_method_get_closest_offset>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                                    |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point<class_Curve3D_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_point_count<class_Curve3D_method_get_point_count>` **(** **)** |const|                                                                                                                                                                 |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`get_point_in<class_Curve3D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                             |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +99,22 @@ The distance in meters between two adjacent cached points. Changing it forces th
 
 ----
 
+.. _class_Curve3D_property_point_count:
+
+- :ref:`int<class_int>` **point_count**
+
++-----------+------------------------+
+| *Default* | ``0``                  |
++-----------+------------------------+
+| *Setter*  | set_point_count(value) |
++-----------+------------------------+
+| *Getter*  | get_point_count()      |
++-----------+------------------------+
+
+The number of points describing the curve.
+
+----
+
 .. _class_Curve3D_property_up_vector_enabled:
 
 - :ref:`bool<class_bool>` **up_vector_enabled**
@@ -120,7 +136,7 @@ Method Descriptions
 
 - void **add_point** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` in=Vector3(0, 0, 0), :ref:`Vector3<class_Vector3>` out=Vector3(0, 0, 0), :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a point to a curve at ``position``, with control points ``in`` and ``out``.
+Adds a point to a curve at ``position`` relative to the ``Curve3D``'s position, with control points ``in`` and ``out``.
 
 If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position <0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 
@@ -185,14 +201,6 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 Returns the closest baked point (in curve's local space) to ``to_point``.
 
 \ ``to_point`` must be in this curve's local space.
-
-----
-
-.. _class_Curve3D_method_get_point_count:
-
-- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
-
-Returns the number of points describing the curve.
 
 ----
 

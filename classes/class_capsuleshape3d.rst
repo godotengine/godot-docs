@@ -11,12 +11,14 @@ CapsuleShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Capsule shape for collisions.
+Capsule shape resource for 3D collisions.
 
 Description
 -----------
 
-Capsule shape for collisions.
+3D capsule shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. In 3D, a capsule is a cylinder shape with hemispheres at both ends.
+
+\ **Performance:** Being a primitive collision shape, ``CapsuleShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). ``CapsuleShape3D`` is cheaper to check collisions against compared to :ref:`CylinderShape3D<class_CylinderShape3D>`.
 
 Tutorials
 ---------

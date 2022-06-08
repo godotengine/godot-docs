@@ -85,6 +85,8 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`clear_polygons<class_NavigationPolygon_method_clear_polygons>` **(** **)**                                                                                                      |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NavigationMesh<class_NavigationMesh>`         | :ref:`get_mesh<class_NavigationPolygon_method_get_mesh>` **(** **)**                                                                                                                  |
++-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_outline<class_NavigationPolygon_method_get_outline>` **(** :ref:`int<class_int>` idx **)** |const|                                                                          |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`get_outline_count<class_NavigationPolygon_method_get_outline_count>` **(** **)** |const|                                                                                        |
@@ -144,6 +146,14 @@ Clears the array of the outlines, but it doesn't clear the vertices and the poly
 - void **clear_polygons** **(** **)**
 
 Clears the array of polygons, but it doesn't clear the array of outlines and vertices.
+
+----
+
+.. _class_NavigationPolygon_method_get_mesh:
+
+- :ref:`NavigationMesh<class_NavigationMesh>` **get_mesh** **(** **)**
+
+Returns the :ref:`NavigationMesh<class_NavigationMesh>` resulting from this navigation polygon. This navmesh can be used to update the navmesh of a region with the :ref:`NavigationServer3D.region_set_navmesh<class_NavigationServer3D_method_region_set_navmesh>` API directly (as 2D uses the 3D server behind the scene).
 
 ----
 

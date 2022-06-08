@@ -38,7 +38,7 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`is_bound<class_PacketPeerUDP_method_is_bound>` **(** **)** |const|                                                                                                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_connected_to_host<class_PacketPeerUDP_method_is_connected_to_host>` **(** **)** |const|                                                                                     |
+| :ref:`bool<class_bool>`               | :ref:`is_socket_connected<class_PacketPeerUDP_method_is_socket_connected>` **(** **)** |const|                                                                                       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`join_multicast_group<class_PacketPeerUDP_method_join_multicast_group>` **(** :ref:`String<class_String>` multicast_address, :ref:`String<class_String>` interface_name **)**   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,9 +118,9 @@ Returns whether this ``PacketPeerUDP`` is bound to an address and can receive pa
 
 ----
 
-.. _class_PacketPeerUDP_method_is_connected_to_host:
+.. _class_PacketPeerUDP_method_is_socket_connected:
 
-- :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** |const|
+- :ref:`bool<class_bool>` **is_socket_connected** **(** **)** |const|
 
 Returns ``true`` if the UDP socket is open and has been connected to a remote address. See :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 

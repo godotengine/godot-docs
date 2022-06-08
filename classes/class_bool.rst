@@ -135,13 +135,9 @@ Operators
 ---------
 
 +-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** **)**                               |
-+-------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** :ref:`bool<class_bool>` right **)** |
 +-------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator <<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**   |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** **)**                                |
 +-------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** :ref:`bool<class_bool>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------+
@@ -180,10 +176,6 @@ Operator Descriptions
 
 .. _class_bool_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`bool<class_bool>` right **)**
 
 Returns ``true`` if two bools are different, i.e. one is ``true`` and the other is ``false``.
@@ -199,12 +191,6 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 ----
 
 .. _class_bool_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-Returns ``true`` if two bools are equal, i.e. both are ``true`` or both are ``false``.
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`bool<class_bool>` right **)**
 

@@ -114,11 +114,15 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_keycode_unicode<class_OS_method_is_keycode_unicode>` **(** :ref:`int<class_int>` code **)** |const|                                                                                                                                                                  |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`is_process_running<class_OS_method_is_process_running>` **(** :ref:`int<class_int>` pid **)** |const|                                                                                                                                                                   |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_stdout_verbose<class_OS_method_is_stdout_verbose>` **(** **)** |const|                                                                                                                                                                                               |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_userfs_persistent<class_OS_method_is_userfs_persistent>` **(** **)** |const|                                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`kill<class_OS_method_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                                                                       |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`move_to_trash<class_OS_method_move_to_trash>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                                                                      |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` **(** **)**                                                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -688,7 +692,7 @@ Returns the model name of the current device.
 
 Returns the name of the host OS.
 
-On Windows, this is ``"Windows"`` or ``"UWP"`` (Universal Windows Platform) if exported thereon.
+On Windows, this is ``"Windows"`` or ``"UWP"`` if exported on Universal Windows Platform.
 
 On macOS, this is ``"macOS"``.
 
@@ -896,6 +900,18 @@ Returns ``true`` if the input keycode corresponds to a Unicode character.
 
 ----
 
+.. _class_OS_method_is_process_running:
+
+- :ref:`bool<class_bool>` **is_process_running** **(** :ref:`int<class_int>` pid **)** |const|
+
+Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated.
+
+Must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
+
+\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+
+----
+
 .. _class_OS_method_is_stdout_verbose:
 
 - :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** |const|
@@ -921,6 +937,16 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 \ **Note:** This method can also be used to kill processes that were not spawned by the game.
 
 \ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_move_to_trash:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **move_to_trash** **(** :ref:`String<class_String>` path **)** |const|
+
+Moves the file or directory to the system's recycle bin. See also :ref:`Directory.remove<class_Directory_method_remove>`.
+
+\ **Note:** If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.
 
 ----
 
@@ -1020,7 +1046,7 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 - ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 
-- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `Customizing [code]mailto:[/code] Links <https://blog.escapecreative.com/customizing-mailto-links/>`__ for a list of fields that can be added.
+- ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `RFC 2368 - The [code]mailto[/code] URL scheme <https://datatracker.ietf.org/doc/html/rfc2368>`__ for a list of fields that can be added.
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 

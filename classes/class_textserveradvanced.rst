@@ -9,7 +9,7 @@
 TextServerAdvanced
 ==================
 
-**Inherits:** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Text Server using HarfBuzz, ICU and SIL Graphite to support BiDi, complex text layouts and contextual OpenType features.
 

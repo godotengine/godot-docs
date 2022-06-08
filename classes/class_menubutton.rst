@@ -64,7 +64,7 @@ Theme Properties
 +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_MenuButton_theme_color_font_pressed_color>`   | ``Color(1, 1, 1, 1)``             |
 +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_MenuButton_theme_constant_hseparation>`              | ``3``                             |
+| :ref:`int<class_int>`           | :ref:`h_separation<class_MenuButton_theme_constant_h_separation>`            | ``3``                             |
 +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`           | :ref:`outline_size<class_MenuButton_theme_constant_outline_size>`            | ``0``                             |
 +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
@@ -219,9 +219,9 @@ Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
 
 ----
 
-.. _class_MenuButton_theme_constant_hseparation:
+.. _class_MenuButton_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``3`` |

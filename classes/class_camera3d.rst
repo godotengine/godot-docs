@@ -363,7 +363,7 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera3D_con
 | *Getter*  | get_size()      |
 +-----------+-----------------+
 
-The camera's size measured as 1/2 the width or height. Only applicable in orthogonal mode. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
+The camera's size measured as 1/2 the width or height. Only applicable in orthogonal and frustum modes. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
 
 ----
 
@@ -478,7 +478,7 @@ Returns the 3D point in world space that maps to the given 2D coordinate in the 
 
 - :ref:`Vector3<class_Vector3>` **project_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 
@@ -486,7 +486,7 @@ Returns a normal vector in world space, that is the result of projecting a point
 
 - :ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
-Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 ----
 

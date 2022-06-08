@@ -31,7 +31,7 @@ Methods
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`String<class_String>` base_path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30 **)** |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` **(** :ref:`String<class_String>` path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30 **)**                                                               |
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` **(** :ref:`String<class_String>` path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30, :ref:`String<class_String>` base_path="" **)**                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`append_from_scene<class_GLTFDocument_method_append_from_scene>` **(** :ref:`Node<class_Node>` node, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30 **)**                                                                 |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,7 +68,7 @@ Method Descriptions
 
 .. _class_GLTFDocument_method_append_from_file:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **append_from_file** **(** :ref:`String<class_String>` path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **append_from_file** **(** :ref:`String<class_String>` path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`int<class_int>` bake_fps=30, :ref:`String<class_String>` base_path="" **)**
 
 ----
 

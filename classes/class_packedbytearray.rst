@@ -9,12 +9,12 @@
 PackedByteArray
 ===============
 
-A packed :ref:`Array<class_Array>` of bytes.
+A packed array of bytes.
 
 Description
 -----------
 
-An :ref:`Array<class_Array>` specifically designed to hold bytes. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold bytes. Packs data tightly, so it saves memory for large array sizes.
 
 Constructors
 ------------
@@ -38,6 +38,8 @@ Methods
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedByteArray_method_bsearch>` **(** :ref:`int<class_int>` value, :ref:`bool<class_bool>` before=true **)**                                                          |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`compress<class_PackedByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)** |const|                                                                        |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`count<class_PackedByteArray_method_count>` **(** :ref:`int<class_int>` value **)** |const|                                                                                           |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`decode_double<class_PackedByteArray_method_decode_double>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                     |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,6 +99,8 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`fill<class_PackedByteArray_method_fill>` **(** :ref:`int<class_int>` value **)**                                                                                                     |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`find<class_PackedByteArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)** |const|                                                               |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` **(** **)** |const|                                                                                       |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`get_string_from_utf16<class_PackedByteArray_method_get_string_from_utf16>` **(** **)** |const|                                                                                       |
@@ -123,6 +127,8 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`reverse<class_PackedByteArray_method_reverse>` **(** **)**                                                                                                                           |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`rfind<class_PackedByteArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)** |const|                                                            |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set<class_PackedByteArray_method_set>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` value **)**                                                                          |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`size<class_PackedByteArray_method_size>` **(** **)** |const|                                                                                                                         |
@@ -144,13 +150,9 @@ Operators
 ---------
 
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`operator !=<class_PackedByteArray_operator_neq_bool>` **(** **)**                                                               |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`operator !=<class_PackedByteArray_operator_neq_bool>` **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**           |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`operator +<class_PackedByteArray_operator_sum_PackedByteArray>` **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)** |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`operator ==<class_PackedByteArray_operator_eq_bool>` **(** **)**                                                                |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`operator ==<class_PackedByteArray_operator_eq_bool>` **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**            |
 +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,6 +214,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 - :ref:`PackedByteArray<class_PackedByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)** |const|
 
 Returns a new ``PackedByteArray`` with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+
+----
+
+.. _class_PackedByteArray_method_count:
+
+- :ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)** |const|
+
+Returns the number of times an element is in the array.
 
 ----
 
@@ -401,6 +411,14 @@ Assigns the given value to all elements in the array. This can typically be used
 
 ----
 
+.. _class_PackedByteArray_method_find:
+
+- :ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)** |const|
+
+Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+----
+
 .. _class_PackedByteArray_method_get_string_from_ascii:
 
 - :ref:`String<class_String>` **get_string_from_ascii** **(** **)** |const|
@@ -518,6 +536,14 @@ Reverses the order of the elements in the array.
 
 ----
 
+.. _class_PackedByteArray_method_rfind:
+
+- :ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)** |const|
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+----
+
 .. _class_PackedByteArray_method_set:
 
 - void **set** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` value **)**
@@ -605,10 +631,6 @@ Operator Descriptions
 
 .. _class_PackedByteArray_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**
 
 ----
@@ -620,10 +642,6 @@ Operator Descriptions
 ----
 
 .. _class_PackedByteArray_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**
 

@@ -52,7 +52,7 @@ enum **TextureType**:
 
 - **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
 
-- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
+- **TYPE_COLOR** = **1** --- Adds ``source_color`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
 - **TYPE_NORMAL_MAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
 

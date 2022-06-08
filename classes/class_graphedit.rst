@@ -28,6 +28,8 @@ Properties
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | :ref:`connection_lines_antialiased<class_GraphEdit_property_connection_lines_antialiased>` | ``true``                                                                  |
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`connection_lines_curvature<class_GraphEdit_property_connection_lines_curvature>`     | ``0.5``                                                                   |
++----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`float<class_float>`                          | :ref:`connection_lines_thickness<class_GraphEdit_property_connection_lines_thickness>`     | ``2.0``                                                                   |
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>`           | focus_mode                                                                                 | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
@@ -109,39 +111,35 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`activity<class_GraphEdit_theme_color_activity>`                                              | ``Color(1, 1, 1, 1)``    |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`grid_major<class_GraphEdit_theme_color_grid_major>`                                          | ``Color(1, 1, 1, 0.2)``  |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`grid_minor<class_GraphEdit_theme_color_grid_minor>`                                          | ``Color(1, 1, 1, 0.05)`` |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`selection_fill<class_GraphEdit_theme_color_selection_fill>`                                  | ``Color(1, 1, 1, 0.3)``  |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`selection_stroke<class_GraphEdit_theme_color_selection_stroke>`                              | ``Color(1, 1, 1, 0.8)``  |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`int<class_int>`             | :ref:`bezier_len_neg<class_GraphEdit_theme_constant_bezier_len_neg>`                               | ``160``                  |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`int<class_int>`             | :ref:`bezier_len_pos<class_GraphEdit_theme_constant_bezier_len_pos>`                               | ``80``                   |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`int<class_int>`             | :ref:`port_grab_distance_horizontal<class_GraphEdit_theme_constant_port_grab_distance_horizontal>` | ``24``                   |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`int<class_int>`             | :ref:`port_grab_distance_vertical<class_GraphEdit_theme_constant_port_grab_distance_vertical>`     | ``26``                   |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`layout<class_GraphEdit_theme_icon_layout>`                                                   |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`minimap<class_GraphEdit_theme_icon_minimap>`                                                 |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`minus<class_GraphEdit_theme_icon_minus>`                                                     |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`more<class_GraphEdit_theme_icon_more>`                                                       |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`reset<class_GraphEdit_theme_icon_reset>`                                                     |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`snap<class_GraphEdit_theme_icon_snap>`                                                       |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_GraphEdit_theme_style_bg>`                                                          |                          |
-+-----------------------------------+----------------------------------------------------------------------------------------------------+--------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`activity<class_GraphEdit_theme_color_activity>`                                      | ``Color(1, 1, 1, 1)``    |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`grid_major<class_GraphEdit_theme_color_grid_major>`                                  | ``Color(1, 1, 1, 0.2)``  |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`grid_minor<class_GraphEdit_theme_color_grid_minor>`                                  | ``Color(1, 1, 1, 0.05)`` |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`selection_fill<class_GraphEdit_theme_color_selection_fill>`                          | ``Color(1, 1, 1, 0.3)``  |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`selection_stroke<class_GraphEdit_theme_color_selection_stroke>`                      | ``Color(1, 1, 1, 0.8)``  |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`int<class_int>`             | :ref:`port_hotzone_inner_extent<class_GraphEdit_theme_constant_port_hotzone_inner_extent>` | ``22``                   |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`int<class_int>`             | :ref:`port_hotzone_outer_extent<class_GraphEdit_theme_constant_port_hotzone_outer_extent>` | ``26``                   |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`layout<class_GraphEdit_theme_icon_layout>`                                           |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`minimap<class_GraphEdit_theme_icon_minimap>`                                         |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`minus<class_GraphEdit_theme_icon_minus>`                                             |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`more<class_GraphEdit_theme_icon_more>`                                               |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`reset<class_GraphEdit_theme_icon_reset>`                                             |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`snap<class_GraphEdit_theme_icon_snap>`                                               |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_GraphEdit_theme_style_bg>`                                                  |                          |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
 
 Signals
 -------
@@ -204,9 +202,9 @@ Emitted when the user presses :kbd:`Ctrl + C`.
 
 .. _class_GraphEdit_signal_delete_nodes_request:
 
-- **delete_nodes_request** **(** **)**
+- **delete_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
 
-Emitted when a GraphNode is attempted to be removed from the GraphEdit.
+Emitted when a GraphNode is attempted to be removed from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
 
 ----
 
@@ -266,7 +264,7 @@ Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. `
 
 .. _class_GraphEdit_signal_scroll_offset_changed:
 
-- **scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` ofs **)**
+- **scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Emitted when the scroll offset is changed by the user. It will not be emitted when changed in code.
 
@@ -301,6 +299,22 @@ Property Descriptions
 +-----------+-----------------------------------------+
 
 If ``true``, the lines between nodes will use antialiasing.
+
+----
+
+.. _class_GraphEdit_property_connection_lines_curvature:
+
+- :ref:`float<class_float>` **connection_lines_curvature**
+
++-----------+---------------------------------------+
+| *Default* | ``0.5``                               |
++-----------+---------------------------------------+
+| *Setter*  | set_connection_lines_curvature(value) |
++-----------+---------------------------------------+
+| *Getter*  | get_connection_lines_curvature()      |
++-----------+---------------------------------------+
+
+The curvature of the lines between the nodes. 0 results in straight lines.
 
 ----
 
@@ -786,47 +800,27 @@ The outline color of the selection rectangle.
 
 ----
 
-.. _class_GraphEdit_theme_constant_bezier_len_neg:
+.. _class_GraphEdit_theme_constant_port_hotzone_inner_extent:
 
-- :ref:`int<class_int>` **bezier_len_neg**
+- :ref:`int<class_int>` **port_hotzone_inner_extent**
 
-+-----------+---------+
-| *Default* | ``160`` |
-+-----------+---------+
++-----------+--------+
+| *Default* | ``22`` |
++-----------+--------+
+
+The horizontal range within which a port can be grabbed (inner side).
 
 ----
 
-.. _class_GraphEdit_theme_constant_bezier_len_pos:
+.. _class_GraphEdit_theme_constant_port_hotzone_outer_extent:
 
-- :ref:`int<class_int>` **bezier_len_pos**
-
-+-----------+--------+
-| *Default* | ``80`` |
-+-----------+--------+
-
-----
-
-.. _class_GraphEdit_theme_constant_port_grab_distance_horizontal:
-
-- :ref:`int<class_int>` **port_grab_distance_horizontal**
-
-+-----------+--------+
-| *Default* | ``24`` |
-+-----------+--------+
-
-The horizontal range within which a port can be grabbed (on both sides).
-
-----
-
-.. _class_GraphEdit_theme_constant_port_grab_distance_vertical:
-
-- :ref:`int<class_int>` **port_grab_distance_vertical**
+- :ref:`int<class_int>` **port_hotzone_outer_extent**
 
 +-----------+--------+
 | *Default* | ``26`` |
 +-----------+--------+
 
-The vertical range within which a port can be grabbed (on both sides).
+The horizontal range within which a port can be grabbed (outer side).
 
 ----
 

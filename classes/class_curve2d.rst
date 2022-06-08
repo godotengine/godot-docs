@@ -26,6 +26,8 @@ Properties
 +---------------------------+------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`bake_interval<class_Curve2D_property_bake_interval>` | ``5.0`` |
 +---------------------------+------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`point_count<class_Curve2D_property_point_count>`     | ``0``   |
++---------------------------+------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -42,8 +44,6 @@ Methods
 | :ref:`float<class_float>`                           | :ref:`get_closest_offset<class_Curve2D_method_get_closest_offset>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                                                              |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`get_closest_point<class_Curve2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                                                                |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_point_count<class_Curve2D_method_get_point_count>` **(** **)** |const|                                                                                                                                                           |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`get_point_in<class_Curve2D_method_get_point_in>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                       |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,6 +85,22 @@ Property Descriptions
 
 The distance in pixels between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve2D_method_get_baked_points>` or :ref:`get_baked_length<class_Curve2D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 
+----
+
+.. _class_Curve2D_property_point_count:
+
+- :ref:`int<class_int>` **point_count**
+
++-----------+------------------------+
+| *Default* | ``0``                  |
++-----------+------------------------+
+| *Setter*  | set_point_count(value) |
++-----------+------------------------+
+| *Getter*  | get_point_count()      |
++-----------+------------------------+
+
+The number of points describing the curve.
+
 Method Descriptions
 -------------------
 
@@ -92,7 +108,7 @@ Method Descriptions
 
 - void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` in=Vector2(0, 0), :ref:`Vector2<class_Vector2>` out=Vector2(0, 0), :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a point to a curve at ``position``, with control points ``in`` and ``out``.
+Adds a point to a curve at ``position`` relative to the ``Curve2D``'s position, with control points ``in`` and ``out``.
 
 If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position <0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
 
@@ -139,14 +155,6 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 Returns the closest baked point (in curve's local space) to ``to_point``.
 
 \ ``to_point`` must be in this curve's local space.
-
-----
-
-.. _class_Curve2D_method_get_point_count:
-
-- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
-
-Returns the number of points describing the curve.
 
 ----
 

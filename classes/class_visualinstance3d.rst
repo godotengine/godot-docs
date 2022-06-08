@@ -23,9 +23,9 @@ The ``VisualInstance3D`` is used to connect a resource to a visual representatio
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` | ``1`` |
-+-----------------------+-------------------------------------------------------+-------+
++-----------------------+-------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` |
++-----------------------+-------------------------------------------------------+
 
 Methods
 -------
@@ -55,17 +55,17 @@ Property Descriptions
 
 - :ref:`int<class_int>` **layers**
 
-+-----------+-----------------------+
-| *Default* | ``1``                 |
-+-----------+-----------------------+
-| *Setter*  | set_layer_mask(value) |
-+-----------+-----------------------+
-| *Getter*  | get_layer_mask()      |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Setter* | set_layer_mask(value) |
++----------+-----------------------+
+| *Getter* | get_layer_mask()      |
++----------+-----------------------+
 
 The render layer(s) this ``VisualInstance3D`` is drawn on.
 
 This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cull mask includes the render object this ``VisualInstance3D`` is set to.
+
+For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which ``VisualInstance3D``\ s are affected by a specific light. For :ref:`GPUParticles3D<class_GPUParticles3D>`, this can be used to control which particles are effected by a specific attractor. For :ref:`Decal<class_Decal>`\ s, this can be used to control which ``VisualInstance3D``\ s are affected by a specific decal.
 
 Method Descriptions
 -------------------

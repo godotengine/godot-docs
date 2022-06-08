@@ -16,7 +16,9 @@ Defines a 2D collision polygon.
 Description
 -----------
 
-Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices.
+Provides a concave or convex 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices. See also :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`.
+
+In the editor, a ``CollisionPolygon2D`` can be generated from a :ref:`Sprite2D<class_Sprite2D>`'s outline by selecting a :ref:`Sprite2D<class_Sprite2D>` node, going to the **Sprite2D** menu at the top of the 2D editor viewport then choosing **Create CollisionPolygon2D Sibling**.
 
 Properties
 ----------
@@ -96,6 +98,8 @@ If ``true``, no collisions will be detected.
 +-----------+--------------------------------+
 
 If ``true``, only edges that face up, relative to ``CollisionPolygon2D``'s rotation, will collide with other objects.
+
+\ **Note:** This property has no effect if this ``CollisionPolygon2D`` is a child of an :ref:`Area2D<class_Area2D>` node.
 
 ----
 

@@ -53,7 +53,7 @@ Methods
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`add_custom_control<class_EditorInspectorPlugin_method_add_custom_control>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                                                                                           |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**                                                                                                                                                                    |
+| void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor, :ref:`bool<class_bool>` add_to_end=false **)**                                                                                                                          |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**                                                         |
 +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -119,7 +119,7 @@ Adds a custom control, which is not necessarily a property editor.
 
 .. _class_EditorInspectorPlugin_method_add_property_editor:
 
-- void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor **)**
+- void **add_property_editor** **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor, :ref:`bool<class_bool>` add_to_end=false **)**
 
 Adds a property editor for an individual property. The ``editor`` control must extend :ref:`EditorProperty<class_EditorProperty>`.
 

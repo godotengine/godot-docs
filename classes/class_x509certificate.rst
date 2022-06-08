@@ -20,8 +20,6 @@ The X509Certificate class represents an X509 certificate. Certificates can be lo
 
 They can be used as the server certificate in :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to an SSL server via :ref:`StreamPeerSSL.connect_to_stream<class_StreamPeerSSL_method_connect_to_stream>`.
 
-\ **Note:** Not available in HTML5 exports.
-
 Methods
 -------
 

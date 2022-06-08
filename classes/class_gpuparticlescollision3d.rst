@@ -13,7 +13,22 @@ GPUParticlesCollision3D
 
 **Inherited By:** :ref:`GPUParticlesCollisionBox3D<class_GPUParticlesCollisionBox3D>`, :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`, :ref:`GPUParticlesCollisionSDF3D<class_GPUParticlesCollisionSDF3D>`, :ref:`GPUParticlesCollisionSphere3D<class_GPUParticlesCollisionSphere3D>`
 
+Abstract class for 3D particle collision shapes affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+Description
+-----------
+
+Particle collision shapes can be used to make particles stop or bounce against them.
+
+Particle collision shapes in real-time and can be moved, rotated and scaled during gameplay. Unlike attractors, non-uniform scaling of collision shapes is *not* supported.
+
+Particle collision shapes can be temporarily disabled by hiding them.
+
+\ **Note:** :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
+
+\ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
+
+\ **Note:** Particles pushed by a collider that is being moved will not be interpolated, which can result in visible stuttering. This can be alleviated by setting :ref:`GPUParticles3D.fixed_fps<class_GPUParticles3D_property_fixed_fps>` to ``0`` or a value that matches or exceeds the target framerate.
 
 Properties
 ----------
@@ -36,6 +51,12 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_cull_mask()      |
 +-----------+----------------------+
+
+The particle rendering layers (:ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>`) that will be affected by the collision shape. By default, all particles that have :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` set to ``true`` will be affected by a collision shape.
+
+After configuring particle nodes accordingly, specific layers can be unchecked to prevent certain particles from being affected by attractors. For example, this can be used if you're using an attractor as part of a spell effect but don't want the attractor to affect unrelated weather particles at the same position.
+
+Particle attraction can also be disabled on a per-process material basis by setting :ref:`ParticlesMaterial.attractor_interaction_enabled<class_ParticlesMaterial_property_attractor_interaction_enabled>` on the :ref:`GPUParticles3D<class_GPUParticles3D>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

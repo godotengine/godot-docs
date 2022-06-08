@@ -55,6 +55,8 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PackedStringArray<class_PackedStringArray>` protocols=PackedStringArray(), :ref:`bool<class_bool>` gd_mp_api=false **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_extra_headers<class_WebSocketServer_method_set_extra_headers>` **(** :ref:`PackedStringArray<class_PackedStringArray>` headers=PackedStringArray() **)**                                                  |
++---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                          |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -224,6 +226,14 @@ You can specify the desired subprotocols via the "protocols" array. If the list 
 If ``true`` is passed as ``gd_mp_api``, the server will behave like a multiplayer peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, connections from non-Godot clients will not work, and :ref:`data_received<class_WebSocketServer_signal_data_received>` will not be emitted.
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
+
+----
+
+.. _class_WebSocketServer_method_set_extra_headers:
+
+- void **set_extra_headers** **(** :ref:`PackedStringArray<class_PackedStringArray>` headers=PackedStringArray() **)**
+
+Sets additional headers to be sent to clients during the HTTP handshake.
 
 ----
 

@@ -20,6 +20,11 @@ Description
 
 Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Theme Properties
 ----------------
 

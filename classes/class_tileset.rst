@@ -548,7 +548,7 @@ If the TileSet has no proxy for the given identifiers, returns an empty Array.
 
 - :ref:`Array<class_Array>` **get_coords_level_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`Vector2i<class_Vector2i>` coords_from **)**
 
-Returns the coodinate-level proxy for the given identifiers. The returned array contains the two proxie's target identifiers (source ID and atlas coords ID).
+Returns the coordinate-level proxy for the given identifiers. The returned array contains the two target identifiers of the proxy (source ID and atlas coordinates ID).
 
 If the TileSet has no proxy for the given identifiers, returns an empty Array.
 

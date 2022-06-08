@@ -11,6 +11,8 @@ PhysicsServer3D
 
 **Inherits:** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`PhysicsServer3DExtension<class_PhysicsServer3DExtension>`
+
 Server interface for low-level physics access.
 
 Description
@@ -1711,7 +1713,7 @@ Sets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_Physics
 
 - :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>` process_info **)**
 
-Returns an Info defined by the :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>` input given.
+Returns information about the current state of the 3D physics engine. See :ref:`ProcessInfo<enum_PhysicsServer3D_ProcessInfo>` for a list of available states.
 
 ----
 

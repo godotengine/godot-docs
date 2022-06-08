@@ -81,7 +81,7 @@ If ``true``, the button's state is pressed. If ``false``, the button's state is 
 | *Getter*  | get_pressure()      |
 +-----------+---------------------+
 
-Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
+Represents the pressure the user puts on the button with their finger, if the controller supports it. Ranges from ``0`` to ``1``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

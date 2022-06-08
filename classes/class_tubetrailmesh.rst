@@ -21,7 +21,7 @@ Properties
 +---------------------------+--------------------------------------------------------------------+---------+
 | :ref:`int<class_int>`     | :ref:`radial_steps<class_TubeTrailMesh_property_radial_steps>`     | ``8``   |
 +---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``1.0`` |
+| :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``0.5`` |
 +---------------------------+--------------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`section_length<class_TubeTrailMesh_property_section_length>` | ``0.2`` |
 +---------------------------+--------------------------------------------------------------------+---------+
@@ -64,7 +64,7 @@ Property Descriptions
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

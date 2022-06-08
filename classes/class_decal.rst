@@ -22,6 +22,8 @@ They are made of an :ref:`AABB<class_AABB>` and a group of :ref:`Texture2D<class
 
 The :ref:`Texture2D<class_Texture2D>`\ s associated with the Decal are automatically stored in a texture atlas which is used for drawing the decals so all decals can be drawn at once. Godot uses clustered decals, meaning they are stored in cluster data and drawn when the mesh is drawn, they are not drawn as a post-processing effect after.
 
+\ **Note:** Decals cannot affect an underlying material's transparency, regardless of its transparency mode (alpha blend, alpha scissor, alpha hash, opaque pre-pass). This means translucent or transparent areas of a material will remain translucent or transparent even if an opaque decal is applied on them.
+
 Properties
 ----------
 

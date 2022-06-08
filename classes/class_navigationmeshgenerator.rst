@@ -11,7 +11,18 @@ NavigationMeshGenerator
 
 **Inherits:** :ref:`Object<class_Object>`
 
+Helper class for creating and clearing navigation meshes.
 
+Description
+-----------
+
+This class is responsible for creating and clearing 3D navigation meshes used as :ref:`NavigationMesh<class_NavigationMesh>` resources inside :ref:`NavigationRegion3D<class_NavigationRegion3D>`. The ``NavigationMeshGenerator`` has very limited to no use for 2D as the navigation mesh baking process expects 3D node types and 3D source geometry to parse.
+
+The entire navigation mesh baking is best done in a separate thread as the voxelization, collision tests and mesh optimization steps involved are very performance and time hungry operations.
+
+Navigation mesh baking happens in multiple steps and the result depends on 3D source geometry and properties of the :ref:`NavigationMesh<class_NavigationMesh>` resource. In the first step, starting from a root node and depending on :ref:`NavigationMesh<class_NavigationMesh>` properties all valid 3D source geometry nodes are collected from the :ref:`SceneTree<class_SceneTree>`. Second, all collected nodes are parsed for their relevant 3D geometry data and a combined 3D mesh is build. Due to the many different types of parsable objects, from normal :ref:`MeshInstance3D<class_MeshInstance3D>`\ s to :ref:`CSGShape3D<class_CSGShape3D>`\ s or various :ref:`CollisionObject3D<class_CollisionObject3D>`\ s, some operations to collect geometry data can trigger :ref:`RenderingServer<class_RenderingServer>` and :ref:`PhysicsServer3D<class_PhysicsServer3D>` synchronizations. Server synchronization can have a negative effect on baking time or framerate as it often involves :ref:`Mutex<class_Mutex>` locking for thread security. Many parsable objects and the continuous synchronization with other threaded Servers can increase the baking time significantly. On the other hand only a few but very large and complex objects will take some time to prepare for the Servers which can noticeably stall the next frame render. As a general rule the total amount of parsable objects and their individual size and complexity should be balanced to avoid framerate issues or very long baking times. The combined mesh is then passed to the Recast Navigation Object to test the source geometry for walkable terrain suitable to :ref:`NavigationMesh<class_NavigationMesh>` agent properties by creating a voxel world around the meshes bounding area.
+
+The finalized navigation mesh is then returned and stored inside the :ref:`NavigationMesh<class_NavigationMesh>` for use as a resource inside :ref:`NavigationRegion3D<class_NavigationRegion3D>` nodes.
 
 Methods
 -------
@@ -29,11 +40,15 @@ Method Descriptions
 
 - void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
 
+Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>` and :ref:`NavigationMesh.geometry/source_geometry_mode<class_NavigationMesh_property_geometry/source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+
 ----
 
 .. _class_NavigationMeshGenerator_method_clear:
 
 - void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**
+
+Removes all polygons and vertices from the provided ``nav_mesh`` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -31,9 +31,11 @@ Properties
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Color<class_Color>`                                       | :ref:`albedo_color<class_BaseMaterial3D_property_albedo_color>`                                                   | ``Color(1, 1, 1, 1)`` |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`albedo_tex_force_srgb<class_BaseMaterial3D_property_albedo_tex_force_srgb>`                                 | ``false``             |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Texture2D<class_Texture2D>`                               | :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>`                                               |                       |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`                         | ``false``             |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`albedo_texture_msdf<class_BaseMaterial3D_property_albedo_texture_msdf>`                                     | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                                       | :ref:`alpha_antialiasing_edge<class_BaseMaterial3D_property_alpha_antialiasing_edge>`                             |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -150,6 +152,10 @@ Properties
 | :ref:`Texture2D<class_Texture2D>`                               | :ref:`metallic_texture<class_BaseMaterial3D_property_metallic_texture>`                                           |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>`       | :ref:`metallic_texture_channel<class_BaseMaterial3D_property_metallic_texture_channel>`                           | ``0``                 |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                       | :ref:`msdf_outline_size<class_BaseMaterial3D_property_msdf_outline_size>`                                         | ``0.0``               |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                       | :ref:`msdf_pixel_range<class_BaseMaterial3D_property_msdf_pixel_range>`                                           | ``4.0``               |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`no_depth_test<class_BaseMaterial3D_property_no_depth_test>`                                                 | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -632,6 +638,8 @@ enum **CullMode**:
 
 .. _class_BaseMaterial3D_constant_FLAG_PARTICLE_TRAILS_MODE:
 
+.. _class_BaseMaterial3D_constant_FLAG_ALBEDO_TEXTURE_MSDF:
+
 .. _class_BaseMaterial3D_constant_FLAG_MAX:
 
 enum **Flags**:
@@ -640,7 +648,9 @@ enum **Flags**:
 
 - **FLAG_ALBEDO_FROM_VERTEX_COLOR** = **1** --- Set ``ALBEDO`` to the per-vertex color specified in the mesh.
 
-- **FLAG_SRGB_VERTEX_COLOR** = **2** --- Vertex color is in sRGB space and needs to be converted to linear. Only applies in the Vulkan renderer.
+- **FLAG_SRGB_VERTEX_COLOR** = **2** --- Vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+
+\ **Note:** Only effective when using the Vulkan Clustered or Vulkan Mobile backends.
 
 - **FLAG_USE_POINT_SIZE** = **3** --- Uses point size to alter the size of primitive points. Also changes the albedo texture lookup to use ``POINT_COORD`` instead of ``UV``.
 
@@ -660,7 +670,7 @@ enum **Flags**:
 
 - **FLAG_EMISSION_ON_UV2** = **11** --- Use ``UV2`` coordinates to look up from the :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`.
 
-- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **12** --- Forces the shader to convert albedo from sRGB space to linear space.
+- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **12** --- Forces the shader to convert albedo from sRGB space to linear space. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
 - **FLAG_DONT_RECEIVE_SHADOWS** = **13** --- Disables receiving shadows from other objects.
 
@@ -676,7 +686,9 @@ enum **Flags**:
 
 - **FLAG_PARTICLE_TRAILS_MODE** = **19**
 
-- **FLAG_MAX** = **20** --- Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
+- **FLAG_ALBEDO_TEXTURE_MSDF** = **20** --- Enables multichannel signed distance field rendering shader.
+
+- **FLAG_MAX** = **21** --- Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
 ----
 
@@ -766,7 +778,7 @@ enum **TextureChannel**:
 
 - **TEXTURE_CHANNEL_ALPHA** = **3** --- Used to read from the alpha channel of a texture.
 
-- **TEXTURE_CHANNEL_GRAYSCALE** = **4** --- Currently unused.
+- **TEXTURE_CHANNEL_GRAYSCALE** = **4** --- Used to read from the linear (non-perceptual) average of the red, green and blue channels of a texture.
 
 ----
 
@@ -821,21 +833,7 @@ Property Descriptions
 
 The material's base color.
 
-----
-
-.. _class_BaseMaterial3D_property_albedo_tex_force_srgb:
-
-- :ref:`bool<class_bool>` **albedo_tex_force_srgb**
-
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_flag(value) |
-+-----------+-----------------+
-| *Getter*  | get_flag()      |
-+-----------+-----------------+
-
-Forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from sRGB space to linear space.
+\ **Note:** If :ref:`detail_enabled<class_BaseMaterial3D_property_detail_enabled>` is ``true`` and a :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` texture is specified, :ref:`albedo_color<class_BaseMaterial3D_property_albedo_color>` will *not* modulate the detail texture. This can be used to color partial areas of a material by not specifying an albedo texture and using a transparent :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` texture instead.
 
 ----
 
@@ -850,6 +848,42 @@ Forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_al
 +----------+--------------------+
 
 Texture to multiply by :ref:`albedo_color<class_BaseMaterial3D_property_albedo_color>`. Used for basic texturing of objects.
+
+If the texture appears unexpectedly too dark or too bright, check :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+
+----
+
+.. _class_BaseMaterial3D_property_albedo_texture_force_srgb:
+
+- :ref:`bool<class_bool>` **albedo_texture_force_srgb**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
+
+If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from sRGB color space to linear color space. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+
+This should only be enabled when needed (typically when using a :ref:`ViewportTexture<class_ViewportTexture>` as :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>`). If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``true`` when it shouldn't be, the texture will appear to be too dark. If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``false`` when it shouldn't be, the texture will appear to be too bright.
+
+----
+
+.. _class_BaseMaterial3D_property_albedo_texture_msdf:
+
+- :ref:`bool<class_bool>` **albedo_texture_msdf**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
+
+Enables multichannel signed distance field rendering shader. Use :ref:`msdf_pixel_range<class_BaseMaterial3D_property_msdf_pixel_range>` and :ref:`msdf_outline_size<class_BaseMaterial3D_property_msdf_outline_size>` to configure MSDF parameters.
 
 ----
 
@@ -1243,7 +1277,9 @@ Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_BaseMa
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture that specifies the color of the detail overlay.
+Texture that specifies the color of the detail overlay. :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel is used as a mask, even when the material is opaque. To use a dedicated texture as a mask, see :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>`.
+
+\ **Note:** :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` is *not* modulated by :ref:`albedo_color<class_BaseMaterial3D_property_albedo_color>`.
 
 ----
 
@@ -1275,7 +1311,7 @@ Specifies how the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albed
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, enables the detail overlay. Detail is a second texture that gets mixed over the surface of the object based on :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>`. This can be used to add variation to objects, or to blend between two different albedo/normal textures.
+If ``true``, enables the detail overlay. Detail is a second texture that gets mixed over the surface of the object based on :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>` and :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel. This can be used to add variation to objects, or to blend between two different albedo/normal textures.
 
 ----
 
@@ -1289,7 +1325,7 @@ If ``true``, enables the detail overlay. Detail is a second texture that gets mi
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture used to specify how the detail textures get blended with the base textures.
+Texture used to specify how the detail textures get blended with the base textures. :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>` can be used together with :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel (if any).
 
 ----
 
@@ -1303,7 +1339,7 @@ Texture used to specify how the detail textures get blended with the base textur
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture that specifies the per-pixel normal of the detail overlay.
+Texture that specifies the per-pixel normal of the detail overlay. The :ref:`detail_normal<class_BaseMaterial3D_property_detail_normal>` texture only uses the red and green channels; the blue and alpha channels are ignored. The normal read from :ref:`detail_normal<class_BaseMaterial3D_property_detail_normal>` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
 \ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
@@ -1755,6 +1791,38 @@ Specifies the channel of the :ref:`metallic_texture<class_BaseMaterial3D_propert
 
 ----
 
+.. _class_BaseMaterial3D_property_msdf_outline_size:
+
+- :ref:`float<class_float>` **msdf_outline_size**
+
++-----------+------------------------------+
+| *Default* | ``0.0``                      |
++-----------+------------------------------+
+| *Setter*  | set_msdf_outline_size(value) |
++-----------+------------------------------+
+| *Getter*  | get_msdf_outline_size()      |
++-----------+------------------------------+
+
+The width of the shape outine.
+
+----
+
+.. _class_BaseMaterial3D_property_msdf_pixel_range:
+
+- :ref:`float<class_float>` **msdf_pixel_range**
+
++-----------+-----------------------------+
+| *Default* | ``4.0``                     |
++-----------+-----------------------------+
+| *Setter*  | set_msdf_pixel_range(value) |
++-----------+-----------------------------+
+| *Getter*  | get_msdf_pixel_range()      |
++-----------+-----------------------------+
+
+The width of the range around the shape between the minimum and maximum representable signed distance.
+
+----
+
 .. _class_BaseMaterial3D_property_no_depth_test:
 
 - :ref:`bool<class_bool>` **no_depth_test**
@@ -1813,11 +1881,13 @@ The strength of the normal map's effect.
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-Texture used to specify the normal at a given pixel. The ``normal_texture`` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from ``normal_texture`` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
+Texture used to specify the normal at a given pixel. The :ref:`normal_texture<class_BaseMaterial3D_property_normal_texture>` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from :ref:`normal_texture<class_BaseMaterial3D_property_normal_texture>` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
 \ **Note:** The mesh must have both normals and tangents defined in its vertex data. Otherwise, the normal map won't render correctly and will only appear to darken the whole surface. If creating geometry with :ref:`SurfaceTool<class_SurfaceTool>`, you can use :ref:`SurfaceTool.generate_normals<class_SurfaceTool_method_generate_normals>` and :ref:`SurfaceTool.generate_tangents<class_SurfaceTool_method_generate_tangents>` to automatically generate normals and tangents respectively.
 
 \ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
+
+\ **Note:** If :ref:`detail_enabled<class_BaseMaterial3D_property_detail_enabled>` is ``true``, the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` texture is drawn *below* the :ref:`normal_texture<class_BaseMaterial3D_property_normal_texture>`. To display a normal map *above* the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` texture, use :ref:`detail_normal<class_BaseMaterial3D_property_detail_normal>` instead.
 
 ----
 
@@ -2527,7 +2597,9 @@ If ``true``, triplanar mapping for ``UV2`` is calculated in world space rather t
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, the model's vertex colors are processed as sRGB mode.
+If ``true``, vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. If ``false``, vertex colors are considered to be stored in linear color space and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+
+\ **Note:** Only effective when using the Vulkan Clustered or Vulkan Mobile backends.
 
 ----
 

@@ -359,7 +359,7 @@ If ``true``, during a jump against the ceiling, the body will slide, if ``false`
 | *Getter*  | get_up_direction()      |
 +-----------+-------------------------+
 
-Direction vector used to determine what is a wall and what is a floor (or a ceiling), rather than a wall, when calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. Defaults to ``Vector2.UP``. If set to ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
+Vector pointing upwards, used to determine what is a wall and what is a floor (or a ceiling) when calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. Defaults to ``Vector2.UP``. As the vector will be normalized it can't be equal to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`, if you want all collisions to be reported as walls, consider using :ref:`MOTION_MODE_FLOATING<class_CharacterBody2D_constant_MOTION_MODE_FLOATING>` as :ref:`motion_mode<class_CharacterBody2D_property_motion_mode>`.
 
 ----
 

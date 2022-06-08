@@ -26,8 +26,6 @@ Methods
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`class_exists<class_ClassDB_method_class_exists>` **(** :ref:`StringName<class_StringName>` class **)** |const|                                                                                                                               |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>`               | :ref:`class_get_category<class_ClassDB_method_class_get_category>` **(** :ref:`StringName<class_StringName>` class **)** |const|                                                                                                                   |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`class_get_enum_constants<class_ClassDB_method_class_get_enum_constants>` **(** :ref:`StringName<class_StringName>` class, :ref:`StringName<class_StringName>` enum, :ref:`bool<class_bool>` no_inheritance=false **)** |const|               |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`class_get_enum_list<class_ClassDB_method_class_get_enum_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                                   |
@@ -87,14 +85,6 @@ Returns ``true`` if you can instance objects from the specified ``class``, ``fal
 - :ref:`bool<class_bool>` **class_exists** **(** :ref:`StringName<class_StringName>` class **)** |const|
 
 Returns whether the specified ``class`` is available or not.
-
-----
-
-.. _class_ClassDB_method_class_get_category:
-
-- :ref:`StringName<class_StringName>` **class_get_category** **(** :ref:`StringName<class_StringName>` class **)** |const|
-
-Returns a category associated with the class for use in documentation and the Asset Library. Debug mode required.
 
 ----
 

@@ -21,17 +21,21 @@ Class representing a cylindrical :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     | ``0.5`` |
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CylinderMesh_property_height>`                   | ``2.0`` |
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_CylinderMesh_property_radial_segments>` | ``64``  |
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`rings<class_CylinderMesh_property_rings>`                     | ``4``   |
-+---------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | ``0.5`` |
-+---------------------------+---------------------------------------------------------------------+---------+
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`     | ``0.5``  |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`cap_bottom<class_CylinderMesh_property_cap_bottom>`           | ``true`` |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`cap_top<class_CylinderMesh_property_cap_top>`                 | ``true`` |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`height<class_CylinderMesh_property_height>`                   | ``2.0``  |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`radial_segments<class_CylinderMesh_property_radial_segments>` | ``64``   |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`rings<class_CylinderMesh_property_rings>`                     | ``4``    |
++---------------------------+---------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`top_radius<class_CylinderMesh_property_top_radius>`           | ``0.5``  |
++---------------------------+---------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -48,7 +52,43 @@ Property Descriptions
 | *Getter*  | get_bottom_radius()      |
 +-----------+--------------------------+
 
-Bottom radius of the cylinder. If set to ``0.0``, the bottom faces will not be generated, resulting in a conic shape.
+Bottom radius of the cylinder. If set to ``0.0``, the bottom faces will not be generated, resulting in a conic shape. See also :ref:`cap_bottom<class_CylinderMesh_property_cap_bottom>`.
+
+----
+
+.. _class_CylinderMesh_property_cap_bottom:
+
+- :ref:`bool<class_bool>` **cap_bottom**
+
++-----------+-----------------------+
+| *Default* | ``true``              |
++-----------+-----------------------+
+| *Setter*  | set_cap_bottom(value) |
++-----------+-----------------------+
+| *Getter*  | is_cap_bottom()       |
++-----------+-----------------------+
+
+If ``true``, generates a cap at the bottom of the cylinder. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera. See also :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>`.
+
+\ **Note:** If :ref:`bottom_radius<class_CylinderMesh_property_bottom_radius>` is ``0.0``, cap generation is always skipped even if :ref:`cap_bottom<class_CylinderMesh_property_cap_bottom>` is ``true``.
+
+----
+
+.. _class_CylinderMesh_property_cap_top:
+
+- :ref:`bool<class_bool>` **cap_top**
+
++-----------+--------------------+
+| *Default* | ``true``           |
++-----------+--------------------+
+| *Setter*  | set_cap_top(value) |
++-----------+--------------------+
+| *Getter*  | is_cap_top()       |
++-----------+--------------------+
+
+If ``true``, generates a cap at the top of the cylinder. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera. See also :ref:`top_radius<class_CylinderMesh_property_top_radius>`.
+
+\ **Note:** If :ref:`top_radius<class_CylinderMesh_property_top_radius>` is ``0.0``, cap generation is always skipped even if :ref:`cap_top<class_CylinderMesh_property_cap_top>` is ``true``.
 
 ----
 
@@ -112,7 +152,7 @@ Number of edge rings along the height of the cylinder. Changing :ref:`rings<clas
 | *Getter*  | get_top_radius()      |
 +-----------+-----------------------+
 
-Top radius of the cylinder. If set to ``0.0``, the top faces will not be generated, resulting in a conic shape.
+Top radius of the cylinder. If set to ``0.0``, the top faces will not be generated, resulting in a conic shape. See also :ref:`cap_top<class_CylinderMesh_property_cap_top>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

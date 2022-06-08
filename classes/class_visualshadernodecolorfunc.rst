@@ -32,6 +32,10 @@ Enumerations
 
 .. _class_VisualShaderNodeColorFunc_constant_FUNC_GRAYSCALE:
 
+.. _class_VisualShaderNodeColorFunc_constant_FUNC_HSV2RGB:
+
+.. _class_VisualShaderNodeColorFunc_constant_FUNC_RGB2HSV:
+
 .. _class_VisualShaderNodeColorFunc_constant_FUNC_SEPIA:
 
 .. _class_VisualShaderNodeColorFunc_constant_FUNC_MAX:
@@ -48,7 +52,11 @@ enum **Function**:
     float max3 = max(max1, max2);
     return vec3(max3, max3, max3);
 
-- **FUNC_SEPIA** = **1** --- Applies sepia tone effect using the following formula:
+- **FUNC_HSV2RGB** = **1** --- Converts HSV vector to RGB equivalent.
+
+- **FUNC_RGB2HSV** = **2** --- Converts RGB vector to HSV equivalent.
+
+- **FUNC_SEPIA** = **3** --- Applies sepia tone effect using the following formula:
 
 ::
 
@@ -58,7 +66,7 @@ enum **Function**:
     float b = (c.r * 0.272) + (c.g * 0.534) + (c.b * 0.131);
     return vec3(r, g, b);
 
-- **FUNC_MAX** = **2** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` enum.
+- **FUNC_MAX** = **4** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` enum.
 
 Property Descriptions
 ---------------------

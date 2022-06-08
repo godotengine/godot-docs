@@ -64,7 +64,7 @@ Enumerations
 
 .. _class_VisualShaderNodeFloatFunc_constant_FUNC_CEIL:
 
-.. _class_VisualShaderNodeFloatFunc_constant_FUNC_FRAC:
+.. _class_VisualShaderNodeFloatFunc_constant_FUNC_FRACT:
 
 .. _class_VisualShaderNodeFloatFunc_constant_FUNC_SATURATE:
 
@@ -132,7 +132,7 @@ enum **Function**:
 
 - **FUNC_CEIL** = **16** --- Finds the nearest integer that is greater than or equal to the parameter. Translates to ``ceil(x)`` in the Godot Shader Language.
 
-- **FUNC_FRAC** = **17** --- Computes the fractional part of the argument. Translates to ``fract(x)`` in the Godot Shader Language.
+- **FUNC_FRACT** = **17** --- Computes the fractional part of the argument. Translates to ``fract(x)`` in the Godot Shader Language.
 
 - **FUNC_SATURATE** = **18** --- Clamps the value between ``0.0`` and ``1.0`` using ``min(max(x, 0.0), 1.0)``.
 

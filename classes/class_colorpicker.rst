@@ -122,6 +122,8 @@ Enumerations
 
 .. _class_ColorPicker_constant_SHAPE_VHS_CIRCLE:
 
+.. _class_ColorPicker_constant_SHAPE_OKHSL_CIRCLE:
+
 enum **PickerShapeType**:
 
 - **SHAPE_HSV_RECTANGLE** = **0** --- HSV Color Model rectangle color space.
@@ -129,6 +131,8 @@ enum **PickerShapeType**:
 - **SHAPE_HSV_WHEEL** = **1** --- HSV Color Model rectangle color space with a wheel.
 
 - **SHAPE_VHS_CIRCLE** = **2** --- HSV Color Model circle color space. Use Saturation as a radius.
+
+- **SHAPE_OKHSL_CIRCLE** = **3** --- HSL OK Color Model circle color space.
 
 Property Descriptions
 ---------------------

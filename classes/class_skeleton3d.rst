@@ -72,6 +72,8 @@ Methods
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                                 | :ref:`get_bone_global_pose_override<class_Skeleton3D_method_get_bone_global_pose_override>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                 |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform3D<class_Transform3D>`                                 | :ref:`get_bone_global_rest<class_Skeleton3D_method_get_bone_global_rest>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                   |
++-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                                 | :ref:`get_bone_local_pose_override<class_Skeleton3D_method_get_bone_local_pose_override>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                   |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                           | :ref:`get_bone_name<class_Skeleton3D_method_get_bone_name>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                                 |
@@ -324,6 +326,16 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 .. _class_Skeleton3D_method_get_bone_global_pose_override:
 
 - :ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_override** **(** :ref:`int<class_int>` bone_idx **)** |const|
+
+Returns the global pose override transform for ``bone_idx``.
+
+----
+
+.. _class_Skeleton3D_method_get_bone_global_rest:
+
+- :ref:`Transform3D<class_Transform3D>` **get_bone_global_rest** **(** :ref:`int<class_int>` bone_idx **)** |const|
+
+Returns the global rest transform for ``bone_idx``.
 
 ----
 

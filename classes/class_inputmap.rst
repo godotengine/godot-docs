@@ -95,6 +95,8 @@ Returns a deadzone value for the action.
 
 Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a given action.
 
+\ **Note:** When used in the editor (e.g. a tool script or :ref:`EditorPlugin<class_EditorPlugin>`), this method will return events for the editor action. If you want to access your project's input binds from the editor, read the ``input/*`` settings from :ref:`ProjectSettings<class_ProjectSettings>`.
+
 ----
 
 .. _class_InputMap_method_action_has_event:
@@ -137,7 +139,7 @@ Removes an action from the ``InputMap``.
 
 Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_method_action_has_event>` if you don't want this behavior.
 
-If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
 ----
 

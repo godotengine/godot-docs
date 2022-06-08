@@ -11,6 +11,8 @@ PhysicsDirectSpaceState3D
 
 **Inherits:** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`PhysicsDirectSpaceState3DExtension<class_PhysicsDirectSpaceState3DExtension>`
+
 Direct access object to a space in the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
 Description

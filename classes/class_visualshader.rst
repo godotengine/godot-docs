@@ -149,6 +149,8 @@ enum **VaryingMode**:
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_3D:
 
+.. _class_VisualShader_constant_VARYING_TYPE_VECTOR_4D:
+
 .. _class_VisualShader_constant_VARYING_TYPE_COLOR:
 
 .. _class_VisualShader_constant_VARYING_TYPE_TRANSFORM:
@@ -163,11 +165,13 @@ enum **VaryingType**:
 
 - **VARYING_TYPE_VECTOR_3D** = **2**
 
-- **VARYING_TYPE_COLOR** = **3**
+- **VARYING_TYPE_VECTOR_4D** = **3**
 
-- **VARYING_TYPE_TRANSFORM** = **4**
+- **VARYING_TYPE_COLOR** = **4**
 
-- **VARYING_TYPE_MAX** = **5**
+- **VARYING_TYPE_TRANSFORM** = **5**
+
+- **VARYING_TYPE_MAX** = **6**
 
 Constants
 ---------

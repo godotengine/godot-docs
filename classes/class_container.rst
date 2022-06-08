@@ -22,6 +22,11 @@ Base node for containers. A ``Container`` contains other controls and automatica
 
 A Control can inherit this to create custom container classes.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

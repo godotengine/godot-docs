@@ -34,6 +34,8 @@ Properties
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Vector2<class_Vector2>`         | :ref:`motion<class_PhysicsTestMotionParameters2D_property_motion>`                                 | ``Vector2(0, 0)``                 |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`recovery_as_collision<class_PhysicsTestMotionParameters2D_property_recovery_as_collision>`   | ``false``                         |
++---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
 
 Property Descriptions
 ---------------------
@@ -133,6 +135,24 @@ Increases the size of the shapes involved in the collision detection.
 +-----------+-------------------+
 
 Motion vector to define the length and direction of the motion to test.
+
+----
+
+.. _class_PhysicsTestMotionParameters2D_property_recovery_as_collision:
+
+- :ref:`bool<class_bool>` **recovery_as_collision**
+
++-----------+------------------------------------------+
+| *Default* | ``false``                                |
++-----------+------------------------------------------+
+| *Setter*  | set_recovery_as_collision_enabled(value) |
++-----------+------------------------------------------+
+| *Getter*  | is_recovery_as_collision_enabled()       |
++-----------+------------------------------------------+
+
+If set to ``true``, any depenetration from the recovery phase is reported as a collision; this is used e.g. by :ref:`CharacterBody2D.move_and_slide<class_CharacterBody2D_method_move_and_slide>` for improving floor detection when floor snapping is disabled.
+
+If set to ``false``, only collisions resulting from the motion are reported; this is used e.g. by :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

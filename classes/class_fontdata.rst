@@ -15,7 +15,7 @@ Font source data and prerendered glyph cache, imported from dynamic or bitmap fo
 
 Supported font formats:
 
-- Dynamic font importer: TrueType (.ttf), OpenType (.otf), WOFF (.woff), Type 1 (.pfb, .pfm).
+- Dynamic font importer: TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2), Type 1 (.pfb, .pfm).
 
 - Bitmap font importer: AngelCode BMFont (.fnt, .font), text and binary (version 3) format variants.
 
@@ -38,6 +38,8 @@ Properties
 | :ref:`int<class_int>`                                           | :ref:`font_style<class_FontData_property_font_style>`                                                 | ``0``                             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`force_autohinter<class_FontData_property_force_autohinter>`                                     | ``false``                         |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_FontData_property_generate_mipmaps>`                                     | ``false``                         |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_FontData_property_hinting>`                                                       | ``1``                             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -307,6 +309,22 @@ Font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
 +-----------+-----------------------------+
 
 If set to ``true``, auto-hinting is supported and preferred over font built-in hinting. Used by dynamic fonts only.
+
+----
+
+.. _class_FontData_property_generate_mipmaps:
+
+- :ref:`bool<class_bool>` **generate_mipmaps**
+
++-----------+-----------------------------+
+| *Default* | ``false``                   |
++-----------+-----------------------------+
+| *Setter*  | set_generate_mipmaps(value) |
++-----------+-----------------------------+
+| *Getter*  | get_generate_mipmaps()      |
++-----------+-----------------------------+
+
+If set to ``true``, generate mipmaps for the font textures.
 
 ----
 
@@ -783,7 +801,7 @@ Loads an AngelCode BMFont (.fnt, .font) bitmap font from file ``path``.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load_dynamic_font** **(** :ref:`String<class_String>` path **)**
 
-Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff) or Type 1 (.pfb, .pfm) dynamic font from file ``path``.
+Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2) or Type 1 (.pfb, .pfm) dynamic font from file ``path``.
 
 \ **Warning:** This method should only be used in the editor or in cases when you need to load external fonts at run-time, such as fonts located at the ``user://`` directory.
 

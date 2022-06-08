@@ -110,7 +110,7 @@ Given the two 3D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 - :ref:`Variant<class_Variant>` **ray_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
-Tests if the 3D ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
+Tests if the 3D ray starting at ``from`` with the direction of ``dir`` intersects the triangle specified by ``a``, ``b`` and ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, returns ``null``.
 
 ----
 
@@ -142,7 +142,7 @@ Checks if the segment (``from``, ``to``) intersects the sphere that is located a
 
 - :ref:`Variant<class_Variant>` **segment_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
-Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, an empty :ref:`Variant<class_Variant>` is returned.
+Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, returns ``null``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

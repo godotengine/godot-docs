@@ -87,8 +87,6 @@ For now, this includes generating cryptographically secure random bytes, RSA key
 
 
 
-\ **Note:** Not available in HTML5 exports.
-
 Methods
 -------
 

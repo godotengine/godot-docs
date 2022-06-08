@@ -16,7 +16,7 @@ Defines a binding between an :ref:`OpenXRAction<class_OpenXRAction>` and an XR i
 Description
 -----------
 
-This binding resource binds an OpenXR action to inputs or outputs. As most controllers have left hand and right versions that are handled by the same interaction profile we can specify multiple bindings. For instance an action "Fire" could be bound to both "/user/hand/left/input/trigger" and "/user/hand/right/input/trigger".
+This binding resource binds an :ref:`OpenXRAction<class_OpenXRAction>` to inputs or outputs. As most controllers have left hand and right versions that are handled by the same interaction profile we can specify multiple bindings. For instance an action "Fire" could be bound to both "/user/hand/left/input/trigger" and "/user/hand/right/input/trigger".
 
 Properties
 ----------
@@ -26,6 +26,19 @@ Properties
 +---------------------------------------------------+------------------------------------------------------+-------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`paths<class_OpenXRIPBinding_property_paths>`   | ``PackedStringArray()`` |
 +---------------------------------------------------+------------------------------------------------------+-------------------------+
+
+Methods
+-------
+
++-------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`add_path<class_OpenXRIPBinding_method_add_path>` **(** :ref:`String<class_String>` path **)**         |
++-------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>` **(** **)** |const|                      |
++-------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` arg0 **)** |const| |
++-------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>` **(** :ref:`String<class_String>` path **)**   |
++-------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -40,7 +53,7 @@ Property Descriptions
 | *Getter* | get_action()      |
 +----------+-------------------+
 
-Action that is bound to these paths.
+:ref:`OpenXRAction<class_OpenXRAction>` that is bound to these paths.
 
 ----
 
@@ -57,6 +70,39 @@ Action that is bound to these paths.
 +-----------+-------------------------+
 
 Paths that define the inputs or outputs bound on the device.
+
+Method Descriptions
+-------------------
+
+.. _class_OpenXRIPBinding_method_add_path:
+
+- void **add_path** **(** :ref:`String<class_String>` path **)**
+
+Add an input/output path to this binding.
+
+----
+
+.. _class_OpenXRIPBinding_method_get_path_count:
+
+- :ref:`int<class_int>` **get_path_count** **(** **)** |const|
+
+Get the number of input/output paths in this binding.
+
+----
+
+.. _class_OpenXRIPBinding_method_has_path:
+
+- :ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` arg0 **)** |const|
+
+Returns ``true`` if this input/output path is part of this binding.
+
+----
+
+.. _class_OpenXRIPBinding_method_remove_path:
+
+- void **remove_path** **(** :ref:`String<class_String>` path **)**
+
+Removes this input/output path from this binding.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

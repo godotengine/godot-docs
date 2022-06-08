@@ -288,6 +288,8 @@ enum **ParticleFlags**:
 
 .. _class_CPUParticles2D_constant_EMISSION_SHAPE_SPHERE:
 
+.. _class_CPUParticles2D_constant_EMISSION_SHAPE_SPHERE_SURFACE:
+
 .. _class_CPUParticles2D_constant_EMISSION_SHAPE_RECTANGLE:
 
 .. _class_CPUParticles2D_constant_EMISSION_SHAPE_POINTS:
@@ -300,15 +302,17 @@ enum **EmissionShape**:
 
 - **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
 
-- **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted on the surface of a sphere flattened to two dimensions.
+- **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted in the volume of a sphere flattened to two dimensions.
 
-- **EMISSION_SHAPE_RECTANGLE** = **2** --- Particles will be emitted in the area of a rectangle.
+- **EMISSION_SHAPE_SPHERE_SURFACE** = **2** --- Particles will be emitted on the surface of a sphere flattened to two dimensions.
 
-- **EMISSION_SHAPE_POINTS** = **3** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
+- **EMISSION_SHAPE_RECTANGLE** = **3** --- Particles will be emitted in the area of a rectangle.
 
-- **EMISSION_SHAPE_DIRECTED_POINTS** = **4** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle velocity and rotation will be set based on :ref:`emission_normals<class_CPUParticles2D_property_emission_normals>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
+- **EMISSION_SHAPE_POINTS** = **4** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
 
-- **EMISSION_SHAPE_MAX** = **5** --- Represents the size of the :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` enum.
+- **EMISSION_SHAPE_DIRECTED_POINTS** = **5** --- Particles will be emitted at a position chosen randomly among :ref:`emission_points<class_CPUParticles2D_property_emission_points>`. Particle velocity and rotation will be set based on :ref:`emission_normals<class_CPUParticles2D_property_emission_normals>`. Particle color will be modulated by :ref:`emission_colors<class_CPUParticles2D_property_emission_colors>`.
+
+- **EMISSION_SHAPE_MAX** = **6** --- Represents the size of the :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` enum.
 
 Property Descriptions
 ---------------------

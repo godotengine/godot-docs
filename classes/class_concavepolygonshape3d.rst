@@ -11,14 +11,16 @@ ConcavePolygonShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Concave polygon shape.
+Concave polygon shape resource (also called "trimesh") for 3D physics.
 
 Description
 -----------
 
-Concave polygon shape resource, which can be set into a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or area. This shape is created by feeding a list of triangles.
+3D concave polygon shape resource (also called "trimesh") to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is created by feeding a list of triangles. Despite its name, ``ConcavePolygonShape3D`` can also store convex polygon shapes. However, unlike :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, ``ConcavePolygonShape3D`` is *not* limited to storing convex shapes exclusively.
 
 \ **Note:** When used for collision, ``ConcavePolygonShape3D`` is intended to work with static :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will not work with :ref:`CharacterBody3D<class_CharacterBody3D>` or :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` with a mode other than Static.
+
+\ **Performance:** Due to its complexity, ``ConcavePolygonShape3D`` is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` first.
 
 Tutorials
 ---------

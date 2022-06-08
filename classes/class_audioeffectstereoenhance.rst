@@ -11,7 +11,12 @@ AudioEffectStereoEnhance
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+An audio effect that can be used to adjust the intensity of stereo panning.
 
+Description
+-----------
+
+An audio effect that can be used to adjust the intensity of stereo panning.
 
 Properties
 ----------
@@ -38,6 +43,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_pan_pullout()      |
 +-----------+------------------------+
+
+Values greater than 1.0 increase intensity of any panning on audio passing through this effect, whereas values less than 1.0 will decrease the panning intensity. A value of 0.0 will downmix audio to mono.
 
 ----
 

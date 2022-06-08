@@ -11,12 +11,14 @@ SeparationRayShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Separation ray shape for 2D collisions.
+Separation ray shape resource for 2D physics.
 
 Description
 -----------
 
-Separation ray shape for 2D collisions. A ray is not really a collision body; instead, it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
+2D separation ray shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. A ray is not really a collision body; instead, it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
+
+\ **Performance:** Being a primitive collision shape, ``SeparationRayShape2D`` is fast to check collisions against.
 
 Properties
 ----------

@@ -170,9 +170,9 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`title_outline_modulate<class_Window_theme_color_title_outline_modulate>` | ``Color(1, 1, 1, 1)``             |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`close_h_ofs<class_Window_theme_constant_close_h_ofs>`                    | ``18``                            |
+| :ref:`int<class_int>`             | :ref:`close_h_offset<class_Window_theme_constant_close_h_offset>`              | ``18``                            |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`close_v_ofs<class_Window_theme_constant_close_v_ofs>`                    | ``24``                            |
+| :ref:`int<class_int>`             | :ref:`close_v_offset<class_Window_theme_constant_close_v_offset>`              | ``24``                            |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`resize_margin<class_Window_theme_constant_resize_margin>`                | ``4``                             |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
@@ -213,6 +213,18 @@ Signals
 - **files_dropped** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
 
 Emitted when files are dragged from the OS file manager and dropped in the game window. The argument is a list of file paths.
+
+Note that this method only works with non-embedded windows, i.e. the main window and ``Window``-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
+
+Example usage:
+
+::
+
+    func _ready():
+        get_viewport().files_dropped.connect(on_files_dropped)
+    
+    func on_files_dropped(files):
+        print(files)
 
 ----
 
@@ -1073,9 +1085,9 @@ The color of the title outline.
 
 ----
 
-.. _class_Window_theme_constant_close_h_ofs:
+.. _class_Window_theme_constant_close_h_offset:
 
-- :ref:`int<class_int>` **close_h_ofs**
+- :ref:`int<class_int>` **close_h_offset**
 
 +-----------+--------+
 | *Default* | ``18`` |
@@ -1083,9 +1095,9 @@ The color of the title outline.
 
 ----
 
-.. _class_Window_theme_constant_close_v_ofs:
+.. _class_Window_theme_constant_close_v_offset:
 
-- :ref:`int<class_int>` **close_v_ofs**
+- :ref:`int<class_int>` **close_v_offset**
 
 +-----------+--------+
 | *Default* | ``24`` |

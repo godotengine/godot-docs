@@ -11,12 +11,12 @@ VisualShaderNodeVectorCompose
 
 **Inherits:** :ref:`VisualShaderNodeVectorBase<class_VisualShaderNodeVectorBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Composes a :ref:`Vector3<class_Vector3>` from three scalars within the visual shader graph.
+Composes a :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>` or 4D vector (represented as a :ref:`Quaternion<class_Quaternion>`) from scalars within the visual shader graph.
 
 Description
 -----------
 
-Creates a ``vec3`` using three scalar values that can be provided from separate inputs.
+Creates a ``vec2``, ``vec3`` or ``vec4`` using scalar values that can be provided from separate inputs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

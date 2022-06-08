@@ -11,7 +11,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
+**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 Base class for all *scene* objects.
 
@@ -52,23 +52,23 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>` |        |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                 | :ref:`editor_description<class_Node_property_editor_description>` | ``""`` |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`               |        |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`StringName<class_StringName>`         | :ref:`name<class_Node_property_name>`                             |        |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                           |        |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`ProcessMode<enum_Node_ProcessMode>`   | :ref:`process_mode<class_Node_property_process_mode>`             | ``0``  |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`     | ``0``  |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`       |        |
-+---------------------------------------------+-------------------------------------------------------------------+--------+
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                 | :ref:`editor_description<class_Node_property_editor_description>`     | ``""``    |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`                   |           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`StringName<class_StringName>`         | :ref:`name<class_Node_property_name>`                                 |           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                               |           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`ProcessMode<enum_Node_ProcessMode>`   | :ref:`process_mode<class_Node_property_process_mode>`                 | ``0``     |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`         | ``0``     |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`           |           |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                     | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>` | ``false`` |
++---------------------------------------------+-----------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -88,6 +88,8 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`_ready<class_Node_method__ready>` **(** **)** |virtual|                                                                                                                                                                                                                                              |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`_shortcut_input<class_Node_method__shortcut_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`_unhandled_input<class_Node_method__unhandled_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                                        |
@@ -104,9 +106,11 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                           | :ref:`duplicate<class_Node_method_duplicate>` **(** :ref:`int<class_int>` flags=15 **)** |const|                                                                                                                                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node[]<class_Node>`                         | :ref:`find_nodes<class_Node_method_find_nodes>` **(** :ref:`String<class_String>` mask, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                                                                                      |
+| :ref:`Node<class_Node>`                           | :ref:`find_child<class_Node_method_find_child>` **(** :ref:`String<class_String>` pattern, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                                                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                           | :ref:`find_parent<class_Node_method_find_parent>` **(** :ref:`String<class_String>` mask **)** |const|                                                                                                                                                                                                     |
+| :ref:`Node[]<class_Node>`                         | :ref:`find_children<class_Node_method_find_children>` **(** :ref:`String<class_String>` pattern, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|                                                                             |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`                           | :ref:`find_parent<class_Node_method_find_parent>` **(** :ref:`String<class_String>` pattern **)** |const|                                                                                                                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                           | :ref:`get_child<class_Node_method_get_child>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` include_internal=false **)** |const|                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,13 +174,15 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_processing_internal<class_Node_method_is_processing_internal>` **(** **)** |const|                                                                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`is_processing_shortcut_input<class_Node_method_is_processing_shortcut_input>` **(** **)** |const|                                                                                                                                                                                                    |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_processing_unhandled_input<class_Node_method_is_processing_unhandled_input>` **(** **)** |const|                                                                                                                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_processing_unhandled_key_input<class_Node_method_is_processing_unhandled_key_input>` **(** **)** |const|                                                                                                                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`move_child<class_Node_method_move_child>` **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**                                                                                                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`print_stray_nodes<class_Node_method_print_stray_nodes>` **(** **)**                                                                                                                                                                                                                                  |
+| void                                              | :ref:`print_orphan_nodes<class_Node_method_print_orphan_nodes>` **(** **)**                                                                                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`print_tree<class_Node_method_print_tree>` **(** **)**                                                                                                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -200,11 +206,11 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`request_ready<class_Node_method_request_ready>` **(** **)**                                                                                                                                                                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                                                                                                     |
+| void                                              | :ref:`rpc<class_Node_method_rpc>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                                                                                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rpc_config<class_Node_method_rpc_config>` **(** :ref:`StringName<class_StringName>` method, :ref:`RPCMode<enum_@GlobalScope_RPCMode>` rpc_mode, :ref:`bool<class_bool>` call_local=false, :ref:`TransferMode<enum_@GlobalScope_TransferMode>` transfer_mode=2, :ref:`int<class_int>` channel=0 **)** |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                                                                |
+| void                                              | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_display_folded<class_Node_method_set_display_folded>` **(** :ref:`bool<class_bool>` fold **)**                                                                                                                                                                                                   |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -221,6 +227,8 @@ Methods
 | void                                              | :ref:`set_process_input<class_Node_method_set_process_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                   |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_process_internal<class_Node_method_set_process_internal>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                             |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`set_process_shortcut_input<class_Node_method_set_process_shortcut_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                 |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_process_unhandled_input<class_Node_method_set_process_unhandled_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                               |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -466,9 +474,15 @@ Constants
 
 - **NOTIFICATION_INSTANCED** = **20** --- Notification received when the node is instantiated.
 
-- **NOTIFICATION_DRAG_BEGIN** = **21** --- Notification received when a drag begins.
+- **NOTIFICATION_DRAG_BEGIN** = **21** --- Notification received when a drag operation begins. All nodes receive this notification, not only the dragged one.
 
-- **NOTIFICATION_DRAG_END** = **22** --- Notification received when a drag ends.
+Can be triggered either by dragging a :ref:`Control<class_Control>` that provides drag data (see :ref:`Control._get_drag_data<class_Control_method__get_drag_data>`) or using :ref:`Control.force_drag<class_Control_method_force_drag>`.
+
+Use :ref:`Viewport.gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` to get the dragged data.
+
+- **NOTIFICATION_DRAG_END** = **22** --- Notification received when a drag operation ends.
+
+Use :ref:`Viewport.gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` to check if the drag succeeded.
 
 - **NOTIFICATION_PATH_RENAMED** = **23** --- Notification received when the node's name or one of its parents' name is changed. This notification is *not* received when the node is removed from the scene tree to be added to another parent later on.
 
@@ -553,20 +567,6 @@ Implemented on desktop platforms.
 Property Descriptions
 ---------------------
 
-.. _class_Node_property_custom_multiplayer:
-
-- :ref:`MultiplayerAPI<class_MultiplayerAPI>` **custom_multiplayer**
-
-+----------+-------------------------------+
-| *Setter* | set_custom_multiplayer(value) |
-+----------+-------------------------------+
-| *Getter* | get_custom_multiplayer()      |
-+----------+-------------------------------+
-
-The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to ``null`` to use the default :ref:`SceneTree<class_SceneTree>` one.
-
-----
-
 .. _class_Node_property_editor_description:
 
 - :ref:`String<class_String>` **editor_description**
@@ -579,7 +579,7 @@ The override to the default :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Set to 
 | *Getter*  | get_editor_description()      |
 +-----------+-------------------------------+
 
-Add a custom description to a node.
+Add a custom description to a node. It will be displayed in a tooltip when hovered in editor's scene tree.
 
 ----
 
@@ -591,7 +591,7 @@ Add a custom description to a node.
 | *Getter* | get_multiplayer() |
 +----------+-------------------+
 
-The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this node. Either the :ref:`custom_multiplayer<class_Node_property_custom_multiplayer>`, or the default SceneTree one (if inside tree).
+The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this node. See :ref:`SceneTree.get_multiplayer<class_SceneTree_method_get_multiplayer>`.
 
 ----
 
@@ -622,6 +622,8 @@ The name of the node. This name is unique among the siblings (other child nodes 
 +----------+------------------+
 
 The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
+
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/misc/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 
@@ -668,6 +670,24 @@ The node's priority in the execution order of the enabled processing callbacks (
 +----------+----------------------------+
 
 If a scene is instantiated from a file, its topmost node contains the absolute file path from which it was loaded in :ref:`scene_file_path<class_Node_property_scene_file_path>` (e.g. ``res://levels/1.tscn``). Otherwise, :ref:`scene_file_path<class_Node_property_scene_file_path>` is set to an empty string.
+
+----
+
+.. _class_Node_property_unique_name_in_owner:
+
+- :ref:`bool<class_bool>` **unique_name_in_owner**
+
++-----------+---------------------------------+
+| *Default* | ``false``                       |
++-----------+---------------------------------+
+| *Setter*  | set_unique_name_in_owner(value) |
++-----------+---------------------------------+
+| *Getter*  | is_unique_name_in_owner()       |
++-----------+---------------------------------+
+
+Sets this node's name as a unique name in its :ref:`owner<class_Node_property_owner>`. This allows the node to be accessed as ``%Name`` instead of the full path, from any node within that scene.
+
+If another node with the same owner already had that name declared as unique, that other node's name will no longer be set as having a unique name.
 
 Method Descriptions
 -------------------
@@ -762,6 +782,22 @@ Usually used for initialization. For even earlier initialization, :ref:`Object._
 
 ----
 
+.. _class_Node_method__shortcut_input:
+
+- void **_shortcut_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
+
+Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShortcut<class_InputEventShortcut>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
+
+It is only called if shortcut processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_shortcut_input<class_Node_method_set_process_shortcut_input>`.
+
+To consume the input event and stop it propagating further to other nodes, :ref:`Viewport.set_input_as_handled<class_Viewport_method_set_input_as_handled>` can be called.
+
+This method can be used to handle shortcuts.
+
+\ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not orphan).
+
+----
+
 .. _class_Node_method__unhandled_input:
 
 - void **_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
@@ -787,6 +823,8 @@ Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShor
 It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>`.
 
 To consume the input event and stop it propagating further to other nodes, :ref:`Viewport.set_input_as_handled<class_Viewport_method_set_input_as_handled>` can be called.
+
+This method can be used to handle Unicode character input with :kbd:`Alt`, :kbd:`Alt + Ctrl`, and :kbd:`Alt + Shift` modifiers, after shortcuts were handled.
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
 
@@ -829,7 +867,7 @@ If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_consta
 
 If you need the child node to be added below a specific node in the list of children, use :ref:`add_sibling<class_Node_method_add_sibling>` instead of this method.
 
-\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for `tool scripts <https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html>`__ and `editor plugins <https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html>`__. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/misc/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 
@@ -891,33 +929,57 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 ----
 
-.. _class_Node_method_find_nodes:
+.. _class_Node_method_find_child:
 
-- :ref:`Node[]<class_Node>` **find_nodes** **(** :ref:`String<class_String>` mask, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
+- :ref:`Node<class_Node>` **find_child** **(** :ref:`String<class_String>` pattern, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds descendants of this node whose, name matches ``mask`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
+Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
 
-\ ``mask`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
-\ ``type`` will check equality or inheritance. It is case-sensitive, ``"Object"`` will match a node whose type is ``"Node"`` but not the other way around.
+If ``recursive`` is ``true``, all child nodes are included, even if deeply nested. Nodes are checked in tree order, so this node's first direct child is checked first, then its own direct children, etc., before moving to the second direct child, and so on. If ``recursive`` is ``false``, only this node's direct children are matched.
 
-If ``owned`` is ``true``, this method only finds nodes whose owner is this node. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
+If ``owned`` is ``true``, this method only finds nodes who have an assigned :ref:`owner<class_Node_property_owner>`. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
 
-Returns an empty array, if no matching nodes are found.
+Returns ``null`` if no matching ``Node`` is found.
 
-\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get references to other nodes. To avoid using :ref:`find_nodes<class_Node_method_find_nodes>` too often, consider caching the node references into variables.
+\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get a reference to another node. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` with unique names instead (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`), or caching the node references into variable.
+
+\ **Note:** To find all descendant nodes matching a pattern or a class type, see :ref:`find_children<class_Node_method_find_children>`.
+
+----
+
+.. _class_Node_method_find_children:
+
+- :ref:`Node[]<class_Node>` **find_children** **(** :ref:`String<class_String>` pattern, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
+
+Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
+
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+
+\ ``type`` will check equality or inheritance, and is case-sensitive. ``"Object"`` will match a node whose type is ``"Node"`` but not the other way around.
+
+If ``recursive`` is ``true``, all child nodes are included, even if deeply nested. Nodes are checked in tree order, so this node's first direct child is checked first, then its own direct children, etc., before moving to the second direct child, and so on. If ``recursive`` is ``false``, only this node's direct children are matched.
+
+If ``owned`` is ``true``, this method only finds nodes who have an assigned :ref:`owner<class_Node_property_owner>`. This is especially important for scenes instantiated through a script, because those scenes don't have an owner.
+
+Returns an empty array if no matching nodes are found.
+
+\ **Note:** As this method walks through all the descendants of the node, it is the slowest way to get references to other nodes. Whenever possible, consider caching the node references into variables.
+
+\ **Note:** If you only want to find the first descendant node that matches a pattern, see :ref:`find_child<class_Node_method_find_child>`.
 
 ----
 
 .. _class_Node_method_find_parent:
 
-- :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` mask **)** |const|
+- :ref:`Node<class_Node>` **find_parent** **(** :ref:`String<class_String>` pattern **)** |const|
 
-Finds the first parent of the current node whose name matches ``mask`` as in :ref:`String.match<class_String_method_match>` (i.e. case-sensitive, but ``"*"`` matches zero or more characters and ``"?"`` matches any single character except ``"."``).
+Finds the first parent of the current node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
 
-\ **Note:** It does not match against the full path, just against individual node names.
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
-\ **Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` instead. To avoid using :ref:`find_parent<class_Node_method_find_parent>` too often, consider caching the node reference into a variable.
+\ **Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` with unique names instead (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`), or caching the node references into variable.
 
 ----
 
@@ -1250,6 +1312,14 @@ Returns ``true`` if internal processing is enabled (see :ref:`set_process_intern
 
 ----
 
+.. _class_Node_method_is_processing_shortcut_input:
+
+- :ref:`bool<class_bool>` **is_processing_shortcut_input** **(** **)** |const|
+
+Returns ``true`` if the node is processing shortcuts (see :ref:`set_process_shortcut_input<class_Node_method_set_process_shortcut_input>`).
+
+----
+
 .. _class_Node_method_is_processing_unhandled_input:
 
 - :ref:`bool<class_bool>` **is_processing_unhandled_input** **(** **)** |const|
@@ -1276,11 +1346,13 @@ Moves a child node to a different position (order) among the other children. Sin
 
 ----
 
-.. _class_Node_method_print_stray_nodes:
+.. _class_Node_method_print_orphan_nodes:
 
-- void **print_stray_nodes** **(** **)**
+- void **print_orphan_nodes** **(** **)**
 
-Prints all stray nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Used for debugging. Works only in debug builds.
+Prints all orphan nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). Used for debugging.
+
+\ **Note:** :ref:`print_orphan_nodes<class_Node_method_print_orphan_nodes>` only works in debug builds. When called in a project exported in release mode, :ref:`print_orphan_nodes<class_Node_method_print_orphan_nodes>` will not print anything.
 
 ----
 
@@ -1404,9 +1476,9 @@ Requests that ``_ready`` be called again. Note that the method won't be called i
 
 .. _class_Node_method_rpc:
 
-- :ref:`Variant<class_Variant>` **rpc** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- void **rpc** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns an empty :ref:`Variant<class_Variant>`.
+Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns ``null``.
 
 \ **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. You also need to keep track of the connection state, either by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals like ``server_disconnected`` or by checking ``get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED``.
 
@@ -1416,15 +1488,15 @@ Sends a remote procedure call request for the given ``method`` to peers on the n
 
 - :ref:`int<class_int>` **rpc_config** **(** :ref:`StringName<class_StringName>` method, :ref:`RPCMode<enum_@GlobalScope_RPCMode>` rpc_mode, :ref:`bool<class_bool>` call_local=false, :ref:`TransferMode<enum_@GlobalScope_TransferMode>` transfer_mode=2, :ref:`int<class_int>` channel=0 **)**
 
-Changes the RPC mode for the given ``method`` to the given ``rpc_mode``, optionally specifying the ``transfer_mode`` and ``channel`` (on supported peers). See :ref:`RPCMode<enum_@GlobalScope_RPCMode>` and :ref:`TransferMode<enum_@GlobalScope_TransferMode>`. An alternative is annotating methods and properties with the corresponding annotation (``@rpc(any)``, ``@rpc(auth)``). By default, methods are not exposed to networking (and RPCs).
+Changes the RPC mode for the given ``method`` to the given ``rpc_mode``, optionally specifying the ``transfer_mode`` and ``channel`` (on supported peers). See :ref:`RPCMode<enum_@GlobalScope_RPCMode>` and :ref:`TransferMode<enum_@GlobalScope_TransferMode>`. An alternative is annotating methods and properties with the corresponding annotation (``@rpc(any)``, ``@rpc(authority)``). By default, methods are not exposed to networking (and RPCs).
 
 ----
 
 .. _class_Node_method_rpc_id:
 
-- :ref:`Variant<class_Variant>` **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- void **rpc_id** **(** :ref:`int<class_int>` peer_id, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`MultiplayerPeer.set_target_peer<class_MultiplayerPeer_method_set_target_peer>`). Returns an empty :ref:`Variant<class_Variant>`.
+Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``peer_id`` (see :ref:`MultiplayerPeer.set_target_peer<class_MultiplayerPeer_method_set_target_peer>`). Returns ``null``.
 
 ----
 
@@ -1493,6 +1565,14 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 Enables or disabled internal processing for this node. Internal processing happens in isolation from the normal :ref:`_process<class_Node_method__process>` calls and is used by some nodes internally to guarantee proper functioning even if the node is paused or processing is disabled for scripting (:ref:`set_process<class_Node_method_set_process>`). Only useful for advanced uses to manipulate built-in nodes' behavior.
 
 \ **Warning:** Built-in Nodes rely on the internal processing for their own logic, so changing this value from your code may lead to unexpected behavior. Script access to this internal logic is provided for specific advanced uses, but is unsafe and not supported.
+
+----
+
+.. _class_Node_method_set_process_shortcut_input:
+
+- void **set_process_shortcut_input** **(** :ref:`bool<class_bool>` enable **)**
+
+Enables shortcut processing. Enabled automatically if :ref:`_shortcut_input<class_Node_method__shortcut_input>` is overridden. Any calls to this before :ref:`_ready<class_Node_method__ready>` will be ignored.
 
 ----
 

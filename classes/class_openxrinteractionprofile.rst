@@ -29,6 +29,15 @@ Properties
 | :ref:`String<class_String>` | :ref:`interaction_profile_path<class_OpenXRInteractionProfile_property_interaction_profile_path>` | ``""`` |
 +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
 
+Methods
+-------
+
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>` **(** :ref:`int<class_int>` index **)** |const| |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>` **(** **)** |const|                 |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -61,6 +70,23 @@ Action bindings for this interaction profile.
 +-----------+-------------------------------------+
 
 The interaction profile path identifying the XR device.
+
+Method Descriptions
+-------------------
+
+.. _class_OpenXRInteractionProfile_method_get_binding:
+
+- :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding** **(** :ref:`int<class_int>` index **)** |const|
+
+Retrieve the binding at this index.
+
+----
+
+.. _class_OpenXRInteractionProfile_method_get_binding_count:
+
+- :ref:`int<class_int>` **get_binding_count** **(** **)** |const|
+
+Get the number of bindings in this interaction profile.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

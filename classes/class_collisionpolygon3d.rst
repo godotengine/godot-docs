@@ -11,12 +11,14 @@ CollisionPolygon3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Editor-only class for defining a collision polygon in 3D space.
+Editor-only node for defining a collision polygon in 3D space.
 
 Description
 -----------
 
-Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates a :ref:`Shape3D<class_Shape3D>` for gameplay. Properties modified during gameplay will have no effect.
+Allows editing a concave or convex collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s at run-time to represent the original polygon using convex decomposition.
+
+\ **Note:** Since this is an editor-only helper, properties modified during gameplay will have no effect.
 
 Properties
 ----------

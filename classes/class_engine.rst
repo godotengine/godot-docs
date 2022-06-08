@@ -59,6 +59,10 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_process_frames<class_Engine_method_get_process_frames>` **(** **)** |const|                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ScriptLanguage<class_ScriptLanguage>`       | :ref:`get_script_language<class_Engine_method_get_script_language>` **(** :ref:`int<class_int>` index **)** |const|                                          |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_script_language_count<class_Engine_method_get_script_language_count>` **(** **)**                                                                  |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`                       | :ref:`get_singleton<class_Engine_method_get_singleton>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                         |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_singleton_list<class_Engine_method_get_singleton_list>` **(** **)** |const|                                                                        |
@@ -70,6 +74,8 @@ Methods
 | :ref:`bool<class_bool>`                           | :ref:`is_editor_hint<class_Engine_method_is_editor_hint>` **(** **)** |const|                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** |const|                                                                      |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`register_script_language<class_Engine_method_register_script_language>` **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`register_singleton<class_Engine_method_register_singleton>` **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)** |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -286,6 +292,18 @@ Returns the total number of frames passed since engine initialization which is a
 
 ----
 
+.. _class_Engine_method_get_script_language:
+
+- :ref:`ScriptLanguage<class_ScriptLanguage>` **get_script_language** **(** :ref:`int<class_int>` index **)** |const|
+
+----
+
+.. _class_Engine_method_get_script_language_count:
+
+- :ref:`int<class_int>` **get_script_language_count** **(** **)**
+
+----
+
 .. _class_Engine_method_get_singleton:
 
 - :ref:`Object<class_Object>` **get_singleton** **(** :ref:`StringName<class_StringName>` name **)** |const|
@@ -383,6 +401,12 @@ See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_e
 - :ref:`bool<class_bool>` **is_in_physics_frame** **(** **)** |const|
 
 Returns ``true`` if the game is inside the fixed process and physics phase of the game loop.
+
+----
+
+.. _class_Engine_method_register_script_language:
+
+- void **register_script_language** **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**
 
 ----
 

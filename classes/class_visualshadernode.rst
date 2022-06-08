@@ -71,6 +71,8 @@ Enumerations
 
 .. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_3D:
 
+.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_4D:
+
 .. _class_VisualShaderNode_constant_PORT_TYPE_BOOLEAN:
 
 .. _class_VisualShaderNode_constant_PORT_TYPE_TRANSFORM:
@@ -89,13 +91,15 @@ enum **PortType**:
 
 - **PORT_TYPE_VECTOR_3D** = **3** --- 3D vector of floating-point values. Translated to ``vec3`` type in shader code.
 
-- **PORT_TYPE_BOOLEAN** = **4** --- Boolean type. Translated to ``bool`` type in shader code.
+- **PORT_TYPE_VECTOR_4D** = **4** --- 4D vector of floating-point values. Translated to ``vec4`` type in shader code.
 
-- **PORT_TYPE_TRANSFORM** = **5** --- Transform type. Translated to ``mat4`` type in shader code.
+- **PORT_TYPE_BOOLEAN** = **5** --- Boolean type. Translated to ``bool`` type in shader code.
 
-- **PORT_TYPE_SAMPLER** = **6** --- Sampler type. Translated to reference of sampler uniform in shader code. Can only be used for input ports in non-uniform nodes.
+- **PORT_TYPE_TRANSFORM** = **6** --- Transform type. Translated to ``mat4`` type in shader code.
 
-- **PORT_TYPE_MAX** = **7** --- Represents the size of the :ref:`PortType<enum_VisualShaderNode_PortType>` enum.
+- **PORT_TYPE_SAMPLER** = **7** --- Sampler type. Translated to reference of sampler uniform in shader code. Can only be used for input ports in non-uniform nodes.
+
+- **PORT_TYPE_MAX** = **8** --- Represents the size of the :ref:`PortType<enum_VisualShaderNode_PortType>` enum.
 
 Property Descriptions
 ---------------------

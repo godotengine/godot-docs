@@ -545,7 +545,7 @@ Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing
 | *Getter*  | get_zoom()        |
 +-----------+-------------------+
 
-The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2× zoom-in, and ``Vector2(4, 4)`` for a 4× zoom-out.
+The camera's zoom. A zoom of ``Vector(2, 2)`` doubles the size seen in the viewport. A zoom of ``Vector(0.5, 0.5)`` halves the size seen in the viewport.
 
 Method Descriptions
 -------------------

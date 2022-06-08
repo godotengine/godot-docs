@@ -16,24 +16,30 @@ MultiplayerSpawner
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`                 | :ref:`auto_spawn<class_MultiplayerSpawner_property_auto_spawn>`   | ``false``        |
-+-----------------------------------------+-------------------------------------------------------------------+------------------+
-| :ref:`PackedScene[]<class_PackedScene>` | :ref:`replication<class_MultiplayerSpawner_property_replication>` | ``[]``           |
-+-----------------------------------------+-------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`                   | :ref:`spawn_limit<class_MultiplayerSpawner_property_spawn_limit>` | ``0``            |
-+-----------------------------------------+-------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`         | :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`   | ``NodePath("")`` |
-+-----------------------------------------+-------------------------------------------------------------------+------------------+
++---------------------------------+-------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`auto_spawn<class_MultiplayerSpawner_property_auto_spawn>`   | ``false``        |
++---------------------------------+-------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`           | :ref:`spawn_limit<class_MultiplayerSpawner_property_spawn_limit>` | ``0``            |
++---------------------------------+-------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`   | ``NodePath("")`` |
++---------------------------------+-------------------------------------------------------------------+------------------+
 
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` **(** :ref:`Variant<class_Variant>` data **)** |virtual| |
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`     | :ref:`spawn<class_MultiplayerSpawner_method_spawn>` **(** :ref:`Variant<class_Variant>` data=null **)**                      |
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` **(** :ref:`Variant<class_Variant>` data **)** |virtual|   |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_spawnable_scene<class_MultiplayerSpawner_method_add_spawnable_scene>` **(** :ref:`String<class_String>` path **)**   |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`clear_spawnable_scenes<class_MultiplayerSpawner_method_clear_spawnable_scenes>` **(** **)**                              |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_spawnable_scene<class_MultiplayerSpawner_method_get_spawnable_scene>` **(** :ref:`int<class_int>` path **)** |const| |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`       | :ref:`get_spawnable_scene_count<class_MultiplayerSpawner_method_get_spawnable_scene_count>` **(** **)** |const|                |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`     | :ref:`spawn<class_MultiplayerSpawner_method_spawn>` **(** :ref:`Variant<class_Variant>` data=null **)**                        |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -62,20 +68,6 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | is_auto_spawning()       |
 +-----------+--------------------------+
-
-----
-
-.. _class_MultiplayerSpawner_property_replication:
-
-- :ref:`PackedScene[]<class_PackedScene>` **replication**
-
-+-----------+-----------------------------+
-| *Default* | ``[]``                      |
-+-----------+-----------------------------+
-| *Setter*  | set_spawnable_scenes(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_spawnable_scenes()      |
-+-----------+-----------------------------+
 
 ----
 
@@ -111,6 +103,30 @@ Method Descriptions
 .. _class_MultiplayerSpawner_method__spawn_custom:
 
 - :ref:`Object<class_Object>` **_spawn_custom** **(** :ref:`Variant<class_Variant>` data **)** |virtual|
+
+----
+
+.. _class_MultiplayerSpawner_method_add_spawnable_scene:
+
+- void **add_spawnable_scene** **(** :ref:`String<class_String>` path **)**
+
+----
+
+.. _class_MultiplayerSpawner_method_clear_spawnable_scenes:
+
+- void **clear_spawnable_scenes** **(** **)**
+
+----
+
+.. _class_MultiplayerSpawner_method_get_spawnable_scene:
+
+- :ref:`String<class_String>` **get_spawnable_scene** **(** :ref:`int<class_int>` path **)** |const|
+
+----
+
+.. _class_MultiplayerSpawner_method_get_spawnable_scene_count:
+
+- :ref:`int<class_int>` **get_spawnable_scene_count** **(** **)** |const|
 
 ----
 

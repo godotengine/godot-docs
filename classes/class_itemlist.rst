@@ -22,6 +22,8 @@ Selectable items in the list may be selected or deselected and multiple selectio
 
 Item text only supports single-line strings, newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
 
+All ``set_*`` methods allow negative item index, which makes the item accessed from the last one.
+
 Properties
 ----------
 
@@ -166,7 +168,7 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`guide_color<class_ItemList_theme_color_guide_color>`                 | ``Color(0, 0, 0, 0.1)``        |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_ItemList_theme_constant_hseparation>`              | ``4``                          |
+| :ref:`int<class_int>`           | :ref:`h_separation<class_ItemList_theme_constant_h_separation>`            | ``4``                          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`icon_margin<class_ItemList_theme_constant_icon_margin>`              | ``4``                          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -174,7 +176,7 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`outline_size<class_ItemList_theme_constant_outline_size>`            | ``0``                          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`vseparation<class_ItemList_theme_constant_vseparation>`              | ``2``                          |
+| :ref:`int<class_int>`           | :ref:`v_separation<class_ItemList_theme_constant_v_separation>`            | ``2``                          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                |                                |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -196,6 +198,14 @@ Theme Properties
 Signals
 -------
 
+.. _class_ItemList_signal_empty_clicked:
+
+- **empty_clicked** **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`int<class_int>` mouse_button_index **)**
+
+Triggered when any mouse click is issued within the rect of the list but on empty space.
+
+----
+
 .. _class_ItemList_signal_item_activated:
 
 - **item_activated** **(** :ref:`int<class_int>` index **)**
@@ -204,15 +214,13 @@ Triggered when specified list item is activated via double-clicking or by pressi
 
 ----
 
-.. _class_ItemList_signal_item_rmb_selected:
+.. _class_ItemList_signal_item_clicked:
 
-- **item_rmb_selected** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` at_position **)**
+- **item_clicked** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` at_position, :ref:`int<class_int>` mouse_button_index **)**
 
-Triggered when specified list item has been selected via right mouse clicking.
+Triggered when specified list item has been clicked with any mouse button.
 
 The click position is also provided to allow appropriate popup of context menus at the correct location.
-
-\ :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>` must be enabled.
 
 ----
 
@@ -231,24 +239,6 @@ Triggered when specified item has been selected.
 - **multi_selected** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected **)**
 
 Triggered when a multiple selection is altered on a list allowing multiple selection.
-
-----
-
-.. _class_ItemList_signal_nothing_selected:
-
-- **nothing_selected** **(** **)**
-
-Triggered when a left mouse click is issued within the rect of the list but on empty space.
-
-----
-
-.. _class_ItemList_signal_rmb_clicked:
-
-- **rmb_clicked** **(** :ref:`Vector2<class_Vector2>` at_position **)**
-
-Triggered when a right mouse click is issued within the rect of the list but on empty space.
-
-\ :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>` must be enabled.
 
 Enumerations
 ------------
@@ -932,9 +922,9 @@ Text :ref:`Color<class_Color>` used when the item is selected.
 
 ----
 
-.. _class_ItemList_theme_constant_hseparation:
+.. _class_ItemList_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -980,9 +970,9 @@ The size of the item text outline.
 
 ----
 
-.. _class_ItemList_theme_constant_vseparation:
+.. _class_ItemList_theme_constant_v_separation:
 
-- :ref:`int<class_int>` **vseparation**
+- :ref:`int<class_int>` **v_separation**
 
 +-----------+-------+
 | *Default* | ``2`` |

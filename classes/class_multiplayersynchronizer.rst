@@ -16,16 +16,28 @@ MultiplayerSynchronizer
 Properties
 ----------
 
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`                                   | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>` | ``0.0``          |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+
-| :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` | :ref:`resource<class_MultiplayerSynchronizer_property_resource>`                         |                  |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`                             | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                       | ``NodePath("")`` |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+| :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` | :ref:`replication_config<class_MultiplayerSynchronizer_property_replication_config>`     |                    |
++-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                   | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>` | ``0.0``            |
++-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                             | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                       | ``NodePath("..")`` |
++-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_MultiplayerSynchronizer_property_replication_config:
+
+- :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **replication_config**
+
++----------+-------------------------------+
+| *Setter* | set_replication_config(value) |
++----------+-------------------------------+
+| *Getter* | get_replication_config()      |
++----------+-------------------------------+
+
+----
 
 .. _class_MultiplayerSynchronizer_property_replication_interval:
 
@@ -41,24 +53,12 @@ Property Descriptions
 
 ----
 
-.. _class_MultiplayerSynchronizer_property_resource:
-
-- :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **resource**
-
-+----------+-------------------------------+
-| *Setter* | set_replication_config(value) |
-+----------+-------------------------------+
-| *Getter* | get_replication_config()      |
-+----------+-------------------------------+
-
-----
-
 .. _class_MultiplayerSynchronizer_property_root_path:
 
 - :ref:`NodePath<class_NodePath>` **root_path**
 
 +-----------+----------------------+
-| *Default* | ``NodePath("")``     |
+| *Default* | ``NodePath("..")``   |
 +-----------+----------------------+
 | *Setter*  | set_root_path(value) |
 +-----------+----------------------+

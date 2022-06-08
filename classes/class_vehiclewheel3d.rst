@@ -154,7 +154,7 @@ A negative value will result in the wheel reversing.
 | *Getter*  | get_steering()      |
 +-----------+---------------------+
 
-The steering angle for the wheel. Setting this to a non-zero value will result in the vehicle turning when it's moving.
+The steering angle for the wheel, in radians. Setting this to a non-zero value will result in the vehicle turning when it's moving.
 
 ----
 

@@ -20,6 +20,8 @@ OptionButton is a type button that provides a selectable list of items when pres
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
+\ **Note:** Properties :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` are automatically set based on the selected item. They shouldn't be changed manually.
+
 Properties
 ----------
 
@@ -43,7 +45,7 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`add_item<class_OptionButton_method_add_item>` **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1 **)**                                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`add_separator<class_OptionButton_method_add_separator>` **(** **)**                                                                                                           |
+| void                              | :ref:`add_separator<class_OptionButton_method_add_separator>` **(** :ref:`String<class_String>` text="" **)**                                                                       |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`clear<class_OptionButton_method_clear>` **(** **)**                                                                                                                           |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -57,13 +59,21 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`       | :ref:`get_item_text<class_OptionButton_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                         |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`get_item_tooltip<class_OptionButton_method_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** |const|                                                                   |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_OptionButton_method_get_popup>` **(** **)** |const|                                                                                                           |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_selectable_item<class_OptionButton_method_get_selectable_item>` **(** :ref:`bool<class_bool>` from_last=false **)** |const|                                               |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_selected_id<class_OptionButton_method_get_selected_id>` **(** **)** |const|                                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`     | :ref:`get_selected_metadata<class_OptionButton_method_get_selected_metadata>` **(** **)** |const|                                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`has_selectable_items<class_OptionButton_method_has_selectable_items>` **(** **)** |const|                                                                                     |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`is_item_disabled<class_OptionButton_method_is_item_disabled>` **(** :ref:`int<class_int>` idx **)** |const|                                                                   |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_item_separator<class_OptionButton_method_is_item_separator>` **(** :ref:`int<class_int>` idx **)** |const|                                                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`remove_item<class_OptionButton_method_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                     |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,6 +88,8 @@ Methods
 | void                              | :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_Variant>` metadata **)**                                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_item_text<class_OptionButton_method_set_item_text>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**                                               |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_item_tooltip<class_OptionButton_method_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
@@ -98,7 +110,7 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`            | ``4``                               |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_OptionButton_theme_constant_hseparation>`              | ``2``                               |
+| :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`            | ``2``                               |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`outline_size<class_OptionButton_theme_constant_outline_size>`            | ``0``                               |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------+
@@ -196,9 +208,9 @@ Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passe
 
 .. _class_OptionButton_method_add_separator:
 
-- void **add_separator** **(** **)**
+- void **add_separator** **(** :ref:`String<class_String>` text="" **)**
 
-Adds a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
+Adds a separator to the list of items. Separators help to group items, and can optionally be given a ``text`` header. A separator also gets an index assigned, and is appended at the end of the item list.
 
 ----
 
@@ -250,6 +262,14 @@ Returns the text of the item at index ``idx``.
 
 ----
 
+.. _class_OptionButton_method_get_item_tooltip:
+
+- :ref:`String<class_String>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** |const|
+
+Returns the tooltip of the item at index ``idx``.
+
+----
+
 .. _class_OptionButton_method_get_popup:
 
 - :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
@@ -257,6 +277,12 @@ Returns the text of the item at index ``idx``.
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
+
+----
+
+.. _class_OptionButton_method_get_selectable_item:
+
+- :ref:`int<class_int>` **get_selectable_item** **(** :ref:`bool<class_bool>` from_last=false **)** |const|
 
 ----
 
@@ -276,11 +302,23 @@ Gets the metadata of the selected item. Metadata for items can be set using :ref
 
 ----
 
+.. _class_OptionButton_method_has_selectable_items:
+
+- :ref:`bool<class_bool>` **has_selectable_items** **(** **)** |const|
+
+----
+
 .. _class_OptionButton_method_is_item_disabled:
 
 - :ref:`bool<class_bool>` **is_item_disabled** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns ``true`` if the item at index ``idx`` is disabled.
+
+----
+
+.. _class_OptionButton_method_is_item_separator:
+
+- :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** |const|
 
 ----
 
@@ -341,6 +379,14 @@ Sets the metadata of an item. Metadata may be of any type and can be used to sto
 - void **set_item_text** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` text **)**
 
 Sets the text of the item at index ``idx``.
+
+----
+
+.. _class_OptionButton_method_set_item_tooltip:
+
+- void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
+
+Sets the tooltip of the item at index ``idx``.
 
 Theme Property Descriptions
 ---------------------------
@@ -429,9 +475,9 @@ The horizontal space between the arrow icon and the right edge of the button.
 
 ----
 
-.. _class_OptionButton_theme_constant_hseparation:
+.. _class_OptionButton_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``2`` |

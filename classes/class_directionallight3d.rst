@@ -26,27 +26,25 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`directional_shadow_blend_splits<class_DirectionalLight3D_property_directional_shadow_blend_splits>` | ``false``                                                              |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_fade_start<class_DirectionalLight3D_property_directional_shadow_fade_start>`     | ``0.8``                                                                |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_max_distance<class_DirectionalLight3D_property_directional_shadow_max_distance>` | ``100.0``                                                              |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>` | :ref:`directional_shadow_mode<class_DirectionalLight3D_property_directional_shadow_mode>`                 | ``2``                                                                  |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_pancake_size<class_DirectionalLight3D_property_directional_shadow_pancake_size>` | ``20.0``                                                               |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_1<class_DirectionalLight3D_property_directional_shadow_split_1>`           | ``0.1``                                                                |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_2<class_DirectionalLight3D_property_directional_shadow_split_2>`           | ``0.2``                                                                |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_3<class_DirectionalLight3D_property_directional_shadow_split_3>`           | ``0.5``                                                                |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | shadow_bias                                                                                               | ``0.1`` (overrides :ref:`Light3D<class_Light3D_property_shadow_bias>`) |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`use_in_sky_only<class_DirectionalLight3D_property_use_in_sky_only>`                                 | ``false``                                                              |
-+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                               | :ref:`directional_shadow_blend_splits<class_DirectionalLight3D_property_directional_shadow_blend_splits>` | ``false`` |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_fade_start<class_DirectionalLight3D_property_directional_shadow_fade_start>`     | ``0.8``   |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_max_distance<class_DirectionalLight3D_property_directional_shadow_max_distance>` | ``100.0`` |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`ShadowMode<enum_DirectionalLight3D_ShadowMode>` | :ref:`directional_shadow_mode<class_DirectionalLight3D_property_directional_shadow_mode>`                 | ``2``     |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_pancake_size<class_DirectionalLight3D_property_directional_shadow_pancake_size>` | ``20.0``  |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_1<class_DirectionalLight3D_property_directional_shadow_split_1>`           | ``0.1``   |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_2<class_DirectionalLight3D_property_directional_shadow_split_2>`           | ``0.2``   |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                             | :ref:`directional_shadow_split_3<class_DirectionalLight3D_property_directional_shadow_split_3>`           | ``0.5``   |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>`       | :ref:`sky_mode<class_DirectionalLight3D_property_sky_mode>`                                               | ``0``     |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
 
 Enumerations
 ------------
@@ -66,6 +64,24 @@ enum **ShadowMode**:
 - **SHADOW_PARALLEL_2_SPLITS** = **1** --- Splits the view frustum in 2 areas, each with its own shadow map. This shadow mode is a compromise between :ref:`SHADOW_ORTHOGONAL<class_DirectionalLight3D_constant_SHADOW_ORTHOGONAL>` and :ref:`SHADOW_PARALLEL_4_SPLITS<class_DirectionalLight3D_constant_SHADOW_PARALLEL_4_SPLITS>` in terms of performance.
 
 - **SHADOW_PARALLEL_4_SPLITS** = **2** --- Splits the view frustum in 4 areas, each with its own shadow map. This is the slowest directional shadow mode.
+
+----
+
+.. _enum_DirectionalLight3D_SkyMode:
+
+.. _class_DirectionalLight3D_constant_SKY_MODE_LIGHT_AND_SKY:
+
+.. _class_DirectionalLight3D_constant_SKY_MODE_LIGHT_ONLY:
+
+.. _class_DirectionalLight3D_constant_SKY_MODE_SKY_ONLY:
+
+enum **SkyMode**:
+
+- **SKY_MODE_LIGHT_AND_SKY** = **0** --- Makes the light visible in both scene lighting and sky rendering.
+
+- **SKY_MODE_LIGHT_ONLY** = **1** --- Makes the light visible in scene lighting only (including direct lighting and global illumination). When using this mode, the light will not be visible from sky shaders.
+
+- **SKY_MODE_SKY_ONLY** = **2** --- Makes the light visible to sky shaders only. When using this mode the light will not cast light into the scene (either through direct lighting or through global illumination), but can be accessed through sky shaders. This can be useful, for example, when you want to control sky effects without illuminating the scene (during a night cycle, for example).
 
 Property Descriptions
 ---------------------
@@ -198,19 +214,19 @@ The distance from shadow split 2 to split 3. Relative to :ref:`directional_shado
 
 ----
 
-.. _class_DirectionalLight3D_property_use_in_sky_only:
+.. _class_DirectionalLight3D_property_sky_mode:
 
-- :ref:`bool<class_bool>` **use_in_sky_only**
+- :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` **sky_mode**
 
 +-----------+---------------------+
-| *Default* | ``false``           |
+| *Default* | ``0``               |
 +-----------+---------------------+
-| *Setter*  | set_sky_only(value) |
+| *Setter*  | set_sky_mode(value) |
 +-----------+---------------------+
-| *Getter*  | is_sky_only()       |
+| *Getter*  | get_sky_mode()      |
 +-----------+---------------------+
 
-If ``true``, this ``DirectionalLight3D`` will not be used for anything except sky shaders. Use this for lights that impact your sky shader that you may want to hide from affecting the rest of the scene. For example, you may want to enable this when the sun in your sky shader falls below the horizon.
+Set whether this ``DirectionalLight3D`` is visible in the sky, in the scene, or both in the sky and in the scene. See :ref:`SkyMode<enum_DirectionalLight3D_SkyMode>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

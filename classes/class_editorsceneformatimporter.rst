@@ -11,7 +11,7 @@ EditorSceneFormatImporter
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`EditorSceneFormatImporterFBX<class_EditorSceneFormatImporterFBX>`, :ref:`EditorSceneFormatImporterGLTF<class_EditorSceneFormatImporterGLTF>`
+**Inherited By:** :ref:`EditorSceneFormatImporterBlend<class_EditorSceneFormatImporterBlend>`, :ref:`EditorSceneFormatImporterFBX<class_EditorSceneFormatImporterFBX>`, :ref:`EditorSceneFormatImporterGLTF<class_EditorSceneFormatImporterGLTF>`
 
 Imports scenes from third-parties' 3D files.
 
@@ -25,19 +25,17 @@ To use ``EditorSceneFormatImporter``, register it using the :ref:`EditorPlugin.a
 Methods
 -------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                                        |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                                    |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                                       |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` option **)** |virtual| |const|                                                     |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>`                 | :ref:`_import_animation<class_EditorSceneFormatImporter_method__import_animation>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual| |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|         |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                                |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                            |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                               |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|      |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual| |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -52,6 +50,8 @@ Constants
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_USE_NAMED_SKIN_BINDS:
 
+.. _class_EditorSceneFormatImporter_constant_IMPORT_DISCARD_MESHES_AND_MATERIALS:
+
 - **IMPORT_SCENE** = **1**
 
 - **IMPORT_ANIMATION** = **2**
@@ -61,6 +61,8 @@ Constants
 - **IMPORT_GENERATE_TANGENT_ARRAYS** = **8**
 
 - **IMPORT_USE_NAMED_SKIN_BINDS** = **16**
+
+- **IMPORT_DISCARD_MESHES_AND_MATERIALS** = **32**
 
 Method Descriptions
 -------------------
@@ -85,13 +87,7 @@ Method Descriptions
 
 .. _class_EditorSceneFormatImporter_method__get_option_visibility:
 
-- :ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` option **)** |virtual| |const|
-
-----
-
-.. _class_EditorSceneFormatImporter_method__import_animation:
-
-- :ref:`Animation<class_Animation>` **_import_animation** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|
+- :ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
 
 ----
 

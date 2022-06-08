@@ -44,8 +44,6 @@ Operators
 ---------
 
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator !=<class_float_operator_neq_bool>` **(** **)**                                                |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_float_operator_neq_bool>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_float_operator_neq_bool>` **(** :ref:`int<class_int>` right **)**                    |
@@ -66,6 +64,10 @@ Operators
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator *<class_float_operator_mul_float>` **(** :ref:`int<class_int>` right **)**                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`operator **<class_float_operator_pow_float>` **(** :ref:`float<class_float>` right **)**               |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`operator **<class_float_operator_pow_float>` **(** :ref:`int<class_int>` right **)**                   |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_float_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_float_operator_sum_float>` **(** :ref:`int<class_int>` right **)**                    |
@@ -85,8 +87,6 @@ Operators
 | :ref:`bool<class_bool>`             | :ref:`operator <=<class_float_operator_lte_bool>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator <=<class_float_operator_lte_bool>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ==<class_float_operator_eq_bool>` **(** **)**                                                 |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator ==<class_float_operator_eq_bool>` **(** :ref:`float<class_float>` right **)**                 |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -136,10 +136,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_float_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
 
@@ -219,6 +215,16 @@ Multiplies a ``float`` and an :ref:`int<class_int>`. The result is a ``float``.
 
 ----
 
+.. _class_float_operator_pow_float:
+
+- :ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
+
+----
+
+- :ref:`float<class_float>` **operator **** **(** :ref:`int<class_int>` right **)**
+
+----
+
 .. _class_float_operator_sum_float:
 
 - :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
@@ -290,10 +296,6 @@ Returns ``true`` if this ``float`` is less than or equal to the given :ref:`int<
 ----
 
 .. _class_float_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)**
 

@@ -71,7 +71,7 @@ Methods
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>` | :ref:`orthonormalized<class_Transform3D_method_orthonormalized>` **(** **)** |const|                                                                                               |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)** |const|                                             |
+| :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                                           |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled<class_Transform3D_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                                             |
 +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,8 +83,6 @@ Methods
 Operators
 ---------
 
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform3D_operator_neq_bool>` **(** **)**                                                                        |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform3D_operator_neq_bool>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                            |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,8 +97,6 @@ Operators
 | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`float<class_float>` right **)**                                  |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`int<class_int>` right **)**                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform3D_operator_eq_bool>` **(** **)**                                                                         |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform3D_operator_eq_bool>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                             |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,9 +227,9 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 .. _class_Transform3D_method_rotated:
 
-- :ref:`Transform3D<class_Transform3D>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` phi **)** |const|
+- :ref:`Transform3D<class_Transform3D>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
-Rotates the transform around the given axis by the given angle (in radians), using matrix multiplication. The axis must be a normalized vector.
+Returns a copy of the transform rotated around the given ``axis`` by the given ``angle`` (in radians), using matrix multiplication. The ``axis`` must be a normalized vector.
 
 ----
 
@@ -241,7 +237,7 @@ Rotates the transform around the given axis by the given angle (in radians), usi
 
 - :ref:`Transform3D<class_Transform3D>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
 
-Scales basis and origin of the transform by the given scale factor, using matrix multiplication.
+Returns a copy of the transform with its basis and origin scaled by the given ``scale`` factor, using matrix multiplication.
 
 ----
 
@@ -257,7 +253,7 @@ Returns a transform spherically interpolated between this transform and another 
 
 - :ref:`Transform3D<class_Transform3D>` **translated** **(** :ref:`Vector3<class_Vector3>` offset **)** |const|
 
-Translates the transform by the given offset, relative to the transform's basis vectors.
+Returns a copy of the transform translated by the given ``offset``, relative to the transform's basis vectors.
 
 Unlike :ref:`rotated<class_Transform3D_method_rotated>` and :ref:`scaled<class_Transform3D_method_scaled>`, this does not use matrix multiplication.
 
@@ -265,10 +261,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_Transform3D_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
@@ -317,10 +309,6 @@ This operator multiplies all components of the ``Transform3D``, including the or
 ----
 
 .. _class_Transform3D_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 

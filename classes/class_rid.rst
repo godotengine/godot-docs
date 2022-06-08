@@ -38,15 +38,11 @@ Operators
 ---------
 
 +-------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_RID_operator_neq_bool>` **(** **)**                             |
-+-------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_RID_operator_neq_bool>` **(** :ref:`RID<class_RID>` right **)** |
 +-------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator <<class_RID_operator_lt_bool>` **(** :ref:`RID<class_RID>` right **)**   |
 +-------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator <=<class_RID_operator_lte_bool>` **(** :ref:`RID<class_RID>` right **)** |
-+-------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_RID_operator_eq_bool>` **(** **)**                              |
 +-------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_RID_operator_eq_bool>` **(** :ref:`RID<class_RID>` right **)**  |
 +-------------------------+-----------------------------------------------------------------------------------------+
@@ -92,10 +88,6 @@ Operator Descriptions
 
 .. _class_RID_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`RID<class_RID>` right **)**
 
 ----
@@ -113,10 +105,6 @@ Operator Descriptions
 ----
 
 .. _class_RID_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`RID<class_RID>` right **)**
 

@@ -18,88 +18,64 @@ GLTFDocumentExtension
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`export_post<class_GLTFDocumentExtension_method_export_post>` **(** :ref:`GLTFDocument<class_GLTFDocument>` document **)**                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`export_preflight<class_GLTFDocumentExtension_method_export_preflight>` **(** :ref:`GLTFDocument<class_GLTFDocument>` document, :ref:`Node<class_Node>` node **)**   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_export_setting<class_GLTFDocumentExtension_method_get_export_setting>` **(** :ref:`StringName<class_StringName>` key **)** |const|                              |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_export_setting_keys<class_GLTFDocumentExtension_method_get_export_setting_keys>` **(** **)** |const|                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_import_setting<class_GLTFDocumentExtension_method_get_import_setting>` **(** :ref:`StringName<class_StringName>` key **)** |const|                              |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_import_setting_keys<class_GLTFDocumentExtension_method_get_import_setting_keys>` **(** **)** |const|                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`import_post<class_GLTFDocumentExtension_method_import_post>` **(** :ref:`GLTFDocument<class_GLTFDocument>` document, :ref:`Node<class_Node>` node **)**             |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`import_preflight<class_GLTFDocumentExtension_method_import_preflight>` **(** :ref:`GLTFDocument<class_GLTFDocument>` document **)**                                 |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_export_setting<class_GLTFDocumentExtension_method_set_export_setting>` **(** :ref:`StringName<class_StringName>` key, :ref:`Variant<class_Variant>` value **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_import_setting<class_GLTFDocumentExtension_method_set_import_setting>` **(** :ref:`StringName<class_StringName>` key, :ref:`Variant<class_Variant>` value **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                                    |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`Node<class_Node>` root **)** |virtual|                                                                                                                     |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_import_node<class_GLTFDocumentExtension_method__import_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_import_post<class_GLTFDocumentExtension_method__import_post>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|                                                                                      |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                        |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`_import_preflight<class_GLTFDocumentExtension_method__import_preflight>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                          |
++-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
-.. _class_GLTFDocumentExtension_method_export_post:
+.. _class_GLTFDocumentExtension_method__export_node:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **export_post** **(** :ref:`GLTFDocument<class_GLTFDocument>` document **)**
-
-----
-
-.. _class_GLTFDocumentExtension_method_export_preflight:
-
-- :ref:`Error<enum_@GlobalScope_Error>` **export_preflight** **(** :ref:`GLTFDocument<class_GLTFDocument>` document, :ref:`Node<class_Node>` node **)**
+- :ref:`int<class_int>` **_export_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
 ----
 
-.. _class_GLTFDocumentExtension_method_get_export_setting:
+.. _class_GLTFDocumentExtension_method__export_post:
 
-- :ref:`Variant<class_Variant>` **get_export_setting** **(** :ref:`StringName<class_StringName>` key **)** |const|
-
-----
-
-.. _class_GLTFDocumentExtension_method_get_export_setting_keys:
-
-- :ref:`Array<class_Array>` **get_export_setting_keys** **(** **)** |const|
+- :ref:`int<class_int>` **_export_post** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
 ----
 
-.. _class_GLTFDocumentExtension_method_get_import_setting:
+.. _class_GLTFDocumentExtension_method__export_preflight:
 
-- :ref:`Variant<class_Variant>` **get_import_setting** **(** :ref:`StringName<class_StringName>` key **)** |const|
-
-----
-
-.. _class_GLTFDocumentExtension_method_get_import_setting_keys:
-
-- :ref:`Array<class_Array>` **get_import_setting_keys** **(** **)** |const|
+- :ref:`int<class_int>` **_export_preflight** **(** :ref:`Node<class_Node>` root **)** |virtual|
 
 ----
 
-.. _class_GLTFDocumentExtension_method_import_post:
+.. _class_GLTFDocumentExtension_method__import_node:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **import_post** **(** :ref:`GLTFDocument<class_GLTFDocument>` document, :ref:`Node<class_Node>` node **)**
-
-----
-
-.. _class_GLTFDocumentExtension_method_import_preflight:
-
-- :ref:`Error<enum_@GlobalScope_Error>` **import_preflight** **(** :ref:`GLTFDocument<class_GLTFDocument>` document **)**
+- :ref:`int<class_int>` **_import_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
 ----
 
-.. _class_GLTFDocumentExtension_method_set_export_setting:
+.. _class_GLTFDocumentExtension_method__import_post:
 
-- void **set_export_setting** **(** :ref:`StringName<class_StringName>` key, :ref:`Variant<class_Variant>` value **)**
+- :ref:`int<class_int>` **_import_post** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|
 
 ----
 
-.. _class_GLTFDocumentExtension_method_set_import_setting:
+.. _class_GLTFDocumentExtension_method__import_post_parse:
 
-- void **set_import_setting** **(** :ref:`StringName<class_StringName>` key, :ref:`Variant<class_Variant>` value **)**
+- :ref:`int<class_int>` **_import_post_parse** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+
+----
+
+.. _class_GLTFDocumentExtension_method__import_preflight:
+
+- :ref:`int<class_int>` **_import_preflight** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

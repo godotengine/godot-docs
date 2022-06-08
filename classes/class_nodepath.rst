@@ -16,7 +16,7 @@ Description
 
 A pre-parsed relative or absolute path in a scene tree, for use with :ref:`Node.get_node<class_Node_method_get_node>` and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For instance, ``"Path2D/PathFollow2D/Sprite2D:texture:size"`` would refer to the ``size`` property of the ``texture`` resource on the node named ``"Sprite2D"`` which is a child of the other named nodes in the path.
 
-You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with ``NodePath`` or the literal syntax ``@"path"``. Exporting a ``NodePath`` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
+You will usually just pass a string to :ref:`Node.get_node<class_Node_method_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with ``NodePath`` or the literal syntax ``^"path"``. Exporting a ``NodePath`` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
 
 A ``NodePath`` is composed of a list of slash-separated node names (like a filesystem path) and an optional colon-separated list of "subnames" which can be resources or properties.
 
@@ -25,15 +25,17 @@ Some examples of NodePaths include the following:
 ::
 
     # No leading slash means it is relative to the current node.
-    @"A" # Immediate child A
-    @"A/B" # A's child B
-    @"." # The current node.
-    @".." # The parent node.
-    @"../C" # A sibling node C.
+    ^"A" # Immediate child A
+    ^"A/B" # A's child B
+    ^"." # The current node.
+    ^".." # The parent node.
+    ^"../C" # A sibling node C.
     # A leading slash means it is absolute from the SceneTree.
-    @"/root" # Equivalent to get_tree().get_root().
-    @"/root/Main" # If your main scene's root node were named "Main".
-    @"/root/MyAutoload" # If you have an autoloaded node or scene.
+    ^"/root" # Equivalent to get_tree().get_root().
+    ^"/root/Main" # If your main scene's root node were named "Main".
+    ^"/root/MyAutoload" # If you have an autoloaded node or scene.
+
+See also :ref:`StringName<class_StringName>`, which is a similar concept for general-purpose string interning.
 
 \ **Note:** In the editor, ``NodePath`` properties are automatically updated when moving, renaming or deleting a node in the scene tree, but they are never updated at runtime.
 
@@ -69,6 +71,8 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`get_subname_count<class_NodePath_method_get_subname_count>` **(** **)** |const|                 |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`hash<class_NodePath_method_hash>` **(** **)** |const|                                           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_absolute<class_NodePath_method_is_absolute>` **(** **)** |const|                             |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_empty<class_NodePath_method_is_empty>` **(** **)** |const|                                   |
@@ -78,11 +82,7 @@ Operators
 ---------
 
 +-------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_NodePath_operator_neq_bool>` **(** **)**                                       |
-+-------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_NodePath_operator_neq_bool>` **(** :ref:`NodePath<class_NodePath>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_NodePath_operator_eq_bool>` **(** **)**                                        |
 +-------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_NodePath_operator_eq_bool>` **(** :ref:`NodePath<class_NodePath>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------------------+
@@ -100,7 +100,7 @@ Constructs an empty ``NodePath``.
 
 - :ref:`NodePath<class_NodePath>` **NodePath** **(** :ref:`NodePath<class_NodePath>` from **)**
 
-Constructs a ``NodePath`` as a copy of the given ``NodePath``.
+Constructs a ``NodePath`` as a copy of the given ``NodePath``. ``NodePath("example")`` is equivalent to ``^"example"``.
 
 ----
 
@@ -186,7 +186,7 @@ Returns all subnames concatenated with a colon character (``:``) as separator, i
 
 - :ref:`StringName<class_StringName>` **get_name** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_method_get_name_count>`).
+Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_method_get_name_count>` - 1).
 
 
 .. tabs::
@@ -254,6 +254,14 @@ For example, ``"Path2D/PathFollow2D/Sprite2D:texture:load_path"`` has 2 subnames
 
 ----
 
+.. _class_NodePath_method_hash:
+
+- :ref:`int<class_int>` **hash** **(** **)** |const|
+
+Returns the 32-bit hash value representing the ``NodePath``'s contents.
+
+----
+
 .. _class_NodePath_method_is_absolute:
 
 - :ref:`bool<class_bool>` **is_absolute** **(** **)** |const|
@@ -273,19 +281,11 @@ Operator Descriptions
 
 .. _class_NodePath_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`NodePath<class_NodePath>` right **)**
 
 ----
 
 .. _class_NodePath_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`NodePath<class_NodePath>` right **)**
 

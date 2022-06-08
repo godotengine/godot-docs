@@ -98,6 +98,10 @@ Methods
 -------
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`all<class_Array_method_all>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`any<class_Array_method_any>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`append<class_Array_method_append>` **(** :ref:`Variant<class_Variant>` value **)**                                                                                                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                               |
@@ -175,8 +179,6 @@ Operators
 ---------
 
 +---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Array_operator_neq_bool>` **(** **)**                                 |
-+---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator !=<class_Array_operator_neq_bool>` **(** :ref:`Array<class_Array>` right **)** |
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>` | :ref:`operator +<class_Array_operator_sum_Array>` **(** :ref:`Array<class_Array>` right **)** |
@@ -184,8 +186,6 @@ Operators
 | :ref:`bool<class_bool>`   | :ref:`operator <<class_Array_operator_lt_bool>` **(** :ref:`Array<class_Array>` right **)**   |
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator <=<class_Array_operator_lte_bool>` **(** :ref:`Array<class_Array>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Array_operator_eq_bool>` **(** **)**                                  |
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator ==<class_Array_operator_eq_bool>` **(** :ref:`Array<class_Array>` right **)**  |
 +---------------------------+-----------------------------------------------------------------------------------------------+
@@ -267,6 +267,58 @@ Constructs an array from a :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
 Method Descriptions
 -------------------
+
+.. _class_Array_method_all:
+
+- :ref:`bool<class_bool>` **all** **(** :ref:`Callable<class_Callable>` method **)** |const|
+
+Calls the provided :ref:`Callable<class_Callable>` on each element in the array and returns ``true`` if the :ref:`Callable<class_Callable>` returns ``true`` for *all* elements in the array. If the :ref:`Callable<class_Callable>` returns ``false`` for one array element or more, this method returns ``false``.
+
+The callable's method should take one :ref:`Variant<class_Variant>` parameter (the current array element) and return a boolean value.
+
+::
+
+    func _ready():
+        print([6, 10, 6].all(greater_than_5))  # Prints True (3 elements evaluate to `true`).
+        print([4, 10, 4].all(greater_than_5))  # Prints False (1 elements evaluate to `true`).
+        print([4, 4, 4].all(greater_than_5))  # Prints False (0 elements evaluate to `true`).
+    
+        print([6, 10, 6].all(func(number): return number > 5))  # Prints True. Same as the first line above, but using lambda function.
+    
+    func greater_than_5(number):
+        return number > 5
+
+See also :ref:`any<class_Array_method_any>`, :ref:`filter<class_Array_method_filter>`, :ref:`map<class_Array_method_map>` and :ref:`reduce<class_Array_method_reduce>`.
+
+\ **Note:** Unlike relying on the size of an array returned by :ref:`filter<class_Array_method_filter>`, this method will return as early as possible to improve performance (especially with large arrays).
+
+----
+
+.. _class_Array_method_any:
+
+- :ref:`bool<class_bool>` **any** **(** :ref:`Callable<class_Callable>` method **)** |const|
+
+Calls the provided :ref:`Callable<class_Callable>` on each element in the array and returns ``true`` if the :ref:`Callable<class_Callable>` returns ``true`` for *one or more* elements in the array. If the :ref:`Callable<class_Callable>` returns ``false`` for all elements in the array, this method returns ``false``.
+
+The callable's method should take one :ref:`Variant<class_Variant>` parameter (the current array element) and return a boolean value.
+
+::
+
+    func _ready():
+        print([6, 10, 6].any(greater_than_5))  # Prints True (3 elements evaluate to `true`).
+        print([4, 10, 4].any(greater_than_5))  # Prints True (1 elements evaluate to `true`).
+        print([4, 4, 4].any(greater_than_5))  # Prints False (0 elements evaluate to `true`).
+    
+        print([6, 10, 6].any(func(number): return number > 5))  # Prints True. Same as the first line above, but using lambda function.
+    
+    func greater_than_5(number):
+        return number > 5
+
+See also :ref:`all<class_Array_method_all>`, :ref:`filter<class_Array_method_filter>`, :ref:`map<class_Array_method_map>` and :ref:`reduce<class_Array_method_reduce>`.
+
+\ **Note:** Unlike relying on the size of an array returned by :ref:`filter<class_Array_method_filter>`, this method will return as early as possible to improve performance (especially with large arrays).
+
+----
 
 .. _class_Array_method_append:
 
@@ -351,7 +403,7 @@ If ``deep`` is ``true``, a deep copy is performed: all nested arrays and diction
 
 - void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
-Removes the first occurrence of a value from the array. To remove an element by index, use :ref:`remove_at<class_Array_method_remove_at>` instead.
+Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove_at<class_Array_method_remove_at>` instead.
 
 \ **Note:** This method acts in-place and doesn't return a value.
 
@@ -400,6 +452,8 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
     
     func remove_1(number):
         return number != 1
+
+See also :ref:`any<class_Array_method_any>`, :ref:`all<class_Array_method_all>`, :ref:`map<class_Array_method_map>` and :ref:`reduce<class_Array_method_reduce>`.
 
 ----
 
@@ -529,6 +583,8 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
     func negate(number):
         return -number
 
+See also :ref:`filter<class_Array_method_filter>`, :ref:`reduce<class_Array_method_reduce>`, :ref:`any<class_Array_method_any>` and :ref:`all<class_Array_method_all>`.
+
 ----
 
 .. _class_Array_method_max:
@@ -609,6 +665,8 @@ The callable's method takes two arguments: the current value of ``accum`` and th
     
     func sum(accum, number):
         return accum + number
+
+See also :ref:`map<class_Array_method_map>`, :ref:`filter<class_Array_method_filter>`, :ref:`any<class_Array_method_any>` and :ref:`all<class_Array_method_all>`.
 
 ----
 
@@ -751,11 +809,9 @@ Operator Descriptions
 
 .. _class_Array_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Array<class_Array>` right **)**
+
+Compares the left operand ``Array`` against the ``right`` ``Array``. Returns ``true`` if the sizes or contents of the arrays are *not* equal, ``false`` otherwise.
 
 ----
 
@@ -763,11 +819,15 @@ Operator Descriptions
 
 - :ref:`Array<class_Array>` **operator +** **(** :ref:`Array<class_Array>` right **)**
 
+Concatenates two ``Array``\ s together, with the ``right`` ``Array`` being added to the end of the ``Array`` specified in the left operand. For example, ``[1, 2] + [3, 4]`` results in ``[1, 2, 3, 4]``.
+
 ----
 
 .. _class_Array_operator_lt_bool:
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Array<class_Array>` right **)**
+
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``false`` if the left operand ``Array`` has less elements, otherwise it returns ``true``.
 
 ----
 
@@ -775,15 +835,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Array<class_Array>` right **)**
 
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``true`` if the left operand ``Array`` has less or the same number of elements, otherwise it returns ``false``.
+
 ----
 
 .. _class_Array_operator_eq_bool:
 
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Array<class_Array>` right **)**
+
+Compares the left operand ``Array`` against the ``right`` ``Array``. Returns ``true`` if the sizes and contents of the arrays are equal, ``false`` otherwise.
 
 ----
 
@@ -791,17 +851,23 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`Array<class_Array>` right **)**
 
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is greater, or ``false`` if the element is less. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``true`` if the ``right`` ``Array`` has more elements, otherwise it returns ``false``.
+
 ----
 
 .. _class_Array_operator_gte_bool:
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Array<class_Array>` right **)**
 
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is greater, or ``false`` if the element is less. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``true`` if the ``right`` ``Array`` has more or the same number of elements, otherwise it returns ``false``.
+
 ----
 
 .. _class_Array_operator_idx_void:
 
 - void **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns a reference to the element of type :ref:`Variant<class_Variant>` at the specified location. Arrays start at index 0. ``index`` can be a zero or positive value to start from the beginning, or a negative value to start from the end. Out-of-bounds array access causes a run-time error, which will result in an error being printed and the project execution pausing if run from the editor.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

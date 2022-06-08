@@ -68,8 +68,6 @@ The HMACContext class is useful for advanced HMAC use cases, such as streaming t
 
 
 
-\ **Note:** Not available in HTML5 exports.
-
 Methods
 -------
 

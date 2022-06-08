@@ -25,6 +25,8 @@ Notice that grid layout will preserve the columns and rows for every size of the
 Tutorials
 ---------
 
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
 Properties
@@ -37,11 +39,11 @@ Properties
 Theme Properties
 ----------------
 
-+-----------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`hseparation<class_GridContainer_theme_constant_hseparation>` | ``4`` |
-+-----------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`vseparation<class_GridContainer_theme_constant_vseparation>` | ``4`` |
-+-----------------------+--------------------------------------------------------------------+-------+
++-----------------------+----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`h_separation<class_GridContainer_theme_constant_h_separation>` | ``4`` |
++-----------------------+----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`v_separation<class_GridContainer_theme_constant_v_separation>` | ``4`` |
++-----------------------+----------------------------------------------------------------------+-------+
 
 Property Descriptions
 ---------------------
@@ -63,9 +65,9 @@ The number of columns in the ``GridContainer``. If modified, ``GridContainer`` r
 Theme Property Descriptions
 ---------------------------
 
-.. _class_GridContainer_theme_constant_hseparation:
+.. _class_GridContainer_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -75,9 +77,9 @@ The horizontal separation of children nodes.
 
 ----
 
-.. _class_GridContainer_theme_constant_vseparation:
+.. _class_GridContainer_theme_constant_v_separation:
 
-- :ref:`int<class_int>` **vseparation**
+- :ref:`int<class_int>` **v_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |

@@ -22,13 +22,13 @@ Properties
 ----------
 
 +---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | ``2.0``   |
+| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | ``1.0``   |
 +---------------------------+-------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_property_is_hemisphere>`     | ``false`` |
 +---------------------------+-------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_property_radial_segments>` | ``64``    |
 +---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | ``1.0``   |
+| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | ``0.5``   |
 +---------------------------+-------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | ``32``    |
 +---------------------------+-------------------------------------------------------------------+-----------+
@@ -41,7 +41,7 @@ Property Descriptions
 - :ref:`float<class_float>` **height**
 
 +-----------+-------------------+
-| *Default* | ``2.0``           |
+| *Default* | ``1.0``           |
 +-----------+-------------------+
 | *Setter*  | set_height(value) |
 +-----------+-------------------+
@@ -91,7 +91,7 @@ Number of radial segments on the sphere.
 - :ref:`float<class_float>` **radius**
 
 +-----------+-------------------+
-| *Default* | ``1.0``           |
+| *Default* | ``0.5``           |
 +-----------+-------------------+
 | *Setter*  | set_radius(value) |
 +-----------+-------------------+

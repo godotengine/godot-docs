@@ -11,35 +11,16 @@ EditorSceneFormatImporterFBX
 
 **Inherits:** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-FBX 3D asset importer.
+Importer for the ``.fbx`` scene file format.
 
 Description
 -----------
 
-This is an FBX 3D asset importer with full support for most FBX features.
+Imports Autodesk FBX 3D scenes by way of converting them to glTF 2.0 using the FBX2glTF command line tool.
 
-If exporting a FBX scene from Autodesk Maya, use these FBX export settings:
+The location of the FBX2glTF binary is set via the ``filesystem/import/fbx/fbx2gltf_path`` editor setting.
 
-::
-
-    - Smoothing Groups
-    - Smooth Mesh
-    - Triangluate (for meshes with blend shapes)
-    - Bake Animation
-    - Resample All
-    - Deformed Models
-    - Skins
-    - Blend Shapes
-    - Curve Filters
-    - Constant Key Reducer
-    - Auto Tangents Only
-    - *Do not check* Constraints (as it will break the file)
-    - Can check Embed Media (embeds textures into the exported FBX file)
-      - Note that when importing embedded media, the texture and mesh will be a single immutable file.
-      - You will have to re-export then re-import the FBX if the texture has changed.
-    - Units: Centimeters
-    - Up Axis: Y
-    - Binary format in FBX 2017
+This importer is only used if :ref:`ProjectSettings.filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>` is enabled, otherwise ``.fbx`` files present in the project folder are not imported.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

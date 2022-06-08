@@ -24,7 +24,7 @@ Properties
 +-------------------------------+--------------------------------------------------------------------+----------------------+
 | :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_property_left_to_right>`       | ``0.5``              |
 +-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3(2, 2, 2)`` |
+| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3(1, 1, 1)`` |
 +-------------------------------+--------------------------------------------------------------------+----------------------+
 | :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_property_subdivide_depth>`   | ``0``                |
 +-------------------------------+--------------------------------------------------------------------+----------------------+
@@ -57,7 +57,7 @@ Displacement of the upper edge along the X axis. 0.0 positions edge straight abo
 - :ref:`Vector3<class_Vector3>` **size**
 
 +-----------+----------------------+
-| *Default* | ``Vector3(2, 2, 2)`` |
+| *Default* | ``Vector3(1, 1, 1)`` |
 +-----------+----------------------+
 | *Setter*  | set_size(value)      |
 +-----------+----------------------+

@@ -27,17 +27,17 @@ Properties
 ----------
 
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`agent/height<class_NavigationMesh_property_agent/height>`                                                               | ``2.0``   |
+| :ref:`float<class_float>`                                           | :ref:`agent/height<class_NavigationMesh_property_agent/height>`                                                               | ``1.5``   |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`agent/max_climb<class_NavigationMesh_property_agent/max_climb>`                                                         | ``0.9``   |
+| :ref:`float<class_float>`                                           | :ref:`agent/max_climb<class_NavigationMesh_property_agent/max_climb>`                                                         | ``0.25``  |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                           | :ref:`agent/max_slope<class_NavigationMesh_property_agent/max_slope>`                                                         | ``45.0``  |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`agent/radius<class_NavigationMesh_property_agent/radius>`                                                               | ``1.0``   |
+| :ref:`float<class_float>`                                           | :ref:`agent/radius<class_NavigationMesh_property_agent/radius>`                                                               | ``0.5``   |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`cell/height<class_NavigationMesh_property_cell/height>`                                                                 | ``0.2``   |
+| :ref:`float<class_float>`                                           | :ref:`cell/height<class_NavigationMesh_property_cell/height>`                                                                 | ``0.25``  |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`cell/size<class_NavigationMesh_property_cell/size>`                                                                     | ``0.3``   |
+| :ref:`float<class_float>`                                           | :ref:`cell/size<class_NavigationMesh_property_cell/size>`                                                                     | ``0.25``  |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                           | :ref:`detail/sample_distance<class_NavigationMesh_property_detail/sample_distance>`                                           | ``6.0``   |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
@@ -65,7 +65,7 @@ Properties
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                           | :ref:`region/merge_size<class_NavigationMesh_property_region/merge_size>`                                                     | ``20.0``  |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                           | :ref:`region/min_size<class_NavigationMesh_property_region/min_size>`                                                         | ``8.0``   |
+| :ref:`float<class_float>`                                           | :ref:`region/min_size<class_NavigationMesh_property_region/min_size>`                                                         | ``2.0``   |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` | :ref:`sample_partition_type/sample_partition_type<class_NavigationMesh_property_sample_partition_type/sample_partition_type>` | ``0``     |
 +---------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-----------+
@@ -168,7 +168,7 @@ Property Descriptions
 - :ref:`float<class_float>` **agent/height**
 
 +-----------+-------------------------+
-| *Default* | ``2.0``                 |
+| *Default* | ``1.5``                 |
 +-----------+-------------------------+
 | *Setter*  | set_agent_height(value) |
 +-----------+-------------------------+
@@ -186,7 +186,7 @@ The minimum floor to ceiling height that will still allow the floor area to be c
 - :ref:`float<class_float>` **agent/max_climb**
 
 +-----------+----------------------------+
-| *Default* | ``0.9``                    |
+| *Default* | ``0.25``                   |
 +-----------+----------------------------+
 | *Setter*  | set_agent_max_climb(value) |
 +-----------+----------------------------+
@@ -220,7 +220,7 @@ The maximum slope that is considered walkable, in degrees.
 - :ref:`float<class_float>` **agent/radius**
 
 +-----------+-------------------------+
-| *Default* | ``1.0``                 |
+| *Default* | ``0.5``                 |
 +-----------+-------------------------+
 | *Setter*  | set_agent_radius(value) |
 +-----------+-------------------------+
@@ -238,7 +238,7 @@ The distance to erode/shrink the walkable area of the heightfield away from obst
 - :ref:`float<class_float>` **cell/height**
 
 +-----------+------------------------+
-| *Default* | ``0.2``                |
+| *Default* | ``0.25``               |
 +-----------+------------------------+
 | *Setter*  | set_cell_height(value) |
 +-----------+------------------------+
@@ -254,7 +254,7 @@ The Y axis cell size to use for fields.
 - :ref:`float<class_float>` **cell/size**
 
 +-----------+----------------------+
-| *Default* | ``0.3``              |
+| *Default* | ``0.25``             |
 +-----------+----------------------+
 | *Setter*  | set_cell_size(value) |
 +-----------+----------------------+
@@ -482,7 +482,7 @@ Any regions with a size smaller than this will be merged with larger regions if 
 - :ref:`float<class_float>` **region/min_size**
 
 +-----------+----------------------------+
-| *Default* | ``8.0``                    |
+| *Default* | ``2.0``                    |
 +-----------+----------------------------+
 | *Setter*  | set_region_min_size(value) |
 +-----------+----------------------------+

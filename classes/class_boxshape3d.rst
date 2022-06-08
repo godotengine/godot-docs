@@ -11,12 +11,14 @@ BoxShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Box shape resource.
+Box shape resource for 3D collisions.
 
 Description
 -----------
 
-3D box shape that can be a child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>`.
+3D box shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node.
+
+\ **Performance:** Being a primitive collision shape, ``BoxShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`).
 
 Tutorials
 ---------

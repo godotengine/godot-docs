@@ -18,6 +18,11 @@ Description
 
 Horizontal split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Theme Properties
 ----------------
 

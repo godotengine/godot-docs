@@ -17,6 +17,8 @@ Properties
 ----------
 
 +-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+| :ref:`String<class_String>`                   | :ref:`base_path<class_GLTFState_property_base_path>`                       | ``""``                |
++-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
 | :ref:`Array<class_Array>`                     | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                |
 +-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()`` |
@@ -107,6 +109,20 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_GLTFState_property_base_path:
+
+- :ref:`String<class_String>` **base_path**
+
++-----------+----------------------+
+| *Default* | ``""``               |
++-----------+----------------------+
+| *Setter*  | set_base_path(value) |
++-----------+----------------------+
+| *Getter*  | get_base_path()      |
++-----------+----------------------+
+
+----
 
 .. _class_GLTFState_property_buffers:
 

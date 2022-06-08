@@ -110,13 +110,9 @@ Operators
 ---------
 
 +-------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_AABB_operator_neq_bool>` **(** **)**                                            |
-+-------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_AABB_operator_neq_bool>` **(** :ref:`AABB<class_AABB>` right **)**              |
 +-------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>` | :ref:`operator *<class_AABB_operator_mul_AABB>` **(** :ref:`Transform3D<class_Transform3D>` right **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_AABB_operator_eq_bool>` **(** **)**                                             |
 +-------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_AABB_operator_eq_bool>` **(** :ref:`AABB<class_AABB>` right **)**               |
 +-------------------------+---------------------------------------------------------------------------------------------------------+
@@ -400,10 +396,6 @@ Operator Descriptions
 
 .. _class_AABB_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
 Returns ``true`` if the vectors are not equal.
@@ -421,10 +413,6 @@ Inversely transforms (multiplies) the ``AABB`` by the given :ref:`Transform3D<cl
 ----
 
 .. _class_AABB_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`AABB<class_AABB>` right **)**
 

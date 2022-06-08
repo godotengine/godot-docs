@@ -22,9 +22,13 @@ Properties
 ----------
 
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`             | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``    |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`navigable_layers<class_NavigationAgent2D_property_navigable_layers>`               | ``1``     |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent2D_property_neighbor_dist>`                     | ``500.0`` |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
@@ -102,6 +106,22 @@ Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`s
 Property Descriptions
 ---------------------
 
+.. _class_NavigationAgent2D_property_avoidance_enabled:
+
+- :ref:`bool<class_bool>` **avoidance_enabled**
+
++-----------+------------------------------+
+| *Default* | ``false``                    |
++-----------+------------------------------+
+| *Setter*  | set_avoidance_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | get_avoidance_enabled()      |
++-----------+------------------------------+
+
+If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`NavigationServer2D<class_NavigationServer2D>`. When :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>` is used and the processing is completed a ``safe_velocity`` Vector2 is received with a signal connection to :ref:`velocity_computed<class_NavigationAgent2D_signal_velocity_computed>`. Avoidance processing with many registered agents has a significant performance cost and should only be enabled on agents that currently require it.
+
+----
+
 .. _class_NavigationAgent2D_property_max_neighbors:
 
 - :ref:`int<class_int>` **max_neighbors**
@@ -131,6 +151,22 @@ The maximum number of neighbors for the agent to consider.
 +-----------+----------------------+
 
 The maximum speed that an agent can move.
+
+----
+
+.. _class_NavigationAgent2D_property_navigable_layers:
+
+- :ref:`int<class_int>` **navigable_layers**
+
++-----------+-----------------------------+
+| *Default* | ``1``                       |
++-----------+-----------------------------+
+| *Setter*  | set_navigable_layers(value) |
++-----------+-----------------------------+
+| *Getter*  | get_navigable_layers()      |
++-----------+-----------------------------+
+
+A bitfield determining what layers of navigation regions this agent will use to calculate path. Changing it runtime will clear current navigation path and generate new one, according to new layers.
 
 ----
 
@@ -258,6 +294,8 @@ Returns a :ref:`Vector2<class_Vector2>` in global coordinates, that can be moved
 .. _class_NavigationAgent2D_method_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 ----
 

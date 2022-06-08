@@ -84,11 +84,7 @@ Operators
 ---------
 
 +---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Plane_operator_neq_bool>` **(** **)**                                 |
-+---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator !=<class_Plane_operator_neq_bool>` **(** :ref:`Plane<class_Plane>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Plane_operator_eq_bool>` **(** **)**                                  |
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`   | :ref:`operator ==<class_Plane_operator_eq_bool>` **(** :ref:`Plane<class_Plane>` right **)**  |
 +---------------------------+-----------------------------------------------------------------------------------------------+
@@ -308,10 +304,6 @@ Operator Descriptions
 
 .. _class_Plane_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Plane<class_Plane>` right **)**
 
 Returns ``true`` if the planes are not equal.
@@ -321,10 +313,6 @@ Returns ``true`` if the planes are not equal.
 ----
 
 .. _class_Plane_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Plane<class_Plane>` right **)**
 

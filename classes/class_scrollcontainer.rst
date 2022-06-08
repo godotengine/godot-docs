@@ -24,6 +24,11 @@ ScrollContainers will automatically create a scrollbar child (:ref:`HScrollBar<c
 
 Works great with a :ref:`Panel<class_Panel>` control. You can set ``EXPAND`` on the children's size flags, so they will upscale to the ScrollContainer's size if it's larger (scroll is invisible for the chosen dimension).
 
+Tutorials
+---------
+
+- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+
 Properties
 ----------
 

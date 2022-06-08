@@ -88,11 +88,7 @@ Operators
 ---------
 
 +-------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_Rect2i_operator_neq_bool>` **(** **)**                                   |
-+-------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_Rect2i_operator_neq_bool>` **(** :ref:`Rect2i<class_Rect2i>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_Rect2i_operator_eq_bool>` **(** **)**                                    |
 +-------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_Rect2i_operator_eq_bool>` **(** :ref:`Rect2i<class_Rect2i>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------------+
@@ -306,10 +302,6 @@ Operator Descriptions
 
 .. _class_Rect2i_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
-
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2i<class_Rect2i>` right **)**
 
 Returns ``true`` if the rectangles are not equal.
@@ -317,10 +309,6 @@ Returns ``true`` if the rectangles are not equal.
 ----
 
 .. _class_Rect2i_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2i<class_Rect2i>` right **)**
 

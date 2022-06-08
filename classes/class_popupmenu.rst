@@ -22,6 +22,8 @@ The size of a ``PopupMenu`` can be limited by using :ref:`Window.max_size<class_
 
 If no maximum size is set, or if it is set to 0, the ``PopupMenu`` height will be limited by its parent rect.
 
+All ``set_*`` methods allow negative item index, which makes the item accessed from the last one.
+
 Properties
 ----------
 
@@ -165,57 +167,65 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_accelerator_color<class_PopupMenu_theme_color_font_accelerator_color>`   | ``Color(0.7, 0.7, 0.7, 0.8)``     |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_color<class_PopupMenu_theme_color_font_color>`                           | ``Color(0.875, 0.875, 0.875, 1)`` |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_PopupMenu_theme_color_font_disabled_color>`         | ``Color(0.4, 0.4, 0.4, 0.8)``     |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_PopupMenu_theme_color_font_hover_color>`               | ``Color(0.875, 0.875, 0.875, 1)`` |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_PopupMenu_theme_color_font_outline_color>`           | ``Color(1, 1, 1, 1)``             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_separator_color<class_PopupMenu_theme_color_font_separator_color>`       | ``Color(0.875, 0.875, 0.875, 1)`` |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`hseparation<class_PopupMenu_theme_constant_hseparation>`                      | ``4``                             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`item_end_padding<class_PopupMenu_theme_constant_item_end_padding>`            | ``2``                             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`item_start_padding<class_PopupMenu_theme_constant_item_start_padding>`        | ``2``                             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>`                    | ``0``                             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`vseparation<class_PopupMenu_theme_constant_vseparation>`                      | ``4``                             |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Font<class_Font>`           | :ref:`font<class_PopupMenu_theme_font_font>`                                        |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`font_size<class_PopupMenu_theme_font_size_font_size>`                         |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                  |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                      |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                  |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                  |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`submenu_mirrored<class_PopupMenu_theme_icon_submenu_mirrored>`                |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_PopupMenu_theme_icon_unchecked>`                              |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_PopupMenu_theme_style_hover>`                                     |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_left<class_PopupMenu_theme_style_labeled_separator_left>`   |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_right<class_PopupMenu_theme_style_labeled_separator_right>` |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_PopupMenu_theme_style_panel>`                                     |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_disabled<class_PopupMenu_theme_style_panel_disabled>`                   |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`separator<class_PopupMenu_theme_style_separator>`                             |                                   |
-+-----------------------------------+-------------------------------------------------------------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_accelerator_color<class_PopupMenu_theme_color_font_accelerator_color>`             | ``Color(0.7, 0.7, 0.7, 0.8)``     |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_color<class_PopupMenu_theme_color_font_color>`                                     | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_PopupMenu_theme_color_font_disabled_color>`                   | ``Color(0.4, 0.4, 0.4, 0.8)``     |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_PopupMenu_theme_color_font_hover_color>`                         | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_PopupMenu_theme_color_font_outline_color>`                     | ``Color(1, 1, 1, 1)``             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_separator_color<class_PopupMenu_theme_color_font_separator_color>`                 | ``Color(0.875, 0.875, 0.875, 1)`` |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_separator_outline_color<class_PopupMenu_theme_color_font_separator_outline_color>` | ``Color(1, 1, 1, 1)``             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`h_separation<class_PopupMenu_theme_constant_h_separation>`                              | ``4``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`item_end_padding<class_PopupMenu_theme_constant_item_end_padding>`                      | ``2``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`item_start_padding<class_PopupMenu_theme_constant_item_start_padding>`                  | ``2``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>`                              | ``0``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`separator_outline_size<class_PopupMenu_theme_constant_separator_outline_size>`          | ``0``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`v_separation<class_PopupMenu_theme_constant_v_separation>`                              | ``4``                             |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font<class_PopupMenu_theme_font_font>`                                                  |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font_separator<class_PopupMenu_theme_font_font_separator>`                              |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_separator_size<class_PopupMenu_theme_font_size_font_separator_size>`               |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_size<class_PopupMenu_theme_font_size_font_size>`                                   |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                            |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                                |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                            |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                            |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`submenu_mirrored<class_PopupMenu_theme_icon_submenu_mirrored>`                          |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_PopupMenu_theme_icon_unchecked>`                                        |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_PopupMenu_theme_style_hover>`                                               |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_left<class_PopupMenu_theme_style_labeled_separator_left>`             |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_right<class_PopupMenu_theme_style_labeled_separator_right>`           |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_PopupMenu_theme_style_panel>`                                               |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_disabled<class_PopupMenu_theme_style_panel_disabled>`                             |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`separator<class_PopupMenu_theme_style_separator>`                                       |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 
 Signals
 -------
@@ -941,15 +951,27 @@ The tint of text outline of the menu item.
 
 ----
 
-.. _class_PopupMenu_theme_constant_hseparation:
+.. _class_PopupMenu_theme_color_font_separator_outline_color:
 
-- :ref:`int<class_int>` **hseparation**
+- :ref:`Color<class_Color>` **font_separator_outline_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The tint of text outline of the labeled separator.
+
+----
+
+.. _class_PopupMenu_theme_constant_h_separation:
+
+- :ref:`int<class_int>` **h_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
 +-----------+-------+
 
-The horizontal space between the item's name and the shortcut text/submenu arrow.
+The horizontal space between the item's elements.
 
 ----
 
@@ -985,9 +1007,21 @@ The size of the item text outline.
 
 ----
 
-.. _class_PopupMenu_theme_constant_vseparation:
+.. _class_PopupMenu_theme_constant_separator_outline_size:
 
-- :ref:`int<class_int>` **vseparation**
+- :ref:`int<class_int>` **separator_outline_size**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+The size of the labeled separator text outline.
+
+----
+
+.. _class_PopupMenu_theme_constant_v_separation:
+
+- :ref:`int<class_int>` **v_separation**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -1002,6 +1036,22 @@ The vertical space between each menu item.
 - :ref:`Font<class_Font>` **font**
 
 :ref:`Font<class_Font>` used for the menu items.
+
+----
+
+.. _class_PopupMenu_theme_font_font_separator:
+
+- :ref:`Font<class_Font>` **font_separator**
+
+:ref:`Font<class_Font>` used for the labeled separator.
+
+----
+
+.. _class_PopupMenu_theme_font_size_font_separator_size:
+
+- :ref:`int<class_int>` **font_separator_size**
+
+Font size of the labeled separator.
 
 ----
 

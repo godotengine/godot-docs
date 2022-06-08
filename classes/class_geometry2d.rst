@@ -241,7 +241,7 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 - :ref:`Variant<class_Variant>` **line_intersects_line** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**
 
-Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
+Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns ``null``.
 
 \ **Note:** The lines are specified using direction vectors, not end points.
 
@@ -325,7 +325,7 @@ Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
 - :ref:`Variant<class_Variant>` **segment_intersects_segment** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**
 
-Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns an empty :ref:`Variant<class_Variant>`.
+Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns ``null``.
 
 ----
 

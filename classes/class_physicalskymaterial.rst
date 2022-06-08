@@ -26,8 +26,6 @@ Properties
 ----------
 
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>`         | :ref:`dither_strength<class_PhysicalSkyMaterial_property_dither_strength>`           | ``1.0``                          |
-+-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`float<class_float>`         | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                          |
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color(0.1, 0.07, 0.034, 1)``   |
@@ -48,25 +46,11 @@ Properties
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`float<class_float>`         | :ref:`turbidity<class_PhysicalSkyMaterial_property_turbidity>`                       | ``10.0``                         |
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`use_debanding<class_PhysicalSkyMaterial_property_use_debanding>`               | ``true``                         |
++-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 
 Property Descriptions
 ---------------------
-
-.. _class_PhysicalSkyMaterial_property_dither_strength:
-
-- :ref:`float<class_float>` **dither_strength**
-
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_dither_strength(value) |
-+-----------+----------------------------+
-| *Getter*  | get_dither_strength()      |
-+-----------+----------------------------+
-
-Sets the amount of dithering to use. Dithering helps reduce banding that appears from the smooth changes in color in the sky. Use the lowest value possible, higher amounts may add fuzziness to the sky.
-
-----
 
 .. _class_PhysicalSkyMaterial_property_exposure:
 
@@ -223,6 +207,22 @@ Sets the size of the sun disk. Default value is based on Sol's perceived size fr
 +-----------+----------------------+
 
 Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atmosphere, while a low turbidity results in a clearer atmosphere.
+
+----
+
+.. _class_PhysicalSkyMaterial_property_use_debanding:
+
+- :ref:`bool<class_bool>` **use_debanding**
+
++-----------+--------------------------+
+| *Default* | ``true``                 |
++-----------+--------------------------+
+| *Setter*  | set_use_debanding(value) |
++-----------+--------------------------+
+| *Getter*  | get_use_debanding()      |
++-----------+--------------------------+
+
+If ``true``, enables debanding. Debanding adds a small amount of noise which helps reduce banding that appears from the smooth changes in color in the sky.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

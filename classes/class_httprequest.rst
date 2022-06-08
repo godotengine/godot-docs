@@ -201,7 +201,7 @@ Properties
 +-----------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`       | :ref:`max_redirects<class_HTTPRequest_property_max_redirects>`             | ``8``     |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`       | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0``     |
+| :ref:`float<class_float>`   | :ref:`timeout<class_HTTPRequest_property_timeout>`                         | ``0.0``   |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`     | :ref:`use_threads<class_HTTPRequest_property_use_threads>`                 | ``false`` |
 +-----------------------------+----------------------------------------------------------------------------+-----------+
@@ -392,10 +392,10 @@ Maximum number of allowed redirects.
 
 .. _class_HTTPRequest_property_timeout:
 
-- :ref:`int<class_int>` **timeout**
+- :ref:`float<class_float>` **timeout**
 
 +-----------+--------------------+
-| *Default* | ``0``              |
+| *Default* | ``0.0``            |
 +-----------+--------------------+
 | *Setter*  | set_timeout(value) |
 +-----------+--------------------+

@@ -11,7 +11,7 @@ Mesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateMesh>`, :ref:`PrimitiveMesh<class_PrimitiveMesh>`
+**Inherited By:** :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateMesh>`, :ref:`PlaceholderMesh<class_PlaceholderMesh>`, :ref:`PrimitiveMesh<class_PrimitiveMesh>`
 
 A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
 
@@ -34,9 +34,9 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------+--------------------+
-| :ref:`Vector2i<class_Vector2i>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2i(0, 0)`` |
-+---------------------------------+-------------------------------------------------------------------+--------------------+
++---------------------------------+-------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` |
++---------------------------------+-------------------------------------------------------------------+
 
 Methods
 -------
@@ -353,13 +353,11 @@ Property Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **lightmap_size_hint**
 
-+-----------+-------------------------------+
-| *Default* | ``Vector2i(0, 0)``            |
-+-----------+-------------------------------+
-| *Setter*  | set_lightmap_size_hint(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_lightmap_size_hint()      |
-+-----------+-------------------------------+
++----------+-------------------------------+
+| *Setter* | set_lightmap_size_hint(value) |
++----------+-------------------------------+
+| *Getter* | get_lightmap_size_hint()      |
++----------+-------------------------------+
 
 Sets a hint to be used for lightmap resolution.
 
@@ -484,7 +482,7 @@ Calculate a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` from the m
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
-Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
+Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh. Considers only surfaces using one of these primitive types: :ref:`PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`, :ref:`PRIMITIVE_TRIANGLE_STRIP<class_Mesh_constant_PRIMITIVE_TRIANGLE_STRIP>`.
 
 ----
 

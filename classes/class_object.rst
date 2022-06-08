@@ -9,7 +9,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`NativeExtensionManager<class_NativeExtensionManager>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptCustomNodes<class_VisualScriptCustomNodes>`, :ref:`XRServer<class_XRServer>`
+**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`IP<class_IP>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScript<class_JavaScript>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`NativeExtensionManager<class_NativeExtensionManager>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`ScriptLanguage<class_ScriptLanguage>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`VisualScriptCustomNodes<class_VisualScriptCustomNodes>`, :ref:`XRServer<class_XRServer>`
 
 Base class for all non-built-in types.
 
@@ -82,7 +82,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                     | :ref:`call<class_Object_method_call>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                       |
+| :ref:`Variant<class_Variant>`                     | :ref:`call_deferred<class_Object_method_call_deferred>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                                       |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                     | :ref:`callv<class_Object_method_callv>` **(** :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` arg_array **)**                                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,7 +92,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`disconnect<class_Object_method_disconnect>` **(** :ref:`StringName<class_StringName>` signal, :ref:`Callable<class_Callable>` callable **)**                                                                                 |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`StringName<class_StringName>` signal, ... **)** |vararg|                                                                                                           |
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`emit_signal<class_Object_method_emit_signal>` **(** :ref:`StringName<class_StringName>` signal, ... **)** |vararg|                                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`free<class_Object_method_free>` **(** **)**                                                                                                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -106,7 +106,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_instance_id<class_Object_method_get_instance_id>` **(** **)** |const|                                                                                                                                                    |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`get_meta<class_Object_method_get_meta>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                         |
+| :ref:`Variant<class_Variant>`                     | :ref:`get_meta<class_Object_method_get_meta>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` default=null **)** |const|                                                                             |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_meta_list<class_Object_method_get_meta_list>` **(** **)** |const|                                                                                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -241,7 +241,9 @@ Each property's :ref:`Dictionary<class_Dictionary>` must contain at least ``name
 
 - void **_init** **(** **)** |virtual|
 
-Called when the object is initialized.
+Called when the object is initialized in memory. Can be defined to take in parameters, that are passed in when constructing.
+
+\ **Note:** If :ref:`_init<class_Object_method__init>` is defined with required parameters, then explicit construction is the only valid means of creating an Object of the class. If any other means (such as :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`) is used, then initialization will fail.
 
 ----
 
@@ -308,7 +310,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 .. _class_Object_method_call_deferred:
 
-- void **call_deferred** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
 Calls the ``method`` on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
 
@@ -370,7 +372,7 @@ Connects a ``signal`` to a ``callable``. Pass optional ``binds`` to the call as 
 
 \ **Note:** This method is the legacy implementation for connecting signals. The recommended modern approach is to use :ref:`Signal.connect<class_Signal_method_connect>` and to use :ref:`Callable.bind<class_Callable_method_bind>` to add and validate parameter binds. Both syntaxes are shown below.
 
-A signal can only be connected once to a :ref:`Callable<class_Callable>`. It will throw an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
+A signal can only be connected once to a :ref:`Callable<class_Callable>`. It will print an error if already connected, unless the signal was connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To avoid this, first, use :ref:`is_connected<class_Object_method_is_connected>` to check for existing connections.
 
 If the callable's target is destroyed in the game's lifecycle, the connection will be lost.
 
@@ -474,7 +476,7 @@ As seen above, the recommended method to connect signals is not :ref:`connect<cl
 
 
 
-While all options have the same outcome (``button``'s :ref:`BaseButton.button_down<class_BaseButton_signal_button_down>` signal will be connected to ``_on_button_down``), option 3 offers the best validation: it will throw a compile-time error if either the ``button_down`` signal or the ``_on_button_down`` callable are undefined. On the other hand, option 2 only relies on string names and will only be able to validate either names at runtime: it will throw a runtime error if ``"button_down"`` doesn't correspond to a signal, or if ``"_on_button_down"`` is not a registered method in the object ``self``. The main reason for using options 1, 2, or 4 would be if you actually need to use strings (e.g. to connect signals programmatically based on strings read from a configuration file). Otherwise, option 3 is the recommended (and fastest) method.
+While all options have the same outcome (``button``'s :ref:`BaseButton.button_down<class_BaseButton_signal_button_down>` signal will be connected to ``_on_button_down``), option 3 offers the best validation: it will print a compile-time error if either the ``button_down`` signal or the ``_on_button_down`` callable are undefined. On the other hand, option 2 only relies on string names and will only be able to validate either names at runtime: it will print a runtime error if ``"button_down"`` doesn't correspond to a signal, or if ``"_on_button_down"`` is not a registered method in the object ``self``. The main reason for using options 1, 2, or 4 would be if you actually need to use strings (e.g. to connect signals programmatically based on strings read from a configuration file). Otherwise, option 3 is the recommended (and fastest) method.
 
 \ **Parameter bindings and passing:**\ 
 
@@ -535,13 +537,13 @@ One can also pass additional parameters when emitting the signal with :ref:`emit
 
 Disconnects a ``signal`` from a given ``callable``.
 
-If you try to disconnect a connection that does not exist, the method will throw an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
+If you try to disconnect a connection that does not exist, the method will print an error. Use :ref:`is_connected<class_Object_method_is_connected>` to ensure that the connection exists.
 
 ----
 
 .. _class_Object_method_emit_signal:
 
-- void **emit_signal** **(** :ref:`StringName<class_StringName>` signal, ... **)** |vararg|
+- :ref:`Error<enum_@GlobalScope_Error>` **emit_signal** **(** :ref:`StringName<class_StringName>` signal, ... **)** |vararg|
 
 Emits the given ``signal``. The signal must exist, so it should be a built-in signal of this class or one of its parent classes, or a user-defined signal. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
 
@@ -628,9 +630,11 @@ This ID can be saved in :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, and c
 
 .. _class_Object_method_get_meta:
 
-- :ref:`Variant<class_Variant>` **get_meta** **(** :ref:`StringName<class_StringName>` name **)** |const|
+- :ref:`Variant<class_Variant>` **get_meta** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns the object's metadata entry for the given ``name``.
+
+Throws error if the entry does not exist, unless ``default`` is not ``null`` (in which case the default value will be returned).
 
 ----
 

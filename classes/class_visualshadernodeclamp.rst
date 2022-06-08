@@ -38,6 +38,8 @@ Enumerations
 
 .. _class_VisualShaderNodeClamp_constant_OP_TYPE_VECTOR_3D:
 
+.. _class_VisualShaderNodeClamp_constant_OP_TYPE_VECTOR_4D:
+
 .. _class_VisualShaderNodeClamp_constant_OP_TYPE_MAX:
 
 enum **OpType**:
@@ -50,7 +52,9 @@ enum **OpType**:
 
 - **OP_TYPE_VECTOR_3D** = **3** --- A 3D vector type.
 
-- **OP_TYPE_MAX** = **4** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeClamp_OpType>` enum.
+- **OP_TYPE_VECTOR_4D** = **4** --- A 4D vector type.
+
+- **OP_TYPE_MAX** = **5** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeClamp_OpType>` enum.
 
 Property Descriptions
 ---------------------

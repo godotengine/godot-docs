@@ -21,25 +21,29 @@ Description
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`         | ``0.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                               | ``true`` |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                     | ``10``   |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                             | ``10.0`` |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent3D_property_neighbor_dist>`                     | ``50.0`` |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`             | ``3.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent3D_property_radius>`                                   | ``1.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` | ``1.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                       | ``5.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+----------+
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`         | ``0.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>`             | ``false`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                               | ``true``  |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                     | ``10``    |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                             | ``10.0``  |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`navigable_layers<class_NavigationAgent3D_property_navigable_layers>`               | ``1``     |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent3D_property_neighbor_dist>`                     | ``50.0``  |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`             | ``3.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent3D_property_radius>`                                   | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` | ``1.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                       | ``5.0``   |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -118,7 +122,23 @@ Property Descriptions
 | *Getter*  | get_agent_height_offset()      |
 +-----------+--------------------------------+
 
-The agent height offset to match the navigation mesh height.
+The NavigationAgent height offset is subtracted from the y-axis value of any vector path position for this NavigationAgent. The NavigationAgent height offset does not change or influence the navigation mesh or pathfinding query result. Additional navigation maps that use regions with navigation meshes that the developer baked with appropriate agent radius or height values are required to support different-sized agents.
+
+----
+
+.. _class_NavigationAgent3D_property_avoidance_enabled:
+
+- :ref:`bool<class_bool>` **avoidance_enabled**
+
++-----------+------------------------------+
+| *Default* | ``false``                    |
++-----------+------------------------------+
+| *Setter*  | set_avoidance_enabled(value) |
++-----------+------------------------------+
+| *Getter*  | get_avoidance_enabled()      |
++-----------+------------------------------+
+
+If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`NavigationServer3D<class_NavigationServer3D>`. When :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>` is used and the processing is completed a ``safe_velocity`` Vector3 is received with a signal connection to :ref:`velocity_computed<class_NavigationAgent3D_signal_velocity_computed>`. Avoidance processing with many registered agents has a significant performance cost and should only be enabled on agents that currently require it.
 
 ----
 
@@ -167,6 +187,22 @@ The maximum number of neighbors for the agent to consider.
 +-----------+----------------------+
 
 The maximum speed that an agent can move.
+
+----
+
+.. _class_NavigationAgent3D_property_navigable_layers:
+
+- :ref:`int<class_int>` **navigable_layers**
+
++-----------+-----------------------------+
+| *Default* | ``1``                       |
++-----------+-----------------------------+
+| *Setter*  | set_navigable_layers(value) |
++-----------+-----------------------------+
+| *Getter*  | get_navigable_layers()      |
++-----------+-----------------------------+
+
+A bitfield determining what layers of navigation regions this agent will use to calculate path. Changing it runtime will clear current navigation path and generate new one, according to new layers.
 
 ----
 
@@ -294,6 +330,8 @@ Returns a :ref:`Vector3<class_Vector3>` in global coordinates, that can be moved
 .. _class_NavigationAgent3D_method_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 ----
 

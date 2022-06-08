@@ -21,13 +21,11 @@ General-purpose progress bar. Shows fill percentage from right to left.
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true``                                                                     |
-+---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | size_flags_vertical                                                | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
-+---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | step                                                               | ``0.01`` (overrides :ref:`Range<class_Range_property_step>`)                 |
-+---------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`   | :ref:`fill_mode<class_ProgressBar_property_fill_mode>`             | ``0``    |
++-------------------------+--------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true`` |
++-------------------------+--------------------------------------------------------------------+----------+
 
 Theme Properties
 ----------------
@@ -50,8 +48,47 @@ Theme Properties
 | :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                                 |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 
+Enumerations
+------------
+
+.. _enum_ProgressBar_FillMode:
+
+.. _class_ProgressBar_constant_FILL_BEGIN_TO_END:
+
+.. _class_ProgressBar_constant_FILL_END_TO_BEGIN:
+
+.. _class_ProgressBar_constant_FILL_TOP_TO_BOTTOM:
+
+.. _class_ProgressBar_constant_FILL_BOTTOM_TO_TOP:
+
+enum **FillMode**:
+
+- **FILL_BEGIN_TO_END** = **0** --- The progress bar fills from begin to end horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from left to right, and if it returns ``true``, it fills from right to left.
+
+- **FILL_END_TO_BEGIN** = **1** --- The progress bar fills from end to begin horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from right to left, and if it returns ``true``, it fills from left to right.
+
+- **FILL_TOP_TO_BOTTOM** = **2** --- The progress fills from top to bottom.
+
+- **FILL_BOTTOM_TO_TOP** = **3** --- The progress fills from bottom to top.
+
 Property Descriptions
 ---------------------
+
+.. _class_ProgressBar_property_fill_mode:
+
+- :ref:`int<class_int>` **fill_mode**
+
++-----------+----------------------+
+| *Default* | ``0``                |
++-----------+----------------------+
+| *Setter*  | set_fill_mode(value) |
++-----------+----------------------+
+| *Getter*  | get_fill_mode()      |
++-----------+----------------------+
+
+The fill direction. See :ref:`FillMode<enum_ProgressBar_FillMode>` for possible values.
+
+----
 
 .. _class_ProgressBar_property_percent_visible:
 

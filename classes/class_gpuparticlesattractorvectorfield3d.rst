@@ -11,7 +11,16 @@ GPUParticlesAttractorVectorField3D
 
 **Inherits:** :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Box-shaped 3D particle attractor with strength varying within the box, affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+Description
+-----------
+
+Box-shaped 3D particle attractor with strength varying within the box, affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+
+Unlike :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`, ``GPUParticlesAttractorVectorField3D`` uses a :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` to affect attraction strength within the box. This can be used to create complex attraction scenarios where particles travel in different directions depending on their location. This can be useful for weather effects such as sandstorms.
+
+\ **Note:** Particle attractors only affect :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 Properties
 ----------
@@ -37,6 +46,8 @@ Property Descriptions
 | *Getter*  | get_extents()        |
 +-----------+----------------------+
 
+The extents of the vector field box in 3D units.
+
 ----
 
 .. _class_GPUParticlesAttractorVectorField3D_property_texture:
@@ -48,6 +59,10 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The 3D texture to be used. Values are linearly interpolated between the texture's pixels.
+
+\ **Note:** To get better performance, the 3D texture's resolution should reflect the :ref:`extents<class_GPUParticlesAttractorVectorField3D_property_extents>` of the attractor. Since particle attraction is usually low-frequency data, the texture can be kept at a low resolution such as 64×64×64.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

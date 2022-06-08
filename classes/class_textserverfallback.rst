@@ -9,7 +9,7 @@
 TextServerFallback
 ==================
 
-**Inherits:** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Fallback implementation of the Text Server, without BiDi and complex text layout support.
 

@@ -167,16 +167,6 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`Vector3<class_Vector3>`                              | :ref:`sky_rotation<class_Environment_property_sky_rotation>`                                                                 | ``Vector3(0, 0, 0)``        |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`ss_reflections_depth_tolerance<class_Environment_property_ss_reflections_depth_tolerance>`                             | ``0.2``                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`ss_reflections_enabled<class_Environment_property_ss_reflections_enabled>`                                             | ``false``                   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`ss_reflections_fade_in<class_Environment_property_ss_reflections_fade_in>`                                             | ``0.15``                    |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`                                  | :ref:`ss_reflections_fade_out<class_Environment_property_ss_reflections_fade_out>`                                           | ``2.0``                     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`                                      | :ref:`ss_reflections_max_steps<class_Environment_property_ss_reflections_max_steps>`                                         | ``64``                      |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`ssao_ao_channel_affect<class_Environment_property_ssao_ao_channel_affect>`                                             | ``0.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`ssao_detail<class_Environment_property_ssao_detail>`                                                                   | ``0.5``                     |
@@ -204,6 +194,16 @@ Properties
 | :ref:`float<class_float>`                                  | :ref:`ssil_radius<class_Environment_property_ssil_radius>`                                                                   | ``5.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`ssil_sharpness<class_Environment_property_ssil_sharpness>`                                                             | ``0.98``                    |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssr_depth_tolerance<class_Environment_property_ssr_depth_tolerance>`                                                   | ``0.2``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`ssr_enabled<class_Environment_property_ssr_enabled>`                                                                   | ``false``                   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssr_fade_in<class_Environment_property_ssr_fade_in>`                                                                   | ``0.15``                    |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`float<class_float>`                                  | :ref:`ssr_fade_out<class_Environment_property_ssr_fade_out>`                                                                 | ``2.0``                     |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`                                      | :ref:`ssr_max_steps<class_Environment_property_ssr_max_steps>`                                                               | ``64``                      |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
 | :ref:`float<class_float>`                                  | :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`                                                         | ``1.0``                     |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
@@ -296,9 +296,9 @@ enum **AmbientSource**:
 
 - **AMBIENT_SOURCE_BG** = **0** --- Gather ambient light from whichever source is specified as the background.
 
-- **AMBIENT_SOURCE_DISABLED** = **1** --- Disable ambient light.
+- **AMBIENT_SOURCE_DISABLED** = **1** --- Disable ambient light. This provides a slight performance boost over :ref:`AMBIENT_SOURCE_SKY<class_Environment_constant_AMBIENT_SOURCE_SKY>`.
 
-- **AMBIENT_SOURCE_COLOR** = **2** --- Specify a specific :ref:`Color<class_Color>` for ambient light.
+- **AMBIENT_SOURCE_COLOR** = **2** --- Specify a specific :ref:`Color<class_Color>` for ambient light. This provides a slight performance boost over :ref:`AMBIENT_SOURCE_SKY<class_Environment_constant_AMBIENT_SOURCE_SKY>`.
 
 - **AMBIENT_SOURCE_SKY** = **3** --- Gather ambient light from the :ref:`Sky<class_Sky>` regardless of what the background is.
 
@@ -316,7 +316,7 @@ enum **ReflectionSource**:
 
 - **REFLECTION_SOURCE_BG** = **0** --- Use the background for reflections.
 
-- **REFLECTION_SOURCE_DISABLED** = **1** --- Disable reflections.
+- **REFLECTION_SOURCE_DISABLED** = **1** --- Disable reflections. This provides a slight performance boost over other options.
 
 - **REFLECTION_SOURCE_SKY** = **2** --- Use the :ref:`Sky<class_Sky>` for reflections regardless of what the background is.
 
@@ -334,13 +334,15 @@ enum **ReflectionSource**:
 
 enum **ToneMapper**:
 
-- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified.
+- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
 
-- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``.
+- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
 
-- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
+- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
 
-- **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
+- **TONE_MAPPER_ACES** = **3** --- Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` and :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
+
+\ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
 
 ----
 
@@ -380,11 +382,11 @@ enum **GlowBlendMode**:
 
 enum **SDFGIYScale**:
 
-- **SDFGI_Y_SCALE_50_PERCENT** = **0**
+- **SDFGI_Y_SCALE_50_PERCENT** = **0** --- Use 50% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be twice as short as they are wide. This allows providing increased GI detail and reduced light leaking with thin floors and ceilings. This is usually the best choice for scenes that don't feature much verticality.
 
-- **SDFGI_Y_SCALE_75_PERCENT** = **1**
+- **SDFGI_Y_SCALE_75_PERCENT** = **1** --- Use 75% scale for SDFGI on the Y (vertical) axis. This is a balance between the 50% and 100% SDFGI Y scales.
 
-- **SDFGI_Y_SCALE_100_PERCENT** = **2**
+- **SDFGI_Y_SCALE_100_PERCENT** = **2** --- Use 100% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be as tall as they are wide. This is usually the best choice for highly vertical scenes. The downside is that light leaking may become more noticeable with thin floors and ceilings.
 
 Property Descriptions
 ---------------------
@@ -479,7 +481,7 @@ The global color saturation value of the rendered scene (default value is 1). Ef
 | *Getter*  | get_ambient_light_color()      |
 +-----------+--------------------------------+
 
-The ambient light's :ref:`Color<class_Color>`.
+The ambient light's :ref:`Color<class_Color>`. Only effective if :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is lower than ``1.0`` (exclusive).
 
 ----
 
@@ -495,7 +497,7 @@ The ambient light's :ref:`Color<class_Color>`.
 | *Getter*  | get_ambient_light_energy()      |
 +-----------+---------------------------------+
 
-The ambient light's energy. The higher the value, the stronger the light.
+The ambient light's energy. The higher the value, the stronger the light. Only effective if :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is lower than ``1.0`` (exclusive).
 
 ----
 
@@ -528,6 +530,8 @@ Defines the amount of light that the sky brings on the scene. A value of ``0.0``
 +-----------+---------------------------+
 | *Getter*  | get_ambient_source()      |
 +-----------+---------------------------+
+
+The ambient light source to use for rendering materials and global illumination.
 
 ----
 
@@ -721,6 +725,8 @@ This is useful to simulate `aerial perspective <https://en.wikipedia.org/wiki/Ae
 | *Getter*  | get_fog_density()      |
 +-----------+------------------------+
 
+The exponential fog density to use. Higher values result in a more dense fog.
+
 ----
 
 .. _class_Environment_property_fog_enabled:
@@ -783,6 +789,8 @@ The density used to increase fog as height decreases. To make fog increase as he
 | *Getter*  | get_fog_light_color()       |
 +-----------+-----------------------------+
 
+The fog's color.
+
 ----
 
 .. _class_Environment_property_fog_light_energy:
@@ -797,6 +805,8 @@ The density used to increase fog as height decreases. To make fog increase as he
 | *Getter*  | get_fog_light_energy()      |
 +-----------+-----------------------------+
 
+The fog's brightness. Higher values result in brighter fog.
+
 ----
 
 .. _class_Environment_property_fog_sun_scatter:
@@ -810,6 +820,8 @@ The density used to increase fog as height decreases. To make fog increase as he
 +-----------+----------------------------+
 | *Getter*  | get_fog_sun_scatter()      |
 +-----------+----------------------------+
+
+If set above ``0.0``, renders the scene's directional light(s) in the fog color depending on the view angle. This can be used to give the impression that the sun is "piercing" through the fog.
 
 ----
 
@@ -921,7 +933,7 @@ The lower threshold of the HDR glow. When using the OpenGL renderer (which doesn
 | *Getter*  | get_glow_intensity()      |
 +-----------+---------------------------+
 
-The overall brightness multiplier of the glow effect. When using the OpenGL renderer, this should be increased to 1.5 to compensate for the lack of HDR rendering.
+The overall brightness multiplier of the glow effect. When using the OpenGL renderer, this should be increased to ``1.5`` to compensate for the lack of HDR rendering.
 
 ----
 
@@ -1081,6 +1093,8 @@ How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>`
 | *Getter*  | get_glow_mix()      |
 +-----------+---------------------+
 
+When using the :ref:`GLOW_BLEND_MODE_MIX<class_Environment_constant_GLOW_BLEND_MODE_MIX>` :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>`, this controls how much the source image is blended with the glow layer. A value of ``0.0`` makes the glow rendering invisible, while a value of ``1.0`` is equivalent to :ref:`GLOW_BLEND_MODE_REPLACE<class_Environment_constant_GLOW_BLEND_MODE_REPLACE>`.
+
 ----
 
 .. _class_Environment_property_glow_normalized:
@@ -1127,6 +1141,8 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 | *Getter*  | get_reflection_source()      |
 +-----------+------------------------------+
 
+The reflected (specular) light source.
+
 ----
 
 .. _class_Environment_property_sdfgi_bounce_feedback:
@@ -1141,6 +1157,12 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 | *Getter*  | get_sdfgi_bounce_feedback()      |
 +-----------+----------------------------------+
 
+The energy multiplier applied to light every time it bounces from a surface when using SDFGI. Values greater than ``0.0`` will simulate multiple bounces, resulting in a more realistic appearance. Increasing :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>` generally has no performance impact. See also :ref:`sdfgi_energy<class_Environment_property_sdfgi_energy>`.
+
+\ **Note:** Values greater than ``0.5`` can cause infinite feedback loops and should be avoided in scenes with bright materials.
+
+\ **Note:** If :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>` is ``0.0``, indirect lighting will not be represented in reflections as light will only bounce one time.
+
 ----
 
 .. _class_Environment_property_sdfgi_cascade0_distance:
@@ -1154,6 +1176,8 @@ The strength of the glow effect. This applies as the glow is blurred across the 
 +-----------+------------------------------------+
 | *Getter*  | get_sdfgi_cascade0_distance()      |
 +-----------+------------------------------------+
+
+**Note:** This property is linked to :ref:`sdfgi_min_cell_size<class_Environment_property_sdfgi_min_cell_size>` and :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>`. Changing its value will automatically change those properties as well.
 
 ----
 
@@ -1205,6 +1229,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 | *Getter*  | get_sdfgi_energy()      |
 +-----------+-------------------------+
 
+The energy multiplier to use for SDFGI. Higher values will result in brighter indirect lighting and reflections. See also :ref:`sdfgi_bounce_feedback<class_Environment_property_sdfgi_bounce_feedback>`.
+
 ----
 
 .. _class_Environment_property_sdfgi_max_distance:
@@ -1218,6 +1244,10 @@ If ``true``, enables signed distance field global illumination for meshes that h
 +-----------+-------------------------------+
 | *Getter*  | get_sdfgi_max_distance()      |
 +-----------+-------------------------------+
+
+The maximum distance at which SDFGI is visible. Beyond this distance, environment lighting or other sources of GI such as :ref:`ReflectionProbe<class_ReflectionProbe>` will be used as a fallback.
+
+\ **Note:** This property is linked to :ref:`sdfgi_min_cell_size<class_Environment_property_sdfgi_min_cell_size>` and :ref:`sdfgi_cascade0_distance<class_Environment_property_sdfgi_cascade0_distance>`. Changing its value will automatically change those properties as well.
 
 ----
 
@@ -1233,6 +1263,10 @@ If ``true``, enables signed distance field global illumination for meshes that h
 | *Getter*  | get_sdfgi_min_cell_size()      |
 +-----------+--------------------------------+
 
+The cell size to use for the closest SDFGI cascade (in 3D units). Lower values allow SDFGI to be more precise up close, at the cost of making SDFGI updates more demanding. This can cause stuttering when the camera moves fast. Higher values allow SDFGI to cover more ground, while also reducing the performance impact of SDFGI updates.
+
+\ **Note:** This property is linked to :ref:`sdfgi_max_distance<class_Environment_property_sdfgi_max_distance>` and :ref:`sdfgi_cascade0_distance<class_Environment_property_sdfgi_cascade0_distance>`. Changing its value will automatically change those properties as well.
+
 ----
 
 .. _class_Environment_property_sdfgi_normal_bias:
@@ -1246,6 +1280,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 +-----------+------------------------------+
 | *Getter*  | get_sdfgi_normal_bias()      |
 +-----------+------------------------------+
+
+The normal bias to use for SDFGI probes. Increasing this value can reduce visible streaking artifacts on sloped surfaces, at the cost of increased light leaking.
 
 ----
 
@@ -1261,6 +1297,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 | *Getter*  | get_sdfgi_probe_bias()      |
 +-----------+-----------------------------+
 
+The constant bias to use for SDFGI probes. Increasing this value can reduce visible streaking artifacts on sloped surfaces, at the cost of increased light leaking.
+
 ----
 
 .. _class_Environment_property_sdfgi_read_sky_light:
@@ -1274,6 +1312,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 +-----------+---------------------------------+
 | *Getter*  | is_sdfgi_reading_sky_light()    |
 +-----------+---------------------------------+
+
+If ``true``, SDFGI takes the environment lighting into account. This should be set to ``false`` for interior scenes.
 
 ----
 
@@ -1289,6 +1329,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 | *Getter*  | is_sdfgi_using_occlusion()     |
 +-----------+--------------------------------+
 
+If ``true``, SDFGI uses an occlusion detection approach to reduce light leaking. Occlusion may however introduce dark blotches in certain spots, which may be undesired in mostly outdoor scenes. :ref:`sdfgi_use_occlusion<class_Environment_property_sdfgi_use_occlusion>` has a performance impact and should only be enabled when needed.
+
 ----
 
 .. _class_Environment_property_sdfgi_y_scale:
@@ -1302,6 +1344,8 @@ If ``true``, enables signed distance field global illumination for meshes that h
 +-----------+--------------------------+
 | *Getter*  | get_sdfgi_y_scale()      |
 +-----------+--------------------------+
+
+The Y scale to use for SDFGI cells. Lower values will result in SDFGI cells being packed together more closely on the Y axis. This is used to balance between quality and covering a lot of vertical ground. :ref:`sdfgi_y_scale<class_Environment_property_sdfgi_y_scale>` should be set depending on how vertical your scene is (and how fast your camera may move on the Y axis).
 
 ----
 
@@ -1331,6 +1375,8 @@ The :ref:`Sky<class_Sky>` resource used for this ``Environment``.
 | *Getter*  | get_sky_custom_fov()      |
 +-----------+---------------------------+
 
+If set to a value greater than ``0.0``, overrides the field of view to use for sky rendering. If set to ``0.0``, the same FOV as the current :ref:`Camera3D<class_Camera3D>` is used for sky rendering.
+
 ----
 
 .. _class_Environment_property_sky_rotation:
@@ -1345,85 +1391,7 @@ The :ref:`Sky<class_Sky>` resource used for this ``Environment``.
 | *Getter*  | get_sky_rotation()      |
 +-----------+-------------------------+
 
-----
-
-.. _class_Environment_property_ss_reflections_depth_tolerance:
-
-- :ref:`float<class_float>` **ss_reflections_depth_tolerance**
-
-+-----------+--------------------------------+
-| *Default* | ``0.2``                        |
-+-----------+--------------------------------+
-| *Setter*  | set_ssr_depth_tolerance(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_ssr_depth_tolerance()      |
-+-----------+--------------------------------+
-
-The depth tolerance for screen-space reflections.
-
-----
-
-.. _class_Environment_property_ss_reflections_enabled:
-
-- :ref:`bool<class_bool>` **ss_reflections_enabled**
-
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_ssr_enabled(value) |
-+-----------+------------------------+
-| *Getter*  | is_ssr_enabled()       |
-+-----------+------------------------+
-
-If ``true``, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from :ref:`VoxelGI<class_VoxelGI>`\ s or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s, but are slower and can't reflect surfaces occluded by others.
-
-----
-
-.. _class_Environment_property_ss_reflections_fade_in:
-
-- :ref:`float<class_float>` **ss_reflections_fade_in**
-
-+-----------+------------------------+
-| *Default* | ``0.15``               |
-+-----------+------------------------+
-| *Setter*  | set_ssr_fade_in(value) |
-+-----------+------------------------+
-| *Getter*  | get_ssr_fade_in()      |
-+-----------+------------------------+
-
-The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection). Only positive values are valid (negative values will be clamped to ``0.0``).
-
-----
-
-.. _class_Environment_property_ss_reflections_fade_out:
-
-- :ref:`float<class_float>` **ss_reflections_fade_out**
-
-+-----------+-------------------------+
-| *Default* | ``2.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_ssr_fade_out(value) |
-+-----------+-------------------------+
-| *Getter*  | get_ssr_fade_out()      |
-+-----------+-------------------------+
-
-The fade-out distance for screen-space reflections. Affects the area from the screen-space reflection to the "global" reflection. Only positive values are valid (negative values will be clamped to ``0.0``).
-
-----
-
-.. _class_Environment_property_ss_reflections_max_steps:
-
-- :ref:`int<class_int>` **ss_reflections_max_steps**
-
-+-----------+--------------------------+
-| *Default* | ``64``                   |
-+-----------+--------------------------+
-| *Setter*  | set_ssr_max_steps(value) |
-+-----------+--------------------------+
-| *Getter*  | get_ssr_max_steps()      |
-+-----------+--------------------------+
-
-The maximum number of steps for screen-space reflections. Higher values are slower.
+The rotation to use for sky rendering.
 
 ----
 
@@ -1651,6 +1619,86 @@ The amount that the screen-space indirect lighting effect is allowed to blur ove
 
 ----
 
+.. _class_Environment_property_ssr_depth_tolerance:
+
+- :ref:`float<class_float>` **ssr_depth_tolerance**
+
++-----------+--------------------------------+
+| *Default* | ``0.2``                        |
++-----------+--------------------------------+
+| *Setter*  | set_ssr_depth_tolerance(value) |
++-----------+--------------------------------+
+| *Getter*  | get_ssr_depth_tolerance()      |
++-----------+--------------------------------+
+
+The depth tolerance for screen-space reflections.
+
+----
+
+.. _class_Environment_property_ssr_enabled:
+
+- :ref:`bool<class_bool>` **ssr_enabled**
+
++-----------+------------------------+
+| *Default* | ``false``              |
++-----------+------------------------+
+| *Setter*  | set_ssr_enabled(value) |
++-----------+------------------------+
+| *Getter*  | is_ssr_enabled()       |
++-----------+------------------------+
+
+If ``true``, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from :ref:`VoxelGI<class_VoxelGI>`\ s or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s, but are slower and can't reflect surfaces occluded by others.
+
+----
+
+.. _class_Environment_property_ssr_fade_in:
+
+- :ref:`float<class_float>` **ssr_fade_in**
+
++-----------+------------------------+
+| *Default* | ``0.15``               |
++-----------+------------------------+
+| *Setter*  | set_ssr_fade_in(value) |
++-----------+------------------------+
+| *Getter*  | get_ssr_fade_in()      |
++-----------+------------------------+
+
+The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection). Only positive values are valid (negative values will be clamped to ``0.0``).
+
+----
+
+.. _class_Environment_property_ssr_fade_out:
+
+- :ref:`float<class_float>` **ssr_fade_out**
+
++-----------+-------------------------+
+| *Default* | ``2.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_ssr_fade_out(value) |
++-----------+-------------------------+
+| *Getter*  | get_ssr_fade_out()      |
++-----------+-------------------------+
+
+The fade-out distance for screen-space reflections. Affects the area from the screen-space reflection to the "global" reflection. Only positive values are valid (negative values will be clamped to ``0.0``).
+
+----
+
+.. _class_Environment_property_ssr_max_steps:
+
+- :ref:`int<class_int>` **ssr_max_steps**
+
++-----------+--------------------------+
+| *Default* | ``64``                   |
++-----------+--------------------------+
+| *Setter*  | set_ssr_max_steps(value) |
++-----------+--------------------------+
+| *Getter*  | get_ssr_max_steps()      |
++-----------+--------------------------+
+
+The maximum number of steps for screen-space reflections. Higher values are slower.
+
+----
+
 .. _class_Environment_property_tonemap_exposure:
 
 - :ref:`float<class_float>` **tonemap_exposure**
@@ -1663,7 +1711,7 @@ The amount that the screen-space indirect lighting effect is allowed to blur ove
 | *Getter*  | get_tonemap_exposure()      |
 +-----------+-----------------------------+
 
-The default exposure used for tonemapping.
+The default exposure used for tonemapping. Higher values result in a brighter image. See also :ref:`tonemap_white<class_Environment_property_tonemap_white>`.
 
 ----
 
@@ -1695,7 +1743,7 @@ The tonemapping mode to use. Tonemapping is the process that "converts" HDR valu
 | *Getter*  | get_tonemap_white()      |
 +-----------+--------------------------+
 
-The white reference value for tonemapping. Only effective if the :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` isn't set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`.
+The white reference value for tonemapping (also called "whitepoint"). Higher values can make highlights look less blown out, and will also slightly darken the whole scene as a result. Only effective if the :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` isn't set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
 
 ----
 

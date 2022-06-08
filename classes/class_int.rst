@@ -70,8 +70,6 @@ Operators
 ---------
 
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_bool>` **(** **)**                                                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_bool>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_bool>` **(** :ref:`int<class_int>` right **)**                    |
@@ -96,6 +94,10 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`           | :ref:`operator **<class_int_operator_pow_float>` **(** :ref:`float<class_float>` right **)**               |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | :ref:`operator **<class_int_operator_pow_int>` **(** :ref:`int<class_int>` right **)**                     |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`operator +<class_int_operator_sum_String>` **(** :ref:`String<class_String>` right **)**             |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
@@ -119,8 +121,6 @@ Operators
 | :ref:`bool<class_bool>`             | :ref:`operator <=<class_int_operator_lte_bool>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator <=<class_int_operator_lte_bool>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_bool>` **(** **)**                                                 |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_bool>` **(** :ref:`float<class_float>` right **)**                 |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -178,10 +178,6 @@ Operator Descriptions
 ---------------------
 
 .. _class_int_operator_neq_bool:
-
-- :ref:`bool<class_bool>` **operator !=** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
 
@@ -285,6 +281,16 @@ Multiplies two ``int``\ s.
 
 ----
 
+.. _class_int_operator_pow_float:
+
+- :ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
+
+----
+
+- :ref:`int<class_int>` **operator **** **(** :ref:`int<class_int>` right **)**
+
+----
+
 .. _class_int_operator_sum_String:
 
 - :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
@@ -384,10 +390,6 @@ Returns ``true`` the left integer is less than or equal to the right one.
 ----
 
 .. _class_int_operator_eq_bool:
-
-- :ref:`bool<class_bool>` **operator ==** **(** **)**
-
-----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)**
 

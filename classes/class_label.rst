@@ -47,7 +47,7 @@ Properties
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                  | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`StructuredTextParser<enum_Control_StructuredTextParser>`         | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
+| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`      | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                                              | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -306,7 +306,7 @@ Limits the amount of visible characters. If you set ``percent_visible`` to 0.5, 
 
 .. _class_Label_property_structured_text_bidi_override:
 
-- :ref:`StructuredTextParser<enum_Control_StructuredTextParser>` **structured_text_bidi_override**
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override**
 
 +-----------+------------------------------------------+
 | *Default* | ``0``                                    |

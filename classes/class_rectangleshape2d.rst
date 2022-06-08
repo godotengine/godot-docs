@@ -11,12 +11,14 @@ RectangleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Rectangle shape for 2D collisions.
+Rectangle shape resource for 2D physics.
 
 Description
 -----------
 
-Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
+2D rectangle shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. This shape is useful for modeling box-like 2D objects.
+
+\ **Performance:** Being a primitive collision shape, ``RectangleShape2D`` is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
 
 Tutorials
 ---------

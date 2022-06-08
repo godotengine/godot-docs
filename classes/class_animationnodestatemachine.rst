@@ -48,8 +48,6 @@ Methods
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`add_transition<class_AnimationNodeStateMachine_method_add_transition>` **(** :ref:`StringName<class_StringName>` from, :ref:`StringName<class_StringName>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)** |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_end_node<class_AnimationNodeStateMachine_method_get_end_node>` **(** **)** |const|                                                                                                                                                                                |
-+---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_graph_offset<class_AnimationNodeStateMachine_method_get_graph_offset>` **(** **)** |const|                                                                                                                                                                        |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AnimationNode<class_AnimationNode>`                                             | :ref:`get_node<class_AnimationNodeStateMachine_method_get_node>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                               |
@@ -57,8 +55,6 @@ Methods
 | :ref:`StringName<class_StringName>`                                                   | :ref:`get_node_name<class_AnimationNodeStateMachine_method_get_node_name>` **(** :ref:`AnimationNode<class_AnimationNode>` node **)** |const|                                                                                                                               |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_node_position<class_AnimationNodeStateMachine_method_get_node_position>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                             |
-+---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_start_node<class_AnimationNodeStateMachine_method_get_start_node>` **(** **)** |const|                                                                                                                                                                            |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` | :ref:`get_transition<class_AnimationNodeStateMachine_method_get_transition>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                                  |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,13 +78,9 @@ Methods
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`replace_node<class_AnimationNodeStateMachine_method_replace_node>` **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**                                                                                               |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_end_node<class_AnimationNodeStateMachine_method_set_end_node>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                                               |
-+---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                                                                                           |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                                  | :ref:`set_node_position<class_AnimationNodeStateMachine_method_set_node_position>` **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**                                                                                             |
-+---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_start_node<class_AnimationNodeStateMachine_method_set_start_node>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                                           |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
@@ -107,14 +99,6 @@ Adds a new node to the graph. The ``position`` is used for display in the editor
 - void **add_transition** **(** :ref:`StringName<class_StringName>` from, :ref:`StringName<class_StringName>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)**
 
 Adds a transition between the given nodes.
-
-----
-
-.. _class_AnimationNodeStateMachine_method_get_end_node:
-
-- :ref:`String<class_String>` **get_end_node** **(** **)** |const|
-
-Returns the graph's end node.
 
 ----
 
@@ -147,14 +131,6 @@ Returns the given animation node's name.
 - :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns the given node's coordinates. Used for display in the editor.
-
-----
-
-.. _class_AnimationNodeStateMachine_method_get_start_node:
-
-- :ref:`String<class_String>` **get_start_node** **(** **)** |const|
-
-Returns the graph's end node.
 
 ----
 
@@ -244,14 +220,6 @@ Renames the given node.
 
 ----
 
-.. _class_AnimationNodeStateMachine_method_set_end_node:
-
-- void **set_end_node** **(** :ref:`StringName<class_StringName>` name **)**
-
-Sets the given node as the graph end point.
-
-----
-
 .. _class_AnimationNodeStateMachine_method_set_graph_offset:
 
 - void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` offset **)**
@@ -265,14 +233,6 @@ Sets the draw offset of the graph. Used for display in the editor.
 - void **set_node_position** **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the node's coordinates. Used for display in the editor.
-
-----
-
-.. _class_AnimationNodeStateMachine_method_set_start_node:
-
-- void **set_start_node** **(** :ref:`StringName<class_StringName>` name **)**
-
-Sets the given node as the graph start point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

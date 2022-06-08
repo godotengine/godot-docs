@@ -55,8 +55,6 @@ Properties
 +-----------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                             | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | ``false``             |
 +-----------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                             | :ref:`show_on_top<class_CanvasItem_property_show_on_top>`                 |                       |
-+-----------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
 | :ref:`TextureFilter<enum_CanvasItem_TextureFilter>` | :ref:`texture_filter<class_CanvasItem_property_texture_filter>`           | ``0``                 |
 +-----------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
 | :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` | :ref:`texture_repeat<class_CanvasItem_property_texture_repeat>`           | ``0``                 |
@@ -84,9 +82,11 @@ Methods
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`Texture2D<class_Texture2D>` texture=null **)**                                                                                                                                                                                                                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`draw_dashed_line<class_CanvasItem_method_draw_dashed_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`float<class_float>` dash=2.0 **)**                                                                                                                                                                                                                                                                                                                      |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_end_animation<class_CanvasItem_method_draw_end_animation>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`draw_line<class_CanvasItem_method_draw_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0 **)**                                                                                                                                                                                                                                                                                                                                                                        |
+| void                                  | :ref:`draw_line<class_CanvasItem_method_draw_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture2D<class_Texture2D>` texture, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**                                                                                                                                                                                                                                                                                                      |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,6 +139,8 @@ Methods
 | :ref:`Transform2D<class_Transform2D>` | :ref:`get_global_transform_with_canvas<class_CanvasItem_method_get_global_transform_with_canvas>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`         | :ref:`get_local_mouse_position<class_CanvasItem_method_get_local_mouse_position>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`get_screen_transform<class_CanvasItem_method_get_screen_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`get_transform<class_CanvasItem_method_get_transform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -276,6 +278,8 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED:
 
+.. _class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
+
 .. _class_CanvasItem_constant_NOTIFICATION_DRAW:
 
 .. _class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED:
@@ -284,7 +288,9 @@ Constants
 
 .. _class_CanvasItem_constant_NOTIFICATION_EXIT_CANVAS:
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The ``CanvasItem``'s transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` or :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- The ``CanvasItem``'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>`.
+
+- **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = **35** --- The ``CanvasItem``'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
 - **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw.
 
@@ -389,14 +395,6 @@ If ``true``, the object draws behind its parent.
 
 ----
 
-.. _class_CanvasItem_property_show_on_top:
-
-- :ref:`bool<class_bool>` **show_on_top**
-
-If ``true``, the object draws on top of its parent.
-
-----
-
 .. _class_CanvasItem_property_texture_filter:
 
 - :ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **texture_filter**
@@ -441,7 +439,7 @@ The texture repeating mode to use on this ``CanvasItem``.
 | *Getter*  | is_set_as_top_level()   |
 +-----------+-------------------------+
 
-If ``true``, the node will not inherit its transform from parent ``CanvasItem``\ s.
+If ``true``, this ``CanvasItem`` will *not* inherit its transform from parent ``CanvasItem``\ s. Its draw order will also be changed to make it draw on top of other ``CanvasItem``\ s that do not have :ref:`top_level<class_CanvasItem_property_top_level>` set to ``true``. The ``CanvasItem`` will effectively act as if it was placed as a child of a bare :ref:`Node<class_Node>`.
 
 ----
 
@@ -516,7 +514,7 @@ Draws a string character using a custom font. Returns the advance, depending on 
 
 - void **draw_circle** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
-Draws a colored, unfilled circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws a colored, filled circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -525,6 +523,14 @@ Draws a colored, unfilled circle. See also :ref:`draw_arc<class_CanvasItem_metho
 - void **draw_colored_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
 Draws a colored polygon of any amount of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
+
+----
+
+.. _class_CanvasItem_method_draw_dashed_line:
+
+- void **draw_dashed_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`float<class_float>` dash=2.0 **)**
+
+Draws a dashed line from a 2D point to another, with a given color and width. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
 
 ----
 
@@ -538,9 +544,9 @@ After submitting all animations slices via :ref:`draw_animation_slice<class_Canv
 
 .. _class_CanvasItem_method_draw_line:
 
-- void **draw_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0 **)**
+- void **draw_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a line from a 2D point to another, with a given color and width. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
+Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
 
 ----
 
@@ -608,7 +614,7 @@ Draws a solid polygon of any amount of points, convex or concave. Unlike :ref:`d
 
 - void **draw_polyline** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws interconnected line segments with a uniform ``color`` and ``width``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -616,7 +622,7 @@ Draws interconnected line segments with a uniform ``color`` and ``width``. When 
 
 - void **draw_polyline_colors** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws interconnected line segments with a uniform ``width`` and segment-by-segment coloring. Colors assigned to line segments match by index between ``points`` and ``colors``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws interconnected line segments with a uniform ``width`` and segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 ----
 
@@ -785,6 +791,16 @@ Returns the mouse's position in this ``CanvasItem`` using the local coordinate s
 
 ----
 
+.. _class_CanvasItem_method_get_screen_transform:
+
+- :ref:`Transform2D<class_Transform2D>` **get_screen_transform** **(** **)** |const|
+
+Returns the transform of this ``CanvasItem`` in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
+
+Equals to :ref:`get_global_transform<class_CanvasItem_method_get_global_transform>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
+
+----
+
 .. _class_CanvasItem_method_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)** |const|
@@ -869,7 +885,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, children will be updated with local transform data.
+If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` when its local transform changes.
 
 ----
 
@@ -877,7 +893,7 @@ If ``enable`` is ``true``, children will be updated with local transform data.
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``enable`` is ``true``, children will be updated with global transform data.
+If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` when its global transform changes.
 
 ----
 
