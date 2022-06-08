@@ -102,6 +102,7 @@ The main documentation for the site is organized into the following sections:
    tutorials/inputs/index
    tutorials/io/index
    tutorials/math/index
+   tutorials/navigation/index
    tutorials/networking/index
    tutorials/performance/index
    tutorials/physics/index

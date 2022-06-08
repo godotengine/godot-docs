@@ -1,3 +1,6 @@
+Navigation
+==========
+
 .. toctree::
    :maxdepth: 1
    :name: toc-learn-features-navigation
