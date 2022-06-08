@@ -24,9 +24,9 @@ ones, and more.
 
 .. image:: img/editor_intro_project_manager.png
 
-At the top of the window, there is another tab named "Templates". You can search
-for demo projects in the open-source asset library, which includes many projects
-developed by the community.
+At the top of the window, there is another tab named "Asset Library Projects".
+In the open-source asset library you can search for demo projects, templates,
+and completed projects, including many that are developed by the community.
 
 .. image:: img/editor_intro_project_templates.png
 
