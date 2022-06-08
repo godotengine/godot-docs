@@ -139,6 +139,8 @@ If ``exact_match`` is ``false``, it ignores the input modifiers for :ref:`InputE
 
 Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a given action.
 
+**Note:** When used in the editor (e.g. a tool script or :ref:`EditorPlugin<class_EditorPlugin>`), this method will return events for the editor action. If you want to access your project's input binds from the editor, read the ``input/*`` settings from :ref:`ProjectSettings<class_ProjectSettings>`.
+
 ----
 
 .. _class_InputMap_method_get_actions:

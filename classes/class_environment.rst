@@ -312,15 +312,17 @@ enum **GlowBlendMode**:
 
 enum **ToneMapper**:
 
-- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified.
+- **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and passes it on unmodified. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
 
-- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``.
+- **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
 
-- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
+- **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>`.
 
-- **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator. Performs an approximation of the ACES tonemapping curve.
+- **TONE_MAPPER_ACES** = **3** --- Use the legacy Godot version of the Academy Color Encoding System tonemapper. Unlike :ref:`TONE_MAPPER_ACES_FITTED<class_Environment_constant_TONE_MAPPER_ACES_FITTED>`, this version of ACES does not handle bright lighting in a physically accurate way. ACES typically has a more contrasted output compared to :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` and :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
 
-- **TONE_MAPPER_ACES_FITTED** = **4** --- High quality Academy Color Encoding System tonemapper operator that matches the industry standard. Performs a more physically accurate curve fit which better simulates how light works in the real world. The color of lights and emissive materials will become lighter as the emissive energy increases, and will eventually become white if the light is bright enough to saturate the camera sensor.
+**Note:** This tonemapping operator will be removed in Godot 4.0 in favor of the more accurate :ref:`TONE_MAPPER_ACES_FITTED<class_Environment_constant_TONE_MAPPER_ACES_FITTED>`.
+
+- **TONE_MAPPER_ACES_FITTED** = **4** --- Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`TONE_MAPPER_REINHARDT<class_Environment_constant_TONE_MAPPER_REINHARDT>` and :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>`.
 
 ----
 

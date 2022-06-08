@@ -16,7 +16,7 @@ A 2D line.
 Description
 -----------
 
-A line through several points in 2D space.
+A line through several points in 2D space. Supports varying width and color over the line's length, texturing, and several cap/joint types.
 
 **Note:** By default, Godot can only draw up to 4,096 polygon points at a time. To increase this limit, open the Project Settings and increase :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_buffer_size_kb>` and :ref:`ProjectSettings.rendering/limits/buffers/canvas_polygon_index_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/canvas_polygon_index_buffer_size_kb>`.
 
@@ -145,9 +145,11 @@ Property Descriptions
 | *Getter*  | get_antialiased()      |
 +-----------+------------------------+
 
-If ``true``, the line's border will be anti-aliased.
+If ``true``, the line's border will attempt to perform antialiasing by drawing thin OpenGL smooth lines on the line's edges.
 
-**Note:** Line2D is not accelerated by batching when being anti-aliased.
+**Note:** Line2D is not accelerated by batching if :ref:`antialiased<class_Line2D_property_antialiased>` is ``true``.
+
+**Note:** Due to how it works, built-in antialiasing will not look correct for translucent lines and may not work on certain platforms. As a workaround, install the `Antialiased Line2D <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__ add-on then create an AntialiasedLine2D node. That node relies on a texture with custom mipmaps to perform antialiasing. 2D batching is also still supported with those antialiased lines.
 
 ----
 

@@ -95,7 +95,9 @@ Property Descriptions
 | *Getter*  | get_antialiased()      |
 +-----------+------------------------+
 
-If ``true``, polygon edges will be anti-aliased.
+If ``true``, attempts to perform antialiasing for polygon edges by drawing a thin OpenGL smooth line on the edges.
+
+**Note:** Due to how it works, built-in antialiasing will not look correct for translucent polygons and may not work on certain platforms. As a workaround, install the `Antialiased Line2D <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__ add-on then create an AntialiasedPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.
 
 ----
 

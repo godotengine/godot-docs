@@ -1891,15 +1891,17 @@ enum **EnvironmentGlowBlendMode**:
 
 enum **EnvironmentToneMapper**:
 
-- **ENV_TONE_MAPPER_LINEAR** = **0** --- Output color as they came in.
+- **ENV_TONE_MAPPER_LINEAR** = **0** --- Output color as they came in. This can cause bright lighting to look blown out, with noticeable clipping in the output colors.
 
-- **ENV_TONE_MAPPER_REINHARD** = **1** --- Use the Reinhard tonemapper.
+- **ENV_TONE_MAPPER_REINHARD** = **1** --- Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
 
-- **ENV_TONE_MAPPER_FILMIC** = **2** --- Use the filmic tonemapper.
+- **ENV_TONE_MAPPER_FILMIC** = **2** --- Use the filmic tonemapper. This avoids clipping bright highlights, with a resulting image that usually looks more vivid than :ref:`ENV_TONE_MAPPER_REINHARD<class_VisualServer_constant_ENV_TONE_MAPPER_REINHARD>`.
 
-- **ENV_TONE_MAPPER_ACES** = **3** --- Use the ACES tonemapper.
+- **ENV_TONE_MAPPER_ACES** = **3** --- Use the legacy Godot version of the Academy Color Encoding System tonemapper. Unlike :ref:`ENV_TONE_MAPPER_ACES_FITTED<class_VisualServer_constant_ENV_TONE_MAPPER_ACES_FITTED>`, this version of ACES does not handle bright lighting in a physically accurate way. ACES typically has a more contrasted output compared to :ref:`ENV_TONE_MAPPER_REINHARD<class_VisualServer_constant_ENV_TONE_MAPPER_REINHARD>` and :ref:`ENV_TONE_MAPPER_FILMIC<class_VisualServer_constant_ENV_TONE_MAPPER_FILMIC>`.
 
-- **ENV_TONE_MAPPER_ACES_FITTED** = **4** --- Use the ACES Fitted tonemapper.
+**Note:** This tonemapping operator will be removed in Godot 4.0 in favor of the more accurate :ref:`ENV_TONE_MAPPER_ACES_FITTED<class_VisualServer_constant_ENV_TONE_MAPPER_ACES_FITTED>`.
+
+- **ENV_TONE_MAPPER_ACES_FITTED** = **4** --- Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`ENV_TONE_MAPPER_REINHARD<class_VisualServer_constant_ENV_TONE_MAPPER_REINHARD>` and :ref:`ENV_TONE_MAPPER_FILMIC<class_VisualServer_constant_ENV_TONE_MAPPER_FILMIC>`.
 
 ----
 

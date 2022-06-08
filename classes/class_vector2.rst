@@ -228,7 +228,7 @@ Returns the angle to the given vector, in radians.
 
 Returns the angle between the line connecting the two points and the X axis, in radians.
 
-`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png>`__
+`Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/vector2_angle_to_point.png>`__
 
 ----
 
