@@ -62,6 +62,32 @@ Materials
 Only the materials from within the meshes are used when generating the mesh
 library. Materials set on the node will be ignored.
 
+NavigationMeshes
+----------------
+
+Like all mesh instances, MeshLibrary items can be assigned a :ref:`class_NavigationMesh`
+resource, which can be created manually, or baked as described below.
+
+To create the NavigationMesh from a MeshLibrary scene export, place a
+:ref:`class_NavigationMeshInstance` child node below the main MeshInstance for the GridMap
+item. Add a valid NavigationMesh resource to the NavigationMeshInstance and some source
+geometry nodes below and bake the NavigationMesh.
+
+.. note::
+
+    With small grid cells it is often necessary to reduce the NavigationMesh properties
+    for agent radius and region minimum size.
+
+.. image:: img/meshlibrary_scene.png
+
+Nodes below the NavigationMeshInstance are ignored for the MeshLibrary scene export, so
+additional nodes can be added as source geometry just for baking the navmesh.
+
+.. warning::
+
+    The baked cell size of the NavigationMesh must match the NavigationServer map cell
+    size to properly merge the navigation meshes of different grid cells.
+
 Exporting the MeshLibrary
 -------------------------
 
