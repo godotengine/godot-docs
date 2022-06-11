@@ -1092,6 +1092,19 @@ in the loop variable.
     for i in 2.2:
         statement # Similar to range(ceil(2.2)).
 
+If you want to assign values on an array as it is being iterated through, it is best to use ``for i in array.size()``.
+
+::
+    for i in array.size():
+	    array[i] = "Hello World"
+
+
+The loop variable is local to the for-loop, and assigning to it will not influence the original value.
+
+::
+    for string in array:
+        string = "Hello World" # This has no effect
+
 match
 ^^^^^
 
