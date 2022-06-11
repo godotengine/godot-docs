@@ -44,8 +44,9 @@ either of those glTF binary files are fine.
 
 .. note::
 
-    Blender does not export emissive textures with the glTF file. If your model
-    uses one, it must be brought in separately.
+    Blender versions older than 3.2 do not export emissive textures with the
+    glTF file. If your model uses one and you're using an older version of
+    Blender, it must be brought in separately.
 
     By default, Blender has backface culling disabled on materials and will
     export materials to match how they render in Blender. This means that
