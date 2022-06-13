@@ -93,7 +93,7 @@ Portals
 
 If you create some rooms, place objects within them, then convert the level in the editor, you will see the objects in the rooms appearing and showing as you move between rooms. There is one problem however! Although you can see the objects within the room that the camera is in, you can't see to any neighbouring rooms! For that we need portals.
 
-:ref:`Portal<class_Portal>`\ s are special convex polygons. You position over the openings between rooms, in order to allow the system to see between them. You can create a portal node directly in the editor. The default portal has 4 points and behaves much like a ``plane`` :ref:`MeshInstance<class_MeshInstance>`. You can add or remove points using the inspector. A portal will require at least 3 points to work - this is because it needs to form a polygon rather than a point or line.
+:ref:`Portal<class_Portal>`\ s are special convex polygons that you position over the openings between rooms in order to allow the system to see between them. You can create a portal node directly in the editor. The default portal has 4 points and behaves much like a ``plane`` :ref:`MeshInstance<class_MeshInstance>`. You can add or remove points using the inspector. A portal will require at least 3 points to work - this is because it needs to form a polygon rather than a point or line.
 
 To save editing effort, **only one Portal is required between each pair of Rooms**. You *do not need* to (and indeed should not) create two Portals that overlap in opposite directions. Portals default to being two-way (but you can make them one-way in the Portal inspector).
 
