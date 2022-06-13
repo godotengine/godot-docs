@@ -47,7 +47,7 @@ A room doesn't need to correspond to a literal room. It could, for example, also
 Why convex?
 ^^^^^^^^^^^
 
-The reason why rooms are defined as convex volumes (or *convex hulls* as they are known), is that it's mathematically trivial to determine whether a point is within a convex hull. A simple plane check will tell you the distance of a point from a plane. If a point is behind all the planes bounding the convex hull, then by definition it is inside the room. This makes all kinds of things easier in the internals of the system, such as checking which room a camera is within.
+Rooms are defined as convex volumes (or *convex hulls*) because it's trivial to mathematically determine whether a point is within a convex hull. A simple plane check will tell you the distance of a point from a plane. If a point is behind all the planes bounding the convex hull, then by definition it is inside the room. This makes all kinds of things easier in the internals of the system, such as checking which room a camera is within.
 
 *A convex hull. The hull is defined as a series of planes facing outward. If a point is behind all the planes, it is within the hull.*
 
