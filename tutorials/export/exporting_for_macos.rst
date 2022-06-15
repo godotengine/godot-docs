@@ -27,7 +27,7 @@ Code signing and notarization
 
 By default, macOS will run only applications that are signed and notarized, if you use any other signing configuration see :ref:`Running Godot apps on macOS <doc_running_on_macos>` for workarounds.
 
-To notarize an app you mast have a valid `Apple Developer ID Certificate <https://developer.apple.com/>`__.
+To notarize an app you must have a valid `Apple Developer ID Certificate <https://developer.apple.com/>`__.
 
 If you have an Apple Developer ID Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
