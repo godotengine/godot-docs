@@ -217,6 +217,7 @@ legend,
     font-weight: 500;
 }
 
+/* See <https://github.com/godotengine/godot-docs/pull/5876> for context. */
 .rst-content .align-right,
 .rst-content .align-left {
 	clear: both;
