@@ -209,6 +209,12 @@ legend,
     font-weight: 500;
 }
 
+/* See <https://github.com/godotengine/godot-docs/pull/5876> for context. */
+.rst-content .align-right,
+.rst-content .align-left {
+	clear: both;
+}
+
 .rst-content div.figure p.caption {
     /* Tweak caption styling to be closer to typical captions */
     text-align: center;
