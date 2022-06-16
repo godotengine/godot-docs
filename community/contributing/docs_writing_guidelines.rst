@@ -11,7 +11,7 @@ for everyone and precise.
 
 In summary, always try to:
 
-1. Use the direct voice
+1. Use the active voice
 2. Use precise action verbs
 3. Avoid verbs that end in -ing
 4. Remove unnecessary adverbs and adjectives.
@@ -40,10 +40,10 @@ There are 3 rules to describe classes:
 7 rules for clear English
 -------------------------
 
-Use the direct voice
+Use the active voice
 ~~~~~~~~~~~~~~~~~~~~
 
-Use the direct voice when possible. Take the classes, methods, and
+Use the active voice when possible. Take the classes, methods, and
 constants you describe as the subject. It's natural to write using the
 passive voice, but it's harder to read and produces longer sentences.
 
