@@ -1046,6 +1046,16 @@ multiple lines to preserve readability::
             else "orange"
     print(fruit_alt)  # banana
 
+You may also wish to check if a value is contained within something. You can
+use an if statement combined with the 'in' operator to accomplish this::
+
+    # Check if a letter is in a string.
+    var text = "abc"
+    if 'b' in text: print("The string contains b")
+
+    # Check if a variable is contained within a node.
+    if "varName" in get_parent(): print("varName is defined in parent!")
+
 while
 ^^^^^
 
