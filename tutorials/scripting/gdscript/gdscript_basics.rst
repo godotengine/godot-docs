@@ -264,7 +264,12 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                        | Comparisons                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                         | Check if content is in a variable         |
+| ``in``                                                                         | When used with the 'if' keyword it checks |
+|                                                                                | if a value is within a string, list,      |
+|                                                                                | range, dictionary, or node.               |
+|                                                                                | When used with the 'for' keyword it is    |
+|                                                                                | used to iterate though the contents of a  |
+|                                                                                | string, list, range, dictionary or node.  |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not``                                                                        | Boolean NOT                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
