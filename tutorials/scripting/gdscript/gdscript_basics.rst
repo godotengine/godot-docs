@@ -1052,7 +1052,7 @@ multiple lines to preserve readability::
     print(fruit_alt)  # banana
 
 You may also wish to check if a value is contained within something. You can
-use an if statement combined with the 'in' operator to accomplish this::
+use an ``if`` statement combined with the ``in`` operator to accomplish this::
 
     # Check if a letter is in a string.
     var text = "abc"
