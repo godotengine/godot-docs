@@ -77,9 +77,9 @@ enum **Enabler**:
 
 - **ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop :ref:`Particles2D<class_Particles2D>` nodes.
 
-- **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's _process function.
+- **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's :ref:`Node._process<class_Node_method__process>` function.
 
-- **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
+- **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's :ref:`Node._physics_process<class_Node_method__physics_process>` function.
 
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5** --- This enabler will stop :ref:`AnimatedSprite<class_AnimatedSprite>` nodes animations.
 

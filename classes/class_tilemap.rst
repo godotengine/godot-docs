@@ -41,6 +41,8 @@ Properties
 ----------
 
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`bake_navigation<class_TileMap_property_bake_navigation>`                 | ``false``                             |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`cell_clip_uv<class_TileMap_property_cell_clip_uv>`                       | ``false``                             |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`Transform2D<class_Transform2D>`      | :ref:`cell_custom_transform<class_TileMap_property_cell_custom_transform>`     | ``Transform2D( 64, 0, 0, 64, 0, 0 )`` |
@@ -72,6 +74,8 @@ Properties
 | :ref:`bool<class_bool>`                    | :ref:`compatibility_mode<class_TileMap_property_compatibility_mode>`           | ``false``                             |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`Mode<enum_TileMap_Mode>`             | :ref:`mode<class_TileMap_property_mode>`                                       | ``0``                                 |
++--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`navigation_layers<class_TileMap_property_navigation_layers>`             | ``1``                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`occluder_light_mask<class_TileMap_property_occluder_light_mask>`         | ``1``                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------+
@@ -210,6 +214,22 @@ Constants
 
 Property Descriptions
 ---------------------
+
+.. _class_TileMap_property_bake_navigation:
+
+- :ref:`bool<class_bool>` **bake_navigation**
+
++-----------+----------------------------+
+| *Default* | ``false``                  |
++-----------+----------------------------+
+| *Setter*  | set_bake_navigation(value) |
++-----------+----------------------------+
+| *Getter*  | is_baking_navigation()     |
++-----------+----------------------------+
+
+If ``true``, this TileMap bakes a navigation region.
+
+----
 
 .. _class_TileMap_property_cell_clip_uv:
 
@@ -470,6 +490,22 @@ The compatibility mode doesn't work with the :ref:`centered_textures<class_TileM
 +-----------+-----------------+
 
 The TileMap orientation mode. See :ref:`Mode<enum_TileMap_Mode>` for possible values.
+
+----
+
+.. _class_TileMap_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+The navigation layers the TileMap generates its navigation regions in.
 
 ----
 

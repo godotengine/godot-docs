@@ -40,7 +40,7 @@ Property Descriptions
 | *Getter* | get_curve()      |
 +----------+------------------+
 
-The ``curve`` rendered onto the texture.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture.
 
 ----
 
@@ -56,7 +56,7 @@ The ``curve`` rendered onto the texture.
 | *Getter*  | get_width()      |
 +-----------+------------------+
 
-The width of the texture.
+The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

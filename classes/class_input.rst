@@ -27,6 +27,15 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+Properties
+----------
+
++----------------------------------------+--------------------------------------------------------------------------+
+| :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                       |
++----------------------------------------+--------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>` |
++----------------------------------------+--------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -79,8 +88,6 @@ Methods
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_mouse_button_mask<class_Input_method_get_mouse_button_mask>` **(** **)** |const|                                                                                                                                                                                   |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MouseMode<enum_Input_MouseMode>`     | :ref:`get_mouse_mode<class_Input_method_get_mouse_mode>` **(** **)** |const|                                                                                                                                                                                                 |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`              | :ref:`get_vector<class_Input_method_get_vector>` **(** :ref:`String<class_String>` negative_x, :ref:`String<class_String>` positive_x, :ref:`String<class_String>` negative_y, :ref:`String<class_String>` positive_y, :ref:`float<class_float>` deadzone=-1.0 **)** |const| |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` **(** :ref:`String<class_String>` action, :ref:`bool<class_bool>` exact=false **)** |const|                                                                                                         |
@@ -116,10 +123,6 @@ Methods
 | void                                       | :ref:`set_gyroscope<class_Input_method_set_gyroscope>` **(** :ref:`Vector3<class_Vector3>` value **)**                                                                                                                                                                       |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`set_magnetometer<class_Input_method_set_magnetometer>` **(** :ref:`Vector3<class_Vector3>` value **)**                                                                                                                                                                 |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_mouse_mode<class_Input_method_set_mouse_mode>` **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**                                                                                                                                                             |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_use_accumulated_input<class_Input_method_set_use_accumulated_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                    |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`start_joy_vibration<class_Input_method_start_joy_vibration>` **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**                                      |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -238,6 +241,37 @@ enum **CursorShape**:
 
 - **CURSOR_HELP** = **16** --- Help cursor. Usually a question mark.
 
+Property Descriptions
+---------------------
+
+.. _class_Input_property_mouse_mode:
+
+- :ref:`MouseMode<enum_Input_MouseMode>` **mouse_mode**
+
++----------+-----------------------+
+| *Setter* | set_mouse_mode(value) |
++----------+-----------------------+
+| *Getter* | get_mouse_mode()      |
++----------+-----------------------+
+
+Controls the mouse mode. See :ref:`MouseMode<enum_Input_MouseMode>` for more information.
+
+----
+
+.. _class_Input_property_use_accumulated_input:
+
+- :ref:`bool<class_bool>` **use_accumulated_input**
+
++----------+----------------------------------+
+| *Setter* | set_use_accumulated_input(value) |
++----------+----------------------------------+
+| *Getter* | is_using_accumulated_input()     |
++----------+----------------------------------+
+
+If ``true``, similar input events sent by the operating system are accumulated. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
+
+Input accumulation can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
+
 Method Descriptions
 -------------------
 
@@ -273,7 +307,7 @@ Adds a new mapping entry (in SDL2 format) to the mapping database. Optionally up
 
 - void **flush_buffered_events** **(** **)**
 
-Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (:ref:`set_use_accumulated_input<class_Input_method_set_use_accumulated_input>`) or agile input flushing (:ref:`ProjectSettings.input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`).
+Sends all input events which are in the current buffer to the game loop. These events may have been buffered as a result of accumulated input (:ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`) or agile input flushing (:ref:`ProjectSettings.input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`).
 
 The engine will already do this itself at key execution points (at least once per frame). However, this can be useful in advanced cases where you want precise control over the timing of event handling.
 
@@ -452,14 +486,6 @@ Returns the magnetic field strength in micro-Tesla for all axes of the device's 
 - :ref:`int<class_int>` **get_mouse_button_mask** **(** **)** |const|
 
 Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together.
-
-----
-
-.. _class_Input_method_get_mouse_mode:
-
-- :ref:`MouseMode<enum_Input_MouseMode>` **get_mouse_mode** **(** **)** |const|
-
-Returns the mouse mode. See the constants for more information.
 
 ----
 
@@ -659,24 +685,6 @@ Sets the value of the rotation rate of the gyroscope sensor. Can be used for deb
 Sets the value of the magnetic field of the magnetometer sensor. Can be used for debugging on devices without a hardware sensor, for example in an editor on a PC.
 
 \ **Note:** This value can be immediately overwritten by the hardware sensor value on Android and iOS.
-
-----
-
-.. _class_Input_method_set_mouse_mode:
-
-- void **set_mouse_mode** **(** :ref:`MouseMode<enum_Input_MouseMode>` mode **)**
-
-Sets the mouse mode. See the constants for more information.
-
-----
-
-.. _class_Input_method_set_use_accumulated_input:
-
-- void **set_use_accumulated_input** **(** :ref:`bool<class_bool>` enable **)**
-
-Enables or disables the accumulation of similar input events sent by the operating system. When input accumulation is enabled, all input events generated during a frame will be merged and emitted when the frame is done rendering. Therefore, this limits the number of input method calls per second to the rendering FPS.
-
-Input accumulation is enabled by default. It can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
 
 ----
 

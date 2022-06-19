@@ -1915,9 +1915,13 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_PHYSICS:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_NAVIGATION:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_RENDER:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_PHYSICS:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_NAVIGATION:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
 
@@ -1951,7 +1955,7 @@ enum **PropertyHint**:
 
 The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
-- **PROPERTY_HINT_ENUM_SUGGESTION** = **37** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+- **PROPERTY_HINT_ENUM_SUGGESTION** = **39** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
 Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>` a property with this hint still accepts arbitrary values and can be empty. The list of values serves to suggest possible values.
 
@@ -1967,29 +1971,33 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
 
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
+- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **11** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
 
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
 
-- **PROPERTY_HINT_FILE** = **13** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **13** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
 
-- **PROPERTY_HINT_DIR** = **14** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **14** --- Hints that an integer property is a bitmask using the optionally named 3D navigation layers.
 
-- **PROPERTY_HINT_GLOBAL_FILE** = **15** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_FILE** = **15** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_GLOBAL_DIR** = **16** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_DIR** = **16** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture"``). Editing it will show a popup menu of valid resource types to instantiate.
+- **PROPERTY_HINT_GLOBAL_FILE** = **17** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_MULTILINE_TEXT** = **18** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
+- **PROPERTY_HINT_GLOBAL_DIR** = **18** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **19** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
+- **PROPERTY_HINT_RESOURCE_TYPE** = **19** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture"``). Editing it will show a popup menu of valid resource types to instantiate.
 
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **20** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+- **PROPERTY_HINT_MULTILINE_TEXT** = **20** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **21** --- Hints that an image is compressed using lossy compression.
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **21** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **22** --- Hints that an image is compressed using lossless compression.
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **22** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **23** --- Hints that an image is compressed using lossy compression.
+
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **24** --- Hints that an image is compressed using lossless compression.
 
 ----
 
@@ -2075,6 +2083,8 @@ enum **PropertyUsageFlags**:
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_FROM_SCRIPT:
 
+.. _class_@GlobalScope_constant_METHOD_FLAG_VARARG:
+
 .. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
 
 enum **MethodFlags**:
@@ -2092,6 +2102,8 @@ enum **MethodFlags**:
 - **METHOD_FLAG_VIRTUAL** = **32** --- Flag for a virtual method.
 
 - **METHOD_FLAG_FROM_SCRIPT** = **64** --- Deprecated method flag, unused.
+
+- **METHOD_FLAG_VARARG** = **128**
 
 - **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags.
 

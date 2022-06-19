@@ -40,7 +40,7 @@ Method Descriptions
 
 - void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
 
-Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>` and :ref:`NavigationMesh.geometry/source_geometry_mode<class_NavigationMesh_property_geometry/source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>` and :ref:`NavigationMesh.geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
 
 ----
 

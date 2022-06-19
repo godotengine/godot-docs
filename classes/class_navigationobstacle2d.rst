@@ -18,6 +18,8 @@ Description
 
 2D obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. This can be done by having the obstacle as a child of a :ref:`Navigation2D<class_Navigation2D>` node, or using :ref:`set_navigation<class_NavigationObstacle2D_method_set_navigation>`. ``NavigationObstacle2D`` is physics safe.
 
+\ **Note:** Obstacles are intended as a last resort option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently.
+
 Properties
 ----------
 

@@ -11,16 +11,39 @@ NavigationPolygonInstance
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+A region of the 2D navigation map.
 
+Description
+-----------
+
+A region of the navigation map. It tells the :ref:`Navigation2DServer<class_Navigation2DServer>` what can be navigated and what cannot, based on its :ref:`NavigationPolygon<class_NavigationPolygon>` resource.
+
+By default this node will register to the default :ref:`World2D<class_World2D>` navigation map. If this node is a child of a :ref:`Navigation2D<class_Navigation2D>` node it will register to the navigation map of the navigation node.
+
+Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`Navigation2DServer.map_set_edge_connection_margin<class_Navigation2DServer_method_map_set_edge_connection_margin>`.
+
+\ **Note:** Overlapping two regions' polygons is not enough for connecting two regions. They must share a similar edge.
+
+The pathfinding cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationPolygonInstance_property_enter_cost>` value.
+
+\ **Note**: This value is not added to the path cost when the start position is already inside this region.
+
+The pathfinding cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationPolygonInstance_property_travel_cost>` multiplier.
 
 Properties
 ----------
 
-+---------------------------------------------------+------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>` | ``true`` |
-+---------------------------------------------------+------------------------------------------------------------------+----------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` |          |
-+---------------------------------------------------+------------------------------------------------------------------+----------+
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>`                     | ``true`` |
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationPolygonInstance_property_enter_cost>`               | ``0.0``  |
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationPolygonInstance_property_navigation_layers>` | ``1``    |
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>`                     |          |
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationPolygonInstance_property_travel_cost>`             | ``1.0``  |
++---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -44,6 +67,40 @@ Property Descriptions
 | *Getter*  | is_enabled()       |
 +-----------+--------------------+
 
+Determines if the ``NavigationPolygonInstance`` is enabled or disabled.
+
+----
+
+.. _class_NavigationPolygonInstance_property_enter_cost:
+
+- :ref:`float<class_float>` **enter_cost**
+
++-----------+-----------------------+
+| *Default* | ``0.0``               |
++-----------+-----------------------+
+| *Setter*  | set_enter_cost(value) |
++-----------+-----------------------+
+| *Getter*  | get_enter_cost()      |
++-----------+-----------------------+
+
+When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+----
+
+.. _class_NavigationPolygonInstance_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation map layers the :ref:`NavigationPolygon<class_NavigationPolygon>` belongs to. On path requests with :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` navmeshes without matching layers will be ignored and the navigation map will only proximity merge different navmeshes with matching layers.
+
 ----
 
 .. _class_NavigationPolygonInstance_property_navpoly:
@@ -55,6 +112,24 @@ Property Descriptions
 +----------+-------------------------------+
 | *Getter* | get_navigation_polygon()      |
 +----------+-------------------------------+
+
+The :ref:`NavigationPolygon<class_NavigationPolygon>` resource to use.
+
+----
+
+.. _class_NavigationPolygonInstance_property_travel_cost:
+
+- :ref:`float<class_float>` **travel_cost**
+
++-----------+------------------------+
+| *Default* | ``1.0``                |
++-----------+------------------------+
+| *Setter*  | set_travel_cost(value) |
++-----------+------------------------+
+| *Getter*  | get_travel_cost()      |
++-----------+------------------------+
+
+When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
 
 Method Descriptions
 -------------------

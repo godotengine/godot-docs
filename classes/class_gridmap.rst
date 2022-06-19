@@ -39,6 +39,8 @@ Properties
 ----------
 
 +-----------------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`bake_navigation<class_GridMap_property_bake_navigation>`       | ``false``              |
++-----------------------------------------------+----------------------------------------------------------------------+------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`           | ``true``               |
 +-----------------------------------------------+----------------------------------------------------------------------+------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`           | ``true``               |
@@ -56,6 +58,8 @@ Properties
 | :ref:`int<class_int>`                         | :ref:`collision_mask<class_GridMap_property_collision_mask>`         | ``1``                  |
 +-----------------------------------------------+----------------------------------------------------------------------+------------------------+
 | :ref:`MeshLibrary<class_MeshLibrary>`         | :ref:`mesh_library<class_GridMap_property_mesh_library>`             |                        |
++-----------------------------------------------+----------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                         | :ref:`navigation_layers<class_GridMap_property_navigation_layers>`   | ``1``                  |
 +-----------------------------------------------+----------------------------------------------------------------------+------------------------+
 | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material<class_GridMap_property_physics_material>`     |                        |
 +-----------------------------------------------+----------------------------------------------------------------------+------------------------+
@@ -123,6 +127,22 @@ Constants
 
 Property Descriptions
 ---------------------
+
+.. _class_GridMap_property_bake_navigation:
+
+- :ref:`bool<class_bool>` **bake_navigation**
+
++-----------+----------------------------+
+| *Default* | ``false``                  |
++-----------+----------------------------+
+| *Setter*  | set_bake_navigation(value) |
++-----------+----------------------------+
+| *Getter*  | is_baking_navigation()     |
++-----------+----------------------------+
+
+If ``true``, this GridMap uses cell navmesh resources to create navigation regions.
+
+----
 
 .. _class_GridMap_property_cell_center_x:
 
@@ -269,6 +289,22 @@ The physics layers this GridMap detects collisions in. See `Collision layers and
 +----------+-------------------------+
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
+
+----
+
+.. _class_GridMap_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+The navigation layers the GridMap generates its navigation regions in.
 
 ----
 

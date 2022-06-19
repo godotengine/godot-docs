@@ -16,7 +16,7 @@ Class that has everything pertaining to a world.
 Description
 -----------
 
-Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
+Class that has everything pertaining to a world. A physics space, a visual scenario, a navigation map and a sound space. Spatial nodes register their resources into the current world.
 
 Tutorials
 ---------
@@ -32,6 +32,8 @@ Properties
 | :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_property_environment>`                   |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
 | :ref:`Environment<class_Environment>`                         | :ref:`fallback_environment<class_World_property_fallback_environment>` |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`navigation_map<class_World_property_navigation_map>`             |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                         | :ref:`scenario<class_World_property_scenario>`                         |
 +---------------------------------------------------------------+------------------------------------------------------------------------+
@@ -77,7 +79,19 @@ The World's :ref:`Environment<class_Environment>`.
 | *Getter* | get_fallback_environment()      |
 +----------+---------------------------------+
 
-The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
+The World's fallback environment will be used if :ref:`environment<class_World_property_environment>` fails or is missing.
+
+----
+
+.. _class_World_property_navigation_map:
+
+- :ref:`RID<class_RID>` **navigation_map**
+
++----------+----------------------+
+| *Getter* | get_navigation_map() |
++----------+----------------------+
+
+The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`NavigationServer<class_NavigationServer>`.
 
 ----
 

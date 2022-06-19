@@ -256,6 +256,8 @@ Rotation part of the local transformation in degrees, specified in terms of YXZ-
 
 Scale part of the local transformation.
 
+\ **Note:** Mixed negative scales in 3D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, the scale values will either be all positive or all negative.
+
 ----
 
 .. _class_Spatial_property_transform:

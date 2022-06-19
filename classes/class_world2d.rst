@@ -16,7 +16,7 @@ Class that has everything pertaining to a 2D world.
 Description
 -----------
 
-Class that has everything pertaining to a 2D world. A physics space, a visual scenario and a sound space. 2D nodes register their resources into the current 2D world.
+Class that has everything pertaining to a 2D world. A physics space, a visual scenario, a navigation map and a sound space. 2D nodes register their resources into the current 2D world.
 
 Tutorials
 ---------
@@ -30,6 +30,8 @@ Properties
 | :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_property_canvas>`                         |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
++-------------------------------------------------------------------+----------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                             | :ref:`navigation_map<class_World2D_property_navigation_map>`         |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_property_space>`                           |
 +-------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -58,6 +60,18 @@ The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`Vis
 +----------+--------------------------+
 
 Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to ``_physics_process(delta)`` in the main thread.
+
+----
+
+.. _class_World2D_property_navigation_map:
+
+- :ref:`RID<class_RID>` **navigation_map**
+
++----------+----------------------+
+| *Getter* | get_navigation_map() |
++----------+----------------------+
+
+The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`Navigation2DServer<class_Navigation2DServer>`.
 
 ----
 

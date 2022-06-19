@@ -495,7 +495,7 @@ Returns the result of ``value`` decreased by ``step`` \* ``amount``.
 
 - :ref:`bool<class_bool>` **deep_equal** **(** :ref:`Variant<class_Variant>` a, :ref:`Variant<class_Variant>` b **)**
 
-Compares two values by checking their actual contents, recursing into any `Array` or `Dictionary` up to its deepest level.
+Compares two values by checking their actual contents, recursing into any :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` up to its deepest level.
 
 This compares to ``==`` in a number of ways:
 

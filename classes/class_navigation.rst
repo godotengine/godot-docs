@@ -27,11 +27,13 @@ Properties
 ----------
 
 +-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`cell_height<class_Navigation_property_cell_height>`                       | ``0.2``                |
+| :ref:`float<class_float>`     | :ref:`cell_height<class_Navigation_property_cell_height>`                       | ``0.25``               |
 +-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`cell_size<class_Navigation_property_cell_size>`                           | ``0.3``                |
+| :ref:`float<class_float>`     | :ref:`cell_size<class_Navigation_property_cell_size>`                           | ``0.25``               |
 +-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`edge_connection_margin<class_Navigation_property_edge_connection_margin>` | ``5.0``                |
+| :ref:`float<class_float>`     | :ref:`edge_connection_margin<class_Navigation_property_edge_connection_margin>` | ``0.25``               |
++-------------------------------+---------------------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`         | :ref:`navigation_layers<class_Navigation_property_navigation_layers>`           | ``1``                  |
 +-------------------------------+---------------------------------------------------------------------------------+------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>`                           | ``Vector3( 0, 1, 0 )`` |
 +-------------------------------+---------------------------------------------------------------------------------+------------------------+
@@ -53,6 +55,15 @@ Methods
 | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_simple_path<class_Navigation_method_get_simple_path>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|                                 |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_Navigation_signal_map_changed:
+
+- **map_changed** **(** :ref:`RID<class_RID>` map **)**
+
+Emitted when a navigation map is updated, when a region moves or is modified.
+
 Property Descriptions
 ---------------------
 
@@ -61,7 +72,7 @@ Property Descriptions
 - :ref:`float<class_float>` **cell_height**
 
 +-----------+------------------------+
-| *Default* | ``0.2``                |
+| *Default* | ``0.25``               |
 +-----------+------------------------+
 | *Setter*  | set_cell_height(value) |
 +-----------+------------------------+
@@ -77,7 +88,7 @@ The cell height to use for fields.
 - :ref:`float<class_float>` **cell_size**
 
 +-----------+----------------------+
-| *Default* | ``0.3``              |
+| *Default* | ``0.25``             |
 +-----------+----------------------+
 | *Setter*  | set_cell_size(value) |
 +-----------+----------------------+
@@ -93,7 +104,7 @@ The XZ plane cell size to use for fields.
 - :ref:`float<class_float>` **edge_connection_margin**
 
 +-----------+-----------------------------------+
-| *Default* | ``5.0``                           |
+| *Default* | ``0.25``                          |
 +-----------+-----------------------------------+
 | *Setter*  | set_edge_connection_margin(value) |
 +-----------+-----------------------------------+
@@ -101,6 +112,22 @@ The XZ plane cell size to use for fields.
 +-----------+-----------------------------------+
 
 This value is used to detect the near edges to connect compatible regions.
+
+----
+
+.. _class_Navigation_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation map layers the navigation can use on a :ref:`get_simple_path<class_Navigation_method_get_simple_path>` path query.
 
 ----
 
@@ -157,7 +184,7 @@ Returns the navigation point closest to the given line segment. When enabling ``
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
-Returns the object's :ref:`RID<class_RID>`.
+Returns the :ref:`RID<class_RID>` of the navigation map on the :ref:`NavigationServer<class_NavigationServer>`.
 
 ----
 

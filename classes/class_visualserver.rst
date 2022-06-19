@@ -1669,6 +1669,8 @@ enum **CanvasOccluderPolygonCullMode**:
 
 .. _class_VisualServer_constant_INFO_SHADER_CHANGES_IN_FRAME:
 
+.. _class_VisualServer_constant_INFO_SHADER_COMPILES_IN_FRAME:
+
 .. _class_VisualServer_constant_INFO_SURFACE_CHANGES_IN_FRAME:
 
 .. _class_VisualServer_constant_INFO_DRAW_CALLS_IN_FRAME:
@@ -1695,21 +1697,29 @@ enum **RenderInfo**:
 
 - **INFO_SHADER_CHANGES_IN_FRAME** = **3** --- The amount of shader rebinds in the frame.
 
-- **INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- The amount of surface changes in the frame.
+- **INFO_SHADER_COMPILES_IN_FRAME** = **4** --- The peak amount of shaders that have been under compilation in the frame.
 
-- **INFO_DRAW_CALLS_IN_FRAME** = **5** --- The amount of draw calls in frame.
+This is useful to know when asynchronous shader compilation has finished for the current shaders on screen.
 
-- **INFO_2D_ITEMS_IN_FRAME** = **6** --- The amount of 2d items in the frame.
+\ **Note:** For complete certainty, only assume there are no outstanding compilations when this value is zero for at least two frames in a row.
 
-- **INFO_2D_DRAW_CALLS_IN_FRAME** = **7** --- The amount of 2d draw calls in frame.
+Unimplemented in the GLES2 rendering backend, always returns 0.
 
-- **INFO_USAGE_VIDEO_MEM_TOTAL** = **8** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+- **INFO_SURFACE_CHANGES_IN_FRAME** = **5** --- The amount of surface changes in the frame.
 
-- **INFO_VIDEO_MEM_USED** = **9** --- The amount of video memory used, i.e. texture and vertex memory combined.
+- **INFO_DRAW_CALLS_IN_FRAME** = **6** --- The amount of draw calls in frame.
 
-- **INFO_TEXTURE_MEM_USED** = **10** --- The amount of texture memory used.
+- **INFO_2D_ITEMS_IN_FRAME** = **7** --- The amount of 2d items in the frame.
 
-- **INFO_VERTEX_MEM_USED** = **11** --- The amount of vertex memory used.
+- **INFO_2D_DRAW_CALLS_IN_FRAME** = **8** --- The amount of 2d draw calls in frame.
+
+- **INFO_USAGE_VIDEO_MEM_TOTAL** = **9** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+
+- **INFO_VIDEO_MEM_USED** = **10** --- The amount of video memory used, i.e. texture and vertex memory combined.
+
+- **INFO_TEXTURE_MEM_USED** = **11** --- The amount of texture memory used.
+
+- **INFO_VERTEX_MEM_USED** = **12** --- The amount of vertex memory used.
 
 ----
 

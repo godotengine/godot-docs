@@ -16,7 +16,9 @@ NavigationAgent2D
 Description
 -----------
 
-2D agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO (Reciprocal Velocity Obstacles) collision avoidance. The agent needs navigation data to work correctly. This can be done by having the agent as a child of a :ref:`Navigation2D<class_Navigation2D>` node, or using :ref:`set_navigation<class_NavigationAgent2D_method_set_navigation>`. ``NavigationAgent2D`` is physics safe.
+2D agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO (Reciprocal Velocity Obstacles) collision avoidance. The agent needs navigation data to work correctly. By default this node will register to the default :ref:`World2D<class_World2D>` navigation map. If this node is a child of a :ref:`Navigation2D<class_Navigation2D>` node it will register to the navigation map of the navigation node or the function :ref:`set_navigation<class_NavigationAgent2D_method_set_navigation>` can be used to set the navigation node directly. ``NavigationAgent2D`` is physics safe.
+
+\ **Note:** After :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` is used it is required to use the :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
 Properties
 ----------
@@ -27,6 +29,8 @@ Properties
 | :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``    |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0`` |
++---------------------------+------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`     | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`             | ``1``     |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent2D_property_neighbor_dist>`                     | ``500.0`` |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
@@ -53,6 +57,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                         | :ref:`get_navigation<class_NavigationAgent2D_method_get_navigation>` **(** **)** |const|                                          |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`get_navigation_map<class_NavigationAgent2D_method_get_navigation_map>` **(** **)** |const|                                  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                   | :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` **(** **)**                                            |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`get_rid<class_NavigationAgent2D_method_get_rid>` **(** **)** |const|                                                        |
@@ -66,6 +72,8 @@ Methods
 | :ref:`bool<class_bool>`                         | :ref:`is_target_reached<class_NavigationAgent2D_method_is_target_reached>` **(** **)** |const|                                    |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_navigation<class_NavigationAgent2D_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)**               |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_navigation_map<class_NavigationAgent2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**     |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` **(** :ref:`Vector2<class_Vector2>` location **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -153,6 +161,22 @@ The maximum number of neighbors for the agent to consider.
 +-----------+----------------------+
 
 The maximum speed that an agent can move.
+
+----
+
+.. _class_NavigationAgent2D_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation map layers the ``NavigationAgent2D`` belongs to. On path requests the agent will ignore navmeshes without at least one matching layer.
 
 ----
 
@@ -257,7 +281,7 @@ Returns the reachable final location in global coordinates. This can change if t
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_nav_path** **(** **)** |const|
 
-Returns the path from start to finish in global coordinates.
+Returns this agent's current path from start to finish in global coordinates. The path only updates when the target location is changed or the agent requires a repath. The path array is not intended to be used in direct path movement as the agent has its own internal path logic that would get corrupted by changing the path array manually. Use the intended :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` once every physics frame to receive the next path point for the agents movement as this function also updates the internal path logic.
 
 ----
 
@@ -277,11 +301,19 @@ Returns the :ref:`Navigation2D<class_Navigation2D>` node that the agent is using
 
 ----
 
+.. _class_NavigationAgent2D_method_get_navigation_map:
+
+- :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationAgent node. This function returns always the map set on the NavigationAgent node and not the map of the abstract agent on the NavigationServer. If the agent map is changed directly with the NavigationServer API the NavigationAgent node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationAgent2D_method_set_navigation_map>` to change the navigation map for the NavigationAgent and also update the agent on the NavigationServer.
+
+----
+
 .. _class_NavigationAgent2D_method_get_next_location:
 
 - :ref:`Vector2<class_Vector2>` **get_next_location** **(** **)**
 
-Returns a :ref:`Vector2<class_Vector2>` in global coordinates, that can be moved to, making sure that there are no static objects in the way. If the agent does not have a navigation path, it will return the position of the agent's parent.
+Returns the next location in global coordinates that can be moved to, making sure that there are no static objects in the way. If the agent does not have a navigation path, it will return the position of the agent's parent. The use of this function once every physics frame is required to update the internal path logic of the NavigationAgent.
 
 ----
 
@@ -330,6 +362,14 @@ Returns ``true`` if the target location is reached. The target location is set u
 - void **set_navigation** **(** :ref:`Node<class_Node>` navigation **)**
 
 Sets the :ref:`Navigation2D<class_Navigation2D>` node used by the agent. Useful when you don't want to make the agent a child of a :ref:`Navigation2D<class_Navigation2D>` node.
+
+----
+
+.. _class_NavigationAgent2D_method_set_navigation_map:
+
+- void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+
+Sets the :ref:`RID<class_RID>` of the navigation map this NavigationAgent node should use and also updates the ``agent`` on the NavigationServer.
 
 ----
 

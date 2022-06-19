@@ -16,7 +16,7 @@ Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D.
 Description
 -----------
 
-Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. Can be constructed from an existing :ref:`Sprite<class_Sprite>` via a tool in the editor toolbar. Select "Sprite" then "Convert to Mesh2D", select settings in popup and press "Create Mesh2D".
+Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. A ``MeshInstance2D`` can be automatically created from an existing :ref:`Sprite<class_Sprite>` via a tool in the editor toolbar. Select the :ref:`Sprite<class_Sprite>` node, then choose **Sprite > Convert to MeshInstance2D** at the top of the 2D editor viewport.
 
 Tutorials
 ---------

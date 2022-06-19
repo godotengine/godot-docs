@@ -31,6 +31,8 @@ Properties
 +---------------------------+-----------------------------------------------------------------------------------+---------+
 | :ref:`float<class_float>` | :ref:`edge_connection_margin<class_Navigation2D_property_edge_connection_margin>` | ``1.0`` |
 +---------------------------+-----------------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`     | :ref:`navigation_layers<class_Navigation2D_property_navigation_layers>`           | ``1``   |
++---------------------------+-----------------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -77,6 +79,22 @@ The XY plane cell size to use for fields.
 +-----------+-----------------------------------+
 
 This value is used to detect the near edges to connect compatible regions.
+
+----
+
+.. _class_Navigation2D_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation map layers the navigation can use on a :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` path query.
 
 Method Descriptions
 -------------------

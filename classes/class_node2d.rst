@@ -218,6 +218,8 @@ Rotation in degrees, relative to the node's parent.
 
 The node's scale. Unscaled value: ``(1, 1)``.
 
+\ **Note:** Negative X scales in 2D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, negative scales on the X axis will be changed to negative scales on the Y axis and a rotation of 180 degrees when decomposed.
+
 ----
 
 .. _class_Node2D_property_transform:

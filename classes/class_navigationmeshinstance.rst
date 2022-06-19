@@ -16,16 +16,34 @@ An instance of a :ref:`NavigationMesh<class_NavigationMesh>`.
 Description
 -----------
 
-An instance of a :ref:`NavigationMesh<class_NavigationMesh>`. It tells the :ref:`Navigation<class_Navigation>` node what can be navigated and what cannot, based on the :ref:`NavigationMesh<class_NavigationMesh>` resource. This should be a child of a :ref:`Navigation<class_Navigation>` node.
+An instance of a :ref:`NavigationMesh<class_NavigationMesh>`. It tells the :ref:`Navigation<class_Navigation>` node what can be navigated and what cannot, based on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+
+By default this node will register to the default :ref:`World<class_World>` navigation map. If this node is a child of a :ref:`Navigation<class_Navigation>` node it will register to the navigation map of the navigation node.
+
+Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer.map_set_edge_connection_margin<class_NavigationServer_method_map_set_edge_connection_margin>`.
+
+\ **Note:** Overlapping two regions' navmeshes is not enough for connecting two regions. They must share a similar edge.
+
+The cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationMeshInstance_property_enter_cost>` value.
+
+\ **Note**: This value is not added to the path cost when the start position is already inside this region.
+
+The cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationMeshInstance_property_travel_cost>` multiplier.
 
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` | ``true`` |
-+---------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |          |
-+---------------------------------------------+---------------------------------------------------------------+----------+
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>`                     | ``true`` |
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationMeshInstance_property_enter_cost>`               | ``0.0``  |
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationMeshInstance_property_navigation_layers>` | ``1``    |
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>`                     |          |
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationMeshInstance_property_travel_cost>`             | ``1.0``  |
++---------------------------------------------+-----------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -72,6 +90,38 @@ Determines if the ``NavigationMeshInstance`` is enabled or disabled.
 
 ----
 
+.. _class_NavigationMeshInstance_property_enter_cost:
+
+- :ref:`float<class_float>` **enter_cost**
+
++-----------+-----------------------+
+| *Default* | ``0.0``               |
++-----------+-----------------------+
+| *Setter*  | set_enter_cost(value) |
++-----------+-----------------------+
+| *Getter*  | get_enter_cost()      |
++-----------+-----------------------+
+
+When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+----
+
+.. _class_NavigationMeshInstance_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation map layers the :ref:`NavigationMesh<class_NavigationMesh>` belongs to. On path requests with :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` navmeshes without matching layers will be ignored and the navigation map will only proximity merge different navmeshes with matching layers.
+
+----
+
 .. _class_NavigationMeshInstance_property_navmesh:
 
 - :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
@@ -83,6 +133,22 @@ Determines if the ``NavigationMeshInstance`` is enabled or disabled.
 +----------+----------------------------+
 
 The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
+
+----
+
+.. _class_NavigationMeshInstance_property_travel_cost:
+
+- :ref:`float<class_float>` **travel_cost**
+
++-----------+------------------------+
+| *Default* | ``1.0``                |
++-----------+------------------------+
+| *Setter*  | set_travel_cost(value) |
++-----------+------------------------+
+| *Getter*  | get_travel_cost()      |
++-----------+------------------------+
+
+When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
 
 Method Descriptions
 -------------------

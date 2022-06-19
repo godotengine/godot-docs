@@ -27,9 +27,11 @@ If you want nodes to be disabled automatically when they exit the screen, use :r
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------+---------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibilityNotifier_property_aabb>` | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
-+-------------------------+-----------------------------------------------------+---------------------------------+
++---------------------------+---------------------------------------------------------------------+---------------------------------+
+| :ref:`AABB<class_AABB>`   | :ref:`aabb<class_VisibilityNotifier_property_aabb>`                 | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
++---------------------------+---------------------------------------------------------------------+---------------------------------+
+| :ref:`float<class_float>` | :ref:`max_distance<class_VisibilityNotifier_property_max_distance>` | ``0.0``                         |
++---------------------------+---------------------------------------------------------------------+---------------------------------+
 
 Methods
 -------
@@ -87,6 +89,24 @@ Property Descriptions
 +-----------+---------------------------------+
 
 The VisibilityNotifier's bounding box.
+
+----
+
+.. _class_VisibilityNotifier_property_max_distance:
+
+- :ref:`float<class_float>` **max_distance**
+
++-----------+-------------------------+
+| *Default* | ``0.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_max_distance(value) |
++-----------+-------------------------+
+| *Getter*  | get_max_distance()      |
++-----------+-------------------------+
+
+In addition to checking whether a node is on screen or within a :ref:`Camera<class_Camera>`'s view, VisibilityNotifier can also optionally check whether a node is within a specified maximum distance when using a :ref:`Camera<class_Camera>` with perspective projection. This is useful for throttling the performance requirements of nodes that are far away.
+
+\ **Note:** This feature will be disabled if set to 0.0.
 
 Method Descriptions
 -------------------

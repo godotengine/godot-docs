@@ -27,7 +27,7 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
         yield(get_tree().create_timer(1.0), "timeout")
         print("Timer ended.")
 
-The timer will be automatically freed after its time elapses, so be aware that any reference you might have kept to it will become invalid.
+The timer will be dereferenced after its time elapses. To preserve the timer, you can keep a reference to it. See :ref:`Reference<class_Reference>`.
 
 Properties
 ----------
