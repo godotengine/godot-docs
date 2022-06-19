@@ -1158,11 +1158,13 @@ Converts an angle expressed in radians to degrees.
 
 - :ref:`float<class_float>` **rand_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
-Random range, any floating point value between ``from`` and ``to``.
+Returns a random floating point value between ``from`` and ``to`` (both endpoints inclusive).
 
 ::
 
     prints(rand_range(0, 1), rand_range(0, 1)) # Prints e.g. 0.135591 0.405263
+
+**Note:** This is equivalent to ``randf() * (to - from) + from``.
 
 ----
 

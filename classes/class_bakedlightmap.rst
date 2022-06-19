@@ -481,7 +481,7 @@ The calculated light data.
 | *Getter*  | get_bake_quality()      |
 +-----------+-------------------------+
 
-Determines the amount of samples per texel used in indrect light baking. The amount of samples for each quality level can be configured in the project settings.
+Determines the amount of samples per texel used in indirect light baking. The amount of samples for each quality level can be configured in the project settings.
 
 ----
 

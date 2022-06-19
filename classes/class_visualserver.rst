@@ -3678,7 +3678,7 @@ Returns the value of a certain material's parameter.
 
 - :ref:`Variant<class_Variant>` **material_get_param_default** **(** :ref:`RID<class_RID>` material, :ref:`String<class_String>` parameter **)** |const|
 
-Returns the default value for the param if available. Otherwise returns an empty :ref:`Variant<class_Variant>`.
+Returns the default value for the param if available. Returns ``null`` otherwise.
 
 ----
 

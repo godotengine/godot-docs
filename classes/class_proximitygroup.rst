@@ -49,7 +49,6 @@ There are 3 caveats to keep in mind when using ``ProximityGroup``:
 
 - If your :ref:`grid_radius<class_ProximityGroup_property_grid_radius>` is smaller than ``Vector3(1, 1, 1)``, it will be rounded up to ``Vector3(1, 1, 1)``. Therefore, small grid radius values may lead to unwanted groupings.
 
-
 **Note:** ``ProximityGroup`` will be removed in Godot 4.0 in favor of more effective and faster :ref:`VisibilityNotifier<class_VisibilityNotifier>` functionality. For most use cases, :ref:`Vector3.distance_to<class_Vector3_method_distance_to>` or :ref:`Vector3.distance_squared_to<class_Vector3_method_distance_squared_to>` are fast enough too, especially if you call them less often using a :ref:`Timer<class_Timer>` node.
 
 Properties

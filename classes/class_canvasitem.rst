@@ -400,7 +400,7 @@ Draws a string character using a custom font. Returns the advance, depending on 
 
 - void **draw_circle** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
-Draws a colored, unfilled circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws a colored, filled circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 **Note:** Built-in antialiasing is not provided for :ref:`draw_circle<class_CanvasItem_method_draw_circle>`. As a workaround, install the `Antialiased Line2D <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__ add-on then create an AntialiasedRegularPolygon2D node. That node relies on a texture with custom mipmaps to perform antialiasing.
 
