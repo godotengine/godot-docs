@@ -53,7 +53,7 @@ This example will show you how to create a WebSocket connection to a remote serv
         _client.connect("data_received", self, "_on_data")
 
         # Initiate connection to the given URL.
-        var err = _client.connect_to_url(websocket_url)
+        var err = _client.connect_to_url(websocket_url, ["lws-mirror-protocol"])
         if err != OK:
             print("Unable to connect")
             set_process(false)
