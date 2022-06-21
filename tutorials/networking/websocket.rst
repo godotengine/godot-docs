@@ -37,7 +37,7 @@ This example will show you how to create a WebSocket connection to a remote serv
     extends Node
 
     # The URL we will connect to
-    export var websocket_url = "ws://echo.websocket.org"
+    export var websocket_url = ""wss://libwebsockets.org""
 
     # Our WebSocketClient instance
     var _client = WebSocketClient.new()
