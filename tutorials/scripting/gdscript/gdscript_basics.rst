@@ -265,7 +265,12 @@ The following is the list of supported operators and their precedence.
 +------------------------------------------------------------------------+-----------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                | Comparisons                             |
 +------------------------------------------------------------------------+-----------------------------------------+
-| ``in``                                                                 | Content test                            |
+| ``in``                                                                 | When used with the ``if`` keyword it    |
+|                                                                        | checks if a value is within a string,   |
+|                                                                        | list, range, dictionary, or node. When  |
+|                                                                        | used with the ``for`` keyword it is used|
+|                                                                        | to iterate though the contents of a     |
+|                                                                        | string, list, range, dictionary or node.|
 +------------------------------------------------------------------------+-----------------------------------------+
 | ``!`` ``not``                                                          | Boolean NOT                             |
 +------------------------------------------------------------------------+-----------------------------------------+
@@ -857,6 +862,16 @@ multiple lines to preserve readability::
             else "banana" if count == 0 \
             else "orange"
     print(fruit_alt)  # banana
+
+You may also wish to check if a value is contained within something. You can
+use an ``if`` statement combined with the ``in`` operator to accomplish this::
+
+    # Check if a letter is in a string.
+    var text = "abc"
+    if 'b' in text: print("The string contains b")
+
+    # Check if a variable is contained within a node.
+    if "varName" in get_parent(): print("varName is defined in parent!")
 
 while
 ^^^^^
