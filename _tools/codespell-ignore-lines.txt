@@ -1,1 +1,13 @@
-| te           | Telugu                             |
+| ba            | Bashkir                       |
+| dum           | Middle Dutch                  |
+| fo            | Faroese                       |
+| fro           | Old French                    |
+| mye           | Myene                         |
+| nd            | North Ndebele                 |
+| seh           | Sena                          |
+| te            | Telugu                        |
+| tem           | Timne                         |
+| Beng        | Bengali                     |
+| Maka        | Makasar                     |
+| BA           | Bosnia and Herzegovina                     |
+| FO           | Faroe Islands                              |
