@@ -38,57 +38,57 @@ Tutorials
 Properties
 ----------
 
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>`                           | :ref:`autowrap_mode<class_RichTextLabel_property_autowrap_mode>`                                                 | ``3``                                                                     |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                                               | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | clip_contents                                                                                                    | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`context_menu_enabled<class_RichTextLabel_property_context_menu_enabled>`                                   | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                                      | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                                               | ``[]``                                                                    |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`deselect_on_focus_loss_enabled<class_RichTextLabel_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                                       | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`hint_underlined<class_RichTextLabel_property_hint_underlined>`                                             | ``true``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                    | :ref:`language<class_RichTextLabel_property_language>`                                                           | ``""``                                                                    |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                                             | ``true``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>`                   | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                      | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                                             | ``1.0``                                                                   |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                          | :ref:`progress_bar_delay<class_RichTextLabel_property_progress_bar_delay>`                                       | ``1000``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                                 | ``true``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                                           | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                                         | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`shortcut_keys_enabled<class_RichTextLabel_property_shortcut_keys_enabled>`                                 | ``true``                                                                  |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`              | :ref:`structured_text_bidi_override<class_RichTextLabel_property_structured_text_bidi_override>`                 | ``0``                                                                     |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                                      | :ref:`structured_text_bidi_override_options<class_RichTextLabel_property_structured_text_bidi_override_options>` | ``[]``                                                                    |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                          | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                                           | ``4``                                                                     |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                    | :ref:`text<class_RichTextLabel_property_text>`                                                                   | ``""``                                                                    |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`TextDirection<enum_Control_TextDirection>`                               | :ref:`text_direction<class_RichTextLabel_property_text_direction>`                                               | ``0``                                                                     |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`threaded<class_RichTextLabel_property_threaded>`                                                           | ``false``                                                                 |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                          | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                                       | ``-1``                                                                    |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`VisibleCharactersBehavior<enum_RichTextLabel_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_RichTextLabel_property_visible_characters_behavior>`                     | ``0``                                                                     |
-+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                           | :ref:`autowrap_mode<class_RichTextLabel_property_autowrap_mode>`                                                 | ``3``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>`                                               | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | clip_contents                                                                                                    | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`context_menu_enabled<class_RichTextLabel_property_context_menu_enabled>`                                   | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                                                   | :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`                                               | ``[]``                                                                    |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`deselect_on_focus_loss_enabled<class_RichTextLabel_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                                       | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`hint_underlined<class_RichTextLabel_property_hint_underlined>`                                             | ``true``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                                 | :ref:`language<class_RichTextLabel_property_language>`                                                           | ``""``                                                                    |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                                             | ``true``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>`                   | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                                             | ``1.0``                                                                   |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                       | :ref:`progress_bar_delay<class_RichTextLabel_property_progress_bar_delay>`                                       | ``1000``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                                 | ``true``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`scroll_following<class_RichTextLabel_property_scroll_following>`                                           | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>`                                         | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`shortcut_keys_enabled<class_RichTextLabel_property_shortcut_keys_enabled>`                                 | ``true``                                                                  |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_RichTextLabel_property_structured_text_bidi_override>`                 | ``0``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_RichTextLabel_property_structured_text_bidi_override_options>` | ``[]``                                                                    |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                       | :ref:`tab_size<class_RichTextLabel_property_tab_size>`                                                           | ``4``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                                 | :ref:`text<class_RichTextLabel_property_text>`                                                                   | ``""``                                                                    |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`TextDirection<enum_Control_TextDirection>`                            | :ref:`text_direction<class_RichTextLabel_property_text_direction>`                                               | ``0``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                                     | :ref:`threaded<class_RichTextLabel_property_threaded>`                                                           | ``false``                                                                 |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                                       | ``-1``                                                                    |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_RichTextLabel_property_visible_characters_behavior>`                     | ``0``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Methods
 -------
@@ -312,28 +312,6 @@ Triggers when the mouse enters a meta tag.
 Enumerations
 ------------
 
-.. _enum_RichTextLabel_AutowrapMode:
-
-.. _class_RichTextLabel_constant_AUTOWRAP_OFF:
-
-.. _class_RichTextLabel_constant_AUTOWRAP_ARBITRARY:
-
-.. _class_RichTextLabel_constant_AUTOWRAP_WORD:
-
-.. _class_RichTextLabel_constant_AUTOWRAP_WORD_SMART:
-
-enum **AutowrapMode**:
-
-- **AUTOWRAP_OFF** = **0** --- Autowrap is disabled.
-
-- **AUTOWRAP_ARBITRARY** = **1** --- Wraps the text inside the node's bounding rectangle by allowing to break lines at arbitrary positions, which is useful when very limited space is available.
-
-- **AUTOWRAP_WORD** = **2** --- Wraps the text inside the node's bounding rectangle by soft-breaking between words.
-
-- **AUTOWRAP_WORD_SMART** = **3** --- Behaves similarly to :ref:`AUTOWRAP_WORD<class_RichTextLabel_constant_AUTOWRAP_WORD>`, but force-breaks a word if that single word does not fit in one line.
-
-----
-
 .. _enum_RichTextLabel_ListType:
 
 .. _class_RichTextLabel_constant_LIST_NUMBERS:
@@ -468,38 +446,12 @@ enum **ItemType**:
 
 - **ITEM_CUSTOMFX** = **26**
 
-----
-
-.. _enum_RichTextLabel_VisibleCharactersBehavior:
-
-.. _class_RichTextLabel_constant_VC_CHARS_BEFORE_SHAPING:
-
-.. _class_RichTextLabel_constant_VC_CHARS_AFTER_SHAPING:
-
-.. _class_RichTextLabel_constant_VC_GLYPHS_AUTO:
-
-.. _class_RichTextLabel_constant_VC_GLYPHS_LTR:
-
-.. _class_RichTextLabel_constant_VC_GLYPHS_RTL:
-
-enum **VisibleCharactersBehavior**:
-
-- **VC_CHARS_BEFORE_SHAPING** = **0** --- Trims text before the shaping. e.g, increasing :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` value is visually identical to typing the text.
-
-- **VC_CHARS_AFTER_SHAPING** = **1** --- Displays glyphs that are mapped to the first :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` characters from the beginning of the text.
-
-- **VC_GLYPHS_AUTO** = **2** --- Displays :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the left or from the right, depending on :ref:`Control.layout_direction<class_Control_property_layout_direction>` value.
-
-- **VC_GLYPHS_LTR** = **3** --- Displays :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the left.
-
-- **VC_GLYPHS_RTL** = **4** --- Displays :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the right.
-
 Property Descriptions
 ---------------------
 
 .. _class_RichTextLabel_property_autowrap_mode:
 
-- :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>` **autowrap_mode**
+- :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode**
 
 +-----------+--------------------------+
 | *Default* | ``3``                    |
@@ -509,7 +461,7 @@ Property Descriptions
 | *Getter*  | get_autowrap_mode()      |
 +-----------+--------------------------+
 
-If set to something other than :ref:`AUTOWRAP_OFF<class_RichTextLabel_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. To see how each mode behaves, see :ref:`AutowrapMode<enum_RichTextLabel_AutowrapMode>`.
+If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
 
 ----
 
@@ -879,7 +831,7 @@ The restricted number of characters to display in the label. If ``-1``, all char
 
 .. _class_RichTextLabel_property_visible_characters_behavior:
 
-- :ref:`VisibleCharactersBehavior<enum_RichTextLabel_VisibleCharactersBehavior>` **visible_characters_behavior**
+- :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **visible_characters_behavior**
 
 +-----------+----------------------------------------+
 | *Default* | ``0``                                  |
@@ -889,7 +841,7 @@ The restricted number of characters to display in the label. If ``-1``, all char
 | *Getter*  | get_visible_characters_behavior()      |
 +-----------+----------------------------------------+
 
-Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` is set. See :ref:`VisibleCharactersBehavior<enum_RichTextLabel_VisibleCharactersBehavior>` for more info.
+Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
 
 Method Descriptions
 -------------------

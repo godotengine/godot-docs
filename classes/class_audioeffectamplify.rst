@@ -13,12 +13,15 @@ AudioEffectAmplify
 
 Adds an amplifying audio effect to an audio bus.
 
-Increases or decreases the volume of the selected audio bus.
-
 Description
 -----------
 
 Increases or decreases the volume being routed through the audio bus.
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 Properties
 ----------

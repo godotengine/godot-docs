@@ -86,11 +86,11 @@ Methods
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>`       | :ref:`get_custom_format<class_SurfaceTool_method_get_custom_format>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                                                                                                                                                                                                                         |
+| :ref:`AABB<class_AABB>`                                  | :ref:`get_aabb<class_SurfaceTool_method_get_aabb>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                | :ref:`get_max_axis_length<class_SurfaceTool_method_get_max_axis_length>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>`       | :ref:`get_custom_format<class_SurfaceTool_method_get_custom_format>` **(** :ref:`int<class_int>` channel_index **)** |const|                                                                                                                                                                                                                                                                                                                                                                                 |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`            | :ref:`get_primitive<class_SurfaceTool_method_get_primitive>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`            | :ref:`get_primitive_type<class_SurfaceTool_method_get_primitive_type>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>` | :ref:`get_skin_weight_count<class_SurfaceTool_method_get_skin_weight_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,9 +102,9 @@ Methods
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`set_color<class_SurfaceTool_method_set_color>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                     | :ref:`set_custom<class_SurfaceTool_method_set_custom>` **(** :ref:`int<class_int>` index, :ref:`Color<class_Color>` custom **)**                                                                                                                                                                                                                                                                                                                                                                             |
+| void                                                     | :ref:`set_custom<class_SurfaceTool_method_set_custom>` **(** :ref:`int<class_int>` channel_index, :ref:`Color<class_Color>` custom_color **)**                                                                                                                                                                                                                                                                                                                                                               |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                     | :ref:`set_custom_format<class_SurfaceTool_method_set_custom_format>` **(** :ref:`int<class_int>` index, :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` format **)**                                                                                                                                                                                                                                                                                                                                      |
+| void                                                     | :ref:`set_custom_format<class_SurfaceTool_method_set_custom_format>` **(** :ref:`int<class_int>` channel_index, :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` format **)**                                                                                                                                                                                                                                                                                                                              |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                     | :ref:`set_material<class_SurfaceTool_method_set_material>` **(** :ref:`Material<class_Material>` material **)**                                                                                                                                                                                                                                                                                                                                                                                              |
 +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,23 +148,23 @@ Enumerations
 
 enum **CustomFormat**:
 
-- **CUSTOM_RGBA8_UNORM** = **0**
+- **CUSTOM_RGBA8_UNORM** = **0** --- Limits range of data passed to `set_custom` to unsigned normalized 0 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`.
 
-- **CUSTOM_RGBA8_SNORM** = **1**
+- **CUSTOM_RGBA8_SNORM** = **1** --- Limits range of data passed to `set_custom` to signed normalized -1 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_SNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_SNORM>`.
 
-- **CUSTOM_RG_HALF** = **2**
+- **CUSTOM_RG_HALF** = **2** --- Stores data passed to `set_custom` as half precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>`.
 
-- **CUSTOM_RGBA_HALF** = **3**
+- **CUSTOM_RGBA_HALF** = **3** --- Stores data passed to `set_custom` as half precision floats and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`.
 
-- **CUSTOM_R_FLOAT** = **4**
+- **CUSTOM_R_FLOAT** = **4** --- Stores data passed to `set_custom` as full precision floats, and uses only red color channel. See :ref:`Mesh.ARRAY_CUSTOM_R_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_R_FLOAT>`.
 
-- **CUSTOM_RG_FLOAT** = **5**
+- **CUSTOM_RG_FLOAT** = **5** --- Stores data passed to `set_custom` as full precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT>`.
 
-- **CUSTOM_RGB_FLOAT** = **6**
+- **CUSTOM_RGB_FLOAT** = **6** --- Stores data passed to `set_custom` as full precision floats, and uses only red, green and blue color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGB_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGB_FLOAT>`.
 
-- **CUSTOM_RGBA_FLOAT** = **7**
+- **CUSTOM_RGBA_FLOAT** = **7** --- Stores data passed to `set_custom` as full precision floats, and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGBA_FLOAT>`.
 
-- **CUSTOM_MAX** = **8**
+- **CUSTOM_MAX** = **8** --- Used to indicate a disabled custom channel.
 
 ----
 
@@ -176,9 +176,9 @@ enum **CustomFormat**:
 
 enum **SkinWeightCount**:
 
-- **SKIN_4_WEIGHTS** = **0**
+- **SKIN_4_WEIGHTS** = **0** --- Each individual vertex can be influenced by only 4 bone weights.
 
-- **SKIN_8_WEIGHTS** = **1**
+- **SKIN_8_WEIGHTS** = **1** --- Each individual vertex can be influenced by up to 8 bone weights.
 
 Method Descriptions
 -------------------
@@ -187,7 +187,7 @@ Method Descriptions
 
 - void **add_index** **(** :ref:`int<class_int>` index **)**
 
-Adds an index to index array if you are using indexed vertices. Does not need to be called before adding vertices.
+Adds a vertex to index array if you are using indexed vertices. Does not need to be called before adding vertices.
 
 ----
 
@@ -279,6 +279,10 @@ Removes the index array by expanding the vertex array.
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **generate_lod** **(** :ref:`float<class_float>` nd_threshold, :ref:`int<class_int>` target_index_count=3 **)**
 
+Generates a LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
+
+Deprecated. Unused internally and neglects to preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
+
 ----
 
 .. _class_SurfaceTool_method_generate_normals:
@@ -299,27 +303,39 @@ Generates a tangent vector for each vertex. Requires that each vertex have UVs a
 
 ----
 
+.. _class_SurfaceTool_method_get_aabb:
+
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+
+Returns the axis-aligned bounding box of the vertex positions.
+
+----
+
 .. _class_SurfaceTool_method_get_custom_format:
 
-- :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **get_custom_format** **(** :ref:`int<class_int>` index **)** |const|
+- :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **get_custom_format** **(** :ref:`int<class_int>` channel_index **)** |const|
+
+Returns the format for custom ``channel_index`` (currently up to 4). Returns :ref:`CUSTOM_MAX<class_SurfaceTool_constant_CUSTOM_MAX>` if this custom channel is unused.
 
 ----
 
-.. _class_SurfaceTool_method_get_max_axis_length:
+.. _class_SurfaceTool_method_get_primitive_type:
 
-- :ref:`float<class_float>` **get_max_axis_length** **(** **)** |const|
+- :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **get_primitive_type** **(** **)** |const|
 
-----
-
-.. _class_SurfaceTool_method_get_primitive:
-
-- :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **get_primitive** **(** **)** |const|
+Returns the type of mesh geometry, such as :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 ----
 
 .. _class_SurfaceTool_method_get_skin_weight_count:
 
 - :ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>` **get_skin_weight_count** **(** **)** |const|
+
+By default, returns :ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>` to indicate only 4 bone influences per vertex are used.
+
+Returns :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` if up to 8 influences are used.
+
+\ **Note:** This function returns an enum, not the exact number of weights.
 
 ----
 
@@ -334,6 +350,8 @@ Shrinks the vertex array by creating an index array. This can improve performanc
 .. _class_SurfaceTool_method_optimize_indices_for_cache:
 
 - void **optimize_indices_for_cache** **(** **)**
+
+Optimizes triangle sorting for performance. Requires that :ref:`get_primitive_type<class_SurfaceTool_method_get_primitive_type>` is :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 ----
 
@@ -357,13 +375,21 @@ Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every ver
 
 .. _class_SurfaceTool_method_set_custom:
 
-- void **set_custom** **(** :ref:`int<class_int>` index, :ref:`Color<class_Color>` custom **)**
+- void **set_custom** **(** :ref:`int<class_int>` channel_index, :ref:`Color<class_Color>` custom_color **)**
+
+Sets the custom value on this vertex for ``channel_index``.
+
+\ :ref:`set_custom_format<class_SurfaceTool_method_set_custom_format>` must be called first for this ``channel_index``. Formats which are not RGBA will ignore other color channels.
 
 ----
 
 .. _class_SurfaceTool_method_set_custom_format:
 
-- void **set_custom_format** **(** :ref:`int<class_int>` index, :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` format **)**
+- void **set_custom_format** **(** :ref:`int<class_int>` channel_index, :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` format **)**
+
+Sets the color format for this custom ``channel_index``. Use :ref:`CUSTOM_MAX<class_SurfaceTool_constant_CUSTOM_MAX>` to disable.
+
+Must be invoked after :ref:`begin<class_SurfaceTool_method_begin>` and should be set before :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`.
 
 ----
 
@@ -386,6 +412,12 @@ Specifies a normal to use for the *next* vertex. If every vertex needs to have t
 .. _class_SurfaceTool_method_set_skin_weight_count:
 
 - void **set_skin_weight_count** **(** :ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>` count **)**
+
+Set to :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` to indicate that up to 8 bone influences per vertex may be used.
+
+By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>`)
+
+\ **Note:** This function takes an enum, not the exact number of weights.
 
 ----
 

@@ -24,40 +24,42 @@ Item text only supports single-line strings, newline characters (e.g. ``\n``) in
 
 All ``set_*`` methods allow negative item index, which makes the item accessed from the last one.
 
+\ **Incremental search:** Like :ref:`PopupMenu<class_PopupMenu>` and :ref:`Tree<class_Tree>`, ``ItemList`` supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing :ref:`ProjectSettings.gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`.
+
 Properties
 ----------
 
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`               | ``false``                                                                 |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`           | ``false``                                                                 |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`auto_height<class_ItemList_property_auto_height>`                     | ``false``                                                                 |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | clip_contents                                                               | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`       | ``0``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`             | ``Vector2(0, 0)``                                                         |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`                   | focus_mode                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`IconMode<enum_ItemList_IconMode>`                    | :ref:`icon_mode<class_ItemList_property_icon_mode>`                         | ``1``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`icon_scale<class_ItemList_property_icon_scale>`                       | ``1.0``                                                                   |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`item_count<class_ItemList_property_item_count>`                       | ``0``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`max_columns<class_ItemList_property_max_columns>`                     | ``1``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`               | ``1``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`same_column_width<class_ItemList_property_same_column_width>`         | ``false``                                                                 |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`SelectMode<enum_ItemList_SelectMode>`                | :ref:`select_mode<class_ItemList_property_select_mode>`                     | ``0``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>` | :ref:`text_overrun_behavior<class_ItemList_property_text_overrun_behavior>` | ``3``                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`               | ``false``                                                                 |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`           | ``false``                                                                 |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`auto_height<class_ItemList_property_auto_height>`                     | ``false``                                                                 |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | clip_contents                                                               | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`       | ``0``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                           | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`             | ``Vector2(0, 0)``                                                         |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>`                | focus_mode                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`IconMode<enum_ItemList_IconMode>`                 | :ref:`icon_mode<class_ItemList_property_icon_mode>`                         | ``1``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                               | :ref:`icon_scale<class_ItemList_property_icon_scale>`                       | ``1.0``                                                                   |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`item_count<class_ItemList_property_item_count>`                       | ``0``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`max_columns<class_ItemList_property_max_columns>`                     | ``1``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                   | :ref:`max_text_lines<class_ItemList_property_max_text_lines>`               | ``1``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                 | :ref:`same_column_width<class_ItemList_property_same_column_width>`         | ``false``                                                                 |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`SelectMode<enum_ItemList_SelectMode>`             | :ref:`select_mode<class_ItemList_property_select_mode>`                     | ``0``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` | :ref:`text_overrun_behavior<class_ItemList_property_text_overrun_behavior>` | ``3``                                                                     |
++---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Methods
 -------
@@ -478,7 +480,7 @@ Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList
 
 .. _class_ItemList_property_text_overrun_behavior:
 
-- :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>` **text_overrun_behavior**
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior**
 
 +-----------+----------------------------------+
 | *Default* | ``3``                            |
@@ -488,7 +490,7 @@ Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList
 | *Getter*  | get_text_overrun_behavior()      |
 +-----------+----------------------------------+
 
-Sets the clipping behavior when the text exceeds an item's bounding rectangle. See :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>` for a description of all modes.
+Sets the clipping behavior when the text exceeds an item's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
 
 Method Descriptions
 -------------------

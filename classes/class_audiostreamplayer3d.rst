@@ -59,6 +59,8 @@ Properties
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 | :ref:`int<class_int>`                                              | :ref:`max_polyphony<class_AudioStreamPlayer3D_property_max_polyphony>`                                               | ``1``         |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`                                         | ``1.0``       |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | ``1.0``       |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | ``false``     |
@@ -345,6 +347,22 @@ The distance past which the sound can no longer be heard at all. Only has an eff
 +-----------+--------------------------+
 
 The maximum number of sounds this node can play at the same time. Playing additional sounds after this value is reached will cut off the oldest sounds.
+
+----
+
+.. _class_AudioStreamPlayer3D_property_panning_strength:
+
+- :ref:`float<class_float>` **panning_strength**
+
++-----------+-----------------------------+
+| *Default* | ``1.0``                     |
++-----------+-----------------------------+
+| *Setter*  | set_panning_strength(value) |
++-----------+-----------------------------+
+| *Getter*  | get_panning_strength()      |
++-----------+-----------------------------+
+
+Scales the panning strength for this node by multiplying the base :ref:`ProjectSettings.audio/general/3d_panning_strength<class_ProjectSettings_property_audio/general/3d_panning_strength>` with this factor. Higher values will pan audio from left to right more dramatically than lower values.
 
 ----
 

@@ -48,6 +48,8 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`poll<class_WebRTCPeerConnection_method_poll>` **(** **)**                                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_default_extension<class_WebRTCPeerConnection_method_set_default_extension>` **(** :ref:`StringName<class_StringName>` extension_class **)** |static|                             |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                        |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_remote_description<class_WebRTCPeerConnection_method_set_remote_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                      |
@@ -208,6 +210,14 @@ Valid ``options`` are:
 - :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 Call this method frequently (e.g. in :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>`) to properly receive signals.
+
+----
+
+.. _class_WebRTCPeerConnection_method_set_default_extension:
+
+- void **set_default_extension** **(** :ref:`StringName<class_StringName>` extension_class **)** |static|
+
+Sets the ``extension_class`` as the default :ref:`WebRTCPeerConnectionExtension<class_WebRTCPeerConnectionExtension>` returned when creating a new ``WebRTCPeerConnection``.
 
 ----
 

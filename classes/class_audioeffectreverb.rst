@@ -13,15 +13,15 @@ AudioEffectReverb
 
 Adds a reverberation audio effect to an Audio bus.
 
-Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
-
 Description
 -----------
 
-Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
+Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
 
 Tutorials
 ---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

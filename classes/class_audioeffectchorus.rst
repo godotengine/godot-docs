@@ -18,6 +18,11 @@ Description
 
 Adds a chorus audio effect. The effect applies a filter with voices to duplicate the audio source and manipulate it through the filter.
 
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
 Properties
 ----------
 

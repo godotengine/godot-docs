@@ -35,7 +35,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         # Create an HTTP request node and connect its completion signal.
         var http_request = HTTPRequest.new()
         add_child(http_request)
-        http_request.connect("request_completed", self, "_http_request_completed")
+        http_request.request_completed.connect(self._http_request_completed)
     
         # Perform a GET request. The URL below returns JSON as of writing.
         var error = http_request.request("https://httpbin.org/get")
@@ -45,7 +45,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         # Perform a POST request. The URL below returns JSON as of writing.
         # Note: Don't make simultaneous requests using a single HTTPRequest node.
         # The snippet below is provided for reference only.
-        var body = {"name": "Godette"}
+        var body = JSON.new().stringify({"name": "Godette"})
         error = http_request.request("https://httpbin.org/post", [], true, HTTPClient.METHOD_POST, body)
         if error != OK:
             push_error("An error occurred in the HTTP request.")
@@ -53,7 +53,9 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     
     # Called when the HTTP request is completed.
     func _http_request_completed(result, response_code, headers, body):
-        var response = parse_json(body.get_string_from_utf8())
+        var json = JSON.new()
+        json.parse(body.get_string_from_utf8())
+        var response = json.get_data()
     
         # Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
         print(response.headers["User-Agent"])
@@ -65,7 +67,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         // Create an HTTP request node and connect its completion signal.
         var httpRequest = new HTTPRequest();
         AddChild(httpRequest);
-        httpRequest.Connect("request_completed", this, nameof(HttpRequestCompleted));
+        httpRequest.RequestCompleted += HttpRequestCompleted;
     
         // Perform a GET request. The URL below returns JSON as of writing.
         Error error = httpRequest.Request("https://httpbin.org/get");
@@ -77,21 +79,24 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         // Perform a POST request. The URL below returns JSON as of writing.
         // Note: Don't make simultaneous requests using a single HTTPRequest node.
         // The snippet below is provided for reference only.
-        string[] body = { "name", "Godette" };
-        // GDScript to_json is non existent, so we use JSON.Print() here.
-        error = httpRequest.Request("https://httpbin.org/post", null, true, HTTPClient.Method.Post, JSON.Print(body));
+        string body = new JSON().Stringify(new Godot.Collections.Dictionary
+        {
+            { "name", "Godette" }
+        });
+        error = httpRequest.Request("https://httpbin.org/post", null, true, HTTPClient.Method.Post, body);
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
         }
     }
     
-    
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(int result, int response_code, string[] headers, byte[] body)
     {
-        // GDScript parse_json is non existent so we have to use JSON.parse, which has a slightly different syntax.
-        var response = JSON.Parse(body.GetStringFromUTF8()).Result as Godot.Collections.Dictionary;
+        var json = new JSON();
+        json.Parse(body.GetStringFromUTF8());
+        var response = json.GetData() as Godot.Collections.Dictionary;
+    
         // Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
         GD.Print((response["headers"] as Godot.Collections.Dictionary)["User-Agent"]);
     }
@@ -109,7 +114,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         # Create an HTTP request node and connect its completion signal.
         var http_request = HTTPRequest.new()
         add_child(http_request)
-        http_request.connect("request_completed", self, "_http_request_completed")
+        http_request.request_completed.connect(self._http_request_completed)
     
         # Perform the HTTP request. The URL below returns a PNG image as of writing.
         var error = http_request.request("https://via.placeholder.com/512")
@@ -142,7 +147,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         // Create an HTTP request node and connect its completion signal.
         var httpRequest = new HTTPRequest();
         AddChild(httpRequest);
-        httpRequest.Connect("request_completed", this, nameof(HttpRequestCompleted));
+        httpRequest.RequestCompleted += HttpRequestCompleted;
     
         // Perform the HTTP request. The URL below returns a PNG image as of writing.
         Error error = httpRequest.Request("https://via.placeholder.com/512");
@@ -151,7 +156,6 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
             GD.PushError("An error occurred in the HTTP request.");
         }
     }
-    
     
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(int result, int response_code, string[] headers, byte[] body)

@@ -544,6 +544,44 @@ enum **InlineAlignment**:
 
 .. _class_@GlobalScope_constant_KEY_F16:
 
+.. _class_@GlobalScope_constant_KEY_F17:
+
+.. _class_@GlobalScope_constant_KEY_F18:
+
+.. _class_@GlobalScope_constant_KEY_F19:
+
+.. _class_@GlobalScope_constant_KEY_F20:
+
+.. _class_@GlobalScope_constant_KEY_F21:
+
+.. _class_@GlobalScope_constant_KEY_F22:
+
+.. _class_@GlobalScope_constant_KEY_F23:
+
+.. _class_@GlobalScope_constant_KEY_F24:
+
+.. _class_@GlobalScope_constant_KEY_F25:
+
+.. _class_@GlobalScope_constant_KEY_F26:
+
+.. _class_@GlobalScope_constant_KEY_F27:
+
+.. _class_@GlobalScope_constant_KEY_F28:
+
+.. _class_@GlobalScope_constant_KEY_F29:
+
+.. _class_@GlobalScope_constant_KEY_F30:
+
+.. _class_@GlobalScope_constant_KEY_F31:
+
+.. _class_@GlobalScope_constant_KEY_F32:
+
+.. _class_@GlobalScope_constant_KEY_F33:
+
+.. _class_@GlobalScope_constant_KEY_F34:
+
+.. _class_@GlobalScope_constant_KEY_F35:
+
 .. _class_@GlobalScope_constant_KEY_KP_MULTIPLY:
 
 .. _class_@GlobalScope_constant_KEY_KP_DIVIDE:
@@ -1034,6 +1072,44 @@ enum **Key**:
 
 - **KEY_F16** = **16777259** --- F16 key.
 
+- **KEY_F17** = **16777260** --- F17 key.
+
+- **KEY_F18** = **16777261** --- F18 key.
+
+- **KEY_F19** = **16777262** --- F19 key.
+
+- **KEY_F20** = **16777263** --- F20 key.
+
+- **KEY_F21** = **16777264** --- F21 key.
+
+- **KEY_F22** = **16777265** --- F22 key.
+
+- **KEY_F23** = **16777266** --- F23 key.
+
+- **KEY_F24** = **16777267** --- F24 key.
+
+- **KEY_F25** = **16777268** --- F25 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F26** = **16777269** --- F26 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F27** = **16777270** --- F27 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F28** = **16777271** --- F28 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F29** = **16777272** --- F29 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F30** = **16777273** --- F30 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F31** = **16777274** --- F31 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F32** = **16777275** --- F32 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F33** = **16777276** --- F33 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F34** = **16777277** --- F34 key. Only supported on macOS and Linux due to a Windows limitation.
+
+- **KEY_F35** = **16777278** --- F35 key. Only supported on macOS and Linux due to a Windows limitation.
+
 - **KEY_KP_MULTIPLY** = **16777345** --- Multiply (\*) key on the numeric keypad.
 
 - **KEY_KP_DIVIDE** = **16777346** --- Divide (/) key on the numeric keypad.
@@ -1064,101 +1140,101 @@ enum **Key**:
 
 - **KEY_KP_9** = **16777359** --- Number 9 on the numeric keypad.
 
-- **KEY_SUPER_L** = **16777260** --- Left Super key (Windows key).
+- **KEY_SUPER_L** = **16777280** --- Left Super key (Windows key).
 
-- **KEY_SUPER_R** = **16777261** --- Right Super key (Windows key).
+- **KEY_SUPER_R** = **16777281** --- Right Super key (Windows key).
 
-- **KEY_MENU** = **16777262** --- Context menu key.
+- **KEY_MENU** = **16777282** --- Context menu key.
 
-- **KEY_HYPER_L** = **16777263** --- Left Hyper key.
+- **KEY_HYPER_L** = **16777283** --- Left Hyper key.
 
-- **KEY_HYPER_R** = **16777264** --- Right Hyper key.
+- **KEY_HYPER_R** = **16777284** --- Right Hyper key.
 
-- **KEY_HELP** = **16777265** --- Help key.
+- **KEY_HELP** = **16777285** --- Help key.
 
-- **KEY_DIRECTION_L** = **16777266** --- Left Direction key.
+- **KEY_DIRECTION_L** = **16777286** --- Left Direction key.
 
-- **KEY_DIRECTION_R** = **16777267** --- Right Direction key.
+- **KEY_DIRECTION_R** = **16777287** --- Right Direction key.
 
-- **KEY_BACK** = **16777280** --- Media back key. Not to be confused with the Back button on an Android device.
+- **KEY_BACK** = **16777288** --- Media back key. Not to be confused with the Back button on an Android device.
 
-- **KEY_FORWARD** = **16777281** --- Media forward key.
+- **KEY_FORWARD** = **16777289** --- Media forward key.
 
-- **KEY_STOP** = **16777282** --- Media stop key.
+- **KEY_STOP** = **16777290** --- Media stop key.
 
-- **KEY_REFRESH** = **16777283** --- Media refresh key.
+- **KEY_REFRESH** = **16777291** --- Media refresh key.
 
-- **KEY_VOLUMEDOWN** = **16777284** --- Volume down key.
+- **KEY_VOLUMEDOWN** = **16777292** --- Volume down key.
 
-- **KEY_VOLUMEMUTE** = **16777285** --- Mute volume key.
+- **KEY_VOLUMEMUTE** = **16777293** --- Mute volume key.
 
-- **KEY_VOLUMEUP** = **16777286** --- Volume up key.
+- **KEY_VOLUMEUP** = **16777294** --- Volume up key.
 
-- **KEY_BASSBOOST** = **16777287** --- Bass Boost key.
+- **KEY_BASSBOOST** = **16777295** --- Bass Boost key.
 
-- **KEY_BASSUP** = **16777288** --- Bass up key.
+- **KEY_BASSUP** = **16777296** --- Bass up key.
 
-- **KEY_BASSDOWN** = **16777289** --- Bass down key.
+- **KEY_BASSDOWN** = **16777297** --- Bass down key.
 
-- **KEY_TREBLEUP** = **16777290** --- Treble up key.
+- **KEY_TREBLEUP** = **16777298** --- Treble up key.
 
-- **KEY_TREBLEDOWN** = **16777291** --- Treble down key.
+- **KEY_TREBLEDOWN** = **16777299** --- Treble down key.
 
-- **KEY_MEDIAPLAY** = **16777292** --- Media play key.
+- **KEY_MEDIAPLAY** = **16777300** --- Media play key.
 
-- **KEY_MEDIASTOP** = **16777293** --- Media stop key.
+- **KEY_MEDIASTOP** = **16777301** --- Media stop key.
 
-- **KEY_MEDIAPREVIOUS** = **16777294** --- Previous song key.
+- **KEY_MEDIAPREVIOUS** = **16777302** --- Previous song key.
 
-- **KEY_MEDIANEXT** = **16777295** --- Next song key.
+- **KEY_MEDIANEXT** = **16777303** --- Next song key.
 
-- **KEY_MEDIARECORD** = **16777296** --- Media record key.
+- **KEY_MEDIARECORD** = **16777304** --- Media record key.
 
-- **KEY_HOMEPAGE** = **16777297** --- Home page key.
+- **KEY_HOMEPAGE** = **16777305** --- Home page key.
 
-- **KEY_FAVORITES** = **16777298** --- Favorites key.
+- **KEY_FAVORITES** = **16777306** --- Favorites key.
 
-- **KEY_SEARCH** = **16777299** --- Search key.
+- **KEY_SEARCH** = **16777307** --- Search key.
 
-- **KEY_STANDBY** = **16777300** --- Standby key.
+- **KEY_STANDBY** = **16777308** --- Standby key.
 
-- **KEY_OPENURL** = **16777301** --- Open URL / Launch Browser key.
+- **KEY_OPENURL** = **16777309** --- Open URL / Launch Browser key.
 
-- **KEY_LAUNCHMAIL** = **16777302** --- Launch Mail key.
+- **KEY_LAUNCHMAIL** = **16777310** --- Launch Mail key.
 
-- **KEY_LAUNCHMEDIA** = **16777303** --- Launch Media key.
+- **KEY_LAUNCHMEDIA** = **16777311** --- Launch Media key.
 
-- **KEY_LAUNCH0** = **16777304** --- Launch Shortcut 0 key.
+- **KEY_LAUNCH0** = **16777312** --- Launch Shortcut 0 key.
 
-- **KEY_LAUNCH1** = **16777305** --- Launch Shortcut 1 key.
+- **KEY_LAUNCH1** = **16777313** --- Launch Shortcut 1 key.
 
-- **KEY_LAUNCH2** = **16777306** --- Launch Shortcut 2 key.
+- **KEY_LAUNCH2** = **16777314** --- Launch Shortcut 2 key.
 
-- **KEY_LAUNCH3** = **16777307** --- Launch Shortcut 3 key.
+- **KEY_LAUNCH3** = **16777315** --- Launch Shortcut 3 key.
 
-- **KEY_LAUNCH4** = **16777308** --- Launch Shortcut 4 key.
+- **KEY_LAUNCH4** = **16777316** --- Launch Shortcut 4 key.
 
-- **KEY_LAUNCH5** = **16777309** --- Launch Shortcut 5 key.
+- **KEY_LAUNCH5** = **16777317** --- Launch Shortcut 5 key.
 
-- **KEY_LAUNCH6** = **16777310** --- Launch Shortcut 6 key.
+- **KEY_LAUNCH6** = **16777318** --- Launch Shortcut 6 key.
 
-- **KEY_LAUNCH7** = **16777311** --- Launch Shortcut 7 key.
+- **KEY_LAUNCH7** = **16777319** --- Launch Shortcut 7 key.
 
-- **KEY_LAUNCH8** = **16777312** --- Launch Shortcut 8 key.
+- **KEY_LAUNCH8** = **16777320** --- Launch Shortcut 8 key.
 
-- **KEY_LAUNCH9** = **16777313** --- Launch Shortcut 9 key.
+- **KEY_LAUNCH9** = **16777321** --- Launch Shortcut 9 key.
 
-- **KEY_LAUNCHA** = **16777314** --- Launch Shortcut A key.
+- **KEY_LAUNCHA** = **16777322** --- Launch Shortcut A key.
 
-- **KEY_LAUNCHB** = **16777315** --- Launch Shortcut B key.
+- **KEY_LAUNCHB** = **16777323** --- Launch Shortcut B key.
 
-- **KEY_LAUNCHC** = **16777316** --- Launch Shortcut C key.
+- **KEY_LAUNCHC** = **16777324** --- Launch Shortcut C key.
 
-- **KEY_LAUNCHD** = **16777317** --- Launch Shortcut D key.
+- **KEY_LAUNCHD** = **16777325** --- Launch Shortcut D key.
 
-- **KEY_LAUNCHE** = **16777318** --- Launch Shortcut E key.
+- **KEY_LAUNCHE** = **16777326** --- Launch Shortcut E key.
 
-- **KEY_LAUNCHF** = **16777319** --- Launch Shortcut F key.
+- **KEY_LAUNCHF** = **16777327** --- Launch Shortcut F key.
 
 - **KEY_UNKNOWN** = **33554431** --- Unknown key.
 
@@ -2001,6 +2077,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LENGTH:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LINK:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_KEY_ACCEL:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_FLAGS:
@@ -2065,6 +2143,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_SAVE_FILE:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_SAVE_FILE:
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INT_IS_OBJECTID:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INT_IS_POINTER:
@@ -2097,45 +2177,47 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_LENGTH** = **5** --- Deprecated hint, unused.
 
-- **PROPERTY_HINT_KEY_ACCEL** = **6** --- Deprecated hint, unused.
+- **PROPERTY_HINT_LINK** = **6** --- Hints that a vector property should allow linking values (e.g. to edit both ``x`` and ``y`` together).
 
-- **PROPERTY_HINT_FLAGS** = **7** --- Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
+- **PROPERTY_HINT_KEY_ACCEL** = **7** --- Deprecated hint, unused.
 
-- **PROPERTY_HINT_LAYERS_2D_RENDER** = **8** --- Hints that an integer property is a bitmask using the optionally named 2D render layers.
+- **PROPERTY_HINT_FLAGS** = **8** --- Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
 
-- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **9** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
+- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9** --- Hints that an integer property is a bitmask using the optionally named 2D render layers.
 
-- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **10** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
+- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
 
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
+- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **11** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
 
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
 
-- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **13** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **13** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
 
-- **PROPERTY_HINT_FILE** = **14** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **14** --- Hints that an integer property is a bitmask using the optionally named 3D navigation layers.
 
-- **PROPERTY_HINT_DIR** = **15** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_FILE** = **15** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_GLOBAL_FILE** = **16** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_DIR** = **16** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_GLOBAL_DIR** = **17** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_GLOBAL_FILE** = **17** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_RESOURCE_TYPE** = **18** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture2D"``). Editing it will show a popup menu of valid resource types to instantiate.
+- **PROPERTY_HINT_GLOBAL_DIR** = **18** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_MULTILINE_TEXT** = **19** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
+- **PROPERTY_HINT_RESOURCE_TYPE** = **19** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture2D"``). Editing it will show a popup menu of valid resource types to instantiate.
 
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **20** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
+- **PROPERTY_HINT_MULTILINE_TEXT** = **20** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
 
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **21** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **21** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **22** --- Hints that an image is compressed using lossy compression.
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **22** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **23** --- Hints that an image is compressed using lossless compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **23** --- Hints that an image is compressed using lossy compression.
 
-- **PROPERTY_HINT_OBJECT_ID** = **24**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **24** --- Hints that an image is compressed using lossless compression.
 
-- **PROPERTY_HINT_TYPE_STRING** = **25** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
+- **PROPERTY_HINT_OBJECT_ID** = **25**
+
+- **PROPERTY_HINT_TYPE_STRING** = **26** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
 
 ::
 
@@ -2146,41 +2228,43 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 \ **Note:** The final colon is required to specify for properly detecting built-in types.
 
-- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **26**
+- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **27**
 
-- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **27**
+- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **28**
 
-- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **28**
+- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **29**
 
-- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **29**
+- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **30**
 
-- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **30**
+- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **31**
 
-- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **31**
+- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **32**
 
-- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **32**
+- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **33**
 
-- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **33**
+- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **34**
 
-- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **34**
+- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **35**
 
-- **PROPERTY_HINT_OBJECT_TOO_BIG** = **35**
+- **PROPERTY_HINT_OBJECT_TOO_BIG** = **36**
 
-- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **36**
+- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **37**
 
-- **PROPERTY_HINT_SAVE_FILE** = **37**
+- **PROPERTY_HINT_SAVE_FILE** = **38**
 
-- **PROPERTY_HINT_INT_IS_OBJECTID** = **38**
+- **PROPERTY_HINT_GLOBAL_SAVE_FILE** = **39**
 
-- **PROPERTY_HINT_INT_IS_POINTER** = **40**
+- **PROPERTY_HINT_INT_IS_OBJECTID** = **40**
 
-- **PROPERTY_HINT_ARRAY_TYPE** = **39**
+- **PROPERTY_HINT_INT_IS_POINTER** = **42**
 
-- **PROPERTY_HINT_LOCALE_ID** = **41** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
+- **PROPERTY_HINT_ARRAY_TYPE** = **41**
 
-- **PROPERTY_HINT_LOCALIZABLE_STRING** = **42** --- Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
+- **PROPERTY_HINT_LOCALE_ID** = **43** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
 
-- **PROPERTY_HINT_MAX** = **43**
+- **PROPERTY_HINT_LOCALIZABLE_STRING** = **44** --- Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
+
+- **PROPERTY_HINT_MAX** = **45**
 
 ----
 

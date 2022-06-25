@@ -86,6 +86,8 @@ Methods
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`       | :ref:`get_meshes<class_GridMap_method_get_meshes>` **(** **)** |const|                                                                                                           |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`get_navigation_layer_value<class_GridMap_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                        |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`       | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                   |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`       | :ref:`get_used_cells_by_item<class_GridMap_method_get_used_cells_by_item>` **(** :ref:`int<class_int>` item **)** |const|                                                        |
@@ -101,6 +103,8 @@ Methods
 | void                            | :ref:`set_collision_layer_value<class_GridMap_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                   |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`set_collision_mask_value<class_GridMap_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                     |
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`set_navigation_layer_value<class_GridMap_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                 |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|                                                          |
 +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,7 +304,7 @@ The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
 | *Getter*  | get_navigation_layers()      |
 +-----------+------------------------------+
 
-The navigation layers the GridMap generates its navigable regions in.
+A bitmask determining all navigation layers the GridMap generated navigation regions belong to. These navigation layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
 
 ----
 
@@ -387,6 +391,14 @@ Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_M
 
 ----
 
+.. _class_GridMap_method_get_navigation_layer_value:
+
+- :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified layer of the :ref:`navigation_layers<class_GridMap_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+----
+
 .. _class_GridMap_method_get_used_cells:
 
 - :ref:`Array<class_Array>` **get_used_cells** **(** **)** |const|
@@ -448,6 +460,14 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 - void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_GridMap_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
+
+----
+
+.. _class_GridMap_method_set_navigation_layer_value:
+
+- void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_GridMap_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
 ----
 

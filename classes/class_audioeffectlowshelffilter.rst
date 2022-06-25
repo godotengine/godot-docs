@@ -11,6 +11,11 @@ AudioEffectLowShelfFilter
 
 **Inherits:** :ref:`AudioEffectFilter<class_AudioEffectFilter>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Adds a low-shelf filter to the audio bus.
+
+Description
+-----------
+
 Reduces all frequencies below the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>`.
 
 Tutorials

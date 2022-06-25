@@ -166,13 +166,13 @@ enum **ArrayType**:
 
 - **ARRAY_TEX_UV2** = **5** --- :ref:`PackedVector2Array<class_PackedVector2Array>` for second UV coordinates.
 
-- **ARRAY_CUSTOM0** = **6**
+- **ARRAY_CUSTOM0** = **6** --- Contains custom color channel 0. :ref:`PackedByteArray<class_PackedByteArray>` if ``(format >> [constant ARRAY_FORMAT_CUSTOM0_SHIFT]) & [constant ARRAY_FORMAT_CUSTOM_MASK])`` is :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>` or :ref:`ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`. :ref:`PackedFloat32Array<class_PackedFloat32Array>` otherwise.
 
-- **ARRAY_CUSTOM1** = **7**
+- **ARRAY_CUSTOM1** = **7** --- Contains custom color channel 1. :ref:`PackedByteArray<class_PackedByteArray>` if ``(format >> [constant ARRAY_FORMAT_CUSTOM1_SHIFT]) & [constant ARRAY_FORMAT_CUSTOM_MASK])`` is :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>` or :ref:`ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`. :ref:`PackedFloat32Array<class_PackedFloat32Array>` otherwise.
 
-- **ARRAY_CUSTOM2** = **8**
+- **ARRAY_CUSTOM2** = **8** --- Contains custom color channel 2. :ref:`PackedByteArray<class_PackedByteArray>` if ``(format >> [constant ARRAY_FORMAT_CUSTOM2_SHIFT]) & [constant ARRAY_FORMAT_CUSTOM_MASK])`` is :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>` or :ref:`ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`. :ref:`PackedFloat32Array<class_PackedFloat32Array>` otherwise.
 
-- **ARRAY_CUSTOM3** = **9**
+- **ARRAY_CUSTOM3** = **9** --- Contains custom color channel 3. :ref:`PackedByteArray<class_PackedByteArray>` if ``(format >> [constant ARRAY_FORMAT_CUSTOM3_SHIFT]) & [constant ARRAY_FORMAT_CUSTOM_MASK])`` is :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`, :ref:`ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>` or :ref:`ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`. :ref:`PackedFloat32Array<class_PackedFloat32Array>` otherwise.
 
 - **ARRAY_BONES** = **10** --- :ref:`PackedFloat32Array<class_PackedFloat32Array>` or :ref:`PackedInt32Array<class_PackedInt32Array>` of bone indices. Each element is a group of 4 numbers.
 
@@ -208,21 +208,21 @@ For triangles, the index array is interpreted as triples, referring to the verti
 
 enum **ArrayCustomFormat**:
 
-- **ARRAY_CUSTOM_RGBA8_UNORM** = **0**
+- **ARRAY_CUSTOM_RGBA8_UNORM** = **0** --- Indicates this custom channel contains unsigned normalized byte colors from 0 to 1, encoded as :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **ARRAY_CUSTOM_RGBA8_SNORM** = **1**
+- **ARRAY_CUSTOM_RGBA8_SNORM** = **1** --- Indicates this custom channel contains signed normalized byte colors from -1 to 1, encoded as :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **ARRAY_CUSTOM_RG_HALF** = **2**
+- **ARRAY_CUSTOM_RG_HALF** = **2** --- Indicates this custom channel contains half precision float colors, encoded as :ref:`PackedByteArray<class_PackedByteArray>`. Only red and green channels are used.
 
-- **ARRAY_CUSTOM_RGBA_HALF** = **3**
+- **ARRAY_CUSTOM_RGBA_HALF** = **3** --- Indicates this custom channel contains half precision float colors, encoded as :ref:`PackedByteArray<class_PackedByteArray>`.
 
-- **ARRAY_CUSTOM_R_FLOAT** = **4**
+- **ARRAY_CUSTOM_R_FLOAT** = **4** --- Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`. Only the red green channel is used.
 
-- **ARRAY_CUSTOM_RG_FLOAT** = **5**
+- **ARRAY_CUSTOM_RG_FLOAT** = **5** --- Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`. Only red and green channels are used.
 
-- **ARRAY_CUSTOM_RGB_FLOAT** = **6**
+- **ARRAY_CUSTOM_RGB_FLOAT** = **6** --- Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`. Only red, green and blue channels are used.
 
-- **ARRAY_CUSTOM_RGBA_FLOAT** = **7**
+- **ARRAY_CUSTOM_RGBA_FLOAT** = **7** --- Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
 - **ARRAY_CUSTOM_MAX** = **8** --- Represents the size of the :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` enum.
 
@@ -294,13 +294,13 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_TEX_UV2** = **32** --- Mesh array contains second UV.
 
-- **ARRAY_FORMAT_CUSTOM0** = **64**
+- **ARRAY_FORMAT_CUSTOM0** = **64** --- Mesh array contains custom channel index 0.
 
-- **ARRAY_FORMAT_CUSTOM1** = **128**
+- **ARRAY_FORMAT_CUSTOM1** = **128** --- Mesh array contains custom channel index 1.
 
-- **ARRAY_FORMAT_CUSTOM2** = **256**
+- **ARRAY_FORMAT_CUSTOM2** = **256** --- Mesh array contains custom channel index 2.
 
-- **ARRAY_FORMAT_CUSTOM3** = **512**
+- **ARRAY_FORMAT_CUSTOM3** = **512** --- Mesh array contains custom channel index 3.
 
 - **ARRAY_FORMAT_BONES** = **1024** --- Mesh array contains bones.
 
@@ -308,29 +308,29 @@ enum **ArrayFormat**:
 
 - **ARRAY_FORMAT_INDEX** = **4096** --- Mesh array uses indices.
 
-- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **7**
+- **ARRAY_FORMAT_BLEND_SHAPE_MASK** = **7** --- Mask of mesh channels permitted in blend shapes.
 
-- **ARRAY_FORMAT_CUSTOM_BASE** = **13**
+- **ARRAY_FORMAT_CUSTOM_BASE** = **13** --- Shift of first custom channel.
 
-- **ARRAY_FORMAT_CUSTOM_BITS** = **3**
+- **ARRAY_FORMAT_CUSTOM_BITS** = **3** --- Number of format bits per custom channel. See :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>`.
 
-- **ARRAY_FORMAT_CUSTOM0_SHIFT** = **13**
+- **ARRAY_FORMAT_CUSTOM0_SHIFT** = **13** --- Amount to shift :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` for custom channel index 0.
 
-- **ARRAY_FORMAT_CUSTOM1_SHIFT** = **16**
+- **ARRAY_FORMAT_CUSTOM1_SHIFT** = **16** --- Amount to shift :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` for custom channel index 1.
 
-- **ARRAY_FORMAT_CUSTOM2_SHIFT** = **19**
+- **ARRAY_FORMAT_CUSTOM2_SHIFT** = **19** --- Amount to shift :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` for custom channel index 2.
 
-- **ARRAY_FORMAT_CUSTOM3_SHIFT** = **22**
+- **ARRAY_FORMAT_CUSTOM3_SHIFT** = **22** --- Amount to shift :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` for custom channel index 3.
 
-- **ARRAY_FORMAT_CUSTOM_MASK** = **7**
+- **ARRAY_FORMAT_CUSTOM_MASK** = **7** --- Mask of custom format bits per custom channel. Must be shifted by one of the SHIFT constants. See :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>`.
 
-- **ARRAY_COMPRESS_FLAGS_BASE** = **25**
+- **ARRAY_COMPRESS_FLAGS_BASE** = **25** --- Shift of first compress flag. Compress flags should be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` and :ref:`SurfaceTool.commit<class_SurfaceTool_method_commit>`.
 
 - **ARRAY_FLAG_USE_2D_VERTICES** = **33554432** --- Flag used to mark that the array contains 2D vertices.
 
-- **ARRAY_FLAG_USE_DYNAMIC_UPDATE** = **67108864**
+- **ARRAY_FLAG_USE_DYNAMIC_UPDATE** = **67108864** --- Flag indices that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
 
-- **ARRAY_FLAG_USE_8_BONE_WEIGHTS** = **134217728**
+- **ARRAY_FLAG_USE_8_BONE_WEIGHTS** = **134217728** --- Flag used to mark that the mesh contains up to 8 bone influences per vertex. This flag indicates that :ref:`ARRAY_BONES<class_Mesh_constant_ARRAY_BONES>` and :ref:`ARRAY_WEIGHTS<class_Mesh_constant_ARRAY_WEIGHTS>` elements will have double length.
 
 ----
 

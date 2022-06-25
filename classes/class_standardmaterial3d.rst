@@ -11,12 +11,17 @@ StandardMaterial3D
 
 **Inherits:** :ref:`BaseMaterial3D<class_BaseMaterial3D>` **<** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Physically based rendering (PBR) material that can be applied to 3D objects.
 
+Description
+-----------
+
+StandardMaterial3D's properties are inherited from :ref:`BaseMaterial3D<class_BaseMaterial3D>`.
 
 Tutorials
 ---------
 
-- :doc:`Standard Material 3D <../tutorials/3d/standard_material_3d>`
+- :doc:`Standard Material 3D and ORM Material 3D <../tutorials/3d/standard_material_3d>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

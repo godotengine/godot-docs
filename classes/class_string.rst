@@ -122,7 +122,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`json_escape<class_String_method_json_escape>` **(** **)** |const|                                                                                                          |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`left<class_String_method_left>` **(** :ref:`int<class_int>` position **)** |const|                                                                                         |
+| :ref:`String<class_String>`                         | :ref:`left<class_String_method_left>` **(** :ref:`int<class_int>` length **)** |const|                                                                                           |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`length<class_String_method_length>` **(** **)** |const|                                                                                                                    |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,7 +166,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`rfindn<class_String_method_rfindn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                    |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`right<class_String_method_right>` **(** :ref:`int<class_int>` position **)** |const|                                                                                       |
+| :ref:`String<class_String>`                         | :ref:`right<class_String_method_right>` **(** :ref:`int<class_int>` length **)** |const|                                                                                         |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`rpad<class_String_method_rpad>` **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|                                            |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -756,9 +756,9 @@ Returns a copy of the string with special characters escaped using the JSON stan
 
 .. _class_String_method_left:
 
-- :ref:`String<class_String>` **left** **(** :ref:`int<class_int>` position **)** |const|
+- :ref:`String<class_String>` **left** **(** :ref:`int<class_int>` length **)** |const|
 
-Returns a number of characters from the left of the string. If negative ``position`` is used, the characters are counted downwards from ``String``'s length.
+Returns a number of characters from the left of the string. If negative ``length`` is used, the characters are counted downwards from ``String``'s length.
 
 Examples:
 
@@ -971,9 +971,9 @@ Returns the index of the **last** case-insensitive occurrence of the specified s
 
 .. _class_String_method_right:
 
-- :ref:`String<class_String>` **right** **(** :ref:`int<class_int>` position **)** |const|
+- :ref:`String<class_String>` **right** **(** :ref:`int<class_int>` length **)** |const|
 
-Returns a number of characters from the right of the string. If negative ``position`` is used, the characters are counted downwards from ``String``'s length.
+Returns a number of characters from the right of the string. If negative ``length`` is used, the characters are counted downwards from ``String``'s length.
 
 Examples:
 

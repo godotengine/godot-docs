@@ -18,6 +18,11 @@ Description
 
 An audio effect that can be used to adjust the intensity of stereo panning.
 
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
 Properties
 ----------
 

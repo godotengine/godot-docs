@@ -55,6 +55,8 @@ Property Descriptions
 | *Getter* | get_camera_effects()      |
 +----------+---------------------------+
 
+The :ref:`CameraEffects<class_CameraEffects>` resource used by this ``WorldEnvironment``, defining the default properties. This :ref:`CameraEffects<class_CameraEffects>` resource will be used by all :ref:`Camera3D<class_Camera3D>`\ s that do not define their own :ref:`CameraEffects<class_CameraEffects>`.
+
 ----
 
 .. _class_WorldEnvironment_property_environment:

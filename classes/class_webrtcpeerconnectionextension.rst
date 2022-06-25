@@ -35,8 +35,6 @@ Methods
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`       | :ref:`_set_remote_description<class_WebRTCPeerConnectionExtension_method__set_remote_description>` **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|                                             |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`make_default<class_WebRTCPeerConnectionExtension_method_make_default>` **(** **)**                                                                                                                                                   |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -92,12 +90,6 @@ Method Descriptions
 .. _class_WebRTCPeerConnectionExtension_method__set_remote_description:
 
 - :ref:`int<class_int>` **_set_remote_description** **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|
-
-----
-
-.. _class_WebRTCPeerConnectionExtension_method_make_default:
-
-- void **make_default** **(** **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

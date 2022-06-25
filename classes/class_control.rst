@@ -65,6 +65,8 @@ Properties
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`bool<class_bool>`                              | :ref:`clip_contents<class_Control_property_clip_contents>`                                   | ``false``         |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>`                        | :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`                       | ``Vector2(0, 0)`` |
++------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>`             | :ref:`focus_mode<class_Control_property_focus_mode>`                                         | ``0``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`                   | ``NodePath("")``  |
@@ -88,8 +90,6 @@ Properties
 | :ref:`String<class_String>`                          | :ref:`hint_tooltip<class_Control_property_hint_tooltip>`                                     | ``""``            |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`LayoutDirection<enum_Control_LayoutDirection>` | :ref:`layout_direction<class_Control_property_layout_direction>`                             | ``0``             |
-+------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>`                        | :ref:`minimum_size<class_Control_property_minimum_size>`                                     | ``Vector2(0, 0)`` |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>`         | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`         | ``0``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
@@ -825,6 +825,22 @@ Enables whether rendering of :ref:`CanvasItem<class_CanvasItem>` based children 
 
 ----
 
+.. _class_Control_property_custom_minimum_size:
+
+- :ref:`Vector2<class_Vector2>` **custom_minimum_size**
+
++-----------+--------------------------------+
+| *Default* | ``Vector2(0, 0)``              |
++-----------+--------------------------------+
+| *Setter*  | set_custom_minimum_size(value) |
++-----------+--------------------------------+
+| *Getter*  | get_custom_minimum_size()      |
++-----------+--------------------------------+
+
+The minimum size of the node's bounding rectangle. If you set it to a value greater than (0, 0), the node's bounding rectangle will always have at least this size, even if its content is smaller. If it's set to (0, 0), the node sizes automatically to fit its content, be it a texture or child nodes.
+
+----
+
 .. _class_Control_property_focus_mode:
 
 - :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
@@ -1037,22 +1053,6 @@ The tooltip popup will use either a default implementation, or a custom one that
 +-----------+-----------------------------+
 
 Controls layout direction and text writing direction. Right-to-left layouts are necessary for certain languages (e.g. Arabic and Hebrew).
-
-----
-
-.. _class_Control_property_minimum_size:
-
-- :ref:`Vector2<class_Vector2>` **minimum_size**
-
-+-----------+--------------------------------+
-| *Default* | ``Vector2(0, 0)``              |
-+-----------+--------------------------------+
-| *Setter*  | set_custom_minimum_size(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_custom_minimum_size()      |
-+-----------+--------------------------------+
-
-The minimum size of the node's bounding rectangle. If you set it to a value greater than (0, 0), the node's bounding rectangle will always have at least this size, even if its content is smaller. If it's set to (0, 0), the node sizes automatically to fit its content, be it a texture or child nodes.
 
 ----
 
@@ -1442,7 +1442,7 @@ A preview that will follow the mouse that should represent the data can be set w
 
 - :ref:`Vector2<class_Vector2>` **_get_minimum_size** **(** **)** |virtual| |const|
 
-Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`minimum_size<class_Control_property_minimum_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
+Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
 
 If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
@@ -1522,7 +1522,7 @@ The returned node must be of type ``Control`` or Control-derived. It can have ch
 
 The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
 
-\ **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`minimum_size<class_Control_property_minimum_size>` to some non-zero value.
+\ **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` to some non-zero value.
 
 \ **Note:** The node (and any relevant children) should be :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` when returned, otherwise, the viewport that instantiates it will not be able to calculate its minimum size reliably.
 
@@ -1770,7 +1770,7 @@ Returns :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_
 
 - :ref:`Vector2<class_Vector2>` **get_combined_minimum_size** **(** **)** |const|
 
-Returns combined minimum size from :ref:`minimum_size<class_Control_property_minimum_size>` and :ref:`get_minimum_size<class_Control_method_get_minimum_size>`.
+Returns combined minimum size from :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` and :ref:`get_minimum_size<class_Control_method_get_minimum_size>`.
 
 ----
 
@@ -1810,7 +1810,7 @@ Returns the position and size of the control relative to the top-left corner of 
 
 - :ref:`Vector2<class_Vector2>` **get_minimum_size** **(** **)** |const|
 
-Returns the minimum size for this control. See :ref:`minimum_size<class_Control_property_minimum_size>`.
+Returns the minimum size for this control. See :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`.
 
 ----
 
@@ -2458,7 +2458,7 @@ If ``keep_offsets`` is ``true``, control's anchors will be updated instead of of
 
 - void **update_minimum_size** **(** **)**
 
-Invalidates the size cache in this node and in parent nodes up to top level. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`minimum_size<class_Control_property_minimum_size>` directly calls this method automatically.
+Invalidates the size cache in this node and in parent nodes up to top level. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` directly calls this method automatically.
 
 ----
 

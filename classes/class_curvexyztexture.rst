@@ -11,7 +11,14 @@ CurveXYZTexture
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A texture that shows 3 different curves (stored on the red, green and blue color channels).
 
+Description
+-----------
+
+Renders 3 given :ref:`Curve<class_Curve>`\ s provided to it, on the red, green and blue channels respectively. Compared to using separate :ref:`CurveTexture<class_CurveTexture>`\ s, this further simplifies the task of drawing curves and/or saving them as image files.
+
+If you only need to store one curve within a single texture, use :ref:`CurveTexture<class_CurveTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
 Properties
 ----------
@@ -39,6 +46,8 @@ Property Descriptions
 | *Getter* | get_curve_x()      |
 +----------+--------------------+
 
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
+
 ----
 
 .. _class_CurveXYZTexture_property_curve_y:
@@ -51,6 +60,8 @@ Property Descriptions
 | *Getter* | get_curve_y()      |
 +----------+--------------------+
 
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
+
 ----
 
 .. _class_CurveXYZTexture_property_curve_z:
@@ -62,6 +73,8 @@ Property Descriptions
 +----------+--------------------+
 | *Getter* | get_curve_z()      |
 +----------+--------------------+
+
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
 
 ----
 
@@ -76,6 +89,8 @@ Property Descriptions
 +-----------+------------------+
 | *Getter*  | get_width()      |
 +-----------+------------------+
+
+The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

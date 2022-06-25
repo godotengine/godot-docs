@@ -80,11 +80,11 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_position_in_segment<class_AStar3D_method_get_closest_position_in_segment>` **(** :ref:`Vector3<class_Vector3>` to_position **)** |const|                                   |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_id_path<class_AStar3D_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                                  |
+| :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_id_path<class_AStar3D_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`get_point_capacity<class_AStar3D_method_get_point_capacity>` **(** **)** |const|                                                                                                       |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_point_connections<class_AStar3D_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                                                |
+| :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_connections<class_AStar3D_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`get_point_count<class_AStar3D_method_get_point_count>` **(** **)** |const|                                                                                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,7 +263,7 @@ The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the clo
 
 .. _class_AStar3D_method_get_id_path:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_id_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_id_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
 
 Returns an array with the IDs of the points that form the path found by AStar3D between the given points. The array is ordered from the starting point to the ending point of the path.
 
@@ -314,7 +314,7 @@ Returns the capacity of the structure backing the points, useful in conjunction 
 
 .. _class_AStar3D_method_get_point_connections:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
 
 Returns an array with the IDs of the points that form the connection with the given point.
 

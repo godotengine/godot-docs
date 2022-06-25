@@ -20,25 +20,41 @@ A region of the navigation map. It tells the :ref:`NavigationServer3D<class_Navi
 
 Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer3D.map_set_edge_connection_margin<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
 
+\ **Note:** Overlapping two regions' navmeshes is not enough for connecting two regions. They must share a similar edge.
+
+The cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>` value.
+
+\ **Note**: This value is not added to the path cost when the start position is already inside this region.
+
+The cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>` multiplier.
+
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationRegion3D_property_enabled>` | ``true`` |
-+---------------------------------------------+-----------------------------------------------------------+----------+
-| :ref:`int<class_int>`                       | :ref:`layers<class_NavigationRegion3D_property_layers>`   | ``1``    |
-+---------------------------------------------+-----------------------------------------------------------+----------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationRegion3D_property_navmesh>` |          |
-+---------------------------------------------+-----------------------------------------------------------+----------+
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationRegion3D_property_enabled>`                     | ``true`` |
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>`               | ``0.0``  |
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>` | ``1``    |
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationRegion3D_property_navmesh>`                     |          |
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>`             | ``1.0``  |
++---------------------------------------------+-------------------------------------------------------------------------------+----------+
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`bake_navigation_mesh<class_NavigationRegion3D_method_bake_navigation_mesh>` **(** :ref:`bool<class_bool>` on_thread=true **)** |
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationRegion3D_method_get_region_rid>` **(** **)** |const|                                            |
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`bake_navigation_mesh<class_NavigationRegion3D_method_bake_navigation_mesh>` **(** :ref:`bool<class_bool>` on_thread=true **)**                                        |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationRegion3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`   | :ref:`get_region_rid<class_NavigationRegion3D_method_get_region_rid>` **(** **)** |const|                                                                                   |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_navigation_layer_value<class_NavigationRegion3D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -76,19 +92,35 @@ Determines if the ``NavigationRegion3D`` is enabled or disabled.
 
 ----
 
-.. _class_NavigationRegion3D_property_layers:
+.. _class_NavigationRegion3D_property_enter_cost:
 
-- :ref:`int<class_int>` **layers**
+- :ref:`float<class_float>` **enter_cost**
 
-+-----------+-------------------+
-| *Default* | ``1``             |
-+-----------+-------------------+
-| *Setter*  | set_layers(value) |
-+-----------+-------------------+
-| *Getter*  | get_layers()      |
-+-----------+-------------------+
++-----------+-----------------------+
+| *Default* | ``0.0``               |
++-----------+-----------------------+
+| *Setter*  | set_enter_cost(value) |
++-----------+-----------------------+
+| *Getter*  | get_enter_cost()      |
++-----------+-----------------------+
 
-A bitfield determining all layers the region belongs to. These layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+----
+
+.. _class_NavigationRegion3D_property_navigation_layers:
+
+- :ref:`int<class_int>` **navigation_layers**
+
++-----------+------------------------------+
+| *Default* | ``1``                        |
++-----------+------------------------------+
+| *Setter*  | set_navigation_layers(value) |
++-----------+------------------------------+
+| *Getter*  | get_navigation_layers()      |
++-----------+------------------------------+
+
+A bitfield determining all navigation layers the region belongs to. These navigation layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
 
 ----
 
@@ -104,6 +136,22 @@ A bitfield determining all layers the region belongs to. These layers can be che
 
 The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
 
+----
+
+.. _class_NavigationRegion3D_property_travel_cost:
+
+- :ref:`float<class_float>` **travel_cost**
+
++-----------+------------------------+
+| *Default* | ``1.0``                |
++-----------+------------------------+
+| *Setter*  | set_travel_cost(value) |
++-----------+------------------------+
+| *Getter*  | get_travel_cost()      |
++-----------+------------------------+
+
+When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+
 Method Descriptions
 -------------------
 
@@ -115,11 +163,27 @@ Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. If ``on_thread`` is set t
 
 ----
 
+.. _class_NavigationRegion3D_method_get_navigation_layer_value:
+
+- :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified layer of the :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+----
+
 .. _class_NavigationRegion3D_method_get_region_rid:
 
 - :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`. Combined with :ref:`NavigationServer3D.map_get_closest_point_owner<class_NavigationServer3D_method_map_get_closest_point_owner>` can be used to identify the ``NavigationRegion3D`` closest to a point on the merged navigation map.
+
+----
+
+.. _class_NavigationRegion3D_method_set_navigation_layer_value:
+
+- void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

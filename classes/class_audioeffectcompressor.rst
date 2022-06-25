@@ -30,6 +30,11 @@ Compressor has many uses in the mix:
 
 - Accentuates transients by using a wider attack, making effects sound more punchy.
 
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
 Properties
 ----------
 

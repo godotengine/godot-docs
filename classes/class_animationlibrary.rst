@@ -42,19 +42,19 @@ Signals
 
 .. _class_AnimationLibrary_signal_animation_added:
 
-- **animation_added** **(** :ref:`Animation<class_Animation>` name **)**
+- **animation_added** **(** :ref:`StringName<class_StringName>` name **)**
 
 ----
 
 .. _class_AnimationLibrary_signal_animation_removed:
 
-- **animation_removed** **(** :ref:`Animation<class_Animation>` name **)**
+- **animation_removed** **(** :ref:`StringName<class_StringName>` name **)**
 
 ----
 
 .. _class_AnimationLibrary_signal_animation_renamed:
 
-- **animation_renamed** **(** :ref:`Animation<class_Animation>` name, :ref:`Animation<class_Animation>` to_name **)**
+- **animation_renamed** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` to_name **)**
 
 Property Descriptions
 ---------------------

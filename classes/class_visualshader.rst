@@ -23,11 +23,9 @@ The visual shader editor creates the shader.
 Properties
 ----------
 
-+-------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`engine_version<class_VisualShader_property_engine_version>` | ``{}``            |
-+-------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`graph_offset<class_VisualShader_property_graph_offset>`     | ``Vector2(0, 0)`` |
-+-------------------------------------+-------------------------------------------------------------------+-------------------+
++-------------------------------+---------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_VisualShader_property_graph_offset>` | ``Vector2(0, 0)`` |
++-------------------------------+---------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -186,24 +184,6 @@ Constants
 
 Property Descriptions
 ---------------------
-
-.. _class_VisualShader_property_engine_version:
-
-- :ref:`Dictionary<class_Dictionary>` **engine_version**
-
-+-----------+---------------------------+
-| *Default* | ``{}``                    |
-+-----------+---------------------------+
-| *Setter*  | set_engine_version(value) |
-+-----------+---------------------------+
-| *Getter*  | get_engine_version()      |
-+-----------+---------------------------+
-
-The Godot version this ``VisualShader`` was designed for, in the form of a :ref:`Dictionary<class_Dictionary>` with ``major`` and ``minor`` keys with integer values. Example: ``{"major": 4, "minor": 0}``\ 
-
-This is used by the editor to convert visual shaders from older Godot versions.
-
-----
 
 .. _class_VisualShader_property_graph_offset:
 

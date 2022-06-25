@@ -16,7 +16,7 @@ Gradient-filled 2D texture.
 Description
 -----------
 
-The texture uses a :ref:`Gradient<class_Gradient>` to fill the texture data in 2D space. The gradient is filled according to the specified :ref:`fill<class_GradientTexture2D_property_fill>` and :ref:`repeat<class_GradientTexture2D_property_repeat>` types using colors obtained from the gradient. The texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture2D_property_width>` and :ref:`height<class_GradientTexture2D_property_height>`).
+The texture uses a :ref:`Gradient<class_Gradient>` to fill the texture data in 2D space. The gradient is filled according to the specified :ref:`fill<class_GradientTexture2D_property_fill>` and :ref:`repeat<class_GradientTexture2D_property_repeat>` types using colors obtained from the gradient. The texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture2D_property_width>` and :ref:`height<class_GradientTexture2D_property_height>`). See also :ref:`GradientTexture1D<class_GradientTexture1D>`, :ref:`CurveTexture<class_CurveTexture>` and :ref:`CurveXYZTexture<class_CurveXYZTexture>`.
 
 Properties
 ----------

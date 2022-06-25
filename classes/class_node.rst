@@ -248,13 +248,17 @@ Signals
 
 Emitted when a child node enters the scene tree, either because it entered on its own or because this node entered with it.
 
+This signal is emitted *after* the child node's own :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` and :ref:`tree_entered<class_Node_signal_tree_entered>`.
+
 ----
 
-.. _class_Node_signal_child_exited_tree:
+.. _class_Node_signal_child_exiting_tree:
 
-- **child_exited_tree** **(** :ref:`Node<class_Node>` node **)**
+- **child_exiting_tree** **(** :ref:`Node<class_Node>` node **)**
 
-Emitted when a child node exits the scene tree, either because it exited on its own or because this node exited.
+Emitted when a child node is about to exit the scene tree, either because it is being removed or freed directly, or because this node is exiting the tree.
+
+When this signal is received, the child ``node`` is still in the tree and valid. This signal is emitted *after* the child node's own :ref:`tree_exiting<class_Node_signal_tree_exiting>` and :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION_EXIT_TREE>`.
 
 ----
 
@@ -280,6 +284,8 @@ Emitted when the node is renamed.
 
 Emitted when the node enters the tree.
 
+This signal is emitted *after* the related :ref:`NOTIFICATION_ENTER_TREE<class_Node_constant_NOTIFICATION_ENTER_TREE>` notification.
+
 ----
 
 .. _class_Node_signal_tree_exited:
@@ -295,6 +301,8 @@ Emitted after the node exits the tree and is no longer active.
 - **tree_exiting** **(** **)**
 
 Emitted when the node is still active but about to exit the tree. This is the right place for de-initialization (or a "destructor", if you will).
+
+This signal is emitted *before* the related :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION_EXIT_TREE>` notification.
 
 Enumerations
 ------------
@@ -452,7 +460,11 @@ Constants
 
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_SceneTree>`.
 
+This notification is emitted *before* the related :ref:`tree_entered<class_Node_signal_tree_entered>`.
+
 - **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node is about to exit a :ref:`SceneTree<class_SceneTree>`.
+
+This notification is emitted *after* the related :ref:`tree_exiting<class_Node_signal_tree_exiting>`.
 
 - **NOTIFICATION_MOVED_IN_PARENT** = **12** --- Notification received when the node is moved in the parent.
 

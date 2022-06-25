@@ -13,7 +13,14 @@ Lightmapper
 
 **Inherited By:** :ref:`LightmapperRD<class_LightmapperRD>`
 
+Abstract class extended by lightmappers, for use in :ref:`LightmapGI<class_LightmapGI>`.
 
+Description
+-----------
+
+This class should be extended by custom lightmapper classes. Lightmappers can then be used with :ref:`LightmapGI<class_LightmapGI>` to provide fast baked global illumination in 3D.
+
+Godot contains a built-in GPU-based lightmapper :ref:`LightmapperRD<class_LightmapperRD>` that uses compute shaders, but custom lightmappers can be implemented by C++ modules.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

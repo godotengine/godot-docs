@@ -11,7 +11,14 @@ LightmapProbe
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Represents a single manually placed probe for dynamic object lighting with :ref:`LightmapGI<class_LightmapGI>`.
 
+Description
+-----------
+
+``LightmapProbe`` represents the position of a single manually placed probe for dynamic object lighting with :ref:`LightmapGI<class_LightmapGI>`.
+
+Typically, :ref:`LightmapGI<class_LightmapGI>` probes are placed automatically by setting :ref:`LightmapGI.generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>` to a value other than :ref:`LightmapGI.GENERATE_PROBES_DISABLED<class_LightmapGI_constant_GENERATE_PROBES_DISABLED>`. By creating ``LightmapProbe`` nodes before baking lightmaps, you can add more probes in specific areas for greater detail, or disable automatic generation and rely only on manually placed probes instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

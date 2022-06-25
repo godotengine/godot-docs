@@ -345,6 +345,8 @@ Specify the axis rotation order of the :ref:`rotation<class_Node3D_property_rota
 
 Scale part of the local transformation.
 
+\ **Note:** Mixed negative scales in 3D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, the scale values will either be all positive or all negative.
+
 ----
 
 .. _class_Node3D_property_top_level:

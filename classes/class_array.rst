@@ -279,9 +279,10 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
 ::
 
     func _ready():
-        print([6, 10, 6].all(greater_than_5))  # Prints True (3 elements evaluate to `true`).
-        print([4, 10, 4].all(greater_than_5))  # Prints False (1 elements evaluate to `true`).
-        print([4, 4, 4].all(greater_than_5))  # Prints False (0 elements evaluate to `true`).
+        print([6, 10, 6].all(greater_than_5))  # Prints True (3/3 elements evaluate to `true`).
+        print([4, 10, 4].all(greater_than_5))  # Prints False (1/3 elements evaluate to `true`).
+        print([4, 4, 4].all(greater_than_5))  # Prints False (0/3 elements evaluate to `true`).
+        print([].all(greater_than_5))  # Prints True (0/0 elements evaluate to `true`).
     
         print([6, 10, 6].all(func(number): return number > 5))  # Prints True. Same as the first line above, but using lambda function.
     
@@ -291,6 +292,8 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
 See also :ref:`any<class_Array_method_any>`, :ref:`filter<class_Array_method_filter>`, :ref:`map<class_Array_method_map>` and :ref:`reduce<class_Array_method_reduce>`.
 
 \ **Note:** Unlike relying on the size of an array returned by :ref:`filter<class_Array_method_filter>`, this method will return as early as possible to improve performance (especially with large arrays).
+
+\ **Note:** For an empty array, this method `always <https://en.wikipedia.org/wiki/Vacuous_truth>`__ returns ``true``.
 
 ----
 
@@ -308,6 +311,7 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
         print([6, 10, 6].any(greater_than_5))  # Prints True (3 elements evaluate to `true`).
         print([4, 10, 4].any(greater_than_5))  # Prints True (1 elements evaluate to `true`).
         print([4, 4, 4].any(greater_than_5))  # Prints False (0 elements evaluate to `true`).
+        print([].any(greater_than_5))  # Prints False (0 elements evaluate to `true`).
     
         print([6, 10, 6].any(func(number): return number > 5))  # Prints True. Same as the first line above, but using lambda function.
     
@@ -317,6 +321,8 @@ The callable's method should take one :ref:`Variant<class_Variant>` parameter (t
 See also :ref:`all<class_Array_method_all>`, :ref:`filter<class_Array_method_filter>`, :ref:`map<class_Array_method_map>` and :ref:`reduce<class_Array_method_reduce>`.
 
 \ **Note:** Unlike relying on the size of an array returned by :ref:`filter<class_Array_method_filter>`, this method will return as early as possible to improve performance (especially with large arrays).
+
+\ **Note:** For an empty array, this method always returns ``false``.
 
 ----
 

@@ -48,6 +48,10 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`font_get_embolden<class_TextServer_method_font_get_embolden>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                                 |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`font_get_face_count<class_TextServer_method_font_get_face_count>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`font_get_face_index<class_TextServer_method_font_get_face_index>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`font_get_fixed_size<class_TextServer_method_font_get_fixed_size>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`font_get_generate_mipmaps<class_TextServer_method_font_get_generate_mipmaps>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                 |
@@ -163,6 +167,8 @@ Methods
 | void                                                            | :ref:`font_set_descent<class_TextServer_method_font_set_descent>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)**                                                                                                                                                                                            |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_embolden<class_TextServer_method_font_set_embolden>` **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` strength **)**                                                                                                                                                                                                                     |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                            | :ref:`font_set_face_index<class_TextServer_method_font_set_face_index>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` face_index **)**                                                                                                                                                                                                                   |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`font_set_fixed_size<class_TextServer_method_font_set_fixed_size>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` fixed_size **)**                                                                                                                                                                                                                   |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -448,6 +454,28 @@ enum **JustificationFlag**:
 
 ----
 
+.. _enum_TextServer_AutowrapMode:
+
+.. _class_TextServer_constant_AUTOWRAP_OFF:
+
+.. _class_TextServer_constant_AUTOWRAP_ARBITRARY:
+
+.. _class_TextServer_constant_AUTOWRAP_WORD:
+
+.. _class_TextServer_constant_AUTOWRAP_WORD_SMART:
+
+enum **AutowrapMode**:
+
+- **AUTOWRAP_OFF** = **0** --- Autowrap is disabled.
+
+- **AUTOWRAP_ARBITRARY** = **1** --- Wraps the text inside the node's bounding rectangle by allowing to break lines at arbitrary positions, which is useful when very limited space is available.
+
+- **AUTOWRAP_WORD** = **2** --- Wraps the text inside the node's bounding rectangle by soft-breaking between words.
+
+- **AUTOWRAP_WORD_SMART** = **3** --- Behaves similarly to :ref:`AUTOWRAP_WORD<class_TextServer_constant_AUTOWRAP_WORD>`, but force-breaks a word if that single word does not fit in one line.
+
+----
+
 .. _enum_TextServer_LineBreakFlag:
 
 .. _class_TextServer_constant_BREAK_NONE:
@@ -474,9 +502,61 @@ enum **LineBreakFlag**:
 
 ----
 
-.. _enum_TextServer_TextOverrunFlag:
+.. _enum_TextServer_VisibleCharactersBehavior:
+
+.. _class_TextServer_constant_VC_CHARS_BEFORE_SHAPING:
+
+.. _class_TextServer_constant_VC_CHARS_AFTER_SHAPING:
+
+.. _class_TextServer_constant_VC_GLYPHS_AUTO:
+
+.. _class_TextServer_constant_VC_GLYPHS_LTR:
+
+.. _class_TextServer_constant_VC_GLYPHS_RTL:
+
+enum **VisibleCharactersBehavior**:
+
+- **VC_CHARS_BEFORE_SHAPING** = **0** --- Trims text before the shaping. e.g, increasing :ref:`Label.visible_characters<class_Label_property_visible_characters>` or :ref:`RichTextLabel.visible_characters<class_RichTextLabel_property_visible_characters>` value is visually identical to typing the text.
+
+- **VC_CHARS_AFTER_SHAPING** = **1** --- Displays glyphs that are mapped to the first :ref:`Label.visible_characters<class_Label_property_visible_characters>` or :ref:`RichTextLabel.visible_characters<class_RichTextLabel_property_visible_characters>` characters from the beginning of the text.
+
+- **VC_GLYPHS_AUTO** = **2** --- Displays :ref:`Label.percent_visible<class_Label_property_percent_visible>` or :ref:`RichTextLabel.percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the left or from the right, depending on :ref:`Control.layout_direction<class_Control_property_layout_direction>` value.
+
+- **VC_GLYPHS_LTR** = **3** --- Displays :ref:`Label.percent_visible<class_Label_property_percent_visible>` or :ref:`RichTextLabel.percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the left.
+
+- **VC_GLYPHS_RTL** = **4** --- Displays :ref:`Label.percent_visible<class_Label_property_percent_visible>` or :ref:`RichTextLabel.percent_visible<class_RichTextLabel_property_percent_visible>` glyphs, starting from the right.
+
+----
+
+.. _enum_TextServer_OverrunBehavior:
 
 .. _class_TextServer_constant_OVERRUN_NO_TRIMMING:
+
+.. _class_TextServer_constant_OVERRUN_TRIM_CHAR:
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD:
+
+.. _class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS:
+
+.. _class_TextServer_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
+
+enum **OverrunBehavior**:
+
+- **OVERRUN_NO_TRIMMING** = **0** --- No text trimming is performed.
+
+- **OVERRUN_TRIM_CHAR** = **1** --- Trims the text per character.
+
+- **OVERRUN_TRIM_WORD** = **2** --- Trims the text per word.
+
+- **OVERRUN_TRIM_ELLIPSIS** = **3** --- Trims the text per character and adds an ellipsis to indicate that parts are hidden.
+
+- **OVERRUN_TRIM_WORD_ELLIPSIS** = **4** --- Trims the text per word and adds an ellipsis to indicate that parts are hidden.
+
+----
+
+.. _enum_TextServer_TextOverrunFlag:
+
+.. _class_TextServer_constant_OVERRUN_NO_TRIM:
 
 .. _class_TextServer_constant_OVERRUN_TRIM:
 
@@ -490,7 +570,7 @@ enum **LineBreakFlag**:
 
 enum **TextOverrunFlag**:
 
-- **OVERRUN_NO_TRIMMING** = **0** --- No trimming is performed.
+- **OVERRUN_NO_TRIM** = **0** --- No trimming is performed.
 
 - **OVERRUN_TRIM** = **1** --- Trims the text when it exceeds the given width.
 
@@ -870,6 +950,22 @@ Returns the font descent (number of pixels below the baseline).
 - :ref:`float<class_float>` **font_get_embolden** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
 Returns font embolden strength.
+
+----
+
+.. _class_TextServer_method_font_get_face_count:
+
+- :ref:`int<class_int>` **font_get_face_count** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returns number of faces in the TrueType / OpenType collection.
+
+----
+
+.. _class_TextServer_method_font_get_face_index:
+
+- :ref:`int<class_int>` **font_get_face_index** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Recturns an active face index in the TrueType / OpenType collection.
 
 ----
 
@@ -1350,6 +1446,14 @@ Sets the font descent (number of pixels below the baseline).
 - void **font_set_embolden** **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` strength **)**
 
 Sets font embolden strength. If ``strength`` is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
+
+----
+
+.. _class_TextServer_method_font_set_face_index:
+
+- void **font_set_face_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` face_index **)**
+
+Sets an active face index in the TrueType / OpenType collection.
 
 ----
 

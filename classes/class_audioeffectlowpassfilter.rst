@@ -11,12 +11,17 @@ AudioEffectLowPassFilter
 
 **Inherits:** :ref:`AudioEffectFilter<class_AudioEffectFilter>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Adds a low-pass filter to the Audio bus.
+Adds a low-pass filter to the audio bus.
 
 Description
 -----------
 
 Cuts frequencies higher than the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and allows lower frequencies to pass.
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -15,7 +15,7 @@ Font source data and prerendered glyph cache, imported from dynamic or bitmap fo
 
 Supported font formats:
 
-- Dynamic font importer: TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2), Type 1 (.pfb, .pfm).
+- Dynamic font importer: TrueType (.ttf), TrueType collection (.ttc), OpenType (.otf), OpenType collection (.otc), WOFF (.woff), WOFF2 (.woff2), Type 1 (.pfb, .pfm).
 
 - Bitmap font importer: AngelCode BMFont (.fnt, .font), text and binary (version 3) format variants.
 
@@ -30,6 +30,8 @@ Properties
 | :ref:`PackedByteArray<class_PackedByteArray>`                   | :ref:`data<class_FontData_property_data>`                                                             | ``PackedByteArray()``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                                       | :ref:`embolden<class_FontData_property_embolden>`                                                     | ``0.0``                           |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`face_index<class_FontData_property_face_index>`                                                 | ``0``                             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`                                           | :ref:`fixed_size<class_FontData_property_fixed_size>`                                                 | ``0``                             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -83,6 +85,8 @@ Methods
 | :ref:`RID<class_RID>`                             | :ref:`get_cache_rid<class_FontData_method_get_cache_rid>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`get_descent<class_FontData_method_get_descent>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|                                                                                                                |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`get_face_count<class_FontData_method_get_face_count>` **(** **)** |const|                                                                                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`get_glyph_advance<class_FontData_method_get_glyph_advance>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph **)** |const|                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,6 +249,22 @@ Contents of the dynamic font source file.
 +-----------+---------------------+
 
 If is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
+
+----
+
+.. _class_FontData_property_face_index:
+
+- :ref:`int<class_int>` **face_index**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_face_index(value) |
++-----------+-----------------------+
+| *Getter*  | get_face_index()      |
++-----------+-----------------------+
+
+Active face index in the TrueType / OpenType collection file.
 
 ----
 
@@ -559,6 +579,14 @@ Returns font descent (number of pixels below the baseline).
 
 ----
 
+.. _class_FontData_method_get_face_count:
+
+- :ref:`int<class_int>` **get_face_count** **(** **)** |const|
+
+Returns number of faces in the TrueType / OpenType collection.
+
+----
+
 .. _class_FontData_method_get_glyph_advance:
 
 - :ref:`Vector2<class_Vector2>` **get_glyph_advance** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph **)** |const|
@@ -801,7 +829,9 @@ Loads an AngelCode BMFont (.fnt, .font) bitmap font from file ``path``.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load_dynamic_font** **(** :ref:`String<class_String>` path **)**
 
-Loads a TrueType (.ttf), OpenType (.otf), WOFF (.woff), WOFF2 (.woff2) or Type 1 (.pfb, .pfm) dynamic font from file ``path``.
+Loads a TrueType (.ttf), TrueType collection (.ttc), OpenType (.otf), OpenType collection (.otc), WOFF (.woff), WOFF2 (.woff2) or Type 1 (.pfb, .pfm) dynamic font from file ``path``.
+
+\ **Note:** Use :ref:`face_index<class_FontData_property_face_index>` to select specific face from the collection file.
 
 \ **Warning:** This method should only be used in the editor or in cases when you need to load external fonts at run-time, such as fonts located at the ``user://`` directory.
 

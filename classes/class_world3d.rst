@@ -93,7 +93,7 @@ The World3D's :ref:`Environment<class_Environment>`.
 | *Getter* | get_fallback_environment()      |
 +----------+---------------------------------+
 
-The World3D's fallback_environment will be used if the World3D's :ref:`Environment<class_Environment>` fails or is missing.
+The World3D's fallback environment will be used if :ref:`environment<class_World3D_property_environment>` fails or is missing.
 
 ----
 

@@ -18,6 +18,8 @@ Description
 
 Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
 
+If you need to store up to 3 curves within a single texture, use :ref:`CurveXYZTexture<class_CurveXYZTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
+
 Properties
 ----------
 
@@ -40,9 +42,9 @@ Enumerations
 
 enum **TextureMode**:
 
-- **TEXTURE_MODE_RGB** = **0**
+- **TEXTURE_MODE_RGB** = **0** --- Store the curve equally across the red, green and blue channels. This uses more video memory, but is more compatible with shaders that only read the green and blue values.
 
-- **TEXTURE_MODE_RED** = **1**
+- **TEXTURE_MODE_RED** = **1** --- Store the curve only in the red channel. This saves video memory, but some custom shaders may not be able to work with this.
 
 Property Descriptions
 ---------------------
@@ -57,7 +59,7 @@ Property Descriptions
 | *Getter* | get_curve()      |
 +----------+------------------+
 
-The ``curve`` rendered onto the texture.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture.
 
 ----
 
@@ -73,6 +75,8 @@ The ``curve`` rendered onto the texture.
 | *Getter*  | get_texture_mode()      |
 +-----------+-------------------------+
 
+The format the texture should be generated with. When passing a CurveTexture as a input to a :ref:`Shader<class_Shader>`, this may need to be adjusted.
+
 ----
 
 .. _class_CurveTexture_property_width:
@@ -87,7 +91,7 @@ The ``curve`` rendered onto the texture.
 | *Getter*  | get_width()      |
 +-----------+------------------+
 
-The width of the texture.
+The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

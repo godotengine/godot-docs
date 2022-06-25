@@ -611,7 +611,19 @@ For main screen plugins, this appears at the top of the screen, to the right of 
 
 - :ref:`Dictionary<class_Dictionary>` **_get_state** **(** **)** |virtual| |const|
 
-Gets the state of your plugin editor. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns).
+Override this method to provide a state data you want to be saved, like view position, grid settings, folding, etc. This is used when saving the scene (so state is kept when opening it again) and for switching tabs (so state can be restored when the tab returns). This data is automatically saved for each scene in an ``editstate`` file in the editor metadata folder. If you want to store global (scene-independent) editor data for your plugin, you can use :ref:`_get_window_layout<class_EditorPlugin_method__get_window_layout>` instead.
+
+Use :ref:`_set_state<class_EditorPlugin_method__set_state>` to restore your saved state.
+
+\ **Note:** This method should not be used to save important settings that should persist with the project.
+
+\ **Note:** You must implement :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` for the state to be stored and restored correctly.
+
+::
+
+    func _get_state():
+        var state = {"zoom": zoom, "preferred_color": my_color}
+        return state
 
 ----
 
@@ -619,7 +631,15 @@ Gets the state of your plugin editor. This is used when saving the scene (so sta
 
 - void **_get_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` configuration **)** |virtual|
 
-Gets the GUI layout of the plugin. This is used to save the project's editor layout when :ref:`queue_save_layout<class_EditorPlugin_method_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
+Override this method to provide the GUI layout of the plugin or any other data you want to be stored. This is used to save the project's editor layout when :ref:`queue_save_layout<class_EditorPlugin_method_queue_save_layout>` is called or the editor layout was changed (for example changing the position of a dock). The data is stored in the ``editor_layout.cfg`` file in the editor metadata directory.
+
+Use :ref:`_set_window_layout<class_EditorPlugin_method__set_window_layout>` to restore your saved layout.
+
+::
+
+    func _get_window_layout(configuration):
+        configuration.set_value("MyPlugin", "window_position", $Window.position)
+        configuration.set_value("MyPlugin", "icon_color", $Icon.modulate)
 
 ----
 
@@ -661,7 +681,15 @@ This method is called after the editor saves the project or when it's closed. It
 
 - void **_set_state** **(** :ref:`Dictionary<class_Dictionary>` state **)** |virtual|
 
-Restore the state saved by :ref:`_get_state<class_EditorPlugin_method__get_state>`.
+Restore the state saved by :ref:`_get_state<class_EditorPlugin_method__get_state>`. This method is called when the current scene tab is changed in the editor.
+
+\ **Note:** Your plugin must implement :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>`, otherwise it will not be recognized and this method will not be called.
+
+::
+
+    func _set_state(data):
+        zoom = data.get("zoom", 1.0)
+        preferred_color = data.get("my_color", Color.white)
 
 ----
 
@@ -669,7 +697,13 @@ Restore the state saved by :ref:`_get_state<class_EditorPlugin_method__get_state
 
 - void **_set_window_layout** **(** :ref:`ConfigFile<class_ConfigFile>` configuration **)** |virtual|
 
-Restore the plugin GUI layout saved by :ref:`_get_window_layout<class_EditorPlugin_method__get_window_layout>`.
+Restore the plugin GUI layout and data saved by :ref:`_get_window_layout<class_EditorPlugin_method__get_window_layout>`. This method is called for every plugin on editor startup. Use the provided ``configuration`` file to read your saved data.
+
+::
+
+    func _set_window_layout(configuration):
+        $Window.position = configuration.get_value("MyPlugin", "window_position", Vector2())
+        $Icon.modulate = configuration.get_value("MyPlugin", "icon_color", Color.white)
 
 ----
 

@@ -20,7 +20,7 @@ Encapsulates a :ref:`ColorPicker<class_ColorPicker>` making it accessible by pre
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-\ **Note:** By default, the button may not be wide enough for the color preview swatch to be visible. Make sure to set :ref:`Control.minimum_size<class_Control_property_minimum_size>` to a big enough value to give the button enough space.
+\ **Note:** By default, the button may not be wide enough for the color preview swatch to be visible. Make sure to set :ref:`Control.custom_minimum_size<class_Control_property_custom_minimum_size>` to a big enough value to give the button enough space.
 
 Tutorials
 ---------

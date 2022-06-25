@@ -549,6 +549,10 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
         if argument.find("=") > -1:
             var key_value = argument.split("=")
             arguments[key_value[0].lstrip("--")] = key_value[1]
+        else:
+            # Options without an argument will be present in the dictionary,
+            # with the value set to an empty string.
+            arguments[argument.lstrip("--")] = ""
 
  .. code-tab:: csharp
 
@@ -559,6 +563,12 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
         {
             string[] keyValue = argument.Split("=");
             arguments[keyValue[0].LStrip("--")] = keyValue[1];
+        }
+        else
+        {
+            // Options without an argument will be present in the dictionary,
+            // with the value set to an empty string.
+            arguments[keyValue[0].LStrip("--")] = "";
         }
     }
 
@@ -946,7 +956,14 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 Moves the file or directory to the system's recycle bin. See also :ref:`Directory.remove<class_Directory_method_remove>`.
 
+The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported project.
+
 \ **Note:** If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.
+
+::
+
+    var file_to_remove = "user://slot1.sav"
+    OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 
 ----
 

@@ -16,11 +16,17 @@ Computes and stores baked lightmaps for fast global illumination.
 Description
 -----------
 
-The ``LightmapGI`` node is used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking. ``LightmapGI`` can also provide rough reflections using spherical harmonics if :ref:`directional<class_LightmapGI_property_directional>` is enabled. Dynamic objects can receive indirect lighting thanks to *light probes*, which can be automatically placed by setting :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`. Additional lightmap probes can also be added by creating :ref:`LightmapProbe<class_LightmapProbe>` nodes. The downside is that lightmaps are fully static and cannot be baked in an exported project. Baking a ``LightmapGI`` node is also slower compared to :ref:`VoxelGI<class_VoxelGI>`.
+The ``LightmapGI`` node is used to compute and store baked lightmaps. Lightmaps are used to provide high-quality indirect lighting with very little light leaking. ``LightmapGI`` can also provide rough reflections using spherical harmonics if :ref:`directional<class_LightmapGI_property_directional>` is enabled. Dynamic objects can receive indirect lighting thanks to *light probes*, which can be automatically placed by setting :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>` to a value other than :ref:`GENERATE_PROBES_DISABLED<class_LightmapGI_constant_GENERATE_PROBES_DISABLED>`. Additional lightmap probes can also be added by creating :ref:`LightmapProbe<class_LightmapProbe>` nodes. The downside is that lightmaps are fully static and cannot be baked in an exported project. Baking a ``LightmapGI`` node is also slower compared to :ref:`VoxelGI<class_VoxelGI>`.
 
 \ **Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``LightmapGI`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`VoxelGI<class_VoxelGI>` or SDFGI instead (see :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`).
 
 \ **Performance:** ``LightmapGI`` provides the best possible run-time performance for global illumination. It is suitable for low-end hardware including integrated graphics and mobile devices.
+
+\ **Note:** Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.
+
+\ **Note:** Lightmap baking on :ref:`CSGShape3D<class_CSGShape3D>`\ s and :ref:`PrimitiveMesh<class_PrimitiveMesh>`\ es is not supported, as these cannot store UV2 data required for baking.
+
+\ **Note:** If no custom lightmappers are installed, ``LightmapGI`` can only be baked when using the Vulkan backend (Clustered or Mobile), not OpenGL.
 
 Properties
 ----------
@@ -68,13 +74,13 @@ Enumerations
 
 enum **BakeQuality**:
 
-- **BAKE_QUALITY_LOW** = **0**
+- **BAKE_QUALITY_LOW** = **0** --- Low bake quality (fastest bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/low_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/low_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_probe_ray_count>`.
 
-- **BAKE_QUALITY_MEDIUM** = **1**
+- **BAKE_QUALITY_MEDIUM** = **1** --- Medium bake quality (fast bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/medium_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/medium_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_probe_ray_count>`.
 
-- **BAKE_QUALITY_HIGH** = **2**
+- **BAKE_QUALITY_HIGH** = **2** --- High bake quality (slow bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/high_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/high_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_probe_ray_count>`.
 
-- **BAKE_QUALITY_ULTRA** = **3**
+- **BAKE_QUALITY_ULTRA** = **3** --- Highest bake quality (slowest bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/high_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`.
 
 ----
 
@@ -92,15 +98,15 @@ enum **BakeQuality**:
 
 enum **GenerateProbes**:
 
-- **GENERATE_PROBES_DISABLED** = **0**
+- **GENERATE_PROBES_DISABLED** = **0** --- Don't generate lightmap probes for lighting dynamic objects.
 
-- **GENERATE_PROBES_SUBDIV_4** = **1**
+- **GENERATE_PROBES_SUBDIV_4** = **1** --- Lowest level of subdivision (fastest bake times, smallest file sizes).
 
-- **GENERATE_PROBES_SUBDIV_8** = **2**
+- **GENERATE_PROBES_SUBDIV_8** = **2** --- Low level of subdivision (fast bake times, small file sizes).
 
-- **GENERATE_PROBES_SUBDIV_16** = **3**
+- **GENERATE_PROBES_SUBDIV_16** = **3** --- High level of subdivision (slow bake times, large file sizes).
 
-- **GENERATE_PROBES_SUBDIV_32** = **4**
+- **GENERATE_PROBES_SUBDIV_32** = **4** --- Highest level of subdivision (slowest bake times, largest file sizes).
 
 ----
 
@@ -122,19 +128,19 @@ enum **GenerateProbes**:
 
 enum **BakeError**:
 
-- **BAKE_ERROR_OK** = **0**
+- **BAKE_ERROR_OK** = **0** --- Lightmap baking was successful.
 
-- **BAKE_ERROR_NO_LIGHTMAPPER** = **1**
+- **BAKE_ERROR_NO_LIGHTMAPPER** = **1** --- Lightmap baking failed as there is no lightmapper available in this Godot build.
 
-- **BAKE_ERROR_NO_SAVE_PATH** = **2**
+- **BAKE_ERROR_NO_SAVE_PATH** = **2** --- Lightmap baking failed as the :ref:`LightmapGIData<class_LightmapGIData>` save path isn't configured in the resource.
 
-- **BAKE_ERROR_NO_MESHES** = **3**
+- **BAKE_ERROR_NO_MESHES** = **3** --- Lightmap baking failed as there are no meshes whose :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` is :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` and with valid UV2 mapping in the current scene. You may need to select 3D scenes in the Import dock and change their global illumination mode accordingly.
 
-- **BAKE_ERROR_MESHES_INVALID** = **4**
+- **BAKE_ERROR_MESHES_INVALID** = **4** --- Lightmap baking failed as the lightmapper failed to analyze some of the meshes marked as static for baking.
 
-- **BAKE_ERROR_CANT_CREATE_IMAGE** = **5**
+- **BAKE_ERROR_CANT_CREATE_IMAGE** = **5** --- Lightmap baking failed as the resulting image couldn't be saved or imported by Godot after it was saved.
 
-- **BAKE_ERROR_USER_ABORTED** = **6**
+- **BAKE_ERROR_USER_ABORTED** = **6** --- The user aborted the lightmap baking operation (typically by clicking the **Cancel** button in the progress dialog).
 
 ----
 
@@ -150,13 +156,15 @@ enum **BakeError**:
 
 enum **EnvironmentMode**:
 
-- **ENVIRONMENT_MODE_DISABLED** = **0**
+- **ENVIRONMENT_MODE_DISABLED** = **0** --- Ignore environment lighting when baking lightmaps.
 
-- **ENVIRONMENT_MODE_SCENE** = **1**
+- **ENVIRONMENT_MODE_SCENE** = **1** --- Use the scene's environment lighting when baking lightmaps.
 
-- **ENVIRONMENT_MODE_CUSTOM_SKY** = **2**
+\ **Note:** If baking lightmaps in a scene with no :ref:`WorldEnvironment<class_WorldEnvironment>` node, this will act like :ref:`ENVIRONMENT_MODE_DISABLED<class_LightmapGI_constant_ENVIRONMENT_MODE_DISABLED>`. The editor's preview sky and sun is *not* taken into account by ``LightmapGI`` when baking lightmaps.
 
-- **ENVIRONMENT_MODE_CUSTOM_COLOR** = **3**
+- **ENVIRONMENT_MODE_CUSTOM_SKY** = **2** --- Use :ref:`environment_custom_sky<class_LightmapGI_property_environment_custom_sky>` as a source of environment lighting when baking lightmaps.
+
+- **ENVIRONMENT_MODE_CUSTOM_COLOR** = **3** --- Use :ref:`environment_custom_color<class_LightmapGI_property_environment_custom_color>` multiplied by :ref:`environment_custom_energy<class_LightmapGI_property_environment_custom_energy>` as a constant source of environment lighting when baking lightmaps.
 
 Property Descriptions
 ---------------------
@@ -173,6 +181,8 @@ Property Descriptions
 | *Getter*  | get_bias()      |
 +-----------+-----------------+
 
+The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_property_bias>` can fix shadow acne on the resulting baked lightmap, but can introduce peter-panning (shadows not connecting to their casters). Real-time :ref:`Light3D<class_Light3D>` shadows are not affected by this :ref:`bias<class_LightmapGI_property_bias>` property.
+
 ----
 
 .. _class_LightmapGI_property_bounces:
@@ -186,6 +196,8 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_bounces()      |
 +-----------+--------------------+
+
+Number of light bounces that are taken into account during baking. Higher values result in brighter, more realistic lighting, at the cost of longer bake times. If set to ``0``, only environment lighting, direct light and emissive lighting is baked.
 
 ----
 
@@ -201,6 +213,10 @@ Property Descriptions
 | *Getter*  | is_directional()       |
 +-----------+------------------------+
 
+If ``true``, bakes lightmaps to contain directional information as spherical harmonics. This results in more realistic lighting appearance, especially with normal mapped materials and for lights that their have direct light baked (:ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` set to :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`). The directional information is also used to provide rough reflections for static and dynamic objects. This has a small run-time performance cost as the shader has to perform more work to interpret the direction information from the lightmap. Directional lightmaps also take longer to bake and result in larger file sizes.
+
+\ **Note:** The property's name has no relationship with :ref:`DirectionalLight3D<class_DirectionalLight3D>`. :ref:`directional<class_LightmapGI_property_directional>` works with all light types.
+
 ----
 
 .. _class_LightmapGI_property_environment_custom_color:
@@ -212,6 +228,8 @@ Property Descriptions
 +----------+-------------------------------------+
 | *Getter* | get_environment_custom_color()      |
 +----------+-------------------------------------+
+
+The color to use for environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>`.
 
 ----
 
@@ -225,6 +243,8 @@ Property Descriptions
 | *Getter* | get_environment_custom_energy()      |
 +----------+--------------------------------------+
 
+The color multiplier to use for environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>`.
+
 ----
 
 .. _class_LightmapGI_property_environment_custom_sky:
@@ -236,6 +256,8 @@ Property Descriptions
 +----------+-----------------------------------+
 | *Getter* | get_environment_custom_sky()      |
 +----------+-----------------------------------+
+
+The sky to use as a source of environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_SKY<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_SKY>`.
 
 ----
 
@@ -251,6 +273,8 @@ Property Descriptions
 | *Getter*  | get_environment_mode()      |
 +-----------+-----------------------------+
 
+The environment mode to use when baking lightmaps.
+
 ----
 
 .. _class_LightmapGI_property_generate_probes_subdiv:
@@ -264,6 +288,12 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_generate_probes()      |
 +-----------+----------------------------+
+
+The level of subdivision to use when automatically generating :ref:`LightmapProbe<class_LightmapProbe>`\ s for dynamic object lighting. Higher values result in more accurate indirect lighting on dynamic objects, at the cost of longer bake times and larger file sizes.
+
+\ **Note:** Automatically generated :ref:`LightmapProbe<class_LightmapProbe>`\ s are not visible as nodes in the Scene tree dock, and cannot be modified this way after they are generated.
+
+\ **Note:** Regardless of :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`, direct lighting on dynamic objects is always applied using :ref:`Light3D<class_Light3D>` nodes in real-time.
 
 ----
 
@@ -279,6 +309,8 @@ Property Descriptions
 | *Getter*  | is_interior()       |
 +-----------+---------------------+
 
+If ``true``, ignore environment lighting when baking lightmaps.
+
 ----
 
 .. _class_LightmapGI_property_light_data:
@@ -290,6 +322,8 @@ Property Descriptions
 +----------+-----------------------+
 | *Getter* | get_light_data()      |
 +----------+-----------------------+
+
+The :ref:`LightmapGIData<class_LightmapGIData>` associated to this ``LightmapGI`` node. This resource is automatically created after baking, and is not meant to be created manually.
 
 ----
 
@@ -305,6 +339,8 @@ Property Descriptions
 | *Getter*  | get_max_texture_size()      |
 +-----------+-----------------------------+
 
+The maximum texture size for the generated texture atlas. Higher values will result in fewer slices being generated, but may not work on all hardware as a result of hardware limitations on texture sizes. Leave :ref:`max_texture_size<class_LightmapGI_property_max_texture_size>` at its default value of ``16384`` if unsure.
+
 ----
 
 .. _class_LightmapGI_property_quality:
@@ -319,6 +355,10 @@ Property Descriptions
 | *Getter*  | get_bake_quality()      |
 +-----------+-------------------------+
 
+The quality preset to use when baking lightmaps. This affects bake times, but output file sizes remain mostly identical across quality levels.
+
+To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property_bounces>`, disable :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` and increase the lightmap texel size on 3D scenes in the Import doc.
+
 ----
 
 .. _class_LightmapGI_property_use_denoiser:
@@ -332,6 +372,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | is_using_denoiser()     |
 +-----------+-------------------------+
+
+If ``true``, uses a CPU-based denoising algorithm on the generated lightmap. This eliminates most noise within the generated lightmap at the cost of longer bake times. File sizes are generally not impacted significantly by the use of a denoiser, although lossless compression may do a better job at compressing a denoised image.
+
+\ **Note:** The built-in denoiser (OpenImageDenoise) may crash when denoising lightmaps in large scenes. If you encounter a crash at the end of lightmap baking, try disabling :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -24,6 +24,8 @@ If no maximum size is set, or if it is set to 0, the ``PopupMenu`` height will b
 
 All ``set_*`` methods allow negative item index, which makes the item accessed from the last one.
 
+\ **Incremental search:** Like :ref:`ItemList<class_ItemList>` and :ref:`Tree<class_Tree>`, ``PopupMenu`` supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing :ref:`ProjectSettings.gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`.
+
 Properties
 ----------
 
@@ -83,6 +85,8 @@ Methods
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Key<enum_@GlobalScope_Key>`                | :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                              |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_item_horizontal_offset<class_PopupMenu_method_get_item_horizontal_offset>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                  |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>`                | :ref:`get_item_icon<class_PopupMenu_method_get_item_icon>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_item_id<class_PopupMenu_method_get_item_id>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                |
@@ -134,6 +138,8 @@ Methods
 | void                                             | :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` checked **)**                                                                                                                             |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` disabled **)**                                                                                                                          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_item_horizontal_offset<class_PopupMenu_method_set_item_horizontal_offset>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` offset **)**                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_icon<class_PopupMenu_method_set_item_icon>` **(** :ref:`int<class_int>` index, :ref:`Texture2D<class_Texture2D>` icon **)**                                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -546,6 +552,14 @@ Returns the accelerator of the item at the given ``index``. Accelerators are spe
 
 ----
 
+.. _class_PopupMenu_method_get_item_horizontal_offset:
+
+- :ref:`int<class_int>` **get_item_horizontal_offset** **(** :ref:`int<class_int>` index **)** |const|
+
+Returns the horizontal offset of the item at the given ``index``.
+
+----
+
 .. _class_PopupMenu_method_get_item_icon:
 
 - :ref:`Texture2D<class_Texture2D>` **get_item_icon** **(** :ref:`int<class_int>` index **)** |const|
@@ -761,6 +775,14 @@ Sets the checkstate status of the item at the given ``index``.
 - void **set_item_disabled** **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` disabled **)**
 
 Enables/disables the item at the given ``index``. When it is disabled, it can't be selected and its action can't be invoked.
+
+----
+
+.. _class_PopupMenu_method_set_item_horizontal_offset:
+
+- void **set_item_horizontal_offset** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` offset **)**
+
+Sets the horizontal offset of the item at the given ``index``.
 
 ----
 

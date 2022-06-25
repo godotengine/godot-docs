@@ -20,6 +20,11 @@ Description
 
 Plays input signal back after a period of time. The delayed signal may be played back multiple times to create the sound of a repeating, decaying echo. Delay effects range from a subtle echo effect to a pronounced blending of previous sounds with new sounds.
 
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
 Properties
 ----------
 

@@ -11,12 +11,17 @@ AudioEffectPanner
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Adds a panner audio effect to an Audio bus. Pans sound left or right.
+Adds a panner audio effect to an audio bus. Pans sound left or right.
 
 Description
 -----------
 
 Determines how much of an audio signal is sent to the left and right buses.
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 Properties
 ----------

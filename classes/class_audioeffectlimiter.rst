@@ -20,6 +20,11 @@ A limiter is similar to a compressor, but it's less flexible and designed to dis
 
 Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
 Properties
 ----------
 

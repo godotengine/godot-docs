@@ -2359,6 +2359,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 
 Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
 
+\ **Note:** :ref:`heightmap_texture<class_BaseMaterial3D_property_heightmap_texture>` is always sampled with linear filtering, even if nearest-neighbor filtering is selected here. This is to ensure the heightmap effect looks as intended. If you need sharper height transitions between pixels, resize the heightmap texture in an image editor with nearest-neighbor filtering.
+
 ----
 
 .. _class_BaseMaterial3D_property_texture_repeat:

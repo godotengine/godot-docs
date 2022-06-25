@@ -69,25 +69,27 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`           | ``1``     |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`           | ``false`` |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`       | ``false`` |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                     | ``false`` |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                     |           |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>` | ``0``     |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`             | ``""``    |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                     | ``""``    |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
-| :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>` | ``0``     |
-+-------------------------------------------------------------------+-------------------------------------------------------------+-----------+
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`                         | ``1``     |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`                         | ``false`` |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`                     | ``false`` |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                                   | ``false`` |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                                   |           |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>`               | ``0``     |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`                           | ``""``    |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                                   | ``""``    |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>`               | ``0``     |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+| :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>` | ``0``     |
++-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -293,6 +295,22 @@ The button's text that will be displayed inside the button's area.
 +-----------+---------------------------+
 
 Base text writing direction.
+
+----
+
+.. _class_Button_property_text_overrun_behavior:
+
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior**
+
++-----------+----------------------------------+
+| *Default* | ``0``                            |
++-----------+----------------------------------+
+| *Setter*  | set_text_overrun_behavior(value) |
++-----------+----------------------------------+
+| *Getter*  | get_text_overrun_behavior()      |
++-----------+----------------------------------+
+
+Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
 
 Method Descriptions
 -------------------

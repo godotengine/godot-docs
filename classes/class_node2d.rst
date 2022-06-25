@@ -37,6 +37,8 @@ Properties
 +---------------------------------------+-----------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>`         | :ref:`global_scale<class_Node2D_property_global_scale>`         |                   |
 +---------------------------------------+-----------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`             | :ref:`global_skew<class_Node2D_property_global_skew>`           |                   |
++---------------------------------------+-----------------------------------------------------------------+-------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`global_transform<class_Node2D_property_global_transform>` |                   |
 +---------------------------------------+-----------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>`         | :ref:`position<class_Node2D_property_position>`                 | ``Vector2(0, 0)`` |
@@ -128,6 +130,20 @@ Global scale.
 
 ----
 
+.. _class_Node2D_property_global_skew:
+
+- :ref:`float<class_float>` **global_skew**
+
++----------+------------------------+
+| *Setter* | set_global_skew(value) |
++----------+------------------------+
+| *Getter* | get_global_skew()      |
++----------+------------------------+
+
+Global skew in radians.
+
+----
+
 .. _class_Node2D_property_global_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **global_transform**
@@ -187,6 +203,8 @@ Rotation in radians, relative to the node's parent.
 +-----------+-------------------+
 
 The node's scale. Unscaled value: ``(1, 1)``.
+
+\ **Note:** Negative X scales in 2D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, negative scales on the X axis will be changed to negative scales on the Y axis and a rotation of 180 degrees when decomposed.
 
 ----
 

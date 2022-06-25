@@ -138,9 +138,19 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_exr<class_Image_method_save_exr>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** |const|                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`save_exr_to_buffer<class_Image_method_save_exr_to_buffer>` **(** :ref:`bool<class_bool>` grayscale=false **)** |const|                                                                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_jpg<class_Image_method_save_jpg>` **(** :ref:`String<class_String>` path, :ref:`float<class_float>` quality=0.75 **)** |const|                                                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`save_jpg_to_buffer<class_Image_method_save_jpg_to_buffer>` **(** :ref:`float<class_float>` quality=0.75 **)** |const|                                                                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_png<class_Image_method_save_png>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`save_png_to_buffer<class_Image_method_save_png_to_buffer>` **(** **)** |const|                                                                                                                                                                                 |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_webp<class_Image_method_save_webp>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` lossy=false, :ref:`float<class_float>` quality=0.75 **)** |const|                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`save_webp_to_buffer<class_Image_method_save_webp_to_buffer>` **(** :ref:`bool<class_bool>` lossy=false, :ref:`float<class_float>` quality=0.75 **)** |const|                                                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`set_pixel<class_Image_method_set_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_Color>` color **)**                                                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -881,17 +891,65 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 
 ----
 
+.. _class_Image_method_save_exr_to_buffer:
+
+- :ref:`PackedByteArray<class_PackedByteArray>` **save_exr_to_buffer** **(** :ref:`bool<class_bool>` grayscale=false **)** |const|
+
+Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return an empty byte array if Godot was compiled without the TinyEXR module.
+
+\ **Note:** The TinyEXR module is disabled in non-editor builds, which means :ref:`save_exr<class_Image_method_save_exr>` will return an empty byte array when it is called from an exported project.
+
+----
+
+.. _class_Image_method_save_jpg:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **save_jpg** **(** :ref:`String<class_String>` path, :ref:`float<class_float>` quality=0.75 **)** |const|
+
+Saves the image as a JPEG file to ``path`` with the specified ``quality`` between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.90``. Even at quality ``1.00``, JPEG compression remains lossy.
+
+\ **Note:** JPEG does not save an alpha channel. If the ``Image`` contains an alpha channel, the image will still be saved, but the resulting JPEG file won't contain the alpha channel.
+
+----
+
+.. _class_Image_method_save_jpg_to_buffer:
+
+- :ref:`PackedByteArray<class_PackedByteArray>` **save_jpg_to_buffer** **(** :ref:`float<class_float>` quality=0.75 **)** |const|
+
+Saves the image as a JPEG file to a byte array with the specified ``quality`` between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger byte array sizes (and therefore memory usage). Recommended ``quality`` values are between ``0.75`` and ``0.90``. Even at quality ``1.00``, JPEG compression remains lossy.
+
+\ **Note:** JPEG does not save an alpha channel. If the ``Image`` contains an alpha channel, the image will still be saved, but the resulting byte array won't contain the alpha channel.
+
+----
+
 .. _class_Image_method_save_png:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_png** **(** :ref:`String<class_String>` path **)** |const|
 
-Saves the image as a PNG file to ``path``.
+Saves the image as a PNG file to the file at ``path``.
 
 ----
 
 .. _class_Image_method_save_png_to_buffer:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **save_png_to_buffer** **(** **)** |const|
+
+Saves the image as a PNG file to a byte array.
+
+----
+
+.. _class_Image_method_save_webp:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **save_webp** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` lossy=false, :ref:`float<class_float>` quality=0.75 **)** |const|
+
+Saves the image as a WebP (Web Picture) file to the file at ``path``. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive).
+
+----
+
+.. _class_Image_method_save_webp_to_buffer:
+
+- :ref:`PackedByteArray<class_PackedByteArray>` **save_webp_to_buffer** **(** :ref:`bool<class_bool>` lossy=false, :ref:`float<class_float>` quality=0.75 **)** |const|
+
+Saves the image as a WebP (Web Picture) file to a byte array. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive).
 
 ----
 

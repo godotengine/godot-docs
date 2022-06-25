@@ -18,7 +18,9 @@ Base class for all windows.
 Description
 -----------
 
-A node that creates a window.
+A node that creates a window. The window can either be a native system window or embedded inside another ``Window`` (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
+
+At runtime, ``Window``\ s will not close automatically when requested. You need to handle it manually using :ref:`close_requested<class_Window_signal_close_requested>` (this applies both to clicking close button and clicking outside popup).
 
 Properties
 ----------
@@ -176,8 +178,6 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`resize_margin<class_Window_theme_constant_resize_margin>`                | ``4``                             |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`             | :ref:`scaleborder_size<class_Window_theme_constant_scaleborder_size>`          | ``4``                             |
-+-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`title_height<class_Window_theme_constant_title_height>`                  | ``36``                            |
 +-----------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`title_outline_size<class_Window_theme_constant_title_outline_size>`      | ``0``                             |
@@ -200,11 +200,17 @@ Signals
 
 - **about_to_popup** **(** **)**
 
+Emitted right after :ref:`popup<class_Window_method_popup>` call, before the ``Window`` appears or does anything.
+
 ----
 
 .. _class_Window_signal_close_requested:
 
 - **close_requested** **(** **)**
+
+Emitted when the ``Window``'s close button is pressed or when :ref:`popup_window<class_Window_property_popup_window>` is enabled and user clicks outside the window.
+
+This signal can be used to handle window closing, e.g. by connecting it to :ref:`hide<class_Window_method_hide>`.
 
 ----
 
@@ -232,11 +238,15 @@ Example usage:
 
 - **focus_entered** **(** **)**
 
+Emitted when the ``Window`` gains focus.
+
 ----
 
 .. _class_Window_signal_focus_exited:
 
 - **focus_exited** **(** **)**
+
+Emitted when the ``Window`` loses its focus.
 
 ----
 
@@ -244,11 +254,15 @@ Example usage:
 
 - **go_back_requested** **(** **)**
 
+Emitted when a go back request is sent (e.g. pressing the "Back" button on Android), right after :ref:`Node.NOTIFICATION_WM_GO_BACK_REQUEST<class_Node_constant_NOTIFICATION_WM_GO_BACK_REQUEST>`.
+
 ----
 
 .. _class_Window_signal_mouse_entered:
 
 - **mouse_entered** **(** **)**
+
+Emitted when the mouse cursor enters the ``Window``'s area, regardless if it's currently focused or not.
 
 ----
 
@@ -256,11 +270,15 @@ Example usage:
 
 - **mouse_exited** **(** **)**
 
+Emitted when the mouse cursor exits the ``Window``'s area (including when it's hovered over another window on top of this one).
+
 ----
 
 .. _class_Window_signal_theme_changed:
 
 - **theme_changed** **(** **)**
+
+Emitted when the :ref:`theme<class_Window_property_theme>` is modified or changed to another :ref:`Theme<class_Theme>`.
 
 ----
 
@@ -268,11 +286,15 @@ Example usage:
 
 - **visibility_changed** **(** **)**
 
+Emitted when ``Window`` is made visible or disappears.
+
 ----
 
 .. _class_Window_signal_window_input:
 
 - **window_input** **(** :ref:`InputEvent<class_InputEvent>` event **)**
+
+Emitted when the ``Window`` is currently focused and receives any input, passing the received event as an argument.
 
 Enumerations
 ------------
@@ -291,11 +313,11 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_WINDOWED** = **0** --- Windowed mode.
+- **MODE_WINDOWED** = **0** --- Windowed mode, i.e. ``Window`` doesn't occupy whole screen (unless set to the size of the screen).
 
-- **MODE_MINIMIZED** = **1** --- Minimized window mode.
+- **MODE_MINIMIZED** = **1** --- Minimized window mode, i.e. ``Window`` is not visible and available on window manager's window list. Normally happens when the minimize button is presesd.
 
-- **MODE_MAXIMIZED** = **2** --- Maximized window mode.
+- **MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. ``Window`` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is presesd.
 
 - **MODE_FULLSCREEN** = **3** --- Fullscreen window mode. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
 
@@ -327,19 +349,19 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 enum **Flags**:
 
-- **FLAG_RESIZE_DISABLED** = **0** --- The window's ability to be resized.
+- **FLAG_RESIZE_DISABLED** = **0** --- The window's ability to be resized. Set with :ref:`unresizable<class_Window_property_unresizable>`.
 
-- **FLAG_BORDERLESS** = **1** --- Borderless window.
+- **FLAG_BORDERLESS** = **1** --- Borderless window. Set with :ref:`borderless<class_Window_property_borderless>`.
 
-- **FLAG_ALWAYS_ON_TOP** = **2** --- Flag for making the window always on top of all other windows.
+- **FLAG_ALWAYS_ON_TOP** = **2** --- Flag for making the window always on top of all other windows. Set with :ref:`always_on_top<class_Window_property_always_on_top>`.
 
-- **FLAG_TRANSPARENT** = **3**
+- **FLAG_TRANSPARENT** = **3** --- Flag for per-pixel transparency. Set with :ref:`transparent<class_Window_property_transparent>`.
 
-- **FLAG_NO_FOCUS** = **4**
+- **FLAG_NO_FOCUS** = **4** --- The window's ability to gain focus. Set with :ref:`unfocusable<class_Window_property_unfocusable>`.
 
-- **FLAG_POPUP** = **5**
+- **FLAG_POPUP** = **5** --- Whether the window is popup or a regular window. Set with :ref:`popup_window<class_Window_property_popup_window>`.
 
-- **FLAG_MAX** = **6**
+- **FLAG_MAX** = **6** --- Max value of the :ref:`Flags<enum_Window_Flags>`.
 
 ----
 
@@ -353,11 +375,11 @@ enum **Flags**:
 
 enum **ContentScaleMode**:
 
-- **CONTENT_SCALE_MODE_DISABLED** = **0**
+- **CONTENT_SCALE_MODE_DISABLED** = **0** --- The content will not be scaled to match the ``Window``'s size.
 
-- **CONTENT_SCALE_MODE_CANVAS_ITEMS** = **1**
+- **CONTENT_SCALE_MODE_CANVAS_ITEMS** = **1** --- The content will be rendered at the target size. This is more performance-expensive than :ref:`CONTENT_SCALE_MODE_VIEWPORT<class_Window_constant_CONTENT_SCALE_MODE_VIEWPORT>`, but provides better results.
 
-- **CONTENT_SCALE_MODE_VIEWPORT** = **2**
+- **CONTENT_SCALE_MODE_VIEWPORT** = **2** --- The content will be rendered at the base size and then scaled to the target size. More performant than :ref:`CONTENT_SCALE_MODE_CANVAS_ITEMS<class_Window_constant_CONTENT_SCALE_MODE_CANVAS_ITEMS>`, but results in pixelated image.
 
 ----
 
@@ -375,15 +397,15 @@ enum **ContentScaleMode**:
 
 enum **ContentScaleAspect**:
 
-- **CONTENT_SCALE_ASPECT_IGNORE** = **0**
+- **CONTENT_SCALE_ASPECT_IGNORE** = **0** --- The aspect will be ignored. Scaling will simply stretch the content to fit the target size.
 
-- **CONTENT_SCALE_ASPECT_KEEP** = **1**
+- **CONTENT_SCALE_ASPECT_KEEP** = **1** --- The content's aspect will be preserved. If the target size has different aspect from the base one, the image will be centered and black bars will appear on left and right sides.
 
-- **CONTENT_SCALE_ASPECT_KEEP_WIDTH** = **2**
+- **CONTENT_SCALE_ASPECT_KEEP_WIDTH** = **2** --- The content can be expanded vertically. Scaling horizontally will result in keeping the width ratio and then black bars on left and right sides.
 
-- **CONTENT_SCALE_ASPECT_KEEP_HEIGHT** = **3**
+- **CONTENT_SCALE_ASPECT_KEEP_HEIGHT** = **3** --- The content can be expanded horizontally. Scaling vertically will result in keeping the height ratio and then black bars on top and bottom sides.
 
-- **CONTENT_SCALE_ASPECT_EXPAND** = **4**
+- **CONTENT_SCALE_ASPECT_EXPAND** = **4** --- The content's aspect will be preserved. If the target size has different aspect from the base one, the content will stay in the to-left corner and add an extra visible area in the stretched space.
 
 ----
 
@@ -412,7 +434,7 @@ Constants
 
 .. _class_Window_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
-- **NOTIFICATION_VISIBILITY_CHANGED** = **30**
+- **NOTIFICATION_VISIBILITY_CHANGED** = **30** --- Emitted when ``Window``'s visibility changes, right before :ref:`visibility_changed<class_Window_signal_visibility_changed>`.
 
 Property Descriptions
 ---------------------
@@ -429,7 +451,7 @@ Property Descriptions
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, the window will be on top of all other windows.
+If ``true``, the window will be on top of all other windows. Does not work if :ref:`transient<class_Window_property_transient>` is enabled.
 
 ----
 
@@ -477,6 +499,8 @@ If ``true``, the window will have no borders.
 | *Getter*  | get_content_scale_aspect()      |
 +-----------+---------------------------------+
 
+Specifies how the content's aspect behaves when the ``Window`` is resized. The base aspect is determined by :ref:`content_scale_size<class_Window_property_content_scale_size>`.
+
 ----
 
 .. _class_Window_property_content_scale_factor:
@@ -490,6 +514,8 @@ If ``true``, the window will have no borders.
 +-----------+---------------------------------+
 | *Getter*  | get_content_scale_factor()      |
 +-----------+---------------------------------+
+
+Specifies the base scale of ``Window``'s content when its :ref:`size<class_Window_property_size>` is equal to :ref:`content_scale_size<class_Window_property_content_scale_size>`.
 
 ----
 
@@ -505,6 +531,8 @@ If ``true``, the window will have no borders.
 | *Getter*  | get_content_scale_mode()      |
 +-----------+-------------------------------+
 
+Specifies how the content is scaled when the ``Window`` is resized.
+
 ----
 
 .. _class_Window_property_content_scale_size:
@@ -518,6 +546,8 @@ If ``true``, the window will have no borders.
 +-----------+-------------------------------+
 | *Getter*  | get_content_scale_size()      |
 +-----------+-------------------------------+
+
+Base size of the content (i.e. nodes that are drawn inside the window). If non-zero, ``Window``'s content will be scaled when the window is resized to a different size.
 
 ----
 
@@ -549,6 +579,10 @@ The screen the window is currently on.
 | *Getter*  | is_exclusive()       |
 +-----------+----------------------+
 
+If ``true``, the ``Window`` will be in exclusive mode. Exclusive windows are always on top of their parent and will block all input going to the parent ``Window``.
+
+Needs :ref:`transient<class_Window_property_transient>` enabled to work.
+
 ----
 
 .. _class_Window_property_max_size:
@@ -563,6 +597,8 @@ The screen the window is currently on.
 | *Getter*  | get_max_size()      |
 +-----------+---------------------+
 
+If non-zero, the ``Window`` can't be resized to be bigger than this size.
+
 ----
 
 .. _class_Window_property_min_size:
@@ -576,6 +612,8 @@ The screen the window is currently on.
 +-----------+---------------------+
 | *Getter*  | get_min_size()      |
 +-----------+---------------------+
+
+If non-zero, the ``Window`` can't be resized to be smaller than this size.
 
 ----
 
@@ -608,6 +646,8 @@ Set's the window's current mode.
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+If ``true``, the ``Window`` will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
 
 ----
 
@@ -653,6 +693,10 @@ The window's size in pixels.
 | *Getter* | get_theme()      |
 +----------+------------------+
 
+The :ref:`Theme<class_Theme>` resource that determines the style of the underlying :ref:`Control<class_Control>` nodes.
+
+\ ``Window`` styles will have no effect unless the window is embedded.
+
 ----
 
 .. _class_Window_property_theme_type_variation:
@@ -666,6 +710,8 @@ The window's size in pixels.
 +-----------+---------------------------------+
 | *Getter*  | get_theme_type_variation()      |
 +-----------+---------------------------------+
+
+The name of a theme type variation used by this ``Window`` to look up its own theme items. See :ref:`Control.theme_type_variation<class_Control_property_theme_type_variation>` for more details.
 
 ----
 
@@ -681,7 +727,7 @@ The window's size in pixels.
 | *Getter*  | get_title()      |
 +-----------+------------------+
 
-The window's title.
+The window's title. If the ``Window`` is non-embedded, title styles set in :ref:`Theme<class_Theme>` will have no effect.
 
 ----
 
@@ -697,6 +743,10 @@ The window's title.
 | *Getter*  | is_transient()       |
 +-----------+----------------------+
 
+If ``true``, the ``Window`` is transient, i.e. it's considered a child of another ``Window``. Transient windows can't be in fullscreen mode and will return focus to their parent when closed.
+
+Note that behavior might be different depending on the platform.
+
 ----
 
 .. _class_Window_property_transparent:
@@ -710,6 +760,8 @@ The window's title.
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+If ``true``, the ``Window``'s background can be transparent. This is best used with embedded windows. Currently non-embedded ``Window`` transparency is implemented only for MacOS.
 
 ----
 
@@ -725,6 +777,8 @@ The window's title.
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
+If ``true``, the ``Window`` can't be focused nor interacted with. It can still be visible.
+
 ----
 
 .. _class_Window_property_unresizable:
@@ -739,7 +793,7 @@ The window's title.
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, the window can't be resized.
+If ``true``, the window can't be resized. Minimize and maximize buttons are disabled.
 
 ----
 
@@ -771,6 +825,10 @@ If ``true``, the window is visible.
 | *Getter*  | is_wrapping_controls()   |
 +-----------+--------------------------+
 
+If ``true``, the window's size will automatically update when a child node is added or removed.
+
+If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_child_controls_changed>` manually.
+
 Method Descriptions
 -------------------
 
@@ -786,13 +844,15 @@ Returns whether the window is being drawn to the screen.
 
 - void **child_controls_changed** **(** **)**
 
+Requests an update of the ``Window`` size to fit underlying :ref:`Control<class_Control>` nodes.
+
 ----
 
 .. _class_Window_method_get_contents_minimum_size:
 
 - :ref:`Vector2<class_Vector2>` **get_contents_minimum_size** **(** **)** |const|
 
-Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window.
+Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
 
 ----
 
@@ -824,11 +884,19 @@ Returns the window's size including its border.
 
 - :ref:`Color<class_Color>` **get_theme_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
+Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_constant:
 
 - :ref:`int<class_int>` **get_theme_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
+
+Returns the constant at ``name`` if the theme has ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
 
 ----
 
@@ -836,17 +904,29 @@ Returns the window's size including its border.
 
 - :ref:`float<class_float>` **get_theme_default_base_scale** **(** **)** |const|
 
+Returns the default base scale defined in the attached :ref:`Theme<class_Theme>`.
+
+See :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_default_font:
 
 - :ref:`Font<class_Font>` **get_theme_default_font** **(** **)** |const|
 
+Returns the default :ref:`Font<class_Font>` defined in the attached :ref:`Theme<class_Theme>`.
+
+See :ref:`Theme.default_font<class_Theme_property_default_font>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_default_font_size:
 
 - :ref:`int<class_int>` **get_theme_default_font_size** **(** **)** |const|
+
+Returns the default font size defined in the attached :ref:`Theme<class_Theme>`.
+
+See :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` for more details.
 
 ----
 
@@ -856,6 +936,8 @@ Returns the window's size including its border.
 
 Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
 
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_font_size:
@@ -864,17 +946,27 @@ Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
 
 Returns the font size at ``name`` if the theme has ``theme_type``.
 
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_icon:
 
 - :ref:`Texture2D<class_Texture2D>` **get_theme_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
+Returns the icon at ``name`` if the theme has ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+
 ----
 
 .. _class_Window_method_get_theme_stylebox:
 
 - :ref:`StyleBox<class_StyleBox>` **get_theme_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
+
+Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
 
 ----
 
@@ -898,11 +990,15 @@ Returns ``true`` if the window is focused.
 
 - :ref:`bool<class_bool>` **has_theme_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
+Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``theme_type``.
+
 ----
 
 .. _class_Window_method_has_theme_constant:
 
 - :ref:`bool<class_bool>` **has_theme_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
+
+Returns ``true`` if constant with ``name`` is in ``theme_type``.
 
 ----
 
@@ -912,8 +1008,6 @@ Returns ``true`` if the window is focused.
 
 Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``theme_type``.
-
 ----
 
 .. _class_Window_method_has_theme_font_size:
@@ -922,13 +1016,13 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 Returns ``true`` if font size with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``theme_type``.
-
 ----
 
 .. _class_Window_method_has_theme_icon:
 
 - :ref:`bool<class_bool>` **has_theme_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
+
+Returns ``true`` if icon with ``name`` is in ``theme_type``.
 
 ----
 
@@ -936,11 +1030,15 @@ Returns ``false`` if the theme does not have ``theme_type``.
 
 - :ref:`bool<class_bool>` **has_theme_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
+Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``theme_type``.
+
 ----
 
 .. _class_Window_method_hide:
 
 - void **hide** **(** **)**
+
+Hides the window. This is not the same as minimized state. Hidden window can't be interacted with and needs to be made visible with :ref:`show<class_Window_method_show>`.
 
 ----
 
@@ -964,11 +1062,15 @@ Returns ``true`` if layout is right-to-left.
 
 - :ref:`bool<class_bool>` **is_maximize_allowed** **(** **)** |const|
 
+Returns ``true`` if the window can be maximized (the maximize button is enabled).
+
 ----
 
 .. _class_Window_method_is_using_font_oversampling:
 
 - :ref:`bool<class_bool>` **is_using_font_oversampling** **(** **)** |const|
+
+Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversampling<class_Window_method_set_use_font_oversampling>`.
 
 ----
 
@@ -976,11 +1078,17 @@ Returns ``true`` if layout is right-to-left.
 
 - void **move_to_foreground** **(** **)**
 
+Moves the ``Window`` on top of other windows and focuses it.
+
 ----
 
 .. _class_Window_method_popup:
 
 - void **popup** **(** :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**
+
+Shows the ``Window`` and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the ``Window``'s size.
+
+Fails if called on the main window.
 
 ----
 
@@ -988,11 +1096,19 @@ Returns ``true`` if layout is right-to-left.
 
 - void **popup_centered** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0) **)**
 
+Popups the ``Window`` at the center of the current screen, with optionally given minimum size.
+
+If the ``Window`` is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
+
 ----
 
 .. _class_Window_method_popup_centered_clamped:
 
 - void **popup_centered_clamped** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0), :ref:`float<class_float>` fallback_ratio=0.75 **)**
+
+Popups the ``Window`` centered inside its parent ``Window``.
+
+\ ``fallback_ratio`` determines the maximum size of the ``Window``, in relation to its parent.
 
 ----
 
@@ -1000,17 +1116,25 @@ Returns ``true`` if layout is right-to-left.
 
 - void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.8 **)**
 
+Popups the ``Window`` centered inside its parent ``Window`` and sets its size as a ``ratio`` of parent's size.
+
 ----
 
 .. _class_Window_method_popup_on_parent:
 
 - void **popup_on_parent** **(** :ref:`Rect2i<class_Rect2i>` parent_rect **)**
 
+Popups the ``Window`` with a position shifted by parent ``Window``'s position.
+
+If the ``Window`` is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
+
 ----
 
 .. _class_Window_method_request_attention:
 
 - void **request_attention** **(** **)**
+
+Tells the OS that the ``Window`` needs an attention. This makes the window stand out in some way depending on the system, e.g. it might blink on the task bar.
 
 ----
 
@@ -1034,11 +1158,15 @@ Sets a specified window flag.
 
 - void **set_ime_active** **(** :ref:`bool<class_bool>` active **)**
 
+If ``active`` is ``true``, enables system's native IME (Input Method Editor).
+
 ----
 
 .. _class_Window_method_set_ime_position:
 
 - void **set_ime_position** **(** :ref:`Vector2i<class_Vector2i>` position **)**
+
+Moves IME to the given position.
 
 ----
 
@@ -1054,11 +1182,15 @@ Sets layout direction and text writing direction. Right-to-left layouts are nece
 
 - void **set_use_font_oversampling** **(** :ref:`bool<class_bool>` enable **)**
 
+Enables font oversampling. This makes fonts look better when they are scaled up.
+
 ----
 
 .. _class_Window_method_show:
 
 - void **show** **(** **)**
+
+Makes the ``Window`` appear. This enables interactions with the ``Window`` and doesn't change any of its property other than visibility (unlike e.g. :ref:`popup<class_Window_method_popup>`).
 
 Theme Property Descriptions
 ---------------------------
@@ -1071,6 +1203,8 @@ Theme Property Descriptions
 | *Default* | ``Color(0.875, 0.875, 0.875, 1)`` |
 +-----------+-----------------------------------+
 
+The color of the title's text.
+
 ----
 
 .. _class_Window_theme_color_title_outline_modulate:
@@ -1081,7 +1215,7 @@ Theme Property Descriptions
 | *Default* | ``Color(1, 1, 1, 1)`` |
 +-----------+-----------------------+
 
-The color of the title outline.
+The color of the title's text outline.
 
 ----
 
@@ -1093,6 +1227,8 @@ The color of the title outline.
 | *Default* | ``18`` |
 +-----------+--------+
 
+Horizontal position offset of the close button.
+
 ----
 
 .. _class_Window_theme_constant_close_v_offset:
@@ -1102,6 +1238,8 @@ The color of the title outline.
 +-----------+--------+
 | *Default* | ``24`` |
 +-----------+--------+
+
+Vertical position offset of the close button.
 
 ----
 
@@ -1113,15 +1251,7 @@ The color of the title outline.
 | *Default* | ``4`` |
 +-----------+-------+
 
-----
-
-.. _class_Window_theme_constant_scaleborder_size:
-
-- :ref:`int<class_int>` **scaleborder_size**
-
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+Defines the outside margin at which the window border can be grabbed with mouse and resized.
 
 ----
 
@@ -1132,6 +1262,8 @@ The color of the title outline.
 +-----------+--------+
 | *Default* | ``36`` |
 +-----------+--------+
+
+Height of the title bar.
 
 ----
 
@@ -1151,6 +1283,8 @@ The size of the title outline.
 
 - :ref:`Font<class_Font>` **title_font**
 
+The font used to draw the title.
+
 ----
 
 .. _class_Window_theme_font_size_title_font_size:
@@ -1165,17 +1299,25 @@ The size of the title font.
 
 - :ref:`Texture2D<class_Texture2D>` **close**
 
+The icon for the close button.
+
 ----
 
 .. _class_Window_theme_icon_close_pressed:
 
 - :ref:`Texture2D<class_Texture2D>` **close_pressed**
 
+The icon for the close button when it's being pressed.
+
 ----
 
 .. _class_Window_theme_style_embedded_border:
 
 - :ref:`StyleBox<class_StyleBox>` **embedded_border**
+
+The background style used when the ``Window`` is embedded. Note that this is drawn only under the window's content, excluding the title. For proper borders and title bar style, you can use ``expand_margin_*`` properties of :ref:`StyleBoxFlat<class_StyleBoxFlat>`.
+
+\ **Note:** The content background will not be visible unless :ref:`transparent<class_Window_property_transparent>` is enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

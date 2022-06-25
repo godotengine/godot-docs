@@ -38,7 +38,7 @@ Properties
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                           | :ref:`preserve_invalid<class_TextParagraph_property_preserve_invalid>`           | ``true``  |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-| :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>`        | :ref:`text_overrun_behavior<class_TextParagraph_property_text_overrun_behavior>` | ``0``     |
+| :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_TextParagraph_property_text_overrun_behavior>` | ``0``     |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                         | :ref:`width<class_TextParagraph_property_width>`                                 | ``-1.0``  |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
@@ -115,33 +115,6 @@ Methods
 +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                            | :ref:`tab_align<class_TextParagraph_method_tab_align>` **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)**                                                                                                                                                                                                   |
 +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enumerations
-------------
-
-.. _enum_TextParagraph_OverrunBehavior:
-
-.. _class_TextParagraph_constant_OVERRUN_NO_TRIMMING:
-
-.. _class_TextParagraph_constant_OVERRUN_TRIM_CHAR:
-
-.. _class_TextParagraph_constant_OVERRUN_TRIM_WORD:
-
-.. _class_TextParagraph_constant_OVERRUN_TRIM_ELLIPSIS:
-
-.. _class_TextParagraph_constant_OVERRUN_TRIM_WORD_ELLIPSIS:
-
-enum **OverrunBehavior**:
-
-- **OVERRUN_NO_TRIMMING** = **0** --- No text trimming is performed.
-
-- **OVERRUN_TRIM_CHAR** = **1** --- Trims the text per character.
-
-- **OVERRUN_TRIM_WORD** = **2** --- Trims the text per word.
-
-- **OVERRUN_TRIM_ELLIPSIS** = **3** --- Trims the text per character and adds an ellipsis to indicate that parts are hidden.
-
-- **OVERRUN_TRIM_WORD_ELLIPSIS** = **4** --- Trims the text per word and adds an ellipsis to indicate that parts are hidden.
 
 Property Descriptions
 ---------------------
@@ -276,7 +249,7 @@ If set to ``true`` text will display invalid characters.
 
 .. _class_TextParagraph_property_text_overrun_behavior:
 
-- :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>` **text_overrun_behavior**
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior**
 
 +-----------+----------------------------------+
 | *Default* | ``0``                            |
@@ -286,7 +259,7 @@ If set to ``true`` text will display invalid characters.
 | *Getter*  | get_text_overrun_behavior()      |
 +-----------+----------------------------------+
 
-Sets the clipping behavior when the text exceeds the paragraph's set width. See :ref:`OverrunBehavior<enum_TextParagraph_OverrunBehavior>` for a description of all modes.
+Sets the clipping behavior when the text exceeds the paragraph's set width. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
 
 ----
 

@@ -26,7 +26,7 @@ Properties
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                                         | :ref:`alpha_scissor_threshold<class_Label3D_property_alpha_scissor_threshold>`                             | ``0.5``               |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`AutowrapMode<enum_Label3D_AutowrapMode>`                    | :ref:`autowrap_mode<class_Label3D_property_autowrap_mode>`                                                 | ``0``                 |
+| :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                 | :ref:`autowrap_mode<class_Label3D_property_autowrap_mode>`                                                 | ``0``                 |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`           | :ref:`billboard<class_Label3D_property_billboard>`                                                         | ``0``                 |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -98,28 +98,6 @@ Methods
 
 Enumerations
 ------------
-
-.. _enum_Label3D_AutowrapMode:
-
-.. _class_Label3D_constant_AUTOWRAP_OFF:
-
-.. _class_Label3D_constant_AUTOWRAP_ARBITRARY:
-
-.. _class_Label3D_constant_AUTOWRAP_WORD:
-
-.. _class_Label3D_constant_AUTOWRAP_WORD_SMART:
-
-enum **AutowrapMode**:
-
-- **AUTOWRAP_OFF** = **0** --- Autowrap is disabled.
-
-- **AUTOWRAP_ARBITRARY** = **1** --- Wraps the text inside the node's bounding rectangle by allowing to break lines at arbitrary positions, which is useful when very limited space is available.
-
-- **AUTOWRAP_WORD** = **2** --- Wraps the text inside the node's bounding rectangle by soft-breaking between words.
-
-- **AUTOWRAP_WORD_SMART** = **3** --- Behaves similarly to :ref:`AUTOWRAP_WORD<class_Label3D_constant_AUTOWRAP_WORD>`, but force-breaks a word if that single word does not fit in one line.
-
-----
 
 .. _enum_Label3D_DrawFlags:
 
@@ -206,7 +184,7 @@ Threshold at which the alpha scissor will discard values.
 
 .. _class_Label3D_property_autowrap_mode:
 
-- :ref:`AutowrapMode<enum_Label3D_AutowrapMode>` **autowrap_mode**
+- :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode**
 
 +-----------+--------------------------+
 | *Default* | ``0``                    |
@@ -216,7 +194,7 @@ Threshold at which the alpha scissor will discard values.
 | *Getter*  | get_autowrap_mode()      |
 +-----------+--------------------------+
 
-If set to something other than :ref:`AUTOWRAP_OFF<class_Label3D_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. To see how each mode behaves, see :ref:`AutowrapMode<enum_Label3D_AutowrapMode>`.
+If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
 
 ----
 

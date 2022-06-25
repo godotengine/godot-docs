@@ -11,7 +11,7 @@ AudioEffectPitchShift
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Adds a pitch-shifting audio effect to an Audio bus.
+Adds a pitch-shifting audio effect to an audio bus.
 
 Raises or lowers the pitch of original sound.
 
@@ -19,6 +19,11 @@ Description
 -----------
 
 Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 Properties
 ----------

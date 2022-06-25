@@ -18,7 +18,12 @@ Description
 
 AudioEffectCapture is an AudioEffect which copies all audio frames from the attached audio effect bus into its internal ring buffer.
 
-Application code should consume these audio frames from this ring buffer using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from a microphone, implement application defined effects, or to transmit audio over the network.
+Application code should consume these audio frames from this ring buffer using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from a microphone, implement application defined effects, or to transmit audio over the network. When capturing audio data from a microphone, the format of the samples will be stereo 32-bit floating point PCM.
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 Properties
 ----------

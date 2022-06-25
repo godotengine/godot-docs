@@ -16,27 +16,29 @@ TileData
 Properties
 ----------
 
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                     | :ref:`flip_h<class_TileData_property_flip_h>`                 | ``false``             |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                     | :ref:`flip_v<class_TileData_property_flip_v>`                 | ``false``             |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`ShaderMaterial<class_ShaderMaterial>` | :ref:`material<class_TileData_property_material>`             |                       |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`                   | :ref:`modulate<class_TileData_property_modulate>`             | ``Color(1, 1, 1, 1)`` |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                   | :ref:`probability<class_TileData_property_probability>`       | ``1.0``               |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                       | :ref:`terrain_set<class_TileData_property_terrain_set>`       | ``-1``                |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`Vector2i<class_Vector2i>`             | :ref:`texture_offset<class_TileData_property_texture_offset>` | ``Vector2i(0, 0)``    |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                     | :ref:`transpose<class_TileData_property_transpose>`           | ``false``             |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                       | :ref:`y_sort_origin<class_TileData_property_y_sort_origin>`   | ``0``                 |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                       | :ref:`z_index<class_TileData_property_z_index>`               | ``0``                 |
-+---------------------------------------------+---------------------------------------------------------------+-----------------------+
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_h<class_TileData_property_flip_h>`                 | ``false``             |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_v<class_TileData_property_flip_v>`                 | ``false``             |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_TileData_property_material>`             |                       |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | :ref:`modulate<class_TileData_property_modulate>`             | ``Color(1, 1, 1, 1)`` |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`       | :ref:`probability<class_TileData_property_probability>`       | ``1.0``               |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`terrain<class_TileData_property_terrain>`               | ``-1``                |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`terrain_set<class_TileData_property_terrain_set>`       | ``-1``                |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`texture_offset<class_TileData_property_texture_offset>` | ``Vector2i(0, 0)``    |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`         | :ref:`transpose<class_TileData_property_transpose>`           | ``false``             |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`y_sort_origin<class_TileData_property_y_sort_origin>`   | ``0``                 |
++---------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`           | :ref:`z_index<class_TileData_property_z_index>`               | ``0``                 |
++---------------------------------+---------------------------------------------------------------+-----------------------+
 
 Methods
 -------
@@ -62,7 +64,7 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`   | :ref:`get_occluder<class_TileData_method_get_occluder>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                                                           |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_peering_bit_terrain<class_TileData_method_get_peering_bit_terrain>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|                                                                         |
+| :ref:`int<class_int>`                               | :ref:`get_terrain_peering_bit<class_TileData_method_get_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|                                                                         |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_collision_polygon_one_way<class_TileData_method_is_collision_polygon_one_way>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                                      |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,7 +90,7 @@ Methods
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_occluder<class_TileData_method_set_occluder>` **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**                                                               |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_peering_bit_terrain<class_TileData_method_set_peering_bit_terrain>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**                                                  |
+| void                                                | :ref:`set_terrain_peering_bit<class_TileData_method_set_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**                                                  |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -131,13 +133,15 @@ Property Descriptions
 
 .. _class_TileData_property_material:
 
-- :ref:`ShaderMaterial<class_ShaderMaterial>` **material**
+- :ref:`Material<class_Material>` **material**
 
 +----------+---------------------+
 | *Setter* | set_material(value) |
 +----------+---------------------+
 | *Getter* | get_material()      |
 +----------+---------------------+
+
+The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` to use the default shader, or a :ref:`ShaderMaterial<class_ShaderMaterial>` to use a custom shader.
 
 ----
 
@@ -166,6 +170,20 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_probability()      |
 +-----------+------------------------+
+
+----
+
+.. _class_TileData_property_terrain:
+
+- :ref:`int<class_int>` **terrain**
+
++-----------+--------------------+
+| *Default* | ``-1``             |
++-----------+--------------------+
+| *Setter*  | set_terrain(value) |
++-----------+--------------------+
+| *Getter*  | get_terrain()      |
++-----------+--------------------+
 
 ----
 
@@ -320,9 +338,9 @@ Returns the occluder polygon of the tile for the TileSet occlusion layer with in
 
 ----
 
-.. _class_TileData_method_get_peering_bit_terrain:
+.. _class_TileData_method_get_terrain_peering_bit:
 
-- :ref:`int<class_int>` **get_peering_bit_terrain** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|
+- :ref:`int<class_int>` **get_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|
 
 Returns the tile's terrain bit for the given ``peering_bit`` direction.
 
@@ -424,9 +442,9 @@ Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
 
 ----
 
-.. _class_TileData_method_set_peering_bit_terrain:
+.. _class_TileData_method_set_terrain_peering_bit:
 
-- void **set_peering_bit_terrain** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**
+- void **set_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**
 
 Sets the tile's terrain bit for the given ``peering_bit`` direction.
 

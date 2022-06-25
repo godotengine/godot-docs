@@ -24,6 +24,8 @@ Navigation mesh baking happens in multiple steps and the result depends on 3D so
 
 The finalized navigation mesh is then returned and stored inside the :ref:`NavigationMesh<class_NavigationMesh>` for use as a resource inside :ref:`NavigationRegion3D<class_NavigationRegion3D>` nodes.
 
+\ **Note:** Using meshes to not only define walkable surfaces but also obstruct navigation baking does not always work. The navigation baking has no concept of what is a geometry "inside" when dealing with mesh source geometry and this is intentional. Depending on current baking parameters, as soon as the obstructing mesh is large enough to fit a navigation mesh area inside, the baking will generate navigation mesh areas that are inside the obstructing source geometry mesh.
+
 Methods
 -------
 
@@ -40,7 +42,7 @@ Method Descriptions
 
 - void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
 
-Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry/parsed_geometry_type<class_NavigationMesh_property_geometry/parsed_geometry_type>` and :ref:`NavigationMesh.geometry/source_geometry_mode<class_NavigationMesh_property_geometry/source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>` and :ref:`NavigationMesh.geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
 
 ----
 
