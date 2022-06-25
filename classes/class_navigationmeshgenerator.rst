@@ -24,6 +24,8 @@ Navigation mesh baking happens in multiple steps and the result depends on 3D so
 
 The finalized navigation mesh is then returned and stored inside the :ref:`NavigationMesh<class_NavigationMesh>` for use as a resource inside :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes.
 
+\ **Note:** Using meshes to not only define walkable surfaces but also obstruct navigation baking does not always work. The navigation baking has no concept of what is a geometry "inside" when dealing with mesh source geometry and this is intentional. Depending on current baking parameters, as soon as the obstructing mesh is large enough to fit a navigation mesh area inside, the baking will generate navigation mesh areas that are inside the obstructing source geometry mesh.
+
 Methods
 -------
 

@@ -183,7 +183,9 @@ Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<
 
 - :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** |const|
 
-Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
+Returns the override :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
+
+\ **Note:** This function only returns *override* materials associated with this ``MeshInstance``. Consider using :ref:`get_active_material<class_MeshInstance_method_get_active_material>` or :ref:`Mesh.surface_get_material<class_Mesh_method_surface_get_material>` to get materials associated with the :ref:`Mesh<class_Mesh>` resource.
 
 ----
 
@@ -191,7 +193,7 @@ Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<clas
 
 - :ref:`int<class_int>` **get_surface_material_count** **(** **)** |const|
 
-Returns the number of surface materials.
+Returns the number of surface override materials.
 
 ----
 
@@ -227,7 +229,7 @@ Also note that any initial data in the destination ``MeshInstance`` data will be
 
 - void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
 
-Sets the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
+Sets the override :ref:`Material<class_Material>` for the specified surface of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this ``MeshInstance`` rather than with the :ref:`Mesh<class_Mesh>` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

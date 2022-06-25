@@ -16,6 +16,8 @@ Navigation2D
 Description
 -----------
 
+*Deprecated.* ``Navigation2D`` node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
+
 Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes.
 
 Tutorials
@@ -126,6 +128,8 @@ Returns the object's :ref:`RID<class_RID>`.
 .. _class_Navigation2D_method_get_simple_path:
 
 - :ref:`PoolVector2Array<class_PoolVector2Array>` **get_simple_path** **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+
+*Deprecated.* ``Navigation2D`` node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the path is smoothed by merging path segments where possible.
 

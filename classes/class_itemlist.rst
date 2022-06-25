@@ -22,6 +22,8 @@ Selectable items in the list may be selected or deselected and multiple selectio
 
 Item text only supports single-line strings, newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
 
+\ **Incremental search:** Like :ref:`PopupMenu<class_PopupMenu>` and :ref:`Tree<class_Tree>`, ``ItemList`` supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing :ref:`ProjectSettings.gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`.
+
 Properties
 ----------
 

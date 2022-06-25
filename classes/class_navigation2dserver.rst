@@ -69,7 +69,11 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`free_rid<class_Navigation2DServer_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)** |const|                                                                                                                                                                       |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                       | :ref:`get_maps<class_Navigation2DServer_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                           | :ref:`map_create<class_Navigation2DServer_method_map_create>` **(** **)** |const|                                                                                                                                                                                             |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`map_force_update<class_Navigation2DServer_method_map_force_update>` **(** :ref:`RID<class_RID>` map **)**                                                                                                                                                               |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`map_get_agents<class_Navigation2DServer_method_map_get_agents>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                           |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,6 +116,8 @@ Methods
 | :ref:`int<class_int>`                           | :ref:`region_get_navigation_layers<class_Navigation2DServer_method_region_get_navigation_layers>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                            |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`region_get_travel_cost<class_Navigation2DServer_method_region_get_travel_cost>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                        |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`region_owns_point<class_Navigation2DServer_method_region_owns_point>` **(** :ref:`RID<class_RID>` region, :ref:`Vector2<class_Vector2>` point **)** |const|                                                                                                             |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`region_set_enter_cost<class_Navigation2DServer_method_region_set_enter_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` enter_cost **)** |const|                                                                                                    |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,11 +258,33 @@ Destroys the given RID.
 
 ----
 
+.. _class_Navigation2DServer_method_get_maps:
+
+- :ref:`Array<class_Array>` **get_maps** **(** **)** |const|
+
+Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationServer. This returns both 2D and 3D created navigation maps as there is technically no distinction between them.
+
+----
+
 .. _class_Navigation2DServer_method_map_create:
 
 - :ref:`RID<class_RID>` **map_create** **(** **)** |const|
 
 Create a new map.
+
+----
+
+.. _class_Navigation2DServer_method_map_force_update:
+
+- void **map_force_update** **(** :ref:`RID<class_RID>` map **)**
+
+This function immediately forces synchronization of the specified navigation ``map`` :ref:`RID<class_RID>`. By default navigation maps are only synchronized at the end of each physics frame. This function can be used to immediately (re)calculate all the navigation meshes and region connections of the navigation map. This makes it possible to query a navigation path for a changed map immediately and in the same frame (multiple times if needed).
+
+Due to technical restrictions the current NavigationServer command queue will be flushed. This means all already queued update commands for this physics frame will be executed, even those intended for other maps, regions and agents not part of the specified map. The expensive computation of the navigation meshes and region connections of a map will only be done for the specified map. Other maps will receive the normal synchronization at the end of the physics frame. Should the specified map receive changes after the forced update it will update again as well when the other maps receive their update.
+
+Avoidance processing and dispatch of the ``safe_velocity`` signals is untouched by this function and continues to happen for all maps and agents at the end of the physics frame.
+
+\ **Note:** With great power comes great responsibility. This function should only be used by users that really know what they are doing and have a good reason for it. Forcing an immediate update of a navigation map requires locking the NavigationServer and flushing the entire NavigationServer command queue. Not only can this severely impact the performance of a game but it can also introduce bugs if used inappropriately without much foresight.
 
 ----
 
@@ -425,6 +453,18 @@ Returns the region's navigation layers.
 - :ref:`float<class_float>` **region_get_travel_cost** **(** :ref:`RID<class_RID>` region **)** |const|
 
 Returns the ``travel_cost`` of this ``region``.
+
+----
+
+.. _class_Navigation2DServer_method_region_owns_point:
+
+- :ref:`bool<class_bool>` **region_owns_point** **(** :ref:`RID<class_RID>` region, :ref:`Vector2<class_Vector2>` point **)** |const|
+
+Returns ``true`` if the provided ``point`` in world space is currently owned by the provided navigation ``region``. Owned in this context means that one of the region's navigation mesh polygon faces has a possible position at the closest distance to this point compared to all other navigation meshes from other navigation regions that are also registered on the navigation map of the provided region.
+
+If multiple navigation meshes have positions at equal distance the navigation region whose polygons are processed first wins the ownership. Polygons are processed in the same order that navigation regions were registered on the NavigationServer.
+
+\ **Note:** If navigation meshes from different navigation regions overlap (which should be avoided in general) the result might not be what is expected.
 
 ----
 

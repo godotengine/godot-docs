@@ -16,6 +16,8 @@ Mesh-based navigation and pathfinding node.
 Description
 -----------
 
+*Deprecated.* ``Navigation`` node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
+
 Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
 
 Tutorials
@@ -191,6 +193,8 @@ Returns the :ref:`RID<class_RID>` of the navigation map on the :ref:`NavigationS
 .. _class_Navigation_method_get_simple_path:
 
 - :ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+
+*Deprecated.* ``Navigation`` node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
 

@@ -779,11 +779,11 @@ Returns ``true`` if this string contains a valid integer.
 
 ::
 
-    print("7".is_valid_int()) # Prints "True"
-    print("14.6".is_valid_int()) # Prints "False"
-    print("L".is_valid_int()) # Prints "False"
-    print("+3".is_valid_int()) # Prints "True"
-    print("-12".is_valid_int()) # Prints "True"
+    print("7".is_valid_integer()) # Prints "True"
+    print("14.6".is_valid_integer()) # Prints "False"
+    print("L".is_valid_integer()) # Prints "False"
+    print("+3".is_valid_integer()) # Prints "True"
+    print("-12".is_valid_integer()) # Prints "True"
 
 ----
 

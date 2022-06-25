@@ -38,6 +38,8 @@ Properties
 +---------------------------+----------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent_property_neighbor_dist>`                     | ``50.0``  |
 +---------------------------+----------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`path_desired_distance<class_NavigationAgent_property_path_desired_distance>`     | ``1.0``   |
++---------------------------+----------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent_property_path_max_distance>`             | ``3.0``   |
 +---------------------------+----------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent_property_radius>`                                   | ``1.0``   |
@@ -232,6 +234,22 @@ The distance to search for other agents.
 
 ----
 
+.. _class_NavigationAgent_property_path_desired_distance:
+
+- :ref:`float<class_float>` **path_desired_distance**
+
++-----------+----------------------------------+
+| *Default* | ``1.0``                          |
++-----------+----------------------------------+
+| *Setter*  | set_path_desired_distance(value) |
++-----------+----------------------------------+
+| *Getter*  | get_path_desired_distance()      |
++-----------+----------------------------------+
+
+The distance threshold before a path point is considered to be reached. This will allow an agent to not have to hit a path point on the path exactly, but in the area. If this value is set to high the NavigationAgent will skip points on the path which can lead to leaving the navigation mesh. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the next point on each physics frame update.
+
+----
+
 .. _class_NavigationAgent_property_path_max_distance:
 
 - :ref:`float<class_float>` **path_max_distance**
@@ -276,7 +294,7 @@ The radius of the agent.
 | *Getter*  | get_target_desired_distance()      |
 +-----------+------------------------------------+
 
-The distance threshold before a target is considered to be reached. This will allow an agent to not have to hit a point on the path exactly, but in the area.
+The distance threshold before the final target point is considered to be reached. This will allow an agent to not have to hit the point of the final target exactly, but only the area. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
 
 ----
 
