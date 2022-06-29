@@ -10,7 +10,7 @@ Pathfinding in a 3D environment is crucial for many games, it's commonly
 how non directly controlled characters or entities find their way around
 an environment. Godot provides several nodes for this purpose:
 
--  :ref:`Navigation<class_Navigation>`
+-  :ref:`Navigation<class_Navigation>` (deprecated)
 -  :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`
 -  :ref:`NavigationAgent<class_NavigationAgent>`
 -  :ref:`NavigationObstacle<class_NavigationObstacle>`
@@ -23,9 +23,8 @@ the physics engine. It's comprised of navigation regions, these regions
 define parts of the world that can be navigated around by navigation
 agents.
 
-To create a navigation region add the :ref:`Navigation<class_Navigation>`
-node to a 3D scene, then add a :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`
-as child of the navigation node. Next in the inspector for that mesh create or add a
+To create a navigation region add the :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`
+node to a 3D scene. Next in the inspector for that mesh create or add a
 :ref:`NavigationMesh<class_NavigationMesh>`. The navmesh contains options
 for how it will be generated when it's baked. The geometry options control
 which nodes, and types of nodes, are used to bake the mesh. A full
@@ -97,7 +96,9 @@ Generating a path (old method)
 ------------------------------
 
 This is the old method for generating a navigation path, it will be
-removed in Godot 4.
+removed in Godot 4. First, add a navigation node to the scene, then
+add a navigation mesh instance as it's child and set up a navigation
+mesh. 
 
 To get a path between two areas on a map you use the navigation node
 method ``get_simple_path()``. The first argument is a Vector3 of the
