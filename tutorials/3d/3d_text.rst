@@ -1,7 +1,10 @@
 .. _doc_3d_text:
 
+3D text
+=======
+
 Introduction
-============
+------------
 
 In a project there may be times when text needs to be created as
 part of a 3D scene and not just in the HUD. Godot provides two
