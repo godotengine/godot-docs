@@ -1,9 +1,12 @@
 .. _doc_3d_text:
 
-Introduction
-============
+3D text
+=======
 
-In a project there may be times when text needs to be created as
+Introduction
+------------
+
+In a project, there may be times when text needs to be created as
 part of a 3D scene and not just in the HUD. Godot provides two
 methods to do this. The Label3D node and the text mesh for a
 MeshInstance node.
