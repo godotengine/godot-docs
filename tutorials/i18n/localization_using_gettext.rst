@@ -3,9 +3,10 @@
 Localization using gettext
 ==========================
 
-In addition to :ref:`doc_importing_translations` in CSV format, Godot
-also supports loading translation files written in the GNU gettext
-format (text-based ``.po`` and compiled ``.mo`` since Godot 4.0).
+In addition to importing translations in
+:ref:`CSV format <doc_localization_using_spreadsheets>`, Godot also
+supports loading translation files written in the GNU gettext format
+(text-based ``.po`` and compiled ``.mo`` since Godot 4.0).
 
 .. note:: For an introduction to gettext, check out
           `A Quick Gettext Tutorial <https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html>`_.
