@@ -213,7 +213,7 @@ property. Set this property to the locale code of the language you want to test.
 run the project with that locale when the project is run (either from the editor or when
 exported).
 
-..image:: img/locale_test.png
+.. image:: img/locale_test.png
 
 Keep in mind that since this is a project setting, it will show up in version control when
 it is set to a non-empty value. Therefore, it should be set back to an empty value before
