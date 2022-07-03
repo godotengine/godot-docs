@@ -715,7 +715,7 @@ Signals are better used by getting them from actual objects, e.g. ``$Button.butt
 Contains an object and a function, which is useful for passing functions as
 values (e.g. when connecting to signals).
 
-Getting a method as a member returns a callable.``var x = $Sprite2D.rotate``
+Getting a method as a member returns a callable. ``var x = $Sprite2D.rotate``
 will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
 ``rotate`` as the method.
 
