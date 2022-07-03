@@ -24,7 +24,7 @@ Available scripting languages
 -----------------------------
 
 Godot offers **five gameplay programming languages**: GDScript, C#,
-VisualScript, and C++ and C via its GDNative technology. There are more
+VisualScript, C++ and C via its GDNative technology. There are more
 :ref:`community-supported languages <doc_what_is_gdnative_third_party_bindings>`,
 but these are the official ones.
 
