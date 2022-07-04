@@ -80,27 +80,30 @@ library a better place for all users.
 * Consider adding a **.gitattributes** file to your repo. This file allows
   giving extra instructions to Git, such as specifying line endings and listing
   files not required for your asset to function with the ``export-ignore``
-  directive. This directive removes such files from the resulting ZIP file
-  and prevents them from being downloaded by the asset library users.
-  For a typical plugin **.gitattributes** may look like this:
+  directive. This directive removes such files from the resulting ZIP file,
+  preventing them from being downloaded by the asset library users.
+  These are common examples of **.gitattributes**:
 
-  .. code-block:: none
+  .. tabs::
 
-    # Normalize EOL for all files that Git considers text files.
-    * text=auto eol=lf
+   .. tab:: Projects / Templates
 
-    # Ignore some files when exporting to a ZIP.
-    /.gitattributes     export-ignore
-    /.gitignore         export-ignore
-    /LICENSE            export-ignore
-    /LICENSE.md         export-ignore
-    /README.md          export-ignore
-    /project.godot      export-ignore
-    /icon.png           export-ignore
-    /icon.svg           export-ignore
+      .. code-block:: shell
 
-  Other types of assets may require a different configuration (e.g.
-  a project template requires **project.godot**).
+        # Normalize line endings for all files that Git considers text files.
+        * text=auto eol=lf
+
+   .. tab:: Addons / Asset Packs
+
+      .. code-block:: shell
+
+        # Normalize line endings for all files that Git considers text files.
+        * text=auto eol=lf
+
+        # Only include the addons folder when downloading from the Asset Library.
+        /**        export-ignore
+        /addons    !export-ignore
+        /addons/** !export-ignore
 
 * If you are submitting a plugin, add a **copy** of your license and readme
   to the plugin folder itself. This is the folder that users are guaranteed to
