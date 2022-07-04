@@ -176,7 +176,7 @@ Method Descriptions
 
 Draws this stylebox using a :ref:`CanvasItem<class_CanvasItem>` with given :ref:`RID<class_RID>`.
 
-You can get a :ref:`RID<class_RID>` value using :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` on a :ref:`CanvasItem<class_CanvasItem>`-derived node.
+You can get a :ref:`RID<class_RID>` value using :ref:`get_canvas_item<class_CanvasItem_method_get_canvas_item>` on a :ref:`CanvasItem<class_CanvasItem>`-derived node.
 
 ----
 
