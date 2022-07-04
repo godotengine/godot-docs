@@ -60,6 +60,10 @@ included in the Mono SDK, but it can't build C# projects with the new
 In summary, you must have installed .NET Core SDK
 **and** the Mono-enabled version of Godot.
 
+If you're using the built-in code editor, you may have to make sure of these settings:
+In Godot's **Editor → Editor Settings** menu:
+- Set **Mono** -> **Builds** -> **Build Tool** to **dotnet CLI**.
+
 Additional notes
 ~~~~~~~~~~~~~~~~
 
