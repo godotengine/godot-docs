@@ -326,8 +326,8 @@ The script could look like this:
 
     func _enter_tree():
         # Initialization of the plugin goes here.
-        # Load the dock scene and instance it.
-        dock = preload("res://addons/my_custom_dock/my_dock.tscn").instance()
+        # Load the dock scene and instantiate it.
+        dock = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
 
         # Add the loaded scene to the docks.
         add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
@@ -354,7 +354,7 @@ The script could look like this:
 
         public override void _EnterTree()
         {
-            dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instance();
+            dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instantiate();
             AddControlToDock(DockSlot.LeftUl, dock);
         }
 
