@@ -120,7 +120,7 @@ without having to edit the Project Settings:
     The ``--write-movie`` and ``--fixed-fps`` command line arguments are both available
     in exported projects. Movie Maker mode cannot be toggled while the project is running,
     but you can use the :ref:`OS.execute() <class_OS_method_execute>` method to
-    run a second instance of th exported project that will record a video file.
+    run a second instance of the exported project that will record a video file.
 
 Choosing an output format
 -------------------------
