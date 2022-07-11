@@ -83,7 +83,7 @@ The bindings below are developed and maintained by the community:
 .. Please keep languages sorted in alphabetical order.
 
 - `D <https://github.com/godot-d/godot-d>`__
-- `Kotlin <https://github.com/utopia-rise/godot-kotlin>`__
+- `Kotlin <https://github.com/utopia-rise/godot-kotlin-jvm>`__
 - `Nim <https://github.com/pragmagic/godot-nim>`__
 - `Python <https://github.com/touilleMan/godot-python>`__
 - `Rust <https://github.com/godot-rust/godot-rust>`__
