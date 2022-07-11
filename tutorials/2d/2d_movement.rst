@@ -295,7 +295,7 @@ on the screen will cause the player to move to the target location.
 
     export (int) var speed = 200
 
-    var target = Vector2()
+    onready var target = position
     var velocity = Vector2()
 
     func _input(event):
@@ -317,8 +317,13 @@ on the screen will cause the player to move to the target location.
     {
         [Export] public int speed = 200;
 
-        public Vector2 target = new Vector2();
+        public Vector2 target;
         public Vector2 velocity = new Vector2();
+
+        public override void _Ready()
+        {
+            target = Position;
+        }
 
         public override void _Input(InputEvent @event)
         {
