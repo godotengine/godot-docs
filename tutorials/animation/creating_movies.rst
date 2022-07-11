@@ -64,8 +64,8 @@ after restarting the editor if needed.
 
 .. note::
 
-Toggling Movie Maker mode while running the project will not have any effect
-until the project is restarted.
+    Toggling Movie Maker mode while running the project will not have any
+    effect until the project is restarted.
 
 Before you can record video by running the project, you still need to configure
 the output file path. This path can be set for all scenes in the Project Settings:
