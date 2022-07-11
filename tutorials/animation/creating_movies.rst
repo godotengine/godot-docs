@@ -62,6 +62,8 @@ The icon turns red when Movie Maker mode is enabled. Movie Maker status is *not*
 persisted when the editor quits, so you must re-enable Movie Maker mode again
 after restarting the editor if needed.
 
+.. note::
+
 Toggling Movie Maker mode while running the project will not have any effect
 until the project is restarted.
 
