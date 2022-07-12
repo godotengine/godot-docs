@@ -28,7 +28,7 @@ Download and install the Android SDK.
     - Android SDK Platform 29
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
-    - NDK version 21.4.7075529
+    - NDK version r23c (23.2.8568313)
 
 - You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
 
