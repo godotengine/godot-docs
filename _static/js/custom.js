@@ -1,9 +1,3 @@
-
-// Set this to `true` when the `latest` branch is significantly incompatible with the
-// current `stable` branch, which can lead to confusion for users that land on
-// `latest` instead of `stable`.
-const inDev = true;
-
 // Handle page scroll and adjust sidebar accordingly.
 
 // Each page has two scrolls: the main scroll, which is moving the content of the page;
@@ -207,27 +201,6 @@ $(document).ready(() => {
   registerSidebarObserver(() => {
     registerOnScrollEvent(mediaQuery);
   });
-
-  if (inDev) {
-    // Add a compatibility notice using JavaScript so it doesn't end up in the
-    // automatically generated `meta description` tag.
-    const strippedUrl = [location.protocol, '//', location.host, location.pathname].join('');
-    const updatedUrl = strippedUrl.replace('/latest/', '/stable/');
-    document.querySelector('div[itemprop="articleBody"]').insertAdjacentHTML('afterbegin', `
-      <div class="admonition attention">
-        <p class="first admonition-title">Attention</p>
-        <p>
-          You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
-          (unstable) version of this documentation, which may document features not available
-          or compatible with Godot 3.2.x.
-        </p>
-        <p class="last">
-          See <a class="reference" href="${updatedUrl}">this page</a>
-          for the stable version of this documentation.
-        </p>
-      </div>
-    `);
-  }
 
   // Load instant.page to prefetch pages upon hovering. This makes navigation feel
   // snappier. The script is dynamically appended as Read the Docs doesn't have
