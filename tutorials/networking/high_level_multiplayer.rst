@@ -28,7 +28,7 @@ In summary, you can use the low-level networking API for maximum control and imp
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
           features. As networking is always largely hardware and operating system dependent, however,
           some features may change or not be available on some target platforms. Most notably,
-          the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
+          the HTML5 platform currently offers WebRTC and WebSocket support but lacks some of the higher level features as
           well as raw access to low-level protocols like TCP and UDP.
 
 .. note:: More about TCP/IP, UDP, and networking:
