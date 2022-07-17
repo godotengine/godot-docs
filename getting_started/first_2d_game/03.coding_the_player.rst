@@ -361,7 +361,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
  .. code-tab:: cpp
 
         if (velocity.x != 0) {
-            _animated_sprite->set_animation("right");
+            _animated_sprite->set_animation("walk");
             _animated_sprite->set_flip_v(false);
             // See the note below about boolean assignment.
             _animated_sprite->set_flip_h(velocity.x < 0);
