@@ -175,9 +175,9 @@ Put together the full code looks like:
             var normals = new List<Vector3> ();
             var indices = new List<int> ();
 
-            #######################################
-            ## Insert code here to generate mesh ##
-            #######################################
+            ///////////////////////////////////////
+            // Insert code here to generate mesh //
+            ///////////////////////////////////////
 
             arr[(int)Mesh.ArrayType.Vertex] = vertices.ToArray ();
             arr[(int)Mesh.ArrayType.TexUv] = uvs.ToArray ();
