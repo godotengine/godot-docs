@@ -188,9 +188,7 @@ Put together the full code looks like:
             mesh.AddSurfaceFromArrays (Mesh.PrimitiveType.Triangles, arr);
 
             this.Mesh = mesh;
-
         }
-
     }
 
   
