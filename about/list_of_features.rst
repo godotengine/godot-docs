@@ -72,8 +72,8 @@ Editor
 - Editor plugins can be downloaded from the
   :ref:`asset library <doc_what_is_assetlib>` to extend editor functionality.
 - :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
-- Download projects from the asset library in the project manager and import them directly.
   features or speed up your workflow.
+- Download projects from the asset library in the project manager and import them directly.
 - :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
   in the project manager and import them directly.
 
