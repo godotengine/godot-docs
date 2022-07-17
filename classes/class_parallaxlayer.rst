@@ -48,7 +48,7 @@ Property Descriptions
 | *Getter*  | get_mirroring()      |
 +-----------+----------------------+
 
-The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture<class_Texture>` will not be mirrored.
+The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture<class_Texture>` will not be mirrored. If the length of the viewport axis is bigger than 2x the mirrored axis size it will not repeat infinitely, as the parallax layer only has 2 instances of the sprite at any one time.
 
 ----
 
