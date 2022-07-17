@@ -59,6 +59,11 @@ Under ``_ready()``, create a new Array.
   .. code-tab:: gdscript GDScript
 
     var arr = []
+    
+  .. code-tab:: csharp 
+  
+    var arr = new Godot.Collections.Array ();
+    
 
 This will be the array that we keep our surface information in, it will hold
 all the arrays of data that the surface needs. Godot will expect it to be of
@@ -69,6 +74,12 @@ size ``Mesh.ARRAY_MAX``, so resize it accordingly.
 
     var arr = []
     arr.resize(Mesh.ARRAY_MAX)
+    
+  .. code-tab:: csharp 
+  
+    var arr = new Godot.Collections.Array ();
+    arr.Resize ((int)Mesh.ArrayType.Max);
+    
 
 Next create the arrays for each data type you will use.
 
@@ -79,6 +90,14 @@ Next create the arrays for each data type you will use.
     var uvs = PackedVector2Array()
     var normals = PackedVector3Array()
     var indices = PackedInt32Array()
+    
+  .. code-tab:: csharp 
+  
+    var vertices = new List<Vector3> ();
+    var uvs = new List<Vector2> ();
+    var normals = new List<Vector3> ();
+    var indices = new List<int> ();
+    
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -92,6 +111,19 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     arr[Mesh.ARRAY_INDEX] = indices
 
     mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
+    
+  .. code-tab:: csharp 
+  
+    arr[(int)Mesh.ArrayType.Vertex] = vertices.ToArray ();
+    arr[(int)Mesh.ArrayType.TexUv] = uvs.ToArray ();
+    arr[(int)Mesh.ArrayType.Normal] = normals.ToArray ();
+    arr[(int)Mesh.ArrayType.Index] = indices.ToArray ();
+    
+    var mesh = (ArrayMesh)this.Mesh;
+    mesh.AddSurfaceFromArrays (Mesh.PrimitiveType.Triangles, arr);
+    
+    this.Mesh = mesh;
+  
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
           available from mesh.
@@ -126,6 +158,42 @@ Put together the full code looks like:
         # Create mesh surface from mesh array.
         mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
 
+  .. code-tab:: csharp 
+
+    using Godot;
+    using System.Collections.Generic;
+
+    public class MeshInstance : Godot.MeshInstance {
+
+        public override void _Ready () {
+
+            Godot.Collections.Array arr = new Godot.Collections.Array ();
+            arr.Resize ((int)Mesh.ArrayType.Max);
+
+            var vertices = new List<Vector3> ();
+            var uvs = new List<Vector2> ();
+            var normals = new List<Vector3> ();
+            var indices = new List<int> ();
+
+            #######################################
+            ## Insert code here to generate mesh ##
+            #######################################
+
+            arr[(int)Mesh.ArrayType.Vertex] = vertices.ToArray ();
+            arr[(int)Mesh.ArrayType.TexUv] = uvs.ToArray ();
+            arr[(int)Mesh.ArrayType.Normal] = normals.ToArray ();
+            arr[(int)Mesh.ArrayType.Index] = indices.ToArray ();
+
+            var mesh = (ArrayMesh)this.Mesh;
+            mesh.AddSurfaceFromArrays (Mesh.PrimitiveType.Triangles, arr);
+
+            this.Mesh = mesh;
+
+        }
+
+    }
+
+  
 
 The code that goes in the middle can be whatever you want. Below we will present some example code that
 could go in the middle.
