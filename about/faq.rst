@@ -305,7 +305,7 @@ There are several reasons for this:
 For all the reasons above, we have to be selective of what we can accept as core
 functionality in Godot. This is why we are aiming to move some core
 functionality to officially supported add-ons in future versions of Godot. In
-terms of binary size, this also has the advance of making you pay only for what
+terms of binary size, this also has the advantage of making you pay only for what
 you actually use in your project. (In the meantime, you can
 :ref:`compile custom export templates with unused features disabled <doc_optimizing_for_size>`
 to optimize the distribution size of your project.)
