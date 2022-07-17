@@ -166,8 +166,7 @@ Put together the full code looks like:
     public class MeshInstance : Godot.MeshInstance {
 
         public override void _Ready () {
-
-            Godot.Collections.Array arr = new Godot.Collections.Array ();
+            Godot.Collections.Array arr = new Godot.Collections.Array();
             arr.Resize ((int)Mesh.ArrayType.Max);
 
             var vertices = new List<Vector3> ();
