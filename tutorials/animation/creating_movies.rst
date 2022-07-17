@@ -7,9 +7,9 @@ Godot can record **non-real-time** video and audio from any 2D or 3D project.
 There are many scenarios where this is useful:
 
 - Recording game trailers for promotional use.
-- Recording cutscenes that will be displayed as pre-recorded videos in the final game.
-  This allows for using higher quality settings (at the cost of file size),
-  regardless of the player's hardware.
+- Recording cutscenes that will be :ref:`displayed as pre-recorded videos <doc_playing_videos>`
+  in the final game. This allows for using higher quality settings
+  (at the cost of file size), regardless of the player's hardware.
 - Recording procedurally generated animations or motion design. User interaction
   remains possible during video recording, and audio can be included as well
   (although you won't be able to hear it while the video is recording).
