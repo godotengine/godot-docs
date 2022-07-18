@@ -3,5 +3,22 @@
 {% block breadcrumbs_aside %}
 {% if not meta or meta.get('github_url') != 'hide' %}
 {{ super() }}
+
+<style>
+	.godot-edit-guidelines {
+		font-size: 14px;
+		float: right;
+		clear: both;
+	}
+
+	@media screen and (max-width: 480px) {
+		.godot-edit-guidelines {
+			display: none;
+		}
+	}
+</style>
+<a class="godot-edit-guidelines" href="https://docs.godotengine.org/en/latest/community/contributing/index.html#writing-documentation">
+	Learn how to contribute!
+</a>
 {% endif %}
 {% endblock %}
