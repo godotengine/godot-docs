@@ -1093,3 +1093,29 @@ kbd.compound > .kbd,
     border-left-color: var(--code-example-bad-color);
     border-left-width: 8px;
 }
+
+/* Top-level navigation. */
+.godot-menu-top {
+    border-bottom: 1px solid var(--hr-color);
+    margin: 0 -8px 16px -8px;
+    padding-bottom: 8px;
+}
+
+.godot-menu-top ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.godot-menu-top li {
+    padding: 8px 12px;
+}
+
+.godot-menu-top li a::before {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .godot-menu-top {
+        display: none;
+    }
+}

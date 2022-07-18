@@ -22,3 +22,20 @@
 {% block htmltitle -%}
 <title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
 {% endblock -%}
+
+{% block content -%}
+<div class="godot-menu-top">
+  <ul>
+    <li><a href="/about/index.html">About</a></li>
+    <li><a href="/getting_started/index.html">Getting Started</a></li>
+    <li><a href="/tutorials/index.html">Tutorials</a></li>
+    <li><a href="/development/index.html">Development</a></li>
+    <li><a href="/community/index.html">Community</a></li>
+    <li><a href="/classes/index.html">Class Reference</a></li>
+  </ul>
+</div>
+
+{{ super() }}
+{% endblock -%}
+
+
