@@ -8,7 +8,7 @@ a tree structure, with a single node as its root. You can split your project
 into any number of scenes. This feature helps you break down and organize your
 game's different components.
 
-You can create as many scenes as you'd like and save them to the disk with the
+You can create as many scenes as you'd like and save them as files with the
 ``.tscn`` extension, which stands for "text scene". The ``Label.tscn`` file from
 the previous lesson was an example. We call those files "Packed Scenes" as they
 pack information about your scene's content.
