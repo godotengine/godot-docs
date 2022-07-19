@@ -124,7 +124,10 @@ so if exporting to mobile using GLES2 make sure to set the project setting
 Blend shapes
 ------------
 
-Blend shapes are not supported in GLES2.
+In GLES2, blend shapes are implemented on the CPU instead of the GPU.
+Accordingly, they may not perform as well as blend shapes in GLES3. To avoid
+performance issues when using blend shapes in GLES2, try to minimize the number
+of blend shapes that are updated each frame.
 
 Shading language
 ----------------
