@@ -7,7 +7,7 @@ Introduction
 ------------
 
 With :ref:`AnimationPlayer <class_AnimationPlayer>`, Godot has one of the most flexible animation systems that you can find in any game engine.
-The ability to animate pretty much any property in any node or resource, as well as having dedicated transform, bezier,
+The ability to animate almost any property in any node or resource, as well as having dedicated transform, bezier,
 function calling, audio and sub-animation tracks, is pretty much unique.
 
 However, the support for blending those animations via ``AnimationPlayer`` is relatively limited, as only a fixed cross-fade transition time can be set.
@@ -163,12 +163,12 @@ This is similar to 2D blend spaces, but in one dimension (so triangles are not n
 StateMachine
 ^^^^^^^^^^^^
 
-This node is a relatively simple state machine. Root nodes can be created and connected via lines. States are connected via *Transitions*,
-which are connections with special properties. Transitions are uni-directional, but two can be used to connect in both ways.
+This node acts as a state machine with root nodes as states. Root nodes can be created and connected via lines. States are connected via *Transitions*,
+which are connections with special properties. Transitions are uni-directional, but two can be used to connect in both directions.
 
 .. image:: img/animtree11.gif
 
-There are many types of transitions:
+There are many types of transition:
 
 .. image:: img/animtree12.png
 
@@ -185,8 +185,8 @@ Transitions also have a few properties. Click any transition and it will be disp
 * *Advance Condition* will turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name.
   The variable can be modified from code (more on this later).
 * *Xfade Time* is the time to cross-fade between this state and the next.
-* *Priority* is used together with the ``travel()`` function from code (more on this later). When travelling from a state to another, give more priority to this node.
-* *Disabled* allows to disable this transition (it will not be used during travel or auto advance).
+* *Priority* is used together with the ``travel()`` function from code (more on this later). Lower priority transitions are preferred when travelling through the tree.
+* *Disabled* toggles disabling this transition (when disabled, it will not be used during travel or auto advance).
 
 
 Root motion
@@ -214,7 +214,7 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 This can be fed to functions such as :ref:`KinematicBody.move_and_slide <class_KinematicBody_method_move_and_slide>` to control the character movement.
 
 There is also a tool node, ``RootMotionView``, that can be placed in a scene and will act as a custom floor for your
-character and animations (this node is normally disabled during the game).
+character and animations (this node is disabled by default during the game).
 
 .. image:: img/animtree15.gif
 
@@ -224,10 +224,10 @@ Controlling from code
 
 After building the tree and previewing it, the only question remaining is "How is all this controlled from code?".
 
-Keep in mind that the animation nodes are just resources and, as such, they are shared between all the instances.
+Keep in mind that the animation nodes are just resources and, as such, they are shared between all instances using them.
 Setting values in the nodes directly will affect all instances of the scene that uses this ``AnimationTree``.
-This has some cool use cases, though, e.g. you can copy and paste parts of your animation tree, or reuse nodes with a complex layout
-(such as a state machine or blend space) in different animation trees.
+This is generally undesirable, but does have some cool use cases, e.g. you can copy and paste parts of your animation tree,
+or reuse nodes with a complex layout (such as a state machine or blend space) in different animation trees.
 
 The actual animation data is contained in the ``AnimationTree`` node and is accessed via properties.
 Check the "Parameters" section of the ``AnimationTree`` node to see all the parameters that can be modified in real-time:
@@ -260,7 +260,8 @@ State machine travel
 
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. The graph can be instructed to go from the
 current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
-In the absence of any transition between the current state and the destination state, the graph teleports to the destination state.
+In the absence of any viable set of transitions starting at the current state and finishing at the destination state, the graph teleports
+to the destination state.
 
 To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
