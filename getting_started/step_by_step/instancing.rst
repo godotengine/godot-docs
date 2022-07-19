@@ -38,7 +38,7 @@ scene.
 In practice
 -----------
 
-Let's use instancing in practice to see how it works exactly in Godot. We invite
+Let's use instancing in practice to see how it works in Godot. We invite
 you to download the ball's sample project we prepared for you:
 :download:`instancing.zip <files/instancing.zip>`.
 
