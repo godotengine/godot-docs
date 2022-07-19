@@ -8,12 +8,12 @@ a tree structure, with a single node as its root. You can split your project
 into any number of scenes. This feature helps you break down and organize your
 game's different components.
 
-You can create as many scenes as you'd like and save them to the disk with the
+You can create as many scenes as you'd like and save them as files with the
 ``.tscn`` extension, which stands for "text scene". The ``Label.tscn`` file from
 the previous lesson was an example. We call those files "Packed Scenes" as they
 pack information about your scene's content.
 
-Here's the example of a ball. It's composed of a :ref:`RigidBody2D
+Here's an example of a ball. It's composed of a :ref:`RigidBody2D
 <class_RigidBody2D>` node as its root named Ball, which allows the ball to fall
 and bounce on walls, a :ref:`Sprite <class_Sprite>` node, and a
 :ref:`CollisionShape2D <class_CollisionShape2D>`.
@@ -22,7 +22,7 @@ and bounce on walls, a :ref:`Sprite <class_Sprite>` node, and a
 
 Once you saved a scene, it works as a blueprint: you can reproduce it in other
 scenes as many times as you'd like. Replicating an object from a template like
-so is called **instancing**.
+this is called **instancing**.
 
 .. image:: img/instancing_ball_instances_example.png
 
@@ -38,7 +38,7 @@ scene.
 In practice
 -----------
 
-Let's use instancing in practice to see how it works exactly in Godot. We invite
+Let's use instancing in practice to see how it works in Godot. We invite
 you to download the ball's sample project we prepared for you:
 :download:`instancing.zip <files/instancing.zip>`.
 
@@ -107,7 +107,7 @@ There is more to instances. With this feature, you can:
 
 1. Change the properties of one ball without affecting the others using the
    Inspector.
-2. Change the default properties of every Ball by opening ``Ball.tscn`` scene
+2. Change the default properties of every Ball by opening the ``Ball.tscn`` scene
    and making a change to the Ball node there. Upon saving, all instances of the
    Ball in the project will see their values update.
 
