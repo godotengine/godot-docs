@@ -44,10 +44,7 @@ powered by Godot, and so is the voxel RPG creator RPG in a box.
 
 .. image:: img/introduction_rpg_in_a_box.png
 
-You can find many more examples in the official showcase videos:
-
-- `November 2021 desktop and console showcase`_
-- `November 2021 mobile showcase`_
+You can find many more examples in the `official showcase videos`_.
 
 How does it work and look?
 --------------------------
@@ -125,6 +122,5 @@ In the next part, you will get an overview of the engine's essential concepts.
 .. _Blender: https://www.blender.org/
 .. _VSCode: https://github.com/godotengine/godot-vscode-plugin
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
-.. _November 2021 desktop and console showcase: https://youtu.be/iAceTF0yE7I
-.. _November 2021 mobile showcase: https://youtu.be/BhwMSfX-8iw
+.. _official showcase videos: https://www.youtube.com/playlist?list=PLeG_dAglpVo6EpaO9A1nkwJZOwrfiLdQ8
 .. _CS50 open courseware: https://cs50.harvard.edu/x
