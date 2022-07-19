@@ -107,7 +107,7 @@ There is more to instances. With this feature, you can:
 
 1. Change the properties of one ball without affecting the others using the
    Inspector.
-2. Change the default properties of every Ball by opening ``Ball.tscn`` scene
+2. Change the default properties of every Ball by opening the ``Ball.tscn`` scene
    and making a change to the Ball node there. Upon saving, all instances of the
    Ball in the project will see their values update.
 
