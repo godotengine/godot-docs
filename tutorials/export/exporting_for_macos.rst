@@ -10,13 +10,15 @@ Exporting for macOS
     read :ref:`doc_compiling_for_osx`.
 
 macOS apps are exported as an ``.app`` bundle, a folder with a specific structure which stores the executable, libraries and all the project files.
-This bundle is packed in a ZIP archive or DMG disk image (only supported when exporting for macOS).
+This bundle can be exported as is, packed in a ZIP archive or DMG disk image (only supported when exporting from a computer running macOS).
 
 Requirements
 ------------
 
--  To enable code signing and notarization, you must export from a computer running macOS with Xcode command line tools installed.
+-  To enable code signing with Apple Developer ID and notarization, you must export from a computer running macOS with Xcode command line tools installed.
+-  Ad-hoc code signing is supported on all platforms, without additional tools.
 -  Download the Godot export templates. Use the Godot menu: ``Editor > Manage Export Templates``.
+-  A valid and unique ``Bundle identifier`` should be set in the ``Application`` section of the export options.
 
 .. warning::
 
@@ -32,6 +34,7 @@ To notarize an app, you **must** have a valid `Apple Developer ID Certificate <h
 If you have an Apple Developer ID Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Export your project from a computer running macOS with Xcode command line tools installed.
 - Enable ``Code Signing``, ``Notarization``, ``Hardened Runtime`` and ``Timestamp`` and disable the ``Debug`` entitlement.
 - Provide valid Apple ID credentials and certificate identity.
 
@@ -46,7 +49,8 @@ After notarization is completed, `staple the ticket <https://developer.apple.com
 If you do not have an Apple Developer ID Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Keep ``Code Signing`` enabled and leave the ``Identity`` option empty, in this case Godot will use a ad-hoc signature, which will make running an exported app easier for the end users.
+Keep ``Code Signing`` enabled and leave the ``Identity`` option empty (when exporting from a computer running macOS, on other platforms this option is hidden).
+In this case Godot will use a ad-hoc signature, which will make running an exported app easier for the end users, see the :ref:`Running Godot apps on macOS <doc_running_on_macos>` page for more information.
 
 Signing Options
 ~~~~~~~~~~~~~~~
@@ -56,11 +60,11 @@ Signing Options
 +==============================+===================================================================================================+
 | Enable                       | Enables code signing.                                                                             |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| Identity                     | The "Full Name" or "Common Name" of the signing identity, store in the macOS key chain. [1]_      |
+| Identity                     | The "Full Name" or "Common Name" of the signing identity, store in the macOS keychain. [1]_ [2]_  |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| Timestamp                    | Requests a timestamp server to authenticate the time of signing. Required for notarization.       |
+| Timestamp                    | Requests a timestamp server to authenticate the time of signing. Required for notarization. [2]_  |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| Hardened Runtime             | Enables "Hardened Runtime". Required for notarization.                                            |
+| Hardened Runtime             | Enables "Hardened Runtime". Required for notarization. [2]_                                       |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | Replace Existing Signature   | Replaces existing signatures of the GDNative libraries and embedded helper executables.           |
 +------------------------------+---------------------------------------------------------------------------------------------------+
@@ -69,7 +73,10 @@ Signing Options
 
     To notarize an app, you must enable the ``Hardened Runtime`` and ``Timestamp``.
 
+    The ``Hardened Runtime`` and ``Timestamp`` options are incompatible with ad-hoc signing and will be ignored.
+
 .. [1] Leave ``Identity`` option empty to use ad-hoc signature.
+.. [2] This option is visible only when exporting from a computer running macOS.
 
 Notarization Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -83,10 +90,14 @@ Notarization Options
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Apple ID Password  | Apple ID app-specific password. See `Using app-specific passwords <https://support.apple.com/en-us/HT204397>`__ to enable two-factor authentication and create app password. |
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Apple Team ID      | Team ID if your Apple ID belongs to multiple teams                                                                                                                           |
+| Apple Team ID      | Team ID, if your Apple ID belongs to multiple teams                                                                                                                          |
 +--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 See `Notarizing macOS Software Before Distribution <https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution?language=objc>`__ for more info.
+
+.. note::
+
+    Notarization is supported when exporting from a computer running macOS, these options are hidden on other platforms.
 
 Entitlements
 ------------
@@ -100,11 +111,11 @@ See `Hardened Runtime <https://developer.apple.com/documentation/security/harden
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Entitlement                           | Description                                                                                                                                                                                      |
 +=======================================+==================================================================================================================================================================================================+
-| Allow JIT Code Execution [2]_         | Allows creating writable and executable memory for JIT code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.             |
+| Allow JIT Code Execution [3]_         | Allows creating writable and executable memory for JIT code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Allow Unsigned Executable Memory [2]_ | Allows creating writable and executable memory without JIT restrictions. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. |
+| Allow Unsigned Executable Memory [3]_ | Allows creating writable and executable memory without JIT restrictions. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Allow DYLD Environment Variables [2]_ | Allows app to uss dynamic linker environment variables to inject code.  f you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
+| Allow DYLD Environment Variables [3]_ | Allows app to uss dynamic linker environment variables to inject code.  f you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Disable Library Validation            | Allows app to load arbitrary libraries and frameworks. Enabled it if you are using GDNative add-ons and ad-hoc signature, or want to support user-provided external add-ons.                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -114,20 +125,20 @@ See `Hardened Runtime <https://developer.apple.com/documentation/security/harden
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Location                              | Enable if you need to use location information from Location Services, if it's enabled you should also provide usage message in the `privacy/location_usage_description` option.                 |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Address Book                          | [3]_ Enable to allow access contacts in the user's address book, if it's enabled you should also provide usage message in the `privacy/address_book_usage_description` option.                   |
+| Address Book                          | [4]_ Enable to allow access contacts in the user's address book, if it's enabled you should also provide usage message in the `privacy/address_book_usage_description` option.                   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Calendars                             | [3]_ Enable to allow access to the user's calendar, if it's enabled you should also provide usage message in the `privacy/calendar_usage_description` option.                                    |
+| Calendars                             | [4]_ Enable to allow access to the user's calendar, if it's enabled you should also provide usage message in the `privacy/calendar_usage_description` option.                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Photo Library                         | [3]_ Enable to allow access to the user's Photos library, if it's enabled you should also provide usage message in the `privacy/photos_library_usage_description` option.                        |
+| Photo Library                         | [4]_ Enable to allow access to the user's Photos library, if it's enabled you should also provide usage message in the `privacy/photos_library_usage_description` option.                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Apple Events                          | [3]_ Enable to allow app to send Apple events to other apps.                                                                                                                                     |
+| Apple Events                          | [4]_ Enable to allow app to send Apple events to other apps.                                                                                                                                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Debugging                             | [4]_ You can temporarily enable this entitlement to use native debugger (GDB, LLDB) with the exported app. This entitlement should be disabled for production export.                            |
+| Debugging                             | [5]_ You can temporarily enable this entitlement to use native debugger (GDB, LLDB) with the exported app. This entitlement should be disabled for production export.                            |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. [2] The ``Allow JIT Code Execution``, ``Allow Unsigned Executable Memory`` and ``Allow DYLD Environment Variables`` entitlements are always enabled for the Godot Mono exports, and are not visible in the export options.
-.. [3] These features aren't supported by Godot out of the box, enable them only if you are using add-ons which require them.
-.. [4] To notarize an app, you must disable the ``Debugging`` entitlement.
+.. [3] The ``Allow JIT Code Execution``, ``Allow Unsigned Executable Memory`` and ``Allow DYLD Environment Variables`` entitlements are always enabled for the Godot Mono exports, and are not visible in the export options.
+.. [4] These features aren't supported by Godot out of the box, enable them only if you are using add-ons which require them.
+.. [5] To notarize an app, you must disable the ``Debugging`` entitlement.
 
 App Sandbox Entitlement
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,19 +164,19 @@ See `App Sandbox <https://developer.apple.com/documentation/security/app_sandbox
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Device Bluetooth                  | Enable to allow app to interact with Bluetooth devices. This entitlement is required to use wireless controllers.                    |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Files Downloads [5]_              | Allows read or write access to the user's "Downloads" folder.                                                                        |
+| Files Downloads [6]_              | Allows read or write access to the user's "Downloads" folder.                                                                        |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Files Pictures [5]_               | Allows read or write access to the user's "Pictures" folder.                                                                         |
+| Files Pictures [6]_               | Allows read or write access to the user's "Pictures" folder.                                                                         |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Files Music [5]_                  | Allows read or write access to the user's "Music" folder.                                                                            |
+| Files Music [6]_                  | Allows read or write access to the user's "Music" folder.                                                                            |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Files Movies [5]_                 | Allows read or write access to the user's "Movies" folder.                                                                           |
+| Files Movies [6]_                 | Allows read or write access to the user's "Movies" folder.                                                                           |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Files User Selected [5]_          | Allows read or write access to arbitrary folder. To gain access, a folder must be selected from the native file dialog by the user.  |
+| Files User Selected [6]_          | Allows read or write access to arbitrary folder. To gain access, a folder must be selected from the native file dialog by the user.  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Helper Executable                 | List of helper executables to embedded to the app bundle. Sandboxed app are limited to execute only these executable.                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. [5] You can optionally provide usage messages for various folders in the `privacy/*_folder_usage_description` options.
+.. [6] You can optionally provide usage messages for various folders in the `privacy/*_folder_usage_description` options.
 
 You can override default entitlements by selecting custom entitlements file, in this case all other entitlement are ignored.
