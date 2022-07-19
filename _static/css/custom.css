@@ -17,6 +17,7 @@
     --navbar-current-background-color: #212d51;
     --navbar-current-background-color-hover: #182343;
     --navbar-current-background-color-active: #131e3b;
+    --navbar-category-active-color: rgba(255 115 129 / 10%);
     --navbar-level-1-color: #c3e3ff;
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
@@ -107,6 +108,7 @@
         --navbar-current-background-color: #333639;
         --navbar-current-background-color-hover: #44474a;
         --navbar-current-background-color-active: #222528;
+        --navbar-category-active-color: rgba(238 115 129 / 10%);
         --navbar-level-1-color: #ddd;
         --navbar-level-2-color: #ccc;
         --navbar-level-3-color: #bbb;
@@ -934,6 +936,10 @@ kbd.compound > .kbd,
     background-color: var(--navbar-background-color-active);
 }
 
+.wy-menu-vertical li.toctree-l1 > a {
+    padding: .4045em 1.918em;
+}
+
 .wy-menu-vertical li.toctree-l1.current > a {
     border: none;
 }
@@ -1107,4 +1113,35 @@ kbd.compound > .kbd,
 .code-example-bad div.highlight {
     border-left-color: var(--code-example-bad-color);
     border-left-width: 8px;
+}
+
+/* Togglable sidebar sections. */
+.wy-menu-vertical p.caption {
+    cursor: pointer;
+}
+.wy-menu-vertical p.caption.active {
+    background-color: var(--navbar-category-active-color);
+}
+.wy-menu-vertical p.caption:hover {
+    background-color: var(--navbar-background-color-hover);
+}
+
+.wy-menu-vertical p.caption.active .caption-text:before {
+    transform: rotate(90deg);
+}
+.wy-menu-vertical p.caption .caption-text:before {
+    content: "❯";
+    display: inline-block;
+    margin-left: -4px;
+    transition: transform 0.2s;
+    width: 16px;
+    height: 32px;
+    transform-origin: 2px 16px;
+}
+
+.wy-menu-vertical p.caption + ul {
+    display: none;
+}
+.wy-menu-vertical p.caption + ul.active {
+    display: block;
 }

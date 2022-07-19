@@ -67,11 +67,16 @@ The main documentation for the site is organized into the following sections:
 
 .. toctree::
    :maxdepth: 1
-   :caption: General
+   :caption: About
    :name: sec-general
 
-   about/index
-
+   about/introduction
+   about/faq
+   about/troubleshooting
+   about/list_of_features
+   about/docs_changelog
+   about/release_policy
+   about/complying_with_licenses
 
 .. toctree::
    :maxdepth: 1
@@ -117,7 +122,7 @@ The main documentation for the site is organized into the following sections:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Development
+   :caption: Engine Development
    :name: sec-devel
 
    development/compiling/index
