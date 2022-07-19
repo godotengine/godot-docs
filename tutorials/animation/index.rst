@@ -9,3 +9,4 @@ Animation
    cutout_animation
    2d_skeletons
    animation_tree
+   playing_videos
