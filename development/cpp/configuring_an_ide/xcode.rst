@@ -82,7 +82,7 @@ To enable debugging support you need to edit the external build target's build a
 
 .. code-block:: shell
 
-  ln -f ${PROJECT_DIR}/godot/bin/godot.osx.tools.64 ${PROJECT_DIR}/godot/bin/godot
+  ln -f ${PROJECT_DIR}/godot/bin/godot.macos.tools.64 ${PROJECT_DIR}/godot/bin/godot
 
 .. figure:: img/xcode_7_setup_build_post_action.png
    :figclass: figure-w480
@@ -103,7 +103,7 @@ To enable debugging support you need to edit the external build target's build a
   tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 
-To check that everything is working, put a breakpoint in ``platform/osx/godot_main_osx.mm`` and
+To check that everything is working, put a breakpoint in ``platform/macos/godot_main_macos.mm`` and
 run the project.
 
 If you run into any issues, ask for help in one of
