@@ -26,7 +26,7 @@ Before we create any rooms, we must first create a node to be the parent of all 
 
 .. image:: img/roomlist_node.png
 
-.. note:: The roomlist is **not** a special node type - it can just be a regular Spatial.
+.. note:: The roomlist is **not** a special node type – it can just be a regular Spatial.
 
 You will need to assign the roomlist node in the RoomManager so that it knows where to find the rooms.
 
