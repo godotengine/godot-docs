@@ -54,15 +54,15 @@ Start a terminal, go to the root directory of the engine source code.
 
 To compile for Intel (x86-64) powered Macs, use::
 
-    scons platform=osx arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
 
 To compile for Apple Silicon (ARM64) powered Macs, use::
 
-    scons platform=osx arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.osx.tools.x86_64 bin/godot.osx.tools.arm64 -output bin/godot.osx.tools.universal
+    lipo -create bin/godot.macos.tools.x86_64 bin/godot.macos.tools.arm64 -output bin/godot.macos.tools.universal
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
@@ -75,12 +75,12 @@ manager.
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/osx_tools.app``. Typically, for an optimized
+template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
 editor binary built with ``target=release_debug``::
 
-    cp -r misc/dist/osx_tools.app ./Godot.app
+    cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.osx.opt.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.macos.opt.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
 
 .. note::
@@ -124,32 +124,32 @@ of those two architectures by leaving out the ``lipo`` step below.
 
 - For Intel x86_64::
 
-    scons platform=osx tools=no target=release arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
-    scons platform=osx tools=no target=release_debug arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos tools=no target=release arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos tools=no target=release_debug arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
 
 - For ARM64 (Apple M1)::
 
-    scons platform=osx tools=no target=release arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
-    scons platform=osx tools=no target=release_debug arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos tools=no target=release arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos tools=no target=release_debug arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
 
 To support both architectures in a single "Universal 2" binary, run the above
 two commands blocks and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.osx.opt.x86_64 bin/godot.osx.opt.arm64 -output bin/godot.osx.opt.universal
-    lipo -create bin/godot.osx.opt.debug.x86_64 bin/godot.osx.opt.debug.arm64 -output bin/godot.osx.opt.debug.universal
+    lipo -create bin/godot.macos.opt.x86_64 bin/godot.macos.opt.arm64 -output bin/godot.macos.opt.universal
+    lipo -create bin/godot.macos.opt.debug.x86_64 bin/godot.macos.opt.debug.arm64 -output bin/godot.macos.opt.debug.universal
 
 To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/osx_template.app``. The release and debug
-builds should be placed in ``osx_template.app/Contents/MacOS`` with the names
-``godot_osx_release.64`` and ``godot_osx_debug.64`` respectively. You can do so
+template located in ``misc/dist/macos_template.app``. The release and debug
+builds should be placed in ``macos_template.app/Contents/MacOS`` with the names
+``godot_macos_release.64`` and ``godot_macos_debug.64`` respectively. You can do so
 with the following commands (assuming a universal build, otherwise replace the
 ``.universal`` extension with the one of your arch-specific binaries)::
 
-    cp -r misc/dist/osx_template.app .
-    mkdir -p osx_template.app/Contents/MacOS
-    cp bin/godot.osx.opt.universal osx_template.app/Contents/MacOS/godot_osx_release.64
-    cp bin/godot.osx.opt.debug.universal osx_template.app/Contents/MacOS/godot_osx_debug.64
-    chmod +x osx_template.app/Contents/MacOS/godot_osx*
+    cp -r misc/dist/macos_template.app .
+    mkdir -p macos_template.app/Contents/MacOS
+    cp bin/godot.macos.opt.universal macos_template.app/Contents/MacOS/godot_macos_release.64
+    cp bin/godot.macos.opt.debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.64
+    chmod +x macos_template.app/Contents/MacOS/godot_macos*
 
 .. note::
 
@@ -158,13 +158,13 @@ with the following commands (assuming a universal build, otherwise replace the
     building it statically with ``use_static_mvk=yes``, or by including the
     dynamic library in your ``.app`` bundle::
 
-        mkdir -p osx_template.app/Contents/Frameworks
-        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib osx_template.app/Contents/Frameworks/libMoltenVK.dylib
+        mkdir -p macos_template.app/Contents/Frameworks
+        cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib macos_template.app/Contents/Frameworks/libMoltenVK.dylib
 
-You can then zip the ``osx_template.app`` folder to reproduce the ``osx.zip``
+You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
 template from the official Godot distribution::
 
-    zip -q -9 -r osx.zip osx_template.app
+    zip -q -9 -r macos.zip macos_template.app
 
 Cross-compiling for macOS from Linux
 ------------------------------------
@@ -193,8 +193,8 @@ repository/extracted the zip), e.g.::
 
 Now you can compile with SCons like you normally would::
 
-    scons platform=osx
+    scons platform=macos
 
 If you have an OSXCross SDK version different from the one expected by the SCons buildsystem, you can specify a custom one with the ``osxcross_sdk`` argument::
 
-    scons platform=osx osxcross_sdk=darwin15
+    scons platform=macos osxcross_sdk=darwin15

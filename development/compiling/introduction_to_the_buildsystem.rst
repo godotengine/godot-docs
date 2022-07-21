@@ -334,7 +334,7 @@ platform:
     linux_x11_32_release
     linux_x11_64_debug
     linux_x11_64_release
-    osx.zip
+    macos.zip
     version.txt
     windows_32_debug.exe
     windows_32_release.exe

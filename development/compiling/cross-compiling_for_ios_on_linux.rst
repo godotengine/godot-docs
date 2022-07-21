@@ -141,22 +141,4 @@ way, with some additional arguments to provide the correct paths:
 
 ::
 
-    $ scons -j 4 platform=iphone arch=arm target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
-    $ scons -j 4 platform=iphone arch=arm64 target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
-
-Producing fat binaries
-~~~~~~~~~~~~~~~~~~~~~~
-
-Apple requires a fat binary with both architectures (``armv7`` and
-``arm64``) in a single file. To do this, use the
-``arm-apple-darwin11-lipo`` executable. The following example assumes
-you are in the root Godot source directory:
-
-::
-
-    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot.iphone.opt.debug.arm.a bin/libgodot.iphone.opt.debug.arm64.a -output bin/libgodot.iphone.debug.fat.a
-    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot_camera_module.iphone.opt.debug.arm.a bin/libgodot_camera_module.iphone.opt.debug.arm64.a -output bin/libgodot_camera_module.iphone.debug.fat.a
-    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/libgodot_arkit_module.iphone.opt.debug.arm.a bin/libgodot_arkit_module.iphone.opt.debug.arm64.a -output bin/libgodot_arkit_module.iphone.debug.fat.a
-
-
-Then you will have iOS fat binaries in ``bin`` directory.
+    $ scons -j 4 platform=ios arch=arm64 target=release_debug IOS_SDK_PATH="/path/to/iPhoneSDK" IOS_TOOLCHAIN_PATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
