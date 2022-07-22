@@ -169,12 +169,13 @@ dependencies. Running it will bring up the Project Manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-Development in Visual Studio or other IDEs
-------------------------------------------
+Development in Visual Studio
+----------------------------
 
-For most projects, using only scripting is enough but when development
-in C++ is needed, for creating modules or extending the engine, working
-with an IDE is usually desirable.
+Using an IDE is not required to compile Godot as SCons takes care of everything,
+but if you intend to do engine development or debugging of the C++ code on a
+Windows development environment, you may be interested in configuring things
+for use in Visual Studio.
 
 You can create a Visual Studio solution via SCons by running SCons with
 the ``vsproj=yes`` parameter, like this::
@@ -184,11 +185,7 @@ the ``vsproj=yes`` parameter, like this::
 You will be able to open Godot's source in a Visual Studio solution now,
 and able to build Godot using Visual Studio's **Build** button.
 
-If you need to edit the build commands, they are located in
-"Godot" project settings, NMAKE sheet. SCons is called at the end of
-the commands. If you make a mistake, copy the command from one of the
-other build configurations (debug, release_debug, release) or
-architectures (Win32/x64); they are equivalent.
+.. sealso:: See :ref:`doc_configuring_an_ide_vs` for further details.
 
 Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
