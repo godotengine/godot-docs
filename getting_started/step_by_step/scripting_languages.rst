@@ -14,9 +14,9 @@ will write your first script using GDScript.
 inherit all functions and properties of the node they attach to.
 
 For example, take a game where a Camera2D node follows a ship. The Camera2D node
-follows its parent by default. Imagine you want it to shake when the player
-takes damage. As this feature is not built-into Godot, you would attach a script
-to it and code the camera shake.
+follows its parent by default. Imagine you want the camera to shake when the player
+takes damage. As this feature is not built into Godot, you would attach a script
+to the Camera2D node and code the shake.
 
 .. image:: img/scripting_camera_shake.gif
 
@@ -49,7 +49,7 @@ with Godot.
 
 For C#, you will need an external code editor like
 `VSCode <https://code.visualstudio.com/>`_ or Visual Studio. While C# support is
-now mature, you will also find fewer learning resources for it compared to
+now mature, you will find fewer learning resources for it compared to
 GDScript. That's why we recommend C# mainly to users who already have experience
 with the language.
 
@@ -70,9 +70,7 @@ to save you time coding games. Its features include:
   information from the scene it's attached to.
 - Built-in vector and transform types, making it efficient for heavy use of
   linear algebra, a must for games.
-- Supports multiple threads as efficiently as statically typed languages. This
-  is one of the features we couldn't provide easily with a third-party language
-  like Lua or Python.
+- Supports multiple threads as efficiently as statically typed languages.
 - No `garbage collection
   <https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>`_, as
   this feature eventually gets in the way when creating games. The engine counts
@@ -138,7 +136,7 @@ non-programmers like game designers and artists.
 .. image:: img/scripting_visualscript.png
 
 You can use other languages to create custom blocks that are specific to your
-game. For example, to script AIs, quests, or dialogues. That's where the
+game, for example, to script AIs, quests, or dialogues. That's where the
 strength of VisualScript lies.
 
 While it provides all the basic building blocks you need to code complete games,
@@ -161,7 +159,7 @@ or even restart Godot.
 You can use any version of the language or mix compiler brands and versions for
 the generated shared libraries, thanks to our use of an internal C API Bridge.
 
-This language is the best choice for performance. You don't need to use it
+GDNative is the best choice for performance. You don't need to use it
 throughout an entire game, as you can write other parts in GDScript, C#, or
 VisualScript.
 
