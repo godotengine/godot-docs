@@ -15,7 +15,7 @@ In this lesson, we will look at signals. They are messages that nodes emit when
 something specific happens to them, like a button being pressed. Other nodes can
 connect to that signal and call a function when the event occurs.
 
-It is a delegation mechanism built into Godot that allows one game object to
+Signals are a delegation mechanism built into Godot that allows one game object to
 react to a change in another without them referencing one another. Using signals
 limits `coupling
 <https://en.wikipedia.org/wiki/Coupling_(computer_programming)>`_ and keeps your
@@ -76,7 +76,7 @@ If you don't see the handles, ensure the select tool is active in the toolbar.
 Click and drag on the button itself to move it closer to the sprite.
 
 You can also write a label on the Button by editing its Text property in the
-Inspector.
+Inspector. Enter "Toggle motion".
 
 .. image:: img/signals_08_toggle_motion_text.png
 
@@ -85,6 +85,8 @@ Your scene tree and viewport should look like this.
 .. image:: img/signals_09_scene_setup.png
 
 Save your newly created scene. You can then run it with :kbd:`F6`.
+At the moment, the button will be visible, but nothing will happen if you
+press it.
 
 Connecting a signal in the editor
 ---------------------------------
@@ -122,10 +124,10 @@ methods "_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
 
    The advanced view lets you connect to any node and any built-in
    function, add arguments to the callback, and set options. You can
-   toggle the mode in the window's bottom-right by clicking the radio
+   toggle the mode in the window's bottom-right by clicking the Advanced
    button.
 
-Click the connect button to complete the signal connection and jump to the
+Click the Connect button to complete the signal connection and jump to the
 Script workspace. You should see the new method with a connection icon in the
 left margin.
 
@@ -267,6 +269,9 @@ bottom of our script and use it to toggle our sprite's visibility.
 The ``visible`` property is a boolean that controls the visibility of our node.
 The line ``visible = not visible`` toggles the value. If ``visible`` is
 ``true``, it becomes ``false``, and vice-versa.
+
+If you run the scene now, you will see that the sprite blinks on and off, at one
+second intervals.
 
 Complete script
 ---------------
