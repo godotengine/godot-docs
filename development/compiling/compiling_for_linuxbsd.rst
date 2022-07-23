@@ -215,7 +215,7 @@ must be copied to:
 
 ::
 
-    $HOME/.local/share/godot/templates/[gd-version]/
+    $HOME/.local/share/godot/export_templates/<version>/
 
 and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
 
