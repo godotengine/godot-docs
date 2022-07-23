@@ -582,7 +582,7 @@ and ``size``. Also contains an ``end`` field which is
 vectors.
 
 :ref:`Transform3D <class_Transform3D>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Basis field ``basis`` and a Vector3 field
 ``origin``.

@@ -32,5 +32,7 @@ To use a unique node in a script, use the ``%`` symbol and the node's
 name in the path for ``get_node()``. For example:
 
 .. tabs::
+
  .. code-tab:: gdscript GDScript
+
     get_node("%RedButton").text = "Hello"

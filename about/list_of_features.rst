@@ -161,7 +161,7 @@ Vulkan 1.0, with Vulkan 1.1 and 1.2 features optionally used.
   or improve visuals on high-end systems.
 
   - 3D rendering can be scaled with bilinear filtering or
-    `AMD FidelityFX Super Resolution 1.0 https://www.amd.com/en/technologies/fidelityfx-super-resolution`__.
+    `AMD FidelityFX Super Resolution 1.0 <https://www.amd.com/en/technologies/fidelityfx-super-resolution>`__.
 
 - `OpenGL support planned for a future Godot 4.x release <https://godotengine.org/article/about-godot4-vulkan-gles3-and-gles2>`__.
 
