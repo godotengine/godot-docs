@@ -126,7 +126,7 @@ Choosing an output format
 -------------------------
 
 Output formats are provided by the :ref:`MovieWriter <class_MovieWriter>` class.
-Godot has 2 built-in :ref:`MovieWriter <class_MovieWriter>`s, and more can be implemented by extensions:
+Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be implemented by extensions:
 
 AVI (recommended)
 ^^^^^^^^^^^^^^^^^

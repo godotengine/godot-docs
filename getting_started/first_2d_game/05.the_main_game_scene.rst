@@ -75,7 +75,7 @@ Main script
 
 Add a script to ``Main``. At the top of the script, we use 
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
- to instance.
+to instance.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
