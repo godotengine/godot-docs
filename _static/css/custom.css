@@ -243,6 +243,12 @@ article ol,
     line-height: 25px;
 }
 
+.rst-content section ul li {
+    /* Increase spacing between list items. */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 body,
 .rst-content table.docutils thead {
     color: var(--body-color);
