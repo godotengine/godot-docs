@@ -180,12 +180,31 @@ shader, this value can be used as desired.
 | in vec4 **INSTANCE_CUSTOM**          | Instance custom data (for particles, mostly).         |
 +--------------------------------------+-------------------------------------------------------+
 
+.. note::
+
+    ``MODELVIEW_MATRIX`` combines both the ``WORLD_MATRIX`` and ``INV_CAMERA_MATRIX`` and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the seperated ``WORLD_MATRIX`` and ``INV_CAMERA_MATRIX``.
+
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
 The default use of a Godot fragment processor function is to set up the material properties of your object
 and to let the built-in renderer handle the final shading. However, you are not required to use all
 these properties, and if you don't write to them, Godot will optimize away the corresponding functionality.
+
+Below are examples of common variables calculated using the built-ins:
+
+.. code-block:: glsl
+
+    vec3 model_world_space = WORLD_MATRIX[3].xyz; // Object's world space position. This is the equivalent to global_transform.origin in GDScript.
+    mat3 model_transform_basis = mat3(WORLD_MATRIX); // Object's world space transform basis. This is the equivalent to global_transform.basis in GDScript.
+    vec3 camera_world_space = CAMERA_MATRIX[3].xyz; // Camera's world space position. This is the equivalent to camera.global_transform.origin in GDScript.
+    vec3 camera_eye_world_space = INV_CAMERA_MATRIX[3].xyz; // Camera eye vector in world space direction of the camera.
+    vec3 camera_to_object_world_space = normalize(WORLD_MATRIX[3].xyz - CAMERA_MATRIX[3].xyz); // Camera's direction to the object in world space.
+
+.. note::
+
+    A commonly used alternative to ``WORLD_MATRIX[3].xyz`` is to use ``vec3 origin = (WORLD_MATRIX * vec4(0,0,0,1)).xyz``. It is more efficient to use ``WORLD_MATRIX[3].xyz`` as it avoids the matrix multiplication. 
+
 
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | Built-in                          | Description                                                                                      |
