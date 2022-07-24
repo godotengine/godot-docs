@@ -43,21 +43,19 @@ Setting up C# for Godot
 Prerequisites
 ~~~~~~~~~~~~~
 
-Install the latest stable version of
-`.NET Core SDK <https://dotnet.microsoft.com/download/dotnet-core>`__
-(3.1 as of writing).
+Install the latest stable version of the
+`.NET SDK <https://dotnet.microsoft.com/download>`__, previously known as the
+.NET Core SDK.
 
 From Godot 3.2.3 onwards, installing Mono SDK is not a requirement anymore,
 except it is required if you are building the engine from source.
 
-Godot bundles the parts of Mono needed to run already compiled games,
-however Godot does not include the tools required to build and compile
-games, such as MSBuild. These tools need to be installed separately.
-The required tools are included in the .NET Core SDK. MSBuild is also
-included in the Mono SDK, but it can't build C# projects with the new
-``csproj`` format, therefore .NET Core SDK is required for Godot 3.2.3+.
+Godot bundles the parts of Mono needed to run already compiled games.
+However, Godot does not bundle the tools required to build and compile
+games, such as MSBuild and the C# compiler. These are
+included in the .NET SDK, which needs to be installed separately.
 
-In summary, you must have installed .NET Core SDK
+In summary, you must have installed the .NET SDK
 **and** the Mono-enabled version of Godot.
 
 Additional notes
