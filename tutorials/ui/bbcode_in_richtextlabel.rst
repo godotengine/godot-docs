@@ -557,11 +557,13 @@ Custom BBCode tags and text effects
 -----------------------------------
 
 You can extend the :ref:`class_RichTextEffect` resource type to create your own custom
-BBCode tags. You begin by extending the :ref:`class_RichTextEffect` resource type. Add
-the ``tool`` prefix to your GDScript file if you wish to have these custom effects run
-within the editor itself. The RichTextLabel does not need to have a script attached,
-nor does it need to be running in ``tool`` mode. The new effect can be activated in
-the Inspector through the **Custom Effects** property.
+BBCode tags. Create a new script file that extends the :ref:`class_RichTextEffect` resource type
+and give the script a ``class_name`` so that the effect can be selected in the inspector.
+Add the ``@tool`` annotation to your GDScript file if you wish to have these custom effects
+run within the editor itself. The RichTextLabel does not need to have a script attached,
+nor does it need to be running in ``tool`` mode. The new effect can be registered in
+the Inspector by adding it to the **Custom Effects** array, or in code with the
+:ref:`install_effect() <class_RichTextLabel_method_install_effect>` method.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member
@@ -605,7 +607,7 @@ Ghost
 
 ::
 
-    tool
+    @tool
     extends RichTextEffect
     class_name RichTextGhost
 
@@ -619,7 +621,7 @@ Ghost
         var speed = char_fx.env.get("freq", 5.0)
         var span = char_fx.env.get("span", 10.0)
 
-        var alpha = sin(char_fx.elapsed_time * speed + (char_fx.absolute_index / span)) * 0.5 + 0.5
+        var alpha = sin(char_fx.elapsed_time * speed + (char_fx.range.x / span)) * 0.5 + 0.5
         char_fx.color.a = alpha
         return true
 
@@ -628,7 +630,7 @@ Pulse
 
 ::
 
-    tool
+    @tool
     extends RichTextEffect
     class_name RichTextPulse
 
@@ -646,7 +648,7 @@ Pulse
         var sined_time = (sin(char_fx.elapsed_time * freq) + 1.0) / 2.0
         var y_off = sined_time * height
         color.a = 1.0
-        char_fx.color = char_fx.color.linear_interpolate(color, sined_time)
+        char_fx.color = char_fx.color.lerp(color, sined_time)
         char_fx.offset = Vector2(0, -1) * y_off
         return true
 
@@ -655,7 +657,7 @@ Matrix
 
 ::
 
-    tool
+    @tool
     extends RichTextEffect
     class_name RichTextMatrix
 
@@ -664,11 +666,17 @@ Matrix
     # Define the tag name.
     var bbcode = "matrix"
 
+    # Gets TextServer for retrieving font information.
+    func get_text_server():
+        return TextServerManager.get_primary_interface()
+
     func _process_custom_fx(char_fx):
         # Get parameters, or use the provided default value if missing.
         var clear_time = char_fx.env.get("clean", 2.0)
         var dirty_time = char_fx.env.get("dirty", 1.0)
         var text_span = char_fx.env.get("span", 50)
+
+        var value = char_fx.glyph_index
 
         var matrix_time = fmod(char_fx.elapsed_time + (char_fx.range.x / float(text_span)), \
                                clear_time + dirty_time)
@@ -680,7 +688,7 @@ Matrix
             value = int(1 * matrix_time * (126 - 65))
             value %= (126 - 65)
             value += 65
-        char_fx.glyph_index = TextServer.font_get_glyph_index(char_fx.font, value)
+        char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, value, 0)
         return true
 
 This will add a few new BBCode commands, which can be used like so:
