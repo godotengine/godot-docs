@@ -114,6 +114,7 @@ After reading the "Prerequisites" section, you can download and install
 In Godot's **Editor → Editor Settings** menu:
 
 - Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio Code**.
+- Set **Mono** -> **Builds** -> **Build Tool** to **dotnet CLI**.
 
 In Visual Studio Code:
 
@@ -149,6 +150,7 @@ While installing Visual Studio, select these workloads:
 In Godot's **Editor → Editor Settings** menu:
 
 - Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio**.
+- Set **Mono** -> **Builds** -> **Build Tool** to **dotnet CLI**.
 
 Next, you need to download the Godot Visual Studio extension from github
 `here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
