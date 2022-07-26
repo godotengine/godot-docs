@@ -238,9 +238,9 @@ quit the project when the animation is finished:
         animation_finished.connect(_on_animation_player_animation_finished)
 
     func _on_animation_player_animation_finished(_anim_name):
-	    if OS.has_feature("movie"):
-		    print("Done recording movie.")
-		    get_tree().quit()
+        if OS.has_feature("movie"):
+            print("Done recording movie.")
+            get_tree().quit()
 
 Using high-quality graphics settings
 ------------------------------------
