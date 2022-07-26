@@ -33,7 +33,7 @@ from within the Godot editor. To do so, go to Help -> Search or press
 
 .. image:: img/manual_class_reference_search.png
 
-To browse it online, head to the manual's :ref:`Class Reference <toc-class-ref>`
+To browse it online, head to the manual's :ref:`Class Reference <doc_class_reference>`
 section.
 
 A class reference's page tells you:

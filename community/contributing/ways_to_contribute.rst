@@ -196,8 +196,8 @@ There are two separate resources referred to as "documentation" in Godot:
 
 - **The class reference.** This is the documentation for the complete Godot API
   as exposed to GDScript and the other scripting languages. It can be consulted
-  offline, directly in Godot's code editor, or online at :ref:`Godot API
-  <toc-class-ref>`. To contribute to the class reference, you have to edit the
+  offline, directly in Godot's code editor, or online at Godot :ref:`Class Reference
+  <doc_class_reference>`. To contribute to the class reference, you have to edit the
   XML file corresponding to the class and make a pull request.
   See :ref:`doc_updating_the_class_reference` and
   :ref:`doc_class_reference_writing_guidelines` for more details.

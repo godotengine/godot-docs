@@ -5,7 +5,7 @@ Contributing to the class reference
 
 .. highlight:: shell
 
-The class reference is available online in the :ref:`classes <toc-class-ref>`
+The class reference is available online in the :ref:`classes <doc_class_reference>`
 section of the documentation and in the Godot editor, from the help menu.
 
 In the class reference, some methods, variables, and signals lack descriptions.
@@ -45,7 +45,7 @@ repository: `doc/classes/
 
 .. warning:: Always edit the API reference through these source XML files. Do
              not edit the generated ``.rst`` files :ref:`in the online documentation
-             <toc-class-ref>`, hosted in the `godot-docs
+             <doc_class_reference>`, hosted in the `godot-docs
              <https://github.com/godotengine/godot-docs>`_ repository.
 
 .. warning::
