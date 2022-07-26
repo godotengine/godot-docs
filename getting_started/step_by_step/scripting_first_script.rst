@@ -21,12 +21,15 @@ Creating your first script
 In this lesson, you will code your first script to make the Godot icon turn in
 circles using GDScript. As we mentioned :ref:`in the introduction
 <toc-learn-introduction>`, we assume you have programming foundations.
+The equivalent C# code has been included in another tab for convenience.
 
 .. image:: img/scripting_first_script_rotating_godot.gif
 
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
              the :ref:`GDScript reference<doc_gdscript>`.
 
+.. seealso:: To learn more about C#, head to
+    the :ref:`C# basics<doc_c_sharp>`
 Project setup
 -------------
 
@@ -92,6 +95,25 @@ the following line of code:
 
     extends Sprite2D
 
+ .. code-tab:: csharp C#
+
+    public class Sprite : Godot.Sprite
+    // Declare member variables here. Examples:
+    // private int a = 2;
+    // private string b = "text";
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+
+    }
+
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //
+    //  }
+
 Every GDScript file is implicitly a class. The ``extends`` keyword defines the
 class this script inherits or extends. In this case, it's ``Sprite2D``, meaning
 our script will get access to all the properties and functions of the Sprite2D
@@ -127,6 +149,13 @@ Add the following code to your script:
 
     func _init():
         print("Hello, world!")
+ .. code-tab:: csharp C#
+
+    public Sprite()
+    {
+        GD.Print("Hello, world!");
+    }
+
 
 Let's break it down. The ``func`` keyword defines a new function named
 ``_init``. This is a special name for our class's constructor. The engine calls
@@ -158,6 +187,10 @@ angular speed in radians per second.
 
     var speed = 400
     var angular_speed = PI
+ .. code-tab:: csharp C#
+
+    private int Speed = 400;
+    private float AngularSpeed = Mathf.Pi;
 
 Member variables sit near the top of the script, after any "extends" lines,
 but before functions. Every node
@@ -194,6 +227,12 @@ At the bottom of the script, define the function:
 
     func _process(delta):
         rotation += angular_speed * delta
+ .. code-tab:: csharp C#
+
+    public override void _Process(float delta)
+    {
+        Rotation += AngularSpeed * delta;
+    }
 
 The ``func`` keyword defines a new function. After it, we have to write the
 function's name and arguments it takes in parentheses. A colon ends the
@@ -231,6 +270,11 @@ them.
     var velocity = Vector2.UP.rotated(rotation) * speed
 
     position += velocity * delta
+ .. code-tab:: csharp C#
+
+    var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+
+    Position += velocity * delta;
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
 the top of the script, it defines a property of the class. Inside a function, it
@@ -278,3 +322,21 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         var velocity = Vector2.UP.rotated(rotation) * speed
 
         position += velocity * delta
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public class Sprite : Godot.Sprite
+    {
+        private int Speed = 400;
+        private float AngularSpeed = Mathf.Pi;
+
+        public override void _Process(float delta)
+        {
+            Rotation += AngularSpeed * delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+
+            Position += velocity * delta;
+
+        }
+    }
