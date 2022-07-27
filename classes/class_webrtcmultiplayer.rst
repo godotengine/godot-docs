@@ -22,15 +22,6 @@ You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :re
 
 \ :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
-Properties
-----------
-
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)              |
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
 Methods
 -------
 

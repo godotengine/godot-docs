@@ -177,6 +177,8 @@ The culling mask that describes which 3D render layers are rendered by this came
 
 If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this camera.
 
+If multiple cameras are in the scene, one will always be made current. For example, if two ``Camera`` nodes are present in the scene and only one is current, setting one camera's :ref:`current<class_Camera_property_current>` to ``false`` will cause the other camera to be made current.
+
 ----
 
 .. _class_Camera_property_doppler_tracking:

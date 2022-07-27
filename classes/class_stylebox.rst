@@ -142,9 +142,9 @@ Method Descriptions
 
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |const|
 
-Draws this stylebox using a :ref:`CanvasItem<class_CanvasItem>` with given :ref:`RID<class_RID>`.
+Draws this stylebox using a canvas item identified by the given :ref:`RID<class_RID>`.
 
-You can get a :ref:`RID<class_RID>` value using :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` on a :ref:`CanvasItem<class_CanvasItem>`-derived node.
+The :ref:`RID<class_RID>` value can either be the result of :ref:`CanvasItem.get_canvas_item<class_CanvasItem_method_get_canvas_item>` called on an existing :ref:`CanvasItem<class_CanvasItem>`-derived node, or directly from creating a canvas item in the :ref:`VisualServer<class_VisualServer>` with :ref:`VisualServer.canvas_item_create<class_VisualServer_method_canvas_item_create>`.
 
 ----
 

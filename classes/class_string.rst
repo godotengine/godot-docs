@@ -541,7 +541,26 @@ Finds the first occurrence of a substring, ignoring case. Returns the starting p
 
 - :ref:`String<class_String>` **format** **(** :ref:`Variant<class_Variant>` values, :ref:`String<class_String>` placeholder="{_}" **)**
 
-Formats the string by replacing all occurrences of ``placeholder`` with ``values``.
+Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
+
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+
+::
+
+    # Prints: Waiting for Godot is a play by Samuel Beckett, and Godot Engine is named after it.
+    var use_array_values = "Waiting for {0} is a play by {1}, and {0} Engine is named after it."
+    print(use_array_values.format(["Godot", "Samuel Beckett"]))
+    
+    # Prints: User 42 is Godot.
+    print("User {id} is {name}.".format({"id": 42, "name": "Godot"}))
+
+Some additional handling is performed when ``values`` is an array. If ``placeholder`` does not contain an underscore, the elements of the array will be used to replace one occurrence of the placeholder in turn; If an array element is another 2-element array, it'll be interpreted as a key-value pair.
+
+::
+
+    # Prints: User 42 is Godot.
+    print("User {} is {}.".format([42, "Godot"], "{}"))
+    print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
 ----
 

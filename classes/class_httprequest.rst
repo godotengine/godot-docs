@@ -280,7 +280,7 @@ Maximum number of allowed redirects. This is used to prevent endless redirect lo
 | *Getter*  | get_timeout()      |
 +-----------+--------------------+
 
-If set to a value greater than ``0.0``, the HTTP request will time out after ``timeout`` seconds have passed and the request is not *completed* yet. For small HTTP requests such as REST API usage, set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value greater than ``0.0`` to prevent the application from getting stuck if the request fails to get a response in a timely manner. For file downloads, leave this to ``0.0`` to prevent the download from failing if it takes too much time.
+If set to a value greater than ``0.0`` before the request starts, the HTTP request will time out after ``timeout`` seconds have passed and the request is not *completed* yet. For small HTTP requests such as REST API usage, set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value between ``10.0`` and ``30.0`` to prevent the application from getting stuck if the request fails to get a response in a timely manner. For file downloads, leave this to ``0.0`` to prevent the download from failing if it takes too much time.
 
 ----
 

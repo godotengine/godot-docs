@@ -20,15 +20,6 @@ Description
 
 Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-Properties
-----------
-
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``false`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``2`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)              |
-+-----------------------------------------------------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
 Methods
 -------
 

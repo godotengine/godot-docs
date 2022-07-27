@@ -806,7 +806,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 
 The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
 
-\ **Note:** If this is set to 0, shadows won't be visible. Since user-created viewports default to a value of 0, this value must be set above 0 manually.
+\ **Note:** If this is set to ``0``, both point *and* directional shadows won't be visible. Since user-created viewports default to a value of ``0``, this value must be set above ``0`` manually (typically at least ``256``).
 
 ----
 
@@ -887,6 +887,8 @@ If ``true``, the viewport should render its background as transparent.
 +-----------+------------------+
 
 The rendering mode of viewport.
+
+\ **Note:** If set to :ref:`USAGE_2D<class_Viewport_constant_USAGE_2D>` or :ref:`USAGE_2D_NO_SAMPLING<class_Viewport_constant_USAGE_2D_NO_SAMPLING>`, :ref:`hdr<class_Viewport_property_hdr>` will have no effect when enabled since HDR is not supported for 2D.
 
 ----
 

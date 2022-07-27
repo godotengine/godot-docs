@@ -117,7 +117,7 @@ When a controller is turned off, its slot is freed. This ensures controllers wil
 | *Getter*  | get_rumble()      |
 +-----------+-------------------+
 
-The degree to which the controller vibrates. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
+The degree to which the controller vibrates. Ranges from ``0.0`` to ``1.0``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
 
 This is a useful property to animate if you want the controller to vibrate for a limited duration.
 

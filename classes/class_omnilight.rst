@@ -51,7 +51,7 @@ enum **ShadowMode**:
 
 - **SHADOW_DUAL_PARABOLOID** = **0** --- Shadows are rendered to a dual-paraboloid texture. Faster than :ref:`SHADOW_CUBE<class_OmniLight_constant_SHADOW_CUBE>`, but lower-quality.
 
-- **SHADOW_CUBE** = **1** --- Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality.
+- **SHADOW_CUBE** = **1** --- Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality. Only supported on GPUs that feature support for depth cubemaps.
 
 ----
 
@@ -130,7 +130,9 @@ See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
 | *Getter*  | get_shadow_mode()      |
 +-----------+------------------------+
 
-See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
+The shadow rendering mode to use for this ``OmniLight``. See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
+
+\ **Note:** In GLES2, :ref:`SHADOW_CUBE<class_OmniLight_constant_SHADOW_CUBE>` is only supported on GPUs that feature support for depth cubemaps. Old GPUs such as the Radeon HD 4000 series don't support cubemap shadows and will fall back to dual paraboloid shadows as a result.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

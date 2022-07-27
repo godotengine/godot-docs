@@ -95,7 +95,7 @@ enum **DrawFlags**:
 
 - **FLAG_SHADED** = **0** --- If set, lights in the environment affect the label.
 
-- **FLAG_DOUBLE_SIDED** = **1** --- If set, text can be seen from the back as well. If not, the texture is invisible when looking at it from behind.
+- **FLAG_DOUBLE_SIDED** = **1** --- If set, text can be seen from the back as well. If not, the text is invisible when looking at it from behind.
 
 - **FLAG_DISABLE_DEPTH_TEST** = **2** --- Disables the depth test, so this object is drawn on top of all others. However, objects drawn after it in the draw order may cover it.
 
@@ -394,7 +394,7 @@ The tint of :ref:`Font<class_Font>`'s outline.
 
 Sets the render priority for the text outline. Higher priority objects will be sorted in front of lower priority objects.
 
-\ **Node:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
+\ **Note:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
@@ -430,7 +430,7 @@ The size of one pixel's width on the label to scale it in 3D.
 
 Sets the render priority for the text. Higher priority objects will be sorted in front of lower priority objects.
 
-\ **Node:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
+\ **Note:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 

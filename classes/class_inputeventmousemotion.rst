@@ -18,7 +18,9 @@ Description
 
 Contains mouse and pen motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
 
-\ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
+\ **Note:** The behavior of this event is affected by the value of :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`. When set to ``true`` (default), mouse/pen motion events received from the OS will be merged to emit an accumulated event only once per frame rendered at most. When set to ``false``, the events will be emitted as received, which means that they can be emitted multiple times per frame rendered, allowing for precise input reporting at the expense of CPU usage.
+
+\ **Note:** If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
 
 Tutorials
 ---------
@@ -30,18 +32,38 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`pressure<class_InputEventMouseMotion_property_pressure>` | ``0.0``             |
-+-------------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       | ``Vector2( 0, 0 )`` |
-+-------------------------------+----------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`         | ``Vector2( 0, 0 )`` |
-+-------------------------------+----------------------------------------------------------------+---------------------+
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`bool<class_bool>`       | :ref:`pen_inverted<class_InputEventMouseMotion_property_pen_inverted>` | ``false``           |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`float<class_float>`     | :ref:`pressure<class_InputEventMouseMotion_property_pressure>`         | ``0.0``             |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>`         | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`               | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+---------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`                 | ``Vector2( 0, 0 )`` |
++-------------------------------+------------------------------------------------------------------------+---------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_InputEventMouseMotion_property_pen_inverted:
+
+- :ref:`bool<class_bool>` **pen_inverted**
+
++-----------+-------------------------+
+| *Default* | ``false``               |
++-----------+-------------------------+
+| *Setter*  | set_pen_inverted(value) |
++-----------+-------------------------+
+| *Getter*  | get_pen_inverted()      |
++-----------+-------------------------+
+
+Returns ``true`` when using the eraser end of a stylus pen.
+
+\ **Note:** This property is implemented on Linux, macOS and Windows.
+
+----
 
 .. _class_InputEventMouseMotion_property_pressure:
 

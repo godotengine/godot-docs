@@ -1729,7 +1729,7 @@ The default exposure used for tonemapping.
 | *Getter*  | get_tonemapper()      |
 +-----------+-----------------------+
 
-The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on a LDR display. (Godot doesn't support rendering on HDR displays yet.)
+The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on a SDR display. (Godot doesn't support rendering on HDR displays yet.)
 
 ----
 

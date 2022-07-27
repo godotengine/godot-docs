@@ -859,13 +859,19 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/max_simultaneous_compiles.mobile<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles.mobile>`             | ``1``                                                                                            |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/max_simultaneous_compiles.web<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles.web>`                   | ``1``                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_cache_size_mb<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb>`                                     | ``512``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_cache_size_mb.mobile<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb.mobile>`                       | ``128``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>`                               | ``2``                                                                                            |
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_cache_size_mb.web<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb.web>`                             | ``128``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>`                               | ``0``                                                                                            |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode.mobile<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode.mobile>`                 | ``0``                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`rendering/gles3/shaders/shader_compilation_mode.web<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode.web>`                       | ``0``                                                                                            |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`rendering/limits/buffers/blend_shape_max_buffer_size_kb<class_ProjectSettings_property_rendering/limits/buffers/blend_shape_max_buffer_size_kb>`               | ``4096``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -6153,7 +6159,7 @@ This is a way to balance the CPU work between running the game and compiling the
 
 The default value is a conservative one, so you are advised to tweak it according to the hardware you are targeting.
 
-\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is **not** ``Synchronous``.
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is **not** ``Synchronous``.
 
 ----
 
@@ -6165,11 +6171,27 @@ The default value is a conservative one, so you are advised to tweak it accordin
 | *Default* | ``1`` |
 +-----------+-------+
 
-The default is a very conservative override for ``rendering/gles3/shaders/max_concurrent_compiles``.
+The default is a very conservative override for :ref:`rendering/gles3/shaders/max_simultaneous_compiles<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles>`.
 
 Depending on the specific devices you are targeting, you may want to raise it.
 
-\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is **not** ``Synchronous``.
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is **not** ``Synchronous``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles.web:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/max_simultaneous_compiles.web**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+The default is a very conservative override for :ref:`rendering/gles3/shaders/max_simultaneous_compiles<class_ProjectSettings_property_rendering/gles3/shaders/max_simultaneous_compiles>`.
+
+Depending on the specific browsers you are targeting, you may want to raise it.
+
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is **not** ``Synchronous``.
 
 ----
 
@@ -6183,7 +6205,7 @@ Depending on the specific devices you are targeting, you may want to raise it.
 
 The maximum size, in megabytes, that the ubershader cache can grow up to. On startup, the least recently used entries will be deleted until the total size is within bounds.
 
-\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is set to ``Asynchronous + Cache``.
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is set to ``Asynchronous + Cache``.
 
 ----
 
@@ -6195,9 +6217,25 @@ The maximum size, in megabytes, that the ubershader cache can grow up to. On sta
 | *Default* | ``128`` |
 +-----------+---------+
 
-An override for ``rendering/gles3/shaders/ubershader_cache_size_mb``, so a smaller maximum size can be configured for mobile platforms, where storage space is more limited.
+An override for :ref:`rendering/gles3/shaders/shader_cache_size_mb<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb>`, so a smaller maximum size can be configured for mobile platforms, where storage space is more limited.
 
-\ **Note:** This setting is only meaningful if ``rendering/gles3/shaders/shader_compilation_mode`` is set to ``Asynchronous + Cache``.
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is set to ``Asynchronous + Cache``.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb.web:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_cache_size_mb.web**
+
++-----------+---------+
+| *Default* | ``128`` |
++-----------+---------+
+
+An override for :ref:`rendering/gles3/shaders/shader_cache_size_mb<class_ProjectSettings_property_rendering/gles3/shaders/shader_cache_size_mb>`, so a smaller maximum size can be configured for web platforms, where storage space is more limited.
+
+\ **Note:** Currently, shader caching is generally unavailable on web platforms.
+
+\ **Note:** This setting is only meaningful if :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>` is set to ``Asynchronous + Cache``.
 
 ----
 
@@ -6206,7 +6244,7 @@ An override for ``rendering/gles3/shaders/ubershader_cache_size_mb``, so a small
 - :ref:`int<class_int>` **rendering/gles3/shaders/shader_compilation_mode**
 
 +-----------+-------+
-| *Default* | ``2`` |
+| *Default* | ``0`` |
 +-----------+-------+
 
 If set to ``Asynchronous`` and available on the target device, asynchronous compilation of shaders is enabled (in contrast to ``Asynchronous``).
@@ -6231,9 +6269,23 @@ To reduce loading times after the project has been launched at least once, you c
 | *Default* | ``0`` |
 +-----------+-------+
 
-An override for ``rendering/gles3/shaders/shader_compilation_mode``, so asynchronous compilation can be disabled for mobile.
+An override for :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>`, so asynchronous compilation can be disabled on mobile platforms.
 
 You may want to do that since mobile GPUs generally won't support ubershaders due to their complexity.
+
+----
+
+.. _class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode.web:
+
+- :ref:`int<class_int>` **rendering/gles3/shaders/shader_compilation_mode.web**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+An override for :ref:`rendering/gles3/shaders/shader_compilation_mode<class_ProjectSettings_property_rendering/gles3/shaders/shader_compilation_mode>`, so asynchronous compilation can be disabled on web platforms.
+
+You may want to do that since certain browsers (especially on mobile platforms) generally won't support ubershaders due to their complexity.
 
 ----
 
@@ -6985,7 +7037,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 | *Default* | ``4096`` |
 +-----------+----------+
 
-Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
+Size for shadow atlas (used for OmniLights and SpotLights). The value will be rounded up to the nearest power of 2. See shadow mapping documentation.
 
 ----
 

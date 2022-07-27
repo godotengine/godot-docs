@@ -11,7 +11,7 @@ NetworkedMultiplayerPeer
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
+**Inherited By:** :ref:`MultiplayerPeerGDNative<class_MultiplayerPeerGDNative>`, :ref:`NetworkedMultiplayerCustom<class_NetworkedMultiplayerCustom>`, :ref:`NetworkedMultiplayerENet<class_NetworkedMultiplayerENet>`, :ref:`WebRTCMultiplayer<class_WebRTCMultiplayer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
 A high-level network interface to simplify multiplayer interactions.
 
@@ -32,11 +32,11 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``true`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``0``    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+----------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``2``     |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -150,7 +150,7 @@ Property Descriptions
 - :ref:`bool<class_bool>` **refuse_new_connections**
 
 +-----------+-----------------------------------+
-| *Default* | ``true``                          |
+| *Default* | ``false``                         |
 +-----------+-----------------------------------+
 | *Setter*  | set_refuse_new_connections(value) |
 +-----------+-----------------------------------+
@@ -166,7 +166,7 @@ If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
 - :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
 
 +-----------+--------------------------+
-| *Default* | ``0``                    |
+| *Default* | ``2``                    |
 +-----------+--------------------------+
 | *Setter*  | set_transfer_mode(value) |
 +-----------+--------------------------+

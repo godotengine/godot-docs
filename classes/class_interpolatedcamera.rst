@@ -23,13 +23,15 @@ If it is not :ref:`enabled<class_InterpolatedCamera_property_enabled>` or does n
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`enabled<class_InterpolatedCamera_property_enabled>` | ``false``        |
-+---------------------------------+-----------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`speed<class_InterpolatedCamera_property_speed>`     | ``1.0``          |
-+---------------------------------+-----------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`target<class_InterpolatedCamera_property_target>`   | ``NodePath("")`` |
-+---------------------------------+-----------------------------------------------------------+------------------+
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`                                                                     | :ref:`enabled<class_InterpolatedCamera_property_enabled>`           | ``false``        |
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+| :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` | :ref:`process_mode<class_InterpolatedCamera_property_process_mode>` | ``1``            |
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+| :ref:`float<class_float>`                                                                   | :ref:`speed<class_InterpolatedCamera_property_speed>`               | ``1.0``          |
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>`                                                             | :ref:`target<class_InterpolatedCamera_property_target>`             | ``NodePath("")`` |
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
 
 Methods
 -------
@@ -37,6 +39,21 @@ Methods
 +------+--------------------------------------------------------------------------------------------------------------+
 | void | :ref:`set_target<class_InterpolatedCamera_method_set_target>` **(** :ref:`Object<class_Object>` target **)** |
 +------+--------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_InterpolatedCamera_InterpolatedCameraProcessMode:
+
+.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_PHYSICS:
+
+.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_IDLE:
+
+enum **InterpolatedCameraProcessMode**:
+
+- **INTERPOLATED_CAMERA_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
+
+- **INTERPOLATED_CAMERA_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
 
 Property Descriptions
 ---------------------
@@ -54,6 +71,22 @@ Property Descriptions
 +-----------+----------------------------------+
 
 If ``true``, and a target is set, the camera will move automatically.
+
+----
+
+.. _class_InterpolatedCamera_property_process_mode:
+
+- :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **process_mode**
+
++-----------+-------------------------+
+| *Default* | ``1``                   |
++-----------+-------------------------+
+| *Setter*  | set_process_mode(value) |
++-----------+-------------------------+
+| *Getter*  | get_process_mode()      |
++-----------+-------------------------+
+
+The camera's process callback. See :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>`.
 
 ----
 

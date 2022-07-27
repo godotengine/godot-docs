@@ -70,6 +70,8 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`size<class_PoolColorArray_method_size>` **(** **)**                                                                   |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`sort<class_PoolColorArray_method_sort>` **(** **)**                                                                   |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -201,6 +203,14 @@ Changes the :ref:`Color<class_Color>` at the given index.
 - :ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+----
+
+.. _class_PoolColorArray_method_sort:
+
+- void **sort** **(** **)**
+
+Sorts the elements of the array in ascending order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

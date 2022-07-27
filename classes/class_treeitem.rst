@@ -427,7 +427,7 @@ Returns the metadata value that was set for the given column using :ref:`set_met
 
 - :ref:`TreeItem<class_TreeItem>` **get_next** **(** **)**
 
-Returns the next TreeItem in the tree or a null object if there is none.
+Returns the next sibling TreeItem in the tree or a null object if there is none.
 
 ----
 
@@ -435,7 +435,7 @@ Returns the next TreeItem in the tree or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the next visible TreeItem in the tree or a null object if there is none.
+Returns the next visible sibling TreeItem in the tree or a null object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns ``null``.
 
@@ -453,7 +453,7 @@ Returns the parent TreeItem or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev** **(** **)**
 
-Returns the previous TreeItem in the tree or a null object if there is none.
+Returns the previous sibling TreeItem in the tree or a null object if there is none.
 
 ----
 
@@ -461,7 +461,7 @@ Returns the previous TreeItem in the tree or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the previous visible TreeItem in the tree or a null object if there is none.
+Returns the previous visible sibling TreeItem in the tree or a null object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns ``null``.
 

@@ -34,23 +34,27 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                       |                                                     |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>` |                                                     |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                 |                                                     |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>` | ``Vector3( 0, 0, 0 )``                              |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                       | ``Vector3( 1, 1, 1 )``                              |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`               | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`           | ``Vector3( 0, 0, 0 )``                              |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                   | ``true``                                            |
-+-----------------------------------------+------------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`SpatialGizmo<class_SpatialGizmo>` | :ref:`gizmo<class_Spatial_property_gizmo>`                           |                                                     |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`global_rotation<class_Spatial_property_global_rotation>`       |                                                     |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`global_transform<class_Spatial_property_global_transform>`     |                                                     |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`global_translation<class_Spatial_property_global_translation>` |                                                     |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation<class_Spatial_property_rotation>`                     |                                                     |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`rotation_degrees<class_Spatial_property_rotation_degrees>`     | ``Vector3( 0, 0, 0 )``                              |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_Spatial_property_scale>`                           | ``Vector3( 1, 1, 1 )``                              |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Transform<class_Transform>`       | :ref:`transform<class_Spatial_property_transform>`                   | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_Spatial_property_translation>`               | ``Vector3( 0, 0, 0 )``                              |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`visible<class_Spatial_property_visible>`                       | ``true``                                            |
++-----------------------------------------+----------------------------------------------------------------------+-----------------------------------------------------+
 
 Methods
 -------
@@ -196,6 +200,22 @@ The :ref:`SpatialGizmo<class_SpatialGizmo>` for this node. Used for example in :
 
 ----
 
+.. _class_Spatial_property_global_rotation:
+
+- :ref:`Vector3<class_Vector3>` **global_rotation**
+
++----------+----------------------------+
+| *Setter* | set_global_rotation(value) |
++----------+----------------------------+
+| *Getter* | get_global_rotation()      |
++----------+----------------------------+
+
+Rotation part of the global transformation in radians, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
+
+\ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+
+----
+
 .. _class_Spatial_property_global_transform:
 
 - :ref:`Transform<class_Transform>` **global_transform**
@@ -207,6 +227,20 @@ The :ref:`SpatialGizmo<class_SpatialGizmo>` for this node. Used for example in :
 +----------+-----------------------------+
 
 World space (global) :ref:`Transform<class_Transform>` of this node.
+
+----
+
+.. _class_Spatial_property_global_translation:
+
+- :ref:`Vector3<class_Vector3>` **global_translation**
+
++----------+-------------------------------+
+| *Setter* | set_global_translation(value) |
++----------+-------------------------------+
+| *Getter* | get_global_translation()      |
++----------+-------------------------------+
+
+Global position of this node. This is equivalent to ``global_transform.origin``.
 
 ----
 

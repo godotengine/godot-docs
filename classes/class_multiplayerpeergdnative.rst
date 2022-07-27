@@ -13,6 +13,15 @@ MultiplayerPeerGDNative
 
 
 
+Properties
+----------
+
++-----------------------------------------------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | refuse_new_connections | ``true`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_refuse_new_connections>`) |
++-----------------------------------------------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | transfer_mode          | ``0`` (overrides :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer_property_transfer_mode>`)             |
++-----------------------------------------------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------+
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

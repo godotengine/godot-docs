@@ -343,7 +343,7 @@ Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) inte
 
 - :ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` sizes **)**
 
-Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a vector of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
+Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is an array of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
 
 ----
 
