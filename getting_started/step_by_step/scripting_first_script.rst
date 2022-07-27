@@ -97,7 +97,7 @@ the following line of code:
 
  .. code-tab:: csharp C#
 
-    public class Sprite : Godot.Sprite
+    public class Sprite : Godot.Sprite2D
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
@@ -326,7 +326,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite
+    public class Sprite : Godot.Sprite2D
     {
         private int Speed = 400;
         private float AngularSpeed = Mathf.Pi;
