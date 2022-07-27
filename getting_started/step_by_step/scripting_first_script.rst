@@ -28,8 +28,8 @@ The equivalent C# code has been included in another tab for convenience.
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
              the :ref:`GDScript reference<doc_gdscript>`.
 
-.. seealso:: To learn more about C#, head to
-    the :ref:`C# basics<doc_c_sharp>`
+.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
+
 Project setup
 -------------
 
