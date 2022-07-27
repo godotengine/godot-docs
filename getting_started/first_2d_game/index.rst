@@ -17,7 +17,7 @@ a 2D game.
           programming entirely, you should start here: :ref:`doc_scripting`.
 
 The game is called "Dodge the Creeps!". Your character must move and avoid the
-enemies for as long as possible. Here is a preview of the final result:
+enemies for as long as possible. 
 
 You will learn to:
 
