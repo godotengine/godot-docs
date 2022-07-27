@@ -17,8 +17,6 @@ Properties
 ----------
 
 +---------------------------------+-------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`auto_spawn<class_MultiplayerSpawner_property_auto_spawn>`   | ``false``        |
-+---------------------------------+-------------------------------------------------------------------+------------------+
 | :ref:`int<class_int>`           | :ref:`spawn_limit<class_MultiplayerSpawner_property_spawn_limit>` | ``0``            |
 +---------------------------------+-------------------------------------------------------------------+------------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`   | ``NodePath("")`` |
@@ -56,20 +54,6 @@ Signals
 
 Property Descriptions
 ---------------------
-
-.. _class_MultiplayerSpawner_property_auto_spawn:
-
-- :ref:`bool<class_bool>` **auto_spawn**
-
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_auto_spawning(value) |
-+-----------+--------------------------+
-| *Getter*  | is_auto_spawning()       |
-+-----------+--------------------------+
-
-----
 
 .. _class_MultiplayerSpawner_property_spawn_limit:
 

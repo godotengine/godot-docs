@@ -35,6 +35,8 @@ Properties
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                                 | :ref:`language<class_Label_property_language>`                                                           | ``""``                                                                       |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                       | :ref:`lines_skipped<class_Label_property_lines_skipped>`                                                 | ``0``                                                                        |
@@ -69,21 +71,15 @@ Properties
 Methods
 -------
 
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`clear_opentype_features<class_Label_method_clear_opentype_features>` **(** **)**                                                        |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                                                                  |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** :ref:`int<class_int>` line=-1 **)** |const|                                  |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_opentype_feature<class_Label_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                      |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const|                                            |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|                                                  |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`set_opentype_feature<class_Label_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)** |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                                 |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** :ref:`int<class_int>` line=-1 **)** |const| |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const|           |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|                 |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -160,6 +156,18 @@ If ``true``, the Label only shows the text that fits inside its bounding rectang
 +-----------+---------------------------------+
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+
+----
+
+.. _class_Label_property_label_settings:
+
+- :ref:`LabelSettings<class_LabelSettings>` **label_settings**
+
++----------+---------------------------+
+| *Setter* | set_label_settings(value) |
++----------+---------------------------+
+| *Getter* | get_label_settings()      |
++----------+---------------------------+
 
 ----
 
@@ -376,14 +384,6 @@ Sets the clipping behavior when :ref:`visible_characters<class_Label_property_vi
 Method Descriptions
 -------------------
 
-.. _class_Label_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
-
-----
-
 .. _class_Label_method_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** |const|
@@ -404,14 +404,6 @@ If there're no lines returns font size in pixels.
 
 ----
 
-.. _class_Label_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
-
-----
-
 .. _class_Label_method_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
@@ -425,14 +417,6 @@ Returns the total number of printable characters in the text (excluding spaces a
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
 
 Returns the number of lines shown. Useful if the ``Label``'s height cannot currently display all lines.
-
-----
-
-.. _class_Label_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 Theme Property Descriptions
 ---------------------------
@@ -457,7 +441,7 @@ Default text :ref:`Color<class_Color>` of the ``Label``.
 | *Default* | ``Color(1, 1, 1, 1)`` |
 +-----------+-----------------------+
 
-The tint of :ref:`Font<class_Font>`'s outline.
+The tint of text outline.
 
 ----
 

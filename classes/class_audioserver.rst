@@ -118,6 +118,8 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`set_bus_volume_db<class_AudioServer_method_set_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**                                           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`set_enable_tagging_used_audio_streams<class_AudioServer_method_set_enable_tagging_used_audio_streams>` **(** :ref:`bool<class_bool>` enable **)**                                       |
++-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`swap_bus_effects<class_AudioServer_method_swap_bus_effects>` **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx, :ref:`int<class_int>` by_effect_idx **)**           |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`unlock<class_AudioServer_method_unlock>` **(** **)**                                                                                                                                    |
@@ -510,6 +512,12 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 - void **set_bus_volume_db** **(** :ref:`int<class_int>` bus_idx, :ref:`float<class_float>` volume_db **)**
 
 Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
+
+----
+
+.. _class_AudioServer_method_set_enable_tagging_used_audio_streams:
+
+- void **set_enable_tagging_used_audio_streams** **(** :ref:`bool<class_bool>` enable **)**
 
 ----
 

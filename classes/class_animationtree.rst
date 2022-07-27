@@ -30,17 +30,19 @@ Tutorials
 Properties
 ----------
 
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`                                                      | :ref:`active<class_AnimationTree_property_active>`                       | ``false``        |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`                                              | :ref:`anim_player<class_AnimationTree_property_anim_player>`             | ``NodePath("")`` |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
-| :ref:`AnimationProcessCallback<enum_AnimationTree_AnimationProcessCallback>` | :ref:`process_callback<class_AnimationTree_property_process_callback>`   | ``1``            |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`                                              | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` | ``NodePath("")`` |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
-| :ref:`AnimationNode<class_AnimationNode>`                                    | :ref:`tree_root<class_AnimationTree_property_tree_root>`                 |                  |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                                      | :ref:`active<class_AnimationTree_property_active>`                                             | ``false``         |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`NodePath<class_NodePath>`                                              | :ref:`advance_expression_base_node<class_AnimationTree_property_advance_expression_base_node>` | ``NodePath(".")`` |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`NodePath<class_NodePath>`                                              | :ref:`anim_player<class_AnimationTree_property_anim_player>`                                   | ``NodePath("")``  |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`AnimationProcessCallback<enum_AnimationTree_AnimationProcessCallback>` | :ref:`process_callback<class_AnimationTree_property_process_callback>`                         | ``1``             |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`NodePath<class_NodePath>`                                              | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>`                       | ``NodePath("")``  |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+| :ref:`AnimationNode<class_AnimationNode>`                                    | :ref:`tree_root<class_AnimationTree_property_tree_root>`                                       |                   |
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -88,6 +90,22 @@ Property Descriptions
 +-----------+-------------------+
 
 If ``true``, the ``AnimationTree`` will be processing.
+
+----
+
+.. _class_AnimationTree_property_advance_expression_base_node:
+
+- :ref:`NodePath<class_NodePath>` **advance_expression_base_node**
+
++-----------+-----------------------------------------+
+| *Default* | ``NodePath(".")``                       |
++-----------+-----------------------------------------+
+| *Setter*  | set_advance_expression_base_node(value) |
++-----------+-----------------------------------------+
+| *Getter*  | get_advance_expression_base_node()      |
++-----------+-----------------------------------------+
+
+The path to the :ref:`Node<class_Node>` used to evaluate the AnimationNode :ref:`Expression<class_Expression>` if one is not explicitly specified internally.
 
 ----
 

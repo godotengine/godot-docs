@@ -27,7 +27,7 @@ As many XR runtimes now use a configurable action map all inputs are named.
 Tutorials
 ---------
 
-- :doc:`VR documentation index <../tutorials/vr/index>`
+- :doc:`XR documentation index <../tutorials/xr/index>`
 
 Methods
 -------

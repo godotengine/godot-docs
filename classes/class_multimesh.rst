@@ -137,7 +137,9 @@ Property Descriptions
 | *Getter*  | get_instance_count()      |
 +-----------+---------------------------+
 
-Number of instances that will get drawn. This clears and (re)sizes the buffers. By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
+Number of instances that will get drawn. This clears and (re)sizes the buffers. Setting data format or flags afterwards will have no effect.
+
+By default, all instances are drawn but you can limit this with :ref:`visible_instance_count<class_MultiMesh_property_visible_instance_count>`.
 
 ----
 

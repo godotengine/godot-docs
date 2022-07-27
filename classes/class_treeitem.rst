@@ -45,8 +45,6 @@ Methods
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`clear_custom_color<class_TreeItem_method_clear_custom_color>` **(** :ref:`int<class_int>` column **)**                                                                                                                                        |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`clear_opentype_features<class_TreeItem_method_clear_opentype_features>` **(** :ref:`int<class_int>` column **)**                                                                                                                              |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`create_child<class_TreeItem_method_create_child>` **(** :ref:`int<class_int>` idx=-1 **)**                                                                                                                                                    |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`deselect<class_TreeItem_method_deselect>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                            |
@@ -100,8 +98,6 @@ Methods
 | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_next<class_TreeItem_method_get_next>` **(** **)** |const|                                                                                                                                                                                 |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_next_visible<class_TreeItem_method_get_next_visible>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                      |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                             | :ref:`get_opentype_feature<class_TreeItem_method_get_opentype_feature>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tag **)** |const|                                                                                           |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_parent<class_TreeItem_method_get_parent>` **(** **)** |const|                                                                                                                                                                             |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -190,8 +186,6 @@ Methods
 | void                                                              | :ref:`set_language<class_TreeItem_method_set_language>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` language **)**                                                                                                              |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_metadata<class_TreeItem_method_set_metadata>` **(** :ref:`int<class_int>` column, :ref:`Variant<class_Variant>` meta **)**                                                                                                                |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_opentype_feature<class_TreeItem_method_set_opentype_feature>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**                                                                      |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_range<class_TreeItem_method_set_range>` **(** :ref:`int<class_int>` column, :ref:`float<class_float>` value **)**                                                                                                                         |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,14 +328,6 @@ Resets the background color for the given column to default.
 - void **clear_custom_color** **(** :ref:`int<class_int>` column **)**
 
 Resets the color for the given column to default.
-
-----
-
-.. _class_TreeItem_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** :ref:`int<class_int>` column **)**
-
-Removes all OpenType features.
 
 ----
 
@@ -553,7 +539,7 @@ Returns the metadata value that was set for the given column using :ref:`set_met
 
 - :ref:`TreeItem<class_TreeItem>` **get_next** **(** **)** |const|
 
-Returns the next TreeItem in the tree or a null object if there is none.
+Returns the next sibling TreeItem in the tree or a null object if there is none.
 
 ----
 
@@ -561,17 +547,9 @@ Returns the next TreeItem in the tree or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the next visible TreeItem in the tree or a null object if there is none.
+Returns the next visible sibling TreeItem in the tree or a null object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns ``null``.
-
-----
-
-.. _class_TreeItem_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag`` of the item's text.
 
 ----
 
@@ -587,7 +565,7 @@ Returns the parent TreeItem or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev** **(** **)**
 
-Returns the previous TreeItem in the tree or a null object if there is none.
+Returns the previous sibling TreeItem in the tree or a null object if there is none.
 
 ----
 
@@ -595,7 +573,7 @@ Returns the previous TreeItem in the tree or a null object if there is none.
 
 - :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the previous visible TreeItem in the tree or a null object if there is none.
+Returns the previous visible sibling TreeItem in the tree or a null object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns ``null``.
 
@@ -926,14 +904,6 @@ Sets language code of item's text used for line-breaking and text shaping algori
 - void **set_metadata** **(** :ref:`int<class_int>` column, :ref:`Variant<class_Variant>` meta **)**
 
 Sets the metadata value for the given column, which can be retrieved later using :ref:`get_metadata<class_TreeItem_method_get_metadata>`. This can be used, for example, to store a reference to the original data.
-
-----
-
-.. _class_TreeItem_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Sets OpenType feature ``tag`` for the item's text.
 
 ----
 

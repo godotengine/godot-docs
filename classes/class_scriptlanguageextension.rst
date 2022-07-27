@@ -71,6 +71,8 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`_get_name<class_ScriptLanguageExtension_method__get_name>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_public_annotations<class_ScriptLanguageExtension_method__get_public_annotations>` **(** **)** |virtual| |const|                                                                                                                                                                                                                       |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`_get_public_constants<class_ScriptLanguageExtension_method__get_public_constants>` **(** **)** |virtual| |const|                                                                                                                                                                                                                           |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_public_functions<class_ScriptLanguageExtension_method__get_public_functions>` **(** **)** |virtual| |const|                                                                                                                                                                                                                           |
@@ -155,6 +157,8 @@ Enumerations
 
 .. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_CLASS_TBD_GLOBALSCOPE:
 
+.. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_CLASS_ANNOTATION:
+
 .. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_MAX:
 
 enum **LookupResultType**:
@@ -175,7 +179,9 @@ enum **LookupResultType**:
 
 - **LOOKUP_RESULT_CLASS_TBD_GLOBALSCOPE** = **7**
 
-- **LOOKUP_RESULT_MAX** = **8**
+- **LOOKUP_RESULT_CLASS_ANNOTATION** = **8**
+
+- **LOOKUP_RESULT_MAX** = **9**
 
 ----
 
@@ -411,6 +417,12 @@ Method Descriptions
 .. _class_ScriptLanguageExtension_method__get_name:
 
 - :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
+
+----
+
+.. _class_ScriptLanguageExtension_method__get_public_annotations:
+
+- :ref:`Dictionary[]<class_Dictionary>` **_get_public_annotations** **(** **)** |virtual| |const|
 
 ----
 

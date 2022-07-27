@@ -76,6 +76,169 @@ Constants
 
 \ **Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
+Annotations
+-----------
+
+.. _class_@GDScript_annotation_export:
+
+- :ref:`bool<class_bool>` **@export** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_category:
+
+- :ref:`bool<class_bool>` **@export_category** **(** :ref:`String<class_String>` name **)**
+
+----
+
+.. _class_@GDScript_annotation_export_color_no_alpha:
+
+- :ref:`bool<class_bool>` **@export_color_no_alpha** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_dir:
+
+- :ref:`bool<class_bool>` **@export_dir** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_enum:
+
+- :ref:`bool<class_bool>` **@export_enum** **(** :ref:`String<class_String>` names, ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_exp_easing:
+
+- :ref:`bool<class_bool>` **@export_exp_easing** **(** :ref:`String<class_String>` hints="", ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_file:
+
+- :ref:`bool<class_bool>` **@export_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_flags:
+
+- :ref:`bool<class_bool>` **@export_flags** **(** :ref:`String<class_String>` names, ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_flags_2d_navigation:
+
+- :ref:`bool<class_bool>` **@export_flags_2d_navigation** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_flags_2d_physics:
+
+- :ref:`bool<class_bool>` **@export_flags_2d_physics** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_flags_2d_render:
+
+- :ref:`bool<class_bool>` **@export_flags_2d_render** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_flags_3d_navigation:
+
+- :ref:`bool<class_bool>` **@export_flags_3d_navigation** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_flags_3d_physics:
+
+- :ref:`bool<class_bool>` **@export_flags_3d_physics** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_flags_3d_render:
+
+- :ref:`bool<class_bool>` **@export_flags_3d_render** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_global_dir:
+
+- :ref:`bool<class_bool>` **@export_global_dir** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_global_file:
+
+- :ref:`bool<class_bool>` **@export_global_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_group:
+
+- :ref:`bool<class_bool>` **@export_group** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
+
+----
+
+.. _class_@GDScript_annotation_export_multiline:
+
+- :ref:`bool<class_bool>` **@export_multiline** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_node_path:
+
+- :ref:`bool<class_bool>` **@export_node_path** **(** :ref:`String<class_String>` type="", ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_placeholder:
+
+- :ref:`bool<class_bool>` **@export_placeholder** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_export_range:
+
+- :ref:`bool<class_bool>` **@export_range** **(** :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step=1.0, :ref:`String<class_String>` extra_hints="", ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_export_subgroup:
+
+- :ref:`bool<class_bool>` **@export_subgroup** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
+
+----
+
+.. _class_@GDScript_annotation_icon:
+
+- :ref:`bool<class_bool>` **@icon** **(** :ref:`String<class_String>` icon_path **)**
+
+----
+
+.. _class_@GDScript_annotation_onready:
+
+- :ref:`bool<class_bool>` **@onready** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_rpc:
+
+- :ref:`bool<class_bool>` **@rpc** **(** :ref:`String<class_String>` mode="", :ref:`String<class_String>` sync="", :ref:`String<class_String>` transfer_mode="", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+
+----
+
+.. _class_@GDScript_annotation_tool:
+
+- :ref:`bool<class_bool>` **@tool** **(** **)**
+
+----
+
+.. _class_@GDScript_annotation_warning_ignore:
+
+- :ref:`bool<class_bool>` **@warning_ignore** **(** :ref:`String<class_String>` warning, ... **)** |vararg|
+
 Method Descriptions
 -------------------
 
@@ -240,6 +403,8 @@ Loads a resource from the filesystem located at ``path``. The resource is loaded
 \ **Important:** The path must be absolute, a local path will just return ``null``.
 
 This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
+
+\ **Note:** You have to import the files into the engine first to load them using :ref:`load<class_@GDScript_method_load>`. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
 
 ----
 

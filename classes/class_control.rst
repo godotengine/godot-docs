@@ -509,7 +509,7 @@ enum **CursorShape**:
 
 .. _class_Control_constant_PRESET_HCENTER_WIDE:
 
-.. _class_Control_constant_PRESET_WIDE:
+.. _class_Control_constant_PRESET_FULL_RECT:
 
 enum **LayoutPreset**:
 
@@ -543,7 +543,7 @@ enum **LayoutPreset**:
 
 - **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent control in half. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
 
-- **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent control. Set all 4 offsets to 0 after you applied this preset and the ``Control`` will fit its parent control. This is equivalent to the "Full Rect" layout option in the editor. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
+- **PRESET_FULL_RECT** = **15** --- Snap all 4 anchors to the respective corners of the parent control. Set all 4 offsets to 0 after you applied this preset and the ``Control`` will fit its parent control. Use with :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>`.
 
 ----
 

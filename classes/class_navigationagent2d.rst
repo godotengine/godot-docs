@@ -242,7 +242,9 @@ The maximum distance the agent is allowed away from the ideal path to the final 
 | *Getter*  | get_radius()      |
 +-----------+-------------------+
 
-The radius of the agent.
+The radius of the avoidance agent. This is the "body" of the avoidance agent and not the avoidance maneuver starting radius (which is controlled by :ref:`neighbor_dist<class_NavigationAgent2D_property_neighbor_dist>`).
+
+Does not affect normal pathfinding. To change an actor's pathfinding radius bake :ref:`NavigationMesh<class_NavigationMesh>` resources with a different :ref:`NavigationMesh.agent_radius<class_NavigationMesh_property_agent_radius>` property and use different navigation maps for each actor size.
 
 ----
 

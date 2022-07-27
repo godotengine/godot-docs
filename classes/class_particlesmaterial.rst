@@ -354,7 +354,9 @@ Each particle's rotation will be animated along this :ref:`CurveTexture<class_Cu
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum angle.
+Maximum initial rotation applied to each particle, in degrees.
+
+Only applied when :ref:`particle_flag_disable_z<class_ParticlesMaterial_property_particle_flag_disable_z>` or :ref:`particle_flag_rotate_y<class_ParticlesMaterial_property_particle_flag_rotate_y>` are ``true`` or the :ref:`BaseMaterial3D<class_BaseMaterial3D>` being used to draw the particle is using :ref:`BaseMaterial3D.BILLBOARD_PARTICLES<class_BaseMaterial3D_constant_BILLBOARD_PARTICLES>`.
 
 ----
 
@@ -370,7 +372,7 @@ Maximum angle.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum angle.
+Minimum equivalent of :ref:`angle_max<class_ParticlesMaterial_property_angle_max>`.
 
 ----
 
@@ -402,6 +404,8 @@ Each particle's angular velocity (rotation speed) will vary along this :ref:`Cur
 
 Maximum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
+Only applied when :ref:`particle_flag_disable_z<class_ParticlesMaterial_property_particle_flag_disable_z>` or :ref:`particle_flag_rotate_y<class_ParticlesMaterial_property_particle_flag_rotate_y>` are ``true`` or the :ref:`BaseMaterial3D<class_BaseMaterial3D>` being used to draw the particle is using :ref:`BaseMaterial3D.BILLBOARD_PARTICLES<class_BaseMaterial3D_constant_BILLBOARD_PARTICLES>`.
+
 ----
 
 .. _class_ParticlesMaterial_property_angular_velocity_min:
@@ -416,7 +420,7 @@ Maximum initial angular velocity (rotation speed) applied to each particle in *d
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
+Minimum equivalent of :ref:`angular_velocity_max<class_ParticlesMaterial_property_angular_velocity_max>`.
 
 ----
 
@@ -446,7 +450,7 @@ Each particle's animation offset will vary along this :ref:`CurveTexture<class_C
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum animation offset.
+Maximum animation offset that corresponds to frame index in the texture. ``0`` is the first frame, ``1`` is the last one. See :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>`.
 
 ----
 
@@ -462,7 +466,7 @@ Maximum animation offset.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum animation offset.
+Minimum equivalent of :ref:`anim_offset_max<class_ParticlesMaterial_property_anim_offset_max>`.
 
 ----
 
@@ -510,7 +514,7 @@ With animation speed greater than ``1``, remember to enable :ref:`CanvasItemMate
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum particle animation speed.
+Minimum equivalent of :ref:`anim_speed_max<class_ParticlesMaterial_property_anim_speed_max>`.
 
 ----
 
@@ -664,6 +668,8 @@ Damping will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+The maximum rate at which particles lose velocity. For example value of ``100`` means that the particle will go from ``100`` velocity to ``0`` in ``1`` second.
+
 ----
 
 .. _class_ParticlesMaterial_property_damping_min:
@@ -677,6 +683,8 @@ Damping will vary along this :ref:`CurveTexture<class_CurveTexture>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`damping_max<class_ParticlesMaterial_property_damping_max>`.
 
 ----
 
@@ -910,7 +918,7 @@ Each particle's hue will vary along this :ref:`CurveTexture<class_CurveTexture>`
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum hue variation.
+Maximum initial hue variation applied to each particle. It will shift the particle color's hue.
 
 ----
 
@@ -926,7 +934,7 @@ Maximum hue variation.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum hue variation.
+Minimum equivalent of :ref:`hue_variation_max<class_ParticlesMaterial_property_hue_variation_max>`.
 
 ----
 
@@ -942,7 +950,7 @@ Minimum hue variation.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum initial velocity.
+Maximum initial velocity magnitude for each particle. Direction comes from :ref:`direction<class_ParticlesMaterial_property_direction>` and :ref:`spread<class_ParticlesMaterial_property_spread>`.
 
 ----
 
@@ -958,7 +966,7 @@ Maximum initial velocity.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum initial velocity.
+Minimum equivalent of :ref:`initial_velocity_max<class_ParticlesMaterial_property_initial_velocity_max>`.
 
 ----
 
@@ -1004,7 +1012,7 @@ Each particle's linear acceleration will vary along this :ref:`CurveTexture<clas
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum linear acceleration.
+Maximum linear acceleration applied to each particle in the direction of motion.
 
 ----
 
@@ -1020,7 +1028,7 @@ Maximum linear acceleration.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum linear acceleration.
+Minimum equivalent of :ref:`linear_accel_min<class_ParticlesMaterial_property_linear_accel_min>`.
 
 ----
 
@@ -1048,7 +1056,9 @@ Each particle's orbital velocity will vary along this :ref:`CurveTexture<class_C
 | *Getter* | get_param_max()      |
 +----------+----------------------+
 
-Maximum orbit velocity.
+Maximum orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
+
+Only available when :ref:`particle_flag_disable_z<class_ParticlesMaterial_property_particle_flag_disable_z>` is ``true``.
 
 ----
 
@@ -1062,7 +1072,7 @@ Maximum orbit velocity.
 | *Getter* | get_param_min()      |
 +----------+----------------------+
 
-Minimum orbit velocity.
+Minimum equivalent of :ref:`orbit_velocity_max<class_ParticlesMaterial_property_orbit_velocity_max>`.
 
 ----
 
@@ -1140,7 +1150,7 @@ Each particle's radial acceleration will vary along this :ref:`CurveTexture<clas
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum radial acceleration.
+Maximum radial acceleration applied to each particle. Makes particle accelerate away from the origin or towards it if negative.
 
 ----
 
@@ -1156,7 +1166,7 @@ Maximum radial acceleration.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum radial acceleration.
+Minimum equivalent of :ref:`radial_accel_max<class_ParticlesMaterial_property_radial_accel_max>`.
 
 ----
 
@@ -1186,7 +1196,7 @@ Each particle's scale will vary along this :ref:`CurveTexture<class_CurveTexture
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum scale.
+Maximum initial scale applied to each particle.
 
 ----
 
@@ -1202,7 +1212,7 @@ Maximum scale.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum scale.
+Minimum equivalent of :ref:`scale_max<class_ParticlesMaterial_property_scale_max>`.
 
 ----
 
@@ -1300,7 +1310,7 @@ Each particle's tangential acceleration will vary along this :ref:`CurveTexture<
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
-Maximum tangential acceleration.
+Maximum tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
 ----
 
@@ -1316,7 +1326,7 @@ Maximum tangential acceleration.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum tangential acceleration.
+Minimum equivalent of :ref:`tangential_accel_max<class_ParticlesMaterial_property_tangential_accel_max>`.
 
 Method Descriptions
 -------------------

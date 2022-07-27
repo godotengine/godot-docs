@@ -17,6 +17,12 @@ Properties
 ----------
 
 +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                             | :ref:`bar_beats<class_AudioStreamOGGVorbis_property_bar_beats>`             | ``4``     |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                             | :ref:`beat_count<class_AudioStreamOGGVorbis_property_beat_count>`           | ``0``     |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                         | :ref:`bpm<class_AudioStreamOGGVorbis_property_bpm>`                         | ``0.0``   |
++---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                           | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`                       | ``false`` |
 +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                         | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>`         | ``0.0``   |
@@ -26,6 +32,48 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_AudioStreamOGGVorbis_property_bar_beats:
+
+- :ref:`int<class_int>` **bar_beats**
+
++-----------+----------------------+
+| *Default* | ``4``                |
++-----------+----------------------+
+| *Setter*  | set_bar_beats(value) |
++-----------+----------------------+
+| *Getter*  | get_bar_beats()      |
++-----------+----------------------+
+
+----
+
+.. _class_AudioStreamOGGVorbis_property_beat_count:
+
+- :ref:`int<class_int>` **beat_count**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_beat_count(value) |
++-----------+-----------------------+
+| *Getter*  | get_beat_count()      |
++-----------+-----------------------+
+
+----
+
+.. _class_AudioStreamOGGVorbis_property_bpm:
+
+- :ref:`float<class_float>` **bpm**
+
++-----------+----------------+
+| *Default* | ``0.0``        |
++-----------+----------------+
+| *Setter*  | set_bpm(value) |
++-----------+----------------+
+| *Getter*  | get_bpm()      |
++-----------+----------------+
+
+----
 
 .. _class_AudioStreamOGGVorbis_property_loop:
 

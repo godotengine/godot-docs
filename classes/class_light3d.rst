@@ -413,6 +413,8 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 :ref:`Texture2D<class_Texture2D>` projected by light. :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>` must be on for the projector to work. Light projectors make the light appear as if it is shining through a colored but transparent object, almost like light shining through stained-glass.
 
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for light projector textures is set globally with :ref:`ProjectSettings.rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`.
+
 ----
 
 .. _class_Light3D_property_light_size:

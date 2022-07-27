@@ -20,9 +20,9 @@ Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` 
 
 Godot has 2 built-in ``MovieWriter``\ s:
 
-- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. AVI output is currently limited to a file of 4 GB in size at most.
+- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
 
-- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported.
+- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported, even if the root viewport is set to be transparent.
 
 If you need to encode to a different format or pipe a stream through third-party software, you can extend the ``MovieWriter`` class to create your own movie writers. This should typically be done using GDExtension for performance reasons.
 
@@ -113,7 +113,7 @@ Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame
 
 - void **add_writer** **(** :ref:`MovieWriter<class_MovieWriter>` writer **)** |static|
 
-Adds a writer to be usable by the engine. The supported file extensions can be set by overridding :ref:`_handles_file<class_MovieWriter_method__handles_file>`.
+Adds a writer to be usable by the engine. The supported file extensions can be set by overriding :ref:`_handles_file<class_MovieWriter_method__handles_file>`.
 
 \ **Note:** :ref:`add_writer<class_MovieWriter_method_add_writer>` must be called early enough in the engine initialization to work, as movie writing is designed to start at the same time as the rest of the engine.
 

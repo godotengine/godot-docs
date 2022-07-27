@@ -40,7 +40,7 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`add_import_option<class_EditorScenePostImportPlugin_method_add_import_option>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                                                                  |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=7 **)** |
+| void                          | :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`get_option_value<class_EditorScenePostImportPlugin_method_get_option_value>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                         |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,6 +62,8 @@ Enumerations
 
 .. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE:
 
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE:
+
 .. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MAX:
 
 enum **InternalImportCategory**:
@@ -78,7 +80,9 @@ enum **InternalImportCategory**:
 
 - **INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE** = **5**
 
-- **INTERNAL_IMPORT_CATEGORY_MAX** = **6**
+- **INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE** = **6**
+
+- **INTERNAL_IMPORT_CATEGORY_MAX** = **7**
 
 Method Descriptions
 -------------------
@@ -157,7 +161,7 @@ Add a specific import option (name and default value only). This function can on
 
 .. _class_EditorScenePostImportPlugin_method_add_import_option_advanced:
 
-- void **add_import_option_advanced** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=7 **)**
+- void **add_import_option_advanced** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)**
 
 Add a specific import option. This function can only be called from :ref:`_get_import_options<class_EditorScenePostImportPlugin_method__get_import_options>` and :ref:`_get_internal_import_options<class_EditorScenePostImportPlugin_method__get_internal_import_options>`.
 

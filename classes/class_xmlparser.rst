@@ -123,7 +123,7 @@ Gets the value of the attribute specified by the index in ``idx`` argument.
 
 - :ref:`int<class_int>` **get_current_line** **(** **)** |const|
 
-Gets the current line in the parsed file (currently not implemented).
+Gets the current line in the parsed file, counting from 0.
 
 ----
 

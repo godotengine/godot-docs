@@ -37,6 +37,10 @@ Properties
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Basis<class_Basis>`                             | :ref:`basis<class_Node3D_property_basis>`                           |                                                     |
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                         | :ref:`global_position<class_Node3D_property_global_position>`       |                                                     |
++-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`                         | :ref:`global_rotation<class_Node3D_property_global_rotation>`       |                                                     |
++-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                 | :ref:`global_transform<class_Node3D_property_global_transform>`     |                                                     |
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                         | :ref:`position<class_Node3D_property_position>`                     | ``Vector3(0, 0, 0)``                                |
@@ -234,6 +238,36 @@ Property Descriptions
 +----------+------------------+
 
 Direct access to the 3x3 basis of the :ref:`Transform3D<class_Transform3D>` property.
+
+----
+
+.. _class_Node3D_property_global_position:
+
+- :ref:`Vector3<class_Vector3>` **global_position**
+
++----------+----------------------------+
+| *Setter* | set_global_position(value) |
++----------+----------------------------+
+| *Getter* | get_global_position()      |
++----------+----------------------------+
+
+Global position of this node. This is equivalent to ``global_transform.origin``.
+
+----
+
+.. _class_Node3D_property_global_rotation:
+
+- :ref:`Vector3<class_Vector3>` **global_rotation**
+
++----------+----------------------------+
+| *Setter* | set_global_rotation(value) |
++----------+----------------------------+
+| *Getter* | get_global_rotation()      |
++----------+----------------------------+
+
+Rotation part of the global transformation in radians, specified in terms of YXZ-Euler angles in the format (X angle, Y angle, Z angle).
+
+\ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
 
 ----
 

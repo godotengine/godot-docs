@@ -20,6 +20,8 @@ Singleton used to load resource files from the filesystem.
 
 It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes registered in the engine (either built-in or from a plugin) to load files into memory and convert them to a format that can be used by the engine.
 
+\ **Note:** You have to import the files into the engine first to load them using :ref:`load<class_ResourceLoader_method_load>`. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
+
 Tutorials
 ---------
 
@@ -28,6 +30,8 @@ Tutorials
 Methods
 -------
 
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                          | :ref:`add_resource_format_loader<class_ResourceLoader_method_add_resource_format_loader>` **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader, :ref:`bool<class_bool>` at_front=false **)**   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                       | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                                                              |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -46,6 +50,8 @@ Methods
 | :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` | :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` progress=[] **)**                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                         | :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false **)** |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                          | :ref:`remove_resource_format_loader<class_ResourceLoader_method_remove_resource_format_loader>` **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader **)**                                     |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                          | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                                                           |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,6 +99,16 @@ enum **CacheMode**:
 
 Method Descriptions
 -------------------
+
+.. _class_ResourceLoader_method_add_resource_format_loader:
+
+- void **add_resource_format_loader** **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader, :ref:`bool<class_bool>` at_front=false **)**
+
+Registers a new :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. The ResourceLoader will use the ResourceFormatLoader as described in :ref:`load<class_ResourceLoader_method_load>`.
+
+This method is performed implicitly for ResourceFormatLoaders written in GDScript (see :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` for more information).
+
+----
 
 .. _class_ResourceLoader_method_exists:
 
@@ -181,6 +197,14 @@ An array variable can optionally be passed via ``progress``, and will return a o
 - :ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` use_sub_threads=false **)**
 
 Loads the resource using threads. If ``use_sub_threads`` is ``true``, multiple threads will be used to load the resource, which makes loading faster, but may affect the main thread (and thus cause game slowdowns).
+
+----
+
+.. _class_ResourceLoader_method_remove_resource_format_loader:
+
+- void **remove_resource_format_loader** **(** :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` format_loader **)**
+
+Unregisters the given :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 ----
 

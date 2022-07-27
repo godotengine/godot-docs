@@ -34,6 +34,8 @@ Properties
 +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | exclusive                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_exclusive>`)     |
 +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`ok_button_text<class_AcceptDialog_property_ok_button_text>`                 | ``"OK"``                                                                |
++-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | :ref:`String<class_String>` | title                                                                             | ``"Alert!"`` (overrides :ref:`Window<class_Window_property_title>`)     |
 +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | transient                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
@@ -123,6 +125,8 @@ Sets autowrapping for the text in the dialog.
 | *Getter*  | get_close_on_escape()      |
 +-----------+----------------------------+
 
+If ``true``, the dialog will be hidden when the escape key (:ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`) is pressed.
+
 ----
 
 .. _class_AcceptDialog_property_dialog_hide_on_ok:
@@ -156,6 +160,22 @@ If ``true``, the dialog is hidden when the OK button is pressed. You can set it 
 +-----------+-----------------+
 
 The text displayed by the dialog.
+
+----
+
+.. _class_AcceptDialog_property_ok_button_text:
+
+- :ref:`String<class_String>` **ok_button_text**
+
++-----------+---------------------------+
+| *Default* | ``"OK"``                  |
++-----------+---------------------------+
+| *Setter*  | set_ok_button_text(value) |
++-----------+---------------------------+
+| *Getter*  | get_ok_button_text()      |
++-----------+---------------------------+
+
+The text displayed by the OK button (see :ref:`get_ok_button<class_AcceptDialog_method_get_ok_button>`).
 
 Method Descriptions
 -------------------

@@ -83,17 +83,11 @@ Methods
 -------
 
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`clear_opentype_features<class_Label3D_method_clear_opentype_features>` **(** **)**                                                            |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_Label3D_method_generate_triangle_mesh>` **(** **)** |const|                                                      |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_Label3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|                          |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_opentype_feature<class_Label3D_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                          |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                    | :ref:`set_draw_flag<class_Label3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_opentype_feature<class_Label3D_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**     |
 +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -256,7 +250,7 @@ If ``true``, the label is rendered at the same size regardless of distance.
 | *Getter* | get_font()      |
 +----------+-----------------+
 
-:ref:`Font<class_Font>` used for the ``Label3D``'s text.
+Font configuration used to display text.
 
 ----
 
@@ -384,7 +378,7 @@ The text drawing offset (in pixels).
 | *Getter*  | get_outline_modulate()      |
 +-----------+-----------------------------+
 
-The tint of :ref:`Font<class_Font>`'s outline.
+The tint of text outline.
 
 ----
 
@@ -605,14 +599,6 @@ Text width (in pixels), used for autowrap and fill alignment.
 Method Descriptions
 -------------------
 
-.. _class_Label3D_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
-
-----
-
 .. _class_Label3D_method_generate_triangle_mesh:
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
@@ -629,27 +615,11 @@ Returns the value of the specified flag.
 
 ----
 
-.. _class_Label3D_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
-
-----
-
 .. _class_Label3D_method_set_draw_flag:
 
 - void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_Label3D_DrawFlags>` for a list of flags.
-
-----
-
-.. _class_Label3D_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

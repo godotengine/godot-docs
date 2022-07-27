@@ -100,6 +100,10 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_system_dir<class_OS_method_get_system_dir>` **(** :ref:`SystemDir<enum_OS_SystemDir>` dir, :ref:`bool<class_bool>` shared_storage=true **)** |const|                                                                                                                |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_system_font_path<class_OS_method_get_system_font_path>` **(** :ref:`String<class_String>` font_name, :ref:`bool<class_bool>` bold=false, :ref:`bool<class_bool>` italic=false **)** |const|                                                                         |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_system_fonts<class_OS_method_get_system_fonts>` **(** **)** |const|                                                                                                                                                                                                 |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>` **(** **)** |const|                                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_unique_id<class_OS_method_get_unique_id>` **(** **)** |const|                                                                                                                                                                                                       |
@@ -823,6 +827,26 @@ Returns the actual path to commonly used folders across different platforms. Ava
 \ **Note:** This method is implemented on Android, Linux, macOS and Windows.
 
 \ **Note:** Shared storage is implemented on Android and allows to differentiate between app specific and shared directories. Shared directories have additional restrictions on Android.
+
+----
+
+.. _class_OS_method_get_system_font_path:
+
+- :ref:`String<class_String>` **get_system_font_path** **(** :ref:`String<class_String>` font_name, :ref:`bool<class_bool>` bold=false, :ref:`bool<class_bool>` italic=false **)** |const|
+
+Returns path to the system font file with ``font_name`` and style. Return empty string if no matching fonts found.
+
+\ **Note:** This method is implemented on iOS, Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_get_system_fonts:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_system_fonts** **(** **)** |const|
+
+Returns list of font family names available.
+
+\ **Note:** This method is implemented on iOS, Linux, macOS and Windows.
 
 ----
 

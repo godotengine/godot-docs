@@ -43,6 +43,8 @@ Methods
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`_stop<class_AudioStreamPlayback_method__stop>` **(** **)** |virtual|                                                                                      |
 +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`_tag_used_streams<class_AudioStreamPlayback_method__tag_used_streams>` **(** **)** |virtual|                                                              |
++---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -86,6 +88,12 @@ Method Descriptions
 .. _class_AudioStreamPlayback_method__stop:
 
 - void **_stop** **(** **)** |virtual|
+
+----
+
+.. _class_AudioStreamPlayback_method__tag_used_streams:
+
+- void **_tag_used_streams** **(** **)** |virtual|
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

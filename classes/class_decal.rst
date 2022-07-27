@@ -32,11 +32,11 @@ Properties
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
 | :ref:`int<class_int>`             | :ref:`cull_mask<class_Decal_property_cull_mask>`                         | ``1048575``           |
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`     | ``10.0``              |
+| :ref:`float<class_float>`         | :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`     | ``40.0``              |
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`           | :ref:`distance_fade_enabled<class_Decal_property_distance_fade_enabled>` | ``false``             |
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`   | ``1.0``               |
+| :ref:`float<class_float>`         | :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`   | ``10.0``              |
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`         | :ref:`emission_energy<class_Decal_property_emission_energy>`             | ``1.0``               |
 +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
@@ -135,14 +135,14 @@ Specifies which :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_la
 - :ref:`float<class_float>` **distance_fade_begin**
 
 +-----------+--------------------------------+
-| *Default* | ``10.0``                       |
+| *Default* | ``40.0``                       |
 +-----------+--------------------------------+
 | *Setter*  | set_distance_fade_begin(value) |
 +-----------+--------------------------------+
 | *Getter*  | get_distance_fade_begin()      |
 +-----------+--------------------------------+
 
-Distance from the camera at which the Decal begins to fade away.
+The distance from the camera at which the Decal begins to fade away (in 3D units).
 
 ----
 
@@ -158,7 +158,7 @@ Distance from the camera at which the Decal begins to fade away.
 | *Getter*  | is_distance_fade_enabled()      |
 +-----------+---------------------------------+
 
-If ``true``, decals will smoothly fade away when far from the active :ref:`Camera3D<class_Camera3D>` starting at :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`. The Decal will fade out over :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`, after which it will be culled and not sent to the shader at all. Use this to reduce the number of active Decals in a scene and thus improve performance.
+If ``true``, decals will smoothly fade away when far from the active :ref:`Camera3D<class_Camera3D>` starting at :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`. The Decal will fade out over :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`, after which it will be culled and not sent to the shader at all. Use this to reduce the number of active Decals in a scene and thus improve performance.
 
 ----
 
@@ -167,14 +167,14 @@ If ``true``, decals will smoothly fade away when far from the active :ref:`Camer
 - :ref:`float<class_float>` **distance_fade_length**
 
 +-----------+---------------------------------+
-| *Default* | ``1.0``                         |
+| *Default* | ``10.0``                        |
 +-----------+---------------------------------+
 | *Setter*  | set_distance_fade_length(value) |
 +-----------+---------------------------------+
 | *Getter*  | get_distance_fade_length()      |
 +-----------+---------------------------------+
 
-Distance over which the Decal fades. The Decal becomes slowly more transparent over this distance and is completely invisible at the end.
+The distance over which the Decal fades (in 3D units). The Decal becomes slowly more transparent over this distance and is completely invisible at the end.
 
 ----
 
@@ -222,7 +222,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes fr
 | *Getter*  | get_lower_fade()      |
 +-----------+-----------------------+
 
-Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`.
+Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``).
 
 ----
 
@@ -270,6 +270,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 
 :ref:`Texture2D<class_Texture2D>` with the base :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_emission<class_Decal_property_texture_emission>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
 
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+
 ----
 
 .. _class_Decal_property_texture_emission:
@@ -283,6 +285,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 +----------+--------------------+
 
 :ref:`Texture2D<class_Texture2D>` with the emission :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_emission<class_Decal_property_texture_emission>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
+
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
 ----
 
@@ -298,6 +302,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 
 :ref:`Texture2D<class_Texture2D>` with the per-pixel normal map for the decal. Use this to add extra detail to decals.
 
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+
 ----
 
 .. _class_Decal_property_texture_orm:
@@ -311,6 +317,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 +----------+--------------------+
 
 :ref:`Texture2D<class_Texture2D>` storing ambient occlusion, roughness, and metallic for the decal. Use this to add extra detail to decals.
+
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
 ----
 
@@ -326,7 +334,7 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 | *Getter*  | get_upper_fade()      |
 +-----------+-----------------------+
 
-Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`.
+Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``).
 
 Method Descriptions
 -------------------

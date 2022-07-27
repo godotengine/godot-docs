@@ -53,17 +53,6 @@ Properties
 | :ref:`float<class_float>`                                         | :ref:`width<class_TextMesh_property_width>`                                                                 | ``500.0`` |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------+
 
-Methods
--------
-
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`clear_opentype_features<class_TextMesh_method_clear_opentype_features>` **(** **)**                                                        |
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_opentype_feature<class_TextMesh_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                      |
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`set_opentype_feature<class_TextMesh_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)** |
-+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Property Descriptions
 ---------------------
 
@@ -109,7 +98,7 @@ Depths of the mesh, if set to ``0.0`` only front surface, is generated, and UV l
 | *Getter* | get_font()      |
 +----------+-----------------+
 
-:ref:`Font<class_Font>` used for the ``TextMesh``'s text.
+Font configuration used to display text.
 
 ----
 
@@ -270,31 +259,6 @@ If ``true``, all the text displays as UPPERCASE.
 +-----------+------------------+
 
 Text width (in pixels), used for fill alignment.
-
-Method Descriptions
--------------------
-
-.. _class_TextMesh_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
-
-----
-
-.. _class_TextMesh_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
-
-----
-
-.. _class_TextMesh_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

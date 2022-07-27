@@ -40,13 +40,13 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`adjust_bcs<class_Image_method_adjust_bcs>` **(** :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation **)**                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`blend_rect<class_Image_method_blend_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                                                                    |
+| void                                          | :ref:`blend_rect<class_Image_method_blend_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**                                                                                                |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`blend_rect_mask<class_Image_method_blend_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                          |
+| void                                          | :ref:`blend_rect_mask<class_Image_method_blend_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`blit_rect<class_Image_method_blit_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                                                                      |
+| void                                          | :ref:`blit_rect<class_Image_method_blit_rect>` **(** :ref:`Image<class_Image>` src, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**                                                                                                  |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`blit_rect_mask<class_Image_method_blit_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**                                                            |
+| void                                          | :ref:`blit_rect_mask<class_Image_method_blit_rect_mask>` **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`bump_map_to_normal_map<class_Image_method_bump_map_to_normal_map>` **(** :ref:`float<class_float>` bump_scale=1.0 **)**                                                                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -76,7 +76,7 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fill<class_Image_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`fill_rect<class_Image_method_fill_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**                                                                                                                                           |
+| void                                          | :ref:`fill_rect<class_Image_method_fill_rect>` **(** :ref:`Rect2i<class_Rect2i>` rect, :ref:`Color<class_Color>` color **)**                                                                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`fix_alpha_edges<class_Image_method_fix_alpha_edges>` **(** **)**                                                                                                                                                                                               |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,11 +98,11 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                     | :ref:`get_pixelv<class_Image_method_get_pixelv>` **(** :ref:`Vector2i<class_Vector2i>` point **)** |const|                                                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`                     | :ref:`get_rect<class_Image_method_get_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                                                                                      |
+| :ref:`Image<class_Image>`                     | :ref:`get_rect<class_Image_method_get_rect>` **(** :ref:`Rect2i<class_Rect2i>` rect **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                 | :ref:`get_size<class_Image_method_get_size>` **(** **)** |const|                                                                                                                                                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                     | :ref:`get_used_rect<class_Image_method_get_used_rect>` **(** **)** |const|                                                                                                                                                                                           |
+| :ref:`Rect2i<class_Rect2i>`                   | :ref:`get_used_rect<class_Image_method_get_used_rect>` **(** **)** |const|                                                                                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`get_width<class_Image_method_get_width>` **(** **)** |const|                                                                                                                                                                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -117,6 +117,8 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_Image_method_load>` **(** :ref:`String<class_String>` path **)**                                                                                                                                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_bmp_from_buffer<class_Image_method_load_bmp_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>`                     | :ref:`load_from_file<class_Image_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                                                                                                                                                       |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_jpg_from_buffer<class_Image_method_load_jpg_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +137,10 @@ Methods
 | void                                          | :ref:`resize_to_po2<class_Image_method_resize_to_po2>` **(** :ref:`bool<class_bool>` square=false, :ref:`Interpolation<enum_Image_Interpolation>` interpolation=1 **)**                                                                                              |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>`                     | :ref:`rgbe_to_srgb<class_Image_method_rgbe_to_srgb>` **(** **)**                                                                                                                                                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`rotate_180<class_Image_method_rotate_180>` **(** **)**                                                                                                                                                                                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`rotate_90<class_Image_method_rotate_90>` **(** :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>` direction **)**                                                                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save_exr<class_Image_method_save_exr>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` grayscale=false **)** |const|                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -487,7 +493,7 @@ Method Descriptions
 
 .. _class_Image_method_blend_rect:
 
-- void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
+- void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**
 
 Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
@@ -495,7 +501,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest
 
 .. _class_Image_method_blend_rect_mask:
 
-- void **blend_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
+- void **blend_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**
 
 Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``, clipped accordingly to both image bounds. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
@@ -503,7 +509,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 .. _class_Image_method_blit_rect:
 
-- void **blit_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
+- void **blit_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**
 
 Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
@@ -511,7 +517,7 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, cli
 
 .. _class_Image_method_blit_rect_mask:
 
-- void **blit_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Vector2<class_Vector2>` dst **)**
+- void **blit_rect_mask** **(** :ref:`Image<class_Image>` src, :ref:`Image<class_Image>` mask, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**
 
 Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``, clipped accordingly to both image bounds. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with not positive size is treated as empty.
 
@@ -631,7 +637,7 @@ Fills the image with ``color``.
 
 .. _class_Image_method_fill_rect:
 
-- void **fill_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**
+- void **fill_rect** **(** :ref:`Rect2i<class_Rect2i>` rect, :ref:`Color<class_Color>` color **)**
 
 Fills ``rect`` with ``color``.
 
@@ -725,7 +731,7 @@ This is the same as :ref:`get_pixel<class_Image_method_get_pixel>`, but with a :
 
 .. _class_Image_method_get_rect:
 
-- :ref:`Image<class_Image>` **get_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
+- :ref:`Image<class_Image>` **get_rect** **(** :ref:`Rect2i<class_Rect2i>` rect **)** |const|
 
 Returns a new image that is a copy of the image's area specified with ``rect``.
 
@@ -741,9 +747,9 @@ Returns the image's size (width and height).
 
 .. _class_Image_method_get_used_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_used_rect** **(** **)** |const|
+- :ref:`Rect2i<class_Rect2i>` **get_used_rect** **(** **)** |const|
 
-Returns a :ref:`Rect2<class_Rect2>` enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
+Returns a :ref:`Rect2i<class_Rect2i>` enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
 
 ----
 
@@ -806,6 +812,14 @@ See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 Loads an image from the binary contents of a BMP file.
 
 \ **Note:** Godot's BMP module doesn't support 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
+
+----
+
+.. _class_Image_method_load_from_file:
+
+- :ref:`Image<class_Image>` **load_from_file** **(** :ref:`String<class_String>` path **)** |static|
+
+Creates a new ``Image`` and loads data from the specified file.
 
 ----
 
@@ -878,6 +892,22 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 - :ref:`Image<class_Image>` **rgbe_to_srgb** **(** **)**
 
 Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
+
+----
+
+.. _class_Image_method_rotate_180:
+
+- void **rotate_180** **(** **)**
+
+Rotates the image by ``180`` degrees. The width and height of the image must be greater than ``1``.
+
+----
+
+.. _class_Image_method_rotate_90:
+
+- void **rotate_90** **(** :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>` direction **)**
+
+Rotates the image in the specified ``direction`` by ``90`` degrees. The width and height of the image must be greater than ``1``. If the width and height are not equal, the image will be resized.
 
 ----
 

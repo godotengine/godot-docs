@@ -657,6 +657,31 @@ Implement this function if your plugin edits a specific type of object (Resource
 
 Returns ``true`` if this is a main screen editor plugin (it goes in the workspace selector together with **2D**, **3D**, **Script** and **AssetLib**).
 
+When the plugin's workspace is selected, other main screen plugins will be hidden, but your plugin will not appear automatically. It needs to be added as a child of :ref:`EditorInterface.get_base_control<class_EditorInterface_method_get_base_control>` and made visible inside :ref:`_make_visible<class_EditorPlugin_method__make_visible>`.
+
+Use :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` and :ref:`_get_plugin_icon<class_EditorPlugin_method__get_plugin_icon>` to customize the plugin button's appearance.
+
+::
+
+    var plugin_control
+    
+    func _enter_tree():
+        plugin_control = preload("my_plugin_control.tscn").instantiate()
+        get_editor_interface().get_editor_main_control().add_child(plugin_control)
+        plugin_control.hide()
+    
+    func _has_main_screen():
+        return true
+    
+    func _make_visible(visible):
+        plugin_control.visible = visible
+    
+    func _get_plugin_name():
+        return "My Super Cool Plugin 3000"
+    
+    func _get_plugin_icon():
+        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+
 ----
 
 .. _class_EditorPlugin_method__make_visible:

@@ -34,24 +34,40 @@ Tutorials
 Methods
 -------
 
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`_get_length<class_AudioStream_method__get_length>` **(** **)** |virtual| |const|               |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                           | :ref:`_get_stream_name<class_AudioStream_method__get_stream_name>` **(** **)** |virtual| |const|     |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`_instance_playback<class_AudioStream_method__instance_playback>` **(** **)** |virtual| |const| |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`_is_monophonic<class_AudioStream_method__is_monophonic>` **(** **)** |virtual| |const|         |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const|                           |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`instance_playback<class_AudioStream_method_instance_playback>` **(** **)**                     |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                     |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                 | :ref:`_get_beat_count<class_AudioStream_method__get_beat_count>` **(** **)** |virtual| |const|             |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`_get_bpm<class_AudioStream_method__get_bpm>` **(** **)** |virtual| |const|                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`_get_length<class_AudioStream_method__get_length>` **(** **)** |virtual| |const|                     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                           | :ref:`_get_stream_name<class_AudioStream_method__get_stream_name>` **(** **)** |virtual| |const|           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`_instantiate_playback<class_AudioStream_method__instantiate_playback>` **(** **)** |virtual| |const| |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`_is_monophonic<class_AudioStream_method__is_monophonic>` **(** **)** |virtual| |const|               |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                             | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const|                                 |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` **(** **)**                     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
+
+.. _class_AudioStream_method__get_beat_count:
+
+- :ref:`int<class_int>` **_get_beat_count** **(** **)** |virtual| |const|
+
+----
+
+.. _class_AudioStream_method__get_bpm:
+
+- :ref:`float<class_float>` **_get_bpm** **(** **)** |virtual| |const|
+
+----
 
 .. _class_AudioStream_method__get_length:
 
@@ -65,9 +81,9 @@ Method Descriptions
 
 ----
 
-.. _class_AudioStream_method__instance_playback:
+.. _class_AudioStream_method__instantiate_playback:
 
-- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instance_playback** **(** **)** |virtual| |const|
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback** **(** **)** |virtual| |const|
 
 ----
 
@@ -85,11 +101,11 @@ Returns the length of the audio stream in seconds.
 
 ----
 
-.. _class_AudioStream_method_instance_playback:
+.. _class_AudioStream_method_instantiate_playback:
 
-- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instance_playback** **(** **)**
+- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instantiate_playback** **(** **)**
 
-Returns an AudioStreamPlayback. Useful for when you want to extend `_instance_playback` but call `instance_playback` from an internally held AudioStream subresource. An example of this can be found in the source files for `AudioStreamRandomPitch::instance_playback`.
+Returns an AudioStreamPlayback. Useful for when you want to extend :ref:`_instantiate_playback<class_AudioStream_method__instantiate_playback>` but call :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source files for ``AudioStreamRandomPitch::instantiate_playback``.
 
 ----
 

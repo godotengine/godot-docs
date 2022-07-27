@@ -41,15 +41,15 @@ Properties
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>` **(** **)**                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invalidate<class_EditorFileDialog_method_invalidate>` **(** **)**                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                                                                          |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>` **(** **)**                                                                                    |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`invalidate<class_EditorFileDialog_method_invalidate>` **(** **)**                                                                                |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -263,11 +263,13 @@ Method Descriptions
 
 .. _class_EditorFileDialog_method_add_filter:
 
-- void **add_filter** **(** :ref:`String<class_String>` filter **)**
+- void **add_filter** **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)**
 
-Adds a comma-delimited file extension filter option to the ``EditorFileDialog`` with an optional semi-colon-delimited label.
+Adds a comma-delimited file name ``filter`` option to the ``EditorFileDialog`` with an optional ``description``, which restricts what files can be picked.
 
-For example, ``"*.tscn, *.scn; Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
+A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
+
+For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
 
 ----
 

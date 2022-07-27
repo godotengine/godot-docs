@@ -9,7 +9,7 @@
 AnimationNodeOneShot
 ====================
 
-**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -40,8 +40,6 @@ Properties
 | :ref:`float<class_float>`                         | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.0``   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 | :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` | :ref:`mix_mode<class_AnimationNodeOneShot_property_mix_mode>`                                 | ``0``     |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                           | :ref:`sync<class_AnimationNodeOneShot_property_sync>`                                         | ``false`` |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
 
 Enumerations
@@ -148,20 +146,6 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 | *Setter*  | set_mix_mode(value) |
 +-----------+---------------------+
 | *Getter*  | get_mix_mode()      |
-+-----------+---------------------+
-
-----
-
-.. _class_AnimationNodeOneShot_property_sync:
-
-- :ref:`bool<class_bool>` **sync**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_use_sync(value) |
-+-----------+---------------------+
-| *Getter*  | is_using_sync()     |
 +-----------+---------------------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

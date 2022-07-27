@@ -37,17 +37,6 @@ Properties
 | :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`               | :ref:`underline<class_LinkButton_property_underline>`                                                         | ``0``  |
 +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------+
 
-Methods
--------
-
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`clear_opentype_features<class_LinkButton_method_clear_opentype_features>` **(** **)**                                                        |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_opentype_feature<class_LinkButton_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                      |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`set_opentype_feature<class_LinkButton_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)** |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Theme Properties
 ----------------
 
@@ -188,31 +177,6 @@ Base text writing direction.
 +-----------+---------------------------+
 
 Determines when to show the underline. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for options.
-
-Method Descriptions
--------------------
-
-.. _class_LinkButton_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
-
-----
-
-.. _class_LinkButton_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
-
-----
-
-.. _class_LinkButton_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Returns OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 Theme Property Descriptions
 ---------------------------

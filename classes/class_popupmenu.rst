@@ -79,8 +79,6 @@ Methods
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`clear<class_PopupMenu_method_clear>` **(** **)**                                                                                                                                                                                                                |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`clear_item_opentype_features<class_PopupMenu_method_clear_item_opentype_features>` **(** :ref:`int<class_int>` index **)**                                                                                                                                      |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_current_index<class_PopupMenu_method_get_current_index>` **(** **)** |const|                                                                                                                                                                                |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Key<enum_@GlobalScope_Key>`                | :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                              |
@@ -96,8 +94,6 @@ Methods
 | :ref:`String<class_String>`                      | :ref:`get_item_language<class_PopupMenu_method_get_item_language>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                    | :ref:`get_item_metadata<class_PopupMenu_method_get_item_metadata>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                    |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_item_opentype_feature<class_PopupMenu_method_get_item_opentype_feature>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` tag **)** |const|                                                                                                   |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Shortcut<class_Shortcut>`                  | :ref:`get_item_shortcut<class_PopupMenu_method_get_item_shortcut>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,8 +146,6 @@ Methods
 | void                                             | :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>` **(** :ref:`int<class_int>` index, :ref:`Variant<class_Variant>` metadata **)**                                                                                                                    |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` state **)**                                                                                                                           |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_item_opentype_feature<class_PopupMenu_method_set_item_opentype_feature>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**                                                                              |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_shortcut<class_PopupMenu_method_set_item_shortcut>` **(** :ref:`int<class_int>` index, :ref:`Shortcut<class_Shortcut>` shortcut, :ref:`bool<class_bool>` global=false **)**                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -528,14 +522,6 @@ Removes all items from the ``PopupMenu``.
 
 ----
 
-.. _class_PopupMenu_method_clear_item_opentype_features:
-
-- void **clear_item_opentype_features** **(** :ref:`int<class_int>` index **)**
-
-Removes all OpenType features form the item's text.
-
-----
-
 .. _class_PopupMenu_method_get_current_index:
 
 - :ref:`int<class_int>` **get_current_index** **(** **)** |const|
@@ -597,14 +583,6 @@ Returns item's text language code.
 - :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the metadata of the specified item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`, which provides a simple way of assigning context data to items.
-
-----
-
-.. _class_PopupMenu_method_get_item_opentype_feature:
-
-- :ref:`int<class_int>` **get_item_opentype_feature** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag`` of the item's text.
 
 ----
 
@@ -825,14 +803,6 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 - void **set_item_multistate** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` state **)**
 
 Sets the state of a multistate item. See :ref:`add_multistate_item<class_PopupMenu_method_add_multistate_item>` for details.
-
-----
-
-.. _class_PopupMenu_method_set_item_opentype_feature:
-
-- void **set_item_opentype_feature** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Sets OpenType feature ``tag`` for the item's text. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 ----
 

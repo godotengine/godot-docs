@@ -90,6 +90,10 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_int_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>`       | :ref:`operator *<class_int_operator_mul_Vector4>` **(** :ref:`Vector4<class_Vector4>` right **)**          |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4i<class_Vector4i>`     | :ref:`operator *<class_int_operator_mul_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**       |
++-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator *<class_int_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
@@ -266,6 +270,14 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``in
 - :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
 Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``int``.
+
+----
+
+- :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
+
+----
+
+- :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
 ----
 

@@ -72,7 +72,7 @@ Adds an object that is considered baked within this ``LightmapGIData``.
 
 - void **clear_users** **(** **)**
 
-Clear all objects that are considred baked within this ``LightmapGIData``.
+Clear all objects that are considered baked within this ``LightmapGIData``.
 
 ----
 

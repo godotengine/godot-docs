@@ -132,8 +132,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         if error != OK:
             push_error("Couldn't load the image.")
     
-        var texture = ImageTexture.new()
-        texture.create_from_image(image)
+        var texture = ImageTexture.create_from_image(image)
     
         # Display the image in a TextureRect node.
         var texture_rect = TextureRect.new()
@@ -405,6 +404,8 @@ Maximum number of allowed redirects.
 +-----------+--------------------+
 | *Getter*  | get_timeout()      |
 +-----------+--------------------+
+
+If set to a value greater than ``0.0`` before the request starts, the HTTP request will time out after ``timeout`` seconds have passed and the request is not *completed* yet. For small HTTP requests such as REST API usage, set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value between ``10.0`` and ``30.0`` to prevent the application from getting stuck if the request fails to get a response in a timely manner. For file downloads, leave this to ``0.0`` to prevent the download from failing if it takes too much time.
 
 ----
 

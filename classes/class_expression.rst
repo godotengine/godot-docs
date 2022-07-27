@@ -70,22 +70,22 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)** |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                                                                        |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                                                                |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**                                                        |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_Expression_method_execute:
 
-- :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)**
+- :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)**
 
 Executes the expression that was previously parsed by :ref:`parse<class_Expression_method_parse>` and returns the result. Before you use the returned object, you should check if the method failed by calling :ref:`has_execute_failed<class_Expression_method_has_execute_failed>`.
 

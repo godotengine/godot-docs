@@ -28,6 +28,8 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`_exists<class_ResourceFormatLoader_method__exists>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_classes_used<class_ResourceFormatLoader_method__get_classes_used>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                               |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_dependencies<class_ResourceFormatLoader_method__get_dependencies>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` add_types **)** |virtual| |const|                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatLoader_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                                              |
@@ -68,6 +70,12 @@ Method Descriptions
 .. _class_ResourceFormatLoader_method__exists:
 
 - :ref:`bool<class_bool>` **_exists** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+----
+
+.. _class_ResourceFormatLoader_method__get_classes_used:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **_get_classes_used** **(** :ref:`String<class_String>` path **)** |virtual| |const|
 
 ----
 

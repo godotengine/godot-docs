@@ -63,7 +63,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`distance_to<class_Plane_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                                |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)** |const|           |
+| :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` tolerance=1e-05 **)** |const|         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>` | :ref:`intersect_3<class_Plane_method_intersect_3>` **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)** |const|                           |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` **(** :ref:`Plane<class_Plane>` to_plane **)** |const|                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` plane **)** |const|                                            |
+| :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Plane<class_Plane>`     | :ref:`normalized<class_Plane_method_normalized>` **(** **)** |const|                                                                                      |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -233,15 +233,15 @@ Returns the center of the plane.
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
-Returns the shortest distance from the plane to the position ``point``.
+Returns the shortest distance from the plane to the position ``point``. If the point is above the plane, the distance will be positive. If below, the distance will be negative.
 
 ----
 
 .. _class_Plane_method_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)** |const|
+- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` tolerance=1e-05 **)** |const|
 
-Returns ``true`` if ``point`` is inside the plane. Comparison uses a custom minimum ``epsilon`` threshold.
+Returns ``true`` if ``point`` is inside the plane. Comparison uses a custom minimum ``tolerance`` threshold.
 
 ----
 
@@ -265,7 +265,7 @@ Returns the intersection point of a ray consisting of the position ``from`` and 
 
 - :ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns the intersection point of a segment from position ``begin`` to position ``end`` with this plane. If no intersection is found, ``null`` is returned.
+Returns the intersection point of a segment from position ``from`` to position ``to`` with this plane. If no intersection is found, ``null`` is returned.
 
 ----
 
@@ -279,7 +279,7 @@ Returns ``true`` if this plane and ``plane`` are approximately equal, by running
 
 .. _class_Plane_method_is_point_over:
 
-- :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` plane **)** |const|
+- :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
 Returns ``true`` if ``point`` is located above the plane.
 

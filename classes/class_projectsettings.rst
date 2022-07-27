@@ -43,6 +43,8 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                                                 | ``""``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`application/boot_splash/minimum_display_time<class_ProjectSettings_property_application/boot_splash/minimum_display_time>`                                                                   | ``0``                                                                                            |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>`                                                                                       | ``true``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/use_filter<class_ProjectSettings_property_application/boot_splash/use_filter>`                                                                                       | ``true``                                                                                         |
@@ -227,6 +229,10 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`                         | :ref:`debug/shapes/navigation/geometry_color<class_ProjectSettings_property_debug/shapes/navigation/geometry_color>`                                                                               | ``Color(0.1, 1, 0.7, 0.4)``                                                                      |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                         | :ref:`debug/shapes/paths/geometry_color<class_ProjectSettings_property_debug/shapes/paths/geometry_color>`                                                                                         | ``Color(0.1, 1, 0.7, 0.4)``                                                                      |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`debug/shapes/paths/geometry_width<class_ProjectSettings_property_debug/shapes/paths/geometry_width>`                                                                                         | ``2.0``                                                                                          |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`display/mouse_cursor/custom_image<class_ProjectSettings_property_display/mouse_cursor/custom_image>`                                                                                         | ``""``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`display/mouse_cursor/custom_image_hotspot<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`                                                                         | ``Vector2(0, 0)``                                                                                |
@@ -263,7 +269,7 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>`                                                                                                             | ``60``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`editor/movie_writer/mix_rate_hz<class_ProjectSettings_property_editor/movie_writer/mix_rate_hz>`                                                                                             | ``48000``                                                                                        |
+| :ref:`int<class_int>`                             | :ref:`editor/movie_writer/mix_rate<class_ProjectSettings_property_editor/movie_writer/mix_rate>`                                                                                                   | ``48000``                                                                                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`                                                                                         | ``0.75``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1135,27 +1141,27 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/size.mobile<class_ProjectSettings_property_rendering/shadows/directional_shadow/size.mobile>`                                                           | ``2048``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality>`                                           | ``2``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_filter_quality>`                             | ``2``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_quality.mobile<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality.mobile>`                             | ``0``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/directional_shadow/soft_shadow_filter_quality.mobile<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_filter_quality.mobile>`               | ``0``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`rendering/shadows/shadow_atlas/16_bits<class_ProjectSettings_property_rendering/shadows/shadow_atlas/16_bits>`                                                                               | ``true``                                                                                         |
+| :ref:`bool<class_bool>`                           | :ref:`rendering/shadows/positional_shadow/atlas_16_bits<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_16_bits>`                                                         | ``true``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/quadrant_0_subdiv<class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_0_subdiv>`                                                           | ``2``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_quadrant_0_subdiv<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_0_subdiv>`                                     | ``2``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/quadrant_1_subdiv<class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_1_subdiv>`                                                           | ``2``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_quadrant_1_subdiv<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_1_subdiv>`                                     | ``2``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/quadrant_2_subdiv<class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_2_subdiv>`                                                           | ``3``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_quadrant_2_subdiv<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_2_subdiv>`                                     | ``3``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/quadrant_3_subdiv<class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_3_subdiv>`                                                           | ``4``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_quadrant_3_subdiv<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_3_subdiv>`                                     | ``4``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/size<class_ProjectSettings_property_rendering/shadows/shadow_atlas/size>`                                                                                     | ``4096``                                                                                         |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_size<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_size>`                                                               | ``4096``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadow_atlas/size.mobile<class_ProjectSettings_property_rendering/shadows/shadow_atlas/size.mobile>`                                                                       | ``2048``                                                                                         |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/atlas_size.mobile<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_size.mobile>`                                                 | ``2048``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadows/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality>`                                                                 | ``2``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/shadows/positional_shadow/soft_shadow_filter_quality>`                               | ``2``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/shadows/shadows/soft_shadow_quality.mobile<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality.mobile>`                                                   | ``0``                                                                                            |
+| :ref:`int<class_int>`                             | :ref:`rendering/shadows/positional_shadow/soft_shadow_filter_quality.mobile<class_ProjectSettings_property_rendering/shadows/positional_shadow/soft_shadow_filter_quality.mobile>`                 | ``0``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`                                                                                           | ``3``                                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1177,6 +1183,10 @@ Properties
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc>`                                                             | ``true``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>`                                                                                                                       | ``0``                                                                                            |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`rendering/vrs/texture<class_ProjectSettings_property_rendering/vrs/texture>`                                                                                                                 | ``""``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/descriptor_pools/max_descriptors_per_pool<class_ProjectSettings_property_rendering/vulkan/descriptor_pools/max_descriptors_per_pool>`                                       | ``64``                                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/rendering/back_end<class_ProjectSettings_property_rendering/vulkan/rendering/back_end>`                                                                                     | ``0``                                                                                            |
@@ -1188,6 +1198,12 @@ Properties
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/staging_buffer/max_size_mb<class_ProjectSettings_property_rendering/vulkan/staging_buffer/max_size_mb>`                                                                     | ``128``                                                                                          |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vulkan/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/vulkan/staging_buffer/texture_upload_region_size_px>`                                 | ``64``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`threading/worker_pool/low_priority_thread_ratio<class_ProjectSettings_property_threading/worker_pool/low_priority_thread_ratio>`                                                             | ``0.3``                                                                                          |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`threading/worker_pool/max_threads<class_ProjectSettings_property_threading/worker_pool/max_threads>`                                                                                         | ``-1``                                                                                           |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`threading/worker_pool/use_system_threads_for_low_priority_tasks<class_ProjectSettings_property_threading/worker_pool/use_system_threads_for_low_priority_tasks>`                             | ``true``                                                                                         |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`xr/openxr/default_action_map<class_ProjectSettings_property_xr/openxr/default_action_map>`                                                                                                   | ``"res://openxr_action_map.tres"``                                                               |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1275,6 +1291,18 @@ If ``true``, scale the boot splash image to the full window size (preserving the
 Path to an image used as the boot splash. If left empty, the default Godot Engine splash will be displayed instead.
 
 \ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
+
+----
+
+.. _class_ProjectSettings_property_application/boot_splash/minimum_display_time:
+
+- :ref:`int<class_int>` **application/boot_splash/minimum_display_time**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Minimum boot splash display time (in milliseconds). It is not recommended to set too high values for this setting.
 
 ----
 
@@ -2404,6 +2432,30 @@ Color of the navigation geometry, visible when "Visible Navigation" is enabled i
 
 ----
 
+.. _class_ProjectSettings_property_debug/shapes/paths/geometry_color:
+
+- :ref:`Color<class_Color>` **debug/shapes/paths/geometry_color**
+
++-----------+-----------------------------+
+| *Default* | ``Color(0.1, 1, 0.7, 0.4)`` |
++-----------+-----------------------------+
+
+Color of the curve path geometry, visible when "Visible Paths" is enabled in the Debug menu.
+
+----
+
+.. _class_ProjectSettings_property_debug/shapes/paths/geometry_width:
+
+- :ref:`float<class_float>` **debug/shapes/paths/geometry_width**
+
++-----------+---------+
+| *Default* | ``2.0`` |
++-----------+---------+
+
+Line width of the curve path geometry, visible when "Visible Paths" is enabled in the Debug menu.
+
+----
+
 .. _class_ProjectSettings_property_display/mouse_cursor/custom_image:
 
 - :ref:`String<class_String>` **display/mouse_cursor/custom_image**
@@ -2640,15 +2692,15 @@ If ``true``, requests V-Sync to be disabled when writing a movie (similar to set
 | *Default* | ``60`` |
 +-----------+--------+
 
-The number of frames per second to record in the video when writing a movie. Simulation speed will adjust to always match the specified framerate, which means the engine will appear to run slower at higher :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>` values. Certain FPS values will require you to adjust :ref:`editor/movie_writer/mix_rate_hz<class_ProjectSettings_property_editor/movie_writer/mix_rate_hz>` to prevent audio from desynchronizing over time.
+The number of frames per second to record in the video when writing a movie. Simulation speed will adjust to always match the specified framerate, which means the engine will appear to run slower at higher :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>` values. Certain FPS values will require you to adjust :ref:`editor/movie_writer/mix_rate<class_ProjectSettings_property_editor/movie_writer/mix_rate>` to prevent audio from desynchronizing over time.
 
 This can be specified manually on the command line using the ``--fixed-fps <fps>`` command line argument.
 
 ----
 
-.. _class_ProjectSettings_property_editor/movie_writer/mix_rate_hz:
+.. _class_ProjectSettings_property_editor/movie_writer/mix_rate:
 
-- :ref:`int<class_int>` **editor/movie_writer/mix_rate_hz**
+- :ref:`int<class_int>` **editor/movie_writer/mix_rate**
 
 +-----------+-----------+
 | *Default* | ``48000`` |
@@ -2666,9 +2718,7 @@ The audio mix rate to use in the recorded audio when writing a movie (in Hz). Th
 | *Default* | ``0.75`` |
 +-----------+----------+
 
-The JPEG quality to use when writing a video to an AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.90``. Even at quality ``1.00``, JPEG compression remains lossy.
-
-\ **Note:** JPEG does not saving an alpha channel. If the :ref:`Image<class_Image>` contains an alpha channel, the image will still be saved, but the resulting JPEG file won't contain the alpha channel.
+The JPEG quality to use when writing a video to an AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, JPEG compression remains lossy.
 
 \ **Note:** This does not affect the audio quality or writing PNG image sequences.
 
@@ -2686,9 +2736,9 @@ The output path for the movie. The file extension determines the :ref:`MovieWrit
 
 Godot has 2 built-in :ref:`MovieWriter<class_MovieWriter>`\ s:
 
-- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. AVI output is currently limited to a file of 4 GB in size at most.
+- AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
 
-- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported.
+- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported, even if the root viewport is set to be transparent.
 
 If you need to encode to a different format or pipe a stream through third-party software, you can extend this :ref:`MovieWriter<class_MovieWriter>` class to create your own movie writers.
 
@@ -2866,7 +2916,7 @@ Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI 
 | *Default* | ``true`` |
 +-----------+----------+
 
-If set to ``true``, default font uses 8-bit anitialiased glyph rendering.  See :ref:`FontData.antialiased<class_FontData_property_antialiased>`.
+If set to ``true``, default font uses 8-bit anitialiased glyph rendering.  See :ref:`FontFile.antialiased<class_FontFile_property_antialiased>`.
 
 ----
 
@@ -2894,7 +2944,7 @@ Enabling :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_pro
 | *Default* | ``1`` |
 +-----------+-------+
 
-Default font hinting mode. See :ref:`FontData.hinting<class_FontData_property_hinting>`.
+Default font hinting mode. See :ref:`FontFile.hinting<class_FontFile_property_hinting>`.
 
 ----
 
@@ -2922,7 +2972,7 @@ MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_m
 | *Default* | ``1`` |
 +-----------+-------+
 
-Default font glyph sub-pixel positioning mode. See :ref:`FontData.subpixel_positioning<class_FontData_property_subpixel_positioning>`.
+Default font glyph sub-pixel positioning mode. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
 
 ----
 
@@ -7602,9 +7652,9 @@ Lower-end override for :ref:`rendering/shadows/directional_shadow/size<class_Pro
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality:
+.. _class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_filter_quality:
 
-- :ref:`int<class_int>` **rendering/shadows/directional_shadow/soft_shadow_quality**
+- :ref:`int<class_int>` **rendering/shadows/directional_shadow/soft_shadow_filter_quality**
 
 +-----------+-------+
 | *Default* | ``2`` |
@@ -7618,21 +7668,21 @@ Quality setting for shadows cast by :ref:`DirectionalLight3D<class_DirectionalLi
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality.mobile:
+.. _class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_filter_quality.mobile:
 
-- :ref:`int<class_int>` **rendering/shadows/directional_shadow/soft_shadow_quality.mobile**
+- :ref:`int<class_int>` **rendering/shadows/directional_shadow/soft_shadow_filter_quality.mobile**
 
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
 
-Lower-end override for :ref:`rendering/shadows/directional_shadow/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_quality>` on mobile devices, due to performance concerns or driver support.
+Lower-end override for :ref:`rendering/shadows/directional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/shadows/directional_shadow/soft_shadow_filter_quality>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/16_bits:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_16_bits:
 
-- :ref:`bool<class_bool>` **rendering/shadows/shadow_atlas/16_bits**
+- :ref:`bool<class_bool>` **rendering/shadows/positional_shadow/atlas_16_bits**
 
 +-----------+----------+
 | *Default* | ``true`` |
@@ -7640,21 +7690,9 @@ Lower-end override for :ref:`rendering/shadows/directional_shadow/soft_shadow_qu
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_0_subdiv:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_0_subdiv:
 
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/quadrant_0_subdiv**
-
-+-----------+-------+
-| *Default* | ``2`` |
-+-----------+-------+
-
-Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
-
-----
-
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_1_subdiv:
-
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/quadrant_1_subdiv**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_quadrant_0_subdiv**
 
 +-----------+-------+
 | *Default* | ``2`` |
@@ -7664,9 +7702,21 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_2_subdiv:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_1_subdiv:
 
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/quadrant_2_subdiv**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_quadrant_1_subdiv**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
+
+----
+
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_2_subdiv:
+
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_quadrant_2_subdiv**
 
 +-----------+-------+
 | *Default* | ``3`` |
@@ -7676,9 +7726,9 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/quadrant_3_subdiv:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_quadrant_3_subdiv:
 
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/quadrant_3_subdiv**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_quadrant_3_subdiv**
 
 +-----------+-------+
 | *Default* | ``4`` |
@@ -7688,9 +7738,9 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/size:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_size:
 
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/size**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_size**
 
 +-----------+----------+
 | *Default* | ``4096`` |
@@ -7700,21 +7750,21 @@ Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadow_atlas/size.mobile:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_size.mobile:
 
-- :ref:`int<class_int>` **rendering/shadows/shadow_atlas/size.mobile**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/atlas_size.mobile**
 
 +-----------+----------+
 | *Default* | ``2048`` |
 +-----------+----------+
 
-Lower-end override for :ref:`rendering/shadows/shadow_atlas/size<class_ProjectSettings_property_rendering/shadows/shadow_atlas/size>` on mobile devices, due to performance concerns or driver support.
+Lower-end override for :ref:`rendering/shadows/positional_shadow/atlas_size<class_ProjectSettings_property_rendering/shadows/positional_shadow/atlas_size>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/soft_shadow_filter_quality:
 
-- :ref:`int<class_int>` **rendering/shadows/shadows/soft_shadow_quality**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/soft_shadow_filter_quality**
 
 +-----------+-------+
 | *Default* | ``2`` |
@@ -7728,15 +7778,15 @@ Quality setting for shadows cast by :ref:`OmniLight3D<class_OmniLight3D>`\ s and
 
 ----
 
-.. _class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality.mobile:
+.. _class_ProjectSettings_property_rendering/shadows/positional_shadow/soft_shadow_filter_quality.mobile:
 
-- :ref:`int<class_int>` **rendering/shadows/shadows/soft_shadow_quality.mobile**
+- :ref:`int<class_int>` **rendering/shadows/positional_shadow/soft_shadow_filter_quality.mobile**
 
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
 
-Lower-end override for :ref:`rendering/shadows/shadows/soft_shadow_quality<class_ProjectSettings_property_rendering/shadows/shadows/soft_shadow_quality>` on mobile devices, due to performance concerns or driver support.
+Lower-end override for :ref:`rendering/shadows/positional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/shadows/positional_shadow/soft_shadow_filter_quality>` on mobile devices, due to performance concerns or driver support.
 
 ----
 
@@ -7868,6 +7918,30 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 ----
 
+.. _class_ProjectSettings_property_rendering/vrs/mode:
+
+- :ref:`int<class_int>` **rendering/vrs/mode**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Set the default Variable Rate Shading (VRS) mode for the main viewport. See :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to change this at runtime, and :ref:`VRSMode<enum_Viewport_VRSMode>` for possible values.
+
+----
+
+.. _class_ProjectSettings_property_rendering/vrs/texture:
+
+- :ref:`String<class_String>` **rendering/vrs/texture**
+
++-----------+--------+
+| *Default* | ``""`` |
++-----------+--------+
+
+If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` is set to texture, this is the path to default texture loaded as the VRS image.
+
+----
+
 .. _class_ProjectSettings_property_rendering/vulkan/descriptor_pools/max_descriptors_per_pool:
 
 - :ref:`int<class_int>` **rendering/vulkan/descriptor_pools/max_descriptors_per_pool**
@@ -7925,6 +7999,36 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 +-----------+--------+
 | *Default* | ``64`` |
 +-----------+--------+
+
+----
+
+.. _class_ProjectSettings_property_threading/worker_pool/low_priority_thread_ratio:
+
+- :ref:`float<class_float>` **threading/worker_pool/low_priority_thread_ratio**
+
++-----------+---------+
+| *Default* | ``0.3`` |
++-----------+---------+
+
+----
+
+.. _class_ProjectSettings_property_threading/worker_pool/max_threads:
+
+- :ref:`int<class_int>` **threading/worker_pool/max_threads**
+
++-----------+--------+
+| *Default* | ``-1`` |
++-----------+--------+
+
+----
+
+.. _class_ProjectSettings_property_threading/worker_pool/use_system_threads_for_low_priority_tasks:
+
+- :ref:`bool<class_bool>` **threading/worker_pool/use_system_threads_for_low_priority_tasks**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
 
 ----
 

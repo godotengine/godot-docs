@@ -20,13 +20,6 @@ Sprite frame library for an :ref:`AnimatedSprite2D<class_AnimatedSprite2D>` or :
 
 \ **Note:** You can associate a set of normal or specular maps by creating additional ``SpriteFrames`` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 ``SpriteFrames`` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
-Properties
-----------
-
-+---------------------------+---------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`frames<class_SpriteFrames_property_frames>` |
-+---------------------------+---------------------------------------------------+
-
 Methods
 -------
 
@@ -63,15 +56,6 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_frame<class_SpriteFrames_method_set_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` txt **)**              |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Property Descriptions
----------------------
-
-.. _class_SpriteFrames_property_frames:
-
-- :ref:`Array<class_Array>` **frames**
-
-Compatibility property, always equals to an empty array.
 
 Method Descriptions
 -------------------

@@ -248,7 +248,7 @@ enum **TileLayout**:
 
 - **TILE_LAYOUT_STACKED** = **0** --- Tile coordinates layout where both axis stay consistent with their respective local horizontal and vertical axis.
 
-- **TILE_LAYOUT_STACKED_OFFSET** = **1** --- Same as ``TILE_LAYOUT_STAKED``, but the first half-offset is negative instead of positive.
+- **TILE_LAYOUT_STACKED_OFFSET** = **1** --- Same as :ref:`TILE_LAYOUT_STACKED<class_TileSet_constant_TILE_LAYOUT_STACKED>`, but the first half-offset is negative instead of positive.
 
 - **TILE_LAYOUT_STAIRS_RIGHT** = **2** --- Tile coordinates layout where the horizontal axis stay horizontal, and the vertical one goes down-right.
 

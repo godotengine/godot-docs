@@ -134,7 +134,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 | *Getter*  | get_engine_force()      |
 +-----------+-------------------------+
 
-Accelerates the wheel by applying an engine force. The wheel is only speed up if it is in contact with a surface. The :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
+Accelerates the wheel by applying an engine force. The wheel is only sped up if it is in contact with a surface. The :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
 \ **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 

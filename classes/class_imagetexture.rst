@@ -20,10 +20,8 @@ A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. For a
 
 ::
 
-    var texture = ImageTexture.new()
-    var image = Image.new()
-    image.load("res://icon.png")
-    texture.create_from_image(image)
+    var image = Image.load_from_file("res://icon.png")
+    var texture = ImageTexture.create_from_image(image)
     $Sprite2D.texture = texture
 
 This way, textures can be created at run-time by loading images both from within the editor and externally.
@@ -56,24 +54,26 @@ Tutorials
 Methods
 -------
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)**    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                          |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2<class_Vector2>` size **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                          |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ImageTexture<class_ImageTexture>` | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)** |static| |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Format<enum_Image_Format>`        | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                                |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_image<class_ImageTexture_method_set_image>` **(** :ref:`Image<class_Image>` image **)**                          |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2i<class_Vector2i>` size **)**     |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                    | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                                |
++-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
 
 .. _class_ImageTexture_method_create_from_image:
 
-- void **create_from_image** **(** :ref:`Image<class_Image>` image **)**
+- :ref:`ImageTexture<class_ImageTexture>` **create_from_image** **(** :ref:`Image<class_Image>` image **)** |static|
 
-Initializes the texture by allocating and setting the data from an :ref:`Image<class_Image>`.
+Creates a new ``ImageTexture`` and initializes it by allocating and setting the data from an :ref:`Image<class_Image>`.
 
 ----
 
@@ -85,9 +85,19 @@ Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 ----
 
+.. _class_ImageTexture_method_set_image:
+
+- void **set_image** **(** :ref:`Image<class_Image>` image **)**
+
+Replaces the texture's data with a new :ref:`Image<class_Image>`. This will re-allocate new memory for the texture.
+
+If you want to update the image, but don't need to change its parameters (format, size), use :ref:`update<class_ImageTexture_method_update>` instead for better performance.
+
+----
+
 .. _class_ImageTexture_method_set_size_override:
 
-- void **set_size_override** **(** :ref:`Vector2<class_Vector2>` size **)**
+- void **set_size_override** **(** :ref:`Vector2i<class_Vector2i>` size **)**
 
 Resizes the texture to the specified dimensions.
 
@@ -99,9 +109,9 @@ Resizes the texture to the specified dimensions.
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`.
 
-\ **Note:** The texture has to be initialized first with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration, otherwise it has to be re-created with the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method.
+\ **Note:** The texture has to be created using :ref:`create_from_image<class_ImageTexture_method_create_from_image>` or initialized first with the :ref:`set_image<class_ImageTexture_method_set_image>` method before it can be updated. The new image dimensions, format, and mipmaps configuration should match the existing texture's image configuration.
 
-Use this method over :ref:`create_from_image<class_ImageTexture_method_create_from_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
+Use this method over :ref:`set_image<class_ImageTexture_method_set_image>` if you need to update the texture frequently, which is faster than allocating additional memory for a new texture each time.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

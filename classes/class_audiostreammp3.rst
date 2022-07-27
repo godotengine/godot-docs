@@ -16,11 +16,17 @@ MP3 audio stream driver.
 Description
 -----------
 
-MP3 audio stream driver.
+MP3 audio stream driver. See :ref:`data<class_AudioStreamMP3_property_data>` if you want to load an MP3 file at run-time.
 
 Properties
 ----------
 
++-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                         | :ref:`bar_beats<class_AudioStreamMP3_property_bar_beats>`     | ``4``                 |
++-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`int<class_int>`                         | :ref:`beat_count<class_AudioStreamMP3_property_beat_count>`   | ``0``                 |
++-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                     | :ref:`bpm<class_AudioStreamMP3_property_bpm>`                 | ``0.0``               |
 +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data<class_AudioStreamMP3_property_data>`               | ``PackedByteArray()`` |
 +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
@@ -31,6 +37,48 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_AudioStreamMP3_property_bar_beats:
+
+- :ref:`int<class_int>` **bar_beats**
+
++-----------+----------------------+
+| *Default* | ``4``                |
++-----------+----------------------+
+| *Setter*  | set_bar_beats(value) |
++-----------+----------------------+
+| *Getter*  | get_bar_beats()      |
++-----------+----------------------+
+
+----
+
+.. _class_AudioStreamMP3_property_beat_count:
+
+- :ref:`int<class_int>` **beat_count**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_beat_count(value) |
++-----------+-----------------------+
+| *Getter*  | get_beat_count()      |
++-----------+-----------------------+
+
+----
+
+.. _class_AudioStreamMP3_property_bpm:
+
+- :ref:`float<class_float>` **bpm**
+
++-----------+----------------+
+| *Default* | ``0.0``        |
++-----------+----------------+
+| *Setter*  | set_bpm(value) |
++-----------+----------------+
+| *Getter*  | get_bpm()      |
++-----------+----------------+
+
+----
 
 .. _class_AudioStreamMP3_property_data:
 
@@ -45,6 +93,35 @@ Property Descriptions
 +-----------+-----------------------+
 
 Contains the audio data in bytes.
+
+You can load a file without having to import it beforehand using the code snippet below. Keep in mind that this snippet loads the whole file into memory and may not be ideal for huge files (hundreds of megabytes or more).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func load_mp3(path):
+        var file = File.new()
+        file.open(path, File.READ)
+        var sound = AudioStreamMP3.new()
+        sound.data = file.get_buffer(file.get_length())
+        file.close()
+        return sound
+
+ .. code-tab:: csharp
+
+    public AudioStreamMP3 LoadMP3(string path)
+    {
+        var file = new File();
+        file.Open(path, File.READ);
+        var sound = new AudioStreamMP3();
+        sound.Data = file.GetBuffer(file.GetLength());
+        file.Close();
+        return sound;
+    }
+
+
 
 ----
 

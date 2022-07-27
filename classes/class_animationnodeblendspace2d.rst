@@ -43,6 +43,8 @@ Properties
 +------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------+
 | :ref:`Vector2<class_Vector2>`                              | :ref:`snap<class_AnimationNodeBlendSpace2D_property_snap>`                     | ``Vector2(0.1, 0.1)`` |
 +------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`sync<class_AnimationNodeBlendSpace2D_property_sync>`                     | ``false``             |
++------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------+
 | :ref:`String<class_String>`                                | :ref:`x_label<class_AnimationNodeBlendSpace2D_property_x_label>`               | ``"x"``               |
 +------------------------------------------------------------+--------------------------------------------------------------------------------+-----------------------+
 | :ref:`String<class_String>`                                | :ref:`y_label<class_AnimationNodeBlendSpace2D_property_y_label>`               | ``"y"``               |
@@ -183,6 +185,24 @@ The blend space's X and Y axes' lower limit for the points' position. See :ref:`
 +-----------+-----------------------+
 
 Position increment to snap to when moving a point.
+
+----
+
+.. _class_AnimationNodeBlendSpace2D_property_sync:
+
+- :ref:`bool<class_bool>` **sync**
+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_use_sync(value) |
++-----------+---------------------+
+| *Getter*  | is_using_sync()     |
++-----------+---------------------+
+
+If ``false``, the blended animations' frame are stopped when the blend value is ``0``.
+
+If ``true``, forcing the blended animations to advance frame.
 
 ----
 

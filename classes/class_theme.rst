@@ -638,9 +638,9 @@ Returns ``false`` if neither exist. Use :ref:`set_font<class_Theme_method_set_fo
 
 - :ref:`bool<class_bool>` **has_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if the font size property defined by ``name`` and ``theme_type`` exists, or if the default theme font size is set up (see :ref:`has_default_font_size<class_Theme_method_has_default_font_size>`).
+Returns ``true`` if :ref:`default_font_size<class_Theme_property_default_font_size>` has a valid value.
 
-Returns ``false`` if neither exist. Use :ref:`set_font_size<class_Theme_method_set_font_size>` to define the property.
+Returns ``false`` if it doesn't. The value must be greater than ``0`` to be considered valid.
 
 ----
 
@@ -736,9 +736,9 @@ Fails if it doesn't exist, or if a similar property with the new name already ex
 
 - void **rename_font_size** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Renames the font size property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+Returns ``true`` if the font size property defined by ``name`` and ``theme_type`` exists, or if the default theme font size is set up (see :ref:`has_default_font_size<class_Theme_method_has_default_font_size>`).
 
-Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence, and :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the existing property.
+Returns ``false`` if neither exist. Use :ref:`set_font_size<class_Theme_method_set_font_size>` to define the property.
 
 ----
 
@@ -802,7 +802,9 @@ Creates or changes the value of the :ref:`Font<class_Font>` property defined by 
 
 - void **set_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`int<class_int>` font_size **)**
 
-Creates or changes the value of the font size property defined by ``name`` and ``theme_type``. Use :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the property.
+Renames the font size property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
+
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence, and :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the existing property.
 
 ----
 

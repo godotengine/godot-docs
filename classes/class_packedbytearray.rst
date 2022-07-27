@@ -586,7 +586,7 @@ Sorts the elements of the array in ascending order.
 
 Returns a copy of the data converted to a :ref:`PackedFloat32Array<class_PackedFloat32Array>`, where each block of 4 bytes has been converted to a 32-bit float (C++ ``float``).
 
-The size of the new array will be ``byte_array.size() / 4``.
+The size of the input array must be a multiple of 4 (size of 32-bit float). The size of the new array will be ``byte_array.size() / 4``.
 
 If the original data can't be converted to 32-bit floats, the resulting data is undefined.
 
@@ -598,7 +598,7 @@ If the original data can't be converted to 32-bit floats, the resulting data is 
 
 Returns a copy of the data converted to a :ref:`PackedFloat64Array<class_PackedFloat64Array>`, where each block of 8 bytes has been converted to a 64-bit float (C++ ``double``, Godot :ref:`float<class_float>`).
 
-The size of the new array will be ``byte_array.size() / 8``.
+The size of the input array must be a multiple of 8 (size of 64-bit double). The size of the new array will be ``byte_array.size() / 8``.
 
 If the original data can't be converted to 64-bit floats, the resulting data is undefined.
 
@@ -610,7 +610,7 @@ If the original data can't be converted to 64-bit floats, the resulting data is 
 
 Returns a copy of the data converted to a :ref:`PackedInt32Array<class_PackedInt32Array>`, where each block of 4 bytes has been converted to a signed 32-bit integer (C++ ``int32_t``).
 
-The size of the new array will be ``byte_array.size() / 4``.
+The size of the input array must be a multiple of 4 (size of 32-bit integer). The size of the new array will be ``byte_array.size() / 4``.
 
 If the original data can't be converted to signed 32-bit integers, the resulting data is undefined.
 
@@ -620,9 +620,9 @@ If the original data can't be converted to signed 32-bit integers, the resulting
 
 - :ref:`PackedInt64Array<class_PackedInt64Array>` **to_int64_array** **(** **)** |const|
 
-Returns a copy of the data converted to a :ref:`PackedInt64Array<class_PackedInt64Array>`, where each block of 4 bytes has been converted to a signed 64-bit integer (C++ ``int64_t``, Godot :ref:`int<class_int>`).
+Returns a copy of the data converted to a :ref:`PackedInt64Array<class_PackedInt64Array>`, where each block of 8 bytes has been converted to a signed 64-bit integer (C++ ``int64_t``, Godot :ref:`int<class_int>`).
 
-The size of the new array will be ``byte_array.size() / 8``.
+The size of the input array must be a multiple of 8 (size of 64-bit integer). The size of the new array will be ``byte_array.size() / 8``.
 
 If the original data can't be converted to signed 64-bit integers, the resulting data is undefined.
 

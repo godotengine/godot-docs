@@ -46,7 +46,7 @@ Methods
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_ios_project_static_lib<class_EditorExportPlugin_method_add_ios_project_static_lib>` **(** :ref:`String<class_String>` path **)**                                                                                                            |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_osx_plugin_file<class_EditorExportPlugin_method_add_osx_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                          |
+| void | :ref:`add_macos_plugin_file<class_EditorExportPlugin_method_add_macos_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                      |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**                                  |
 +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,9 +150,9 @@ Adds a static lib from the given ``path`` to the iOS project.
 
 ----
 
-.. _class_EditorExportPlugin_method_add_osx_plugin_file:
+.. _class_EditorExportPlugin_method_add_macos_plugin_file:
 
-- void **add_osx_plugin_file** **(** :ref:`String<class_String>` path **)**
+- void **add_macos_plugin_file** **(** :ref:`String<class_String>` path **)**
 
 Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app bundle.
 

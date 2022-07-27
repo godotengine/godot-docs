@@ -23,11 +23,15 @@ It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes r
 Methods
 -------
 
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                            |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)** |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_resource_format_saver<class_ResourceSaver_method_add_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)** |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                                       |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                   |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**                 |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -50,7 +54,7 @@ Enumerations
 
 .. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
 
-enum **SaverFlags**:
+flags **SaverFlags**:
 
 - **FLAG_NONE** = **0** --- No resource saving option.
 
@@ -71,6 +75,16 @@ enum **SaverFlags**:
 Method Descriptions
 -------------------
 
+.. _class_ResourceSaver_method_add_resource_format_saver:
+
+- void **add_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)**
+
+Registers a new :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`. The ResourceSaver will use the ResourceFormatSaver as described in :ref:`save<class_ResourceSaver_method_save>`.
+
+This method is performed implicitly for ResourceFormatSavers written in GDScript (see :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` for more information).
+
+----
+
 .. _class_ResourceSaver_method_get_recognized_extensions:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
@@ -79,9 +93,17 @@ Returns the list of extensions available for saving a resource of a given type.
 
 ----
 
+.. _class_ResourceSaver_method_remove_resource_format_saver:
+
+- void **remove_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**
+
+Unregisters the given :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
+
+----
+
 .. _class_ResourceSaver_method_save:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
 
 Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object.
 

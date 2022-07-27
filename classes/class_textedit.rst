@@ -40,6 +40,8 @@ Properties
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`deselect_on_focus_loss_enabled<class_TextEdit_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                            |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`drag_and_drop_selection_enabled<class_TextEdit_property_drag_and_drop_selection_enabled>`             | ``true``                                                                            |
++-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`draw_control_chars<class_TextEdit_property_draw_control_chars>`                                       | ``false``                                                                           |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`draw_spaces<class_TextEdit_property_draw_spaces>`                                                     | ``false``                                                                           |
@@ -67,6 +69,8 @@ Properties
 | :ref:`bool<class_bool>`                                           | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>`                   | ``false``                                                                           |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`placeholder_text<class_TextEdit_property_placeholder_text>`                                           | ``""``                                                                              |
++-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>`                         | ``false``                                                                           |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>`                                         | ``0``                                                                               |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -124,8 +128,6 @@ Methods
 | void                                              | :ref:`center_viewport_to_caret<class_TextEdit_method_center_viewport_to_caret>` **(** **)**                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`clear<class_TextEdit_method_clear>` **(** **)**                                                                                                                                                                                |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`clear_opentype_features<class_TextEdit_method_clear_opentype_features>` **(** **)**                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`clear_undo_history<class_TextEdit_method_clear_undo_history>` **(** **)**                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,8 +206,6 @@ Methods
 | :ref:`Vector2i<class_Vector2i>`                   | :ref:`get_next_visible_line_index_offset_from<class_TextEdit_method_get_next_visible_line_index_offset_from>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` wrap_index, :ref:`int<class_int>` visible_amount **)** |const| |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_next_visible_line_offset_from<class_TextEdit_method_get_next_visible_line_offset_from>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` visible_amount **)** |const|                                               |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`get_opentype_feature<class_TextEdit_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                   | :ref:`get_pos_at_line_column<class_TextEdit_method_get_pos_at_line_column>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` column **)** |const|                                                                             |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -336,8 +336,6 @@ Methods
 | void                                              | :ref:`set_line_gutter_metadata<class_TextEdit_method_set_line_gutter_metadata>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`Variant<class_Variant>` metadata **)**                                         |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_line_gutter_text<class_TextEdit_method_set_line_gutter_text>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`String<class_String>` text **)**                                                       |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_opentype_feature<class_TextEdit_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**                                                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_overtype_mode_enabled<class_TextEdit_method_set_overtype_mode_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -800,6 +798,22 @@ If ``true``, the selected text will be deselected when focus is lost.
 
 ----
 
+.. _class_TextEdit_property_drag_and_drop_selection_enabled:
+
+- :ref:`bool<class_bool>` **drag_and_drop_selection_enabled**
+
++-----------+--------------------------------------------+
+| *Default* | ``true``                                   |
++-----------+--------------------------------------------+
+| *Setter*  | set_drag_and_drop_selection_enabled(value) |
++-----------+--------------------------------------------+
+| *Getter*  | is_drag_and_drop_selection_enabled()       |
++-----------+--------------------------------------------+
+
+If ``true``, allow drag and drop of selected text.
+
+----
+
 .. _class_TextEdit_property_draw_control_chars:
 
 - :ref:`bool<class_bool>` **draw_control_chars**
@@ -994,6 +1008,22 @@ Text shown when the ``TextEdit`` is empty. It is **not** the ``TextEdit``'s defa
 
 ----
 
+.. _class_TextEdit_property_scroll_fit_content_height:
+
+- :ref:`bool<class_bool>` **scroll_fit_content_height**
+
++-----------+---------------------------------------+
+| *Default* | ``false``                             |
++-----------+---------------------------------------+
+| *Setter*  | set_fit_content_height_enabled(value) |
++-----------+---------------------------------------+
+| *Getter*  | is_fit_content_height_enabled()       |
++-----------+---------------------------------------+
+
+If ``true``, ``TextEdit`` will disable vertical scroll and fit minimum height to the number of visible lines.
+
+----
+
 .. _class_TextEdit_property_scroll_horizontal:
 
 - :ref:`int<class_int>` **scroll_horizontal**
@@ -1030,13 +1060,13 @@ Allow scrolling past the last line into "virtual" space.
 
 - :ref:`bool<class_bool>` **scroll_smooth**
 
-+-----------+---------------------------------+
-| *Default* | ``false``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_smooth_scroll_enable(value) |
-+-----------+---------------------------------+
-| *Getter*  | is_smooth_scroll_enabled()      |
-+-----------+---------------------------------+
++-----------+----------------------------------+
+| *Default* | ``false``                        |
++-----------+----------------------------------+
+| *Setter*  | set_smooth_scroll_enabled(value) |
++-----------+----------------------------------+
+| *Getter*  | is_smooth_scroll_enabled()       |
++-----------+----------------------------------+
 
 Scroll smoothly over the text rather then jumping to the next location.
 
@@ -1314,14 +1344,6 @@ Centers the viewport on the line the editing caret is at. This also resets the :
 - void **clear** **(** **)**
 
 Performs a full reset of ``TextEdit``, including undo history.
-
-----
-
-.. _class_TextEdit_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
 
 ----
 
@@ -1636,14 +1658,6 @@ Similar to :ref:`get_next_visible_line_offset_from<class_TextEdit_method_get_nex
 - :ref:`int<class_int>` **get_next_visible_line_offset_from** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` visible_amount **)** |const|
 
 Returns the count to the next visible line from ``line`` to ``line + visible_amount``. Can also count backwards. For example if a ``TextEdit`` has 5 lines with lines 2 and 3 hidden, calling this with ``line = 1, visible_amount = 1`` would return 3.
-
-----
-
-.. _class_TextEdit_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
 
 ----
 
@@ -2205,14 +2219,6 @@ Sets the metadata for ``gutter`` on ``line``.
 - void **set_line_gutter_text** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`String<class_String>` text **)**
 
 Sets the text for ``gutter`` on ``line``.
-
-----
-
-.. _class_TextEdit_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Sets OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 ----
 

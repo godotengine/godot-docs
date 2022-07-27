@@ -91,17 +91,6 @@ Properties
 | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>` | ``0``     |
 +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
 
-Methods
--------
-
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`clear_opentype_features<class_Button_method_clear_opentype_features>` **(** **)**                                                        |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_opentype_feature<class_Button_method_get_opentype_feature>` **(** :ref:`String<class_String>` tag **)** |const|                      |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`set_opentype_feature<class_Button_method_set_opentype_feature>` **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)** |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Theme Properties
 ----------------
 
@@ -311,31 +300,6 @@ Base text writing direction.
 +-----------+----------------------------------+
 
 Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
-
-Method Descriptions
--------------------
-
-.. _class_Button_method_clear_opentype_features:
-
-- void **clear_opentype_features** **(** **)**
-
-Removes all OpenType features.
-
-----
-
-.. _class_Button_method_get_opentype_feature:
-
-- :ref:`int<class_int>` **get_opentype_feature** **(** :ref:`String<class_String>` tag **)** |const|
-
-Returns OpenType feature ``tag``.
-
-----
-
-.. _class_Button_method_set_opentype_feature:
-
-- void **set_opentype_feature** **(** :ref:`String<class_String>` tag, :ref:`int<class_int>` value **)**
-
-Sets OpenType feature ``tag``. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
 Theme Property Descriptions
 ---------------------------

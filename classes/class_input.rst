@@ -270,6 +270,8 @@ If ``true``, similar input events sent by the operating system are accumulated. 
 
 Input accumulation can be disabled to get slightly more precise/reactive input at the cost of increased CPU usage. In applications where drawing freehand lines is required, input accumulation should generally be disabled while the user is drawing the line to get results that closely follow the actual input.
 
+\ **Note:** Input accumulation is *enabled* by default.
+
 Method Descriptions
 -------------------
 

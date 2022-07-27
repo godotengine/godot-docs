@@ -2439,7 +2439,7 @@ If ``true``, render point size can be changed.
 | *Getter*  | get_uv1_offset()      |
 +-----------+-----------------------+
 
-How much to offset the ``UV`` coordinates. This amount will be added to ``UV`` in the vertex function. This can be used to offset a texture.
+How much to offset the ``UV`` coordinates. This amount will be added to ``UV`` in the vertex function. This can be used to offset a texture. The Z component is used when :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled, but it is not used anywhere else.
 
 ----
 
@@ -2455,7 +2455,7 @@ How much to offset the ``UV`` coordinates. This amount will be added to ``UV`` i
 | *Getter*  | get_uv1_scale()      |
 +-----------+----------------------+
 
-How much to scale the ``UV`` coordinates. This is multiplied by ``UV`` in the vertex function.
+How much to scale the ``UV`` coordinates. This is multiplied by ``UV`` in the vertex function. The Z component is used when :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled, but it is not used anywhere else.
 
 ----
 
@@ -2519,7 +2519,7 @@ If ``true``, triplanar mapping for ``UV`` is calculated in world space rather th
 | *Getter*  | get_uv2_offset()      |
 +-----------+-----------------------+
 
-How much to offset the ``UV2`` coordinates. This amount will be added to ``UV2`` in the vertex function. This can be used to offset a texture.
+How much to offset the ``UV2`` coordinates. This amount will be added to ``UV2`` in the vertex function. This can be used to offset a texture. The Z component is used when :ref:`uv2_triplanar<class_BaseMaterial3D_property_uv2_triplanar>` is enabled, but it is not used anywhere else.
 
 ----
 
@@ -2535,7 +2535,7 @@ How much to offset the ``UV2`` coordinates. This amount will be added to ``UV2``
 | *Getter*  | get_uv2_scale()      |
 +-----------+----------------------+
 
-How much to scale the ``UV2`` coordinates. This is multiplied by ``UV2`` in the vertex function.
+How much to scale the ``UV2`` coordinates. This is multiplied by ``UV2`` in the vertex function. The Z component is used when :ref:`uv2_triplanar<class_BaseMaterial3D_property_uv2_triplanar>` is enabled, but it is not used anywhere else.
 
 ----
 

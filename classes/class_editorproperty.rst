@@ -49,7 +49,7 @@ Methods
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`         | :ref:`get_edited_object<class_EditorProperty_method_get_edited_object>` **(** **)**                                                                                                                                                                |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)**                                                                                                                                                            |
+| :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)** |const|                                                                                                                                                    |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`         | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** |const|                                                                                                                                                          |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -291,7 +291,7 @@ Gets the edited object.
 
 .. _class_EditorProperty_method_get_edited_property:
 
-- :ref:`StringName<class_StringName>` **get_edited_property** **(** **)**
+- :ref:`StringName<class_StringName>` **get_edited_property** **(** **)** |const|
 
 Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_method__parse_property>`), then this will return the property.
 

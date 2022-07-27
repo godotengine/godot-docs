@@ -36,7 +36,7 @@ Properties
 +---------------------------------------+--------------------------------------------------------------------------+---------------+
 | :ref:`StringName<class_StringName>`   | :ref:`bus<class_VideoStreamPlayer_property_bus>`                         | ``&"Master"`` |
 +---------------------------------------+--------------------------------------------------------------------------+---------------+
-| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoStreamPlayer_property_expand>`                   | ``true``      |
+| :ref:`bool<class_bool>`               | :ref:`expand<class_VideoStreamPlayer_property_expand>`                   | ``false``     |
 +---------------------------------------+--------------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`               | :ref:`paused<class_VideoStreamPlayer_property_paused>`                   | ``false``     |
 +---------------------------------------+--------------------------------------------------------------------------+---------------+
@@ -145,7 +145,7 @@ Audio bus to use for sound playback.
 - :ref:`bool<class_bool>` **expand**
 
 +-----------+-------------------+
-| *Default* | ``true``          |
+| *Default* | ``false``         |
 +-----------+-------------------+
 | *Setter*  | set_expand(value) |
 +-----------+-------------------+

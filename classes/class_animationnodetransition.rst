@@ -9,7 +9,7 @@
 AnimationNodeTransition
 =======================
 
-**Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
 
@@ -30,11 +30,13 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>` | ``0``   |
-+---------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`   | ``0.0`` |
-+---------------------------+------------------------------------------------------------------------+---------+
++---------------------------+------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`from_start<class_AnimationNodeTransition_property_from_start>`   | ``true`` |
++---------------------------+------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>` | ``0``    |
++---------------------------+------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`   | ``0.0``  |
++---------------------------+------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -51,6 +53,22 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_AnimationNodeTransition_property_from_start:
+
+- :ref:`bool<class_bool>` **from_start**
+
++-----------+-----------------------+
+| *Default* | ``true``              |
++-----------+-----------------------+
+| *Setter*  | set_from_start(value) |
++-----------+-----------------------+
+| *Getter*  | is_from_start()       |
++-----------+-----------------------+
+
+If ``true``, the destination animation is played back from the beginning when switched.
+
+----
 
 .. _class_AnimationNodeTransition_property_input_count:
 

@@ -41,6 +41,8 @@ Properties
 +-----------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`     | :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>` | ``false`` |
 +-----------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`     | :ref:`debug_paths_hint<class_SceneTree_property_debug_paths_hint>`           | ``false`` |
++-----------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`Node<class_Node>`     | :ref:`edited_scene_root<class_SceneTree_property_edited_scene_root>`         |           |
 +-----------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`     | :ref:`multiplayer_poll<class_SceneTree_property_multiplayer_poll>`           | ``true``  |
@@ -254,6 +256,22 @@ If ``true``, navigation polygons will be visible when running the game from the 
 
 ----
 
+.. _class_SceneTree_property_debug_paths_hint:
+
+- :ref:`bool<class_bool>` **debug_paths_hint**
+
++-----------+-----------------------------+
+| *Default* | ``false``                   |
++-----------+-----------------------------+
+| *Setter*  | set_debug_paths_hint(value) |
++-----------+-----------------------------+
+| *Getter*  | is_debugging_paths_hint()   |
++-----------+-----------------------------+
+
+If ``true``, curves from :ref:`Path2D<class_Path2D>` and :ref:`Path3D<class_Path3D>` nodes will be visible when running the game from the editor for debugging purposes.
+
+----
+
 .. _class_SceneTree_property_edited_scene_root:
 
 - :ref:`Node<class_Node>` **edited_scene_root**
@@ -341,9 +359,7 @@ Method Descriptions
 
 - void **call_group** **(** :ref:`StringName<class_StringName>` group, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call.
-
-\ **Note:** Due to design limitations, :ref:`call_group<class_SceneTree_method_call_group>` will fail silently if one of the arguments is ``null``.
+Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call. If a node doesn't have the given method or the argument list does not match (either in count or in types), it will be skipped.
 
 \ **Note:** :ref:`call_group<class_SceneTree_method_call_group>` will call methods immediately on all members at once, which can cause stuttering if an expensive method is called on lots of members. To wait for one frame after :ref:`call_group<class_SceneTree_method_call_group>` was called, use :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag.
 
@@ -353,14 +369,12 @@ Calls ``method`` on each member of the given group. You can pass arguments to ``
 
 - void **call_group_flags** **(** :ref:`int<class_int>` flags, :ref:`StringName<class_StringName>` group, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call.
+Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call. If a node doesn't have the given method or the argument list does not match (either in count or in types), it will be skipped.
 
 ::
 
     # Call the method in a deferred manner and in reverse order.
     get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE)
-
-\ **Note:** Due to design limitations, :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` will fail silently if one of the arguments is ``null``.
 
 \ **Note:** Group call flags are used to control the method calling behavior. By default, methods will be called immediately in a way similar to :ref:`call_group<class_SceneTree_method_call_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, methods will be called with a one-frame delay in a way similar to :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
 

@@ -51,7 +51,7 @@ Properties
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`float<class_float>`                             | :ref:`near<class_Camera3D_property_near>`                         | ``0.05``          |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`Projection<enum_Camera3D_Projection>`           | :ref:`projection<class_Camera3D_property_projection>`             | ``0``             |
+| :ref:`ProjectionType<enum_Camera3D_ProjectionType>`   | :ref:`projection<class_Camera3D_property_projection>`             | ``0``             |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`float<class_float>`                             | :ref:`size<class_Camera3D_property_size>`                         | ``1.0``           |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
@@ -102,7 +102,7 @@ Methods
 Enumerations
 ------------
 
-.. _enum_Camera3D_Projection:
+.. _enum_Camera3D_ProjectionType:
 
 .. _class_Camera3D_constant_PROJECTION_PERSPECTIVE:
 
@@ -110,7 +110,7 @@ Enumerations
 
 .. _class_Camera3D_constant_PROJECTION_FRUSTUM:
 
-enum **Projection**:
+enum **ProjectionType**:
 
 - **PROJECTION_PERSPECTIVE** = **0** --- Perspective projection. Objects on the screen becomes smaller when they are far away.
 
@@ -182,6 +182,8 @@ The culling mask that describes which 3D render layers are rendered by this came
 +-----------+--------------------+
 
 If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this camera.
+
+If multiple cameras are in the scene, one will always be made current. For example, if two ``Camera3D`` nodes are present in the scene and only one is current, setting one camera's :ref:`current<class_Camera3D_property_current>` to ``false`` will cause the other camera to be made current.
 
 ----
 
@@ -337,7 +339,7 @@ The distance to the near culling boundary for this camera relative to its local 
 
 .. _class_Camera3D_property_projection:
 
-- :ref:`Projection<enum_Camera3D_Projection>` **projection**
+- :ref:`ProjectionType<enum_Camera3D_ProjectionType>` **projection**
 
 +-----------+-----------------------+
 | *Default* | ``0``                 |

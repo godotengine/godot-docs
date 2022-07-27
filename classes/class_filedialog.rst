@@ -38,6 +38,8 @@ Properties
 +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                 |
 +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`root_subfolder<class_FileDialog_property_root_subfolder>`             | ``""``                                                                                   |
++---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                |
 +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
@@ -46,19 +48,19 @@ Properties
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`add_filter<class_FileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`clear_filters<class_FileDialog_method_clear_filters>` **(** **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`deselect_all<class_FileDialog_method_deselect_all>` **(** **)**                                |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_FileDialog_method_get_line_edit>` **(** **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_FileDialog_method_get_vbox>` **(** **)**                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invalidate<class_FileDialog_method_invalidate>` **(** **)**                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`add_filter<class_FileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`clear_filters<class_FileDialog_method_clear_filters>` **(** **)**                                                                          |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`deselect_all<class_FileDialog_method_deselect_all>` **(** **)**                                                                            |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_FileDialog_method_get_line_edit>` **(** **)**                                                                          |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_FileDialog_method_get_vbox>` **(** **)**                                                                                    |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`invalidate<class_FileDialog_method_invalidate>` **(** **)**                                                                                |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -266,6 +268,22 @@ If ``true``, changing the ``Mode`` property will set the window title accordingl
 
 ----
 
+.. _class_FileDialog_property_root_subfolder:
+
+- :ref:`String<class_String>` **root_subfolder**
+
++-----------+---------------------------+
+| *Default* | ``""``                    |
++-----------+---------------------------+
+| *Setter*  | set_root_subfolder(value) |
++-----------+---------------------------+
+| *Getter*  | get_root_subfolder()      |
++-----------+---------------------------+
+
+If non-empty, the given sub-folder will be "root" of this ``FileDialog``, i.e. user won't be able to go to its parent directory.
+
+----
+
 .. _class_FileDialog_property_show_hidden_files:
 
 - :ref:`bool<class_bool>` **show_hidden_files**
@@ -285,13 +303,13 @@ Method Descriptions
 
 .. _class_FileDialog_method_add_filter:
 
-- void **add_filter** **(** :ref:`String<class_String>` filter **)**
+- void **add_filter** **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)**
 
-Adds ``filter`` to the list of filters, which restricts what files can be picked.
+Adds a comma-delimited file name ``filter`` option to the ``FileDialog`` with an optional ``description``, which restricts what files can be picked.
 
-A ``filter`` should be of the form ``"filename.extension ; Description"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
+A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
 
-Example filters: ``"*.png ; PNG Images"``, ``"project.godot ; Godot Project"``.
+For example, a ``filter`` of ``"*.png, *.jpg"`` and a ``description`` of ``"Images"`` results in filter text "Images (\*.png, \*.jpg)".
 
 ----
 

@@ -16,16 +16,75 @@ MultiplayerSynchronizer
 Properties
 ----------
 
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-| :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` | :ref:`replication_config<class_MultiplayerSynchronizer_property_replication_config>`     |                    |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`                                   | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>` | ``0.0``            |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-| :ref:`NodePath<class_NodePath>`                             | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                       | ``NodePath("..")`` |
-+-------------------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                        | :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>`           | ``true``           |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+| :ref:`SceneReplicationConfig<class_SceneReplicationConfig>`                    | :ref:`replication_config<class_MultiplayerSynchronizer_property_replication_config>`         |                    |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+| :ref:`float<class_float>`                                                      | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>`     | ``0.0``            |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+| :ref:`NodePath<class_NodePath>`                                                | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                           | ``NodePath("..")`` |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+| :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` | :ref:`visibility_update_mode<class_MultiplayerSynchronizer_property_visibility_update_mode>` | ``0``              |
++--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+
+Methods
+-------
+
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**                |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`get_visibility_for<class_MultiplayerSynchronizer_method_get_visibility_for>` **(** :ref:`int<class_int>` peer **)** |const|                          |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`remove_visibility_filter<class_MultiplayerSynchronizer_method_remove_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**          |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)** |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>` **(** :ref:`int<class_int>` for_peer=0 **)**                              |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+.. _class_MultiplayerSynchronizer_signal_visibility_changed:
+
+- **visibility_changed** **(** :ref:`int<class_int>` for_peer **)**
+
+Enumerations
+------------
+
+.. _enum_MultiplayerSynchronizer_VisibilityUpdateMode:
+
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_IDLE:
+
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_PHYSICS:
+
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_NONE:
+
+enum **VisibilityUpdateMode**:
+
+- **VISIBILITY_PROCESS_IDLE** = **0**
+
+- **VISIBILITY_PROCESS_PHYSICS** = **1**
+
+- **VISIBILITY_PROCESS_NONE** = **2**
 
 Property Descriptions
 ---------------------
+
+.. _class_MultiplayerSynchronizer_property_public_visibility:
+
+- :ref:`bool<class_bool>` **public_visibility**
+
++-----------+------------------------------+
+| *Default* | ``true``                     |
++-----------+------------------------------+
+| *Setter*  | set_visibility_public(value) |
++-----------+------------------------------+
+| *Getter*  | is_visibility_public()       |
++-----------+------------------------------+
+
+----
 
 .. _class_MultiplayerSynchronizer_property_replication_config:
 
@@ -64,6 +123,51 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_root_path()      |
 +-----------+----------------------+
+
+----
+
+.. _class_MultiplayerSynchronizer_property_visibility_update_mode:
+
+- :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **visibility_update_mode**
+
++-----------+-----------------------------------+
+| *Default* | ``0``                             |
++-----------+-----------------------------------+
+| *Setter*  | set_visibility_update_mode(value) |
++-----------+-----------------------------------+
+| *Getter*  | get_visibility_update_mode()      |
++-----------+-----------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_MultiplayerSynchronizer_method_add_visibility_filter:
+
+- void **add_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
+
+----
+
+.. _class_MultiplayerSynchronizer_method_get_visibility_for:
+
+- :ref:`bool<class_bool>` **get_visibility_for** **(** :ref:`int<class_int>` peer **)** |const|
+
+----
+
+.. _class_MultiplayerSynchronizer_method_remove_visibility_filter:
+
+- void **remove_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
+
+----
+
+.. _class_MultiplayerSynchronizer_method_set_visibility_for:
+
+- void **set_visibility_for** **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)**
+
+----
+
+.. _class_MultiplayerSynchronizer_method_update_visibility:
+
+- void **update_visibility** **(** :ref:`int<class_int>` for_peer=0 **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

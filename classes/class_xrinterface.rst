@@ -25,7 +25,7 @@ Interfaces should be written in such a way that simply enabling them will give u
 Tutorials
 ---------
 
-- :doc:`VR documentation index <../tutorials/vr/index>`
+- :doc:`XR documentation index <../tutorials/xr/index>`
 
 Properties
 ----------

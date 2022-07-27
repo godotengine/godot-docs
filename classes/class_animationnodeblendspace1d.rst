@@ -39,6 +39,8 @@ Properties
 +-----------------------------+--------------------------------------------------------------------------+-------------+
 | :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | ``0.1``     |
 +-----------------------------+--------------------------------------------------------------------------+-------------+
+| :ref:`bool<class_bool>`     | :ref:`sync<class_AnimationNodeBlendSpace1D_property_sync>`               | ``false``   |
++-----------------------------+--------------------------------------------------------------------------+-------------+
 | :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | ``"value"`` |
 +-----------------------------+--------------------------------------------------------------------------+-------------+
 
@@ -109,6 +111,24 @@ The blend space's axis's lower limit for the points' position. See :ref:`add_ble
 +-----------+-----------------+
 
 Position increment to snap to when moving a point on the axis.
+
+----
+
+.. _class_AnimationNodeBlendSpace1D_property_sync:
+
+- :ref:`bool<class_bool>` **sync**
+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_use_sync(value) |
++-----------+---------------------+
+| *Getter*  | is_using_sync()     |
++-----------+---------------------+
+
+If ``false``, the blended animations' frame are stopped when the blend value is ``0``.
+
+If ``true``, forcing the blended animations to advance frame.
 
 ----
 

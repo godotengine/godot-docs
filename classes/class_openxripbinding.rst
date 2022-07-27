@@ -35,7 +35,7 @@ Methods
 +-------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>` **(** **)** |const|                      |
 +-------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` arg0 **)** |const| |
+| :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` path **)** |const| |
 +-------------------------+-------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>` **(** :ref:`String<class_String>` path **)**   |
 +-------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -92,7 +92,7 @@ Get the number of input/output paths in this binding.
 
 .. _class_OpenXRIPBinding_method_has_path:
 
-- :ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` arg0 **)** |const|
+- :ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns ``true`` if this input/output path is part of this binding.
 

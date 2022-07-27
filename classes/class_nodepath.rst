@@ -61,6 +61,8 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_NodePath>`     | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` **(** **)** |const|           |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | :ref:`get_concatenated_names<class_NodePath_method_get_concatenated_names>` **(** **)** |const|       |
++-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>` **(** **)** |const| |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>` | :ref:`get_name<class_NodePath_method_get_name>` **(** :ref:`int<class_int>` idx **)** |const|         |
@@ -156,6 +158,14 @@ Returns a node path with a colon character (``:``) prepended, transforming it to
     GD.Print(propertyPath); // :position:x
 
 
+
+----
+
+.. _class_NodePath_method_get_concatenated_names:
+
+- :ref:`StringName<class_StringName>` **get_concatenated_names** **(** **)** |const|
+
+Returns all paths concatenated with a slash character (``/``) as separator without subnames.
 
 ----
 

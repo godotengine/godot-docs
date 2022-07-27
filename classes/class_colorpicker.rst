@@ -31,19 +31,17 @@ Properties
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`Color<class_Color>`                                | :ref:`color<class_ColorPicker_property_color>`                     | ``Color(1, 1, 1, 1)`` |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
+| :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`     | :ref:`color_mode<class_ColorPicker_property_color_mode>`           | ``0``                 |
++----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | ``false``             |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | ``true``              |
-+----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | ``false``             |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` | :ref:`picker_shape<class_ColorPicker_property_picker_shape>`       | ``0``                 |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | ``true``              |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | ``true``              |
-+----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | ``false``             |
 +----------------------------------------------------------+--------------------------------------------------------------------+-----------------------+
 
 Methods
@@ -114,6 +112,32 @@ Emitted when a preset is removed.
 Enumerations
 ------------
 
+.. _enum_ColorPicker_ColorModeType:
+
+.. _class_ColorPicker_constant_MODE_RGB:
+
+.. _class_ColorPicker_constant_MODE_HSV:
+
+.. _class_ColorPicker_constant_MODE_RAW:
+
+.. _class_ColorPicker_constant_MODE_OKHSL:
+
+enum **ColorModeType**:
+
+- **MODE_RGB** = **0** --- Allows editing the color with Red/Green/Blue sliders.
+
+- **MODE_HSV** = **1** --- Allows editing the color with Hue/Saturation/Value sliders.
+
+- **MODE_RAW** = **2** --- Allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
+
+- **MODE_OKHSL** = **3** --- Allows editing the color with Hue/Saturation/Lightness sliders.
+
+OKHSL is a new color space similar to HSL but that better match perception by leveraging the Oklab color space which is designed to be simple to use, while doing a good job at predicting perceived lightness, chroma and hue.
+
+\ `Okhsv and Okhsl color spaces <https://bottosson.github.io/posts/colorpicker/>`__
+
+----
+
 .. _enum_ColorPicker_PickerShapeType:
 
 .. _class_ColorPicker_constant_SHAPE_HSV_RECTANGLE:
@@ -153,6 +177,22 @@ The currently selected color.
 
 ----
 
+.. _class_ColorPicker_property_color_mode:
+
+- :ref:`ColorModeType<enum_ColorPicker_ColorModeType>` **color_mode**
+
++-----------+-----------------------+
+| *Default* | ``0``                 |
++-----------+-----------------------+
+| *Setter*  | set_color_mode(value) |
++-----------+-----------------------+
+| *Getter*  | get_color_mode()      |
++-----------+-----------------------+
+
+The currently selected color mode. See :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`.
+
+----
+
 .. _class_ColorPicker_property_deferred_mode:
 
 - :ref:`bool<class_bool>` **deferred_mode**
@@ -182,24 +222,6 @@ If ``true``, the color will apply only after the user releases the mouse button,
 +-----------+-----------------------+
 
 If ``true``, shows an alpha channel slider (opacity).
-
-----
-
-.. _class_ColorPicker_property_hsv_mode:
-
-- :ref:`bool<class_bool>` **hsv_mode**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_hsv_mode(value) |
-+-----------+---------------------+
-| *Getter*  | is_hsv_mode()       |
-+-----------+---------------------+
-
-If ``true``, allows editing the color with Hue/Saturation/Value sliders.
-
-\ **Note:** Cannot be enabled if raw mode is on.
 
 ----
 
@@ -248,24 +270,6 @@ If ``true``, the "add preset" button is enabled.
 +-----------+----------------------------+
 
 If ``true``, saved color presets are visible.
-
-----
-
-.. _class_ColorPicker_property_raw_mode:
-
-- :ref:`bool<class_bool>` **raw_mode**
-
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_raw_mode(value) |
-+-----------+---------------------+
-| *Getter*  | is_raw_mode()       |
-+-----------+---------------------+
-
-If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
-
-\ **Note:** Cannot be enabled if HSV mode is on.
 
 Method Descriptions
 -------------------
