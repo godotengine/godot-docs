@@ -134,7 +134,7 @@ Running the scene
 -----------------
 
 Everything's ready to run the scene! Press the Play Scene button in the
-top-right of the screen or press :kbd:`F6` or :kbd:`Cmd + R` (macOS).
+top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 
 .. image:: img/nodes_and_scenes_09_play_scene_button.png
 
@@ -169,8 +169,8 @@ Setting the main scene
 ----------------------
 
 To run our test scene, we used the Play Scene button. Another button next to it
-allows you to set and run the project's main scene. You can press :kbd:`F5` or :kbd:`Cmd + B` (macOS) to
-do so.
+allows you to set and run the project's main scene. You can press :kbd:`F5`
+(:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_13_play_button.png
 
