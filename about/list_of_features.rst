@@ -561,7 +561,7 @@ Windowing and OS integration
 
    - Doesn't use exclusive fullscreen, which allows for fast alt-tabbing. The
      downside is that the screen resolution can't be changed this way. For 3D
-     resolution scaling, use the appropriatee project settings or the equivalent
+     resolution scaling, use the appropriate project settings or the equivalent
      Viewport property. For 2D resolution scaling, use a second Viewport node
      to render the game world with a different size.
 

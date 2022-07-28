@@ -220,7 +220,7 @@ shader, this value can be used as desired.
 
 .. note::
 
-    ``MODELVIEW_MATRIX`` combines both the ``MODEL_MATRIX`` and ``VIEW_MATRIX`` and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the seperated ``MODE_MATRIX`` and ``VIEW_MATRIX``.
+    ``MODELVIEW_MATRIX`` combines both the ``MODEL_MATRIX`` and ``VIEW_MATRIX`` and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the separated ``MODE_MATRIX`` and ``VIEW_MATRIX``.
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
