@@ -66,6 +66,8 @@ the following to list them:
 
 Integers and strings hint enumerated values.
 
+::
+
     # Editor will enumerate as 0, 1 and 2.
     @export_enum("Warrior", "Magician", "Thief") var character_class
 
@@ -212,6 +214,8 @@ from the FileSystem dock into the variable slot.
 Opening the inspector dropdown may result in an
 extremely long list of possible classes to create, however.
 Therefore, if you specify an extension of Resource such as:
+
+::
 
     @export var resource: AnimationNode
 
