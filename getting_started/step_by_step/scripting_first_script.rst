@@ -149,6 +149,7 @@ Add the following code to your script:
 
     func _init():
         print("Hello, world!")
+
  .. code-tab:: csharp C#
 
     public Sprite()
@@ -187,6 +188,7 @@ angular speed in radians per second.
 
     var speed = 400
     var angular_speed = PI
+
  .. code-tab:: csharp C#
 
     private int Speed = 400;
@@ -227,6 +229,7 @@ At the bottom of the script, define the function:
 
     func _process(delta):
         rotation += angular_speed * delta
+
  .. code-tab:: csharp C#
 
     public override void _Process(float delta)
@@ -270,6 +273,7 @@ them.
     var velocity = Vector2.UP.rotated(rotation) * speed
 
     position += velocity * delta
+
  .. code-tab:: csharp C#
 
     var velocity = Vector2.Up.Rotated(Rotation) * Speed;
@@ -322,6 +326,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         var velocity = Vector2.UP.rotated(rotation) * speed
 
         position += velocity * delta
+
  .. code-tab:: csharp C#
 
     using Godot;
