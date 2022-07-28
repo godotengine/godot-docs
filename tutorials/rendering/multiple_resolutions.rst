@@ -130,23 +130,15 @@ demonstrate the effect of different stretch modes. A single sprite, also
    unit in the scene corresponds to one pixel on the screen. In this
    mode, the **Stretch Aspect** setting has no effect.
 
-   This is a good option if you want full control over every screen
-   pixel, and is probably the best option for 3D games.
-
    .. image:: img/stretch_disabled_expand.gif
 
 -  **Stretch Mode = 2D**: In this mode, the base size specified in
    width and height in the project settings is
    stretched to cover the whole screen (taking the **Stretch Aspect**
    setting into account). This means that everything is rendered
-   directly at the target resolution. 3D is largely unaffected,
+   directly at the target resolution. 3D is unaffected,
    while in 2D, there is no longer a 1:1 correspondence between sprite
    pixels and screen pixels, which may result in scaling artifacts.
-
-   This is a good option if your 2D artwork has a sufficiently high
-   resolution and does not require pixel-perfect rendering. Consider
-   enabling texture filtering and mipmapping on your 2D textures and
-   fonts.
 
    .. image:: img/stretch_2d_expand.gif
 
@@ -156,9 +148,6 @@ demonstrate the effect of different stretch modes. A single sprite, also
    The scene is rendered to this viewport first. Finally, this viewport
    is scaled to fit the screen (taking the **Stretch Aspect** setting into
    account).
-
-   This mode is useful when working with pixel-precise games, or for the
-   sake of rendering to a lower resolution to improve performance.
 
    .. image:: img/stretch_viewport_expand.gif
 
