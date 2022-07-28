@@ -294,7 +294,7 @@ The :ref:`reference_space_reset<class_WebXRInterface_signal_reference_space_rese
 | *Getter* | get_optional_features()      |
 +----------+------------------------------+
 
-A comma-seperated list of optional features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
+A comma-separated list of optional features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
 If a user's browser or device doesn't support one of the given features, initialization will continue, but you won't be able to use the requested feature.
 
@@ -328,7 +328,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 | *Getter* | get_requested_reference_space_types()      |
 +----------+--------------------------------------------+
 
-A comma-seperated list of reference space types used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
+A comma-separated list of reference space types used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
 The reference space types are requested in order, and the first on supported by the users device or browser will be used. The :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>` property contains the reference space type that was ultimately used.
 
@@ -348,7 +348,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 | *Getter* | get_required_features()      |
 +----------+------------------------------+
 
-A comma-seperated list of required features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
+A comma-separated list of required features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
 If a user's browser or device doesn't support one of the given features, initialization will fail and :ref:`session_failed<class_WebXRInterface_signal_session_failed>` will be emitted.
 

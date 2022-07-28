@@ -138,7 +138,7 @@ Example use of ``queryPurchases()``:
                     " debug message: ", query_result.debug_message)
 
 
-You should query purchases during startup after succesfully retrieving SKU details.
+You should query purchases during startup after successfully retrieving SKU details.
 Since the user may make a purchase or resolve a pending transaction from
 outside your app, you should recheck for purchases when resuming from the
 background. To accomplish this, you can use the ``billing_resume`` signal.

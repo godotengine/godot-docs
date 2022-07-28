@@ -60,8 +60,8 @@ the following to list them:
     private Resource Resource;
 
 ..
-	Commenting out enum examples becuase I have been told they
-	require extra steps to actually work properly. The examples bellow
+	Commenting out enum examples because I have been told they
+	require extra steps to actually work properly. The examples below
 	will show up in the inspector but apparently do not function properly
 ..
 	Integers and strings hint enumerated values.

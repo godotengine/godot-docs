@@ -20,7 +20,7 @@ Then, open the Godot root directory with CLion. CLion will import the compilatio
 Compiling and debugging the project
 -----------------------------------
 
-CLion does not support compiling and debugging Godot via SCons out of the box. This can be achived by creating a custom build target and run configuration in CLion. Before creating a custom build target, you must :ref:`compile Godot <toc-devel-compiling>` once on the command line, to generate the Godot executable. Open the terminal, change into the Godot root directory, and execute:
+CLion does not support compiling and debugging Godot via SCons out of the box. This can be achieved by creating a custom build target and run configuration in CLion. Before creating a custom build target, you must :ref:`compile Godot <toc-devel-compiling>` once on the command line, to generate the Godot executable. Open the terminal, change into the Godot root directory, and execute:
 
 ::
 
