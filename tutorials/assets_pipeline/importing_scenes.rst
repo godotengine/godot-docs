@@ -42,6 +42,14 @@ text based format and the binary data in a separate binary file. This can be use
 changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
 either of those glTF binary files are fine.
 
+.. warning::
+
+    If your model contains blend shapes (aka "shape keys" and "morph targets"),
+    your glTF export setting ``Export Deformation Bones Only`` needs to be configured to **Enabled**
+    under the Animation export configurations.
+
+    Exporting non-deforming bones anyway will lead to incorrect shading in GLES3.
+
 .. note::
 
     Blender versions older than 3.2 do not export emissive textures with the
