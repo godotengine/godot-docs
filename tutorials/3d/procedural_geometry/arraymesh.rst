@@ -3,53 +3,84 @@
 Using the ArrayMesh
 ===================
 
-This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`
+This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`.
 
 To do so, we will use the function :ref:`add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`,
 which takes up to four parameters. The first two are required, while the second two are optional.
 
-The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
-how to arrange the primitive based on the vertices given whether it is triangles,
-lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>`
-class reference page.
+The first parameter is the ``PrimitiveType``, an OpenGL concept that instructs the GPU
+how to arrange the primitive based on the vertices given, i.e. whether they represent triangles,
+lines, points, etc. See :ref:`Mesh.PrimitiveType <enum_Mesh_PrimitiveType>` for the options available.
 
-The second is the actual Array that stores the mesh information. The array is a normal Godot array that
-is constructed with empty brackets ``[]``. It stores a ``Pool**Array`` (e.g. PoolVector3Array,
-PoolIntArray, etc.) for each type of information.
+The second parameter, ``arrays``, is the actual Array that stores the mesh information. The array is a
+normal Godot array that is constructed with empty brackets ``[]``. It stores a ``Pool**Array``
+(e.g. PoolVector3Array, PoolIntArray, etc.) for each type of information that will be used to build the surface.
 
-- ``ARRAY_VERTEX`` = 0 | PoolVector3Array or PoolVector2Array
-- ``ARRAY_NORMAL`` = 1 | PoolVector3Array
-- ``ARRAY_TANGENT`` = 2 | PoolRealArray of groups of 4 floats. First 3 floats determine the tangent, and
-  the last the binormal direction as -1 or 1.
-- ``ARRAY_COLOR`` = 3 | PoolColorArray
-- ``ARRAY_TEX_UV`` = 4 | PoolVector2Array or PoolVector3Array
-- ``ARRAY_TEX_UV2`` = 5 | PoolVector2Array or PoolVector3Array
-- ``ARRAY_BONES`` = 6 | PoolRealArray of groups of 4 floats or PoolIntArray of groups of 4 ints. Each group lists indexes of 4 bones that affects a given vertex.
-- ``ARRAY_WEIGHTS`` = 7 | PoolRealArray of groups of 4 floats. Each float lists the amount of weight an determined bone on ``ARRAY_BONES`` has on a given vertex.
-- ``ARRAY_INDEX`` = 8 | PoolIntArray
+The possible elements of ``arrays`` are listed below, together with the position they must have within ``arrays``.
+See also :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>`.
 
-The Array of vertices is always required. All the others are optional and will only be used if included.
 
-Each array needs to have the same number of elements as the vertex array except for the index array.
-For arrays like tangents, an element is a group of 4 floats. So the array size will be four times
-the size of the vertex array size, but they will have the same number of elements
+.. list-table::
+    :class: wrap-normal
+    :width: 100%
+    :widths: auto
+    :header-rows: 1
 
-The index array is unique.
+    * - Index
+      - Mesh.ArrayType Enum
+      - Array type
 
-The third parameter is an array of blendshapes for the Mesh to use. While this tutorial does not cover
-using blendshapes, it is possible to specify them when creating a surface from arrays.
+    * - 0
+      - ``ARRAY_VERTEX``
+      - :ref:`PoolVector3Array <class_PoolVector3Array>` or :ref:`PoolVector2Array <class_PoolVector2Array>`
 
-The last parameter is the compress flags which specifies which arrays to store with half as many bits. The
-values can be found in the classref for :ref:`VisualServer <class_visualserver>` under :ref:`ArrayFormat <enum_visualserver_arrayformat>`.
+    * - 1
+      - ``ARRAY_NORMAL``
+      - :ref:`PoolVector3Array <class_PoolVector3Array>`
 
-For normal usage you will find it is best to leave the last two parameters empty.
+    * - 2
+      - ``ARRAY_TANGENT``
+      - :ref:`PoolRealArray <class_PoolRealArray>` of groups of 4 floats. First 3 floats determine the tangent, and
+        the last the binormal direction as -1 or 1.
+
+    * - 3
+      - ``ARRAY_COLOR``
+      - :ref:`PoolColorArray <class_PoolColorArray>`
+
+    * - 4
+      - ``ARRAY_TEX_UV``
+      - :ref:`PoolVector2Array <class_PoolVector2Array>` or :ref:`PoolVector3Array <class_PoolVector3Array>`
+
+    * - 5
+      - ``ARRAY_TEX_UV2``
+      - :ref:`PoolVector2Array <class_PoolVector2Array>` or :ref:`PoolVector3Array <class_PoolVector3Array>`
+
+    * - 6
+      - ``ARRAY_BONES``
+      - :ref:`PoolRealArray <class_PoolRealArray>` of groups of 4 floats or :ref:`PoolIntArray <class_PoolIntArray>` of groups of 4 ints. Each group lists indexes of 4 bones that affects a given vertex.
+
+    * - 7
+      - ``ARRAY_WEIGHTS``
+      - :ref:`PoolRealArray <class_PoolRealArray>` of groups of 4 floats. Each float lists the amount of weight an determined bone on ``ARRAY_BONES`` has on a given vertex.
+
+    * - 8
+      - ``ARRAY_INDEX``
+      - :ref:`PoolIntArray <class_PoolIntArray>`
+
+The array of vertices (at index 0) is always required. The index array is optional and will only be used if included. We won't use it in this tutorial.
+
+All the other arrays carry information about the vertices. They are also optional and will only be used if included. Some of these arrays (e.g. ``ARRAY_COLOR``)
+use one entry per vertex to provide extra information about vertices. They must have the same size as the vertex array. Other arrays (e.g. ``ARRAY_TANGENT``) use
+four entries to describe a single vertex. These must be exactly four times larger than the vertex array.
+
+For normal usage, the last two parameters in :ref:`add_surface_from_arrays() <class_arraymesh_method_add_surface_from_arrays>` are typically left empty.
 
 ArrayMesh
 ---------
 
-Add an :ref:`ArrayMesh <class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
-the editor is not useful, but in this case it allows as to access the ArrayMesh from code
-without creating one.
+In the editor, create a :ref:`MeshInstance <class_meshinstance>` and add an :ref:`ArrayMesh <class_arraymesh>` to it in the Inspector.
+Normally, adding an ArrayMesh in the editor is not useful, but in this case it allows us to access the ArrayMesh
+from code without creating one.
 
 Next, add a script to the MeshInstance.
 
@@ -58,17 +89,17 @@ Under ``_ready()``, create a new Array.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    var arr = []
+    var surface_array = []
 
-This will be the array that we keep our surface information in, it will hold
+This will be the array that we keep our surface information in - it will hold
 all the arrays of data that the surface needs. Godot will expect it to be of
 size ``Mesh.ARRAY_MAX``, so resize it accordingly.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var arr = []
-    arr.resize(Mesh.ARRAY_MAX)
+    var surface_array = []
+    surface_array.resize(Mesh.ARRAY_MAX)
 
 Next create the arrays for each data type you will use.
 
@@ -86,17 +117,17 @@ by adding each array to ``surface_array`` and then committing to the mesh.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    arr[Mesh.ARRAY_VERTEX] = verts
-    arr[Mesh.ARRAY_TEX_UV] = uvs
-    arr[Mesh.ARRAY_NORMAL] = normals
-    arr[Mesh.ARRAY_INDEX] = indices
+    surface_array[Mesh.ARRAY_VERTEX] = verts
+    surface_array[Mesh.ARRAY_TEX_UV] = uvs
+    surface_array[Mesh.ARRAY_NORMAL] = normals
+    surface_array[Mesh.ARRAY_INDEX] = indices
 
-    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
+    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes or compression used.
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
           available from mesh.
 
-Put together the full code looks like:
+Put together, the full code looks like:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -104,10 +135,10 @@ Put together the full code looks like:
     extends MeshInstance
 
     func _ready():
-        var arr = []
-        arr.resize(Mesh.ARRAY_MAX)
+        var surface_array= []
+        surface_array.resize(Mesh.ARRAY_MAX)
 
-        # PoolVectorXXArrays for mesh construction.
+        # PoolVector**Arrays for mesh construction.
         var verts = PoolVector3Array()
         var uvs = PoolVector2Array()
         var normals = PoolVector3Array()
@@ -118,17 +149,17 @@ Put together the full code looks like:
         #######################################
 
         # Assign arrays to mesh array.
-        arr[Mesh.ARRAY_VERTEX] = verts
-        arr[Mesh.ARRAY_TEX_UV] = uvs
-        arr[Mesh.ARRAY_NORMAL] = normals
-        arr[Mesh.ARRAY_INDEX] = indices
+        surface_array[Mesh.ARRAY_VERTEX] = verts
+        surface_array[Mesh.ARRAY_TEX_UV] = uvs
+        surface_array[Mesh.ARRAY_NORMAL] = normals
+        surface_array[Mesh.ARRAY_INDEX] = indices
 
         # Create mesh surface from mesh array.
-        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
+        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes or compression used.
 
 
-The code that goes in the middle can be whatever you want. Below we will present some example code that
-could go in the middle.
+The code that goes in the middle can be whatever you want. Below we will present some example code
+for generating a sphere.
 
 Generating geometry
 -------------------
@@ -152,7 +183,7 @@ that you find online.
 
     func _ready():
 
-        # Set up the PoolVectorXArrays.
+        # Insert setting up the PoolVector**Arrays here.
 
         # Vertex indices.
         var thisrow = 0
@@ -198,21 +229,16 @@ that you find online.
             prevrow = thisrow
             thisrow = point
 
-      # Commit to the ArrayMesh.
-
-Combined with the code above, this code will generate a sphere.
-
-When it comes to generating geometry with the ArrayMesh you need to understand what goes
-in each array and then you can follow tutorials for any language/engine and convert it into Godot.
+      # Insert committing to the ArrayMesh here.
 
 Saving
 ------
 
-Finally, Godot provides a single method to save ArrayMeshes using the :ref:`ResourceSaver <class_resourcesaver>`
-class. This is useful when you want to generate a mesh and then use it later without having to re-generate.
+Finally, we can use the :ref:`ResourceSaver <class_resourcesaver>` class to save the ArrayMesh.
+This is useful when you want to generate a mesh and then use it later without having to re-generate it.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Saves mesh to a .tres file with compression enabled.
-    ResourceSaver.save("res://sphere.tres", mesh, 32)
+    ResourceSaver.save("res://sphere.tres", mesh, ResourceSaver.FLAG_COMPRESS)
