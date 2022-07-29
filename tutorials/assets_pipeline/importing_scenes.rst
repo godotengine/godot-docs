@@ -44,8 +44,8 @@ either of those glTF binary files are fine.
 
 .. warning::
 
-    If your model contains blend shapes (aka "shape keys" and "morph targets"),
-    your glTF export setting ``Export Deformation Bones Only`` needs to be configured to **Enabled**
+    If your model contains blend shapes (also known as "shape keys" and "morph targets"),
+    your glTF export setting **Export Deformation Bones Only** needs to be configured to **Enabled**
     under the Animation export configurations.
 
     Exporting non-deforming bones anyway will lead to incorrect shading in GLES3.
