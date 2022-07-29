@@ -17,7 +17,7 @@ is constructed with empty brackets ``[]``. It stores a ``Packed**Array`` (e.g. P
 PackedInt32Array, etc.) for each type of information that will be used to build the surface.
 
 Common elements of ``arrays`` are listed below, together with the position they must have within ``arrays``.
-See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.`
+See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
 
 
 .. list-table::
