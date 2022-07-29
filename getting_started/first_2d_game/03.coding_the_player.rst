@@ -219,16 +219,16 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
             velocity.y -= 1;
         }
 
-        var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (velocity.Length() > 0)
         {
             velocity = velocity.Normalized() * Speed;
-            animatedSprite.Play();
+            animatedSprite2D.Play();
         }
         else
         {
-            animatedSprite.Stop();
+            animatedSprite2D.Stop();
         }
     }
 
@@ -270,7 +270,7 @@ We also check whether the player is moving so we can call ``play()`` or
 .. tip:: ``$`` is shorthand for ``get_node()``. So in the code above,
          ``$AnimatedSprite2D.play()`` is the same as
          ``get_node("AnimatedSprite2D").play()``.
-         
+
          In GDScript, ``$`` returns the node at the relative path from the
          current node, or returns ``null`` if the node is not found. Since
          AnimatedSprite2D is a child of the current node, we can use
