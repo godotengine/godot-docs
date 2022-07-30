@@ -197,8 +197,8 @@ under "Script Variables".
 
 You can assign this property's value in two ways:
 
-- Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the ``Mob``
-  property .
+- Drag ``Mob.tscn`` from the "FileSystem" dock and drop it in the **Mob Scene**
+  property.
 - Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
 
 Next, select the ``Player`` node in the Scene dock, and access the Node dock on
