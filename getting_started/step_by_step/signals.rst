@@ -157,7 +157,7 @@ the ``not`` keyword to invert the value.
 
     public void OnButtonPressed()
     {
-        SetProcess(!IsProcessing()); // "!" - means not.
+        SetProcess(!IsProcessing());
     }
 
 This function will toggle processing and, in turn, the icon's motion on and off
@@ -208,7 +208,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite
+    public class Sprite : Godot.Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -222,7 +222,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
         public void OnButtonPressed()
         {
-            SetProcess(!IsProcessing()); // "!" - means not.
+            SetProcess(!IsProcessing());
         }
     }
 
@@ -305,7 +305,7 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
     public override void _Ready()
     {
         var timer = GetNode<Timer>("Timer");
-        timer.Connect("timeout", this, "OnTimerTimeout");
+        timer.Connect("timeout", this, nameof(OnTimerTimeout));
     }
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
@@ -370,7 +370,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite
+    public class Sprite : Godot.Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -378,7 +378,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         public override void _Ready()
         {
             var timer = GetNode<Timer>("Timer");
-            timer.Connect("timeout", this, "OnTimerTimeout");
+            timer.Connect("timeout", this, nameof(OnTimerTimeout));
         }
 
         public override void _Process(float delta)
@@ -390,7 +390,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
         public void OnButtonPressed()
         {
-            SetProcess(!IsProcessing()); // "!" - means not.
+            SetProcess(!IsProcessing());
         }
 
         public void OnTimerTimeout()
@@ -457,7 +457,7 @@ To emit a signal in your scripts, call ``emit_signal()``.
 
         if (Health < 0)
         {
-            EmitSignal("HealthDepleted");
+            EmitSignal(nameof(HealthDepleted));
         }
     }
 
@@ -507,9 +507,9 @@ To emit values along with the signal, add them as extra arguments to the
 
     public void TakeDamage(int amount)
     {
-        var oldHealth = health;
+        var oldHealth = Health;
         Health -= amount;
-        EmitSignal("HealthChanged", oldHealth, Health);
+        EmitSignal(nameof(HealthChanged), oldHealth, Health);
     }
 
 Summary
