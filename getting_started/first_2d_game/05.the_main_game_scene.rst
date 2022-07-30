@@ -432,13 +432,32 @@ call to ``_ready()``:
 
     public override void _Ready()
     {
+        GD.Randomize();
         NewGame();
     }
 
  .. code-tab:: cpp
 
     // This code goes in `main.cpp`.
+    #include "main.hpp"
+
+    #include <SceneTree.hpp>
+
+    #include "mob.hpp"
+
     void Main::_ready() {
+        _hud = get_node<HUD>("HUD");
+        _player = get_node<Player>("Player");
+        _start_position = get_node<godot::Node2D>("StartPosition");
+        _mob_spawn_location = get_node<godot::PathFollow2D>("MobPath/MobSpawnLocation");
+        _mob_timer = get_node<godot::Timer>("MobTimer");
+        _score_timer = get_node<godot::Timer>("ScoreTimer");
+        _start_timer = get_node<godot::Timer>("StartTimer");
+        // Uncomment these after adding the nodes in the "Sound effects" section of "Finishing up".
+        //_music = get_node<godot::AudioStreamPlayer>("Music");
+        //_death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
+        _random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
+        _random->randomize();
         new_game();
     }
 
