@@ -198,7 +198,7 @@ under "Script Variables".
 
 You can assign this property's value in two ways:
 
-- Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the ``Mob``
+- Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the ``Mob Scene``
   property .
 - Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
 
