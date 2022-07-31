@@ -11,9 +11,7 @@ Importing the project
 
 - Make sure the C/C++ extension is installed. You can find instructions in
   the `official documentation <https://code.visualstudio.com/docs/languages/cpp>`_. Alternatively, `clangd <https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd>`_ can be used instead.
-- When using the clangd extension, run:
-::
-  `scons compiledb=True`
+- When using the clangd extension, run ``scons compiledb=True``.
 - From the Visual Studio Code's main screen open the Godot root folder with
   **File > Open Folder...**.
 - Press :kbd:`Ctrl + Shift + P` to open the command prompt window and enter *Configure Task*.
