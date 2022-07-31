@@ -41,7 +41,7 @@ Add these two and it's possible to guess almost exactly when sound or music will
     var time_delay
 
 
-    func _ready()
+    func _ready():
         time_begin = OS.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
@@ -119,7 +119,7 @@ Here is the same code as before using this approach:
  .. code-tab:: gdscript GDScript
 
 
-    func _ready()
+    func _ready():
         $Player.play()
 
 
