@@ -165,7 +165,7 @@ means that the last child of root is always the loaded scene.
 
         public override void _Ready()
         {
-            Viewport root = GetTree().GetRoot();
+            Viewport root = GetTree().Root;
             CurrentScene = root.GetChild(root.GetChildCount() - 1);
         }
     }
@@ -233,10 +233,10 @@ current scene and replace it with the requested one.
         CurrentScene = nextScene.Instance();
 
         // Add it to the active scene, as child of root.
-        GetTree().GetRoot().AddChild(CurrentScene);
+        GetTree().Root.AddChild(CurrentScene);
 
         // Optionally, to make it compatible with the SceneTree.change_scene() API.
-        GetTree().SetCurrentScene(CurrentScene);
+        GetTree().CurrentScene = CurrentScene;
     }
 
 Using :ref:`Object.call_deferred() <class_Object_method_call_deferred>`,
