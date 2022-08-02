@@ -36,11 +36,11 @@ to draw it in different parts of your scene with different materials or transfor
 rotation, position etc.).
 
 If you are going to draw the same object many times, it can be helpful to use a MultiMesh with
-a MultiMeshInstance. The MultiMeshInstance draws meshes thousands of times very
-cheaply. It takes advantage of hardware instancing in order to do so. The drawback with
-using a MultiMeshInstance is that you are limited to one material for all instances. It uses an
-instance array to store different colors and transformations for each instance, but all the
-instances use the same material.
+a MultiMeshInstance. MultiMeshInstances draw meshes thousands of times very
+cheaply by taking advantage of hardware instancing. The drawback with
+using a MultiMeshInstance is that each of your mesh's surfaces are limited to one material for
+all instances. It uses an instance array to store different colors and transformations for each
+instance, but all the instances of each surface use the same material.
 
 What a Mesh is
 --------------
@@ -54,7 +54,7 @@ Surfaces
 ^^^^^^^^
 
 Each surface has its own material. Alternatively, you can override the material for all surfaces
-in the Mesh when you use a MeshInstance using ``MeshInstance.override_material``.
+in the Mesh when you use a MeshInstance using the :ref:`material_override <class_GeometryInstance_property_material_override>` property.
 
 Surface array
 ^^^^^^^^^^^^^
@@ -62,6 +62,7 @@ Surface array
 The surface array is an array of length ``ArrayMesh.ARRAY_MAX``. Each position in the array is
 filled with a sub-array containing per-vertex information. For example, the array located at
 ``ArrayMesh.ARRAY_NORMAL`` is a :ref:`PoolVector3Array <class_PoolVector3Array>` of vertex normals.
+See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for more information.
 
 The surface array can be indexed or non-indexed. Creating a non-indexed array is as easy as not assigning
 an array at the index ``ArrayMesh.ARRAY_INDEX``. A non-indexed array stores unique vertex information for
@@ -80,7 +81,7 @@ be provided in the following tutorials.
 ArrayMesh
 ^^^^^^^^^
 
-The ArrayMesh resource extends Mesh to add a few different quality of life functions, and most
+The ArrayMesh resource extends Mesh to add a few different quality of life functions and, most
 importantly, the ability to construct a Mesh surface through scripting.
 
 For more information about the ArrayMesh, please see the :ref:`ArrayMesh tutorial <doc_arraymesh>`.
@@ -105,11 +106,11 @@ ImmediateGeometry
 
 ImmediateGeometry is a node that uses an immediate mode style interface (like SurfaceTool) to draw objects. The
 difference between ImmediateGeometry and the SurfaceTool is that ImmediateGeometry is a node itself that can be
-added to the scene tree and is drawn directly from the code. The SurfaceTool generates a Mesh that needs to be added
-a MeshInstance to be seen.
+added to the scene tree and is drawn directly from the code, while the SurfaceTool generates a Mesh that needs to be added
+to a MeshInstance to be seen.
 
-ImmediateGeometry is useful for prototyping because of the straightforward API, but it is slow because the geometry
-is rebuilt every frame. It is most useful for quickly adding simple geometry to debug visually (e.g. by drawing lines to
+ImmediateGeometry is useful for prototyping because of its straightforward API, but it is slow because the geometry
+is rebuilt every frame. It is most useful for adding simple geometry for visual debugging (e.g. by drawing lines to
 visualize physics raycasts etc.).
 
 For more information about ImmediateGeometry, please see the :ref:`ImmediateGeometry tutorial <doc_immediategeometry>`.
@@ -117,7 +118,7 @@ For more information about ImmediateGeometry, please see the :ref:`ImmediateGeom
 Which one should I use?
 -----------------------
 
-Which method you use depends on what you are trying to do and what kind of procedure you are comfortable with.
+Which approach you use depends on what you are trying to do and what kind of procedure you are comfortable with.
 
 Both SurfaceTool and ArrayMesh are excellent for generating static geometry (meshes) that don't change over time.
 
@@ -130,5 +131,5 @@ an ArrayMesh every frame.
 
 The MeshDataTool is not fast, but it gives you access to all kinds of properties of the mesh that you don't get with the others
 (edges, faces, etc.). It is incredibly useful when you need that sort of data to transform the mesh, but it is not a good idea
-to use it if that information is not needed. The MeshDataTool is best used if you are going to be using an algorithm that requires
+to use it if that extra information is not needed. The MeshDataTool is best used if you are going to be using an algorithm that requires
 access to the face or edge array.
