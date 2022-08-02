@@ -76,11 +76,11 @@ its name, parent and (most of the time) a type. For example
 
 Other valid keywords include:
 
-- ``instance``
-- ``instance_placeholder``
-- ``owner``
-- ``index`` (to set the order of appearance in the tree, if absent, inherited nodes will take precedence over plain ones)
-- ``groups``
+ - ``instance``
+ - ``instance_placeholder``
+ - ``owner``
+ - ``index`` (to set the order of appearance in the tree, if absent, inherited nodes will take precedence over plain ones)
+ - ``groups``
 
 The first node in the file, which is also the scene root, must not have a
 ``parent=Path/To/Node`` entry in its heading. All scene files should have
