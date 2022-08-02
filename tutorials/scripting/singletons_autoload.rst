@@ -151,7 +151,7 @@ means that the last child of root is always the loaded scene.
     var current_scene = null
 
     func _ready():
-        var root = get_tree().get_root()
+        var root = get_tree().root
         current_scene = root.get_child(root.get_child_count() - 1)
 
  .. code-tab:: csharp
@@ -200,10 +200,10 @@ current scene and replace it with the requested one.
         current_scene = s.instance()
 
         # Add it to the active scene, as child of root.
-        get_tree().get_root().add_child(current_scene)
+        get_tree().root.add_child(current_scene)
 
         # Optionally, to make it compatible with the SceneTree.change_scene() API.
-        get_tree().set_current_scene(current_scene)
+        get_tree().current_scene = current_scene
 
  .. code-tab:: csharp
 
