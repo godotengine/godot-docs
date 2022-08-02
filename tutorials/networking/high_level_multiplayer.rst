@@ -200,8 +200,8 @@ Synchronizing member variables is also possible:
 
 Functions can be called in two fashions:
 
-- Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
-- Unreliable: if the function call does not arrive, it will not be re-transmitted; but if it arrives, it will do it quickly.
+- Reliable: when the function call arrives, an acknowledgement will be sent back; if the acknowledgement isn't received after a certain amount of time, the function call will be re-transmitted.
+- Unreliable: the function call is sent only once, without checking to see if it arrived or not, but also without any extra overhead.
 
 In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
