@@ -79,7 +79,7 @@ Other valid keywords include:
  - ``instance``
  - ``instance_placeholder``
  - ``owner``
- - ``index`` (if two nodes have the same name)
+ - ``index`` (sets the order of appearance in the tree. If absent, inherited nodes will take precedence over plain ones)
  - ``groups``
 
 The first node in the file, which is also the scene root, must not have a
