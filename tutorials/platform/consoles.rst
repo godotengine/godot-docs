@@ -67,6 +67,12 @@ Following is the list of providers:
   Switch and PS4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
   Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
+- `Flynn's Arcade <https://www.flynnsarcades.com/>`_ offers
+  Switch porting and publishing of Godot games.
+- `RAWRLAB games <https://www.rawrlab.com/>`_ offers
+  Switch porting of Godot games.
+- `mazette! games <https://mazette.games/>`_ offers
+  Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
 
 If your company offers porting and/or publishing services for Godot games,
 feel free to
