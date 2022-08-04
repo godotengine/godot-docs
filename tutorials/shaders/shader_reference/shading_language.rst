@@ -550,8 +550,9 @@ You can set uniforms in the editor in the material. Or you can set them through 
 .. note:: The first argument to ``set_shader_param`` is the name of the uniform in the shader. It
           must match *exactly* to the name of the uniform in the shader or else it will not be recognized.
 
-Any GLSL type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
-to make the compiler understand for what the uniform is used.
+Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
+optional shader hints to make the compiler understand for what the uniform is
+used, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
@@ -565,25 +566,25 @@ It's important to understand that textures that are supplied as color require hi
 
 Full list of hints below:
 
-+----------------+------------------------------+-------------------------------------+
-| Type           | Hint                         | Description                         |
-+================+==============================+=====================================+
-| **vec4**       | hint_color                   | Used as color                       |
-+----------------+------------------------------+-------------------------------------+
-| **int, float** | hint_range(min, max[, step]) | Used as range (with min/max/step)   |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_albedo                  | Used as albedo color, default white |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_black_albedo            | Used as albedo color, default black |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_normal                  | Used as normalmap                   |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_white                   | As value, default to white.         |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_black                   | As value, default to black          |
-+----------------+------------------------------+-------------------------------------+
-| **sampler2D**  | hint_aniso                   | As flowmap, default to right.       |
-+----------------+------------------------------+-------------------------------------+
++----------------+------------------------------+------------------------------------------------------+
+| Type           | Hint                         | Description                                          |
++================+==============================+======================================================+
+| **vec4**       | hint_color                   | Used as color.                                       |
++----------------+------------------------------+------------------------------------------------------+
+| **int, float** | hint_range(min, max[, step]) | Restricted to values in a range (with min/max/step). |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_albedo                  | Used as albedo color, default white.                 |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_black_albedo            | Used as albedo color, default black.                 |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_normal                  | Used as normalmap.                                   |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_white                   | As value, default to white.                          |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_black                   | As value, default to black                           |
++----------------+------------------------------+------------------------------------------------------+
+| **sampler2D**  | hint_aniso                   | As flowmap, default to right.                        |
++----------------+------------------------------+------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables from GDScript
 to shaders, Godot converts the type automatically. Below is a table of the corresponding types:
