@@ -736,7 +736,7 @@ GDScript:
 
 Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
 optional shader hints to make the compiler understand for what the uniform is
-used.
+used, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
@@ -757,7 +757,7 @@ Full list of hints below:
 +======================+================================================+======================================================+
 | **vec3, vec4**       | source_color                                   | Used as color.                                       |
 +----------------------+------------------------------------------------+------------------------------------------------------+
-| **int, float**       | hint_range(min, max[, step])                   | Used as range (with min/max/step).                   |
+| **int, float**       | hint_range(min, max[, step])                   | Restricted to values in a range (with min/max/step). |
 +----------------------+------------------------------------------------+------------------------------------------------------+
 | **sampler2D**        | source_color                                   | Used as albedo color.                                |
 +----------------------+------------------------------------------------+------------------------------------------------------+
