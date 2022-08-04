@@ -124,7 +124,7 @@ and open a script, and change it to this:
     extends Sprite2D
 
     func _process(delta):
-        rotation_degrees += 180 * delta
+        rotation += PI * delta
 
  .. code-tab:: csharp
 
@@ -136,7 +136,7 @@ and open a script, and change it to this:
     {
         public override void _Process(float delta)
         {
-            RotationDegrees += 180 * delta;
+            Rotation += Mathf.Pi * delta;
         }
     }
 
@@ -157,9 +157,9 @@ look like this:
 
     func _process(delta):
         if Engine.is_editor_hint():
-            rotation_degrees += 180 * delta
+            rotation += PI * delta
         else:
-            rotation_degrees -= 180 * delta
+            rotation -= PI * delta
 
  .. code-tab:: csharp
 
@@ -167,11 +167,11 @@ look like this:
     {
         if (Engine.IsEditorHint())
         {
-            RotationDegrees += 180 * delta;
+            Rotation += Mathf.Pi * delta;
         }
         else
         {
-            RotationDegrees -= 180 * delta;
+            Rotation -= Mathf.Pi * delta;
         }
     }
 
@@ -196,11 +196,11 @@ Add and export a variable speed to the script. The function set_speed after
         # Update speed and reset the rotation.
         set(new_speed):
             speed = new_speed
-            rotation_degrees = 0
+            rotation = 0
 
 
     func _process(delta):
-    	rotation_degrees += 180 * delta * speed
+    	rotation += PI * delta * speed
 
  .. code-tab:: csharp
 
@@ -222,12 +222,12 @@ Add and export a variable speed to the script. The function set_speed after
         private void SetSpeed(float newSpeed)
         {
             speed = newSpeed;
-            RotationDegrees = 0;
+            Rotation = 0;
         }
 
         public override void _Process(float delta)
         {
-            RotationDegrees += 180 * delta * speed;
+            Rotation += Mathf.Pi * delta * speed;
         }
     }
 
