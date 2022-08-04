@@ -168,8 +168,9 @@ this function.
           it or don't indent a line correctly, the editor will highlight it in
           red and display the following error message: "Indented block expected".
 
-Save the scene if you haven't already, then press :kbd:`F6` to run it. Look at
-the Output bottom panel that expands. It should display "Hello, world!"
+Save the scene if you haven't already, then press :kbd:`F6` (:kbd:`Cmd + R` on macOS)
+to run it. Look at the **Output** bottom panel that expands.
+It should display "Hello, world!".
 
 .. image:: img/scripting_first_script_print_hello_world.png
 
