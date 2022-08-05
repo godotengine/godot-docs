@@ -47,10 +47,7 @@ Which platforms are supported by Godot?
 * Linux, \*BSD
 * Android
 * iOS
-
-.. note:: Godot 4.0 does not support Web exporting (HTML5) yet.
-          A previous version, e.g. Godot 3.X, can be used instead to
-          export to web.
+* Web
 
 Both 32- and 64-bit binaries are supported where it makes sense, with 64
 being the default.
