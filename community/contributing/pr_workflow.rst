@@ -400,7 +400,7 @@ codebase from one functional state to another functional state, without having
 intermediate commits fixing up bugs in your own code or style issues. Most of
 the time, we will prefer a single commit in a given PR (unless there's a good
 reason to keep the changes separate), so instead of authoring a new commit,
-considering using ``git commit --amend`` to amend the previous commit with your
+consider using ``git commit --amend`` to amend the previous commit with your
 fixes. The above example would then become:
 
 ::
