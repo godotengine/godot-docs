@@ -86,9 +86,10 @@ editor binary built with ``target=release_debug``::
 .. note::
 
     If you are building the ``master`` branch, you also need to include support
-    for the MoltenVK Vulkan portability library. You can do so either by
-    building it statically with ``use_static_mvk=yes``, or by including the
-    dynamic library in your ``.app`` bundle::
+    for the MoltenVK Vulkan portability library. By default, it will be linked
+    statically from your installation of the Vulkan SDK for macOS.
+    You can also choose to link it dynamically by passing ``use_volk=yes`` and
+    including the dynamic library in your ``.app`` bundle::
 
         mkdir -p Godot.app/Contents/Frameworks
         cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
@@ -154,9 +155,10 @@ with the following commands (assuming a universal build, otherwise replace the
 .. note::
 
     If you are building the ``master`` branch, you also need to include support
-    for the MoltenVK Vulkan portability library. You can do so either by
-    building it statically with ``use_static_mvk=yes``, or by including the
-    dynamic library in your ``.app`` bundle::
+    for the MoltenVK Vulkan portability library. By default, it will be linked
+    statically from your installation of the Vulkan SDK for macOS.
+    You can also choose to link it dynamically by passing ``use_volk=yes`` and
+    including the dynamic library in your ``.app`` bundle::
 
         mkdir -p macos_template.app/Contents/Frameworks
         cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib macos_template.app/Contents/Frameworks/libMoltenVK.dylib
