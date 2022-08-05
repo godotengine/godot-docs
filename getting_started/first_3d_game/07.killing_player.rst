@@ -41,7 +41,7 @@ The wider the cylinder, the more easily the player will get killed.
 Next, select the *MobDetector* node again, and in the *Inspector*, turn
 off its *Monitorable* property. This makes it so other physics nodes
 cannot detect the area. The complementary *Monitoring* property allows
-it to detect collisions. Then, remove the *Collision -> Layer* and sets
+it to detect collisions. Then, remove the *Collision -> Layer* and set
 the mask to the "enemies" layer.
 
 |image3|
