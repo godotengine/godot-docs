@@ -1356,7 +1356,7 @@ the ``is`` keyword can be used::
         entity.apply_damage()
 
 To call a function in a *super class* (i.e. one ``extend``-ed in your current
-class), user the ``super`` keyword::
+class), use the ``super`` keyword::
 
     super(args)
 
