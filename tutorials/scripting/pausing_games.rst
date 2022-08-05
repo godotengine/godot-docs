@@ -57,7 +57,7 @@ You can also alter the property with code:
         PauseMode = Node.PauseModeEnum.Process;
     }
 
-This is what each mode tells a node to do:
+This is what each mode tells a node to do:  
 
 -  **Inherit**: Process depending on the state of the parent,
    grandparent, etc. The first parent that has a non-Inherit state.
@@ -72,12 +72,12 @@ on. If a state can't be found in any of the grandparents, the pause state
 in SceneTree is used. This means that, by default, when the game is paused
 every node will be paused. Several things happen when a node stops processing.
 
-``_process``, ``_physics_process``, ``_input``, and ``_input_event`` functions
-will not be called". However signals still work and cause their connected function to
+The ``_process``, ``_physics_process``, ``_input``, and ``_input_event`` functions
+will not be called. However signals still work and cause their connected function to
 run, even if that function's script is attached to a node that has its pause
 mode set to "Stop".
 
-animation nodes will pause their current animation, audio nodes
+Animation nodes will pause their current animation, audio nodes
 will pause their current audio stream, and particles will pause. These resume
 automatically when the game is no longer paused.
 
@@ -89,7 +89,7 @@ active while the game is paused by using their ``set_active`` methods.
 Pause Menu Example
 ------------------
 
-Here is an example of a pause menu. create a popup or panel with controls
+Here is an example of a pause menu. Create a popup or panel with controls
 inside, and set its pause mode to "Process" then hide it. By setting the
 root of the pause popup to "Process", all children and grandchildren will
 inherit that state. This way, this branch of the scene tree will continue
@@ -113,7 +113,7 @@ enable the pause and show the pause screen.
         GetNode<Control>("pause_popup").Show();
     }
 
-To remove the pause, do the opposite when the pause screen is
+To unpause, do the opposite when the pause screen is
 closed:
 
 .. tabs::
