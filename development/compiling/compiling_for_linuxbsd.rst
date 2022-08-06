@@ -42,7 +42,7 @@ Distro-specific one-liners
 | **Alpine Linux** | ::                                                                                                        |
 |                  |                                                                                                           |
 |                  |     apk add scons pkgconf gcc g++ libx11-dev libxcursor-dev libxinerama-dev libxi-dev libxrandr-dev \     |
-|                  |         libexecinfo-dev                                                                                   |
+|                  |         mesa-dev libexecinfo-dev                                                                          |
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Arch Linux**   | ::                                                                                                        |
 |                  |                                                                                                           |
