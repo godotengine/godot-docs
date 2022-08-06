@@ -39,7 +39,7 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`get_animation_speed<class_SpriteFrames_method_get_animation_speed>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                    |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>`                 | :ref:`get_frame<class_SpriteFrames_method_get_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|                                             |
+| :ref:`AtlasTexture<class_Texture2D>`                 | :ref:`get_frame<class_SpriteFrames_method_get_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|                                             |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_frame_count<class_SpriteFrames_method_get_frame_count>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                            |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -119,9 +119,9 @@ The animation's speed in frames per second.
 
 .. _class_SpriteFrames_method_get_frame:
 
-- :ref:`Texture2D<class_Texture2D>` **get_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|
+- :ref:`AtlasTexture<class_AtlasTexture>` **get_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|
 
-Returns the animation's selected frame.
+Returns the ``AtlasTexture`` for the animation's selected frame.
 
 ----
 
