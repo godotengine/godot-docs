@@ -52,6 +52,10 @@ text based format and the binary data in a separate binary file. This can be use
 changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
 either of those glTF binary files are fine.
 
+.. warning::
+
+    Blend shape animations cannot be imported - they require manual animation within Godot.
+
 .. note::
 
     Blender does not export emissive textures with the glTF file. If your model
