@@ -10,3 +10,4 @@ Navigation
    navigation_using_navigationmaps
    navigation_different_actor_types
    navigation_different_actor_locomotion
+   navigation_using_navigationobstacles
