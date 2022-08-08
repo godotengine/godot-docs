@@ -288,6 +288,34 @@ a variable to to a property also gives you the ability to give it a default stat
         })
         return properties
 
+Adding default values for properties
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To define default values for advanced exports, you need to override the ``property_can_revert()`` and ``property_get_revert()`` methods.
+
+* The ``property_can_revert()`` method takes the name of a property and must return ``true`` if the property can be reverted. This will enable the Revert button next to the property in the inspector.
+
+* The ``property_get_revert()`` method takes the name of a property and must return the default value for that property.
+
+::
+
+    func _get_property_list():
+        var properties = []
+        properties.append({
+            name = "my_property",
+            type = TYPE_INT
+        })
+        return properties
+
+    func property_can_revert(property):
+        if property == "my_property":
+            return true
+        return false
+
+    func property_get_revert(property):
+        if property == "my_property":
+            return 5
+
 Adding script categories
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
