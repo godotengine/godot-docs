@@ -17,3 +17,5 @@ Navigation
    navigation_using_agent_avoidance
    navigation_debug_tools
    navigation_connecting_navmesh
+   navigation_using_navigationlayers
+   navigation_different_actor_area_access
