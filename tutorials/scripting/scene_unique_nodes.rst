@@ -33,4 +33,5 @@ name in the path for ``get_node()``. For example:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     get_node("%RedButton").text = "Hello"
