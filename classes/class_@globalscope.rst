@@ -3311,7 +3311,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
 ::
 
     - Lower than -1.0 (exclusive): Ease in-out
-    - 1.0: Linear
+    - -1.0: Linear
     - Between -1.0 and 0.0 (exclusive): Ease out-in
     - 0.0: Constant
     - Between 0.0 to 1.0 (exclusive): Ease out
