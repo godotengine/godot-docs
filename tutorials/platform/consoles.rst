@@ -66,7 +66,7 @@ Following is the list of providers:
 - `Lone Wolf Technology <http://www.lonewolftechnology.com/>`_ offers
   Switch and PS4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
-  Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
+  Switch, Xbox One & Xbox Series X/S (GDK) porting and publishing of Godot games (GDScript/C#).
 - `Flynn's Arcade <https://www.flynnsarcades.com/>`_ offers
   Switch porting and publishing of Godot games.
 - `RAWRLAB games <https://www.rawrlab.com/>`_ offers
