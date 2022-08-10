@@ -6,7 +6,7 @@ Your first 3D shader
 You have decided to start writing your own custom Spatial shader. Maybe you saw
 a cool trick online that was done with shaders, or you have found that the
 :ref:`SpatialMaterial <class_SpatialMaterial>` isn't quite meeting your
-needs. Either way, you have decided to write your own and now you need figure
+needs. Either way, you have decided to write your own and now you need to figure
 out where to start.
 
 This tutorial will explain how to write a Spatial shader and will cover more
