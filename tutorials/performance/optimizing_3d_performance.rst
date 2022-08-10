@@ -159,3 +159,15 @@ There may also be rendering and physics glitches due to floating point error in
 large worlds. You may be able to use techniques such as orienting the world
 around the player (rather than the other way around), or shifting the origin
 periodically to keep things centred around ``Vector3(0, 0, 0)``.
+
+Environment File
+================
+
+The background and ambient light are configured in the Environment resource file.
+The settings inside this file can create more draws than necessary.
+The default environment file created when you start a new 3D project create a huge
+sky texture of 1024 x 512 pixels inside the RAM. If you don't need a sky texture, or
+want a custom sky texture with small size, delete the "default_env.tres" in your res:// directory
+and create a new WorldEnvironment node so you can create a new environment inside the Inspector panel.
+
+This will delete the default large Sky texture and save 1.5MB of RAM if you not add any other sky texture.
