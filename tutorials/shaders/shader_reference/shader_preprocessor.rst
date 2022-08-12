@@ -95,8 +95,6 @@ Used as terminator for the `#if`, `#ifdef`, `#ifndef` or subsequent `#else` dire
 ^^^^^^
 \ **Syntax:** `#undef identifier`.
 
-`#undef directive_name`
-
 The `#undef` directive may be used to cancel the previously defined `#define` directive: 
 
 .. code-block:: glsl
