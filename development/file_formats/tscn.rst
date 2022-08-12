@@ -343,13 +343,14 @@ TSCN files support two surface formats:
     ii. ``arrays`` is a two-dimensional array, it contains:
 
         1. Vertex positions array
-        2. Tangents array
-        3. Vertex colors array
-        4. UV array 1
-        5. UV array 2
-        6. Bone indexes array
-        7. Bone weights array
-        8. Vertex indexes array
+        2. Normals array
+        3. Tangents array
+        4. Vertex colors array
+        5. UV array 1
+        6. UV array 2
+        7. Bone indexes array
+        8. Bone weights array
+        9. Vertex indexes array
 
     iii. ``morph_arrays`` is an array of morphs. Each morph is exactly an
          ``arrays`` without the vertex indexes array.
