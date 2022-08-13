@@ -596,7 +596,7 @@ Example below:
     }
 
 Varyings
-~~~~~~~~
+--------
 
 To send data from the vertex to the fragment (or light) processor function, *varyings* are
 used. They are set for every primitive vertex in the *vertex processor*, and the
@@ -676,7 +676,7 @@ Note that varying may not be assigned in custom functions or a *light processor*
 This limitation was introduced to prevent incorrect usage before initialization.
 
 Interpolation qualifiers
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Certain values are interpolated during the shading pipeline. You can modify how
 these interpolations are done by using *interpolation qualifiers*.
@@ -707,7 +707,7 @@ There are two possible interpolation qualifiers:
 
 
 Uniforms
-~~~~~~~~
+--------
 
 Passing values to shaders is possible. These are global to the whole shader and
 are called *uniforms*. When a shader is later assigned to a material, the
@@ -731,7 +731,7 @@ GDScript:
 
   material.set_shader_uniform("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
 
-.. note:: The first argument to ``set_shader_param`` is the name of the uniform
+.. note:: The first argument to ``set_shader_uniform`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
