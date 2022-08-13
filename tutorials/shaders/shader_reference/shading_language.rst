@@ -714,14 +714,13 @@ are called *uniforms*. When a shader is later assigned to a material, the
 uniforms will appear as editable parameters in it. Uniforms can't be written
 from within the shader.
 
-.. note::
-    Uniform arrays are not implemented yet.
-
 .. code-block:: glsl
 
     shader_type spatial;
 
     uniform float some_value;
+
+    uniform vec3 colors[3];
 
 You can set uniforms in the editor in the material. Or you can set them through
 GDScript:
@@ -816,6 +815,25 @@ Uniforms can also be assigned default values:
 
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : source_color = vec4(1.0);
+
+If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
+
+::
+
+    group_uniforms MyGroup;
+    uniform sampler2D test;
+
+You can close the group by using:
+
+::
+
+    group_uniforms;
+
+The syntax also supports subgroups (it's not mandatory to declare the base group before this):
+
+::
+
+    group_uniforms MyGroup.MySubgroup;
 
 Built-in variables
 ------------------
