@@ -225,22 +225,11 @@ video editors may not be able to open the file.
 can help in those cases.
 
 If you're using an AnimationPlayer to control a "main action" in the scene (such
-as camera movement), you can attach a script to that AnimationPlayer node to
-quit the project when the animation is finished:
-
-::
-
-    extends AnimationPlayer
-
-    func _ready():
-        # Make sure the animation is *not* set to loop, or this signal
-        # will not be emitted when the animation finishes playing.
-        animation_finished.connect(_on_animation_player_animation_finished)
-
-    func _on_animation_player_animation_finished(_anim_name):
-        if OS.has_feature("movie"):
-            print("Done recording movie.")
-            get_tree().quit()
+as camera movement), you can enable the **Movie Quit On Finish** property on the
+AnimationPlayer node in question. When enabled, this property will make Godot
+quit on its own when an animation is done playing *and* the engine is running in
+Movie Maker mode. Note that *this property has no effect on looping animations*.
+Therefore, you need to make sure that the animation is set as non-looping.
 
 Using high-quality graphics settings
 ------------------------------------
