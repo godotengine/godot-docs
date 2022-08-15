@@ -223,6 +223,12 @@ within the editor itself. The RichTextLabel does not need to have a script attac
 nor does it need to be running in ``tool`` mode. The new effect will be activable in
 the Inspector through the **Custom Effects** property.
 
+.. warning::
+
+    If the custom effect is not registered within the RichTextLabel's
+    **Custom Effects** property, no effect will be visible and the original
+    tag will be left as-is.
+
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member
 name ``bbcode``. The code will check the ``bbcode`` property automatically or will
