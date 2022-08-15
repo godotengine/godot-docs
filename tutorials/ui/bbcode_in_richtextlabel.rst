@@ -565,6 +565,12 @@ nor does it need to be running in ``tool`` mode. The new effect can be registere
 the Inspector by adding it to the **Custom Effects** array, or in code with the
 :ref:`install_effect() <class_RichTextLabel_method_install_effect>` method.
 
+.. warning::
+
+    If the custom effect is not registered within the RichTextLabel's
+    **Custom Effects** property, no effect will be visible and the original
+    tag will be left as-is.
+
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
 Optionally, you can also provide a custom BBCode identifier simply by adding a member
 name ``bbcode``. The code will check the ``bbcode`` property automatically or will
