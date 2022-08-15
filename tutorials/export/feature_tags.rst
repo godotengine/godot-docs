@@ -131,6 +131,13 @@ field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.png
 
+.. note::
+
+    Custom feature tags are only used when running the exported project
+    (including with :ref:`doc_one-click_deploy`). They are **not used** when
+    running the project from the editor, even if the export preset marked as
+    **Runnable** for your current platform has custom feature tags defined.
+
 Overriding project settings
 ---------------------------
 
