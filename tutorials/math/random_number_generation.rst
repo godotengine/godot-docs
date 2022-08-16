@@ -442,21 +442,20 @@ time, or anything else.
 
 To achieve this, you can use random *noise* functions. Noise functions are
 especially popular in procedural generation to generate realistic-looking
-terrain. Godot provides :ref:`class_opensimplexnoise` for this, which supports
+terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
 1D, 2D, 3D, and 4D noise. Here's an example with 1D noise:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var _noise = OpenSimplexNoise.new()
+    var _noise = FastNoiseLite.new()
 
     func _ready():
         randomize()
-        # Configure the OpenSimplexNoise instance.
+        # Configure the FastNoiseLite instance.
         _noise.seed = randi()
-        _noise.octaves = 4
-        _noise.period = 20.0
-        _noise.persistence = 0.8
+        _noise.fractal_octaves = 4
+        _noise.frequency = 1.0 / 20.0
 
         for i in 100:
             # Prints a slowly-changing series of floating-point numbers
@@ -465,16 +464,15 @@ terrain. Godot provides :ref:`class_opensimplexnoise` for this, which supports
 
  .. code-tab:: csharp
 
-    private OpenSimplexNoise _noise = new OpenSimplexNoise();
+    private FastNoiseLite _noise = new FastNoiseLite();
 
     public override void _Ready()
     {
         GD.Randomize();
-        // Configure the OpenSimplexNoise instance.
+        // Configure the FastNoiseLite instance.
         _noise.Seed = (int)GD.Randi();
-        _noise.Octaves = 4;
-        _noise.Period = 20.0f;
-        _noise.Persistence = 0.8f;
+        _noise.FractalOctaves = 4;
+        _noise.Frequency = 1.0f / 20.0f;
 
         for (int i = 0; i < 100; i++)
         {

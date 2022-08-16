@@ -179,9 +179,9 @@ If you open it up, you'll see a section called "noise".
 
 Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
 your NoiseTexture click beside where it says "Noise" and select "New
-OpenSimplexNoise".
+NoiseTexture".
 
-.. note:: :ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to
+.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture to
           generate a heightmap.
 
 Once you set it up and should look like this.
@@ -305,7 +305,7 @@ do that by passing in a second noise texture.
   uniform sampler2D normalmap;
 
 Set this second uniform texture to another NoiseTexture with another
-OpenSimplexNoise. But this time, check **As Normalmap**.
+FastNoiseLite. But this time, check **As Normalmap**.
 
 .. image:: img/normal-set.png
 
