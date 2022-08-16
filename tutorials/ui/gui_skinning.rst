@@ -127,6 +127,24 @@ is applied to them. Those methods accept the theme type as one of the arguments.
    Color accentColor = GetColor("accent_color", "MyType");
    label.AddColorOverride("font_color", accentColor);
 
+To give more customization opportunities types can also be linked together as
+type variations. This is another use-case for custom theme types. For example,
+a theme can contain a type ``Header`` which can be marked as a variation of
+the base ``Label`` type. An individual ``Label`` control can then be set to
+use the ``Header`` variation for its type, and every time a theme item is
+requested from a theme this variation will be used before any other type. This
+allows to store various presets of theme items for the same class of the
+control node in the single ``Theme`` resource.
+
+.. warning::
+   Only variations available from the default theme or defined in the custom
+   project theme are shown in the Inspector dock as options. You can still
+   input manually the name of a variation that is defined outside of those
+   two places, but it is recommended to keep all variations to the project theme.
+
+You can learn more about creating and using theme type variations in a
+:ref:`dedicated article <doc_gui_theme_type_variations>`.
+
 Customizing a control
 ---------------------
 
