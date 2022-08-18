@@ -400,7 +400,7 @@ This method runs faster than :ref:`distance_to<class_Vector2_method_distance_to>
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
 
-Returns the distance between this vector and ``to``.
+Returns the number of pixels between this vector and ``to`` halved.
 
 ----
 
