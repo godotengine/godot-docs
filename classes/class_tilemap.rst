@@ -500,7 +500,7 @@ Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coor
 
 - void **set_cells_terrain_connect** **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` cells, :ref:`int<class_int>` terrain_set, :ref:`int<class_int>` terrain, :ref:`bool<class_bool>` ignore_empty_terrains=true **)**
 
-Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.				If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.
 
 If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
