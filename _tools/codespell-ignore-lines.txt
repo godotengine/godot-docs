@@ -2,8 +2,10 @@
 | dum           | Middle Dutch                  |
 | fo            | Faroese                       |
 | fro           | Old French                    |
+| inh           | Ingush                        |
 | mye           | Myene                         |
 | nd            | North Ndebele                 |
+| ro            | Romanian                      |
 | seh           | Sena                          |
 | te            | Telugu                        |
 | tem           | Timne                         |
@@ -11,3 +13,6 @@
 | Maka        | Makasar                     |
 | BA           | Bosnia and Herzegovina                     |
 | FO           | Faroe Islands                              |
+| MM, BU       | Myanmar                                    |
+| RO           | Romania                                    |
+| VN           | Viet Nam                                   |
