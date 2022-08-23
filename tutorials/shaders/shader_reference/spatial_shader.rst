@@ -326,7 +326,7 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 
 .. warning::
 
-    In GLES2, lights will always be added together even if you override ``DIFFUSE_LIGHT``. This is due to lighting being computed in multiple passes (one for each light), unlike GLES3.
+    In GLES2, lights will always be added together even if you override ``DIFFUSE_LIGHT`` using ``=``. This is due to lighting being computed in multiple passes (one for each light), unlike GLES3.
 
 .. warning::
 
