@@ -74,7 +74,7 @@ Holes
 
 Real world game levels don't always have large continuous areas that should be occluded. Often walls will have a door or windows, caves will have an entrance, etc. In some cases we have to make do by placing several OccluderShapePolygons around such an opening, but Occluder polygons have one more trick up their sleeve - they can have "holes".
 
-In the inspector you will notice that as well as a set of points for the polygon, the polgon has a set of points for a single "hole". If you add 3 or 4 to your polygon, you will see they appear in the editor as smaller handles. You can drag these around just like the polygon handles, to form a convex hole.
+In the inspector you will notice that as well as a set of points for the polygon, the polygon has a set of points for a single "hole". If you add 3 or 4 to your polygon, you will see they appear in the editor as smaller handles. You can drag these around just like the polygon handles, to form a convex hole.
 
 .. image:: img/occluder_shape_polygon_hole.png
 
