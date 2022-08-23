@@ -325,7 +325,8 @@ Below is an example of a custom light function using a Lambertian lighting model
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
 
 .. warning::
-    In GLES2 the lights will always add together even if you override DIFFUSE_LIGHT due to how lighting is calculated.
+
+    In GLES2, lights will always be added together even if you override ``DIFFUSE_LIGHT``. This is due to lighting being computed in multiple passes (one for each light), unlike GLES3.
 
 .. warning::
 
