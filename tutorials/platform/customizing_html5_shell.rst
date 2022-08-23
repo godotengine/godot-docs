@@ -57,7 +57,7 @@ The only required placeholders are:
   A JavaScript object, containing the export options and can be later overridden.
   See :js:attr:`EngineConfig` for the full list of overrides.
 
-The following optional placeholders will enable some extra features in your cusstom HTML template.
+The following optional placeholders will enable some extra features in your custom HTML template.
 
 - ``$GODOT_PROJECT_NAME``:
   The project name as defined in the Project Settings. It is a good idea to use it as a ``<title>``
