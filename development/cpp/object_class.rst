@@ -219,7 +219,7 @@ Signals
 -------
 
 Objects can have a set of signals defined (similar to Delegates in other
-languages). Connecting to them is rather easy:
+languages). This example shows how to connect to them:
 
 .. code-block:: cpp
 
