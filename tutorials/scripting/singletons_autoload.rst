@@ -40,6 +40,12 @@ Autoloading nodes and scripts can give us these characteristics.
     Godot won't make an AutoLoad a "true" singleton as per the singleton design
     pattern. It may still be instanced more than once by the user if desired.
 
+.. tip::
+
+    If you're creating an autoload as part of an editor plugin, consider
+    :ref:`registering it automatically in the Project Settings <doc_making_plugins_autoload>`
+    when the plugin is enabled.
+
 AutoLoad
 --------
 
