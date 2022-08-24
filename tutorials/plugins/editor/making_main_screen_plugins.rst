@@ -6,8 +6,7 @@ Making main screen plugins
 What this tutorial covers
 -------------------------
 
-As seen in the :ref:`doc_making_plugins` page, making a basic plugin that
-extends the editor is fairly easy. Main screen plugins allow you to create
+Main screen plugins allow you to create
 new UIs in the central part of the editor, which appear next to the
 "2D", "3D", "Script", and "AssetLib" buttons. Such editor plugins are
 referred as "Main screen plugins".
