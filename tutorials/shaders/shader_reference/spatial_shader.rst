@@ -326,6 +326,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 
 .. warning::
 
+    In GLES2, lights will always be added together even if you override ``DIFFUSE_LIGHT`` using ``=``. This is due to lighting being computed in multiple passes (one for each light), unlike GLES3.
+
+.. warning::
+
     The ``light()`` function won't be run if the ``vertex_lighting`` render mode
     is enabled, or if
     **Rendering > Quality > Shading > Force Vertex Shading** is enabled in the
