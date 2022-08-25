@@ -107,3 +107,21 @@ zip content to your web server and visit it with your browser to use the editor.
 
 Refer to the :ref:`export page <doc_javascript_export_options>` for the web
 server requirements.
+
+.. tip::
+
+    The Godot repository includes a script to host a local web server for the
+    purposes of testing the web editor.
+
+    After compiling the editor, extract the ZIP archive that was created in the
+    ``bin/`` folder, then run the following command in the Godot repository
+    root:
+
+    ::
+
+        # You may need to replace `python` with `python3` on some platforms.
+        python platform/javascript/serve.py
+
+    This will serve the contents of the ``bin/`` folder and open the default web
+    browser automatically. In the page that opens, access ``godot.tools.html``
+    and you should be able to test the web editor this way.
