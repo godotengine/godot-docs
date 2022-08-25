@@ -265,6 +265,32 @@ of its original size with gzip compression.
 **Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
 (`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__)
 
+.. tip::
+
+    The Godot repository includes a
+    `Python script to host a local web server <https://raw.githubusercontent.com/godotengine/godot/master/platform/web/serve.py>`__.
+    This script is intended for testing the web editor, but it can also be used to test exported projects.
+
+    Save the linked script to a file called ``serve.py``, move this file to the
+    folder containing the exported project's ``index.html``, then run the
+    following command in a command prompt within the same folder:
+
+    ::
+
+        # You may need to replace `python` with `python3` on some platforms.
+        python serve.py --root .
+
+    On Windows, you can open a command prompt in the current folder by holding
+    :kbd:`Shift` and right-clicking on empty space in Windows Explorer, then
+    choosing **Open PowerShell window here**.
+
+    This will serve the contents of the current folder and open the default web
+    browser automatically.
+
+    Note that for production use cases, this Python-based web server should not
+    be used. Instead, you should use an established web server such as Apache or
+    nginx.
+
 .. _doc_javascript_eval:
 
 Calling JavaScript from script
@@ -283,7 +309,7 @@ languages integrated into Godot.
         JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")
 
  .. code-tab:: csharp
-     
+
     private void MyFunc()
     {
         JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
@@ -332,7 +358,7 @@ platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
             print("The JavaScriptBridge singleton is NOT available")
 
  .. code-tab:: csharp
-    
+
     private void MyFunc3()
     {
         if (OS.HasFeature("web"))
@@ -368,4 +394,3 @@ defaulting to ``false`` to prevent polluting the global namespace:
         // thus adding a new JavaScript global variable `SomeGlobal`
         JavaScriptBridge.Eval("var SomeGlobal = {};", true);
     }
-
