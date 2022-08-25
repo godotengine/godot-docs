@@ -99,7 +99,7 @@ To run this app, you should remove the quarantine extended file attribute manual
 
 * Run the command ``xattr -dr com.apple.quarantine "Unsigned Game.app"`` (including quotation marks and ``.app`` extension).
 
-Neither app not executable is signed (relevant for Apple Silicon macs only)
+Neither app nor executable is signed (relevant for Apple Silicon macs only)
 ---------------------------------------------------------------------------
 
 .. note::
