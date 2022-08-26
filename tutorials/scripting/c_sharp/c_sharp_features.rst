@@ -83,17 +83,17 @@ For more advanced type checking, you can look into `Pattern Matching <https://do
 C# signals
 ----------
 
-For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
+For a complete C# example, see the :ref:`doc_signals` section in the step by step tutorial.
 
 Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
 
 .. code-block:: csharp
 
     [Signal]
-    delegate void MySignal();
+    delegate void MySignalEventHandler();
 
     [Signal]
-    delegate void MySignalWithArguments(string foo, int bar);
+    delegate void MySignalWithArgumentsEventHandler(string foo, int bar);
 
 These signals can then be connected either in the editor or from code with ``Connect``.
 If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the "Build" button at the top right corner of the editor window.
@@ -112,8 +112,8 @@ If you want to connect a signal in the editor, you need to (re)build the project
 
     public void SomeFunction()
     {
-        instance.Connect("MySignal", this, "MyCallback");
-        instance.Connect(nameof(MySignalWithArguments), this, "MyCallbackWithArguments");
+        instance.MySignal += MyCallback;
+        instance.MySignalWithArguments += MyCallbackWithArguments;
     }
 
 Emitting signals is done with the ``EmitSignal`` method.
@@ -123,7 +123,7 @@ Emitting signals is done with the ``EmitSignal`` method.
     public void SomeFunction()
     {
         EmitSignal(nameof(MySignal));
-        EmitSignal("MySignalWithArguments", "hello there", 28);
+        EmitSignal(nameof(MySignalWithArguments), "hello there", 28);
     }
 
 Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
@@ -144,8 +144,8 @@ It is possible to bind values when establishing a connection by passing a Godot 
         var plusButton = (Button)GetNode("PlusButton");
         var minusButton = (Button)GetNode("MinusButton");
 
-        plusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { 1 });
-        minusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { -1 });
+        plusButton.Pressed += () => ModifyValue(1);
+        minusButton.Pressed += () => ModifyValue(-1);
     }
 
 Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.

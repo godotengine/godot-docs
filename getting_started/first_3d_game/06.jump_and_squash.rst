@@ -325,7 +325,7 @@ destroy the mob.
 
     // Emitted when the played jumped on the mob.
     [Signal]
-    public delegate void Squashed();
+    public delegate void SquashedEventHandler();
 
     // ...
 

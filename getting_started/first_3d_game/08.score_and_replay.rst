@@ -136,7 +136,7 @@ line.
     {
         // ...
         // We connect the mob to the score label to update the score upon squashing one.
-        mob.Connect(nameof(Mob.Squashed), GetNode<ScoreLabel>("UserInterface/ScoreLabel"), nameof(ScoreLabel.OnMobSquashed));
+        mob.Squashed += GetNode<ScoreLabel>("UserInterface/ScoreLabel").OnMobSquashed;
     }
 
 This line means that when the mob emits the ``squashed`` signal, the
@@ -438,7 +438,7 @@ Here is the complete ``Main.gd`` script for reference.
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
 
             AddChild(mob);
-            mob.Connect(nameof(Mob.Squashed), GetNode<ScoreLabel>("UserInterface/ScoreLabel"), nameof(ScoreLabel.OnMobSquashed));
+            mob.Squashed += GetNode<ScoreLabel>("UserInterface/ScoreLabel").OnMobSquashed;
         }
 
         public void OnPlayerHit()

@@ -177,7 +177,7 @@ clicked. For that, we'll need a script that extends from
     {
         public override void _EnterTree()
         {
-            Connect("pressed", Clicked);
+            Pressed += Clicked;
         }
 
         public void Clicked()

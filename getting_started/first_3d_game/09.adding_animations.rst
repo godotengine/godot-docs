@@ -353,7 +353,7 @@ Here's the *Player* script.
     {
         // Emitted when the player was hit by a mob.
         [Signal]
-        public delegate void Hit();
+        public delegate void HitEventHandler();
 
         // How fast the player moves in meters per second.
         [Export]
@@ -491,7 +491,7 @@ And the *Mob*'s script.
     {
         // Emitted when the played jumped on the mob.
         [Signal]
-        public delegate void Squashed();
+        public delegate void SquashedEventHandler();
 
         // Minimum speed of the mob in meters per second
         [Export]

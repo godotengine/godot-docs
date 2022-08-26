@@ -438,7 +438,7 @@ Add the following at the top of the script. If you're using GDScript, add it aft
     // Don't forget to rebuild the project so the editor knows about the new signal.
 
     [Signal]
-    public delegate void Hit();
+    public delegate void HitEventHandler();
 
  .. code-tab:: cpp
 

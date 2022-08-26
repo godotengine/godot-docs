@@ -111,7 +111,7 @@ Now add this script to ``HUD``:
         // Don't forget to rebuild the project so the editor knows about the new signal.
 
         [Signal]
-        public delegate void StartGame();
+        public delegate void StartGameEventHandler();
     }
 
  .. code-tab:: cpp
@@ -302,7 +302,7 @@ signal of ``StartButton`` and add the following code to the new functions:
     public void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
-        EmitSignal("StartGame");
+        EmitSignal(nameof(StartGame));
     }
 
     public void OnMessageTimerTimeout()
