@@ -7,7 +7,7 @@ Godot Docs – *3.5* branch
             Expand the "Read the Docs" panel at the bottom of the sidebar to see
             the list.
 
-  .. tip:: This is the documentation for the beta 3.5 branch.
+  .. tip:: This is the documentation for the 3.5 branch.
            Looking for the documentation of the current **development** branch?
            `Have a look here <https://docs.godotengine.org/en/latest>`_.
            You can also browse the documentation for the current stable
