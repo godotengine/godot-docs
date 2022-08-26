@@ -76,9 +76,6 @@ Godot-specific and tightly integrated language with a lightweight syntax, or
 :ref:`C# <toc-learn-scripting-C#>`, which is popular in the games industry.
 These are the two main scripting languages we support.
 
-Godot also supports a node-based visual programming language named
-:ref:`VisualScript <toc-learn-scripting-visual_script>`.
-
 With the :ref:`GDNative <toc-tutorials-gdnative>` technology, you can also write
 gameplay or high-performance algorithms in C or C++ without recompiling the
 engine. You can use this technology to integrate third-party libraries and other

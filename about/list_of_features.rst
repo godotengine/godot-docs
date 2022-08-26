@@ -413,12 +413,6 @@ Scripting
 - Supports all platforms.
 - Using an external editor is recommended to benefit from IDE functionality.
 
-:ref:`VisualScript: <toc-learn-scripting-visual_script>`
-
-- :ref:`Graph-based visual scripting language <doc_what_is_visual_script>`.
-- Works best when used for specific purposes (such as level-specific logic)
-  rather than as a language to create entire projects.
-
 **GDNative (C, C++, Rust, D, ...):**
 
 - When you need it, link to native libraries for higher performance and third-party integrations.

@@ -129,7 +129,6 @@ feature request, or one that is not precise enough to be worked on.
 -  *Shaders*: relates to the Godot shader language or visual shaders.
 -  *Tests*: relates to unit tests.
 -  *Thirdparty*: relates to third-party libraries used in Godot.
--  *VisualScript*: relates to issues with the visual scripting language (*not* visual shaders).
 -  *XR*: relates to Augmented Reality or Virtual Reality.
 
 Issues would typically correspond to only one topic, though it's not

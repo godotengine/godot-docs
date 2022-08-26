@@ -80,7 +80,7 @@ there is an import plugin for it. Or you can create one, like the `Tiled
 Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
 That is also partly why Godot offers its own programming languages
-GDScript and VisualScript, along with C#. They're designed for the needs
+GDScript and, along with C#. They're designed for the needs
 of game developers and game designers, and they're tightly integrated in
 the engine and the editor.
 
@@ -91,12 +91,6 @@ It is also optimized for gameplay code with built-in types like Vectors and Colo
 Note that with GDNative, you can write high-performance code using compiled
 languages like C, C++, Rust, or Python (using the Cython compiler)
 without recompiling the engine.
-
-|image3|
-
-*VisualScript is a node-based programming language that integrates well
-in the editor. You can drag and drop nodes or resources into the graph
-to create new code blocks.*
 
 Note that the 3D workspace doesn't feature as many tools as the 2D workspace.
 You'll need external programs or add-ons to edit terrains, animate complex characters, and so on.
@@ -183,6 +177,5 @@ interfaces over your 3D world.
 .. |image0| image:: img/engine_design_01.png
 .. |image1| image:: img/engine_design_02.png
 .. |image2| image:: img/engine_design_03.png
-.. |image3| image:: img/engine_design_visual_script.png
 .. |image4| image:: img/engine_design_fsm_plugin.png
 .. |image5| image:: img/engine_design_rpg_in_a_box.png
