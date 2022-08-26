@@ -19,7 +19,6 @@ case, an interface that works with multiple languages.
    :name: toc-learn-scripting
 
    gdscript/index
-   visual_script/index
    c_sharp/index
    gdnative/index
 

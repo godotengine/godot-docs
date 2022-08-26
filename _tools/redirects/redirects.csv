@@ -33,11 +33,6 @@ source,destination
 /getting_started/scripting/gdscript/index.html,/tutorials/scripting/gdscript/index.html
 /getting_started/scripting/gdscript/static_typing.html,/tutorials/scripting/gdscript/static_typing.html
 /getting_started/scripting/gdscript/warning_system.html,/tutorials/scripting/gdscript/warning_system.html
-/getting_started/scripting/visual_script/custom_visualscript_nodes.html,/tutorials/scripting/visual_script/custom_visualscript_nodes.html
-/getting_started/scripting/visual_script/getting_started.html,/tutorials/scripting/visual_script/getting_started.html
-/getting_started/scripting/visual_script/index.html,/tutorials/scripting/visual_script/index.html
-/getting_started/scripting/visual_script/nodes_purposes.html,/tutorials/scripting/visual_script/nodes_purposes.html
-/getting_started/scripting/visual_script/what_is_visual_scripting.html,/tutorials/scripting/visual_script/what_is_visual_scripting.html
 /getting_started/step_by_step/exporting.html,/tutorials/export/exporting_basics.html
 /getting_started/step_by_step/filesystem.html,/tutorials/scripting/filesystem.html
 /getting_started/step_by_step/godot_design_philosophy.html,/getting_started/introduction/godot_design_philosophy.html

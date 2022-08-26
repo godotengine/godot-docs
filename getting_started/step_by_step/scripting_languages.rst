@@ -23,14 +23,13 @@ to the Camera2D node and code the shake.
 Available scripting languages
 -----------------------------
 
-Godot offers **five gameplay programming languages**: GDScript, C#,
-VisualScript, and, via its GDNative technology, C and C++. There are more
+Godot offers **four gameplay programming languages**: GDScript, C#,
+and, via its GDNative technology, C and C++. There are more
 :ref:`community-supported languages <doc_what_is_gdnative_third_party_bindings>`,
 but these are the official ones.
 
 You can use multiple languages in a single project. For instance, in a team, you
-could code gameplay logic in GDScript as it's fast to write, let level designers
-script quests in the graphical language VisualScript, and use C# or C++ to
+could code gameplay logic in GDScript as it's fast to write, and use C# or C++ to
 implement complex algorithms and maximize their performance. Or you can write
 everything in GDScript or C#. It's your call.
 
@@ -126,28 +125,6 @@ or ClojureCLR. However, C# is the only officially supported .NET option.
           in GDScript, C#, or C++ won't have a significant impact on
           performance.
 
-VisualScript
-~~~~~~~~~~~~
-
-:ref:`Visual Scripting<doc_what_is_visual_script>` is a graph-based visual
-programming language where you connect blocks. It can be a great tool for
-non-programmers like game designers and artists.
-
-.. image:: img/scripting_visualscript.png
-
-You can use other languages to create custom blocks that are specific to your
-game, for example, to script AIs, quests, or dialogues. That's where the
-strength of VisualScript lies.
-
-While it provides all the basic building blocks you need to code complete games,
-we do not recommend to use VisualScript this way. Programming everything with it
-is slow compared to using other programming languages.
-
-.. seealso::
-
-    For more information, see
-    :ref:`Getting started with VisualScript <doc_getting_started_visual_script>`.
-
 C and C++ via GDNative
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -160,8 +137,7 @@ You can use any version of the language or mix compiler brands and versions for
 the generated shared libraries, thanks to our use of an internal C API Bridge.
 
 GDNative is the best choice for performance. You don't need to use it
-throughout an entire game, as you can write other parts in GDScript, C#, or
-VisualScript.
+throughout an entire game, as you can write other parts in GDScript or C#.
 
 When working with GDNative, the available types, functions, and properties
 closely resemble Godot's actual C++ API.
