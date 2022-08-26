@@ -52,8 +52,8 @@ Below is all the code we need to make it work. The URL points to an online API m
         {
             public override void _Ready()
             {
-                GetNode("HTTPRequest").Connect("request_completed", this, "OnRequestCompleted");
-                GetNode("Button").Connect("pressed", this, "OnButtonPressed");
+                GetNode("HTTPRequest").RequestCompleted += OnRequestCompleted;
+                GetNode("Button").Pressed += OnButtonPressed;
             }
 
             public void OnButtonPressed()

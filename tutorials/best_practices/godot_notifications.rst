@@ -280,11 +280,15 @@ nodes that one might create at runtime.
                 case NOTIFICATION_PARENTED:
                     ParentCache = GetParent();
                     if (ConnectionCheck())
-                        ParentCache.Connect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        ParentCache.Connect("InteractedWith", OnParentInteractedWith);
+                    }
                     break;
                 case NOTIFICATION_UNPARENTED:
                     if (ConnectionCheck())
-                        ParentCache.Disconnect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        ParentCache.Disconnect("InteractedWith", OnParentInteractedWith);
+                    }
                     break;
             }
         }

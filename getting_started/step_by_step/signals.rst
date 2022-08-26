@@ -426,7 +426,7 @@ reaches 0.
     public class CustomSignal : Node2D
     {
         [Signal]
-        public delegate void HealthDepleted();
+        public delegate void HealthDepletedEventHandler();
 
         private int Health = 10;
     }
@@ -480,7 +480,7 @@ names between parentheses:
     public class CustomSignal : Node
     {
         [Signal]
-        public delegate void HealthChanged(int oldValue, int newValue);
+        public delegate void HealthChangedEventHandler(int oldValue, int newValue);
 
         private int Health = 10;
     }

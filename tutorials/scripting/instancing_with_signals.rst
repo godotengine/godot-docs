@@ -107,7 +107,7 @@ Here is the code for the player using signals to emit the bullet:
     public class Player : Sprite2D
     {
         [Signal]
-        delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);
+        delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
