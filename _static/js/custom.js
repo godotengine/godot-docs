@@ -198,8 +198,15 @@ const registerSidebarObserver = (function(){
   };
 })();
 
+const hideSearchHighlight = function(){
+  Documentation.hideSearchWords();
+  document.querySelector('.highlight-link').remove();
+};
+
 $(document).ready(() => {
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
+  const articleBody = document.querySelector('div[itemprop="articleBody"]');
+  const url = new URL(location.href);
 
   registerOnScrollEvent(mediaQuery);
   mediaQuery.addListener(registerOnScrollEvent);
@@ -213,7 +220,7 @@ $(document).ready(() => {
     // automatically generated `meta description` tag.
     const strippedUrl = [location.protocol, '//', location.host, location.pathname].join('');
     const updatedUrl = strippedUrl.replace('/latest/', '/stable/');
-    document.querySelector('div[itemprop="articleBody"]').insertAdjacentHTML('afterbegin', `
+    articleBody.insertAdjacentHTML('afterbegin', `
       <div class="admonition attention">
         <p class="first admonition-title">Attention</p>
         <p>
@@ -227,7 +234,13 @@ $(document).ready(() => {
         </p>
       </div>
     `);
-  }
+  };
+
+  if (url.searchParams.has('highlight')) {
+    articleBody.insertAdjacentHTML('afterbegin', `<p class="highlight-link" style="text-align:center;">
+    <a href="javascript:hideSearchHighlight()">Hide Search Matches</a>
+  </p>`);
+  };
 
   // Load instant.page to prefetch pages upon hovering. This makes navigation feel
   // snappier. The script is dynamically appended as Read the Docs doesn't have
