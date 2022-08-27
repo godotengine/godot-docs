@@ -206,7 +206,7 @@ file in the ``bin\`` directory of your Godot source folder, so that the
 next time you build you will automatically have the custom templates
 referenced.
 
-Building the Godot Editor
+Building the Godot editor
 -------------------------
 
 Compiling the editor is done by calling SCons from the Godot
@@ -229,7 +229,7 @@ root directory with the following arguments:
 
 The resulting APK will be located at ``bin/android_editor.apk``.
 
-Cleaning the Editor templates
+Removing the Editor templates
 -----------------------------
 
 You can use the following commands to remove the generated editor templates:
@@ -242,8 +242,8 @@ You can use the following commands to remove the generated editor templates:
    # On Linux and macOS
    ./gradlew cleanGodotEditor
 
-Installing the Godot Editor
--------------------------
+Installing the Godot editor
+---------------------------
 
 With an Android device with Developer Options enabled, connect the Android device to your computer via its charging cable to a USB/USB-C port.
 Open up a Terminal/Command Prompt and run the following commands from the root directory with the following arguments:
