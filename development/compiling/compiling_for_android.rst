@@ -212,8 +212,6 @@ Building the Godot editor
 Compiling the editor is done by calling SCons from the Godot
 root directory with the following arguments:
 
--  Release Debug target (the editor will **only** compile with the **release debug** target.)
-
 ::
 
    scons platform=android android_arch=armv7 production=yes tools=yes target=release_debug
@@ -251,7 +249,6 @@ Open up a Terminal/Command Prompt and run the following commands from the root d
 ::
 
    adb install ./bin/android_editor.apk
-
 
 Troubleshooting
 ---------------
