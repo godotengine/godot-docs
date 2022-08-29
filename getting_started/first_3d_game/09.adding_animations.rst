@@ -288,13 +288,13 @@ Here's the *Player* script.
    signal hit
 
    # How fast the player moves in meters per second.
-   export var speed = 14
+   @export var speed = 14
    # The downward acceleration when in the air, in meters per second per second.
-   export var fall_acceleration = 75
+   @export var fall_acceleration = 75
    # Vertical impulse applied to the character upon jumping in meters per second.
-   export var jump_impulse = 20
+   @export var jump_impulse = 20
    # Vertical impulse applied to the character upon bouncing over a mob in meters per second.
-   export var bounce_impulse = 16
+   @export var bounce_impulse = 16
 
    var velocity = Vector3.ZERO
 
@@ -455,9 +455,9 @@ And the *Mob*'s script.
    signal squashed
 
    # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
+   @export var min_speed = 10
    # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
+   @export var max_speed = 18
 
    var velocity = Vector3.ZERO
 
