@@ -163,7 +163,7 @@ always spawn following the same sequence.
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():
@@ -280,7 +280,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():

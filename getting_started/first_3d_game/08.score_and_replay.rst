@@ -374,7 +374,7 @@ Here is the complete ``Main.gd`` script for reference.
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():

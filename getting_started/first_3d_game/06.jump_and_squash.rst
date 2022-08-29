@@ -114,7 +114,7 @@ the ``jump_impulse``.
 
    #...
    # Vertical impulse applied to the character upon jumping in meters per second.
-   export var jump_impulse = 20
+   @export var jump_impulse = 20
 
  .. code-tab:: csharp
 
@@ -212,7 +212,7 @@ when jumping.
 
    # Vertical impulse applied to the character upon bouncing over a mob in
    # meters per second.
-   export var bounce_impulse = 16
+   @export var bounce_impulse = 16
 
  .. code-tab:: csharp
 
