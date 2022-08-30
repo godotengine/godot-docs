@@ -992,7 +992,7 @@ Here are some examples of expressions::
     do_something() # Function call.
     [1, 2, 3] # Array definition.
     {A = 1, B = 2} # Dictionary definition.
-    preload("res://icon.png) # Preload builtin function.
+    preload("res://icon.png") # Preload builtin function.
     self # Reference to current instance.
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
