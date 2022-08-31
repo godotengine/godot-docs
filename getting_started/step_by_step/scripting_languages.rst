@@ -37,6 +37,16 @@ everything in GDScript or C#. It's your call.
 We provide this flexibility to answer the needs of different game projects and
 developers.
 
+.. warning::
+
+    `Godot 4.0 will remove VisualScript from core entirely. <https://godotengine.org/article/godot-4-will-discontinue-visual-scripting>`__
+    As a result, creating new projects using visual scripting in Godot is not recommended.
+    Future Godot 4.x releases may have VisualScript reimplemented as an extension.
+
+    While Godot 3.x will keep VisualScript supported, we recommend
+    :ref:`trying out GDScript <toc-learn-scripting-gdscript>` instead,
+    especially if you intend to migrate your project to Godot 4.
+
 Which language should I use?
 ----------------------------
 
@@ -128,6 +138,16 @@ or ClojureCLR. However, C# is the only officially supported .NET option.
 
 VisualScript
 ~~~~~~~~~~~~
+
+.. warning::
+
+    `Godot 4.0 will remove VisualScript from core entirely. <https://godotengine.org/article/godot-4-will-discontinue-visual-scripting>`__
+    As a result, creating new projects using visual scripting in Godot is not recommended.
+    Future Godot 4.x releases may have VisualScript reimplemented as an extension.
+
+    While Godot 3.x will keep VisualScript supported, we recommend
+    :ref:`trying out GDScript <toc-learn-scripting-gdscript>` instead,
+    especially if you intend to migrate your project to Godot 4.
 
 :ref:`Visual Scripting<doc_what_is_visual_script>` is a graph-based visual
 programming language where you connect blocks. It can be a great tool for
