@@ -56,7 +56,7 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`agent_set_max_speed<class_NavigationServer3D_method_agent_set_max_speed>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` max_speed **)** |const|                                                                                                          |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`agent_set_neighbor_dist<class_NavigationServer3D_method_agent_set_neighbor_dist>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` dist **)** |const|                                                                                                       |
+| void                                                | :ref:`agent_set_neighbor_distance<class_NavigationServer3D_method_agent_set_neighbor_distance>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` distance **)** |const|                                                                                           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`agent_set_position<class_NavigationServer3D_method_agent_set_position>` **(** :ref:`RID<class_RID>` agent, :ref:`Vector3<class_Vector3>` position **)** |const|                                                                                                         |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,13 +70,13 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`free_rid<class_NavigationServer3D_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)** |const|                                                                                                                                                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`get_maps<class_NavigationServer3D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
+| :ref:`RID[]<class_RID>`                             | :ref:`get_maps<class_NavigationServer3D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                               | :ref:`map_create<class_NavigationServer3D_method_map_create>` **(** **)** |const|                                                                                                                                                                                             |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`map_force_update<class_NavigationServer3D_method_map_force_update>` **(** :ref:`RID<class_RID>` map **)**                                                                                                                                                               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`map_get_agents<class_NavigationServer3D_method_map_get_agents>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                           |
+| :ref:`RID[]<class_RID>`                             | :ref:`map_get_agents<class_NavigationServer3D_method_map_get_agents>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`map_get_cell_size<class_NavigationServer3D_method_map_get_cell_size>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                     |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -92,11 +92,11 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>` **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` origin, :ref:`Vector3<class_Vector3>` destination, :ref:`bool<class_bool>` optimize, :ref:`int<class_int>` navigation_layers=1 **)** |const| |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`map_get_regions<class_NavigationServer3D_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                         |
+| :ref:`RID[]<class_RID>`                             | :ref:`map_get_regions<class_NavigationServer3D_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                         |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                       | :ref:`map_get_up<class_NavigationServer3D_method_map_get_up>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                                   |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`map_is_active<class_NavigationServer3D_method_map_is_active>` **(** :ref:`RID<class_RID>` nap **)** |const|                                                                                                                                                             |
+| :ref:`bool<class_bool>`                             | :ref:`map_is_active<class_NavigationServer3D_method_map_is_active>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                             |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`map_set_active<class_NavigationServer3D_method_map_set_active>` **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` active **)** |const|                                                                                                                           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,6 +151,14 @@ Signals
 - **map_changed** **(** :ref:`RID<class_RID>` map **)**
 
 Emitted when a navigation map is updated, when a region moves or is modified.
+
+----
+
+.. _class_NavigationServer3D_signal_navigation_debug_changed:
+
+- **navigation_debug_changed** **(** **)**
+
+Emitted when navigation debug settings are changed. Only available in debug builds.
 
 Method Descriptions
 -------------------
@@ -213,9 +221,9 @@ Sets the maximum speed of the agent. Must be positive.
 
 ----
 
-.. _class_NavigationServer3D_method_agent_set_neighbor_dist:
+.. _class_NavigationServer3D_method_agent_set_neighbor_distance:
 
-- void **agent_set_neighbor_dist** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` dist **)** |const|
+- void **agent_set_neighbor_distance** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` distance **)** |const|
 
 Sets the maximum distance to other agents this agent takes into account in the navigation. The larger this number, the longer the running time of the simulation. If the number is too low, the simulation will not be safe.
 
@@ -271,7 +279,7 @@ Destroys the given RID.
 
 .. _class_NavigationServer3D_method_get_maps:
 
-- :ref:`Array<class_Array>` **get_maps** **(** **)** |const|
+- :ref:`RID[]<class_RID>` **get_maps** **(** **)** |const|
 
 Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationServer. This returns both 2D and 3D created navigation maps as there is technically no distinction between them.
 
@@ -301,7 +309,7 @@ Avoidance processing and dispatch of the ``safe_velocity`` signals is untouched 
 
 .. _class_NavigationServer3D_method_map_get_agents:
 
-- :ref:`Array<class_Array>` **map_get_agents** **(** :ref:`RID<class_RID>` map **)** |const|
+- :ref:`RID[]<class_RID>` **map_get_agents** **(** :ref:`RID<class_RID>` map **)** |const|
 
 Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
@@ -319,7 +327,7 @@ Returns the map cell size.
 
 - :ref:`Vector3<class_Vector3>` **map_get_closest_point** **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns the point closest to the provided ``point`` on the navigation mesh surface.
+Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
 
 ----
 
@@ -365,7 +373,7 @@ Returns the navigation path to reach the destination from the origin. ``navigati
 
 .. _class_NavigationServer3D_method_map_get_regions:
 
-- :ref:`Array<class_Array>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
+- :ref:`RID[]<class_RID>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
 
 Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
@@ -381,7 +389,7 @@ Returns the map's up direction.
 
 .. _class_NavigationServer3D_method_map_is_active:
 
-- :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` nap **)** |const|
+- :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` map **)** |const|
 
 Returns true if the map is active.
 

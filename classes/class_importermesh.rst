@@ -111,7 +111,7 @@ Creates a new surface, analogous to :ref:`ArrayMesh.add_surface_from_arrays<clas
 
 Surfaces are created to be rendered using a ``primitive``, which may be any of the types defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`. (As a note, when using indices, it is recommended to only use points, lines, or triangles.) :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>` will become the ``surf_idx`` for this new surface.
 
-The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_Mesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` if it is used.
+The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_Mesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array (or be an exact multiple of the vertex array's length, when multiple elements of a sub-array correspond to a single vertex) or be empty, except for :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` if it is used.
 
 ----
 
@@ -129,7 +129,7 @@ Removes all surfaces and blend shapes from this ``ImporterMesh``.
 
 Generates all lods for this ImporterMesh.
 
-\ ``normal_merge_angle`` and ``normal_split_angle`` are in degrees and used in the same way as the importer settings in ``lods``. As a good default, use 25 and 60 respectively.
+``normal_merge_angle`` and ``normal_split_angle`` are in degrees and used in the same way as the importer settings in ``lods``. As a good default, use 25 and 60 respectively.
 
 The number of generated lods can be accessed using :ref:`get_surface_lod_count<class_ImporterMesh_method_get_surface_lod_count>`, and each LOD is available in :ref:`get_surface_lod_size<class_ImporterMesh_method_get_surface_lod_size>` and :ref:`get_surface_lod_indices<class_ImporterMesh_method_get_surface_lod_indices>`.
 
@@ -199,7 +199,7 @@ Returns a single set of blend shape arrays for the requested blend shape index f
 
 - :ref:`int<class_int>` **get_surface_count** **(** **)** |const|
 
-Returns the amount of surfaces that the mesh holds.
+Returns the number of surfaces that the mesh holds.
 
 ----
 
@@ -215,7 +215,7 @@ Returns the format of the surface that the mesh holds.
 
 - :ref:`int<class_int>` **get_surface_lod_count** **(** :ref:`int<class_int>` surface_idx **)** |const|
 
-Returns the amount of lods that the mesh holds on a given surface.
+Returns the number of lods that the mesh holds on a given surface.
 
 ----
 

@@ -12,7 +12,16 @@ ResourceUID
 
 **Inherits:** :ref:`Object<class_Object>`
 
+Singleton for managing a cache of resource UIDs within a project.
 
+Description
+-----------
+
+Resources can not only be referenced using their resource paths ``res://``, but alternatively through a unique identifier specified via ``uid://``.
+
+Using UIDs allows for the engine to keep references between resources intact, even if the files get renamed or moved.
+
+This singleton is responsible for keeping track of all registered resource UIDs of a project, generating new UIDs and converting between the string and integer representation.
 
 Methods
 -------
@@ -40,7 +49,9 @@ Constants
 
 .. _class_ResourceUID_constant_INVALID_ID:
 
-- **INVALID_ID** = **-1**
+- **INVALID_ID** = **-1** --- The value to use for an invalid UID, for example if the resource could not be loaded.
+
+Its text representation is ``uid://<invalid>``.
 
 Method Descriptions
 -------------------
@@ -49,11 +60,19 @@ Method Descriptions
 
 - void **add_id** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` path **)**
 
+Adds a new UID value which is mapped to the given resource path.
+
+Fails with an error if the UID already exists, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`set_id<class_ResourceUID_method_set_id>` instead.
+
 ----
 
 .. _class_ResourceUID_method_create_id:
 
 - :ref:`int<class_int>` **create_id** **(** **)**
+
+Generates a random resource UID which is guaranteed to be unique within the list of currently loaded UIDs.
+
+In order for this UID to be registered, you must call :ref:`add_id<class_ResourceUID_method_add_id>` or :ref:`set_id<class_ResourceUID_method_set_id>`.
 
 ----
 
@@ -61,11 +80,17 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_id_path** **(** :ref:`int<class_int>` id **)** |const|
 
+Returns the path that the given UID value refers to.
+
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
+
 ----
 
 .. _class_ResourceUID_method_has_id:
 
 - :ref:`bool<class_bool>` **has_id** **(** :ref:`int<class_int>` id **)** |const|
+
+Returns whether the given UID value is known to the cache.
 
 ----
 
@@ -73,11 +98,17 @@ Method Descriptions
 
 - :ref:`String<class_String>` **id_to_text** **(** :ref:`int<class_int>` id **)** |const|
 
+Converts the given UID to a ``uid://`` string value.
+
 ----
 
 .. _class_ResourceUID_method_remove_id:
 
 - void **remove_id** **(** :ref:`int<class_int>` id **)**
+
+Removes a loaded UID value from the cache.
+
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand.
 
 ----
 
@@ -85,11 +116,17 @@ Method Descriptions
 
 - void **set_id** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` path **)**
 
+Updates the resource path of an existing UID.
+
+Fails with an error if the UID does not exist, so be sure to check :ref:`has_id<class_ResourceUID_method_has_id>` beforehand, or use :ref:`add_id<class_ResourceUID_method_add_id>` instead.
+
 ----
 
 .. _class_ResourceUID_method_text_to_id:
 
 - :ref:`int<class_int>` **text_to_id** **(** :ref:`String<class_String>` text_id **)** |const|
+
+Extracts the UID value from the given ``uid://`` string.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -219,7 +219,7 @@ Returns ``true`` if the socket is open and listening on a port.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
 
-Starts the server by opening a UDP socket listening on the given port. You can optionally specify a ``bind_address`` to only listen for packets sent to that address. See also :ref:`PacketPeerUDP.bind<class_PacketPeerUDP_method_bind>`.
+Starts the server by opening a UDP socket listening on the given ``port``. You can optionally specify a ``bind_address`` to only listen for packets sent to that address. See also :ref:`PacketPeerUDP.bind<class_PacketPeerUDP_method_bind>`.
 
 ----
 

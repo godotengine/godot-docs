@@ -33,7 +33,7 @@ Properties
 +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
 | :ref:`float<class_float>`                           | :ref:`invert_border<class_Polygon2D_property_invert_border>`                 | ``100.0``                |
 +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`invert_enable<class_Polygon2D_property_invert_enable>`                 | ``false``                |
+| :ref:`bool<class_bool>`                             | :ref:`invert_enabled<class_Polygon2D_property_invert_enabled>`               | ``false``                |
 +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`offset<class_Polygon2D_property_offset>`                               | ``Vector2(0, 0)``        |
 +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
@@ -148,23 +148,23 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 | *Getter*  | get_invert_border()      |
 +-----------+--------------------------+
 
-Added padding applied to the bounding box when using ``invert``. Setting this value too small may result in a "Bad Polygon" error.
+Added padding applied to the bounding box when :ref:`invert_enabled<class_Polygon2D_property_invert_enabled>` is set to ``true``. Setting this value too small may result in a "Bad Polygon" error.
 
 ----
 
-.. _class_Polygon2D_property_invert_enable:
+.. _class_Polygon2D_property_invert_enabled:
 
-- :ref:`bool<class_bool>` **invert_enable**
+- :ref:`bool<class_bool>` **invert_enabled**
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_invert(value) |
-+-----------+-------------------+
-| *Getter*  | get_invert()      |
-+-----------+-------------------+
++-----------+---------------------------+
+| *Default* | ``false``                 |
++-----------+---------------------------+
+| *Setter*  | set_invert_enabled(value) |
++-----------+---------------------------+
+| *Getter*  | get_invert_enabled()      |
++-----------+---------------------------+
 
-If ``true``, polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``.
+If ``true``, the polygon will be inverted, containing the area outside the defined points and extending to the :ref:`invert_border<class_Polygon2D_property_invert_border>`.
 
 ----
 

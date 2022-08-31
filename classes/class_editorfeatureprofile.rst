@@ -142,7 +142,7 @@ Loads an editor feature profile from a file. The file must follow the JSON forma
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_to_file** **(** :ref:`String<class_String>` path **)**
 
-Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's **Import** button or the :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` button.
+Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's **Import** button or the :ref:`load_from_file<class_EditorFeatureProfile_method_load_from_file>` method.
 
 ----
 

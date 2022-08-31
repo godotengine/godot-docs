@@ -84,7 +84,7 @@ Property Descriptions
 | *Getter*  | get_ccdik_data_chain_length()      |
 +-----------+------------------------------------+
 
-The amount of CCDIK joints in the CCDIK modification.
+The number of CCDIK joints in the CCDIK modification.
 
 ----
 
@@ -189,7 +189,7 @@ Sets the :ref:`Bone2D<class_Bone2D>` node assigned to the CCDIK joint at ``joint
 
 - void **set_ccdik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_idx **)**
 
-Sets the bone index, ``bone_index``, of the CCDIK joint at ``joint_idx``. When possible, this will also update the ``bone2d_node`` of the CCDIK joint based on data provided by the linked skeleton.
+Sets the bone index, ``bone_idx``, of the CCDIK joint at ``joint_idx``. When possible, this will also update the ``bone2d_node`` of the CCDIK joint based on data provided by the linked skeleton.
 
 ----
 

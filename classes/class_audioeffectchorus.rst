@@ -503,7 +503,7 @@ The voice's filter rate.
 | *Getter*  | get_voice_count()      |
 +-----------+------------------------+
 
-The amount of voices in the effect.
+The number of voices in the effect.
 
 ----
 

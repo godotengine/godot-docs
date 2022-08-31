@@ -56,6 +56,8 @@ Properties
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_SpinBox_property_alignment>`                           | ``0``     |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                         | :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>`           | ``0.0``   |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``  |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`String<class_String>`                                       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``    |
@@ -95,6 +97,22 @@ Property Descriptions
 +-----------+---------------------------------+
 | *Getter*  | get_horizontal_alignment()      |
 +-----------+---------------------------------+
+
+----
+
+.. _class_SpinBox_property_custom_arrow_step:
+
+- :ref:`float<class_float>` **custom_arrow_step**
+
++-----------+------------------------------+
+| *Default* | ``0.0``                      |
++-----------+------------------------------+
+| *Setter*  | set_custom_arrow_step(value) |
++-----------+------------------------------+
+| *Getter*  | get_custom_arrow_step()      |
++-----------+------------------------------+
+
+If not ``0``, ``value`` will always be rounded to a multiple of ``custom_arrow_step`` when interacting with the arrow buttons of the ``SpinBox``.
 
 ----
 

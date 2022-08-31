@@ -22,29 +22,29 @@ A two-dimensional array of boolean values, can be used to efficiently store a bi
 Methods
 -------
 
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`     | :ref:`convert_to_image<class_BitMap_method_convert_to_image>` **(** **)** |const|                                                                                |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`create<class_BitMap_method_create>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                         |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`create_from_image_alpha<class_BitMap_method_create_from_image_alpha>` **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_bit<class_BitMap_method_get_bit>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                           |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_BitMap_method_get_size>` **(** **)** |const|                                                                                                |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_true_bit_count<class_BitMap_method_get_true_bit_count>` **(** **)** |const|                                                                            |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`grow_mask<class_BitMap_method_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**                                         |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`opaque_to_polygons<class_BitMap_method_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`resize<class_BitMap_method_resize>` **(** :ref:`Vector2<class_Vector2>` new_size **)**                                                                     |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_bit<class_BitMap_method_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_bit_rect<class_BitMap_method_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**                                    |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_Image>`                             | :ref:`convert_to_image<class_BitMap_method_convert_to_image>` **(** **)** |const|                                                                                |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`create<class_BitMap_method_create>` **(** :ref:`Vector2<class_Vector2>` size **)**                                                                         |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`create_from_image_alpha<class_BitMap_method_create_from_image_alpha>` **(** :ref:`Image<class_Image>` image, :ref:`float<class_float>` threshold=0.1 **)** |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                               | :ref:`get_bit<class_BitMap_method_get_bit>` **(** :ref:`Vector2<class_Vector2>` position **)** |const|                                                           |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                         | :ref:`get_size<class_BitMap_method_get_size>` **(** **)** |const|                                                                                                |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                 | :ref:`get_true_bit_count<class_BitMap_method_get_true_bit_count>` **(** **)** |const|                                                                            |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`grow_mask<class_BitMap_method_grow_mask>` **(** :ref:`int<class_int>` pixels, :ref:`Rect2<class_Rect2>` rect **)**                                         |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`opaque_to_polygons<class_BitMap_method_opaque_to_polygons>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|      |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`resize<class_BitMap_method_resize>` **(** :ref:`Vector2<class_Vector2>` new_size **)**                                                                     |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`set_bit<class_BitMap_method_set_bit>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` bit **)**                                      |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                  | :ref:`set_bit_rect<class_BitMap_method_set_bit_rect>` **(** :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` bit **)**                                    |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -93,7 +93,7 @@ Returns bitmap's dimensions.
 
 - :ref:`int<class_int>` **get_true_bit_count** **(** **)** |const|
 
-Returns the amount of bitmap elements that are set to ``true``.
+Returns the number of bitmap elements that are set to ``true``.
 
 ----
 
@@ -107,7 +107,7 @@ Applies morphological dilation or erosion to the bitmap. If ``pixels`` is positi
 
 .. _class_BitMap_method_opaque_to_polygons:
 
-- :ref:`Array<class_Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|
+- :ref:`PackedVector2Array[]<class_PackedVector2Array>` **opaque_to_polygons** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`float<class_float>` epsilon=2.0 **)** |const|
 
 Creates an :ref:`Array<class_Array>` of polygons covering a rectangular portion of the bitmap. It uses a marching squares algorithm, followed by Ramer-Douglas-Peucker (RDP) reduction of the number of vertices. Each polygon is described as a :ref:`PackedVector2Array<class_PackedVector2Array>` of its vertices.
 
@@ -117,7 +117,7 @@ To get polygons covering the whole bitmap, pass:
 
     Rect2(Vector2(), get_size())
 
-\ ``epsilon`` is passed to RDP to control how accurately the polygons cover the bitmap: a lower ``epsilon`` corresponds to more points in the polygons.
+``epsilon`` is passed to RDP to control how accurately the polygons cover the bitmap: a lower ``epsilon`` corresponds to more points in the polygons.
 
 ----
 

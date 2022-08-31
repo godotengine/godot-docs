@@ -75,7 +75,7 @@ The particle rendering layers (:ref:`VisualInstance3D.layers<class_VisualInstanc
 
 After configuring particle nodes accordingly, specific layers can be unchecked to prevent certain particles from being affected by attractors. For example, this can be used if you're using an attractor as part of a spell effect but don't want the attractor to affect unrelated weather particles at the same position.
 
-Particle attraction can also be disabled on a per-process material basis by setting :ref:`ParticlesMaterial.attractor_interaction_enabled<class_ParticlesMaterial_property_attractor_interaction_enabled>` on the :ref:`GPUParticles3D<class_GPUParticles3D>` node.
+Particle attraction can also be disabled on a per-process material basis by setting :ref:`ParticleProcessMaterial.attractor_interaction_enabled<class_ParticleProcessMaterial_property_attractor_interaction_enabled>` on the :ref:`GPUParticles3D<class_GPUParticles3D>` node.
 
 ----
 

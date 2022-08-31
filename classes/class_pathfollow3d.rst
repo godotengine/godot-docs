@@ -19,26 +19,26 @@ Description
 
 This node takes its parent :ref:`Path3D<class_Path3D>`, and returns the coordinates of a point within it, given a distance from the first vertex.
 
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting the :ref:`progress<class_PathFollow3D_property_progress>` in this node.
 
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                             | :ref:`cubic_interp<class_PathFollow3D_property_cubic_interp>`   | ``true`` |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                           | :ref:`h_offset<class_PathFollow3D_property_h_offset>`           | ``0.0``  |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                             | :ref:`loop<class_PathFollow3D_property_loop>`                   | ``true`` |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                           | :ref:`offset<class_PathFollow3D_property_offset>`               | ``0.0``  |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`RotationMode<enum_PathFollow3D_RotationMode>` | :ref:`rotation_mode<class_PathFollow3D_property_rotation_mode>` | ``3``    |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                           | :ref:`unit_offset<class_PathFollow3D_property_unit_offset>`     | ``0.0``  |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                           | :ref:`v_offset<class_PathFollow3D_property_v_offset>`           | ``0.0``  |
-+-----------------------------------------------------+-----------------------------------------------------------------+----------+
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                             | :ref:`cubic_interp<class_PathFollow3D_property_cubic_interp>`     | ``true`` |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                           | :ref:`h_offset<class_PathFollow3D_property_h_offset>`             | ``0.0``  |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                             | :ref:`loop<class_PathFollow3D_property_loop>`                     | ``true`` |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                           | :ref:`progress<class_PathFollow3D_property_progress>`             | ``0.0``  |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                           | :ref:`progress_ratio<class_PathFollow3D_property_progress_ratio>` | ``0.0``  |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`RotationMode<enum_PathFollow3D_RotationMode>` | :ref:`rotation_mode<class_PathFollow3D_property_rotation_mode>`   | ``3``    |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                           | :ref:`v_offset<class_PathFollow3D_property_v_offset>`             | ``0.0``  |
++-----------------------------------------------------+-------------------------------------------------------------------+----------+
 
 Enumerations
 ------------
@@ -122,19 +122,35 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 ----
 
-.. _class_PathFollow3D_property_offset:
+.. _class_PathFollow3D_property_progress:
 
-- :ref:`float<class_float>` **offset**
+- :ref:`float<class_float>` **progress**
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``0.0``             |
++-----------+---------------------+
+| *Setter*  | set_progress(value) |
++-----------+---------------------+
+| *Getter*  | get_progress()      |
++-----------+---------------------+
 
-The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
+The distance from the first vertex, measured in 3D units along the path. Changing this value sets this node's position to a point within the path.
+
+----
+
+.. _class_PathFollow3D_property_progress_ratio:
+
+- :ref:`float<class_float>` **progress_ratio**
+
++-----------+---------------------------+
+| *Default* | ``0.0``                   |
++-----------+---------------------------+
+| *Setter*  | set_progress_ratio(value) |
++-----------+---------------------------+
+| *Getter*  | get_progress_ratio()      |
++-----------+---------------------------+
+
+The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the progress within the path, as the progress supplied is multiplied internally by the path's length.
 
 ----
 
@@ -151,22 +167,6 @@ The distance from the first vertex, measured in 3D units along the path. This se
 +-----------+--------------------------+
 
 Allows or forbids rotation on one or more axes, depending on the :ref:`RotationMode<enum_PathFollow3D_RotationMode>` constants being used.
-
-----
-
-.. _class_PathFollow3D_property_unit_offset:
-
-- :ref:`float<class_float>` **unit_offset**
-
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_unit_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_unit_offset()      |
-+-----------+------------------------+
-
-The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
 ----
 

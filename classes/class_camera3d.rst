@@ -71,7 +71,7 @@ Methods
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`get_cull_mask_value<class_Camera3D_method_get_cull_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                                              |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_frustum<class_Camera3D_method_get_frustum>` **(** **)** |const|                                                                                                                                 |
+| :ref:`Plane[]<class_Plane>`           | :ref:`get_frustum<class_Camera3D_method_get_frustum>` **(** **)** |const|                                                                                                                                 |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                 | :ref:`get_pyramid_shape_rid<class_Camera3D_method_get_pyramid_shape_rid>` **(** **)**                                                                                                                     |
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -288,6 +288,8 @@ For reference, the default vertical field of view value (``75.0``) is equivalent
 
 The camera's frustum offset. This can be changed from the default to create "tilted frustum" effects such as `Y-shearing <https://zdoom.org/wiki/Y-shearing>`__.
 
+\ **Note:** Only effective if :ref:`projection<class_Camera3D_property_projection>` is :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`.
+
 ----
 
 .. _class_Camera3D_property_h_offset:
@@ -366,7 +368,7 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera3D_con
 | *Getter*  | get_size()      |
 +-----------+-----------------+
 
-The camera's size measured as 1/2 the width or height. Only applicable in orthogonal and frustum modes. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
+The camera's size in meters measured as the diameter of the width or height, depending on :ref:`keep_aspect<class_Camera3D_property_keep_aspect>`. Only applicable in orthogonal and frustum modes.
 
 ----
 
@@ -421,7 +423,7 @@ Returns whether or not the specified layer of the :ref:`cull_mask<class_Camera3D
 
 .. _class_Camera3D_method_get_frustum:
 
-- :ref:`Array<class_Array>` **get_frustum** **(** **)** |const|
+- :ref:`Plane[]<class_Plane>` **get_frustum** **(** **)** |const|
 
 Returns the camera's frustum planes in world space units as an array of :ref:`Plane<class_Plane>`\ s in the following order: near, far, left, top, right, bottom. Not to be confused with :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`.
 
@@ -505,7 +507,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`cull_ma
 
 - void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units.
+Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units. See also :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`.
 
 ----
 
@@ -538,7 +540,7 @@ Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that 
     # This code block is part of a script that inherits from Node3D.
     # `control` is a reference to a node inheriting from Control.
     control.visible = not get_viewport().get_camera_3d().is_position_behind(global_transform.origin)
-    control.rect_position = get_viewport().get_camera_3d().unproject_position(global_transform.origin)
+    control.position = get_viewport().get_camera_3d().unproject_position(global_transform.origin)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

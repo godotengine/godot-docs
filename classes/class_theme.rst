@@ -220,7 +220,7 @@ Property Descriptions
 | *Getter*  | get_default_base_scale()      |
 +-----------+-------------------------------+
 
-The default base scale factor of this theme resource. Used by some controls to scale their visual properties based on the global scale factor. If this value is set to ``0.0``, the global scale factor is used.
+The default base scale factor of this theme resource. Used by some controls to scale their visual properties based on the global scale factor. If this value is set to ``0.0``, the global scale factor is used (see :ref:`ThemeDB.fallback_base_scale<class_ThemeDB_property_fallback_base_scale>`).
 
 Use :ref:`has_default_base_scale<class_Theme_method_has_default_base_scale>` to check if this value is valid.
 
@@ -236,7 +236,7 @@ Use :ref:`has_default_base_scale<class_Theme_method_has_default_base_scale>` to 
 | *Getter* | get_default_font()      |
 +----------+-------------------------+
 
-The default font of this theme resource. Used as the default value when trying to fetch a font resource that doesn't exist in this theme or is in invalid state. If the default font is also missing or invalid, the engine fallback value is used.
+The default font of this theme resource. Used as the default value when trying to fetch a font resource that doesn't exist in this theme or is in invalid state. If the default font is also missing or invalid, the engine fallback value is used (see :ref:`ThemeDB.fallback_font<class_ThemeDB_property_fallback_font>`).
 
 Use :ref:`has_default_font<class_Theme_method_has_default_font>` to check if this value is valid.
 
@@ -254,7 +254,7 @@ Use :ref:`has_default_font<class_Theme_method_has_default_font>` to check if thi
 | *Getter*  | get_default_font_size()      |
 +-----------+------------------------------+
 
-The default font size of this theme resource. Used as the default value when trying to fetch a font size value that doesn't exist in this theme or is in invalid state. If the default font size is also missing or invalid, the engine fallback value is used.
+The default font size of this theme resource. Used as the default value when trying to fetch a font size value that doesn't exist in this theme or is in invalid state. If the default font size is also missing or invalid, the engine fallback value is used (see :ref:`ThemeDB.fallback_font_size<class_ThemeDB_property_fallback_font_size>`).
 
 Values below ``0`` are invalid and can be used to unset the property. Use :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check if this value is valid.
 
@@ -419,7 +419,7 @@ Returns the :ref:`Font<class_Font>` property defined by ``name`` and ``theme_typ
 
 Returns the default theme font if the property doesn't exist and the default theme font is set up (see :ref:`default_font<class_Theme_property_default_font>`). Use :ref:`has_font<class_Theme_method_has_font>` to check for existence of the property and :ref:`has_default_font<class_Theme_method_has_default_font>` to check for existence of the default theme font.
 
-Returns the engine fallback font value, if neither exist.
+Returns the engine fallback font value, if neither exist (see :ref:`ThemeDB.fallback_font<class_ThemeDB_property_fallback_font>`).
 
 ----
 
@@ -439,7 +439,7 @@ Returns the font size property defined by ``name`` and ``theme_type``, if it exi
 
 Returns the default theme font size if the property doesn't exist and the default theme font size is set up (see :ref:`default_font_size<class_Theme_property_default_font_size>`). Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence of the property and :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check for existence of the default theme font.
 
-Returns the engine fallback font size value, if neither exist.
+Returns the engine fallback font size value, if neither exist (see :ref:`ThemeDB.fallback_font_size<class_ThemeDB_property_fallback_font_size>`).
 
 ----
 
@@ -473,7 +473,7 @@ Returns a list of all unique theme type names for :ref:`Font<class_Font>` proper
 
 Returns the icon property defined by ``name`` and ``theme_type``, if it exists.
 
-Returns the engine fallback icon value if the property doesn't exist. Use :ref:`has_icon<class_Theme_method_has_icon>` to check for existence.
+Returns the engine fallback icon value if the property doesn't exist (see :ref:`ThemeDB.fallback_icon<class_ThemeDB_property_fallback_icon>`). Use :ref:`has_icon<class_Theme_method_has_icon>` to check for existence.
 
 ----
 
@@ -499,7 +499,7 @@ Returns a list of all unique theme type names for icon properties. Use :ref:`get
 
 Returns the :ref:`StyleBox<class_StyleBox>` property defined by ``name`` and ``theme_type``, if it exists.
 
-Returns the engine fallback stylebox value if the property doesn't exist. Use :ref:`has_stylebox<class_Theme_method_has_stylebox>` to check for existence.
+Returns the engine fallback stylebox value if the property doesn't exist (see :ref:`ThemeDB.fallback_stylebox<class_ThemeDB_property_fallback_stylebox>`). Use :ref:`has_stylebox<class_Theme_method_has_stylebox>` to check for existence.
 
 ----
 
@@ -525,7 +525,7 @@ Returns a list of all unique theme type names for :ref:`StyleBox<class_StyleBox>
 
 Returns the theme property of ``data_type`` defined by ``name`` and ``theme_type``, if it exists.
 
-Returns the engine fallback icon value if the property doesn't exist. Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
+Returns the engine fallback icon value if the property doesn't exist (see :ref:`ThemeDB<class_ThemeDB>`). Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
 
 \ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
@@ -639,9 +639,9 @@ Returns ``false`` if neither exist. Use :ref:`set_font<class_Theme_method_set_fo
 
 - :ref:`bool<class_bool>` **has_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`default_font_size<class_Theme_property_default_font_size>` has a valid value.
+Returns ``true`` if the font size property defined by ``name`` and ``theme_type`` exists, or if the default theme font size is set up (see :ref:`has_default_font_size<class_Theme_method_has_default_font_size>`).
 
-Returns ``false`` if it doesn't. The value must be greater than ``0`` to be considered valid.
+Returns ``false`` if neither exist. Use :ref:`set_font_size<class_Theme_method_set_font_size>` to define the property.
 
 ----
 
@@ -737,9 +737,9 @@ Fails if it doesn't exist, or if a similar property with the new name already ex
 
 - void **rename_font_size** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type **)**
 
-Returns ``true`` if the font size property defined by ``name`` and ``theme_type`` exists, or if the default theme font size is set up (see :ref:`has_default_font_size<class_Theme_method_has_default_font_size>`).
+Renames the font size property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
 
-Returns ``false`` if neither exist. Use :ref:`set_font_size<class_Theme_method_set_font_size>` to define the property.
+Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence, and :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the existing property.
 
 ----
 
@@ -803,9 +803,7 @@ Creates or changes the value of the :ref:`Font<class_Font>` property defined by 
 
 - void **set_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type, :ref:`int<class_int>` font_size **)**
 
-Renames the font size property defined by ``old_name`` and ``theme_type`` to ``name``, if it exists.
-
-Fails if it doesn't exist, or if a similar property with the new name already exists. Use :ref:`has_font_size<class_Theme_method_has_font_size>` to check for existence, and :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the existing property.
+Creates or changes the value of the font size property defined by ``name`` and ``theme_type``. Use :ref:`clear_font_size<class_Theme_method_clear_font_size>` to remove the property.
 
 ----
 

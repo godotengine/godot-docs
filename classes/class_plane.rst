@@ -84,15 +84,17 @@ Methods
 Operators
 ---------
 
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Plane_operator_neq_bool>` **(** :ref:`Plane<class_Plane>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Plane_operator_eq_bool>` **(** :ref:`Plane<class_Plane>` right **)**  |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>` | :ref:`operator unary+<class_Plane_operator_unplus_Plane>` **(** **)**                         |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>` | :ref:`operator unary-<class_Plane_operator_unminus_Plane>` **(** **)**                        |
-+---------------------------+-----------------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Plane_operator_neq_bool>` **(** :ref:`Plane<class_Plane>` right **)**             |
++---------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`operator *<class_Plane_operator_mul_Plane>` **(** :ref:`Transform3D<class_Transform3D>` right **)** |
++---------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Plane_operator_eq_bool>` **(** :ref:`Plane<class_Plane>` right **)**              |
++---------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`operator unary+<class_Plane_operator_unplus_Plane>` **(** **)**                                     |
++---------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`operator unary-<class_Plane_operator_unminus_Plane>` **(** **)**                                    |
++---------------------------+-----------------------------------------------------------------------------------------------------------+
 
 Constants
 ---------
@@ -274,7 +276,7 @@ Returns the intersection point of a segment from position ``from`` to position `
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` to_plane **)** |const|
 
-Returns ``true`` if this plane and ``plane`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this plane and ``to_plane`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 ----
 
@@ -310,6 +312,14 @@ Operator Descriptions
 Returns ``true`` if the planes are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` instead, which is more reliable.
+
+----
+
+.. _class_Plane_operator_mul_Plane:
+
+- :ref:`Plane<class_Plane>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Inversely transforms (multiplies) the ``Plane`` by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
 
 ----
 

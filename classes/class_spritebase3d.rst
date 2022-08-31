@@ -331,7 +331,7 @@ The size of one pixel's width on the sprite to scale it in 3D.
 
 Sets the render priority for the sprite. Higher priority objects will be sorted in front of lower priority objects.
 
-\ **Node:** This only applies if :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_SpriteBase3D_constant_ALPHA_CUT_DISABLED>` (default value).
+\ **Note:** This only applies if :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_SpriteBase3D_constant_ALPHA_CUT_DISABLED>` (default value).
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 

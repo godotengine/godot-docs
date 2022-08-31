@@ -19,7 +19,7 @@ Description
 
 Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics, or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
-\ **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.hint_tooltip<class_Control_property_hint_tooltip>`, unless you change its mouse filter.
+\ **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.tooltip_text<class_Control_property_tooltip_text>`, unless you change its mouse filter.
 
 Tutorials
 ---------
@@ -46,8 +46,6 @@ Properties
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                   | :ref:`percent_visible<class_Label_property_percent_visible>`                                             | ``1.0``                                                                      |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                       | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
@@ -67,6 +65,8 @@ Properties
 | :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_Label_property_visible_characters>`                                       | ``-1``                                                                       |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_Label_property_visible_characters_behavior>`                     | ``0``                                                                        |
++-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                   | :ref:`visible_ratio<class_Label_property_visible_ratio>`                                                 | ``1.0``                                                                      |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Methods
@@ -220,24 +220,6 @@ Limits the lines of text the node shows on screen.
 
 ----
 
-.. _class_Label_property_percent_visible:
-
-- :ref:`float<class_float>` **percent_visible**
-
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_percent_visible(value) |
-+-----------+----------------------------+
-| *Getter*  | get_percent_visible()      |
-+-----------+----------------------------+
-
-Limits the amount of visible characters. If you set ``percent_visible`` to 0.5, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
-
-\ **Note:** Setting this property updates :ref:`visible_characters<class_Label_property_visible_characters>` based on current :ref:`get_total_character_count<class_Label_method_get_total_character_count>`.
-
-----
-
 .. _class_Label_property_structured_text_bidi_override:
 
 - :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override**
@@ -362,9 +344,9 @@ Controls the text's vertical alignment. Supports top, center, bottom, and fill. 
 | *Getter*  | get_visible_characters()      |
 +-----------+-------------------------------+
 
-Restricts the number of characters to display. Set to -1 to disable.
+The number of characters to display. If set to ``-1``, all characters are displayed. This can be useful when animating the text appearing in a dialog box.
 
-\ **Note:** Setting this property updates :ref:`percent_visible<class_Label_property_percent_visible>` based on current :ref:`get_total_character_count<class_Label_method_get_total_character_count>`.
+\ **Note:** Setting this property updates :ref:`visible_ratio<class_Label_property_visible_ratio>` accordingly.
 
 ----
 
@@ -380,7 +362,25 @@ Restricts the number of characters to display. Set to -1 to disable.
 | *Getter*  | get_visible_characters_behavior()      |
 +-----------+----------------------------------------+
 
-Sets the clipping behavior when :ref:`visible_characters<class_Label_property_visible_characters>` or :ref:`percent_visible<class_Label_property_percent_visible>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+Sets the clipping behavior when :ref:`visible_characters<class_Label_property_visible_characters>` or :ref:`visible_ratio<class_Label_property_visible_ratio>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+
+----
+
+.. _class_Label_property_visible_ratio:
+
+- :ref:`float<class_float>` **visible_ratio**
+
++-----------+--------------------------+
+| *Default* | ``1.0``                  |
++-----------+--------------------------+
+| *Setter*  | set_visible_ratio(value) |
++-----------+--------------------------+
+| *Getter*  | get_visible_ratio()      |
++-----------+--------------------------+
+
+The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count<class_Label_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
+
+\ **Note:** Setting this property updates :ref:`visible_characters<class_Label_property_visible_characters>` accordingly.
 
 Method Descriptions
 -------------------
@@ -389,7 +389,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
-Returns the amount of lines of text the Label has.
+Returns the number of lines of text the Label has.
 
 ----
 
@@ -401,7 +401,7 @@ Returns the height of the line ``line``.
 
 If ``line`` is set to ``-1``, returns the biggest line height.
 
-If there're no lines returns font size in pixels.
+If there are no lines, returns font size in pixels.
 
 ----
 

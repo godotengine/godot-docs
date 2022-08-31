@@ -32,29 +32,29 @@ Properties
 +---------------------------+-----------------------------------------------------------------------------+-------------+
 | :ref:`float<class_float>` | :ref:`dry<class_AudioEffectDelay_property_dry>`                             | ``1.0``     |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`feedback/active<class_AudioEffectDelay_property_feedback/active>`     | ``false``   |
+| :ref:`bool<class_bool>`   | :ref:`feedback_active<class_AudioEffectDelay_property_feedback_active>`     | ``false``   |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/delay_ms<class_AudioEffectDelay_property_feedback/delay_ms>` | ``340.0``   |
+| :ref:`float<class_float>` | :ref:`feedback_delay_ms<class_AudioEffectDelay_property_feedback_delay_ms>` | ``340.0``   |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/level_db<class_AudioEffectDelay_property_feedback/level_db>` | ``-6.0``    |
+| :ref:`float<class_float>` | :ref:`feedback_level_db<class_AudioEffectDelay_property_feedback_level_db>` | ``-6.0``    |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/lowpass<class_AudioEffectDelay_property_feedback/lowpass>`   | ``16000.0`` |
+| :ref:`float<class_float>` | :ref:`feedback_lowpass<class_AudioEffectDelay_property_feedback_lowpass>`   | ``16000.0`` |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`tap1/active<class_AudioEffectDelay_property_tap1/active>`             | ``true``    |
+| :ref:`bool<class_bool>`   | :ref:`tap1_active<class_AudioEffectDelay_property_tap1_active>`             | ``true``    |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/delay_ms<class_AudioEffectDelay_property_tap1/delay_ms>`         | ``250.0``   |
+| :ref:`float<class_float>` | :ref:`tap1_delay_ms<class_AudioEffectDelay_property_tap1_delay_ms>`         | ``250.0``   |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/level_db<class_AudioEffectDelay_property_tap1/level_db>`         | ``-6.0``    |
+| :ref:`float<class_float>` | :ref:`tap1_level_db<class_AudioEffectDelay_property_tap1_level_db>`         | ``-6.0``    |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/pan<class_AudioEffectDelay_property_tap1/pan>`                   | ``0.2``     |
+| :ref:`float<class_float>` | :ref:`tap1_pan<class_AudioEffectDelay_property_tap1_pan>`                   | ``0.2``     |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`tap2/active<class_AudioEffectDelay_property_tap2/active>`             | ``true``    |
+| :ref:`bool<class_bool>`   | :ref:`tap2_active<class_AudioEffectDelay_property_tap2_active>`             | ``true``    |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/delay_ms<class_AudioEffectDelay_property_tap2/delay_ms>`         | ``500.0``   |
+| :ref:`float<class_float>` | :ref:`tap2_delay_ms<class_AudioEffectDelay_property_tap2_delay_ms>`         | ``500.0``   |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/level_db<class_AudioEffectDelay_property_tap2/level_db>`         | ``-12.0``   |
+| :ref:`float<class_float>` | :ref:`tap2_level_db<class_AudioEffectDelay_property_tap2_level_db>`         | ``-12.0``   |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/pan<class_AudioEffectDelay_property_tap2/pan>`                   | ``-0.4``    |
+| :ref:`float<class_float>` | :ref:`tap2_pan<class_AudioEffectDelay_property_tap2_pan>`                   | ``-0.4``    |
 +---------------------------+-----------------------------------------------------------------------------+-------------+
 
 Property Descriptions
@@ -76,9 +76,9 @@ Output percent of original sound. At 0, only delayed sounds are output. Value ca
 
 ----
 
-.. _class_AudioEffectDelay_property_feedback/active:
+.. _class_AudioEffectDelay_property_feedback_active:
 
-- :ref:`bool<class_bool>` **feedback/active**
+- :ref:`bool<class_bool>` **feedback_active**
 
 +-----------+----------------------------+
 | *Default* | ``false``                  |
@@ -92,9 +92,9 @@ If ``true``, feedback is enabled.
 
 ----
 
-.. _class_AudioEffectDelay_property_feedback/delay_ms:
+.. _class_AudioEffectDelay_property_feedback_delay_ms:
 
-- :ref:`float<class_float>` **feedback/delay_ms**
+- :ref:`float<class_float>` **feedback_delay_ms**
 
 +-----------+------------------------------+
 | *Default* | ``340.0``                    |
@@ -108,9 +108,9 @@ Feedback delay time in milliseconds.
 
 ----
 
-.. _class_AudioEffectDelay_property_feedback/level_db:
+.. _class_AudioEffectDelay_property_feedback_level_db:
 
-- :ref:`float<class_float>` **feedback/level_db**
+- :ref:`float<class_float>` **feedback_level_db**
 
 +-----------+------------------------------+
 | *Default* | ``-6.0``                     |
@@ -124,9 +124,9 @@ Sound level for ``tap1``.
 
 ----
 
-.. _class_AudioEffectDelay_property_feedback/lowpass:
+.. _class_AudioEffectDelay_property_feedback_lowpass:
 
-- :ref:`float<class_float>` **feedback/lowpass**
+- :ref:`float<class_float>` **feedback_lowpass**
 
 +-----------+-----------------------------+
 | *Default* | ``16000.0``                 |
@@ -140,9 +140,9 @@ Low-pass filter for feedback, in Hz. Frequencies below this value are filtered o
 
 ----
 
-.. _class_AudioEffectDelay_property_tap1/active:
+.. _class_AudioEffectDelay_property_tap1_active:
 
-- :ref:`bool<class_bool>` **tap1/active**
+- :ref:`bool<class_bool>` **tap1_active**
 
 +-----------+------------------------+
 | *Default* | ``true``               |
@@ -156,9 +156,9 @@ If ``true``, ``tap1`` will be enabled.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap1/delay_ms:
+.. _class_AudioEffectDelay_property_tap1_delay_ms:
 
-- :ref:`float<class_float>` **tap1/delay_ms**
+- :ref:`float<class_float>` **tap1_delay_ms**
 
 +-----------+--------------------------+
 | *Default* | ``250.0``                |
@@ -172,9 +172,9 @@ If ``true``, ``tap1`` will be enabled.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap1/level_db:
+.. _class_AudioEffectDelay_property_tap1_level_db:
 
-- :ref:`float<class_float>` **tap1/level_db**
+- :ref:`float<class_float>` **tap1_level_db**
 
 +-----------+--------------------------+
 | *Default* | ``-6.0``                 |
@@ -188,9 +188,9 @@ Sound level for ``tap1``.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap1/pan:
+.. _class_AudioEffectDelay_property_tap1_pan:
 
-- :ref:`float<class_float>` **tap1/pan**
+- :ref:`float<class_float>` **tap1_pan**
 
 +-----------+---------------------+
 | *Default* | ``0.2``             |
@@ -204,9 +204,9 @@ Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully righ
 
 ----
 
-.. _class_AudioEffectDelay_property_tap2/active:
+.. _class_AudioEffectDelay_property_tap2_active:
 
-- :ref:`bool<class_bool>` **tap2/active**
+- :ref:`bool<class_bool>` **tap2_active**
 
 +-----------+------------------------+
 | *Default* | ``true``               |
@@ -220,9 +220,9 @@ If ``true``, ``tap2`` will be enabled.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap2/delay_ms:
+.. _class_AudioEffectDelay_property_tap2_delay_ms:
 
-- :ref:`float<class_float>` **tap2/delay_ms**
+- :ref:`float<class_float>` **tap2_delay_ms**
 
 +-----------+--------------------------+
 | *Default* | ``500.0``                |
@@ -236,9 +236,9 @@ If ``true``, ``tap2`` will be enabled.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap2/level_db:
+.. _class_AudioEffectDelay_property_tap2_level_db:
 
-- :ref:`float<class_float>` **tap2/level_db**
+- :ref:`float<class_float>` **tap2_level_db**
 
 +-----------+--------------------------+
 | *Default* | ``-12.0``                |
@@ -252,9 +252,9 @@ Sound level for ``tap2``.
 
 ----
 
-.. _class_AudioEffectDelay_property_tap2/pan:
+.. _class_AudioEffectDelay_property_tap2_pan:
 
-- :ref:`float<class_float>` **tap2/pan**
+- :ref:`float<class_float>` **tap2_pan**
 
 +-----------+---------------------+
 | *Default* | ``-0.4``            |

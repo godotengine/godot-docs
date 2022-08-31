@@ -26,70 +26,80 @@ CollisionObject2D is the base class for 2D physics objects. It can hold any numb
 Properties
 ----------
 
-+--------------------------------------------------------+--------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                                  | :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` | ``1``    |
-+--------------------------------------------------------+--------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                                  | :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`   | ``1``    |
-+--------------------------------------------------------+--------------------------------------------------------------------------+----------+
-| :ref:`DisableMode<enum_CollisionObject2D_DisableMode>` | :ref:`disable_mode<class_CollisionObject2D_property_disable_mode>`       | ``0``    |
-+--------------------------------------------------------+--------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                                | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>`   | ``true`` |
-+--------------------------------------------------------+--------------------------------------------------------------------------+----------+
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                                  | :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>`       | ``1``    |
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`                                  | :ref:`collision_mask<class_CollisionObject2D_property_collision_mask>`         | ``1``    |
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>`                              | :ref:`collision_priority<class_CollisionObject2D_property_collision_priority>` | ``1.0``  |
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`DisableMode<enum_CollisionObject2D_DisableMode>` | :ref:`disable_mode<class_CollisionObject2D_property_disable_mode>`             | ``0``    |
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`                                | :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>`         | ``true`` |
++--------------------------------------------------------+--------------------------------------------------------------------------------+----------+
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`_input_event<class_CollisionObject2D_method__input_event>` **(** :ref:`Viewport<class_Viewport>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** |virtual| |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`create_shape_owner<class_CollisionObject2D_method_create_shape_owner>` **(** :ref:`Object<class_Object>` owner **)**                                                                                  |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`get_collision_layer_value<class_CollisionObject2D_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`get_collision_mask_value<class_CollisionObject2D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                             |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                 | :ref:`get_rid<class_CollisionObject2D_method_get_rid>` **(** **)** |const|                                                                                                                                  |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`get_shape_owner_one_way_collision_margin<class_CollisionObject2D_method_get_shape_owner_one_way_collision_margin>` **(** :ref:`int<class_int>` owner_id **)** |const|                                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_shape_owners<class_CollisionObject2D_method_get_shape_owners>` **(** **)**                                                                                                                        |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_shape_owner_disabled<class_CollisionObject2D_method_is_shape_owner_disabled>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                                   |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_shape_owner_one_way_collision_enabled<class_CollisionObject2D_method_is_shape_owner_one_way_collision_enabled>` **(** :ref:`int<class_int>` owner_id **)** |const|                                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`remove_shape_owner<class_CollisionObject2D_method_remove_shape_owner>` **(** :ref:`int<class_int>` owner_id **)**                                                                                     |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_collision_layer_value<class_CollisionObject2D_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                    |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_collision_mask_value<class_CollisionObject2D_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                      |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`shape_find_owner<class_CollisionObject2D_method_shape_find_owner>` **(** :ref:`int<class_int>` shape_index **)** |const|                                                                              |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_add_shape<class_CollisionObject2D_method_shape_owner_add_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`Shape2D<class_Shape2D>` shape **)**                                          |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_clear_shapes<class_CollisionObject2D_method_shape_owner_clear_shapes>` **(** :ref:`int<class_int>` owner_id **)**                                                                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`           | :ref:`shape_owner_get_owner<class_CollisionObject2D_method_shape_owner_get_owner>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                                       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape2D<class_Shape2D>`         | :ref:`shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|                                       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`shape_owner_get_shape_count<class_CollisionObject2D_method_shape_owner_get_shape_count>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`shape_owner_get_shape_index<class_CollisionObject2D_method_shape_owner_get_shape_index>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`shape_owner_get_transform<class_CollisionObject2D_method_shape_owner_get_transform>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                               |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_remove_shape<class_CollisionObject2D_method_shape_owner_remove_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)**                                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_set_disabled<class_CollisionObject2D_method_shape_owner_set_disabled>` **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**                                       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_set_one_way_collision<class_CollisionObject2D_method_shape_owner_set_one_way_collision>` **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` enable **)**                       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_set_one_way_collision_margin<class_CollisionObject2D_method_shape_owner_set_one_way_collision_margin>` **(** :ref:`int<class_int>` owner_id, :ref:`float<class_float>` margin **)**       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`shape_owner_set_transform<class_CollisionObject2D_method_shape_owner_set_transform>` **(** :ref:`int<class_int>` owner_id, :ref:`Transform2D<class_Transform2D>` transform **)**                      |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`_input_event<class_CollisionObject2D_method__input_event>` **(** :ref:`Viewport<class_Viewport>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** |virtual| |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`_mouse_enter<class_CollisionObject2D_method__mouse_enter>` **(** **)** |virtual|                                                                                                                      |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`_mouse_exit<class_CollisionObject2D_method__mouse_exit>` **(** **)** |virtual|                                                                                                                        |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`_mouse_shape_enter<class_CollisionObject2D_method__mouse_shape_enter>` **(** :ref:`int<class_int>` shape_idx **)** |virtual|                                                                          |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`_mouse_shape_exit<class_CollisionObject2D_method__mouse_shape_exit>` **(** :ref:`int<class_int>` shape_idx **)** |virtual|                                                                            |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`create_shape_owner<class_CollisionObject2D_method_create_shape_owner>` **(** :ref:`Object<class_Object>` owner **)**                                                                                  |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`get_collision_layer_value<class_CollisionObject2D_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                           |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`get_collision_mask_value<class_CollisionObject2D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                             |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                           | :ref:`get_rid<class_CollisionObject2D_method_get_rid>` **(** **)** |const|                                                                                                                                  |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`get_shape_owner_one_way_collision_margin<class_CollisionObject2D_method_get_shape_owner_one_way_collision_margin>` **(** :ref:`int<class_int>` owner_id **)** |const|                                 |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_shape_owners<class_CollisionObject2D_method_get_shape_owners>` **(** **)**                                                                                                                        |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_shape_owner_disabled<class_CollisionObject2D_method_is_shape_owner_disabled>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                                   |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_shape_owner_one_way_collision_enabled<class_CollisionObject2D_method_is_shape_owner_one_way_collision_enabled>` **(** :ref:`int<class_int>` owner_id **)** |const|                                 |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`remove_shape_owner<class_CollisionObject2D_method_remove_shape_owner>` **(** :ref:`int<class_int>` owner_id **)**                                                                                     |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_collision_layer_value<class_CollisionObject2D_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                    |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_collision_mask_value<class_CollisionObject2D_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                      |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`shape_find_owner<class_CollisionObject2D_method_shape_find_owner>` **(** :ref:`int<class_int>` shape_index **)** |const|                                                                              |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_add_shape<class_CollisionObject2D_method_shape_owner_add_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`Shape2D<class_Shape2D>` shape **)**                                          |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_clear_shapes<class_CollisionObject2D_method_shape_owner_clear_shapes>` **(** :ref:`int<class_int>` owner_id **)**                                                                         |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`                     | :ref:`shape_owner_get_owner<class_CollisionObject2D_method_shape_owner_get_owner>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                                       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape2D<class_Shape2D>`                   | :ref:`shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|                                       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`shape_owner_get_shape_count<class_CollisionObject2D_method_shape_owner_get_shape_count>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                           |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`shape_owner_get_shape_index<class_CollisionObject2D_method_shape_owner_get_shape_index>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|                           |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>`           | :ref:`shape_owner_get_transform<class_CollisionObject2D_method_shape_owner_get_transform>` **(** :ref:`int<class_int>` owner_id **)** |const|                                                               |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_remove_shape<class_CollisionObject2D_method_shape_owner_remove_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)**                                         |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_set_disabled<class_CollisionObject2D_method_shape_owner_set_disabled>` **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**                                       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_set_one_way_collision<class_CollisionObject2D_method_shape_owner_set_one_way_collision>` **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` enable **)**                       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_set_one_way_collision_margin<class_CollisionObject2D_method_shape_owner_set_one_way_collision_margin>` **(** :ref:`int<class_int>` owner_id, :ref:`float<class_float>` margin **)**       |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`shape_owner_set_transform<class_CollisionObject2D_method_shape_owner_set_transform>` **(** :ref:`int<class_int>` owner_id, :ref:`Transform2D<class_Transform2D>` transform **)**                      |
++-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -98,7 +108,7 @@ Signals
 
 - **input_event** **(** :ref:`Node<class_Node>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)**
 
-Emitted when an input event occurs. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one ``collision_layer`` bit to be set. See :ref:`_input_event<class_CollisionObject2D_method__input_event>` for details.
+Emitted when an input event occurs. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set. See :ref:`_input_event<class_CollisionObject2D_method__input_event>` for details.
 
 ----
 
@@ -108,6 +118,8 @@ Emitted when an input event occurs. Requires :ref:`input_pickable<class_Collisio
 
 Emitted when the mouse pointer enters any of this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set. Note that moving between different shapes within a single ``CollisionObject2D`` won't cause this signal to be emitted.
 
+\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the ``CollisionObject2D``'s area is small. This signal may also not be emitted if another ``CollisionObject2D`` is overlapping the ``CollisionObject2D`` in question.
+
 ----
 
 .. _class_CollisionObject2D_signal_mouse_exited:
@@ -115,6 +127,8 @@ Emitted when the mouse pointer enters any of this object's shapes. Requires :ref
 - **mouse_exited** **(** **)**
 
 Emitted when the mouse pointer exits all this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set. Note that moving between different shapes within a single ``CollisionObject2D`` won't cause this signal to be emitted.
+
+\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the ``CollisionObject2D``'s area is small. This signal may also not be emitted if another ``CollisionObject2D`` is overlapping the ``CollisionObject2D`` in question.
 
 ----
 
@@ -194,6 +208,22 @@ The physics layers this CollisionObject2D scans. Collision objects can scan one 
 
 ----
 
+.. _class_CollisionObject2D_property_collision_priority:
+
+- :ref:`float<class_float>` **collision_priority**
+
++-----------+-------------------------------+
+| *Default* | ``1.0``                       |
++-----------+-------------------------------+
+| *Setter*  | set_collision_priority(value) |
++-----------+-------------------------------+
+| *Getter*  | get_collision_priority()      |
++-----------+-------------------------------+
+
+The priority used to solve colliding when occurring penetration. The higher the priority is, the lower the penetration into the object will be. This can for example be used to prevent the player from breaking through the boundaries of a level.
+
+----
+
 .. _class_CollisionObject2D_property_disable_mode:
 
 - :ref:`DisableMode<enum_CollisionObject2D_DisableMode>` **disable_mode**
@@ -231,7 +261,41 @@ Method Descriptions
 
 - void **_input_event** **(** :ref:`Viewport<class_Viewport>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** |virtual|
 
-Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true``. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to the ``input_event`` signal to easily pick up these events.
+Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to the ``input_event`` signal to easily pick up these events.
+
+\ **Note:** :ref:`_input_event<class_CollisionObject2D_method__input_event>` requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set.
+
+----
+
+.. _class_CollisionObject2D_method__mouse_enter:
+
+- void **_mouse_enter** **(** **)** |virtual|
+
+Called when the mouse pointer enters any of this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set. Note that moving between different shapes within a single ``CollisionObject2D`` won't cause this function to be called.
+
+----
+
+.. _class_CollisionObject2D_method__mouse_exit:
+
+- void **_mouse_exit** **(** **)** |virtual|
+
+Called when the mouse pointer exits all this object's shapes. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set. Note that moving between different shapes within a single ``CollisionObject2D`` won't cause this function to be called.
+
+----
+
+.. _class_CollisionObject2D_method__mouse_shape_enter:
+
+- void **_mouse_shape_enter** **(** :ref:`int<class_int>` shape_idx **)** |virtual|
+
+Called when the mouse pointer enters any of this object's shapes or moves from one shape to another. ``shape_idx`` is the child index of the newly entered :ref:`Shape2D<class_Shape2D>`. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be called.
+
+----
+
+.. _class_CollisionObject2D_method__mouse_shape_exit:
+
+- void **_mouse_shape_exit** **(** :ref:`int<class_int>` shape_idx **)** |virtual|
+
+Called when the mouse pointer exits any of this object's shapes. ``shape_idx`` is the child index of the exited :ref:`Shape2D<class_Shape2D>`. Requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be called.
 
 ----
 
@@ -277,7 +341,7 @@ Returns the ``one_way_collision_margin`` of the shape owner identified by given 
 
 .. _class_CollisionObject2D_method_get_shape_owners:
 
-- :ref:`Array<class_Array>` **get_shape_owners** **(** **)**
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_shape_owners** **(** **)**
 
 Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 

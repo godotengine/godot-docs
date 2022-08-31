@@ -19,7 +19,7 @@ Description
 
 2D particle node used to create a variety of particle systems and effects. ``GPUParticles2D`` features an emitter that generates some number of particles at a given rate.
 
-Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
 Tutorials
 ---------
@@ -50,7 +50,7 @@ Properties
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`float<class_float>`                       | :ref:`lifetime<class_GPUParticles2D_property_lifetime>`                                     | ``1.0``                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`local_coords<class_GPUParticles2D_property_local_coords>`                             | ``true``                        |
+| :ref:`bool<class_bool>`                         | :ref:`local_coords<class_GPUParticles2D_property_local_coords>`                             | ``false``                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`one_shot<class_GPUParticles2D_property_one_shot>`                                     | ``false``                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
@@ -283,14 +283,14 @@ Amount of time each particle will exist.
 - :ref:`bool<class_bool>` **local_coords**
 
 +-----------+----------------------------------+
-| *Default* | ``true``                         |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_use_local_coordinates(value) |
 +-----------+----------------------------------+
 | *Getter*  | get_use_local_coordinates()      |
 +-----------+----------------------------------+
 
-If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
+If ``true``, particles use the parent node's coordinate space (known as local coordinates). This will cause particles to move and rotate along the ``GPUParticles2D`` node (and its parents) when it is moved or rotated. If ``false``, particles use global coordinates; they will not move or rotate along the ``GPUParticles2D`` node (and its parents) when it is moved or rotated.
 
 ----
 
@@ -336,7 +336,7 @@ Particle system starts as if it had already run for this many seconds.
 | *Getter* | get_process_material()      |
 +----------+-----------------------------+
 
-:ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
+:ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
 ----
 

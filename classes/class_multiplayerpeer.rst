@@ -35,13 +35,13 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                             | :ref:`refuse_new_connections<class_MultiplayerPeer_property_refuse_new_connections>` | ``false`` |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                               | :ref:`transfer_channel<class_MultiplayerPeer_property_transfer_channel>`             | ``0``     |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
-| :ref:`TransferMode<enum_@GlobalScope_TransferMode>` | :ref:`transfer_mode<class_MultiplayerPeer_property_transfer_mode>`                   | ``2``     |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                | :ref:`refuse_new_connections<class_MultiplayerPeer_property_refuse_new_connections>` | ``false`` |
++--------------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                  | :ref:`transfer_channel<class_MultiplayerPeer_property_transfer_channel>`             | ``0``     |
++--------------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+| :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_MultiplayerPeer_property_transfer_mode>`                   | ``2``     |
++--------------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -120,6 +120,24 @@ enum **ConnectionStatus**:
 
 - **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
 
+----
+
+.. _enum_MultiplayerPeer_TransferMode:
+
+.. _class_MultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE:
+
+.. _class_MultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED:
+
+.. _class_MultiplayerPeer_constant_TRANSFER_MODE_RELIABLE:
+
+enum **TransferMode**:
+
+- **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets may arrive in any order. Potentially faster than :ref:`TRANSFER_MODE_UNRELIABLE_ORDERED<class_MultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`. Use for non-critical data, and always consider whether the order matters.
+
+- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than :ref:`TRANSFER_MODE_RELIABLE<class_MultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>`. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
+
+- **TRANSFER_MODE_RELIABLE** = **2** --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
+
 Constants
 ---------
 
@@ -164,13 +182,13 @@ If ``true``, this ``MultiplayerPeer`` refuses new connections.
 
 The channel to use to send packets. Many network APIs such as ENet and WebRTC allow the creation of multiple independent channels which behaves, in a way, like separate connections. This means that reliable data will only block delivery of other packets on that channel, and ordering will only be in respect to the channel the packet is being sent on. Using different channels to send **different and independent** state updates is a common way to optimize network usage and decrease latency in fast-paced games.
 
-\ **Note:** The default channel (``0``) actually works as 3 separate channels (one for each :ref:`TransferMode<enum_@GlobalScope_TransferMode>`) so that :ref:`@GlobalScope.TRANSFER_MODE_RELIABLE<class_@GlobalScope_constant_TRANSFER_MODE_RELIABLE>` and :ref:`@GlobalScope.TRANSFER_MODE_UNRELIABLE_ORDERED<class_@GlobalScope_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>` does not interact with each other by default. Refer to the specific network API documentation (e.g. ENet or WebRTC) to learn how to set up channels correctly.
+\ **Note:** The default channel (``0``) actually works as 3 separate channels (one for each :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`) so that :ref:`TRANSFER_MODE_RELIABLE<class_MultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>` and :ref:`TRANSFER_MODE_UNRELIABLE_ORDERED<class_MultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>` does not interact with each other by default. Refer to the specific network API documentation (e.g. ENet or WebRTC) to learn how to set up channels correctly.
 
 ----
 
 .. _class_MultiplayerPeer_property_transfer_mode:
 
-- :ref:`TransferMode<enum_@GlobalScope_TransferMode>` **transfer_mode**
+- :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **transfer_mode**
 
 +-----------+--------------------------+
 | *Default* | ``2``                    |
@@ -180,7 +198,7 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 | *Getter*  | get_transfer_mode()      |
 +-----------+--------------------------+
 
-The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_@GlobalScope_TransferMode>`.
+The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`.
 
 Method Descriptions
 -------------------

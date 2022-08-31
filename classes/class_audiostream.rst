@@ -12,14 +12,14 @@ AudioStream
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomizer<class_AudioStreamRandomizer>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
+**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>`, :ref:`AudioStreamRandomizer<class_AudioStreamRandomizer>`, :ref:`AudioStreamWAV<class_AudioStreamWAV>`
 
 Base class for audio streams.
 
 Description
 -----------
 
-Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamSample<class_AudioStreamSample>`) and OGG (via :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`) file formats.
+Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamWAV<class_AudioStreamWAV>`) and Ogg (via :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>`) file formats.
 
 Tutorials
 ---------

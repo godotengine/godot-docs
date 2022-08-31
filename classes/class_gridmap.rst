@@ -68,47 +68,53 @@ Properties
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`clear<class_GridMap_method_clear>` **(** **)**                                                                                                                             |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`clear_baked_meshes<class_GridMap_method_clear_baked_meshes>` **(** **)**                                                                                                   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`           | :ref:`get_bake_mesh_instance<class_GridMap_method_get_bake_mesh_instance>` **(** :ref:`int<class_int>` idx **)**                                                                 |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`       | :ref:`get_bake_meshes<class_GridMap_method_get_bake_meshes>` **(** **)**                                                                                                         |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_cell_item<class_GridMap_method_get_cell_item>` **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|                                                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_cell_item_orientation<class_GridMap_method_get_cell_item_orientation>` **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|                                    |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_collision_layer_value<class_GridMap_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_collision_mask_value<class_GridMap_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`       | :ref:`get_meshes<class_GridMap_method_get_meshes>` **(** **)** |const|                                                                                                           |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_navigation_layer_value<class_GridMap_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`       | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`       | :ref:`get_used_cells_by_item<class_GridMap_method_get_used_cells_by_item>` **(** :ref:`int<class_int>` item **)** |const|                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)** |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`   | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`resource_changed<class_GridMap_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)**                                                              |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_cell_item<class_GridMap_method_set_cell_item>` **(** :ref:`Vector3i<class_Vector3i>` position, :ref:`int<class_int>` item, :ref:`int<class_int>` orientation=0 **)**   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_collision_layer_value<class_GridMap_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_collision_mask_value<class_GridMap_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                     |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_navigation_layer_value<class_GridMap_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                 |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`clear<class_GridMap_method_clear>` **(** **)**                                                                                                                             |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`clear_baked_meshes<class_GridMap_method_clear_baked_meshes>` **(** **)**                                                                                                   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`get_bake_mesh_instance<class_GridMap_method_get_bake_mesh_instance>` **(** :ref:`int<class_int>` idx **)**                                                                 |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`get_bake_meshes<class_GridMap_method_get_bake_meshes>` **(** **)**                                                                                                         |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>`         | :ref:`get_basis_with_orthogonal_index<class_GridMap_method_get_basis_with_orthogonal_index>` **(** :ref:`int<class_int>` index **)** |const|                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_cell_item<class_GridMap_method_get_cell_item>` **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|                                                            |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>`         | :ref:`get_cell_item_basis<class_GridMap_method_get_cell_item_basis>` **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|                                                |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_cell_item_orientation<class_GridMap_method_get_cell_item_orientation>` **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|                                    |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`get_collision_layer_value<class_GridMap_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                          |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`get_collision_mask_value<class_GridMap_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                            |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`get_meshes<class_GridMap_method_get_meshes>` **(** **)** |const|                                                                                                           |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`get_navigation_layer_value<class_GridMap_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                        |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`get_orthogonal_index_from_basis<class_GridMap_method_get_orthogonal_index_from_basis>` **(** :ref:`Basis<class_Basis>` basis **)** |const|                                 |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i[]<class_Vector3i>` | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i[]<class_Vector3i>` | :ref:`get_used_cells_by_item<class_GridMap_method_get_used_cells_by_item>` **(** :ref:`int<class_int>` item **)** |const|                                                        |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)** |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`     | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|                                                          |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`resource_changed<class_GridMap_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)**                                                              |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_cell_item<class_GridMap_method_set_cell_item>` **(** :ref:`Vector3i<class_Vector3i>` position, :ref:`int<class_int>` item, :ref:`int<class_int>` orientation=0 **)**   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_collision_layer_value<class_GridMap_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_collision_mask_value<class_GridMap_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                     |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_navigation_layer_value<class_GridMap_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                 |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>`   | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|                                                          |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -352,11 +358,27 @@ Returns an array of :ref:`ArrayMesh<class_ArrayMesh>`\ es and :ref:`Transform3D<
 
 ----
 
+.. _class_GridMap_method_get_basis_with_orthogonal_index:
+
+- :ref:`Basis<class_Basis>` **get_basis_with_orthogonal_index** **(** :ref:`int<class_int>` index **)** |const|
+
+Returns one of 24 possible rotations that lie along the vectors (x,y,z) with each component being either -1, 0, or 1. For further details, refer to the Godot source code.
+
+----
+
 .. _class_GridMap_method_get_cell_item:
 
 - :ref:`int<class_int>` **get_cell_item** **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|
 
 The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the given grid coordinates. If the cell is empty, :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will be returned.
+
+----
+
+.. _class_GridMap_method_get_cell_item_basis:
+
+- :ref:`Basis<class_Basis>` **get_cell_item_basis** **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|
+
+Returns the basis that gives the specificed cell its orientation.
 
 ----
 
@@ -400,9 +422,17 @@ Returns whether or not the specified layer of the :ref:`navigation_layers<class_
 
 ----
 
+.. _class_GridMap_method_get_orthogonal_index_from_basis:
+
+- :ref:`int<class_int>` **get_orthogonal_index_from_basis** **(** :ref:`Basis<class_Basis>` basis **)** |const|
+
+This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index (in the range from 0 to 23) of the point best representing the orientation of the object. For further details, refer to the Godot source code.
+
+----
+
 .. _class_GridMap_method_get_used_cells:
 
-- :ref:`Array<class_Array>` **get_used_cells** **(** **)** |const|
+- :ref:`Vector3i[]<class_Vector3i>` **get_used_cells** **(** **)** |const|
 
 Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordinates in the grid map.
 
@@ -410,7 +440,7 @@ Returns an array of :ref:`Vector3<class_Vector3>` with the non-empty cell coordi
 
 .. _class_GridMap_method_get_used_cells_by_item:
 
-- :ref:`Array<class_Array>` **get_used_cells_by_item** **(** :ref:`int<class_int>` item **)** |const|
+- :ref:`Vector3i[]<class_Vector3i>` **get_used_cells_by_item** **(** :ref:`int<class_int>` item **)** |const|
 
 Returns an array of all cells with the given item index specified in ``item``.
 
@@ -444,7 +474,7 @@ Sets the mesh index for the cell referenced by its grid coordinates.
 
 A negative item index such as :ref:`INVALID_CELL_ITEM<class_GridMap_constant_INVALID_CELL_ITEM>` will clear the cell.
 
-Optionally, the item's orientation can be passed. For valid orientation values, see :ref:`Basis.get_orthogonal_index<class_Basis_method_get_orthogonal_index>`.
+Optionally, the item's orientation can be passed. For valid orientation values, see :ref:`get_orthogonal_index_from_basis<class_GridMap_method_get_orthogonal_index_from_basis>`.
 
 ----
 

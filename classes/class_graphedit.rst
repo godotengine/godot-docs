@@ -25,6 +25,8 @@ Properties
 ----------
 
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                            | :ref:`arrange_nodes_button_hidden<class_GraphEdit_property_arrange_nodes_button_hidden>`   | ``false``                                                                 |
++----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | clip_contents                                                                              | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                            | :ref:`connection_lines_antialiased<class_GraphEdit_property_connection_lines_antialiased>` | ``true``                                                                  |
@@ -72,6 +74,8 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`_is_in_output_hotzone<class_GraphEdit_method__is_in_output_hotzone>` **(** :ref:`Object<class_Object>` graph_node, :ref:`int<class_int>` slot_index, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`_is_node_hover_valid<class_GraphEdit_method__is_node_hover_valid>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)** |virtual|                               |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                 |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                           |
@@ -90,7 +94,7 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**                                                                                                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                    |
+| :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                    |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_zoom_hbox<class_GraphEdit_method_get_zoom_hbox>` **(** **)**                                                                                                                                                                                                        |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -163,7 +167,7 @@ Emitted at the end of a connection drag.
 
 .. _class_GraphEdit_signal_connection_drag_started:
 
-- **connection_drag_started** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` slot, :ref:`bool<class_bool>` is_output **)**
+- **connection_drag_started** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` slot, :ref:`bool<class_bool>` is_output **)**
 
 Emitted at the beginning of a connection drag.
 
@@ -286,6 +290,22 @@ enum **PanningScheme**:
 
 Property Descriptions
 ---------------------
+
+.. _class_GraphEdit_property_arrange_nodes_button_hidden:
+
+- :ref:`bool<class_bool>` **arrange_nodes_button_hidden**
+
++-----------+----------------------------------------+
+| *Default* | ``false``                              |
++-----------+----------------------------------------+
+| *Setter*  | set_arrange_nodes_button_hidden(value) |
++-----------+----------------------------------------+
+| *Getter*  | is_arrange_nodes_button_hidden()       |
++-----------+----------------------------------------+
+
+If ``true``, the Arrange Nodes button is hidden.
+
+----
 
 .. _class_GraphEdit_property_connection_lines_antialiased:
 
@@ -592,6 +612,34 @@ Below is a sample code to help get started:
 
 ----
 
+.. _class_GraphEdit_method__is_node_hover_valid:
+
+- :ref:`bool<class_bool>` **_is_node_hover_valid** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)** |virtual|
+
+This virtual method can be used to insert additional error detection while the user is dragging a connection over a valid port.
+
+Return ``true`` if the connection is indeed valid or return ``false`` if the connection is impossible. If the connection is impossible, no snapping to the port and thus no connection request to that port will happen.
+
+In this example a connection to same node is suppressed:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _is_node_hover_valid(from, from_slot, to, to_slot):
+        return from != to
+
+ .. code-tab:: csharp
+
+    public override bool _IsNodeHoverValid(String from, int fromSlot, String to, int toSlot) {
+        return from != to;
+    }
+
+
+
+----
+
 .. _class_GraphEdit_method_add_valid_connection_type:
 
 - void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
@@ -670,7 +718,7 @@ Returns the points which would make up a connection between ``from`` and ``to``.
 
 .. _class_GraphEdit_method_get_connection_list:
 
-- :ref:`Array<class_Array>` **get_connection_list** **(** **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_connection_list** **(** **)** |const|
 
 Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }``.
 

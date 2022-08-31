@@ -21,7 +21,7 @@ This class implements a WebSocket server that can also support the high-level mu
 
 After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), you will need to :ref:`MultiplayerPeer.poll<class_MultiplayerPeer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`). When clients connect, disconnect, or send data, you will receive the appropriate signal.
 
-\ **Note:** Not available in HTML5 exports.
+\ **Note:** Not available in Web exports.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 

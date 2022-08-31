@@ -114,7 +114,7 @@ Properties
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                               | :ref:`linear_accel_min<class_CPUParticles2D_property_linear_accel_min>`             | ``0.0``               |
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles2D_property_local_coords>`                     | ``true``              |
+| :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles2D_property_local_coords>`                     | ``false``             |
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                 | :ref:`one_shot<class_CPUParticles2D_property_one_shot>`                             | ``false``             |
 +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
@@ -935,14 +935,14 @@ Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve
 - :ref:`bool<class_bool>` **local_coords**
 
 +-----------+----------------------------------+
-| *Default* | ``true``                         |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_use_local_coordinates(value) |
 +-----------+----------------------------------+
 | *Getter*  | get_use_local_coordinates()      |
 +-----------+----------------------------------+
 
-If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
+If ``true``, particles use the parent node's coordinate space (known as local coordinates). This will cause particles to move and rotate along the ``CPUParticles2D`` node (and its parents) when it is moved or rotated. If ``false``, particles use global coordinates; they will not move or rotate along the ``CPUParticles2D`` node (and its parents) when it is moved or rotated.
 
 ----
 
@@ -1267,7 +1267,7 @@ Method Descriptions
 
 - void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
 
-Sets this node's properties to match a given :ref:`GPUParticles2D<class_GPUParticles2D>` node with an assigned :ref:`ParticlesMaterial<class_ParticlesMaterial>`.
+Sets this node's properties to match a given :ref:`GPUParticles2D<class_GPUParticles2D>` node with an assigned :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`.
 
 ----
 

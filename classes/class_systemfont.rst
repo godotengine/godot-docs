@@ -30,42 +30,44 @@ You can create :ref:`FontVariation<class_FontVariation>` of the system font for 
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`antialiased<class_SystemFont_property_antialiased>`                   | ``true``                |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Font[]<class_Font>`                                       | :ref:`fallbacks<class_SystemFont_property_fallbacks>`                       | ``[]``                  |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                     | ``PackedStringArray()`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`FontStyle<enum_TextServer_FontStyle>`                     | :ref:`font_style<class_SystemFont_property_font_style>`                     | ``0``                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`force_autohinter<class_SystemFont_property_force_autohinter>`         | ``false``               |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_SystemFont_property_generate_mipmaps>`         | ``false``               |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                           | ``1``                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                 | ``0.0``                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` | :ref:`subpixel_positioning<class_SystemFont_property_subpixel_positioning>` | ``1``                   |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Font[]<class_Font>`                                       | :ref:`fallbacks<class_SystemFont_property_fallbacks>`                                                   | ``[]``                  |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                                                 | ``PackedStringArray()`` |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`FontStyle<enum_TextServer_FontStyle>`                     | :ref:`font_style<class_SystemFont_property_font_style>`                                                 | ``0``                   |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`force_autohinter<class_SystemFont_property_force_autohinter>`                                     | ``false``               |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_SystemFont_property_generate_mipmaps>`                                     | ``false``               |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                                                       | ``1``                   |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` | ``false``               |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             | ``0.0``                 |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+| :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` | :ref:`subpixel_positioning<class_SystemFont_property_subpixel_positioning>`                             | ``1``                   |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_SystemFont_property_antialiased:
+.. _class_SystemFont_property_antialiasing:
 
-- :ref:`bool<class_bool>` **antialiased**
+- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing**
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_antialiased(value) |
-+-----------+------------------------+
-| *Getter*  | is_antialiased()       |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``1``                   |
++-----------+-------------------------+
+| *Setter*  | set_antialiasing(value) |
++-----------+-------------------------+
+| *Getter*  | get_antialiasing()      |
++-----------+-------------------------+
 
-If set to ``true``, font 8-bit anitialiased glyph rendering is supported and enabled.
+Font anti-aliasing mode.
 
 ----
 
@@ -162,6 +164,22 @@ If set to ``true``, generate mipmaps for the font textures.
 +-----------+--------------------+
 
 Font hinting mode.
+
+----
+
+.. _class_SystemFont_property_multichannel_signed_distance_field:
+
+- :ref:`bool<class_bool>` **multichannel_signed_distance_field**
+
++-----------+-----------------------------------------------+
+| *Default* | ``false``                                     |
++-----------+-----------------------------------------------+
+| *Setter*  | set_multichannel_signed_distance_field(value) |
++-----------+-----------------------------------------------+
+| *Getter*  | is_multichannel_signed_distance_field()       |
++-----------+-----------------------------------------------+
+
+If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field generated from the dynamic font vector data.
 
 ----
 

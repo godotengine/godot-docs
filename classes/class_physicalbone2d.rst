@@ -10,18 +10,18 @@
 PhysicalBone2D
 ==============
 
-**Inherits:** :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RigidBody2D<class_RigidBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A 2D node that can be used for physically aware bones in 2D.
 
 Description
 -----------
 
-The ``PhysicalBone2D`` node is a :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`-based node that can be used to make :ref:`Bone2D<class_Bone2D>` nodes in a :ref:`Skeleton2D<class_Skeleton2D>` react to physics. This node is very similar to the :ref:`PhysicalBone3D<class_PhysicalBone3D>` node, just for 2D instead of 3D.
+The ``PhysicalBone2D`` node is a :ref:`RigidBody2D<class_RigidBody2D>`-based node that can be used to make :ref:`Bone2D<class_Bone2D>` nodes in a :ref:`Skeleton2D<class_Skeleton2D>` react to physics. This node is very similar to the :ref:`PhysicalBone3D<class_PhysicalBone3D>` node, just for 2D instead of 3D.
 
 \ **Note:** To have the Bone2D nodes visually follow the ``PhysicalBone2D`` node, use a :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>` modification on the :ref:`Skeleton2D<class_Skeleton2D>` node with the :ref:`Bone2D<class_Bone2D>` nodes.
 
-\ **Note:** The PhysicalBone2D node does not automatically create a :ref:`Joint2D<class_Joint2D>` node to keep ``PhysicalBone2D`` nodes together. You will need to create these manually. For most cases, you want to use a :ref:`PinJoint2D<class_PinJoint2D>` node. The ``PhysicalBone2D`` node can automatically configure the :ref:`Joint2D<class_Joint2D>` node once its been created as a child node.
+\ **Note:** The PhysicalBone2D node does not automatically create a :ref:`Joint2D<class_Joint2D>` node to keep ``PhysicalBone2D`` nodes together. You will need to create these manually. For most cases, you want to use a :ref:`PinJoint2D<class_PinJoint2D>` node. The ``PhysicalBone2D`` node can automatically configure the :ref:`Joint2D<class_Joint2D>` node once it's been created as a child node.
 
 Properties
 ----------

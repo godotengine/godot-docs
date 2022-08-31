@@ -51,7 +51,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                  | :ref:`add_bus_effect<class_AudioServer_method_add_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                             | :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>` **(** **)**                                                                                                  |
+| :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>` **(** **)**                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** |const|                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,7 +75,7 @@ Methods
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                        |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                             | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
+| :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                             | :ref:`get_mix_rate<class_AudioServer_method_get_mix_rate>` **(** **)** |const|                                                                                                                |
 +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -244,7 +244,7 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 .. _class_AudioServer_method_capture_get_device_list:
 
-- :ref:`Array<class_Array>` **capture_get_device_list** **(** **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **capture_get_device_list** **(** **)**
 
 Returns the names of all audio input devices detected on the system.
 
@@ -262,7 +262,7 @@ Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available bus
 
 - :ref:`int<class_int>` **get_bus_channels** **(** :ref:`int<class_int>` bus_idx **)** |const|
 
-Returns the amount of channels of the bus at index ``bus_idx``.
+Returns the number of channels of the bus at index ``bus_idx``.
 
 ----
 
@@ -340,7 +340,7 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 .. _class_AudioServer_method_get_device_list:
 
-- :ref:`Array<class_Array>` **get_device_list** **(** **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_device_list** **(** **)**
 
 Returns the names of all audio devices detected on the system.
 

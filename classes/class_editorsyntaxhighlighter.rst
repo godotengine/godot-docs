@@ -24,11 +24,11 @@ Add a syntax highlighter to an individual script by calling :ref:`ScriptEditorBa
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`_get_name<class_EditorSyntaxHighlighter_method__get_name>` **(** **)** |virtual| |const|                               |
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`   | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_method__get_supported_languages>` **(** **)** |virtual| |const| |
-+-----------------------------+------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_method__get_name>` **(** **)** |virtual| |const|                               |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_method__get_supported_languages>` **(** **)** |virtual| |const| |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -43,7 +43,7 @@ Virtual method which can be overridden to return the syntax highlighter name.
 
 .. _class_EditorSyntaxHighlighter_method__get_supported_languages:
 
-- :ref:`Array<class_Array>` **_get_supported_languages** **(** **)** |virtual| |const|
+- :ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages** **(** **)** |virtual| |const|
 
 Virtual method which can be overridden to return the supported language names.
 

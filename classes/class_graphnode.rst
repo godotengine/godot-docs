@@ -29,6 +29,8 @@ Properties
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`comment<class_GraphNode_property_comment>`                 | ``false``                                                             |
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`draggable<class_GraphNode_property_draggable>`             | ``true``                                                              |
++--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
 | :ref:`String<class_String>`                      | :ref:`language<class_GraphNode_property_language>`               | ``""``                                                                |
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
 | :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                     | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
@@ -38,6 +40,8 @@ Properties
 | :ref:`Vector2<class_Vector2>`                    | :ref:`position_offset<class_GraphNode_property_position_offset>` | ``Vector2(0, 0)``                                                     |
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`resizable<class_GraphNode_property_resizable>`             | ``false``                                                             |
++--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`selectable<class_GraphNode_property_selectable>`           | ``true``                                                              |
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`selected<class_GraphNode_property_selected>`               | ``false``                                                             |
 +--------------------------------------------------+------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -124,6 +128,8 @@ Theme Properties
 | :ref:`int<class_int>`             | :ref:`port_offset<class_GraphNode_theme_constant_port_offset>`       | ``0``                             |
 +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`separation<class_GraphNode_theme_constant_separation>`         | ``2``                             |
++-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`title_h_offset<class_GraphNode_theme_constant_title_h_offset>` | ``0``                             |
 +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`title_offset<class_GraphNode_theme_constant_title_offset>`     | ``26``                            |
 +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
@@ -237,6 +243,22 @@ If ``true``, the GraphNode is a comment node.
 
 ----
 
+.. _class_GraphNode_property_draggable:
+
+- :ref:`bool<class_bool>` **draggable**
+
++-----------+----------------------+
+| *Default* | ``true``             |
++-----------+----------------------+
+| *Setter*  | set_draggable(value) |
++-----------+----------------------+
+| *Getter*  | is_draggable()       |
++-----------+----------------------+
+
+If ``true``, the user can drag the GraphNode.
+
+----
+
 .. _class_GraphNode_property_language:
 
 - :ref:`String<class_String>` **language**
@@ -302,6 +324,22 @@ The offset of the GraphNode, relative to the scroll offset of the :ref:`GraphEdi
 If ``true``, the user can resize the GraphNode.
 
 \ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphNode_signal_resize_request>` signal, the GraphNode needs to be resized manually.
+
+----
+
+.. _class_GraphNode_property_selectable:
+
+- :ref:`bool<class_bool>` **selectable**
+
++-----------+-----------------------+
+| *Default* | ``true``              |
++-----------+-----------------------+
+| *Setter*  | set_selectable(value) |
++-----------+-----------------------+
+| *Getter*  | is_selectable()       |
++-----------+-----------------------+
+
+If ``true``, the user can select the GraphNode.
 
 ----
 
@@ -530,13 +568,13 @@ Returns ``true`` if right (output) side of the slot ``idx`` is enabled.
 
 Sets properties of the slot with ID ``idx``.
 
-If ``enable_left``/``right``, a port will appear and the slot will be able to be connected from this side.
+If ``enable_left``/``enable_right``, a port will appear and the slot will be able to be connected from this side.
 
-\ ``type_left``/``right`` is an arbitrary type of the port. Only ports with the same type values can be connected.
+``type_left``/``type_right`` is an arbitrary type of the port. Only ports with the same type values can be connected and negative values will disallow all connections to be made via user inputs.
 
-\ ``color_left``/``right`` is the tint of the port's icon on this side.
+``color_left``/``color_right`` is the tint of the port's icon on this side.
 
-\ ``custom_left``/``right`` is a custom texture for this side's port.
+``custom_left``/``custom_right`` is a custom texture for this side's port.
 
 \ **Note:** This method only sets properties of the slot. To create the slot, add a :ref:`Control<class_Control>`-derived child to the GraphNode.
 
@@ -588,7 +626,7 @@ Toggles the right (output) side of the slot ``idx``. If ``enable_right`` is ``tr
 
 - void **set_slot_type_left** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_left **)**
 
-Sets the left (input) type of the slot ``idx`` to ``type_left``.
+Sets the left (input) type of the slot ``idx`` to ``type_left``. If the value is negative, all connections will be disallowed to be created via user inputs.
 
 ----
 
@@ -596,7 +634,7 @@ Sets the left (input) type of the slot ``idx`` to ``type_left``.
 
 - void **set_slot_type_right** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` type_right **)**
 
-Sets the right (output) type of the slot ``idx`` to ``type_right``.
+Sets the right (output) type of the slot ``idx`` to ``type_right``. If the value is negative, all connections will be disallowed to be created via user inputs.
 
 Theme Property Descriptions
 ---------------------------
@@ -680,6 +718,18 @@ Horizontal offset for the ports.
 +-----------+-------+
 
 The vertical distance between ports.
+
+----
+
+.. _class_GraphNode_theme_constant_title_h_offset:
+
+- :ref:`int<class_int>` **title_h_offset**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Horizontal offset of the title text.
 
 ----
 

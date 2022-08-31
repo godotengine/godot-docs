@@ -21,7 +21,7 @@ Description
 
 Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. ``CanvasItem`` is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
 
-Any ``CanvasItem`` can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the ``CanvasItem`` are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
+Any ``CanvasItem`` can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the ``CanvasItem`` are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
 Canvas items are drawn in tree order. By default, children are on top of their parents so a root ``CanvasItem`` will be drawn behind everything. This behavior can be changed on a per-item basis.
 
@@ -29,7 +29,7 @@ A ``CanvasItem`` can also be hidden, which will also hide its children. It provi
 
 Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 
-\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg2rad<class_@GlobalScope_method_deg2rad>`.
+\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>`.
 
 Tutorials
 ---------
@@ -88,6 +88,8 @@ Methods
 | void                                  | :ref:`draw_dashed_line<class_CanvasItem_method_draw_dashed_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`float<class_float>` dash=2.0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_end_animation<class_CanvasItem_method_draw_end_animation>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`draw_lcd_texture_rect_region<class_CanvasItem_method_draw_lcd_texture_rect_region>` **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`draw_line<class_CanvasItem_method_draw_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -169,13 +171,13 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`InputEvent<class_InputEvent>`   | :ref:`make_input_local<class_CanvasItem_method_make_input_local>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`show<class_CanvasItem_method_show>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`update<class_CanvasItem_method_update>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -185,7 +187,9 @@ Signals
 
 - **draw** **(** **)**
 
-Emitted when the ``CanvasItem`` must redraw. This can only be connected realtime, as deferred will not allow drawing.
+Emitted when the ``CanvasItem`` must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_method__draw>` is called.
+
+\ **Note:** Deferred connections do not allow drawing through the ``draw_*`` methods.
 
 ----
 
@@ -244,11 +248,11 @@ enum **TextureFilter**:
 
 - **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS** = **4** --- The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps. Use this for non-pixel art textures that may be viewed at a low scale (e.g. due to :ref:`Camera2D<class_Camera2D>` zoom), as mipmaps are important to smooth out pixels that are smaller than on-screen pixels.
 
-- **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC** = **5** --- The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera.
+- **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC** = **5** --- The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
 \ **Note:** This texture filter is rarely useful in 2D projects. :ref:`TEXTURE_FILTER_NEAREST_WITH_MIPMAPS<class_CanvasItem_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS>` is usually more appropriate.
 
-- **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC** = **6** --- The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing.
+- **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC** = **6** --- The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
 \ **Note:** This texture filter is rarely useful in 2D projects. :ref:`TEXTURE_FILTER_LINEAR_WITH_MIPMAPS<class_CanvasItem_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS>` is usually more appropriate.
 
@@ -299,7 +303,7 @@ Constants
 
 - **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = **35** --- The ``CanvasItem``'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
-- **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw.
+- **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw (see :ref:`_draw<class_CanvasItem_method__draw>`).
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- The ``CanvasItem``'s visibility has changed.
 
@@ -489,7 +493,9 @@ Method Descriptions
 
 - void **_draw** **(** **)** |virtual|
 
-Overridable function called by the engine (if defined) to draw the canvas item.
+Called when ``CanvasItem`` has been requested to redraw (after :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called, either manually or by the engine).
+
+Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
 ----
 
@@ -537,7 +543,7 @@ Draws a colored, filled circle. See also :ref:`draw_arc<class_CanvasItem_method_
 
 - void **draw_colored_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
-Draws a colored polygon of any amount of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
+Draws a colored polygon of any number of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
 
 ----
 
@@ -554,6 +560,23 @@ Draws a dashed line from a 2D point to another, with a given color and width. Se
 - void **draw_end_animation** **(** **)**
 
 After submitting all animations slices via :ref:`draw_animation_slice<class_CanvasItem_method_draw_animation_slice>`, this function can be used to revert drawing to its default state (all subsequent drawing commands will be visible). If you don't care about this particular use case, usage of this function after submitting the slices is not required.
+
+----
+
+.. _class_CanvasItem_method_draw_lcd_texture_rect_region:
+
+- void **draw_lcd_texture_rect_region** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**
+
+Draws a textured rectangle region of the font texture with LCD sub-pixel anti-aliasing at a given position, optionally modulated by a color.
+
+Texture is drawn using the following blend operation, blend mode of the :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` is ignored:
+
+::
+
+    dst.r = texture.r * modulate.r * modulate.a + dst.r * (1.0 - texture.r * modulate.a);
+    dst.g = texture.g * modulate.g * modulate.a + dst.g * (1.0 - texture.g * modulate.a);
+    dst.b = texture.b * modulate.b * modulate.a + dst.b * (1.0 - texture.b * modulate.a);
+    dst.a = modulate.a + dst.a * (1.0 - modulate.a);
 
 ----
 
@@ -605,7 +628,7 @@ Draws multiple disconnected lines with a uniform ``width`` and segment-by-segmen
 
 - void **draw_multiline_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` max_lines=-1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` brk_flags=3, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Breaks ``text`` to the lines and draws it using the specified ``font`` at the ``position`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+Breaks ``text`` into lines and draws it using the specified ``font`` at the ``pos`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
 ----
 
@@ -613,7 +636,7 @@ Breaks ``text`` to the lines and draws it using the specified ``font`` at the ``
 
 - void **draw_multiline_string_outline** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` max_lines=-1, :ref:`int<class_int>` size=1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` brk_flags=3, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Breaks ``text`` to the lines and draws text outline using the specified ``font`` at the ``position`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+Breaks ``text`` to the lines and draws text outline using the specified ``font`` at the ``pos`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
 ----
 
@@ -629,7 +652,7 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 - void **draw_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
-Draws a solid polygon of any amount of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
+Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
 
 ----
 
@@ -687,7 +710,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 - void **draw_string** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Draws ``text`` using the specified ``font`` at the ``position`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
 \ **Example using the default project font:**\ 
 
@@ -722,7 +745,7 @@ See also :ref:`Font.draw_string<class_Font_method_draw_string>`.
 
 - void **draw_string_outline** **(** :ref:`Font<class_Font>` font, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` size=1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Draws ``text`` outline using the specified ``font`` at the ``position`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``clip_w`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
+Draws ``text`` outline using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
 ----
 
@@ -892,7 +915,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_method__draw>`).
 
 ----
 
@@ -909,6 +932,14 @@ Assigns ``screen_point`` as this node's new local transform.
 - :ref:`InputEvent<class_InputEvent>` **make_input_local** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
+
+----
+
+.. _class_CanvasItem_method_queue_redraw:
+
+- void **queue_redraw** **(** **)**
+
+Queues the ``CanvasItem`` to redraw. During idle time, if ``CanvasItem`` is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
 
 ----
 
@@ -933,14 +964,6 @@ If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_C
 - void **show** **(** **)**
 
 Show the ``CanvasItem`` if it's currently hidden. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
-
-----
-
-.. _class_CanvasItem_method_update:
-
-- void **update** **(** **)**
-
-Queue the ``CanvasItem`` for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

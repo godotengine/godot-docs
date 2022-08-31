@@ -307,7 +307,7 @@ Sets the collision mask that the Jiggle modifier takes into account when perform
 
 - void **set_jiggle_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_idx **)**
 
-Sets the bone index, ``bone_index``, of the Jiggle joint at ``joint_idx``. When possible, this will also update the ``bone_name`` of the Jiggle joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+Sets the bone index, ``bone_idx``, of the Jiggle joint at ``joint_idx``. When possible, this will also update the ``bone_name`` of the Jiggle joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
 ----
 
@@ -315,7 +315,7 @@ Sets the bone index, ``bone_index``, of the Jiggle joint at ``joint_idx``. When 
 
 - void **set_jiggle_joint_bone_name** **(** :ref:`int<class_int>` joint_idx, :ref:`String<class_String>` name **)**
 
-Sets the bone name, ``bone_name``, of the Jiggle joint at ``joint_idx``. When possible, this will also update the ``bone_index`` of the Jiggle joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+Sets the bone name, ``name``, of the Jiggle joint at ``joint_idx``. When possible, this will also update the ``bone_index`` of the Jiggle joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
 ----
 

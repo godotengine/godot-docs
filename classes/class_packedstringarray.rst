@@ -51,6 +51,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`bsearch<class_PackedStringArray_method_bsearch>` **(** :ref:`String<class_String>` value, :ref:`bool<class_bool>` before=true **)** |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`clear<class_PackedStringArray_method_clear>` **(** **)**                                                                            |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`count<class_PackedStringArray_method_count>` **(** :ref:`String<class_String>` value **)** |const|                                  |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`duplicate<class_PackedStringArray_method_duplicate>` **(** **)**                                                                    |
@@ -146,6 +148,14 @@ Appends a ``PackedStringArray`` at the end of this array.
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedStringArray_method_bsearch>` on an unsorted array results in unexpected behavior.
+
+----
+
+.. _class_PackedStringArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedStringArray_method_resize>` with a size of ``0``.
 
 ----
 
@@ -285,6 +295,8 @@ Sorts the elements of the array in ascending order.
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
 
+Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each string encoded as bytes.
+
 Operator Descriptions
 ---------------------
 
@@ -292,11 +304,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedStringArray_operator_sum_PackedStringArray:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **operator +** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
+
+Returns a new ``PackedStringArray`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedStringArray_method_append_array>` instead.
 
 ----
 
@@ -304,11 +320,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal :ref:`String<class_String>`\ s at the corresponding indices.
+
 ----
 
 .. _class_PackedStringArray_operator_idx_String:
 
 - :ref:`String<class_String>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the :ref:`String<class_String>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

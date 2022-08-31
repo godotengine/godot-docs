@@ -307,13 +307,13 @@ Returns the total time in seconds the ``Tween`` has been animating (i.e. the tim
 
 This method can be used for manual interpolation of a value, when you don't want ``Tween`` to do animating for you. It's similar to :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`, but with support for custom transition and easing.
 
-\ ``initial_value`` is the starting value of the interpolation.
+``initial_value`` is the starting value of the interpolation.
 
-\ ``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
+``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
 
-\ ``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
+``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
 
-\ ``duration`` is the total time of the interpolation.
+``duration`` is the total time of the interpolation.
 
 \ **Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
 

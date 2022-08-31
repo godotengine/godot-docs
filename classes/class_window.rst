@@ -45,6 +45,8 @@ Properties
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`exclusive<class_Window_property_exclusive>`                       | ``false``              |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`extend_to_title<class_Window_property_extend_to_title>`           | ``false``              |
++-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Vector2i<class_Vector2i>`                           | :ref:`max_size<class_Window_property_max_size>`                         | ``Vector2i(0, 0)``     |
 +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 | :ref:`Vector2i<class_Vector2i>`                           | :ref:`min_size<class_Window_property_min_size>`                         | ``Vector2i(0, 0)``     |
@@ -279,7 +281,7 @@ Emitted when the mouse cursor exits the ``Window``'s area (including when it's h
 
 - **theme_changed** **(** **)**
 
-Emitted when the :ref:`theme<class_Window_property_theme>` is modified or changed to another :ref:`Theme<class_Theme>`.
+Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICATION_THEME_CHANGED>` notification is sent.
 
 ----
 
@@ -346,6 +348,8 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 .. _class_Window_constant_FLAG_POPUP:
 
+.. _class_Window_constant_FLAG_EXTEND_TO_TITLE:
+
 .. _class_Window_constant_FLAG_MAX:
 
 enum **Flags**:
@@ -362,7 +366,9 @@ enum **Flags**:
 
 - **FLAG_POPUP** = **5** --- Whether the window is popup or a regular window. Set with :ref:`popup_window<class_Window_property_popup_window>`.
 
-- **FLAG_MAX** = **6** --- Max value of the :ref:`Flags<enum_Window_Flags>`.
+- **FLAG_EXTEND_TO_TITLE** = **6** --- Window contents is expanded to the full size of the window, window title bar is transparent.
+
+- **FLAG_MAX** = **7** --- Max value of the :ref:`Flags<enum_Window_Flags>`.
 
 ----
 
@@ -435,7 +441,19 @@ Constants
 
 .. _class_Window_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
+.. _class_Window_constant_NOTIFICATION_THEME_CHANGED:
+
 - **NOTIFICATION_VISIBILITY_CHANGED** = **30** --- Emitted when ``Window``'s visibility changes, right before :ref:`visibility_changed<class_Window_signal_visibility_changed>`.
+
+- **NOTIFICATION_THEME_CHANGED** = **32** --- Sent when the node needs to refresh its theme items. This happens in one of the following cases:
+
+- The :ref:`theme<class_Window_property_theme>` property is changed on this node or any of its ancestors.
+
+- The :ref:`theme_type_variation<class_Window_property_theme_type_variation>` property is changed on this node.
+
+- The node enters the scene tree.
+
+\ **Note:** As an optimization, this notification won't be sent from changes that occur while this node is outside of the scene tree. Instead, all of the theme item updates can be applied at once when the node enters the scene tree.
 
 Property Descriptions
 ---------------------
@@ -586,6 +604,22 @@ Needs :ref:`transient<class_Window_property_transient>` enabled to work.
 
 ----
 
+.. _class_Window_property_extend_to_title:
+
+- :ref:`bool<class_bool>` **extend_to_title**
+
++-----------+-----------------+
+| *Default* | ``false``       |
++-----------+-----------------+
+| *Setter*  | set_flag(value) |
++-----------+-----------------+
+| *Getter*  | get_flag()      |
++-----------+-----------------+
+
+If ``true``, the ``Window`` contents is expanded to the full size of the window, window title bar is transparent.
+
+----
+
 .. _class_Window_property_max_size:
 
 - :ref:`Vector2i<class_Vector2i>` **max_size**
@@ -599,6 +633,8 @@ Needs :ref:`transient<class_Window_property_transient>` enabled to work.
 +-----------+---------------------+
 
 If non-zero, the ``Window`` can't be resized to be bigger than this size.
+
+\ **Note:** This property will be ignored if the value is lower than :ref:`min_size<class_Window_property_min_size>`.
 
 ----
 
@@ -615,6 +651,8 @@ If non-zero, the ``Window`` can't be resized to be bigger than this size.
 +-----------+---------------------+
 
 If non-zero, the ``Window`` can't be resized to be smaller than this size.
+
+\ **Note:** This property will be ignored in favor of :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>` if :ref:`wrap_controls<class_Window_property_wrap_controls>` is enabled and if its size is bigger.
 
 ----
 
@@ -826,7 +864,7 @@ If ``true``, the window is visible.
 | *Getter*  | is_wrapping_controls()   |
 +-----------+--------------------------+
 
-If ``true``, the window's size will automatically update when a child node is added or removed.
+If ``true``, the window's size will automatically update when a child node is added or removed, ignoring :ref:`min_size<class_Window_property_min_size>` if the new size is bigger.
 
 If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_child_controls_changed>` manually.
 
@@ -861,7 +899,7 @@ Returns the combined minimum size from the child :ref:`Control<class_Control>` n
 
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_Window_Flags>` flag **)** |const|
 
-Returns ``true`` if the flag is set.
+Returns ``true`` if the ``flag`` is set.
 
 ----
 

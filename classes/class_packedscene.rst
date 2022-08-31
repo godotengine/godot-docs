@@ -44,7 +44,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 
 
-\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
 
 .. tabs::
@@ -53,7 +53,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
     # Create the objects.
     var node = Node2D.new()
-    var body = RigidDynamicBody2D.new()
+    var body = RigidBody2D.new()
     var collision = CollisionShape2D.new()
     
     # Create the object hierarchy.
@@ -75,7 +75,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
     // Create the objects.
     var node = new Node2D();
-    var body = new RigidDynamicBody2D();
+    var body = new RigidBody2D();
     var collision = new CollisionShape2D();
     
     // Create the object hierarchy.
@@ -191,7 +191,7 @@ Returns the ``SceneState`` representing the scene file contents.
 
 - :ref:`Node<class_Node>` **instantiate** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const|
 
-Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_INSTANCED<class_Node_constant_NOTIFICATION_INSTANCED>` notification on the root node.
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_SCENE_INSTANTIATED<class_Node_constant_NOTIFICATION_SCENE_INSTANTIATED>` notification on the root node.
 
 ----
 

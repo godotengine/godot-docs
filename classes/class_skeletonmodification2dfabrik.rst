@@ -72,7 +72,7 @@ Property Descriptions
 | *Getter*  | get_fabrik_data_chain_length()      |
 +-----------+-------------------------------------+
 
-The amount of FABRIK joints in the FABRIK modification.
+The number of FABRIK joints in the FABRIK modification.
 
 ----
 
@@ -137,7 +137,7 @@ Sets the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``join
 
 - void **set_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_idx **)**
 
-Sets the bone index, ``bone_index``, of the FABRIK joint at ``joint_idx``. When possible, this will also update the ``bone2d_node`` of the FABRIK joint based on data provided by the linked skeleton.
+Sets the bone index, ``bone_idx``, of the FABRIK joint at ``joint_idx``. When possible, this will also update the ``bone2d_node`` of the FABRIK joint based on data provided by the linked skeleton.
 
 ----
 

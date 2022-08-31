@@ -42,23 +42,23 @@ Methods
 Operators
 ---------
 
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`String<class_String>` right **)**         |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator <<class_StringName_operator_lt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator <=<class_StringName_operator_lte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**          |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ><class_StringName_operator_gt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator >=<class_StringName_operator_gte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`String<class_String>` right **)**          |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator \<<class_StringName_operator_lt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator \<=<class_StringName_operator_lte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**           |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator ><class_StringName_operator_gt_bool>` **(** :ref:`StringName<class_StringName>` right **)**    |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`operator >=<class_StringName_operator_gte_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
++-------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Constructor Descriptions
 ------------------------

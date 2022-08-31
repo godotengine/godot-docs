@@ -99,7 +99,7 @@ If ``server_compatibilty`` is ``false`` (default), the multiplayer peer will be 
 
 If ``server_compatibilty`` is ``true`` the peer will suppress all :ref:`MultiplayerPeer.peer_connected<class_MultiplayerPeer_signal_peer_connected>` signals until a peer with id :ref:`MultiplayerPeer.TARGET_PEER_SERVER<class_MultiplayerPeer_constant_TARGET_PEER_SERVER>` connects and then emit :ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>`. After that the signal :ref:`MultiplayerPeer.peer_connected<class_MultiplayerPeer_signal_peer_connected>` will be emitted for every already connected peer, and any new peer that might connect. If the server peer disconnects after that, signal :ref:`MultiplayerPeer.server_disconnected<class_MultiplayerPeer_signal_server_disconnected>` will be emitted and state will become :ref:`MultiplayerPeer.CONNECTION_CONNECTED<class_MultiplayerPeer_constant_CONNECTION_CONNECTED>`.
 
-You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enum_@GlobalScope_TransferMode>` which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
+You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
 
 ----
 

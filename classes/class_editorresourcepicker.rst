@@ -62,9 +62,9 @@ Emitted when the value of the edited resource was changed.
 
 .. _class_EditorResourcePicker_signal_resource_selected:
 
-- **resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`bool<class_bool>` edit **)**
+- **resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`bool<class_bool>` inspect **)**
 
-Emitted when the resource value was set and user clicked to edit it. When ``edit`` is ``true``, the signal was caused by the context menu "Edit" option.
+Emitted when the resource value was set and user clicked to edit it. When ``inspect`` is ``true``, the signal was caused by the context menu "Edit" or "Inspect" option.
 
 Property Descriptions
 ---------------------

@@ -38,6 +38,8 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedVector3Array_method_bsearch>` **(** :ref:`Vector3<class_Vector3>` value, :ref:`bool<class_bool>` before=true **)** |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear<class_PackedVector3Array_method_clear>` **(** **)**                                                                              |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`count<class_PackedVector3Array_method_count>` **(** :ref:`Vector3<class_Vector3>` value **)** |const|                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`duplicate<class_PackedVector3Array_method_duplicate>` **(** **)**                                                                      |
@@ -135,6 +137,14 @@ Appends a ``PackedVector3Array`` at the end of this array.
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedVector3Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+
+----
+
+.. _class_PackedVector3Array_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedVector3Array_method_resize>` with a size of ``0``.
 
 ----
 
@@ -274,6 +284,8 @@ Sorts the elements of the array in ascending order.
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
 
+Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each vector encoded as bytes.
+
 Operator Descriptions
 ---------------------
 
@@ -281,11 +293,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedVector3Array_operator_mul_PackedVector3Array:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Transforms (multiplies) all vectors in the array by the :ref:`Transform3D<class_Transform3D>` matrix.
 
 ----
 
@@ -293,17 +309,23 @@ Operator Descriptions
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **operator +** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 
+Returns a new ``PackedVector3Array`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedVector3Array_method_append_array>` instead.
+
 ----
 
 .. _class_PackedVector3Array_operator_eq_bool:
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal :ref:`Vector3<class_Vector3>`\ s at the corresponding indices.
+
 ----
 
 .. _class_PackedVector3Array_operator_idx_Vector3:
 
 - :ref:`Vector3<class_Vector3>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the :ref:`Vector3<class_Vector3>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

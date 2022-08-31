@@ -61,7 +61,7 @@ Loads a key from ``path``. If ``public_only`` is ``true``, only the public key w
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load_from_string** **(** :ref:`String<class_String>` string_key, :ref:`bool<class_bool>` public_only=false **)**
 
-Loads a key from the given ``string``. If ``public_only`` is ``true``, only the public key will be loaded.
+Loads a key from the given ``string_key``. If ``public_only`` is ``true``, only the public key will be loaded.
 
 ----
 

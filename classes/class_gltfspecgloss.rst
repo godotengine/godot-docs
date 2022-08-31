@@ -12,7 +12,17 @@ GLTFSpecGloss
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Archived GLTF extension for specular/glossy materials.
 
+Description
+-----------
+
+KHR_materials_pbrSpecularGlossiness is an archived GLTF extension. This means that it is deprecated and not recommended for new files. However, it is still supported for loading old files.
+
+Tutorials
+---------
+
+- `KHR_materials_pbrSpecularGlossiness GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Archived/KHR_materials_pbrSpecularGlossiness>`__
 
 Properties
 ----------
@@ -44,6 +54,8 @@ Property Descriptions
 | *Getter*  | get_diffuse_factor()      |
 +-----------+---------------------------+
 
+The reflected diffuse factor of the material.
+
 ----
 
 .. _class_GLTFSpecGloss_property_diffuse_img:
@@ -55,6 +67,8 @@ Property Descriptions
 +----------+------------------------+
 | *Getter* | get_diffuse_img()      |
 +----------+------------------------+
+
+The diffuse texture.
 
 ----
 
@@ -70,6 +84,8 @@ Property Descriptions
 | *Getter*  | get_gloss_factor()      |
 +-----------+-------------------------+
 
+The glossiness or smoothness of the material.
+
 ----
 
 .. _class_GLTFSpecGloss_property_spec_gloss_img:
@@ -81,6 +97,8 @@ Property Descriptions
 +----------+---------------------------+
 | *Getter* | get_spec_gloss_img()      |
 +----------+---------------------------+
+
+The specular-glossiness texture.
 
 ----
 
@@ -95,6 +113,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_specular_factor()      |
 +-----------+----------------------------+
+
+The specular RGB color of the material. The alpha channel is unused.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

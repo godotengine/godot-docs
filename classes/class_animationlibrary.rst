@@ -12,7 +12,17 @@ AnimationLibrary
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Container for :ref:`Animation<class_Animation>` resources.
 
+Description
+-----------
+
+An animation library stores a set of animations accessible through :ref:`StringName<class_StringName>` keys, for use with :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
+Tutorials
+---------
+
+- :doc:`Animation tutorial index <../tutorials/animation/index>`
 
 Properties
 ----------
@@ -45,17 +55,23 @@ Signals
 
 - **animation_added** **(** :ref:`StringName<class_StringName>` name **)**
 
+Emitted when an :ref:`Animation<class_Animation>` is added, under the key ``name``.
+
 ----
 
 .. _class_AnimationLibrary_signal_animation_removed:
 
 - **animation_removed** **(** :ref:`StringName<class_StringName>` name **)**
 
+Emitted when an :ref:`Animation<class_Animation>` stored with the key ``name`` is removed.
+
 ----
 
 .. _class_AnimationLibrary_signal_animation_renamed:
 
 - **animation_renamed** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` to_name **)**
+
+Emitted when the key for an :ref:`Animation<class_Animation>` is changed, from ``name`` to ``to_name``.
 
 Property Descriptions
 ---------------------
@@ -75,11 +91,15 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**
 
+Adds the ``animation`` to the library, accesible by the key ``name``.
+
 ----
 
 .. _class_AnimationLibrary_method_get_animation:
 
 - :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
 
 ----
 
@@ -87,11 +107,15 @@ Method Descriptions
 
 - :ref:`StringName[]<class_StringName>` **get_animation_list** **(** **)** |const|
 
+Returns the keys for the :ref:`Animation<class_Animation>`\ s stored in the library.
+
 ----
 
 .. _class_AnimationLibrary_method_has_animation:
 
 - :ref:`bool<class_bool>` **has_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if the library stores an :ref:`Animation<class_Animation>` with ``name`` as the key.
 
 ----
 
@@ -99,11 +123,15 @@ Method Descriptions
 
 - void **remove_animation** **(** :ref:`StringName<class_StringName>` name **)**
 
+Removes the :ref:`Animation<class_Animation>` with the key ``name``.
+
 ----
 
 .. _class_AnimationLibrary_method_rename_animation:
 
 - void **rename_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
+
+Changes the key of the :ref:`Animation<class_Animation>` associated with the key ``name`` to ``newname``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter*  | get_physical_bone_chain_length()      |
 +-----------+---------------------------------------+
 
-The amount of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes linked in this modification.
+The number of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes linked in this modification.
 
 Method Descriptions
 -------------------

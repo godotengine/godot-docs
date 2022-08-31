@@ -58,11 +58,11 @@ Methods
 -------
 
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_shader_instance_uniform<class_GeometryInstance3D_method_get_shader_instance_uniform>` **(** :ref:`StringName<class_StringName>` uniform **)** |const|                              |
+| :ref:`Variant<class_Variant>` | :ref:`get_instance_shader_uniform<class_GeometryInstance3D_method_get_instance_shader_uniform>` **(** :ref:`StringName<class_StringName>` uniform **)** |const|                              |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`set_custom_aabb<class_GeometryInstance3D_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                                                             |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_shader_instance_uniform<class_GeometryInstance3D_method_set_shader_instance_uniform>` **(** :ref:`StringName<class_StringName>` uniform, :ref:`Variant<class_Variant>` value **)** |
+| void                          | :ref:`set_instance_shader_uniform<class_GeometryInstance3D_method_set_instance_shader_uniform>` **(** :ref:`StringName<class_StringName>` uniform, :ref:`Variant<class_Variant>` value **)** |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -366,9 +366,9 @@ Controls which instances will be faded when approaching the limits of the visibi
 Method Descriptions
 -------------------
 
-.. _class_GeometryInstance3D_method_get_shader_instance_uniform:
+.. _class_GeometryInstance3D_method_get_instance_shader_uniform:
 
-- :ref:`Variant<class_Variant>` **get_shader_instance_uniform** **(** :ref:`StringName<class_StringName>` uniform **)** |const|
+- :ref:`Variant<class_Variant>` **get_instance_shader_uniform** **(** :ref:`StringName<class_StringName>` uniform **)** |const|
 
 ----
 
@@ -380,9 +380,9 @@ Overrides the bounding box of this node with a custom one. To remove it, set an 
 
 ----
 
-.. _class_GeometryInstance3D_method_set_shader_instance_uniform:
+.. _class_GeometryInstance3D_method_set_instance_shader_uniform:
 
-- void **set_shader_instance_uniform** **(** :ref:`StringName<class_StringName>` uniform, :ref:`Variant<class_Variant>` value **)**
+- void **set_instance_shader_uniform** **(** :ref:`StringName<class_StringName>` uniform, :ref:`Variant<class_Variant>` value **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -228,7 +228,7 @@ Returns an input for this tracker. It can return a boolean, float or :ref:`Vecto
 
 - :ref:`XRPose<class_XRPose>` **get_pose** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``pose``.
+Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``name`` pose.
 
 ----
 
@@ -236,7 +236,7 @@ Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``pos
 
 - :ref:`bool<class_bool>` **has_pose** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns ``true`` if the bound ``tracker`` is available and is currently tracking the bound ``pose``.
+Returns ``true`` if the tracker is available and is currently tracking the bound ``name`` pose.
 
 ----
 

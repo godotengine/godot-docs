@@ -74,7 +74,9 @@ State of the :kbd:`Alt` modifier.
 | *Getter*  | is_command_pressed()       |
 +-----------+----------------------------+
 
-State of the :kbd:`Cmd` modifier.
+State of the :kbd:`Cmd` modifier. On macOS, this is equivalent to :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`. On other platforms, this is equivalent to :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`.
+
+This modifier should be preferred to :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` or :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` for system shortcuts, as it maintains better cross-platform compatibility.
 
 ----
 
@@ -106,7 +108,9 @@ State of the :kbd:`Ctrl` modifier.
 | *Getter*  | is_meta_pressed()       |
 +-----------+-------------------------+
 
-State of the :kbd:`Meta` modifier.
+State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Windows key (sometimes called "meta" or "super" on Linux). On macOS, this represents the Command key, and is equivalent to :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>`.
+
+For better cross-system compatibility, use :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>` instead.
 
 ----
 

@@ -89,7 +89,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`get_point_count<class_AStar3D_method_get_point_count>` **(** **)** |const|                                                                                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`get_point_ids<class_AStar3D_method_get_point_ids>` **(** **)**                                                                                                                         |
+| :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_ids<class_AStar3D_method_get_point_ids>` **(** **)**                                                                                                                         |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_point_path<class_AStar3D_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                            |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -141,7 +141,7 @@ Note that this function is hidden in the default ``AStar3D`` class.
 
 Adds a new point at the given position with the given identifier. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 0.0 or greater.
 
-The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar3D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
+The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar3D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``s to form a path.
 
 
 .. tabs::
@@ -361,7 +361,7 @@ Returns the number of points currently in the points pool.
 
 .. _class_AStar3D_method_get_point_ids:
 
-- :ref:`Array<class_Array>` **get_point_ids** **(** **)**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_ids** **(** **)**
 
 Returns an array of all point IDs.
 

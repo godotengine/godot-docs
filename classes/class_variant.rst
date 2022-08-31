@@ -42,8 +42,6 @@ Godot tracks all scripting API variables within Variants. Without even realizing
 
 - GDScript automatically wrap values in them. It keeps all data in plain Variants by default and then optionally enforces custom static typing rules on variable types.
 
-- VisualScript tracks properties inside Variants as well, but it also uses static typing. The GUI interface enforces that properties have a particular type that doesn't change over time.
-
 - C# is statically typed, but uses the Mono ``object`` type in place of Godot's Variant class when it needs to represent a dynamic value. ``object`` is the Mono runtime's equivalent of the same concept.
 
 The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`).

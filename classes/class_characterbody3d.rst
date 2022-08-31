@@ -39,37 +39,37 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                                                                          | :ref:`collision/safe_margin<class_CharacterBody3D_property_collision/safe_margin>`                                     | ``0.001``            |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                                                                            | :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>`                                         | ``true``             |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                                                                            | :ref:`floor_constant_speed<class_CharacterBody3D_property_floor_constant_speed>`                                       | ``false``            |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                                                                          | :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>`                                                 | ``0.785398``         |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                                                                          | :ref:`floor_snap_length<class_CharacterBody3D_property_floor_snap_length>`                                             | ``0.1``              |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                                                                            | :ref:`floor_stop_on_slope<class_CharacterBody3D_property_floor_stop_on_slope>`                                         | ``true``             |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                                                                              | :ref:`max_slides<class_CharacterBody3D_property_max_slides>`                                                           | ``6``                |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`MotionMode<enum_CharacterBody3D_MotionMode>`                                                 | :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`                                                         | ``0``                |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` | :ref:`moving_platform_apply_velocity_on_leave<class_CharacterBody3D_property_moving_platform_apply_velocity_on_leave>` | ``0``                |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                                                                              | :ref:`moving_platform_floor_layers<class_CharacterBody3D_property_moving_platform_floor_layers>`                       | ``4294967295``       |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                                                                              | :ref:`moving_platform_wall_layers<class_CharacterBody3D_property_moving_platform_wall_layers>`                         | ``0``                |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                                                                            | :ref:`slide_on_ceiling<class_CharacterBody3D_property_slide_on_ceiling>`                                               | ``true``             |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                                                      | :ref:`up_direction<class_CharacterBody3D_property_up_direction>`                                                       | ``Vector3(0, 1, 0)`` |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                                                      | :ref:`velocity<class_CharacterBody3D_property_velocity>`                                                               | ``Vector3(0, 0, 0)`` |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                                                                          | :ref:`wall_min_slide_angle<class_CharacterBody3D_property_wall_min_slide_angle>`                                       | ``0.261799``         |
-+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------+
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                                      | :ref:`floor_block_on_wall<class_CharacterBody3D_property_floor_block_on_wall>`     | ``true``             |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                                      | :ref:`floor_constant_speed<class_CharacterBody3D_property_floor_constant_speed>`   | ``false``            |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                                    | :ref:`floor_max_angle<class_CharacterBody3D_property_floor_max_angle>`             | ``0.785398``         |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                                    | :ref:`floor_snap_length<class_CharacterBody3D_property_floor_snap_length>`         | ``0.1``              |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                                      | :ref:`floor_stop_on_slope<class_CharacterBody3D_property_floor_stop_on_slope>`     | ``true``             |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                                        | :ref:`max_slides<class_CharacterBody3D_property_max_slides>`                       | ``6``                |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`MotionMode<enum_CharacterBody3D_MotionMode>`           | :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`                     | ``0``                |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                                        | :ref:`platform_floor_layers<class_CharacterBody3D_property_platform_floor_layers>` | ``4294967295``       |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`PlatformOnLeave<enum_CharacterBody3D_PlatformOnLeave>` | :ref:`platform_on_leave<class_CharacterBody3D_property_platform_on_leave>`         | ``0``                |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                                        | :ref:`platform_wall_layers<class_CharacterBody3D_property_platform_wall_layers>`   | ``0``                |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                                    | :ref:`safe_margin<class_CharacterBody3D_property_safe_margin>`                     | ``0.001``            |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`bool<class_bool>`                                      | :ref:`slide_on_ceiling<class_CharacterBody3D_property_slide_on_ceiling>`           | ``true``             |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                                | :ref:`up_direction<class_CharacterBody3D_property_up_direction>`                   | ``Vector3(0, 1, 0)`` |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                                | :ref:`velocity<class_CharacterBody3D_property_velocity>`                           | ``Vector3(0, 0, 0)`` |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+| :ref:`float<class_float>`                                    | :ref:`wall_min_slide_angle<class_CharacterBody3D_property_wall_min_slide_angle>`   | ``0.261799``         |
++--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
 
 Methods
 -------
@@ -127,46 +127,24 @@ enum **MotionMode**:
 
 ----
 
-.. _enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave:
+.. _enum_CharacterBody3D_PlatformOnLeave:
 
-.. _class_CharacterBody3D_constant_PLATFORM_VEL_ON_LEAVE_ALWAYS:
+.. _class_CharacterBody3D_constant_PLATFORM_ON_LEAVE_ADD_VELOCITY:
 
-.. _class_CharacterBody3D_constant_PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY:
+.. _class_CharacterBody3D_constant_PLATFORM_ON_LEAVE_ADD_UPWARD_VELOCITY:
 
-.. _class_CharacterBody3D_constant_PLATFORM_VEL_ON_LEAVE_NEVER:
+.. _class_CharacterBody3D_constant_PLATFORM_ON_LEAVE_DO_NOTHING:
 
-enum **MovingPlatformApplyVelocityOnLeave**:
+enum **PlatformOnLeave**:
 
-- **PLATFORM_VEL_ON_LEAVE_ALWAYS** = **0** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform.
+- **PLATFORM_ON_LEAVE_ADD_VELOCITY** = **0** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform.
 
-- **PLATFORM_VEL_ON_LEAVE_UPWARD_ONLY** = **1** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
+- **PLATFORM_ON_LEAVE_ADD_UPWARD_VELOCITY** = **1** --- Add the last platform velocity to the :ref:`velocity<class_CharacterBody3D_property_velocity>` when you leave a moving platform, but any downward motion is ignored. It's useful to keep full jump height even when the platform is moving down.
 
-- **PLATFORM_VEL_ON_LEAVE_NEVER** = **2** --- Do nothing when leaving a platform.
+- **PLATFORM_ON_LEAVE_DO_NOTHING** = **2** --- Do nothing when leaving a platform.
 
 Property Descriptions
 ---------------------
-
-.. _class_CharacterBody3D_property_collision/safe_margin:
-
-- :ref:`float<class_float>` **collision/safe_margin**
-
-+-----------+------------------------+
-| *Default* | ``0.001``              |
-+-----------+------------------------+
-| *Setter*  | set_safe_margin(value) |
-+-----------+------------------------+
-| *Getter*  | get_safe_margin()      |
-+-----------+------------------------+
-
-Extra margin used for collision recovery when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`.
-
-If the body is at least this close to another body, it will consider them to be colliding and will be pushed away before performing the actual motion.
-
-A higher value means it's more flexible for detecting collision, which helps with consistently detecting walls and floors.
-
-A lower value forces the collision algorithm to use more exact detection, so it can be used in cases that specifically require precision, e.g at very low scale to avoid visible jittering, or for stability with a stack of character bodies.
-
-----
 
 .. _class_CharacterBody3D_property_floor_block_on_wall:
 
@@ -286,51 +264,73 @@ Sets the motion mode which defines the behavior of :ref:`move_and_slide<class_Ch
 
 ----
 
-.. _class_CharacterBody3D_property_moving_platform_apply_velocity_on_leave:
+.. _class_CharacterBody3D_property_platform_floor_layers:
 
-- :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` **moving_platform_apply_velocity_on_leave**
+- :ref:`int<class_int>` **platform_floor_layers**
 
-+-----------+----------------------------------------------------+
-| *Default* | ``0``                                              |
-+-----------+----------------------------------------------------+
-| *Setter*  | set_moving_platform_apply_velocity_on_leave(value) |
-+-----------+----------------------------------------------------+
-| *Getter*  | get_moving_platform_apply_velocity_on_leave()      |
-+-----------+----------------------------------------------------+
++-----------+----------------------------------+
+| *Default* | ``4294967295``                   |
++-----------+----------------------------------+
+| *Setter*  | set_platform_floor_layers(value) |
++-----------+----------------------------------+
+| *Getter*  | get_platform_floor_layers()      |
++-----------+----------------------------------+
 
-Sets the behavior to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`MovingPlatformApplyVelocityOnLeave<enum_CharacterBody3D_MovingPlatformApplyVelocityOnLeave>` constants for available behavior.
-
-----
-
-.. _class_CharacterBody3D_property_moving_platform_floor_layers:
-
-- :ref:`int<class_int>` **moving_platform_floor_layers**
-
-+-----------+-----------------------------------------+
-| *Default* | ``4294967295``                          |
-+-----------+-----------------------------------------+
-| *Setter*  | set_moving_platform_floor_layers(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | get_moving_platform_floor_layers()      |
-+-----------+-----------------------------------------+
-
-Collision layers that will be included for detecting floor bodies that will act as moving platforms to be followed by the :ref:`CharacterBody2D<class_CharacterBody2D>`. By default, all floor bodies are detected and propagate their velocity.
+Collision layers that will be included for detecting floor bodies that will act as moving platforms to be followed by the ``CharacterBody3D``. By default, all floor bodies are detected and propagate their velocity.
 
 ----
 
-.. _class_CharacterBody3D_property_moving_platform_wall_layers:
+.. _class_CharacterBody3D_property_platform_on_leave:
 
-- :ref:`int<class_int>` **moving_platform_wall_layers**
+- :ref:`PlatformOnLeave<enum_CharacterBody3D_PlatformOnLeave>` **platform_on_leave**
 
-+-----------+----------------------------------------+
-| *Default* | ``0``                                  |
-+-----------+----------------------------------------+
-| *Setter*  | set_moving_platform_wall_layers(value) |
-+-----------+----------------------------------------+
-| *Getter*  | get_moving_platform_wall_layers()      |
-+-----------+----------------------------------------+
++-----------+------------------------------+
+| *Default* | ``0``                        |
++-----------+------------------------------+
+| *Setter*  | set_platform_on_leave(value) |
++-----------+------------------------------+
+| *Getter*  | get_platform_on_leave()      |
++-----------+------------------------------+
 
-Collision layers that will be included for detecting wall bodies that will act as moving platforms to be followed by the :ref:`CharacterBody2D<class_CharacterBody2D>`. By default, all wall bodies are ignored.
+Sets the behavior to apply when you leave a moving platform. By default, to be physically accurate, when you leave the last platform velocity is applied. See :ref:`PlatformOnLeave<enum_CharacterBody3D_PlatformOnLeave>` constants for available behavior.
+
+----
+
+.. _class_CharacterBody3D_property_platform_wall_layers:
+
+- :ref:`int<class_int>` **platform_wall_layers**
+
++-----------+---------------------------------+
+| *Default* | ``0``                           |
++-----------+---------------------------------+
+| *Setter*  | set_platform_wall_layers(value) |
++-----------+---------------------------------+
+| *Getter*  | get_platform_wall_layers()      |
++-----------+---------------------------------+
+
+Collision layers that will be included for detecting wall bodies that will act as moving platforms to be followed by the ``CharacterBody3D``. By default, all wall bodies are ignored.
+
+----
+
+.. _class_CharacterBody3D_property_safe_margin:
+
+- :ref:`float<class_float>` **safe_margin**
+
++-----------+------------------------+
+| *Default* | ``0.001``              |
++-----------+------------------------+
+| *Setter*  | set_safe_margin(value) |
++-----------+------------------------+
+| *Getter*  | get_safe_margin()      |
++-----------+------------------------+
+
+Extra margin used for collision recovery when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`.
+
+If the body is at least this close to another body, it will consider them to be colliding and will be pushed away before performing the actual motion.
+
+A higher value means it's more flexible for detecting collision, which helps with consistently detecting walls and floors.
+
+A lower value forces the collision algorithm to use more exact detection, so it can be used in cases that specifically require precision, e.g at very low scale to avoid visible jittering, or for stability with a stack of character bodies.
 
 ----
 
@@ -531,7 +531,7 @@ Returns ``true`` if the body collided only with a wall on the last call of :ref:
 
 - :ref:`bool<class_bool>` **move_and_slide** **(** **)**
 
-Moves the body based on :ref:`velocity<class_CharacterBody3D_property_velocity>`. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``CharacterBody3D`` or :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
+Moves the body based on :ref:`velocity<class_CharacterBody3D_property_velocity>`. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``CharacterBody3D`` or :ref:`RigidBody3D<class_RigidBody3D>`, it will also be affected by the motion of the other body. You can use this to make moving and rotating platforms, or to make nodes push other nodes.
 
 Modifies :ref:`velocity<class_CharacterBody3D_property_velocity>` if a slide collision occurred. To get the latest collision call :ref:`get_last_slide_collision<class_CharacterBody3D_method_get_last_slide_collision>`, for more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_CharacterBody3D_method_get_slide_collision>`.
 

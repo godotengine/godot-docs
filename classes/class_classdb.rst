@@ -37,15 +37,15 @@ Methods
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`class_get_integer_constant_list<class_ClassDB_method_class_get_integer_constant_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`class_get_method_list<class_ClassDB_method_class_get_method_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                               |
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`class_get_method_list<class_ClassDB_method_class_get_method_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                               |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                     | :ref:`class_get_property<class_ClassDB_method_class_get_property>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property **)** |const|                                                                            |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`class_get_property_list<class_ClassDB_method_class_get_property_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                           |
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`class_get_property_list<class_ClassDB_method_class_get_property_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`class_get_signal<class_ClassDB_method_class_get_signal>` **(** :ref:`StringName<class_StringName>` class, :ref:`StringName<class_StringName>` signal **)** |const|                                                                           |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`class_get_signal_list<class_ClassDB_method_class_get_signal_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                               |
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`class_get_signal_list<class_ClassDB_method_class_get_signal_list>` **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                                               |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`class_has_enum<class_ClassDB_method_class_has_enum>` **(** :ref:`StringName<class_StringName>` class, :ref:`StringName<class_StringName>` name, :ref:`bool<class_bool>` no_inheritance=false **)** |const|                                   |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -131,7 +131,7 @@ Returns an array with the names all the integer constants of ``class`` or its an
 
 .. _class_ClassDB_method_class_get_method_list:
 
-- :ref:`Array<class_Array>` **class_get_method_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **class_get_method_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
 
 Returns an array with all the methods of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``args``, ``default_args``, ``flags``, ``id``, ``name``, ``return: (class_name, hint, hint_string, name, type, usage)``.
 
@@ -143,13 +143,13 @@ Returns an array with all the methods of ``class`` or its ancestry if ``no_inher
 
 - :ref:`Variant<class_Variant>` **class_get_property** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property **)** |const|
 
-Returns the value of ``property`` of ``class`` or its ancestry.
+Returns the value of ``property`` of ``object`` or its ancestry.
 
 ----
 
 .. _class_ClassDB_method_class_get_property_list:
 
-- :ref:`Array<class_Array>` **class_get_property_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **class_get_property_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
 
 Returns an array with all the properties of ``class`` or its ancestry if ``no_inheritance`` is ``false``.
 
@@ -165,7 +165,7 @@ Returns the ``signal`` data of ``class`` or its ancestry. The returned value is 
 
 .. _class_ClassDB_method_class_get_signal_list:
 
-- :ref:`Array<class_Array>` **class_get_signal_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **class_get_signal_list** **(** :ref:`StringName<class_StringName>` class, :ref:`bool<class_bool>` no_inheritance=false **)** |const|
 
 Returns an array with all the signals of ``class`` or its ancestry if ``no_inheritance`` is ``false``. Every element of the array is a :ref:`Dictionary<class_Dictionary>` as described in :ref:`class_get_signal<class_ClassDB_method_class_get_signal>`.
 
@@ -207,7 +207,7 @@ Returns whether ``class`` or its ancestry has a signal called ``signal`` or not.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **class_set_property** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)** |const|
 
-Sets ``property`` value of ``class`` to ``value``.
+Sets ``property`` value of ``object`` to ``value``.
 
 ----
 

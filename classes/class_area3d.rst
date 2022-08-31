@@ -19,6 +19,10 @@ Description
 
 3D area that detects :ref:`CollisionObject3D<class_CollisionObject3D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
 
+To give the area its shape, add a :ref:`CollisionShape3D<class_CollisionShape3D>` or a :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
+
+\ **Warning:** See :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` (also called "trimesh") for a warning about possibly unexpected behavior when using that shape for an area.
+
 Tutorials
 ---------
 
@@ -97,7 +101,7 @@ Signals
 
 Emitted when another Area3D enters this Area3D. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
-\ ``area`` the other Area3D.
+``area`` the other Area3D.
 
 ----
 
@@ -107,7 +111,7 @@ Emitted when another Area3D enters this Area3D. Requires :ref:`monitoring<class_
 
 Emitted when another Area3D exits this Area3D. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
-\ ``area`` the other Area3D.
+``area`` the other Area3D.
 
 ----
 
@@ -117,13 +121,13 @@ Emitted when another Area3D exits this Area3D. Requires :ref:`monitoring<class_A
 
 Emitted when one of another Area3D's :ref:`Shape3D<class_Shape3D>`\ s enters one of this Area3D's :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
-\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area3D's :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+``area_rid`` the :ref:`RID<class_RID>` of the other Area3D's :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ ``area`` the other Area3D.
+``area`` the other Area3D.
 
-\ ``area_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
+``area_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -133,13 +137,13 @@ Emitted when one of another Area3D's :ref:`Shape3D<class_Shape3D>`\ s enters one
 
 Emitted when one of another Area3D's :ref:`Shape3D<class_Shape3D>`\ s exits one of this Area3D's :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
-\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area3D's :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+``area_rid`` the :ref:`RID<class_RID>` of the other Area3D's :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ ``area`` the other Area3D.
+``area`` the other Area3D.
 
-\ ``area_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
+``area_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -149,7 +153,7 @@ Emitted when one of another Area3D's :ref:`Shape3D<class_Shape3D>`\ s exits one 
 
 Emitted when a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` enters this Area3D. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -159,7 +163,7 @@ Emitted when a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_
 
 Emitted when a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` exits this Area3D. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -169,13 +173,13 @@ Emitted when a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_
 
 Emitted when one of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s enters one of this Area3D's :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -185,13 +189,13 @@ Emitted when one of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap
 
 Emitted when one of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s enters one of this Area3D's :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this Area3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 Enumerations
 ------------

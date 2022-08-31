@@ -31,17 +31,19 @@ Tutorials
 Methods
 -------
 
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_cache_dir<class_EditorPaths_method_get_cache_dir>` **(** **)** |const|                     |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_config_dir<class_EditorPaths_method_get_config_dir>` **(** **)** |const|                   |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_data_dir<class_EditorPaths_method_get_data_dir>` **(** **)** |const|                       |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>` **(** **)** |const| |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>` **(** **)** |const|             |
-+-----------------------------+------------------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_cache_dir<class_EditorPaths_method_get_cache_dir>` **(** **)** |const|                       |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_config_dir<class_EditorPaths_method_get_config_dir>` **(** **)** |const|                     |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_data_dir<class_EditorPaths_method_get_data_dir>` **(** **)** |const|                         |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_project_settings_dir<class_EditorPaths_method_get_project_settings_dir>` **(** **)** |const| |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>` **(** **)** |const|   |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>` **(** **)** |const|               |
++-----------------------------+--------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -91,6 +93,14 @@ Returns the absolute path to the user's data folder. This folder should be used 
     - Windows: %APPDATA%\Godot\                    (same as `get_config_dir()`)
     - macOS: ~/Library/Application Support/Godot/  (same as `get_config_dir()`)
     - Linux: ~/.local/share/godot/
+
+----
+
+.. _class_EditorPaths_method_get_project_settings_dir:
+
+- :ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
+
+Returns the project-specific editor settings path. Projects all have a unique subdirectory inside the settings path where project-specific editor settings are saved.
 
 ----
 

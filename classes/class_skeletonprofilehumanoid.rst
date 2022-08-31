@@ -22,11 +22,15 @@ A :ref:`SkeletonProfile<class_SkeletonProfile>` as a preset that is optimized fo
 Properties
 ----------
 
-+-----------------------+------------+-------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | bone_size  | ``56`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_bone_size>`) |
-+-----------------------+------------+-------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | group_size | ``4`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_group_size>`) |
-+-----------------------+------------+-------------------------------------------------------------------------------------+
++-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | bone_size       | ``56`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_bone_size>`)            |
++-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`               | group_size      | ``4`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_group_size>`)            |
++-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | root_bone       | ``&"Root"`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_root_bone>`)       |
++-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
+| :ref:`StringName<class_StringName>` | scale_base_bone | ``&"Hips"`` (overrides :ref:`SkeletonProfile<class_SkeletonProfile_property_scale_base_bone>`) |
++-------------------------------------+-----------------+------------------------------------------------------------------------------------------------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

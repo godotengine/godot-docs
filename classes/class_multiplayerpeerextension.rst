@@ -91,7 +91,7 @@ Called when the maximum allowed packet size (in bytes) is requested by the :ref:
 
 - :ref:`int<class_int>` **_get_packet** **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|
 
-Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, with ``p_buffer_size`` being the size of the binary ``p_buffer`` in bytes.
+Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, with ``r_buffer_size`` being the size of the binary ``r_buffer`` in bytes.
 
 ----
 

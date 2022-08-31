@@ -31,13 +31,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`from_start<class_AnimationNodeTransition_property_from_start>`   | ``true`` |
-+---------------------------+------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>` | ``0``    |
-+---------------------------+------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`   | ``0.0``  |
-+---------------------------+------------------------------------------------------------------------+----------+
++---------------------------+------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`enabled_inputs<class_AnimationNodeTransition_property_enabled_inputs>` | ``0``    |
++---------------------------+------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`from_start<class_AnimationNodeTransition_property_from_start>`         | ``true`` |
++---------------------------+------------------------------------------------------------------------------+----------+
+| :ref:`Curve<class_Curve>` | :ref:`xfade_curve<class_AnimationNodeTransition_property_xfade_curve>`       |          |
++---------------------------+------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`         | ``0.0``  |
++---------------------------+------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -55,6 +57,22 @@ Methods
 Property Descriptions
 ---------------------
 
+.. _class_AnimationNodeTransition_property_enabled_inputs:
+
+- :ref:`int<class_int>` **enabled_inputs**
+
++-----------+---------------------------+
+| *Default* | ``0``                     |
++-----------+---------------------------+
+| *Setter*  | set_enabled_inputs(value) |
++-----------+---------------------------+
+| *Getter*  | get_enabled_inputs()      |
++-----------+---------------------------+
+
+The number of enabled input ports for this node.
+
+----
+
 .. _class_AnimationNodeTransition_property_from_start:
 
 - :ref:`bool<class_bool>` **from_start**
@@ -71,19 +89,15 @@ If ``true``, the destination animation is played back from the beginning when sw
 
 ----
 
-.. _class_AnimationNodeTransition_property_input_count:
+.. _class_AnimationNodeTransition_property_xfade_curve:
 
-- :ref:`int<class_int>` **input_count**
+- :ref:`Curve<class_Curve>` **xfade_curve**
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_enabled_inputs(value) |
-+-----------+---------------------------+
-| *Getter*  | get_enabled_inputs()      |
-+-----------+---------------------------+
-
-The number of available input ports for this node.
++----------+------------------------+
+| *Setter* | set_xfade_curve(value) |
++----------+------------------------+
+| *Getter* | get_xfade_curve()      |
++----------+------------------------+
 
 ----
 
@@ -91,13 +105,13 @@ The number of available input ports for this node.
 
 - :ref:`float<class_float>` **xfade_time**
 
-+-----------+----------------------------+
-| *Default* | ``0.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_cross_fade_time(value) |
-+-----------+----------------------------+
-| *Getter*  | get_cross_fade_time()      |
-+-----------+----------------------------+
++-----------+-----------------------+
+| *Default* | ``0.0``               |
++-----------+-----------------------+
+| *Setter*  | set_xfade_time(value) |
++-----------+-----------------------+
+| *Getter*  | get_xfade_time()      |
++-----------+-----------------------+
 
 Cross-fading time (in seconds) between each animation connected to the inputs.
 

@@ -71,11 +71,13 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`force_update<class_TileMap_method_force_update>` **(** :ref:`int<class_int>` layer=-1 **)**                                                                                                                                                                                       |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`get_cell_alternative_tile<class_TileMap_method_get_cell_alternative_tile>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|                                                                           |
+| :ref:`int<class_int>`                       | :ref:`get_cell_alternative_tile<class_TileMap_method_get_cell_alternative_tile>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|                                                                     |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`             | :ref:`get_cell_atlas_coords<class_TileMap_method_get_cell_atlas_coords>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|                                                                                   |
+| :ref:`Vector2i<class_Vector2i>`             | :ref:`get_cell_atlas_coords<class_TileMap_method_get_cell_atlas_coords>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|                                                                             |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`get_cell_source_id<class_TileMap_method_get_cell_source_id>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|                                                                                         |
+| :ref:`int<class_int>`                       | :ref:`get_cell_source_id<class_TileMap_method_get_cell_source_id>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|                                                                                   |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TileData<class_TileData>`             | :ref:`get_cell_tile_data<class_TileMap_method_get_cell_tile_data>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|                                                                                   |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`             | :ref:`get_coords_for_body_rid<class_TileMap_method_get_coords_for_body_rid>` **(** :ref:`RID<class_RID>` body **)**                                                                                                                                                                     |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -119,7 +121,7 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_layer_enabled<class_TileMap_method_set_layer_enabled>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)**                                                                                                                                               |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set_layer_modulate<class_TileMap_method_set_layer_modulate>` **(** :ref:`int<class_int>` layer, :ref:`Color<class_Color>` enabled **)**                                                                                                                                           |
+| void                                        | :ref:`set_layer_modulate<class_TileMap_method_set_layer_modulate>` **(** :ref:`int<class_int>` layer, :ref:`Color<class_Color>` modulate **)**                                                                                                                                          |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_layer_name<class_TileMap_method_set_layer_name>` **(** :ref:`int<class_int>` layer, :ref:`String<class_String>` name **)**                                                                                                                                                    |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,7 +254,7 @@ Method Descriptions
 
 Called with a TileData object about to be used internally by the TileMap, allowing its modification at runtime.
 
-This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords[/coords] and [code]layer``.
+This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords`` and ``layer``.
 
 \ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
 
@@ -264,7 +266,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 
 - :ref:`bool<class_bool>` **_use_tile_data_runtime_update** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)** |virtual|
 
-Should return ``true`` if the tile at coordinates ``coords[/coords] on layer [code]layer`` requires a runtime update.
+Should return ``true`` if the tile at coordinates ``coords`` on layer ``layer`` requires a runtime update.
 
 \ **Warning:** Make sure this function only return ``true`` when needed. Any tile processed at runtime without a need for it will imply a significant performance penalty.
 
@@ -274,7 +276,7 @@ Should return ``true`` if the tile at coordinates ``coords[/coords] on layer [co
 
 - void **add_layer** **(** :ref:`int<class_int>` to_position **)**
 
-Adds a layer at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
+Adds a layer at the given position ``to_position`` in the array. If ``to_position`` is negative, the position is counted from the end, with ``-1`` adding the layer at the end of the array.
 
 ----
 
@@ -318,13 +320,13 @@ Triggers an update of the TileMap. If ``layer`` is provided, only updates the gi
 
 \ **Note:** The TileMap node updates automatically when one of its properties is modified. A manual update is only needed if runtime modifications (implemented in :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>`) need to be applied.
 
-\ **Warning:** Updating the TileMap is a performance demanding task. Limit occurrences of those updates to the minimum and limit the amount tiles they impact (by segregating tiles updated often to a dedicated layer for example).
+\ **Warning:** Updating the TileMap is computationally expensive and may impact performance. Try to limit the number of updates and the tiles they impact (by placing frequently updated tiles in a dedicated layer for example).
 
 ----
 
 .. _class_TileMap_method_get_cell_alternative_tile:
 
-- :ref:`int<class_int>` **get_cell_alternative_tile** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|
+- :ref:`int<class_int>` **get_cell_alternative_tile** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
 
 Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
@@ -332,7 +334,7 @@ Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``. If
 
 .. _class_TileMap_method_get_cell_atlas_coords:
 
-- :ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|
+- :ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
 
 Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordinates ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
@@ -340,9 +342,19 @@ Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordina
 
 .. _class_TileMap_method_get_cell_source_id:
 
-- :ref:`int<class_int>` **get_cell_source_id** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies **)** |const|
+- :ref:`int<class_int>` **get_cell_source_id** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
 
 Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+
+----
+
+.. _class_TileMap_method_get_cell_tile_data:
+
+- :ref:`TileData<class_TileData>` **get_cell_tile_data** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
+
+Returns the :ref:`TileData<class_TileData>` object associated with the given cell, or ``null`` if the cell is not a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`.
+
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 ----
 
@@ -470,7 +482,7 @@ Returns a local position of the center of the cell at the given tilemap (grid-ba
 
 - void **move_layer** **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` to_position **)**
 
-Moves the layer at index ``layer_index`` to the given position ``to_position`` in the array.
+Moves the layer at index ``layer`` to the given position ``to_position`` in the array.
 
 ----
 
@@ -500,7 +512,7 @@ Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coor
 
 - void **set_cells_terrain_connect** **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` cells, :ref:`int<class_int>` terrain_set, :ref:`int<class_int>` terrain, :ref:`bool<class_bool>` ignore_empty_terrains=true **)**
 
-Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.				If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.
 
 If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
@@ -512,7 +524,7 @@ If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying
 
 - void **set_cells_terrain_path** **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` path, :ref:`int<class_int>` terrain_set, :ref:`int<class_int>` terrain, :ref:`bool<class_bool>` ignore_empty_terrains=true **)**
 
-Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. The function will also connect two successive cell in the path with the same terrain. This function might update neighboring tiles if needed to create correct terrain transitions.
+Update all the cells in the ``path`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. The function will also connect two successive cell in the path with the same terrain. This function might update neighboring tiles if needed to create correct terrain transitions.
 
 If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
@@ -526,13 +538,17 @@ If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying
 
 Enables or disables the layer ``layer``. A disabled layer is not processed at all (no rendering, no physics, etc...).
 
+If ``layer`` is negative, the layers are accessed from the last one.
+
 ----
 
 .. _class_TileMap_method_set_layer_modulate:
 
-- void **set_layer_modulate** **(** :ref:`int<class_int>` layer, :ref:`Color<class_Color>` enabled **)**
+- void **set_layer_modulate** **(** :ref:`int<class_int>` layer, :ref:`Color<class_Color>` modulate **)**
 
 Sets a layer's color. It will be multiplied by tile's color and TileMap's modulate.
+
+If ``layer`` is negative, the layers are accessed from the last one.
 
 ----
 
@@ -541,6 +557,8 @@ Sets a layer's color. It will be multiplied by tile's color and TileMap's modula
 - void **set_layer_name** **(** :ref:`int<class_int>` layer, :ref:`String<class_String>` name **)**
 
 Sets a layer's name. This is mostly useful in the editor.
+
+If ``layer`` is negative, the layers are accessed from the last one.
 
 ----
 
@@ -552,6 +570,8 @@ Enables or disables a layer's Y-sorting. If a layer is Y-sorted, the layer will 
 
 Y-sorted layers should usually be on different Z-index values than not Y-sorted layers, otherwise, each of those layer will be Y-sorted as whole with the Y-sorted one. This is usually an undesired behvaior.
 
+If ``layer`` is negative, the layers are accessed from the last one.
+
 ----
 
 .. _class_TileMap_method_set_layer_y_sort_origin:
@@ -562,6 +582,8 @@ Sets a layer's Y-sort origin value. This Y-sort origin value is added to each ti
 
 This allows, for example, to fake a different height level on each layer. This can be useful for top-down view games.
 
+If ``layer`` is negative, the layers are accessed from the last one.
+
 ----
 
 .. _class_TileMap_method_set_layer_z_index:
@@ -569,6 +591,8 @@ This allows, for example, to fake a different height level on each layer. This c
 - void **set_layer_z_index** **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` z_index **)**
 
 Sets a layers Z-index value. This Z-index is added to each tile's Z-index value.
+
+If ``layer`` is negative, the layers are accessed from the last one.
 
 ----
 

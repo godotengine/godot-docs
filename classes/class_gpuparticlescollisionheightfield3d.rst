@@ -23,7 +23,7 @@ Heightmap shapes allow for efficiently representing collisions for convex and co
 
 \ ``GPUParticlesCollisionHeightField3D`` can also be regenerated in real-time when it is moved, when the camera moves, or even continuously. This makes ``GPUParticlesCollisionHeightField3D`` a good choice for weather effects such as rain and snow and games with highly dynamic geometry. However, since heightmaps cannot represent overhangs, ``GPUParticlesCollisionHeightField3D`` is not suited for indoor particle collision.
 
-\ **Note:** :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
+\ **Note:** :ref:`ParticleProcessMaterial.collision_mode<class_ParticleProcessMaterial_property_collision_mode>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
 
 \ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 

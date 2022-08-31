@@ -59,13 +59,13 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **bind** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**
 
-Binds this ``PacketPeerUDP`` to the specified ``port`` and ``address`` with a buffer size ``recv_buf_size``, allowing it to receive incoming packets.
+Binds this ``PacketPeerUDP`` to the specified ``port`` and ``bind_address`` with a buffer size ``recv_buf_size``, allowing it to receive incoming packets.
 
-If ``address`` is set to ``"*"`` (default), the peer will be bound on all available addresses (both IPv4 and IPv6).
+If ``bind_address`` is set to ``"*"`` (default), the peer will be bound on all available addresses (both IPv4 and IPv6).
 
-If ``address`` is set to ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), the peer will be bound to all available addresses matching that IP type.
+If ``bind_address`` is set to ``"0.0.0.0"`` (for IPv4) or ``"::"`` (for IPv6), the peer will be bound to all available addresses matching that IP type.
 
-If ``address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the peer will only be bound to the interface with that addresses (or fail if no interface with the given address exists).
+If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::1"``, etc), the peer will only be bound to the interface with that addresses (or fail if no interface with the given address exists).
 
 ----
 

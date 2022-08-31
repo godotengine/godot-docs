@@ -99,9 +99,9 @@ Operators
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>` | :ref:`operator /<class_Vector2i_operator_div_Vector2i>` **(** :ref:`int<class_int>` right **)**           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <<class_Vector2i_operator_lt_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**      |
+| :ref:`bool<class_bool>`         | :ref:`operator \<<class_Vector2i_operator_lt_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <=<class_Vector2i_operator_lte_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**    |
+| :ref:`bool<class_bool>`         | :ref:`operator \<=<class_Vector2i_operator_lte_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**   |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector2i_operator_eq_bool>` **(** :ref:`Vector2i<class_Vector2i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -427,7 +427,7 @@ Compares two ``Vector2i`` vectors by first checking if the X value of the left v
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
 
-Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, and ``v[1]`` is equivalent to ``v.y``.
+Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, and ``v[1]`` is equivalent to ``v.y``.
 
 ----
 

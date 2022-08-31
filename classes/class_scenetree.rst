@@ -79,9 +79,9 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`get_node_count<class_SceneTree_method_get_node_count>` **(** **)** |const|                                                                                                                                                  |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                   | :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                        |
+| :ref:`Node[]<class_Node>`                   | :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                   | :ref:`get_processed_tweens<class_SceneTree_method_get_processed_tweens>` **(** **)**                                                                                                                                              |
+| :ref:`Tween[]<class_Tween>`                 | :ref:`get_processed_tweens<class_SceneTree_method_get_processed_tweens>` **(** **)**                                                                                                                                              |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                     | :ref:`has_group<class_SceneTree_method_has_group>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                   |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,6 +239,8 @@ The current scene.
 
 If ``true``, collision shapes will be visible when running the game from the editor for debugging purposes.
 
+\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` while the project is running will not have the desired effect.
+
 ----
 
 .. _class_SceneTree_property_debug_navigation_hint:
@@ -255,6 +257,8 @@ If ``true``, collision shapes will be visible when running the game from the edi
 
 If ``true``, navigation polygons will be visible when running the game from the editor for debugging purposes.
 
+\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>` while the project is running will not have the desired effect.
+
 ----
 
 .. _class_SceneTree_property_debug_paths_hint:
@@ -270,6 +274,8 @@ If ``true``, navigation polygons will be visible when running the game from the 
 +-----------+-----------------------------+
 
 If ``true``, curves from :ref:`Path2D<class_Path2D>` and :ref:`Path3D<class_Path3D>` nodes will be visible when running the game from the editor for debugging purposes.
+
+\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_paths_hint<class_SceneTree_property_debug_paths_hint>` while the project is running will not have the desired effect.
 
 ----
 
@@ -480,7 +486,7 @@ Returns the number of nodes in this ``SceneTree``.
 
 .. _class_SceneTree_method_get_nodes_in_group:
 
-- :ref:`Array<class_Array>` **get_nodes_in_group** **(** :ref:`StringName<class_StringName>` group **)**
+- :ref:`Node[]<class_Node>` **get_nodes_in_group** **(** :ref:`StringName<class_StringName>` group **)**
 
 Returns a list of all nodes assigned to the given group.
 
@@ -488,7 +494,7 @@ Returns a list of all nodes assigned to the given group.
 
 .. _class_SceneTree_method_get_processed_tweens:
 
-- :ref:`Array<class_Array>` **get_processed_tweens** **(** **)**
+- :ref:`Tween[]<class_Tween>` **get_processed_tweens** **(** **)**
 
 Returns an array of currently existing :ref:`Tween<class_Tween>`\ s in the ``SceneTree`` (both running and paused).
 
@@ -518,7 +524,7 @@ Sends the given notification to all members of the ``group``.
 
 Sends the given notification to all members of the ``group``, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
 
-\ **Note:** Group call flags are used to control the notification sending behavior. By default, notifications will be sent immediately in a way similar to :ref:`notify_group<class_SceneTree_method_notify_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, notifications will be sent with a one-frame delay in a way similar to using ``Object.call_deferred("notification", ...)``.
+\ **Note:** Group call flags are used to control the notification sending behavior. By default, notifications will be sent immediately in a way similar to :ref:`notify_group<class_SceneTree_method_notify_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, notifications will be sent with a one-frame delay in a way similar to using ``Object.call_deferred("notification", ...)``.
 
 ----
 
@@ -570,7 +576,7 @@ Sets the given ``property`` to ``value`` on all members of the given group.
 
 Sets the given ``property`` to ``value`` on all members of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
 
-\ **Note:** Group call flags are used to control the property setting behavior. By default, properties will be set immediately in a way similar to :ref:`set_group<class_SceneTree_method_set_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, properties will be set with a one-frame delay in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
+\ **Note:** Group call flags are used to control the property setting behavior. By default, properties will be set immediately in a way similar to :ref:`set_group<class_SceneTree_method_set_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, properties will be set with a one-frame delay in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 ----
 

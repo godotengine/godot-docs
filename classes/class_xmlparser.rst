@@ -100,7 +100,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_attribute_count** **(** **)** |const|
 
-Gets the amount of attributes in the current element.
+Gets the number of attributes in the current element.
 
 ----
 
@@ -108,7 +108,7 @@ Gets the amount of attributes in the current element.
 
 - :ref:`String<class_String>` **get_attribute_name** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the name of the attribute specified by the index in ``idx`` argument.
+Gets the name of the attribute specified by the ``idx`` index.
 
 ----
 
@@ -116,7 +116,7 @@ Gets the name of the attribute specified by the index in ``idx`` argument.
 
 - :ref:`String<class_String>` **get_attribute_value** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the value of the attribute specified by the index in ``idx`` argument.
+Gets the value of the attribute specified by the ``idx`` index.
 
 ----
 
@@ -132,7 +132,7 @@ Gets the current line in the parsed file, counting from 0.
 
 - :ref:`String<class_String>` **get_named_attribute_value** **(** :ref:`String<class_String>` name **)** |const|
 
-Gets the value of a certain attribute of the current element by name. This will raise an error if the element has no such attribute.
+Gets the value of a certain attribute of the current element by ``name``. This will raise an error if the element has no such attribute.
 
 ----
 
@@ -140,7 +140,7 @@ Gets the value of a certain attribute of the current element by name. This will 
 
 - :ref:`String<class_String>` **get_named_attribute_value_safe** **(** :ref:`String<class_String>` name **)** |const|
 
-Gets the value of a certain attribute of the current element by name. This will return an empty :ref:`String<class_String>` if the attribute is not found.
+Gets the value of a certain attribute of the current element by ``name``. This will return an empty :ref:`String<class_String>` if the attribute is not found.
 
 ----
 
@@ -196,7 +196,7 @@ Check whether the current element is empty (this only works for completely empty
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` file **)**
 
-Opens an XML file for parsing. This returns an error code.
+Opens an XML ``file`` for parsing. This returns an error code.
 
 ----
 
@@ -204,7 +204,7 @@ Opens an XML file for parsing. This returns an error code.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
-Opens an XML raw buffer for parsing. This returns an error code.
+Opens an XML raw ``buffer`` for parsing. This returns an error code.
 
 ----
 

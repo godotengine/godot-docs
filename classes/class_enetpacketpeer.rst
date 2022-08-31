@@ -34,6 +34,10 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_channels<class_ENetPacketPeer_method_get_channels>` **(** **)** |const|                                                                                                            |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                     | :ref:`get_remote_address<class_ENetPacketPeer_method_get_remote_address>` **(** **)** |const|                                                                                                |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_remote_port<class_ENetPacketPeer_method_get_remote_port>` **(** **)** |const|                                                                                                      |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PeerState<enum_ENetPacketPeer_PeerState>` | :ref:`get_state<class_ENetPacketPeer_method_get_state>` **(** **)** |const|                                                                                                                  |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                       | :ref:`get_statistic<class_ENetPacketPeer_method_get_statistic>` **(** :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>` statistic **)**                                                |
@@ -199,6 +203,22 @@ Method Descriptions
 - :ref:`int<class_int>` **get_channels** **(** **)** |const|
 
 Returns the number of channels allocated for communication with peer.
+
+----
+
+.. _class_ENetPacketPeer_method_get_remote_address:
+
+- :ref:`String<class_String>` **get_remote_address** **(** **)** |const|
+
+Returns the IP address of this peer.
+
+----
+
+.. _class_ENetPacketPeer_method_get_remote_port:
+
+- :ref:`int<class_int>` **get_remote_port** **(** **)** |const|
+
+Returns the remote port of this peer.
 
 ----
 

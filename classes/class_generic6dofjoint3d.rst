@@ -427,9 +427,13 @@ The maximum amount of force that can occur, when rotating around the X axis.
 
 - :ref:`float<class_float>` **angular_limit_x/lower_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_x(value) |
++-----------+--------------------+
+| *Getter*  | get_param_x()      |
++-----------+--------------------+
 
 The minimum rotation in negative direction to break loose and rotate around the X axis.
 
@@ -471,9 +475,13 @@ The speed of all rotations across the X axis.
 
 - :ref:`float<class_float>` **angular_limit_x/upper_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_x(value) |
++-----------+--------------------+
+| *Getter*  | get_param_x()      |
++-----------+--------------------+
 
 The minimum rotation in positive direction to break loose and rotate around the X axis.
 
@@ -547,9 +555,13 @@ The maximum amount of force that can occur, when rotating around the Y axis.
 
 - :ref:`float<class_float>` **angular_limit_y/lower_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_y(value) |
++-----------+--------------------+
+| *Getter*  | get_param_y()      |
++-----------+--------------------+
 
 The minimum rotation in negative direction to break loose and rotate around the Y axis.
 
@@ -591,9 +603,13 @@ The speed of all rotations across the Y axis.
 
 - :ref:`float<class_float>` **angular_limit_y/upper_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_y(value) |
++-----------+--------------------+
+| *Getter*  | get_param_y()      |
++-----------+--------------------+
 
 The minimum rotation in positive direction to break loose and rotate around the Y axis.
 
@@ -667,9 +683,13 @@ The maximum amount of force that can occur, when rotating around the Z axis.
 
 - :ref:`float<class_float>` **angular_limit_z/lower_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_z(value) |
++-----------+--------------------+
+| *Getter*  | get_param_z()      |
++-----------+--------------------+
 
 The minimum rotation in negative direction to break loose and rotate around the Z axis.
 
@@ -711,9 +731,13 @@ The speed of all rotations across the Z axis.
 
 - :ref:`float<class_float>` **angular_limit_z/upper_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+--------------------+
+| *Default* | ``0.0``            |
++-----------+--------------------+
+| *Setter*  | set_param_z(value) |
++-----------+--------------------+
+| *Getter*  | get_param_z()      |
++-----------+--------------------+
 
 The minimum rotation in positive direction to break loose and rotate around the Z axis.
 

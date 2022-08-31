@@ -12,7 +12,7 @@ Script
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CSharpScript<class_CSharpScript>`, :ref:`GDScript<class_GDScript>`, :ref:`ScriptExtension<class_ScriptExtension>`, :ref:`VisualScript<class_VisualScript>`
+**Inherited By:** :ref:`CSharpScript<class_CSharpScript>`, :ref:`GDScript<class_GDScript>`, :ref:`ScriptExtension<class_ScriptExtension>`
 
 A class stored as a resource.
 
@@ -51,11 +51,11 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_script_constant_map<class_Script_method_get_script_constant_map>` **(** **)**                                                    |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                                      |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                                  |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                                      |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`StringName<class_StringName>` signal_name **)** |const|        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -128,7 +128,7 @@ Returns a dictionary containing constant names and their values.
 
 .. _class_Script_method_get_script_method_list:
 
-- :ref:`Array<class_Array>` **get_script_method_list** **(** **)**
+- :ref:`Dictionary[]<class_Dictionary>` **get_script_method_list** **(** **)**
 
 Returns the list of methods in this ``Script``.
 
@@ -136,7 +136,7 @@ Returns the list of methods in this ``Script``.
 
 .. _class_Script_method_get_script_property_list:
 
-- :ref:`Array<class_Array>` **get_script_property_list** **(** **)**
+- :ref:`Dictionary[]<class_Dictionary>` **get_script_property_list** **(** **)**
 
 Returns the list of properties in this ``Script``.
 
@@ -144,7 +144,7 @@ Returns the list of properties in this ``Script``.
 
 .. _class_Script_method_get_script_signal_list:
 
-- :ref:`Array<class_Array>` **get_script_signal_list** **(** **)**
+- :ref:`Dictionary[]<class_Dictionary>` **get_script_signal_list** **(** **)**
 
 Returns the list of user signals defined in this ``Script``.
 

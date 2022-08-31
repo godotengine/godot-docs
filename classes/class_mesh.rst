@@ -59,7 +59,7 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                           | :ref:`_surface_get_arrays<class_Mesh_method__surface_get_arrays>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`_surface_get_blend_shape_arrays<class_Mesh_method__surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` index **)** |virtual| |const|               |
+| :ref:`Array[]<class_Array>`                         | :ref:`_surface_get_blend_shape_arrays<class_Mesh_method__surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` index **)** |virtual| |const|               |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`_surface_get_format<class_Mesh_method__surface_get_format>` **(** :ref:`int<class_int>` index **)** |virtual| |const|                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -87,7 +87,7 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                           | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                                |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                        |
+| :ref:`Array[]<class_Array>`                         | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                        |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Material<class_Material>`                     | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                            |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -415,7 +415,7 @@ Method Descriptions
 
 .. _class_Mesh_method__surface_get_blend_shape_arrays:
 
-- :ref:`Array<class_Array>` **_surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
+- :ref:`Array[]<class_Array>` **_surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
 ----
 
@@ -457,7 +457,7 @@ Calculate a :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` from the mes
 
 If ``clean`` is ``true`` (default), duplicate and interior vertices are removed automatically. You can set it to ``false`` to make the process faster if not needed.
 
-If ``simplify`` is ``true``, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.
+If ``simplify`` is ``true``, the geometry can be further simplified to reduce the number of vertices. Disabled by default.
 
 ----
 
@@ -509,7 +509,7 @@ Returns all the vertices that make up the faces of the mesh. Each three vertices
 
 - :ref:`int<class_int>` **get_surface_count** **(** **)** |const|
 
-Returns the amount of surfaces that the ``Mesh`` holds.
+Returns the number of surfaces that the ``Mesh`` holds.
 
 ----
 
@@ -523,7 +523,7 @@ Returns the arrays for the vertices, normals, uvs, etc. that make up the request
 
 .. _class_Mesh_method_surface_get_blend_shape_arrays:
 
-- :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
+- :ref:`Array[]<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns the blend shape arrays for the requested surface.
 

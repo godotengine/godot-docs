@@ -47,7 +47,7 @@ Example:
         # [0, 9, [JavaScriptObject:1180]]
         print(args)
 
-\ **Note:** Only available in the HTML5 platform.
+\ **Note:** Only available in the Web platform.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

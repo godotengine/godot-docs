@@ -53,10 +53,6 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`delay_usec<class_OS_method_delay_usec>` **(** :ref:`int<class_int>` usec **)** |const|                                                                                                                                                                                  |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`dump_memory_to_file<class_OS_method_dump_memory_to_file>` **(** :ref:`String<class_String>` file **)**                                                                                                                                                                  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`dump_resources_to_file<class_OS_method_dump_resources_to_file>` **(** :ref:`String<class_String>` file **)**                                                                                                                                                            |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`execute<class_OS_method_execute>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` arguments, :ref:`Array<class_Array>` output=[], :ref:`bool<class_bool>` read_stderr=false, :ref:`bool<class_bool>` open_console=false **)** |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string>` **(** :ref:`String<class_String>` string **)** |const|                                                                                                                                              |
@@ -64,6 +60,8 @@ Methods
 | :ref:`String<class_String>`                       | :ref:`get_cache_dir<class_OS_method_get_cache_dir>` **(** **)** |const|                                                                                                                                                                                                       |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` **(** **)**                                                                                                                                                                                                         |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` **(** **)**                                                                                                                                                                                               |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_config_dir<class_OS_method_get_config_dir>` **(** **)** |const|                                                                                                                                                                                                     |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,6 +93,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_processor_name<class_OS_method_get_processor_name>` **(** **)** |const|                                                                                                                                                                                             |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>` **(** **)** |const|                                                                                                                                                                       |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_static_memory_peak_usage<class_OS_method_get_static_memory_peak_usage>` **(** **)** |const|                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_static_memory_usage<class_OS_method_get_static_memory_usage>` **(** **)** |const|                                                                                                                                                                                   |
@@ -121,6 +121,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_process_running<class_OS_method_is_process_running>` **(** :ref:`int<class_int>` pid **)** |const|                                                                                                                                                                   |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` **(** **)** |const|                                                                                                                                                                                     |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_stdout_verbose<class_OS_method_is_stdout_verbose>` **(** **)** |const|                                                                                                                                                                                               |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_userfs_persistent<class_OS_method_is_userfs_persistent>` **(** **)** |const|                                                                                                                                                                                         |
@@ -131,19 +133,13 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` **(** **)**                                                                                                                                                                                                         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`print_all_resources<class_OS_method_print_all_resources>` **(** :ref:`String<class_String>` tofile="" **)**                                                                                                                                                             |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`print_all_textures_by_size<class_OS_method_print_all_textures_by_size>` **(** **)**                                                                                                                                                                                     |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`print_resources_by_type<class_OS_method_print_resources_by_type>` **(** :ref:`PackedStringArray<class_PackedStringArray>` types **)**                                                                                                                                   |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`print_resources_in_use<class_OS_method_print_resources_in_use>` **(** :ref:`bool<class_bool>` short=false **)**                                                                                                                                                         |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                    |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`request_permissions<class_OS_method_request_permissions>` **(** **)**                                                                                                                                                                                                   |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`set_environment<class_OS_method_set_environment>` **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|                                                                                                                           |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` **(** :ref:`bool<class_bool>` restart, :ref:`PackedStringArray<class_PackedStringArray>` arguments=PackedStringArray() **)**                                                                                  |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`set_thread_name<class_OS_method_set_thread_name>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                          |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -165,7 +161,7 @@ enum **VideoDriver**:
 
 - **VIDEO_DRIVER_VULKAN** = **0** --- The Vulkan rendering backend. It requires Vulkan 1.0 support and automatically uses features from Vulkan 1.1 and 1.2 if available.
 
-- **VIDEO_DRIVER_OPENGL_3** = **1** --- The OpenGL 3 rendering backend. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on HTML5.
+- **VIDEO_DRIVER_OPENGL_3** = **1** --- The OpenGL 3 rendering backend. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
 
 ----
 
@@ -432,28 +428,6 @@ Delays execution of the current thread by ``usec`` microseconds. ``usec`` must b
 
 ----
 
-.. _class_OS_method_dump_memory_to_file:
-
-- void **dump_memory_to_file** **(** :ref:`String<class_String>` file **)**
-
-Dumps the memory allocation ringlist to a file (only works in debug).
-
-Entry format per line: "Address - Size - Description".
-
-----
-
-.. _class_OS_method_dump_resources_to_file:
-
-- void **dump_resources_to_file** **(** :ref:`String<class_String>` file **)**
-
-Dumps all used resources to file (only works in debug).
-
-Entry format per line: "Resource Type : Resource Location".
-
-At the end of the file is a statistic of all used Resource Types.
-
-----
-
 .. _class_OS_method_execute:
 
 - :ref:`int<class_int>` **execute** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` arguments, :ref:`Array<class_Array>` output=[], :ref:`bool<class_bool>` read_stderr=false, :ref:`bool<class_bool>` open_console=false **)**
@@ -578,6 +552,22 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
     }
 
 
+
+\ **Note:** Passing custom user arguments directly is not recommended, as the engine may discard or modify them. Instead, the best way is to use the standard UNIX double dash (``--``) and then pass custom arguments, which the engine itself will ignore. These can be read via :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`.
+
+----
+
+.. _class_OS_method_get_cmdline_user_args:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_cmdline_user_args** **(** **)**
+
+Similar to :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>`, but this returns the user arguments (any argument passed after the double dash ``--`` argument). These are left untouched by Godot for the user.
+
+For example, in the command line below, ``--fullscreen`` will not be returned in :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` and ``--level 1`` will only be returned in :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>`:
+
+::
+
+    godot --fullscreen -- --level 1
 
 ----
 
@@ -719,7 +709,7 @@ On Android, this is ``"Android"``.
 
 On iOS, this is ``"iOS"``.
 
-On the web, this is ``"HTML5"``.
+On the web, this is ``"Web"``.
 
 \ **Note:** Custom builds of the engine may support additional platforms, such as consoles, yielding other return values.
 
@@ -739,7 +729,7 @@ On the web, this is ``"HTML5"``.
             print("Android")
         "iOS":
             print("iOS")
-        "HTML5":
+        "Web":
             print("Web")
 
  .. code-tab:: csharp
@@ -766,7 +756,7 @@ On the web, this is ``"HTML5"``.
         case "iOS":
             GD.Print("iOS");
             break;
-        case "HTML5":
+        case "Web":
             GD.Print("Web");
             break;
     }
@@ -799,7 +789,15 @@ Returns the number of *logical* CPU cores available on the host machine. On CPUs
 
 Returns the name of the CPU model on the host machine (e.g. "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz").
 
-\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android, HTML5 and UWP, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
+\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android, Web and UWP, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
+
+----
+
+.. _class_OS_method_get_restart_on_exit_arguments:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_restart_on_exit_arguments** **(** **)** |const|
+
+Returns the list of command line arguments that will be used when the project automatically restarts using :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>`. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>`.
 
 ----
 
@@ -869,7 +867,7 @@ Returns a string that is unique to the device.
 
 \ **Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
 
-\ **Note:** Returns an empty string on HTML5 and UWP, as this method isn't implemented on those platforms yet.
+\ **Note:** Returns an empty string on Web and UWP, as this method isn't implemented on those platforms yet.
 
 ----
 
@@ -947,6 +945,14 @@ Must be a valid ID generated from :ref:`create_process<class_OS_method_create_pr
 
 ----
 
+.. _class_OS_method_is_restart_on_exit_set:
+
+- :ref:`bool<class_bool>` **is_restart_on_exit_set** **(** **)** |const|
+
+Returns ``true`` if the project will automatically restart when it exits for any reason, ``false`` otherwise. See also :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+
+----
+
 .. _class_OS_method_is_stdout_verbose:
 
 - :ref:`bool<class_bool>` **is_stdout_verbose** **(** **)** |const|
@@ -959,7 +965,7 @@ Returns ``true`` if the engine was executed with the ``--verbose`` or ``-v`` com
 
 - :ref:`bool<class_bool>` **is_userfs_persistent** **(** **)** |const|
 
-If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the HTML5 platform, where this persistence may be unavailable.
+If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the Web platform, where this persistence may be unavailable.
 
 ----
 
@@ -1002,38 +1008,6 @@ Initialises the singleton for the system MIDI driver.
 
 ----
 
-.. _class_OS_method_print_all_resources:
-
-- void **print_all_resources** **(** :ref:`String<class_String>` tofile="" **)**
-
-Shows all resources in the game. Optionally, the list can be written to a file by specifying a file path in ``tofile``.
-
-----
-
-.. _class_OS_method_print_all_textures_by_size:
-
-- void **print_all_textures_by_size** **(** **)**
-
-Shows the list of loaded textures sorted by size in memory.
-
-----
-
-.. _class_OS_method_print_resources_by_type:
-
-- void **print_resources_by_type** **(** :ref:`PackedStringArray<class_PackedStringArray>` types **)**
-
-Shows the number of resources loaded by the game of the given types.
-
-----
-
-.. _class_OS_method_print_resources_in_use:
-
-- void **print_resources_in_use** **(** :ref:`bool<class_bool>` short=false **)**
-
-Shows all resources currently used by the game.
-
-----
-
 .. _class_OS_method_request_permission:
 
 - :ref:`bool<class_bool>` **request_permission** **(** :ref:`String<class_String>` name **)**
@@ -1059,6 +1033,20 @@ With this function, you can request dangerous permissions since normal permissio
 Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
 
 \ **Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
+
+----
+
+.. _class_OS_method_set_restart_on_exit:
+
+- void **set_restart_on_exit** **(** :ref:`bool<class_bool>` restart, :ref:`PackedStringArray<class_PackedStringArray>` arguments=PackedStringArray() **)**
+
+If ``restart`` is ``true``, restarts the project automatically when it is exited with :ref:`SceneTree.quit<class_SceneTree_method_quit>` or :ref:`Node.NOTIFICATION_WM_CLOSE_REQUEST<class_Node_constant_NOTIFICATION_WM_CLOSE_REQUEST>`. Command line ``arguments`` can be supplied. To restart the project with the same command line arguments as originally used to run the project, pass :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` as the value for ``arguments``.
+
+\ :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` can be used to apply setting changes that require a restart. See also :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` and :ref:`get_restart_on_exit_arguments<class_OS_method_get_restart_on_exit_arguments>`.
+
+\ **Note:** This method is only effective on desktop platforms, and only when the project isn't started from the editor. It will have no effect on mobile and Web platforms, or when the project is started from the editor.
+
+\ **Note:** If the project process crashes or is *killed* by the user (by sending ``SIGKILL`` instead of the usual ``SIGTERM``), the project won't restart automatically.
 
 ----
 
@@ -1092,7 +1080,7 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 
-\ **Note:** This method is implemented on Android, iOS, HTML5, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS and Windows.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

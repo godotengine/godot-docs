@@ -225,7 +225,7 @@ The second bone will be calculated either using the tip node if that setting is 
 
 - void **set_joint_one_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
 
-Sets the bone index, ``bone_index``, of the first bone. When possible, this will also update the ``bone_name`` of the first bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+Sets the bone index, ``bone_idx``, of the first bone. When possible, this will also update the ``bone_name`` of the first bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
 ----
 
@@ -257,7 +257,7 @@ Sets the amount of roll/twist applied to the first bone in the TwoBoneIK modific
 
 - void **set_joint_two_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
 
-Sets the bone index, ``bone_index``, of the second bone. When possible, this will also update the ``bone_name`` of the second bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+Sets the bone index, ``bone_idx``, of the second bone. When possible, this will also update the ``bone_name`` of the second bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
 ----
 

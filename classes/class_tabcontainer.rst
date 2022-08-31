@@ -136,6 +136,8 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_unselected<class_TabContainer_theme_style_tab_unselected>`               |                                     |
 +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`tabbar_background<class_TabContainer_theme_style_tabbar_background>`         |                                     |
++-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 
 Signals
 -------
@@ -650,6 +652,14 @@ The style of the currently selected tab.
 - :ref:`StyleBox<class_StyleBox>` **tab_unselected**
 
 The style of the other, unselected tabs.
+
+----
+
+.. _class_TabContainer_theme_style_tabbar_background:
+
+- :ref:`StyleBox<class_StyleBox>` **tabbar_background**
+
+The style for the background fill of the :ref:`TabBar<class_TabBar>` area.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

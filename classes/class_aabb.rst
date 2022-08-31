@@ -310,7 +310,7 @@ Returns the volume of the ``AABB``.
 
 - :ref:`AABB<class_AABB>` **grow** **(** :ref:`float<class_float>` by **)** |const|
 
-Returns a copy of the ``AABB`` grown a given amount of units towards all the sides.
+Returns a copy of the ``AABB`` grown a given number of units towards all the sides.
 
 ----
 

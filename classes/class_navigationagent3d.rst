@@ -37,7 +37,7 @@ Properties
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`navigation_layers<class_NavigationAgent3D_property_navigation_layers>`             | ``1``     |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent3D_property_neighbor_dist>`                     | ``50.0``  |
+| :ref:`float<class_float>` | :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`             | ``50.0``  |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`     | ``1.0``   |
 +---------------------------+------------------------------------------------------------------------------------------+-----------+
@@ -219,17 +219,17 @@ A bitfield determining what navigation layers of navigation regions this Navigat
 
 ----
 
-.. _class_NavigationAgent3D_property_neighbor_dist:
+.. _class_NavigationAgent3D_property_neighbor_distance:
 
-- :ref:`float<class_float>` **neighbor_dist**
+- :ref:`float<class_float>` **neighbor_distance**
 
-+-----------+--------------------------+
-| *Default* | ``50.0``                 |
-+-----------+--------------------------+
-| *Setter*  | set_neighbor_dist(value) |
-+-----------+--------------------------+
-| *Getter*  | get_neighbor_dist()      |
-+-----------+--------------------------+
++-----------+------------------------------+
+| *Default* | ``50.0``                     |
++-----------+------------------------------+
+| *Setter*  | set_neighbor_distance(value) |
++-----------+------------------------------+
+| *Getter*  | get_neighbor_distance()      |
++-----------+------------------------------+
 
 The distance to search for other agents.
 
@@ -279,7 +279,7 @@ The maximum distance the agent is allowed away from the ideal path to the final 
 | *Getter*  | get_radius()      |
 +-----------+-------------------+
 
-The radius of the avoidance agent. This is the "body" of the avoidance agent and not the avoidance maneuver starting radius (which is controlled by :ref:`neighbor_dist<class_NavigationAgent3D_property_neighbor_dist>`).
+The radius of the avoidance agent. This is the "body" of the avoidance agent and not the avoidance maneuver starting radius (which is controlled by :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`).
 
 Does not affect normal pathfinding. To change an actor's pathfinding radius bake :ref:`NavigationMesh<class_NavigationMesh>` resources with a different :ref:`NavigationMesh.agent_radius<class_NavigationMesh_property_agent_radius>` property and use different navigation maps for each actor size.
 

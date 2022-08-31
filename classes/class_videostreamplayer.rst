@@ -23,7 +23,7 @@ Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, 
 
 \ **Note:** Due to a bug, VideoStreamPlayer does not support localization remapping yet.
 
-\ **Warning:** On HTML5, video playback *will* perform poorly due to missing architecture-specific assembly optimizations.
+\ **Warning:** On Web, video playback *will* perform poorly due to missing architecture-specific assembly optimizations.
 
 Properties
 ----------

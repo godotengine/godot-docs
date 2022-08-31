@@ -37,7 +37,7 @@ Properties
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Font<class_Font>`                                           | :ref:`font<class_Label3D_property_font>`                                                                   |                       |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                                             | :ref:`font_size<class_Label3D_property_font_size>`                                                         | ``16``                |
+| :ref:`int<class_int>`                                             | :ref:`font_size<class_Label3D_property_font_size>`                                                         | ``32``                |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`horizontal_alignment<class_Label3D_property_horizontal_alignment>`                                   | ``1``                 |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -55,9 +55,9 @@ Properties
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`int<class_int>`                                             | :ref:`outline_render_priority<class_Label3D_property_outline_render_priority>`                             | ``-1``                |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                                             | :ref:`outline_size<class_Label3D_property_outline_size>`                                                   | ``0``                 |
+| :ref:`int<class_int>`                                             | :ref:`outline_size<class_Label3D_property_outline_size>`                                                   | ``12``                |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                                         | :ref:`pixel_size<class_Label3D_property_pixel_size>`                                                       | ``0.01``              |
+| :ref:`float<class_float>`                                         | :ref:`pixel_size<class_Label3D_property_pixel_size>`                                                       | ``0.005``             |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`int<class_int>`                                             | :ref:`render_priority<class_Label3D_property_render_priority>`                                             | ``0``                 |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -110,7 +110,7 @@ enum **DrawFlags**:
 
 - **FLAG_SHADED** = **0** --- If set, lights in the environment affect the label.
 
-- **FLAG_DOUBLE_SIDED** = **1** --- If set, text can be seen from the back as well. If not, the texture is invisible when looking at it from behind.
+- **FLAG_DOUBLE_SIDED** = **1** --- If set, text can be seen from the back as well. If not, the text is invisible when looking at it from behind.
 
 - **FLAG_DISABLE_DEPTH_TEST** = **2** --- Disables the depth test, so this object is drawn on top of all others. However, objects drawn after it in the draw order may cover it.
 
@@ -130,7 +130,7 @@ enum **DrawFlags**:
 
 enum **AlphaCutMode**:
 
-- **ALPHA_CUT_DISABLED** = **0** --- This mode performs standard alpha blending. It can display translucent areas, but transparency sorting issues may be visible when multiple transparent materials are overlapping.
+- **ALPHA_CUT_DISABLED** = **0** --- This mode performs standard alpha blending. It can display translucent areas, but transparency sorting issues may be visible when multiple transparent materials are overlapping. :ref:`GeometryInstance3D.cast_shadow<class_GeometryInstance3D_property_cast_shadow>` has no effect when this transparency mode is used; the ``Label3D`` will never cast shadows.
 
 - **ALPHA_CUT_DISCARD** = **1** --- This mode only allows fully transparent or fully opaque pixels. Harsh edges will be visible unless some form of screen-space antialiasing is enabled (see :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`). This mode is also known as *alpha testing* or *1-bit transparency*.
 
@@ -260,14 +260,16 @@ Font configuration used to display text.
 - :ref:`int<class_int>` **font_size**
 
 +-----------+----------------------+
-| *Default* | ``16``               |
+| *Default* | ``32``               |
 +-----------+----------------------+
 | *Setter*  | set_font_size(value) |
 +-----------+----------------------+
 | *Getter*  | get_font_size()      |
 +-----------+----------------------+
 
-Font size of the ``Label3D``'s text.
+Font size of the ``Label3D``'s text. To make the font look more detailed when up close, increase :ref:`font_size<class_Label3D_property_font_size>` while decreasing :ref:`pixel_size<class_Label3D_property_pixel_size>` at the same time.
+
+Higher font sizes require more time to render new characters, which can cause stuttering during gameplay.
 
 ----
 
@@ -397,7 +399,7 @@ The tint of text outline.
 
 Sets the render priority for the text outline. Higher priority objects will be sorted in front of lower priority objects.
 
-\ **Node:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
+\ **Note:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
@@ -408,7 +410,7 @@ Sets the render priority for the text outline. Higher priority objects will be s
 - :ref:`int<class_int>` **outline_size**
 
 +-----------+-------------------------+
-| *Default* | ``0``                   |
+| *Default* | ``12``                  |
 +-----------+-------------------------+
 | *Setter*  | set_outline_size(value) |
 +-----------+-------------------------+
@@ -424,14 +426,14 @@ Text outline size.
 - :ref:`float<class_float>` **pixel_size**
 
 +-----------+-----------------------+
-| *Default* | ``0.01``              |
+| *Default* | ``0.005``             |
 +-----------+-----------------------+
 | *Setter*  | set_pixel_size(value) |
 +-----------+-----------------------+
 | *Getter*  | get_pixel_size()      |
 +-----------+-----------------------+
 
-The size of one pixel's width on the label to scale it in 3D.
+The size of one pixel's width on the label to scale it in 3D. To make the font look more detailed when up close, increase :ref:`font_size<class_Label3D_property_font_size>` while decreasing :ref:`pixel_size<class_Label3D_property_pixel_size>` at the same time.
 
 ----
 
@@ -449,7 +451,7 @@ The size of one pixel's width on the label to scale it in 3D.
 
 Sets the render priority for the text. Higher priority objects will be sorted in front of lower priority objects.
 
-\ **Node:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
+\ **Note:** This only applies if :ref:`alpha_cut<class_Label3D_property_alpha_cut>` is set to :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` (default value).
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 

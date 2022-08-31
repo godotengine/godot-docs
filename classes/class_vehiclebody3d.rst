@@ -10,7 +10,7 @@
 VehicleBody3D
 =============
 
-**Inherits:** :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` **<** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`RigidBody3D<class_RigidBody3D>` **<** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Physics body that simulates the behavior of a car.
 
@@ -31,15 +31,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody3D_property_brake>`               | ``0.0``                                                                                |
-+---------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody3D_property_engine_force>` | ``0.0``                                                                                |
-+---------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | mass                                                           | ``40.0`` (overrides :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D_property_mass>`) |
-+---------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody3D_property_steering>`         | ``0.0``                                                                                |
-+---------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody3D_property_brake>`               | ``0.0``                                                                  |
++---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody3D_property_engine_force>` | ``0.0``                                                                  |
++---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | mass                                                           | ``40.0`` (overrides :ref:`RigidBody3D<class_RigidBody3D_property_mass>`) |
++---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody3D_property_steering>`         | ``0.0``                                                                  |
++---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter*  | get_brake()      |
 +-----------+------------------+
 
-Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
+Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
 ----
 
@@ -72,7 +72,7 @@ Slows down the vehicle by applying a braking force. The vehicle is only slowed d
 | *Getter*  | get_engine_force()      |
 +-----------+-------------------------+
 
-Accelerates the vehicle by applying an engine force. The vehicle is only sped up if the wheels that have :ref:`VehicleWheel3D.use_as_traction<class_VehicleWheel3D_property_use_as_traction>` set to ``true`` and are in contact with a surface. The :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
+Accelerates the vehicle by applying an engine force. The vehicle is only sped up if the wheels that have :ref:`VehicleWheel3D.use_as_traction<class_VehicleWheel3D_property_use_as_traction>` set to ``true`` and are in contact with a surface. The :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
 \ **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 

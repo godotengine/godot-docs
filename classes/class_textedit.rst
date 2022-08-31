@@ -1278,7 +1278,7 @@ Override this method to define what happens when the user performs a cut operati
 
 - void **_handle_unicode_input** **(** :ref:`int<class_int>` unicode_char **)** |virtual|
 
-Override this method to define what happens when the types in the provided key ``unicode``.
+Override this method to define what happens when the user types in the provided key ``unicode_char``.
 
 ----
 
@@ -1448,7 +1448,7 @@ Returns the first visible line.
 
 - :ref:`int<class_int>` **get_gutter_count** **(** **)** |const|
 
-Returns the total amount of gutters registered.
+Returns the number of gutters registered.
 
 ----
 
@@ -1480,7 +1480,7 @@ Returns the width of the gutter at the given index.
 
 - :ref:`int<class_int>` **get_indent_level** **(** :ref:`int<class_int>` line **)** |const|
 
-Returns the amount of spaces and ``tab * tab_size`` before the first char.
+Returns the number of spaces and ``tab * tab_size`` before the first char.
 
 ----
 
@@ -1536,7 +1536,7 @@ Returns the line and column at the given position. In the returned vector, ``x``
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
-Returns the amount of total lines in the text.
+Returns the number of lines in the text.
 
 ----
 
@@ -1642,7 +1642,7 @@ Returns the equivalent minimap line at ``position``
 
 - :ref:`int<class_int>` **get_minimap_visible_lines** **(** **)** |const|
 
-Returns the total amount of lines that can be draw on the minimap.
+Returns the number of lines that may be drawn on the minimap.
 
 ----
 
@@ -1782,7 +1782,7 @@ Returns the total width of all gutters and internal padding.
 
 - :ref:`int<class_int>` **get_total_visible_line_count** **(** **)** |const|
 
-Returns the total amount of lines that could be draw.
+Returns the number of lines that may be drawn.
 
 ----
 
@@ -2187,7 +2187,7 @@ Sets the current background color of the line. Set to ``Color(0, 0, 0, 0)`` for 
 
 - void **set_line_gutter_clickable** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`bool<class_bool>` clickable **)**
 
-Sets the ``gutter`` on ``line`` as clickable.
+If ``clickable`` is ``true``, makes the ``gutter`` on ``line`` clickable. See :ref:`gutter_clicked<class_TextEdit_signal_gutter_clicked>`.
 
 ----
 
@@ -2195,7 +2195,7 @@ Sets the ``gutter`` on ``line`` as clickable.
 
 - void **set_line_gutter_icon** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`Texture2D<class_Texture2D>` icon **)**
 
-Sets the icon for ``gutter`` on ``line``.
+Sets the icon for ``gutter`` on ``line`` to ``icon``.
 
 ----
 
@@ -2203,7 +2203,7 @@ Sets the icon for ``gutter`` on ``line``.
 
 - void **set_line_gutter_item_color** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`Color<class_Color>` color **)**
 
-Sets the color for ``gutter`` on ``line``.
+Sets the color for ``gutter`` on ``line`` to ``color``.
 
 ----
 
@@ -2211,7 +2211,7 @@ Sets the color for ``gutter`` on ``line``.
 
 - void **set_line_gutter_metadata** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`Variant<class_Variant>` metadata **)**
 
-Sets the metadata for ``gutter`` on ``line``.
+Sets the metadata for ``gutter`` on ``line`` to ``metadata``.
 
 ----
 
@@ -2219,7 +2219,7 @@ Sets the metadata for ``gutter`` on ``line``.
 
 - void **set_line_gutter_text** **(** :ref:`int<class_int>` line, :ref:`int<class_int>` gutter, :ref:`String<class_String>` text **)**
 
-Sets the text for ``gutter`` on ``line``.
+Sets the text for ``gutter`` on ``line`` to ``text``.
 
 ----
 
@@ -2235,7 +2235,7 @@ If ``true``, sets the user into overtype mode. When the user types in this mode,
 
 - void **set_search_flags** **(** :ref:`int<class_int>` flags **)**
 
-Sets the search flags. This is used with :ref:`set_search_text<class_TextEdit_method_set_search_text>` to highlight occurrences of the searched text. Search flags can be specified from the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
+Sets the search ``flags``. This is used with :ref:`set_search_text<class_TextEdit_method_set_search_text>` to highlight occurrences of the searched text. Search flags can be specified from the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
 
 ----
 

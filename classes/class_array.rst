@@ -179,23 +179,23 @@ Methods
 Operators
 ---------
 
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Array_operator_neq_bool>` **(** :ref:`Array<class_Array>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`operator +<class_Array_operator_sum_Array>` **(** :ref:`Array<class_Array>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator <<class_Array_operator_lt_bool>` **(** :ref:`Array<class_Array>` right **)**   |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator <=<class_Array_operator_lte_bool>` **(** :ref:`Array<class_Array>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Array_operator_eq_bool>` **(** :ref:`Array<class_Array>` right **)**  |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ><class_Array_operator_gt_bool>` **(** :ref:`Array<class_Array>` right **)**   |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator >=<class_Array_operator_gte_bool>` **(** :ref:`Array<class_Array>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| void                      | :ref:`operator []<class_Array_operator_idx_void>` **(** :ref:`int<class_int>` index **)**     |
-+---------------------------+-----------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Array_operator_neq_bool>` **(** :ref:`Array<class_Array>` right **)**  |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`operator +<class_Array_operator_sum_Array>` **(** :ref:`Array<class_Array>` right **)**  |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator \<<class_Array_operator_lt_bool>` **(** :ref:`Array<class_Array>` right **)**   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator \<=<class_Array_operator_lte_bool>` **(** :ref:`Array<class_Array>` right **)** |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Array_operator_eq_bool>` **(** :ref:`Array<class_Array>` right **)**   |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator ><class_Array_operator_gt_bool>` **(** :ref:`Array<class_Array>` right **)**    |
++---------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`operator >=<class_Array_operator_gte_bool>` **(** :ref:`Array<class_Array>` right **)**  |
++---------------------------+------------------------------------------------------------------------------------------------+
+| void                      | :ref:`operator []<class_Array_operator_idx_void>` **(** :ref:`int<class_int>` index **)**      |
++---------------------------+------------------------------------------------------------------------------------------------+
 
 Constructor Descriptions
 ------------------------
@@ -834,7 +834,7 @@ Concatenates two ``Array``\ s together, with the ``right`` ``Array`` being added
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Array<class_Array>` right **)**
 
-Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``false`` if the left operand ``Array`` has less elements, otherwise it returns ``true``.
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``false`` if the left operand ``Array`` has fewer elements, otherwise it returns ``true``.
 
 ----
 
@@ -842,7 +842,7 @@ Performs a comparison for each index between the left operand ``Array`` and the 
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Array<class_Array>` right **)**
 
-Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``true`` if the left operand ``Array`` has less or the same number of elements, otherwise it returns ``false``.
+Performs a comparison for each index between the left operand ``Array`` and the ``right`` ``Array``, considering the highest common index of both arrays for this comparison: Returns ``true`` on the first occurrence of an element that is less, or ``false`` if the element is greater. Note that depending on the type of data stored, this function may be recursive. If all elements are equal, it compares the length of both arrays and returns ``true`` if the left operand ``Array`` has the same number of elements or fewer, otherwise it returns ``false``.
 
 ----
 

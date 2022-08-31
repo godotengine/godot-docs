@@ -99,9 +99,9 @@ Operators
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i<class_Vector3i>` | :ref:`operator /<class_Vector3i_operator_div_Vector3i>` **(** :ref:`int<class_int>` right **)**           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <<class_Vector3i_operator_lt_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**      |
+| :ref:`bool<class_bool>`         | :ref:`operator \<<class_Vector3i_operator_lt_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <=<class_Vector3i_operator_lte_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**    |
+| :ref:`bool<class_bool>`         | :ref:`operator \<=<class_Vector3i_operator_lte_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**   |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector3i_operator_eq_bool>` **(** :ref:`Vector3i<class_Vector3i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -443,7 +443,7 @@ Compares two ``Vector3i`` vectors by first checking if the X value of the left v
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
 
-Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, and ``v[2]`` is equivalent to ``v.z``.
+Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, and ``v[2]`` is equivalent to ``v.z``.
 
 ----
 

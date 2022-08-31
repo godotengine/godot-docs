@@ -146,7 +146,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
-:ref:`Texture2D<class_Texture2D>` object to draw.
+:ref:`Texture2D<class_Texture2D>` object to draw. If :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is used, this will be overridden. The size information is still used.
 
 ----
 

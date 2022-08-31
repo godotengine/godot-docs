@@ -15,7 +15,7 @@ A packed array of 64-bit floating-point values.
 Description
 -----------
 
-An array specifically designed to hold 64-bit floating-point values. Packs data tightly, so it saves memory for large array sizes.
+An array specifically designed to hold 64-bit floating-point values (double). Packs data tightly, so it saves memory for large array sizes.
 
 If you only need to pack 32-bit floats tightly, see :ref:`PackedFloat32Array<class_PackedFloat32Array>` for a more memory-friendly alternative.
 
@@ -39,6 +39,8 @@ Methods
 | void                                                | :ref:`append_array<class_PackedFloat64Array_method_append_array>` **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` array **)**   |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedFloat64Array_method_bsearch>` **(** :ref:`float<class_float>` value, :ref:`bool<class_bool>` before=true **)**  |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear<class_PackedFloat64Array_method_clear>` **(** **)**                                                                           |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`count<class_PackedFloat64Array_method_count>` **(** :ref:`float<class_float>` value **)** |const|                                   |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +137,14 @@ Appends a ``PackedFloat64Array`` at the end of this array.
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedFloat64Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+
+----
+
+.. _class_PackedFloat64Array_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedFloat64Array_method_resize>` with a size of ``0``.
 
 ----
 
@@ -285,11 +295,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedFloat64Array_operator_sum_PackedFloat64Array:
 
 - :ref:`PackedFloat64Array<class_PackedFloat64Array>` **operator +** **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` right **)**
+
+Returns a new ``PackedFloat64Array`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedFloat64Array_method_append_array>` instead.
 
 ----
 
@@ -297,11 +311,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal doubles at the corresponding indices.
+
 ----
 
 .. _class_PackedFloat64Array_operator_idx_float:
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the :ref:`float<class_float>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

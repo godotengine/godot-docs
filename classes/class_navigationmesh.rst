@@ -575,6 +575,8 @@ Clears the array of polygons, but it doesn't clear the array of vertices.
 
 Initializes the navigation mesh by setting the vertices and indices according to a :ref:`Mesh<class_Mesh>`.
 
+\ **Note:** The given ``mesh`` must be of type :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>` and have an index array.
+
 ----
 
 .. _class_NavigationMesh_method_get_collision_mask_value:

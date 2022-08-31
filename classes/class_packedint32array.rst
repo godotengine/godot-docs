@@ -40,6 +40,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`bsearch<class_PackedInt32Array_method_bsearch>` **(** :ref:`int<class_int>` value, :ref:`bool<class_bool>` before=true **)**      |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_PackedInt32Array_method_clear>` **(** **)**                                                                           |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`count<class_PackedInt32Array_method_count>` **(** :ref:`int<class_int>` value **)** |const|                                       |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`duplicate<class_PackedInt32Array_method_duplicate>` **(** **)**                                                                   |
@@ -135,6 +137,14 @@ Appends a ``PackedInt32Array`` at the end of this array.
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedInt32Array_method_bsearch>` on an unsorted array results in unexpected behavior.
+
+----
+
+.. _class_PackedInt32Array_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedInt32Array_method_resize>` with a size of ``0``.
 
 ----
 
@@ -285,11 +295,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedInt32Array_operator_sum_PackedInt32Array:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **operator +** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` right **)**
+
+Returns a new ``PackedInt32Array`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedInt32Array_method_append_array>` instead.
 
 ----
 
@@ -297,11 +311,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal ints at the corresponding indices.
+
 ----
 
 .. _class_PackedInt32Array_operator_idx_int:
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the :ref:`int<class_int>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
+
+Note that :ref:`int<class_int>` type is 64-bit, unlike the values stored in the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

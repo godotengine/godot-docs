@@ -14,7 +14,7 @@ VisualShaderNodeGroupBase
 
 **Inherited By:** :ref:`VisualShaderNodeExpression<class_VisualShaderNodeExpression>`
 
-Base class for a family of nodes with variable amount of input and output ports within the visual shader graph.
+Base class for a family of nodes with variable number of input and output ports within the visual shader graph.
 
 Description
 -----------

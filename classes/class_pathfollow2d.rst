@@ -19,28 +19,28 @@ Description
 
 This node takes its parent :ref:`Path2D<class_Path2D>`, and returns the coordinates of a point within it, given a distance from the first vertex.
 
-It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
+It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting the :ref:`progress<class_PathFollow2D_property_progress>` in this node.
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`cubic_interp<class_PathFollow2D_property_cubic_interp>` | ``true`` |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`         | ``0.0``  |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`       | ``4.0``  |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                 | ``true`` |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`offset<class_PathFollow2D_property_offset>`             | ``0.0``  |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`rotates<class_PathFollow2D_property_rotates>`           | ``true`` |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`unit_offset<class_PathFollow2D_property_unit_offset>`   | ``0.0``  |
-+---------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`         | ``0.0``  |
-+---------------------------+---------------------------------------------------------------+----------+
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`cubic_interp<class_PathFollow2D_property_cubic_interp>`     | ``true`` |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`             | ``0.0``  |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`           | ``4.0``  |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                     | ``true`` |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`progress<class_PathFollow2D_property_progress>`             | ``0.0``  |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`progress_ratio<class_PathFollow2D_property_progress_ratio>` | ``0.0``  |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`rotates<class_PathFollow2D_property_rotates>`               | ``true`` |
++---------------------------+-------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`             | ``0.0``  |
++---------------------------+-------------------------------------------------------------------+----------+
 
 Property Descriptions
 ---------------------
@@ -113,19 +113,35 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 ----
 
-.. _class_PathFollow2D_property_offset:
+.. _class_PathFollow2D_property_progress:
 
-- :ref:`float<class_float>` **offset**
+- :ref:`float<class_float>` **progress**
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
++-----------+---------------------+
+| *Default* | ``0.0``             |
++-----------+---------------------+
+| *Setter*  | set_progress(value) |
++-----------+---------------------+
+| *Getter*  | get_progress()      |
++-----------+---------------------+
 
-The distance along the path in pixels.
+The distance along the path, in pixels. Changing this value sets this node's position to a point within the path.
+
+----
+
+.. _class_PathFollow2D_property_progress_ratio:
+
+- :ref:`float<class_float>` **progress_ratio**
+
++-----------+---------------------------+
+| *Default* | ``0.0``                   |
++-----------+---------------------------+
+| *Setter*  | set_progress_ratio(value) |
++-----------+---------------------------+
+| *Getter*  | get_progress_ratio()      |
++-----------+---------------------------+
+
+The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the progress within the path, as the offset supplied is multiplied internally by the path's length.
 
 ----
 
@@ -142,22 +158,6 @@ The distance along the path in pixels.
 +-----------+--------------------+
 
 If ``true``, this node rotates to follow the path, with the +X direction facing forward on the path.
-
-----
-
-.. _class_PathFollow2D_property_unit_offset:
-
-- :ref:`float<class_float>` **unit_offset**
-
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_unit_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_unit_offset()      |
-+-----------+------------------------+
-
-The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
 
 ----
 

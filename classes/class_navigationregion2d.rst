@@ -25,7 +25,7 @@ Two regions can be connected to each other if they share a similar edge. You can
 
 The pathfinding cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>` value.
 
-\ **Note**: This value is not added to the path cost when the start position is already inside this region.
+\ **Note:** This value is not added to the path cost when the start position is already inside this region.
 
 The pathfinding cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationRegion2D_property_travel_cost>` multiplier.
 

@@ -291,7 +291,7 @@ The automatic LOD bias to use for meshes rendered within the ``ReflectionProbe``
 | *Getter*  | get_origin_offset()      |
 +-----------+--------------------------+
 
-Sets the origin offset to be used when this ``ReflectionProbe`` is in :ref:`box_projection<class_ReflectionProbe_property_box_projection>` mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the amount of objects that "get in the way" of the reflection.
+Sets the origin offset to be used when this ``ReflectionProbe`` is in :ref:`box_projection<class_ReflectionProbe_property_box_projection>` mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the number of objects that "get in the way" of the reflection.
 
 ----
 

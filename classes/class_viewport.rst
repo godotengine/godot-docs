@@ -66,8 +66,6 @@ Properties
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                                       | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false`` |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                                                     | :ref:`fsr_mipmap_bias<class_Viewport_property_fsr_mipmap_bias>`                                       | ``0.0``   |
-+-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                                                     | :ref:`fsr_sharpness<class_Viewport_property_fsr_sharpness>`                                           | ``0.2``   |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`global_canvas_transform<class_Viewport_property_global_canvas_transform>`                       |           |
@@ -82,7 +80,9 @@ Properties
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                                                     | :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>`                                 | ``1.0``   |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`MSAA<enum_Viewport_MSAA>`                                                               | :ref:`msaa<class_Viewport_property_msaa>`                                                             | ``0``     |
+| :ref:`MSAA<enum_Viewport_MSAA>`                                                               | :ref:`msaa_2d<class_Viewport_property_msaa_2d>`                                                       | ``0``     |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`MSAA<enum_Viewport_MSAA>`                                                               | :ref:`msaa_3d<class_Viewport_property_msaa_3d>`                                                       | ``0``     |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                                       | :ref:`own_world_3d<class_Viewport_property_own_world_3d>`                                             | ``false`` |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
@@ -113,6 +113,8 @@ Properties
 | :ref:`bool<class_bool>`                                                                       | :ref:`snap_2d_transforms_to_pixel<class_Viewport_property_snap_2d_transforms_to_pixel>`               | ``false`` |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                                       | :ref:`snap_2d_vertices_to_pixel<class_Viewport_property_snap_2d_vertices_to_pixel>`                   | ``false`` |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                                                     | :ref:`texture_mipmap_bias<class_Viewport_property_texture_mipmap_bias>`                               | ``0.0``   |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                                                       | :ref:`transparent_bg<class_Viewport_property_transparent_bg>`                                         | ``false`` |
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------+
@@ -683,24 +685,6 @@ Disable 3D rendering (but keep 2D rendering).
 
 ----
 
-.. _class_Viewport_property_fsr_mipmap_bias:
-
-- :ref:`float<class_float>` **fsr_mipmap_bias**
-
-+-----------+----------------------------+
-| *Default* | ``0.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_fsr_mipmap_bias(value) |
-+-----------+----------------------------+
-| *Getter*  | get_fsr_mipmap_bias()      |
-+-----------+----------------------------+
-
-Affects the final texture sharpness by reading from a lower or higher mipmap when using FSR. Mipmap bias does nothing when FSR is not being used. Negative values make textures sharper, while positive values make textures blurrier. This value is used to adjust the mipmap bias calculated internally which is based on the selected quality. The formula for this is ``-log2(1.0 / scale) + mipmap_bias``. This updates the rendering server's mipmap bias when called
-
-To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/fsr_mipmap_bias<class_ProjectSettings_property_rendering/scaling_3d/fsr_mipmap_bias>` project setting.
-
-----
-
 .. _class_Viewport_property_fsr_sharpness:
 
 - :ref:`float<class_float>` **fsr_sharpness**
@@ -815,19 +799,35 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 ----
 
-.. _class_Viewport_property_msaa:
+.. _class_Viewport_property_msaa_2d:
 
-- :ref:`MSAA<enum_Viewport_MSAA>` **msaa**
+- :ref:`MSAA<enum_Viewport_MSAA>` **msaa_2d**
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_msaa(value) |
-+-----------+-----------------+
-| *Getter*  | get_msaa()      |
-+-----------+-----------------+
++-----------+--------------------+
+| *Default* | ``0``              |
++-----------+--------------------+
+| *Setter*  | set_msaa_2d(value) |
++-----------+--------------------+
+| *Getter*  | get_msaa_2d()      |
++-----------+--------------------+
 
-The multisample anti-aliasing mode. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive.
+The multisample anti-aliasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
+
+----
+
+.. _class_Viewport_property_msaa_3d:
+
+- :ref:`MSAA<enum_Viewport_MSAA>` **msaa_3d**
+
++-----------+--------------------+
+| *Default* | ``0``              |
++-----------+--------------------+
+| *Setter*  | set_msaa_3d(value) |
++-----------+--------------------+
+| *Getter*  | get_msaa_3d()      |
++-----------+--------------------+
+
+The multisample anti-aliasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
 
 ----
 
@@ -989,7 +989,7 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 | *Getter*  | get_scaling_3d_scale()      |
 +-----------+-----------------------------+
 
-Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`ProjectSettings.rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa>` for multi-sample antialiasing, which is significantly cheaper but only smoothens the edges of polygons.
+Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`ProjectSettings.rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` for multi-sample antialiasing, which is significantly cheaper but only smooths the edges of polygons.
 
 When using FSR upscaling, AMD recommends exposing the following values as preset options to users "Ultra Quality: 0.77", "Quality: 0.67", "Balanced: 0.59", "Performance: 0.5" instead of exposing the entire scale.
 
@@ -1066,6 +1066,28 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 +-----------+----------------------------------------+
 | *Getter*  | is_snap_2d_vertices_to_pixel_enabled() |
 +-----------+----------------------------------------+
+
+----
+
+.. _class_Viewport_property_texture_mipmap_bias:
+
+- :ref:`float<class_float>` **texture_mipmap_bias**
+
++-----------+--------------------------------+
+| *Default* | ``0.0``                        |
++-----------+--------------------------------+
+| *Setter*  | set_texture_mipmap_bias(value) |
++-----------+--------------------------------+
+| *Getter*  | get_texture_mipmap_bias()      |
++-----------+--------------------------------+
+
+Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close).
+
+Enabling temporal antialiasing (:ref:`use_taa<class_Viewport_property_use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`screen_space_aa<class_Viewport_property_screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enbled at the same time, an offset of ``-0.75`` is applied to this value.
+
+\ **Note:** If :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>` is lower than ``1.0`` (exclusive), :ref:`texture_mipmap_bias<class_Viewport_property_texture_mipmap_bias>` is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``log2(scaling_3d_scale) + mipmap_bias``.
+
+To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>` project setting.
 
 ----
 
@@ -1361,8 +1383,6 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 .. _class_Viewport_method_push_text_input:
 
 - void **push_text_input** **(** :ref:`String<class_String>` text **)**
-
-Returns ``true`` if the viewport is currently embedding windows.
 
 ----
 

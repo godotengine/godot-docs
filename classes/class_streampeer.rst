@@ -153,7 +153,7 @@ Gets a signed byte from the stream.
 
 - :ref:`int<class_int>` **get_available_bytes** **(** **)** |const|
 
-Returns the amount of bytes this ``StreamPeer`` has available.
+Returns the number of bytes this ``StreamPeer`` has available.
 
 ----
 
@@ -161,7 +161,7 @@ Returns the amount of bytes this ``StreamPeer`` has available.
 
 - :ref:`Array<class_Array>` **get_data** **(** :ref:`int<class_int>` bytes **)**
 
-Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the ``bytes`` argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code and a data array.
+Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the ``bytes`` argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code and a data array.
 
 ----
 
@@ -185,7 +185,7 @@ Gets a single-precision float from the stream.
 
 - :ref:`Array<class_Array>` **get_partial_data** **(** :ref:`int<class_int>` bytes **)**
 
-Returns a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code, and a data array.
+Returns a chunk data with the received bytes. The number of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an :ref:`Error<enum_@GlobalScope_Error>` code, and a data array.
 
 ----
 

@@ -31,7 +31,7 @@ Methods
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                   |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**                 |
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**              |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
@@ -104,9 +104,9 @@ Unregisters the given :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 .. _class_ResourceSaver_method_save:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
 
-Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object.
+Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object. If ``path`` is empty, ``ResourceSaver`` will try to use :ref:`Resource.resource_path<class_Resource_property_resource_path>`.
 
 The ``flags`` bitmask can be specified to customize the save behavior using :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags.
 

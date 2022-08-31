@@ -228,7 +228,7 @@ Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
 | *Default* | ``3`` |
 +-----------+-------+
 
-The horizontal space between ``MenuButton``'s icon and text.
+The horizontal space between ``MenuButton``'s icon and text. Negative values will be treated as ``0`` when used.
 
 ----
 

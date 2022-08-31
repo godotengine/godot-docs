@@ -201,9 +201,13 @@ A lower damping value allows a rotation initiated by body A to travel to body B 
 
 - :ref:`float<class_float>` **angular_limit/lower_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+------------------+
+| *Default* | ``0.0``          |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The lower limit of rotation in the slider.
 
@@ -249,9 +253,13 @@ Makes all rotation slower when between 0 and 1.
 
 - :ref:`float<class_float>` **angular_limit/upper_angle**
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
++-----------+------------------+
+| *Default* | ``0.0``          |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 The upper limit of rotation in the slider.
 

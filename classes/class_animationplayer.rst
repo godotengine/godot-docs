@@ -12,14 +12,16 @@ AnimationPlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Container and player of :ref:`Animation<class_Animation>` resources.
+Player of :ref:`Animation<class_Animation>` resources.
 
 Description
 -----------
 
-An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
+An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of :ref:`AnimationLibrary<class_AnimationLibrary>` resources and custom blend times between animation transitions.
 
-\ ``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>` node, but it requires doing everything by code.
+Some methods and properties use a single key to refence an animation directly. These keys are formatted as the key for the library, followed by a forward slash, then the key for the animation whithin the library, for example ``"movement/run"``. If the library's key is an empty string (known as the default library), the forward slash is omitted, being the same key used by the library.
+
+\ ``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>`, but it requires doing everything by code.
 
 Updating the target properties of animations occurs at process time.
 
@@ -47,6 +49,8 @@ Properties
 | :ref:`float<class_float>`                                                      | :ref:`current_animation_position<class_AnimationPlayer_property_current_animation_position>`   |                    |
 +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`AnimationMethodCallMode<enum_AnimationPlayer_AnimationMethodCallMode>`   | :ref:`method_call_mode<class_AnimationPlayer_property_method_call_mode>`                       | ``0``              |
++--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+| :ref:`bool<class_bool>`                                                        | :ref:`movie_quit_on_finish<class_AnimationPlayer_property_movie_quit_on_finish>`               | ``false``          |
 +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
 | :ref:`bool<class_bool>`                                                        | :ref:`playback_active<class_AnimationPlayer_property_playback_active>`                         |                    |
 +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
@@ -125,9 +129,9 @@ Signals
 
 - **animation_changed** **(** :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` new_name **)**
 
-Emitted when a queued animation plays after the previous animation was finished. See :ref:`queue<class_AnimationPlayer_method_queue>`.
+Emitted when a queued animation plays after the previous animation finished. See :ref:`queue<class_AnimationPlayer_method_queue>`.
 
-\ **Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or from :ref:`AnimationTree<class_AnimationTree>`.
+\ **Note:** The signal is not emitted when the animation is changed via :ref:`play<class_AnimationPlayer_method_play>` or by an :ref:`AnimationTree<class_AnimationTree>`.
 
 ----
 
@@ -136,6 +140,8 @@ Emitted when a queued animation plays after the previous animation was finished.
 - **animation_finished** **(** :ref:`StringName<class_StringName>` anim_name **)**
 
 Notifies when an animation finished playing.
+
+\ **Note:** This signal is not emitted if an animation is looping.
 
 ----
 
@@ -199,7 +205,7 @@ Property Descriptions
 | *Getter* | get_assigned_animation()      |
 +----------+-------------------------------+
 
-If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
+If playing, the the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
 
 ----
 
@@ -215,7 +221,7 @@ If playing, the current animation; otherwise, the animation last played. When se
 | *Getter*  | get_autoplay()      |
 +-----------+---------------------+
 
-The name of the animation to play when the scene loads.
+The key of the animation to play when the scene loads.
 
 ----
 
@@ -231,7 +237,7 @@ The name of the animation to play when the scene loads.
 | *Getter*  | get_current_animation()      |
 +-----------+------------------------------+
 
-The name of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
+The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
 
 \ **Note:** while this property appears in the inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
 
@@ -245,7 +251,7 @@ The name of the currently playing animation. If no animation is playing, the pro
 | *Getter* | get_current_animation_length() |
 +----------+--------------------------------+
 
-The length (in seconds) of the currently being played animation.
+The length (in seconds) of the currently playing animation.
 
 ----
 
@@ -274,6 +280,24 @@ The position (in seconds) of the currently playing animation.
 +-----------+-----------------------------+
 
 The call mode to use for Call Method tracks.
+
+----
+
+.. _class_AnimationPlayer_property_movie_quit_on_finish:
+
+- :ref:`bool<class_bool>` **movie_quit_on_finish**
+
++-----------+-----------------------------------------+
+| *Default* | ``false``                               |
++-----------+-----------------------------------------+
+| *Setter*  | set_movie_quit_on_finish_enabled(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_movie_quit_on_finish_enabled()       |
++-----------+-----------------------------------------+
+
+If ``true`` and the engine is running in Movie Maker mode (see :ref:`MovieWriter<class_MovieWriter>`), exits the engine with :ref:`SceneTree.quit<class_SceneTree_method_quit>` as soon as an animation is done playing in this ``AnimationPlayer``. A message is printed when the engine quits for this reason.
+
+\ **Note:** This obeys the same logic as the :ref:`animation_finished<class_AnimationPlayer_signal_animation_finished>` signal, so it will not quit the engine if the animation is set to be looping.
 
 ----
 
@@ -351,9 +375,9 @@ The speed scaling ratio. For instance, if this value is 1, then the animation pl
 | *Getter*  | is_reset_on_save_enabled()       |
 +-----------+----------------------------------+
 
-This is used by the editor. If set to ``true``, the scene will be saved with the effects of the reset animation applied (as if it had been seeked to time 0), then reverted after saving.
+This is used by the editor. If set to ``true``, the scene will be saved with the effects of the reset animation (the animation with the key ``"RESET"``) applied as if it had been seeked to time 0, with the editor keeping the values that the scene had before saving.
 
-In other words, the saved scene file will contain the "default pose", as defined by the reset animation, if any, with the editor keeping the values that the nodes had before saving.
+This makes it more convenient to preview and edit animations in the editor, as changes to the scene will not be saved as long as they are set in the reset animation.
 
 ----
 
@@ -378,6 +402,8 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **add_animation_library** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationLibrary<class_AnimationLibrary>` library **)**
 
+Adds ``library`` to the animation player, under the key ``name``.
+
 ----
 
 .. _class_AnimationPlayer_method_advance:
@@ -392,7 +418,7 @@ Shifts position in the animation timeline and immediately updates the animation.
 
 - :ref:`StringName<class_StringName>` **animation_get_next** **(** :ref:`StringName<class_StringName>` anim_from **)** |const|
 
-Returns the name of the next animation in the queue.
+Returns the key of the animation which is queued to play after the ``anim_from`` animation.
 
 ----
 
@@ -424,7 +450,7 @@ Clears all queued, unplayed animations.
 
 - :ref:`StringName<class_StringName>` **find_animation** **(** :ref:`Animation<class_Animation>` animation **)** |const|
 
-Returns the name of ``animation`` or an empty string if not found.
+Returns the key of ``animation`` or an empty :ref:`StringName<class_StringName>` if not found.
 
 ----
 
@@ -432,13 +458,15 @@ Returns the name of ``animation`` or an empty string if not found.
 
 - :ref:`StringName<class_StringName>` **find_animation_library** **(** :ref:`Animation<class_Animation>` animation **)** |const|
 
+Returns the key for the :ref:`AnimationLibrary<class_AnimationLibrary>` that contains ``animation`` or an empty :ref:`StringName<class_StringName>` if not found.
+
 ----
 
 .. _class_AnimationPlayer_method_get_animation:
 
 - :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if not found.
+Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
 
 ----
 
@@ -446,11 +474,15 @@ Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if n
 
 - :ref:`AnimationLibrary<class_AnimationLibrary>` **get_animation_library** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
+Returns the first :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name`` or ``null`` if not found.
+
 ----
 
 .. _class_AnimationPlayer_method_get_animation_library_list:
 
 - :ref:`StringName[]<class_StringName>` **get_animation_library_list** **(** **)** |const|
+
+Returns the list of stored library keys.
 
 ----
 
@@ -458,7 +490,7 @@ Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if n
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_animation_list** **(** **)** |const|
 
-Returns the list of stored animation names.
+Returns the list of stored animation keys.
 
 ----
 
@@ -466,7 +498,7 @@ Returns the list of stored animation names.
 
 - :ref:`float<class_float>` **get_blend_time** **(** :ref:`StringName<class_StringName>` anim_from, :ref:`StringName<class_StringName>` anim_to **)** |const|
 
-Gets the blend time (in seconds) between two animations, referenced by their names.
+Gets the blend time (in seconds) between two animations, referenced by their keys.
 
 ----
 
@@ -482,7 +514,7 @@ Gets the actual playing speed of current animation or 0 if not playing. This spe
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_queue** **(** **)**
 
-Returns a list of the animation names that are currently queued to play.
+Returns a list of the animation keys that are currently queued to play.
 
 ----
 
@@ -497,6 +529,8 @@ Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`Animation<class_Anim
 .. _class_AnimationPlayer_method_has_animation_library:
 
 - :ref:`bool<class_bool>` **has_animation_library** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if the ``AnimationPlayer`` stores an :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name``.
 
 ----
 
@@ -544,11 +578,15 @@ Queues an animation for playback once the current one is done.
 
 - void **remove_animation_library** **(** :ref:`StringName<class_StringName>` name **)**
 
+Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` assosiated with the key ``name``.
+
 ----
 
 .. _class_AnimationPlayer_method_rename_animation_library:
 
 - void **rename_animation_library** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
+
+Moves the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the key ``name`` to the key ``newname``.
 
 ----
 
@@ -566,7 +604,7 @@ Seeks the animation to the ``seconds`` point in time (in seconds). If ``update``
 
 - void **set_blend_time** **(** :ref:`StringName<class_StringName>` anim_from, :ref:`StringName<class_StringName>` anim_to, :ref:`float<class_float>` sec **)**
 
-Specifies a blend time (in seconds) between two animations, referenced by their names.
+Specifies a blend time (in seconds) between two animations, referenced by their keys.
 
 ----
 

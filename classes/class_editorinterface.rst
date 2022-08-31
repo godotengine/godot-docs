@@ -58,7 +58,7 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInspector<class_EditorInspector>`             | :ref:`get_inspector<class_EditorInterface_method_get_inspector>` **(** **)** |const|                                                                                                                                |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                 | :ref:`get_open_scenes<class_EditorInterface_method_get_open_scenes>` **(** **)** |const|                                                                                                                            |
+| :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`get_open_scenes<class_EditorInterface_method_get_open_scenes>` **(** **)** |const|                                                                                                                            |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`get_playing_scene<class_EditorInterface_method_get_playing_scene>` **(** **)** |const|                                                                                                                        |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +78,7 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** |const|                                                                                     |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                 | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**                                                         |
+| :ref:`Texture2D[]<class_Texture2D>`                       | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**                                                         |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`open_scene_from_path<class_EditorInterface_method_open_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                                                                               |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,6 +89,8 @@ Methods
 | void                                                      | :ref:`play_main_scene<class_EditorInterface_method_play_main_scene>` **(** **)**                                                                                                                                    |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`reload_scene_from_path<class_EditorInterface_method_reload_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                                                                           |
++-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`restart_editor<class_EditorInterface_method_restart_editor>` **(** :ref:`bool<class_bool>` save=true **)**                                                                                                    |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                     | :ref:`save_scene<class_EditorInterface_method_save_scene>` **(** **)**                                                                                                                                              |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,7 +241,7 @@ Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
 .. _class_EditorInterface_method_get_open_scenes:
 
-- :ref:`Array<class_Array>` **get_open_scenes** **(** **)** |const|
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_open_scenes** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` with the file paths of the currently opened scenes.
 
@@ -321,7 +323,7 @@ Returns ``true`` if the specified ``plugin`` is enabled. The plugin name is the 
 
 .. _class_EditorInterface_method_make_mesh_previews:
 
-- :ref:`Array<class_Array>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
+- :ref:`Texture2D[]<class_Texture2D>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
 
 Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture2D<class_Texture2D>`\ s.
 
@@ -364,6 +366,14 @@ Plays the main scene.
 - void **reload_scene_from_path** **(** :ref:`String<class_String>` scene_filepath **)**
 
 Reloads the scene at the given path.
+
+----
+
+.. _class_EditorInterface_method_restart_editor:
+
+- void **restart_editor** **(** :ref:`bool<class_bool>` save=true **)**
+
+Restarts the editor. This closes the editor and then opens the same project. If ``save`` is ``true``, the project will be saved before restarting.
 
 ----
 

@@ -109,7 +109,7 @@ Properties
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`secret<class_LineEdit_property_secret>`                                                               | ``false``                                                                           |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                       | :ref:`secret_character<class_LineEdit_property_secret_character>`                                           | ``"*"``                                                                             |
+| :ref:`String<class_String>`                                       | :ref:`secret_character<class_LineEdit_property_secret_character>`                                           | ``"•"``                                                                             |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`                                         | ``true``                                                                            |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -124,6 +124,8 @@ Properties
 | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_LineEdit_property_text_direction>`                                               | ``0``                                                                               |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`virtual_keyboard_enabled<class_LineEdit_property_virtual_keyboard_enabled>`                           | ``true``                                                                            |
++-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`VirtualKeyboardType<enum_LineEdit_VirtualKeyboardType>`     | :ref:`virtual_keyboard_type<class_LineEdit_property_virtual_keyboard_type>`                                 | ``0``                                                                               |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Methods
@@ -140,7 +142,7 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** |const|                                                                  |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
+| :ref:`float<class_float>`         | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_selection_from_column<class_LineEdit_method_get_selection_from_column>` **(** **)** |const|                                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -349,6 +351,46 @@ Non-printable escape characters are automatically stripped from the OS clipboard
 - **MENU_INSERT_SHY** = **27** --- Inserts soft hyphen (SHY) character.
 
 - **MENU_MAX** = **28** --- Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
+
+----
+
+.. _enum_LineEdit_VirtualKeyboardType:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_DEFAULT:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_MULTILINE:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_NUMBER:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_NUMBER_DECIMAL:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_PHONE:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_EMAIL_ADDRESS:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_PASSWORD:
+
+.. _class_LineEdit_constant_KEYBOARD_TYPE_URL:
+
+enum **VirtualKeyboardType**:
+
+- **KEYBOARD_TYPE_DEFAULT** = **0** --- Default text virtual keyboard.
+
+- **KEYBOARD_TYPE_MULTILINE** = **1** --- Multiline virtual keyboard.
+
+- **KEYBOARD_TYPE_NUMBER** = **2** --- Virtual number keypad, useful for PIN entry.
+
+- **KEYBOARD_TYPE_NUMBER_DECIMAL** = **3** --- Virtual number keypad, useful for entering fractional numbers.
+
+- **KEYBOARD_TYPE_PHONE** = **4** --- Virtual phone number keypad.
+
+- **KEYBOARD_TYPE_EMAIL_ADDRESS** = **5** --- Virtual keyboard with additional keys to assist with typing email addresses.
+
+- **KEYBOARD_TYPE_PASSWORD** = **6** --- Virtual keyboard for entering a password. On most platforms, this should disable autocomplete and autocapitalization.
+
+\ **Note:** This is not supported on Web. Instead, this behaves identically to :ref:`KEYBOARD_TYPE_DEFAULT<class_LineEdit_constant_KEYBOARD_TYPE_DEFAULT>`.
+
+- **KEYBOARD_TYPE_URL** = **7** --- Virtual keyboard with additional keys to assist with typing URLs.
 
 Property Descriptions
 ---------------------
@@ -591,7 +633,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 | *Getter*  | get_max_length()      |
 +-----------+-----------------------+
 
-Maximum amount of characters that can be entered inside the ``LineEdit``. If ``0``, there is no limit.
+Maximum number of characters that can be entered inside the ``LineEdit``. If ``0``, there is no limit.
 
 When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the ``LineEdit``, including pasting. If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter.
 
@@ -693,14 +735,14 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 - :ref:`String<class_String>` **secret_character**
 
 +-----------+-----------------------------+
-| *Default* | ``"*"``                     |
+| *Default* | ``"•"``                     |
 +-----------+-----------------------------+
 | *Setter*  | set_secret_character(value) |
 +-----------+-----------------------------+
 | *Getter*  | get_secret_character()      |
 +-----------+-----------------------------+
 
-The character to use to mask secret input (defaults to "\*"). Only a single character can be used as the secret character.
+The character to use to mask secret input (defaults to "•"). Only a single character can be used as the secret character.
 
 ----
 
@@ -816,6 +858,22 @@ Base text writing direction.
 
 If ``true``, the native virtual keyboard is shown when focused on platforms that support it.
 
+----
+
+.. _class_LineEdit_property_virtual_keyboard_type:
+
+- :ref:`VirtualKeyboardType<enum_LineEdit_VirtualKeyboardType>` **virtual_keyboard_type**
+
++-----------+----------------------------------+
+| *Default* | ``0``                            |
++-----------+----------------------------------+
+| *Setter*  | set_virtual_keyboard_type(value) |
++-----------+----------------------------------+
+| *Getter*  | get_virtual_keyboard_type()      |
++-----------+----------------------------------+
+
+Specifies the type of virtual keyboard to show.
+
 Method Descriptions
 -------------------
 
@@ -863,7 +921,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` of this ``LineEdit``. By default, 
 
 .. _class_LineEdit_method_get_scroll_offset:
 
-- :ref:`int<class_int>` **get_scroll_offset** **(** **)** |const|
+- :ref:`float<class_float>` **get_scroll_offset** **(** **)** |const|
 
 Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_caret_column>`, as a number of characters.
 
@@ -1081,7 +1139,7 @@ The caret's width in pixels. Greater values can be used to improve accessibility
 | *Default* | ``4`` |
 +-----------+-------+
 
-Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'M' characters (i.e. this amount of 'M' characters can be displayed without scrolling).
+Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'M' characters (i.e. this number of 'M' characters can be displayed without scrolling).
 
 ----
 

@@ -39,7 +39,9 @@ Method Descriptions
 
 - :ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
-Not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
+Call this method to actually load in the node. The created node will be placed as a sibling *above* the ``InstancePlaceholder`` in the scene tree. The :ref:`Node<class_Node>`'s reference is also returned for convenience.
+
+\ **Note:** :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` is not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
 
 ----
 
@@ -54,6 +56,10 @@ Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is
 .. _class_InstancePlaceholder_method_get_stored_values:
 
 - :ref:`Dictionary<class_Dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
+
+Returns the list of properties that will be applied to the node when :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` is called.
+
+If ``with_order`` is ``true``, a key named ``.order`` (note the leading period) is added to the dictionary. This ``.order`` key is an :ref:`Array<class_Array>` of :ref:`String<class_String>` property names specifying the order in which properties will be applied (with index 0 being the first).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

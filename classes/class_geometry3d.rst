@@ -23,11 +23,11 @@ Methods
 -------
 
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`build_box_planes<class_Geometry3D_method_build_box_planes>` **(** :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                         |
+| :ref:`Plane[]<class_Plane>`                         | :ref:`build_box_planes<class_Geometry3D_method_build_box_planes>` **(** :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                         |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`build_capsule_planes<class_Geometry3D_method_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**                                      |
+| :ref:`Plane[]<class_Plane>`                         | :ref:`build_capsule_planes<class_Geometry3D_method_build_capsule_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**                                      |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`build_cylinder_planes<class_Geometry3D_method_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**                                                                |
+| :ref:`Plane[]<class_Plane>`                         | :ref:`build_cylinder_planes<class_Geometry3D_method_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**                                                                |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`clip_polygon<class_Geometry3D_method_clip_polygon>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                           |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -53,7 +53,7 @@ Method Descriptions
 
 .. _class_Geometry3D_method_build_box_planes:
 
-- :ref:`Array<class_Array>` **build_box_planes** **(** :ref:`Vector3<class_Vector3>` extents **)**
+- :ref:`Plane[]<class_Plane>` **build_box_planes** **(** :ref:`Vector3<class_Vector3>` extents **)**
 
 Returns an array with 6 :ref:`Plane<class_Plane>`\ s that describe the sides of a box centered at the origin. The box size is defined by ``extents``, which represents one (positive) corner of the box (i.e. half its actual size).
 
@@ -61,7 +61,7 @@ Returns an array with 6 :ref:`Plane<class_Plane>`\ s that describe the sides of 
 
 .. _class_Geometry3D_method_build_capsule_planes:
 
-- :ref:`Array<class_Array>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**
+- :ref:`Plane[]<class_Plane>` **build_capsule_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, Vector3.Axis axis=2 **)**
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted capsule centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the side part of the capsule, whereas ``lats`` gives the number of latitudinal steps at the bottom and top of the capsule. The parameter ``axis`` describes the axis along which the capsule is oriented (0 for X, 1 for Y, 2 for Z).
 
@@ -69,7 +69,7 @@ Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted caps
 
 .. _class_Geometry3D_method_build_cylinder_planes:
 
-- :ref:`Array<class_Array>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**
+- :ref:`Plane[]<class_Plane>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, Vector3.Axis axis=2 **)**
 
 Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted cylinder centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the round part of the cylinder. The parameter ``axis`` describes the axis along which the cylinder is oriented (0 for X, 1 for Y, 2 for Z).
 

@@ -26,17 +26,17 @@ Once the Bodies swing, the twist axis is calculated as the middle of the x-axes 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`bias<class_ConeTwistJoint3D_property_bias>`             | ``0.3``   |
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`relaxation<class_ConeTwistJoint3D_property_relaxation>` | ``1.0``   |
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`softness<class_ConeTwistJoint3D_property_softness>`     | ``0.8``   |
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`swing_span<class_ConeTwistJoint3D_property_swing_span>` | ``45.0``  |
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`twist_span<class_ConeTwistJoint3D_property_twist_span>` | ``180.0`` |
-+---------------------------+---------------------------------------------------------------+-----------+
++---------------------------+---------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`bias<class_ConeTwistJoint3D_property_bias>`             | ``0.3``      |
++---------------------------+---------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`relaxation<class_ConeTwistJoint3D_property_relaxation>` | ``1.0``      |
++---------------------------+---------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`softness<class_ConeTwistJoint3D_property_softness>`     | ``0.8``      |
++---------------------------+---------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`swing_span<class_ConeTwistJoint3D_property_swing_span>` | ``0.785398`` |
++---------------------------+---------------------------------------------------------------+--------------+
+| :ref:`float<class_float>` | :ref:`twist_span<class_ConeTwistJoint3D_property_twist_span>` | ``3.14159``  |
++---------------------------+---------------------------------------------------------------+--------------+
 
 Methods
 -------
@@ -145,9 +145,13 @@ The ease with which the joint starts to twist. If it's too low, it takes more fo
 
 - :ref:`float<class_float>` **swing_span**
 
-+-----------+----------+
-| *Default* | ``45.0`` |
-+-----------+----------+
++-----------+------------------+
+| *Default* | ``0.785398``     |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
@@ -163,9 +167,13 @@ If below 0.05, this behavior is locked.
 
 - :ref:`float<class_float>` **twist_span**
 
-+-----------+-----------+
-| *Default* | ``180.0`` |
-+-----------+-----------+
++-----------+------------------+
+| *Default* | ``3.14159``      |
++-----------+------------------+
+| *Setter*  | set_param(value) |
++-----------+------------------+
+| *Getter*  | get_param()      |
++-----------+------------------+
 
 Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 

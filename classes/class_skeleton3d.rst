@@ -33,19 +33,19 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`animate_physical_bones<class_Skeleton3D_property_animate_physical_bones>` | ``true``  |
-+-------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`show_rest_only<class_Skeleton3D_property_show_rest_only>`                 | ``false`` |
-+-------------------------+---------------------------------------------------------------------------------+-----------+
++---------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`animate_physical_bones<class_Skeleton3D_property_animate_physical_bones>` | ``true``  |
++---------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`motion_scale<class_Skeleton3D_property_motion_scale>`                     | ``1.0``   |
++---------------------------+---------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`show_rest_only<class_Skeleton3D_property_show_rest_only>`                 | ``false`` |
++---------------------------+---------------------------------------------------------------------------------+-----------+
 
 Methods
 -------
 
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                  | :ref:`add_bone<class_Skeleton3D_method_add_bone>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                 |
-+-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`add_bone_child<class_Skeleton3D_method_add_bone_child>` **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` child_bone_idx **)**                                                                                                                 |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                  | :ref:`clear_bones<class_Skeleton3D_method_clear_bones>` **(** **)**                                                                                                                                                                                            |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Methods
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                  | :ref:`force_update_bone_child_transform<class_Skeleton3D_method_force_update_bone_child_transform>` **(** :ref:`int<class_int>` bone_idx **)**                                                                                                                 |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`                       | :ref:`get_bone_children<class_Skeleton3D_method_get_bone_children>` **(** :ref:`int<class_int>` bone_idx **)**                                                                                                                                                 |
+| :ref:`PackedInt32Array<class_PackedInt32Array>`                       | :ref:`get_bone_children<class_Skeleton3D_method_get_bone_children>` **(** :ref:`int<class_int>` bone_idx **)** |const|                                                                                                                                         |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                 | :ref:`get_bone_count<class_Skeleton3D_method_get_bone_count>` **(** **)** |const|                                                                                                                                                                              |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,7 +93,7 @@ Methods
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` | :ref:`get_modification_stack<class_Skeleton3D_method_get_modification_stack>` **(** **)**                                                                                                                                                                      |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`                       | :ref:`get_parentless_bones<class_Skeleton3D_method_get_parentless_bones>` **(** **)**                                                                                                                                                                          |
+| :ref:`PackedInt32Array<class_PackedInt32Array>`                       | :ref:`get_parentless_bones<class_Skeleton3D_method_get_parentless_bones>` **(** **)** |const|                                                                                                                                                                  |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                                 | :ref:`global_pose_to_local_pose<class_Skeleton3D_method_global_pose_to_local_pose>` **(** :ref:`int<class_int>` bone_idx, :ref:`Transform3D<class_Transform3D>` global_pose **)**                                                                              |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -117,9 +117,9 @@ Methods
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SkinReference<class_SkinReference>`                             | :ref:`register_skin<class_Skeleton3D_method_register_skin>` **(** :ref:`Skin<class_Skin>` skin **)**                                                                                                                                                           |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`remove_bone_child<class_Skeleton3D_method_remove_bone_child>` **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` child_bone_idx **)**                                                                                                           |
+| void                                                                  | :ref:`reset_bone_pose<class_Skeleton3D_method_reset_bone_pose>` **(** :ref:`int<class_int>` bone_idx **)**                                                                                                                                                     |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`set_bone_children<class_Skeleton3D_method_set_bone_children>` **(** :ref:`int<class_int>` bone_idx, :ref:`PackedInt32Array<class_PackedInt32Array>` bone_children **)**                                                                                  |
+| void                                                                  | :ref:`reset_bone_poses<class_Skeleton3D_method_reset_bone_poses>` **(** **)**                                                                                                                                                                                  |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                  | :ref:`set_bone_enabled<class_Skeleton3D_method_set_bone_enabled>` **(** :ref:`int<class_int>` bone_idx, :ref:`bool<class_bool>` enabled=true **)**                                                                                                             |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,6 +197,24 @@ Property Descriptions
 
 ----
 
+.. _class_Skeleton3D_property_motion_scale:
+
+- :ref:`float<class_float>` **motion_scale**
+
++-----------+-------------------------+
+| *Default* | ``1.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_motion_scale(value) |
++-----------+-------------------------+
+| *Getter*  | get_motion_scale()      |
++-----------+-------------------------+
+
+Multiplies the position 3D track animation.
+
+\ **Note:** Unless this value is ``1.0``, the key value in animation will not match the actual position value.
+
+----
+
 .. _class_Skeleton3D_property_show_rest_only:
 
 - :ref:`bool<class_bool>` **show_rest_only**
@@ -217,16 +235,6 @@ Method Descriptions
 - void **add_bone** **(** :ref:`String<class_String>` name **)**
 
 Adds a bone, with name ``name``. :ref:`get_bone_count<class_Skeleton3D_method_get_bone_count>` will become the bone index.
-
-----
-
-.. _class_Skeleton3D_method_add_bone_child:
-
-- void **add_bone_child** **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` child_bone_idx **)**
-
-Takes the given bone pose/transform and converts it to a world transform, relative to the ``Skeleton3D`` node.
-
-This is useful for using the bone transform in calculations with transforms from :ref:`Node3D<class_Node3D>`-based nodes.
 
 ----
 
@@ -294,7 +302,7 @@ Force updates the bone transform for the bone at ``bone_idx`` and all of its chi
 
 .. _class_Skeleton3D_method_get_bone_children:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_bone_children** **(** :ref:`int<class_int>` bone_idx **)**
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_bone_children** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
 Returns an array containing the bone indexes of all the children node of the passed in bone, ``bone_idx``.
 
@@ -304,7 +312,7 @@ Returns an array containing the bone indexes of all the children node of the pas
 
 - :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
-Returns the amount of bones in the skeleton.
+Returns the number of bones in the skeleton.
 
 ----
 
@@ -352,7 +360,7 @@ Returns the local pose override transform for ``bone_idx``.
 
 - :ref:`String<class_String>` **get_bone_name** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-Returns the name of the bone at index ``index``.
+Returns the name of the bone at index ``bone_idx``.
 
 ----
 
@@ -410,7 +418,7 @@ Returns the modification stack attached to this skeleton, if one exists.
 
 .. _class_Skeleton3D_method_get_parentless_bones:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_parentless_bones** **(** **)**
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_parentless_bones** **(** **)** |const|
 
 Returns an array with all of the bones that are parentless. Another way to look at this is that it returns the indexes of all the bones that are not dependent or modified by other bones in the Skeleton.
 
@@ -478,7 +486,7 @@ Returns all bones in the skeleton to their rest poses.
 
 Adds a collision exception to the physical bone.
 
-Works just like the :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` node.
+Works just like the :ref:`RigidBody3D<class_RigidBody3D>` node.
 
 ----
 
@@ -488,7 +496,7 @@ Works just like the :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` node.
 
 Removes a collision exception to the physical bone.
 
-Works just like the :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` node.
+Works just like the :ref:`RigidBody3D<class_RigidBody3D>` node.
 
 ----
 
@@ -518,21 +526,19 @@ Binds the given Skin to the Skeleton.
 
 ----
 
-.. _class_Skeleton3D_method_remove_bone_child:
+.. _class_Skeleton3D_method_reset_bone_pose:
 
-- void **remove_bone_child** **(** :ref:`int<class_int>` bone_idx, :ref:`int<class_int>` child_bone_idx **)**
+- void **reset_bone_pose** **(** :ref:`int<class_int>` bone_idx **)**
 
-Removes the passed in child bone index, ``child_bone_idx``, from the passed-in bone, ``bone_idx``, if it exists.
-
-\ **Note:** This does not remove the child bone, but instead it removes the connection it has to the parent bone.
+Sets the bone pose to rest for ``bone_idx``.
 
 ----
 
-.. _class_Skeleton3D_method_set_bone_children:
+.. _class_Skeleton3D_method_reset_bone_poses:
 
-- void **set_bone_children** **(** :ref:`int<class_int>` bone_idx, :ref:`PackedInt32Array<class_PackedInt32Array>` bone_children **)**
+- void **reset_bone_poses** **(** **)**
 
-Sets the children for the passed in bone, ``bone_idx``, to the passed-in array of bone indexes, ``bone_children``.
+Sets all bone poses to rests.
 
 ----
 
@@ -550,7 +556,7 @@ Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone po
 
 Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
-\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
 \ **Note:** The pose transform needs to be a global pose! Use :ref:`world_transform_to_global_pose<class_Skeleton3D_method_world_transform_to_global_pose>` to convert a world transform, like one you can get from a :ref:`Node3D<class_Node3D>`, to a global pose.
 
@@ -562,7 +568,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
 
-\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
 \ **Note:** The pose transform needs to be a local pose! Use :ref:`global_pose_to_local_pose<class_Skeleton3D_method_global_pose_to_local_pose>` to convert a global pose to a local pose.
 

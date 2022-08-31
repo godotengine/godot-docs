@@ -19,7 +19,7 @@ Description
 
 Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automatically applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
 
-By default, audio is heard from the camera position. This can be changed by adding a :ref:`AudioListener3D<class_AudioListener3D>` node to the scene and enabling it by calling :ref:`AudioListener3D.make_current<class_AudioListener3D_method_make_current>` on it.
+By default, audio is heard from the camera position. This can be changed by adding an :ref:`AudioListener3D<class_AudioListener3D>` node to the scene and enabling it by calling :ref:`AudioListener3D.make_current<class_AudioListener3D_method_make_current>` on it.
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 

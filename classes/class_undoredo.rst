@@ -163,7 +163,7 @@ Method Descriptions
 
 - void **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Register a method that will be called when the action is committed.
+Register a ``method`` that will be called when the action is committed.
 
 ----
 
@@ -171,7 +171,7 @@ Register a method that will be called when the action is committed.
 
 - void **add_do_property** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
 
-Register a property value change for "do".
+Register a ``property`` that would change its value to ``value`` when the action is committed.
 
 ----
 
@@ -187,7 +187,7 @@ Register a reference for "do" that will be erased if the "do" history is lost. T
 
 - void **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Register a method that will be called when the action is undone.
+Register a ``method`` that will be called when the action is undone.
 
 ----
 
@@ -195,7 +195,7 @@ Register a method that will be called when the action is undone.
 
 - void **add_undo_property** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
 
-Register a property value change for "undo".
+Register a ``property`` that would change its value to ``value`` when the action is undone.
 
 ----
 
@@ -213,7 +213,7 @@ Register a reference for "undo" that will be erased if the "undo" history is los
 
 Clear the undo/redo history and associated references.
 
-Passing ``false`` to ``increase_version`` will prevent the version number to be increased from this.
+Passing ``false`` to ``increase_version`` will prevent the version number from increasing when the history is cleared.
 
 ----
 
@@ -221,7 +221,7 @@ Passing ``false`` to ``increase_version`` will prevent the version number to be 
 
 - void **commit_action** **(** :ref:`bool<class_bool>` execute=true **)**
 
-Commit the action. If ``execute`` is true (default), all "do" methods/properties are called/set when this function is called.
+Commit the action. If ``execute`` is ``true`` (which it is by default), all "do" methods/properties are called/set when this function is called.
 
 ----
 
@@ -231,7 +231,7 @@ Commit the action. If ``execute`` is true (default), all "do" methods/properties
 
 Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, and :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, then commit the action with :ref:`commit_action<class_UndoRedo_method_commit_action>`.
 
-The way actions are merged is dictated by the ``merge_mode`` argument. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
+The way actions are merged is dictated by ``merge_mode``. See :ref:`MergeMode<enum_UndoRedo_MergeMode>` for details.
 
 ----
 

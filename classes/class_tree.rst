@@ -162,7 +162,7 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`custom_button_font_highlight<class_Tree_theme_color_custom_button_font_highlight>` | ``Color(0.95, 0.95, 0.95, 1)``    |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`drop_position_color<class_Tree_theme_color_drop_position_color>`                   | ``Color(1, 0.3, 0.2, 1)``         |
+| :ref:`Color<class_Color>`         | :ref:`drop_position_color<class_Tree_theme_color_drop_position_color>`                   | ``Color(1, 1, 1, 1)``             |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_color<class_Tree_theme_color_font_color>`                                     | ``Color(0.7, 0.7, 0.7, 1)``       |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
@@ -280,11 +280,11 @@ Emitted when :ref:`TreeItem.propagate_check<class_TreeItem_method_propagate_chec
 
 ----
 
-.. _class_Tree_signal_column_title_pressed:
+.. _class_Tree_signal_column_title_clicked:
 
-- **column_title_pressed** **(** :ref:`int<class_int>` column **)**
+- **column_title_clicked** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` mouse_button_index **)**
 
-Emitted when a column's title is pressed.
+Emitted when a column's title is clicked with either :ref:`@GlobalScope.MOUSE_BUTTON_LEFT<class_@GlobalScope_constant_MOUSE_BUTTON_LEFT>` or :ref:`@GlobalScope.MOUSE_BUTTON_RIGHT<class_@GlobalScope_constant_MOUSE_BUTTON_RIGHT>`.
 
 ----
 
@@ -613,7 +613,7 @@ Creates an item in the tree and adds it as a child of ``parent``, which can be e
 
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
-The new item will be the ``idx``\ th child of parent, or it will be the last child if there are not enough siblings.
+The new item will be the ``idx``th child of parent, or it will be the last child if there are not enough siblings.
 
 ----
 
@@ -927,9 +927,9 @@ Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeI
 
 - :ref:`Color<class_Color>` **drop_position_color**
 
-+-----------+---------------------------+
-| *Default* | ``Color(1, 0.3, 0.2, 1)`` |
-+-----------+---------------------------+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
 
 :ref:`Color<class_Color>` used to draw possible drop locations. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants for further description of drop locations.
 

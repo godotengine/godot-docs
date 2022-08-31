@@ -12,7 +12,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
+**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`MenuBar<class_MenuBar>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
 
 All user interface nodes inherit from Control. A control's anchors and offsets adapt its position and size relative to its parent.
 
@@ -88,8 +88,6 @@ Properties
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`GrowDirection<enum_Control_GrowDirection>`     | :ref:`grow_vertical<class_Control_property_grow_vertical>`                                   | ``1``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-| :ref:`String<class_String>`                          | :ref:`hint_tooltip<class_Control_property_hint_tooltip>`                                     | ``""``            |
-+------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`LayoutDirection<enum_Control_LayoutDirection>` | :ref:`layout_direction<class_Control_property_layout_direction>`                             | ``0``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>`         | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`         | ``0``             |
@@ -126,6 +124,8 @@ Properties
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`StringName<class_StringName>`                  | :ref:`theme_type_variation<class_Control_property_theme_type_variation>`                     | ``&""``           |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+| :ref:`String<class_String>`                          | :ref:`tooltip_text<class_Control_property_tooltip_text>`                                     | ``""``            |
++------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -145,7 +145,7 @@ Methods
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual| |const|                                                                                                                          |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                    | :ref:`_structured_text_parser<class_Control_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                        |
+| :ref:`Vector2i[]<class_Vector2i>`            | :ref:`_structured_text_parser<class_Control_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`accept_event<class_Control_method_accept_event>` **(** **)**                                                                                                                                                                                                 |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -382,6 +382,8 @@ Emitted when one of the size flags changes. See :ref:`size_flags_horizontal<clas
 .. _class_Control_signal_theme_changed:
 
 - **theme_changed** **(** **)**
+
+Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Control_constant_NOTIFICATION_THEME_CHANGED>` notification is sent.
 
 Enumerations
 ------------
@@ -725,7 +727,17 @@ Constants
 
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
 
-- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_property_theme>` changes, right before Godot redraws the control. Happens when you call one of the ``add_theme_*_override`` methods.
+- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node needs to refresh its theme items. This happens in one of the following cases:
+
+- The :ref:`theme<class_Control_property_theme>` property is changed on this node or any of its ancestors.
+
+- The :ref:`theme_type_variation<class_Control_property_theme_type_variation>` property is changed on this node.
+
+- One of the node's theme property overrides is changed.
+
+- The node enters the scene tree.
+
+\ **Note:** As an optimization, this notification won't be sent from changes that occur while this node is outside of the scene tree. Instead, all of the theme item updates can be applied at once when the node enters the scene tree.
 
 - **NOTIFICATION_SCROLL_BEGIN** = **47** --- Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled.
 
@@ -1002,45 +1014,6 @@ Controls the direction on the vertical axis in which the control should grow if 
 
 ----
 
-.. _class_Control_property_hint_tooltip:
-
-- :ref:`String<class_String>` **hint_tooltip**
-
-+-----------+--------------------+
-| *Default* | ``""``             |
-+-----------+--------------------+
-| *Setter*  | set_tooltip(value) |
-+-----------+--------------------+
-
-Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`. You can change the time required for the tooltip to appear with ``gui/timers/tooltip_delay_sec`` option in Project Settings.
-
-The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>`. The default tooltip includes a :ref:`PopupPanel<class_PopupPanel>` and :ref:`Label<class_Label>` whose theme properties can be customized using :ref:`Theme<class_Theme>` methods with the ``"TooltipPanel"`` and ``"TooltipLabel"`` respectively. For example:
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var style_box = StyleBoxFlat.new()
-    style_box.set_bg_color(Color(1, 1, 0))
-    style_box.set_border_width_all(2)
-    # We assume here that the `theme` property has been assigned a custom Theme beforehand.
-    theme.set_stylebox("panel", "TooltipPanel", style_box)
-    theme.set_color("font_color", "TooltipLabel", Color(0, 1, 1))
-
- .. code-tab:: csharp
-
-    var styleBox = new StyleBoxFlat();
-    styleBox.SetBgColor(new Color(1, 1, 0));
-    styleBox.SetBorderWidthAll(2);
-    // We assume here that the `Theme` property has been assigned a custom Theme beforehand.
-    Theme.SetStyleBox("panel", "TooltipPanel", styleBox);
-    Theme.SetColor("font_color", "TooltipLabel", new Color(0, 1, 1));
-
-
-
-----
-
 .. _class_Control_property_layout_direction:
 
 - :ref:`LayoutDirection<enum_Control_LayoutDirection>` **layout_direction**
@@ -1239,7 +1212,7 @@ The node's rotation around its pivot, in radians. See :ref:`pivot_offset<class_C
 | *Getter*  | get_scale()       |
 +-----------+-------------------+
 
-The node's scale, relative to its :ref:`size<class_Control_property_size>`. Change this property to scale the node around its :ref:`pivot_offset<class_Control_property_pivot_offset>`. The Control's :ref:`hint_tooltip<class_Control_property_hint_tooltip>` will also scale according to this value.
+The node's scale, relative to its :ref:`size<class_Control_property_size>`. Change this property to scale the node around its :ref:`pivot_offset<class_Control_property_pivot_offset>`. The Control's :ref:`tooltip_text<class_Control_property_tooltip_text>` will also scale according to this value.
 
 \ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/viewports/multiple_resolutions>` instead of scaling Controls individually.
 
@@ -1343,6 +1316,47 @@ When set, this property gives the highest priority to the type of the specified 
 
 \ **Note:** Theme items are looked for in the tree order, from branch to root, where each ``Control`` node is checked for its :ref:`theme<class_Control_property_theme>` property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
 
+----
+
+.. _class_Control_property_tooltip_text:
+
+- :ref:`String<class_String>` **tooltip_text**
+
++-----------+-------------------------+
+| *Default* | ``""``                  |
++-----------+-------------------------+
+| *Setter*  | set_tooltip_text(value) |
++-----------+-------------------------+
+| *Getter*  | get_tooltip_text()      |
++-----------+-------------------------+
+
+The default tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`. The time required for the tooltip to appear can be changed with the ``gui/timers/tooltip_delay_sec`` option in Project Settings. See also :ref:`get_tooltip<class_Control_method_get_tooltip>`.
+
+The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>`. The default tooltip includes a :ref:`PopupPanel<class_PopupPanel>` and :ref:`Label<class_Label>` whose theme properties can be customized using :ref:`Theme<class_Theme>` methods with the ``"TooltipPanel"`` and ``"TooltipLabel"`` respectively. For example:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var style_box = StyleBoxFlat.new()
+    style_box.set_bg_color(Color(1, 1, 0))
+    style_box.set_border_width_all(2)
+    # We assume here that the `theme` property has been assigned a custom Theme beforehand.
+    theme.set_stylebox("panel", "TooltipPanel", style_box)
+    theme.set_color("font_color", "TooltipLabel", Color(0, 1, 1))
+
+ .. code-tab:: csharp
+
+    var styleBox = new StyleBoxFlat();
+    styleBox.SetBgColor(new Color(1, 1, 0));
+    styleBox.SetBorderWidthAll(2);
+    // We assume here that the `Theme` property has been assigned a custom Theme beforehand.
+    Theme.SetStyleBox("panel", "TooltipPanel", styleBox);
+    Theme.SetColor("font_color", "TooltipLabel", new Color(0, 1, 1));
+
+
+
 Method Descriptions
 -------------------
 
@@ -1350,7 +1364,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_can_drop_data** **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual| |const|
 
-Godot calls this method to test if ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` can be dropped at ``position``. ``position`` is local to this control.
+Godot calls this method to test if ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` can be dropped at ``at_position``. ``at_position`` is local to this control.
 
 This method should only be used to test the data. Process the data in :ref:`_drop_data<class_Control_method__drop_data>`.
 
@@ -1381,7 +1395,7 @@ This method should only be used to test the data. Process the data in :ref:`_dro
 
 - void **_drop_data** **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual|
 
-Godot calls this method to pass you the ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` result. Godot first calls :ref:`_can_drop_data<class_Control_method__can_drop_data>` to test if ``data`` is allowed to drop at ``position`` where ``position`` is local to this control.
+Godot calls this method to pass you the ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` result. Godot first calls :ref:`_can_drop_data<class_Control_method__can_drop_data>` to test if ``data`` is allowed to drop at ``at_position`` where ``at_position`` is local to this control.
 
 
 .. tabs::
@@ -1412,7 +1426,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
 - :ref:`Variant<class_Variant>` **_get_drag_data** **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual| |const|
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>`. ``position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>`. ``at_position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_method_set_drag_preview>`. A good time to set the preview is in this method.
 
@@ -1505,7 +1519,7 @@ The event won't trigger if:
 
 - :ref:`bool<class_bool>` **_has_point** **(** :ref:`Vector2<class_Vector2>` position **)** |virtual| |const|
 
-Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
+Virtual method to be implemented by the user. Returns whether the given ``position`` is inside this control.
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
@@ -1517,11 +1531,11 @@ If not overridden, default behavior is checking if the point is within control's
 
 - :ref:`Object<class_Object>` **_make_custom_tooltip** **(** :ref:`String<class_String>` for_text **)** |virtual| |const|
 
-Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. The ``for_text`` includes the contents of the :ref:`hint_tooltip<class_Control_property_hint_tooltip>` property.
+Virtual method to be implemented by the user. Returns a ``Control`` node that should be used as a tooltip instead of the default one. The ``for_text`` includes the contents of the :ref:`tooltip_text<class_Control_property_tooltip_text>` property.
 
 The returned node must be of type ``Control`` or Control-derived. It can have child nodes of any type. It is freed when the tooltip disappears, so make sure you always provide a new instance (if you want to use a pre-existing node from your scene tree, you can duplicate it and pass the duplicated instance). When ``null`` or a non-Control node is returned, the default tooltip will be used instead.
 
-The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`hint_tooltip<class_Control_property_hint_tooltip>` for an example).
+The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>`, so you should only provide the contents of that panel. That :ref:`PopupPanel<class_PopupPanel>` can be themed using :ref:`Theme.set_stylebox<class_Theme_method_set_stylebox>` for the type ``"TooltipPanel"`` (see :ref:`tooltip_text<class_Control_property_tooltip_text>` for an example).
 
 \ **Note:** The tooltip is shrunk to minimal size. If you want to ensure it's fully visible, you might want to set its :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` to some non-zero value.
 
@@ -1577,7 +1591,7 @@ Example of usage with a custom scene instance:
 
 .. _class_Control_method__structured_text_parser:
 
-- :ref:`Array<class_Array>` **_structured_text_parser** **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|
+- :ref:`Vector2i[]<class_Vector2i>` **_structured_text_parser** **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|
 
 User defined BiDi algorithm override function.
 
@@ -1871,7 +1885,7 @@ Example usage for showing a popup:
 
 Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``. If ``theme_type`` is omitted the class name of the current control is used as the type, or :ref:`theme_type_variation<class_Control_property_theme_type_variation>` if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance. If the type is a variation its base types are checked, in order of dependency, then the control's class name and its parent classes are checked.
 
-For the current control its local overrides are considered first (see :ref:`add_theme_color_override<class_Control_method_add_theme_color_override>`), then its assigned :ref:`theme<class_Control_property_theme>`. After the current control, each parent control and its assigned :ref:`theme<class_Control_property_theme>` are considered; controls without a :ref:`theme<class_Control_property_theme>` assigned are skipped. If no matching :ref:`Theme<class_Theme>` is found in the tree, a custom project :ref:`Theme<class_Theme>` (see :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`) and the default :ref:`Theme<class_Theme>` are used.
+For the current control its local overrides are considered first (see :ref:`add_theme_color_override<class_Control_method_add_theme_color_override>`), then its assigned :ref:`theme<class_Control_property_theme>`. After the current control, each parent control and its assigned :ref:`theme<class_Control_property_theme>` are considered; controls without a :ref:`theme<class_Control_property_theme>` assigned are skipped. If no matching :ref:`Theme<class_Theme>` is found in the tree, the custom project :ref:`Theme<class_Theme>` (see :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`) and the default :ref:`Theme<class_Theme>` are used (see :ref:`ThemeDB<class_ThemeDB>`).
 
 
 .. tabs::
@@ -1982,7 +1996,9 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 - :ref:`String<class_String>` **get_tooltip** **(** :ref:`Vector2<class_Vector2>` at_position=Vector2(0, 0) **)** |const|
 
-Returns the tooltip, which will appear when the cursor is resting over this control. See :ref:`hint_tooltip<class_Control_property_hint_tooltip>`.
+Returns the tooltip text ``at_position`` in local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
+
+\ **Note:** This method can be overriden to customise its behaviour. If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
 
 ----
 
@@ -2016,6 +2032,8 @@ Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attemp
 - void **grab_focus** **(** **)**
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
+
+\ **Note**: Using this method together with :ref:`Callable.call_deferred<class_Callable_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
 
 ----
 

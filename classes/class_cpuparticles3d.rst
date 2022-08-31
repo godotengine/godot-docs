@@ -119,7 +119,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`float<class_float>`                               | :ref:`linear_accel_min<class_CPUParticles3D_property_linear_accel_min>`                     | ``0.0``                 |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles3D_property_local_coords>`                             | ``true``                |
+| :ref:`bool<class_bool>`                                 | :ref:`local_coords<class_CPUParticles3D_property_local_coords>`                             | ``false``               |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Mesh<class_Mesh>`                                 | :ref:`mesh<class_CPUParticles3D_property_mesh>`                                             |                         |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------------+-------------------------+
@@ -549,7 +549,9 @@ Minimum particle animation speed.
 | *Getter*  | get_color()           |
 +-----------+-----------------------+
 
-Each particle's initial color. To have particle display color in a :ref:`BaseMaterial3D<class_BaseMaterial3D>` make sure to set :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` to ``true``.
+Each particle's initial color.
+
+\ **Note:** :ref:`color<class_CPUParticles3D_property_color>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`color<class_CPUParticles3D_property_color>` will have no visible effect.
 
 ----
 
@@ -565,6 +567,8 @@ Each particle's initial color. To have particle display color in a :ref:`BaseMat
 
 Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_CPUParticles3D_property_color>`).
 
+\ **Note:** :ref:`color_initial_ramp<class_CPUParticles3D_property_color_initial_ramp>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`color_initial_ramp<class_CPUParticles3D_property_color_initial_ramp>` will have no visible effect.
+
 ----
 
 .. _class_CPUParticles3D_property_color_ramp:
@@ -578,6 +582,8 @@ Each particle's initial color will vary along this :ref:`GradientTexture1D<class
 +----------+-----------------------+
 
 Each particle's color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` over its lifetime (multiplied with :ref:`color<class_CPUParticles3D_property_color>`).
+
+\ **Note:** :ref:`color_ramp<class_CPUParticles3D_property_color_ramp>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`color_ramp<class_CPUParticles3D_property_color_ramp>` will have no visible effect.
 
 ----
 
@@ -686,6 +692,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles3D_property_em
 +-----------+----------------------------+
 
 Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles3D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles3D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+
+\ **Note:** :ref:`emission_colors<class_CPUParticles3D_property_emission_colors>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`emission_colors<class_CPUParticles3D_property_emission_colors>` will have no visible effect.
 
 ----
 
@@ -1060,14 +1068,14 @@ Minimum linear acceleration.
 - :ref:`bool<class_bool>` **local_coords**
 
 +-----------+----------------------------------+
-| *Default* | ``true``                         |
+| *Default* | ``false``                        |
 +-----------+----------------------------------+
 | *Setter*  | set_use_local_coordinates(value) |
 +-----------+----------------------------------+
 | *Getter*  | get_use_local_coordinates()      |
 +-----------+----------------------------------+
 
-If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
+If ``true``, particles use the parent node's coordinate space (known as local coordinates). This will cause particles to move and rotate along the ``CPUParticles3D`` node (and its parents) when it is moved or rotated. If ``false``, particles use global coordinates; they will not move or rotate along the ``CPUParticles3D`` node (and its parents) when it is moved or rotated.
 
 ----
 
@@ -1456,7 +1464,7 @@ Method Descriptions
 
 - void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
 
-Sets this node's properties to match a given :ref:`GPUParticles3D<class_GPUParticles3D>` node with an assigned :ref:`ParticlesMaterial<class_ParticlesMaterial>`.
+Sets this node's properties to match a given :ref:`GPUParticles3D<class_GPUParticles3D>` node with an assigned :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`.
 
 ----
 

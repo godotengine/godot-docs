@@ -24,92 +24,18 @@ See also :ref:`CSharpScript<class_CSharpScript>`.
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`attach_thread<class_GodotSharp_method_attach_thread>` **(** **)**                                                                     |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`detach_thread<class_GodotSharp_method_detach_thread>` **(** **)**                                                                     |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_domain_id<class_GodotSharp_method_get_domain_id>` **(** **)**                                                                     |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_scripts_domain_id<class_GodotSharp_method_get_scripts_domain_id>` **(** **)**                                                     |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_domain_finalizing_for_unload<class_GodotSharp_method_is_domain_finalizing_for_unload>` **(** :ref:`int<class_int>` domain_id **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` **(** **)**                                                   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_runtime_shutting_down<class_GodotSharp_method_is_runtime_shutting_down>` **(** **)**                                               |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_scripts_domain_loaded<class_GodotSharp_method_is_scripts_domain_loaded>` **(** **)**                                               |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` **(** **)** |
++-------------------------+-------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
-
-.. _class_GodotSharp_method_attach_thread:
-
-- void **attach_thread** **(** **)**
-
-Attaches the current thread to the Mono runtime.
-
-----
-
-.. _class_GodotSharp_method_detach_thread:
-
-- void **detach_thread** **(** **)**
-
-Detaches the current thread from the Mono runtime.
-
-----
-
-.. _class_GodotSharp_method_get_domain_id:
-
-- :ref:`int<class_int>` **get_domain_id** **(** **)**
-
-Returns the current MonoDomain ID.
-
-\ **Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
-
-----
-
-.. _class_GodotSharp_method_get_scripts_domain_id:
-
-- :ref:`int<class_int>` **get_scripts_domain_id** **(** **)**
-
-Returns the scripts MonoDomain's ID. This will be the same MonoDomain ID as :ref:`get_domain_id<class_GodotSharp_method_get_domain_id>`, unless the scripts domain isn't loaded.
-
-\ **Note:** The Mono runtime must be initialized for this method to work (use :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` to check). If the Mono runtime isn't initialized at the time this method is called, the engine will crash.
-
-----
-
-.. _class_GodotSharp_method_is_domain_finalizing_for_unload:
-
-- :ref:`bool<class_bool>` **is_domain_finalizing_for_unload** **(** :ref:`int<class_int>` domain_id **)**
-
-Returns ``true`` if the domain is being finalized, ``false`` otherwise.
-
-----
 
 .. _class_GodotSharp_method_is_runtime_initialized:
 
 - :ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
 
-Returns ``true`` if the Mono runtime is initialized, ``false`` otherwise.
-
-----
-
-.. _class_GodotSharp_method_is_runtime_shutting_down:
-
-- :ref:`bool<class_bool>` **is_runtime_shutting_down** **(** **)**
-
-Returns ``true`` if the Mono runtime is shutting down, ``false`` otherwise.
-
-----
-
-.. _class_GodotSharp_method_is_scripts_domain_loaded:
-
-- :ref:`bool<class_bool>` **is_scripts_domain_loaded** **(** **)**
-
-Returns ``true`` if the scripts domain is loaded, ``false`` otherwise.
+Returns ``true`` if the .NET runtime is initialized, ``false`` otherwise.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

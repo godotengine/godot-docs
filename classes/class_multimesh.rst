@@ -281,7 +281,7 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors.
 
-For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the ``MultiMesh`` and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material.
+For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the ``MultiMesh`` and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material. If the color doesn't look as expected, make sure the material's albedo color is set to pure white (``Color(1, 1, 1)``).
 
 ----
 

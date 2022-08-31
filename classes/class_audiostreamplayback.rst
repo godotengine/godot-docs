@@ -19,7 +19,7 @@ Meta class for playing back audio.
 Description
 -----------
 
-Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioStream>` and :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>` for usage.
+Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioStream>` and :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` for usage.
 
 Tutorials
 ---------

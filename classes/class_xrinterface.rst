@@ -320,9 +320,9 @@ Call this to find out if a given play area mode is supported by this interface.
 
 Triggers a haptic pulse on a device associated with this interface.
 
-\ ``action_name`` is the name of the action for this pulse.
+``action_name`` is the name of the action for this pulse.
 
-\ ``tracker_name`` is optional and can be used to direct the pulse to a specific device provided that device is bound to this haptic.
+``tracker_name`` is optional and can be used to direct the pulse to a specific device provided that device is bound to this haptic.
 
 ----
 

@@ -21,7 +21,7 @@ Description
 
 Static body for 2D physics.
 
-A static body is a simple body that can't be moved by external forces or contacts. It is ideal for implementing objects in the environment, such as walls or platforms. In contrast to :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, it doesn't consume any CPU resources as long as they don't move.
+A static body is a simple body that can't be moved by external forces or contacts. It is ideal for implementing objects in the environment, such as walls or platforms. In contrast to :ref:`RigidBody2D<class_RigidBody2D>`, it doesn't consume any CPU resources as long as they don't move.
 
 They have extra functionalities to move and affect other bodies:
 

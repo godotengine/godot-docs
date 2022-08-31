@@ -51,7 +51,7 @@ Methods
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                 | :ref:`get_interface_count<class_XRServer_method_get_interface_count>` **(** **)** |const|                                                                                |
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                             | :ref:`get_interfaces<class_XRServer_method_get_interfaces>` **(** **)** |const|                                                                                          |
+| :ref:`Dictionary[]<class_Dictionary>`                 | :ref:`get_interfaces<class_XRServer_method_get_interfaces>` **(** **)** |const|                                                                                          |
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform3D<class_Transform3D>`                 | :ref:`get_reference_frame<class_XRServer_method_get_reference_frame>` **(** **)** |const|                                                                                |
 +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -230,7 +230,7 @@ You should call this method after a few seconds have passed. For instance, when 
 
 - :ref:`XRInterface<class_XRInterface>` **find_interface** **(** :ref:`String<class_String>` name **)** |const|
 
-Finds an interface by its name. For instance, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
+Finds an interface by its ``name``. For instance, if your project uses capabilities of an AR/VR platform, you can find the interface for that platform by name and initialize it.
 
 ----
 
@@ -246,7 +246,7 @@ Returns the primary interface's transformation.
 
 - :ref:`XRInterface<class_XRInterface>` **get_interface** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the interface registered at a given index in our list of interfaces.
+Returns the interface registered at the given ``idx`` index in the list of interfaces.
 
 ----
 
@@ -260,7 +260,7 @@ Returns the number of interfaces currently registered with the AR/VR server. If 
 
 .. _class_XRServer_method_get_interfaces:
 
-- :ref:`Array<class_Array>` **get_interfaces** **(** **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_interfaces** **(** **)** |const|
 
 Returns a list of available interfaces the ID and name of each interface.
 
@@ -278,7 +278,7 @@ Returns the reference frame transform. Mostly used internally and exposed for GD
 
 - :ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_tracker** **(** :ref:`StringName<class_StringName>` tracker_name **)** |const|
 
-Returns the positional tracker with this name.
+Returns the positional tracker with the given ``tracker_name``.
 
 ----
 
@@ -286,7 +286,7 @@ Returns the positional tracker with this name.
 
 - :ref:`Dictionary<class_Dictionary>` **get_trackers** **(** :ref:`int<class_int>` tracker_types **)**
 
-Returns a dictionary of trackers for this type.
+Returns a dictionary of trackers for ``tracker_types``.
 
 ----
 
@@ -294,7 +294,7 @@ Returns a dictionary of trackers for this type.
 
 - void **remove_interface** **(** :ref:`XRInterface<class_XRInterface>` interface **)**
 
-Removes this interface.
+Removes this ``interface``.
 
 ----
 
@@ -302,7 +302,7 @@ Removes this interface.
 
 - void **remove_tracker** **(** :ref:`XRPositionalTracker<class_XRPositionalTracker>` tracker **)**
 
-Removes this positional tracker.
+Removes this positional ``tracker``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

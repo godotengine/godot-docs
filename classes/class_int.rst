@@ -117,15 +117,15 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator /<class_int_operator_div_int>` **(** :ref:`int<class_int>` right **)**                      |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator <<class_int_operator_lt_bool>` **(** :ref:`float<class_float>` right **)**                  |
+| :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_bool>` **(** :ref:`float<class_float>` right **)**                 |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator <<class_int_operator_lt_bool>` **(** :ref:`int<class_int>` right **)**                      |
+| :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_bool>` **(** :ref:`int<class_int>` right **)**                     |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator <<<class_int_operator_bwsl_int>` **(** :ref:`int<class_int>` right **)**                    |
+| :ref:`int<class_int>`               | :ref:`operator \<\<<class_int_operator_bwsl_int>` **(** :ref:`int<class_int>` right **)**                  |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator <=<class_int_operator_lte_bool>` **(** :ref:`float<class_float>` right **)**                |
+| :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_bool>` **(** :ref:`float<class_float>` right **)**               |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator <=<class_int_operator_lte_bool>` **(** :ref:`int<class_int>` right **)**                    |
+| :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_bool>` **(** :ref:`int<class_int>` right **)**                   |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_bool>` **(** :ref:`float<class_float>` right **)**                 |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+

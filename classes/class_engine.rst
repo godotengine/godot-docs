@@ -38,9 +38,11 @@ Methods
 -------
 
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_architecture_name<class_Engine_method_get_architecture_name>` **(** **)** |const|                                                                  |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`get_author_info<class_Engine_method_get_author_info>` **(** **)** |const|                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** |const|                                                                        |
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`get_copyright_info<class_Engine_method_get_copyright_info>` **(** **)** |const|                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`get_donor_info<class_Engine_method_get_donor_info>` **(** **)** |const|                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,6 +71,8 @@ Methods
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_singleton_list<class_Engine_method_get_singleton_list>` **(** **)** |const|                                                                        |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`get_version_info<class_Engine_method_get_version_info>` **(** **)** |const|                                                                            |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_write_movie_path<class_Engine_method_get_write_movie_path>` **(** **)** |const|                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_singleton<class_Engine_method_has_singleton>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                         |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -175,6 +179,25 @@ Controls how fast or slow the in-game clock ticks versus the real life one. It d
 Method Descriptions
 -------------------
 
+.. _class_Engine_method_get_architecture_name:
+
+- :ref:`String<class_String>` **get_architecture_name** **(** **)** |const|
+
+Returns the name of the CPU architecture the Godot binary was built for. Possible return values are ``x86_64``, ``x86_32``, ``arm64``, ``armv7``, ``rv64``, ``riscv``, ``ppc64``, ``ppc``, ``wasm64`` and ``wasm32``.
+
+To detect whether the current CPU architecture is 64-bit, you can use the fact that all 64-bit architecture names have ``64`` in their name:
+
+::
+
+    if "64" in Engine.get_architecture_name():
+        print("Running on 64-bit CPU.")
+    else:
+        print("Running on 32-bit CPU.")
+
+\ **Note:** :ref:`get_architecture_name<class_Engine_method_get_architecture_name>` does *not* return the name of the host CPU architecture. For example, if running an x86_32 Godot binary on a x86_64 system, the returned value will be ``x86_32``.
+
+----
+
 .. _class_Engine_method_get_author_info:
 
 - :ref:`Dictionary<class_Dictionary>` **get_author_info** **(** **)** |const|
@@ -193,7 +216,7 @@ Returns engine author information in a Dictionary.
 
 .. _class_Engine_method_get_copyright_info:
 
-- :ref:`Array<class_Array>` **get_copyright_info** **(** **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_copyright_info** **(** **)** |const|
 
 Returns an Array of copyright information Dictionaries.
 
@@ -367,6 +390,14 @@ The ``hex`` value is encoded as follows, from left to right: one byte for the ma
     }
 
 
+
+----
+
+.. _class_Engine_method_get_write_movie_path:
+
+- :ref:`String<class_String>` **get_write_movie_path** **(** **)** |const|
+
+Returns the path to the :ref:`MovieWriter<class_MovieWriter>`'s output file, or an empty string if the engine wasn't started in Movie Maker mode. This path can be absolute or relative depending on how the user specified it.
 
 ----
 

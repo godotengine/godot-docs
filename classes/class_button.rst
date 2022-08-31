@@ -469,7 +469,7 @@ Icon modulate :ref:`Color<class_Color>` used when the ``Button`` is being presse
 | *Default* | ``2`` |
 +-----------+-------+
 
-The horizontal space between ``Button``'s icon and text.
+The horizontal space between ``Button``'s icon and text. Negative values will be treated as ``0`` when used.
 
 ----
 

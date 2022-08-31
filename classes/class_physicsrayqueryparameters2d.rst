@@ -38,6 +38,13 @@ Properties
 | :ref:`Vector2<class_Vector2>` | :ref:`to<class_PhysicsRayQueryParameters2D_property_to>`                                   | ``Vector2(0, 0)`` |
 +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
 
+Methods
+-------
+
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` | :ref:`create<class_PhysicsRayQueryParameters2D_method_create>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static| |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -150,6 +157,20 @@ If ``true``, the query will detect a hit when starting inside shapes. In this ca
 +-----------+-------------------+
 
 The ending point of the ray being queried for, in global coordinates.
+
+Method Descriptions
+-------------------
+
+.. _class_PhysicsRayQueryParameters2D_method_create:
+
+- :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` **create** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static|
+
+Returns a new, pre-configured ``PhysicsRayQueryParameters2D`` object. Use it to quickly create query parameters using the most common options.
+
+::
+
+    var query = PhysicsRayQueryParameters2D.create(global_position, global_position + Vector2(0, 100))
+    var collision = get_world_2d().direct_space_state.intersect_ray(query)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

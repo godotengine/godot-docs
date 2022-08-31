@@ -194,7 +194,7 @@ The vertical offset used when rendering the check icons (in pixels).
 | *Default* | ``4`` |
 +-----------+-------+
 
-The separation between the check icon and the text (in pixels).
+The separation between the check icon and the text (in pixels). Negative values will be treated as ``0`` when used.
 
 ----
 

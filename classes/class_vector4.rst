@@ -50,39 +50,55 @@ Constructors
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`abs<class_Vector4_method_abs>` **(** **)** |const|                                                                          |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`ceil<class_Vector4_method_ceil>` **(** **)** |const|                                                                        |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`clamp<class_Vector4_method_clamp>` **(** :ref:`Vector4<class_Vector4>` min, :ref:`Vector4<class_Vector4>` max **)** |const| |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`dot<class_Vector4_method_dot>` **(** :ref:`Vector4<class_Vector4>` with **)** |const|                                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`floor<class_Vector4_method_floor>` **(** **)** |const|                                                                      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`inverse<class_Vector4_method_inverse>` **(** **)** |const|                                                                  |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` **(** :ref:`Vector4<class_Vector4>` with **)** |const|               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector4_method_is_normalized>` **(** **)** |const|                                                      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`length<class_Vector4_method_length>` **(** **)** |const|                                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`length_squared<class_Vector4_method_length_squared>` **(** **)** |const|                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`lerp<class_Vector4_method_lerp>` **(** :ref:`Vector4<class_Vector4>` to, :ref:`float<class_float>` weight **)** |const|     |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`max_axis_index<class_Vector4_method_max_axis_index>` **(** **)** |const|                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`min_axis_index<class_Vector4_method_min_axis_index>` **(** **)** |const|                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`normalized<class_Vector4_method_normalized>` **(** **)** |const|                                                            |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`round<class_Vector4_method_round>` **(** **)** |const|                                                                      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>` | :ref:`sign<class_Vector4_method_sign>` **(** **)** |const|                                                                        |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`abs<class_Vector4_method_abs>` **(** **)** |const|                                                                                                                                                                                                                                                                                                |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`ceil<class_Vector4_method_ceil>` **(** **)** |const|                                                                                                                                                                                                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`clamp<class_Vector4_method_clamp>` **(** :ref:`Vector4<class_Vector4>` min, :ref:`Vector4<class_Vector4>` max **)** |const|                                                                                                                                                                                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`cubic_interpolate<class_Vector4_method_cubic_interpolate>` **(** :ref:`Vector4<class_Vector4>` b, :ref:`Vector4<class_Vector4>` pre_a, :ref:`Vector4<class_Vector4>` post_b, :ref:`float<class_float>` weight **)** |const|                                                                                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`cubic_interpolate_in_time<class_Vector4_method_cubic_interpolate_in_time>` **(** :ref:`Vector4<class_Vector4>` b, :ref:`Vector4<class_Vector4>` pre_a, :ref:`Vector4<class_Vector4>` post_b, :ref:`float<class_float>` weight, :ref:`float<class_float>` b_t, :ref:`float<class_float>` pre_a_t, :ref:`float<class_float>` post_b_t **)** |const| |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`direction_to<class_Vector4_method_direction_to>` **(** :ref:`Vector4<class_Vector4>` to **)** |const|                                                                                                                                                                                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`distance_squared_to<class_Vector4_method_distance_squared_to>` **(** :ref:`Vector4<class_Vector4>` to **)** |const|                                                                                                                                                                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`distance_to<class_Vector4_method_distance_to>` **(** :ref:`Vector4<class_Vector4>` to **)** |const|                                                                                                                                                                                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`dot<class_Vector4_method_dot>` **(** :ref:`Vector4<class_Vector4>` with **)** |const|                                                                                                                                                                                                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`floor<class_Vector4_method_floor>` **(** **)** |const|                                                                                                                                                                                                                                                                                            |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`inverse<class_Vector4_method_inverse>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` **(** :ref:`Vector4<class_Vector4>` with **)** |const|                                                                                                                                                                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector4_method_is_normalized>` **(** **)** |const|                                                                                                                                                                                                                                                                            |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`length<class_Vector4_method_length>` **(** **)** |const|                                                                                                                                                                                                                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`length_squared<class_Vector4_method_length_squared>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`lerp<class_Vector4_method_lerp>` **(** :ref:`Vector4<class_Vector4>` to, :ref:`float<class_float>` weight **)** |const|                                                                                                                                                                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`max_axis_index<class_Vector4_method_max_axis_index>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`min_axis_index<class_Vector4_method_min_axis_index>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`normalized<class_Vector4_method_normalized>` **(** **)** |const|                                                                                                                                                                                                                                                                                  |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`posmod<class_Vector4_method_posmod>` **(** :ref:`float<class_float>` mod **)** |const|                                                                                                                                                                                                                                                            |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`posmodv<class_Vector4_method_posmodv>` **(** :ref:`Vector4<class_Vector4>` modv **)** |const|                                                                                                                                                                                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`round<class_Vector4_method_round>` **(** **)** |const|                                                                                                                                                                                                                                                                                            |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`sign<class_Vector4_method_sign>` **(** **)** |const|                                                                                                                                                                                                                                                                                              |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector4<class_Vector4>` | :ref:`snapped<class_Vector4_method_snapped>` **(** :ref:`Vector4<class_Vector4>` step **)** |const|                                                                                                                                                                                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
 ---------
@@ -108,9 +124,9 @@ Operators
 +-------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector4<class_Vector4>` | :ref:`operator /<class_Vector4_operator_div_Vector4>` **(** :ref:`int<class_int>` right **)**               |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator <<class_Vector4_operator_lt_bool>` **(** :ref:`Vector4<class_Vector4>` right **)**           |
+| :ref:`bool<class_bool>`       | :ref:`operator \<<class_Vector4_operator_lt_bool>` **(** :ref:`Vector4<class_Vector4>` right **)**          |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`operator <=<class_Vector4_operator_lte_bool>` **(** :ref:`Vector4<class_Vector4>` right **)**         |
+| :ref:`bool<class_bool>`       | :ref:`operator \<=<class_Vector4_operator_lte_bool>` **(** :ref:`Vector4<class_Vector4>` right **)**        |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Vector4_operator_eq_bool>` **(** :ref:`Vector4<class_Vector4>` right **)**          |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -150,11 +166,11 @@ Constants
 
 - **AXIS_W** = **3** --- Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
 
-- **ZERO** = **Vector4(0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
+- **ZERO** = **Vector4(0, 0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
-- **ONE** = **Vector4(1, 1, 1)** --- One vector, a vector with all components set to ``1``.
+- **ONE** = **Vector4(1, 1, 1, 1)** --- One vector, a vector with all components set to ``1``.
 
-- **INF** = **Vector4(inf, inf, inf)** --- Infinity vector, a vector with all components set to :ref:`@GDScript.INF<class_@GDScript_constant_INF>`.
+- **INF** = **Vector4(inf, inf, inf, inf)** --- Infinity vector, a vector with all components set to :ref:`@GDScript.INF<class_@GDScript_constant_INF>`.
 
 Property Descriptions
 ---------------------
@@ -259,6 +275,50 @@ Returns a new vector with all components clamped between the components of ``min
 
 ----
 
+.. _class_Vector4_method_cubic_interpolate:
+
+- :ref:`Vector4<class_Vector4>` **cubic_interpolate** **(** :ref:`Vector4<class_Vector4>` b, :ref:`Vector4<class_Vector4>` pre_a, :ref:`Vector4<class_Vector4>` post_b, :ref:`float<class_float>` weight **)** |const|
+
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+
+----
+
+.. _class_Vector4_method_cubic_interpolate_in_time:
+
+- :ref:`Vector4<class_Vector4>` **cubic_interpolate_in_time** **(** :ref:`Vector4<class_Vector4>` b, :ref:`Vector4<class_Vector4>` pre_a, :ref:`Vector4<class_Vector4>` post_b, :ref:`float<class_float>` weight, :ref:`float<class_float>` b_t, :ref:`float<class_float>` pre_a_t, :ref:`float<class_float>` post_b_t **)** |const|
+
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+
+It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+
+----
+
+.. _class_Vector4_method_direction_to:
+
+- :ref:`Vector4<class_Vector4>` **direction_to** **(** :ref:`Vector4<class_Vector4>` to **)** |const|
+
+Returns the normalized vector pointing from this vector to ``to``. This is equivalent to using ``(b - a).normalized()``.
+
+----
+
+.. _class_Vector4_method_distance_squared_to:
+
+- :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector4<class_Vector4>` to **)** |const|
+
+Returns the squared distance between this vector and ``to``.
+
+This method runs faster than :ref:`distance_to<class_Vector4_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+
+----
+
+.. _class_Vector4_method_distance_to:
+
+- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector4<class_Vector4>` to **)** |const|
+
+Returns the distance between this vector and ``to``.
+
+----
+
 .. _class_Vector4_method_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector4<class_Vector4>` with **)** |const|
@@ -287,7 +347,7 @@ Returns the inverse of the vector. This is the same as ``Vector4(1.0 / v.x, 1.0 
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector4<class_Vector4>` with **)** |const|
 
-Returns ``true`` if this vector and ``v`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this vector and ``with`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 ----
 
@@ -347,6 +407,22 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 ----
 
+.. _class_Vector4_method_posmod:
+
+- :ref:`Vector4<class_Vector4>` **posmod** **(** :ref:`float<class_float>` mod **)** |const|
+
+Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``mod``.
+
+----
+
+.. _class_Vector4_method_posmodv:
+
+- :ref:`Vector4<class_Vector4>` **posmodv** **(** :ref:`Vector4<class_Vector4>` modv **)** |const|
+
+Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``modv``'s components.
+
+----
+
 .. _class_Vector4_method_round:
 
 - :ref:`Vector4<class_Vector4>` **round** **(** **)** |const|
@@ -360,6 +436,14 @@ Returns a new vector with all components rounded to the nearest integer, with ha
 - :ref:`Vector4<class_Vector4>` **sign** **(** **)** |const|
 
 Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+
+----
+
+.. _class_Vector4_method_snapped:
+
+- :ref:`Vector4<class_Vector4>` **snapped** **(** :ref:`Vector4<class_Vector4>` step **)** |const|
+
+Returns this vector with each component snapped to the nearest multiple of ``step``. This can also be used to round to an arbitrary number of decimals.
 
 Operator Descriptions
 ---------------------
@@ -498,7 +582,7 @@ Compares two ``Vector4`` vectors by first checking if the X value of the left ve
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector4<class_Vector4>` right **)**
 
-Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, and ``v[2]`` is equivalent to ``v.z``.
+Compares two ``Vector4`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 ----
 
@@ -506,7 +590,7 @@ Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, `
 
 - :ref:`float<class_float>` **operator []** **(** :ref:`int<class_int>` index **)**
 
-Access vector components using their index. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, ``v[2]`` is equivalent to ``v.z``, and ``v[3]`` is equivalent to ``v.w``.
+Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, ``v[2]`` is equivalent to ``v.z``, and ``v[3]`` is equivalent to ``v.w``.
 
 ----
 

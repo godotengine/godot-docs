@@ -113,7 +113,7 @@ Returns the :ref:`XRPose<class_XRPose>` containing the current state of the pose
 
 Triggers a haptic pulse on a device associated with this interface.
 
-\ ``action_name`` is the name of the action for this pulse.
+``action_name`` is the name of the action for this pulse.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

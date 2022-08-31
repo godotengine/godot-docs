@@ -12,7 +12,7 @@ PhysicsBody3D
 
 **Inherits:** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CharacterBody3D<class_CharacterBody3D>`, :ref:`PhysicalBone3D<class_PhysicalBone3D>`, :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>`, :ref:`StaticBody3D<class_StaticBody3D>`
+**Inherited By:** :ref:`CharacterBody3D<class_CharacterBody3D>`, :ref:`PhysicalBone3D<class_PhysicalBone3D>`, :ref:`RigidBody3D<class_RigidBody3D>`, :ref:`StaticBody3D<class_StaticBody3D>`
 
 Base class for all objects affected by physics in 3D space.
 
@@ -196,9 +196,9 @@ The body will stop if it collides. Returns a :ref:`KinematicCollision3D<class_Ki
 
 If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
 
-\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody3D.collision/safe_margin<class_CharacterBody3D_property_collision/safe_margin>` for more details).
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody3D.safe_margin<class_CharacterBody3D_property_safe_margin>` for more details).
 
-\ ``max_collisions`` allows to retrieve more than one collision result.
+``max_collisions`` allows to retrieve more than one collision result.
 
 ----
 
@@ -226,11 +226,11 @@ Checks for collisions without moving the body. In order to be frame rate indepen
 
 Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform3D<class_Transform3D>`, then tries to move the body along the vector ``distance``. Returns ``true`` if a collision would stop the body from moving along the whole path.
 
-\ ``collision`` is an optional object of type :ref:`KinematicCollision3D<class_KinematicCollision3D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
+``collision`` is an optional object of type :ref:`KinematicCollision3D<class_KinematicCollision3D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
 
-\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody3D.collision/safe_margin<class_CharacterBody3D_property_collision/safe_margin>` for more details).
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody3D.safe_margin<class_CharacterBody3D_property_safe_margin>` for more details).
 
-\ ``max_collisions`` allows to retrieve more than one collision result.
+``max_collisions`` allows to retrieve more than one collision result.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

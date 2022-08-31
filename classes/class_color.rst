@@ -1068,7 +1068,7 @@ Constructs a color from an `HSV profile <https://en.wikipedia.org/wiki/HSL_and_H
 
 - :ref:`Color<class_Color>` **from_ok_hsl** **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` l, :ref:`float<class_float>` alpha=1.0 **)** |static|
 
-Constructs a color from an `OK HSL profile <https://bottosson.github.io/posts/colorpicker/>`__. ``h`` (hue), ``s`` (saturation), and ``v`` (value) are typically between 0 and 1.
+Constructs a color from an `OK HSL profile <https://bottosson.github.io/posts/colorpicker/>`__. ``h`` (hue), ``s`` (saturation), and ``l`` (lightness) are typically between 0 and 1.
 
 
 .. tabs::
@@ -1145,7 +1145,7 @@ This is useful when determining light or dark color. Colors with a luminance sma
 
 Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is not case sensitive, and may be prefixed with a '#' character.
 
-\ ``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied.
+``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied.
 
 If ``rgba`` is invalid a Color(0.0, 0.0, 0.0, 1.0) is returned.
 
@@ -1228,7 +1228,7 @@ Returns the inverted color ``(1 - r, 1 - g, 1 - b, a)``.
 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Color<class_Color>` to **)** |const|
 
-Returns ``true`` if this color and ``color`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this color and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 ----
 

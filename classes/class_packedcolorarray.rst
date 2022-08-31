@@ -38,6 +38,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`bsearch<class_PackedColorArray_method_bsearch>` **(** :ref:`Color<class_Color>` value, :ref:`bool<class_bool>` before=true **)**  |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_PackedColorArray_method_clear>` **(** **)**                                                                           |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`count<class_PackedColorArray_method_count>` **(** :ref:`Color<class_Color>` value **)** |const|                                   |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`duplicate<class_PackedColorArray_method_duplicate>` **(** **)**                                                                   |
@@ -133,6 +135,14 @@ Appends a ``PackedColorArray`` at the end of this array.
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedColorArray_method_bsearch>` on an unsorted array results in unexpected behavior.
+
+----
+
+.. _class_PackedColorArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedColorArray_method_resize>` with a size of ``0``.
 
 ----
 
@@ -272,6 +282,8 @@ Sorts the elements of the array in ascending order.
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
 
+Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each color encoded as bytes.
+
 Operator Descriptions
 ---------------------
 
@@ -279,11 +291,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedColorArray_operator_sum_PackedColorArray:
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **operator +** **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**
+
+Returns a new ``PackedColorArray`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedColorArray_method_append_array>` instead.
 
 ----
 
@@ -291,11 +307,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedColorArray<class_PackedColorArray>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal :ref:`Color<class_Color>`\ s at the corresponding indices.
+
 ----
 
 .. _class_PackedColorArray_operator_idx_Color:
 
 - :ref:`Color<class_Color>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the :ref:`Color<class_Color>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

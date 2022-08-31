@@ -73,7 +73,7 @@ Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetSc
 
 - :ref:`bool<class_bool>` **get_scene_tile_display_placeholder** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns whether the scene tile with id ``id`` displays a placeholder in the editor.
+Returns whether the scene tile with ``id`` displays a placeholder in the editor.
 
 ----
 
@@ -81,7 +81,7 @@ Returns whether the scene tile with id ``id`` displays a placeholder in the edit
 
 - :ref:`int<class_int>` **get_scene_tile_id** **(** :ref:`int<class_int>` index **)**
 
-Returns the scene tile ID of the scene tile at index ``index``.
+Returns the scene tile ID of the scene tile at ``index``.
 
 ----
 
@@ -89,7 +89,7 @@ Returns the scene tile ID of the scene tile at index ``index``.
 
 - :ref:`PackedScene<class_PackedScene>` **get_scene_tile_scene** **(** :ref:`int<class_int>` id **)** |const|
 
-Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with id ``id``.
+Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with ``id``.
 
 ----
 
@@ -105,7 +105,7 @@ Returns the number or scene tiles this TileSet source has.
 
 - :ref:`bool<class_bool>` **has_scene_tile_id** **(** :ref:`int<class_int>` id **)**
 
-Returns whether this TileSet source has a scene tile with id ``id``.
+Returns whether this TileSet source has a scene tile with ``id``.
 
 ----
 
@@ -113,7 +113,7 @@ Returns whether this TileSet source has a scene tile with id ``id``.
 
 - void **remove_scene_tile** **(** :ref:`int<class_int>` id **)**
 
-Remove the scene tile with id ``id``.
+Remove the scene tile with ``id``.
 
 ----
 
@@ -121,7 +121,7 @@ Remove the scene tile with id ``id``.
 
 - void **set_scene_tile_display_placeholder** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` display_placeholder **)**
 
-Sets whether or not the scene tile with id ``id`` should display a placeholder in the editor. This might be useful for scenes that are not visible.
+Sets whether or not the scene tile with ``id`` should display a placeholder in the editor. This might be useful for scenes that are not visible.
 
 ----
 
@@ -137,7 +137,7 @@ Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is 
 
 - void **set_scene_tile_scene** **(** :ref:`int<class_int>` id, :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
-Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with id ``id``. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMap.
+Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with ``id``. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMap.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

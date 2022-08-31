@@ -25,13 +25,15 @@ Signed distance fields (SDF) allow for efficiently representing approximate coll
 
 \ **Note:** Baking a ``GPUParticlesCollisionSDF3D``'s :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` is only possible within the editor, as there is no bake method exposed for use in exported projects. However, it's still possible to load pre-baked :ref:`Texture3D<class_Texture3D>`\ s into its :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` property in an exported project.
 
-\ **Note:** :ref:`ParticlesMaterial.collision_enabled<class_ParticlesMaterial_property_collision_enabled>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
+\ **Note:** :ref:`ParticleProcessMaterial.collision_mode<class_ParticleProcessMaterial_property_collision_mode>` must be :ref:`ParticleProcessMaterial.COLLISION_RIGID<class_ParticleProcessMaterial_constant_COLLISION_RIGID>` or :ref:`ParticleProcessMaterial.COLLISION_HIDE_ON_CONTACT<class_ParticleProcessMaterial_constant_COLLISION_HIDE_ON_CONTACT>` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
 
 \ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 Properties
 ----------
 
++---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                                         | :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`   | ``4294967295``       |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
 | :ref:`Vector3<class_Vector3>`                                 | :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>`       | ``Vector3(1, 1, 1)`` |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
@@ -41,6 +43,15 @@ Properties
 +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
 | :ref:`float<class_float>`                                     | :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>`   | ``1.0``              |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+
+Methods
+-------
+
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                    | :ref:`set_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
++-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -79,6 +90,22 @@ enum **Resolution**:
 
 Property Descriptions
 ---------------------
+
+.. _class_GPUParticlesCollisionSDF3D_property_bake_mask:
+
+- :ref:`int<class_int>` **bake_mask**
+
++-----------+----------------------+
+| *Default* | ``4294967295``       |
++-----------+----------------------+
+| *Setter*  | set_bake_mask(value) |
++-----------+----------------------+
+| *Getter*  | get_bake_mask()      |
++-----------+----------------------+
+
+The visual layers to account for when baking the particle collision SDF. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>` will be included in the generated particle collision SDF. By default, all objects are taken into account for the particle collision SDF baking.
+
+----
 
 .. _class_GPUParticlesCollisionSDF3D_property_extents:
 
@@ -139,6 +166,23 @@ The 3D texture representing the signed distance field.
 +-----------+----------------------+
 
 The collision shape's thickness. Unlike other particle colliders, ``GPUParticlesCollisionSDF3D`` is actually hollow on the inside. :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>` can be increased to prevent particles from tunneling through the collision shape at high speeds, or when the ``GPUParticlesCollisionSDF3D`` is moved.
+
+Method Descriptions
+-------------------
+
+.. _class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value:
+
+- :ref:`bool<class_bool>` **get_bake_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified layer of the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
+
+----
+
+.. _class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value:
+
+- void **set_bake_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -31,7 +31,7 @@ Methods
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node[]<class_Node>` | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>` **(** **)**                             |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>` **(** **)** |
+| :ref:`Node[]<class_Node>` | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>` **(** **)** |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`remove_node<class_EditorSelection_method_remove_node>` **(** :ref:`Node<class_Node>` node **)**              |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------+
@@ -76,7 +76,7 @@ Gets the list of selected nodes.
 
 .. _class_EditorSelection_method_get_transformable_selected_nodes:
 
-- :ref:`Array<class_Array>` **get_transformable_selected_nodes** **(** **)**
+- :ref:`Node[]<class_Node>` **get_transformable_selected_nodes** **(** **)**
 
 Gets the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc). This list avoids situations where a node is selected and also child/grandchild.
 

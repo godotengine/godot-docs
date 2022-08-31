@@ -12,7 +12,7 @@ PhysicsBody2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CharacterBody2D<class_CharacterBody2D>`, :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
+**Inherited By:** :ref:`CharacterBody2D<class_CharacterBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
 Base class for all objects affected by physics in 2D space.
 
@@ -77,7 +77,7 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
 
 If ``test_only`` is ``true``, the body does not move but the would-be collision information is given.
 
-\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.safe_margin<class_CharacterBody2D_property_safe_margin>` for more details).
 
 ----
 
@@ -97,9 +97,9 @@ Checks for collisions without moving the body. In order to be frame rate indepen
 
 Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_Transform2D>`, then tries to move the body along the vector ``distance``. Returns ``true`` if a collision would stop the body from moving along the whole path.
 
-\ ``collision`` is an optional object of type :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
+``collision`` is an optional object of type :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains additional information about the collision when stopped, or when touching another body along the motion.
 
-\ ``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.collision/safe_margin<class_CharacterBody2D_property_collision/safe_margin>` for more details).
+``safe_margin`` is the extra margin used for collision recovery (see :ref:`CharacterBody2D.safe_margin<class_CharacterBody2D_property_safe_margin>` for more details).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

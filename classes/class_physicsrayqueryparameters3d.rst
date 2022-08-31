@@ -40,6 +40,13 @@ Properties
 | :ref:`Vector3<class_Vector3>` | :ref:`to<class_PhysicsRayQueryParameters3D_property_to>`                                   | ``Vector3(0, 0, 0)`` |
 +-------------------------------+--------------------------------------------------------------------------------------------+----------------------+
 
+Methods
+-------
+
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` | :ref:`create<class_PhysicsRayQueryParameters3D_method_create>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static| |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Property Descriptions
 ---------------------
 
@@ -168,6 +175,20 @@ If ``true``, the query will detect a hit when starting inside shapes. In this ca
 +-----------+----------------------+
 
 The ending point of the ray being queried for, in global coordinates.
+
+Method Descriptions
+-------------------
+
+.. _class_PhysicsRayQueryParameters3D_method_create:
+
+- :ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` **create** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static|
+
+Returns a new, pre-configured ``PhysicsRayQueryParameters3D`` object. Use it to quickly create query parameters using the most common options.
+
+::
+
+    var query = PhysicsRayQueryParameters3D.create(position, position + Vector3(0, -10, 0))
+    var collision = get_world_3d().direct_space_state.intersect_ray(query)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

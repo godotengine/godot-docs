@@ -87,7 +87,7 @@ Property Descriptions
 | *Getter*  | get_brake()      |
 +-----------+------------------+
 
-Slows down the wheel by applying a braking force. The wheel is only slowed down if it is in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
+Slows down the wheel by applying a braking force. The wheel is only slowed down if it is in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
 
 ----
 
@@ -135,7 +135,7 @@ The damping applied to the spring when relaxing. This value should be between 0.
 | *Getter*  | get_engine_force()      |
 +-----------+-------------------------+
 
-Accelerates the wheel by applying an engine force. The wheel is only sped up if it is in contact with a surface. The :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
+Accelerates the wheel by applying an engine force. The wheel is only sped up if it is in contact with a surface. The :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
 \ **Note:** The simulation does not take the effect of gears into account, you will need to add logic for this if you wish to simulate gears.
 
@@ -171,7 +171,7 @@ The steering angle for the wheel, in radians. Setting this to a non-zero value w
 | *Getter*  | get_suspension_max_force()      |
 +-----------+---------------------------------+
 
-The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidDynamicBody3D.mass<class_RigidDynamicBody3D_property_mass>` of the :ref:`VehicleBody3D<class_VehicleBody3D>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3× to 4× this number.
+The maximum force the spring can resist. This value should be higher than a quarter of the :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the :ref:`VehicleBody3D<class_VehicleBody3D>` or the spring will not carry the weight of the vehicle. Good results are often obtained by a value that is about 3× to 4× this number.
 
 ----
 

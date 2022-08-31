@@ -39,6 +39,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`get_collider_velocity<class_KinematicCollision2D_method_get_collider_velocity>` **(** **)** |const|                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_depth<class_KinematicCollision2D_method_get_depth>` **(** **)** |const|                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`   | :ref:`get_local_shape<class_KinematicCollision2D_method_get_local_shape>` **(** **)** |const|                                               |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`get_normal<class_KinematicCollision2D_method_get_normal>` **(** **)** |const|                                                         |
@@ -57,7 +59,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_angle** **(** :ref:`Vector2<class_Vector2>` up_direction=Vector2(0, -1) **)** |const|
 
-Returns the collision angle according to ``up_direction``, which is ``Vector2.UP`` by default. This value is always positive.
+Returns the collision angle according to ``up_direction``, which is :ref:`Vector2.UP<class_Vector2_constant_UP>` by default. This value is always positive.
 
 ----
 
@@ -106,6 +108,14 @@ Returns the colliding body's shape index. See :ref:`CollisionObject2D<class_Coll
 - :ref:`Vector2<class_Vector2>` **get_collider_velocity** **(** **)** |const|
 
 Returns the colliding body's velocity.
+
+----
+
+.. _class_KinematicCollision2D_method_get_depth:
+
+- :ref:`float<class_float>` **get_depth** **(** **)** |const|
+
+Returns the colliding body's length of overlap along the collision normal.
 
 ----
 

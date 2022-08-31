@@ -64,7 +64,7 @@ The first two parameters define the size and queued packets limits of the input 
 
 Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters will be rounded up to the nearest power of two.
 
-\ **Note:** HTML5 exports only use the input buffer since the output one is managed by browsers.
+\ **Note:** Web exports only use the input buffer since the output one is managed by browsers.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

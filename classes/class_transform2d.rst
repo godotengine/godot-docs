@@ -86,7 +86,11 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`rotated<class_Transform2D_method_rotated>` **(** :ref:`float<class_float>` angle **)** |const|                                                                 |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`rotated_local<class_Transform2D_method_rotated_local>` **(** :ref:`float<class_float>` angle **)** |const|                                                     |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`scaled<class_Transform2D_method_scaled>` **(** :ref:`Vector2<class_Vector2>` scale **)** |const|                                                               |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`scaled_local<class_Transform2D_method_scaled_local>` **(** :ref:`Vector2<class_Vector2>` scale **)** |const|                                                   |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_rotation<class_Transform2D_method_set_rotation>` **(** :ref:`float<class_float>` rotation **)**                                                            |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,6 +99,8 @@ Methods
 | void                                  | :ref:`set_skew<class_Transform2D_method_set_skew>` **(** :ref:`float<class_float>` skew **)**                                                                        |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`translated<class_Transform2D_method_translated>` **(** :ref:`Vector2<class_Vector2>` offset **)** |const|                                                      |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`translated_local<class_Transform2D_method_translated_local>` **(** :ref:`Vector2<class_Vector2>` offset **)** |const|                                          |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
@@ -314,7 +320,27 @@ Returns the transform with the basis orthogonal (90 degrees), and normalized axi
 
 - :ref:`Transform2D<class_Transform2D>` **rotated** **(** :ref:`float<class_float>` angle **)** |const|
 
-Returns a copy of the transform rotated by the given ``angle`` (in radians), using matrix multiplication.
+Returns a copy of the transform rotated by the given ``angle`` (in radians).
+
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
+
+This can be seen as transforming with respect to the global/parent frame.
+
+----
+
+.. _class_Transform2D_method_rotated_local:
+
+- :ref:`Transform2D<class_Transform2D>` **rotated_local** **(** :ref:`float<class_float>` angle **)** |const|
+
+Returns a copy of the transform rotated by the given ``angle`` (in radians).
+
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding rotation transform ``R`` from the right, i.e., ``X * R``.
+
+This can be seen as transforming with respect to the local frame.
 
 ----
 
@@ -322,7 +348,27 @@ Returns a copy of the transform rotated by the given ``angle`` (in radians), usi
 
 - :ref:`Transform2D<class_Transform2D>` **scaled** **(** :ref:`Vector2<class_Vector2>` scale **)** |const|
 
-Returns a copy of the transform scaled by the given ``scale`` factor, using matrix multiplication.
+Returns a copy of the transform scaled by the given ``scale`` factor.
+
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding scaling transform ``S`` from the left, i.e., ``S * X``.
+
+This can be seen as transforming with respect to the global/parent frame.
+
+----
+
+.. _class_Transform2D_method_scaled_local:
+
+- :ref:`Transform2D<class_Transform2D>` **scaled_local** **(** :ref:`Vector2<class_Vector2>` scale **)** |const|
+
+Returns a copy of the transform scaled by the given ``scale`` factor.
+
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding scaling transform ``S`` from the right, i.e., ``X * S``.
+
+This can be seen as transforming with respect to the local frame.
 
 ----
 
@@ -356,9 +402,27 @@ Sets the transform's skew (in radians).
 
 - :ref:`Transform2D<class_Transform2D>` **translated** **(** :ref:`Vector2<class_Vector2>` offset **)** |const|
 
-Returns a copy of the transform translated by the given ``offset``, relative to the transform's basis vectors.
+Returns a copy of the transform translated by the given ``offset``.
 
-Unlike :ref:`rotated<class_Transform2D_method_rotated>` and :ref:`scaled<class_Transform2D_method_scaled>`, this does not use matrix multiplication.
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding translation transform ``T`` from the left, i.e., ``T * X``.
+
+This can be seen as transforming with respect to the global/parent frame.
+
+----
+
+.. _class_Transform2D_method_translated_local:
+
+- :ref:`Transform2D<class_Transform2D>` **translated_local** **(** :ref:`Vector2<class_Vector2>` offset **)** |const|
+
+Returns a copy of the transform translated by the given ``offset``.
+
+This method is an optimized version of multiplying the given transform ``X``\ 
+
+with a corresponding translation transform ``T`` from the right, i.e., ``X * T``.
+
+This can be seen as transforming with respect to the local frame.
 
 Operator Descriptions
 ---------------------

@@ -84,11 +84,11 @@ Methods
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Key<enum_@GlobalScope_Key>`                | :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                              |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_item_horizontal_offset<class_PopupMenu_method_get_item_horizontal_offset>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                  |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>`                | :ref:`get_item_icon<class_PopupMenu_method_get_item_icon>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_item_id<class_PopupMenu_method_get_item_id>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_item_indent<class_PopupMenu_method_get_item_indent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                        |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_item_index<class_PopupMenu_method_get_item_index>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                             |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -136,11 +136,11 @@ Methods
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_disabled<class_PopupMenu_method_set_item_disabled>` **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` disabled **)**                                                                                                                          |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_item_horizontal_offset<class_PopupMenu_method_set_item_horizontal_offset>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` offset **)**                                                                                                            |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_icon<class_PopupMenu_method_set_item_icon>` **(** :ref:`int<class_int>` index, :ref:`Texture2D<class_Texture2D>` icon **)**                                                                                                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_id<class_PopupMenu_method_set_item_id>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` id **)**                                                                                                                                              |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_item_indent<class_PopupMenu_method_set_item_indent>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` indent **)**                                                                                                                                  |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_item_language<class_PopupMenu_method_set_item_language>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` language **)**                                                                                                                      |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -185,6 +185,8 @@ Theme Properties
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`h_separation<class_PopupMenu_theme_constant_h_separation>`                              | ``4``                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`int<class_int>`             | :ref:`indent<class_PopupMenu_theme_constant_indent>`                                          | ``10``                            |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`item_end_padding<class_PopupMenu_theme_constant_item_end_padding>`                      | ``2``                             |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`             | :ref:`item_start_padding<class_PopupMenu_theme_constant_item_start_padding>`                  | ``2``                             |
@@ -205,15 +207,23 @@ Theme Properties
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                            |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_PopupMenu_theme_icon_checked_disabled>`                          |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                                |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked_disabled<class_PopupMenu_theme_icon_radio_checked_disabled>`              |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                            |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked_disabled<class_PopupMenu_theme_icon_radio_unchecked_disabled>`          |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                            |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`submenu_mirrored<class_PopupMenu_theme_icon_submenu_mirrored>`                          |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_PopupMenu_theme_icon_unchecked>`                                        |                                   |
++-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_PopupMenu_theme_icon_unchecked_disabled>`                      |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_PopupMenu_theme_style_hover>`                                               |                                   |
 +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -252,6 +262,12 @@ Emitted when an item of some ``id`` is pressed or its accelerator is activated.
 - **index_pressed** **(** :ref:`int<class_int>` index **)**
 
 Emitted when an item of some ``index`` is pressed or its accelerator is activated.
+
+----
+
+.. _class_PopupMenu_signal_menu_changed:
+
+- **menu_changed** **(** **)**
 
 Property Descriptions
 ---------------------
@@ -539,14 +555,6 @@ Returns the accelerator of the item at the given ``index``. Accelerators are spe
 
 ----
 
-.. _class_PopupMenu_method_get_item_horizontal_offset:
-
-- :ref:`int<class_int>` **get_item_horizontal_offset** **(** :ref:`int<class_int>` index **)** |const|
-
-Returns the horizontal offset of the item at the given ``index``.
-
-----
-
 .. _class_PopupMenu_method_get_item_icon:
 
 - :ref:`Texture2D<class_Texture2D>` **get_item_icon** **(** :ref:`int<class_int>` index **)** |const|
@@ -560,6 +568,14 @@ Returns the icon of the item at the given ``index``.
 - :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the id of the item at the given ``index``. ``id`` can be manually assigned, while index can not.
+
+----
+
+.. _class_PopupMenu_method_get_item_indent:
+
+- :ref:`int<class_int>` **get_item_indent** **(** :ref:`int<class_int>` index **)** |const|
+
+Returns the horizontal offset of the item at the given ``index``.
 
 ----
 
@@ -705,6 +721,8 @@ Moves the scroll view to make the item at the given ``index`` visible.
 
 Sets the currently focused item as the given ``index``.
 
+Passing ``-1`` as the index makes so that no item is focused.
+
 ----
 
 .. _class_PopupMenu_method_set_item_accelerator:
@@ -757,14 +775,6 @@ Enables/disables the item at the given ``index``. When it is disabled, it can't 
 
 ----
 
-.. _class_PopupMenu_method_set_item_horizontal_offset:
-
-- void **set_item_horizontal_offset** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` offset **)**
-
-Sets the horizontal offset of the item at the given ``index``.
-
-----
-
 .. _class_PopupMenu_method_set_item_icon:
 
 - void **set_item_icon** **(** :ref:`int<class_int>` index, :ref:`Texture2D<class_Texture2D>` icon **)**
@@ -780,6 +790,14 @@ Replaces the :ref:`Texture2D<class_Texture2D>` icon of the item at the given ``i
 Sets the ``id`` of the item at the given ``index``.
 
 The ``id`` is used in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :ref:`id_focused<class_PopupMenu_signal_id_focused>` signals.
+
+----
+
+.. _class_PopupMenu_method_set_item_indent:
+
+- void **set_item_indent** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` indent **)**
+
+Sets the horizontal offset of the item at the given ``index``.
 
 ----
 
@@ -968,6 +986,18 @@ The horizontal space between the item's elements.
 
 ----
 
+.. _class_PopupMenu_theme_constant_indent:
+
+- :ref:`int<class_int>` **indent**
+
++-----------+--------+
+| *Default* | ``10`` |
++-----------+--------+
+
+Width of the single indentation level.
+
+----
+
 .. _class_PopupMenu_theme_constant_item_end_padding:
 
 - :ref:`int<class_int>` **item_end_padding**
@@ -1064,6 +1094,14 @@ Font size of the menu items.
 
 ----
 
+.. _class_PopupMenu_theme_icon_checked_disabled:
+
+- :ref:`Texture2D<class_Texture2D>` **checked_disabled**
+
+:ref:`Texture2D<class_Texture2D>` icon for the checked checkbox items when they are disabled.
+
+----
+
 .. _class_PopupMenu_theme_icon_radio_checked:
 
 - :ref:`Texture2D<class_Texture2D>` **radio_checked**
@@ -1072,11 +1110,27 @@ Font size of the menu items.
 
 ----
 
+.. _class_PopupMenu_theme_icon_radio_checked_disabled:
+
+- :ref:`Texture2D<class_Texture2D>` **radio_checked_disabled**
+
+:ref:`Texture2D<class_Texture2D>` icon for the checked radio button items when they are disabled.
+
+----
+
 .. _class_PopupMenu_theme_icon_radio_unchecked:
 
 - :ref:`Texture2D<class_Texture2D>` **radio_unchecked**
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items.
+
+----
+
+.. _class_PopupMenu_theme_icon_radio_unchecked_disabled:
+
+- :ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled**
+
+:ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items when they are disabled.
 
 ----
 
@@ -1101,6 +1155,14 @@ Font size of the menu items.
 - :ref:`Texture2D<class_Texture2D>` **unchecked**
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked checkbox items.
+
+----
+
+.. _class_PopupMenu_theme_icon_unchecked_disabled:
+
+- :ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
+
+:ref:`Texture2D<class_Texture2D>` icon for the unchecked checkbox items when they are disabled.
 
 ----
 

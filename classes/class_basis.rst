@@ -78,8 +78,6 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`       | :ref:`get_euler<class_Basis_method_get_euler>` **(** :ref:`int<class_int>` order=2 **)** |const|                                                              |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_orthogonal_index<class_Basis_method_get_orthogonal_index>` **(** **)** |const|                                                                      |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` **(** **)** |const|                                                                |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`       | :ref:`get_scale<class_Basis_method_get_scale>` **(** **)** |const|                                                                                            |
@@ -275,14 +273,6 @@ Constructs a pure scale basis matrix with no rotation or shearing. The scale val
 Returns the basis's rotation in the form of Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 Consider using the :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>` quaternion instead of Euler angles.
-
-----
-
-.. _class_Basis_method_get_orthogonal_index:
-
-- :ref:`int<class_int>` **get_orthogonal_index** **(** **)** |const|
-
-This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the :ref:`GridMap<class_GridMap>` editor. For further details, refer to the Godot source code.
 
 ----
 

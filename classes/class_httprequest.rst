@@ -449,7 +449,7 @@ Returns the response body length.
 
 - :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** |const|
 
-Returns the amount of bytes this HTTPRequest downloaded.
+Returns the number of bytes this HTTPRequest downloaded.
 
 ----
 

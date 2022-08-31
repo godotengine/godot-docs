@@ -17,7 +17,7 @@ Direct access object to a physics body in the :ref:`PhysicsServer2D<class_Physic
 Description
 -----------
 
-Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of dynamic bodies, and is intended for changing the direct state of that body. See :ref:`RigidDynamicBody2D._integrate_forces<class_RigidDynamicBody2D_method__integrate_forces>`.
+Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
 
 Tutorials
 ---------
@@ -284,7 +284,7 @@ This is equivalent to using :ref:`add_constant_force<class_PhysicsDirectBodyStat
 
 Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -324,7 +324,7 @@ This is equivalent to using :ref:`apply_impulse<class_PhysicsDirectBodyState2D_m
 
 Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -336,7 +336,7 @@ Applies a positioned impulse to the body.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -432,7 +432,7 @@ Returns the linear velocity vector at the collider's contact point.
 
 Returns the number of contacts this body has with other bodies.
 
-\ **Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidDynamicBody2D.contact_monitor<class_RigidDynamicBody2D_property_contact_monitor>`.
+\ **Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidBody2D.contact_monitor<class_RigidBody2D_property_contact_monitor>`.
 
 ----
 

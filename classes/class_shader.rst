@@ -41,7 +41,7 @@ Methods
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                    |
+| :ref:`bool<class_bool>`           | :ref:`has_uniform<class_Shader_method_has_uniform>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`StringName<class_StringName>` param, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)** |
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,13 +113,13 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 ----
 
-.. _class_Shader_method_has_param:
+.. _class_Shader_method_has_uniform:
 
-- :ref:`bool<class_bool>` **has_param** **(** :ref:`StringName<class_StringName>` name **)** |const|
+- :ref:`bool<class_bool>` **has_uniform** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
-\ **Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``name`` must match the name of the uniform in the code exactly.
 
 ----
 

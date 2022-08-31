@@ -163,7 +163,7 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>` | ``Color(1, 1, 1, 1)``          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`guide_color<class_ItemList_theme_color_guide_color>`                 | ``Color(0, 0, 0, 0.1)``        |
+| :ref:`Color<class_Color>`       | :ref:`guide_color<class_ItemList_theme_color_guide_color>`                 | ``Color(0.7, 0.7, 0.7, 0.25)`` |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`h_separation<class_ItemList_theme_constant_h_separation>`            | ``4``                          |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -887,9 +887,9 @@ Text :ref:`Color<class_Color>` used when the item is selected.
 
 - :ref:`Color<class_Color>` **guide_color**
 
-+-----------+-------------------------+
-| *Default* | ``Color(0, 0, 0, 0.1)`` |
-+-----------+-------------------------+
++-----------+--------------------------------+
+| *Default* | ``Color(0.7, 0.7, 0.7, 0.25)`` |
++-----------+--------------------------------+
 
 :ref:`Color<class_Color>` of the guideline. The guideline is a line drawn between each row of items.
 

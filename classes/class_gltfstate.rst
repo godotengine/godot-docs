@@ -17,96 +17,98 @@ GLTFState
 Properties
 ----------
 
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`String<class_String>`                   | :ref:`base_path<class_GLTFState_property_base_path>`                       | ``""``                |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Array<class_Array>`                     | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()`` |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Dictionary<class_Dictionary>`           | :ref:`json<class_GLTFState_property_json>`                                 | ``{}``                |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                         | :ref:`major_version<class_GLTFState_property_major_version>`               | ``0``                 |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                         | :ref:`minor_version<class_GLTFState_property_minor_version>`               | ``0``                 |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Array<class_Array>`                     | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                     | ``[]``                |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`String<class_String>`                   | :ref:`scene_name<class_GLTFState_property_scene_name>`                     | ``""``                |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                       | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>` | ``false``             |
-+-----------------------------------------------+----------------------------------------------------------------------------+-----------------------+
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`String<class_String>`                     | :ref:`base_path<class_GLTFState_property_base_path>`                       | ``""``                 |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`PackedByteArray[]<class_PackedByteArray>` | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                 |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`create_animations<class_GLTFState_property_create_animations>`       | ``true``               |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()``  |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`Dictionary<class_Dictionary>`             | :ref:`json<class_GLTFState_property_json>`                                 | ``{}``                 |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                           | :ref:`major_version<class_GLTFState_property_major_version>`               | ``0``                  |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`int<class_int>`                           | :ref:`minor_version<class_GLTFState_property_minor_version>`               | ``0``                  |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                     | ``PackedInt32Array()`` |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`String<class_String>`                     | :ref:`scene_name<class_GLTFState_property_scene_name>`                     | ``""``                 |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>` | ``false``              |
++-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
 
 Methods
 -------
 
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_accessors<class_GLTFState_method_get_accessors>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationPlayer<class_AnimationPlayer>` | :ref:`get_animation_player<class_GLTFState_method_get_animation_player>` **(** :ref:`int<class_int>` idx **)**                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_animation_players_count<class_GLTFState_method_get_animation_players_count>` **(** :ref:`int<class_int>` idx **)**                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_animations<class_GLTFState_method_get_animations>` **(** **)**                                                                          |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_buffer_views<class_GLTFState_method_get_buffer_views>` **(** **)**                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_cameras<class_GLTFState_method_get_cameras>` **(** **)**                                                                                |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_images<class_GLTFState_method_get_images>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_lights<class_GLTFState_method_get_lights>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_materials<class_GLTFState_method_get_materials>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_meshes<class_GLTFState_method_get_meshes>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_nodes<class_GLTFState_method_get_nodes>` **(** **)**                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                       | :ref:`get_scene_node<class_GLTFState_method_get_scene_node>` **(** :ref:`int<class_int>` idx **)**                                                |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`           | :ref:`get_skeleton_to_node<class_GLTFState_method_get_skeleton_to_node>` **(** **)**                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_skeletons<class_GLTFState_method_get_skeletons>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_skins<class_GLTFState_method_get_skins>` **(** **)**                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_textures<class_GLTFState_method_get_textures>` **(** **)**                                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_unique_animation_names<class_GLTFState_method_get_unique_animation_names>` **(** **)**                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_unique_names<class_GLTFState_method_get_unique_names>` **(** **)**                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_accessors<class_GLTFState_method_set_accessors>` **(** :ref:`Array<class_Array>` accessors **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_animations<class_GLTFState_method_set_animations>` **(** :ref:`Array<class_Array>` animations **)**                                     |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_buffer_views<class_GLTFState_method_set_buffer_views>` **(** :ref:`Array<class_Array>` buffer_views **)**                               |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_cameras<class_GLTFState_method_set_cameras>` **(** :ref:`Array<class_Array>` cameras **)**                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_images<class_GLTFState_method_set_images>` **(** :ref:`Array<class_Array>` images **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_lights<class_GLTFState_method_set_lights>` **(** :ref:`Array<class_Array>` lights **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_materials<class_GLTFState_method_set_materials>` **(** :ref:`Array<class_Array>` materials **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_meshes<class_GLTFState_method_set_meshes>` **(** :ref:`Array<class_Array>` meshes **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_nodes<class_GLTFState_method_set_nodes>` **(** :ref:`Array<class_Array>` nodes **)**                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skeleton_to_node<class_GLTFState_method_set_skeleton_to_node>` **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**         |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skeletons<class_GLTFState_method_set_skeletons>` **(** :ref:`Array<class_Array>` skeletons **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skins<class_GLTFState_method_set_skins>` **(** :ref:`Array<class_Array>` skins **)**                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_textures<class_GLTFState_method_set_textures>` **(** :ref:`Array<class_Array>` textures **)**                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_unique_animation_names<class_GLTFState_method_set_unique_animation_names>` **(** :ref:`Array<class_Array>` unique_animation_names **)** |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_unique_names<class_GLTFState_method_set_unique_names>` **(** :ref:`Array<class_Array>` unique_names **)**                               |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFAccessor[]<class_GLTFAccessor>`     | :ref:`get_accessors<class_GLTFState_method_get_accessors>` **(** **)**                                                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AnimationPlayer<class_AnimationPlayer>` | :ref:`get_animation_player<class_GLTFState_method_get_animation_player>` **(** :ref:`int<class_int>` idx **)**                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_animation_players_count<class_GLTFState_method_get_animation_players_count>` **(** :ref:`int<class_int>` idx **)**                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFAnimation[]<class_GLTFAnimation>`   | :ref:`get_animations<class_GLTFState_method_get_animations>` **(** **)**                                                                              |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFBufferView[]<class_GLTFBufferView>` | :ref:`get_buffer_views<class_GLTFState_method_get_buffer_views>` **(** **)**                                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFCamera[]<class_GLTFCamera>`         | :ref:`get_cameras<class_GLTFState_method_get_cameras>` **(** **)**                                                                                    |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture2D[]<class_Texture2D>`           | :ref:`get_images<class_GLTFState_method_get_images>` **(** **)**                                                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFLight[]<class_GLTFLight>`           | :ref:`get_lights<class_GLTFState_method_get_lights>` **(** **)**                                                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` | :ref:`get_materials<class_GLTFState_method_get_materials>` **(** **)**                                                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFMesh[]<class_GLTFMesh>`             | :ref:`get_meshes<class_GLTFState_method_get_meshes>` **(** **)**                                                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFNode[]<class_GLTFNode>`             | :ref:`get_nodes<class_GLTFState_method_get_nodes>` **(** **)**                                                                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`                       | :ref:`get_scene_node<class_GLTFState_method_get_scene_node>` **(** :ref:`int<class_int>` idx **)**                                                    |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`           | :ref:`get_skeleton_to_node<class_GLTFState_method_get_skeleton_to_node>` **(** **)**                                                                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFSkeleton[]<class_GLTFSkeleton>`     | :ref:`get_skeletons<class_GLTFState_method_get_skeletons>` **(** **)**                                                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFSkin[]<class_GLTFSkin>`             | :ref:`get_skins<class_GLTFState_method_get_skins>` **(** **)**                                                                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFTexture[]<class_GLTFTexture>`       | :ref:`get_textures<class_GLTFState_method_get_textures>` **(** **)**                                                                                  |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String[]<class_String>`                 | :ref:`get_unique_animation_names<class_GLTFState_method_get_unique_animation_names>` **(** **)**                                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String[]<class_String>`                 | :ref:`get_unique_names<class_GLTFState_method_get_unique_names>` **(** **)**                                                                          |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_accessors<class_GLTFState_method_set_accessors>` **(** :ref:`GLTFAccessor[]<class_GLTFAccessor>` accessors **)**                            |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_animations<class_GLTFState_method_set_animations>` **(** :ref:`GLTFAnimation[]<class_GLTFAnimation>` animations **)**                       |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_buffer_views<class_GLTFState_method_set_buffer_views>` **(** :ref:`GLTFBufferView[]<class_GLTFBufferView>` buffer_views **)**               |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_cameras<class_GLTFState_method_set_cameras>` **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**                                      |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_images<class_GLTFState_method_set_images>` **(** :ref:`Texture2D[]<class_Texture2D>` images **)**                                           |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_lights<class_GLTFState_method_set_lights>` **(** :ref:`GLTFLight[]<class_GLTFLight>` lights **)**                                           |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_materials<class_GLTFState_method_set_materials>` **(** :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` materials **)**                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_meshes<class_GLTFState_method_set_meshes>` **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**                                             |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_nodes<class_GLTFState_method_set_nodes>` **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_skeleton_to_node<class_GLTFState_method_set_skeleton_to_node>` **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**             |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_skeletons<class_GLTFState_method_set_skeletons>` **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons **)**                            |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_skins<class_GLTFState_method_set_skins>` **(** :ref:`GLTFSkin[]<class_GLTFSkin>` skins **)**                                                |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_textures<class_GLTFState_method_set_textures>` **(** :ref:`GLTFTexture[]<class_GLTFTexture>` textures **)**                                 |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_unique_animation_names<class_GLTFState_method_set_unique_animation_names>` **(** :ref:`String[]<class_String>` unique_animation_names **)** |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_unique_names<class_GLTFState_method_set_unique_names>` **(** :ref:`String[]<class_String>` unique_names **)**                               |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -127,7 +129,7 @@ Property Descriptions
 
 .. _class_GLTFState_property_buffers:
 
-- :ref:`Array<class_Array>` **buffers**
+- :ref:`PackedByteArray[]<class_PackedByteArray>` **buffers**
 
 +-----------+--------------------+
 | *Default* | ``[]``             |
@@ -136,6 +138,20 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_buffers()      |
 +-----------+--------------------+
+
+----
+
+.. _class_GLTFState_property_create_animations:
+
+- :ref:`bool<class_bool>` **create_animations**
+
++-----------+------------------------------+
+| *Default* | ``true``                     |
++-----------+------------------------------+
+| *Setter*  | set_create_animations(value) |
++-----------+------------------------------+
+| *Getter*  | get_create_animations()      |
++-----------+------------------------------+
 
 ----
 
@@ -197,15 +213,15 @@ Property Descriptions
 
 .. _class_GLTFState_property_root_nodes:
 
-- :ref:`Array<class_Array>` **root_nodes**
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **root_nodes**
 
-+-----------+-----------------------+
-| *Default* | ``[]``                |
-+-----------+-----------------------+
-| *Setter*  | set_root_nodes(value) |
-+-----------+-----------------------+
-| *Getter*  | get_root_nodes()      |
-+-----------+-----------------------+
++-----------+------------------------+
+| *Default* | ``PackedInt32Array()`` |
++-----------+------------------------+
+| *Setter*  | set_root_nodes(value)  |
++-----------+------------------------+
+| *Getter*  | get_root_nodes()       |
++-----------+------------------------+
 
 ----
 
@@ -240,7 +256,7 @@ Method Descriptions
 
 .. _class_GLTFState_method_get_accessors:
 
-- :ref:`Array<class_Array>` **get_accessors** **(** **)**
+- :ref:`GLTFAccessor[]<class_GLTFAccessor>` **get_accessors** **(** **)**
 
 ----
 
@@ -258,49 +274,49 @@ Method Descriptions
 
 .. _class_GLTFState_method_get_animations:
 
-- :ref:`Array<class_Array>` **get_animations** **(** **)**
+- :ref:`GLTFAnimation[]<class_GLTFAnimation>` **get_animations** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_buffer_views:
 
-- :ref:`Array<class_Array>` **get_buffer_views** **(** **)**
+- :ref:`GLTFBufferView[]<class_GLTFBufferView>` **get_buffer_views** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_cameras:
 
-- :ref:`Array<class_Array>` **get_cameras** **(** **)**
+- :ref:`GLTFCamera[]<class_GLTFCamera>` **get_cameras** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_images:
 
-- :ref:`Array<class_Array>` **get_images** **(** **)**
+- :ref:`Texture2D[]<class_Texture2D>` **get_images** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_lights:
 
-- :ref:`Array<class_Array>` **get_lights** **(** **)**
+- :ref:`GLTFLight[]<class_GLTFLight>` **get_lights** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_materials:
 
-- :ref:`Array<class_Array>` **get_materials** **(** **)**
+- :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` **get_materials** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_meshes:
 
-- :ref:`Array<class_Array>` **get_meshes** **(** **)**
+- :ref:`GLTFMesh[]<class_GLTFMesh>` **get_meshes** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_nodes:
 
-- :ref:`Array<class_Array>` **get_nodes** **(** **)**
+- :ref:`GLTFNode[]<class_GLTFNode>` **get_nodes** **(** **)**
 
 ----
 
@@ -318,85 +334,85 @@ Method Descriptions
 
 .. _class_GLTFState_method_get_skeletons:
 
-- :ref:`Array<class_Array>` **get_skeletons** **(** **)**
+- :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` **get_skeletons** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_skins:
 
-- :ref:`Array<class_Array>` **get_skins** **(** **)**
+- :ref:`GLTFSkin[]<class_GLTFSkin>` **get_skins** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_textures:
 
-- :ref:`Array<class_Array>` **get_textures** **(** **)**
+- :ref:`GLTFTexture[]<class_GLTFTexture>` **get_textures** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_unique_animation_names:
 
-- :ref:`Array<class_Array>` **get_unique_animation_names** **(** **)**
+- :ref:`String[]<class_String>` **get_unique_animation_names** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_get_unique_names:
 
-- :ref:`Array<class_Array>` **get_unique_names** **(** **)**
+- :ref:`String[]<class_String>` **get_unique_names** **(** **)**
 
 ----
 
 .. _class_GLTFState_method_set_accessors:
 
-- void **set_accessors** **(** :ref:`Array<class_Array>` accessors **)**
+- void **set_accessors** **(** :ref:`GLTFAccessor[]<class_GLTFAccessor>` accessors **)**
 
 ----
 
 .. _class_GLTFState_method_set_animations:
 
-- void **set_animations** **(** :ref:`Array<class_Array>` animations **)**
+- void **set_animations** **(** :ref:`GLTFAnimation[]<class_GLTFAnimation>` animations **)**
 
 ----
 
 .. _class_GLTFState_method_set_buffer_views:
 
-- void **set_buffer_views** **(** :ref:`Array<class_Array>` buffer_views **)**
+- void **set_buffer_views** **(** :ref:`GLTFBufferView[]<class_GLTFBufferView>` buffer_views **)**
 
 ----
 
 .. _class_GLTFState_method_set_cameras:
 
-- void **set_cameras** **(** :ref:`Array<class_Array>` cameras **)**
+- void **set_cameras** **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**
 
 ----
 
 .. _class_GLTFState_method_set_images:
 
-- void **set_images** **(** :ref:`Array<class_Array>` images **)**
+- void **set_images** **(** :ref:`Texture2D[]<class_Texture2D>` images **)**
 
 ----
 
 .. _class_GLTFState_method_set_lights:
 
-- void **set_lights** **(** :ref:`Array<class_Array>` lights **)**
+- void **set_lights** **(** :ref:`GLTFLight[]<class_GLTFLight>` lights **)**
 
 ----
 
 .. _class_GLTFState_method_set_materials:
 
-- void **set_materials** **(** :ref:`Array<class_Array>` materials **)**
+- void **set_materials** **(** :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` materials **)**
 
 ----
 
 .. _class_GLTFState_method_set_meshes:
 
-- void **set_meshes** **(** :ref:`Array<class_Array>` meshes **)**
+- void **set_meshes** **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**
 
 ----
 
 .. _class_GLTFState_method_set_nodes:
 
-- void **set_nodes** **(** :ref:`Array<class_Array>` nodes **)**
+- void **set_nodes** **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**
 
 ----
 
@@ -408,31 +424,31 @@ Method Descriptions
 
 .. _class_GLTFState_method_set_skeletons:
 
-- void **set_skeletons** **(** :ref:`Array<class_Array>` skeletons **)**
+- void **set_skeletons** **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons **)**
 
 ----
 
 .. _class_GLTFState_method_set_skins:
 
-- void **set_skins** **(** :ref:`Array<class_Array>` skins **)**
+- void **set_skins** **(** :ref:`GLTFSkin[]<class_GLTFSkin>` skins **)**
 
 ----
 
 .. _class_GLTFState_method_set_textures:
 
-- void **set_textures** **(** :ref:`Array<class_Array>` textures **)**
+- void **set_textures** **(** :ref:`GLTFTexture[]<class_GLTFTexture>` textures **)**
 
 ----
 
 .. _class_GLTFState_method_set_unique_animation_names:
 
-- void **set_unique_animation_names** **(** :ref:`Array<class_Array>` unique_animation_names **)**
+- void **set_unique_animation_names** **(** :ref:`String[]<class_String>` unique_animation_names **)**
 
 ----
 
 .. _class_GLTFState_method_set_unique_names:
 
-- void **set_unique_names** **(** :ref:`Array<class_Array>` unique_names **)**
+- void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -19,6 +19,11 @@ A list of GDScript-specific utility functions accessed in any script.
 
 For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
 
+Tutorials
+---------
+
+- :doc:`GDScript exports <../tutorials/scripting/gdscript/gdscript_exports>`
+
 Methods
 -------
 
@@ -31,11 +36,11 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**                                           |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`         | :ref:`dict2inst<class_@GDScript_method_dict2inst>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)**                                                       |
+| :ref:`Object<class_Object>`         | :ref:`dict_to_inst<class_@GDScript_method_dict_to_inst>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)**                                                 |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`get_stack<class_@GDScript_method_get_stack>` **(** **)**                                                                                                      |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`inst2dict<class_@GDScript_method_inst2dict>` **(** :ref:`Object<class_Object>` instance **)**                                                                 |
+| :ref:`Dictionary<class_Dictionary>` | :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>` **(** :ref:`Object<class_Object>` instance **)**                                                           |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`len<class_@GDScript_method_len>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -80,165 +85,425 @@ Constants
 Annotations
 -----------
 
-.. _class_@GDScript_annotation_export:
+.. _class_@GDScript_annotation_@export:
 
-- :ref:`bool<class_bool>` **@export** **(** **)**
+- **@export** **(** **)**
 
-----
+Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property use the type hint notation.
 
-.. _class_@GDScript_annotation_export_category:
+::
 
-- :ref:`bool<class_bool>` **@export_category** **(** :ref:`String<class_String>` name **)**
-
-----
-
-.. _class_@GDScript_annotation_export_color_no_alpha:
-
-- :ref:`bool<class_bool>` **@export_color_no_alpha** **(** **)**
+    @export var int_number = 5
+    @export var float_number: float = 5
 
 ----
 
-.. _class_@GDScript_annotation_export_dir:
+.. _class_@GDScript_annotation_@export_category:
 
-- :ref:`bool<class_bool>` **@export_dir** **(** **)**
+- **@export_category** **(** :ref:`String<class_String>` name **)**
 
-----
+Define a new category for the following exported properties. This helps to organize properties in the Inspector dock.
 
-.. _class_@GDScript_annotation_export_enum:
+See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_PROPERTY_USAGE_CATEGORY>`.
 
-- :ref:`bool<class_bool>` **@export_enum** **(** :ref:`String<class_String>` names, ... **)** |vararg|
+::
 
-----
+    @export_category("My Properties")
+    @export var number = 3
+    @export var string = ""
 
-.. _class_@GDScript_annotation_export_exp_easing:
-
-- :ref:`bool<class_bool>` **@export_exp_easing** **(** :ref:`String<class_String>` hints="", ... **)** |vararg|
-
-----
-
-.. _class_@GDScript_annotation_export_file:
-
-- :ref:`bool<class_bool>` **@export_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
+\ **Note:** Categories in the property list are supposed to indicate different base types, so the use of this annotation is not encouraged. See :ref:`@export_group<class_@GDScript_annotation_@export_group>` and :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` instead.
 
 ----
 
-.. _class_@GDScript_annotation_export_flags:
+.. _class_@GDScript_annotation_@export_color_no_alpha:
 
-- :ref:`bool<class_bool>` **@export_flags** **(** :ref:`String<class_String>` names, ... **)** |vararg|
+- **@export_color_no_alpha** **(** **)**
 
-----
+Export a :ref:`Color<class_Color>` property without an alpha (fixed as ``1.0``).
 
-.. _class_@GDScript_annotation_export_flags_2d_navigation:
+See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA>`.
 
-- :ref:`bool<class_bool>` **@export_flags_2d_navigation** **(** **)**
+::
 
-----
-
-.. _class_@GDScript_annotation_export_flags_2d_physics:
-
-- :ref:`bool<class_bool>` **@export_flags_2d_physics** **(** **)**
+    @export_color_no_alpha var modulate_color: Color
 
 ----
 
-.. _class_@GDScript_annotation_export_flags_2d_render:
+.. _class_@GDScript_annotation_@export_dir:
 
-- :ref:`bool<class_bool>` **@export_flags_2d_render** **(** **)**
+- **@export_dir** **(** **)**
 
-----
+Export a :ref:`String<class_String>` property as a path to a directory. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>` to allow picking from the entire filesystem.
 
-.. _class_@GDScript_annotation_export_flags_3d_navigation:
+See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPERTY_HINT_DIR>`.
 
-- :ref:`bool<class_bool>` **@export_flags_3d_navigation** **(** **)**
+::
 
-----
-
-.. _class_@GDScript_annotation_export_flags_3d_physics:
-
-- :ref:`bool<class_bool>` **@export_flags_3d_physics** **(** **)**
+    @export_dir var sprite_folder: String
 
 ----
 
-.. _class_@GDScript_annotation_export_flags_3d_render:
+.. _class_@GDScript_annotation_@export_enum:
 
-- :ref:`bool<class_bool>` **@export_flags_3d_render** **(** **)**
+- **@export_enum** **(** :ref:`String<class_String>` names, ... **)** |vararg|
 
-----
+Export a :ref:`String<class_String>` or integer property as an enumerated list of options. If the property is an integer field, then the index of the value is stored, in the same order the values are provided. You can add specific identifiers for allowed values using a colon.
 
-.. _class_@GDScript_annotation_export_global_dir:
+See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`.
 
-- :ref:`bool<class_bool>` **@export_global_dir** **(** **)**
+::
 
-----
-
-.. _class_@GDScript_annotation_export_global_file:
-
-- :ref:`bool<class_bool>` **@export_global_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
+    @export_enum("Rebecca", "Mary", "Leah") var character_name: String
+    @export_enum("Warrior", "Magician", "Thief") var character_class: int
+    @export_enum("Walking:30", "Running:60", "Riding:200") var character_speed: int
 
 ----
 
-.. _class_@GDScript_annotation_export_group:
+.. _class_@GDScript_annotation_@export_exp_easing:
 
-- :ref:`bool<class_bool>` **@export_group** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
+- **@export_exp_easing** **(** :ref:`String<class_String>` hints="", ... **)** |vararg|
 
-----
+Export a floating-point property with an easing editor widget. Additional hints can be provided to adjust the behavior of the widget. ``"attenuation"`` flips the curve, which makes it more intuitive for editing attenuation properties. ``"positive_only"`` limits values to only be greater than or equal to zero.
 
-.. _class_@GDScript_annotation_export_multiline:
+See also :ref:`@GlobalScope.PROPERTY_HINT_EXP_EASING<class_@GlobalScope_constant_PROPERTY_HINT_EXP_EASING>`.
 
-- :ref:`bool<class_bool>` **@export_multiline** **(** **)**
+::
 
-----
-
-.. _class_@GDScript_annotation_export_node_path:
-
-- :ref:`bool<class_bool>` **@export_node_path** **(** :ref:`String<class_String>` type="", ... **)** |vararg|
+    @export_exp_easing var transition_speed
+    @export_exp_easing("attenuation") var fading_attenuation
+    @export_exp_easing("positive_only") var effect_power
 
 ----
 
-.. _class_@GDScript_annotation_export_placeholder:
+.. _class_@GDScript_annotation_@export_file:
 
-- :ref:`bool<class_bool>` **@export_placeholder** **(** **)**
+- **@export_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
 
-----
+Export a :ref:`String<class_String>` property as a path to a file. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_file<class_@GDScript_annotation_@export_global_file>` to allow picking from the entire filesystem.
 
-.. _class_@GDScript_annotation_export_range:
+If ``filter`` is provided, only matching files will be available for picking.
 
-- :ref:`bool<class_bool>` **@export_range** **(** :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step=1.0, :ref:`String<class_String>` extra_hints="", ... **)** |vararg|
+See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPERTY_HINT_FILE>`.
 
-----
+::
 
-.. _class_@GDScript_annotation_export_subgroup:
-
-- :ref:`bool<class_bool>` **@export_subgroup** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
-
-----
-
-.. _class_@GDScript_annotation_icon:
-
-- :ref:`bool<class_bool>` **@icon** **(** :ref:`String<class_String>` icon_path **)**
+    @export_file var sound_effect_file: String
+    @export_file("*.txt") var notes_file: String
 
 ----
 
-.. _class_@GDScript_annotation_onready:
+.. _class_@GDScript_annotation_@export_flags:
 
-- :ref:`bool<class_bool>` **@onready** **(** **)**
+- **@export_flags** **(** :ref:`String<class_String>` names, ... **)** |vararg|
 
-----
+Export an integer property as a bit flag field. This allows to store several "checked" or ``true`` values with one property, and comfortably select them from the Inspector dock.
 
-.. _class_@GDScript_annotation_rpc:
+See also :ref:`@GlobalScope.PROPERTY_HINT_FLAGS<class_@GlobalScope_constant_PROPERTY_HINT_FLAGS>`.
 
-- :ref:`bool<class_bool>` **@rpc** **(** :ref:`String<class_String>` mode="", :ref:`String<class_String>` sync="", :ref:`String<class_String>` transfer_mode="", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+::
 
-----
-
-.. _class_@GDScript_annotation_tool:
-
-- :ref:`bool<class_bool>` **@tool** **(** **)**
+    @export_flags("Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
 ----
 
-.. _class_@GDScript_annotation_warning_ignore:
+.. _class_@GDScript_annotation_@export_flags_2d_navigation:
 
-- :ref:`bool<class_bool>` **@warning_ignore** **(** :ref:`String<class_String>` warning, ... **)** |vararg|
+- **@export_flags_2d_navigation** **(** **)**
+
+Export an integer property as a bit flag field for 2D navigation layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_navigation/layer_1<class_ProjectSettings_property_layer_names/2d_navigation/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_NAVIGATION<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_NAVIGATION>`.
+
+::
+
+    @export_flags_2d_navigation var navigation_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_flags_2d_physics:
+
+- **@export_flags_2d_physics** **(** **)**
+
+Export an integer property as a bit flag field for 2D physics layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_physics/layer_1<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_PHYSICS<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_PHYSICS>`.
+
+::
+
+    @export_flags_2d_physics var physics_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_flags_2d_render:
+
+- **@export_flags_2d_render** **(** **)**
+
+Export an integer property as a bit flag field for 2D render layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/2d_render/layer_1<class_ProjectSettings_property_layer_names/2d_render/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_RENDER<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_RENDER>`.
+
+::
+
+    @export_flags_2d_render var render_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_flags_3d_navigation:
+
+- **@export_flags_3d_navigation** **(** **)**
+
+Export an integer property as a bit flag field for 3D navigation layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_navigation/layer_1<class_ProjectSettings_property_layer_names/3d_navigation/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_NAVIGATION<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_NAVIGATION>`.
+
+::
+
+    @export_flags_3d_navigation var navigation_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_flags_3d_physics:
+
+- **@export_flags_3d_physics** **(** **)**
+
+Export an integer property as a bit flag field for 3D physics layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_physics/layer_1<class_ProjectSettings_property_layer_names/3d_physics/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_PHYSICS<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_PHYSICS>`.
+
+::
+
+    @export_flags_3d_physics var physics_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_flags_3d_render:
+
+- **@export_flags_3d_render** **(** **)**
+
+Export an integer property as a bit flag field for 3D render layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/3d_render/layer_1<class_ProjectSettings_property_layer_names/3d_render/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_RENDER>`.
+
+::
+
+    @export_flags_3d_render var render_layers: int
+
+----
+
+.. _class_@GDScript_annotation_@export_global_dir:
+
+- **@export_global_dir** **(** **)**
+
+Export a :ref:`String<class_String>` property as a path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR>`.
+
+::
+
+    @export_global_dir var sprite_folder: String
+
+----
+
+.. _class_@GDScript_annotation_@export_global_file:
+
+- **@export_global_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
+
+Export a :ref:`String<class_String>` property as a path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
+
+If ``filter`` is provided, only matching files will be available for picking.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_FILE>`.
+
+::
+
+    @export_global_file var sound_effect_file: String
+    @export_global_file("*.txt") var notes_file: String
+
+----
+
+.. _class_@GDScript_annotation_@export_group:
+
+- **@export_group** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
+
+Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
+
+If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for paramters, ``@export_group("", "")``.
+
+Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups to your groups.
+
+See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PROPERTY_USAGE_GROUP>`.
+
+::
+
+    @export_group("My Properties")
+    @export var number = 3
+    @export var string = ""
+    
+    @export_group("Prefixed Properties", "prefix_")
+    @export var prefix_number = 3
+    @export var prefix_string = ""
+    
+    @export_group("", "")
+    @export var ungrouped_number = 3
+
+----
+
+.. _class_@GDScript_annotation_@export_multiline:
+
+- **@export_multiline** **(** **)**
+
+Export a :ref:`String<class_String>` property with a large :ref:`TextEdit<class_TextEdit>` widget instead of a :ref:`LineEdit<class_LineEdit>`. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_MULTILINE_TEXT>`.
+
+::
+
+    @export_multiline var character_bio
+
+----
+
+.. _class_@GDScript_annotation_@export_node_path:
+
+- **@export_node_path** **(** :ref:`String<class_String>` type="", ... **)** |vararg|
+
+Export a :ref:`NodePath<class_NodePath>` property with a filter for allowed node types.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES>`.
+
+::
+
+    @export_node_path(Button, TouchScreenButton) var some_button
+
+----
+
+.. _class_@GDScript_annotation_@export_placeholder:
+
+- **@export_placeholder** **(** :ref:`String<class_String>` placeholder **)**
+
+Export a :ref:`String<class_String>` property with a placeholder text displayed in the editor widget when no value is present.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT>`.
+
+::
+
+    @export_placeholder("Name in lowercase") var character_id: String
+
+----
+
+.. _class_@GDScript_annotation_@export_range:
+
+- **@export_range** **(** :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step=1.0, :ref:`String<class_String>` extra_hints="", ... **)** |vararg|
+
+Export a numeric property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your ``EditorSettings.interface/inspector/default_float_step`` setting.
+
+If hints ``"or_greater"`` and ``"or_lesser"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"no_slider"`` hint will hide the slider element of the editor widget.
+
+Hints also allow to indicate the units for the edited value. Using ``"radians"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock. ``"degrees"`` allows to add a degree sign as a unit suffix. Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROPERTY_HINT_RANGE>`.
+
+::
+
+    @export_range(0, 20) var number
+    @export_range(-10, 20) var number
+    @export_range(-10, 20, 0.2) var number: float
+    
+    @export_range(0, 100, 1, "or_greater") var power_percent
+    @export_range(0, 100, 1, "or_greater", "or_lesser") var health_delta
+    
+    @export_range(-3.14, 3.14, 0.001, "radians") var angle_radians
+    @export_range(0, 360, 1, "degrees") var angle_degrees
+    @export_range(-8, 8, 2, "suffix:px") var target_offset
+
+----
+
+.. _class_@GDScript_annotation_@export_subgroup:
+
+- **@export_subgroup** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` prefix="" **)**
+
+Define a new subgroup for the following exported properties. This helps to organize properties in the Inspector dock. Subgroups work exactly like groups, except they need a parent group to exist. See :ref:`@export_group<class_@GDScript_annotation_@export_group>`.
+
+See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_PROPERTY_USAGE_SUBGROUP>`.
+
+::
+
+    @export_group("My Properties")
+    @export var number = 3
+    @export var string = ""
+    
+    @export_subgroup("My Prefixed Properties", "prefix_")
+    @export var prefix_number = 3
+    @export var prefix_string = ""
+
+\ **Note:** Subgroups cannot be nested, they only provide one extra level of depth. Just like the next group ends the previous group, so do the subsequent subgroups.
+
+----
+
+.. _class_@GDScript_annotation_@icon:
+
+- **@icon** **(** :ref:`String<class_String>` icon_path **)**
+
+Add a custom icon to the current script. The icon is displayed in the Scene dock for every node that the script is attached to. For named classes the icon is also displayed in various editor dialogs.
+
+::
+
+    @icon("res://path/to/class/icon.svg")
+
+\ **Note:** Only the script can have a custom icon. Inner classes are not supported yet.
+
+----
+
+.. _class_@GDScript_annotation_@onready:
+
+- **@onready** **(** **)**
+
+Mark the following property as assigned on :ref:`Node<class_Node>`'s ready state change. Values for these properties are no assigned immediately upon the node's creation, and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
+
+::
+
+    @onready var character_name: Label = $Label
+
+----
+
+.. _class_@GDScript_annotation_@rpc:
+
+- **@rpc** **(** :ref:`String<class_String>` mode="", :ref:`String<class_String>` sync="", :ref:`String<class_String>` transfer_mode="", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+
+Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
+
+::
+
+    @rpc()
+
+----
+
+.. _class_@GDScript_annotation_@tool:
+
+- **@tool** **(** **)**
+
+Mark the current script as a tool script, allowing it to be loaded and executed by the editor. See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>`.
+
+::
+
+    @tool
+    extends Node
+
+----
+
+.. _class_@GDScript_annotation_@warning_ignore:
+
+- **@warning_ignore** **(** :ref:`String<class_String>` warning, ... **)** |vararg|
+
+Mark the following statement to ignore the specified warning. See :doc:`GDScript warning system <../tutorials/scripting/gdscript/warning_system>`.
+
+::
+
+    func test():
+        print("hello")
+        return
+        @warning_ignore("unreachable_code")
+        print("unreachable")
 
 Method Descriptions
 -------------------
@@ -315,11 +580,11 @@ Converts from a type to another in the best way possible. The ``type`` parameter
 
 ----
 
-.. _class_@GDScript_method_dict2inst:
+.. _class_@GDScript_method_dict_to_inst:
 
-- :ref:`Object<class_Object>` **dict2inst** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)**
+- :ref:`Object<class_Object>` **dict_to_inst** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)**
 
-Converts a dictionary (previously created with :ref:`inst2dict<class_@GDScript_method_inst2dict>`) back to an instance. Useful for deserializing.
+Converts a ``dictionary`` (previously created with :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>`) back to an Object instance. Useful for deserializing.
 
 ----
 
@@ -350,17 +615,17 @@ would print
 
 ----
 
-.. _class_@GDScript_method_inst2dict:
+.. _class_@GDScript_method_inst_to_dict:
 
-- :ref:`Dictionary<class_Dictionary>` **inst2dict** **(** :ref:`Object<class_Object>` instance **)**
+- :ref:`Dictionary<class_Dictionary>` **inst_to_dict** **(** :ref:`Object<class_Object>` instance **)**
 
-Returns the passed instance converted to a dictionary (useful for serializing).
+Returns the passed ``instance`` converted to a Dictionary (useful for serializing).
 
 ::
 
     var foo = "bar"
     func _ready():
-        var d = inst2dict(self)
+        var d = inst_to_dict(self)
         print(d.keys())
         print(d.values())
 
@@ -533,6 +798,13 @@ Converts one or more arguments to string in the best way possible.
 .. _class_@GDScript_method_type_exists:
 
 - :ref:`bool<class_bool>` **type_exists** **(** :ref:`StringName<class_StringName>` type **)**
+
+Returns whether the given :ref:`Object<class_Object>`-derived class exists in :ref:`ClassDB<class_ClassDB>`. Note that :ref:`Variant<class_Variant>` data types are not registered in :ref:`ClassDB<class_ClassDB>`.
+
+::
+
+    type_exists("Sprite2D") # Returns true
+    type_exists("NonExistentClass") # Returns false
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

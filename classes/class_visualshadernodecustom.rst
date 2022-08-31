@@ -138,7 +138,7 @@ Defining this method is **optional**.
 
 - :ref:`int<class_int>` **_get_input_port_count** **(** **)** |virtual| |const|
 
-Override this method to define the amount of input ports of the associated custom node.
+Override this method to define the number of input ports of the associated custom node.
 
 Defining this method is **required**. If not overridden, the node has no input ports.
 
@@ -178,7 +178,7 @@ Defining this method is **optional**, but recommended. If not overridden, the no
 
 - :ref:`int<class_int>` **_get_output_port_count** **(** **)** |virtual| |const|
 
-Override this method to define the amount of output ports of the associated custom node.
+Override this method to define the number of output ports of the associated custom node.
 
 Defining this method is **required**. If not overridden, the node has no output ports.
 

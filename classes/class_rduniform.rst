@@ -26,13 +26,13 @@ Properties
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------+
-| void                      | :ref:`add_id<class_RDUniform_method_add_id>` **(** :ref:`RID<class_RID>` id **)** |
-+---------------------------+-----------------------------------------------------------------------------------+
-| void                      | :ref:`clear_ids<class_RDUniform_method_clear_ids>` **(** **)**                    |
-+---------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_ids<class_RDUniform_method_get_ids>` **(** **)** |const|                |
-+---------------------------+-----------------------------------------------------------------------------------+
++-------------------------+-----------------------------------------------------------------------------------+
+| void                    | :ref:`add_id<class_RDUniform_method_add_id>` **(** :ref:`RID<class_RID>` id **)** |
++-------------------------+-----------------------------------------------------------------------------------+
+| void                    | :ref:`clear_ids<class_RDUniform_method_clear_ids>` **(** **)**                    |
++-------------------------+-----------------------------------------------------------------------------------+
+| :ref:`RID[]<class_RID>` | :ref:`get_ids<class_RDUniform_method_get_ids>` **(** **)** |const|                |
++-------------------------+-----------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -80,7 +80,7 @@ Method Descriptions
 
 .. _class_RDUniform_method_get_ids:
 
-- :ref:`Array<class_Array>` **get_ids** **(** **)** |const|
+- :ref:`RID[]<class_RID>` **get_ids** **(** **)** |const|
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

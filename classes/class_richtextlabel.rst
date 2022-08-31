@@ -62,8 +62,6 @@ Properties
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>`                   | ``false``                                                                 |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                   | :ref:`percent_visible<class_RichTextLabel_property_percent_visible>`                                             | ``1.0``                                                                   |
-+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                       | :ref:`progress_bar_delay<class_RichTextLabel_property_progress_bar_delay>`                                       | ``1000``                                                                  |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                                 | ``true``                                                                  |
@@ -89,6 +87,8 @@ Properties
 | :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                                       | ``-1``                                                                    |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_RichTextLabel_property_visible_characters_behavior>`                     | ``0``                                                                     |
++-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                                   | :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>`                                                 | ``1.0``                                                                   |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Methods
@@ -612,24 +612,6 @@ If ``true``, the label uses the custom font color.
 
 ----
 
-.. _class_RichTextLabel_property_percent_visible:
-
-- :ref:`float<class_float>` **percent_visible**
-
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_percent_visible(value) |
-+-----------+----------------------------+
-| *Getter*  | get_percent_visible()      |
-+-----------+----------------------------+
-
-The range of characters to display, as a :ref:`float<class_float>` between 0.0 and 1.0. When assigned an out of range value, it's the same as assigning 1.0.
-
-\ **Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
-
-----
-
 .. _class_RichTextLabel_property_progress_bar_delay:
 
 - :ref:`int<class_int>` **progress_bar_delay**
@@ -822,9 +804,9 @@ If ``true``, text processing is done in a background thread.
 | *Getter*  | get_visible_characters()      |
 +-----------+-------------------------------+
 
-The restricted number of characters to display in the label. If ``-1``, all characters will be displayed.
+The number of characters to display. If set to ``-1``, all characters are displayed. This can be useful when animating the text appearing in a dialog box.
 
-\ **Note:** Setting this property updates :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` based on current :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`.
+\ **Note:** Setting this property updates :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` accordingly.
 
 ----
 
@@ -840,7 +822,25 @@ The restricted number of characters to display in the label. If ``-1``, all char
 | *Getter*  | get_visible_characters_behavior()      |
 +-----------+----------------------------------------+
 
-Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`percent_visible<class_RichTextLabel_property_percent_visible>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` or :ref:`visible_ratio<class_RichTextLabel_property_visible_ratio>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+
+----
+
+.. _class_RichTextLabel_property_visible_ratio:
+
+- :ref:`float<class_float>` **visible_ratio**
+
++-----------+--------------------------+
+| *Default* | ``1.0``                  |
++-----------+--------------------------+
+| *Setter*  | set_visible_ratio(value) |
++-----------+--------------------------+
+| *Getter*  | get_visible_ratio()      |
++-----------+--------------------------+
+
+The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count<class_RichTextLabel_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
+
+\ **Note:** Setting this property updates :ref:`visible_characters<class_RichTextLabel_property_visible_characters>` accordingly.
 
 Method Descriptions
 -------------------

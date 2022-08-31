@@ -104,9 +104,9 @@ Called for this plugin's active gizmos.
 
 - void **_commit_subgizmos** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`PackedInt32Array<class_PackedInt32Array>` ids, :ref:`Transform3D[]<class_Transform3D>` restores, :ref:`bool<class_bool>` cancel **)** |virtual|
 
-Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restore`` transforms as "undo".
+Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restores`` transforms as "undo".
 
-If the ``cancel`` argument is ``true``, the ``restore`` transforms should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action. As with all subgizmo methods, transforms are given in local space respect to the gizmo's Node3D. Called for this plugin's active gizmos.
+If the ``cancel`` argument is ``true``, the ``restores`` transforms should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action. As with all subgizmo methods, transforms are given in local space respect to the gizmo's Node3D. Called for this plugin's active gizmos.
 
 ----
 
@@ -200,7 +200,7 @@ Override this method to add all the gizmo elements whenever a gizmo update is re
 
 - void **_set_handle** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`int<class_int>` handle_id, :ref:`bool<class_bool>` secondary, :ref:`Camera3D<class_Camera3D>` camera, :ref:`Vector2<class_Vector2>` screen_pos **)** |virtual|
 
-Override this method to update the node's properties when the user drags a gizmo handle (previously added with :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>`). The provided ``point`` is the mouse position in screen coordinates and the ``camera`` can be used to convert it to raycasts.
+Override this method to update the node's properties when the user drags a gizmo handle (previously added with :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>`). The provided ``screen_pos`` is the mouse position in screen coordinates and the ``camera`` can be used to convert it to raycasts.
 
 The ``secondary`` argument is ``true`` when the edited handle is secondary (see :ref:`EditorNode3DGizmo.add_handles<class_EditorNode3DGizmo_method_add_handles>` for more information).
 
@@ -220,7 +220,7 @@ Override this method to update the node properties during subgizmo editing (see 
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_subgizmos_intersect_frustum** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`Camera3D<class_Camera3D>` camera, :ref:`Plane[]<class_Plane>` frustum_planes **)** |virtual| |const|
 
-Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and a ``frustum``, this method should return which subgizmos are contained within the frustum. The ``frustum`` argument consists of an ``Array`` with all the ``Plane``\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`.  Called for this plugin's active gizmos.
+Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and ``frustum_planes``, this method should return which subgizmos are contained within the frustums. The ``frustum_planes`` argument consists of an ``Array`` with all the ``Plane``\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`.  Called for this plugin's active gizmos.
 
 ----
 
@@ -228,7 +228,7 @@ Override this method to allow selecting subgizmos using mouse drag box selection
 
 - :ref:`int<class_int>` **_subgizmos_intersect_ray** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`Camera3D<class_Camera3D>` camera, :ref:`Vector2<class_Vector2>` screen_pos **)** |virtual| |const|
 
-Override this method to allow selecting subgizmos using mouse clicks. Given a ``camera`` and a ``point`` in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`. Called for this plugin's active gizmos.
+Override this method to allow selecting subgizmos using mouse clicks. Given a ``camera`` and a ``screen_pos`` in screen coordinates, this method should return which subgizmo should be selected. The returned value should be a unique subgizmo identifier, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`. Called for this plugin's active gizmos.
 
 ----
 

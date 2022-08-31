@@ -138,7 +138,7 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_caption** **(** **)** |virtual| |const|
 
-Gets the text caption for this node (used by some editors).
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to override the text caption for this node.
 
 ----
 
@@ -146,7 +146,7 @@ Gets the text caption for this node (used by some editors).
 
 - :ref:`AnimationNode<class_AnimationNode>` **_get_child_by_name** **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|
 
-Gets a child node by index (used by editors inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`).
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a child node by its ``name``.
 
 ----
 
@@ -154,7 +154,7 @@ Gets a child node by index (used by editors inheriting from :ref:`AnimationRootN
 
 - :ref:`Dictionary<class_Dictionary>` **_get_child_nodes** **(** **)** |virtual| |const|
 
-Gets all children nodes in order as a ``name: node`` dictionary. Only useful when inheriting :ref:`AnimationRootNode<class_AnimationRootNode>`.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all children nodes in order as a ``name: node`` dictionary.
 
 ----
 
@@ -162,7 +162,7 @@ Gets all children nodes in order as a ``name: node`` dictionary. Only useful whe
 
 - :ref:`Variant<class_Variant>` **_get_parameter_default_value** **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|
 
-Gets the default value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return the default value of a ``parameter``. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
 ----
 
@@ -170,7 +170,7 @@ Gets the default value of a parameter. Parameters are custom local memory used f
 
 - :ref:`Array<class_Array>` **_get_parameter_list** **(** **)** |virtual| |const|
 
-Gets the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this node. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
 ----
 
@@ -178,7 +178,7 @@ Gets the property information for parameter. Parameters are custom local memory 
 
 - :ref:`bool<class_bool>` **_has_filter** **(** **)** |virtual| |const|
 
-Returns whether you want the blend tree editor to display filter editing on this node.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the blend tree editor should display filter editing on this node.
 
 ----
 
@@ -186,7 +186,7 @@ Returns whether you want the blend tree editor to display filter editing on this
 
 - :ref:`float<class_float>` **_process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root **)** |virtual| |const|
 
-User-defined callback called when a custom node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to run some code when this node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
 Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
 
@@ -206,7 +206,7 @@ Adds an input to the node. This is only useful for nodes created for use in an :
 
 - void **blend_animation** **(** :ref:`StringName<class_StringName>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`int<class_int>` pingponged=0 **)**
 
-Blend an animation by ``blend`` amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A ``time`` and ``delta`` may be passed, as well as whether ``seek`` happened.
+Blend an animation by ``blend`` amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A ``time`` and ``delta`` may be passed, as well as whether ``seeked`` happened.
 
 ----
 

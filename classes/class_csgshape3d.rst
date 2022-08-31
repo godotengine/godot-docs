@@ -38,6 +38,8 @@ Properties
 +---------------------------------------------+-------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                       | :ref:`collision_mask<class_CSGShape3D_property_collision_mask>`         | ``1``     |
 +---------------------------------------------+-------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                   | :ref:`collision_priority<class_CSGShape3D_property_collision_priority>` | ``1.0``   |
++---------------------------------------------+-------------------------------------------------------------------------+-----------+
 | :ref:`Operation<enum_CSGShape3D_Operation>` | :ref:`operation<class_CSGShape3D_property_operation>`                   | ``0``     |
 +---------------------------------------------+-------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                   | :ref:`snap<class_CSGShape3D_property_snap>`                             | ``0.001`` |
@@ -133,6 +135,20 @@ A contact is detected if object A is in any of the layers that object B scans, o
 +-----------+---------------------------+
 
 The physics layers this CSG shape scans for collisions. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+
+----
+
+.. _class_CSGShape3D_property_collision_priority:
+
+- :ref:`float<class_float>` **collision_priority**
+
++-----------+-------------------------------+
+| *Default* | ``1.0``                       |
++-----------+-------------------------------+
+| *Setter*  | set_collision_priority(value) |
++-----------+-------------------------------+
+| *Getter*  | get_collision_priority()      |
++-----------+-------------------------------+
 
 ----
 

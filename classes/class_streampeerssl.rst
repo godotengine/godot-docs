@@ -109,7 +109,7 @@ Accepts a peer connection as a server using the given ``private_key`` and provid
 
 Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the ``for_hostname``.
 
-\ **Note:** Specifying a custom ``valid_certificate`` is not supported in HTML5 exports due to browsers restrictions.
+\ **Note:** Specifying a custom ``valid_certificate`` is not supported in Web exports due to browsers restrictions.
 
 ----
 

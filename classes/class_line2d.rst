@@ -60,19 +60,19 @@ Properties
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` at_position=-1 **)**      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                             |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** |const|                                                               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` i **)** |const|                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_point<class_Line2D_method_remove_point>` **(** :ref:`int<class_int>` i **)**                                                     |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_point_position<class_Line2D_method_set_point_position>` **(** :ref:`int<class_int>` i, :ref:`Vector2<class_Vector2>` position **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` index=-1 **)**                |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** |const|                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` index **)** |const|                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_point<class_Line2D_method_remove_point>` **(** :ref:`int<class_int>` index **)**                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_point_position<class_Line2D_method_set_point_position>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -341,11 +341,11 @@ Method Descriptions
 
 .. _class_Line2D_method_add_point:
 
-- void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` at_position=-1 **)**
+- void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` index=-1 **)**
 
-Adds a point at the ``position``. Appends the point at the end of the line.
+Adds a point with the specified ``position`` relative to the line's own position. Appends the new point at the end of the point list.
 
-If ``at_position`` is given, the point is inserted before the point number ``at_position``, moving that point (and every point after) after the inserted point. If ``at_position`` is not given, or is an illegal value (``at_position < 0`` or ``at_position >= [method get_point_count]``), the point will be appended at the end of the point list.
+If ``index`` is given, the new point is inserted before the existing point identified by index ``index``. Every existing point starting from ``index`` is shifted further down the list of points. The index must be greater than or equal to ``0`` and must not exceed the number of existing points in the line. See :ref:`get_point_count<class_Line2D_method_get_point_count>`.
 
 ----
 
@@ -361,31 +361,31 @@ Removes all points from the line.
 
 - :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
-Returns the Line2D's amount of points.
+Returns the number of points in the line.
 
 ----
 
 .. _class_Line2D_method_get_point_position:
 
-- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** |const|
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns point ``i``'s position.
+Returns the position of the point at index ``index``.
 
 ----
 
 .. _class_Line2D_method_remove_point:
 
-- void **remove_point** **(** :ref:`int<class_int>` i **)**
+- void **remove_point** **(** :ref:`int<class_int>` index **)**
 
-Removes the point at index ``i`` from the line.
+Removes the point at index ``index`` from the line.
 
 ----
 
 .. _class_Line2D_method_set_point_position:
 
-- void **set_point_position** **(** :ref:`int<class_int>` i, :ref:`Vector2<class_Vector2>` position **)**
+- void **set_point_position** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
 
-Overwrites the position in point ``i`` with the supplied ``position``.
+Overwrites the position of the point at index ``index`` with the supplied ``position``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

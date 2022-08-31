@@ -37,6 +37,8 @@ Properties
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
 | :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` | :ref:`switch_mode<class_AnimationNodeStateMachineTransition_property_switch_mode>`                                   | ``0``            |
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
+| :ref:`Curve<class_Curve>`                                              | :ref:`xfade_curve<class_AnimationNodeStateMachineTransition_property_xfade_curve>`                                   |                  |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
 | :ref:`float<class_float>`                                              | :ref:`xfade_time<class_AnimationNodeStateMachineTransition_property_xfade_time>`                                     | ``0.0``          |
 +------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
 
@@ -83,7 +85,7 @@ Property Descriptions
 | *Getter*  | get_advance_condition()      |
 +-----------+------------------------------+
 
-Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see `#controlling-from-code <../tutorials/animation/animation_tree.html#controlling-from-code>`__ in :doc:`../tutorials/animation/animation_tree`). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to ``"idle"``:
+Turn on auto advance when this condition is set. The provided name will become a boolean parameter on the :ref:`AnimationTree<class_AnimationTree>` that can be controlled from code (see `Using AnimationTree <../tutorials/animation/animation_tree.html#controlling-from-code>`__). For example, if :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` is an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` and :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` is set to ``"idle"``:
 
 
 .. tabs::
@@ -193,6 +195,20 @@ Lower priority transitions are preferred when travelling through the tree via :r
 +-----------+------------------------+
 
 The transition type.
+
+----
+
+.. _class_AnimationNodeStateMachineTransition_property_xfade_curve:
+
+- :ref:`Curve<class_Curve>` **xfade_curve**
+
++----------+------------------------+
+| *Setter* | set_xfade_curve(value) |
++----------+------------------------+
+| *Getter* | get_xfade_curve()      |
++----------+------------------------+
+
+Ease curve for better control over cross-fade between this state and the next.
 
 ----
 

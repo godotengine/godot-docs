@@ -19,7 +19,7 @@ Description
 
 *Root motion* refers to an animation technique where a mesh's skeleton is used to give impulse to a character. When working with 3D animations, a popular technique is for animators to use the root skeleton bone to give motion to the rest of the skeleton. This allows animating characters in a way where steps actually match the floor below. It also allows precise interaction with objects during cinematics. See also :ref:`AnimationTree<class_AnimationTree>`.
 
-\ **Note:** ``RootMotionView`` is only visible in the editor. It will be hidden automatically in the running project, and will also be converted to a plain :ref:`Node<class_Node>` in the running project. This means a script attached to a ``RootMotionView`` node *must* have ``extends Node`` instead of ``extends RootMotionView``. Additionally, it must not be a ``@tool`` script.
+\ **Note:** ``RootMotionView`` is only visible in the editor. It will be hidden automatically in the running project.
 
 Tutorials
 ---------
@@ -29,17 +29,17 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`animation_path<class_RootMotionView_property_animation_path>` |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`cell_size<class_RootMotionView_property_cell_size>`           |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`color<class_RootMotionView_property_color>`                   |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`radius<class_RootMotionView_property_radius>`                 |
-+---------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`zero_y<class_RootMotionView_property_zero_y>`                 |
-+---------------------------------+---------------------------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------+---------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`animation_path<class_RootMotionView_property_animation_path>` | ``NodePath("")``          |
++---------------------------------+---------------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>`       | :ref:`cell_size<class_RootMotionView_property_cell_size>`           | ``1.0``                   |
++---------------------------------+---------------------------------------------------------------------+---------------------------+
+| :ref:`Color<class_Color>`       | :ref:`color<class_RootMotionView_property_color>`                   | ``Color(0.5, 0.5, 1, 1)`` |
++---------------------------------+---------------------------------------------------------------------+---------------------------+
+| :ref:`float<class_float>`       | :ref:`radius<class_RootMotionView_property_radius>`                 | ``10.0``                  |
++---------------------------------+---------------------------------------------------------------------+---------------------------+
+| :ref:`bool<class_bool>`         | :ref:`zero_y<class_RootMotionView_property_zero_y>`                 | ``true``                  |
++---------------------------------+---------------------------------------------------------------------+---------------------------+
 
 Property Descriptions
 ---------------------
@@ -48,11 +48,13 @@ Property Descriptions
 
 - :ref:`NodePath<class_NodePath>` **animation_path**
 
-+----------+---------------------------+
-| *Setter* | set_animation_path(value) |
-+----------+---------------------------+
-| *Getter* | get_animation_path()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ``NodePath("")``          |
++-----------+---------------------------+
+| *Setter*  | set_animation_path(value) |
++-----------+---------------------------+
+| *Getter*  | get_animation_path()      |
++-----------+---------------------------+
 
 Path to an :ref:`AnimationTree<class_AnimationTree>` node to use as a basis for root motion.
 
@@ -62,11 +64,13 @@ Path to an :ref:`AnimationTree<class_AnimationTree>` node to use as a basis for 
 
 - :ref:`float<class_float>` **cell_size**
 
-+----------+----------------------+
-| *Setter* | set_cell_size(value) |
-+----------+----------------------+
-| *Getter* | get_cell_size()      |
-+----------+----------------------+
++-----------+----------------------+
+| *Default* | ``1.0``              |
++-----------+----------------------+
+| *Setter*  | set_cell_size(value) |
++-----------+----------------------+
+| *Getter*  | get_cell_size()      |
++-----------+----------------------+
 
 The grid's cell size in 3D units.
 
@@ -76,11 +80,13 @@ The grid's cell size in 3D units.
 
 - :ref:`Color<class_Color>` **color**
 
-+----------+------------------+
-| *Setter* | set_color(value) |
-+----------+------------------+
-| *Getter* | get_color()      |
-+----------+------------------+
++-----------+---------------------------+
+| *Default* | ``Color(0.5, 0.5, 1, 1)`` |
++-----------+---------------------------+
+| *Setter*  | set_color(value)          |
++-----------+---------------------------+
+| *Getter*  | get_color()               |
++-----------+---------------------------+
 
 The grid's color.
 
@@ -90,11 +96,13 @@ The grid's color.
 
 - :ref:`float<class_float>` **radius**
 
-+----------+-------------------+
-| *Setter* | set_radius(value) |
-+----------+-------------------+
-| *Getter* | get_radius()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ``10.0``          |
++-----------+-------------------+
+| *Setter*  | set_radius(value) |
++-----------+-------------------+
+| *Getter*  | get_radius()      |
++-----------+-------------------+
 
 The grid's radius in 3D units. The grid's opacity will fade gradually as the distance from the origin increases until this :ref:`radius<class_RootMotionView_property_radius>` is reached.
 
@@ -104,11 +112,13 @@ The grid's radius in 3D units. The grid's opacity will fade gradually as the dis
 
 - :ref:`bool<class_bool>` **zero_y**
 
-+----------+-------------------+
-| *Setter* | set_zero_y(value) |
-+----------+-------------------+
-| *Getter* | get_zero_y()      |
-+----------+-------------------+
++-----------+-------------------+
+| *Default* | ``true``          |
++-----------+-------------------+
+| *Setter*  | set_zero_y(value) |
++-----------+-------------------+
+| *Getter*  | get_zero_y()      |
++-----------+-------------------+
 
 If ``true``, the grid's points will all be on the same Y coordinate (*local* Y = 0). If ``false``, the points' original Y coordinate is preserved.
 

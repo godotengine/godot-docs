@@ -100,7 +100,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_8<class_File_method_get_8>` **(** **)** |const|                                                                                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`get_as_text<class_File_method_get_as_text>` **(** **)** |const|                                                                                                                                                          |
+| :ref:`String<class_String>`                       | :ref:`get_as_text<class_File_method_get_as_text>` **(** :ref:`bool<class_bool>` skip_cr=false **)** |const|                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`get_buffer<class_File_method_get_buffer>` **(** :ref:`int<class_int>` length **)** |const|                                                                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -333,11 +333,11 @@ Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_Fil
 
 .. _class_File_method_get_as_text:
 
-- :ref:`String<class_String>` **get_as_text** **(** **)** |const|
+- :ref:`String<class_String>` **get_as_text** **(** :ref:`bool<class_bool>` skip_cr=false **)** |const|
 
-Returns the whole file as a :ref:`String<class_String>`.
+Returns the whole file as a :ref:`String<class_String>`. Text is interpreted as being UTF-8 encoded.
 
-Text is interpreted as being UTF-8 encoded.
+If ``skip_cr`` is ``true``, carriage return characters (``\r``, CR) will be ignored when parsing the UTF-8, so that only line feed characters (``\n``, LF) represent a new line (Unix convention).
 
 ----
 

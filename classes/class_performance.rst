@@ -30,21 +30,21 @@ You can add custom monitors using the :ref:`add_custom_monitor<class_Performance
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringName[]<class_StringName>` | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -133,13 +133,13 @@ enum **Monitor**:
 
 - **RENDER_BUFFER_MEM_USED** = **15** --- The amount of render buffer memory used (in bytes). *Lower is better.*
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidDynamicBody2D<class_RigidDynamicBody2D>` nodes in the game. *Lower is better.*
+- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game. *Lower is better.*
 
 - **PHYSICS_2D_COLLISION_PAIRS** = **17** --- Number of collision pairs in the 2D physics engine. *Lower is better.*
 
 - **PHYSICS_2D_ISLAND_COUNT** = **18** --- Number of islands in the 2D physics engine. *Lower is better.*
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
+- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
 
 - **PHYSICS_3D_COLLISION_PAIRS** = **20** --- Number of collision pairs in the 3D physics engine. *Lower is better.*
 
@@ -226,7 +226,7 @@ Returns the value of custom monitor with given ``id``. The callable is called to
 
 .. _class_Performance_method_get_custom_monitor_names:
 
-- :ref:`Array<class_Array>` **get_custom_monitor_names** **(** **)**
+- :ref:`StringName[]<class_StringName>` **get_custom_monitor_names** **(** **)**
 
 Returns the names of active custom monitors in an :ref:`Array<class_Array>`.
 

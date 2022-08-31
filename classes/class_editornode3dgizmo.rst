@@ -91,9 +91,9 @@ The ``secondary`` argument is ``true`` when the committed handle is secondary (s
 
 - void **_commit_subgizmos** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` ids, :ref:`Transform3D[]<class_Transform3D>` restores, :ref:`bool<class_bool>` cancel **)** |virtual|
 
-Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmo_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmo_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restore`` transforms as "undo".
+Override this method to commit a group of subgizmos being edited (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmo_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmo_method__subgizmos_intersect_frustum>`). This usually means creating an :ref:`UndoRedo<class_UndoRedo>` action for the change, using the current transforms as "do" and the ``restores`` transforms as "undo".
 
-If the ``cancel`` argument is ``true``, the ``restore`` transforms should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action.
+If the ``cancel`` argument is ``true``, the ``restores`` transforms should be directly set, without any :ref:`UndoRedo<class_UndoRedo>` action.
 
 ----
 
@@ -199,7 +199,7 @@ Adds collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_Tr
 
 Adds a list of handles (points) which can be used to edit the properties of the gizmo's Node3D. The ``ids`` argument can be used to specify a custom identifier for each handle, if an empty ``Array`` is passed, the ids will be assigned automatically from the ``handles`` argument order.
 
-The ``secondary`` argument marks the added handles as secondary, meaning they will normally have less selection priority than regular handles. When the user is holding the shift key secondary handles will switch to have higher priority than regular handles. This change in priority can be used to place multiple handles at the same point while still giving the user control on their selection.
+The ``secondary`` argument marks the added handles as secondary, meaning they will normally have lower selection priority than regular handles. When the user is holding the shift key secondary handles will switch to have higher priority than regular handles. This change in priority can be used to place multiple handles at the same point while still giving the user control on their selection.
 
 There are virtual methods which will be called upon editing of these handles. Call this method during :ref:`_redraw<class_EditorNode3DGizmo_method__redraw>`.
 

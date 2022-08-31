@@ -62,7 +62,7 @@ Property Descriptions
 | *Getter*  | get_bake_mask()      |
 +-----------+----------------------+
 
-The visual layers to account for when baking for occluders. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` will be included in the generated occluder mesh. By default, all objects are taken into account for the occluder baking.
+The visual layers to account for when baking for occluders. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` will be included in the generated occluder mesh. By default, all objects with *opaque* materials are taken into account for the occluder baking.
 
 To improve performance and avoid artifacts, it is recommended to exclude dynamic objects, small objects and fixtures from the baking process by moving them to a separate visual layer and excluding this layer in :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>`.
 

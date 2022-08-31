@@ -17,7 +17,7 @@ Enables certain nodes only when approximately visible.
 Description
 -----------
 
-The VisibleOnScreenEnabler3D will disable :ref:`RigidDynamicBody3D<class_RigidDynamicBody3D>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibleOnScreenEnabler3D itself.
+The VisibleOnScreenEnabler3D will disable :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibleOnScreenEnabler3D itself.
 
 If you just want to receive notifications, use :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` instead.
 

@@ -140,7 +140,7 @@ Methods
 -------
 
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`_get_import_options<class_EditorImportPlugin_method__get_import_options>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` preset_index **)** |virtual| |const|                                                                                                                  |
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_import_options<class_EditorImportPlugin_method__get_import_options>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` preset_index **)** |virtual| |const|                                                                                                                  |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`_get_import_order<class_EditorImportPlugin_method__get_import_order>` **(** **)** |virtual| |const|                                                                                                                                                                                           |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,7 +170,7 @@ Method Descriptions
 
 .. _class_EditorImportPlugin_method__get_import_options:
 
-- :ref:`Array<class_Array>` **_get_import_options** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` preset_index **)** |virtual| |const|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_import_options** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` preset_index **)** |virtual| |const|
 
 Gets the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: ``name``, ``default_value``, ``property_hint`` (optional), ``hint_string`` (optional), ``usage`` (optional).
 

@@ -97,7 +97,7 @@ Returns if the base tile at coordinates ``atlas_coords`` has an alternative with
 
 - :ref:`bool<class_bool>` **has_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|
 
-Returns if this atlas has a tile with coordinates ID ``atlas_coordinates``.
+Returns if this atlas has a tile with coordinates ID ``atlas_coords``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

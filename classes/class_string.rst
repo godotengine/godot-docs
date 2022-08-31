@@ -155,7 +155,7 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`pad_zeros<class_String_method_pad_zeros>` **(** :ref:`int<class_int>` digits **)** |const|                                                                                 |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                         | :ref:`plus_file<class_String_method_plus_file>` **(** :ref:`String<class_String>` file **)** |const|                                                                             |
+| :ref:`String<class_String>`                         | :ref:`path_join<class_String_method_path_join>` **(** :ref:`String<class_String>` file **)** |const|                                                                             |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`repeat<class_String_method_repeat>` **(** :ref:`int<class_int>` count **)** |const|                                                                                        |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -199,11 +199,17 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>` **(** **)** |const|                                                                                                  |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`to_camel_case<class_String_method_to_camel_case>` **(** **)** |const|                                                                                                      |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                           | :ref:`to_float<class_String_method_to_float>` **(** **)** |const|                                                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`to_int<class_String_method_to_int>` **(** **)** |const|                                                                                                                    |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`to_lower<class_String_method_to_lower>` **(** **)** |const|                                                                                                                |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`to_pascal_case<class_String_method_to_pascal_case>` **(** **)** |const|                                                                                                    |
++-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`to_snake_case<class_String_method_to_snake_case>` **(** **)** |const|                                                                                                      |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                         | :ref:`to_upper<class_String_method_to_upper>` **(** **)** |const|                                                                                                                |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -244,9 +250,9 @@ Operators
 +-----------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>` | :ref:`operator +<class_String_operator_sum_String>` **(** :ref:`int<class_int>` right **)**              |
 +-----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`operator <<class_String_operator_lt_bool>` **(** :ref:`String<class_String>` right **)**           |
+| :ref:`bool<class_bool>`     | :ref:`operator \<<class_String_operator_lt_bool>` **(** :ref:`String<class_String>` right **)**          |
 +-----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`operator <=<class_String_operator_lte_bool>` **(** :ref:`String<class_String>` right **)**         |
+| :ref:`bool<class_bool>`     | :ref:`operator \<=<class_String_operator_lte_bool>` **(** :ref:`String<class_String>` right **)**        |
 +-----------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`     | :ref:`operator ==<class_String_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**          |
 +-----------------------------+----------------------------------------------------------------------------------------------------------+
@@ -463,7 +469,7 @@ Returns the index of the **first** case-insensitive occurrence of the specified 
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -620,7 +626,7 @@ For example, the string can be indented with two tabs using ``"\t\t"``, or four 
 
 - :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)** |const|
 
-Returns a copy of the string with the substring ``what`` inserted at the given position.
+Returns a copy of the string with the substring ``what`` inserted at the given ``position``.
 
 ----
 
@@ -793,7 +799,7 @@ Examples:
 
 - :ref:`int<class_int>` **length** **(** **)** |const|
 
-Returns the string's amount of characters.
+Returns the number of characters in the string.
 
 ----
 
@@ -801,7 +807,7 @@ Returns the string's amount of characters.
 
 - :ref:`String<class_String>` **lpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``\ s to the left of the string.
+Formats a string to be at least ``min_length`` long by adding ``character``s to the left of the string.
 
 ----
 
@@ -897,7 +903,7 @@ Some examples:
     # Last digit will be rounded up here, which reduces total digit count since
     # trailing zeros are removed:
     String.num(42.129999, 5) # "42.13"
-    # If `decimals` is not specified, the total amount of significant digits is 14:
+    # If `decimals` is not specified, the total number of significant digits is 14:
     String.num(-0.0000012345432123454321)     # "-0.00000123454321"
     String.num(-10000.0000012345432123454321) # "-10000.0000012345"
 
@@ -941,11 +947,11 @@ Formats a number to have an exact number of ``digits`` before the decimal point.
 
 ----
 
-.. _class_String_method_plus_file:
+.. _class_String_method_path_join:
 
-- :ref:`String<class_String>` **plus_file** **(** :ref:`String<class_String>` file **)** |const|
+- :ref:`String<class_String>` **path_join** **(** :ref:`String<class_String>` file **)** |const|
 
-If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".plus_file("path") == "this/is/path"``.
+If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".path_join("path") == "this/is/path"``.
 
 ----
 
@@ -1008,7 +1014,7 @@ Examples:
 
 - :ref:`String<class_String>` **rpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``\ s to the right of the string.
+Formats a string to be at least ``min_length`` long by adding ``character``s to the right of the string.
 
 ----
 
@@ -1019,6 +1025,8 @@ Formats a string to be at least ``min_length`` long by adding ``character``\ s t
 Splits the string by a ``delimiter`` string and returns an array of the substrings, starting from right.
 
 The splits in the returned array are sorted in the same order as the original string, from left to right.
+
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
 
 If ``maxsplit`` is specified, it defines the number of splits to do from the right up to ``maxsplit``. The default value of 0 means that all items are split, thus giving the same result as :ref:`split<class_String_method_split>`.
 
@@ -1114,6 +1122,8 @@ Returns a simplified canonical path.
 
 Splits the string by a ``delimiter`` string and returns an array of the substrings. The ``delimiter`` can be of any length.
 
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+
 If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of ``0`` means that all items are split.
 
 If you need only one element from the array at a specific index, :ref:`get_slice<class_String_method_get_slice>` is a more performant option.
@@ -1152,6 +1162,8 @@ Splits the string in floats by using a delimiter string and returns an array of 
 
 For example, ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
 
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+
 ----
 
 .. _class_String_method_strip_edges:
@@ -1183,6 +1195,14 @@ Returns part of the string from the position ``from`` with length ``len``. Argum
 - :ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer** **(** **)** |const|
 
 Converts the String (which is a character array) to ASCII/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>` (which is an array of bytes). The conversion is faster compared to :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>`, as this method assumes that all the characters in the String are ASCII/Latin-1 characters, unsupported characters are replaced with spaces.
+
+----
+
+.. _class_String_method_to_camel_case:
+
+- :ref:`String<class_String>` **to_camel_case** **(** **)** |const|
+
+Returns the string converted to ``camelCase``.
 
 ----
 
@@ -1220,6 +1240,22 @@ Converts a string containing an integer number into an ``int``. The method will 
 - :ref:`String<class_String>` **to_lower** **(** **)** |const|
 
 Returns the string converted to lowercase.
+
+----
+
+.. _class_String_method_to_pascal_case:
+
+- :ref:`String<class_String>` **to_pascal_case** **(** **)** |const|
+
+Returns the string converted to ``PascalCase``.
+
+----
+
+.. _class_String_method_to_snake_case:
+
+- :ref:`String<class_String>` **to_snake_case** **(** **)** |const|
+
+Returns the string converted to ``snake_case``.
 
 ----
 

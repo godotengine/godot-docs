@@ -21,7 +21,7 @@ A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. For a
 
 ::
 
-    var image = Image.load_from_file("res://icon.png")
+    var image = Image.load_from_file("res://icon.svg")
     var texture = ImageTexture.create_from_image(image)
     $Sprite2D.texture = texture
 
@@ -31,7 +31,7 @@ This way, textures can be created at run-time by loading images both from within
 
 ::
 
-    var texture = load("res://icon.png")
+    var texture = load("res://icon.svg")
     $Sprite2D.texture = texture
 
 This is because images have to be imported as a :ref:`CompressedTexture2D<class_CompressedTexture2D>` first to be loaded with :ref:`@GDScript.load<class_@GDScript_method_load>`. If you'd still like to load an image file just like any other :ref:`Resource<class_Resource>`, import it as an :ref:`Image<class_Image>` resource instead, and then load it normally using the :ref:`@GDScript.load<class_@GDScript_method_load>` method.
@@ -40,7 +40,7 @@ This is because images have to be imported as a :ref:`CompressedTexture2D<class_
 
 ::
 
-    var texture = load("res://icon.png")
+    var texture = load("res://icon.svg")
     var image : Image = texture.get_image()
 
 An ``ImageTexture`` is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.

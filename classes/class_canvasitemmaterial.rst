@@ -176,7 +176,7 @@ The number of rows in the spritesheet assigned as :ref:`Texture2D<class_Texture2
 | *Getter*  | get_particles_animation()      |
 +-----------+--------------------------------+
 
-If ``true``, enable spritesheet-based animation features when assigned to :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`CPUParticles2D<class_CPUParticles2D>` nodes. The :ref:`ParticlesMaterial.anim_speed_max<class_ParticlesMaterial_property_anim_speed_max>` or :ref:`CPUParticles2D.anim_speed_max<class_CPUParticles2D_property_anim_speed_max>` should also be set to a positive value for the animation to play.
+If ``true``, enable spritesheet-based animation features when assigned to :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`CPUParticles2D<class_CPUParticles2D>` nodes. The :ref:`ParticleProcessMaterial.anim_speed_max<class_ParticleProcessMaterial_property_anim_speed_max>` or :ref:`CPUParticles2D.anim_speed_max<class_CPUParticles2D_property_anim_speed_max>` should also be set to a positive value for the animation to play.
 
 This property (and other ``particles_anim_*`` properties that depend on it) has no effect on other types of nodes.
 

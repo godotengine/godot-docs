@@ -105,6 +105,8 @@ Methods
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`body_get_collision_mask<class_PhysicsServer3D_method_body_get_collision_mask>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                            |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                         | :ref:`body_get_collision_priority<class_PhysicsServer3D_method_body_get_collision_priority>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                    |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                                     | :ref:`body_get_constant_force<class_PhysicsServer3D_method_body_get_constant_force>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                            |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                                     | :ref:`body_get_constant_torque<class_PhysicsServer3D_method_body_get_constant_torque>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                          |
@@ -148,6 +150,8 @@ Methods
 | void                                                              | :ref:`body_set_collision_layer<class_PhysicsServer3D_method_body_set_collision_layer>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**                                                                                                                                     |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_collision_mask<class_PhysicsServer3D_method_body_set_collision_mask>` **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**                                                                                                                                        |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`body_set_collision_priority<class_PhysicsServer3D_method_body_set_collision_priority>` **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` priority **)**                                                                                                                        |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`body_set_constant_force<class_PhysicsServer3D_method_body_set_constant_force>` **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**                                                                                                                               |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -763,9 +767,9 @@ enum **AreaSpaceOverrideMode**:
 
 .. _class_PhysicsServer3D_constant_BODY_MODE_KINEMATIC:
 
-.. _class_PhysicsServer3D_constant_BODY_MODE_DYNAMIC:
+.. _class_PhysicsServer3D_constant_BODY_MODE_RIGID:
 
-.. _class_PhysicsServer3D_constant_BODY_MODE_DYNAMIC_LINEAR:
+.. _class_PhysicsServer3D_constant_BODY_MODE_RIGID_LINEAR:
 
 enum **BodyMode**:
 
@@ -773,9 +777,9 @@ enum **BodyMode**:
 
 - **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies. In this mode, a body can be only moved by user code and collides with other bodies along its path.
 
-- **BODY_MODE_DYNAMIC** = **2** --- Constant for dynamic bodies. In this mode, a body can be pushed by other bodies and has forces applied.
+- **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies. In this mode, a body can be pushed by other bodies and has forces applied.
 
-- **BODY_MODE_DYNAMIC_LINEAR** = **3** --- Constant for linear dynamic bodies. In this mode, a body is dynamic but can not rotate, and only its linear velocity is affected by external forces.
+- **BODY_MODE_RIGID_LINEAR** = **3** --- Constant for linear rigid bodies. In this mode, a body can not rotate, and only its linear velocity is affected by external forces.
 
 ----
 
@@ -935,7 +939,7 @@ enum **SpaceParameter**:
 
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **6** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 
-- **SPACE_PARAM_SOLVER_ITERATIONS** = **7** --- Constant to set/get the number of solver iterations for contacts and constraints. The greater the amount of iterations, the more accurate the collisions and constraints will be. However, a greater amount of iterations requires more CPU power, which can decrease performance.
+- **SPACE_PARAM_SOLVER_ITERATIONS** = **7** --- Constant to set/get the number of solver iterations for contacts and constraints. The greater the number of iterations, the more accurate the collisions and constraints will be. However, a greater number of iterations requires more CPU power, which can decrease performance.
 
 ----
 
@@ -1190,7 +1194,7 @@ This is equivalent to using :ref:`body_add_constant_force<class_PhysicsServer3D_
 
 Adds a constant positioned force to the body that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector3(0, 0, 0))``.
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -1238,7 +1242,7 @@ This is equivalent to using :ref:`body_apply_impulse<class_PhysicsServer3D_metho
 
 Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -1250,7 +1254,7 @@ Applies a positioned impulse to the body.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-\ ``position`` is the offset from the body origin in global coordinates.
+``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -1307,6 +1311,14 @@ Returns the physics layer or layers a body belongs to.
 - :ref:`int<class_int>` **body_get_collision_mask** **(** :ref:`RID<class_RID>` body **)** |const|
 
 Returns the physics layer or layers a body can collide with.
+
+----
+
+.. _class_PhysicsServer3D_method_body_get_collision_priority:
+
+- :ref:`float<class_float>` **body_get_collision_priority** **(** :ref:`RID<class_RID>` body **)** |const|
+
+Returns the body's collision priority.
 
 ----
 
@@ -1488,6 +1500,14 @@ Sets the physics layer or layers a body can collide with.
 
 ----
 
+.. _class_PhysicsServer3D_method_body_set_collision_priority:
+
+- void **body_set_collision_priority** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` priority **)**
+
+Sets the body's collision priority.
+
+----
+
 .. _class_PhysicsServer3D_method_body_set_constant_force:
 
 - void **body_set_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector3<class_Vector3>` force **)**
@@ -1536,7 +1556,7 @@ The force integration function takes 2 arguments:
 
 - void **body_set_max_contacts_reported** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` amount **)**
 
-Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies. This is enabled by setting the maximum number of contacts reported to a number greater than 0.
 
 ----
 
@@ -1568,7 +1588,7 @@ Sets a body parameter. A list of available parameters is on the :ref:`BodyParame
 
 - void **body_set_ray_pickable** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**
 
-Sets the body pickable with rays if ``enabled`` is set.
+Sets the body pickable with rays if ``enable`` is set.
 
 ----
 

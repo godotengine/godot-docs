@@ -24,11 +24,15 @@ This resource is used in :ref:`EditorScenePostImport<class_EditorScenePostImport
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`bone_size<class_SkeletonProfile_property_bone_size>`   | ``0`` |
-+-----------------------+--------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`group_size<class_SkeletonProfile_property_group_size>` | ``0`` |
-+-----------------------+--------------------------------------------------------------+-------+
++-------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`               | :ref:`bone_size<class_SkeletonProfile_property_bone_size>`             | ``0``   |
++-------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`int<class_int>`               | :ref:`group_size<class_SkeletonProfile_property_group_size>`           | ``0``   |
++-------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`root_bone<class_SkeletonProfile_property_root_bone>`             | ``&""`` |
++-------------------------------------+------------------------------------------------------------------------+---------+
+| :ref:`StringName<class_StringName>` | :ref:`scale_base_bone<class_SkeletonProfile_property_scale_base_bone>` | ``&""`` |
++-------------------------------------+------------------------------------------------------------------------+---------+
 
 Methods
 -------
@@ -82,7 +86,7 @@ Signals
 
 This signal is emitted when change the value in profile. This is used to update key name in the :ref:`BoneMap<class_BoneMap>` and to redraw the :ref:`BoneMap<class_BoneMap>` editor.
 
-\ **Note**: This signal is not connected directly to editor to simplify the reference, instead it is passed on to editor through the :ref:`BoneMap<class_BoneMap>`.
+\ **Note:** This signal is not connected directly to editor to simplify the reference, instead it is passed on to editor through the :ref:`BoneMap<class_BoneMap>`.
 
 Enumerations
 ------------
@@ -131,6 +135,42 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_group_size()      |
 +-----------+-----------------------+
+
+----
+
+.. _class_SkeletonProfile_property_root_bone:
+
+- :ref:`StringName<class_StringName>` **root_bone**
+
++-----------+----------------------+
+| *Default* | ``&""``              |
++-----------+----------------------+
+| *Setter*  | set_root_bone(value) |
++-----------+----------------------+
+| *Getter*  | get_root_bone()      |
++-----------+----------------------+
+
+A name of bone that will be used as the root bone in :ref:`AnimationTree<class_AnimationTree>`.
+
+\ **Note:** In most cases, it is the bone of the parent of the hips that exists at the world origin in the humanoid model.
+
+----
+
+.. _class_SkeletonProfile_property_scale_base_bone:
+
+- :ref:`StringName<class_StringName>` **scale_base_bone**
+
++-----------+----------------------------+
+| *Default* | ``&""``                    |
++-----------+----------------------------+
+| *Setter*  | set_scale_base_bone(value) |
++-----------+----------------------------+
+| *Getter*  | get_scale_base_bone()      |
++-----------+----------------------------+
+
+A name of bone which height will be used as the coefficient for normalization.
+
+\ **Note:** In most cases, it is hips in the humanoid model.
 
 Method Descriptions
 -------------------

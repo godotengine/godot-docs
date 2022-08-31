@@ -12,14 +12,14 @@ MeshInstance3D
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`SoftDynamicBody3D<class_SoftDynamicBody3D>`
+**Inherited By:** :ref:`SoftBody3D<class_SoftBody3D>`
 
 Node that instances meshes into a scenario.
 
 Description
 -----------
 
-MeshInstance3D is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used render 3D geometry and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows reuse of geometry which can save on resources. When a :ref:`Mesh<class_Mesh>` has to be instantiated more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance3D<class_MultiMeshInstance3D>` instead.
+MeshInstance3D is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used render 3D geometry and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows reusing geometry, which can save on resources. When a :ref:`Mesh<class_Mesh>` has to be instantiated more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance3D<class_MultiMeshInstance3D>` instead.
 
 Tutorials
 ---------
@@ -128,7 +128,7 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a 
 
 If ``clean`` is ``true`` (default), duplicate and interior vertices are removed automatically. You can set it to ``false`` to make the process faster if not needed.
 
-If ``simplify`` is ``true``, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.
+If ``simplify`` is ``true``, the geometry can be further simplified to reduce the number of vertices. Disabled by default.
 
 ----
 

@@ -147,7 +147,7 @@ The update mode when the sub-viewport is used as a render target.
 | *Getter*  | get_size()             |
 +-----------+------------------------+
 
-The width and height of the sub-viewport.
+The width and height of the sub-viewport. Must be set to a value greater than or equal to 2 pixels on both dimensions. Otherwise, nothing will be displayed.
 
 ----
 

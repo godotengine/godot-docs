@@ -46,7 +46,7 @@ Methods
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VisualShaderNode<class_VisualShaderNode>` | :ref:`get_node<class_VisualShader_method_get_node>` **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`int<class_int>` id **)** |const|                                                                                                                           |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`get_node_connections<class_VisualShader_method_get_node_connections>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|                                                                                                                             |
+| :ref:`Dictionary[]<class_Dictionary>`           | :ref:`get_node_connections<class_VisualShader_method_get_node_connections>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|                                                                                                                             |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_node_list<class_VisualShader_method_get_node_list>` **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|                                                                                                                                           |
 +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,13 +144,15 @@ enum **VaryingMode**:
 
 .. _class_VisualShader_constant_VARYING_TYPE_FLOAT:
 
+.. _class_VisualShader_constant_VARYING_TYPE_INT:
+
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_2D:
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_3D:
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_4D:
 
-.. _class_VisualShader_constant_VARYING_TYPE_COLOR:
+.. _class_VisualShader_constant_VARYING_TYPE_BOOLEAN:
 
 .. _class_VisualShader_constant_VARYING_TYPE_TRANSFORM:
 
@@ -160,17 +162,19 @@ enum **VaryingType**:
 
 - **VARYING_TYPE_FLOAT** = **0**
 
-- **VARYING_TYPE_VECTOR_2D** = **1**
+- **VARYING_TYPE_INT** = **1**
 
-- **VARYING_TYPE_VECTOR_3D** = **2**
+- **VARYING_TYPE_VECTOR_2D** = **2**
 
-- **VARYING_TYPE_VECTOR_4D** = **3**
+- **VARYING_TYPE_VECTOR_3D** = **3**
 
-- **VARYING_TYPE_COLOR** = **4**
+- **VARYING_TYPE_VECTOR_4D** = **4**
 
-- **VARYING_TYPE_TRANSFORM** = **5**
+- **VARYING_TYPE_BOOLEAN** = **5**
 
-- **VARYING_TYPE_MAX** = **6**
+- **VARYING_TYPE_TRANSFORM** = **6**
+
+- **VARYING_TYPE_MAX** = **7**
 
 Constants
 ---------
@@ -207,7 +211,7 @@ Method Descriptions
 
 - void **add_node** **(** :ref:`Type<enum_VisualShader_Type>` type, :ref:`VisualShaderNode<class_VisualShaderNode>` node, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` id **)**
 
-Adds the specified node to the shader.
+Adds the specified ``node`` to the shader.
 
 ----
 
@@ -259,7 +263,7 @@ Returns the shader node instance with specified ``type`` and ``id``.
 
 .. _class_VisualShader_method_get_node_connections:
 
-- :ref:`Array<class_Array>` **get_node_connections** **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_node_connections** **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|
 
 Returns the list of connected nodes with the specified type.
 

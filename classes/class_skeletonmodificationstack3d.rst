@@ -86,7 +86,7 @@ When true, the modification's in the stack will be called. This is handled autom
 | *Getter*  | get_modification_count()      |
 +-----------+-------------------------------+
 
-The amount of modifications in the stack.
+The number of modifications in the stack.
 
 ----
 

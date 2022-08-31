@@ -69,15 +69,19 @@ enum **TextureType**:
 
 .. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_BLACK:
 
+.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_TRANSPARENT:
+
 .. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_MAX:
 
 enum **ColorDefault**:
 
-- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to white color.
+- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to fully opaque white color.
 
-- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to black color.
+- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to fully opaque black color.
 
-- **COLOR_DEFAULT_MAX** = **2** --- Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` enum.
+- **COLOR_DEFAULT_TRANSPARENT** = **2** --- Defaults to fully transparent black color.
+
+- **COLOR_DEFAULT_MAX** = **3** --- Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` enum.
 
 ----
 

@@ -128,7 +128,7 @@ Given a Dictionary which takes the form of a JSON-RPC request: unpack the reques
 
 To add new supported methods extend the JSONRPC class and call :ref:`process_action<class_JSONRPC_method_process_action>` on your subclass.
 
-\ ``action``: The action to be run, as a Dictionary in the form of a JSON-RPC request or notification.
+``action``: The action to be run, as a Dictionary in the form of a JSON-RPC request or notification.
 
 ----
 

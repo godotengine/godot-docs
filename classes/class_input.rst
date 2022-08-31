@@ -615,9 +615,9 @@ Sets the acceleration value of the accelerometer sensor. Can be used for debuggi
 
 Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
 
-\ ``image``'s size must be lower than 256×256.
+``image``'s size must be lower than 256×256.
 
-\ ``hotspot`` must be within ``image``'s size.
+``hotspot`` must be within ``image``'s size.
 
 \ **Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
 
@@ -689,11 +689,15 @@ Stops the vibration of the joypad.
 
 - void **vibrate_handheld** **(** :ref:`int<class_int>` duration_ms=500 **)**
 
-Vibrate Android and iOS devices.
+Vibrate handheld devices.
+
+\ **Note:** This method is implemented on Android, iOS, and Web.
 
 \ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
 
 \ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
+
+\ **Note:** Some web browsers such as Safari and Firefox for Android do not support this method.
 
 ----
 

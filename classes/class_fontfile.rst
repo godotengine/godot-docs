@@ -60,7 +60,7 @@ Properties
 ----------
 
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`antialiased<class_FontFile_property_antialiased>`                                               | ``true``              |
+| :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_FontFile_property_antialiasing>`                                             | ``1``                 |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`                   | :ref:`data<class_FontFile_property_data>`                                                             | ``PackedByteArray()`` |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
@@ -127,7 +127,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_glyph_index<class_FontFile_method_get_glyph_index>` **(** :ref:`int<class_int>` size, :ref:`int<class_int>` char, :ref:`int<class_int>` variation_selector **)** |const|                                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_glyph_list<class_FontFile_method_get_glyph_list>` **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size **)** |const|                                                                                                |
+| :ref:`PackedInt32Array<class_PackedInt32Array>`   | :ref:`get_glyph_list<class_FontFile_method_get_glyph_list>` **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size **)** |const|                                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`get_glyph_offset<class_FontFile_method_get_glyph_offset>` **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,7 +139,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                     | :ref:`get_kerning<class_FontFile_method_get_kerning>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`Vector2i<class_Vector2i>` glyph_pair **)** |const|                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_kerning_list<class_FontFile_method_get_kerning_list>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|                                                                                                      |
+| :ref:`Vector2i[]<class_Vector2i>`                 | :ref:`get_kerning_list<class_FontFile_method_get_kerning_list>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|                                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`get_language_support_override<class_FontFile_method_get_language_support_override>` **(** :ref:`String<class_String>` language **)** |const|                                                                                                     |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,7 +149,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_script_support_overrides<class_FontFile_method_get_script_support_overrides>` **(** **)** |const|                                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_size_cache_list<class_FontFile_method_get_size_cache_list>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                            |
+| :ref:`Vector2i[]<class_Vector2i>`                 | :ref:`get_size_cache_list<class_FontFile_method_get_size_cache_list>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_texture_count<class_FontFile_method_get_texture_count>` **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size **)** |const|                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,19 +225,19 @@ Methods
 Property Descriptions
 ---------------------
 
-.. _class_FontFile_property_antialiased:
+.. _class_FontFile_property_antialiasing:
 
-- :ref:`bool<class_bool>` **antialiased**
+- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing**
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_antialiased(value) |
-+-----------+------------------------+
-| *Getter*  | is_antialiased()       |
-+-----------+------------------------+
++-----------+-------------------------+
+| *Default* | ``1``                   |
++-----------+-------------------------+
+| *Setter*  | set_antialiasing(value) |
++-----------+-------------------------+
+| *Getter*  | get_antialiasing()      |
++-----------+-------------------------+
 
-If set to ``true``, font 8-bit anitialiased glyph rendering is supported and enabled.
+Font anti-aliasing mode.
 
 ----
 
@@ -602,7 +602,7 @@ Returns the glyph index of a ``char``, optionally modified by the ``variation_se
 
 .. _class_FontFile_method_get_glyph_list:
 
-- :ref:`Array<class_Array>` **get_glyph_list** **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size **)** |const|
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_glyph_list** **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size **)** |const|
 
 Returns list of rendered glyphs in the cache entry.
 
@@ -650,7 +650,7 @@ Returns kerning for the pair of glyphs.
 
 .. _class_FontFile_method_get_kerning_list:
 
-- :ref:`Array<class_Array>` **get_kerning_list** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
+- :ref:`Vector2i[]<class_Vector2i>` **get_kerning_list** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
 Returns list of the kerning overrides.
 
@@ -690,7 +690,7 @@ Returns list of script support overrides.
 
 .. _class_FontFile_method_get_size_cache_list:
 
-- :ref:`Array<class_Array>` **get_size_cache_list** **(** :ref:`int<class_int>` cache_index **)** |const|
+- :ref:`Vector2i[]<class_Vector2i>` **get_size_cache_list** **(** :ref:`int<class_int>` cache_index **)** |const|
 
 Returns list of the font sizes in the cache. Each size is ``Vector2i`` with font size and outline size.
 

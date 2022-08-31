@@ -193,7 +193,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **create_alternative_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_id_override=-1 **)**
 
-Creates an alternative tile for the tile at coords ``atlas_coords``. If ``alternative_id_override`` is -1, give it an automatically generated unique ID, or assigns it the given ID otherwise.
+Creates an alternative tile for the tile at coordinates ``atlas_coords``. If ``alternative_id_override`` is -1, give it an automatically generated unique ID, or assigns it the given ID otherwise.
 
 Returns the new alternative identifier, or -1 if the alternative could not be created with a provided ``alternative_id_override``.
 
@@ -203,7 +203,7 @@ Returns the new alternative identifier, or -1 if the alternative could not be cr
 
 - void **create_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`Vector2i<class_Vector2i>` size=Vector2i(1, 1) **)**
 
-Creates a new tile at coords ``atlas_coords`` with size ``size``.
+Creates a new tile at coordinates ``atlas_coords`` with the given ``size``.
 
 ----
 
@@ -235,7 +235,7 @@ If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_paddi
 
 - :ref:`Rect2i<class_Rect2i>` **get_runtime_tile_texture_region** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` frame **)** |const|
 
-Returns the region of the tile at coordinates ``atlas_coords`` for frame ``frame`` inside the texture returned by :ref:`get_runtime_texture<class_TileSetAtlasSource_method_get_runtime_texture>`.
+Returns the region of the tile at coordinates ``atlas_coords`` for the given ``frame`` inside the texture returned by :ref:`get_runtime_texture<class_TileSetAtlasSource_method_get_runtime_texture>`.
 
 \ **Note:** If :ref:`use_texture_padding<class_TileSetAtlasSource_property_use_texture_padding>` is ``false``, returns the same as :ref:`get_tile_texture_region<class_TileSetAtlasSource_method_get_tile_texture_region>`.
 
@@ -373,7 +373,7 @@ Remove a tile and its alternative at coordinates ``atlas_coords``.
 
 Change a tile's alternative ID from ``alternative_tile`` to ``new_id``.
 
-Calling this function with ``alternative_id`` equals to 0 will fail, as the base tile alternative cannot be moved.
+Calling this function with ``new_id`` of 0 will fail, as the base tile alternative cannot be moved.
 
 ----
 
@@ -389,7 +389,7 @@ Sets the number of columns in the animation layout of the tile at coordinates ``
 
 - void **set_tile_animation_frame_duration** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` frame_index, :ref:`float<class_float>` duration **)**
 
-Sets the animation frame duration of frame ``frame_index`` for the tile at coordinates ``atlas_coords``.
+Sets the animation frame ``duration`` of frame ``frame_index`` for the tile at coordinates ``atlas_coords``.
 
 ----
 

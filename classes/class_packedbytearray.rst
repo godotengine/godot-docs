@@ -17,6 +17,8 @@ Description
 
 An array specifically designed to hold bytes. Packs data tightly, so it saves memory for large array sizes.
 
+\ ``PackedByteArray`` also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
+
 Constructors
 ------------
 
@@ -37,6 +39,8 @@ Methods
 | void                                                | :ref:`append_array<class_PackedByteArray_method_append_array>` **(** :ref:`PackedByteArray<class_PackedByteArray>` array **)**                                                             |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                               | :ref:`bsearch<class_PackedByteArray_method_bsearch>` **(** :ref:`int<class_int>` value, :ref:`bool<class_bool>` before=true **)**                                                          |
++-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear<class_PackedByteArray_method_clear>` **(** **)**                                                                                                                               |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`compress<class_PackedByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)** |const|                                                                        |
 +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,6 +214,14 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 ----
 
+.. _class_PackedByteArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PackedByteArray_method_resize>` with a size of ``0``.
+
+----
+
 .. _class_PackedByteArray_method_compress:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)** |const|
@@ -230,11 +242,15 @@ Returns the number of times an element is in the array.
 
 - :ref:`float<class_float>` **decode_double** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 64-bit floating point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_float:
 
 - :ref:`float<class_float>` **decode_float** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 32-bit floating point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
 
 ----
 
@@ -242,11 +258,15 @@ Returns the number of times an element is in the array.
 
 - :ref:`float<class_float>` **decode_half** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 16-bit floating point number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0.0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_s16:
 
 - :ref:`int<class_int>` **decode_s16** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 16-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 ----
 
@@ -254,11 +274,15 @@ Returns the number of times an element is in the array.
 
 - :ref:`int<class_int>` **decode_s32** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 32-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_s64:
 
 - :ref:`int<class_int>` **decode_s64** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 64-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 ----
 
@@ -266,11 +290,15 @@ Returns the number of times an element is in the array.
 
 - :ref:`int<class_int>` **decode_s8** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 8-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_u16:
 
 - :ref:`int<class_int>` **decode_u16** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 16-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 ----
 
@@ -278,11 +306,15 @@ Returns the number of times an element is in the array.
 
 - :ref:`int<class_int>` **decode_u32** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 32-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_u64:
 
 - :ref:`int<class_int>` **decode_u64** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 64-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 ----
 
@@ -290,17 +322,23 @@ Returns the number of times an element is in the array.
 
 - :ref:`int<class_int>` **decode_u8** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
+Decodes a 8-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+
 ----
 
 .. _class_PackedByteArray_method_decode_var:
 
 - :ref:`Variant<class_Variant>` **decode_var** **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|
 
+Decodes a :ref:`Variant<class_Variant>` from the bytes starting at ``byte_offset``. Returns ``null`` if a valid variant can't be decoded or the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
+
 ----
 
 .. _class_PackedByteArray_method_decode_var_size:
 
 - :ref:`int<class_int>` **decode_var_size** **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|
+
+Decodes a size of a :ref:`Variant<class_Variant>` from the bytes starting at ``byte_offset``. Requires at least 4 bytes of data starting at the offset, otherwise fails.
 
 ----
 
@@ -318,7 +356,7 @@ Returns a new ``PackedByteArray`` with the data decompressed. Set ``buffer_size`
 
 Returns a new ``PackedByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
 
-This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, whereas ``decompress`` knows its output buffer size from the beginning.
+This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, whereas ``decompress`` knows it's output buffer size from the beginning.
 
 GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a small compressed payload to decompress to a potentially very large output. To guard against this, you may provide a maximum size this function is allowed to allocate in bytes via ``max_output_size``. Passing -1 will allow for unbounded output. If any positive value is passed, and the decompression exceeds that amount in bytes, then an error will be returned.
 
@@ -336,11 +374,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_double** **(** :ref:`int<class_int>` byte_offset, :ref:`float<class_float>` value **)**
 
+Encodes a 64-bit floating point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of allocated space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_float:
 
 - void **encode_float** **(** :ref:`int<class_int>` byte_offset, :ref:`float<class_float>` value **)**
+
+Encodes a 32-bit floating point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
 
 ----
 
@@ -348,11 +390,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_half** **(** :ref:`int<class_int>` byte_offset, :ref:`float<class_float>` value **)**
 
+Encodes a 16-bit floating point number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_s16:
 
 - void **encode_s16** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+
+Encodes a 16-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
 ----
 
@@ -360,11 +406,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_s32** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
+Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_s64:
 
 - void **encode_s64** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+
+Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
 ----
 
@@ -372,11 +422,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_s8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
+Encodes a 8-bit signed integer number (signed byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_u16:
 
 - void **encode_u16** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+
+Encodes a 16-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
 
 ----
 
@@ -384,11 +438,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_u32** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
+Encodes a 32-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_u64:
 
 - void **encode_u64** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+
+Encodes a 64-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of space, starting at the offset.
 
 ----
 
@@ -396,11 +454,15 @@ Creates a copy of the array, and returns it.
 
 - void **encode_u8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
+Encodes a 8-bit unsigned integer number (byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
+
 ----
 
 .. _class_PackedByteArray_method_encode_var:
 
 - :ref:`int<class_int>` **encode_var** **(** :ref:`int<class_int>` byte_offset, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` allow_objects=false **)**
+
+Encodes a :ref:`Variant<class_Variant>` at the index of ``byte_offset`` bytes. A sufficient space must be allocated, depending on the encoded variant's size. If ``allow_objects`` is ``false``, :ref:`Object<class_Object>`-derived values are not permitted and will instead be serialized as ID-only.
 
 ----
 
@@ -463,6 +525,8 @@ Returns ``true`` if the array contains ``value``.
 .. _class_PackedByteArray_method_has_encoded_var:
 
 - :ref:`bool<class_bool>` **has_encoded_var** **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|
+
+Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` othewrise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
 
 ----
 
@@ -634,11 +698,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**
 
+Returns ``true`` if contents of the arrays differ.
+
 ----
 
 .. _class_PackedByteArray_operator_sum_PackedByteArray:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **operator +** **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**
+
+Returns a new ``PackedByteArray`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedByteArray_method_append_array>` instead.
 
 ----
 
@@ -646,11 +714,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedByteArray<class_PackedByteArray>` right **)**
 
+Returns ``true`` if contents of both arrays are the same, i.e. they have all equal bytes at the corresponding indices.
+
 ----
 
 .. _class_PackedByteArray_operator_idx_int:
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the byte at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
+
+Note that the byte is returned as a 64-bit :ref:`int<class_int>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

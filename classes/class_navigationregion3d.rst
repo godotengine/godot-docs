@@ -25,7 +25,7 @@ Two regions can be connected to each other if they share a similar edge. You can
 
 The cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>` value.
 
-\ **Note**: This value is not added to the path cost when the start position is already inside this region.
+\ **Note:** This value is not added to the path cost when the start position is already inside this region.
 
 The cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>` multiplier.
 
@@ -160,7 +160,7 @@ Method Descriptions
 
 - void **bake_navigation_mesh** **(** :ref:`bool<class_bool>` on_thread=true **)**
 
-Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. If ``on_thread`` is set to ``true`` (default), the baking is done on a separate thread. Baking on separate thread is useful because navigation baking is not a cheap operation. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`. Please note that baking on separate thread may be very slow if geometry is parsed from meshes as async access to each mesh involves heavy synchronization. Also, please note that baking on a separate thread is automatically disabled on operating systems that cannot use threads (such as HTML5 with threads disabled).
+Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. If ``on_thread`` is set to ``true`` (default), the baking is done on a separate thread. Baking on separate thread is useful because navigation baking is not a cheap operation. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`. Please note that baking on separate thread may be very slow if geometry is parsed from meshes as async access to each mesh involves heavy synchronization. Also, please note that baking on a separate thread is automatically disabled on operating systems that cannot use threads (such as Web with threads disabled).
 
 ----
 

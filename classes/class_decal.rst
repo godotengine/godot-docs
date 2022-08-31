@@ -111,7 +111,7 @@ Property Descriptions
 | *Getter*  | get_albedo_mix()      |
 +-----------+-----------------------+
 
-Blends the albedo :ref:`Color<class_Color>` of the decal with albedo :ref:`Color<class_Color>` of the underlying mesh.
+Blends the albedo :ref:`Color<class_Color>` of the decal with albedo :ref:`Color<class_Color>` of the underlying mesh. This can be set to ``0.0`` to create a decal that only affects normal or ORM. In this case, an albedo texture is still required as its alpha channel will determine where the normal and ORM will be overridden. See also :ref:`modulate<class_Decal_property_modulate>`.
 
 ----
 
@@ -175,7 +175,7 @@ If ``true``, decals will smoothly fade away when far from the active :ref:`Camer
 | *Getter*  | get_distance_fade_length()      |
 +-----------+---------------------------------+
 
-The distance over which the Decal fades (in 3D units). The Decal becomes slowly more transparent over this distance and is completely invisible at the end.
+The distance over which the Decal fades (in 3D units). The Decal becomes slowly more transparent over this distance and is completely invisible at the end. Higher values result in a smoother fade-out transition, which is more suited when the camera moves fast.
 
 ----
 
@@ -191,7 +191,7 @@ The distance over which the Decal fades (in 3D units). The Decal becomes slowly 
 | *Getter*  | get_emission_energy()      |
 +-----------+----------------------------+
 
-Energy multiplier for the emission texture. This will make the decal emit light at a higher intensity.
+Energy multiplier for the emission texture. This will make the decal emit light at a higher or lower intensity, independently of the albedo color. See also :ref:`modulate<class_Decal_property_modulate>`.
 
 ----
 
@@ -223,7 +223,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes fr
 | *Getter*  | get_lower_fade()      |
 +-----------+-----------------------+
 
-Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``).
+Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``). See also :ref:`upper_fade<class_Decal_property_upper_fade>`.
 
 ----
 
@@ -239,7 +239,7 @@ Sets the curve over which the decal will fade as the surface gets further from t
 | *Getter*  | get_modulate()        |
 +-----------+-----------------------+
 
-Changes the :ref:`Color<class_Color>` of the Decal by multiplying it with this value.
+Changes the :ref:`Color<class_Color>` of the Decal by multiplying the albedo and emission colors with this value. The alpha component is only taken into account when multiplying the albedo color, not the emission color. See also :ref:`emission_energy<class_Decal_property_emission_energy>` and :ref:`albedo_mix<class_Decal_property_albedo_mix>` to change the emission and albedo intensity independently of each other.
 
 ----
 
@@ -256,6 +256,8 @@ Changes the :ref:`Color<class_Color>` of the Decal by multiplying it with this v
 +-----------+------------------------+
 
 Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the target surface becomes too large. A value of ``0`` projects the Decal regardless of angle, a value of ``1`` limits the Decal to surfaces that are nearly perpendicular.
+
+\ **Note:** Setting :ref:`normal_fade<class_Decal_property_normal_fade>` to a value greater than ``0.0`` has a small performance cost due to the added normal angle computations.
 
 ----
 
@@ -305,6 +307,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 
 \ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
+\ **Note:** Setting this texture alone will not result in a visible decal, as :ref:`texture_albedo<class_Decal_property_texture_albedo>` must also be set. To create a normal-only decal, load an albedo texture into :ref:`texture_albedo<class_Decal_property_texture_albedo>` and set :ref:`albedo_mix<class_Decal_property_albedo_mix>` to ``0.0``. The albedo texture's alpha channel will be used to determine where the underlying surface's normal map should be overridden (and its intensity).
+
 ----
 
 .. _class_Decal_property_texture_orm:
@@ -321,6 +325,8 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 
 \ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
+\ **Note:** Setting this texture alone will not result in a visible decal, as :ref:`texture_albedo<class_Decal_property_texture_albedo>` must also be set. To create a ORM-only decal, load an albedo texture into :ref:`texture_albedo<class_Decal_property_texture_albedo>` and set :ref:`albedo_mix<class_Decal_property_albedo_mix>` to ``0.0``. The albedo texture's alpha channel will be used to determine where the underlying surface's ORM map should be overridden (and its intensity).
+
 ----
 
 .. _class_Decal_property_upper_fade:
@@ -335,7 +341,7 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 | *Getter*  | get_upper_fade()      |
 +-----------+-----------------------+
 
-Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``).
+Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``). See also :ref:`lower_fade<class_Decal_property_lower_fade>`.
 
 Method Descriptions
 -------------------

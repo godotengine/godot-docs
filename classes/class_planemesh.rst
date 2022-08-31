@@ -17,22 +17,43 @@ Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 Description
 -----------
 
-Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
+Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, change :ref:`orientation<class_PlaneMesh_property_orientation>` to :ref:`FACE_Z<class_PlaneMesh_constant_FACE_Z>`.
 
 \ **Note:** When using a large textured ``PlaneMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3(0, 0, 0)`` |
-+-------------------------------+------------------------------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2(2, 2)``    |
-+-------------------------------+------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                |
-+-------------------------------+------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                |
-+-------------------------------+------------------------------------------------------------------+----------------------+
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`Vector3<class_Vector3>`                  | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3(0, 0, 0)`` |
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`Orientation<enum_PlaneMesh_Orientation>` | :ref:`orientation<class_PlaneMesh_property_orientation>`         | ``1``                |
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`Vector2<class_Vector2>`                  | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2(2, 2)``    |
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                          | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                |
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+| :ref:`int<class_int>`                          | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                |
++------------------------------------------------+------------------------------------------------------------------+----------------------+
+
+Enumerations
+------------
+
+.. _enum_PlaneMesh_Orientation:
+
+.. _class_PlaneMesh_constant_FACE_X:
+
+.. _class_PlaneMesh_constant_FACE_Y:
+
+.. _class_PlaneMesh_constant_FACE_Z:
+
+enum **Orientation**:
+
+- **FACE_X** = **0** --- ``PlaneMesh`` will face the positive X-axis.
+
+- **FACE_Y** = **1** --- ``PlaneMesh`` will face the positive Y-axis. This matches the behaviour of the ``PlaneMesh`` in Godot 3.x.
+
+- **FACE_Z** = **2** --- ``PlaneMesh`` will face the positive Z-axis. This matches the behvaiour of the QuadMesh in Godot 3.x.
 
 Property Descriptions
 ---------------------
@@ -50,6 +71,22 @@ Property Descriptions
 +-----------+--------------------------+
 
 Offset of the generated plane. Useful for particles.
+
+----
+
+.. _class_PlaneMesh_property_orientation:
+
+- :ref:`Orientation<enum_PlaneMesh_Orientation>` **orientation**
+
++-----------+------------------------+
+| *Default* | ``1``                  |
++-----------+------------------------+
+| *Setter*  | set_orientation(value) |
++-----------+------------------------+
+| *Getter*  | get_orientation()      |
++-----------+------------------------+
+
+Direction that the ``PlaneMesh`` is facing. See :ref:`Orientation<enum_PlaneMesh_Orientation>` for options.
 
 ----
 

@@ -95,7 +95,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` char, :ref:`int<class_int>` font_size, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)** |const|
 
-Draw a single Unicode character ``char`` into a canvas item using the font, at a given position, with ``modulate`` color. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Draw a single Unicode character ``char`` into a canvas item using the font, at a given position, with ``modulate`` color. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 \ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
 
@@ -105,7 +105,7 @@ Draw a single Unicode character ``char`` into a canvas item using the font, at a
 
 - :ref:`float<class_float>` **draw_char_outline** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` char, :ref:`int<class_int>` font_size, :ref:`int<class_int>` size=-1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)** |const|
 
-Draw a single Unicode character ``char`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Draw a single Unicode character ``char`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 \ **Note:** Do not use this function to draw strings character by character, use :ref:`draw_string<class_Font_method_draw_string>` or :ref:`TextLine<class_TextLine>` instead.
 
@@ -115,7 +115,7 @@ Draw a single Unicode character ``char`` outline into a canvas item using the fo
 
 - void **draw_multiline_string** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` max_lines=-1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` brk_flags=3, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Breaks ``text`` to the lines using rules specified by ``flags`` and draws it into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``position`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Breaks ``text`` into lines using rules specified by ``brk_flags`` and draws it into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 See also :ref:`CanvasItem.draw_multiline_string<class_CanvasItem_method_draw_multiline_string>`.
 
@@ -125,7 +125,7 @@ See also :ref:`CanvasItem.draw_multiline_string<class_CanvasItem_method_draw_mul
 
 - void **draw_multiline_string_outline** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` max_lines=-1, :ref:`int<class_int>` size=1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` brk_flags=3, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Breaks ``text`` to the lines using rules specified by ``flags`` and draws text outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``position`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Breaks ``text`` to the lines using rules specified by ``brk_flags`` and draws text outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline of the first line, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 See also :ref:`CanvasItem.draw_multiline_string_outline<class_CanvasItem_method_draw_multiline_string_outline>`.
 
@@ -135,7 +135,7 @@ See also :ref:`CanvasItem.draw_multiline_string_outline<class_CanvasItem_method_
 
 - void **draw_string** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Draw ``text`` into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Draw ``text`` into a canvas item using the font, at a given position, with ``modulate`` color, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
 
@@ -145,7 +145,7 @@ See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
 
 - void **draw_string_outline** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`int<class_int>` size=1, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Draw ``text`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Draw ``text`` outline into a canvas item using the font, at a given position, with ``modulate`` color and ``size`` outline size, optionally clipping the width and aligning horizontally. ``pos`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 See also :ref:`CanvasItem.draw_string_outline<class_CanvasItem_method_draw_string_outline>`.
 

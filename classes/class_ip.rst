@@ -22,27 +22,27 @@ IP contains support functions for the Internet Protocol (IP). TCP/IP support is 
 Methods
 -------
 
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`clear_cache<class_IP_method_clear_cache>` **(** :ref:`String<class_String>` hostname="" **)**                                                               |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase_resolve_item<class_IP_method_erase_resolve_item>` **(** :ref:`int<class_int>` id **)**                                                                |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_local_addresses<class_IP_method_get_local_addresses>` **(** **)** |const|                                                                               |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_local_interfaces<class_IP_method_get_local_interfaces>` **(** **)** |const|                                                                             |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_resolve_item_address<class_IP_method_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** |const|                                            |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_resolve_item_addresses<class_IP_method_get_resolve_item_addresses>` **(** :ref:`int<class_int>` id **)** |const|                                        |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResolverStatus<enum_IP_ResolverStatus>` | :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** |const|                                              |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`resolve_hostname<class_IP_method_resolve_hostname>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**                       |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`resolve_hostname_addresses<class_IP_method_resolve_hostname_addresses>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**   |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`resolve_hostname_queue_item<class_IP_method_resolve_hostname_queue_item>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)** |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`clear_cache<class_IP_method_clear_cache>` **(** :ref:`String<class_String>` hostname="" **)**                                                               |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`erase_resolve_item<class_IP_method_erase_resolve_item>` **(** :ref:`int<class_int>` id **)**                                                                |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_local_addresses<class_IP_method_get_local_addresses>` **(** **)** |const|                                                                               |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary[]<class_Dictionary>`             | :ref:`get_local_interfaces<class_IP_method_get_local_interfaces>` **(** **)** |const|                                                                             |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_resolve_item_address<class_IP_method_get_resolve_item_address>` **(** :ref:`int<class_int>` id **)** |const|                                            |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                         | :ref:`get_resolve_item_addresses<class_IP_method_get_resolve_item_addresses>` **(** :ref:`int<class_int>` id **)** |const|                                        |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ResolverStatus<enum_IP_ResolverStatus>`     | :ref:`get_resolve_item_status<class_IP_method_get_resolve_item_status>` **(** :ref:`int<class_int>` id **)** |const|                                              |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`resolve_hostname<class_IP_method_resolve_hostname>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**                       |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`resolve_hostname_addresses<class_IP_method_resolve_hostname_addresses>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**   |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`resolve_hostname_queue_item<class_IP_method_resolve_hostname_queue_item>` **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)** |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -121,7 +121,7 @@ Removes a given item ``id`` from the queue. This should be used to free a queue 
 
 .. _class_IP_method_get_local_addresses:
 
-- :ref:`Array<class_Array>` **get_local_addresses** **(** **)** |const|
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_local_addresses** **(** **)** |const|
 
 Returns all the user's current IPv4 and IPv6 addresses as an array.
 
@@ -129,7 +129,7 @@ Returns all the user's current IPv4 and IPv6 addresses as an array.
 
 .. _class_IP_method_get_local_interfaces:
 
-- :ref:`Array<class_Array>` **get_local_interfaces** **(** **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_local_interfaces** **(** **)** |const|
 
 Returns all network adapters as an array.
 
@@ -180,7 +180,7 @@ Returns a given hostname's IPv4 or IPv6 address when resolved (blocking-type met
 
 .. _class_IP_method_resolve_hostname_addresses:
 
-- :ref:`Array<class_Array>` **resolve_hostname_addresses** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **resolve_hostname_addresses** **(** :ref:`String<class_String>` host, :ref:`Type<enum_IP_Type>` ip_type=3 **)**
 
 Resolves a given hostname in a blocking way. Addresses are returned as an :ref:`Array<class_Array>` of IPv4 or IPv6 addresses depending on ``ip_type``.
 

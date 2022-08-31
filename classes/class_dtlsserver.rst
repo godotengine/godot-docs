@@ -183,7 +183,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **setup** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
 
-Setup the DTLS server to use the given ``private_key`` and provide the given ``certificate`` to clients. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
+Setup the DTLS server to use the given ``key`` and provide the given ``certificate`` to clients. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
 
 ----
 

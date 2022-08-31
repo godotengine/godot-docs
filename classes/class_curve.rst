@@ -19,6 +19,8 @@ Description
 
 A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
+See also :ref:`Gradient<class_Gradient>` which is designed for color interpolation. See also :ref:`Curve2D<class_Curve2D>` and :ref:`Curve3D<class_Curve3D>`.
+
 Properties
 ----------
 
@@ -54,11 +56,11 @@ Methods
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                              |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`interpolate<class_Curve_method_interpolate>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                                 |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`interpolate_baked<class_Curve_method_interpolate_baked>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                     |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`remove_point<class_Curve_method_remove_point>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                            |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`sample<class_Curve_method_sample>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                                           |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`sample_baked<class_Curve_method_sample_baked>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                               |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`set_point_left_mode<class_Curve_method_set_point_left_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**                                                                                                                                             |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -241,27 +243,27 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 ----
 
-.. _class_Curve_method_interpolate:
-
-- :ref:`float<class_float>` **interpolate** **(** :ref:`float<class_float>` offset **)** |const|
-
-Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
-
-----
-
-.. _class_Curve_method_interpolate_baked:
-
-- :ref:`float<class_float>` **interpolate_baked** **(** :ref:`float<class_float>` offset **)** |const|
-
-Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
-
-----
-
 .. _class_Curve_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` index **)**
 
 Removes the point at ``index`` from the curve.
+
+----
+
+.. _class_Curve_method_sample:
+
+- :ref:`float<class_float>` **sample** **(** :ref:`float<class_float>` offset **)** |const|
+
+Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
+
+----
+
+.. _class_Curve_method_sample_baked:
+
+- :ref:`float<class_float>` **sample_baked** **(** :ref:`float<class_float>` offset **)** |const|
+
+Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
 
 ----
 

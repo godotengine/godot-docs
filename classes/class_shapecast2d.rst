@@ -21,7 +21,7 @@ Shape casting allows to detect collision objects by sweeping the :ref:`shape<cla
 
 Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast2D_property_target_position>` set to ``Vector2(0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast2D_method_force_shapecast_update>` within the same **physics_frame**. This also helps to overcome some limitations of :ref:`Area2D<class_Area2D>` when used as a continuous detection area, often requiring waiting a couple of frames before collision information is available to :ref:`Area2D<class_Area2D>` nodes, and when using the signals creates unnecessary complexity.
 
-The node can detect multiple collision objects, but usually the first detected collision
+The node can detect multiple collision objects, but it's usually used to detect the first collision.
 
 \ **Note:** shape casting is more computationally expensive compared to ray casting.
 
@@ -146,7 +146,7 @@ The shape's collision mask. Only objects in at least one collision layer enabled
 | *Default* | ``[]`` |
 +-----------+--------+
 
-A complete collision information. The data returned is the same as in the :ref:`PhysicsDirectSpaceState2D.get_rest_info<class_PhysicsDirectSpaceState2D_method_get_rest_info>` method.
+Returns the complete collision information from the collision sweep. The data returned is the same as in the :ref:`PhysicsDirectSpaceState2D.get_rest_info<class_PhysicsDirectSpaceState2D_method_get_rest_info>` method.
 
 ----
 
@@ -224,7 +224,7 @@ The number of intersections can be limited with this parameter, to reduce the pr
 | *Getter* | get_shape()      |
 +----------+------------------+
 
-Any :ref:`Shape2D<class_Shape2D>` derived shape used for collision queries.
+The :ref:`Shape2D<class_Shape2D>`-derived shape to be used for collision queries.
 
 ----
 
@@ -283,7 +283,7 @@ Updates the collision information for the shape. Use this method to update the c
 
 - :ref:`float<class_float>` **get_closest_collision_safe_fraction** **(** **)** |const|
 
-The fraction of the motion (between 0 and 1) of how far the shape can move without triggering a collision. The motion is determined by :ref:`target_position<class_ShapeCast2D_property_target_position>`.
+The fraction from the ``ShapeCast2D``'s origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` (between 0 and 1) of how far the shape can move without triggering a collision.
 
 ----
 
@@ -291,7 +291,7 @@ The fraction of the motion (between 0 and 1) of how far the shape can move witho
 
 - :ref:`float<class_float>` **get_closest_collision_unsafe_fraction** **(** **)** |const|
 
-The fraction of the motion (between 0 and 1) when the shape triggers a collision. The motion is determined by :ref:`target_position<class_ShapeCast2D_property_target_position>`.
+The fraction from the ``ShapeCast2D``'s origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` (between 0 and 1) of how far the shape must move to trigger a collision.
 
 ----
 
@@ -299,7 +299,7 @@ The fraction of the motion (between 0 and 1) when the shape triggers a collision
 
 - :ref:`Object<class_Object>` **get_collider** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the :ref:`Object<class_Object>` of one of the multiple collisions at ``index``, or ``null`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast2D_method_is_colliding>` returns ``false``).
+Returns the collided :ref:`Object<class_Object>` of one of the multiple collisions at ``index``, or ``null`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast2D_method_is_colliding>` returns ``false``).
 
 ----
 
@@ -307,7 +307,7 @@ Returns the :ref:`Object<class_Object>` of one of the multiple collisions at ``i
 
 - :ref:`int<class_int>` **get_collider_shape** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the shape ID of one of the multiple collisions at ``index`` that the shape intersects, or ``0`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast2D_method_is_colliding>` returns ``false``).
+Returns the shape ID of the colliding shape of one of the multiple collisions at ``index``, or ``0`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast2D_method_is_colliding>` returns ``false``).
 
 ----
 
@@ -331,7 +331,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sha
 
 - :ref:`Vector2<class_Vector2>` **get_collision_normal** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the normal containing one of the multiple collisions at ``index`` of the intersecting object.
+Returns the normal of one of the multiple collisions at ``index`` of the intersecting object.
 
 ----
 
@@ -339,7 +339,7 @@ Returns the normal containing one of the multiple collisions at ``index`` of the
 
 - :ref:`Vector2<class_Vector2>` **get_collision_point** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the collision point containing one of the multiple collisions at ``index`` at which the shape intersects the object.
+Returns the collision point of one of the multiple collisions at ``index`` where the shape intersects the colliding object.
 
 \ **Note:** this point is in the **global** coordinate system.
 

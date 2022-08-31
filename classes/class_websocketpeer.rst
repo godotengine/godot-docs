@@ -70,7 +70,7 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 
 \ **Note:** To achieve a clean close, you will need to keep polling until either :ref:`WebSocketClient.connection_closed<class_WebSocketClient_signal_connection_closed>` or :ref:`WebSocketServer.client_disconnected<class_WebSocketServer_signal_client_disconnected>` is received.
 
-\ **Note:** The HTML5 export might not support all status codes. Please refer to browser-specific documentation for more details.
+\ **Note:** The Web export might not support all status codes. Please refer to browser-specific documentation for more details.
 
 ----
 
@@ -80,7 +80,7 @@ Closes this WebSocket connection. ``code`` is the status code for the closure (s
 
 Returns the IP address of the connected peer.
 
-\ **Note:** Not available in the HTML5 export.
+\ **Note:** Not available in the Web export.
 
 ----
 
@@ -90,7 +90,7 @@ Returns the IP address of the connected peer.
 
 Returns the remote port of the connected peer.
 
-\ **Note:** Not available in the HTML5 export.
+\ **Note:** Not available in the Web export.
 
 ----
 
@@ -98,7 +98,7 @@ Returns the remote port of the connected peer.
 
 - :ref:`int<class_int>` **get_current_outbound_buffered_amount** **(** **)** |const|
 
-Returns the current amount of data in the outbound websocket buffer. **Note:** HTML5 exports use WebSocket.bufferedAmount, while other platforms use an internal buffer.
+Returns the current amount of data in the outbound websocket buffer. **Note:** Web exports use WebSocket.bufferedAmount, while other platforms use an internal buffer.
 
 ----
 
@@ -124,7 +124,7 @@ Returns ``true`` if this peer is currently connected.
 
 Disable Nagle's algorithm on the underling TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay<class_StreamPeerTCP_method_set_no_delay>` for more information.
 
-\ **Note:** Not available in the HTML5 export.
+\ **Note:** Not available in the Web export.
 
 ----
 

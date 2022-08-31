@@ -40,9 +40,9 @@ Properties
 +---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>` | :ref:`normal_bias<class_VoxelGIData_property_normal_bias>`         | ``0.0``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`propagation<class_VoxelGIData_property_propagation>`         | ``0.7``   |
+| :ref:`float<class_float>` | :ref:`propagation<class_VoxelGIData_property_propagation>`         | ``0.5``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` | ``false`` |
+| :ref:`bool<class_bool>`   | :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` | ``true``  |
 +---------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
@@ -152,14 +152,14 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 - :ref:`float<class_float>` **propagation**
 
 +-----------+------------------------+
-| *Default* | ``0.7``                |
+| *Default* | ``0.5``                |
 +-----------+------------------------+
 | *Setter*  | set_propagation(value) |
 +-----------+------------------------+
 | *Getter*  | get_propagation()      |
 +-----------+------------------------+
 
-If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
+The multiplier to use when light bounces off a surface. Higher values result in brighter indirect lighting. If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
 
 ----
 
@@ -168,7 +168,7 @@ If indirect lighting looks too flat, try decreasing :ref:`propagation<class_Voxe
 - :ref:`bool<class_bool>` **use_two_bounces**
 
 +-----------+----------------------------+
-| *Default* | ``false``                  |
+| *Default* | ``true``                   |
 +-----------+----------------------------+
 | *Setter*  | set_use_two_bounces(value) |
 +-----------+----------------------------+

@@ -19,6 +19,8 @@ Description
 
 Given a set of colors, this resource will interpolate them in order. This means that if you have color 1, color 2 and color 3, the gradient will interpolate from color 1 to color 2 and from color 2 to color 3. The gradient will initially have 2 colors (black and white), one (black) at gradient lower offset 0 and the other (white) at the gradient higher offset 1.
 
+See also :ref:`Curve<class_Curve>` which supports more complex easing methods, but does not support colors.
+
 Properties
 ----------
 
@@ -42,11 +44,11 @@ Methods
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>` **(** **)** |const|                                               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`interpolate<class_Gradient_method_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` point **)**                                 |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`reverse<class_Gradient_method_reverse>` **(** **)**                                                                       |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`sample<class_Gradient_method_sample>` **(** :ref:`float<class_float>` offset **)**                                        |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                      | :ref:`set_color<class_Gradient_method_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**      |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -156,14 +158,6 @@ Returns the number of colors in the gradient.
 
 ----
 
-.. _class_Gradient_method_interpolate:
-
-- :ref:`Color<class_Color>` **interpolate** **(** :ref:`float<class_float>` offset **)**
-
-Returns the interpolated color specified by ``offset``.
-
-----
-
 .. _class_Gradient_method_remove_point:
 
 - void **remove_point** **(** :ref:`int<class_int>` point **)**
@@ -177,6 +171,14 @@ Removes the color at the index ``point``.
 - void **reverse** **(** **)**
 
 Reverses/mirrors the gradient.
+
+----
+
+.. _class_Gradient_method_sample:
+
+- :ref:`Color<class_Color>` **sample** **(** :ref:`float<class_float>` offset **)**
+
+Returns the interpolated color specified by ``offset``.
 
 ----
 

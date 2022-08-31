@@ -41,6 +41,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_collision_count<class_KinematicCollision3D_method_get_collision_count>` **(** **)** |const|                                                                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`get_depth<class_KinematicCollision3D_method_get_depth>` **(** **)** |const|                                                                                                      |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`   | :ref:`get_local_shape<class_KinematicCollision3D_method_get_local_shape>` **(** :ref:`int<class_int>` collision_index=0 **)** |const|                                                  |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>` | :ref:`get_normal<class_KinematicCollision3D_method_get_normal>` **(** :ref:`int<class_int>` collision_index=0 **)** |const|                                                            |
@@ -59,7 +61,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_angle** **(** :ref:`int<class_int>` collision_index=0, :ref:`Vector3<class_Vector3>` up_direction=Vector3(0, 1, 0) **)** |const|
 
-Returns the collision angle according to ``up_direction``, which is ``Vector3.UP`` by default. This value is always positive.
+Returns the collision angle according to ``up_direction``, which is :ref:`Vector3.UP<class_Vector3_constant_UP>` by default. This value is always positive.
 
 ----
 
@@ -116,6 +118,14 @@ Returns the colliding body's velocity given a collision index (the deepest colli
 - :ref:`int<class_int>` **get_collision_count** **(** **)** |const|
 
 Returns the number of detected collisions.
+
+----
+
+.. _class_KinematicCollision3D_method_get_depth:
+
+- :ref:`float<class_float>` **get_depth** **(** **)** |const|
+
+Returns the colliding body's length of overlap along the collision normal.
 
 ----
 

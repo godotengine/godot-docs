@@ -35,11 +35,11 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Skeleton3D<class_Skeleton3D>`             | :ref:`get_godot_skeleton<class_GLTFSkeleton_method_get_godot_skeleton>` **(** **)**                                                       |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`get_unique_names<class_GLTFSkeleton_method_get_unique_names>` **(** **)**                                                           |
+| :ref:`String[]<class_String>`                   | :ref:`get_unique_names<class_GLTFSkeleton_method_get_unique_names>` **(** **)**                                                           |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`set_godot_bone_node<class_GLTFSkeleton_method_set_godot_bone_node>` **(** :ref:`Dictionary<class_Dictionary>` godot_bone_node **)** |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_unique_names<class_GLTFSkeleton_method_set_unique_names>` **(** :ref:`Array<class_Array>` unique_names **)**                    |
+| void                                            | :ref:`set_unique_names<class_GLTFSkeleton_method_set_unique_names>` **(** :ref:`String[]<class_String>` unique_names **)**                |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
@@ -100,7 +100,7 @@ Method Descriptions
 
 .. _class_GLTFSkeleton_method_get_unique_names:
 
-- :ref:`Array<class_Array>` **get_unique_names** **(** **)**
+- :ref:`String[]<class_String>` **get_unique_names** **(** **)**
 
 ----
 
@@ -112,7 +112,7 @@ Method Descriptions
 
 .. _class_GLTFSkeleton_method_set_unique_names:
 
-- void **set_unique_names** **(** :ref:`Array<class_Array>` unique_names **)**
+- void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

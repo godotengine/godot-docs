@@ -12,12 +12,12 @@ UPNPDevice
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-UPNP device.
+Universal Plug and Play (UPnP) device.
 
 Description
 -----------
 
-UPNP device. See :ref:`UPNP<class_UPNP>` for UPNP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
+Universal Plug and Play (UPnP) device. See :ref:`UPNP<class_UPNP>` for UPnP discovery and utility functions. Provides low-level access to UPNP control commands. Allows to manage port mappings (port forwarding) and to query network information of the device (like local and external IP address and status). Note that methods on this class are synchronous and block the calling thread.
 
 Properties
 ----------

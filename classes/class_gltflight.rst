@@ -12,7 +12,17 @@ GLTFLight
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Represents a GLTF light.
 
+Description
+-----------
+
+Represents a light as defined by the ``KHR_lights_punctual`` GLTF extension.
+
+Tutorials
+---------
+
+- `KHR_lights_punctual GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_lights_punctual>`__
 
 Properties
 ----------
@@ -30,6 +40,19 @@ Properties
 +-----------------------------+--------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`   | :ref:`range<class_GLTFLight_property_range>`                       | ``inf``               |
 +-----------------------------+--------------------------------------------------------------------+-----------------------+
+
+Methods
+-------
+
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_dictionary<class_GLTFLight_method_from_dictionary>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static| |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_node<class_GLTFLight_method_from_node>` **(** :ref:`Light3D<class_Light3D>` light_node **)** |static|                   |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`to_dictionary<class_GLTFLight_method_to_dictionary>` **(** **)** |const|                                                     |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Light3D<class_Light3D>`       | :ref:`to_node<class_GLTFLight_method_to_node>` **(** **)** |const|                                                                 |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -131,6 +154,39 @@ At this angle, the light drops off to zero brightness. Between the inner and out
 +-----------+------------------+
 
 The range of the light, beyond which the light has no effect. GLTF lights with no range defined behave like physical lights (which have infinite range). When creating a Godot light, the range is clamped to 4096.
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFLight_method_from_dictionary:
+
+- :ref:`GLTFLight<class_GLTFLight>` **from_dictionary** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static|
+
+Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
+
+----
+
+.. _class_GLTFLight_method_from_node:
+
+- :ref:`GLTFLight<class_GLTFLight>` **from_node** **(** :ref:`Light3D<class_Light3D>` light_node **)** |static|
+
+Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D>` node.
+
+----
+
+.. _class_GLTFLight_method_to_dictionary:
+
+- :ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+
+Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
+
+----
+
+.. _class_GLTFLight_method_to_node:
+
+- :ref:`Light3D<class_Light3D>` **to_node** **(** **)** |const|
+
+Converts this GLTFLight instance into a Godot :ref:`Light3D<class_Light3D>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

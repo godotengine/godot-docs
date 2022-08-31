@@ -138,7 +138,7 @@ Operators
 +-------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** :ref:`bool<class_bool>` right **)** |
 +-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator <<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**   |
+| :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** :ref:`bool<class_bool>` right **)**  |
 +-------------------------+--------------------------------------------------------------------------------------------+

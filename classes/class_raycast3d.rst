@@ -71,6 +71,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`   | :ref:`get_collider<class_RayCast3D_method_get_collider>` **(** **)** |const|                                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`         | :ref:`get_collider_rid<class_RayCast3D_method_get_collider_rid>` **(** **)** |const|                                                                           |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_collider_shape<class_RayCast3D_method_get_collider_shape>` **(** **)** |const|                                                                       |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`get_collision_mask_value<class_RayCast3D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
@@ -277,6 +279,14 @@ Updates the collision information for the ray. Use this method to update the col
 - :ref:`Object<class_Object>` **get_collider** **(** **)** |const|
 
 Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+----
+
+.. _class_RayCast3D_method_get_collider_rid:
+
+- :ref:`RID<class_RID>` **get_collider_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, or an empty :ref:`RID<class_RID>` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
 
 ----
 

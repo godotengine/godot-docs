@@ -40,7 +40,7 @@ Methods
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`               | :ref:`_get_property_default_value<class_ScriptExtension_method__get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_rpc_methods<class_ScriptExtension_method__get_rpc_methods>` **(** **)** |virtual| |const|                                                                    |
+| :ref:`Variant<class_Variant>`               | :ref:`_get_rpc_config<class_ScriptExtension_method__get_rpc_config>` **(** **)** |virtual| |const|                                                                      |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_method_list<class_ScriptExtension_method__get_script_method_list>` **(** **)** |virtual| |const|                                                      |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -51,6 +51,8 @@ Methods
 | :ref:`String<class_String>`                 | :ref:`_get_source_code<class_ScriptExtension_method__get_source_code>` **(** **)** |virtual| |const|                                                                    |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                     | :ref:`_has_method<class_ScriptExtension_method__has_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                                   |
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`_has_property_default_value<class_ScriptExtension_method__has_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                     | :ref:`_has_script_signal<class_ScriptExtension_method__has_script_signal>` **(** :ref:`StringName<class_StringName>` signal **)** |virtual| |const|                     |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,9 +150,9 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_rpc_methods:
+.. _class_ScriptExtension_method__get_rpc_config:
 
-- :ref:`Dictionary[]<class_Dictionary>` **_get_rpc_methods** **(** **)** |virtual| |const|
+- :ref:`Variant<class_Variant>` **_get_rpc_config** **(** **)** |virtual| |const|
 
 ----
 
@@ -181,6 +183,12 @@ Method Descriptions
 .. _class_ScriptExtension_method__has_method:
 
 - :ref:`bool<class_bool>` **_has_method** **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|
+
+----
+
+.. _class_ScriptExtension_method__has_property_default_value:
+
+- :ref:`bool<class_bool>` **_has_property_default_value** **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const|
 
 ----
 

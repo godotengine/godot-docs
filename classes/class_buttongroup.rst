@@ -31,11 +31,11 @@ Properties
 Methods
 -------
 
-+-------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
-+-------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_BaseButton>` | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
-+-------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`BaseButton[]<class_BaseButton>` | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
++---------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`BaseButton<class_BaseButton>`   | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
++---------------------------------------+------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -51,7 +51,7 @@ Method Descriptions
 
 .. _class_ButtonGroup_method_get_buttons:
 
-- :ref:`Array<class_Array>` **get_buttons** **(** **)**
+- :ref:`BaseButton[]<class_BaseButton>` **get_buttons** **(** **)**
 
 Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.button_group<class_BaseButton_property_button_group>`).
 

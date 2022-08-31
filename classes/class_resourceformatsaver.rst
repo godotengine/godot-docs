@@ -29,7 +29,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** |virtual| |
+| :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
@@ -53,7 +53,7 @@ Returns whether the given resource object can be saved by this saver.
 
 .. _class_ResourceFormatSaver_method__save:
 
-- :ref:`int<class_int>` **_save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags **)** |virtual|
+- :ref:`int<class_int>` **_save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
 
 Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
 

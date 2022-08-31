@@ -28,8 +28,7 @@ The ``JSON`` enables all data types to be converted to and from a JSON string. T
 ::
 
     var data_to_send = ["a", "b", "c"]
-    var json = JSON.new()
-    var json_string = json.stringify(data_to_send)
+    var json_string = JSON.stringify(data_to_send)
     # Save data
     # ...
     # Retrieve data
@@ -43,20 +42,28 @@ The ``JSON`` enables all data types to be converted to and from a JSON string. T
     else:
         print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
+Alternatively, you can parse string using the static :ref:`parse_string<class_JSON_method_parse_string>` method, but it doesn't allow to handle errors.
+
+::
+
+    var data = JSON.parse_string(json_string) # Returns null if parsing failed.
+
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_data<class_JSON_method_get_data>` **(** **)** |const|                                                                                                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_error_line<class_JSON_method_get_error_line>` **(** **)** |const|                                                                                                                                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_error_message<class_JSON_method_get_error_message>` **(** **)** |const|                                                                                                                                         |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json_string **)**                                                                                                                                 |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`stringify<class_JSON_method_stringify>` **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`get_data<class_JSON_method_get_data>` **(** **)** |const|                                                                                                                                                                    |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_error_line<class_JSON_method_get_error_line>` **(** **)** |const|                                                                                                                                                        |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_error_message<class_JSON_method_get_error_message>` **(** **)** |const|                                                                                                                                                  |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json_string **)**                                                                                                                                          |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`parse_string<class_JSON_method_parse_string>` **(** :ref:`String<class_String>` json_string **)** |static|                                                                                                                   |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`stringify<class_JSON_method_stringify>` **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)** |static| |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -95,17 +102,27 @@ Attempts to parse the ``json_string`` provided.
 
 Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns ``OK`` and the result can be retrieved using :ref:`get_data<class_JSON_method_get_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
 
+Non-static variant of :ref:`parse_string<class_JSON_method_parse_string>`, if you want custom error handling.
+
+----
+
+.. _class_JSON_method_parse_string:
+
+- :ref:`Variant<class_Variant>` **parse_string** **(** :ref:`String<class_String>` json_string **)** |static|
+
+Attempts to parse the ``json_string`` provided and returns the parsed data. Returns ``null`` if parse failed.
+
 ----
 
 .. _class_JSON_method_stringify:
 
-- :ref:`String<class_String>` **stringify** **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)**
+- :ref:`String<class_String>` **stringify** **(** :ref:`Variant<class_Variant>` data, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=true, :ref:`bool<class_bool>` full_precision=false **)** |static|
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
 \ **Note:** The JSON specification does not define integer or float types, but only a *number* type. Therefore, converting a Variant to JSON text will convert all numerical values to :ref:`float<class_float>` types.
 
-\ **Note:** If ``full_precision`` is true, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
+\ **Note:** If ``full_precision`` is ``true``, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
 
 The ``indent`` parameter controls if and how something is indented, the string used for this parameter will be used where there should be an indent in the output, even spaces like ``"   "`` will work. ``\t`` and ``\n`` can also be used for a tab indent, or to make a newline for each indent respectively.
 

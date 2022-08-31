@@ -149,6 +149,11 @@ Calls the method represented by this ``Callable``. Arguments can be passed and s
 
 Calls the method represented by this ``Callable`` in deferred mode, i.e. during the idle frame. Arguments can be passed and should match the method's signature.
 
+::
+
+    func _ready():
+        grab_focus.call_deferred()
+
 ----
 
 .. _class_Callable_method_get_method:

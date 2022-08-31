@@ -53,7 +53,7 @@ Methods
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_language_name<class_TranslationServer_method_get_language_name>` **(** :ref:`String<class_String>` language **)** |const|                                                                                                                                   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                         | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                                                                                                                                                      |
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                                                                                                                                                      |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** |const|                                                                                                                                                                                      |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,7 +166,7 @@ Returns readable language name for the ``language`` code.
 
 .. _class_TranslationServer_method_get_loaded_locales:
 
-- :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** |const|
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_locales** **(** **)** |const|
 
 Returns an array of all loaded locales of the project.
 
@@ -222,7 +222,7 @@ It will return ``null`` if there is no :ref:`Translation<class_Translation>` ins
 
 - :ref:`StringName<class_StringName>` **pseudolocalize** **(** :ref:`StringName<class_StringName>` message **)** |const|
 
-Returns the pseudolocalized string based on the ``p_message`` passed in.
+Returns the pseudolocalized string based on the ``message`` passed in.
 
 ----
 

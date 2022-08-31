@@ -24,23 +24,23 @@ Description
 Methods
 -------
 
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`add_interface<class_TextServerManager_method_add_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**             |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`find_interface<class_TextServerManager_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`get_interface<class_TextServerManager_method_get_interface>` **(** :ref:`int<class_int>` idx **)** |const|                         |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>` **(** **)** |const|                                       |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>` **(** **)** |const|                                                 |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TextServer<class_TextServer>` | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>` **(** **)** |const|                                   |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`remove_interface<class_TextServerManager_method_remove_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**       |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>` **(** :ref:`TextServer<class_TextServer>` index **)** |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`add_interface<class_TextServerManager_method_add_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**             |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>`   | :ref:`find_interface<class_TextServerManager_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>`   | :ref:`get_interface<class_TextServerManager_method_get_interface>` **(** :ref:`int<class_int>` idx **)** |const|                         |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_interface_count<class_TextServerManager_method_get_interface_count>` **(** **)** |const|                                       |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_interfaces<class_TextServerManager_method_get_interfaces>` **(** **)** |const|                                                 |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TextServer<class_TextServer>`   | :ref:`get_primary_interface<class_TextServerManager_method_get_primary_interface>` **(** **)** |const|                                   |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`remove_interface<class_TextServerManager_method_remove_interface>` **(** :ref:`TextServer<class_TextServer>` interface **)**       |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`set_primary_interface<class_TextServerManager_method_set_primary_interface>` **(** :ref:`TextServer<class_TextServer>` index **)** |
++---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -96,7 +96,7 @@ Returns the number of interfaces currently registered.
 
 .. _class_TextServerManager_method_get_interfaces:
 
-- :ref:`Array<class_Array>` **get_interfaces** **(** **)** |const|
+- :ref:`Dictionary[]<class_Dictionary>` **get_interfaces** **(** **)** |const|
 
 Returns a list of available interfaces the index and name of each interface.
 

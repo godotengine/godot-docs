@@ -70,7 +70,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **connect_to_peer** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`bool<class_bool>` validate_certs=true, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
 
-Connects a ``peer`` beginning the DTLS handshake using the underlying :ref:`PacketPeerUDP<class_PacketPeerUDP>` which must be connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`). If ``validate_certs`` is ``true``, ``PacketPeerDTLS`` will validate that the certificate presented by the remote peer and match it with the ``for_hostname`` argument. You can specify a custom :ref:`X509Certificate<class_X509Certificate>` to use for validation via the ``valid_certificate`` argument.
+Connects a ``packet_peer`` beginning the DTLS handshake using the underlying :ref:`PacketPeerUDP<class_PacketPeerUDP>` which must be connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`). If ``validate_certs`` is ``true``, ``PacketPeerDTLS`` will validate that the certificate presented by the remote peer and match it with the ``for_hostname`` argument. You can specify a custom :ref:`X509Certificate<class_X509Certificate>` to use for validation via the ``valid_certificate`` argument.
 
 ----
 

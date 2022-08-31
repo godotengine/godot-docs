@@ -29,22 +29,22 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint3D_property_collision/exclude_nodes>` | ``true``         |
-+---------------------------------+--------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint3D_property_nodes/node_a>`                       | ``NodePath("")`` |
-+---------------------------------+--------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint3D_property_nodes/node_b>`                       | ``NodePath("")`` |
-+---------------------------------+--------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint3D_property_solver/priority>`                 | ``1``            |
-+---------------------------------+--------------------------------------------------------------------------------+------------------+
++---------------------------------+------------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`exclude_nodes_from_collision<class_Joint3D_property_exclude_nodes_from_collision>` | ``true``         |
++---------------------------------+------------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_a<class_Joint3D_property_node_a>`                                             | ``NodePath("")`` |
++---------------------------------+------------------------------------------------------------------------------------------+------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint3D_property_node_b>`                                             | ``NodePath("")`` |
++---------------------------------+------------------------------------------------------------------------------------------+------------------+
+| :ref:`int<class_int>`           | :ref:`solver_priority<class_Joint3D_property_solver_priority>`                           | ``1``            |
++---------------------------------+------------------------------------------------------------------------------------------+------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_Joint3D_property_collision/exclude_nodes:
+.. _class_Joint3D_property_exclude_nodes_from_collision:
 
-- :ref:`bool<class_bool>` **collision/exclude_nodes**
+- :ref:`bool<class_bool>` **exclude_nodes_from_collision**
 
 +-----------+-----------------------------------------+
 | *Default* | ``true``                                |
@@ -58,9 +58,9 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 
 ----
 
-.. _class_Joint3D_property_nodes/node_a:
+.. _class_Joint3D_property_node_a:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_a**
+- :ref:`NodePath<class_NodePath>` **node_a**
 
 +-----------+-------------------+
 | *Default* | ``NodePath("")``  |
@@ -74,9 +74,9 @@ The node attached to the first side (A) of the joint.
 
 ----
 
-.. _class_Joint3D_property_nodes/node_b:
+.. _class_Joint3D_property_node_b:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_b**
+- :ref:`NodePath<class_NodePath>` **node_b**
 
 +-----------+-------------------+
 | *Default* | ``NodePath("")``  |
@@ -90,9 +90,9 @@ The node attached to the second side (B) of the joint.
 
 ----
 
-.. _class_Joint3D_property_solver/priority:
+.. _class_Joint3D_property_solver_priority:
 
-- :ref:`int<class_int>` **solver/priority**
+- :ref:`int<class_int>` **solver_priority**
 
 +-----------+----------------------------+
 | *Default* | ``1``                      |

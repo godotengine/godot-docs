@@ -86,7 +86,7 @@ Property Descriptions
 | *Getter*  | get_ccdik_data_chain_length()      |
 +-----------+------------------------------------+
 
-The amount of CCDIK joints in the CCDIK modification.
+The number of CCDIK joints in the CCDIK modification.
 
 ----
 

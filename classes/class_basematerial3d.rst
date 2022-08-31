@@ -142,7 +142,7 @@ Properties
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`int<class_int>`                                           | :ref:`heightmap_min_layers<class_BaseMaterial3D_property_heightmap_min_layers>`                                   |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                                       | :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`                                             | ``0.05``              |
+| :ref:`float<class_float>`                                       | :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`                                             | ``5.0``               |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Texture2D<class_Texture2D>`                               | :ref:`heightmap_texture<class_BaseMaterial3D_property_heightmap_texture>`                                         |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -389,9 +389,9 @@ enum **TextureFilter**:
 
 - **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS** = **3** --- The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps. Use this for most cases as mipmaps are important to smooth out pixels that are far from the camera.
 
-- **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC** = **4** --- The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera.
+- **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC** = **4** --- The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
-- **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC** = **5** --- The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing.
+- **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC** = **5** --- The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
 - **TEXTURE_FILTER_MAX** = **6** --- Represents the size of the :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` enum.
 
@@ -753,7 +753,7 @@ enum **BillboardMode**:
 
 - **BILLBOARD_PARTICLES** = **3** --- Used for particle systems when assigned to :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` nodes. Enables ``particles_anim_*`` properties.
 
-The :ref:`ParticlesMaterial.anim_speed_min<class_ParticlesMaterial_property_anim_speed_min>` or :ref:`CPUParticles3D.anim_speed_min<class_CPUParticles3D_property_anim_speed_min>` should also be set to a value bigger than zero for the animation to play.
+The :ref:`ParticleProcessMaterial.anim_speed_min<class_ParticleProcessMaterial_property_anim_speed_min>` or :ref:`CPUParticles3D.anim_speed_min<class_CPUParticles3D_property_anim_speed_min>` should also be set to a value bigger than zero for the animation to play.
 
 ----
 
@@ -940,7 +940,7 @@ The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 | *Getter* | get_alpha_scissor_threshold()      |
 +----------+------------------------------------+
 
-Threshold at which the alpha scissor will discard values.
+Threshold at which the alpha scissor will discard values. Higher values will result in more pixels being discarded. If the material becomes too opaque at a distance, try increasing :ref:`alpha_scissor_threshold<class_BaseMaterial3D_property_alpha_scissor_threshold>`. If the material disappears at a distance, try decreasing :ref:`alpha_scissor_threshold<class_BaseMaterial3D_property_alpha_scissor_threshold>`.
 
 ----
 
@@ -1616,6 +1616,8 @@ Grows object vertices in the direction of their normals.
 | *Getter*  | is_heightmap_deep_parallax_enabled() |
 +-----------+--------------------------------------+
 
+If ``true``, uses parallax occlusion mapping to represent depth in the material instead of simple offset mapping (see :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`). This results in a more convincing depth effect, but is much more expensive on the GPU. Only enable this on materials where it makes a significant visual difference.
+
 ----
 
 .. _class_BaseMaterial3D_property_heightmap_enabled:
@@ -1630,7 +1632,7 @@ Grows object vertices in the direction of their normals.
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, height mapping is enabled (also called "parallax mapping" or "depth mapping"). See also :ref:`normal_enabled<class_BaseMaterial3D_property_normal_enabled>`.
+If ``true``, height mapping is enabled (also called "parallax mapping" or "depth mapping"). See also :ref:`normal_enabled<class_BaseMaterial3D_property_normal_enabled>`. Height mapping is a demanding feature on the GPU, so it should only be used on materials where it makes a significant visual difference.
 
 \ **Note:** Height mapping is not supported if triplanar mapping is used on the same material. The value of :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>` will be ignored if :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled.
 
@@ -1648,6 +1650,8 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 | *Getter*  | get_heightmap_deep_parallax_flip_binormal()      |
 +-----------+--------------------------------------------------+
 
+If ``true``, flips the mesh's binormal vectors when interpreting the height map. If the heightmap effect looks strange when the camera moves (even with a reasonable :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`), try setting this to ``true``.
+
 ----
 
 .. _class_BaseMaterial3D_property_heightmap_flip_tangent:
@@ -1661,6 +1665,8 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 +-----------+-------------------------------------------------+
 | *Getter*  | get_heightmap_deep_parallax_flip_tangent()      |
 +-----------+-------------------------------------------------+
+
+If ``true``, flips the mesh's tangent vectors when interpreting the height map. If the heightmap effect looks strange when the camera moves (even with a reasonable :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`), try setting this to ``true``.
 
 ----
 
@@ -1676,6 +1682,10 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
+If ``true``, interprets the height map texture as a depth map, with brighter values appearing to be "lower" in altitude compared to darker values.
+
+This can be enabled for compatibility with some materials authored for Godot 3.x. This is not necessary if the Invert import option was used to invert the depth map in Godot 3.x, in which case :ref:`heightmap_flip_texture<class_BaseMaterial3D_property_heightmap_flip_texture>` should remain ``false``.
+
 ----
 
 .. _class_BaseMaterial3D_property_heightmap_max_layers:
@@ -1687,6 +1697,10 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 +----------+-----------------------------------------------+
 | *Getter* | get_heightmap_deep_parallax_max_layers()      |
 +----------+-----------------------------------------------+
+
+The number of layers to use for parallax occlusion mapping when the camera is up close to the material. Higher values result in a more convincing depth effect, especially in materials that have steep height changes. Higher values have a significant cost on the GPU, so it should only be increased on materials where it makes a significant visual difference.
+
+\ **Note:** Only effective if :ref:`heightmap_deep_parallax<class_BaseMaterial3D_property_heightmap_deep_parallax>` is ``true``.
 
 ----
 
@@ -1700,6 +1714,10 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 | *Getter* | get_heightmap_deep_parallax_min_layers()      |
 +----------+-----------------------------------------------+
 
+The number of layers to use for parallax occlusion mapping when the camera is far away from the material. Higher values result in a more convincing depth effect, especially in materials that have steep height changes. Higher values have a significant cost on the GPU, so it should only be increased on materials where it makes a significant visual difference.
+
+\ **Note:** Only effective if :ref:`heightmap_deep_parallax<class_BaseMaterial3D_property_heightmap_deep_parallax>` is ``true``.
+
 ----
 
 .. _class_BaseMaterial3D_property_heightmap_scale:
@@ -1707,12 +1725,16 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 - :ref:`float<class_float>` **heightmap_scale**
 
 +-----------+----------------------------+
-| *Default* | ``0.05``                   |
+| *Default* | ``5.0``                    |
 +-----------+----------------------------+
 | *Setter*  | set_heightmap_scale(value) |
 +-----------+----------------------------+
 | *Getter*  | get_heightmap_scale()      |
 +-----------+----------------------------+
+
+The heightmap scale to use for the parallax effect (see :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`). The default value is tuned so that the highest point (value = 255) appears to be 5 cm higher than the lowest point (value = 0). Higher values result in a deeper appearance, but may result in artifacts appearing when looking at the material from oblique angles, especially when the camera moves. Negative values can be used to invert the parallax effect, but this is different from inverting the texture using :ref:`heightmap_flip_texture<class_BaseMaterial3D_property_heightmap_flip_texture>` as the material will also appear to be "closer" to the camera. In most cases, :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>` should be kept to a positive value.
+
+\ **Note:** If the height map effect looks strange regardless of this value, try adjusting :ref:`heightmap_flip_binormal<class_BaseMaterial3D_property_heightmap_flip_binormal>` and :ref:`heightmap_flip_tangent<class_BaseMaterial3D_property_heightmap_flip_tangent>`. See also :ref:`heightmap_texture<class_BaseMaterial3D_property_heightmap_texture>` for recommendations on authoring heightmap textures, as the way the heightmap texture is authored affects how :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>` behaves.
 
 ----
 
@@ -1725,6 +1747,12 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The texture to use as a height map. See also :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`.
+
+For best results, the texture should be normalized (with :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>` reduced to compensate). In `GIMP <https://gimp.org>`__, this can be done using **Colors > Auto > Equalize**. If the texture only uses a small part of its available range, the parallax effect may look strange, especially when the camera moves.
+
+\ **Note:** To reduce memory usage and improve loading times, you may be able to use a lower-resolution heightmap texture as most heightmaps are only comprised of low-frequency data.
 
 ----
 
@@ -1756,7 +1784,7 @@ A high value makes the material appear more like a metal. Non-metals use their a
 | *Getter*  | get_specular()      |
 +-----------+---------------------+
 
-Sets the size of the specular lobe. The specular lobe is the bright spot that is reflected from light sources.
+Adjusts the strength of specular reflections. Specular reflections are composed of scene reflections and the specular lobe which is the bright spot that is reflected from light sources. When set to ``0.0``, no specular reflections will be visible. This differs from the :ref:`SPECULAR_DISABLED<class_BaseMaterial3D_constant_SPECULAR_DISABLED>` :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` as :ref:`SPECULAR_DISABLED<class_BaseMaterial3D_constant_SPECULAR_DISABLED>` only applies to the specular lobe from the light source.
 
 \ **Note:** Unlike :ref:`metallic<class_BaseMaterial3D_property_metallic>`, this is not energy-conserving, so it should be left at ``0.5`` in most cases. See also :ref:`roughness<class_BaseMaterial3D_property_roughness>`.
 
@@ -2490,6 +2518,8 @@ If ``true``, instead of using ``UV`` textures will use a triplanar texture looku
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
 
+\ **Note:** :ref:`uv1_triplanar_sharpness<class_BaseMaterial3D_property_uv1_triplanar_sharpness>` is clamped between ``0.0`` and ``150.0`` (inclusive) as values outside that range can look broken depending on the mesh.
+
 ----
 
 .. _class_BaseMaterial3D_property_uv1_world_triplanar:
@@ -2569,6 +2599,8 @@ If ``true``, instead of using ``UV2`` textures will use a triplanar texture look
 +-----------+------------------------------------------+
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
+
+\ **Note:** :ref:`uv2_triplanar_sharpness<class_BaseMaterial3D_property_uv2_triplanar_sharpness>` is clamped between ``0.0`` and ``150.0`` (inclusive) as values outside that range can look broken depending on the mesh.
 
 ----
 

@@ -172,7 +172,7 @@ Method Descriptions
 
 Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, and ``dst`` (Daylight Savings Time).
 
-The returned values are in the system's local time when ``utc`` is false, otherwise they are in UTC.
+The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
 ----
 
@@ -190,7 +190,7 @@ Converts the given Unix timestamp to a dictionary of keys: ``year``, ``month``, 
 
 Returns the current date as an ISO 8601 date string (YYYY-MM-DD).
 
-The returned values are in the system's local time when ``utc`` is false, otherwise they are in UTC.
+The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
 ----
 
@@ -208,7 +208,7 @@ Converts the given Unix timestamp to an ISO 8601 date string (YYYY-MM-DD).
 
 Converts the given ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS) to a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``hour``, ``minute``, and ``second``.
 
-If ``weekday`` is false, then the ``weekday`` entry is excluded (the calculation is relatively expensive).
+If ``weekday`` is ``false``, then the ``weekday`` entry is excluded (the calculation is relatively expensive).
 
 \ **Note:** Any decimal fraction in the time string will be ignored silently.
 
@@ -242,7 +242,7 @@ The given dictionary can be populated with the following keys: ``year``, ``month
 
 If the dictionary is empty, ``0`` is returned. If some keys are omitted, they default to the equivalent values for the Unix epoch timestamp 0 (1970-01-01 at 00:00:00).
 
-If ``use_space`` is true, use a space instead of the letter T in the middle.
+If ``use_space`` is ``true``, the date and time bits are separated by an empty space character instead of the letter T.
 
 ----
 
@@ -252,9 +252,9 @@ If ``use_space`` is true, use a space instead of the letter T in the middle.
 
 Returns the current date and time as an ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS).
 
-The returned values are in the system's local time when ``utc`` is false, otherwise they are in UTC.
+The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
-If ``use_space`` is true, use a space instead of the letter T in the middle.
+If ``use_space`` is ``true``, the date and time bits are separated by an empty space character instead of the letter T.
 
 ----
 
@@ -264,7 +264,7 @@ If ``use_space`` is true, use a space instead of the letter T in the middle.
 
 Converts the given Unix timestamp to an ISO 8601 date and time string (YYYY-MM-DDTHH:MM:SS).
 
-If ``use_space`` is true, use a space instead of the letter T in the middle.
+If ``use_space`` is ``true``, the date and time bits are separated by an empty space character instead of the letter T.
 
 ----
 
@@ -302,7 +302,7 @@ Will always be positive or 0 and uses a 64-bit value (it will wrap after roughly
 
 Returns the current time as a dictionary of keys: ``hour``, ``minute``, and ``second``.
 
-The returned values are in the system's local time when ``utc`` is false, otherwise they are in UTC.
+The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
 ----
 
@@ -320,7 +320,7 @@ Converts the given time to a dictionary of keys: ``hour``, ``minute``, and ``sec
 
 Returns the current time as an ISO 8601 time string (HH:MM:SS).
 
-The returned values are in the system's local time when ``utc`` is false, otherwise they are in UTC.
+The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
 ----
 

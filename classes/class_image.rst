@@ -101,7 +101,7 @@ Methods
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_Image>`                     | :ref:`get_rect<class_Image_method_get_rect>` **(** :ref:`Rect2i<class_Rect2i>` rect **)** |const|                                                                                                                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`get_size<class_Image_method_get_size>` **(** **)** |const|                                                                                                                                                                                                     |
+| :ref:`Vector2i<class_Vector2i>`               | :ref:`get_size<class_Image_method_get_size>` **(** **)** |const|                                                                                                                                                                                                     |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2i<class_Rect2i>`                   | :ref:`get_used_rect<class_Image_method_get_used_rect>` **(** **)** |const|                                                                                                                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -496,7 +496,7 @@ Method Descriptions
 
 - void **blend_rect** **(** :ref:`Image<class_Image>` src, :ref:`Rect2i<class_Rect2i>` src_rect, :ref:`Vector2i<class_Vector2i>` dst **)**
 
-Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
+Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with not positive size is treated as empty.
 
 ----
 
@@ -740,7 +740,7 @@ Returns a new image that is a copy of the image's area specified with ``rect``.
 
 .. _class_Image_method_get_size:
 
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
+- :ref:`Vector2i<class_Vector2i>` **get_size** **(** **)** |const|
 
 Returns the image's size (width and height).
 

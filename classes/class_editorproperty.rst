@@ -52,8 +52,6 @@ Methods
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)** |const|                                                                                                                                                    |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_tooltip_text<class_EditorProperty_method_get_tooltip_text>` **(** **)** |const|                                                                                                                                                          |
-+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>` **(** :ref:`Control<class_Control>` editor **)**                                                                                                                           |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)**                                                                                                                                                                    |
@@ -78,9 +76,17 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 ----
 
+.. _class_EditorProperty_signal_property_can_revert_changed:
+
+- **property_can_revert_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`bool<class_bool>` can_revert **)**
+
+Emitted when the revertability (i.e., whether it has a non-default value and thus is displayed with a revert icon) of a property has changed.
+
+----
+
 .. _class_EditorProperty_signal_property_changed:
 
-- **property_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
+- **property_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field, :ref:`bool<class_bool>` changing **)**
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
@@ -295,14 +301,6 @@ Gets the edited object.
 - :ref:`StringName<class_StringName>` **get_edited_property** **(** **)** |const|
 
 Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_method__parse_property>`), then this will return the property.
-
-----
-
-.. _class_EditorProperty_method_get_tooltip_text:
-
-- :ref:`String<class_String>` **get_tooltip_text** **(** **)** |const|
-
-Must be implemented to provide a custom tooltip to the property editor.
 
 ----
 

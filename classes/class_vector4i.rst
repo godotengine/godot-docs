@@ -83,9 +83,9 @@ Operators
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Vector4i<class_Vector4i>` | :ref:`operator /<class_Vector4i_operator_div_Vector4i>` **(** :ref:`int<class_int>` right **)**           |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <<class_Vector4i_operator_lt_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**      |
+| :ref:`bool<class_bool>`         | :ref:`operator \<<class_Vector4i_operator_lt_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator <=<class_Vector4i_operator_lte_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**    |
+| :ref:`bool<class_bool>`         | :ref:`operator \<=<class_Vector4i_operator_lte_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector4i_operator_eq_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**     |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -123,9 +123,9 @@ Constants
 
 - **AXIS_W** = **3**
 
-- **ZERO** = **Vector4i(0, 0, 0)**
+- **ZERO** = **Vector4i(0, 0, 0, 0)**
 
-- **ONE** = **Vector4i(1, 1, 1)**
+- **ONE** = **Vector4i(1, 1, 1, 1)**
 
 Property Descriptions
 ---------------------
