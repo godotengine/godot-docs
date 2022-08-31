@@ -367,7 +367,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function > dt,
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method > dt,
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).attribute > dt {
-    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
     font-size: 90%;
     font-weight: normal;
     margin-bottom: 16px;
@@ -418,7 +418,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
     color: var(--link-color-visited);
 }
 html.writer-html5 .rst-content dl.field-list > dd strong {
-    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
 footer,
