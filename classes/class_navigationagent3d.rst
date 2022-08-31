@@ -118,7 +118,7 @@ Notifies when the player defined target, set with :ref:`set_target_location<clas
 
 - **velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
 
-Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>`.
+Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>`. Only emitted when :ref:`bool<class_bool>` is enabled.
 
 Property Descriptions
 ---------------------
