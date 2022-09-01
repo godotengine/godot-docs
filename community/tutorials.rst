@@ -12,8 +12,6 @@ Where to start
 
 The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_, `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_ and `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`_ are well-regarded in the community and often recommended as a gentle introduction to beginners.
 
-If you're interested in Visual Scripting, `Emilio's tutorials <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ may be worth a look.
-
 If you're interested in a complete introduction to programming using Godot and GDScript, the unofficial `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ YouTube channel is a good place to start.
 
 GDQuest's *Learn GDScript From Zero* is a free and open source interactive tutorial for absolute beginners to learn to program with Godot's GDScript language. It is available as a `desktop application <https://gdquest.itch.io/learn-godot-gdscript>`_  or `in the browser <https://gdquest.github.io/learn-gdscript>`_.

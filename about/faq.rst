@@ -65,9 +65,8 @@ and :ref:`compiling Godot yourself <toc-devel-compiling>`.
 Which programming languages are supported in Godot?
 ---------------------------------------------------
 
-The officially supported languages for Godot are GDScript, Visual Scripting,
-C#, and C++. See the subcategories for each language in the
-:ref:`scripting <toc-learn-scripting>` section.
+The officially supported languages for Godot are GDScript, C#, and C++.
+See the subcategories for each language in the :ref:`scripting <toc-learn-scripting>` section.
 
 If you are just starting out with either Godot or game development in general,
 GDScript is the recommended language to learn and use since it is native to Godot.

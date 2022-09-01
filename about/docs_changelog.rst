@@ -109,7 +109,6 @@ Scripting
 - :ref:`doc_evaluating_expressions`
 - :ref:`doc_what_is_gdnative`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
-- :ref:`doc_custom_visualscript_nodes`
 
 VR
 ^^

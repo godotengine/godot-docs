@@ -417,9 +417,9 @@ To clarify, here is an example of how this looks in the
 Master and puppet keywords
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. FIXME: Clarify the equivalents to the GDScript keywords in C# and Visual Script.
+.. FIXME: Clarify the equivalents to the GDScript keywords in C#.
 
-The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C# and Visual Script).
+The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C#).
 Similarly to the ``remote`` keyword, functions can also be tagged with them:
 
 Example bomb code:
