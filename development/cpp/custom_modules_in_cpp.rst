@@ -34,25 +34,15 @@ instead. Adding C++ modules can be useful in the following scenarios:
 Creating a new module
 ---------------------
 
-Before creating a module, make sure to download the source code of Godot
-and manage to compile it. There are tutorials in the documentation for this.
+Before creating a module, make sure to :ref:`download the source code of Godot
+and compile it <toc-devel-compiling>`.
 
 To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called "summator", and is placed inside the
-Godot source tree (``C:\godot`` refers to wherever the Godot sources are
-located):
-
-.. code-block:: console
-
-    C:\godot> cd modules
-    C:\godot\modules> mkdir summator
-    C:\godot\modules> cd summator
-    C:\godot\modules\summator>
-
-Inside we will create a simple summator class:
+The example module will be called "summator" (``godot/modules/summator``).
+Inside we will create a summator class:
 
 .. code-block:: cpp
 
@@ -61,10 +51,10 @@ Inside we will create a simple summator class:
     #ifndef SUMMATOR_H
     #define SUMMATOR_H
 
-    #include "core/reference.h"
+    #include "core/object/ref_counted.h"
 
-    class Summator : public Reference {
-        GDCLASS(Summator, Reference);
+    class Summator : public RefCounted {
+        GDCLASS(Summator, RefCounted);
 
         int count;
 
@@ -139,7 +129,7 @@ These files should contain the following:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void register_summator_types() {
@@ -182,8 +172,8 @@ environment's paths:
     env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
 
 If you want to add custom compiler flags when building your module, you need to clone
-`env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCsub` with custom flags:
+``env`` first, so it won't add those flags to whole Godot build (which can cause errors).
+Example ``SCsub`` with custom flags:
 
 .. code-block:: python
 
@@ -193,11 +183,14 @@ Example `SCsub` with custom flags:
 
     module_env = env.Clone()
     module_env.add_source_files(env.modules_sources, "*.cpp")
-    module_env.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
-    module_env.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
+    # Append CCFLAGS flags for both C and C++ code.
+    module_env.Append(CCFLAGS=['-O2'])
+    # If you need to, you can:
+    # - Append CFLAGS for C code only.
+    # - Append CXXFLAGS for C++ code only.
 
-And finally, the configuration file for the module, this is a simple
-python script that must be named ``config.py``:
+And finally, the configuration file for the module, this is a
+Python script that must be named ``config.py``:
 
 .. code-block:: python
 
@@ -237,7 +230,8 @@ Using the module
 
 You can now use your newly created module from any script:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var s = Summator.new()
     s.add(10)
@@ -372,7 +366,7 @@ We now need to add this method to ``register_types`` header and source files:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "summator.h"
 
     void preregister_summator_types() {
@@ -391,16 +385,21 @@ We now need to add this method to ``register_types`` header and source files:
 Improving the build system for development
 ------------------------------------------
 
-So far we defined a clean and simple SCsub that allows us to add the sources
+.. warning::
+
+    This shared library support is not designed to support distributing a module
+    to other users without recompiling the engine. For that purpose, use
+    :ref:`GDNative <doc_what_is_gdnative>` instead.
+
+So far, we defined a clean SCsub that allows us to add the sources
 of our new module as part of the Godot binary.
 
 This static approach is fine when we want to build a release version of our
-game given we want all the modules in a single binary.
+game, given we want all the modules in a single binary.
 
-However, the trade-off is every single change means a full recompilation of the
-game. Even if SCons is able to detect and recompile only the file that have
-changed, finding such files and eventually linking the final binary is a
-long and costly part.
+However, the trade-off is that every single change requires a full recompilation of the
+game. Even though SCons is able to detect and recompile only the file that was
+changed, finding such files and eventually linking the final binary takes a long time.
 
 The solution to avoid such a cost is to build our own module as a shared
 library that will be dynamically loaded when starting our game's binary.
@@ -454,13 +453,13 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
     ./bin/godot*
 
 .. note::
-  You have to ``export`` the environment variable otherwise
-  you won't be able to play your project from within the editor.
+  You have to ``export`` the environment variable. Otherwise,
+  you won't be able to run your project from the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
-using the `ARGUMENT` command:
+using the ``ARGUMENT`` command:
 
 .. code-block:: python
 
@@ -475,7 +474,6 @@ using the `ARGUMENT` command:
 
     module_env = env.Clone()
     module_env.Append(CCFLAGS=['-O2'])
-    module_env.Append(CXXFLAGS=['-std=c++11'])
 
     if ARGUMENTS.get('summator_shared', 'no') == 'yes':
         # Shared lib compilation
@@ -706,7 +704,7 @@ But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.
 
 -  If you inherit from :ref:`class_Node` (or any derived node type, such as
-   Sprite), your new class will appear in the editor, in the inheritance
+   Sprite2D), your new class will appear in the editor, in the inheritance
    tree in the "Add Node" dialog.
 -  If you inherit from :ref:`class_Resource`, it will appear in the resource
    list, and all the exposed properties can be serialized when

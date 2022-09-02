@@ -39,10 +39,9 @@ So, what is the difference?:
    program. However, as a downside, they can't directly interact with
    other physics objects, unless done by hand in code.
 
-This short tutorial will focus on the kinematic character controller.
-Basically, the old-school way of handling collisions (which is not
-necessarily simpler under the hood, but well hidden and presented as a
-nice and simple API).
+This short tutorial focuses on the kinematic character controller.
+It uses the old-school way of handling collisions, which is not
+necessarily simpler under the hood, but well hidden and presented as an API.
 
 Physics process
 ~~~~~~~~~~~~~~~
@@ -184,7 +183,7 @@ Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
 being used (for speed at least) are pixels/second.
 
-This adds simple walking support by pressing left and right:
+This adds basic support for walking when pressing left and right:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

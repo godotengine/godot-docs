@@ -3,72 +3,105 @@
 Using the ArrayMesh
 ===================
 
-This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`
+This tutorial will present the basics of using an :ref:`ArrayMesh <class_arraymesh>`.
 
 To do so, we will use the function :ref:`add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`,
-which takes up to four parameters. The first two are required, while the second two are optional.
+which takes up to five parameters. The first two are required, while the last three are optional.
 
-The first is the ``PrimitiveType``, this is an OpenGL concept that instructs the GPU
-how to arrange the primitive based on the vertices given whether it is triangles,
-lines, points, etc. A complete list can be found under the :ref:`Mesh <class_mesh>`
-class reference page.
+The first parameter is the ``PrimitiveType``, an OpenGL concept that instructs the GPU
+how to arrange the primitive based on the vertices given, i.e. whether they represent triangles,
+lines, points, etc. See :ref:`Mesh.PrimitiveType <enum_Mesh_PrimitiveType>` for the options available.
 
-The second is the actual Array that stores the mesh information. The array is a normal Godot array that
+The second parameter, ``arrays``, is the actual Array that stores the mesh information. The array is a normal Godot array that
 is constructed with empty brackets ``[]``. It stores a ``Packed**Array`` (e.g. PackedVector3Array,
-PackedInt32Array, etc.) for each type of information.
+PackedInt32Array, etc.) for each type of information that will be used to build the surface.
 
-- ``ARRAY_VERTEX`` = 0 | PackedVector3Array or PackedVector2Array
-- ``ARRAY_NORMAL`` = 1 | PackedVector3Array
-- ``ARRAY_TANGENT`` = 2 | PackedFloat32Array of groups of 4 floats. first 3 floats determine the tangent, and
-  the last the binormal direction as -1 or 1.
-- ``ARRAY_COLOR`` = 3 | PackedColorArray
-- ``ARRAY_TEX_UV`` = 4 | PackedVector2Array or PackedVector3Array
-- ``ARRAY_TEX_UV2`` = 5 | PackedVector2Array or PackedVector3Array
-- ``ARRAY_BONES`` = 6 | PackedFloat32Array of groups of 4 floats or PackedInt32Array of groups of 4 ints
-- ``ARRAY_WEIGHTS`` = 7 | PackedFloat32Array of groups of 4 floats
-- ``ARRAY_INDEX`` = 8 | PackedInt32Array
+Common elements of ``arrays`` are listed below, together with the position they must have within ``arrays``.
+See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
 
-The Array of vertices is always required. All the others are optional and will only be used if included.
 
-Each array needs to have the same number of elements as the vertex array except for the index array.
-For arrays like tangents, an element is a group of 4 floats. So the array size will be four times
-the size of the vertex array size, but they will have the same number of elements
+.. list-table::
+    :class: wrap-normal
+    :width: 100%
+    :widths: auto
+    :header-rows: 1
 
-The index array is unique.
+    * - Index
+      - Mesh.ArrayType Enum
+      - Array type
+    
+    * - 0
+      - ``ARRAY_VERTEX``
+      - :ref:`PackedVector3Array <class_PackedVector3Array>` or :ref:`PackedVector2Array <class_PackedVector2Array>`
+    
+    * - 1
+      - ``ARRAY_NORMAL``
+      - :ref:`PackedVector3Array <class_PackedVector3Array>`
+    
+    * - 2
+      - ``ARRAY_TANGENT``
+      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` of groups of 4 floats. The first 3 floats determine the tangent, and the last float the binormal 
+        direction as -1 or 1.
+    
+    * - 3
+      - ``ARRAY_COLOR``
+      - :ref:`PackedColorArray <class_PackedColorArray>`
+    
+    * - 4
+      - ``ARRAY_TEX_UV``
+      - :ref:`PackedVector2Array <class_PackedVector2Array>` or :ref:`PackedVector3Array <class_PackedVector3Array>`
+    
+    * - 5
+      - ``ARRAY_TEX_UV2``
+      - :ref:`PackedVector2Array <class_PackedVector2Array>` or :ref:`PackedVector3Array <class_PackedVector3Array>`
+    
+    * - 10
+      - ``ARRAY_BONES``
+      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` of groups of 4 floats or :ref:`PackedInt32Array <class_PackedInt32Array>` of groups of 4 ints. Each group lists indexes of 4 bones that affects a given vertex.
+    
+    * - 11
+      - ``ARRAY_WEIGHTS``
+      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` of groups of 4 floats. Each float lists the amount of weight the corresponding bone in ``ARRAY_BONES`` has on a given vertex.
+    
+    * - 12
+      - ``ARRAY_INDEX``
+      - :ref:`PackedInt32Array <class_PackedInt32Array>`
 
-The third parameter is an array of blendshapes for the Mesh to use. While this tutorial does not cover
-using blendshapes, it is possible to specify them when creating a surface from arrays.
+In most cases when creating a mesh, we define it by its vertex positions. So usually, the array of vertices (at index 0) is required, while the index array (at index 12) is optional and
+will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial. In fact, we won't use the
+index array at all.
 
-The last parameter is the compress flags which specifies which arrays to store with half as many bits. The
-values can be found in the classref for :ref:`VisualServer <class_visualserver>` under :ref:`ArrayFormat <enum_visualserver_arrayformat>`.
+All the other arrays carry information about the vertices. They are optional and will only be used if included. Some of these arrays (e.g. ``ARRAY_COLOR``)
+use one entry per vertex to provide extra information about vertices. They must have the same size as the vertex array. Other arrays (e.g. ``ARRAY_TANGENT``) use
+four entries to describe a single vertex. These must be exactly four times larger than the vertex array.
 
-For normal usage you will find it is best to leave the last two parameters empty.
+For normal usage, the last three parameters in :ref:`add_surface_from_arrays() <class_arraymesh_method_add_surface_from_arrays>` are typically left empty.
 
-ArrayMesh
----------
+Setting up the ArrayMesh
+------------------------
 
-Add an :ref:`ArrayMesh <class_arraymesh>` to a MeshInstance. Normally, adding an ArrayMesh in
-the editor is not useful, but in this case it allows as to access the ArrayMesh from code
-without creating one.
+In the editor, create a :ref:`MeshInstance3D <class_meshinstance3d>` and add an :ref:`ArrayMesh <class_arraymesh>` to it in the Inspector.
+Normally, adding an ArrayMesh in the editor is not useful, but in this case it allows us to access the ArrayMesh
+from code without creating one.
 
-Next, add a script to the MeshInstance.
+Next, add a script to the MeshInstance3D.
 
 Under ``_ready()``, create a new Array.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    var arr = []
+    var surface_array = []
 
-This will be the array that we keep our surface information in, it will hold
+This will be the array that we keep our surface information in - it will hold
 all the arrays of data that the surface needs. Godot will expect it to be of
 size ``Mesh.ARRAY_MAX``, so resize it accordingly.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var arr = []
-    arr.resize(Mesh.ARRAY_MAX)
+    var surface_array = []
+    surface_array.resize(Mesh.ARRAY_MAX)
 
 Next create the arrays for each data type you will use.
 
@@ -86,28 +119,28 @@ by adding each array to ``surface_array`` and then committing to the mesh.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    arr[Mesh.ARRAY_VERTEX] = verts
-    arr[Mesh.ARRAY_TEX_UV] = uvs
-    arr[Mesh.ARRAY_NORMAL] = normals
-    arr[Mesh.ARRAY_INDEX] = indices
+    surface_array[Mesh.ARRAY_VERTEX] = verts
+    surface_array[Mesh.ARRAY_TEX_UV] = uvs
+    surface_array[Mesh.ARRAY_NORMAL] = normals
+    surface_array[Mesh.ARRAY_INDEX] = indices
 
-    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
+    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
           available from mesh.
 
-Put together the full code looks like:
+Put together, the full code looks like:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends MeshInstance
+    extends MeshInstance3D
 
     func _ready():
-        var arr = []
-        arr.resize(Mesh.ARRAY_MAX)
+        var surface_array = []
+        surface_array.resize(Mesh.ARRAY_MAX)
 
-        # PackedVectorXArrays for mesh construction.
+        # PackedVector**Arrays for mesh construction.
         var verts = PackedVector3Array()
         var uvs = PackedVector2Array()
         var normals = PackedVector3Array()
@@ -117,18 +150,18 @@ Put together the full code looks like:
         ## Insert code here to generate mesh ##
         #######################################
 
-        # Assign arrays to mesh array.
-        arr[Mesh.ARRAY_VERTEX] = verts
-        arr[Mesh.ARRAY_TEX_UV] = uvs
-        arr[Mesh.ARRAY_NORMAL] = normals
-        arr[Mesh.ARRAY_INDEX] = indices
+        # Assign arrays to surface array.
+        surface_array[Mesh.ARRAY_VERTEX] = verts
+        surface_array[Mesh.ARRAY_TEX_UV] = uvs
+        surface_array[Mesh.ARRAY_NORMAL] = normals
+        surface_array[Mesh.ARRAY_INDEX] = indices
 
         # Create mesh surface from mesh array.
-        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
+        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
 
 
-The code that goes in the middle can be whatever you want. Below we will present some example code that
-could go in the middle.
+The code that goes in the middle can be whatever you want. Below we will present some
+example code for generating a sphere.
 
 Generating geometry
 -------------------
@@ -143,7 +176,7 @@ that you find online.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends MeshInstance
+    extends MeshInstance3D
 
     var rings = 50
     var radial_segments = 50
@@ -152,7 +185,7 @@ that you find online.
 
     func _ready():
 
-        # Set up the PackedVectorXArrays.
+        # Insert setting up the PackedVector**Arrays here.
 
         # Vertex indices.
         var thisrow = 0
@@ -198,21 +231,16 @@ that you find online.
             prevrow = thisrow
             thisrow = point
 
-      # Commit to the ArrayMesh.
-
-Combined with the code above, this code will generate a sphere.
-
-When it comes to generating geometry with the ArrayMesh you need to understand what goes
-in each array and then you can follow tutorials for any language/engine and convert it into Godot.
+      # Insert committing to the ArrayMesh here.
 
 Saving
 ------
 
-Finally, Godot provides a single method to save ArrayMeshes using the :ref:`ResourceSaver <class_resourcesaver>`
-class. This is useful when you want to generate a mesh and then use it later without having to re-generate.
+Finally, we can use the :ref:`ResourceSaver <class_resourcesaver>` class to save the ArrayMesh.
+This is useful when you want to generate a mesh and then use it later without having to re-generate it.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Saves mesh to a .tres file with compression enabled.
-    ResourceSaver.save("res://sphere.tres", mesh, 32)
+    ResourceSaver.save("res://sphere.tres", mesh, ResourceSaver.FLAG_COMPRESS)

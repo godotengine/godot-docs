@@ -6,7 +6,9 @@ Shading reference
    :name: toc-shading-reference
 
    shading_language
+   shader_preprocessor
    spatial_shader
    canvas_item_shader
    particle_shader
    sky_shader
+   fog_shader

@@ -52,7 +52,7 @@ Importing the project
    :figclass: figure-w480
    :align: center
 
-- Click **Add Build Step > Custom Process Step** to add a new build step 
+- Click **Add Build Step > Custom Process Step** to add a new build step
   with the following settings:
 
   +-----------+------------------------------------------------------------------------------+
@@ -65,7 +65,7 @@ Importing the project
    :figclass: figure-w480
    :align: center
 
-.. note:: If the build fails with ``Could not start process "scons"``, it can mean that ``scons`` 
+.. note:: If the build fails with ``Could not start process "scons"``, it can mean that ``scons``
           is not in your ``PATH`` environment variable. In this case, you'll have to specify the
           full path to the SCons binary.
 
@@ -73,7 +73,7 @@ Debugging the project
 ---------------------
 
 - From the left-side menu select **Projects** and open the **Run** tab.
-- Under **Executable** specify the path to your executable located in 
+- Under **Executable** specify the path to your executable located in
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
   e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
   You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/godot.linuxbsd.opt.tools.64``.

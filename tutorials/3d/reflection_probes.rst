@@ -49,7 +49,7 @@ can be displaced to an empty place by moving the handles in the center:
 
 By default, shadow mapping is disabled when rendering probes (only in the
 rendered image inside the probe, not the actual scene). This is
-a simple way to save on performance and memory. If you want shadows in the probe,
+a way to save on performance and memory. If you want shadows in the probe,
 they can be toggled on/off with the *Enable Shadow* setting:
 
 .. image:: img/refprobe_shadows.png

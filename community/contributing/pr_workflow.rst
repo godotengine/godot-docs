@@ -47,6 +47,7 @@ which quickly leads to PRs with an unreadable Git history (especially after peer
              the tool's philosophy and the various commands you need to
              master in your daily workflow. You can read them online on the
              `Git SCM <https://git-scm.com/book/en/v2>`_ website.
+             You can also try out `GitHub's interactive guide <https://try.github.io/>`__.
 
 The branches on the Git repository are organized as follows:
 
@@ -58,7 +59,7 @@ The branches on the Git repository are organized as follows:
    They are used to backport bugfixes and enhancements from the ``master``
    branch to the currently maintained stable release (e.g. 3.1.2 or 2.1.6).
    As a rule of thumb, the last stable branch is maintained until the next
-   major version (e.g. the ``3.0`` branch was maintained until the release of
+   minor version (e.g. the ``3.0`` branch was maintained until the release of
    Godot 3.1).
    If you want to make PRs against a maintained stable branch, please check
    first if your changes are also relevant for the ``master`` branch, and if so
@@ -364,7 +365,8 @@ On that line, there is a "Pull request" link. Clicking it will open a form
 that will let you issue a pull request on the ``godotengine/godot`` upstream
 repository. It should show you your two commits, and state "Able to merge".
 If not (e.g. it has way more commits, or says there are merge conflicts),
-don't create the PR, something went wrong. Go to IRC and ask for support :)
+don't create the PR yet, something went wrong. Go to our
+`Godot Contributors Chat <https://chat.godotengine.org/>`_ and ask for support :)
 
 Use an explicit title for the PR and put the necessary details in the comment
 area. You can drag and drop screenshots, GIFs or zipped projects if relevant,
@@ -397,8 +399,8 @@ However, be aware that in our PR workflow, we favor commits that bring the
 codebase from one functional state to another functional state, without having
 intermediate commits fixing up bugs in your own code or style issues. Most of
 the time, we will prefer a single commit in a given PR (unless there's a good
-reason to keep the changes separate), so instead of authoring a new commit,
-considering using ``git commit --amend`` to amend the previous commit with your
+reason to keep the changes separate). Instead of authoring a new commit,
+consider using ``git commit --amend`` to amend the previous commit with your
 fixes. The above example would then become:
 
 ::
@@ -447,7 +449,7 @@ the so-called ``HEAD``.
 
 While you can give any commit ID to ``git rebase -i`` and review everything in
 between, the most common and convenient workflow involves rebasing on the
-*upstream ``master`` branch*, which you can do with:
+upstream ``master`` branch, which you can do with:
 
 ::
 

@@ -6,7 +6,7 @@ This series builds upon the :ref:`Introduction to Godot
 engine. You will learn more about nodes and scenes, code your first classes with
 GDScript, use signals to make nodes communicate with one another, and more.
 
-The following lessons are here to prepare you for :ref:`doc_your_first_game`, a
+The following lessons are here to prepare you for :ref:`doc_your_first_2d_game`, a
 step-by-step tutorial where you will code a game from scratch. By the end of it,
 you will have the necessary foundations to explore more features in other
 sections. We also included links to pages that cover a given topic in-depth
@@ -22,4 +22,3 @@ where appropriate.
    scripting_first_script
    scripting_player_input
    signals
-   your_first_game

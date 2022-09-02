@@ -23,70 +23,105 @@ Features can be queried at run-time from the singleton API by calling:
 
     OS.has_feature(name)
 
+OS feature tags are used by GDExtension to determine which libraries to load.
+For example, a library for ``linux.debug.editor.x86_64`` will be
+loaded only on a debug editor build for Linux x86_64.
 
 Default features
 ----------------
 
 Here is a list of most feature tags in Godot. Keep in mind they are **case-sensitive**:
 
-+-----------------+--------------------------------------------------------+
-| **Feature tag** | **Description**                                        |
-+=================+========================================================+
-| **Android**     | Running on Android                                     |
-+-----------------+--------------------------------------------------------+
-| **BSD**         | Running on \*BSD                                       |
-+-----------------+--------------------------------------------------------+
-| **HTML5**       | Running on HTML5                                       |
-+-----------------+--------------------------------------------------------+
-| **JavaScript**  | :ref:`JavaScript singleton <doc_javascript_eval>` is   |
-|                 | available                                              |
-+-----------------+--------------------------------------------------------+
-| **Linux**       | Running on Linux                                       |
-+-----------------+--------------------------------------------------------+
-| **OSX**         | Running on macOS                                       |
-+-----------------+--------------------------------------------------------+
-| **iOS**         | Running on iOS                                         |
-+-----------------+--------------------------------------------------------+
-| **UWP**         | Running on UWP                                         |
-+-----------------+--------------------------------------------------------+
-| **Windows**     | Running on Windows                                     |
-+-----------------+--------------------------------------------------------+
-| **Server**      | Running on the headless server platform                |
-+-----------------+--------------------------------------------------------+
-| **debug**       | Running on a debug build (including the editor)        |
-+-----------------+--------------------------------------------------------+
-| **release**     | Running on a release build                             |
-+-----------------+--------------------------------------------------------+
-| **editor**      | Running on an editor build                             |
-+-----------------+--------------------------------------------------------+
-| **standalone**  | Running on a non-editor build                          |
-+-----------------+--------------------------------------------------------+
-| **64**          | Running on a 64-bit build (any architecture)           |
-+-----------------+--------------------------------------------------------+
-| **32**          | Running on a 32-bit build (any architecture)           |
-+-----------------+--------------------------------------------------------+
-| **x86_64**      | Running on a 64-bit x86 build                          |
-+-----------------+--------------------------------------------------------+
-| **x86**         | Running on a 32-bit x86 build                          |
-+-----------------+--------------------------------------------------------+
-| **arm64**       | Running on a 64-bit ARM build                          |
-+-----------------+--------------------------------------------------------+
-| **arm**         | Running on a 32-bit ARM build                          |
-+-----------------+--------------------------------------------------------+
-| **mobile**      | Host OS is a mobile platform                           |
-+-----------------+--------------------------------------------------------+
-| **pc**          | Host OS is a PC platform (desktop/laptop)              |
-+-----------------+--------------------------------------------------------+
-| **web**         | Host OS is a Web browser                               |
-+-----------------+--------------------------------------------------------+
-| **etc**         | Textures using ETC1 compression are supported          |
-+-----------------+--------------------------------------------------------+
-| **etc2**        | Textures using ETC2 compression are supported          |
-+-----------------+--------------------------------------------------------+
-| **s3tc**        | Textures using S3TC (DXT/BC) compression are supported |
-+-----------------+--------------------------------------------------------+
-| **pvrtc**       | Textures using PVRTC compression are supported         |
-+-----------------+--------------------------------------------------------+
++-----------------+----------------------------------------------------------+
+| **Feature tag** | **Description**                                          |
++=================+==========================================================+
+| **android**     | Running on Android                                       |
++-----------------+----------------------------------------------------------+
+| **bsd**         | Running on \*BSD                                         |
++-----------------+----------------------------------------------------------+
+| **html5**       | Running on HTML5                                         |
++-----------------+----------------------------------------------------------+
+| **javascript**  | :ref:`JavaScript singleton <doc_javascript_eval>` is     |
+|                 | available                                                |
++-----------------+----------------------------------------------------------+
+| **linux**       | Running on Linux                                         |
++-----------------+----------------------------------------------------------+
+| **macos**       | Running on macOS                                         |
++-----------------+----------------------------------------------------------+
+| **ios**         | Running on iOS                                           |
++-----------------+----------------------------------------------------------+
+| **uwp**         | Running on UWP                                           |
++-----------------+----------------------------------------------------------+
+| **windows**     | Running on Windows                                       |
++-----------------+----------------------------------------------------------+
+| **linuxbsd**    | Running on Linux or \*BSD                                |
++-----------------+----------------------------------------------------------+
+| **debug**       | Running on a debug build (including the editor)          |
++-----------------+----------------------------------------------------------+
+| **release**     | Running on a release build                               |
++-----------------+----------------------------------------------------------+
+| **editor**      | Running on an editor build                               |
++-----------------+----------------------------------------------------------+
+| **standalone**  | Running on a non-editor build                            |
++-----------------+----------------------------------------------------------+
+| **64**          | Running on a 64-bit build (any architecture)             |
++-----------------+----------------------------------------------------------+
+| **32**          | Running on a 32-bit build (any architecture)             |
++-----------------+----------------------------------------------------------+
+| **x86_64**      | Running on a 64-bit x86 build                            |
++-----------------+----------------------------------------------------------+
+| **x86_32**      | Running on a 32-bit x86 build                            |
++-----------------+----------------------------------------------------------+
+| **x86**         | Running on an x86 build (any bitness)                    |
++-----------------+----------------------------------------------------------+
+| **arm64**       | Running on a 64-bit ARM build                            |
++-----------------+----------------------------------------------------------+
+| **arm32**       | Running on a 32-bit ARM build                            |
++-----------------+----------------------------------------------------------+
+| **arm**         | Running on an ARM build (any bitness)                    |
++-----------------+----------------------------------------------------------+
+| **rv64**        | Running on a 64-bit RISC-V build                         |
++-----------------+----------------------------------------------------------+
+| **riscv**       | Running on a RISC-V build (any bitness)                  |
++-----------------+----------------------------------------------------------+
+| **ppc64**       | Running on a 64-bit PowerPC build                        |
++-----------------+----------------------------------------------------------+
+| **ppc32**       | Running on a 32-bit PowerPC build                        |
++-----------------+----------------------------------------------------------+
+| **ppc**         | Running on a PowerPC build (any bitness)                 |
++-----------------+----------------------------------------------------------+
+| **wasm64**      | Running on a 64-bit WebAssembly build (not yet possible) |
++-----------------+----------------------------------------------------------+
+| **wasm32**      | Running on a 32-bit WebAssembly build                    |
++-----------------+----------------------------------------------------------+
+| **wasm**        | Running on a WebAssembly build (any bitness)             |
++-----------------+----------------------------------------------------------+
+| **mobile**      | Host OS is a mobile platform                             |
++-----------------+----------------------------------------------------------+
+| **pc**          | Host OS is a PC platform (desktop/laptop)                |
++-----------------+----------------------------------------------------------+
+| **web**         | Host OS is a Web browser                                 |
++-----------------+----------------------------------------------------------+
+| **etc**         | Textures using ETC1 compression are supported            |
++-----------------+----------------------------------------------------------+
+| **etc2**        | Textures using ETC2 compression are supported            |
++-----------------+----------------------------------------------------------+
+| **s3tc**        | Textures using S3TC (DXT/BC) compression are supported   |
++-----------------+----------------------------------------------------------+
+| **movie**       | :ref:`Movie Maker mode <doc_creating_movies>` is active  |
++-----------------+----------------------------------------------------------+
+
+.. warning::
+
+    With the exception of texture compression and ``movie`` feature tags,
+    default feature tags are **immutable**. This means that they will *not*
+    change depending on run-time conditions. For example,
+    ``OS.has_feature("mobile")`` will return ``false`` when running a project
+    exported to HTML5 on a mobile device.
+
+    To check whether a project exported to HTML5 is running on a mobile device,
+    :ref:`call JavaScript code <doc_javascript_eval>` that reads the browser's
+    user agent.
 
 Custom features
 ---------------
@@ -95,6 +130,13 @@ It is possible to add custom features to a build; use the relevant
 field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.png
+
+.. note::
+
+    Custom feature tags are only used when running the exported project
+    (including with :ref:`doc_one-click_deploy`). They are **not used** when
+    running the project from the editor, even if the export preset marked as
+    **Runnable** for your current platform has custom feature tags defined.
 
 Overriding project settings
 ---------------------------
@@ -110,6 +152,15 @@ customized in a special export preset, which, in turn, includes only demo levels
 After overriding, a new field is added for this specific configuration:
 
 .. image:: img/feature_tags3.png
+
+.. note::
+
+    When using the
+    :ref:`project settings "override.cfg" functionality <class_ProjectSettings>`
+    (which is unrelated to feature tags), remember that feature tags still apply.
+    Therefore, make sure to *also* override the setting with the desired feature
+    tag(s) if you want them to override base project settings on all platforms
+    and configurations.
 
 Default overrides
 -----------------

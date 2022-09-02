@@ -72,16 +72,16 @@ opening the project, you should see an empty editor.
 
 In an empty scene, the Scene dock on the left shows several options to add a
 root node quickly. "2D Scene" adds a Node2D node, "3D Scene" adds a Spatial
-node, "User Interface" adds a Control node, and "Other Node" lets you select any
-node. It is equivalent to pressing the "Add Child Node" button. These presets
-are here for convenience; they are not mandatory.
+node, and "User Interface" adds a Control node. These presets
+are here for convenience; they are not mandatory. "Other Node" lets you select any
+node to be the root node. In an empty scene, "Other Node" is equivalent to pressing
+the "Add Child Node" button at the top-left of the Scene dock, which usually adds
+a new node as a child of the currently selected node.
 
 We're going to add a single Label node to our scene. Its function is to draw
 text on the screen.
 
-Press the "Add Child Node" button at the top left of the Scene dock to create a
-node. This button adds the chosen node as a child of the currently selected one
-or, in an empty scene, as the root.
+Press the "Add Child Node" button or "Other Node" to create a root node.
 
 .. image:: img/nodes_and_scenes_02_scene_dock.png
 
@@ -134,7 +134,7 @@ Running the scene
 -----------------
 
 Everything's ready to run the scene! Press the Play Scene button in the
-top-right of the screen or press :kbd:`F6`.
+top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 
 .. image:: img/nodes_and_scenes_09_play_scene_button.png
 
@@ -169,8 +169,8 @@ Setting the main scene
 ----------------------
 
 To run our test scene, we used the Play Scene button. Another button next to it
-allows you to set and run the project's main scene. You can press :kbd:`F5` to
-do so.
+allows you to set and run the project's main scene. You can press :kbd:`F5`
+(:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_13_play_button.png
 

@@ -31,7 +31,8 @@ single console often exceeds $1,000 (this is a rough figure).
 Official support
 ----------------
 
-Godot currently does not officially support consoles. The reasons for this are:
+Godot supports the Linux-based Steam Deck. The reason other consoles are not
+officially supported are:
 
 - To develop for consoles, one must be licensed as a company.
   As an open source project, Godot does not have such a legal figure.
@@ -63,11 +64,15 @@ your games to various consoles.
 Following is the list of providers:
 
 - `Lone Wolf Technology <http://www.lonewolftechnology.com/>`_ offers
-  Switch, PS4 and Xbox One porting and publishing of Godot games.
+  Switch and PS4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
-  Switch and Xbox One porting and publishing of Godot games.
+  Switch, Xbox One & Xbox Series X/S (GDK) porting and publishing of Godot games (GDScript/C#).
+- `RAWRLAB games <https://www.rawrlab.com/>`_ offers
+  Switch porting of Godot games.
+- `mazette! games <https://mazette.games/>`_ offers
+  Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
 
-If your company offers porting and/or publishing services for Godot games,
+If your company offers porting, or porting *and* publishing services for Godot games,
 feel free to
 `open an issue or pull request <https://github.com/godotengine/godot-docs>`_
 to add your company to the list above.

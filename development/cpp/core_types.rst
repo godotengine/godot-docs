@@ -144,7 +144,7 @@ Godot provides also a set of common containers:
 -  Set
 -  Map
 
-They are simple and aim to be as minimal as possible, as templates
+They aim to be as minimal as possible, as templates
 in C++ are often inlined and make the binary size much fatter, both in
 debug symbols and code. List, Set and Map can be iterated using
 pointers, like this:

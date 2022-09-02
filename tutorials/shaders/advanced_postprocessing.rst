@@ -86,7 +86,7 @@ the uniform variable ``DEPTH_TEXTURE``.
           possible when reading from the current viewport. The depth texture cannot be
           accessed from another viewport to which you have rendered.
 
-The values returned by ``DEPTH_TEXTURE`` are between ``0`` and ``1`` and are nonlinear.
+The values returned by ``DEPTH_TEXTURE`` are between ``0.0`` and ``1.0`` and are nonlinear.
 When displaying depth directly from the ``DEPTH_TEXTURE``, everything will look almost
 white unless it is very close. This is because the depth buffer stores objects closer
 to the camera using more bits than those further, so most of the detail in depth
@@ -97,15 +97,21 @@ inverse of the projection matrix, which in Godot, is accessible with the variabl
 ``INV_PROJECTION_MATRIX``.
 
 Firstly, take the screen space coordinates and transform them into normalized device
-coordinates (NDC). NDC run from ``-1`` to ``1``, similar to clip space coordinates.
+coordinates (NDC). NDC run ``-1.0`` to ``1.0`` in ``x`` and ``y`` directions and
+from ``0.0`` to ``1.0`` in the ``z`` direction when using the Vulkan backend.
 Reconstruct the NDC using ``SCREEN_UV`` for the ``x`` and ``y`` axis, and
 the depth value for ``z``.
+
+.. note::
+
+    This tutorial assumes the use of the Vulkan renderer, which uses NDCs with a Z-range
+    of ``[0.0, 1.0]``. In contrast, OpenGL uses NDCs with a Z-range of ``[-1.0, 1.0]``.
 
 .. code-block:: glsl
 
   void fragment() {
     float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
-    vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
+    vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
   }
 
 Convert NDC to view space by multiplying the NDC by ``INV_PROJECTION_MATRIX``.
@@ -125,7 +131,7 @@ Because the camera is facing the negative ``z`` direction, the position will hav
 In order to get a usable depth value, we have to negate ``view.z``.
 
 The world position can be constructed from the depth buffer using the following code. Note
-that the ``CAMERA_MATRIX`` is needed to transform the position from view space into world space, so
+that the ``INV_VIEW_MATRIX`` is needed to transform the position from view space into world space, so
 it needs to be passed to the fragment shader with a varying.
 
 .. code-block:: glsl
@@ -133,7 +139,7 @@ it needs to be passed to the fragment shader with a varying.
   varying mat4 CAMERA;
 
   void vertex() {
-    CAMERA = CAMERA_MATRIX;
+    CAMERA = INV_VIEW_MATRIX;
   }
 
   void fragment() {
@@ -176,11 +182,12 @@ Now, attach a script to the MeshInstance and use the following code:
     # Create mesh from mesh_array:
     mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, mesh_array)
 
-.. note:: The triangle is specified in normalized device coordinates. Recall, NDC run
-          from ``-1`` to ``1`` in both the ``x`` and ``y`` directions. This makes the screen
-          ``2`` units wide and ``2`` units tall. In order to cover the entire screen with
-          a single triangle, use a triangle that is ``4`` units wide and ``4``
-          units tall, double its height and width.
+.. note:: The triangle is specified in normalized device coordinates.
+          Recall, NDC run from ``-1.0`` to ``1.0`` in both the ``x`` and ``y``
+          directions. This makes the screen ``2`` units wide and ``2`` units
+          tall. In order to cover the entire screen with a single triangle, use
+          a triangle that is ``4`` units wide and ``4`` units tall, double its
+          height and width.
 
 Assign the same vertex shader from above and everything should look exactly the same.
 

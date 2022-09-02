@@ -15,7 +15,7 @@ via ``Viewport`` and ``ViewportTexture``).
 2D meshes are meshes that contain two-dimensional geometry (Z can be omitted or ignored) instead of 3D.
 You can experiment creating them yourself using ``SurfaceTool`` from code and displaying them in a ``MeshInstance2D`` node.
 
-Currently, the only way to generate a 2D mesh within the editor is by either importing an OBJ file as a mesh, or converting it from a Sprite.
+Currently, the only way to generate a 2D mesh within the editor is by either importing an OBJ file as a mesh, or converting it from a Sprite2D.
 
 Optimizing pixels drawn
 -----------------------
@@ -27,15 +27,15 @@ or layering multiple images on top of each other with large transparent areas (f
 
 Converting to a mesh will ensure that only the opaque parts will be drawn and the rest will be ignored.
 
-Converting Sprites to 2D meshes
--------------------------------
+Converting Sprite2Ds to 2D meshes
+---------------------------------
 
-You can take advantage of this optimization by converting a ``Sprite`` to a ``MeshInstance2D``.
+You can take advantage of this optimization by converting a ``Sprite2D`` to a ``MeshInstance2D``.
 Start with an image that contains large amounts of transparency on the edges, like this tree:
 
 .. image:: img/mesh2d1.png
 
-Put it in a ``Sprite`` and select "Convert to 2D Mesh" from the menu:
+Put it in a ``Sprite2D`` and select "Convert to 2D Mesh" from the menu:
 
 .. image:: img/mesh2d2.png
 
@@ -47,6 +47,6 @@ The default values are good enough for many cases, but you can change growth and
 
 .. image:: img/mesh2d4.png
 
-Finally, push the ``Convert 2D Mesh`` button and your Sprite will be replaced:
+Finally, push the ``Convert 2D Mesh`` button and your Sprite2D will be replaced:
 
 .. image:: img/mesh2d5.png

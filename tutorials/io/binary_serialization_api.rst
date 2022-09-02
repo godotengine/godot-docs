@@ -6,18 +6,34 @@ Binary serialization API
 Introduction
 ------------
 
-Godot has a simple serialization API based on Variant. It's used for
+Godot has a serialization API based on Variant. It's used for
 converting data types to an array of bytes efficiently. This API is used
 in the functions ``get_var`` and ``store_var`` of :ref:`class_File`
 as well as the packet APIs for :ref:`class_PacketPeer`. This format
 is *not* used for binary scenes and resources.
+
+Full Objects vs Object instance IDs
+-----------------------------------
+
+If a variable is serialized with ``full_objects = true``, then any Objects
+contained in the variable will be serialized and included in the result. This
+is recursive.
+
+If ``full_objects = false``, then only the instance IDs will be serialized for
+any Objects contained in the variable.
 
 Packet specification
 --------------------
 
 The packet is designed to be always padded to 4 bytes. All values are
 little-endian-encoded. All packets have a 4-byte header representing an
-integer, specifying the type of data:
+integer, specifying the type of data.
+
+The lowest value two bytes are used to determine the type, while the highest value
+two bytes contain flags::
+
+    base_type = val & 0xFFFF;
+    flags = val >> 16;
 
 +--------+--------------------------+
 | Type   | Value                    |
@@ -91,10 +107,10 @@ should be ``(offset - 4) * 2 + 4``. The "float" type itself always uses double
 precision.
 
 0: null
-~~~~~~~
+^^^^^^^
 
 1: :ref:`bool<class_bool>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+---------------------------+
 | Offset   | Len   | Type      | Description               |
@@ -103,7 +119,18 @@ precision.
 +----------+-------+-----------+---------------------------+
 
 2: :ref:`int<class_int>`
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+If no flags are set (flags == 0), the integer is sent as a 32 bit integer:
+
++----------+-------+-----------+--------------------------+
+| Offset   | Len   | Type      | Description              |
++==========+=======+===========+==========================+
+| 4        | 4     | Integer   | 32-bit signed integer    |
++----------+-------+-----------+--------------------------+
+
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the integer is sent as
+a 64-bit integer:
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -112,7 +139,18 @@ precision.
 +----------+-------+-----------+--------------------------+
 
 3: :ref:`float<class_float>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If no flags are set (flags == 0), the float is sent as a 32 bit single precision:
+
++----------+-------+---------+-----------------------------------+
+| Offset   | Len   | Type    | Description                       |
++==========+=======+=========+===================================+
+| 4        | 4     | Float   | IEEE 754 single-precision float   |
++----------+-------+---------+-----------------------------------+
+
+If flag ``ENCODE_FLAG_64`` is set (``flags & 1 == 1``), the float is sent as
+a 64-bit double precision number:
 
 +----------+-------+---------+-----------------------------------+
 | Offset   | Len   | Type    | Description                       |
@@ -121,7 +159,7 @@ precision.
 +----------+-------+---------+-----------------------------------+
 
 4: :ref:`String<class_string>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+----------------------------+
 | Offset   | Len   | Type      | Description                |
@@ -134,7 +172,7 @@ precision.
 This field is padded to 4 bytes.
 
 5: :ref:`Vector2<class_vector2>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -145,7 +183,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 
 6: :ref:`Rect2<class_rect2>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -160,7 +198,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 
 7: :ref:`Vector3<class_vector3>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -173,7 +211,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 
 8: :ref:`Transform2D<class_transform2d>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                   |
@@ -192,7 +230,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+---------------------------------------------------------------+
 
 9: :ref:`Plane<class_plane>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -207,7 +245,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+---------------+
 
 10: :ref:`Quat<class_quat>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -222,7 +260,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+---------------+
 
 11: :ref:`AABB<class_aabb>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -241,7 +279,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+----------------+
 
 12: :ref:`Basis<class_basis>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                   |
@@ -266,7 +304,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+---------------------------------------------------------------+
 
 13: :ref:`Transform<class_transform>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                   |
@@ -297,7 +335,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+---------------------------------------------------------------+
 
 14: :ref:`Color<class_color>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+--------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                  |
@@ -312,7 +350,7 @@ This field is padded to 4 bytes.
 +----------+-------+---------+--------------------------------------------------------------+
 
 15: :ref:`NodePath<class_nodepath>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                                             |
@@ -355,13 +393,70 @@ For each Name and Sub-Name
 Every name string is padded to 4 bytes.
 
 16: :ref:`RID<class_rid>` (unsupported)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-17: :ref:`Object<class_object>` (unsupported)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+17: :ref:`Object<class_object>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+An Object could be serialized in three different ways: as a null value, with
+``full_objects = false``, or with ``full_objects = true``.
+
+A null value
+""""""""""""
+
++----------+-------+------------+-------------------------------------------------+
+| Offset   | Len   | Type       | Description                                     |
++==========+=======+============+=================================================+
+| 4        | 4     | Integer    | Zero (32-bit signed integer)                    |
++----------+-------+------------+-------------------------------------------------+
+
+``full_objects`` disabled
+"""""""""""""""""""""""""
+
++----------+-------+------------+-------------------------------------------------+
+| Offset   | Len   | Type       | Description                                     |
++==========+=======+============+=================================================+
+| 4        | 8     | Integer    | The Object instance ID (64-bit signed integer)  |
++----------+-------+------------+-------------------------------------------------+
+
+``full_objects`` enabled
+""""""""""""""""""""""""
+
++----------+-------+----------------+----------------------------------------------------------+
+| Offset   | Len   | Type           | Description                                              |
++==========+=======+================+==========================================================+
+| 4        | 4     | Integer        | Class name (String length)                               |
++----------+-------+----------------+----------------------------------------------------------+
+| 8        | X     | Bytes          | Class name (UTF-8 encoded string)                        |
++----------+-------+----------------+----------------------------------------------------------+
+| X+8      | 4     | Integer        | The number of properties that are serialized             |
++----------+-------+----------------+----------------------------------------------------------+
+
+For each property:
+
++----------+-------+----------------+----------------------------------------------------------+
+| Offset   | Len   | Type           | Description                                              |
++==========+=======+================+==========================================================+
+| Y        | 4     | Integer        | Property name (String length)                            |
++----------+-------+----------------+----------------------------------------------------------+
+| Y+4      | Z     | Bytes          | Property name (UTF-8 encoded string)                     |
++----------+-------+----------------+----------------------------------------------------------+
+| Y+4+Z    | W     | <variable>     | Property value, using this same format                   |
++----------+-------+----------------+----------------------------------------------------------+
+
+.. Note::
+
+   Not all properties are included. Only properties that are configured with the
+   :ref:`PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`
+   flag set will be serialized. You can add a new usage flag to a property by overriding the
+   :ref:`_get_property_list<class_Object_method__get_property_list>`
+   method in your class. You can also check how property usage is configured by
+   calling ``Object._get_property_list`` See
+   :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
+   possible usage flags.
 
 18: :ref:`Dictionary<class_dictionary>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
@@ -373,7 +468,7 @@ Then what follows is, for amount of "elements", pairs of key and value,
 one after the other, using this same format.
 
 19: :ref:`Array<class_array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
@@ -385,7 +480,7 @@ Then what follows is, for amount of "elements", values one after the
 other, using this same format.
 
 20: :ref:`PackedByteArray<class_PackedByteArray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +---------------+-------+-----------+------------------------+
 | Offset        | Len   | Type      | Description            |
@@ -398,7 +493,7 @@ other, using this same format.
 The array data is padded to 4 bytes.
 
 21: :ref:`PackedInt32Array<class_PackedInt32Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -409,7 +504,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 
 22: :ref:`PackedInt64Array<class_PackedInt64Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -420,7 +515,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 
 23: :ref:`PackedFloat32Array<class_PackedFloat32Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------+-------+-----------+-------------------------------------------+
 | Offset           | Len   | Type      | Description                               |
@@ -431,7 +526,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+-------------------------------------------+
 
 24: :ref:`PackedFloat64Array<class_PackedFloat64Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------+-------+-----------+-------------------------------------------+
 | Offset           | Len   | Type      | Description                               |
@@ -442,7 +537,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+-------------------------------------------+
 
 25: :ref:`PackedStringArray<class_PackedStringArray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -463,7 +558,7 @@ For each String:
 Every string is padded to 4 bytes.
 
 26: :ref:`PackedVector2Array<class_PackedVector2Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------+-------+-----------+----------------+
 | Offset            | Len   | Type      | Description    |
@@ -476,7 +571,7 @@ Every string is padded to 4 bytes.
 +-------------------+-------+-----------+----------------+
 
 27: :ref:`PackedVector3Array<class_PackedVector3Array>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
@@ -491,7 +586,7 @@ Every string is padded to 4 bytes.
 +--------------------+-------+-----------+----------------+
 
 28: :ref:`PackedColorArray<class_PackedColorArray>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------+-------+-----------+--------------------------------------------------------------+
 | Offset             | Len   | Type      | Description                                                  |

@@ -1,0 +1,6 @@
+.wy-nav-side { overflow: visible; }
+.wy-side-scroll { overflow-x: inherit; }
+
+.algolia-autocomplete {
+    display: block !important;
+}

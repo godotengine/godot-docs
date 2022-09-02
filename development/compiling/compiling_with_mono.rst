@@ -8,15 +8,20 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 5.12.0 or greater
+- Mono 6.12.0 or greater (generally 64 bit)
 - MSBuild
 - NuGet
 - **On Linux/macOS only:** pkg-config
 
+You can use ``mono -V`` to check your Mono version.
+A build error like the one below may indicate your Mono version is too old:
+
+    'mono_runtime_set_pending_exception': identifier not found
+
 You may need to import necessary certificates for NuGet to perform HTTPS
 requests.
 
-The recommended method is to use **curl**'s CA (Certificate Autorities) certificate bundle.
+The recommended method is to use **curl**'s CA (Certificate Authorities) certificate bundle.
 
 Run the following commands to download and import it. On Windows, you can run it
 from the Mono command line prompt (or the regular prompt if you added Mono's
@@ -39,6 +44,7 @@ directory by passing the ``mono_prefix`` command-line option to SCons; e.g.
 ``scons [...] mono_prefix=%ProgramFiles%/Mono``.
 
 This is the directory that contains the subdirectories ``include`` and ``lib``.
+Note that as usual, paths including spaces must be wrapped in double quotes.
 
 Enable the Mono module
 ----------------------
@@ -62,8 +68,9 @@ This path must be ``modules/mono/glue`` in the Godot directory::
 
     <godot_binary> --generate-mono-glue modules/mono/glue
 
-This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``
-and the C# solution for the Godot API at ``modules/mono/glue/Managed/Generated``.
+This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``,
+the C# solution for the Godot API at ``modules/mono/glue/GodotSharp/GodotSharp/Generated``,
+and the C# solution for the editor tools at ``modules/mono/glue/GodotSharp/GodotSharpEditor/Generated``.
 Once these files are generated, you can build Godot for all the desired targets
 without having to repeat this process.
 
@@ -108,8 +115,9 @@ the following files in the ``bin`` directory:
 
 - If you're not linking the Mono runtime statically, the build script will place
   the Mono runtime shared library (``monosgen-2.0``) next to the Godot
-  binary in the output directory. Make sure to include this library when
-  distributing Godot. When targeting Android, no extra steps are required as
+  binary in the output directory.
+  **Make sure to include this library when distributing the Godot editor or export templates.**
+  When targeting Android, no extra steps are required as
   this library is automatically copied to ``#platform/android/java/libs`` and
   Gradle takes care of the rest.
 - Unlike "classical" Godot builds, when building with the Mono module enabled
@@ -375,10 +383,6 @@ the Mono module:
 - **mono_prefix**\ =path
 
   - Path to the Mono installation directory for the target platform and architecture.
-
-- **xbuild_fallback**\ =yes | **no**
-
-  - Whether to fallback to xbuild if MSBuild is not available.
 
 - **mono_static**\ =yes | no
 

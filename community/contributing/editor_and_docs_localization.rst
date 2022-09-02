@@ -112,7 +112,7 @@ translation interface where all the work happens:
 On that page, you have:
 
  - A toolbar which lets you cycle through strings of the current list, change
-   to another pre-defined list or do a custom search, etc. There is also a "Zen"
+   to another predefined list or do a custom search, etc. There is also a "Zen"
    editing mode with a simplified interface.
  - The actual string you are working on in the "Translation" panel. By default,
    there should be the English source string and an edit box for your language.
@@ -242,6 +242,10 @@ The editor translations originate from C++ strings, and may use:
     # Weblate:
     Scene '%s' is currently being edited.↵
     Changes will only take effect when reloaded.
+
+.. note::
+  Only logical order of the characters matters, in the right-to-left text, format
+  specifiers may be displayed as ``s%``.
 
 Online documentation (RST)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

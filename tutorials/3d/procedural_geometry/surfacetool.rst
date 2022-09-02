@@ -3,7 +3,7 @@
 Using the SurfaceTool
 =====================
 
-The :ref:`SurfaceTool <doc_surfacetool>` provides a useful interface for constructing geometry.
+The :ref:`SurfaceTool <class_surfacetool>` provides a useful interface for constructing geometry.
 The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You
 set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it
 captures the attributes.
@@ -22,7 +22,7 @@ Attributes are added before each vertex is added:
     st.add_normal() # Normal never added to a vertex.
 
 When finished generating your geometry with the :ref:`SurfaceTool <class_surfacetool>`
-call ``commit()`` to finished generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
+call ``commit()`` to finish generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
 to ``commit()`` then it appends a new surface to the end of the ArrayMesh. While if nothing is passed
 in, ``commit()`` returns an ArrayMesh.
 
@@ -87,7 +87,13 @@ you want to use unique normals or colors per face instead of per-vertex), you ca
 
     st.deindex()
 
-If you don't add custom normals yourself, you can add them using ``generate_normals()``. The same goes for tangents.
+If you don't add custom normals yourself, you can add them using ``generate_normals()``, which should
+be called after generating geometry and before committing the mesh using ``commit()`` or
+``commit_to_arrays()``. Calling ``generate_normals(true)`` will flip the resulting normals. As a side
+note, ``generate_normals()`` only works if the primitive type is set to ``Mesh.PRIMITIVE_TRIANGLES``.
+
+If you don't add custom tangents, they can be added with ``generate_tangents()``, but it requires
+that each vertex have UVs and normals set already.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

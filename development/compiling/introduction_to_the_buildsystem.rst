@@ -41,7 +41,7 @@ Setup
 
 Please refer to the documentation for :ref:`doc_compiling_for_android`,
 :ref:`doc_compiling_for_ios`,  :ref:`doc_compiling_for_linuxbsd`,
-:ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`,
+:ref:`doc_compiling_for_macos`, :ref:`doc_compiling_for_uwp`,
 :ref:`doc_compiling_for_web`, and :ref:`doc_compiling_for_windows`.
 
 Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools
@@ -255,7 +255,14 @@ source to initialize any SCons build options passed via the command line:
     extra_suffix = "game_title"
 
 You can also disable some of the builtin modules before compiling, saving some
-time it takes to build the engine, see :ref:`doc_optimizing_for_size` page for more details.
+time it takes to build the engine. See :ref:`doc_optimizing_for_size` page for more details.
+
+.. seealso::
+
+    You can use the online
+    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
+    to generate a ``custom.py`` file containing SCons options.
+    You can then save this file and place it at the root of your Godot source directory.
 
 Another custom file can be specified explicitly with the ``profile`` command
 line option, both overriding the default build configuration:
@@ -299,7 +306,7 @@ For instance, you may want to build Godot in parallel with the aforementioned
 
      set SCONSFLAGS=-j4
 
- .. code-tab:: powershell Windows (powershell)
+ .. code-tab:: powershell Windows (PowerShell)
 
      $env:SCONSFLAGS="-j4"
 
@@ -327,7 +334,7 @@ platform:
     linux_x11_32_release
     linux_x11_64_debug
     linux_x11_64_release
-    osx.zip
+    macos.zip
     version.txt
     windows_32_debug.exe
     windows_32_release.exe

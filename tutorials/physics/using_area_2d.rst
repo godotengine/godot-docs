@@ -95,7 +95,7 @@ Some other usage examples:
 - Use a large circular area around an enemy to define its "detect" radius. When the player is outside the area, the enemy can't "see" it.
 - "Security cameras" - In a large level with multiple cameras, attach areas to each camera and activate them when the player enters.
 
-See the :ref:`doc_your_first_game` for an example of using Area2D in a game.
+See the :ref:`doc_your_first_2d_game` for an example of using Area2D in a game.
 
 Area influence
 --------------

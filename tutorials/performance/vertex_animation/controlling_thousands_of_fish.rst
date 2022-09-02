@@ -49,7 +49,7 @@ Then add the following two functions:
   }
 
 These functions come from the default :ref:`ParticlesMaterial <class_ParticlesMaterial>`.
-They are used to generate a random number from  each particle's ``RANDOM_SEED``.
+They are used to generate a random number from each particle's ``RANDOM_SEED``.
 
 A unique thing about particle shaders is that some built-in variables are saved across frames.
 ``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the Spatial shader of the mesh, and

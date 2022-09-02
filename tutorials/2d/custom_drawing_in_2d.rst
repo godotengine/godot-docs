@@ -3,36 +3,30 @@
 Custom drawing in 2D
 ====================
 
-Why?
-----
+Introduction
+------------
 
 Godot has nodes to draw sprites, polygons, particles, and all sorts of
-stuff. For most cases, this is enough; but not always. Before crying in fear,
-angst, and rage because a node to draw that specific *something* does not exist...
-it would be good to know that it is possible to easily make any 2D node (be it
-:ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
-based) draw custom commands. It is *really* easy to do it, too.
+stuff. For most cases, this is enough. If there's no node to draw something specific
+you need, you can make any 2D node (for example, :ref:`Control <class_Control>` or
+:ref:`Node2D <class_Node2D>` based) draw custom commands.
 
-But...
-------
+Custom drawing in a 2D node is *really* useful. Here are some use cases:
 
-Custom drawing manually in a node is *really* useful. Here are some
-examples why:
-
--  Drawing shapes or logic that is not handled by nodes (example: making
-   a node that draws a circle, an image with trails, a special kind of
-   animated polygon, etc).
--  Visualizations that are not that compatible with nodes: (example: a
-   tetris board). The tetris example uses a custom draw function to draw
-   the blocks.
+-  Drawing shapes or logic that existing nodes can't do, such as an image
+   with trails or a special animated polygon.
+-  Visualizations that are not that compatible with nodes, such as a
+   tetris board. (The tetris example uses a custom draw function to draw
+   the blocks.)
 -  Drawing a large number of simple objects. Custom drawing avoids the
-   overhead of using nodes which makes it less memory intensive and
-   potentially faster.
+   overhead of using a large number of nodes, possibly lowering memory
+   usage and improving performance.
 -  Making a custom UI control. There are plenty of controls available,
-   but it's easy to run into the need to make a new, custom one.
+   but when you have unusual needs, you will likely need a custom
+   control.
 
-OK, how?
---------
+Drawing
+-------
 
 Add a script to any :ref:`CanvasItem <class_CanvasItem>`
 derived node, like :ref:`Control <class_Control>` or
@@ -64,7 +58,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-simply call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be
@@ -111,7 +105,7 @@ redrawn if modified:
         }
     }
 
-In some cases, it may be desired to draw every frame. For this, just
+In some cases, it may be desired to draw every frame. For this,
 call ``update()`` from the ``_process()`` callback, like this:
 
 .. tabs::
@@ -185,16 +179,18 @@ In our example, we will simply use a fixed number of points, no matter the radiu
     public void DrawCircleArc(Vector2 center, float radius, float angleFrom, float angleTo, Color color)
     {
         int nbPoints = 32;
-        var pointsArc = new Vector2[nbPoints];
+        var pointsArc = new Vector2[nbPoints + 1];
 
-        for (int i = 0; i < nbPoints; ++i)
+        for (int i = 0; i <= nbPoints; i++)
         {
             float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90f);
             pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
-        for (int i = 0; i < nbPoints - 1; ++i)
+        for (int i = 0; i < nbPoints - 1; i++)
+        {
             DrawLine(pointsArc[i], pointsArc[i + 1], color);
+        }
     }
 
 
@@ -209,7 +205,7 @@ We first determine the angle of each point, between the starting and ending angl
 
 The reason why each angle is decreased by 90° is that we will compute 2D positions
 out of each angle using trigonometry (you know, cosine and sine stuff...). However,
-to be simple, ``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
+``cos()`` and ``sin()`` use radians, not degrees. The angle of 0° (0 radian)
 starts at 3 o'clock, although we want to start counting at 12 o'clock. So we decrease
 each angle by 90° in order to start counting from 12 o'clock.
 
@@ -294,10 +290,10 @@ the same as before, except that we draw a polygon instead of lines:
         pointsArc[0] = center;
         var colors = new Color[] { color };
 
-        for (int i = 0; i < nbPoints; ++i)
+        for (int i = 0; i <= nbPoints; i++)
         {
             float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
-            pointsArc[i + 1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
+            pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
         DrawPolygon(pointsArc, colors);
@@ -364,13 +360,6 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
  .. code-tab:: csharp
 
-    private float Wrap(float value, float minVal, float maxVal)
-    {
-        float f1 = value - minVal;
-        float f2 = maxVal - minVal;
-        return (f1 % f2) + minVal;
-    }
-
     public override void _Process(float delta)
     {
         _angleFrom += _rotationAngle;
@@ -379,8 +368,8 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
-            _angleFrom = Wrap(_angleFrom, 0, 360);
-            _angleTo = Wrap(_angleTo, 0, 360);
+            _angleFrom = Mathf.Wrap(_angleFrom, 0, 360);
+            _angleTo = Mathf.Wrap(_angleTo, 0, 360);
         }
         Update();
     }
@@ -457,12 +446,23 @@ smaller value, which directly depends on the rendering speed.
 
 Let's run again! This time, the rotation displays fine!
 
+Antialiased drawing
+^^^^^^^^^^^^^^^^^^^
+
+Godot offers method parameters in :ref:`draw_line<class_CanvasItem_method_draw_line>`
+to enable antialiasing, but it doesn't work reliably in all situations
+(for instance, on mobile/web platforms, or when HDR is enabled).
+There is also no ``antialiased`` parameter available in
+:ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+
+As a workaround, install and use the
+`Antialiased Line2D add-on <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__
+(which also supports antialiased Polygon2D drawing). Note that this add-on relies
+on high-level nodes, rather than low-level ``_draw()`` functions.
+
 Tools
 -----
 
 Drawing your own nodes might also be desired while running them in the
-editor to use as a preview or visualization of some feature or
-behavior.
-
-Remember to use the "tool" keyword at the top of the script
-(check the :ref:`doc_gdscript` reference if you forgot what this does).
+editor. This can be used as a preview or visualization of some feature or
+behavior. See :ref:`doc_running_code_in_the_editor` for more information.

@@ -219,7 +219,7 @@ Signals
 -------
 
 Objects can have a set of signals defined (similar to Delegates in other
-languages). Connecting to them is rather easy:
+languages). This example shows how to connect to them:
 
 .. code-block:: cpp
 
@@ -236,6 +236,13 @@ Adding signals to a class is done in ``_bind_methods``, using the
 .. code-block:: cpp
 
     ADD_SIGNAL(MethodInfo("been_killed"))
+
+Notifications
+-------------
+
+All objects in Godot have a :ref:`_notification <class_Object_method__notification>`
+method that allows it to respond to engine level callbacks that may relate to it.
+More information can be found on the :ref:`doc_godot_notifications` page.
 
 References
 ----------
@@ -309,7 +316,7 @@ Saving a resource can be done with the resource saver API:
 Instance will be saved. Sub resources that have a path to a file will be
 saved as a reference to that resource. Sub resources without a path will
 be bundled with the saved resource and assigned sub-IDs, like
-"res://someresource.res::1". This also helps to cache them when loaded.
+``res://someresource.res::1``. This also helps to cache them when loaded.
 
 References:
 ~~~~~~~~~~~

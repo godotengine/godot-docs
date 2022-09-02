@@ -12,7 +12,7 @@ Platform support
 - **Linux:** `Download an official Linux server binary <https://godotengine.org/download/server>`__.
   To compile a server binary from source, follow instructions in
   :ref:`doc_compiling_for_linuxbsd`.
-- **macOS:** :ref:`Compile a server binary from source for macOS <doc_compiling_for_osx>`.
+- **macOS:** :ref:`Compile a server binary from source for macOS <doc_compiling_for_macos>`.
 - **Windows:** There is no dedicated server build for Windows yet. As an alternative,
   you can use the ``--no-window`` command-line argument to prevent Godot from
   spawning a window. Note that even with the ``--no-window`` command-line argument,
@@ -81,6 +81,14 @@ different name, you can specify the path to the PCK file using the
 ``--main-pack`` command-line argument::
 
     ./godot-server --main-pack my_project.pck
+
+.. warning::
+
+    Make sure the aforementioned ``godot-server`` has the executable permission
+    defined by running ``chmod +x godot-server`` (if the binary is called
+    ``godot-server``). Otherwise, you may get a "command not found" or
+    "permission denied" error message when trying to run the Godot server
+    binary.
 
 Starting the dedicated server
 -----------------------------

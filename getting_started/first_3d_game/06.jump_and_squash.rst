@@ -85,8 +85,8 @@ Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
 Then, open the *Mob* scene by double-clicking on ``Mob.tscn`` and select the
 *Mob* node.
 
-Set its *Collision -> Layer* to "enemies" and its *Collision -> Mask* to both
-"player".
+Set its *Collision -> Layer* to "enemies" and unset its *Collision -> Mask*,
+leaving the mask empty.
 
 |image6|
 
@@ -109,16 +109,27 @@ script. We need a value to control the jump's strength and update
 After the line that defines ``fall_acceleration``, at the top of the script, add
 the ``jump_impulse``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    #...
    # Vertical impulse applied to the character upon jumping in meters per second.
-   export var jump_impulse = 20
+   @export var jump_impulse = 20
+
+ .. code-tab:: csharp
+
+    // Don't forget to rebuild the project so the editor knows about the new export variable.
+
+    // ...
+    // Vertical impulse applied to the character upon jumping in meters per second.
+    [Export]
+    public int JumpImpulse = 20;
 
 Inside ``_physics_process()``, add the following code before the line where we
 called ``move_and_slide()``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _physics_process(delta):
        #...
@@ -128,6 +139,21 @@ called ``move_and_slide()``.
            velocity.y += jump_impulse
 
        #...
+
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        // ...
+
+        // Jumping.
+        if (IsOnFloor() && Input.IsActionJustPressed("jump"))
+        {
+            _velocity.y += JumpImpulse;
+        }
+
+        // ...
+    }
 
 That's all you need to jump!
 
@@ -181,11 +207,20 @@ At the top of the script, we need another property, ``bounce_impulse``. When
 squashing an enemy, we don't necessarily want the character to go as high up as
 when jumping.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # Vertical impulse applied to the character upon bouncing over a mob in
    # meters per second.
-   export var bounce_impulse = 16
+   @export var bounce_impulse = 16
+
+ .. code-tab:: csharp
+
+    // Don't forget to rebuild the project so the editor knows about the new export variable.
+
+    // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
+    [Export]
+    public int BounceImpulse = 16;
 
 Then, at the bottom of ``_physics_process()``, add the following loop. With
 ``move_and_slide()``, Godot makes the body move sometimes multiple times in a
@@ -197,7 +232,8 @@ it and bounce.
 
 With this code, if no collisions occurred on a given frame, the loop won't run.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _physics_process(delta):
        #...
@@ -213,7 +249,31 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
                    mob.squash()
                    velocity.y = bounce_impulse
 
-That's a lot of new functions. Here's some more information about them.
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(float delta)
+    {
+        // ...
+
+        for (int index = 0; index < GetSlideCount(); index++)
+        {
+            // We check every collision that occurred this frame.
+            KinematicCollision collision = GetSlideCollision(index);
+            // If we collide with a monster...
+            if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+            {
+                // ...we check that we are hitting it from above.
+                if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                {
+                    // If so, we squash it and bounce.
+                    mob.Squash();
+                    _velocity.y = BounceImpulse;
+                }
+            }
+        }
+    }
+
+ That's a lot of new functions. Here's some more information about them.
 
 The functions ``get_slide_count()`` and ``get_slide_collision()`` both come from
 the :ref:`KinematicBody<class_KinematicBody>` class and are related to
@@ -246,7 +306,8 @@ the top of the script, we want to define a new signal named ``squashed``. And at
 the bottom, you can add the squash function, where we emit the signal and
 destroy the mob.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # Emitted when the player jumped on the mob.
    signal squashed
@@ -257,6 +318,22 @@ destroy the mob.
    func squash():
        emit_signal("squashed")
        queue_free()
+
+ .. code-tab:: csharp
+
+    // Don't forget to rebuild the project so the editor knows about the new signal.
+
+    // Emitted when the played jumped on the mob.
+    [Signal]
+    public delegate void SquashedEventHandler();
+
+    // ...
+
+    public void Squash()
+    {
+        EmitSignal(nameof(Squashed));
+        QueueFree();
+    }
 
 We will use the signal to add points to the score in the next lesson.
 

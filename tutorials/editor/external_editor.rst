@@ -5,11 +5,6 @@ Using an external text editor
 
 This page explains how to code using an external text editor.
 
-.. warning::
-
-    `External editors are currently incompatible with Godot's "Sync Script
-    Changes" feature. <https://github.com/godotengine/godot/issues/10946>`__
-
 Godot can be used with an external text editor, such as Sublime Text or Visual
 Studio Code. Browse to the relevant editor settings: ``Editor -> Editor Settings
 -> Text Editor -> External``
@@ -42,7 +37,7 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Atom/Sublime Text   | ``{file}:{line}``                                   |
 +---------------------+-----------------------------------------------------+
-| JetBrains Rider     | ``--line {line} {file}``                            |
+| JetBrains Rider     | ``{project} --line {line} {file}``                  |
 +---------------------+-----------------------------------------------------+
 | Visual Studio Code  | ``{project} --goto {file}:{line}:{col}``            |
 +---------------------+-----------------------------------------------------+

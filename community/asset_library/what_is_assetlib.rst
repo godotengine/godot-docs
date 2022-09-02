@@ -4,7 +4,7 @@ About the Asset Library
 =======================
 
 The Godot Asset Library, otherwise known as the AssetLib, is a repository of
-user-submitted Godot addons, scripts, tools and other resources, collectively referred
+user-submitted Godot addons, scripts, tools, and other resources, collectively referred
 to as assets. They're available to all Godot users for download directly from within the
 engine, but it can also be accessed at Godot's `official website <https://godotengine.org/asset-library/asset>`_.
 
@@ -21,7 +21,7 @@ This makes the AssetLib more similar to the software repositories of a Linux dis
 This set of pages will cover how to use the AssetLib (both from inside Godot, and on the
 website), how you can submit your own assets, and what the guidelines for submission are.
 
-Please note that the AssetLib is relatively young - it may have various pain points, bugs
+Please note that the AssetLib is relatively young - it may have various pain points, bugs,
 and usability issues. As with all Godot projects, the code repository is available on `GitHub <https://github.com/godotengine/godot-asset-library>`_,
 where you can submit pull requests and issues, so please do not hesitate to visit it!
 

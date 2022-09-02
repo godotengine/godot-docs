@@ -48,13 +48,18 @@ setup clang-format locally to check and automatically fix all your commits.
              ``/* clang-format off */`` and ``/* clang-format on */`` to tell
              clang-format to ignore a chunk of code.
 
+.. seealso::
+
+    These guidelines only cover code formatting. See :ref:`doc_cpp_usage_guidelines`
+    for a list of language features that are permitted in pull requests.
+
 Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First of all, you will need to install clang-format. As of now, you need to use
-**clang-format 11** to be compatible with Godot's format. Later versions might
-be suitable, but previous versions had bugs that will cause formatting changes
-to the current code base.
+**clang-format 13** to be compatible with Godot's format. Later versions might
+be suitable, but previous versions may not support all used options, or format
+some things differently, leading to style issues in pull requests.
 
 Installation
 ^^^^^^^^^^^^
@@ -122,6 +127,8 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
 
 (Pull requests welcome to extend this list with tested plugins.)
 
+.. _doc_code_style_guidelines_header_includes:
+
 Header includes
 ~~~~~~~~~~~~~~~
 
@@ -160,8 +167,8 @@ Example:
     /*                           GODOT ENGINE                                */
     /*                      https://godotengine.org                          */
     /*************************************************************************/
-    /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
+    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
@@ -205,8 +212,8 @@ Example:
     /*                           GODOT ENGINE                                */
     /*                      https://godotengine.org                          */
     /*************************************************************************/
-    /* Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2020 Godot Engine contributors (cf. AUTHORS.md).   */
+    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
+    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
     /*                                                                       */
     /* Permission is hereby granted, free of charge, to any person obtaining */
     /* a copy of this software and associated documentation files (the       */
@@ -266,7 +273,7 @@ Here's how to install black:
 
 ::
 
-    pip install black --user
+    pip3 install black --user
 
 
 You then have different possibilities to apply black to your changes:
@@ -303,3 +310,63 @@ Editor integration
 Many IDEs or code editors have beautifier plugins that can be configured to run
 black automatically, for example each time you save a file. For details you can
 check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
+
+Comment style guide
+-------------------
+
+This comment style guide applies to all programming languages used within
+Godot's codebase.
+
+- Begin comments with a space character to distinguish them from disabled code.
+- Use sentence case for comments. Begin comments with an uppercase character and
+  always end them with a period.
+- Reference variable/function names and values using backticks.
+- Wrap comments to ~100 characters.
+- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as adominitions
+  when needed.
+
+**Example:**
+
+.. code-block:: cpp
+
+    // Compute the first 10,000 decimals of Pi.
+    // FIXME: Don't crash when computing the 1,337th decimal due to `increment`
+    //        being negative.
+
+Don't repeat what the code says in a comment. Explain the *why* rather than *how*.
+
+**Bad:**
+
+.. code-block:: cpp
+
+    // Draw loading screen.
+    draw_load_screen();
+
+You can use Javadoc-style comments above function or macro definitions. It's
+recommended to use Javadoc-style comments *only* for methods which are not
+exposed to scripting. This is because exposed methods should be documented in
+the :ref:`class reference XML <doc_updating_the_class_reference>`
+instead.
+
+**Example:**
+
+.. code-block:: cpp
+
+    /**
+     * Returns the number of nodes in the universe.
+     * This can potentially be a very large number, hence the 64-bit return type.
+     */
+    uint64_t Universe::get_node_count() {
+        // ...
+    }
+
+For member variables, don't use Javadoc-style comments but use single-line comments instead:
+
+.. code-block:: cpp
+
+    class Universe {
+        // The cached number of nodes in the universe.
+        // This value may not always be up-to-date with the current number of nodes
+        // in the universe.
+        uint64_t node_count_cached = 0;
+    };

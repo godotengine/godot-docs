@@ -15,7 +15,7 @@ This short tutorial will explain how to make a Perlin-3D noise node (original
 code from this `GPU noise shaders plugin
 <https://github.com/curly-brace/Godot-3.0-Noise-Shaders/blob/master/assets/gpu_noise_shaders/classic_perlin3d.tres>`_.
 
-Create a Sprite and assign a :ref:`class_ShaderMaterial` to its material slot:
+Create a Sprite2D and assign a :ref:`class_ShaderMaterial` to its material slot:
 
 .. image:: img/visual_shader_plugins_start.png
 
@@ -23,7 +23,7 @@ Assign :ref:`class_VisualShader` to the shader slot of the material:
 
 .. image:: img/visual_shader_plugins_start2.png
 
-Don't forget to change its mode to "CanvasItem" (if you are using a Sprite):
+Don't forget to change its mode to "CanvasItem" (if you are using a Sprite2D):
 
 .. image:: img/visual_shader_plugins_start3.png
 
@@ -194,7 +194,7 @@ all you need to initialize your plugin.
     func _get_code(input_vars, output_vars, mode, type):
         return output_vars[0] + " = cnoise(vec3((%s.xy + %s.xy) * %s, %s)) * 0.5 + 0.5;" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
 
-Save it and open the Visual Shader. You should see your new node type within the member's dialog (if you can't see your new node, try restarting the editor):
+Save it and open the Visual Shader. You should see your new node type within the member's dialog under the Addons category (if you can't see your new node, try restarting the editor):
 
 .. image:: img/visual_shader_plugins_result1.png
 

@@ -61,7 +61,7 @@ The next step is to change the build options. Right-click on the new project and
    :figclass: figure-w480
    :align: center
 
-Select the **"Make" commands** tab and remove all the existing commands for all the build targets. For each build target enter the **SCons** command for creating the desired build in the **Build project/target** field. The minimum is ``scons``. For details on the **SCons** build options, see :ref:`doc_introduction_to_the_buildsystem`. It's also useful to add the ``scons --clean`` command in the **Clean project/target** field to the project's default commmands.
+Select the **"Make" commands** tab and remove all the existing commands for all the build targets. For each build target enter the **SCons** command for creating the desired build in the **Build project/target** field. The minimum is ``scons``. For details on the **SCons** build options, see :ref:`doc_introduction_to_the_buildsystem`. It's also useful to add the ``scons --clean`` command in the **Clean project/target** field to the project's default commands.
 
 If you're using Windows, all the commands need to be preceded with ``cmd /c`` to initialize the command interpreter.
 
@@ -126,4 +126,4 @@ Under **General Settings**, on the **Editor Settings** tab, under **Tab Options*
    :figclass: figure-w480
    :align: center
 
-That's it. You're ready to start contributing to Godot using the Code::Blocks IDE. Remember to save the project file and the **Workspace**.  If you run into any issues, ask for help in one of `Godot's community channels <https://godotengine.org/community>`__.
+That's it. You're ready to start contributing to Godot using the Code::Blocks IDE. Remember to save the project file and the **Workspace**. If you run into any issues, ask for help in one of `Godot's community channels <https://godotengine.org/community>`__.

@@ -63,9 +63,9 @@ the node, the more reason there is to build it as a scene.
 Named types
 -----------
 
-In some cases, a user can register a script as a new type within the editor
+Scripts can be registered as a new type within the editor
 itself. This displays it as a new type in the node or resource creation dialog
-with an optional icon. In these cases, the user's ability to use the script
+with an optional icon. This way, the user's ability to use the script
 is much more streamlined. Rather than having to...
 
 1. Know the base type of the script they would like to use.
@@ -74,26 +74,12 @@ is much more streamlined. Rather than having to...
 
 3. Add the script to the node.
 
-   1. (Drag-n-drop method)
-
-      1. Find the script in the FileSystem dock.
-
-      2. Drag and drop the script onto the node in the Scene dock.
-
-   2. (Property method)
-
-      1. Scroll down to the bottom of the Inspector to find the ``script`` property and select it.
-
-      2. Select "Load" from the dropdown.
-
-      3. Select the script from the file dialog.
-
 With a registered script, the scripted type instead becomes a creation option
-like the other nodes and resources in the system. One need not do any of the
-above work. The creation dialog even has a search bar to look up the type by
+like the other nodes and resources in the system.
+The creation dialog even has a search bar to look up the type by
 name.
 
-There are two systems for registering types...
+There are two systems for registering types:
 
 - :ref:`Custom Types <doc_making_plugins>`
 
@@ -223,8 +209,9 @@ In the end, the best approach is to consider the following:
     .. code-tab:: gdscript GDScript
 
       # game.gd
-      extends Reference
       class_name Game # extends Reference, so it won't show up in the node creation dialog
+      extends Reference
+
       const MyScene = preload("my_scene.tscn")
 
       # main.gd

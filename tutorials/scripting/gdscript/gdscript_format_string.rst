@@ -11,7 +11,7 @@ placeholder character-sequences. These placeholders can then easily be replaced
 by parameters handed to the format string.
 
 As an example, with ``%s`` as a placeholder, the format string ``"Hello %s, how
-are you?`` can easily be changed to ``"Hello World, how are you?"``. Notice
+are you?"`` can easily be changed to ``"Hello World, how are you?"``. Notice
 the placeholder is in the middle of the string; modifying it without format
 strings could be cumbersome.
 
@@ -134,8 +134,9 @@ conditions.
 | ``+``   | In number specifiers, **show + sign** if positive.                |
 +---------+-------------------------------------------------------------------+
 | Integer | Set **padding**. Padded with spaces or with zeroes if integer     |
-|         | starts with ``0`` in an integer placeholder. When used after      |
-|         | ``.``, see ``.``.                                                 |
+|         | starts with ``0`` in an integer or real number placeholder.       |
+|         | The leading ``0`` is ignored if ``-`` is present.                 |
+|         | When used after ``.``, see ``.``.                                 |
 +---------+-------------------------------------------------------------------+
 | ``.``   | Before ``f``, set **precision** to 0 decimal places. Can be       |
 |         | followed up with numbers to change. Padded with zeroes.           |

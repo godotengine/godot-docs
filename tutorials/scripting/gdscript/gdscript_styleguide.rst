@@ -38,8 +38,8 @@ Here is a complete class example based on these guidelines:
     export var initial_state = NodePath()
     var is_active = true setget set_is_active
 
-    onready var _state = get_node(initial_state) setget set_state
-    onready var _state_name = _state.name
+    @onready var _state = get_node(initial_state) setget set_state
+    @onready var _state_name = _state.name
 
 
     func _init():
@@ -108,12 +108,16 @@ Each indent level should be one greater than the block containing it.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     for i in range(10):
         print("hello")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -128,6 +132,8 @@ regular code blocks.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     effect.interpolate_property(sprite, "transform/scale",
@@ -135,6 +141,8 @@ regular code blocks.
                 Tween.TRANS_QUAD, Tween.EASE_OUT)
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -147,6 +155,8 @@ indentation level to distinguish continuation lines:
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     var party = [
@@ -155,7 +165,7 @@ indentation level to distinguish continuation lines:
         "Steve",
     ]
 
-    var character_dir = {
+    var character_dict = {
         "Name": "Bob",
         "Age": 27,
         "Job": "Mechanic",
@@ -170,6 +180,8 @@ indentation level to distinguish continuation lines:
 
 **Bad**:
 
+.. rst-class:: code-example-bad
+
 ::
 
     var party = [
@@ -178,7 +190,7 @@ indentation level to distinguish continuation lines:
             "Steve",
     ]
 
-    var character_dir = {
+    var character_dict = {
             "Name": "Bob",
             "Age": 27,
             "Job": "Mechanic",
@@ -200,6 +212,8 @@ line doesn't need to be modified when adding new elements.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     enum Tiles {
@@ -210,6 +224,8 @@ line doesn't need to be modified when adding new elements.
     }
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -224,11 +240,15 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -274,6 +294,8 @@ not even with a single line conditional statement.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     if position.x > width:
@@ -283,6 +305,8 @@ not even with a single line conditional statement.
         print("flagged")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -296,13 +320,67 @@ The only exception to that rule is the ternary operator:
 
    next_state = "fall" if not is_on_floor() else "idle"
 
+Format multiline statements for readability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you have particularly long ``if`` statements or nested ternary expressions,
+wrapping them over multiple lines improves readability. Since continuation lines
+are still part of the same expression, 2 indent levels should be used instead of one.
+
+GDScript allows wrapping statements using multiple lines using parentheses or
+backslashes. Parentheses are favored in this style guide since they make for
+easier refactoring. With backslashes, you have to ensure that the last line
+never contains a backslash at the end. With parentheses, you don't have to
+worry about the last line having a backslash at the end.
+
+When wrapping a conditional expression over multiple lines, the ``and``/``or``
+keywords should be placed at the beginning of the line continuation, not at the
+end of the previous line.
+
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
+
+    var angle_degrees = 135
+    var quadrant = (
+            "northeast" if angle_degrees <= 90
+            else "southeast" if angle_degrees <= 180
+            else "southwest" if angle_degrees <= 270
+            else "northwest"
+    )
+
+    var position = Vector2(250, 350)
+    if (
+            position.x > 200 and position.x < 400
+            and position.y > 300 and position.y < 400
+    ):
+        pass
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    var angle_degrees = 135
+    var quadrant = "northeast" if angle_degrees <= 90 else "southeast" if angle_degrees <= 180 else "southwest" if angle_degrees <= 270 else "northwest"
+
+    var position = Vector2(250, 350)
+    if position.x > 200 and position.x < 400 and position.y > 300 and position.y < 400:
+        pass
+
 Avoid unnecessary parentheses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Avoid parentheses in expressions and conditional statements. Unless
-necessary for order of operations, they only reduce readability.
+necessary for order of operations or wrapping over multiple lines,
+they only reduce readability.
 
 **Good**:
+
+.. rst-class:: code-example-good
 
 ::
 
@@ -310,6 +388,8 @@ necessary for order of operations, they only reduce readability.
         queue_free()
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -329,12 +409,16 @@ This can make long expressions easier to read.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     if (foo and bar) or baz:
         print("condition is true")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -349,12 +433,16 @@ This helps differentiate text comments from disabled code.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     # This is a comment.
     #print("This is disabled code")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -375,6 +463,8 @@ in dictionary references and function calls.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
     position.x = 5
@@ -384,6 +474,8 @@ in dictionary references and function calls.
     print("foo")
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
@@ -428,12 +520,20 @@ Don't omit the leading or trailing zero in floating-point numbers. Otherwise,
 this makes them less readable and harder to distinguish from integers at a
 glance.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var float_number = 0.234
     var other_float_number = 13.0
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var float_number = .234
     var other_float_number = 13.
@@ -441,18 +541,30 @@ glance.
 Use lowercase for letters in hexadecimal numbers, as their lower height makes
 the number easier to read.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var hex_number = 0xfb8c0b
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var hex_number = 0xFB8C0B
 
 Take advantage of GDScript's underscores in literals to make large numbers more
 readable.
 
-**Good**::
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
 
     var large_number = 1_234_567_890
     var large_hex_number = 0xffff_f8f8_0000
@@ -460,7 +572,11 @@ readable.
     # Numbers lower than 1000000 generally don't need separators.
     var small_number = 12345
 
-**Bad**::
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
 
     var large_number = 1234567890
     var large_hex_number = 0xfffff8f80000
@@ -484,14 +600,14 @@ Use snake_case for file names. For named classes, convert the PascalCase class
 name to snake_case::
 
     # This file should be saved as `weapon.gd`.
-    extends Node
     class_name Weapon
+    extends Node
 
 ::
 
     # This file should be saved as `yaml_parser.gd`.
-    extends Object
     class_name YAMLParser
+    extends Object
 
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
@@ -656,8 +772,8 @@ variables, in that order.
 
    var _speed = 300.0
 
-   onready var sword = get_node("Sword")
-   onready var gun = get_node("Gun")
+   @onready var sword = get_node("Sword")
+   @onready var gun = get_node("Gun")
 
 
 .. note::
@@ -767,14 +883,30 @@ should set the type explicitly.
 
 **Good**:
 
+.. rst-class:: code-example-good
+
 ::
 
-   onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+   @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+
+Alternatively, you can use the ``as`` keyword to cast the return type, and
+that type will be used to infer the type of the var.
+
+.. rst-class:: code-example-good
+
+::
+
+   @onready var health_bar := get_node("UI/LifeBar") as ProgressBar
+   # health_bar will be typed as ProgressBar
+
+This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
 
 **Bad**:
+
+.. rst-class:: code-example-bad
 
 ::
 
    # The compiler can't infer the exact type and will use Node
    # instead of ProgressBar.
-   onready var health_bar := get_node("UI/LifeBar")
+   @onready var health_bar := get_node("UI/LifeBar")

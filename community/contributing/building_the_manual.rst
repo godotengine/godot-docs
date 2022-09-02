@@ -16,27 +16,26 @@ To get started, you need to:
 4. Install the Sphinx extensions defined in the `godot-docs repository
    <https://github.com/godotengine/godot-docs/>`__ ``requirements.txt`` file.
 
-We recommend using `pip <https://pip.pypa.io>` _, Python’s package manager to
+We recommend using `pip <https://pip.pypa.io>`__, Python’s package manager to
 install all these tools. It comes pre-installed with `Python
 <https://www.python.org/>`__. Ensure that you install and use Python 3. Here are
 the commands to clone the repository and then install all requirements.
 
+.. note:: You may need to write ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``.
+          If both approaches fail, `check that you have pip3 installed <https://pip.pypa.io/en/stable/installation/>`__.
+
 .. code:: sh
 
     git clone https://github.com/godotengine/godot-docs.git
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
-.. note:: On Linux distributions, you may need to write ``pip3`` instead of
-          ``pip`` because you generally have both Python 2 and 3 installed on
-          your system. Alternatively, you can explicitly ask Python 3 to execute
-          its version of pip as a module like so: ``python3 -m pip``.
 
 With the programs installed, you can build the HTML documentation from the root
 folder of this repository with the following command:
 
 .. code:: sh
 
-    # On Linux and MacOS
+    # On Linux and macOS
     make html
 
     # On Windows, you need to execute the ``make.bat`` file instead.
@@ -83,6 +82,12 @@ program manually:
 
    sphinx-build -b html ./ _build
 
+You can also specify a list of files to build, which can greatly speed up compilation:
+
+.. code:: sh
+
+  sphinx-build -b html ./ _build classes/class_node.rst classes/class_resource.rst
+
 Building with Sphinx and virtualenv
 -----------------------------------
 
@@ -94,6 +99,6 @@ root folder:
 
    virtualenv --system-site-packages env/
    . env/bin/activate
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
 
 Then, run ``make html`` as shown above.

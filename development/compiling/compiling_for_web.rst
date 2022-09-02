@@ -3,6 +3,11 @@
 Compiling for the Web
 =====================
 
+.. seealso::
+
+    This page describes how to compile HTML5 editor and export template binaries from source.
+    If you're looking to export your project to HTML5 instead, read :ref:`doc_exporting_for_web`.
+
 .. highlight:: shell
 
 Requirements
@@ -14,7 +19,10 @@ To compile export templates for the Web, the following is required:
 -  `Python 3.5+ <https://www.python.org/>`__.
 -  `SCons 3.0+ <https://www.scons.org>`__ build system.
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 Building export templates
@@ -82,7 +90,7 @@ And ``webassembly_debug_threads.zip`` and ``webassembly_debug_gdnative.zip`` for
 the debug template::
 
     mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
-    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debugzip
+    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debug.zip
 
 Building the editor
 -------------------

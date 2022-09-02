@@ -35,8 +35,8 @@ Vertex attributes
 In GLSL, you can pass in per-vertex information using attributes and have the
 flexibility to pass in as much or as little as you want. In Godot, you have a
 set number of input attributes, including ``VERTEX`` (position), ``COLOR``,
-``UV``, ``UV2``, ``NORMAL``. For a complete list, see the :ref:`Shading language
-reference <doc_shading_language>`.
+``UV``, ``UV2``, ``NORMAL``. Each shaders' page in the shader reference section
+of the documentation comes with a complete list of its vertex attributes.
 
 gl_Position
 ^^^^^^^^^^^

@@ -107,11 +107,11 @@ instance such as ``self``, another script instance or even a singleton::
         var expression = Expression.new()
         expression.parse("double(10)")
 
-        # This won't work, since we're not passing the current script as the base instance.
+        # This won't work since we're not passing the current script as the base instance.
         var result = expression.execute([], null)
         print(result)  # null
 
-        # This will work won't work, since we're not passing the current script
+        # This will work since we're passing the current script (i.e. self)
         # as the base instance.
         result = expression.execute([], self)
         print(result)  # 20

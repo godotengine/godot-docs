@@ -1,7 +1,7 @@
 .. _doc_inputevent:
 
-InputEvent
-==========
+Using InputEvent
+================
 
 What is it?
 -----------
@@ -33,7 +33,7 @@ Here is a quick example, closing your game if the escape key is hit:
 
 However, it is cleaner and more flexible to use the provided :ref:`InputMap <class_InputMap>` feature,
 which allows you to define input actions and assign them different keys. This way,
-you can define multiple keys for the same action (e.g. they keyboard escape key and the start button on a gamepad).
+you can define multiple keys for the same action (e.g. the keyboard escape key and the start button on a gamepad).
 You can then more easily change this mapping in the project settings without updating your code,
 and even build a key mapping feature on top of it to allow your game to change the key mapping at runtime!
 
@@ -62,14 +62,9 @@ How does it work?
 Every input event is originated from the user/player (though it's
 possible to generate an InputEvent and feed them back to the engine,
 which is useful for gestures). The OS object for each platform will read
-events from the device, then feed them to MainLoop. As :ref:`SceneTree <class_SceneTree>`
-is the default MainLoop implementation, events are fed to it. Godot
-provides a function to get the current SceneTree object :
-**get_tree()**.
+events from the device, then feed them to the :ref:`Window <class_Window>`.
 
-But SceneTree does not know what to do with the event, so it will give
-it to the viewports, starting by the "root" :ref:`Viewport <class_Viewport>` (the first
-node of the scene tree). Viewport does quite a lot of stuff with the
+The window's :ref:`Viewport <class_Viewport>` does quite a lot of stuff with the
 received input, in order:
 
 .. image:: img/input_event_flow.png
@@ -82,7 +77,7 @@ received input, in order:
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._gui_input() <class_Control_method__gui_input>` and the signal
-   "input_event" will be emitted (this function is re-implementable by
+   "gui_input" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_method_accept_event>` and the event will
    not spread any more. Use the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
@@ -95,8 +90,8 @@ received input, in order:
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
 4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
-   to the Viewport, a ray to the physics world (in the ray direction from
-   the click) will be cast. If this ray hits an object, it will call the
+   to the Viewport with :ref:`Object Picking <class_viewport_property_physics_object_picking>` turned on, a ray to the physics world (in the ray direction from
+   the click) will be cast. (For the root viewport, this can also be enabled in :ref:`Project Settings <class_ProjectSettings_property_physics/common/enable_object_picking>`) If this ray hits an object, it will call the
    :ref:`CollisionObject._input_event() <class_CollisionObject_method__input_event>` function in the relevant
    physics object (bodies receive this callback by default, but areas do
    not. This can be configured through :ref:`Area <class_Area>` properties).
@@ -161,7 +156,7 @@ There are several specialized types of InputEvent, described in the table below:
 Actions
 -------
 
-An InputEvent may or may not represent a pre-defined action. Actions are
+An InputEvent may or may not represent a predefined action. Actions are
 useful because they abstract the input device when programming the game
 logic. This allows for:
 

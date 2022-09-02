@@ -1,6 +1,6 @@
 .. _doc_using_gridmaps:
 
-Using gridmaps
+Using GridMaps
 ~~~~~~~~~~~~~~
 
 Introduction
@@ -62,10 +62,36 @@ Materials
 Only the materials from within the meshes are used when generating the mesh
 library. Materials set on the node will be ignored.
 
+NavigationMeshes
+----------------
+
+Like all mesh instances, MeshLibrary items can be assigned a :ref:`class_NavigationMesh`
+resource, which can be created manually, or baked as described below.
+
+To create the NavigationMesh from a MeshLibrary scene export, place a
+:ref:`class_NavigationRegion3D` child node below the main MeshInstance for the GridMap
+item. Add a valid NavigationMesh resource to the NavigationRegion3D and some source
+geometry nodes below and bake the NavigationMesh.
+
+.. note::
+
+    With small grid cells it is often necessary to reduce the NavigationMesh properties
+    for agent radius and region minimum size.
+
+.. image:: img/meshlibrary_scene.png
+
+Nodes below the NavigationRegion3D are ignored for the MeshLibrary scene export, so
+additional nodes can be added as source geometry just for baking the navmesh.
+
+.. warning::
+
+    The baked cell size of the NavigationMesh must match the NavigationServer map cell
+    size to properly merge the navigation meshes of different grid cells.
+
 Exporting the MeshLibrary
 -------------------------
 
-To export the library, click on Scene -> Convert To.. -> MeshLibrary.., and save it
+To export the library, click on **Scene > Export As... > MeshLibrary...**, and save it
 as a resource.
 
 .. image:: img/gridmap_export.png
@@ -85,8 +111,9 @@ The "Cell/Size" property should be set to the size of your meshes. You can leave
 it at the default value for the demo. Set the "Center Y" property to "Off".
 
 Now you can start designing the level by choosing a tile from the palette and
-placing it with Left-Click in the editor window. To remove a tile, hold :kbd:`Shift`
-and use Right-click.
+placing it with Left-Click in the editor window. Use Right-click to remove a tile.
+
+Use the arrows next to the "GridMap" menu to change the floor that you are working on.
 
 Click on the "GridMap" menu to see options and shortcuts. For example, pressing
 :kbd:`S` rotates a tile around the y-axis.

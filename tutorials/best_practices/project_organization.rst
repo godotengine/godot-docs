@@ -85,10 +85,11 @@ This can be useful to speed up the initial project importing.
     command prompt: ``type nul > .gdignore``
 
 Once the folder is ignored, resources in that folder can't be loaded anymore
-using the ``load()`` and ``preload()`` methods.
+using the ``load()`` and ``preload()`` methods. Ignoring a folder will also
+automatically hide it from the FileSystem dock, which can be useful to reduce clutter.
 
-Ignoring a folder will also automatically hide it from the FileSystem dock,
-which can be useful to reduce clutter.
+Note that the ``.gdignore`` file's contents are ignored, which is why the file
+should be empty. It does not support patterns like ``.gitignore`` files do.
 
 .. _doc_project_organization_case_sensitivity:
 

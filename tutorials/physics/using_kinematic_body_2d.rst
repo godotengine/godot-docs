@@ -92,9 +92,9 @@ other parameters allowing you to customize the slide behavior:
 
 - ``infinite_inertia`` - *default value:* ``true``
 
-When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
-nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
-the body will collide with rigid bodies and stop.
+    When this parameter is ``true``, the body can push :ref:`RigidBody2D <class_RigidBody2D>`
+    nodes, ignoring their mass, but won't detect collisions with them. If it's ``false``
+    the body will collide with rigid bodies and stop.
 
 ``move_and_slide_with_snap``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,8 +129,25 @@ and ``get_slide_collision()``:
     for i in get_slide_count():
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
+        
+ .. code-tab:: csharp
 
-.. note:: `get_slide_count()` only counts times the body has collided and changed direction.      
+    // Using MoveAndCollide.
+    var collision = MoveAndCollide(velocity * delta);
+    if (collision != null)
+    {
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
+    }
+
+    // Using MoveAndSlide.
+    velocity = MoveAndSlide(velocity);
+    for (int i = 0; i < GetSlideCount(); i++)
+    {
+        var collision = GetSlideCollision(i);
+        GD.Print("I collided with ", ((Node)collision.Collider).Name);
+    }
+
+.. note:: `get_slide_count()` only counts times the body has collided and changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
@@ -140,7 +157,7 @@ Which movement method to use?
 
 A common question from new Godot users is: "How do you decide which movement
 function to use?" Often, the response is to use ``move_and_slide()`` because
-it's "simpler," but this is not necessarily the case. One way to think of it
+it seems simpler, but this is not necessarily the case. One way to think of it
 is that ``move_and_slide()`` is a special case, and ``move_and_collide()``
 is more general. For example, the following two code snippets result in
 the same collision response:
@@ -199,9 +216,9 @@ Movement and walls
 
 If you've downloaded the sample project, this example is in "BasicMovement.tscn".
 
-For this example, add a ``KinematicBody2D`` with two children: a ``Sprite`` and a
-``CollisionShape2D``. Use the Godot "icon.png" as the Sprite's texture (drag it
-from the Filesystem dock to the *Texture* property of the ``Sprite``). In the
+For this example, add a ``KinematicBody2D`` with two children: a ``Sprite2D`` and a
+``CollisionShape2D``. Use the Godot "icon.png" as the Sprite2D's texture (drag it
+from the Filesystem dock to the *Texture* property of the ``Sprite2D``). In the
 ``CollisionShape2D``'s *Shape* property, select "New RectangleShape2D" and
 size the rectangle to fit over the sprite image.
 
@@ -260,6 +277,7 @@ Attach a script to the KinematicBody2D and add the following code:
 
             if (Input.IsActionPressed("ui_up"))
                 _velocity.y -= 1;
+            _velocity = _velocity.Normalized() * Speed;
         }
 
         public override void _PhysicsProcess(float delta)

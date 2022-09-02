@@ -14,7 +14,7 @@ Below is a list of ways multithreading can be used in different areas of Godot.
 Global scope
 ------------
 
-:ref:`Global Scope<class_@GlobalScope>` singletons are all thread-safe. Accessing servers from threads is supported (for VisualServer and Physics servers, ensure threaded or thread-safe operation is enabled in the project settings!).
+:ref:`Global Scope<class_@GlobalScope>` singletons are all thread-safe. Accessing servers from threads is supported (for RenderingServer and Physics servers, ensure threaded or thread-safe operation is enabled in the project settings!).
 
 This makes them ideal for code that creates dozens of thousands of instances in servers and controls them from threads. Of course, it requires a bit more code, as this is used directly and not within the scene tree.
 
@@ -34,7 +34,7 @@ However, creating scene chunks (nodes in tree arrangement) outside the active tr
 
 ::
 
-    var enemy_scene = load("res://enemy_scene.scn").instance()
+    var enemy_scene = load("res://enemy_scene.scn")
     var enemy = enemy_scene.instance()
     enemy.add_child(weapon) # Set a weapon.
     world.call_deferred("add_child", enemy)
@@ -49,10 +49,19 @@ you are doing and you are sure that a single resource is not being used or
 set in multiple ones. Otherwise, you are safer just using the servers API
 (which is fully thread-safe) directly and not touching scene or resources.
 
+Rendering
+---------
+
+Instancing nodes that render anything in 2D or 3D (such as Sprite) is *not* thread-safe by default.
+To make rendering thread-safe, set the **Rendering > Threads > Thread Model** project setting to **Multi-Threaded**.
+
+Note that the Multi-Threaded thread model has several known bugs, so it may not be usable
+in all scenarios.
+
 GDScript arrays, dictionaries
 -----------------------------
 
-In GDScript, reading and writing elements from multiple threads is ok, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
+In GDScript, reading and writing elements from multiple threads is OK, but anything that changes the container size (resizing, adding or removing elements) requires locking a mutex.
 
 Resources
 ---------

@@ -69,7 +69,7 @@ There are many ways to set the background:
 
 - **Clear Color** uses the default clear color defined by the project. The background will be a constant color.
 - **Custom Color** is like Clear Color, but with a custom color value.
-- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a simple sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
+- **Sky** lets you define a panorama sky (a 360 degree sphere texture) or a procedural sky (a basic sky featuring a gradient and an optional sun). Objects will reflect it and absorb ambient light from it.
 - **Color+Sky** lets you define a sky (as above), but uses a constant color value for drawing the background. The sky will only be used for reflection and ambient light.
 
 Ambient Light
@@ -139,14 +139,39 @@ Tonemap
 
 *This feature is only available when using the GLES3 backend.*
 
-Selects the tone-mapping curve that will be applied to the scene, from a short
-list of standard curves used in the film and game industry. Tone mapping can make
-light and dark areas more homogeneous, even though the result is not that strong.
-Tone mapping options are:
+Selects the tonemapping curve that will be applied to the scene, from a
+list of standard curves used in the film and game industry. Tonemapping operators
+other than Linear are used to make light and dark areas more homogeneous,
+while also avoiding clipping of bright highlights.
 
-- **Mode:** Tone mapping mode, which can be Linear, Reindhart, Filmic, or Aces.
-- **Exposure:** Tone mapping exposure which simulates amount of light received over time.
-- **White:** Tone mapping white, which simulates where in the scale white is located (by default 1.0).
+The tone mapping options are:
+
+- **Mode:** The tone mapping mode to use.
+
+  - **Linear:** The default tonemapping mode. This is the fastest and simplest
+    tonemapping operator, but it causes bright lighting to look blown out, with
+    noticeable clipping in the output colors.
+  - **Reinhardt:** Performs a variation on rendered pixels' colors by this
+    formula: ``color = color / (1 + color)``. This avoids clipping bright
+    highlights, but the resulting image can look a bit dull.
+  - **Filmic:** This avoids clipping bright highlights, with a resulting image
+    that usually looks more vivid than Reinhardt.
+  - **ACES:** Academy Color Encoding System tonemapper.
+    ACES is slightly more expensive than other options, but it handles
+    bright lighting in a more realistic fashion by desaturating it as it becomes brighter.
+    ACES typically has a more contrasted output compared to Reinhardt and Filmic.
+    ACES is the recommended option when aiming for photorealistic visuals.
+    This tonemapping mode was called "ACES Fitted" in Godot 3.x.
+
+- **Exposure:** Tone mapping exposure which simulates amount of light received
+  over time (default: ``1.0``). Higher values result in an overall brighter appearance.
+  If the scene appears too dark as a result of a tonemapping operator or whitepoint
+  change, try increasing this value slightly.
+
+- **White:** Tone mapping whitepoint, which simulates where in the scale white is
+  located (default: ``1.0``). For photorealistic lighting, recommended values are
+  between ``6.0`` and ``8.0``. Higher values result in less blown out highlights,
+  but make the scene appear slightly darker as a whole.
 
 Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
@@ -154,7 +179,7 @@ Auto Exposure (HDR)
 *This feature is only available when using the GLES3 backend.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,
-Godot supports a simple high dynamic range implementation with the auto exposure
+Godot supports a basic high dynamic range implementation with the auto exposure
 mechanism. This is generally used for the sake of realism when combining
 interior areas with low light and outdoors. Auto exposure simulates the camera
 (or eye) in an effort to adapt between light and dark locations and their
@@ -259,7 +284,7 @@ Tweaking SSAO is possible with several parameters:
 - **Light Affect:** SSAO only affects ambient light, but increasing this slider can make it also affect direct light. Some artists prefer this effect.
 - **Ao Channel Affect:** If a value of zero is used, only the material's AO texture will be used for ambient occlusion; SSAO will not be applied. Values greater than 0 multiply the AO texture by the SSAO effect to varying degrees. This does not affect materials without an AO texture.
 - **Quality:** Depending on quality, SSAO will take more samples over a sphere for every pixel. High quality only works well on modern GPUs.
-- **Blur:** Type of blur kernel used. The 1x1 kernel is a simple blur that preserves local detail better, but is not as efficient (generally works better with the high quality setting above), while 3x3 will soften the image better (with a bit of dithering-like effect), but does not preserve local detail as well.
+- **Blur:** Type of blur kernel used. The 1x1 kernel preserves local detail better, but is not as efficient (generally works better with the high quality setting above), while 3x3 softens the image better (with a bit of dithering-like effect), but does not preserve local detail as well.
 - **Edge Sharpness**: This can be used to preserve the sharpness of edges (avoids areas without AO on creases).
 
 Depth of Field / Far Blur
@@ -320,10 +345,10 @@ Once glow is visible, it can be controlled with a few extra parameters:
 
 The **Blend Mode** of the effect can also be changed:
 
-- **Additive** is the strongest one, as it just adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
-- **Screen** is the default one. It ensures glow never brights more than itself and works great as an all around.
-- **Softlight** is the weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
-- **Replace** can be used to blur the whole screen or debug the effect. It just shows the glow effect without the image below.
+- **Additive** is the strongest one, as it only adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
+- **Screen** ensures glow never brightens more than itself and it works great as an all around.
+- **Softlight** is the default and weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
+- **Replace** can be used to blur the whole screen or debug the effect. It only shows the glow effect without the image below.
 
 To change the glow effect size and shape, Godot provides **Levels**. Smaller
 levels are strong glows that appear around objects, while large levels are hazy

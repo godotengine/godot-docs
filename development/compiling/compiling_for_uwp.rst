@@ -5,6 +5,11 @@ Compiling for Universal Windows Platform
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile UWP export template binaries from source.
+    If you're looking to export your project to UWP instead, read :ref:`doc_exporting_for_uwp`.
+
 Requirements
 ------------
 
@@ -26,7 +31,10 @@ Requirements
           This page will eventually be updated in the future to reflect
           the new build instructions.
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 Compiling

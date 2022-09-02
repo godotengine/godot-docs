@@ -35,7 +35,7 @@ a path, we won't see it from the camera preview.
 
 To find the view's limits, we can use some placeholder meshes. Your viewport
 should still be split into two parts, with the camera preview at the bottom. If
-that isn't the case, press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on MacOS) to split the view into two.
+that isn't the case, press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on macOS) to split the view into two.
 Select the *Camera* node and click the *Preview* checkbox in the bottom
 viewport.
 
@@ -76,7 +76,7 @@ corner.
 |image9|
 
 We're going to create copies of the mesh and place them around the game area.
-Press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on MacOS) to duplicate the node. You can also right-click
+Press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to duplicate the node. You can also right-click
 the node in the *Scene* dock and select *Duplicate*. Move the copy down along
 the blue Z axis until it's right outside the camera's preview.
 
@@ -158,15 +158,34 @@ Then, as we're going to spawn the monsters procedurally, we want to randomize
 numbers every time we play the game. If we don't do that, the monsters will
 always spawn following the same sequence.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():
        randomize()
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+        // Don't forget to rebuild the project so the editor knows about the new export variable.
+
+    #pragma warning disable 649
+        // We assign this in the editor, so we don't need the warning about not being assigned.
+        [Export]
+        public PackedScene MobScene;
+    #pragma warning restore 649
+
+        public override void _Ready()
+        {
+            GD.Randomize();
+        }
+    }
 
 We want to spawn mobs at regular time intervals. To do this, we need to go back
 to the scene and add a timer. Before that, though, we need to assign the
@@ -208,37 +227,60 @@ Let's code the mob spawning logic. We're going to:
 1. Instantiate the mob scene.
 2. Sample a random position on the spawn path.
 3. Get the player's position.
-4. Add the mob as a child of the *Main* node.
-5. Call the mob's ``initialize()`` method, passing it the random position and
+4. Call the mob's ``initialize()`` method, passing it the random position and
    the player's position.
+5. Add the mob as a child of the *Main* node.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_MobTimer_timeout():
-       # Create a Mob instance and add it to the scene.
+       # Create a new instance of the Mob scene.
        var mob = mob_scene.instance()
 
-       # Choose a random location on Path2D.
+       # Choose a random location on the SpawnPath.
        # We store the reference to the SpawnLocation node.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        # And give it a random offset.
        mob_spawn_location.unit_offset = randf()
 
        var player_position = $Player.transform.origin
+       mob.initialize(mob_spawn_location.translation, player_position)
 
        add_child(mob)
-       mob.initialize(mob_spawn_location.translation, player_position)
+
+ .. code-tab:: csharp
+
+    // We also specified this function name in PascalCase in the editor's connection window
+    public void OnMobTimerTimeout()
+    {
+        // Create a new instance of the Mob scene.
+        Mob mob = (Mob)MobScene.Instance();
+
+        // Choose a random location on the SpawnPath.
+        // We store the reference to the SpawnLocation node.
+        var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+        // And give it a random offset.
+        mobSpawnLocation.UnitOffset = GD.Randf();
+
+        Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+        mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+
+        AddChild(mob);
+
+    }
 
 Above, ``randf()`` produces a random value between ``0`` and ``1``, which is
 what the *PathFollow* node's ``unit_offset`` expects.
 
 Here is the complete ``Main.gd`` script so far, for reference.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():
@@ -251,9 +293,37 @@ Here is the complete ``Main.gd`` script so far, for reference.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        mob_spawn_location.unit_offset = randf()
        var player_position = $Player.transform.origin
+       mob.initialize(mob_spawn_location.translation, player_position)
 
        add_child(mob)
-       mob.initialize(mob_spawn_location.translation, player_position)
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+    #pragma warning disable 649
+        [Export]
+        public PackedScene MobScene;
+    #pragma warning restore 649
+
+        public override void _Ready()
+        {
+            GD.Randomize();
+        }
+
+        public void OnMobTimerTimeout()
+        {
+            Mob mob = (Mob)MobScene.Instance();
+
+            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+            mobSpawnLocation.UnitOffset = GD.Randf();
+
+            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+
+            AddChild(mob);
+        }
+    }
 
 You can test the scene by pressing :kbd:`F6`. You should see the monsters spawn and
 move in a straight line.

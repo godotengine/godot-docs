@@ -54,7 +54,7 @@ const registerOnScrollEvent = (function(){
       // Entering the "desktop" state.
 
       // The main scroll event handler.
-      // Executed as the page is scrolled and once immediatelly as the page enters this state.
+      // Executed as the page is scrolled and once immediately as the page enters this state.
       const handleMainScroll = (currentScroll) => {
         if (currentScroll >= scrollTopPixels) {
           // After the page is scrolled below the threshold, we fix everything in place.
@@ -219,7 +219,7 @@ $(document).ready(() => {
         <p>
           You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
           (unstable) version of this documentation, which may document features not available
-          or compatible with Godot 3.2.x.
+          or compatible with Godot 3.x.
         </p>
         <p class="last">
           See <a class="reference" href="${updatedUrl}">this page</a>

@@ -106,7 +106,7 @@ Compile Godot. This assumes you've set up a build environment:
 .. code-block:: shell
 
     # <platform> is the platform you're targeting for regression testing,
-    # like "windows", "x11" or "osx".
+    # like "windows", "x11" or "macos".
     $ scons platform=<platform> -j4
 
 Since building Godot takes a while, you want to dedicate as many CPU threads as

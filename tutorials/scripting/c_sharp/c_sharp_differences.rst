@@ -120,13 +120,36 @@ Signal keyword
 
 Use the ``[Signal]`` attribute to declare a signal instead of the GDScript ``signal`` keyword.
 This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
+The `delegate` must have the ``EventHandler`` suffix, an `event` will be generated in the class with the same name but without the suffix, use that event's name with ``EmitSignal``.
 
 .. code-block:: csharp
 
     [Signal]
-    delegate void MySignal(string willSendsAString);
+    delegate void MySignalEventHandler(string willSendAString);
 
 See also: :ref:`doc_c_sharp_signals`.
+
+`@onready` annotation
+---------------------
+
+GDScript has the ability to defer the initialization of a member variable until the ready function
+is called with `@onready` (cf. :ref:`doc_gdscript_onready_annotation`).
+For example:
+
+.. code-block:: gdscript
+
+    @onready var my_label = get_node("MyLabel")
+
+However C# does not have this ability. To achieve the same effect you need to do this.
+
+.. code-block:: csharp
+
+    private Label _myLabel;
+
+    public override void _Ready()
+    {
+        _myLabel = GetNode<Label>("MyLabel");
+    }
 
 Singletons
 ----------
@@ -149,7 +172,7 @@ Example:
 
 .. code-block:: csharp
 
-    Input.Singleton.Connect("joy_connection_changed", this, nameof(Input_JoyConnectionChanged));
+    Input.Singleton.JoyConnectionChanged += Input_JoyConnectionChanged;
 
 String
 ------

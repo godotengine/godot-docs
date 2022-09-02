@@ -18,18 +18,19 @@ Official Git plugin
 
 Using Git from inside the editor is supported with an official plugin.
 You can find the latest releases
-`here <https://github.com/godotengine/godot-git-plugin/releases>`__
-(it is not available in the asset library). Documentation on how to use the Git
+`here <https://github.com/godotengine/godot-git-plugin/releases>`__. Documentation on how to use the Git
 plugin can be found
 `here <https://github.com/godotengine/godot-git-plugin/wiki>`__.
 
 Files to exclude from VCS
 -------------------------
 
-There are some folders Godot creates you should have your VCS ignore:
+There are some files and folders Godot automatically creates. You should add them to your VCS ignore:
 
-- ``.import/``: This folder stores all the files it imports automatically based on
-  your source assets and their import flags.
+- ``.godot/``: This folder stores various project cache data. ``.godot/imported/`` stores
+  all the files the engine imports automatically based on your source assets and their
+  import flags. ``.godot/editor/`` holds data regarding the editor state, such as currently
+  opened script files, and recently used nodes.
 - ``*.translation``: These files are binary imported translations generated from CSV files.
 - ``export_presets.cfg``: This file contains all the export presets for the
   project, including sensitive information such as Android keystore credentials.

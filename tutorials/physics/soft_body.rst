@@ -1,7 +1,7 @@
 .. _doc_soft_body:
 
-SoftBody
-========
+Using SoftBody
+==============
 
 Soft bodies (or *soft-body dynamics*) simulate movement, changing shape and other physical properties of deformable objects.
 This can for example be used to simulate cloth or to create more realistic characters.
@@ -32,7 +32,7 @@ Cloak simulation
 
 Let's make a cloak in the Platformer3D demo.
 
-.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>` or `the Asset Library <https://godotengine.org/asset-library/asset/125>`_.
+.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or `the Asset Library <https://godotengine.org/asset-library/asset/125>`_.
 
 Open the ``Player`` scene, add a ``SoftBody`` node and assign a ``PlaneMesh`` to it.
 
@@ -52,7 +52,7 @@ To create pinned joints, select the upper vertices in the ``SoftBody`` node:
 
 .. image:: img/softbody_cloak_pinned.png
 
-The pinned joints can be find in ``SoftBody``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
+The pinned joints can be found in ``SoftBody``'s ``Attachments`` property, choose the ``BoneAttachment`` as the ``SpatialAttachment`` for each pinned joints, the pinned joints are now attached to the neck.
 
 .. image:: img/softbody_cloak_pinned_attach.png
 

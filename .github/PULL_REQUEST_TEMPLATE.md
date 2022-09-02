@@ -1,8 +1,8 @@
 <!--
-**Note:** Pull Requests should be made against the `master` by default.
+Please target the `master` branch in priority.
+PRs can target other branches (e.g. `3.2`, `3.5`) if the same change was done in `master`, or is not relevant there.
+PRs must not target `stable`, as that branch is updated manually.
 
-Only make Pull Requests against other branches (e.g. `2.1`) if your changes only apply to that specific version of Godot.
-
-The type of content accepted into the documentation is explained here: https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html
-
+The type of content accepted into the documentation is explained here:
+https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html
 -->

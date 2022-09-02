@@ -24,7 +24,7 @@ In the *Inspector*, set the *Label*'s *Text* to a placeholder like "Score: 0".
 Also, the text is white by default, like our game's background. We need to
 change its color to see it at runtime.
 
-Scroll down to *Custom Colors* and click the black box next to *Font Color* to
+Scroll down to *Theme Overrides*, and expand *Colors* and click the black box next to *Font Color* to
 tint the text.
 
 |image2|
@@ -90,11 +90,19 @@ Keeping track of the score
 Let's work on the score next. Attach a new script to the *ScoreLabel* and define
 the ``score`` variable.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends Label
 
    var score = 0
+
+ .. code-tab:: csharp
+
+    public class ScoreLabel : Label
+    {
+        private int _score = 0;
+    }
 
 The score should increase by ``1`` every time we squash a monster. We can use
 their ``squashed`` signal to know when that happens. However, as we instantiate
@@ -114,12 +122,22 @@ dock.
 At the bottom of the ``_on_MobTimer_timeout()`` function, add the following
 line.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_MobTimer_timeout():
        #...
        # We connect the mob to the score label to update the score upon squashing one.
        mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+
+ .. code-tab:: csharp
+
+    public void OnMobTimerTimeout()
+    {
+        // ...
+        // We connect the mob to the score label to update the score upon squashing one.
+        mob.Squashed += GetNode<ScoreLabel>("UserInterface/ScoreLabel").OnMobSquashed;
+    }
 
 This line means that when the mob emits the ``squashed`` signal, the
 *ScoreLabel* node will receive it and call the function ``_on_Mob_squashed()``.
@@ -129,11 +147,20 @@ callback function.
 
 There, we increment the score and update the displayed text.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_Mob_squashed():
        score += 1
        text = "Score: %s" % score
+
+ .. code-tab:: csharp
+
+    public void OnMobSquashed()
+    {
+        _score += 1;
+        Text = string.Format("Score: {0}", _score);
+    }
 
 The second line uses the value of the ``score`` variable to replace the
 placeholder ``%s``. When using this feature, Godot automatically converts values
@@ -215,19 +242,37 @@ dies and plays again.
 Open the script ``Main.gd``. First, we want to hide the overlay at the start of
 the game. Add this line to the ``_ready()`` function.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _ready():
        #...
        $UserInterface/Retry.hide()
 
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        // ...
+        GetNode<Control>("UserInterface/Retry").Hide();
+    }
+
 Then, when the player gets hit, we show the overlay.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_Player_hit():
        #...
        $UserInterface/Retry.show()
+
+ .. code-tab:: csharp
+
+    public void OnPlayerHit()
+    {
+        //...
+        GetNode<Control>("UserInterface/Retry").Show();
+    }
 
 Finally, when the *Retry* node is visible, we need to listen to the player's
 input and restart the game if they press enter. To do this, we use the built-in
@@ -236,12 +281,24 @@ input and restart the game if they press enter. To do this, we use the built-in
 If the player pressed the predefined ``ui_accept`` input action and *Retry* is
 visible, we reload the current scene.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _unhandled_input(event):
        if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
            # This restarts the current scene.
            get_tree().reload_current_scene()
+
+ .. code-tab:: csharp
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event.IsActionPressed("ui_accept") && GetNode<Control>("UserInterface/Retry").Visible)
+        {
+            // This restarts the current scene.
+            GetTree().ReloadCurrentScene();
+        }
+    }
 
 The function ``get_tree()`` gives us access to the global :ref:`SceneTree
 <class_SceneTree>` object, which allows us to reload and restart the current
@@ -312,11 +369,12 @@ make the game both look and feel much nicer.
 
 Here is the complete ``Main.gd`` script for reference.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends Node
 
-   export (PackedScene) var mob_scene
+   @export var mob_scene: PackedScene
 
 
    func _ready():
@@ -336,15 +394,60 @@ Here is the complete ``Main.gd`` script for reference.
        mob_spawn_location.unit_offset = randf()
 
        var player_position = $Player.transform.origin
+       mob.initialize(mob_spawn_location.translation, player_position)
 
        add_child(mob)
        mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
-       mob.initialize(mob_spawn_location.translation, player_position)
 
 
    func _on_Player_hit():
        $MobTimer.stop()
        $UserInterface/Retry.show()
+
+ .. code-tab:: csharp
+
+    public class Main : Node
+    {
+    #pragma warning disable 649
+        [Export]
+        public PackedScene MobScene;
+    #pragma warning restore 649
+
+        public override void _Ready()
+        {
+            GD.Randomize();
+            GetNode<Control>("UserInterface/Retry").Hide();
+        }
+
+        public override void _UnhandledInput(InputEvent @event)
+        {
+            if (@event.IsActionPressed("ui_accept") && GetNode<Control>("UserInterface/Retry").Visible)
+            {
+                GetTree().ReloadCurrentScene();
+            }
+        }
+
+        public void OnMobTimerTimeout()
+        {
+            Mob mob = (Mob)MobScene.Instance();
+
+            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+            mobSpawnLocation.UnitOffset = GD.Randf();
+
+            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+
+            AddChild(mob);
+            mob.Squashed += GetNode<ScoreLabel>("UserInterface/ScoreLabel").OnMobSquashed;
+        }
+
+        public void OnPlayerHit()
+        {
+            GetNode<Timer>("MobTimer").Stop();
+            GetNode<Control>("UserInterface/Retry").Show();
+        }
+    }
+
 
 .. |image0| image:: img/08.score_and_replay/01.label_node.png
 .. |image1| image:: img/08.score_and_replay/02.score_placeholder.png

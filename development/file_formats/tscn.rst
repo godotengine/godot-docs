@@ -4,14 +4,16 @@ TSCN file format
 ================
 
 The TSCN (text scene) file format represents a single scene tree inside
-Godot. TSCN files have the advantage of being mostly human-readable and easy for
-version control systems to manage. During import, TSCN files are compiled into
-binary ``.scn`` files stored inside the .import folder. This reduces the data
-size and speeds up loading.
+Godot. Unlike binary SCN files, TSCN files have the advantage of being mostly
+human-readable and easy for version control systems to manage.
 
 The ESCN (exported scene) file format is identical to the TSCN file format, but
 is used to indicate to Godot that the file has been exported from another
 program and should not be edited by the user from within Godot.
+Unlike SCN and TSCN files, during import, ESCN files are compiled to binary
+SCN files stored inside the ``.godot/imported/`` folder.
+This reduces the data size and speeds up loading, as binary formats are faster
+to load compared to text-based formats.
 
 For those looking for a complete description, the parsing is handled in the file
 `resource_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/resource_format_text.cpp>`_
@@ -28,10 +30,12 @@ There are five main sections inside the TSCN file:
 3. Nodes
 4. Connections
 
-The file descriptor looks like ``[gd_scene load_steps=1 format=2]`` and should
-be the first entry in the file. The ``load_steps`` parameter should (in theory)
-be the number of resources within the file. However, in practice, its value seems
-not to matter.
+The file descriptor looks like ``[gd_scene load_steps=3 format=2]`` and should
+be the first entry in the file. The ``load_steps`` parameter is equal to the
+total amount of resources (internal and external) plus one (for the file itself).
+If the file has no resources, ``load_steps`` is omitted. The engine will
+still load the file correctly if ``load_steps`` is incorrect, but this will affect
+loading bars and any other piece of code relying on that value.
 
 These sections should appear in order, but it can be hard to distinguish them.
 The only difference between them is the first element in the heading for all of
@@ -75,7 +79,7 @@ Other valid keywords include:
  - ``instance``
  - ``instance_placeholder``
  - ``owner``
- - ``index`` (if two nodes have the same name)
+ - ``index`` (sets the order of appearance in the tree. If absent, inherited nodes will take precedence over plain ones)
  - ``groups``
 
 The first node in the file, which is also the scene root, must not have a
@@ -304,7 +308,7 @@ heading. For example, a capsule collision shape looks like:
 
 ::
 
-    [sub_resource  type="CapsuleShape" id=2]
+    [sub_resource type="CapsuleShape" id=2]
 
     radius = 0.5
     height = 3.0
@@ -339,13 +343,14 @@ TSCN files support two surface formats:
     ii. ``arrays`` is a two-dimensional array, it contains:
 
         1. Vertex positions array
-        2. Tangents array
-        3. Vertex colors array
-        4. UV array 1
-        5. UV array 2
-        6. Bone indexes array
-        7. Bone weights array
-        8. Vertex indexes array
+        2. Normals array
+        3. Tangents array
+        4. Vertex colors array
+        5. UV array 1
+        6. UV array 2
+        7. Bone indexes array
+        8. Bone weights array
+        9. Vertex indexes array
 
     iii. ``morph_arrays`` is an array of morphs. Each morph is exactly an
          ``arrays`` without the vertex indexes array.

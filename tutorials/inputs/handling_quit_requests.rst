@@ -14,9 +14,8 @@ to go back otherwise).
 Handling the notification
 -------------------------
 
-On desktop platforms, the :ref:`MainLoop <class_MainLoop>`
-has a special ``MainLoop.NOTIFICATION_WM_QUIT_REQUEST`` notification that is
-sent to all nodes when quitting is requested.
+On desktop and web platforms, :ref:`Node <class_Node>`
+receives a special ``NOTIFICATION_WM_CLOSE_REQUEST`` notification when quitting is requested.
 
 On Android, ``MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST`` is sent instead.
 Pressing the Back button will exit the application if
@@ -34,14 +33,14 @@ Handling the notification is done as follows (on any node):
  .. code-tab:: gdscript GDScript
 
     func _notification(what):
-        if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+        if what == NOTIFICATION_WM_CLOSE_REQUEST:
             get_tree().quit() # default behavior
 
  .. code-tab:: csharp
 
     public override void _Notification(int what)
     {
-        if (what == MainLoop.NotificationWmQuitRequest)
+        if (what == NotificationWmCloseRequest)
             GetTree().Quit(); // default behavior
     }
 
@@ -59,3 +58,24 @@ behavior to quit when quit is requested, this can be changed:
  .. code-tab:: csharp
 
     GetTree().SetAutoAcceptQuit(false);
+
+Sending your own quit notification
+----------------------------------
+
+While forcing the application to close can be done by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>`,
+doing so will not send the quit *notification*. This means the function
+described above won't be called. Quitting by calling
+:ref:`SceneTree.quit <class_SceneTree_method_quit>` will not allow custom actions
+to complete (such as saving, confirming the quit, or debugging), even if you try
+to delay the line that forces the quit.
+
+Instead, you should send a quit request:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    get_tree().notification(NOTIFICATION_WM_CLOSE_REQUEST)
+
+ .. code-tab:: csharp
+
+    GetTree().Notification(NotificationWmCloseRequest)

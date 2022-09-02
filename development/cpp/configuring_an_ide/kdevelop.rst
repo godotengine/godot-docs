@@ -23,7 +23,7 @@ Importing the project
    :figclass: figure-w480
    :align: center
 
-- After the project has been imported, open the project configuration by right-clicking 
+- After the project has been imported, open the project configuration by right-clicking
   on it in the **Projects** panel and selecting **Open Configuration..** option.
 
 .. figure:: img/kdevelop_openconfig.png
@@ -39,7 +39,7 @@ Importing the project
      core/os/
      core/math/
      drivers/
-     platform/<your_platform>/  // Replace <your_platform> with a folder 
+     platform/<your_platform>/  // Replace <your_platform> with a folder
                                    corresponding to your current platform
 
 .. figure:: img/kdevelop_addincludes.png
@@ -75,7 +75,7 @@ Debugging the project
    :align: center
 
 - Click **Add** to create a new launch configuration.
-- Select **Executable** option and specify the path to your executable located in 
+- Select **Executable** option and specify the path to your executable located in
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
   e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
 

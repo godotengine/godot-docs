@@ -7,8 +7,9 @@
 Listening to player input
 =========================
 
-Building upon the previous lesson, let's look at another important feature of
-any game: giving control to the player. To add this, we need to modify our code.
+Building upon the previous lesson :ref:`doc_scripting_first_script`, let's look
+at another important feature of any game: giving control to the player.
+To add this, we need to modify our ``Sprite2D.gd`` code.
 
 .. image:: img/scripting_first_script_moving_with_input.gif
 
@@ -26,21 +27,34 @@ You have two main tools to process the player's input in Godot:
 We're going to use the ``Input`` singleton here as we need to know if the player
 wants to turn or move every frame.
 
-For turning, we should use a new variable: ``direction``. Update the top of the
-``_process()`` function like so, up to the line where we increment the sprite's
-``rotation``.
+For turning, we should use a new variable: ``direction``. In our ``_process()``
+function, replace the ``rotation += angular_speed * delta`` line with the
+code below.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _process(delta):
-        var direction = 0
-        if Input.is_action_pressed("ui_left"):
-            direction = -1
-        if Input.is_action_pressed("ui_right"):
-            direction = 1
+    var direction = 0
+    if Input.is_action_pressed("ui_left"):
+        direction = -1
+    if Input.is_action_pressed("ui_right"):
+        direction = 1
 
-        rotation += angular_speed * direction * delta
+    rotation += angular_speed * direction * delta
+
+ .. code-tab:: csharp C#
+
+    var direction = 0;
+    if (Input.IsActionPressed("ui_left"))
+    {
+        direction = -1;
+    }
+    if (Input.IsActionPressed("ui_right"))
+    {
+        direction = 1;
+    }
+
+    Rotation += AngularSpeed * direction * delta;
 
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
@@ -75,13 +89,19 @@ To only move when pressing a key, we need to modify the code that calculates the
 velocity. Replace the line starting with ``var velocity`` with the code below.
 
 .. tabs::
-   .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript GDScript
 
     var velocity = Vector2.ZERO
     if Input.is_action_pressed("ui_up"):
         velocity = Vector2.UP.rotated(rotation) * speed
 
-    position += velocity * delta
+ .. code-tab:: csharp C#
+
+    var velocity = Vector2.Zero;
+    if (Input.IsActionPressed("ui_up"))
+    {
+        velocity = Vector2.Up.Rotated(Rotation) * Speed;
+    }
 
 We initialize the ``velocity`` with a value of ``Vector2.ZERO``, another
 constant of the built-in ``Vector`` type representing a 2D vector of length 0.
@@ -89,12 +109,15 @@ constant of the built-in ``Vector`` type representing a 2D vector of length 0.
 If the player presses the "ui_up" action, we then update the velocity's value,
 causing the sprite to move forward.
 
-Here is the complete ``Sprite.gd`` file for reference.
+Complete script
+---------------
+
+Here is the complete ``Sprite2D.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite
+    extends Sprite2D
 
     var speed = 400
     var angular_speed = PI
@@ -114,6 +137,39 @@ Here is the complete ``Sprite.gd`` file for reference.
             velocity = Vector2.UP.rotated(rotation) * speed
 
         position += velocity * delta
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+    
+    public class Sprite : Godot.Sprite2D
+    {
+        private float Speed = 400;
+        private float AngularSpeed = Mathf.Pi;
+
+        public override void _Process(float delta)
+        {
+            var direction = 0;
+            if (Input.IsActionPressed("ui_left"))
+            {
+                direction = -1;
+            }
+            if (Input.IsActionPressed("ui_right"))
+            {
+                direction = 1;
+            }
+
+            Rotation += AngularSpeed * direction * delta;
+
+            var velocity = Vector2.Zero;
+            if (Input.IsActionPressed("ui_up"))
+            {
+                velocity = Vector2.Up.Rotated(Rotation) * Speed;
+            }
+
+            Position += velocity * delta;
+        }
+    }
 
 If you run the scene, you should now be able to rotate with the left and right
 arrow keys and move forward by pressing :kbd:`Up`.
@@ -140,4 +196,5 @@ button presses from the users. There are quite a few more.
 The ``Input`` singleton allows you to react to the players' input anywhere in
 your code. In particular, you'll get to use it in the ``_process()`` loop.
 
-In the next lesson, we'll build upon
+In the next lesson :ref:`doc_signals`, we'll build upon the relationship between
+scripts and nodes by having our nodes trigger code in scripts.

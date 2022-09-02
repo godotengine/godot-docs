@@ -44,7 +44,7 @@ There are two ways to save resources. They can be:
 2. **Built-in**, saved inside the ``.tscn`` or the ``.scn`` file they're attached to.
 
 To be more specific, here's a :ref:`Texture <class_Texture>`
-in a :ref:`Sprite <class_Sprite>` node:
+in a :ref:`Sprite2D <class_Sprite2D>` node:
 
 .. image:: img/spriteprop.png
 
@@ -83,7 +83,7 @@ There are two ways to load resources from code. First, you can use the ``load()`
     public override void _Ready()
     {
         var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
-        var sprite = (Sprite)GetNode("sprite");
+        var sprite = GetNode<Sprite2D>("sprite");
         sprite.Texture = texture;
     }
 
@@ -206,6 +206,9 @@ Let's see some examples.
     export(Resource) var sub_resource
     export(Array, String) var strings
 
+    # Make sure that every parameter has a default value.
+    # Otherwise, there will be problems with creating and editing
+    # your resource via the inspector.
     func _init(p_health = 0, p_sub_resource = null, p_strings = []):
         health = p_health
         sub_resource = p_sub_resource
@@ -238,6 +241,9 @@ Let's see some examples.
                 [Export]
                 public String[] Strings { get; set; }
 
+                // Make sure that every parameter has a default value.
+                // Otherwise, there will be problems with creating and editing
+                // your resource via the inspector.
                 public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
                 {
                     Health = health;
@@ -274,7 +280,7 @@ Let's see some examples.
     with an :ref:`EditorPlugin <class_EditorPlugin>` to create custom
     visualizations and editors for their data.
 
-    Unreal Engine 4's DataTables and CurveTables are also easy to recreate with
+    Unreal Engine's DataTables and CurveTables are also easy to recreate with
     Resource scripts. DataTables are a String mapped to a custom struct, similar
     to a Dictionary mapping a String to a secondary custom Resource script.
 
@@ -310,11 +316,11 @@ Let's see some examples.
             }
         }
 
-    Instead of just inlining the Dictionary values, one could also, alternatively...
+    Instead of inlining the Dictionary values, one could also, alternatively:
 
-    1. Import a table of values from a spreadsheet and generate these key-value pairs, or...
+    1. Import a table of values from a spreadsheet and generate these key-value pairs.
 
-    2. Design a visualization within the editor and create a simple plugin that adds it
+    2. Design a visualization within the editor and create a plugin that adds it
        to the Inspector when you open these types of Resources.
 
     CurveTables are the same thing, except mapped to an Array of float values
@@ -347,6 +353,7 @@ Let's see some examples.
             # This will NOT serialize the 'value' property.
             ResourceSaver.save("res://my_res.tres", my_res)
       .. code-tab:: csharp
+
         using System;
         using Godot;
 

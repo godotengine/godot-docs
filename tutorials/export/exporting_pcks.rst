@@ -82,42 +82,48 @@ process will build that type of file for the chosen platform.
        build of the engine or have access to one (distributed alongside or
        perhaps in the original game's files). The tool can then use the Godot
        executable to export a PCK file from the command line with
-       :ref:`OS.execute() <class_OS_method_execute>`. It makes the most sense for the
-       game to not use a tool-build though (for security) and for the modding
-       tools to *do* use a tool-enabled engine build.
+       :ref:`OS.execute() <class_OS_method_execute>`. The game itself shouldn't
+       use a tool-build of the engine (for security), so it's best to keep
+       the modding tool and game separate.
 
 Opening PCK files at runtime
 ----------------------------
 
-To import a PCK file, one uses a one-liner. Keep in mind, there is no
-error or exception if the import fails. Instead, one might have to create some
-validation code as a layer on top. The following example expects a "mod.pck"
-file in the directory of the games executable. The PCK file contains a
-"mod_scene.tscn" test scene in its root.
+To import a PCK file, one uses the ProjectSettings singleton. The following
+example expects a “mod.pck” file in the directory of the games executable.
+The PCK file contains a “mod_scene.tscn” test scene in its root.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _your_function():
-        ProjectSettings.load_resource_pack("res://mod.pck")
-        # Now one can use the assets as if they had them in the project from the start
-        var imported_scene = load("res://mod_scene.tscn")
+        # This could fail if, for example, mod.pck cannot be found.
+        var success = ProjectSettings.load_resource_pack("res://mod.pck")
+
+        if success:
+            # Now one can use the assets as if they had them in the project from the start.
+            var imported_scene = load("res://mod_scene.tscn")
 
  .. code-tab:: csharp
 
     private void YourFunction()
     {
-        ProjectSettings.LoadResourcePack("res://mod.pck");
-        // Now one can use the assets as if they had them in the project from the start
-        var importedScene = (PackedScene)ResourceLoader.Load("res://mod_scene.tscn");
+        // This could fail if, for example, mod.pck cannot be found.
+        var success = ProjectSettings.LoadResourcePack("res://mod.pck");
+
+        if (success)
+        {
+            // Now one can use the assets as if they had them in the project from the start.
+            var importedScene = (PackedScene)ResourceLoader.Load("res://mod_scene.tscn");
+        }
     }
 
 .. warning::
 
     By default, if you import a file with the same file path/name as one you already have in your
     project, the imported one will replace it. This is something to watch out for when
-    creating DLC or mods (solved easily with a tool isolating mods to a specific mods
-    subfolder). However, it is also a way of creating patches for one's own game. A
+    creating DLC or mods. You can solve this problem by using a tool that isolates mods to a specific mods subfolder.
+    However, it is also a way of creating patches for one's own game. A
     PCK file of this kind can fix the content of a previously loaded PCK.
 
     To opt out of this behavior, pass ``false`` as the second argument to
@@ -131,8 +137,8 @@ file in the directory of the games executable. The PCK file contains a
 Summary
 -------
 
-This tutorial should illustrate how easy adding mods, patches or DLC to a game
-is. The most important thing is to identify how one plans to distribute future
+This tutorial explains how to add mods, patches, or DLC to a game.
+The most important thing is to identify how one plans to distribute future
 content for their game and develop a workflow that is customized for that
 purpose. Godot should make that process smooth regardless of which route a
 developer pursues.

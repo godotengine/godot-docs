@@ -44,10 +44,7 @@ powered by Godot, and so is the voxel RPG creator RPG in a box.
 
 .. image:: img/introduction_rpg_in_a_box.png
 
-You can find many more examples in the official showcase videos:
-
-- `April 2020 desktop and console showcase`_
-- `April 2020 mobile showcase`_
+You can find many more examples in the `official showcase videos`_.
 
 How does it work and look?
 --------------------------
@@ -79,9 +76,6 @@ Godot-specific and tightly integrated language with a lightweight syntax, or
 :ref:`C# <toc-learn-scripting-C#>`, which is popular in the games industry.
 These are the two main scripting languages we support.
 
-Godot also supports a node-based visual programming language named
-:ref:`VisualScript <toc-learn-scripting-visual_script>`.
-
 With the :ref:`GDNative <toc-tutorials-gdnative>` technology, you can also write
 gameplay or high-performance algorithms in C or C++ without recompiling the
 engine. You can use this technology to integrate third-party libraries and other
@@ -94,6 +88,8 @@ completely free and open-source.
              community maintains support for many more. For more information,
              see :ref:`GDNative third-party bindings
              <doc_what_is_gdnative_third_party_bindings>`.
+
+.. doc_learning_programming
 
 What do I need to know to use Godot?
 ------------------------------------
@@ -123,6 +119,5 @@ In the next part, you will get an overview of the engine's essential concepts.
 .. _Blender: https://www.blender.org/
 .. _VSCode: https://github.com/godotengine/godot-vscode-plugin
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
-.. _April 2020 desktop and console showcase: https://youtu.be/UEDEIksGEjQ
-.. _April 2020 mobile showcase: https://youtu.be/AIapugketbs
-.. _CS50 open courseware: https://cs50.harvard.edu/x/2020/
+.. _official showcase videos: https://www.youtube.com/playlist?list=PLeG_dAglpVo6EpaO9A1nkwJZOwrfiLdQ8
+.. _CS50 open courseware: https://cs50.harvard.edu/x

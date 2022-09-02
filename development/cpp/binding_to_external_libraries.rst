@@ -17,7 +17,7 @@ To bind to an external library, set up a module directory similar to the Summato
 
     godot/modules/tts/
 
-Next, you will create a header file with a simple TTS class:
+Next, you will create a header file with a TTS class:
 
 .. code-block:: cpp
 
@@ -26,10 +26,10 @@ Next, you will create a header file with a simple TTS class:
     #ifndef GODOT_TTS_H
     #define GODOT_TTS_H
 
-    #include "core/reference.h"
+    #include "core/object/ref_counted.h"
 
-    class TTS : public Reference {
-        GDCLASS(TTS, Reference);
+    class TTS : public RefCounted {
+        GDCLASS(TTS, RefCounted);
 
     protected:
         static void _bind_methods();
@@ -95,7 +95,7 @@ These files should contain the following:
 
     #include "register_types.h"
 
-    #include "core/class_db.h"
+    #include "core/object/class_db.h"
     #include "tts.h"
 
     void register_tts_types() {
@@ -118,8 +118,8 @@ this module:
     env_tts = env.Clone()
     env_tts.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
 
-You'll need to install the external library on your machine to get the .a library files.  See the library's official
-documentation for specific instructions on how to do this for your operation system.  We've included the
+You'll need to install the external library on your machine to get the .a library files. See the library's official
+documentation for specific instructions on how to do this for your operation system. We've included the
 installation commands for Linux below, for reference.
 
 .. code-block:: shell
@@ -135,7 +135,7 @@ installation commands for Linux below, for reference.
     Please be sure to check the licenses and terms of use.
 
 The external library will also need to be installed inside your module to make the source
-files accessible to the compiler, while also keeping the module code self-contained.  The
+files accessible to the compiler, while also keeping the module code self-contained. The
 festival and speech_tools libraries can be installed from the modules/tts/ directory via
 git using the following commands:
 
@@ -153,9 +153,9 @@ can link to them instead by adding them as submodules (from within the modules/t
     git submodule add https://github.com/festvox/speech_tools
 
 .. important::
-    Please note that Git submodules are not used in the Godot repository.  If
+    Please note that Git submodules are not used in the Godot repository. If
     you are developing a module to be merged into the main Godot repository, you should not
-    use submodules.  If your module doesn't get merged in, you can always try to implement
+    use submodules. If your module doesn't get merged in, you can always try to implement
     the external library as a GDNative C++ plugin.
 
 To add include directories for the compiler to look at you can append it to the
@@ -190,8 +190,11 @@ Example `SCsub` with custom flags:
 
     env_tts = env.Clone()
     env_tts.add_source_files(env.modules_sources, "*.cpp")
-    env_tts.Append(CCFLAGS=['-O2']) # Flags for C and C++ code
-    env_tts.Append(CXXFLAGS=['-std=c++11']) # Flags for C++ code only
+	# Append CCFLAGS flags for both C and C++ code.
+    env_tts.Append(CCFLAGS=['-O2'])
+    # If you need to, you can:
+    # - Append CFLAGS for C code only.
+    # - Append CXXFLAGS for C++ code only.
 
 The final module should look like this:
 

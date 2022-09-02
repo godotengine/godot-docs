@@ -24,7 +24,7 @@ your project's features.
      though is actually a tree of :ref:`TreeItem <class_TreeItem>` Objects.
 
    - **Advantages:** Simplifying one's API to smaller scoped objects helps improve
-     its accessibility improve iteration time. Rather than working with the
+     its accessibility and improve iteration time. Rather than working with the
      entire Node library, one creates an abbreviated set of Objects from which
      a node can generate and manage the appropriate sub-nodes.
 
@@ -33,7 +33,7 @@ your project's features.
      For example, if the object's creator decides to delete it out of nowhere,
      this would trigger an error state when one next accesses it.
 
-2. :ref:`Reference <class_Reference>`: Only a little more complex than Object.
+2. :ref:`RefCounted <class_RefCounted>`: Only a little more complex than Object.
    They track references to themselves, only deleting loaded memory when no
    further references to themselves exist. These are useful in the majority of
    cases where one needs data in a custom class.
@@ -43,7 +43,7 @@ your project's features.
 
    - **Advantages:** same as the Object.
 
-3. :ref:`Resource <class_Resource>`: Only slightly more complex than Reference.
+3. :ref:`Resource <class_Resource>`: Only slightly more complex than RefCounted.
    They have the innate ability to serialize/deserialize (i.e. save and load)
    their object properties to/from Godot resource files.
 
@@ -56,7 +56,7 @@ your project's features.
      on :ref:`Resource <class_Resource>`'s advantages over traditional data
      storage methods. In the context of using Resources over Nodes though,
      their main advantage is in Inspector-compatibility. While nearly as
-     lightweight as Object/Reference, they can still display and export
+     lightweight as Object/RefCounted, they can still display and export
      properties in the Inspector. This allows them to fulfill a purpose much
      like sub-Nodes on the usability front, but also improve performance if
      one plans to have many such Resources/Nodes in their scenes.

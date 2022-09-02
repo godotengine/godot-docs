@@ -5,7 +5,7 @@ Sky shaders
 
 Sky shaders are a special type of shader used for drawing sky backgrounds
 and for updating radiance cubemaps which are used for image-based lighting
-(IBL). Sky shaders only have one processing function, the ``fragment()``
+(IBL). Sky shaders only have one processing function, the ``sky()``
 function.
 
 There are three places the sky shader is used.
@@ -28,7 +28,7 @@ example:
 
     shader_type sky;
 
-    void fragment() {
+    void sky() {
         if (AT_CUBEMAP_PASS) {
             // Sets the radiance cubemap to a nice shade of blue instead of doing
             // expensive sky calculations
@@ -55,7 +55,7 @@ the radiance cubemap:
 * ``TIME`` is used.
 * ``POSITION`` is used and the camera position changes.
 * If any ``LIGHTX_*`` properties are used and any
-  :ref:`DirectionalLight3D <class_DirectionalLight>` changes.
+  :ref:`DirectionalLight3D <class_DirectionalLight3D>` changes.
 * If any uniform is changed in the shader.
 * If the screen is resized and either of the subpasses are used.
 
@@ -76,7 +76,7 @@ a lower resolution than the rest of the sky:
     shader_type sky;
     render_mode use_half_res_pass;
 
-    void fragment() {
+    void sky() {
         if (AT_HALF_RES_PASS) {
             // Run cloud calculation for 1/4 of the pixels
             vec4 color = generate_clouds(EYEDIR);
@@ -89,28 +89,27 @@ a lower resolution than the rest of the sky:
         }
     }
 
-+---------------------------------+----------------------------------------------------------------------+
-| Render mode                     | Description                                                          |
-+=================================+======================================================================+
-| **use_half_res_pass**           | Allows the shader to write to and access the half resolution pass.   |
-+---------------------------------+----------------------------------------------------------------------+
-| **use_quarter_res_pass**        | Allows the shader to write to and access the quarter resolution pass.|
-+---------------------------------+----------------------------------------------------------------------+
-| **disable_fog**                 | If used, fog will not affect the sky.                                |
-+---------------------------------+----------------------------------------------------------------------+
++--------------------------+-----------------------------------------------------------------------+
+| Render mode              | Description                                                           |
++==========================+=======================================================================+
+| **use_half_res_pass**    | Allows the shader to write to and access the half resolution pass.    |
++--------------------------+-----------------------------------------------------------------------+
+| **use_quarter_res_pass** | Allows the shader to write to and access the quarter resolution pass. |
++--------------------------+-----------------------------------------------------------------------+
+| **disable_fog**          | If used, fog will not affect the sky.                                 |
++--------------------------+-----------------------------------------------------------------------+
 
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default
-value, and can optionally be written to. Samplers are not subjects of writing and they are
-not marked.
+Values marked as "in" are read-only. Values marked as "out" are for optional
+writing and will not necessarily contain sensible values. Samplers cannot be 
+written to so they are not marked.
 
 Global built-ins
 ^^^^^^^^^^^^^^^^
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, and ``LIGHT3``.
 
@@ -122,7 +121,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **POSITION**            | Camera position in world space                                                                                           |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in SamplerCube **RADIANCE**     | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
+| samplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in bool **AT_HALF_RES_PASS**    | Currently rendering to half resolution pass.                                                                             |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -140,24 +139,35 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **LIGHTX_SIZE**        | Angular diameter of ``LIGHTX`` in the sky. Expressed in degrees. For reference, the sun from earth is about 0.5 degrees. |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| in float **PI**                 | A ``PI`` constant (``3.141592``).                                                                                        |
+|                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn.                                  |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| in float **TAU**                | A ``TAU`` constant (``6.283185``).                                                                                       |
+|                                 | An equivalent of ``PI * 2`` and amount of radians in full turn.                                                          |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| in float **E**                  | A ``E`` constant (``2.718281``).                                                                                         |
+|                                 | Euler's number and a base of the natural logarithm.                                                                      |
++---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
-Fragment built-ins
-^^^^^^^^^^^^^^^^^^
+Sky built-ins
+^^^^^^^^^^^^^
 
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| Built-in                        | Description                                                                                     |
-+=================================+=================================================================================================+
-| out vec3 **COLOR**              | Output color                                                                                    |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| out float **ALPHA**             | Output alpha value, can only be used in subpasses.                                              |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec3 **EYEDIR**              | Normalized direction of current pixel. Use this as your basic direction for procedural effects. |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**           | Screen UV coordinate for current pixel. Used to map a texture to the full screen.               |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec2 **SKY_COORDS**          | Sphere UV. Used to map a panorama texture to the sky.                                           |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec4 **HALF_RES_COLOR**      | Color value of corresponding pixel from half resolution pass. Uses linear filter.               |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec4 **QUARTER_RES_COLOR**   | Color value of corresponding pixel from quarter resolution pass. Uses linear filter.            |
-+---------------------------------+-------------------------------------------------------------------------------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| Built-in                      | Description                                                                                     |
++===============================+=================================================================================================+
+| in vec3 **EYEDIR**            | Normalized direction of current pixel. Use this as your basic direction for procedural effects. |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**         | Screen UV coordinate for current pixel. Used to map a texture to the full screen.               |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| in vec2 **SKY_COORDS**        | Sphere UV. Used to map a panorama texture to the sky.                                           |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| in vec4 **HALF_RES_COLOR**    | Color value of corresponding pixel from half resolution pass. Uses linear filter.               |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| in vec4 **QUARTER_RES_COLOR** | Color value of corresponding pixel from quarter resolution pass. Uses linear filter.            |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| out vec3 **COLOR**            | Output color.                                                                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| out float **ALPHA**           | Output alpha value, can only be used in subpasses.                                              |
++-------------------------------+-------------------------------------------------------------------------------------------------+
+| out vec4 **FOG**              |                                                                                                 |
++-------------------------------+-------------------------------------------------------------------------------------------------+

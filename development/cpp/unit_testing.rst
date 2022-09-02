@@ -288,3 +288,69 @@ Here's an example of how GDScript registers test tools in
 
 The custom command-line parsing can be performed by a test tool itself with the
 help of OS :ref:`get_cmdline_args<class_OS_method_get_cmdline_args>` method.
+
+Integration tests for GDScript
+------------------------------
+
+Godot uses doctest to prevent regressions in GDScript during development. There
+are several types of test scripts which can be written:
+
+- tests for expected errors;
+- tests for warnings;
+- tests for features.
+
+Therefore, the process of writing integration tests for GDScript is the following:
+
+1. Pick a type of a test script you'd like to write, and create a new GDScript
+   file under the ``modules/gdscript/tests/scripts`` directory within
+   corresponding sub-directory.
+
+2. Write GDScript code. The test script must have a function called ``test()``
+   which takes no arguments. Such function will be called by the test runner.
+   The test should not have any dependency unless it's part of the test too.
+   Global classes (using ``class_name``) are registered before the runner
+   starts, so those should work if needed.
+
+   Here's an example test script:
+
+   ::
+
+        func test():
+            if true # Missing colon here.
+                print("true")
+
+3. Generate ``*.out`` files to update the expected results from the output:
+
+   .. code-block:: shell
+
+       ./bin/<godot_binary> --gdscript-generate-tests godot-source/modules/gdscript/tests/scripts
+
+4. Run GDScript tests with:
+
+   .. code-block:: shell
+
+       ./bin/<godot_binary> --test --test-suite="*GDScript*"
+
+If no errors are printed and everything goes well, you're done!
+
+.. warning::
+
+    Make sure the output does have the expected values before submitting a pull
+    request. If ``--gdscript-generate-tests`` produces ``*.out`` files which are
+    unrelated to newly added tests, you should revert those files back and
+    only commit ``*.out`` files for new tests.
+
+.. note::
+
+    The GDScript test runner is meant for testing the GDScript implementation,
+    not for testing user scripts nor testing the engine using scripts. We
+    recommend writing new tests for already resolved
+    `issues related to GDScript at GitHub <https://github.com/godotengine/godot/issues?q=is%3Aissue+label%3Atopic%3Agdscript+is%3Aclosed>`_,
+    or writing tests for currently working features.
+
+.. note::
+
+    If your test case requires that there is no ``test()``
+    function present inside the script file,
+    you can disable the runtime section of the test by naming the script file so that it matches the pattern ``*.notest.gd``.
+    For example, "test_empty_file.notest.gd".

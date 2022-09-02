@@ -98,13 +98,12 @@ There are four main screen buttons centered at the top of the editor:
 2D, 3D, Script, and AssetLib.
 
 You'll use the **2D screen** for all types of games. In addition to 2D games,
-the 2D screen is where you'll build your interfaces. Press :kbd:`F1` (or
-:kbd:`Alt + 1` on macOS) to access it.
+the 2D screen is where you'll build your interfaces.
 
 .. image:: img/editor_intro_workspace_2d.png
 
 In the **3D screen**, you can work with meshes, lights, and design levels for
-3D games. Press :kbd:`F2` (:kbd:`Alt + 2` on macOS) to access it.
+3D games.
 
 .. image:: img/editor_intro_workspace_3d.png
 
@@ -117,8 +116,7 @@ options related to the 3D view.
           main screen**.
 
 The **Script screen** is a complete code editor with a debugger, rich
-auto-completion, and built-in code reference. Press :kbd:`F3` (:kbd:`Alt + 3`
-on macOS) to access it.
+auto-completion, and built-in code reference.
 
 .. image:: img/editor_intro_workspace_script.png
 
@@ -136,13 +134,13 @@ Integrated class reference
 Godot comes with a built-in class reference.
 
 You can search for information about a class, method, property, constant, or
-signal by:
+signal by any one of the following methods:
 
-1. Pressing :kbd:`Shift + F1` anywhere in the editor.
-2. Clicking the "Search Help" button in the top-right of the Script main screen.
-3. Clicking on the Help menu and Search.
-4. Clicking while pressing the :kbd:`Ctrl` key on a class name,
-   function name, or built-in variable in the script editor.
+* Pressing :kbd:`F1` (or :kbd:`Alt + Space` on macOS) anywhere in the editor.
+* Clicking the "Search Help" button in the top-right of the Script main screen.
+* Clicking on the Help menu and Search Help.
+* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name, 
+  or built-in variable in the script editor.
 
 
 .. image:: img/editor_intro_search_help_button.png

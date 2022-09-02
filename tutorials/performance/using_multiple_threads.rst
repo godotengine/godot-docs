@@ -14,10 +14,15 @@ Godot supports threads and provides many handy functions to use them.
 .. note:: If using other languages (C#, C++), it may be easier to use the
           threading classes they support.
 
+.. warning::
+
+    Before using a built-in class in a thread, read :ref:`doc_thread_safe_apis`
+    first to check whether it can be safely used in a thread.
+
 Creating a Thread
 -----------------
 
-Creating a thread is very simple, just use the following code:
+To create a thread, use the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -47,6 +52,12 @@ Your function will, then, run in a separate thread until it returns.
 Even if the function has returned already, the thread must collect it, so call
 :ref:`Thread.wait_to_finish()<class_Thread_method_wait_to_finish>`, which will
 wait until the thread is done (if not done yet), then properly dispose of it.
+
+.. warning::
+
+    Creating threads at run-time is slow on Windows and should be avoided to
+    prevent stuttering. Semaphores, explained later on this page, should be used
+    instead.
 
 Mutexes
 -------

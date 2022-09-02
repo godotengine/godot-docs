@@ -3,16 +3,125 @@
 Documentation changelog
 =======================
 
-The documentation is continually being improved. The release of version 3.2
-includes many new tutorials, many fixes and updates for old tutorials, and many updates
-to the :ref:`class reference <toc-class-ref>`. Below is a list of new tutorials
-added since version 3.1.
+The documentation is continually being improved. New releases
+include new pages, fixes and updates to existing pages, and many updates
+to the :ref:`class reference <toc-class-ref>`. Below is a list of new pages
+added since version 3.0.
 
-.. note:: This document only contains new tutorials so not all changes are reflected,
-          many tutorials have been substantially updated but are not reflected in this document.
+.. note:: This document only contains new pages so not all changes are reflected,
+          many pages have been substantially updated but are not reflected in this document.
 
-New tutorials since version 3.1
--------------------------------
+New pages since version 3.3
+---------------------------
+
+C++
+^^^
+
+- :ref:`doc_cpp_usage_guidelines`
+
+GDScript
+^^^^^^^^
+
+- :ref:`doc_gdscript_documentation_comments`
+
+New pages since version 3.2
+---------------------------
+
+3D
+^^
+
+- :ref:`doc_3d_rendering_limitations`
+
+About
+^^^^^
+
+- :ref:`doc_troubleshooting`
+- :ref:`doc_list_of_features`
+- :ref:`doc_release_policy`
+
+Best practices
+^^^^^^^^^^^^^^
+
+- :ref:`doc_version_control_systems`
+
+Community
+^^^^^^^^^
+
+- :ref:`doc_best_practices_for_engine_contributors`
+- :ref:`doc_bisecting_regressions`
+- :ref:`doc_editor_and_docs_localization`
+
+Development
+^^^^^^^^^^^
+
+- :ref:`doc_introduction_to_editor_development`
+- :ref:`doc_editor_style_guide`
+- :ref:`doc_common_engine_methods_and_macros`
+- :ref:`doc_vulkan_validation_layers`
+- :ref:`doc_gdscript_grammar`
+- Configuring an IDE: :ref:`doc_configuring_an_ide_code_blocks`
+
+Editor
+^^^^^^
+
+- :ref:`doc_default_key_mapping`
+- :ref:`doc_using_the_web_editor`
+
+Export
+^^^^^^
+
+- :ref:`doc_exporting_for_dedicated_servers`
+
+Input
+^^^^^
+
+- :ref:`doc_controllers_gamepads_joysticks`
+
+Math
+^^^^
+
+- :ref:`doc_random_number_generation`
+
+Platform-specific
+^^^^^^^^^^^^^^^^^
+
+- :ref:`doc_android_custom_build`
+- :ref:`doc_plugins_for_ios`
+- :ref:`doc_ios_plugin`
+- :ref:`doc_html5_shell_classref`
+
+Physics
+^^^^^^^
+
+- :ref:`doc_collision_shapes_2d`
+- :ref:`doc_collision_shapes_3d`
+
+Shaders
+^^^^^^^
+
+- :ref:`doc_shaders_style_guide`
+
+Scripting
+^^^^^^^^^
+
+- :ref:`doc_debugger_panel`
+- :ref:`doc_creating_script_templates`
+- :ref:`doc_evaluating_expressions`
+- :ref:`doc_what_is_gdnative`
+- :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
+
+VR
+^^
+
+- :ref:`doc_developing_for_oculus_quest`
+
+User Interface (UI)
+^^^^^^^^^^^^^^^^^^^
+
+- :ref:`doc_control_node_gallery`
+
+New pages since version 3.1
+---------------------------
 
 Project workflow
 ^^^^^^^^^^^^^^^^
@@ -100,14 +209,14 @@ Legal
 
 - :ref:`doc_complying_with_licenses`
 
-New tutorials since version 3.0
--------------------------------
+New pages since version 3.0
+---------------------------
 
 Step by step
 ^^^^^^^^^^^^
 
 - :ref:`doc_signals`
-- :ref:`doc_exporting_basics`
+- Exporting
 
 Scripting
 ^^^^^^^^^

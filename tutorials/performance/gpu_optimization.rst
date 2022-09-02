@@ -79,16 +79,18 @@ Reuse Shaders and Materials
 The Godot renderer is a little different to what is out there. It's designed to
 minimize GPU state changes as much as possible. :ref:`StandardMaterial3D
 <class_StandardMaterial3D>` does a good job at reusing materials that need similar
-shaders.  if custom shaders are used, make sure to reuse them as much as
+shaders. If custom shaders are used, make sure to reuse them as much as
 possible. Godot's priorities are:
 
 -  **Reusing Materials:** The fewer different materials in the
    scene, the faster the rendering will be. If a scene has a huge amount
    of objects (in the hundreds or thousands), try reusing the materials.
    In the worst case, use atlases to decrease the amount of texture changes.
--  **Reusing Shaders:** If materials can't be reused, at least try to
-   re-use shaders (or StandardMaterial3Ds with different parameters but the same
-   configuration).
+-  **Reusing Shaders:** If materials can't be reused, at least try to re-use
+   shaders. Note: shaders are automatically reused between
+   StandardMaterial3Ds that share the same configuration (features
+   that are enabled or disabled with a check box) even if they have different
+   parameters.
 
 If a scene has, for example, ``20,000`` objects with ``20,000`` different
 materials each, rendering will be slow. If the same scene has ``20,000``

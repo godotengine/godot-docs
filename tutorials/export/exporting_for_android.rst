@@ -3,18 +3,37 @@
 Exporting for Android
 =====================
 
+
+.. seealso::
+
+    This page describes how to export a Godot project to Android.
+    If you're looking to compile export template binaries from source instead,
+    read :ref:`doc_compiling_for_android`.
+
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
+
+Install OpenJDK 11
+------------------
+
+Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
 
 Download the Android SDK
 ------------------------
 
 Download and install the Android SDK.
 
-- You can install it using `Android Studio <https://developer.android.com/studio/>`__.
+- You can install it using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
+
+    - Android SDK Platform-Tools version 30.0.5 or later
+    - Android SDK Build-Tools version 30.0.3
+    - Android SDK Platform 31
+    - Android SDK Command-line Tools (latest)
+    - CMake version 3.10.2.4988404
+    - NDK version r23c (23.2.8568313)
 
 - You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
 
@@ -22,12 +41,13 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.1" "platforms;android-29" "cmdline-tools;latest"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-31" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
 
-Install OpenJDK
------------------
+.. note::
 
-Download and install  `OpenJDK <https://adoptopenjdk.net/index.html>`__.
+    If you are using Linux,
+    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+
 
 Create a debug.keystore
 -----------------------
@@ -67,6 +87,17 @@ In that screen, 2 paths need to be set:
 
 Once that is configured, everything is ready to export to Android!
 
+.. note::
+
+    If you get an error saying *"Could not install to device."*, make sure
+    you do not have an application with the same Android package name already
+    installed on the device (but signed with a different key).
+
+    If you have an application with the same Android package name but a
+    different signing key already installed on the device, you **must** remove
+    the application in question from the Android device before exporting to
+    Android again.
+
 Providing launcher icons
 ------------------------
 
@@ -98,7 +129,7 @@ keystore file; such file can be generated like this:
 
 .. code-block:: shell
 
-    keytool -v -genkey -v -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
+    keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
@@ -115,7 +146,7 @@ Now fill in the following forms in your Android Export Presets:
 a version control system, you should remove it from public repositories and add
 it to your ``.gitignore`` file or equivalent.
 
-Don't forget to uncheck the **Export With Debug** checkbox while choosing the APK's name.
+Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 

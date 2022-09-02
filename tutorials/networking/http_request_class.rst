@@ -8,6 +8,13 @@ It is backed by the more low-level :ref:`HTTPClient <class_HTTPClient>`, for whi
 
 For the sake of this example, we will create a simple UI with a button, that when pressed will start the HTTP request to the specified URL.
 
+.. warning::
+
+    When exporting to Android, make sure to enable the ``INTERNET``
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Preparing scene
 ---------------
 
@@ -21,21 +28,46 @@ Create a new empty scene, add a CanvasLayer as the root node and add a script to
 Scripting
 ---------
 
-Below is all the code we need to make it work. The URL points to an online API mocker; it returns a pre-defined JSON string, which we will then parse to get access to the data.
+Below is all the code we need to make it work. The URL points to an online API mocker; it returns a predefined JSON string, which we will then parse to get access to the data.
 
-::
+.. tabs::
 
-    extends CanvasLayer
+    .. code-tab:: gdscript GDScript
 
-    func _ready():
-        $HTTPRequest.connect("request_completed", self, "_on_request_completed")
+        extends CanvasLayer
 
-    func _on_Button_pressed():
-        $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
+        func _ready():
+            $HTTPRequest.connect("request_completed", self, "_on_request_completed")
 
-    func _on_request_completed(result, response_code, headers, body):
-        var json = JSON.parse(body.get_string_from_utf8())
-        print(json.result)
+        func _on_Button_pressed():
+            $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
+
+        func _on_request_completed(result, response_code, headers, body):
+            var json = JSON.parse(body.get_string_from_utf8())
+            print(json.result)
+
+    .. code-tab:: csharp
+
+        class HTTPRequestDemo : CanvasLayer
+        {
+            public override void _Ready()
+            {
+                GetNode("HTTPRequest").RequestCompleted += OnRequestCompleted;
+                GetNode("Button").Pressed += OnButtonPressed;
+            }
+
+            public void OnButtonPressed()
+            {
+                HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
+                httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed");
+            }
+
+            public void OnRequestCompleted(int result, int response_code, string[] headers, byte[] body)
+            {
+                JSONParseResult json = JSON.Parse(Encoding.UTF8.GetString(body));
+                GD.Print(json.Result);
+            }
+        }
 
 With this, you should see ``(hello:world)`` printed on the console; hello being a key, and world being a value, both of them strings.
 
@@ -46,9 +78,16 @@ Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``
 Of course, you can also set custom HTTP headers. These are given as a string array, with each string containing a header in the format ``"header: value"``.
 For example, to set a custom user agent (the HTTP ``user-agent`` header) you could use the following:
 
-::
+.. tabs::
 
-    $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", ["user-agent: YourCustomUserAgent"])
+    .. code-tab:: gdscript GDScript
+
+        $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", ["user-agent: YourCustomUserAgent"])
+
+    .. code-tab:: csharp
+
+        HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
+        httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", new string[] { "user-agent: YourCustomUserAgent" });
 
 Please note that, for SSL/TLS encryption and thus HTTPS URLs to work, you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
 
@@ -60,14 +99,26 @@ Sending data to server
 
 Until now, we have limited ourselves to requesting data from a server. But what if you need to send data to the server? Here is a common way of doing it:
 
-::
+.. tabs::
 
-    func _make_post_request(url, data_to_send, use_ssl):
-        # Convert data to json string:
-        var query = JSON.print(data_to_send)
-        # Add 'Content-Type' header:
-        var headers = ["Content-Type: application/json"]
-        $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
+    .. code-tab:: gdscript GDScript
+
+        func _make_post_request(url, data_to_send, use_ssl):
+            # Convert data to json string:
+            var query = JSON.print(data_to_send)
+            # Add 'Content-Type' header:
+            var headers = ["Content-Type: application/json"]
+            $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
+
+    .. code-tab:: csharp
+
+            public void MakePostRequest(string url, object data_to_send, bool use_ssl)
+            {
+                string query = JSON.Print(data_to_send);
+                HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
+                string[] headers = new string[] { "Content-Type: application/json" };
+                httpRequest.Request(url, headers, use_ssl, HTTPClient.Method.Post, query);
+            }
 
 Keep in mind that you have to wait for a request to finish before sending another one. Making multiple request at once requires you to have one node per request.
 A common strategy is to create and delete HTTPRequest nodes at runtime as necessary.

@@ -1,7 +1,7 @@
 .. _doc_scene_tree:
 
-SceneTree
-=========
+Using SceneTree
+===============
 
 Introduction
 ------------
@@ -93,7 +93,7 @@ When a node is connected, directly or indirectly, to the root
 viewport, it becomes part of the *scene tree*.
 
 This means that as explained in previous tutorials, it will get the
-_enter_tree() and _ready() callbacks (as well as _exit_tree()).
+``_enter_tree()`` and ``_ready()`` callbacks (as well as ``_exit_tree()``).
 
 .. image:: img/activescene.png
 
@@ -106,11 +106,18 @@ Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
-notifications are done in tree order. This means that parents and
-siblings with a lower rank in the tree order will get notified before
-the current node.
+notifications are done in tree order, or top to bottom. For example, the
+top node in a scene has its ``_ready()`` function called first, then the
+node below it has its function called, then the node below that and so
+on. However, children of a node will get called before their parent, also
+in top to bottom order. So the top child node of the top node will get its
+``_ready()`` function called first.
 
 .. image:: img/toptobottom.png
+
+This can also be overridden using the ``process_priority`` node property.
+Nodes with a lower number are called first. For example, nodes with the
+priorities "0, 1, 2, 3" would be called in that order (from left to right).
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
@@ -132,8 +139,8 @@ the current node.
 Changing current scene
 ----------------------
 
-After a scene is loaded, it is often desired to change this scene for
-another one. The simple way to do this is to use the
+After a scene is loaded, you may want to change this scene for
+another one. One way to do this is to use the
 :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
 function:
 

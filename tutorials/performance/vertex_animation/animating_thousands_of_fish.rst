@@ -115,7 +115,7 @@ the wave making it look like a wave is moving along the fish.
 .. image:: img/wave.gif
 
 The last motion is the twist, which is a panning roll along the spine. Similarly to the pivot,
-we first  construct a rotation matrix.
+we first construct a rotation matrix.
 
 .. code-block:: glsl
 
@@ -141,7 +141,7 @@ If we apply all these motions one after another, we get a fluid jelly-like motio
 Normal fish swim mostly with the back half of their body. Accordingly, we need to limit the
 panning motions to the back half of the fish. To do this, we create a new variable, ``mask``.
 
-``mask`` is a float that goes from ``0`` at the front of the fish to ``1`` at the end  using
+``mask`` is a float that goes from ``0`` at the front of the fish to ``1`` at the end using
 ``smoothstep`` to control the point at which the transition from ``0`` to ``1`` happens.
 
 .. code-block:: glsl
@@ -220,7 +220,7 @@ to loop over all the instances and set their transform to a random position.
 ::
 
   for i in range($School.multimesh.instance_count):
-    var position = Transform()
+    var position = Transform3D()
     position = position.translated(Vector3(randf() * 100 - 50, randf() * 50 - 25, randf() * 50 - 25))
     $School.multimesh.set_instance_transform(i, position)
 
@@ -229,7 +229,7 @@ MultiMeshInstance.
 
 .. note:: If performance is an issue for you, try running the scene with GLES2 or with fewer fish.
 
-Notice how all the fish  are all in the same position in their swim cycle? It makes them look very
+Notice how all the fish are all in the same position in their swim cycle? It makes them look very
 robotic. The next step is to give each fish a different position in the swim cycle so the entire
 school looks more organic.
 

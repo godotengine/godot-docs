@@ -1,7 +1,7 @@
 .. _doc_viewports:
 
-Viewports
-=========
+Using Viewports
+===============
 
 Introduction
 ------------
@@ -146,7 +146,7 @@ following code:
    # Convert Image to ImageTexture.
    var tex = ImageTexture.new()
    tex.create_from_image(img)
-   # Set Sprite Texture.
+   # Set sprite texture.
    $sprite.texture = tex
 
 But if you use this in ``_ready()`` or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
@@ -156,7 +156,7 @@ it using (for example):
 ::
 
    # Wait until the frame has finished before getting the texture.
-   yield(VisualServer, "frame_post_draw")
+   await RenderingServer.frame_post_draw
    # You can get the image after this.
 
 Viewport Container

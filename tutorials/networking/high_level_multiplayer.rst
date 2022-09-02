@@ -28,7 +28,7 @@ In summary, you can use the low-level networking API for maximum control and imp
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
           features. As networking is always largely hardware and operating system dependent, however,
           some features may change or not be available on some target platforms. Most notably,
-          the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
+          the HTML5 platform currently offers WebSockets and WebRTC support but lacks some of the higher-level features, as
           well as raw access to low-level protocols like TCP and UDP.
 
 .. note:: More about TCP/IP, UDP, and networking:
@@ -143,6 +143,13 @@ Terminating the networking feature:
 
 (Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
 
+.. warning::
+
+    When exporting to Android, make sure to enable the ``INTERNET``
+    permission in the Android export preset before exporting the project or
+    using one-click deploy. Otherwise, network communication of any kind will be
+    blocked by Android.
+
 Managing connections
 --------------------
 
@@ -193,8 +200,8 @@ Synchronizing member variables is also possible:
 
 Functions can be called in two fashions:
 
-- Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
-- Unreliable: if the function call does not arrive, it will not be re-transmitted; but if it arrives, it will do it quickly.
+- Reliable: when the function call arrives, an acknowledgement will be sent back; if the acknowledgement isn't received after a certain amount of time, the function call will be re-transmitted.
+- Unreliable: the function call is sent only once, without checking to see if it arrived or not, but also without any extra overhead.
 
 In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
@@ -410,9 +417,9 @@ To clarify, here is an example of how this looks in the
 Master and puppet keywords
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. FIXME: Clarify the equivalents to the GDScript keywords in C# and Visual Script.
+.. FIXME: Clarify the equivalents to the GDScript keywords in C#.
 
-The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C# and Visual Script).
+The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C#).
 Similarly to the ``remote`` keyword, functions can also be tagged with them:
 
 Example bomb code:
@@ -495,7 +502,7 @@ a dedicated server with no GPU available. See
 
     The bomberman example here is largely for illustrational purposes, and does not
     do anything on the host-side to handle the case where a peer uses a custom client
-    to cheat by for example refusing to to stun itself. In the current implementation
+    to cheat by for example refusing to stun itself. In the current implementation
     such cheating is perfectly possible because each client is the network master of
     its own player, and the network master of a player is the one which decides whether
     to call the I-was-stunned method (``stun``) on all of the other peers and itself.

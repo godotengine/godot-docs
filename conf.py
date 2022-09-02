@@ -2,6 +2,7 @@
 #
 # Godot Engine documentation build configuration file
 
+import sphinx
 import sphinx_rtd_theme
 import sys
 import os
@@ -14,6 +15,8 @@ needs_sphinx = "1.3"
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_tabs.tabs",
+    "notfound.extension",
+    "sphinxext.opengraph",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
@@ -21,11 +24,43 @@ extensions = [
 # we can ignore this so we still can treat other warnings as errors.
 sphinx_tabs_nowarn = True
 
+# Custom 4O4 page HTML template.
+# https://github.com/readthedocs/sphinx-notfound-page
+notfound_context = {
+    "title": "Page not found",
+    "body": """
+        <h1>Page not found</h1>
+        <p>
+            Sorry, we couldn't find that page. It may have been renamed or removed
+            in the version of the documentation you're currently browsing.
+        </p>
+        <p>
+            If you're currently browsing the
+            <em>latest</em> version of the documentation, try browsing the
+            <a href="/en/stable/"><em>stable</em> version of the documentation</a>.
+        </p>
+        <p>
+            Alternatively, use the
+            <a href="#" onclick="$('#rtd-search-form [name=\\'q\\']').focus()">Search docs</a>
+            box on the left or <a href="/">go to the homepage</a>.
+        </p>
+    """,
+}
+
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
+
+# Don't add `/en/latest` prefix during local development.
+# This makes it easier to test the custom 404 page by loading `/404.html`
+# on a local web server.
+if not on_rtd:
+    notfound_urls_prefix = ''
+
+# Specify the site name for the Open Graph extension.
+ogp_site_name = "Godot Engine documentation"
+
 if not os.getenv("SPHINX_NO_GDSCRIPT"):
     extensions.append("gdscript")
-
-if not os.getenv("SPHINX_NO_SEARCH"):
-    extensions.append("sphinx_search.extension")
 
 if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
     extensions.append("godot_descriptions")
@@ -42,7 +77,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+    "2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
@@ -109,9 +144,6 @@ highlight_language = "gdscript"
 
 # -- Options for HTML output ----------------------------------------------
 
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get("READTHEDOCS", None) == "True"
-
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:
@@ -153,13 +185,20 @@ html_static_path = ["_static"]
 html_extra_path = ["robots.txt"]
 
 # These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
+# or fully qualified paths (e.g. https://...)
 html_css_files = [
+    'css/algolia.css',
+    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
     "css/custom.css",
 ]
 
+if not on_rtd:
+    html_css_files.append("css/dev.css")
+
 html_js_files = [
     "js/custom.js",
+    ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
+    ('js/algolia.js', {'defer': 'defer'})
 ]
 
 # Output file base name for HTML help builder
@@ -211,10 +250,10 @@ gettext_compact = False
 # https://github.com/sphinx-doc/sphinx/issues/7768 to see what would be relevant for us.
 figure_language_filename = "{root}.{language}{ext}"
 
-import sphinx
 cwd = os.getcwd()
 
 sphinx_original_get_image_filename_for_language = sphinx.util.i18n.get_image_filename_for_language
+
 
 def godot_get_image_filename_for_language(filename, env):
     """
@@ -229,6 +268,19 @@ def godot_get_image_filename_for_language(filename, env):
     return path
 
 sphinx.util.i18n.get_image_filename_for_language = godot_get_image_filename_for_language
+
+# Similar story for the localized class reference, it's out of tree and there doesn't
+# seem to be an easy way for us to tweak the toctree to take this into account.
+# So we're deleting the existing class reference and adding a symlink instead...
+if is_i18n and os.path.exists("../classes/" + language):
+    import shutil
+
+    if os.path.islink("classes"):  # Previously made symlink.
+        os.unlink("classes")
+    else:
+        shutil.rmtree("classes")
+
+    os.symlink("../classes/" + language, "classes")
 
 # Couldn't find a way to retrieve variables nor do advanced string
 # concat from reST, so had to hardcode this in the "epilog" added to

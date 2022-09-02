@@ -51,6 +51,13 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
+Physics material
+~~~~~~~~~~~~~~~~
+
+Static bodies and rigid bodies can be configured to use a :ref:`physics material
+<class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
+and set if it's absorbent and/or rough.
+
 Collision shapes
 ~~~~~~~~~~~~~~~~
 
@@ -165,9 +172,9 @@ would be as follows::
     0x000d
     # (This value can be shortened to 0xd)
 
-    # Decimal - Add the results of 2 to the power of (layer be enabled-1).
+    # Decimal - Add the results of 2 to the power of (layer to be enabled - 1).
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
-    pow(2, 1) + pow(2, 3) + pow(2, 4)
+    pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
 
 Area2D
@@ -214,7 +221,7 @@ to it and the physics engine calculates the resulting movement, including
 collisions with other bodies, and collision responses, such as bouncing,
 rotating, etc.
 
-You can modify a rigid body's behavior via  properties such as "Mass",
+You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in
@@ -286,16 +293,16 @@ For example, here is the code for an "Asteroids" style spaceship:
         public override void _IntegrateForces(Physics2DDirectBodyState state)
         {
             if (Input.IsActionPressed("ui_up"))
-                SetAppliedForce(_thrust.Rotated(Rotation));
+                AppliedForce = _thrust.Rotated(Rotation);
             else
-                SetAppliedForce(new Vector2());
+                AppliedForce = new Vector2();
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
                 rotationDir += 1;
             if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
-            SetAppliedTorque(rotationDir * _torque);
+            AppliedTorque = rotationDir * _torque;
         }
     }
 
@@ -486,7 +493,7 @@ the ground (including slopes) and jump when standing on the ground:
         {
             _velocity.y += _gravity * delta;
             GetInput();
-            _velocity = MoveAndSlide(velocity, new Vector2(0,-1));
+            _velocity = MoveAndSlide(_velocity, new Vector2(0,-1));
         }
     }
 

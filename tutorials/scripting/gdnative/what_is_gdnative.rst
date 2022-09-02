@@ -54,8 +54,9 @@ GDNative isn't enough:
   limited to what the scripting API exposes.
 - You can use C++ modules to provide additional features in a project without
   carrying native library files around. This extends to exported projects.
-- C++ modules are supported on all platforms. In contrast, GDNative isn't
-  supported on HTML5 and the Universal Windows Platform (UWP) yet.
+- C++ modules are supported on all platforms. In contrast, GDNative has only
+  limited support on HTML5 (cannot be used together with multi-threading), and
+  is not supported on Universal Windows Platform (UWP).
 - C++ modules can be faster than GDNative, especially when the code requires a
   lot of communication through the scripting API.
 
@@ -82,7 +83,7 @@ The bindings below are developed and maintained by the community:
 .. Please keep languages sorted in alphabetical order.
 
 - `D <https://github.com/godot-d/godot-d>`__
-- `Kotlin <https://github.com/utopia-rise/godot-kotlin>`__
+- `Kotlin <https://github.com/utopia-rise/godot-kotlin-jvm>`__
 - `Nim <https://github.com/pragmagic/godot-nim>`__
 - `Python <https://github.com/touilleMan/godot-python>`__
 - `Rust <https://github.com/godot-rust/godot-rust>`__
@@ -93,3 +94,13 @@ The bindings below are developed and maintained by the community:
     research options thoroughly before starting a project with one of those.
     Also, double-check whether the binding is compatible with the Godot version
     you're using.
+
+Version compatibility
+---------------------
+
+:ref:`Unlike Godot itself <doc_release_policy>`, GDNative has stricter version
+compatibility requirements as it relies on low-level *ptrcalls* to function.
+
+GDNative add-ons compiled for a given Godot version are only guaranteed to work
+with the same minor release series. For example, a GDNative add-on compiled for
+Godot 3.4 will only work with Godot 3.4, 3.4.1, 3.4.2… but not Godot 3.3 or 3.5.

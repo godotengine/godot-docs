@@ -97,20 +97,42 @@ Here's the movement code to start with. We define two properties, ``min_speed``
 and ``max_speed``, to define a random speed range. We then define and initialize
 the ``velocity``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends KinematicBody
 
    # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
+   @export var min_speed = 10
    # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
+   @export var max_speed = 18
 
    var velocity = Vector3.ZERO
 
 
    func _physics_process(_delta):
        move_and_slide(velocity)
+
+ .. code-tab:: csharp
+
+    public class Mob : KinematicBody
+    {
+        // Don't forget to rebuild the project so the editor knows about the new export variable.
+
+        // Minimum speed of the mob in meters per second
+        [Export]
+        public int MinSpeed = 10;
+        // Maximum speed of the mob in meters per second
+        [Export]
+        public int MaxSpeed = 18;
+
+        private Vector3 _velocity = Vector3.Zero;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            MoveAndSlide(_velocity);
+        }
+    }
 
 Similarly to the player, we move the mob every frame by calling
 ``KinematicBody``\ 's ``move_and_slide()`` method. This time, we don't update
@@ -124,20 +146,31 @@ of motion and its velocity.
 The function will take a ``start_position``, the mob's spawn position, and the
 ``player_position`` as its arguments.
 
-We first position the mob at ``start_position``. Then, we turn it towards the
-player using the ``look_at()`` method and randomize the angle by rotating a
+We position the mob at ``start_position`` and turn it towards the player using
+the ``look_at_from_position()`` method, and randomize the angle by rotating a
 random amount around the Y axis. Below, ``rand_range()`` outputs a random value
 between ``-PI / 4`` radians and ``PI / 4`` radians.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # We will call this function from the Main scene.
    func initialize(start_position, player_position):
-       translation = start_position
-       # We turn the mob so it looks at the player.
-       look_at(player_position, Vector3.UP)
+       # We position the mob and turn it so that it looks at the player.
+       look_at_from_position(start_position, player_position, Vector3.UP)
        # And rotate it randomly so it doesn't move exactly toward the player.
        rotate_y(rand_range(-PI / 4, PI / 4))
+
+ .. code-tab:: csharp
+
+    // We will call this function from the Main scene
+    public void Initialize(Vector3 startPosition, Vector3 playerPosition)
+    {
+        // We position the mob and turn it so that it looks at the player.
+        LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+        // And rotate it randomly so it doesn't move exactly toward the player.
+        RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
+    }
 
 We then calculate a random speed using ``rand_range()`` once again and we use it
 to calculate the velocity.
@@ -146,7 +179,11 @@ We start by creating a 3D vector pointing forward, multiply it by our
 ``random_speed``, and finally rotate it using the ``Vector3`` class's
 ``rotated()`` method.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+   func initialize(start_position, player_position):
+       # ...
 
        # We calculate a random speed.
        var random_speed = rand_range(min_speed, max_speed)
@@ -155,6 +192,20 @@ We start by creating a 3D vector pointing forward, multiply it by our
        # We then rotate the vector based on the mob's Y rotation to move in the direction it's looking.
        velocity = velocity.rotated(Vector3.UP, rotation.y)
 
+ .. code-tab:: csharp
+
+    public void Initialize(Vector3 startPosition, Vector3 playerPosition)
+    {
+        // ...
+
+        // We calculate a random speed.
+        float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+        // We calculate a forward velocity that represents the speed.
+        _velocity = Vector3.Forward * randomSpeed;
+        // We then rotate the vector based on the mob's Y rotation to move in the direction it's looking
+        _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+    }
+
 Leaving the screen
 ------------------
 
@@ -162,7 +213,7 @@ We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our *VisibilityNotifier* node's ``screen_exited`` signal to the *Mob*.
 
 Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`F2`.
+editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
 
 |image8|
 
@@ -180,24 +231,35 @@ This will take you back to the script editor and add a new function for you,
 method. This will destroy the mob instance when the *VisibilityNotifier* \'s box
 leaves the screen.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    func _on_VisibilityNotifier_screen_exited():
        queue_free()
+
+ .. code-tab:: csharp
+
+    // We also specified this function name in PascalCase in the editor's connection window
+    public void OnVisibilityNotifierScreenExited()
+    {
+        QueueFree();
+    }
+
 
 Our monster is ready to enter the game! In the next part, you will spawn
 monsters in the game level.
 
 Here is the complete ``Mob.gd`` script for reference.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    extends KinematicBody
 
    # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
+   @export var min_speed = 10
    # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
+   @export var max_speed = 18
 
    var velocity = Vector3.ZERO
 
@@ -206,8 +268,7 @@ Here is the complete ``Mob.gd`` script for reference.
        move_and_slide(velocity)
 
    func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
+       look_at_from_position(start_position, player_position, Vector3.UP)
        rotate_y(rand_range(-PI / 4, PI / 4))
 
        var random_speed = rand_range(min_speed, max_speed)
@@ -217,6 +278,42 @@ Here is the complete ``Mob.gd`` script for reference.
 
    func _on_VisibilityNotifier_screen_exited():
        queue_free()
+
+ .. code-tab:: csharp
+
+    public class Mob : KinematicBody
+    {
+        // Minimum speed of the mob in meters per second
+        [Export]
+        public int MinSpeed = 10;
+        // Maximum speed of the mob in meters per second
+        [Export]
+        public int MaxSpeed = 18;
+
+        private Vector3 _velocity = Vector3.Zero;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            MoveAndSlide(_velocity);
+        }
+
+        // We will call this function from the Main scene
+        public void Initialize(Vector3 startPosition, Vector3 playerPosition)
+        {
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+            RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
+
+            var randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+            _velocity = Vector3.Forward * randomSpeed;
+            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+        }
+
+        // We also specified this function name in PascalCase in the editor's connection window
+        public void OnVisibilityNotifierScreenExited()
+        {
+            QueueFree();
+        }
+    }
 
 .. |image0| image:: img/04.mob_scene/01.initial_three_nodes.png
 .. |image1| image:: img/04.mob_scene/02.add_child_node.png

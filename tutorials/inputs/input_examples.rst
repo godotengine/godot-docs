@@ -203,7 +203,7 @@ the :kbd:`T`:
     {
         if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if ((Keylist)keyEvent.Keycode == KeyList.T)
+            if ((KeyList)keyEvent.Keycode == KeyList.T)
             {
                 GD.Print("T was pressed");
             }
@@ -213,11 +213,24 @@ the :kbd:`T`:
 .. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
         constants.
 
+.. warning::
+
+    Due to *keyboard ghosting*, not all key inputs may be registered at a given time
+    if you press too many keys at once. Due to their location on the keyboard,
+    certain keys are more prone to ghosting than others. Some keyboards feature
+    antighosting at a hardware level, but this feature is generally
+    not present on low-end keyboards and laptop keyboards.
+
+    As a result, it's recommended to use a default keyboard layout that is designed to work well
+    on a keyboard without antighosting. See
+    `this Gamedev Stack Exchange question <https://gamedev.stackexchange.com/a/109002>`__
+    for more information.
+
 Keyboard modifiers
 ~~~~~~~~~~~~~~~~~~
 
 Modifier properties are inherited from
-:ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This  allows
+:ref:`InputEventWithModifiers <class_InputEventWithModifiers>`. This allows
 you to check for modifier combinations using boolean properties. Let's imagine
 you want one thing to happen when the :kbd:`T` is pressed, but something
 different when it's :kbd:`Shift + T`:
@@ -303,7 +316,7 @@ Mouse motion
 the mouse moves. You can find the move's distance with the ``relative``
 property.
 
-Here's an example using mouse events to drag-and-drop a :ref:`Sprite <class_Sprite>`
+Here's an example using mouse events to drag-and-drop a :ref:`Sprite2D <class_Sprite2D>`
 node:
 
 .. tabs::
@@ -318,7 +331,7 @@ node:
 
     func _input(event):
         if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-            if (event.position - $Sprite.position).length() < click_radius:
+            if (event.position - $Sprite2D.position).length() < click_radius:
                 # Start dragging if the click is on the sprite.
                 if not dragging and event.pressed:
                     dragging = true
@@ -328,7 +341,7 @@ node:
 
         if event is InputEventMouseMotion and dragging:
             # While dragging, move the sprite with the mouse.
-            $Sprite.position = event.position
+            $Sprite2D.position = event.position
 
  .. code-tab:: csharp
 
@@ -342,7 +355,7 @@ node:
 
         public override void _Input(InputEvent inputEvent)
         {
-            Sprite sprite = GetNodeOrNull<Sprite>("Sprite");
+            Sprite2D sprite = GetNodeOrNull<Sprite2D>("Sprite2D");
             if (sprite == null)
             {
                 return; // No suitable node was found.

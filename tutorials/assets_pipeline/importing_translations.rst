@@ -6,10 +6,11 @@ Importing translations
 Games and internationalization
 ------------------------------
 
-The world is full of different markets and cultures and, to maximize
-profits™, nowadays games are released in several languages. To solve
-this, internationalized text must be supported in any modern game
-engine.
+The gaming community isn't monolingual or monocultural. It's made up of
+many different languages and cultures - just like the Godot community!
+If you want to allow players to experience your game in their language,
+one of things you'll need to provide is text translations, which Godot
+supports via internationalized text.
 
 In regular desktop or mobile applications, internationalized text is
 usually located in resource files (or .po files for GNU stuff). Games,

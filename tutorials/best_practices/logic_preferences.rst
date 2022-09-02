@@ -101,7 +101,7 @@ consider:
 
 3. If one wishes only to 'import' another class resource (script or scene),
    then using a preloaded constant is often the best course of action. However,
-   in exceptional cases, one my wish not to do this:
+   in exceptional cases, one may wish not to do this:
 
    1. If the 'imported' class is liable to change, then it should be a property
       instead, initialized either using an ``export`` or a ``load`` (and

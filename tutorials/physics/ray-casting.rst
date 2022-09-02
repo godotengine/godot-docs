@@ -12,10 +12,10 @@ behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
 Godot stores all the low level game information in servers, while the
-scene is just a frontend. As such, ray casting is generally a
-lower-level task. For simple raycasts, node such as
+scene is only a frontend. As such, ray casting is generally a
+lower-level task. For simple raycasts, nodes like
 :ref:`RayCast <class_RayCast>` and :ref:`RayCast2D <class_RayCast2D>`
-will work, as they will return every frame what the result of a raycast
+will work, as they return every frame what the result of a raycast
 is.
 
 Many times, though, ray-casting needs to be a more interactive process
@@ -182,7 +182,7 @@ collision object node:
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new object[] { this });
+            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new Godot.Collections.Array { this });
         }
     }
 
@@ -217,7 +217,7 @@ member variable:
         {
             var spaceState = GetWorld2d().DirectSpaceState;
             var result = spaceState.IntersectRay(globalPosition, enemyPosition,
-                            new object[] { this }, CollisionMask);
+                            new Godot.Collections.Array { this }, CollisionMask);
         }
     }
 
@@ -245,25 +245,25 @@ To obtain it using a camera, the following code can be used:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    const ray_length = 1000
+    const RAY_LENGTH = 1000.0
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
               var camera = $Camera
               var from = camera.project_ray_origin(event.position)
-              var to = from + camera.project_ray_normal(event.position) * ray_length
+              var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
 
  .. code-tab:: csharp
 
-    private const float rayLength = 1000;
+    private const float RayLength = 1000.0f;
 
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
         {
-            var camera = (Camera)GetNode("Camera");
+            var camera = GetNode<Camera>("Camera");
             var from = camera.ProjectRayOrigin(eventMouseButton.Position);
-            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * rayLength;
+            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
     }
 

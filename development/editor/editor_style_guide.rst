@@ -22,7 +22,7 @@ Writing style
 - **Use contractions.** For example, use "isn't" instead of "is not". An exception
   to this rule can be made when you specifically want to emphasize one of the
   contraction's words.
-- **Use double quotes in messages** (``""``) instead of simple quotes (``''``).
+- **Use double quotes in messages** (``""``) instead of single quotes (``''``).
   Double quotes should be used to quote user input, file paths and possibly
   other things depending on the context.
 

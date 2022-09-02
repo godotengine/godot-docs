@@ -213,7 +213,7 @@ Not blocking main thread during the polling
 If you have a mutex to allow calls from the main thread to your loader
 class, don't lock the main thread while you call ``poll`` on your loader class. When a
 resource is done loading, it might require some resources from the
-low-level APIs (VisualServer, etc), which might need to lock the main
+low-level APIs (RenderingServer, etc), which might need to lock the main
 thread to acquire them. This might cause a deadlock if the main thread
 is waiting for your mutex while your thread is waiting to load a
 resource.

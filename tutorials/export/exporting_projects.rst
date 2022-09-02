@@ -31,8 +31,8 @@ Another reason is that the developer might prefer a specially-compiled
 binary, which is smaller in size, more optimized and does not include
 tools like the editor and debugger.
 
-Finally, Godot has a simple but efficient system for creating DLCs as
-extra package files.
+Finally, Godot has a simple but efficient system for
+:ref:`creating DLCs as extra package files <doc_exporting_pcks>`.
 
 On mobile
 ~~~~~~~~~
@@ -51,8 +51,7 @@ There is also another problem with this approach: different devices
 prefer some data in different formats to run. The main example of this
 is texture compression. All PC hardware uses S3TC (BC) compression and
 that has been standardized for more than a decade, but mobile devices
-use different formats for texture compression, such as PVRTC (iOS) or
-ETC (Android).
+use different formats for texture compression, such as ETC1 and ETC2.
 
 Export menu
 -----------
@@ -103,8 +102,8 @@ option in the editor:
 
 .. _doc_exporting_projects_export_mode:
 
-Export mode
-~~~~~~~~~~~
+Resource options
+~~~~~~~~~~~~~~~~
 
 When exporting, Godot makes a list of all the files to export and then
 creates the package. There are 3 different modes for exporting:
@@ -128,6 +127,11 @@ select every scene or resource you want to export.
     the exported project. This is done to prevent version control folders like
     ``.git`` from being included in the exported PCK file.
 
+Below the list of resources are two filters that can be setup. The first allows
+non resource files such as ``.txt``,``.json`` and ``.csv`` to be exported with
+the project. The second filter can be used to exclude every file of a certain
+type without manually deselecting every one. For example, ``.png`` files.
+
 Exporting from the command line
 -------------------------------
 
@@ -138,23 +142,44 @@ the export parameters. A basic invocation of the command would be:
 
 .. code-block:: shell
 
-    godot --export "Windows Desktop" some_name
+    godot --export "Windows Desktop" some_name.exe
 
 This will export to ``some_name.exe``, assuming there is a preset
-called "Windows Desktop" and the template can be found.
-The output path is relative to the project path or absolute;
-it does not respect the directory the command was invoked from.
+called "Windows Desktop" and the template can be found. (The export preset name
+must be written within quotes if it contains spaces or special characters.)
+The output path is *relative to the project path* or *absolute*;
+**it does not respect the directory the command was invoked from**.
 
-You can also configure it to export only the PCK or ZIP file, allowing
-a single export to be used with multiple Godot executables.
-This takes place if the target name ends with ``.pck`` or ``.zip``.
+The output file extension should match the one used by the Godot export process:
 
-It is often useful to combine the ``--export`` flag with the ``--path``
-flag, and to create a dedicated export preset for automated export:
+- Windows: ``.exe``
+- macOS: ``.zip`` (from all platforms) or ``.dmg`` (only when exporting *from* macOS).
+  ``.app`` is not supported directly, although the generated ZIP archive contains an ``.app`` bundle.
+- Linux: Any extension (including none). ``.x86_64`` is typically used for 64-bit x86 binaries.
+- HTML5: ``.zip``
+- Android: ``.apk``
+- iOS: ``.zip``
+
+You can also configure it to export *only* the PCK or ZIP file, allowing
+a single exported main pack file to be used with multiple Godot executables.
+When doing so, the export preset name must still be specified on the command line:
 
 .. code-block:: shell
 
-    godot --path path/to/project --export "pck" game_name.pck
+    godot --export-pack "Windows Desktop" some_name.pck
+
+It is often useful to combine the ``--export`` flag with the ``--path``
+flag, so that you do not need to ``cd`` to the project folder before running
+the command:
+
+.. code-block:: shell
+
+    godot --path /path/to/project --export "Windows Desktop" some_name.exe
+
+.. seealso::
+
+    See :ref:`doc_command_line_tutorial` for more information about using Godot
+    from the command line.
 
 PCK versus ZIP pack file formats
 --------------------------------
@@ -176,3 +201,21 @@ depending on your needs.
 - Compressed format. Smaller file size, but slower to read/write.
 - Readable and writable using tools normally present on the user's operating system.
   This can be useful to make modding easier (see also :ref:`doc_exporting_pcks`).
+
+.. warning::
+
+    Due to a `known bug <https://github.com/godotengine/godot/pull/42123>`__,
+    when using a ZIP file as a pack file, the exported binary will not try to use
+    it automatically. Therefore, you have to create a *launcher script* that
+    the player can double-click or run from a terminal to launch the project::
+
+        :: launch.bat (Windows)
+        @echo off
+        my_project.exe --main-pack my_project.zip
+
+        # launch.sh (Linux)
+        ./my_project.x86_64 --main-pack my_project.zip
+
+    Save the launcher script and place it in the same folder as the exported binary.
+    On Linux, make sure to give executable permissions to the launcher script using
+    the command ``chmod +x launch.sh``.

@@ -199,8 +199,8 @@ way to pull the data out of the file as well.
     }
 
 
-Game saved! Loading is fairly simple as well. For that, we'll read each
-line, use parse_json() to read it back to a dict, and then iterate over
+Game saved! Now, to load, we'll read each
+line, use ``parse_json()`` to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
 load function:
@@ -251,7 +251,7 @@ load function:
     {
         var saveGame = new File();
         if (!saveGame.FileExists("user://savegame.save"))
-            return; // Error!  We don't have a save to load.
+            return; // Error! We don't have a save to load.
 
         // We need to revert the game state so we're not cloning objects during loading.
         // This will vary wildly depending on the needs of a project, so take care with
@@ -277,7 +277,7 @@ load function:
             newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<object, object> entry in nodeData)
+            foreach (KeyValuePair<string, object> entry in nodeData)
             {
                 string key = entry.Key.ToString();
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
@@ -310,3 +310,49 @@ Load parent objects first so they are available for the :ref:`add_child()
 call when child objects are loaded. You will also need a way to link
 children to parents as the :ref:`NodePath
 <class_nodepath>` will likely be invalid.
+
+JSON vs binary serialization
+----------------------------
+
+For simple game state, JSON may work and it generates human-readable files that are easy to debug.
+
+But JSON has many limitations. If you need to store more complex game state or
+a lot of it, :ref:`binary serialization<doc_binary_serialization_api>`
+may be a better approach.
+
+JSON limitations
+~~~~~~~~~~~~~~~~
+
+Here are some important gotchas to know about when using JSON.
+
+* **Filesize:**
+  JSON stores data in text format, which is much larger than binary formats.
+* **Data types:**
+  JSON only offers a limited set of data types. If you have data types
+  that JSON doesn't have, you will need to translate your data to and
+  from types that JSON can handle. For example, some important types that JSON
+  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quat``.
+* **Custom logic needed for encoding/decoding:**
+  If you have any custom classes that you want to store with JSON, you will
+  need to write your own logic for encoding and decoding those classes.
+
+Binary serialization
+~~~~~~~~~~~~~~~~~~~~
+
+:ref:`Binary serialization<doc_binary_serialization_api>` is an alternative
+approach for storing game state, and you can use it with the functions
+``get_var`` and ``store_var`` of :ref:`class_File`.
+
+* Binary serialization should produce smaller files than JSON.
+* Binary serialization can handle most common data types.
+* Binary serialization requires less custom logic for encoding and decoding
+  custom classes.
+
+Note that not all properties are included. Only properties that are configured
+with the :ref:`PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`
+flag set will be serialized. You can add a new usage flag to a property by overriding the
+:ref:`_get_property_list<class_Object_method__get_property_list>`
+method in your class. You can also check how property usage is configured by
+calling ``Object._get_property_list``.
+See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
+possible usage flags.

@@ -41,7 +41,7 @@ Add these two and it's possible to guess almost exactly when sound or music will
     var time_delay
 
 
-    func _ready()
+    func _ready():
         time_begin = OS.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
@@ -55,6 +55,25 @@ Add these two and it's possible to guess almost exactly when sound or music will
         # May be below 0 (did not begin yet).
         time = max(0, time)
         print("Time is: ", time)
+
+ .. code-tab:: csharp
+
+    private double _timeBegin;
+    private double _timeDelay;
+
+    public override void _Ready()
+    {
+        _timeBegin = OS.GetTicksUsec();
+        _timeDelay = AudioServer.GetTimeToNextMix() + AudioServer.GetOutputLatency();
+        GetNode<AudioStreamPlayer>("Player").Play();
+    }
+
+    public override void _Process(float _delta)
+    {
+        double time = (OS.GetTicksUsec() - _timeBegin) / 1000000.0d;
+        time = Math.Max(0.0d, time - _timeDelay);
+        GD.Print(string.Format("Time is: {0}", time));
+    }
 
 
 In the long run, though, as the sound hardware clock is never exactly in sync with the system clock, the timing information will slowly drift away.
@@ -76,12 +95,21 @@ Adding the return value from this function to *get_playback_position()* increase
 
     var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix()
 
+ .. code-tab:: csharp
+
+    double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
+
+
 To increase precision, subtract the latency information (how much it takes for the audio to be heard after it was mixed):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var time = $Player.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
+
+ .. code-tab:: csharp
+
+    double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix() - AudioServer.GetOutputLatency();
 
 The result may be a bit jittery due how multiple threads work. Just check that the value is not less than in the previous frame (discard it if so). This is also a less precise approach than the one before, but it will work for songs of any length, or synchronizing anything (sound effects, as an example) to music.
 
@@ -91,7 +119,7 @@ Here is the same code as before using this approach:
  .. code-tab:: gdscript GDScript
 
 
-    func _ready()
+    func _ready():
         $Player.play()
 
 
@@ -100,3 +128,18 @@ Here is the same code as before using this approach:
         # Compensate for output latency.
         time -= AudioServer.get_output_latency()
         print("Time is: ", time)
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        GetNode<AudioStreamPlayer>("Player").Play();
+    }
+
+    public override void _Process(float _delta)
+    {
+        double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
+        // Compensate for output latency.
+        time -= AudioServer.GetOutputLatency();
+        GD.Print(string.Format("Time is: {0}", time));
+    }

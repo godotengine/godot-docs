@@ -9,9 +9,9 @@ Introduction
 Spatial gizmo plugins are used by the editor and custom plugins to define the
 gizmos attached to any kind of Spatial node.
 
-This tutorial will show you the two main approaches to defining your own custom
+This tutorial shows the two main approaches to defining your own custom
 gizmos. The first option works well for simple gizmos and creates less clutter in
-your plugin structure, while the second one will let you store some per-gizmo data.
+your plugin structure, and the second one will let you store some per-gizmo data.
 
 .. note:: This tutorial assumes you already know how to make generic plugins. If
           in doubt, refer to the :ref:`doc_making_plugins` page.
@@ -39,7 +39,7 @@ This would be a basic setup:
 ::
 
     # MyCustomEditorPlugin.gd
-    tool
+    @tool
     extends EditorPlugin
 
 
@@ -56,7 +56,7 @@ This would be a basic setup:
         remove_spatial_gizmo_plugin(gizmo_plugin)
 
 
-For simple gizmos, just inheriting :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
+For simple gizmos, inheriting :ref:`EditorSpatialGizmoPlugin <class_EditorSpatialGizmoPlugin>`
 is enough. If you want to store some per-gizmo data or you are porting a Godot 3.0 gizmo
 to 3.1+, you should go with the second approach.
 

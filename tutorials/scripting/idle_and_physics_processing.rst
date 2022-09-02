@@ -54,7 +54,7 @@ possible to keep the physics interactions stable. You can change the interval
 between physics steps in the Project Settings, under Physics -> Common ->
 Physics Fps. By default, it's set to run 60 times per second.
 
-The engine calls this method every time it draws a frame:
+The engine calls this method before every physics step:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

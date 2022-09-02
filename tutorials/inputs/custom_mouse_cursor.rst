@@ -8,12 +8,13 @@ You might want to change the appearance of the mouse cursor in your game in orde
 1. Using project settings
 2. Using a script
 
-Using project settings is a simpler (but more limited) way to customize the mouse cursor. The second way is more customizable, but involves scripting.
+Using project settings is a simpler (but more limited) way to customize the mouse cursor.
+The second way is more customizable, but involves scripting:
 
 .. note::
 
     You could display a "software" mouse cursor by hiding the mouse cursor and
-    moving a Sprite to the cursor position in a ``_process`` method, but this
+    moving a Sprite2D to the cursor position in a ``_process`` method, but this
     will add at least one frame of latency compared to an "hardware" mouse
     cursor. Therefore, it's recommended to use the approach described here
     whenever possible.

@@ -121,8 +121,8 @@ Note the following:
 
 3. Keep in mind that loading a resource fetches the cached resource
    instance maintained by the engine. To get a new object, one must
-   :ref:`duplicate <class_Resource_method_duplicate>` an existing reference or
-   instantiate one from scratch with ``new()``.
+   :ref:`duplicate <class_Resource_method_duplicate>` an existing reference
+   or instantiate one from scratch with ``new()``.
 
 Nodes likewise have an alternative access point: the SceneTree.
 
@@ -140,17 +140,17 @@ Nodes likewise have an alternative access point: the SceneTree.
         print($Child)
 
     # Fastest. Doesn't break if node moves later.
-    # Note that `onready` keyword is GDScript only.
+    # Note that `@onready` annotation is GDScript only.
     # Other languages must do...
     #     var child
     #     func _ready():
     #         child = get_node("Child")
-    onready var child = $Child
+    @onready var child = $Child
     func lookup_and_cache_for_future_access():
         print(child)
 
-    # Delegate reference assignment to an external source
-    # Con: need to perform a validation check
+    # Delegate reference assignment to an external source.
+    # Con: need to perform a validation check.
     # Pro: node makes no requirements of its external structure.
     #      'prop' can come from anywhere.
     var prop
@@ -167,7 +167,8 @@ Nodes likewise have an alternative access point: the SceneTree.
             return
 
         # Fail and terminate.
-        # Note: Scripts run from a release export template don't run `assert` statements.
+        # Note: Scripts run from a release export template don't
+        # run `assert` statements.
         assert(prop, "'prop' wasn't initialized")
 
     # Use an autoload.
@@ -182,8 +183,8 @@ Nodes likewise have an alternative access point: the SceneTree.
 
     public class MyNode
     {
-        // Slow, dynamic lookup with dynamic NodePath.
-        public void Method1()
+        // Slow
+        public void DynamicLookupWithDynamicNodePath()
         {
             GD.Print(GetNode(NodePath("Child")));
         }
@@ -195,13 +196,13 @@ Nodes likewise have an alternative access point: the SceneTree.
         {
             Child = GetNode(NodePath("Child"));
         }
-        public void Method2()
+        public void LookupAndCacheForFutureAccess()
         {
             GD.Print(Child);
         }
 
-        // Delegate reference assignment to an external source
-        // Con: need to perform a validation check
+        // Delegate reference assignment to an external source.
+        // Con: need to perform a validation check.
         // Pro: node makes no requirements of its external structure.
         //      'prop' can come from anywhere.
         public object Prop;
@@ -332,7 +333,7 @@ accesses:
       if child.has_method("set_visible"):
           child.set_visible(false)
 
-      # Cast check, followed by dynamic lookup
+      # Cast check, followed by dynamic lookup.
       # Useful when you make multiple "safe" calls knowing that the class
       # implements them all. No need for repeated checks.
       # Tricky if one executes a cast check for a user-defined type as it
@@ -341,15 +342,17 @@ accesses:
           child.set_visible(false)
           child.show_on_top = true
 
-      # If one does not wish to fail these checks without notifying users, one
-      # can use an assert instead. These will trigger runtime errors
+      # If one does not wish to fail these checks without notifying users,
+      # one can use an assert instead. These will trigger runtime errors
       # immediately if not true.
       assert(child.has_method("set_visible"))
       assert(child.is_in_group("offer"))
       assert(child is CanvasItem)
 
-      # Can also use object labels to imply an interface, i.e. assume it implements certain methods.
-      # There are two types, both of which only exist for Nodes: Names and Groups
+      # Can also use object labels to imply an interface, i.e. assume it
+      # implements certain methods.
+      # There are two types, both of which only exist for Nodes: Names and
+      # Groups.
 
       # Assuming...
       # A "Quest" object exists and 1) that it can "complete" or "fail" and
@@ -370,7 +373,8 @@ accesses:
 
       # Note that these interfaces are project-specific conventions the team
       # defines (which means documentation! But maybe worth it?).
-      # Any script that conforms to the documented "interface" of the name/group can fill in for it.
+      # Any script that conforms to the documented "interface" of the name or
+      # group can fill in for it.
 
     .. code-tab:: csharp
 
@@ -385,11 +389,12 @@ accesses:
           child.Call("SetVisible", false);
       }
 
-      // Use a group as if it were an "interface", i.e. assume it implements certain methods
-      // requires good documentation for the project to keep it reliable (unless you make
-      // editor tools to enforce it at editor time.
-      // Note, this is generally not as good as using an actual interface in C#,
-      // but you can't set C# interfaces from the editor since they are
+      // Use a group as if it were an "interface", i.e. assume it implements
+      // certain methods.
+      // Requires good documentation for the project to keep it reliable
+      // (unless you make editor tools to enforce it at editor time).
+      // Note, this is generally not as good as using an actual interface in
+      // C#, but you can't set C# interfaces from the editor since they are
       // language-level features.
       if (child.IsInGroup("Offer"))
       {
@@ -407,15 +412,17 @@ accesses:
           ci.ShowOnTop = true;
       }
 
-      // If one does not wish to fail these checks without notifying users, one
-      // can use an assert instead. These will trigger runtime errors
+      // If one does not wish to fail these checks without notifying users,
+      // one can use an assert instead. These will trigger runtime errors
       // immediately if not true.
       Debug.Assert(child.HasMethod("set_visible"));
       Debug.Assert(child.IsInGroup("offer"));
       Debug.Assert(CanvasItem.InstanceHas(child));
 
-      // Can also use object labels to imply an interface, i.e. assume it implements certain methods.
-      // There are two types, both of which only exist for Nodes: Names and Groups
+      // Can also use object labels to imply an interface, i.e. assume it
+      // implements certain methods.
+      // There are two types, both of which only exist for Nodes: Names and
+      // Groups.
 
       // Assuming...
       // A "Quest" object exists and 1) that it can "Complete" or "Fail" and
@@ -439,9 +446,9 @@ accesses:
       }
 
       // Note that these interfaces are project-specific conventions the team
-      // defines (which means documentation! But maybe worth it?)..
+      // defines (which means documentation! But maybe worth it?).
       // Any script that conforms to the documented "interface" of the
-      // name/group can fill in for it. Also note that in C#, these methods
+      // name or group can fill in for it. Also note that in C#, these methods
       // will be slower than static accesses with traditional interfaces.
 
 - Outsource the access to a :ref:`FuncRef <class_FuncRef>`. These may be useful
@@ -462,7 +469,7 @@ accesses:
     # parent.gd
     extends Node
 
-    onready var child = $Child
+    @onready var child = $Child
 
     func _ready():
         child.fn = funcref(self, "print_me")

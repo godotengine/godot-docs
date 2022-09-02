@@ -16,9 +16,9 @@ For instance, you can use the open source `Inkscape <https://inkscape.org/>`_ ed
 
 Clone the ``godot`` repository containing all the editor icons:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-       git clone https://github.com/godotengine/godot.git
+    git clone https://github.com/godotengine/godot.git
 
 The icons must be created in a vector graphics editor in SVG format. There are
 two main requirements to follow:

@@ -15,7 +15,7 @@ present in the scene tree. Getting it in the parent node's ``_ready()`` function
 guarantees that.
 
 If, for example,  you have a scene tree like this, and you want to get a reference to the
-Sprite and Camera2D nodes to access them in your script.
+Sprite2D and Camera2D nodes to access them in your script.
 
 .. image:: img/nodes_and_scene_instances_player_scene_example.png
 
@@ -24,32 +24,32 @@ To do so, you can use the following code.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var sprite
+    var sprite2d
     var camera2d
 
     func _ready():
-        sprite = get_node("Sprite")
+        sprite2d = get_node("Sprite2D")
         camera2d = get_node("Camera2D")
 
  .. code-tab:: csharp
 
-    private Sprite _sprite;
-    private Camera2D _camera2d;
+    private Sprite2D _sprite2D;
+    private Camera2D _camera2D;
 
     public override void _Ready()
     {
         base._Ready();
 
-        _sprite = GetNode<Sprite>("Sprite");
-        _camera2d = GetNode<Camera2D>("Camera2D");
+        _sprite2D = GetNode<Sprite2D>("Sprite2D");
+        _camera2D = GetNode<Camera2D>("Camera2D");
     }
 
-Note that you get nodes using their name, not their type. Above, "Sprite" and
+Note that you get nodes using their name, not their type. Above, "Sprite2D" and
 "Camera2D" are the nodes' names in the scene.
 
 .. image:: img/nodes_and_scene_instances_sprite_node.png
 
-If you rename the Sprite node as Skin in the Scene dock, you have to change the
+If you rename the Sprite2D node as Skin in the Scene dock, you have to change the
 line that gets the node to ``get_node("Skin")`` in the script.
 
 .. image:: img/nodes_and_scene_instances_sprite_node_renamed.png
@@ -97,20 +97,20 @@ Syntactic sugar
 ~~~~~~~~~~~~~~~
 
 You can use two shorthands to shorten your code in GDScript. Firstly, putting the
-``onready`` keyword before a member variable makes it initialize right before
+``@onready`` annotation before a member variable makes it initialize right before
 the ``_ready()`` callback.
 
 .. code-block:: gdscript
 
-    onready var sprite = get_node("Sprite")
+    @onready var sprite2d = get_node("Sprite2D")
 
 There is also a short notation for ``get_node()``: the dollar sign, "$". You
 place it before the name or path of the node you want to get.
 
 .. code-block:: gdscript
 
-    onready var sprite = $Sprite
-    onready var tween = $ShieldBar/Tween
+    @onready var sprite2d = $Sprite2D
+    @onready var tween = $ShieldBar/Tween
 
 Creating nodes
 --------------
@@ -125,22 +125,22 @@ script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var sprite
+    var sprite2d
 
     func _ready():
-        var sprite = Sprite.new() # Create a new Sprite.
-        add_child(sprite) # Add it as a child of this node.
+        var sprite2d = Sprite2D.new() # Create a new Sprite2D.
+        add_child(sprite2d) # Add it as a child of this node.
 
  .. code-tab:: csharp
 
-    private Sprite _sprite;
+    private Sprite2D _sprite2D;
 
     public override void _Ready()
     {
         base._Ready();
 
-        _sprite = new Sprite(); // Create a new Sprite.
-        AddChild(_sprite); // Add it as a child of this node.
+        _sprite2D = new Sprite2D(); // Create a new Sprite2D.
+        AddChild(_sprite2D); // Add it as a child of this node.
     }
 
 To delete a node and free it from memory, you can call its ``queue_free()``
@@ -151,13 +151,13 @@ the scene and frees the object in memory.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    sprite.queue_free()
+    sprite2d.queue_free()
 
  .. code-tab:: csharp
 
-    _sprite.QueueFree();
+    _sprite2D.QueueFree();
 
-Before calling ``sprite.queue_free()``, the remote scene tree looks like this.
+Before calling ``sprite2d.queue_free()``, the remote scene tree looks like this.
 
 .. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.png
 
@@ -204,19 +204,19 @@ only available with GDScript.
     var scene = preload("res://MyScene.tscn")
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
-actual node, you need to call :ref:`PackedScene.instance()
-<class_PackedScene_method_instance>`. It returns a tree of nodes that you can
+actual node, you need to call :ref:`PackedScene.instantiate()
+<class_PackedScene_method_instantiate>`. It returns a tree of nodes that you can use
 as a child of your current node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var instance = scene.instance()
+    var instance = scene.instantiate()
     add_child(instance)
 
  .. code-tab:: csharp
 
-    var instance = scene.();
+    var instance = scene.Instantiate();
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and

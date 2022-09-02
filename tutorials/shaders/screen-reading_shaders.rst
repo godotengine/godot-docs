@@ -6,7 +6,7 @@ Screen-reading shaders
 Introduction
 ~~~~~~~~~~~~
 
-Very often, it is desired to make a shader that reads from the same
+It is often desired to make a shader that reads from the same
 screen to which it's writing. 3D APIs, such as OpenGL or DirectX, make this very
 difficult because of internal hardware limitations. GPUs are extremely
 parallel, so reading and writing causes all sorts of cache and coherency
@@ -15,7 +15,7 @@ properly.
 
 The workaround is to make a copy of the screen, or a part of the screen,
 to a back-buffer and then read from it while drawing. Godot provides a
-few tools that make this process easy!
+few tools that make this process easy.
 
 SCREEN_TEXTURE built-in texture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,7 +23,8 @@ SCREEN_TEXTURE built-in texture
 Godot :ref:`doc_shading_language` has a special texture, ``SCREEN_TEXTURE`` (and ``DEPTH_TEXTURE`` for depth, in the case of 3D).
 It takes as argument the UV of the screen and returns a vec3 RGB with the color. A
 special built-in varying: SCREEN_UV can be used to obtain the UV for
-the current fragment. As a result, this simple canvas_item fragment shader:
+the current fragment. As a result, this canvas_item fragment shader results in an invisible object,
+because it only shows what lies behind:
 
 .. code-block:: glsl
 
@@ -31,10 +32,8 @@ the current fragment. As a result, this simple canvas_item fragment shader:
         COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
     }
 
-results in an invisible object, because it just shows what lies behind.
-
 The reason why textureLod must be used is because, when Godot copies back
-a chunk of the screen, it also does an efficient separatable gaussian blur to its mipmaps.
+a chunk of the screen, it also does an efficient separable gaussian blur to its mipmaps.
 
 This allows for not only reading from the screen, but reading from it with different amounts
 of blur at no cost.
@@ -42,7 +41,7 @@ of blur at no cost.
 .. note::
 
    Mipmaps are not generated in GLES2 due to poor performance and compatibility with older
-   devices. 
+   devices.
 
 SCREEN_TEXTURE example
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -101,13 +100,20 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: img/texscreen_demo2.png
 
-In 3D, there is less flexibility to solve this particular issue because the 
-``SCREEN_TEXTURE`` is only captured once. Be careful when using 
+.. warning:
+
+    Materials that use ``SCREEN_TEXTURE`` are considered transparent themselves and
+    will not appear in the resulting ``SCREEN_TEXTURE`` of other materials.
+    If you plan to instance a scene that uses a material with ``SCREEN_TEXTURE``,
+    you will need to use a BackBufferCopy node.
+
+In 3D, there is less flexibility to solve this particular issue because the
+``SCREEN_TEXTURE`` is only captured once. Be careful when using
 ``SCREEN_TEXTURE`` in 3D as it won't capture transparent objects and may capture
 some opaque objects that are in front of the object.
 
 You can reproduce the back-buffer logic in 3D by creating a :ref:`Viewport <class_Viewport>`
-with a camera in the same position as your object, and then use the 
+with a camera in the same position as your object, and then use the
 :ref:`Viewport's <class_Viewport>` texture instead of ``SCREEN_TEXTURE``.
 
 Back-buffer logic
@@ -136,7 +142,7 @@ Godot:
 DEPTH_TEXTURE
 ~~~~~~~~~~~~~
 
-For 3D Shaders, it's also possible to access the screen depth buffer. For this,
+For 3D shaders, it's also possible to access the screen depth buffer. For this,
 the ``DEPTH_TEXTURE`` built-in is used. This texture is not linear; it must be
 converted via the inverse projection matrix.
 

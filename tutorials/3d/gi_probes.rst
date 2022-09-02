@@ -1,7 +1,7 @@
 .. _doc_gi_probes:
 
-GI Probes
-=========
+Using GIProbe
+=============
 
 Introduction
 ------------
@@ -40,8 +40,9 @@ the geometry that will be affected.
 
 .. image:: img/giprobe_wrap.png
 
-Afterwards, make sure to enable the geometry will be baked. This is important in
-order for ``GIProbe`` to recognize objects, otherwise they will be ignored:
+Afterwards, make sure to enable the **Use In Baked Light** property on the geometry instances
+in the inspector. This is required for ``GIProbe`` to recognize objects,
+otherwise they will be ignored:
 
 .. image:: img/giprobe_bake_property.png
 
@@ -49,6 +50,12 @@ Once the geometry is set up, push the Bake button that appears on the 3D editor
 toolbar to begin the pre-baking process:
 
 .. image:: img/giprobe_bake.png
+
+.. warning::
+
+    Meshes should have sufficiently thick walls to avoid light leaks (avoid
+    one-sided walls). For interior levels, enclose your level geometry in a
+    sufficiently large box and bridge the loops to close the mesh.
 
 Adding lights
 -------------

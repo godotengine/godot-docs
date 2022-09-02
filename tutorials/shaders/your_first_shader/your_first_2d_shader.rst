@@ -22,24 +22,24 @@ fragment functions. This tutorial targets absolute beginners to shaders.
 Setup
 -----
 
-:ref:`CanvasItem <doc_canvas_item_shader>` shaders are used to draw all 2D
-     objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are
-     used to draw all 3D objects.
+:ref:`CanvasItem shaders <doc_canvas_item_shader>` are used to draw all 2D
+objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are used
+to draw all 3D objects.
 
 In order to use a shader it must be attached inside a :ref:`Material
-<class_material>` which must be attached to an object. Materials are a type of
+<class_Material>` which must be attached to an object. Materials are a type of
 :ref:`Resource <doc_resources>`. To draw multiple objects with the same
 material, the material must be attached to each object.
 
-All objects derived from a :ref:`CanvasItem <class_canvasitem>` have a material
-property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprites
-<class_sprite>`, :ref:`TileMaps <class_tilemap>`, :ref:`MeshInstance2Ds
-<class_meshinstance2d>` etc. They also have an option to inherit their parent's
+All objects derived from a :ref:`CanvasItem <class_CanvasItem>` have a material
+property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
+<class_Sprite2D>`, :ref:`TileMaps <class_Tilemap>`, :ref:`MeshInstance2Ds
+<class_MeshInstance2D>` etc. They also have an option to inherit their parent's
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.
 
-To begin, create a Sprite node. You can use any CanvasItem, but for this
-tutorial we will use a Sprite.
+To begin, create a Sprite2D node. You can use any CanvasItem, but for this
+tutorial we will use a Sprite2D.
 
 In the Inspector, click beside "Texture" where it says "[empty]" and select
 "Load", then select "Icon.png". For new projects, this is the Godot icon. You
@@ -81,11 +81,11 @@ covered here.
 Your first fragment function
 ----------------------------
 
-The fragment function runs for every pixel in a Sprite and determines what color
+The fragment function runs for every pixel in a Sprite2D and determines what color
 that pixel should be.
 
-They are restricted to the pixels covered by the Sprite, that means you cannot
-use one to, for example, create an outline around a Sprite.
+They are restricted to the pixels covered by the Sprite2D, that means you cannot
+use one to, for example, create an outline around a Sprite2D.
 
 The most basic fragment function does nothing except assign a single color to
 every pixel.
@@ -109,7 +109,7 @@ Godot.
 Now let's make things more complex.
 
 There are many inputs to the fragment function that you can use for calculating
-``COLOR``. ``UV`` is one of them. UV coordinates are specified in your Sprite
+``COLOR``. ``UV`` is one of them. UV coordinates are specified in your Sprite2D
 (without you knowing it!) and they tell the shader where to read from textures
 for each part of the mesh.
 
@@ -131,7 +131,7 @@ other functions or to assign values to ``COLOR`` directly.
 Using ``TEXTURE`` built-in
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you want to adjust a color in a Sprite you cannot just adjust the color
+When you want to adjust a color in a Sprite2D you cannot just adjust the color
 from the texture manually like in the code below.
 
 .. code-block:: glsl
@@ -144,9 +144,9 @@ from the texture manually like in the code below.
 The default fragment function reads from a texture and displays it. When you
 overwrite the default fragment function, you lose that functionality, so you
 have to implement it yourself. You read from textures using the ``texture``
-function. Certain nodes, like Sprites, have a dedicated texture variable that
+function. Certain nodes, like Sprite2Ds, have a dedicated texture variable that
 can be accessed in the shader using ``TEXTURE``. Use it together with ``UV`` and
-``texture`` to draw the Sprite.
+``texture`` to draw the Sprite2D.
 
 .. code-block:: glsl
 
@@ -172,7 +172,7 @@ You can use uniforms by defining them at the top of your shader like so:
 For more information about usage see the :ref:`Shading Language doc
 <doc_shading_language>`.
 
-Add a uniform to change the amount of blue in our Sprite.
+Add a uniform to change the amount of blue in our Sprite2D.
 
 .. code-block:: glsl
 
@@ -183,7 +183,7 @@ Add a uniform to change the amount of blue in our Sprite.
     COLOR.b = blue;
   }
 
-Now you can change the amount of blue in the Sprite from the editor. Look back
+Now you can change the amount of blue in the Sprite2D from the editor. Look back
 at the Inspector under where you created your shader. You should see a section
 called "Shader Param". Unfold that section and you will see the uniform you just
 declared. If you change the value in the editor, it will overwrite the default
@@ -193,7 +193,7 @@ Interacting with shaders from code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can change uniforms from code using the function ``set_shader_param()``
-which is called on the node's material resource. With a Sprite node, the
+which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
 ::
@@ -226,13 +226,13 @@ You can offset the vertices by directly adding to ``VERTEX``.
     VERTEX += vec2(10.0, 0.0);
   }
 
-Combined with the ``TIME`` built-in variable, this can be used for simple
+Combined with the ``TIME`` built-in variable, this can be used for basic
 animation.
 
 .. code-block:: glsl
 
   void vertex() {
-    // Animate Sprite moving in big circle around its location
+    // Animate Sprite2D moving in big circle around its location
     VERTEX += vec2(cos(TIME)*100.0, sin(TIME)*100.0);
   }
 

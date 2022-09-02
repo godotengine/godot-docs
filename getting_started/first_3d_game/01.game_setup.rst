@@ -9,7 +9,7 @@ importing the start assets and setting up the game scene.
 We've prepared a Godot project with the 3D models and sounds we'll use for this
 tutorial, linked in the index page. If you haven't done so yet, you can download
 the archive here: `Squash the Creeps assets
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.0.0>`__.
+<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
 Once you downloaded it, extract the .zip archive on your computer. Open the
 Godot project manager and click the *Import* button.
@@ -41,11 +41,11 @@ Setting up the playable area
 We're going to create our main scene with a plain *Node* as its root. In the
 *Scene* dock, click the *Add Node* button represented by a "+" icon in the
 top-left and double-click on *Node*. Name the node "Main". Alternatively, to add
-a node to the scene, you can press :kbd:`Ctrl + a` (or :kbd:`Cmd + a` on MacOS).
+a node to the scene, you can press :kbd:`Ctrl + a` (or :kbd:`Cmd + a` on macOS).
 
 |image5|
 
-Save the scene as ``Main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on MacOS).
+Save the scene as ``Main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on macOS).
 
 We'll start by adding a floor that'll prevent the characters from falling. To
 create static colliders like the floor, walls, or ceilings, you can use
@@ -105,7 +105,7 @@ You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
 
 We're going to move the ground down so we can see the floor grid. Select the
-*Ground* node, hold the :kbd:`Ctrl` key down to turn on grid snapping (:kbd:`Cmd` on MacOS),
+*Ground* node, hold the :kbd:`Ctrl` key down to turn on grid snapping (:kbd:`Cmd` on macOS),
 and click and drag down on the Y axis. It's the green arrow in the move gizmo.
 
 |image13|

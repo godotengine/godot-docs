@@ -3,6 +3,12 @@
 Exporting for the Web
 =====================
 
+.. seealso::
+
+    This page describes how to export a Godot project to HTML5.
+    If you're looking to compile editor or export template binaries from source instead,
+    read :ref:`doc_compiling_for_web`.
+
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
 <https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
@@ -12,26 +18,36 @@ in the user's browser.
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: `There are significant bugs when running HTML5 projects on iOS <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
+.. attention:: `There are significant bugs when running HTML5 projects on iOS
+               <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
                (regardless of the browser). We recommend using
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
 
-WebGL 2
--------
+.. note::
 
-Until the *OpenGL ES 3* renderer is removed from Godot in favor of *Vulkan*,
-HTML5 export uses *WebGL 2* when the *GLES3* option is selected.
+    If you use Linux, due to
+    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
+    it's recommended to play the exported project using a Chromium-based browser
+    instead of Firefox.
 
-.. warning:: Using WebGL 2 is not recommended due to its expected removal
-             from Godot without replacement.
+WebGL version
+-------------
 
-WebGL 2 is not supported in all browsers. **Firefox** and
-**Chromium** (Chrome, Opera) are the most popular supported browsers,
-**Safari** and **Edge** do not work. On **iOS**, all browsers are based on
-WebKit (i.e. Safari), so they will also not work.
+Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
+WebGL 2.0 (*GLES3*).
 
-Godot's WebGL 2 renderer has issues with 3D and is no longer maintained.
+WebGL 1.0 is the recommended option if you want your project to be supported
+on all browsers with the best performance.
+
+Godot's GLES3 renderer targets high end devices, and the performance using
+WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
+specifically.
+
+Additionally, while most browsers support WebGL 2.0, this is not yet the case
+for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
+available yet for any **iOS** browser (all WebKit-based like Safari).
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
 
 .. _doc_javascript_export_options:
 
@@ -44,9 +60,14 @@ game in the default browser for testing.
 
 You can choose the **Export Type** to select which features will be available:
 
-- *Regular*: is the most compatible across browsers, will not support threads, nor GDNative.
-- *Threads*: will require the browser to support `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__
-- *GDNative*: enables GDNative support but makes the binary bigger and slower to load.
+- *Regular*: is the most compatible across browsers, will not support threads,
+  nor GDNative.
+- *Threads*: will require the browser to support `SharedArrayBuffer
+  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
+  See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
+  for details.
+- *GDNative*: enables GDNative support but makes the binary bigger and slower
+  to load.
 
 If you plan to use :ref:`VRAM compression <doc_import_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
@@ -102,6 +123,19 @@ The method ``OS.is_userfs_persistent()`` can be used to check if the
 ``user://`` file system is persistent, but can give false positives in some
 cases.
 
+Background processing
+~~~~~~~~~~~~~~~~~~~~~
+
+The project will be paused by the browser when the tab is no longer the active
+tab in the user's browser. This means functions such as ``_process()`` and
+``_physics_process()`` will no longer run until the tab is made active again by
+the user (by switching back to the tab). This can cause networked games to
+disconnect if the user switches tabs for a long duration.
+
+This limitation does not apply to unfocused browser *windows*. Therefore, on the
+user's side, this can be worked around by running the project in a separate
+*window* instead of a separate tab.
+
 Threads
 ~~~~~~~
 
@@ -110,7 +144,7 @@ only available if the appropriate **Export Type** is set and support for it
 across browsers is still limited.
 
 .. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers are also starting to require that the web page is served with specific
+             Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 GDNative
@@ -278,7 +312,7 @@ Any other JavaScript value is returned as ``null``.
 HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
 support for the singleton to improve security. With such templates, and on
 platforms other than HTML5, calling ``JavaScript.eval`` will also return
-``null``.  The availability of the singleton can be checked with the
+``null``. The availability of the singleton can be checked with the
 ``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
 
     func my_func3():

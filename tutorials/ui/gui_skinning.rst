@@ -1,186 +1,244 @@
 .. _doc_gui_skinning:
 
-GUI skinning
-============
+Introduction to GUI skinning
+============================
 
-Oh, beautiful GUI!
-------------------
+It is essential for a game to provide clear, informative, and yet visually
+pleasing user interface to its players. While :ref:`Control <class_Control>`
+nodes come with a decently functional look out of the box, there is always
+room for uniqueness and case-specific tuning. For this purpose Godot engine
+includes a system for GUI skinning (or theming), which allows you to customize
+the look of every control in your user interface, including your custom controls.
 
-This tutorial is about advanced skinning of a user interface. Most
-games generally don't need this, as they end up just relying on
-:ref:`Label <class_Label>`, :ref:`TextureRect <class_TextureRect>`,
-:ref:`TextureButton <class_TextureButton>` and
-:ref:`TextureProgress <class_TextureProgress>`.
+Here is an example of this system in action — a game with the GUI that is
+radically different from the default UI theme of the engine:
 
-However, many types of games often need complex user interfaces, like
-MMOs, traditional RPGs, Simulators, Strategy, etc. These kinds of
-interface are also common in some games that include editors to create
-content, or interfaces for network connectivity.
+.. figure:: img/tank-kings-by-winterpixel-games.png
+   :align: center
 
-Godot's user interface uses these kinds of control with the default theme,
-but they can be skinned to resemble pretty much any kind of user
-interface.
+   A "Gear Up!" screen in Tank Kings, courtesy of Winterpixel Games
 
-Theme
------
+Beyond achieving a unique look for your game, this system also enables developers
+to provide customization options to the end users, including accessibility settings.
+UI themes are applied in a cascading manner (i.e. they propagate from parent
+controls to their children), which means that font settings or adjustments for
+colorblind users can be applied in a single place and affect the entire UI tree.
+Of course this system can also be used for gameplay purposes: your hero-based game
+can change its style for the selected player character, or you can give different
+flavors to the sides in your team-based project.
 
-The GUI is skinned through the :ref:`Theme <class_Theme>`
-resource. Theme contains all the information required to change the
-entire visual styling of all controls. Theme options are named, so it's
-not obvious which name changes what (especially from code), but several
-tools are provided. The ultimate place to look at what each theme option
-is for each control, which will always be more up to date than any
-documentation, is the file `scene/resources/default_theme/default_theme.cpp
-<https://github.com/godotengine/godot/blob/master/scene/resources/default_theme/default_theme.cpp>`__.
-The rest of this document will explain the different tools used to
-customize the theme.
+Basics of themes
+----------------
 
-A Theme can be applied to any control in the scene. As a result, all
-children and grand-children controls will use that same theme, too
-(unless another theme is specified further down the tree). If a value is
-not found in a theme, it will be searched in themes higher up in the
-hierarchy, towards the root. If nothing was found, the default theme is
-used. This system allows for flexible overriding of themes in complex
-user interfaces.
+The skinning system is driven by the :ref:`Theme <class_Theme>` resource. Every
+Godot project has an inherent default theme that contains the settings used by
+the built-in control nodes. This is what gives the controls their distinct look
+out of the box. A theme only describes the configuration, however, and it is still
+the job of each individual control to use that configuration in the way it requires
+to display itself. This is important to remember when implementing
+:ref:`your own custom controls <doc_custom_gui_controls>`.
 
-.. attention::
-   
-   Don't use the custom theme option in the Project Settings, as there
-   are known bugs with theme propagation. Instead, apply your theme to the
-   root Control node's Theme property. It will propagate to instanced scenes
-   automatically. To get correct theming in the editor for instanced scenes,
-   you can apply the theme resource to the instanced scene's root node as well.
+.. note::
+   Even the Godot editor itself relies on the default theme. But it doesn't look the
+   same as a Godot project, because it applies its own heavily customized theme on top
+   of the default one. In principle, this works exactly like it would in your game
+   as explained :ref:`below <doc_gui_theme_in_project>`.
 
-Theme options
--------------
+Theme items
+~~~~~~~~~~~
 
-Each kind of option in a theme can be:
+The configuration that is stored in a theme consists of theme items. Each item has
+a unique name and must be one of the following data types:
 
--  **An integer constant**: A single numerical constant. Generally used
-   to define spacing between components or alignment.
--  **A Color**: A single color, with or without transparency. Colors are
-   usually applied to fonts and icons.
--  **A Texture**: A single image. Textures are not often used, but when
-   they are, they represent handles to pick or icons in a complex control
-   (such as a file dialog).
--  **A Font**: Every control that uses text can be assigned the fonts
-   used to draw strings.
--  **A StyleBox**: Stylebox is a resource that defines how to draw a
-   panel in varying sizes (more information on them later).
+-  **Color**
 
-Every option is associated with:
+   A :ref:`color <class_Color>` value, which is often used for fonts
+   and backgrounds. Colors can also be used for modulation of controls
+   and icons.
 
--  A name (the name of the option)
--  A Control (the name of the control)
+-  **Constant**
 
-An example usage:
+   An integer value, which can be used either for numeric properties of
+   controls (such as the item separation in a :ref:`BoxContainer <class_BoxContainer>`),
+   or for boolean flags (such as the drawing of relationship lines in a :ref:`Tree <class_Tree>`).
+
+-  **Font**
+
+   A :ref:`font <class_Font>` resource, which is used by controls that
+   display text. Fonts contain most text rendering settings, except for
+   its size and color. On top of that, alignment and text direction are
+   controlled by individual controls.
+
+-  **Font size**
+
+   An integer value, which is used alongside a font to determine the
+   size at which the text should be displayed.
+
+-  **Icon**
+
+   A :ref:`texture <class_Texture2D>` resource, which is normally used
+   to display an icon (on a :ref:`Button <class_Button>`, for example).
+
+-  **StyleBox**
+
+   A :ref:`StyleBox <class_StyleBox>` resource, a collection of configuration
+   options which define the way a UI panel should be displayed. This is
+   not limited to the :ref:`Panel <class_Panel>` control, as styleboxes
+   are used by many controls for their backgrounds and overlays.
+
+Theme types
+~~~~~~~~~~~
+
+To help with the organization of its items each theme is separated into types,
+and each item must belong to a single type. In other words, each theme item
+is defined by its name, its data type and its theme type. This combination
+must be unique within the theme. For example, there cannot be two color items named
+``font_color`` in a type called ``Label``, but there can be another ``font_color``
+item in a type ``LineEdit``.
+
+The default Godot theme comes with multiple theme types already defined,
+one for every built-in control node that uses UI skinning. The example above
+contains actual theme items present in the default theme. You can refer to the
+**Theme Properties** section in the class reference for each control to see
+which items are available to it and its child classes.
+
+.. note::
+   Child classes can use theme items defined for their parent class (``Button``
+   and its derivatives being a good example of that). In fact, every control can
+   use every theme item of any theme type, if it needs to (but for the clarity and
+   predictability we try to avoid that in the engine).
+
+   It is important to remember that for child classes that process is automated.
+   Whenever a built-in control requests a theme item from the theme it can omit
+   the theme type, and its class name will be used instead. On top of that,
+   the class names of its parent classes will also be used in turn. This allows
+   changes to the parent class, such as ``Button``, to affect all derived
+   classes without the need to customize every one of them.
+
+You can also define your own theme types, and additionally customize both built-in
+controls and your own controls. Because built-in controls have no knowledge of
+your custom theme types, you must utilize scripts to access those items. All control
+nodes have several methods that allow to fetch theme items from the theme that
+is applied to them. Those methods accept the theme type as one of the arguments.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript
 
-    var theme = Theme.new()
-    theme.set_color("font_color", "Label", Color.red)
-
-    var label = Label.new()
-    label.theme = theme
+   var accent_color = get_theme_color("accent_color", "MyType")
+   label.add_color_override("font_color", accent_color)
 
  .. code-tab:: csharp
 
-    var theme = new Theme();
-    theme.SetColor("fontColor", "Label", new Color(1.0f, 0.0f, 0.0f));
+   Color accentColor = GetThemeColor("accent_color", "MyType");
+   label.AddColorOverride("font_color", accentColor);
 
-    var label = new Label();
-    label.Theme = theme;
+To give more customization opportunities types can also be linked together as
+type variations. This is another use-case for custom theme types. For example,
+a theme can contain a type ``Header`` which can be marked as a variation of
+the base ``Label`` type. An individual ``Label`` control can then be set to
+use the ``Header`` variation for its type, and every time a theme item is
+requested from a theme this variation will be used before any other type. This
+allows to store various presets of theme items for the same class of the
+control node in the single ``Theme`` resource.
 
-In the example above, a new theme is created. The "font_color" option
-is changed and then applied to a label. Therefore, the label's text (and all
-children and grandchildren labels) will be red.
+.. warning::
+   Only variations available from the default theme or defined in the custom
+   project theme are shown in the Inspector dock as options. You can still
+   input manually the name of a variation that is defined outside of those
+   two places, but it is recommended to keep all variations to the project theme.
 
-It is possible to override those options without using the theme
-directly, and only for a specific control, by using the override API in
-:ref:`Control.add_color_override() <class_Control_method_add_color_override>`:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var label = Label.new()
-    label.add_color_override("font_color", Color.red)
-
- .. code-tab:: csharp
-
-    var label = new Label();
-    label.AddColorOverride("fontColor", new Color(1.0f, 0.0f, 0.0f));
-
-In the inline help of Godot (in the Script tab), you can check which theme options
-are overridable, or check the :ref:`Control <class_Control>` class reference.
+You can learn more about creating and using theme type variations in a
+:ref:`dedicated article <doc_gui_theme_type_variations>`.
 
 Customizing a control
 ---------------------
 
-If only a few controls need to be skinned, it is often not necessary to
-create a new theme. Controls offer their theme options as special kinds
-of properties. If checked, overriding will take place:
+Each control node can be customized directly without the use of themes. This
+is called local overrides. Every theme property from the control's class
+reference can be overridden directly on the control itself, using either
+the Inspector dock, or scripts. This allows to make granular changes to a
+particular part of the UI, while not affecting anything else in the project,
+including this control's children.
 
-.. image:: img/themecheck.png
+.. figure:: img/themecheck.png
+   :align: center
 
-As can be seen in the image above, theme options have little check boxes.
-If checked, they can be used to override the value of the theme just for
-that control.
+Local overrides are less useful for the visual flair of your user interface,
+especially if you aim for consistency. However, for layout nodes these are
+essential. Nodes such as :ref:`BoxContainer <class_BoxContainer>` and
+:ref:`GridContainer <class_GridContainer>` use theme constants for defining
+separation between their children, and :ref:`MarginContainer <class_MarginContainer>`
+stores its customizable margins in its theme items.
 
-Creating a theme
-----------------
+Whenever a control has a local theme item override, this is the value that
+it uses. Values provided by the theme are ignored.
 
-The simplest way to create a theme is to edit a theme resource. Create a
-Theme from the resource menu; the editor will appear immediately.
-After that, save it (for example, with the name mytheme.theme):
+.. _doc_gui_theme_in_project:
 
-.. image:: img/sb2.png
+Customizing a project
+---------------------
 
-This will create an empty theme that can later be loaded and assigned to
-controls.
+Out of the box each project adopts the default project theme provided by Godot. The
+default theme itself is constant and cannot be changed, but its items can be overridden
+with a custom theme. Custom themes can be applied in two ways: as a project setting,
+and as a node property throughout the tree of control nodes.
 
-Example: theming a button
---------------------------
+There are two project settings that can be adjusted to affect your entire project:
+:ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` allows you to
+set a custom project-wide theme, and :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`
+does the same to the default fallback font. When a theme item is requested by a control
+node the custom project theme, if present, is checked first. Only if it doesn't have
+the item the default theme is checked.
 
-Download these assets (:download:`skin_assets.zip <files/skin_assets.zip>`)
-and add them to your project. Open the theme editor, click on "Edit Theme"
-and select "Add Class Items":
+This allows you to configure the default look of every Godot control with a single
+theme resource, but you can go more granular than that. Every control node also has
+a :ref:`theme <class_Control_property_theme>` property, which allows you to set a
+custom theme for the branch of nodes starting with that control. This means that the
+control and all of its children, and their children in turn, would first check that
+custom theme resource before falling back on the project and the default themes.
 
-.. image:: img/themeci.png
+.. note::
+   Instead of changing the project setting you can set the custom theme resource to the
+   root-most control node of your entire UI branch to almost the same effect. While in the
+   running project it will behave as expected, individual scenes will still display
+   using the default theme when previewing or running them directly. To fix that you
+   can set the same theme resource to the root control of each individual scene.
 
-A menu will appear prompting the type of control to create. Select
-"Button":
+For example, you can have a certain style for buttons in your project theme, but want
+a different look for buttons inside of a popup dialog. You can set a custom theme
+resource to the root control of your popup and define a different style for buttons
+within that resource. As long as the chain of control nodes between the root of
+the popup and the buttons is uninterrupted, those buttons will use the styles defined
+in the theme resource that is closest to them. All other controls will still be styled
+using the project-wide theme and the default theme styles.
 
-.. image:: img/themeci2.png
+To sum it up, for an arbitrary control its theme item lookup would look something
+like this:
 
-Immediately, all button theme options will appear in the property
-editor, where they can be edited:
+#. Check for local overrides of the same data type and name.
+#. Using control's type variation, class name and parent class names:
 
-.. image:: img/themeci3.png
+   a. Check every control starting from itself and see if it has a theme property set;
+   b. If it does, check that theme for the matching item of the same name, data and theme type;
+   c. If there is no custom theme or it doesn't have the item, move to the parent control;
+   d. Repeat steps a-c. until the root of the tree is reached, or a non-control node is reached.
 
-From ``Styles``, open the "Normal" drop-down menu next to where it probably
-says "null" and create a "New StyleBoxTexture", then
-edit it. A texture stylebox contains a texture and the size of the margins
-that will not stretch when the texture is stretched.
-This is called nine-patch or "3x3" stretching:
+#. Using control's type variation, class name and parent class names check the project-wide theme, if it's present.
+#. Using control's type variation, class name and parent class names check the default theme.
 
-.. image:: img/sb1.png
+Even if the item doesn't exist in any theme, a corresponding default value for that
+data type will be returned.
 
-Repeat the steps and add the other assets. There is no hover or disabled
-image in the example files, so use the same stylebox as in normal. Set
-the supplied font as the button font and change the font color to black.
-Soon, your button will look different and retro:
+Beyond controls
+---------------
 
-.. image:: img/sb2.png
+Naturally, themes are an ideal type of resource for storing configuration for
+something visual. While the support for theming is built into control nodes,
+other nodes can use them as well, just like any other resource.
 
-Save this theme to the .theme file. Go to the 2D editor and create a few
-buttons:
-
-.. image:: img/skinbuttons1.png
-
-Now, go to the root node of the scene and locate the "theme" property,
-replace it with the theme that was just created. It should look like this:
-
-.. image:: img/skinbuttons2.png
-
-Congratulations! You have created a reusable GUI Theme!
+An example of using themes for something beyond controls can be a modulation
+of sprites for the same units on different teams in a strategy game. A theme
+resource can define a collection of colors, and sprites (with a help from scripts)
+can use those colors to draw the texture. The main benefit being that you
+could make different themes using the same theme items for red, blue, and
+green teams, and swap them with a single resource change.

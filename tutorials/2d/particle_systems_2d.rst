@@ -6,8 +6,7 @@ Particle systems (2D)
 Intro
 -----
 
-A simple (but flexible enough for most uses) particle system is
-provided. Particle systems are used to simulate complex physical effects,
+Particle systems are used to simulate complex physical effects,
 such as sparks, fire, magic particles, smoke, mist, etc.
 
 The idea is that a "particle" is emitted at a fixed interval and with a
@@ -35,7 +34,7 @@ inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of 
 
 The rest of this tutorial is going to use the Particles2D node. First, add a Particles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
-and that there is a warning icon next to your Particles2D node in the inspector. This
+and that there is a warning icon next to your Particles2D node in the scene dock. This
 is because the node needs a ParticlesMaterial to function.
 
 ParticlesMaterial

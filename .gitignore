@@ -1,3 +1,7 @@
+*.csv
+!redirects.csv
+.env
+
 _build/
 env/
 __pycache__

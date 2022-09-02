@@ -13,7 +13,9 @@ Exporting is done by using the ``@export`` annotation::
 
     extends Button
 
-    @export var number = 5 # Value will be saved and visible in the property editor.
+    @export var number = 5
+
+In that example the value `5` will be saved and visible in the property editor.
 
 An exported variable must be initialized to a constant expression or have a type specifier
 in the variable. Some of the export annotations have a specific type and don't need the variable to be typed (see the
@@ -29,114 +31,196 @@ Exporting can only be done with built-in types or objects derived from the :ref:
 .. note::
 
     Exporting properties can also be done in other languages such as C#.
-    The syntax varies depending on the language.
+    The syntax varies depending on the language. See :ref:`doc_c_sharp_exports`
+    for information on C# exports.
 
-Examples
---------
+Basic use
+---------
+
+If the exported value assigns a constant or constant expression,
+the type will be inferred and used in the editor.
 
 ::
 
-    # If the exported value assigns a constant or constant expression,
-    # the type will be inferred and used in the editor.
-
     @export var number = 5
 
-    # If there's no default value, you can add a type to the variable.
+If there's no default value, you can add a type to the variable.
+
+::
 
     @export var number: int
 
-    # Export works with resource types.
+Export works with resource types.
+
+::
 
     @export var character_face: Texture
     @export var scene_file: PackedScene
-    # There are many resource types that can be used this way, try e.g.
-    # the following to list them:
+
+There are many resource types that can be used this way, try e.g.
+the following to list them:
+
+::
+
     @export var resource: Resource
 
-    # Integers and strings hint enumerated values.
+Integers and strings hint enumerated values.
+
+::
 
     # Editor will enumerate as 0, 1 and 2.
     @export_enum("Warrior", "Magician", "Thief") var character_class
-    # If type is String, editor will enumerate with string names.
+
+If type is String, editor will enumerate with string names.
+
+::
+
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String
 
-    # Named enum values
+Named enum values
+-----------------
 
-    # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
+Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
+
+::
+
     enum NamedEnum {THING_1, THING_2, ANOTHER_THING = -1}
     @export var x: NamedEnum
 
-    # Strings as paths
+Strings as paths
+----------------
 
-    # String is a path to a file.
+String as a path to a file.
+
+::
+
     @export_file var f
-    # String is a path to a directory.
+
+String as a path to a directory.
+
+::
+
     @export_dir var f
-    # String is a path to a file, custom filter provided as hint.
+
+String as a path to a file, custom filter provided as hint.
+
+::
+
     @export_file("*.txt") var f
 
-    # Using paths in the global filesystem is also possible,
-    # but only in scripts in tool mode.
+Using paths in the global filesystem is also possible,
+but only in scripts in tool mode.
 
-    # String is a path to a PNG file in the global filesystem.
+String as a path to a PNG file in the global filesystem.
+
+::
+
     @export_global_file("*.png") var tool_image
-    # String is a path to a directory in the global filesystem.
+
+String as a path to a directory in the global filesystem.
+
+::
+
     @export_global_dir var tool_dir
 
-    # The multiline annotation tells the editor to show a large input
-    # field for editing over multiple lines.
+The multiline annotation tells the editor to show a large input
+field for editing over multiple lines.
+
+::
+
     @export_multiline var text
 
-    # Limiting editor input ranges
+Limiting editor input ranges
+----------------------------
 
-    # Allow integer values from 0 to 20.
+Allow integer values from 0 to 20.
+
+::
+
     @export_range(0, 20) var i
-    # Allow integer values from -10 to 20.
+
+Allow integer values from -10 to 20.
+
+::
+
     @export_range(-10, 20) var j
-    # Allow floats from -10 to 20 and snap the value to multiples of 0.2.
+
+Allow floats from -10 to 20 and snap the value to multiples of 0.2.
+
+::
+
     @export_range(-10, 20, 0.2) var k: float
-    # The limits can be only for the slider if you add the hints "or_greater" and/or "or_lesser".
+
+The limits can be only for the slider if you add the hints "or_greater" and/or "or_lesser".
+
+::
+
     @export_range(0, 100, 1, "or_greater", "or_lesser")
-    # Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
-    # while snapping to steps of 20. The editor will present a
-    # slider for easily editing the value.
-    @export_exp_range(100, 1000, 20) var l
 
-    # Floats with easing hint
+.. TODO: Document other hint strings usable with export_range.
 
-    # Display a visual representation of the 'ease()' function
-    # when editing.
+Floats with easing hint
+-----------------------
+
+Display a visual representation of the 'ease()' function
+when editing.
+
+::
+
     @export_exp_easing var transition_speed
 
-    # Colors
+Colors
+------
 
-    # Regular color given as red-green-blue-alpha value.
+Regular color given as red-green-blue-alpha value.
+
+::
+
     @export var col: Color
-    # Color given as red-green-blue value (alpha will always be 1).
+
+Color given as red-green-blue value (alpha will always be 1).
+
+::
+
     @export_color_no_alpha var col: Color
 
-    # Nodes
+Nodes
+-----
 
-    # Another node in the scene can be exported as a NodePath.
+Nodes can't be directly exported. Instead you need to export
+a node path, then use that node path with `get_node()`
+
+::
+
     @export var node_path: NodePath
-    # Do take note that the node itself isn't being exported -
-    # there is one more step to call the true node:
     var node = get_node(node_path)
-    # If you want to limit the types of nodes, you can use the @export_node_path annotation.
+
+If you want to limit the types of nodes, you can use the @export_node_path annotation.
+
+::
+
     @export_node_path(Button, TouchScreenButton) var some_button
 
-    # Resources
+Resources
+---------
+
+::
 
     @export var resource: Resource
-    # In the Inspector, you can then drag and drop a resource file
-    # from the FileSystem dock into the variable slot.
 
-    # Opening the inspector dropdown may result in an
-    # extremely long list of possible classes to create, however.
-    # Therefore, if you specify an extension of Resource such as:
+In the Inspector, you can then drag and drop a resource file
+from the FileSystem dock into the variable slot.
+
+Opening the inspector dropdown may result in an
+extremely long list of possible classes to create, however.
+Therefore, if you specify an extension of Resource such as:
+
+::
+
     @export var resource: AnimationNode
-    # The drop-down menu will be limited to AnimationNode and all
-    # its inherited classes.
+
+The drop-down menu will be limited to AnimationNode and all
+its inherited classes.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
@@ -157,12 +241,14 @@ has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``const ELEMENT_WIND = 8`` and so on).
 
-Export annotations are also provided for the physics and render layers defined in the project settings::
+Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
 
     @export_flags_2d_physics var layers_2d_physics
     @export_flags_2d_render var layers_2d_render
+    @export_flags_2d_navigation var layers_2d_navigation
     @export_flags_3d_physics var layers_3d_physics
     @export_flags_3d_render var layers_3d_render
+    @export_flags_3d_navigation var layers_3d_navigation
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
@@ -176,38 +262,40 @@ If the exported array specifies a type which inherits from Resource, the array
 values can be set in the inspector by dragging and dropping multiple files
 from the FileSystem dock at once.
 
+The default value **must** be a constant expression.
+
 ::
 
-    # Default value must be a constant expression.
+    @export var a = [1, 2, 3]
 
-    export var a = [1, 2, 3]
+Exported arrays can specify type (using the same hints as before).
 
-    # Exported arrays can specify type (using the same hints as before).
+::
 
-    export(Array, int) var ints = [1, 2, 3]
-    export(Array, int, "Red", "Green", "Blue") var enums = [2, 1, 0]
-    export(Array, Array, float) var two_dimensional = [[1.0, 2.0], [3.0, 4.0]]
+    @export var ints: Array[int] = [1, 2, 3]
+    @export var two_dimensional: Array[Array[float]] = [[1.0, 2.0], [3.0, 4.0]]
 
-    # You can omit the default value, but then it would be null if not assigned.
+You can omit the default value, but it would then be ``null`` if not assigned.
 
-    export(Array) var b
-    export(Array, PackedScene) var scenes
+::
 
-    # Arrays with specified types which inherit from resource can be set by
-    # drag-and-dropping multiple files from the FileSystem dock.
+    @export var b: Array
+    @export var scenes: Array[PackedScene]
 
-    export(Array, Texture) var textures
-    export(Array, PackedScene) var scenes
+Arrays with specified types which inherit from resource can be set by
+drag-and-dropping multiple files from the FileSystem dock.
 
-    # Typed arrays also work, only initialized empty:
+::
 
-    export var vector3s = PackedVector3Array()
-    export var strings = PackedStringArray()
+    @export var textures: Array[Texture] = []
+    @export var scenes: Array[PackedScene] = []
 
-    # Default value can include run-time values, but can't
-    # be exported.
+Packed type arrays also work, but only initialized empty:
 
-    var c = [a, 2, 3]
+::
+
+    @export var vector3s = PackedVector3Array()
+    @export var strings = PackedStringArray()
 
 Setting exported variables from a tool script
 ---------------------------------------------

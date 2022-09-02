@@ -40,10 +40,10 @@ Array vs. Dictionary vs. Object
 -------------------------------
 
 Godot stores all variables in the scripting API in the
-`Variant <https://docs.godotengine.org/en/latest/development/cpp/variant_class.html>`_
-class. Variants can store Variant-compatible data structures such as
-:ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well as
-:ref:`Object <class_Object>` s.
+:ref:`Variant <doc_variant_class>` class.
+Variants can store Variant-compatible data structures such as
+:ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well
+as :ref:`Objects <class_Object>`.
 
 Godot implements Array as a ``Vector<Variant>``. The engine stores the Array
 contents in a contiguous section of memory, i.e. they are in a row adjacent
@@ -85,7 +85,7 @@ Contiguous memory stores imply the following operation performance:
       This makes only 2 copies of the array (still constant time, but slow)
       versus copying roughly 1/2 of the array, on average, N times (linear time).
 
-- **Get, Set:** Fastest *by position*. Ex. can request 0th, 2nd, 10th record, etc.
+- **Get, Set:** Fastest *by position*. E.g. can request 0th, 2nd, 10th record, etc.
   but cannot specify which record you want.
 
     - Op: 1 addition operation from array start position up to desired index.
@@ -257,14 +257,18 @@ tree structures.
 
         public override void Notification(int what)
         {
-            if (what == NotificationPredelete)
+            switch (what)
             {
-                foreach (object child in _children)
-                {
-                    TreeNode node = child as TreeNode;
-                    if (node != null)
-                        node.Free();
-                }
+                case NotificationPredelete:
+                    foreach (object child in _children)
+                    {
+                        TreeNode node = child as TreeNode;
+                        if (node != null)
+                            node.Free();
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
@@ -299,8 +303,8 @@ to group them together as related concepts, then it makes sense to use them as
 strings. That way, a separate data structure to execute on the printing is
 unnecessary.
 
-AnimatedTexture vs. AnimatedSprite vs. AnimationPlayer vs. AnimationTree
-------------------------------------------------------------------------
+AnimatedTexture vs. AnimatedSprite2D vs. AnimationPlayer vs. AnimationTree
+--------------------------------------------------------------------------
 
 Under what circumstances should one use each of Godot's animation classes?
 The answer may not be immediately clear to new Godot users.
@@ -313,20 +317,20 @@ Users can manipulate...
 
 2. the number of regions contained within the texture (frames).
 
-Godot's :ref:`VisualServer <class_VisualServer>` then draws
+Godot's :ref:`RenderingServer <class_RenderingServer>` then draws
 the regions in sequence at the prescribed rate. The good news is that this
 involves no extra logic on the part of the engine. The bad news is
 that users have very little control.
 
 Also note that AnimatedTexture is a :ref:`Resource <class_Resource>` unlike
 the other :ref:`Node <class_Node>` objects discussed here. One might create
-a :ref:`Sprite <class_Sprite>` node that uses AnimatedTexture as its texture.
+a :ref:`Sprite2D <class_Sprite2D>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
 in a :ref:`TileSet <class_TileSet>` and integrate it with a
 :ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
-The AnimatedSprite node, in combination with the
+The AnimatedSprite2D node, in combination with the
 :ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
@@ -336,7 +340,7 @@ If one needs trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
 peripheral elements besides the frame-based animation), then will need to use
 an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
-the AnimatedSprite.
+the AnimatedSprite2D.
 
 AnimationPlayers are also the tool one will need to use if they wish to design
 more complex 2D animation systems, such as...

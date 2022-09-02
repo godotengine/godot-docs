@@ -69,10 +69,9 @@ The following labels are currently defined in the Godot repository:
    feature requests. Please use
    `godot-proposals <https://github.com/godotengine/godot-proposals>`__ instead.
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
-   These meetings are public and are held regularly on the ``#godotengine-meeting``
-   IRC channel.
--  *Junior job*: the issue is *assumed* to be an easy one to fix, which makes
-   it a great fit for junior contributors who need to become familiar with
+   These meetings are public and are held on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
+-  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
+   it a great fit for new contributors who need to become familiar with
    the code base.
 -  *High priority:* the issue is particularly important as it can
    prevent people from releasing their projects or cause data loss.
@@ -81,6 +80,9 @@ The following labels are currently defined in the Godot repository:
    and thus need further testing. This can mean that it needs to be tested
    on different hardware/software configurations or even that the steps to
    reproduce are not certain.
+-  *Performance*: issues that directly impact engine or editor performance.
+   Can also be used for pull requests that improve performance or add low-end-friendly options.
+   Should not be coupled with *Usability*.
 -  *PR welcome / Hero wanted!*: Contributions for issues with these labels
    are especially welcome. Note that this **doesn't** mean you can't work
    on issues without these labels.
@@ -92,7 +94,7 @@ The following labels are currently defined in the Godot repository:
    To do so, you need to open a new pull request based on the original pull request.
 -  *Tracker*: issue used to track other issues (like all issues related to
    the plugin system).
--  *Usability*: issues that directly impact user usability.
+-  *Usability*: issues that directly impact user usability. Should not be coupled with *Performance*.
 
 The categories are used for general triage of the issues. They can be
 combined in some way when relevant, e.g. an issue can be labelled
@@ -102,6 +104,8 @@ feature request, or one that is not precise enough to be worked on.
 
 **Topics:**
 
+-  *2D*: relates to 2D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *3D*.
+-  *3D*: relates to 3D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *2D*.
 -  *Assetlib*: relates to issues with the asset library.
 -  *Audio*: relates to the audio features (low and high level).
 -  *Buildsystem*: relates to building issues, either linked to the SCons
@@ -125,7 +129,6 @@ feature request, or one that is not precise enough to be worked on.
 -  *Shaders*: relates to the Godot shader language or visual shaders.
 -  *Tests*: relates to unit tests.
 -  *Thirdparty*: relates to third-party libraries used in Godot.
--  *VisualScript*: relates to issues with the visual scripting language (*not* visual shaders).
 -  *XR*: relates to Augmented Reality or Virtual Reality.
 
 Issues would typically correspond to only one topic, though it's not

@@ -28,6 +28,8 @@ Godot can import the following image formats:
   For complex vectors, rendering them to PNGs using Inkscape is often a better solution.
   This can be automated thanks to its `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
 - WebP (``.webp``)
+  - WebP files support transparency and can be compressed lossily or losslessly.
+  The precision is limited to 8 bits per channel.
 
 .. note::
 
@@ -78,21 +80,21 @@ Compress Mode
 In this table, each of the four options are described together with their
 advantages and disadvantages (|good| = best, |bad| = worst):
 
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-|                | Uncompressed           | Compress Lossless (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
-+================+========================+===========================+=========================+======================================================+
-| Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC or PVRTC/ETC depending on platform |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Size on Disk   | |bad| Large            | |regular| Small           | |good| Very Small       | |regular| Small                                      |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Memory Usage   | |bad| Large            | |bad| Large               | |bad| Large             | |good| Small                                         |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Performance    | |regular| Normal       | |regular| Normal          | |regular| Normal        | |good| Fast                                          |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Quality Loss   | |good| None            | |good| None               | |regular| Slight        | |bad| Moderate                                       |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Load Time      | |regular| Normal       | |bad| Slow                | |bad| Slow              | |good| Fast                                          |
-+----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+|                | Uncompressed           | Compress Lossless             | Compress Lossy       | Compress VRAM                                        |
++================+========================+===============================+======================+======================================================+
+| Description    | Stored as raw pixels   | Stored as Lossless WebP / PNG | Stored as Lossy WebP | Stored as S3TC, BPTC or ETC2 depending on platform   |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Size on Disk   | |bad| Large            | |regular| Small               | |good| Very Small    | |regular| Small                                      |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Memory Usage   | |bad| Large            | |bad| Large                   | |bad| Large          | |good| Small                                         |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Performance    | |regular| Normal       | |regular| Normal              | |regular| Normal     | |good| Fast                                          |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Quality Loss   | |good| None            | |good| None                   | |regular| Slight     | |bad| Moderate                                       |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
+| Load Time      | |regular| Normal       | |bad| Slow                    | |bad| Slow           | |good| Fast                                          |
++----------------+------------------------+-------------------------------+----------------------+------------------------------------------------------+
 
 .. |bad| image:: img/bad.png
 
@@ -120,10 +122,10 @@ Note that RGTC compression affects the resulting normal map image. You will have
 
 .. note::
 
-  Godot requires the normal map to use the X+, Y- and Z+ coordinates. In other
-  words, if you've imported a material made to be used with another engine, you
-  may have to convert the normal map so its Y axis is flipped. Otherwise, the
-  normal map direction may appear to be inverted on the Y axis.
+  Godot requires the normal map to use the X+, Y+ and Z+ coordinates, this is
+  known as OpenGL style. If you've imported a material made to be used with
+  another engine it may be DirectX style, in which case the normal map needs to
+  be converted so its Y axis is flipped.
 
   More information about normal maps (including a coordinate order table for
   popular engines) can be found
@@ -164,11 +166,21 @@ Anisotropic
 
 When textures are near parallel to the view (like floors), this option makes them have more detail by reducing blurriness.
 
-SRGB
+sRGB
 ~~~~
 
 Godot uses Linear colorspace when rendering 3D. Textures mapped to albedo or detail channels need to have this option turned on in order for colors to look correct.
-When set to "Detect" mode, the texture will be marked as SRGB when used in albedo channels.
+When set to **Detect** mode, the texture will be marked as sRGB when used in albedo channels.
+
+.. warning::
+
+    Since the texture will have its data modified when sRGB is enabled, this
+    means using the same texture in both 2D and 3D will make the texture
+    display with incorrect colors in either 2D or 3D.
+
+    To work around this, make a copy of the texture on the filesystem and enable
+    sRGB on one of the copies only. Use the copy with sRGB enabled in 3D, and
+    the copy with sRGB disabled in 2D.
 
 Process
 -------

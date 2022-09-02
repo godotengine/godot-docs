@@ -8,7 +8,7 @@ shapes or custom meshes to create more complex shapes. In 3D modelling software,
 CSG is mostly known as "Boolean Operators".
 
 Level prototyping is one of the main uses of CSG in Godot. This technique allows
-users to create simple versions of most common shapes by combining primitives.
+users to create the most common shapes by combining primitives.
 Interior environments can be created by using inverted primitives.
 
 .. note:: The CSG nodes in Godot are mainly intended for prototyping. There is
@@ -100,7 +100,7 @@ Processing order
 ~~~~~~~~~~~~~~~~
 
 Every CSG node will first process its children nodes and their operations:
-union, intersection or subtraction, in tree order, and apply them to itself one
+union, intersection, or subtraction, in tree order, and apply them to itself one
 after the other.
 
 .. note:: In the interest of performance, make sure CSG geometry remains

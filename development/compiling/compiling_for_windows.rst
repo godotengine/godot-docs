@@ -5,6 +5,11 @@ Compiling for Windows
 
 .. highlight:: shell
 
+.. seealso::
+
+    This page describes how to compile Windows editor and export template binaries from source.
+    If you're looking to export your project to Windows instead, read :ref:`doc_exporting_for_windows`.
+
 Requirements
 ------------
 
@@ -16,46 +21,44 @@ For compiling under Windows, the following is required:
   will have to run/download the installer again.**
 - `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
-  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later. Because
-  MinGW has not officially released GCC 9 yet, you can get an alternate installer from
-  `here <https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release>`_.
+  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
-- `SCons 3.0 <https://www.scons.org/>`_ build system. If using Visual Studio 2019,
-  you need at least SCons 3.1.1.
-- *Optional* - `yasm <https://yasm.tortall.net/>`_ (for WebM SIMD optimizations)
+  **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
+- `SCons <https://www.scons.org/>`_ build system. Using the latest release is
+  recommended, especially for proper support of recent Visual Studio releases.
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              scoop install gcc python scons yasm make
+              scoop install gcc python scons make
 
 .. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
 
-              pacman -S mingw-w64-x86_64-python3-pip \
-                  mingw-w64-x86_64-gcc mingw-w64-x86_64-yasm \
-                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc \
-                  mingw-w64-i686-yasm make
+              pacman -S mingw-w64-x86_64-python3-pip mingw-w64-x86_64-gcc  \
+                  mingw-w64-i686-python3-pip mingw-w64-i686-gcc make
 
           For each MSYS2 MinGW subsystem, you should then run
-          `pip install scons` in its shell.
+          `pip3 install scons` in its shell.
 
-.. seealso:: For a general overview of SCons usage for Godot, see
+.. seealso:: To get the Godot source code for compiling, see
+             :ref:`doc_getting_source`.
+
+             For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
-
-Setting up Python
------------------
-
-First you need to install Python 3.5 or newer. Make sure to enable the option
-to add Python to the ``PATH`` in the Python installer. The SCons installer
-should then detect and use the existing Python installation.
 
 Setting up SCons
 ----------------
 
-To install SCons open the command prompt and run the following command.
+To install SCons, open the command prompt and run the following command::
 
-``python -m pip install scons``
+    python -m pip install scons
+
+If you are prompted with the message
+``Defaulting to user installation because normal site-packages is not
+writeable``, you may have to run that command again using elevated
+permissions. Open a new command prompt as an Administrator then run the command
+again to ensure that SCons is available from the ``PATH``.
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
@@ -65,6 +68,10 @@ If the commands above don't work, make sure to add Python to your ``PATH``
 environment variable after installing it, then check again.
 You can do so by running the Python installer again and enabling the option
 to add Python to the ``PATH``.
+
+If SCons cannot detect your Visual Studio installation, it might be that your
+SCons version is too old. Update it to the latest version with
+``python -m pip install --upgrade scons``.
 
 .. _doc_compiling_for_windows_install_vs:
 
@@ -85,11 +92,22 @@ a **Repair** option, which won't let you install C++ tools.
 Downloading Godot's source
 --------------------------
 
-Godot's source code is `hosted on GitHub <https://github.com/godotengine/godot>`_.
-Downloading it (cloning) using `Git <https://git-scm.com/>`_ is recommended.
+Refer to :ref:`doc_getting_source` for detailed instructions.
 
 The tutorial will assume from now on that you placed the source code in
 ``C:\godot``.
+
+.. warning::
+
+    To prevent slowdowns caused by continuous virus scanning during compilation,
+    add the Godot source folder to the list of exceptions in your antivirus
+    software.
+
+    For Windows Defender, hit the :kbd:`Windows` key, type
+    "Windows Defender Settings" then hit :kbd:`Enter`.
+    Under **Virus & threat protection**, go to **Virus & threat protection setting**
+    and scroll down to **Exclusions**. Click **Add or remove exclusions** then
+    add the Godot source folder.
 
 Compiling
 ---------
@@ -100,7 +118,9 @@ Selecting a compiler
 SCons will automatically find and use an existing Visual Studio installation.
 If you do not have Visual Studio installed, it will attempt to use
 MinGW instead. If you already have Visual Studio installed and want to
-use MinGW, pass ``use_mingw=yes`` to the SCons command line.
+use MinGW, pass ``use_mingw=yes`` to the SCons command line. Note that MSVC
+builds cannot be performed from the MSYS2 or MinGW shells. Use either
+``cmd.exe`` or PowerShell instead.
 
 During development, using the Visual Studio compiler is usually a better idea,
 as it links the Godot binary much faster than MinGW. However, MinGW can
@@ -142,7 +162,7 @@ dependencies. Running it will bring up the Project Manager.
           If you are compiling Godot with MinGW, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
           As link-time optimization is a memory-intensive process,
-          this will require about 3 GB of available RAM while compiling.
+          this will require about 7 GB of available RAM while compiling.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable

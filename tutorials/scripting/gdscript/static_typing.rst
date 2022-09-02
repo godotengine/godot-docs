@@ -178,6 +178,8 @@ get full autocompletion on the player variable thanks to that cast.
 
     If you try to cast with a built-in type and it fails, Godot will throw an error.
 
+.. _doc_gdscript_static_typing_safe_lines:
+
 Safe lines
 ^^^^^^^^^^
 
@@ -248,7 +250,7 @@ Typed or dynamic: stick to one style
 ------------------------------------
 
 Typed GDScript and dynamic GDScript can coexist in the same project. But
-I recommend to stick to either style for consistency in your codebase,
+it's recommended to stick to either style for consistency in your codebase,
 and for your peers. It's easier for everyone to work together if you
 follow the same guidelines, and faster to read and understand other
 people's code.

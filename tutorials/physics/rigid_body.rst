@@ -1,7 +1,7 @@
 .. _doc_rigid_body:
 
-RigidBody
-=========
+Using RigidBody
+===============
 
 What is a rigid body?
 ---------------------
@@ -12,7 +12,11 @@ In order to define the shape of the body, it must have one or more :ref:`Shape <
 How to control a rigid body
 ---------------------------
 
-A rigid body's behavior can be altered by setting its properties, such as friction, mass, bounce, etc. These properties can be set in the Inspector or via code. See :ref:`RigidBody <class_RigidBody>` for the full list of properties and their effects.
+A rigid body's behavior can be altered by setting its properties, such as mass and weight.
+A physics material needs to be added to the rigid body to adjust its friction and bounce,
+and set if it's absorbent and/or rough. These properties can be set in the Inspector or via code.
+See :ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsMaterial <class_PhysicsMaterial>` for
+the full list of properties and their effects.
 
 There are several ways to control a rigid body's movement, depending on your desired application.
 
@@ -48,7 +52,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
     class Body : RigidBody
     {
-        private void LookFollow(PhysicsDirectBodyState state, Transform currentTransform, Vector3 targetPosition)
+        private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {
             var upDir = new Vector3(0, 1, 0);
             var curDir = currentTransform.basis.Xform(new Vector3(0, 0, 1));

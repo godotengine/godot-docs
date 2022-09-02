@@ -22,25 +22,25 @@ Pros & cons of dynamic typing
 GDScript is a Dynamically Typed language. As such, its main advantages
 are that:
 
--  The language is simple and easy to learn.
+-  The language is easy to get started with.
 -  Most code can be written and changed quickly and without hassle.
 -  Less code written means less errors & mistakes to fix.
--  Easier to read the code (less clutter).
+-  The code is easy to read (little clutter).
 -  No compilation is required to test.
 -  Runtime is tiny.
--  Duck-typing and polymorphism by nature.
+-  It has duck-typing and polymorphism by nature.
 
 While the main disadvantages are:
 
 -  Less performance than statically typed languages.
--  More difficult to refactor (symbols can't be traced)
+-  More difficult to refactor (symbols can't be traced).
 -  Some errors that would typically be detected at compile time in
    statically typed languages only appear while running the code
    (because expression parsing is more strict).
 -  Less flexibility for code-completion (some variable types are only
    known at run-time).
 
-This, translated to reality, means that Godot+GDScript are a combination
+This, translated to reality, means that Godot used with GDScript is a combination
 designed to create games quickly and efficiently. For games that are very
 computationally intensive and can't benefit from the engine built-in
 tools (such as the Vector types, Physics Engine, Math library, etc), the
@@ -204,7 +204,7 @@ And in GDScript:
 
 ::
 
-    var array = [10, "hello", 40, 60] # Simple, and can mix types.
+    var array = [10, "hello", 40, 60] # You can mix types.
     array.resize(3) # Can be resized.
     use_array(array) # Passed as reference.
     # Freed when no longer in use.
@@ -246,7 +246,7 @@ Example of Dictionary:
 
 ::
 
-    var d = {"name": "John", "age": 22} # Simple syntax.
+    var d = {"name": "John", "age": 22}
     print("Name: ", d["name"], " Age: ", d["age"])
 
 Dictionaries are also dynamic, keys can be added or removed at any point
@@ -259,7 +259,7 @@ at little cost:
     d.erase("name") # Removal.
 
 In most cases, two-dimensional arrays can often be implemented more
-easily with dictionaries. Here's a simple battleship game example:
+easily with dictionaries. Here's a battleship game example:
 
 ::
 
@@ -318,7 +318,7 @@ states and quick structs:
 For & while
 -----------
 
-Iterating in some statically typed languages can be quite complex:
+Iterating using the C-style for loop in C-derived languages can be quite complex:
 
 .. code-block:: cpp
 
@@ -338,7 +338,7 @@ Iterating in some statically typed languages can be quite complex:
         std::cout << *it << std::endl;
     }
 
-This is usually greatly simplified in dynamically typed languages:
+Because of this, GDScript makes the opinonated decision to have a for-in loop over iterables instead:
 
 ::
 
@@ -368,7 +368,7 @@ The range() function can take 3 arguments:
     range(b, n) # Will go from b to n-1.
     range(b, n, s) # Will go from b to n-1, in steps of s.
 
-Some statically typed programming language examples:
+Some examples involving C-style for loops:
 
 .. code-block:: cpp
 
@@ -391,7 +391,7 @@ Translate to:
     for i in range(5, 10, 2):
         pass
 
-And backwards looping is done through a negative counter:
+And backwards looping done through a negative counter:
 
 ::
 
@@ -515,8 +515,8 @@ Yes, we should call it Hulk typing instead.
 
 It's possible that the object being hit doesn't have a smash() function.
 Some dynamically typed languages simply ignore a method call when it
-doesn't exist (like Objective C), but GDScript is stricter, so
-checking if the function exists is desirable:
+doesn't exist, but GDScript is stricter, so checking if the function
+exists is desirable:
 
 ::
 

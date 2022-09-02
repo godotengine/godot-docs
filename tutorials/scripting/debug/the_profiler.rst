@@ -30,6 +30,11 @@ To begin profiling, click on the **Start** button in the top-left. Run your game
 and data will start appearing. You can also start profiling at any time before
 or during gameplay, depending on if you want.
 
+.. note::
+
+    The profiler does not currently support C# scripts. C# scripts can be profiled
+    using JetBrains Rider and JetBrains dotTrace with the Godot support plugin.
+
 You can clear the data by clicking the **Clear** button anytime. Use the
 **Measure** drop-down menu to change the type of data you measure. The
 measurements panel and the graph will update accordingly.
@@ -40,7 +45,7 @@ The measured data
 The profiler's interface is split into two. There is a list of functions on the
 left and the performance graph on the right.
 
-The main measurements are frame time, physics time, idle time, and physics time.
+The main measurements are frame time, physics frame, idle time, and physics time.
 
 - The **frame time** is the time it takes Godot to execute all the logic for an
   entire image, from physics to rendering.

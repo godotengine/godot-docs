@@ -19,28 +19,28 @@ C# is a statically typed language. Therefore, you can't do the following:
     mySprite.SetFrame(0);
 
 The method ``GetNode()`` returns a ``Node`` instance.
-You must explicitly convert it to the desired derived type, ``Sprite`` in this case.
+You must explicitly convert it to the desired derived type, ``Sprite2D`` in this case.
 
 For this, you have various options in C#.
 
 **Casting and Type Checking**
 
-Throws ``InvalidCastException`` if the returned node cannot be cast to Sprite.
+Throws ``InvalidCastException`` if the returned node cannot be cast to Sprite2D.
 You would use it instead of the ``as`` operator if you are pretty sure it won't fail.
 
 .. code-block:: csharp
 
-    Sprite mySprite = (Sprite)GetNode("MySprite");
+    Sprite2D mySprite = (Sprite2D)GetNode("MySprite");
     mySprite.SetFrame(0);
 
 **Using the AS operator**
 
-The ``as`` operator returns ``null`` if the node cannot be cast to Sprite,
+The ``as`` operator returns ``null`` if the node cannot be cast to Sprite2D,
 and for that reason, it cannot be used with value types.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNode("MySprite") as Sprite;
+    Sprite2D mySprite = GetNode("MySprite") as Sprite2D;
     // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
@@ -52,28 +52,28 @@ Generic methods are also provided to make this type conversion transparent.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNode<Sprite>("MySprite");
+    Sprite2D mySprite = GetNode<Sprite2D>("MySprite");
     mySprite.SetFrame(0);
 
 ``GetNodeOrNull<T>()`` uses the ``as`` operator and will return ``null`` if the node cannot be cast to the desired type.
 
 .. code-block:: csharp
 
-    Sprite mySprite = GetNodeOrNull<Sprite>("MySprite");
+    Sprite2D mySprite = GetNodeOrNull<Sprite2D>("MySprite");
     // Only call SetFrame() if mySprite is not null
     mySprite?.SetFrame(0);
 
 **Type checking using the IS operator**
 
-To check if the node can be cast to Sprite, you can use the ``is`` operator.
-The ``is`` operator returns false if the node cannot be cast to Sprite,
+To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
+The ``is`` operator returns false if the node cannot be cast to Sprite2D,
 otherwise it returns true.
 
 .. code-block:: csharp
 
-    if (GetNode("MySprite") is Sprite)
+    if (GetNode("MySprite") is Sprite2D)
     {
-        // Yup, it's a sprite!
+        // Yup, it's a Sprite2D!
     }
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
@@ -83,17 +83,17 @@ For more advanced type checking, you can look into `Pattern Matching <https://do
 C# signals
 ----------
 
-For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
+For a complete C# example, see the :ref:`doc_signals` section in the step by step tutorial.
 
 Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
 
 .. code-block:: csharp
 
     [Signal]
-    delegate void MySignal();
+    delegate void MySignalEventHandler();
 
     [Signal]
-    delegate void MySignalWithArguments(string foo, int bar);
+    delegate void MySignalWithArgumentsEventHandler(string foo, int bar);
 
 These signals can then be connected either in the editor or from code with ``Connect``.
 If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the "Build" button at the top right corner of the editor window.
@@ -112,8 +112,8 @@ If you want to connect a signal in the editor, you need to (re)build the project
 
     public void SomeFunction()
     {
-        instance.Connect("MySignal", this, "MyCallback");
-        instance.Connect(nameof(MySignalWithArguments), this, "MyCallbackWithArguments");
+        instance.MySignal += MyCallback;
+        instance.MySignalWithArguments += MyCallbackWithArguments;
     }
 
 Emitting signals is done with the ``EmitSignal`` method.
@@ -123,12 +123,12 @@ Emitting signals is done with the ``EmitSignal`` method.
     public void SomeFunction()
     {
         EmitSignal(nameof(MySignal));
-        EmitSignal("MySignalWithArguments", "hello there", 28);
+        EmitSignal(nameof(MySignalWithArguments), "hello there", 28);
     }
 
 Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
 
-It is possible to bind values when establishing a connection by passing an object array.
+It is possible to bind values when establishing a connection by passing a Godot array.
 
 .. code-block:: csharp
 
@@ -144,8 +144,8 @@ It is possible to bind values when establishing a connection by passing an objec
         var plusButton = (Button)GetNode("PlusButton");
         var minusButton = (Button)GetNode("MinusButton");
 
-        plusButton.Connect("pressed", this, "ModifyValue", new object[] { 1 });
-        minusButton.Connect("pressed", this, "ModifyValue", new object[] { -1 });
+        plusButton.Pressed += () => ModifyValue(1);
+        minusButton.Pressed += () => ModifyValue(-1);
     }
 
 Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
@@ -226,7 +226,7 @@ Full list of defines
   ``GODOT_ANDROID``, ``GODOT_IOS``, ``GODOT_HTML5``, or ``GODOT_SERVER``
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
-  :ref:``OS <class_OS>`` singleton, but not every possible OS
+  :ref:`OS <class_OS>` singleton, but not every possible OS
   the method returns is an OS that Godot with Mono runs on.
 
 When **exporting**, the following may also be defined depending on the export features:

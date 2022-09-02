@@ -4,7 +4,7 @@ Introduction to 3D
 ==================
 
 Creating a 3D game can be challenging. That extra Z coordinate makes
-many of the common techniques that helped to make 2D games simple no
+many of the common techniques that helped to make 2D games simpler no
 longer work. To aid in this transition, it is worth mentioning that
 Godot uses similar APIs for 2D and 3D. Most nodes are the same and
 are present in both 2D and 3D versions. In fact, it is worth checking
@@ -29,7 +29,7 @@ node for everything 3D.
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
 Spatial). This transform can be accessed as a 4×3
-:ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
+:ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
@@ -40,9 +40,9 @@ scale.
 
 Unlike 2D, where loading image content and drawing is straightforward,
 3D is a little more difficult. The content needs to be created with
-special 3D tools (usually referred to as DCCs) and exported to an
-exchange file format in order to be imported in Godot (3D formats are
-not as standardized as images).
+special 3D tools (usually referred to as Digital Content Creation tools, or
+DCCs) and exported to an exchange file format to be imported in
+Godot. This is required since 3D formats are not as standardized as images.
 
 DCC-created models
 ------------------
@@ -52,7 +52,7 @@ DCC-created models
 
 There are two pipelines to import 3D models in Godot. The first and most
 common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
-entire scenes (just as they look in the DCC), including animation,
+entire scenes (exactly as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
@@ -76,7 +76,7 @@ submitting them to the 3D API has a significant performance cost.
 Immediate geometry
 ------------------
 
-If, instead, there is a requirement to generate simple geometry that
+If, instead, you need to generate simple geometry that
 will be updated often, Godot provides a special node,
 :ref:`ImmediateGeometry <class_ImmediateGeometry>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
@@ -126,15 +126,15 @@ Coordinate system
 -----------------
 
 Godot uses the `metric <https://en.wikipedia.org/wiki/Metric_system>`__
-system for everything. 3D Physics and other areas are tuned for this, so
-attempting to use a different scale is usually a bad idea (unless you
-know what you are doing).
+system for everything in 3D, with 1 unit being equal to 1 meter.
+Physics and other areas are tuned for this scale. Therefore, attempting to use a
+different scale is usually a bad idea (unless you know what you are doing).
 
 When working with 3D assets, it's always best to work in the correct
 scale (set your DCC to metric). Godot allows scaling post-import and,
 while this works in most cases, in rare situations it may introduce
 floating-point precision issues (and thus, glitches or artifacts) in
-delicate areas, such as rendering or physics, so make sure your artists
+delicate areas such as rendering or physics. Make sure your artists
 always work in the right scale!
 
 The Y coordinate is used for "up", though for most objects that need

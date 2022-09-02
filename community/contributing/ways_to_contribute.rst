@@ -16,8 +16,8 @@ positive to the engine, regardless of their skill set:
 -  **Be part of the community.** The best way to contribute to Godot and help
    it become ever better is simply to use the engine and promote it by
    word-of-mouth, in the credits or splash screen of your games, blog posts, tutorials,
-   videos, demos, gamedev or free software events, support on the Q&A, IRC,
-   forums, Discord, etc. Participate!
+   videos, demos, gamedev or free software events, support on the Q&A, forums,
+   Contributors Chat, Discord, etc. Participate!
    Being a user and advocate helps spread the word about our great engine,
    which has no marketing budget and can therefore only rely on its community
    to become more mainstream.
@@ -84,7 +84,9 @@ To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the Git and PR workflow.
 
-A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ (or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
+A good place to start is by searching for issues tagged as
+`good first issue <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22>`_
+on GitHub.
 
 .. seealso:: Technical details about the PR workflow are outlined in a
              specific section, :ref:`doc_pr_workflow`.
@@ -92,6 +94,22 @@ A good place to start is by searching for issues tagged as `junior jobs <https:/
              Details about the code style guidelines and the ``clang-format``
              tool used to enforce them are outlined in
              :ref:`doc_code_style_guidelines`.
+
+All pull requests must go through a review process before being accepted.
+Depending on the scope of the changes, it may take some time for a maintainer
+responsible for the modified part of the engine to provide their review.
+We value all of our contributors and ask them to be patient in the meantime,
+as it is expected that in an open source project like Godot, there is going to be
+way more contributions than people validating them.
+
+To make sure that your time and efforts aren't wasted, it is recommended to vet the idea
+first before implementing it and putting it for a review as a PR. To that end, Godot
+has a `proposal system <https://github.com/godotengine/godot-proposals>`_. Its
+usage is encouraged to plan changes and discuss them with the community. Implementation
+details can also be discussed with other contributors on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
+
+.. note:: Proposals are only required when working on an enhancement or a new feature.
+          Bug reports are sufficient for fixing issues.
 
 Testing and reporting issues
 ----------------------------
@@ -163,7 +181,7 @@ always provide:
    project that reproduces this issue out of the box, zip it and attach it to
    the issue (you can do this by drag and drop).
    Even if you think that the issue is trivial to reproduce, adding a minimal
-   project that lets reproduce it is a big added value. You have to keep in
+   project that lets everyone reproduce it is a big added value. You have to keep in
    mind that there are thousands of issues in the tracker, and developers can
    only dedicate little time to each issue.
 
@@ -181,7 +199,7 @@ There are two separate resources referred to as "documentation" in Godot:
   offline, directly in Godot's code editor, or online at :ref:`Godot API
   <toc-class-ref>`. To contribute to the class reference, you have to edit the
   XML file corresponding to the class and make a pull request.
-  See :ref:`doc_updating_the_class_reference_with_git` and
+  See :ref:`doc_updating_the_class_reference` and
   :ref:`doc_class_reference_writing_guidelines` for more details.
 
 - **The tutorials and engine documentation and its translations.**

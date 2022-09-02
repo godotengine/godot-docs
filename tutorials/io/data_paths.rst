@@ -10,8 +10,8 @@ and where Godot stores user files on your hard-drive.
 Path separators
 ---------------
 
-To as many platforms as possible, Godot only accepts UNIX-style path separators
-(``/``). These work on all platforms, including Windows.
+To make supporting multiple platforms easier, Godot only accepts UNIX-style path
+separators (``/``). These work on all platforms, **including Windows**.
 
 Instead of writing paths like ``C:\Projects``, in Godot, you should write
 ``C:/Projects``.
@@ -26,7 +26,7 @@ this file is your project's root folder.
 You can access any file relative to it by writing paths starting with
 ``res://``, which stands for resources. For example, you can access an image
 file ``character.png`` located in the project's root folder in code with the
-following path: ``res://some_texture.png``.
+following path: ``res://character.png``.
 
 Accessing persistent user data
 ------------------------------
@@ -35,12 +35,33 @@ To store persistent data files, like the player's save or settings, you want to
 use ``user://`` instead of ``res://`` as your path's prefix. This is because
 when the game is running, the project's file system will likely be read-only.
 
-The ``user://`` prefix points to a different directory on the user's device. On
-mobile and consoles, this path is unique to the project. On desktop, the engine
-stores user files in ``~/.local/share/godot/app_userdata/Name`` on
-Linux, ``~/Library/Application Support/Godot/app_userdata/Name`` on macOS (since Catalina) and ``%APPDATA%/Name`` on Windows. ``Name`` is based on the application
-name defined in the Project Settings, but you can override it on a per-platform
-basis using :ref:`feature tags <doc_feature_tags>`.
+The ``user://`` prefix points to a different directory on the user's device.
+Unlike ``res://``, the directory pointed at by ``user://`` is *guaranteed* to be
+writable to, even in an exported project.
+
+On desktop platforms, the actual directory paths for ``user://`` are:
+
++-------------------------------+------------------------------------------------------------------------------+
+| Type                          | Location                                                                     |
++===============================+==============================================================================+
+| User data                     | - Windows: ``%APPDATA%\Godot\app_userdata\[project_name]``                   |
+|                               | - macOS: ``~/Library/Application Support/Godot/app_userdata/[project_name]`` |
+|                               | - Linux: ``~/.local/share/godot/app_userdata/[project_name]``                |
++-------------------------------+------------------------------------------------------------------------------+
+| User data                     | - Windows: ``%APPDATA%\[project_name]``                                      |
+| (when ``use_custom_user_dir`` | - macOS: ``~/Library/Application Support/[project_name]``                    |
+| project setting is ``true``)  | - Linux: ``~/.local/share/[project_name]``                                   |
++-------------------------------+------------------------------------------------------------------------------+
+
+``[project_name]`` is based on the application name defined in the Project Settings, but
+you can override it on a per-platform basis using :ref:`feature tags <doc_feature_tags>`.
+
+On mobile platforms, this path is unique to the project and is not accessible
+by other applications for security reasons.
+
+On HTML5 exports, ``user://`` will refer to a virtual filesystem stored on the
+device via IndexedDB. (Interaction with the main filesystem can still be performed
+through the :ref:`JavaScript <class_JavaScript>` singleton.)
 
 Converting paths to absolute paths or "local" paths
 ---------------------------------------------------
@@ -61,21 +82,25 @@ Editor data paths
 The editor uses different paths for user data, user settings, and cache,
 depending on the platform. By default, these paths are:
 
-+---------------+---------------------------------------------------+
-| Type          | Location                                          |
-+===============+===================================================+
-| User data     | - Windows: ``%APPDATA%\Godot\``                   |
-|               | - macOS: ``~/Library/Application Support/Godot/`` |
-|               | - Linux: ``~/.local/share/godot/``                |
-+---------------+---------------------------------------------------+
-| User settings | - Windows: ``%APPDATA%\Godot\``                   |
-|               | - macOS: ``~/Library/Application Support/Godot/`` |
-|               | - Linux: ``~/.config/godot/``                     |
-+---------------+---------------------------------------------------+
-| Cache         | - Windows: ``%TEMP%\Godot\``                      |
-|               | - macOS: ``~/Library/Caches/Godot/``              |
-|               | - Linux: ``~/.cache/godot/``                      |
-+---------------+---------------------------------------------------+
++-------------------------------+----------------------------------------------------------------+
+| Type                          | Location                                                       |
++===============================+================================================================+
+| User data                     | - Windows: ``%APPDATA%\Godot\app_userdata\[project_name]``     |
+|                               | - macOS: ``~/Library/Application Support/Godot/[project_name]``|
+|                               | - Linux: ``~/.local/share/godot/[project_name]``               |
++-------------------------------+----------------------------------------------------------------+
+| User data                     | - Windows: ``%APPDATA%\[project_name]``                        |
+| (when ``use_custom_user_dir`` | - macOS: ``~/Library/Application Support/[project_name]``      |
+| project setting is ``true``)  | - Linux: ``~/.local/share/[project_name]``                     |
++-------------------------------+----------------------------------------------------------------+
+| User settings                 | - Windows: ``%APPDATA%\Godot\``                                |
+|                               | - macOS: ``~/Library/Application Support/Godot/``              |
+|                               | - Linux: ``~/.config/godot/``                                  |
++-------------------------------+----------------------------------------------------------------+
+| Cache                         | - Windows: ``%TEMP%\Godot\``                                   |
+|                               | - macOS: ``~/Library/Caches/Godot/``                           |
+|                               | - Linux: ``~/.cache/godot/``                                   |
++-------------------------------+----------------------------------------------------------------+
 
 - **User data** contains export templates and project-specific data.
 - **User settings** contains editor settings, text editor themes, script
@@ -106,3 +131,12 @@ editor.
 
 The `Steam release of Godot <https://store.steampowered.com/app/404790/>`__ uses
 self-contained mode by default.
+
+.. note::
+
+    Self-contained mode is not supported in exported projects yet.
+    To read and write files relative to the executable path, use
+    :ref:`OS.get_executable_path() <class_OS_method_get_executable_path>`.
+    Note that writing files in the executable path only works if the executable
+    is placed in a writable location (i.e. **not** Program Files or another
+    directory that is read-only for regular users).

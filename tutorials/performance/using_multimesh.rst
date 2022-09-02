@@ -35,7 +35,7 @@ which are ideal for this).
 
 Another alternative is to use GDNative and C++, which should be extremely efficient (it's possible
 to set the entire state for all objects using linear memory via the
-:ref:`VisualServer.multimesh_set_buffer() <class_VisualServer_method_multimesh_set_buffer>`
+:ref:`RenderingServer.multimesh_set_buffer() <class_RenderingServer_method_multimesh_set_buffer>`
 function). This way, the array can be created with multiple threads, then set in one call, providing
 high cache efficiency.
 
@@ -70,9 +70,10 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 
         # Set the transform of the instances.
         for i in multimesh.visible_instance_count:
-            multimesh.set_instance_transform(i, Transform(Basis(), Vector3(i * 20, 0, 0)))
+            multimesh.set_instance_transform(i, Transform3D(Basis(), Vector3(i * 20, 0, 0)))
 
- .. code-tab:: csharp
+ .. code-tab:: csharp C#
+
     using Godot;
     using System;
 
@@ -94,7 +95,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             // Set the transform of the instances.
             for (int i = 0; i < Multimesh.VisibleInstanceCount; i++)
             {
-                Multimesh.SetInstanceTransform(i, new Transform(Basis.Identity, new Vector3(i * 20, 0, 0)));
+                Multimesh.SetInstanceTransform(i, new Transform3D(Basis.Identity, new Vector3(i * 20, 0, 0)));
             }
         }
     }
