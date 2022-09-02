@@ -61,6 +61,11 @@ use the ``Icon`` setting.
 Changing the file icon
 ----------------------
 
+In Godot 3.5 and later, you can change the file icon without
+external tools using `godoticon <https://github.com/pkowal1982/godoticon>`__.
+Changing the file icon this way should work for executables containing
+an embedded PCK.
+
 .. warning::
 
     There are `known issues <https://github.com/godotengine/godot/issues/33466>`__
