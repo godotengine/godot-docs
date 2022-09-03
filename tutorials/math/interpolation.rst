@@ -118,8 +118,9 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
 
     func _physics_process(delta):
         var mouse_pos = get_local_mouse_position()
-
-        $Sprite2D.position = $Sprite2D.position.lerp(mouse_pos, delta * FOLLOW_SPEED)
+        var weight = 1 - exp(-FOLLOW_SPEED * delta)
+        
+        $Sprite2D.position = $Sprite2D.position.lerp(mouse_pos, weight)
 
  .. code-tab:: csharp
 
@@ -127,15 +128,15 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
 
     public override void _PhysicsProcess(float delta)
     {
-        Vector2 mousePos = GetLocalMousePosition();
-
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
+        Vector2 mousePos = GetLocalMousePosition();
+        float weight = 1f - Mathf.Exp(-FollowSpeed * delta);
 
-        sprite.Position = sprite.Position.Lerp(mousePos, delta * FollowSpeed);
+        sprite.Position = sprite.Position.Lerp(mousePos, weight);
     }
 
 Here is how it looks:
 
 .. image:: img/interpolation_follow.gif
 
-This useful for smoothing camera movement, allies following you (ensuring they stay within a certain range), and many other common game patterns.
+This is useful for smoothing camera movement, allies following you (ensuring they stay within a certain range), and many other common game patterns. Notice that  making movement framerate-independent is more involved than just multiplying weight by delta value.
