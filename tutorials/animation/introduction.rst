@@ -401,7 +401,7 @@ where they were.
 
 If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
-animation editor's **Animation** dropdown menu.
+animation editor's **Edit** dropdown menu.
 
 When adding tracks on new animations, the editor will ask you to automatically
 create a RESET track when using the keyframe icon next to a property in the inspector.
