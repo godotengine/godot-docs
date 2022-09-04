@@ -273,7 +273,9 @@ Exported arrays can specify type (using the same hints as before).
 ::
 
     @export var ints: Array[int] = [1, 2, 3]
-    @export var two_dimensional: Array[Array[float]] = [[1.0, 2.0], [3.0, 4.0]]
+
+    # Nested typed arrays such as `Array[Array[float]]` are not supported yet.
+    @export var two_dimensional: Array[Array] = [[1.0, 2.0], [3.0, 4.0]]
 
 You can omit the default value, but it would then be ``null`` if not assigned.
 
