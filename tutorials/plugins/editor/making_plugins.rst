@@ -41,7 +41,10 @@ You will see the dialog appear, like so:
 The placeholder text in each field describes how it affects the plugin's
 creation of the files and the config file's values.
 
-To continue with the example, use the following values::
+To continue with the example, use the following values:
+
+.. tabs::
+ .. code-tab:: ini GDScript
 
     Plugin Name: My Custom Node
     Subfolder: my_custom_node
@@ -51,6 +54,24 @@ To continue with the example, use the following values::
     Language: GDScript
     Script Name: custom_node.gd
     Activate now: No
+
+ .. code-tab:: ini C#
+
+    Plugin Name: My Custom Node
+    Subfolder: my_custom_node
+    Description: A custom node made to extend the Godot Engine.
+    Author: Your Name Here
+    Version: 1.0.0
+    Language: C#
+    Script Name: CustomNode.cs
+    Activate now: No
+
+.. warning::
+
+    Unchecking the ``Activate now?`` option in C# is always required because,
+    like every other C# script, the EditorPlugin script needs to be compiled which
+    requires building the project. After building the project the plugin can be
+    enabled in the ``Plugins`` tab of ``Project Settings``.
 
 You should end up with a directory structure like this:
 
