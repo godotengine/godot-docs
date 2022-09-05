@@ -17,7 +17,7 @@ Using the animation editor
 The engine comes with tools to author animations in the editor. You can then use
 the code to play and control them at runtime.
 
-Open the player scene, select the player node, and add an animation player node.
+Open the player scene, select the player node, and add an *AnimationPlayer* node.
 
 The *Animation* dock appears in the bottom panel.
 
