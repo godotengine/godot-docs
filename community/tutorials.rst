@@ -43,6 +43,7 @@ Video tutorials
 - `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
 - `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
 - `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
+- `bitbrain <https://www.youtube.com/watch?v=lFIBn8kJ-IM&list=PL4AhUX6lGjJWfiDORSmEu8x_myelbe1p2>`_ (2D, GDScript).
 
 Text tutorials
 --------------
