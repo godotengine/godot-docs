@@ -4,7 +4,7 @@ Mesh level of detail (LOD)
 ==========================
 
 Level of detail (LOD) is one of the most important ways to optimize rendering
-performance in a 3D project, along with occlusion culling.
+performance in a 3D project, along with :ref:`doc_occlusion_culling`.
 
 On this page, you'll learn:
 
