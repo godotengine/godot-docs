@@ -25,3 +25,8 @@ Advanced topics
    
    Documentation for XR in Godot 4.0 XR is still a work in progress.
    Please check back in the future.
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/xr.rst

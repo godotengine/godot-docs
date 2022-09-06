@@ -17,3 +17,8 @@ and the animation editor.
    creating_movies
 
 See :ref:`doc_importing_3d_scenes` for information on importing animations from a 3D model.
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/animation.rst

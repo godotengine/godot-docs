@@ -189,3 +189,8 @@ ready to be processed:
 
         # Print the counter.
         print("Counter is: ", counter)
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/multicore.rst

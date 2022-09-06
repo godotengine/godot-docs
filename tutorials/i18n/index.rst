@@ -8,3 +8,8 @@ Internationalization
    internationalizing_games
    localization_using_gettext
    locales
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/text.rst

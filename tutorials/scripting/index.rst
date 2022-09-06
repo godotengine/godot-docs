@@ -52,3 +52,9 @@ below will help you make the most of Godot.
    singletons_autoload
    scene_tree
    scene_unique_nodes
+
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/scripting.rst

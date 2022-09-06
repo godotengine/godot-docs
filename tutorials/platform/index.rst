@@ -9,3 +9,8 @@ Platform-specific
    ios/index
    platform_html5
    consoles
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/platform.rst

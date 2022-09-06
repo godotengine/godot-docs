@@ -17,3 +17,8 @@ Best practices
    logic_preferences
    project_organization
    version_control_systems
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/engine.rst

@@ -74,3 +74,18 @@ The XML files in doc/classes should then be up-to-date with current Godot Engine
 features. You can then check what changed using the ``git diff`` command. Please
 only include changes that are relevant to your work on the API in your commits.
 You can discard changes in other XML files using ``git checkout``.
+
+Selecting a namespace for your class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each class in Godot is associated with a particular area of engine functionality and managed
+by `a specific team <https://godotengine.org/teams>`. These areas of the engine have been
+organised as files in  ``namespaces/`` to aid class discoverability. Each namespace is 
+presented as a curated "Class Reference" for the specific area of functionality it covers
+and is intended to be consumable by third party binding generators.
+
+You will need to add any classes you create to the appropriate namespace file. There is a 
+comment at the top of each file that should help you decide whether your class belongs to 
+that namespace. Have a look at the other classes in each file and see where your class fits.
+A class should only be added to a single namespace (unless it is specific to 2D or 3D in which 
+case it should also be added to ``xy`` or ``xyz`` respectively).

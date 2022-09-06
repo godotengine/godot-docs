@@ -15,3 +15,8 @@ Physics
    soft_body
    collision_shapes_2d
    collision_shapes_3d
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/physics.rst

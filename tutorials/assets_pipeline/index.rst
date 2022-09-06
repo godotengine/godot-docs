@@ -12,3 +12,8 @@ Assets pipeline
    importing_scenes
    exporting_3d_scenes
    escn_exporter/index
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/resource.rst

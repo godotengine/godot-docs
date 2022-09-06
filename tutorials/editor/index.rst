@@ -61,3 +61,8 @@ a project that's only 2D or only 3D and don't want to see what you don't need.
    :name: toc-editor-features
 
    managing_editor_features
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/editor.rst

@@ -1,0 +1,31 @@
+..
+    Platform specific layers with shared components (Unix, Win32, Apple, etc.) in drivers.
+
+- :ref:`ConfigFile <class_ConfigFile>`
+- :ref:`Directory <class_Directory>`
+- :ref:`DisplayServer <class_DisplayServer>`
+- :ref:`File <class_File>`
+- :ref:`Input <class_Input>`
+- :ref:`InputEvent <class_InputEvent>`
+- :ref:`InputEventAction <class_InputEventAction>`
+- :ref:`InputEventFromWindow <class_InputEventFromWindow>`
+- :ref:`InputEventGesture <class_InputEventGesture>`
+- :ref:`InputEventJoypadButton <class_InputEventJoypadButton>`
+- :ref:`InputEventJoypadMotion <class_InputEventJoypadMotion>`
+- :ref:`InputEventKey <class_InputEventKey>`
+- :ref:`InputEventMagnifyGesture <class_InputEventMagnifyGesture>`
+- :ref:`InputEventMIDI <class_InputEventMIDI>`
+- :ref:`InputEventMouse <class_InputEventMouse>`
+- :ref:`InputEventMouseButton <class_InputEventMouseButton>`
+- :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`
+- :ref:`InputEventPanGesture <class_InputEventPanGesture>`
+- :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`
+- :ref:`InputEventScreenTouch <class_InputEventScreenTouch>`
+- :ref:`InputEventShortcut <class_InputEventShortcut>`
+- :ref:`InputEventWithModifiers <class_InputEventWithModifiers>`
+- :ref:`InputMap <class_InputMap>`
+- :ref:`OS <class_OS>`
+- :ref:`Shortcut <class_Shortcut>`
+- :ref:`Time <class_Time>`
+- :ref:`Timer <class_Timer>`
+- :ref:`Window <class_Window>`

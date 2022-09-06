@@ -65,3 +65,8 @@ The following articles cover specific details of using particular control nodes.
    :name: toc-control-nodes-tutorials
 
    bbcode_in_richtextlabel
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/gui.rst

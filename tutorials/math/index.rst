@@ -11,3 +11,8 @@ Math
    interpolation
    beziers_and_curves
    random_number_generation
+
+Class Reference
+---------------
+
+.. include:: ../../namespaces/math.rst
