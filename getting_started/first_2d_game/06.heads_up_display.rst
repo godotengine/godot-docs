@@ -70,26 +70,46 @@ use the following settings:
 ScoreLabel
 ~~~~~~~~~~
 
--  *Layout* : "Top Wide"
 -  *Text* : ``0``
 -  *Align* : "Center"
+-  *Anchor* :
+
+   -  Right: ``1``
+-  *Margin*: 
+
+   -  Set all to ``0``
 
 Message
 ~~~~~~~~~~~~
 
--  *Layout* : "HCenter Wide"
 -  *Text* : ``Dodge the Creeps!``
 -  *Align* : "Center"
 -  *Autowrap* : "On"
+-  *Anchor* :
+
+   -  Top: ``0.5``
+   -  Right: ``1``
+   -  Bottom: ``0.5``
+-  *Margin* :
+
+   -  Top: ``-79``
+   -  Bottom: ``79``
 
 StartButton
 ~~~~~~~~~~~
 
 -  *Text* : ``Start``
--  *Layout* : "Center Bottom"
+-  *Anchor* :
+
+   -  Left: ``0.5``
+   -  Top: ``1``
+   -  Right: ``0.5``
+   -  Bottom: ``1``
 -  *Margin* :
 
+   -  Left: ``-90``
    -  Top: ``-200``
+   -  Right: ``90``
    -  Bottom: ``-100``
 
 On the ``MessageTimer``, set the ``Wait Time`` to ``2`` and set the ``One Shot``
