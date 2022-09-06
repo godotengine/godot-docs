@@ -29,7 +29,7 @@ The following two scripts will be used as references throughout this page.
         for element in arr:
             print(element)
 
-    func print_x_times(msg : String, n : int) -> void:
+    func print_n_times(msg : String, n : int) -> void:
         for i in range(n):
             print(msg)
 
