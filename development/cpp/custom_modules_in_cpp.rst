@@ -119,8 +119,10 @@ These files should contain the following:
 
     /* register_types.h */
 
-    void register_summator_types();
-    void unregister_summator_types();
+    #include "modules/register_module_types.h"
+
+    void initialize_summator_module(ModuleInitializationLevel p_level);
+    void uninitialize_summator_module(ModuleInitializationLevel p_level);
     /* yes, the word in the middle must be the same as the module folder name */
 
 .. code-block:: cpp
@@ -132,11 +134,17 @@ These files should contain the following:
     #include "core/object/class_db.h"
     #include "summator.h"
 
-    void register_summator_types() {
+    void initialize_summator_module(ModuleInitializationLevel p_level) {
+    	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+    		return;
+    	}
         ClassDB::register_class<Summator>();
     }
 
-    void unregister_summator_types() {
+    void uninitialize_summator_module(ModuleInitializationLevel p_level) {
+    	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+    		return;
+    	}
        // Nothing to do here in this example.
     }
 
