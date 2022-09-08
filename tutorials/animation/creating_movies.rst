@@ -336,7 +336,7 @@ while preserving its existing aspect ratio:
 
 ::
 
-    ffmpeg -i input.avi -f:v "scale=-1:1080" -crf 15 -preset veryfast output.mp4
+    ffmpeg -i input.avi -vf "scale=-1:1080" -crf 15 -preset veryfast output.mp4
 
 
 .. _doc_creating_movies_reducing_framerate:

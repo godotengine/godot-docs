@@ -231,4 +231,4 @@ significantly if the source is recorded at a higher resolution than 720p:
 
 ::
 
-    ffmpeg -i input.mp4 -f:v "scale=-1:720" -q:v 6 -q:a 6 output.ogv
+    ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
