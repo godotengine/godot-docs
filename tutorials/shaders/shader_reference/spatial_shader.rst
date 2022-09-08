@@ -273,11 +273,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **NODE_POSITION_WORLD**        | Node world space position                                                                        |
+| in vec3 **NODE_POSITION_WORLD**        | Node position, in world space.                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **NODE_POSITION_VIEW**         | Node view space position                                                                         |
+| in vec3 **NODE_POSITION_VIEW**         | Node position, in view space.                                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **CAMERA_POSITION_WORLD**      | Camera world space position                                                                      |
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space.                                                                 |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
