@@ -21,4 +21,4 @@ See :ref:`doc_importing_3d_scenes` for information on importing animations from 
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/animation.rst
+.. include:: ../../divisions/animation.rst

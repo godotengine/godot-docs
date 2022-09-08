@@ -24,4 +24,4 @@
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/xyz.rst
+.. include:: ../../divisions/xyz.rst

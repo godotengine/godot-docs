@@ -16,4 +16,4 @@ Assets pipeline
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/resource.rst
+.. include:: ../../divisions/resource.rst

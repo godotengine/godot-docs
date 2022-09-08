@@ -1,5 +1,5 @@
 ..
-    Anything specific for 2D. Each class here must also be placed in one of the other namespaces.
+    Anything specific for 2D. Each class here must also be placed in one of the other divisions.
 
 - :ref:`AnimatableBody2D <class_AnimatableBody2D>`
 - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`

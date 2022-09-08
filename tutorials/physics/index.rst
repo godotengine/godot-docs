@@ -19,4 +19,4 @@ Physics
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/physics.rst
+.. include:: ../../divisions/physics.rst

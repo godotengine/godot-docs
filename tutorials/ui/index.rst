@@ -69,4 +69,4 @@ The following articles cover specific details of using particular control nodes.
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/gui.rst
+.. include:: ../../divisions/gui.rst

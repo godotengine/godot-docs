@@ -12,4 +12,4 @@ Internationalization
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/text.rst
+.. include:: ../../divisions/text.rst

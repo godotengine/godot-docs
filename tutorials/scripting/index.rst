@@ -57,4 +57,4 @@ below will help you make the most of Godot.
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/scripting.rst
+.. include:: ../../divisions/scripting.rst

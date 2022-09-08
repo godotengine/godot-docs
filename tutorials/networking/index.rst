@@ -15,4 +15,4 @@ Networking
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/networking.rst
+.. include:: ../../divisions/networking.rst

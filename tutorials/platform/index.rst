@@ -13,4 +13,4 @@ Platform-specific
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/platform.rst
+.. include:: ../../divisions/platform.rst

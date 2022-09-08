@@ -10,4 +10,4 @@ Navigation
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/pathfinding.rst
+.. include:: ../../divisions/pathfinding.rst

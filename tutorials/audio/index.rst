@@ -14,4 +14,4 @@ Audio
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/audio.rst
+.. include:: ../../divisions/audio.rst

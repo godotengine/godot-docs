@@ -29,4 +29,4 @@ Advanced topics
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/xr.rst
+.. include:: ../../divisions/xr.rst

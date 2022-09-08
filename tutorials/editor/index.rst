@@ -65,4 +65,4 @@ a project that's only 2D or only 3D and don't want to see what you don't need.
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/editor.rst
+.. include:: ../../divisions/editor.rst

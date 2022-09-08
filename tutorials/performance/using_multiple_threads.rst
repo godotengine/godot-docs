@@ -193,4 +193,4 @@ ready to be processed:
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/multicore.rst
+.. include:: ../../divisions/multicore.rst

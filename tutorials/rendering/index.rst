@@ -13,4 +13,4 @@ Rendering
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/rendering.rst
+.. include:: ../../divisions/rendering.rst

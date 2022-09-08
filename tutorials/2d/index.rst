@@ -18,4 +18,4 @@
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/xy.rst
+.. include:: ../../divisions/xy.rst

@@ -15,4 +15,4 @@ Math
 Class Reference
 ---------------
 
-.. include:: ../../namespaces/math.rst
+.. include:: ../../divisions/math.rst
