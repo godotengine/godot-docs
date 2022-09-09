@@ -76,7 +76,7 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. _class_EditorProperty_signal_property_changed:
 
-- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value **)**
+- **property_changed** **(** :ref:`String<class_String>` property, :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` field, :ref:`bool<class_bool>` changing **)**
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 

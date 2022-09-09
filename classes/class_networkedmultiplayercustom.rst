@@ -64,6 +64,8 @@ When your script receives a packet from other peers over the network (originatin
 
 Initialize the peer with the given ``peer_id`` (must be between 1 and 2147483647).
 
+Can only be called if the connection status is :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>`. See :ref:`set_connection_status<class_NetworkedMultiplayerCustom_method_set_connection_status>`.
+
 ----
 
 .. _class_NetworkedMultiplayerCustom_method_set_connection_status:
@@ -71,6 +73,10 @@ Initialize the peer with the given ``peer_id`` (must be between 1 and 2147483647
 - void **set_connection_status** **(** :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` connection_status **)**
 
 Set the state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
+
+This will emit the :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>`, :ref:`NetworkedMultiplayerPeer.connection_failed<class_NetworkedMultiplayerPeer_signal_connection_failed>` or :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` signals depending on the status and if the peer has the unique network id of ``1``.
+
+You can only change to :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>` from :ref:`NetworkedMultiplayerPeer.CONNECTION_DISCONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_DISCONNECTED>` and to :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED>` from :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>`.
 
 ----
 

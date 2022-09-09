@@ -426,7 +426,7 @@ Returns the name of ``animation`` or an empty string if not found.
 
 - :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`String<class_String>` name **)** |const|
 
-Returns the :ref:`Animation<class_Animation>` with key ``name`` or ``null`` if not found.
+Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
 
 ----
 

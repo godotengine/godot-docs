@@ -357,6 +357,8 @@ The current scene.
 
 If ``true``, collision shapes will be visible when running the game from the editor for debugging purposes.
 
+\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` while the project is running will not have the desired effect.
+
 ----
 
 .. _class_SceneTree_property_debug_navigation_hint:
@@ -372,6 +374,8 @@ If ``true``, collision shapes will be visible when running the game from the edi
 +-----------+----------------------------------+
 
 If ``true``, navigation polygons will be visible when running the game from the editor for debugging purposes.
+
+\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_navigation_hint<class_SceneTree_property_debug_navigation_hint>` while the project is running will not have the desired effect.
 
 ----
 
@@ -590,6 +594,8 @@ Changes the running scene to a new instance of the given :ref:`PackedScene<class
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
 
 \ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to<class_SceneTree_method_change_scene_to>` call.
+
+\ **Note:** Passing a value of ``null`` into the method will unload the current scene without loading a new one.
 
 ----
 

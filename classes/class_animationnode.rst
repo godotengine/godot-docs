@@ -63,7 +63,7 @@ Methods
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`           | :ref:`get_parameter_list<class_AnimationNode_method_get_parameter_list>` **(** **)** |virtual|                                                                                                                                                                                                                                                             |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`has_filter<class_AnimationNode_method_has_filter>` **(** **)** |virtual|                                                                                                                                                                                                                                                                             |
+| :ref:`bool<class_bool>`             | :ref:`has_filter<class_AnimationNode_method_has_filter>` **(** **)** |virtual|                                                                                                                                                                                                                                                                             |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_path_filtered<class_AnimationNode_method_is_path_filtered>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                                                                                                                              |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,7 +170,7 @@ Blend another animation node (in case this node contains children animation node
 
 - :ref:`String<class_String>` **get_caption** **(** **)** |virtual|
 
-Gets the text caption for this node (used by some editors).
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to override the text caption for this node.
 
 ----
 
@@ -178,7 +178,7 @@ Gets the text caption for this node (used by some editors).
 
 - :ref:`Object<class_Object>` **get_child_by_name** **(** :ref:`String<class_String>` name **)** |virtual|
 
-Gets a child node by index (used by editors inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`).
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a child node by its ``name``.
 
 ----
 
@@ -186,7 +186,7 @@ Gets a child node by index (used by editors inheriting from :ref:`AnimationRootN
 
 - :ref:`Dictionary<class_Dictionary>` **get_child_nodes** **(** **)** |virtual|
 
-Gets all children nodes in order as a ``name: node`` dictionary. Only useful when inheriting :ref:`AnimationRootNode<class_AnimationRootNode>`.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all children nodes in order as a ``name: node`` dictionary.
 
 ----
 
@@ -218,7 +218,7 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 - :ref:`Variant<class_Variant>` **get_parameter_default_value** **(** :ref:`String<class_String>` name **)** |virtual|
 
-Gets the default value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return the default value of parameter "``name``". Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
 ----
 
@@ -226,15 +226,15 @@ Gets the default value of a parameter. Parameters are custom local memory used f
 
 - :ref:`Array<class_Array>` **get_parameter_list** **(** **)** |virtual|
 
-Gets the property information for parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this node. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
 ----
 
 .. _class_AnimationNode_method_has_filter:
 
-- :ref:`String<class_String>` **has_filter** **(** **)** |virtual|
+- :ref:`bool<class_bool>` **has_filter** **(** **)** |virtual|
 
-Returns ``true`` whether you want the blend tree editor to display filter editing on this node.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the blend tree editor should display filter editing on this node.
 
 ----
 
@@ -250,7 +250,7 @@ Returns whether the given path is filtered.
 
 - void **process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek **)** |virtual|
 
-User-defined callback called when a custom node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to run some code when this node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
 Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
 

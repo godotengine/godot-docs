@@ -104,6 +104,8 @@ See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
 
 Draw character ``char`` into a canvas item using the font at a given position, with ``modulate`` color, and optionally kerning if ``next`` is passed. clipping the width. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.
 
+If ``outline`` is ``true``, the outline of the character is drawn instead of the character itself.
+
 ----
 
 .. _class_Font_method_get_ascent:

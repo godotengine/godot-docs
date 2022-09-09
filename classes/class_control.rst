@@ -1697,6 +1697,8 @@ Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attemp
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
 
+\ **Note**: Using this method together with :ref:`Object.call_deferred<class_Object_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
+
 ----
 
 .. _class_Control_method_has_color:

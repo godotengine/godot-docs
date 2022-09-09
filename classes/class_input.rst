@@ -713,11 +713,15 @@ Stops the vibration of the joypad.
 
 - void **vibrate_handheld** **(** :ref:`int<class_int>` duration_ms=500 **)**
 
-Vibrate Android and iOS devices.
+Vibrate handheld devices.
+
+\ **Note:** This method is implemented on Android, iOS, and HTML5.
 
 \ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
 
 \ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
+
+\ **Note:** Some web browsers such as Safari and Firefox for Android do not support this method.
 
 ----
 

@@ -1468,6 +1468,8 @@ Specifies the audio driver to use. This setting is platform-dependent as each pl
 
 If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
 
+\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows 10 and later, make sure that apps are allowed to access the microphone in the OS' privacy settings.
+
 ----
 
 .. _class_ProjectSettings_property_audio/mix_rate:
@@ -6676,7 +6678,11 @@ If ``true``, allows falling back to the GLES2 driver if the GLES3 driver is not 
 | *Default* | ``4`` |
 +-----------+-------+
 
-Maximum anisotropic filter level used for textures with anisotropy enabled. Higher values will result in sharper textures when viewed from oblique angles, at the cost of performance. Only power-of-two values are valid (2, 4, 8, 16).
+Maximum anisotropic filter level used for textures with anisotropy enabled. Higher values will result in sharper textures when viewed from oblique angles, at the cost of performance. With the exception of ``1``, only power-of-two values are valid (``2``, ``4``, ``8``, ``16``). A value of ``1`` forcibly disables anisotropic filtering, even on textures where it is enabled.
+
+\ **Note:** For performance reasons, anisotropic filtering *is not enabled by default* on textures. For this setting to have an effect, anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**. However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this setting at run-time.
 
 ----
 

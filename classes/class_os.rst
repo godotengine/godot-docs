@@ -1665,6 +1665,8 @@ Returns the current UNIX epoch timestamp in seconds.
 
 \ **Important:** This is the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are also subject to automatic adjustments by the operating system. **Always use** :ref:`get_ticks_usec<class_OS_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_OS_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
+\ **Note:** To get a floating point timestamp with sub-second precision, use :ref:`Time.get_unix_time_from_system<class_Time_method_get_unix_time_from_system>`.
+
 ----
 
 .. _class_OS_method_get_unix_time_from_datetime:

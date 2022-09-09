@@ -19,7 +19,7 @@ Node that instances meshes into a scenario.
 Description
 -----------
 
-MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
+MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows reusing geometry, which can save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
 
 Tutorials
 ---------

@@ -1029,6 +1029,8 @@ Splits the string by a ``delimiter`` string and returns an array of the substrin
 
 The splits in the returned array are sorted in the same order as the original string, from left to right.
 
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+
 If ``maxsplit`` is specified, it defines the number of splits to do from the right up to ``maxsplit``. The default value of 0 means that all items are split, thus giving the same result as :ref:`split<class_String_method_split>`.
 
 Example:
@@ -1114,6 +1116,8 @@ Returns a simplified canonical path.
 
 Splits the string by a ``delimiter`` string and returns an array of the substrings. The ``delimiter`` can be of any length.
 
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+
 If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of ``0`` means that all items are split.
 
 If you need only one element from the array at a specific index, :ref:`get_slice<class_String_method_get_slice>` is a more performant option.
@@ -1139,6 +1143,8 @@ If you need to split strings with more complex rules, use the :ref:`RegEx<class_
 Splits the string in floats by using a delimiter string and returns an array of the substrings.
 
 For example, ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
+
+If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
 
 ----
 

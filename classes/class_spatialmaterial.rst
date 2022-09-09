@@ -768,7 +768,7 @@ If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular
 
 \ **Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
 
-\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**.
+\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`.
 
 ----
 
