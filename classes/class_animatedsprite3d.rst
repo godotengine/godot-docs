@@ -40,13 +40,11 @@ Properties
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** |const|                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"" **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                              |
-+-------------------------+----------------------------------------------------------------------------------------------------------+
++------+----------------------------------------------------------------------------------------------------------+
+| void | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"" **)** |
++------+----------------------------------------------------------------------------------------------------------+
+| void | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                              |
++------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -118,22 +116,18 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 - :ref:`bool<class_bool>` **playing**
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_playing(value) |
++-----------+--------------------+
+| *Getter*  | is_playing()       |
++-----------+--------------------+
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
 
 Method Descriptions
 -------------------
-
-.. _class_AnimatedSprite3D_method_is_playing:
-
-- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
-
-Returns ``true`` if an animation is currently being played.
-
-----
 
 .. _class_AnimatedSprite3D_method_play:
 

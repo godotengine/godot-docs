@@ -51,6 +51,8 @@ Property Descriptions
 
 The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be mirrored.
 
+If the length of the viewport axis is bigger than twice the mirrored axis size, it will not repeat infinitely, as the parallax layer only draws 2 instances of the texture at any one time.
+
 ----
 
 .. _class_ParallaxLayer_property_motion_offset:

@@ -93,15 +93,19 @@ Methods
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`           | :ref:`get_navigation_layer_value<class_GridMap_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                        |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`get_navigation_map<class_GridMap_method_get_navigation_map>` **(** **)** |const|                                                                                           |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`             | :ref:`get_orthogonal_index_from_basis<class_GridMap_method_get_orthogonal_index_from_basis>` **(** :ref:`Basis<class_Basis>` basis **)** |const|                                 |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i[]<class_Vector3i>` | :ref:`get_used_cells<class_GridMap_method_get_used_cells>` **(** **)** |const|                                                                                                   |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3i[]<class_Vector3i>` | :ref:`get_used_cells_by_item<class_GridMap_method_get_used_cells_by_item>` **(** :ref:`int<class_int>` item **)** |const|                                                        |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3i<class_Vector3i>`   | :ref:`local_to_map<class_GridMap_method_local_to_map>` **(** :ref:`Vector3<class_Vector3>` local_position **)** |const|                                                          |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`make_baked_meshes<class_GridMap_method_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)** |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`map_to_world<class_GridMap_method_map_to_world>` **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|                                                          |
+| :ref:`Vector3<class_Vector3>`     | :ref:`map_to_local<class_GridMap_method_map_to_local>` **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|                                                          |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`resource_changed<class_GridMap_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)**                                                              |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,7 +117,7 @@ Methods
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_navigation_layer_value<class_GridMap_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                 |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>`   | :ref:`world_to_map<class_GridMap_method_world_to_map>` **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|                                                          |
+| void                              | :ref:`set_navigation_map<class_GridMap_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                                              |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -410,7 +414,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Gri
 
 - :ref:`Array<class_Array>` **get_meshes** **(** **)** |const|
 
-Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_Mesh>` references corresponding to the non-empty cells in the grid. The transforms are specified in world space.
+Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_Mesh>` references corresponding to the non-empty cells in the grid. The transforms are specified in local space.
 
 ----
 
@@ -419,6 +423,16 @@ Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_M
 - :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`navigation_layers<class_GridMap_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+----
+
+.. _class_GridMap_method_get_navigation_map:
+
+- :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of the navigation map this GridMap node uses for its cell baked navigation meshes.
+
+This function returns always the map set on the GridMap node and not the map on the NavigationServer. If the map is changed directly with the NavigationServer API the GridMap node will not be aware of the map change.
 
 ----
 
@@ -446,17 +460,25 @@ Returns an array of all cells with the given item index specified in ``item``.
 
 ----
 
+.. _class_GridMap_method_local_to_map:
+
+- :ref:`Vector3i<class_Vector3i>` **local_to_map** **(** :ref:`Vector3<class_Vector3>` local_position **)** |const|
+
+Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node3D.to_local<class_Node3D_method_to_local>` before passing it to this method. See also :ref:`map_to_local<class_GridMap_method_map_to_local>`.
+
+----
+
 .. _class_GridMap_method_make_baked_meshes:
 
 - void **make_baked_meshes** **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**
 
 ----
 
-.. _class_GridMap_method_map_to_world:
+.. _class_GridMap_method_map_to_local:
 
-- :ref:`Vector3<class_Vector3>` **map_to_world** **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|
+- :ref:`Vector3<class_Vector3>` **map_to_local** **(** :ref:`Vector3i<class_Vector3i>` map_position **)** |const|
 
-Returns the position of a grid cell in the GridMap's local coordinate space.
+Returns the position of a grid cell in the GridMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node3D.to_global<class_Node3D_method_to_global>`. See also :ref:`map_to_local<class_GridMap_method_map_to_local>`.
 
 ----
 
@@ -502,13 +524,11 @@ Based on ``value``, enables or disables the specified layer in the :ref:`navigat
 
 ----
 
-.. _class_GridMap_method_world_to_map:
+.. _class_GridMap_method_set_navigation_map:
 
-- :ref:`Vector3i<class_Vector3i>` **world_to_map** **(** :ref:`Vector3<class_Vector3>` world_position **)** |const|
+- void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
 
-Returns the coordinates of the grid cell containing the given point.
-
-\ ``pos`` should be in the GridMap's local coordinate space.
+Sets the :ref:`RID<class_RID>` of the navigation map this GridMap node should use for its cell baked navigation meshes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -35,13 +35,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------+-------------------------+
-| :ref:`VoxelGIData<class_VoxelGIData>` | :ref:`data<class_VoxelGI_property_data>`       |                         |
-+---------------------------------------+------------------------------------------------+-------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_VoxelGI_property_extents>` | ``Vector3(10, 10, 10)`` |
-+---------------------------------------+------------------------------------------------+-------------------------+
-| :ref:`Subdiv<enum_VoxelGI_Subdiv>`    | :ref:`subdiv<class_VoxelGI_property_subdiv>`   | ``1``                   |
-+---------------------------------------+------------------------------------------------+-------------------------+
++-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`CameraAttributes<class_CameraAttributes>` | :ref:`camera_attributes<class_VoxelGI_property_camera_attributes>` |                         |
++-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`VoxelGIData<class_VoxelGIData>`           | :ref:`data<class_VoxelGI_property_data>`                           |                         |
++-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`Vector3<class_Vector3>`                   | :ref:`extents<class_VoxelGI_property_extents>`                     | ``Vector3(10, 10, 10)`` |
++-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
+| :ref:`Subdiv<enum_VoxelGI_Subdiv>`              | :ref:`subdiv<class_VoxelGI_property_subdiv>`                       | ``1``                   |
++-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -81,6 +83,20 @@ enum **Subdiv**:
 
 Property Descriptions
 ---------------------
+
+.. _class_VoxelGI_property_camera_attributes:
+
+- :ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+
++----------+------------------------------+
+| *Setter* | set_camera_attributes(value) |
++----------+------------------------------+
+| *Getter* | get_camera_attributes()      |
++----------+------------------------------+
+
+The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the ``VoxelGI`` will have banding artifacts or may have over-exposure artifacts.
+
+----
 
 .. _class_VoxelGI_property_data:
 

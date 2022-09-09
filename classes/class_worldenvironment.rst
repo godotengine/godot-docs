@@ -37,26 +37,26 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`CameraEffects<class_CameraEffects>` | :ref:`camera_effects<class_WorldEnvironment_property_camera_effects>` |
-+-------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Environment<class_Environment>`     | :ref:`environment<class_WorldEnvironment_property_environment>`       |
-+-------------------------------------------+-----------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`CameraAttributes<class_CameraAttributes>` | :ref:`camera_attributes<class_WorldEnvironment_property_camera_attributes>` |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`           | :ref:`environment<class_WorldEnvironment_property_environment>`             |
++-------------------------------------------------+-----------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
 
-.. _class_WorldEnvironment_property_camera_effects:
+.. _class_WorldEnvironment_property_camera_attributes:
 
-- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+- :ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
 
-+----------+---------------------------+
-| *Setter* | set_camera_effects(value) |
-+----------+---------------------------+
-| *Getter* | get_camera_effects()      |
-+----------+---------------------------+
++----------+------------------------------+
+| *Setter* | set_camera_attributes(value) |
++----------+------------------------------+
+| *Getter* | get_camera_attributes()      |
++----------+------------------------------+
 
-The :ref:`CameraEffects<class_CameraEffects>` resource used by this ``WorldEnvironment``, defining the default properties. This :ref:`CameraEffects<class_CameraEffects>` resource will be used by all :ref:`Camera3D<class_Camera3D>`\ s that do not define their own :ref:`CameraEffects<class_CameraEffects>`.
+The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if none set on the :ref:`Camera3D<class_Camera3D>`.
 
 ----
 

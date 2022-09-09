@@ -29,7 +29,7 @@ Properties
 +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
 | :ref:`int<class_int>`         | :ref:`collision_mask<class_PhysicsRayQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
 +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-| :ref:`Array<class_Array>`     | :ref:`exclude<class_PhysicsRayQueryParameters2D_property_exclude>`                         | ``[]``            |
+| :ref:`RID[]<class_RID>`       | :ref:`exclude<class_PhysicsRayQueryParameters2D_property_exclude>`                         | ``[]``            |
 +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`from<class_PhysicsRayQueryParameters2D_property_from>`                               | ``Vector2(0, 0)`` |
 +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
@@ -41,9 +41,9 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` | :ref:`create<class_PhysicsRayQueryParameters2D_method_create>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static| |
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` | :ref:`create<class_PhysicsRayQueryParameters2D_method_create>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`RID[]<class_RID>` exclude=[] **)** |static| |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -98,7 +98,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. _class_PhysicsRayQueryParameters2D_property_exclude:
 
-- :ref:`Array<class_Array>` **exclude**
+- :ref:`RID[]<class_RID>` **exclude**
 
 +-----------+--------------------+
 | *Default* | ``[]``             |
@@ -163,7 +163,7 @@ Method Descriptions
 
 .. _class_PhysicsRayQueryParameters2D_method_create:
 
-- :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` **create** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`Array<class_Array>` exclude=[] **)** |static|
+- :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` **create** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`RID[]<class_RID>` exclude=[] **)** |static|
 
 Returns a new, pre-configured ``PhysicsRayQueryParameters2D`` object. Use it to quickly create query parameters using the most common options.
 

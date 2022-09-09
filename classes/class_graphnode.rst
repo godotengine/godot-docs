@@ -167,6 +167,14 @@ Emitted when the GraphNode is requested to be closed. Happens on clicking the cl
 
 ----
 
+.. _class_GraphNode_signal_deselected:
+
+- **deselected** **(** **)**
+
+Emitted when the GraphNode is deselected.
+
+----
+
 .. _class_GraphNode_signal_dragged:
 
 - **dragged** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
@@ -196,6 +204,14 @@ Emitted when the GraphNode is requested to be displayed over other ones. Happens
 - **resize_request** **(** :ref:`Vector2<class_Vector2>` new_minsize **)**
 
 Emitted when the GraphNode is requested to be resized. Happens on dragging the resizer handle (see :ref:`resizable<class_GraphNode_property_resizable>`).
+
+----
+
+.. _class_GraphNode_signal_selected:
+
+- **selected** **(** **)**
+
+Emitted when the GraphNode is selected.
 
 ----
 

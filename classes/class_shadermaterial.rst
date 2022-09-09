@@ -34,11 +34,11 @@ Properties
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_shader_uniform<class_ShaderMaterial_method_get_shader_uniform>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_shader_uniform<class_ShaderMaterial_method_set_shader_uniform>` **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)** |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -58,17 +58,17 @@ The :ref:`Shader<class_Shader>` program used to render this material.
 Method Descriptions
 -------------------
 
-.. _class_ShaderMaterial_method_get_shader_uniform:
+.. _class_ShaderMaterial_method_get_shader_parameter:
 
-- :ref:`Variant<class_Variant>` **get_shader_uniform** **(** :ref:`StringName<class_StringName>` param **)** |const|
+- :ref:`Variant<class_Variant>` **get_shader_parameter** **(** :ref:`StringName<class_StringName>` param **)** |const|
 
 Returns the current value set for this material of a uniform in the shader.
 
 ----
 
-.. _class_ShaderMaterial_method_set_shader_uniform:
+.. _class_ShaderMaterial_method_set_shader_parameter:
 
-- void **set_shader_uniform** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
+- void **set_shader_parameter** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
 
 Changes the value set for this material of a uniform in the shader.
 

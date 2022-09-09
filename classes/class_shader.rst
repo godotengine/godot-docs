@@ -36,15 +36,15 @@ Properties
 Methods
 -------
 
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`StringName<class_StringName>` param, :ref:`int<class_int>` index=0 **)** |const|                                    |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`has_uniform<class_Shader_method_has_uniform>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`StringName<class_StringName>` param, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)** |
-+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`get_default_texture_parameter<class_Shader_method_get_default_texture_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` index=0 **)** |const|                                    |
++-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                                                      |
++-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`has_parameter<class_Shader_method_has_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                   |
++-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_default_texture_parameter<class_Shader_method_set_default_texture_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)** |
++-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -93,13 +93,13 @@ Returns the shader's code as the user has written it, not the full generated cod
 Method Descriptions
 -------------------
 
-.. _class_Shader_method_get_default_texture_param:
+.. _class_Shader_method_get_default_texture_parameter:
 
-- :ref:`Texture2D<class_Texture2D>` **get_default_texture_param** **(** :ref:`StringName<class_StringName>` param, :ref:`int<class_int>` index=0 **)** |const|
+- :ref:`Texture2D<class_Texture2D>` **get_default_texture_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` index=0 **)** |const|
 
 Returns the texture that is set as default for the specified parameter.
 
-\ **Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``name`` must match the name of the uniform in the code exactly.
 
 \ **Note:** If the sampler array is used use ``index`` to access the specified texture.
 
@@ -113,9 +113,9 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 ----
 
-.. _class_Shader_method_has_uniform:
+.. _class_Shader_method_has_parameter:
 
-- :ref:`bool<class_bool>` **has_uniform** **(** :ref:`StringName<class_StringName>` name **)** |const|
+- :ref:`bool<class_bool>` **has_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
@@ -123,13 +123,13 @@ Returns ``true`` if the shader has this param defined as a uniform in its code.
 
 ----
 
-.. _class_Shader_method_set_default_texture_param:
+.. _class_Shader_method_set_default_texture_parameter:
 
-- void **set_default_texture_param** **(** :ref:`StringName<class_StringName>` param, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)**
+- void **set_default_texture_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)**
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-\ **Note:** ``param`` must match the name of the uniform in the code exactly.
+\ **Note:** ``name`` must match the name of the uniform in the code exactly.
 
 \ **Note:** If the sampler array is used use ``index`` to access the specified texture.
 

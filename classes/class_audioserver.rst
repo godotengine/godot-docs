@@ -189,7 +189,9 @@ Number of available audio buses.
 | *Getter*  | capture_get_device()      |
 +-----------+---------------------------+
 
-Name of the current device for audio input (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+
+\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
 ----
 
@@ -247,6 +249,8 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 - :ref:`PackedStringArray<class_PackedStringArray>` **capture_get_device_list** **(** **)**
 
 Returns the names of all audio input devices detected on the system.
+
+\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
 ----
 

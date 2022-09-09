@@ -96,31 +96,27 @@ Properties
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                                                                                                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** |const|                                                                                                                                                                            |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|                                                                                                                                   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                                                                                                                       |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_border_width<class_StyleBoxFlat_method_set_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**                                                                                                                    |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_border_width_all<class_StyleBoxFlat_method_set_border_width_all>` **(** :ref:`int<class_int>` width **)**                                                                                                                                                        |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_corner_radius<class_StyleBoxFlat_method_set_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**                                                                                                             |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>` **(** :ref:`int<class_int>` radius **)**                                                                                                                                                     |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_corner_radius_individual<class_StyleBoxFlat_method_set_corner_radius_individual>` **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)** |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin<class_StyleBoxFlat_method_set_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**                                                                                                               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_all<class_StyleBoxFlat_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                                                                                                                                   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_individual<class_StyleBoxFlat_method_set_expand_margin_individual>` **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**               |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                             |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** |const|                                                                |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|                       |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                           |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_border_width<class_StyleBoxFlat_method_set_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**        |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_border_width_all<class_StyleBoxFlat_method_set_border_width_all>` **(** :ref:`int<class_int>` width **)**                                            |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_corner_radius<class_StyleBoxFlat_method_set_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)** |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>` **(** :ref:`int<class_int>` radius **)**                                         |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_expand_margin<class_StyleBoxFlat_method_set_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**   |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_expand_margin_all<class_StyleBoxFlat_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                       |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -574,14 +570,6 @@ Sets the corner radius to ``radius`` pixels for all corners.
 
 ----
 
-.. _class_StyleBoxFlat_method_set_corner_radius_individual:
-
-- void **set_corner_radius_individual** **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)**
-
-Sets the corner radius for each corner to ``radius_top_left``, ``radius_top_right``, ``radius_bottom_right``, and ``radius_bottom_left`` pixels.
-
-----
-
 .. _class_StyleBoxFlat_method_set_expand_margin:
 
 - void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
@@ -595,14 +583,6 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 - void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
 
 Sets the expand margin to ``size`` pixels for all margins.
-
-----
-
-.. _class_StyleBoxFlat_method_set_expand_margin_individual:
-
-- void **set_expand_margin_individual** **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**
-
-Sets the expand margin for each margin to ``size_left``, ``size_top``, ``size_right``, and ``size_bottom`` pixels.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

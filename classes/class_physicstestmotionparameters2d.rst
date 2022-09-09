@@ -25,7 +25,7 @@ Properties
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`collide_separation_ray<class_PhysicsTestMotionParameters2D_property_collide_separation_ray>` | ``false``                         |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`exclude_bodies<class_PhysicsTestMotionParameters2D_property_exclude_bodies>`                 | ``[]``                            |
+| :ref:`RID[]<class_RID>`               | :ref:`exclude_bodies<class_PhysicsTestMotionParameters2D_property_exclude_bodies>`                 | ``[]``                            |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Array<class_Array>`             | :ref:`exclude_objects<class_PhysicsTestMotionParameters2D_property_exclude_objects>`               | ``[]``                            |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -61,7 +61,7 @@ If set to ``false``, shapes of type :ref:`PhysicsServer2D.SHAPE_SEPARATION_RAY<c
 
 .. _class_PhysicsTestMotionParameters2D_property_exclude_bodies:
 
-- :ref:`Array<class_Array>` **exclude_bodies**
+- :ref:`RID[]<class_RID>` **exclude_bodies**
 
 +-----------+---------------------------+
 | *Default* | ``[]``                    |

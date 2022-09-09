@@ -77,6 +77,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector4_method_is_normalized>` **(** **)** |const|                                                                                                                                                                                                                                                                            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_zero_approx<class_Vector4_method_is_zero_approx>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`length<class_Vector4_method_length>` **(** **)** |const|                                                                                                                                                                                                                                                                                          |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`length_squared<class_Vector4_method_length_squared>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
@@ -240,7 +242,7 @@ Constructs a ``Vector4`` as a copy of the given ``Vector4``.
 
 - :ref:`Vector4<class_Vector4>` **Vector4** **(** :ref:`Vector4i<class_Vector4i>` from **)**
 
-Constructs a new ``Vector4`` from :ref:`Vector4i<class_Vector4i>`.
+Constructs a new ``Vector4`` from the given :ref:`Vector4i<class_Vector4i>`.
 
 ----
 
@@ -356,6 +358,16 @@ Returns ``true`` if this vector and ``with`` are approximately equal, by running
 - :ref:`bool<class_bool>` **is_normalized** **(** **)** |const|
 
 Returns ``true`` if the vector is normalized, i.e. its length is equal to 1.
+
+----
+
+.. _class_Vector4_method_is_zero_approx:
+
+- :ref:`bool<class_bool>` **is_zero_approx** **(** **)** |const|
+
+Returns ``true`` if this vector's values are approximately zero, by running :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` on each component.
+
+This method is faster than using :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` with one value as a zero vector.
 
 ----
 

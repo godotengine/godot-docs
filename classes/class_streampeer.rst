@@ -12,7 +12,7 @@ StreamPeer
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerExtension<class_StreamPeerExtension>`, :ref:`StreamPeerSSL<class_StreamPeerSSL>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`
+**Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerExtension<class_StreamPeerExtension>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`, :ref:`StreamPeerTLS<class_StreamPeerTLS>`
 
 Abstraction and base class for stream-based protocols.
 

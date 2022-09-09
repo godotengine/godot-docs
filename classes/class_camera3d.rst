@@ -30,13 +30,13 @@ Properties
 ----------
 
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+| :ref:`CameraAttributes<class_CameraAttributes>`       | :ref:`attributes<class_Camera3D_property_attributes>`             |                   |
++-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`int<class_int>`                                 | :ref:`cull_mask<class_Camera3D_property_cull_mask>`               | ``1048575``       |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`bool<class_bool>`                               | :ref:`current<class_Camera3D_property_current>`                   | ``false``         |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` | :ref:`doppler_tracking<class_Camera3D_property_doppler_tracking>` | ``0``             |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`CameraEffects<class_CameraEffects>`             | :ref:`effects<class_Camera3D_property_effects>`                   |                   |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 | :ref:`Environment<class_Environment>`                 | :ref:`environment<class_Camera3D_property_environment>`           |                   |
 +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
@@ -154,6 +154,20 @@ enum **DopplerTracking**:
 Property Descriptions
 ---------------------
 
+.. _class_Camera3D_property_attributes:
+
+- :ref:`CameraAttributes<class_CameraAttributes>` **attributes**
+
++----------+-----------------------+
+| *Setter* | set_attributes(value) |
++----------+-----------------------+
+| *Getter* | get_attributes()      |
++----------+-----------------------+
+
+The :ref:`CameraAttributes<class_CameraAttributes>` to use for this camera.
+
+----
+
 .. _class_Camera3D_property_cull_mask:
 
 - :ref:`int<class_int>` **cull_mask**
@@ -201,20 +215,6 @@ If multiple cameras are in the scene, one will always be made current. For examp
 +-----------+-----------------------------+
 
 If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera3D_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` for possible values.
-
-----
-
-.. _class_Camera3D_property_effects:
-
-- :ref:`CameraEffects<class_CameraEffects>` **effects**
-
-+----------+--------------------+
-| *Setter* | set_effects(value) |
-+----------+--------------------+
-| *Getter* | get_effects()      |
-+----------+--------------------+
-
-The :ref:`CameraEffects<class_CameraEffects>` to use for this camera.
 
 ----
 

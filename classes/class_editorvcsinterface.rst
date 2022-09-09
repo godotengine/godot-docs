@@ -35,19 +35,19 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`_fetch<class_EditorVCSInterface_method__fetch>` **(** :ref:`String<class_String>` remote **)** |virtual|                                                                                                                                                                                                            |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`_get_branch_list<class_EditorVCSInterface_method__get_branch_list>` **(** **)** |virtual|                                                                                                                                                                                                                           |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_branch_list<class_EditorVCSInterface_method__get_branch_list>` **(** **)** |virtual|                                                                                                                                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`           | :ref:`_get_current_branch_name<class_EditorVCSInterface_method__get_current_branch_name>` **(** **)** |virtual|                                                                                                                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_diff<class_EditorVCSInterface_method__get_diff>` **(** :ref:`String<class_String>` identifier, :ref:`int<class_int>` area **)** |virtual|                                                                                                                                                                      |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`_get_line_diff<class_EditorVCSInterface_method__get_line_diff>` **(** :ref:`String<class_String>` file_path, :ref:`String<class_String>` text **)** |virtual|                                                                                                                                                       |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_line_diff<class_EditorVCSInterface_method__get_line_diff>` **(** :ref:`String<class_String>` file_path, :ref:`String<class_String>` text **)** |virtual|                                                                                                                                                       |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`_get_modified_files_data<class_EditorVCSInterface_method__get_modified_files_data>` **(** **)** |virtual|                                                                                                                                                                                                           |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_modified_files_data<class_EditorVCSInterface_method__get_modified_files_data>` **(** **)** |virtual|                                                                                                                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`_get_previous_commits<class_EditorVCSInterface_method__get_previous_commits>` **(** :ref:`int<class_int>` max_commits **)** |virtual|                                                                                                                                                                               |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_previous_commits<class_EditorVCSInterface_method__get_previous_commits>` **(** :ref:`int<class_int>` max_commits **)** |virtual|                                                                                                                                                                               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`_get_remotes<class_EditorVCSInterface_method__get_remotes>` **(** **)** |virtual|                                                                                                                                                                                                                                   |
+| :ref:`Dictionary[]<class_Dictionary>` | :ref:`_get_remotes<class_EditorVCSInterface_method__get_remotes>` **(** **)** |virtual|                                                                                                                                                                                                                                   |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`           | :ref:`_get_vcs_name<class_EditorVCSInterface_method__get_vcs_name>` **(** **)** |virtual|                                                                                                                                                                                                                                 |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,9 +69,9 @@ Methods
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`_unstage_file<class_EditorVCSInterface_method__unstage_file>` **(** :ref:`String<class_String>` file_path **)** |virtual|                                                                                                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`add_diff_hunks_into_diff_file<class_EditorVCSInterface_method_add_diff_hunks_into_diff_file>` **(** :ref:`Dictionary<class_Dictionary>` diff_file, :ref:`Array<class_Array>` diff_hunks **)**                                                                                                                       |
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`add_diff_hunks_into_diff_file<class_EditorVCSInterface_method_add_diff_hunks_into_diff_file>` **(** :ref:`Dictionary<class_Dictionary>` diff_file, :ref:`Dictionary[]<class_Dictionary>` diff_hunks **)**                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`add_line_diffs_into_diff_hunk<class_EditorVCSInterface_method_add_line_diffs_into_diff_hunk>` **(** :ref:`Dictionary<class_Dictionary>` diff_hunk, :ref:`Array<class_Array>` line_diffs **)**                                                                                                                       |
+| :ref:`Dictionary<class_Dictionary>`   | :ref:`add_line_diffs_into_diff_hunk<class_EditorVCSInterface_method_add_line_diffs_into_diff_hunk>` **(** :ref:`Dictionary<class_Dictionary>` diff_hunk, :ref:`Dictionary[]<class_Dictionary>` line_diffs **)**                                                                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`   | :ref:`create_commit<class_EditorVCSInterface_method_create_commit>` **(** :ref:`String<class_String>` msg, :ref:`String<class_String>` author, :ref:`String<class_String>` id, :ref:`int<class_int>` unix_timestamp, :ref:`int<class_int>` offset_minutes **)**                                                           |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -188,7 +188,7 @@ Fetches new changes from the remote, but doesn't write changes to the current wo
 
 .. _class_EditorVCSInterface_method__get_branch_list:
 
-- :ref:`Array<class_Array>` **_get_branch_list** **(** **)** |virtual|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_branch_list** **(** **)** |virtual|
 
 Gets an instance of an :ref:`Array<class_Array>` of :ref:`String<class_String>`\ s containing available branch names in the VCS.
 
@@ -212,7 +212,7 @@ Returns an array of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_
 
 .. _class_EditorVCSInterface_method__get_line_diff:
 
-- :ref:`Array<class_Array>` **_get_line_diff** **(** :ref:`String<class_String>` file_path, :ref:`String<class_String>` text **)** |virtual|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_line_diff** **(** :ref:`String<class_String>` file_path, :ref:`String<class_String>` text **)** |virtual|
 
 Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_diff_hunk<class_EditorVCSInterface_method_create_diff_hunk>`), each containing a line diff between a file at ``file_path`` and the ``text`` which is passed in.
 
@@ -220,7 +220,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` item
 
 .. _class_EditorVCSInterface_method__get_modified_files_data:
 
-- :ref:`Array<class_Array>` **_get_modified_files_data** **(** **)** |virtual|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_modified_files_data** **(** **)** |virtual|
 
 Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_status_file<class_EditorVCSInterface_method_create_status_file>`), each containing the status data of every modified file in the project folder.
 
@@ -228,7 +228,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` item
 
 .. _class_EditorVCSInterface_method__get_previous_commits:
 
-- :ref:`Array<class_Array>` **_get_previous_commits** **(** :ref:`int<class_int>` max_commits **)** |virtual|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_previous_commits** **(** :ref:`int<class_int>` max_commits **)** |virtual|
 
 Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` items (see :ref:`create_commit<class_EditorVCSInterface_method_create_commit>`), each containing the data for a past commit.
 
@@ -236,7 +236,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Dictionary<class_Dictionary>` item
 
 .. _class_EditorVCSInterface_method__get_remotes:
 
-- :ref:`Array<class_Array>` **_get_remotes** **(** **)** |virtual|
+- :ref:`Dictionary[]<class_Dictionary>` **_get_remotes** **(** **)** |virtual|
 
 Returns an :ref:`Array<class_Array>` of :ref:`String<class_String>`\ s, each containing the name of a remote configured in the VCS.
 
@@ -324,7 +324,7 @@ Unstages the file present at ``file_path`` from the staged area to the unstaged 
 
 .. _class_EditorVCSInterface_method_add_diff_hunks_into_diff_file:
 
-- :ref:`Dictionary<class_Dictionary>` **add_diff_hunks_into_diff_file** **(** :ref:`Dictionary<class_Dictionary>` diff_file, :ref:`Array<class_Array>` diff_hunks **)**
+- :ref:`Dictionary<class_Dictionary>` **add_diff_hunks_into_diff_file** **(** :ref:`Dictionary<class_Dictionary>` diff_file, :ref:`Dictionary[]<class_Dictionary>` diff_hunks **)**
 
 Helper function to add an array of ``diff_hunks`` into a ``diff_file``.
 
@@ -332,7 +332,7 @@ Helper function to add an array of ``diff_hunks`` into a ``diff_file``.
 
 .. _class_EditorVCSInterface_method_add_line_diffs_into_diff_hunk:
 
-- :ref:`Dictionary<class_Dictionary>` **add_line_diffs_into_diff_hunk** **(** :ref:`Dictionary<class_Dictionary>` diff_hunk, :ref:`Array<class_Array>` line_diffs **)**
+- :ref:`Dictionary<class_Dictionary>` **add_line_diffs_into_diff_hunk** **(** :ref:`Dictionary<class_Dictionary>` diff_hunk, :ref:`Dictionary[]<class_Dictionary>` line_diffs **)**
 
 Helper function to add an array of ``line_diffs`` into a ``diff_hunk``.
 

@@ -29,9 +29,11 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------------------------------+---------------------------------------------------------+-------+
-| :ref:`AlignmentMode<enum_BoxContainer_AlignmentMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0`` |
-+-------------------------------------------------------+---------------------------------------------------------+-------+
++-------------------------------------------------------+---------------------------------------------------------+-----------+
+| :ref:`AlignmentMode<enum_BoxContainer_AlignmentMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0``     |
++-------------------------------------------------------+---------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                               | :ref:`vertical<class_BoxContainer_property_vertical>`   | ``false`` |
++-------------------------------------------------------+---------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -39,6 +41,13 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_Control>` | :ref:`add_spacer<class_BoxContainer_method_add_spacer>` **(** :ref:`bool<class_bool>` begin **)** |
 +-------------------------------+---------------------------------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++-----------------------+-----------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`separation<class_BoxContainer_theme_constant_separation>` | ``4`` |
++-----------------------+-----------------------------------------------------------------+-------+
 
 Enumerations
 ------------
@@ -53,11 +62,11 @@ Enumerations
 
 enum **AlignmentMode**:
 
-- **ALIGNMENT_BEGIN** = **0**
+- **ALIGNMENT_BEGIN** = **0** --- The child controls will be arranged at the beginning of the container, i.e. top if orientation is vertical, left if orientation is horizontal (right for RTL layout).
 
-- **ALIGNMENT_CENTER** = **1**
+- **ALIGNMENT_CENTER** = **1** --- The child controls will be centered in the container.
 
-- **ALIGNMENT_END** = **2**
+- **ALIGNMENT_END** = **2** --- The child controls will be arranged at the end of the container, i.e. bottom if orientation is vertical, right if orientation is horizontal (left for RTL layout).
 
 Property Descriptions
 ---------------------
@@ -76,6 +85,24 @@ Property Descriptions
 
 The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_BoxContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_BoxContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_BoxContainer_constant_ALIGNMENT_END>`).
 
+----
+
+.. _class_BoxContainer_property_vertical:
+
+- :ref:`bool<class_bool>` **vertical**
+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_vertical(value) |
++-----------+---------------------+
+| *Getter*  | is_vertical()       |
++-----------+---------------------+
+
+If ``true``, the ``BoxContainer`` will arrange its children vertically, rather than horizontally.
+
+Can't be changed when using :ref:`HBoxContainer<class_HBoxContainer>` and :ref:`VBoxContainer<class_VBoxContainer>`.
+
 Method Descriptions
 -------------------
 
@@ -84,6 +111,19 @@ Method Descriptions
 - :ref:`Control<class_Control>` **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
 Adds a :ref:`Control<class_Control>` node to the box as a spacer. If ``begin`` is ``true``, it will insert the :ref:`Control<class_Control>` node in front of all other children.
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_BoxContainer_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The space between the ``BoxContainer``'s elements, in pixels.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

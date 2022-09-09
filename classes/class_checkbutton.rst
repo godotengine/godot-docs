@@ -33,59 +33,59 @@ Properties
 Theme Properties
 ----------------
 
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_color<class_CheckButton_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)``   |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_CheckButton_theme_color_font_disabled_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_focus_color<class_CheckButton_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_CheckButton_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_hover_pressed_color<class_CheckButton_theme_color_font_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_CheckButton_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_CheckButton_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`check_v_adjust<class_CheckButton_theme_constant_check_v_adjust>`                  | ``0``                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`h_separation<class_CheckButton_theme_constant_h_separation>`                      | ``4``                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`outline_size<class_CheckButton_theme_constant_outline_size>`                      | ``0``                               |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Font<class_Font>`           | :ref:`font<class_CheckButton_theme_font_font>`                                          |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`font_size<class_CheckButton_theme_font_size_font_size>`                           |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`off<class_CheckButton_theme_icon_off>`                                            |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`off_disabled<class_CheckButton_theme_icon_off_disabled>`                          |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`off_disabled_mirrored<class_CheckButton_theme_icon_off_disabled_mirrored>`        |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`off_mirrored<class_CheckButton_theme_icon_off_mirrored>`                          |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`on<class_CheckButton_theme_icon_on>`                                              |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`on_disabled<class_CheckButton_theme_icon_on_disabled>`                            |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`on_disabled_mirrored<class_CheckButton_theme_icon_on_disabled_mirrored>`          |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`on_mirrored<class_CheckButton_theme_icon_on_mirrored>`                            |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled<class_CheckButton_theme_style_disabled>`                                 |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_CheckButton_theme_style_focus>`                                       |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_CheckButton_theme_style_hover>`                                       |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_pressed<class_CheckButton_theme_style_hover_pressed>`                       |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_CheckButton_theme_style_normal>`                                     |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed<class_CheckButton_theme_style_pressed>`                                   |                                     |
-+-----------------------------------+-----------------------------------------------------------------------------------------+-------------------------------------+
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_color<class_CheckButton_theme_color_font_color>`                                  | ``Color(0.875, 0.875, 0.875, 1)``   |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_CheckButton_theme_color_font_disabled_color>`                | ``Color(0.875, 0.875, 0.875, 0.5)`` |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_focus_color<class_CheckButton_theme_color_font_focus_color>`                      | ``Color(0.95, 0.95, 0.95, 1)``      |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_CheckButton_theme_color_font_hover_color>`                      | ``Color(0.95, 0.95, 0.95, 1)``      |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_hover_pressed_color<class_CheckButton_theme_color_font_hover_pressed_color>`      | ``Color(1, 1, 1, 1)``               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_CheckButton_theme_color_font_outline_color>`                  | ``Color(1, 1, 1, 1)``               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_CheckButton_theme_color_font_pressed_color>`                  | ``Color(1, 1, 1, 1)``               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckButton_theme_constant_check_v_offset>`                       | ``0``                               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`h_separation<class_CheckButton_theme_constant_h_separation>`                           | ``4``                               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`outline_size<class_CheckButton_theme_constant_outline_size>`                           | ``0``                               |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Font<class_Font>`           | :ref:`font<class_CheckButton_theme_font_font>`                                               |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`int<class_int>`             | :ref:`font_size<class_CheckButton_theme_font_size_font_size>`                                |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_CheckButton_theme_icon_checked>`                                         |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_CheckButton_theme_icon_checked_disabled>`                       |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled_mirrored<class_CheckButton_theme_icon_checked_disabled_mirrored>`     |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`checked_mirrored<class_CheckButton_theme_icon_checked_mirrored>`                       |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked<class_CheckButton_theme_icon_unchecked>`                                     |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled<class_CheckButton_theme_icon_unchecked_disabled>`                   |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_disabled_mirrored<class_CheckButton_theme_icon_unchecked_disabled_mirrored>` |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`unchecked_mirrored<class_CheckButton_theme_icon_unchecked_mirrored>`                   |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled<class_CheckButton_theme_style_disabled>`                                      |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_CheckButton_theme_style_focus>`                                            |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_CheckButton_theme_style_hover>`                                            |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_pressed<class_CheckButton_theme_style_hover_pressed>`                            |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_CheckButton_theme_style_normal>`                                          |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed<class_CheckButton_theme_style_pressed>`                                        |                                     |
++-----------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------+
 
 Theme Property Descriptions
 ---------------------------
@@ -174,9 +174,9 @@ The ``CheckButton`` text's font color when it's pressed.
 
 ----
 
-.. _class_CheckButton_theme_constant_check_v_adjust:
+.. _class_CheckButton_theme_constant_check_v_offset:
 
-- :ref:`int<class_int>` **check_v_adjust**
+- :ref:`int<class_int>` **check_v_offset**
 
 +-----------+-------+
 | *Default* | ``0`` |
@@ -226,67 +226,67 @@ Font size of the ``CheckButton``'s text.
 
 ----
 
-.. _class_CheckButton_theme_icon_off:
+.. _class_CheckButton_theme_icon_checked:
 
-- :ref:`Texture2D<class_Texture2D>` **off**
-
-The icon to display when the ``CheckButton`` is unchecked (for left-to-right layouts).
-
-----
-
-.. _class_CheckButton_theme_icon_off_disabled:
-
-- :ref:`Texture2D<class_Texture2D>` **off_disabled**
-
-The icon to display when the ``CheckButton`` is unchecked and disabled (for left-to-right layouts).
-
-----
-
-.. _class_CheckButton_theme_icon_off_disabled_mirrored:
-
-- :ref:`Texture2D<class_Texture2D>` **off_disabled_mirrored**
-
-The icon to display when the ``CheckButton`` is unchecked and disabled (for right-to-left layouts).
-
-----
-
-.. _class_CheckButton_theme_icon_off_mirrored:
-
-- :ref:`Texture2D<class_Texture2D>` **off_mirrored**
-
-The icon to display when the ``CheckButton`` is unchecked (for right-to-left layouts).
-
-----
-
-.. _class_CheckButton_theme_icon_on:
-
-- :ref:`Texture2D<class_Texture2D>` **on**
+- :ref:`Texture2D<class_Texture2D>` **checked**
 
 The icon to display when the ``CheckButton`` is checked (for left-to-right layouts).
 
 ----
 
-.. _class_CheckButton_theme_icon_on_disabled:
+.. _class_CheckButton_theme_icon_checked_disabled:
 
-- :ref:`Texture2D<class_Texture2D>` **on_disabled**
+- :ref:`Texture2D<class_Texture2D>` **checked_disabled**
 
 The icon to display when the ``CheckButton`` is checked and disabled (for left-to-right layouts).
 
 ----
 
-.. _class_CheckButton_theme_icon_on_disabled_mirrored:
+.. _class_CheckButton_theme_icon_checked_disabled_mirrored:
 
-- :ref:`Texture2D<class_Texture2D>` **on_disabled_mirrored**
+- :ref:`Texture2D<class_Texture2D>` **checked_disabled_mirrored**
 
 The icon to display when the ``CheckButton`` is checked and disabled (for right-to-left layouts).
 
 ----
 
-.. _class_CheckButton_theme_icon_on_mirrored:
+.. _class_CheckButton_theme_icon_checked_mirrored:
 
-- :ref:`Texture2D<class_Texture2D>` **on_mirrored**
+- :ref:`Texture2D<class_Texture2D>` **checked_mirrored**
 
 The icon to display when the ``CheckButton`` is checked (for right-to-left layouts).
+
+----
+
+.. _class_CheckButton_theme_icon_unchecked:
+
+- :ref:`Texture2D<class_Texture2D>` **unchecked**
+
+The icon to display when the ``CheckButton`` is unchecked (for left-to-right layouts).
+
+----
+
+.. _class_CheckButton_theme_icon_unchecked_disabled:
+
+- :ref:`Texture2D<class_Texture2D>` **unchecked_disabled**
+
+The icon to display when the ``CheckButton`` is unchecked and disabled (for left-to-right layouts).
+
+----
+
+.. _class_CheckButton_theme_icon_unchecked_disabled_mirrored:
+
+- :ref:`Texture2D<class_Texture2D>` **unchecked_disabled_mirrored**
+
+The icon to display when the ``CheckButton`` is unchecked and disabled (for right-to-left layouts).
+
+----
+
+.. _class_CheckButton_theme_icon_unchecked_mirrored:
+
+- :ref:`Texture2D<class_Texture2D>` **unchecked_mirrored**
+
+The icon to display when the ``CheckButton`` is unchecked (for right-to-left layouts).
 
 ----
 

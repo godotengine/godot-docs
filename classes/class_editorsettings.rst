@@ -312,7 +312,7 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`                                                                                               |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`network/ssl/editor_ssl_certificates<class_EditorSettings_property_network/ssl/editor_ssl_certificates>`                                                                       |
+| :ref:`String<class_String>`   | :ref:`network/tls/editor_tls_certificates<class_EditorSettings_property_network/tls/editor_tls_certificates>`                                                                       |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                                   |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,7 +334,7 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`                                                             |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`text_editor/appearance/caret/caret_blink_speed<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_speed>`                                                 |
+| :ref:`float<class_float>`     | :ref:`text_editor/appearance/caret/caret_blink_interval<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>`                                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/caret/highlight_all_occurrences<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>`                                 |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -527,7 +527,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`mark_setting_changed<class_EditorSettings_method_mark_setting_changed>` **(** :ref:`String<class_String>` setting **)**                                                                                      |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_builtin_action_override<class_EditorSettings_method_set_builtin_action_override>` **(** :ref:`String<class_String>` name, :ref:`Array<class_Array>` actions_list **)**                                   |
+| void                                              | :ref:`set_builtin_action_override<class_EditorSettings_method_set_builtin_action_override>` **(** :ref:`String<class_String>` name, :ref:`InputEvent[]<class_InputEvent>` actions_list **)**                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_favorites<class_EditorSettings_method_set_favorites>` **(** :ref:`PackedStringArray<class_PackedStringArray>` dirs **)**                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1687,11 +1687,11 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 ----
 
-.. _class_EditorSettings_property_network/ssl/editor_ssl_certificates:
+.. _class_EditorSettings_property_network/tls/editor_tls_certificates:
 
-- :ref:`String<class_String>` **network/ssl/editor_ssl_certificates**
+- :ref:`String<class_String>` **network/tls/editor_tls_certificates**
 
-The SSL certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
 
 ----
 
@@ -1771,13 +1771,13 @@ The monitor to display the project on when starting the project from the editor.
 
 - :ref:`bool<class_bool>` **text_editor/appearance/caret/caret_blink**
 
-If ``true``, makes the caret blink according to :ref:`text_editor/appearance/caret/caret_blink_speed<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_speed>`. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
+If ``true``, makes the caret blink according to :ref:`text_editor/appearance/caret/caret_blink_interval<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>`. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
 
 ----
 
-.. _class_EditorSettings_property_text_editor/appearance/caret/caret_blink_speed:
+.. _class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval:
 
-- :ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_speed**
+- :ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval**
 
 The interval at which to blink the caret (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
 
@@ -2594,7 +2594,7 @@ Marks the passed editor setting as being changed, see :ref:`get_changed_settings
 
 .. _class_EditorSettings_method_set_builtin_action_override:
 
-- void **set_builtin_action_override** **(** :ref:`String<class_String>` name, :ref:`Array<class_Array>` actions_list **)**
+- void **set_builtin_action_override** **(** :ref:`String<class_String>` name, :ref:`InputEvent[]<class_InputEvent>` actions_list **)**
 
 Overrides the built-in editor action ``name`` with the input actions defined in ``actions_list``.
 

@@ -86,11 +86,11 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`grow<class_AABB_method_grow>` **(** :ref:`float<class_float>` by **)** |const|                                                                     |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_no_surface<class_AABB_method_has_no_surface>` **(** **)** |const|                                                                              |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_no_volume<class_AABB_method_has_no_volume>` **(** **)** |const|                                                                                |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`has_point<class_AABB_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_surface<class_AABB_method_has_surface>` **(** **)** |const|                                                                                    |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_volume<class_AABB_method_has_volume>` **(** **)** |const|                                                                                      |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`intersection<class_AABB_method_intersection>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                     |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -314,22 +314,6 @@ Returns a copy of the ``AABB`` grown a given number of units towards all the sid
 
 ----
 
-.. _class_AABB_method_has_no_surface:
-
-- :ref:`bool<class_bool>` **has_no_surface** **(** **)** |const|
-
-Returns ``true`` if the ``AABB`` is empty.
-
-----
-
-.. _class_AABB_method_has_no_volume:
-
-- :ref:`bool<class_bool>` **has_no_volume** **(** **)** |const|
-
-Returns ``true`` if the ``AABB`` is flat or empty.
-
-----
-
 .. _class_AABB_method_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
@@ -337,6 +321,22 @@ Returns ``true`` if the ``AABB`` is flat or empty.
 Returns ``true`` if the ``AABB`` contains a point. Points on the faces of the AABB are considered included, though float-point precision errors may impact the accuracy of such checks.
 
 \ **Note:** This method is not reliable for ``AABB`` with a *negative size*. Use :ref:`abs<class_AABB_method_abs>` to get a positive sized equivalent ``AABB`` to check for contained points.
+
+----
+
+.. _class_AABB_method_has_surface:
+
+- :ref:`bool<class_bool>` **has_surface** **(** **)** |const|
+
+Returns ``true`` if the ``AABB`` has a surface or a length, and ``false`` if the ``AABB`` is empty (all components of :ref:`size<class_AABB_property_size>` are zero or negative).
+
+----
+
+.. _class_AABB_method_has_volume:
+
+- :ref:`bool<class_bool>` **has_volume** **(** **)** |const|
+
+Returns ``true`` if the ``AABB`` has a volume, and ``false`` if the ``AABB`` is flat, empty, or has a negative :ref:`size<class_AABB_property_size>`.
 
 ----
 

@@ -46,7 +46,7 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)**                                                                                                                        |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_Control>`                             | :ref:`get_editor_main_control<class_EditorInterface_method_get_editor_main_control>` **(** **)**                                                                                                                    |
+| :ref:`VBoxContainer<class_VBoxContainer>`                 | :ref:`get_editor_main_screen<class_EditorInterface_method_get_editor_main_screen>` **(** **)**                                                                                                                      |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorPaths<class_EditorPaths>`                     | :ref:`get_editor_paths<class_EditorInterface_method_get_editor_paths>` **(** **)**                                                                                                                                  |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +78,7 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** |const|                                                                                     |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D[]<class_Texture2D>`                       | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**                                                         |
+| :ref:`Texture2D[]<class_Texture2D>`                       | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Mesh[]<class_Mesh>` meshes, :ref:`int<class_int>` preview_size **)**                                                         |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`open_scene_from_path<class_EditorInterface_method_open_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                                                                               |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -183,13 +183,11 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 ----
 
-.. _class_EditorInterface_method_get_editor_main_control:
+.. _class_EditorInterface_method_get_editor_main_screen:
 
-- :ref:`Control<class_Control>` **get_editor_main_control** **(** **)**
+- :ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen** **(** **)**
 
-Returns the main editor control. Use this as a parent for main screens.
-
-\ **Note:** This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.
+Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_method__has_main_screen>`.
 
 \ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
@@ -323,7 +321,7 @@ Returns ``true`` if the specified ``plugin`` is enabled. The plugin name is the 
 
 .. _class_EditorInterface_method_make_mesh_previews:
 
-- :ref:`Texture2D[]<class_Texture2D>` **make_mesh_previews** **(** :ref:`Array<class_Array>` meshes, :ref:`int<class_int>` preview_size **)**
+- :ref:`Texture2D[]<class_Texture2D>` **make_mesh_previews** **(** :ref:`Mesh[]<class_Mesh>` meshes, :ref:`int<class_int>` preview_size **)**
 
 Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture2D<class_Texture2D>`\ s.
 

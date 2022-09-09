@@ -226,10 +226,6 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_Tree_theme_icon_updown>`                                              |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_Tree_theme_style_bg>`                                                     |                                   |
-+-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`bg_focus<class_Tree_theme_style_bg_focus>`                                         |                                   |
-+-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_pressed<class_Tree_theme_style_button_pressed>`                             |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`cursor<class_Tree_theme_style_cursor>`                                             |                                   |
@@ -241,6 +237,10 @@ Theme Properties
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`custom_button_hover<class_Tree_theme_style_custom_button_hover>`                   |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`custom_button_pressed<class_Tree_theme_style_custom_button_pressed>`               |                                   |
++-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_Tree_theme_style_focus>`                                               |                                   |
++-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_Tree_theme_style_panel>`                                               |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`StyleBox<class_StyleBox>`   | :ref:`selected<class_Tree_theme_style_selected>`                                         |                                   |
 +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
@@ -1263,22 +1263,6 @@ The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_Tr
 
 ----
 
-.. _class_Tree_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-Default :ref:`StyleBox<class_StyleBox>` for the ``Tree``, i.e. used when the control is not being focused.
-
-----
-
-.. _class_Tree_theme_style_bg_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **bg_focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``Tree`` is being focused.
-
-----
-
 .. _class_Tree_theme_style_button_pressed:
 
 - :ref:`StyleBox<class_StyleBox>` **button_pressed**
@@ -1324,6 +1308,22 @@ Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<cl
 - :ref:`StyleBox<class_StyleBox>` **custom_button_pressed**
 
 :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's pressed.
+
+----
+
+.. _class_Tree_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+The focused style for the ``Tree``, drawn on top of everything.
+
+----
+
+.. _class_Tree_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The background style for the ``Tree``.
 
 ----
 

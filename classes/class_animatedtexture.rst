@@ -19,7 +19,7 @@ Description
 
 ``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
-The playback of the animation is controlled by the :ref:`fps<class_AnimatedTexture_property_fps>` property as well as each frame's optional delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
+The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
 \ ``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
 
@@ -31,24 +31,24 @@ Properties
 +---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |           |
 +---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`fps<class_AnimatedTexture_property_fps>`                     | ``4.0``   |
-+---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``     |
 +---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`oneshot<class_AnimatedTexture_property_oneshot>`             | ``false`` |
+| :ref:`bool<class_bool>`   | :ref:`one_shot<class_AnimatedTexture_property_one_shot>`           | ``false`` |
 +---------------------------+--------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false`` |
++---------------------------+--------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`     | ``1.0``   |
 +---------------------------+--------------------------------------------------------------------+-----------+
 
 Methods
 -------
 
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`get_frame_delay<class_AnimatedTexture_method_get_frame_delay>` **(** :ref:`int<class_int>` frame **)** |const|                                        |
+| :ref:`float<class_float>`         | :ref:`get_frame_duration<class_AnimatedTexture_method_get_frame_duration>` **(** :ref:`int<class_int>` frame **)** |const|                                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** |const|                                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**               |
+| void                              | :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**      |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)** |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,24 +77,6 @@ Sets the currently visible frame of the texture.
 
 ----
 
-.. _class_AnimatedTexture_property_fps:
-
-- :ref:`float<class_float>` **fps**
-
-+-----------+----------------+
-| *Default* | ``4.0``        |
-+-----------+----------------+
-| *Setter*  | set_fps(value) |
-+-----------+----------------+
-| *Getter*  | get_fps()      |
-+-----------+----------------+
-
-Animation speed in frames per second. This value defines the default time interval between two frames of the animation, and thus the overall duration of the animation loop based on the :ref:`frames<class_AnimatedTexture_property_frames>` property. A value of 0 means no predefined number of frames per second, the animation will play according to each frame's frame delay (see :ref:`set_frame_delay<class_AnimatedTexture_method_set_frame_delay>`).
-
-For example, an animation with 8 frames, no frame delay and a ``fps`` value of 2 will run for 4 seconds, with each frame lasting 0.5 seconds.
-
-----
-
 .. _class_AnimatedTexture_property_frames:
 
 - :ref:`int<class_int>` **frames**
@@ -111,17 +93,17 @@ Number of frames to use in the animation. While you can create the frames indepe
 
 ----
 
-.. _class_AnimatedTexture_property_oneshot:
+.. _class_AnimatedTexture_property_one_shot:
 
-- :ref:`bool<class_bool>` **oneshot**
+- :ref:`bool<class_bool>` **one_shot**
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_oneshot(value) |
-+-----------+--------------------+
-| *Getter*  | get_oneshot()      |
-+-----------+--------------------+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_one_shot(value) |
++-----------+---------------------+
+| *Getter*  | get_one_shot()      |
++-----------+---------------------+
 
 If ``true``, the animation will only play once and will not loop back to the first frame after reaching the end. Note that reaching the end will not set :ref:`pause<class_AnimatedTexture_property_pause>` to ``true``.
 
@@ -141,14 +123,30 @@ If ``true``, the animation will only play once and will not loop back to the fir
 
 If ``true``, the animation will pause where it currently is (i.e. at :ref:`current_frame<class_AnimatedTexture_property_current_frame>`). The animation will continue from where it was paused when changing this property to ``false``.
 
+----
+
+.. _class_AnimatedTexture_property_speed_scale:
+
+- :ref:`float<class_float>` **speed_scale**
+
++-----------+------------------------+
+| *Default* | ``1.0``                |
++-----------+------------------------+
+| *Setter*  | set_speed_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_speed_scale()      |
++-----------+------------------------+
+
+The animation speed is multiplied by this value. If set to a negative value, the animation is played in reverse.
+
 Method Descriptions
 -------------------
 
-.. _class_AnimatedTexture_method_get_frame_delay:
+.. _class_AnimatedTexture_method_get_frame_duration:
 
-- :ref:`float<class_float>` **get_frame_delay** **(** :ref:`int<class_int>` frame **)** |const|
+- :ref:`float<class_float>` **get_frame_duration** **(** :ref:`int<class_int>` frame **)** |const|
 
-Returns the given frame's delay value.
+Returns the given ``frame``'s duration, in seconds.
 
 ----
 
@@ -160,20 +158,11 @@ Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
 ----
 
-.. _class_AnimatedTexture_method_set_frame_delay:
+.. _class_AnimatedTexture_method_set_frame_duration:
 
-- void **set_frame_delay** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` delay **)**
+- void **set_frame_duration** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**
 
-Sets an additional delay (in seconds) between this frame and the next one, that will be added to the time interval defined by :ref:`fps<class_AnimatedTexture_property_fps>`. By default, frames have no delay defined. If a delay value is defined, the final time interval between this frame and the next will be ``1.0 / fps + delay``.
-
-For example, for an animation with 3 frames, 2 FPS and a frame delay on the second frame of 1.2, the resulting playback will be:
-
-::
-
-    Frame 0: 0.5 s (1 / fps)
-    Frame 1: 1.7 s (1 / fps + 1.2)
-    Frame 2: 0.5 s (1 / fps)
-    Total duration: 2.7 s
+Sets the duration of any given ``frame``. The final duration is affected by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`. If set to ``0``, the frame is skipped during playback.
 
 ----
 

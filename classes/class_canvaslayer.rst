@@ -102,7 +102,9 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the ``CanvasLayer``.
 | *Getter*  | is_following_viewport()    |
 +-----------+----------------------------+
 
-Sets the layer to follow the viewport in order to simulate a pseudo 3D effect.
+If enabled, the ``CanvasLayer`` will use the viewport's transform, so it will move when camera moves instead of being anchored in a fixed position on the screen.
+
+Together with :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>` it can be used for a pseudo 3D effect.
 
 ----
 

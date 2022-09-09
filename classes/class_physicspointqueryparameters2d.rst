@@ -31,7 +31,7 @@ Properties
 +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`int<class_int>`         | :ref:`collision_mask<class_PhysicsPointQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
 +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-| :ref:`Array<class_Array>`     | :ref:`exclude<class_PhysicsPointQueryParameters2D_property_exclude>`                         | ``[]``            |
+| :ref:`RID[]<class_RID>`       | :ref:`exclude<class_PhysicsPointQueryParameters2D_property_exclude>`                         | ``[]``            |
 +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>` | :ref:`position<class_PhysicsPointQueryParameters2D_property_position>`                       | ``Vector2(0, 0)`` |
 +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
@@ -105,7 +105,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. _class_PhysicsPointQueryParameters2D_property_exclude:
 
-- :ref:`Array<class_Array>` **exclude**
+- :ref:`RID[]<class_RID>` **exclude**
 
 +-----------+--------------------+
 | *Default* | ``[]``             |

@@ -10,7 +10,14 @@
 Vector4i
 ========
 
+Vector used for 4D math using integer coordinates.
 
+Description
+-----------
+
+4-element structure that can be used to represent 4D grid coordinates or sets of integers.
+
+It uses integer coordinates. See :ref:`Vector4<class_Vector4>` for its floating-point counterpart.
 
 Properties
 ----------
@@ -115,17 +122,17 @@ Constants
 
 .. _class_Vector4i_constant_ONE:
 
-- **AXIS_X** = **0**
+- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
-- **AXIS_Y** = **1**
+- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
-- **AXIS_Z** = **2**
+- **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
-- **AXIS_W** = **3**
+- **AXIS_W** = **3** --- Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
-- **ZERO** = **Vector4i(0, 0, 0, 0)**
+- **ZERO** = **Vector4i(0, 0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
 
-- **ONE** = **Vector4i(1, 1, 1, 1)**
+- **ONE** = **Vector4i(1, 1, 1, 1)** --- One vector, a vector with all components set to ``1``.
 
 Property Descriptions
 ---------------------
@@ -138,6 +145,8 @@ Property Descriptions
 | *Default* | ``0`` |
 +-----------+-------+
 
+The vector's W component. Also accessible by using the index position ``[3]``.
+
 ----
 
 .. _class_Vector4i_property_x:
@@ -147,6 +156,8 @@ Property Descriptions
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+The vector's X component. Also accessible by using the index position ``[0]``.
 
 ----
 
@@ -158,6 +169,8 @@ Property Descriptions
 | *Default* | ``0`` |
 +-----------+-------+
 
+The vector's Y component. Also accessible by using the index position ``[1]``.
+
 ----
 
 .. _class_Vector4i_property_z:
@@ -168,6 +181,8 @@ Property Descriptions
 | *Default* | ``0`` |
 +-----------+-------+
 
+The vector's Z component. Also accessible by using the index position ``[2]``.
+
 Constructor Descriptions
 ------------------------
 
@@ -175,17 +190,25 @@ Constructor Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** **)**
 
+Constructs a default-initialized ``Vector4i`` with all components set to ``0``.
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4i<class_Vector4i>` from **)**
+
+Constructs a ``Vector4i`` as a copy of the given ``Vector4i``.
 
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4<class_Vector4>` from **)**
 
+Constructs a new ``Vector4i`` from the given :ref:`Vector4<class_Vector4>`.
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` w **)**
+
+Returns a ``Vector4i`` with the given components.
 
 Method Descriptions
 -------------------
@@ -194,11 +217,15 @@ Method Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **abs** **(** **)** |const|
 
+Returns a new vector with all components in absolute values (i.e. positive).
+
 ----
 
 .. _class_Vector4i_method_clamp:
 
 - :ref:`Vector4i<class_Vector4i>` **clamp** **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const|
+
+Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
 
 ----
 
@@ -206,11 +233,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **length** **(** **)** |const|
 
+Returns the length (magnitude) of this vector.
+
 ----
 
 .. _class_Vector4i_method_length_squared:
 
 - :ref:`int<class_int>` **length_squared** **(** **)** |const|
+
+Returns the squared length (squared magnitude) of this vector. This method runs faster than :ref:`length<class_Vector4i_method_length>`.
 
 ----
 
@@ -218,11 +249,15 @@ Method Descriptions
 
 - :ref:`int<class_int>` **max_axis_index** **(** **)** |const|
 
+Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector4i_constant_AXIS_X>`.
+
 ----
 
 .. _class_Vector4i_method_min_axis_index:
 
 - :ref:`int<class_int>` **min_axis_index** **(** **)** |const|
+
+Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_W<class_Vector4i_constant_AXIS_W>`.
 
 ----
 
@@ -230,12 +265,16 @@ Method Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **sign** **(** **)** |const|
 
+Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+
 Operator Descriptions
 ---------------------
 
 .. _class_Vector4i_operator_neq_bool:
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Returns ``true`` if the vectors are not equal.
 
 ----
 
@@ -253,13 +292,29 @@ Operator Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Multiplies each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) * Vector4i(3, 4, 5, 6)) # Prints "(30, 80, 150, 240)"
+
 ----
 
 - :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`float<class_float>` right **)**
 
+Multiplies each component of the ``Vector4i`` by the given :ref:`float<class_float>`.
+
+Returns a Vector4 value due to floating-point operations.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) * 2) # Prints "(20, 40, 60, 80)"
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the ``Vector4i`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -267,11 +322,23 @@ Operator Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **operator +** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Adds each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) + Vector4i(3, 4, 5, 6)) # Prints "(13, 24, 35, 46)"
+
 ----
 
 .. _class_Vector4i_operator_dif_Vector4i:
 
 - :ref:`Vector4i<class_Vector4i>` **operator -** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Subtracts each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) - Vector4i(3, 4, 5, 6)) # Prints "(7, 16, 25, 34)"
 
 ----
 
@@ -279,13 +346,29 @@ Operator Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Divides each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) / Vector4i(2, 5, 3, 4)) # Prints "(5, 4, 10, 10)"
+
 ----
 
 - :ref:`Vector4<class_Vector4>` **operator /** **(** :ref:`float<class_float>` right **)**
 
+Divides each component of the ``Vector4i`` by the given :ref:`float<class_float>`.
+
+Returns a Vector4 value due to floating-point operations.
+
+::
+
+    print(Vector4i(10, 20, 30, 40) / 2 # Prints "(5, 10, 15, 20)"
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+Divides each component of the ``Vector4i`` by the given :ref:`int<class_int>`.
 
 ----
 
@@ -293,11 +376,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector4i_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 ----
 
@@ -305,11 +392,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Returns ``true`` if the vectors are exactly equal.
+
 ----
 
 .. _class_Vector4i_operator_gt_bool:
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
 ----
 
@@ -317,11 +408,15 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
 ----
 
 .. _class_Vector4i_operator_idx_int:
 
 - :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, ``v[2]`` is equivalent to ``v.z``, and ``v[3]`` is equivalent to ``v.w``.
 
 ----
 
@@ -329,11 +424,15 @@ Operator Descriptions
 
 - :ref:`Vector4i<class_Vector4i>` **operator unary+** **(** **)**
 
+Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
+
 ----
 
 .. _class_Vector4i_operator_unminus_Vector4i:
 
 - :ref:`Vector4i<class_Vector4i>` **operator unary-** **(** **)**
+
+Returns the negative value of the ``Vector4i``. This is the same as writing ``Vector4i(-v.x, -v.y, -v.z, -v.w)``. This operation flips the direction of the vector while keeping the same magnitude.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

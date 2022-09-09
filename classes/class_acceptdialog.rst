@@ -66,9 +66,11 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+----------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_AcceptDialog_theme_style_panel>` |
-+---------------------------------+----------------------------------------------------+
++---------------------------------+---------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`           | :ref:`buttons_separation<class_AcceptDialog_theme_constant_buttons_separation>` | ``10`` |
++---------------------------------+---------------------------------------------------------------------------------+--------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_AcceptDialog_theme_style_panel>`                              |        |
++---------------------------------+---------------------------------------------------------------------------------+--------+
 
 Signals
 -------
@@ -240,11 +242,23 @@ Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``butt
 Theme Property Descriptions
 ---------------------------
 
+.. _class_AcceptDialog_theme_constant_buttons_separation:
+
+- :ref:`int<class_int>` **buttons_separation**
+
++-----------+--------+
+| *Default* | ``10`` |
++-----------+--------+
+
+The size of the vertical space between the dialog's content and the button row.
+
+----
+
 .. _class_AcceptDialog_theme_style_panel:
 
 - :ref:`StyleBox<class_StyleBox>` **panel**
 
-Panel that fills up the background of the window.
+The panel that fills the background of the window.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

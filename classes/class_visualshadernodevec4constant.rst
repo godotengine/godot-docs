@@ -12,12 +12,12 @@ VisualShaderNodeVec4Constant
 
 **Inherits:** :ref:`VisualShaderNodeConstant<class_VisualShaderNodeConstant>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A 4D vector (represented as a :ref:`Quaternion<class_Quaternion>`) constant to be used within the visual shader graph.
+A 4D vector constant to be used within the visual shader graph.
 
 Description
 -----------
 
-A constant 4D vector (represented as a :ref:`Quaternion<class_Quaternion>`), which can be used as an input node.
+A constant 4D vector, which can be used as an input node.
 
 Properties
 ----------

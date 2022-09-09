@@ -15,7 +15,7 @@ Dictionary type.
 Description
 -----------
 
-Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding elements, even though this may not be reflected when printing the dictionary. In other programming languages, this data structure is sometimes referred to as a hash map or associative array.
+Dictionary type. Associative container, which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding elements. In other programming languages, this data structure is sometimes referred to as a hash map or associative array.
 
 You can define a dictionary by placing a comma-separated list of ``key: value`` pairs in curly braces ``{}``.
 
@@ -262,6 +262,8 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                                       |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`find_key<class_Dictionary_method_find_key>` **(** :ref:`Variant<class_Variant>` value **)** |const|                                       |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |const|       |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)** |const|                                                   |
@@ -333,6 +335,16 @@ Creates a copy of the dictionary, and returns it. The ``deep`` parameter causes 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise.
 
 \ **Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
+
+----
+
+.. _class_Dictionary_method_find_key:
+
+- :ref:`Variant<class_Variant>` **find_key** **(** :ref:`Variant<class_Variant>` value **)** |const|
+
+Returns the first key whose associated value is equal to ``value``, or ``null`` if no such value is found.
+
+\ **Note:** ``null`` is also a valid key. If you have it in your ``Dictionary``, the :ref:`find_key<class_Dictionary_method_find_key>` method can give misleading results.
 
 ----
 

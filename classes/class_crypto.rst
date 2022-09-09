@@ -156,7 +156,7 @@ Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically s
 
 - :ref:`CryptoKey<class_CryptoKey>` **generate_rsa** **(** :ref:`int<class_int>` size **)**
 
-Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating self-signed certificates and passed to :ref:`StreamPeerSSL.accept_stream<class_StreamPeerSSL_method_accept_stream>`.
+Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating self-signed certificates and passed to :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>`.
 
 ----
 

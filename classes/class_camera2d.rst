@@ -23,7 +23,7 @@ Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node 
 
 This node is intended to be a simple helper to get things going quickly, but more functionality may be desired to change how the camera works. To make your own custom camera node, inherit it from :ref:`Node2D<class_Node2D>` and change the transform of the canvas by setting :ref:`Viewport.canvas_transform<class_Viewport_property_canvas_transform>` in :ref:`Viewport<class_Viewport>` (you can obtain the current :ref:`Viewport<class_Viewport>` by using :ref:`Node.get_viewport<class_Node_method_get_viewport>`).
 
-Note that the ``Camera2D`` node's ``position`` doesn't represent the actual position of the screen, which may differ due to applied smoothing or limits. You can use :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` to get the real position.
+Note that the ``Camera2D`` node's ``position`` doesn't represent the actual position of the screen, which may differ due to applied smoothing or limits. You can use :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>` to get the real position.
 
 Tutorials
 ---------
@@ -97,13 +97,13 @@ Methods
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                           |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_position<class_Camera2D_method_get_camera_position>` **(** **)** |const|                                                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_camera_screen_center<class_Camera2D_method_get_camera_screen_center>` **(** **)** |const|                                                         |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                            |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>` **(** **)** |const|                                                     |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_target_position<class_Camera2D_method_get_target_position>` **(** **)** |const|                                                                   |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                   |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -567,26 +567,6 @@ Forces the camera to update scroll immediately.
 
 ----
 
-.. _class_Camera2D_method_get_camera_position:
-
-- :ref:`Vector2<class_Vector2>` **get_camera_position** **(** **)** |const|
-
-Returns the camera's ``position`` (the tracked point the camera attempts to follow), relative to the origin.
-
-\ **Note:** The returned value is not the same as :ref:`Node2D.position<class_Node2D_property_position>` or :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the ``drag`` properties.
-
-----
-
-.. _class_Camera2D_method_get_camera_screen_center:
-
-- :ref:`Vector2<class_Vector2>` **get_camera_screen_center** **(** **)** |const|
-
-Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
-
-\ **Note:** The real ``position`` of the camera may be different, see :ref:`get_camera_position<class_Camera2D_method_get_camera_position>`.
-
-----
-
 .. _class_Camera2D_method_get_drag_margin:
 
 - :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
@@ -600,6 +580,26 @@ Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :re
 - :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Returns the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
+
+----
+
+.. _class_Camera2D_method_get_screen_center_position:
+
+- :ref:`Vector2<class_Vector2>` **get_screen_center_position** **(** **)** |const|
+
+Returns the center of the screen from this camera's point of view, in global coordinates.
+
+\ **Note:** The exact targeted position of the camera may be different. See :ref:`get_target_position<class_Camera2D_method_get_target_position>`.
+
+----
+
+.. _class_Camera2D_method_get_target_position:
+
+- :ref:`Vector2<class_Vector2>` **get_target_position** **(** **)** |const|
+
+Returns this camera's target position, in global coordinates.
+
+\ **Note:** The returned value is not the same as :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the drag properties. It is also not the same as the current position if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true`` (see :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>`).
 
 ----
 

@@ -41,7 +41,7 @@ Properties
 +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                   | :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>`       | ``0``                                                                     |
 +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                           | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`             | ``Vector2(0, 0)``                                                         |
+| :ref:`Vector2i<class_Vector2i>`                         | :ref:`fixed_icon_size<class_ItemList_property_fixed_icon_size>`             | ``Vector2i(0, 0)``                                                        |
 +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>`                | focus_mode                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
 +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -179,13 +179,13 @@ Theme Properties
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`font_size<class_ItemList_theme_font_size_font_size>`                 |                                |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ItemList_theme_style_bg>`                                   |                                |
-+---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg_focus<class_ItemList_theme_style_bg_focus>`                       |                                |
-+---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_ItemList_theme_style_cursor>`                           |                                |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                |
++---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ItemList_theme_style_focus>`                             |                                |
++---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ItemList_theme_style_panel>`                             |                                |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
 | :ref:`StyleBox<class_StyleBox>` | :ref:`selected<class_ItemList_theme_style_selected>`                       |                                |
 +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -337,10 +337,10 @@ A value of zero disables the adjustment, each item will have a width equal to th
 
 .. _class_ItemList_property_fixed_icon_size:
 
-- :ref:`Vector2<class_Vector2>` **fixed_icon_size**
+- :ref:`Vector2i<class_Vector2i>` **fixed_icon_size**
 
 +-----------+----------------------------+
-| *Default* | ``Vector2(0, 0)``          |
+| *Default* | ``Vector2i(0, 0)``         |
 +-----------+----------------------------+
 | *Setter*  | set_fixed_icon_size(value) |
 +-----------+----------------------------+
@@ -971,22 +971,6 @@ Font size of the item's text.
 
 ----
 
-.. _class_ItemList_theme_style_bg:
-
-- :ref:`StyleBox<class_StyleBox>` **bg**
-
-Default :ref:`StyleBox<class_StyleBox>` for the ``ItemList``, i.e. used when the control is not being focused.
-
-----
-
-.. _class_ItemList_theme_style_bg_focus:
-
-- :ref:`StyleBox<class_StyleBox>` **bg_focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the ``ItemList`` is being focused.
-
-----
-
 .. _class_ItemList_theme_style_cursor:
 
 - :ref:`StyleBox<class_StyleBox>` **cursor**
@@ -1000,6 +984,22 @@ Default :ref:`StyleBox<class_StyleBox>` for the ``ItemList``, i.e. used when the
 - :ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
 
 :ref:`StyleBox<class_StyleBox>` used for the cursor, when the ``ItemList`` is not being focused.
+
+----
+
+.. _class_ItemList_theme_style_focus:
+
+- :ref:`StyleBox<class_StyleBox>` **focus**
+
+The focused style for the ``ItemList``, drawn on top of the background, but below everything else.
+
+----
+
+.. _class_ItemList_theme_style_panel:
+
+- :ref:`StyleBox<class_StyleBox>` **panel**
+
+The background style for the ``ItemList``.
 
 ----
 

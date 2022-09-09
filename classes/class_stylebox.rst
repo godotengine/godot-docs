@@ -66,6 +66,8 @@ Methods
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`set_default_margin<class_StyleBox_method_set_default_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)** |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`set_default_margin_all<class_StyleBox_method_set_default_margin_all>` **(** :ref:`float<class_float>` offset **)**                                     |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`test_mask<class_StyleBox_method_test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |const|                    |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -236,6 +238,14 @@ Returns the "offset" of a stylebox. This helper function returns a value equival
 - void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
 
 Sets the default value of the specified :ref:`Side<enum_@GlobalScope_Side>` to ``offset`` pixels.
+
+----
+
+.. _class_StyleBox_method_set_default_margin_all:
+
+- void **set_default_margin_all** **(** :ref:`float<class_float>` offset **)**
+
+Sets the default margin to ``offset`` pixels for all sides.
 
 ----
 

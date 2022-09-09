@@ -37,6 +37,8 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`int<class_int>`                                   | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``1``      |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+| :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
++---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`bool<class_bool>`                                 | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`Color<class_Color>`                               | :ref:`environment_custom_color<class_LightmapGI_property_environment_custom_color>`   |            |
@@ -199,6 +201,20 @@ The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_p
 +-----------+--------------------+
 
 Number of light bounces that are taken into account during baking. Higher values result in brighter, more realistic lighting, at the cost of longer bake times. If set to ``0``, only environment lighting, direct light and emissive lighting is baked.
+
+----
+
+.. _class_LightmapGI_property_camera_attributes:
+
+- :ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+
++----------+------------------------------+
+| *Setter* | set_camera_attributes(value) |
++----------+------------------------------+
+| *Getter* | get_camera_attributes()      |
++----------+------------------------------+
+
+The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the ``LightmapGI`` will have banding artifacts or may have over-exposure artifacts.
 
 ----
 

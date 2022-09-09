@@ -26,33 +26,33 @@ The ``ProceduralSkyMaterial`` supports up to 4 suns. Each sun takes its color, e
 Properties
 ----------
 
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`ground_bottom_color<class_ProceduralSkyMaterial_property_ground_bottom_color>`   | ``Color(0.2, 0.169, 0.133, 1)``      |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`ground_curve<class_ProceduralSkyMaterial_property_ground_curve>`                 | ``0.02``                             |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`ground_energy<class_ProceduralSkyMaterial_property_ground_energy>`               | ``1.0``                              |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_ground_horizon_color>` | ``Color(0.6463, 0.6558, 0.6708, 1)`` |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`sky_cover<class_ProceduralSkyMaterial_property_sky_cover>`                       |                                      |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`sky_cover_modulate<class_ProceduralSkyMaterial_property_sky_cover_modulate>`     | ``Color(1, 1, 1, 1)``                |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`sky_curve<class_ProceduralSkyMaterial_property_sky_curve>`                       | ``0.15``                             |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`sky_energy<class_ProceduralSkyMaterial_property_sky_energy>`                     | ``1.0``                              |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky_horizon_color>`       | ``Color(0.6463, 0.6558, 0.6708, 1)`` |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`sky_top_color<class_ProceduralSkyMaterial_property_sky_top_color>`               | ``Color(0.385, 0.454, 0.55, 1)``     |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`sun_angle_max<class_ProceduralSkyMaterial_property_sun_angle_max>`               | ``30.0``                             |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`float<class_float>`         | :ref:`sun_curve<class_ProceduralSkyMaterial_property_sun_curve>`                       | ``0.15``                             |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`use_debanding<class_ProceduralSkyMaterial_property_use_debanding>`               | ``true``                             |
-+-----------------------------------+----------------------------------------------------------------------------------------+--------------------------------------+
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`ground_bottom_color<class_ProceduralSkyMaterial_property_ground_bottom_color>`           | ``Color(0.2, 0.169, 0.133, 1)``      |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`ground_curve<class_ProceduralSkyMaterial_property_ground_curve>`                         | ``0.02``                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`ground_energy_multiplier<class_ProceduralSkyMaterial_property_ground_energy_multiplier>` | ``1.0``                              |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_ground_horizon_color>`         | ``Color(0.6463, 0.6558, 0.6708, 1)`` |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`sky_cover<class_ProceduralSkyMaterial_property_sky_cover>`                               |                                      |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`sky_cover_modulate<class_ProceduralSkyMaterial_property_sky_cover_modulate>`             | ``Color(1, 1, 1, 1)``                |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`sky_curve<class_ProceduralSkyMaterial_property_sky_curve>`                               | ``0.15``                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`sky_energy_multiplier<class_ProceduralSkyMaterial_property_sky_energy_multiplier>`       | ``1.0``                              |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky_horizon_color>`               | ``Color(0.6463, 0.6558, 0.6708, 1)`` |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`sky_top_color<class_ProceduralSkyMaterial_property_sky_top_color>`                       | ``Color(0.385, 0.454, 0.55, 1)``     |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`sun_angle_max<class_ProceduralSkyMaterial_property_sun_angle_max>`                       | ``30.0``                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`float<class_float>`         | :ref:`sun_curve<class_ProceduralSkyMaterial_property_sun_curve>`                               | ``0.15``                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`use_debanding<class_ProceduralSkyMaterial_property_use_debanding>`                       | ``true``                             |
++-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -89,19 +89,19 @@ How quickly the :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_
 
 ----
 
-.. _class_ProceduralSkyMaterial_property_ground_energy:
+.. _class_ProceduralSkyMaterial_property_ground_energy_multiplier:
 
-- :ref:`float<class_float>` **ground_energy**
+- :ref:`float<class_float>` **ground_energy_multiplier**
 
-+-----------+--------------------------+
-| *Default* | ``1.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_ground_energy(value) |
-+-----------+--------------------------+
-| *Getter*  | get_ground_energy()      |
-+-----------+--------------------------+
++-----------+-------------------------------------+
+| *Default* | ``1.0``                             |
++-----------+-------------------------------------+
+| *Setter*  | set_ground_energy_multiplier(value) |
++-----------+-------------------------------------+
+| *Getter*  | get_ground_energy_multiplier()      |
++-----------+-------------------------------------+
 
-Amount of energy contribution from the ground.
+Multiplier for ground color. A higher value will make the ground brighter.
 
 ----
 
@@ -131,7 +131,7 @@ Color of the ground at the horizon. Blends with :ref:`ground_bottom_color<class_
 | *Getter* | get_sky_cover()      |
 +----------+----------------------+
 
-The sky cover texture to use. This texture must use an equirectangular projection (similar to :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`). The texture's colors will be *added* to the existing sky color, and will be multiplied by :ref:`sky_energy<class_ProceduralSkyMaterial_property_sky_energy>` and :ref:`sky_cover_modulate<class_ProceduralSkyMaterial_property_sky_cover_modulate>`. This is mainly suited to displaying stars at night, but it can also be used to display clouds at day or night (with a non-physically-accurate look).
+The sky cover texture to use. This texture must use an equirectangular projection (similar to :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`). The texture's colors will be *added* to the existing sky color, and will be multiplied by :ref:`sky_energy_multiplier<class_ProceduralSkyMaterial_property_sky_energy_multiplier>` and :ref:`sky_cover_modulate<class_ProceduralSkyMaterial_property_sky_cover_modulate>`. This is mainly suited to displaying stars at night, but it can also be used to display clouds at day or night (with a non-physically-accurate look).
 
 ----
 
@@ -167,19 +167,19 @@ How quickly the :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky
 
 ----
 
-.. _class_ProceduralSkyMaterial_property_sky_energy:
+.. _class_ProceduralSkyMaterial_property_sky_energy_multiplier:
 
-- :ref:`float<class_float>` **sky_energy**
+- :ref:`float<class_float>` **sky_energy_multiplier**
 
-+-----------+-----------------------+
-| *Default* | ``1.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_sky_energy(value) |
-+-----------+-----------------------+
-| *Getter*  | get_sky_energy()      |
-+-----------+-----------------------+
++-----------+----------------------------------+
+| *Default* | ``1.0``                          |
++-----------+----------------------------------+
+| *Setter*  | set_sky_energy_multiplier(value) |
++-----------+----------------------------------+
+| *Getter*  | get_sky_energy_multiplier()      |
++-----------+----------------------------------+
 
-Amount of energy contribution from the sky.
+Multiplier for sky color. A higher value will make the sky brighter.
 
 ----
 

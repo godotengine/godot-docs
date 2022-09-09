@@ -22,13 +22,13 @@ Contains the results of a single :ref:`RegEx<class_RegEx>` match returned by :re
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+--------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`names<class_RegExMatch_property_names>`     | ``{}`` |
-+-------------------------------------+---------------------------------------------------+--------+
-| :ref:`Array<class_Array>`           | :ref:`strings<class_RegExMatch_property_strings>` | ``[]`` |
-+-------------------------------------+---------------------------------------------------+--------+
-| :ref:`String<class_String>`         | :ref:`subject<class_RegExMatch_property_subject>` | ``""`` |
-+-------------------------------------+---------------------------------------------------+--------+
++---------------------------------------------------+---------------------------------------------------+-------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`names<class_RegExMatch_property_names>`     | ``{}``                  |
++---------------------------------------------------+---------------------------------------------------+-------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`strings<class_RegExMatch_property_strings>` | ``PackedStringArray()`` |
++---------------------------------------------------+---------------------------------------------------+-------------------------+
+| :ref:`String<class_String>`                       | :ref:`subject<class_RegExMatch_property_subject>` | ``""``                  |
++---------------------------------------------------+---------------------------------------------------+-------------------------+
 
 Methods
 -------
@@ -62,13 +62,13 @@ A dictionary of named groups and its corresponding group number. Only groups tha
 
 .. _class_RegExMatch_property_strings:
 
-- :ref:`Array<class_Array>` **strings**
+- :ref:`PackedStringArray<class_PackedStringArray>` **strings**
 
-+-----------+---------------+
-| *Default* | ``[]``        |
-+-----------+---------------+
-| *Getter*  | get_strings() |
-+-----------+---------------+
++-----------+-------------------------+
+| *Default* | ``PackedStringArray()`` |
++-----------+-------------------------+
+| *Getter*  | get_strings()           |
++-----------+-------------------------+
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 

@@ -105,9 +105,11 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                     | :ref:`is_layer_y_sort_enabled<class_TileMap_method_is_layer_y_sort_enabled>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                                            |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2i<class_Vector2i>`             | :ref:`local_to_map<class_TileMap_method_local_to_map>` **(** :ref:`Vector2<class_Vector2>` local_position **)** |const|                                                                                                                                                                 |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`             | :ref:`map_pattern<class_TileMap_method_map_pattern>` **(** :ref:`Vector2i<class_Vector2i>` position_in_tilemap, :ref:`Vector2i<class_Vector2i>` coords_in_pattern, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**                                                            |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`               | :ref:`map_to_world<class_TileMap_method_map_to_world>` **(** :ref:`Vector2i<class_Vector2i>` map_position **)** |const|                                                                                                                                                                 |
+| :ref:`Vector2<class_Vector2>`               | :ref:`map_to_local<class_TileMap_method_map_to_local>` **(** :ref:`Vector2i<class_Vector2i>` map_position **)** |const|                                                                                                                                                                 |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`move_layer<class_TileMap_method_move_layer>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` to_position **)**                                                                                                                                                           |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,8 +134,6 @@ Methods
 | void                                        | :ref:`set_layer_z_index<class_TileMap_method_set_layer_z_index>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` z_index **)**                                                                                                                                                 |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`set_pattern<class_TileMap_method_set_pattern>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` position, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**                                                                                             |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`             | :ref:`world_to_map<class_TileMap_method_world_to_map>` **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|                                                                                                                                                                 |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -460,6 +460,14 @@ Returns if a layer Y-sorts its tiles.
 
 ----
 
+.. _class_TileMap_method_local_to_map:
+
+- :ref:`Vector2i<class_Vector2i>` **local_to_map** **(** :ref:`Vector2<class_Vector2>` local_position **)** |const|
+
+Returns the map coordinates of the cell containing the given ``local_position``. If ``local_position`` is in global coordinates, consider using :ref:`Node2D.to_local<class_Node2D_method_to_local>` before passing it to this method. See also :ref:`map_to_local<class_TileMap_method_map_to_local>`.
+
+----
+
 .. _class_TileMap_method_map_pattern:
 
 - :ref:`Vector2i<class_Vector2i>` **map_pattern** **(** :ref:`Vector2i<class_Vector2i>` position_in_tilemap, :ref:`Vector2i<class_Vector2i>` coords_in_pattern, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**
@@ -468,13 +476,13 @@ Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern
 
 ----
 
-.. _class_TileMap_method_map_to_world:
+.. _class_TileMap_method_map_to_local:
 
-- :ref:`Vector2<class_Vector2>` **map_to_world** **(** :ref:`Vector2i<class_Vector2i>` map_position **)** |const|
+- :ref:`Vector2<class_Vector2>` **map_to_local** **(** :ref:`Vector2i<class_Vector2i>` map_position **)** |const|
 
-Returns a local position of the center of the cell at the given tilemap (grid-based) coordinates.
+Returns the centered position of a cell in the TileMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node2D.to_global<class_Node2D_method_to_global>`. See also :ref:`local_to_map<class_TileMap_method_local_to_map>`.
 
-\ **Note:** This doesn't correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_offset<class_TileData_property_texture_offset>` property of individual tiles.
+\ **Note:** This may not correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_offset<class_TileData_property_texture_offset>` property of individual tiles.
 
 ----
 
@@ -601,14 +609,6 @@ If ``layer`` is negative, the layers are accessed from the last one.
 - void **set_pattern** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` position, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**
 
 Paste the given :ref:`TileMapPattern<class_TileMapPattern>` at the given ``position`` and ``layer`` in the tile map.
-
-----
-
-.. _class_TileMap_method_world_to_map:
-
-- :ref:`Vector2i<class_Vector2i>` **world_to_map** **(** :ref:`Vector2<class_Vector2>` world_position **)** |const|
-
-Returns the tilemap (grid-based) coordinates corresponding to the given local position.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

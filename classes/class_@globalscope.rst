@@ -56,7 +56,7 @@ Properties
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`JavaClassWrapper<class_JavaClassWrapper>`               | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JavaScript<class_JavaScript>`                           | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
+| :ref:`JavaScriptBridge<class_JavaScriptBridge>`               | :ref:`JavaScriptBridge<class_@GlobalScope_property_JavaScriptBridge>`               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -74,7 +74,11 @@ Properties
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`PhysicsServer2D<class_PhysicsServer2D>`                 | :ref:`PhysicsServer2D<class_@GlobalScope_property_PhysicsServer2D>`                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>`   | :ref:`PhysicsServer2DManager<class_@GlobalScope_property_PhysicsServer2DManager>`   |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`PhysicsServer3D<class_PhysicsServer3D>`                 | :ref:`PhysicsServer3D<class_@GlobalScope_property_PhysicsServer3D>`                 |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>`   | :ref:`PhysicsServer3DManager<class_@GlobalScope_property_PhysicsServer3DManager>`   |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`ProjectSettings<class_ProjectSettings>`                 | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -251,7 +255,7 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`randomize<class_@GlobalScope_method_randomize>` **(** **)**                                                                                                                                                                                                                                                                                                              |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`range_lerp<class_@GlobalScope_method_range_lerp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**                                                                                                                                      |
+| :ref:`float<class_float>`                       | :ref:`remap<class_@GlobalScope_method_remap>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**                                                                                                                                                |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`rid_allocate_id<class_@GlobalScope_method_rid_allocate_id>` **(** **)**                                                                                                                                                                                                                                                                                                  |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1013,259 +1017,259 @@ enum **Key**:
 
 - **KEY_NONE** = **0** --- Enum value which doesn't correspond to any key. This is used to initialize :ref:`Key<enum_@GlobalScope_Key>` properties with a generic state.
 
-- **KEY_SPECIAL** = **16777216** --- Keycodes with this bit applied are non-printable.
+- **KEY_SPECIAL** = **4194304** --- Keycodes with this bit applied are non-printable.
 
-- **KEY_ESCAPE** = **16777217** --- Escape key.
+- **KEY_ESCAPE** = **4194305** --- Escape key.
 
-- **KEY_TAB** = **16777218** --- Tab key.
+- **KEY_TAB** = **4194306** --- Tab key.
 
-- **KEY_BACKTAB** = **16777219** --- Shift + Tab key.
+- **KEY_BACKTAB** = **4194307** --- Shift + Tab key.
 
-- **KEY_BACKSPACE** = **16777220** --- Backspace key.
+- **KEY_BACKSPACE** = **4194308** --- Backspace key.
 
-- **KEY_ENTER** = **16777221** --- Return key (on the main keyboard).
+- **KEY_ENTER** = **4194309** --- Return key (on the main keyboard).
 
-- **KEY_KP_ENTER** = **16777222** --- Enter key on the numeric keypad.
+- **KEY_KP_ENTER** = **4194310** --- Enter key on the numeric keypad.
 
-- **KEY_INSERT** = **16777223** --- Insert key.
+- **KEY_INSERT** = **4194311** --- Insert key.
 
-- **KEY_DELETE** = **16777224** --- Delete key.
+- **KEY_DELETE** = **4194312** --- Delete key.
 
-- **KEY_PAUSE** = **16777225** --- Pause key.
+- **KEY_PAUSE** = **4194313** --- Pause key.
 
-- **KEY_PRINT** = **16777226** --- Print Screen key.
+- **KEY_PRINT** = **4194314** --- Print Screen key.
 
-- **KEY_SYSREQ** = **16777227** --- System Request key.
+- **KEY_SYSREQ** = **4194315** --- System Request key.
 
-- **KEY_CLEAR** = **16777228** --- Clear key.
+- **KEY_CLEAR** = **4194316** --- Clear key.
 
-- **KEY_HOME** = **16777229** --- Home key.
+- **KEY_HOME** = **4194317** --- Home key.
 
-- **KEY_END** = **16777230** --- End key.
+- **KEY_END** = **4194318** --- End key.
 
-- **KEY_LEFT** = **16777231** --- Left arrow key.
+- **KEY_LEFT** = **4194319** --- Left arrow key.
 
-- **KEY_UP** = **16777232** --- Up arrow key.
+- **KEY_UP** = **4194320** --- Up arrow key.
 
-- **KEY_RIGHT** = **16777233** --- Right arrow key.
+- **KEY_RIGHT** = **4194321** --- Right arrow key.
 
-- **KEY_DOWN** = **16777234** --- Down arrow key.
+- **KEY_DOWN** = **4194322** --- Down arrow key.
 
-- **KEY_PAGEUP** = **16777235** --- Page Up key.
+- **KEY_PAGEUP** = **4194323** --- Page Up key.
 
-- **KEY_PAGEDOWN** = **16777236** --- Page Down key.
+- **KEY_PAGEDOWN** = **4194324** --- Page Down key.
 
-- **KEY_SHIFT** = **16777237** --- Shift key.
+- **KEY_SHIFT** = **4194325** --- Shift key.
 
-- **KEY_CTRL** = **16777238** --- Control key.
+- **KEY_CTRL** = **4194326** --- Control key.
 
-- **KEY_META** = **16777239** --- Meta key.
+- **KEY_META** = **4194327** --- Meta key.
 
-- **KEY_ALT** = **16777240** --- Alt key.
+- **KEY_ALT** = **4194328** --- Alt key.
 
-- **KEY_CAPSLOCK** = **16777241** --- Caps Lock key.
+- **KEY_CAPSLOCK** = **4194329** --- Caps Lock key.
 
-- **KEY_NUMLOCK** = **16777242** --- Num Lock key.
+- **KEY_NUMLOCK** = **4194330** --- Num Lock key.
 
-- **KEY_SCROLLLOCK** = **16777243** --- Scroll Lock key.
+- **KEY_SCROLLLOCK** = **4194331** --- Scroll Lock key.
 
-- **KEY_F1** = **16777244** --- F1 key.
+- **KEY_F1** = **4194332** --- F1 key.
 
-- **KEY_F2** = **16777245** --- F2 key.
+- **KEY_F2** = **4194333** --- F2 key.
 
-- **KEY_F3** = **16777246** --- F3 key.
+- **KEY_F3** = **4194334** --- F3 key.
 
-- **KEY_F4** = **16777247** --- F4 key.
+- **KEY_F4** = **4194335** --- F4 key.
 
-- **KEY_F5** = **16777248** --- F5 key.
+- **KEY_F5** = **4194336** --- F5 key.
 
-- **KEY_F6** = **16777249** --- F6 key.
+- **KEY_F6** = **4194337** --- F6 key.
 
-- **KEY_F7** = **16777250** --- F7 key.
+- **KEY_F7** = **4194338** --- F7 key.
 
-- **KEY_F8** = **16777251** --- F8 key.
+- **KEY_F8** = **4194339** --- F8 key.
 
-- **KEY_F9** = **16777252** --- F9 key.
+- **KEY_F9** = **4194340** --- F9 key.
 
-- **KEY_F10** = **16777253** --- F10 key.
+- **KEY_F10** = **4194341** --- F10 key.
 
-- **KEY_F11** = **16777254** --- F11 key.
+- **KEY_F11** = **4194342** --- F11 key.
 
-- **KEY_F12** = **16777255** --- F12 key.
+- **KEY_F12** = **4194343** --- F12 key.
 
-- **KEY_F13** = **16777256** --- F13 key.
+- **KEY_F13** = **4194344** --- F13 key.
 
-- **KEY_F14** = **16777257** --- F14 key.
+- **KEY_F14** = **4194345** --- F14 key.
 
-- **KEY_F15** = **16777258** --- F15 key.
+- **KEY_F15** = **4194346** --- F15 key.
 
-- **KEY_F16** = **16777259** --- F16 key.
+- **KEY_F16** = **4194347** --- F16 key.
 
-- **KEY_F17** = **16777260** --- F17 key.
+- **KEY_F17** = **4194348** --- F17 key.
 
-- **KEY_F18** = **16777261** --- F18 key.
+- **KEY_F18** = **4194349** --- F18 key.
 
-- **KEY_F19** = **16777262** --- F19 key.
+- **KEY_F19** = **4194350** --- F19 key.
 
-- **KEY_F20** = **16777263** --- F20 key.
+- **KEY_F20** = **4194351** --- F20 key.
 
-- **KEY_F21** = **16777264** --- F21 key.
+- **KEY_F21** = **4194352** --- F21 key.
 
-- **KEY_F22** = **16777265** --- F22 key.
+- **KEY_F22** = **4194353** --- F22 key.
 
-- **KEY_F23** = **16777266** --- F23 key.
+- **KEY_F23** = **4194354** --- F23 key.
 
-- **KEY_F24** = **16777267** --- F24 key.
+- **KEY_F24** = **4194355** --- F24 key.
 
-- **KEY_F25** = **16777268** --- F25 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F25** = **4194356** --- F25 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F26** = **16777269** --- F26 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F26** = **4194357** --- F26 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F27** = **16777270** --- F27 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F27** = **4194358** --- F27 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F28** = **16777271** --- F28 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F28** = **4194359** --- F28 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F29** = **16777272** --- F29 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F29** = **4194360** --- F29 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F30** = **16777273** --- F30 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F30** = **4194361** --- F30 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F31** = **16777274** --- F31 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F31** = **4194362** --- F31 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F32** = **16777275** --- F32 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F32** = **4194363** --- F32 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F33** = **16777276** --- F33 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F33** = **4194364** --- F33 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F34** = **16777277** --- F34 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F34** = **4194365** --- F34 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_F35** = **16777278** --- F35 key. Only supported on macOS and Linux due to a Windows limitation.
+- **KEY_F35** = **4194366** --- F35 key. Only supported on macOS and Linux due to a Windows limitation.
 
-- **KEY_KP_MULTIPLY** = **16777345** --- Multiply (\*) key on the numeric keypad.
+- **KEY_KP_MULTIPLY** = **4194433** --- Multiply (\*) key on the numeric keypad.
 
-- **KEY_KP_DIVIDE** = **16777346** --- Divide (/) key on the numeric keypad.
+- **KEY_KP_DIVIDE** = **4194434** --- Divide (/) key on the numeric keypad.
 
-- **KEY_KP_SUBTRACT** = **16777347** --- Subtract (-) key on the numeric keypad.
+- **KEY_KP_SUBTRACT** = **4194435** --- Subtract (-) key on the numeric keypad.
 
-- **KEY_KP_PERIOD** = **16777348** --- Period (.) key on the numeric keypad.
+- **KEY_KP_PERIOD** = **4194436** --- Period (.) key on the numeric keypad.
 
-- **KEY_KP_ADD** = **16777349** --- Add (+) key on the numeric keypad.
+- **KEY_KP_ADD** = **4194437** --- Add (+) key on the numeric keypad.
 
-- **KEY_KP_0** = **16777350** --- Number 0 on the numeric keypad.
+- **KEY_KP_0** = **4194438** --- Number 0 on the numeric keypad.
 
-- **KEY_KP_1** = **16777351** --- Number 1 on the numeric keypad.
+- **KEY_KP_1** = **4194439** --- Number 1 on the numeric keypad.
 
-- **KEY_KP_2** = **16777352** --- Number 2 on the numeric keypad.
+- **KEY_KP_2** = **4194440** --- Number 2 on the numeric keypad.
 
-- **KEY_KP_3** = **16777353** --- Number 3 on the numeric keypad.
+- **KEY_KP_3** = **4194441** --- Number 3 on the numeric keypad.
 
-- **KEY_KP_4** = **16777354** --- Number 4 on the numeric keypad.
+- **KEY_KP_4** = **4194442** --- Number 4 on the numeric keypad.
 
-- **KEY_KP_5** = **16777355** --- Number 5 on the numeric keypad.
+- **KEY_KP_5** = **4194443** --- Number 5 on the numeric keypad.
 
-- **KEY_KP_6** = **16777356** --- Number 6 on the numeric keypad.
+- **KEY_KP_6** = **4194444** --- Number 6 on the numeric keypad.
 
-- **KEY_KP_7** = **16777357** --- Number 7 on the numeric keypad.
+- **KEY_KP_7** = **4194445** --- Number 7 on the numeric keypad.
 
-- **KEY_KP_8** = **16777358** --- Number 8 on the numeric keypad.
+- **KEY_KP_8** = **4194446** --- Number 8 on the numeric keypad.
 
-- **KEY_KP_9** = **16777359** --- Number 9 on the numeric keypad.
+- **KEY_KP_9** = **4194447** --- Number 9 on the numeric keypad.
 
-- **KEY_SUPER_L** = **16777280** --- Left Super key (Windows key).
+- **KEY_SUPER_L** = **4194368** --- Left Super key (Windows key).
 
-- **KEY_SUPER_R** = **16777281** --- Right Super key (Windows key).
+- **KEY_SUPER_R** = **4194369** --- Right Super key (Windows key).
 
-- **KEY_MENU** = **16777282** --- Context menu key.
+- **KEY_MENU** = **4194370** --- Context menu key.
 
-- **KEY_HYPER_L** = **16777283** --- Left Hyper key.
+- **KEY_HYPER_L** = **4194371** --- Left Hyper key.
 
-- **KEY_HYPER_R** = **16777284** --- Right Hyper key.
+- **KEY_HYPER_R** = **4194372** --- Right Hyper key.
 
-- **KEY_HELP** = **16777285** --- Help key.
+- **KEY_HELP** = **4194373** --- Help key.
 
-- **KEY_DIRECTION_L** = **16777286** --- Left Direction key.
+- **KEY_DIRECTION_L** = **4194374** --- Left Direction key.
 
-- **KEY_DIRECTION_R** = **16777287** --- Right Direction key.
+- **KEY_DIRECTION_R** = **4194375** --- Right Direction key.
 
-- **KEY_BACK** = **16777288** --- Media back key. Not to be confused with the Back button on an Android device.
+- **KEY_BACK** = **4194376** --- Media back key. Not to be confused with the Back button on an Android device.
 
-- **KEY_FORWARD** = **16777289** --- Media forward key.
+- **KEY_FORWARD** = **4194377** --- Media forward key.
 
-- **KEY_STOP** = **16777290** --- Media stop key.
+- **KEY_STOP** = **4194378** --- Media stop key.
 
-- **KEY_REFRESH** = **16777291** --- Media refresh key.
+- **KEY_REFRESH** = **4194379** --- Media refresh key.
 
-- **KEY_VOLUMEDOWN** = **16777292** --- Volume down key.
+- **KEY_VOLUMEDOWN** = **4194380** --- Volume down key.
 
-- **KEY_VOLUMEMUTE** = **16777293** --- Mute volume key.
+- **KEY_VOLUMEMUTE** = **4194381** --- Mute volume key.
 
-- **KEY_VOLUMEUP** = **16777294** --- Volume up key.
+- **KEY_VOLUMEUP** = **4194382** --- Volume up key.
 
-- **KEY_BASSBOOST** = **16777295** --- Bass Boost key.
+- **KEY_BASSBOOST** = **4194383** --- Bass Boost key.
 
-- **KEY_BASSUP** = **16777296** --- Bass up key.
+- **KEY_BASSUP** = **4194384** --- Bass up key.
 
-- **KEY_BASSDOWN** = **16777297** --- Bass down key.
+- **KEY_BASSDOWN** = **4194385** --- Bass down key.
 
-- **KEY_TREBLEUP** = **16777298** --- Treble up key.
+- **KEY_TREBLEUP** = **4194386** --- Treble up key.
 
-- **KEY_TREBLEDOWN** = **16777299** --- Treble down key.
+- **KEY_TREBLEDOWN** = **4194387** --- Treble down key.
 
-- **KEY_MEDIAPLAY** = **16777300** --- Media play key.
+- **KEY_MEDIAPLAY** = **4194388** --- Media play key.
 
-- **KEY_MEDIASTOP** = **16777301** --- Media stop key.
+- **KEY_MEDIASTOP** = **4194389** --- Media stop key.
 
-- **KEY_MEDIAPREVIOUS** = **16777302** --- Previous song key.
+- **KEY_MEDIAPREVIOUS** = **4194390** --- Previous song key.
 
-- **KEY_MEDIANEXT** = **16777303** --- Next song key.
+- **KEY_MEDIANEXT** = **4194391** --- Next song key.
 
-- **KEY_MEDIARECORD** = **16777304** --- Media record key.
+- **KEY_MEDIARECORD** = **4194392** --- Media record key.
 
-- **KEY_HOMEPAGE** = **16777305** --- Home page key.
+- **KEY_HOMEPAGE** = **4194393** --- Home page key.
 
-- **KEY_FAVORITES** = **16777306** --- Favorites key.
+- **KEY_FAVORITES** = **4194394** --- Favorites key.
 
-- **KEY_SEARCH** = **16777307** --- Search key.
+- **KEY_SEARCH** = **4194395** --- Search key.
 
-- **KEY_STANDBY** = **16777308** --- Standby key.
+- **KEY_STANDBY** = **4194396** --- Standby key.
 
-- **KEY_OPENURL** = **16777309** --- Open URL / Launch Browser key.
+- **KEY_OPENURL** = **4194397** --- Open URL / Launch Browser key.
 
-- **KEY_LAUNCHMAIL** = **16777310** --- Launch Mail key.
+- **KEY_LAUNCHMAIL** = **4194398** --- Launch Mail key.
 
-- **KEY_LAUNCHMEDIA** = **16777311** --- Launch Media key.
+- **KEY_LAUNCHMEDIA** = **4194399** --- Launch Media key.
 
-- **KEY_LAUNCH0** = **16777312** --- Launch Shortcut 0 key.
+- **KEY_LAUNCH0** = **4194400** --- Launch Shortcut 0 key.
 
-- **KEY_LAUNCH1** = **16777313** --- Launch Shortcut 1 key.
+- **KEY_LAUNCH1** = **4194401** --- Launch Shortcut 1 key.
 
-- **KEY_LAUNCH2** = **16777314** --- Launch Shortcut 2 key.
+- **KEY_LAUNCH2** = **4194402** --- Launch Shortcut 2 key.
 
-- **KEY_LAUNCH3** = **16777315** --- Launch Shortcut 3 key.
+- **KEY_LAUNCH3** = **4194403** --- Launch Shortcut 3 key.
 
-- **KEY_LAUNCH4** = **16777316** --- Launch Shortcut 4 key.
+- **KEY_LAUNCH4** = **4194404** --- Launch Shortcut 4 key.
 
-- **KEY_LAUNCH5** = **16777317** --- Launch Shortcut 5 key.
+- **KEY_LAUNCH5** = **4194405** --- Launch Shortcut 5 key.
 
-- **KEY_LAUNCH6** = **16777318** --- Launch Shortcut 6 key.
+- **KEY_LAUNCH6** = **4194406** --- Launch Shortcut 6 key.
 
-- **KEY_LAUNCH7** = **16777319** --- Launch Shortcut 7 key.
+- **KEY_LAUNCH7** = **4194407** --- Launch Shortcut 7 key.
 
-- **KEY_LAUNCH8** = **16777320** --- Launch Shortcut 8 key.
+- **KEY_LAUNCH8** = **4194408** --- Launch Shortcut 8 key.
 
-- **KEY_LAUNCH9** = **16777321** --- Launch Shortcut 9 key.
+- **KEY_LAUNCH9** = **4194409** --- Launch Shortcut 9 key.
 
-- **KEY_LAUNCHA** = **16777322** --- Launch Shortcut A key.
+- **KEY_LAUNCHA** = **4194410** --- Launch Shortcut A key.
 
-- **KEY_LAUNCHB** = **16777323** --- Launch Shortcut B key.
+- **KEY_LAUNCHB** = **4194411** --- Launch Shortcut B key.
 
-- **KEY_LAUNCHC** = **16777324** --- Launch Shortcut C key.
+- **KEY_LAUNCHC** = **4194412** --- Launch Shortcut C key.
 
-- **KEY_LAUNCHD** = **16777325** --- Launch Shortcut D key.
+- **KEY_LAUNCHD** = **4194413** --- Launch Shortcut D key.
 
-- **KEY_LAUNCHE** = **16777326** --- Launch Shortcut E key.
+- **KEY_LAUNCHE** = **4194414** --- Launch Shortcut E key.
 
-- **KEY_LAUNCHF** = **16777327** --- Launch Shortcut F key.
+- **KEY_LAUNCHF** = **4194415** --- Launch Shortcut F key.
 
-- **KEY_UNKNOWN** = **33554431** --- Unknown key.
+- **KEY_UNKNOWN** = **16777215** --- Unknown key.
 
 - **KEY_SPACE** = **32** --- Space key.
 
@@ -1545,6 +1549,8 @@ enum **Key**:
 
 .. _class_@GlobalScope_constant_KEY_MODIFIER_MASK:
 
+.. _class_@GlobalScope_constant_KEY_MASK_CMD_OR_CTRL:
+
 .. _class_@GlobalScope_constant_KEY_MASK_SHIFT:
 
 .. _class_@GlobalScope_constant_KEY_MASK_ALT:
@@ -1553,27 +1559,25 @@ enum **Key**:
 
 .. _class_@GlobalScope_constant_KEY_MASK_CTRL:
 
-.. _class_@GlobalScope_constant_KEY_MASK_CMD:
-
 .. _class_@GlobalScope_constant_KEY_MASK_KPAD:
 
 .. _class_@GlobalScope_constant_KEY_MASK_GROUP_SWITCH:
 
 enum **KeyModifierMask**:
 
-- **KEY_CODE_MASK** = **33554431** --- Key Code mask.
+- **KEY_CODE_MASK** = **8388607** --- Key Code mask.
 
-- **KEY_MODIFIER_MASK** = **2130706432** --- Modifier key mask.
+- **KEY_MODIFIER_MASK** = **532676608** --- Modifier key mask.
+
+- **KEY_MASK_CMD_OR_CTRL** = **16777216** --- Automatically remapped to :ref:`KEY_META<class_@GlobalScope_constant_KEY_META>` on macOS and :ref:`KEY_CTRL<class_@GlobalScope_constant_KEY_CTRL>` on other platforms, this mask is never set in the actual events, and should be used for key mapping only.
 
 - **KEY_MASK_SHIFT** = **33554432** --- Shift key mask.
 
-- **KEY_MASK_ALT** = **67108864** --- Alt key mask.
+- **KEY_MASK_ALT** = **67108864** --- Alt or Option (on macOS) key mask.
 
-- **KEY_MASK_META** = **134217728** --- Meta key mask.
+- **KEY_MASK_META** = **134217728** --- Command (on macOS) or Meta/Windows key mask.
 
 - **KEY_MASK_CTRL** = **268435456** --- Ctrl key mask.
-
-- **KEY_MASK_CMD** = **platform-dependent** --- Command key mask. On macOS, this is equivalent to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>`. On other platforms, this is equivalent to :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>`. This mask should be preferred to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>` or :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>` for system shortcuts as it handles all platforms correctly.
 
 - **KEY_MASK_KPAD** = **536870912** --- Keypad key mask.
 
@@ -2194,7 +2198,7 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_lesser"``.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_less"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_less"``.
 
 Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians"`` for editing radian angles in degrees, ``"degrees"`` to hint at an angle and ``"no_slider"`` to hide the slider.
 
@@ -2856,11 +2860,11 @@ The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
 ----
 
-.. _class_@GlobalScope_property_JavaScript:
+.. _class_@GlobalScope_property_JavaScriptBridge:
 
-- :ref:`JavaScript<class_JavaScript>` **JavaScript**
+- :ref:`JavaScriptBridge<class_JavaScriptBridge>` **JavaScriptBridge**
 
-The :ref:`JavaScript<class_JavaScript>` singleton.
+The :ref:`JavaScriptBridge<class_JavaScriptBridge>` singleton.
 
 \ **Note:** Only implemented on the Web platform.
 
@@ -2928,11 +2932,27 @@ The :ref:`PhysicsServer2D<class_PhysicsServer2D>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_PhysicsServer2DManager:
+
+- :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` **PhysicsServer2DManager**
+
+The :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` singleton.
+
+----
+
 .. _class_@GlobalScope_property_PhysicsServer3D:
 
 - :ref:`PhysicsServer3D<class_PhysicsServer3D>` **PhysicsServer3D**
 
 The :ref:`PhysicsServer3D<class_PhysicsServer3D>` singleton.
+
+----
+
+.. _class_@GlobalScope_property_PhysicsServer3DManager:
+
+- :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` **PhysicsServer3DManager**
+
+The :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` singleton.
 
 ----
 
@@ -3517,7 +3537,7 @@ Returns an interpolation or extrapolation factor considering the range specified
     var ratio = inverse_lerp(20, 30, 27.5)
     # `ratio` is now 0.75.
 
-See also :ref:`lerp<class_@GlobalScope_method_lerp>` which performs the reverse of this operation, and :ref:`range_lerp<class_@GlobalScope_method_range_lerp>` to map a continuous series of values to another.
+See also :ref:`lerp<class_@GlobalScope_method_lerp>` which performs the reverse of this operation, and :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
 ----
 
@@ -3587,7 +3607,7 @@ Both ``from`` and ``to`` must have matching types. Supported types: :ref:`float<
 
     lerp(0, 4, 0.75) # Returns 3.0
 
-See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. See also :ref:`range_lerp<class_@GlobalScope_method_range_lerp>` to map a continuous series of values to another.
+See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. See also :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
 \ **Note:** For better type safety, you can use :ref:`lerpf<class_@GlobalScope_method_lerpf>`, :ref:`Vector2.lerp<class_Vector2_method_lerp>`, :ref:`Vector3.lerp<class_Vector3_method_lerp>`, :ref:`Vector4.lerp<class_Vector4_method_lerp>`, :ref:`Color.lerp<class_Color_method_lerp>`, :ref:`Quaternion.slerp<class_Quaternion_method_slerp>` or :ref:`Basis.slerp<class_Basis_method_slerp>` instead.
 
@@ -4038,15 +4058,15 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
 
 ----
 
-.. _class_@GlobalScope_method_range_lerp:
+.. _class_@GlobalScope_method_remap:
 
-- :ref:`float<class_float>` **range_lerp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**
+- :ref:`float<class_float>` **remap** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**
 
-Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`range_lerp<class_@GlobalScope_method_range_lerp>` if this is not desired.
+Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`remap<class_@GlobalScope_method_remap>` if this is not desired.
 
 ::
 
-    range_lerp(75, 0, 100, -1, 1) # Returns 0.5
+    remap(75, 0, 100, -1, 1) # Returns 0.5
 
 For complex use cases where you need multiple ranges, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
 

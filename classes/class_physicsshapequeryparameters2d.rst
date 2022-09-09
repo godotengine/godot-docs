@@ -29,7 +29,7 @@ Properties
 +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`                 | :ref:`collision_mask<class_PhysicsShapeQueryParameters2D_property_collision_mask>`           | ``4294967295``                    |
 +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`exclude<class_PhysicsShapeQueryParameters2D_property_exclude>`                         | ``[]``                            |
+| :ref:`RID[]<class_RID>`               | :ref:`exclude<class_PhysicsShapeQueryParameters2D_property_exclude>`                         | ``[]``                            |
 +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`             | :ref:`margin<class_PhysicsShapeQueryParameters2D_property_margin>`                           | ``0.0``                           |
 +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -95,7 +95,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. _class_PhysicsShapeQueryParameters2D_property_exclude:
 
-- :ref:`Array<class_Array>` **exclude**
+- :ref:`RID[]<class_RID>` **exclude**
 
 +-----------+--------------------+
 | *Default* | ``[]``             |

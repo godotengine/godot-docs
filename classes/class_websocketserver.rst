@@ -37,7 +37,7 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------+---------+
 | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`             |         |
 +-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`     |         |
+| :ref:`X509Certificate<class_X509Certificate>` | :ref:`tls_certificate<class_WebSocketServer_property_tls_certificate>`     |         |
 +-----------------------------------------------+----------------------------------------------------------------------------+---------+
 
 Methods
@@ -127,7 +127,7 @@ When not set to ``*`` will restrict incoming connections to the specified IP add
 | *Getter* | get_ca_chain()      |
 +----------+---------------------+
 
-When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the SSL handshake.
+When using TLS (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`tls_certificate<class_WebSocketServer_property_tls_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the TLS handshake.
 
 ----
 
@@ -157,21 +157,21 @@ The time in seconds before a pending client (i.e. a client that has not yet fini
 | *Getter* | get_private_key()      |
 +----------+------------------------+
 
-When set to a valid :ref:`CryptoKey<class_CryptoKey>` (along with :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+When set to a valid :ref:`CryptoKey<class_CryptoKey>` (along with :ref:`tls_certificate<class_WebSocketServer_property_tls_certificate>`) will cause the server to require TLS instead of regular TCP (i.e. the ``wss://`` protocol).
 
 ----
 
-.. _class_WebSocketServer_property_ssl_certificate:
+.. _class_WebSocketServer_property_tls_certificate:
 
-- :ref:`X509Certificate<class_X509Certificate>` **ssl_certificate**
+- :ref:`X509Certificate<class_X509Certificate>` **tls_certificate**
 
 +----------+----------------------------+
-| *Setter* | set_ssl_certificate(value) |
+| *Setter* | set_tls_certificate(value) |
 +----------+----------------------------+
-| *Getter* | get_ssl_certificate()      |
+| *Getter* | get_tls_certificate()      |
 +----------+----------------------------+
 
-When set to a valid :ref:`X509Certificate<class_X509Certificate>` (along with :ref:`private_key<class_WebSocketServer_property_private_key>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+When set to a valid :ref:`X509Certificate<class_X509Certificate>` (along with :ref:`private_key<class_WebSocketServer_property_private_key>`) will cause the server to require TLS instead of regular TCP (i.e. the ``wss://`` protocol).
 
 Method Descriptions
 -------------------

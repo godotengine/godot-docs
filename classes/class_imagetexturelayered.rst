@@ -20,7 +20,7 @@ Methods
 -------
 
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_from_images<class_ImageTextureLayered_method_create_from_images>` **(** :ref:`Array<class_Array>` images **)**                 |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_from_images<class_ImageTextureLayered_method_create_from_images>` **(** :ref:`Image[]<class_Image>` images **)**               |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`update_layer<class_ImageTextureLayered_method_update_layer>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)** |
 +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -30,7 +30,7 @@ Method Descriptions
 
 .. _class_ImageTextureLayered_method_create_from_images:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_from_images** **(** :ref:`Array<class_Array>` images **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **create_from_images** **(** :ref:`Image[]<class_Image>` images **)**
 
 ----
 

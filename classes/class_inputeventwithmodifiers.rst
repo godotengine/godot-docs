@@ -29,19 +29,24 @@ Tutorials
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`alt_pressed<class_InputEventWithModifiers_property_alt_pressed>`         | ``false`` |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>` | ``false`` |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`       | ``false`` |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`       | ``false`` |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`shift_pressed<class_InputEventWithModifiers_property_shift_pressed>`     | ``false`` |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`store_command<class_InputEventWithModifiers_property_store_command>`     | ``true``  |
-+-------------------------+--------------------------------------------------------------------------------+-----------+
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`alt_pressed<class_InputEventWithModifiers_property_alt_pressed>`                                   | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`command_or_control_autoremap<class_InputEventWithModifiers_property_command_or_control_autoremap>` | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`                                 | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`                                 | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`shift_pressed<class_InputEventWithModifiers_property_shift_pressed>`                               | ``false`` |
++-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+
+Methods
+-------
+
++-------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
++-------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -62,21 +67,19 @@ State of the :kbd:`Alt` modifier.
 
 ----
 
-.. _class_InputEventWithModifiers_property_command_pressed:
+.. _class_InputEventWithModifiers_property_command_or_control_autoremap:
 
-- :ref:`bool<class_bool>` **command_pressed**
+- :ref:`bool<class_bool>` **command_or_control_autoremap**
 
-+-----------+----------------------------+
-| *Default* | ``false``                  |
-+-----------+----------------------------+
-| *Setter*  | set_command_pressed(value) |
-+-----------+----------------------------+
-| *Getter*  | is_command_pressed()       |
-+-----------+----------------------------+
++-----------+-----------------------------------------+
+| *Default* | ``false``                               |
++-----------+-----------------------------------------+
+| *Setter*  | set_command_or_control_autoremap(value) |
++-----------+-----------------------------------------+
+| *Getter*  | is_command_or_control_autoremap()       |
++-----------+-----------------------------------------+
 
-State of the :kbd:`Cmd` modifier. On macOS, this is equivalent to :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`. On other platforms, this is equivalent to :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`.
-
-This modifier should be preferred to :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` or :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` for system shortcuts, as it maintains better cross-platform compatibility.
+Automaticaly use :kbd:`Meta` (:kbd:`Command`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
 
 ----
 
@@ -108,9 +111,7 @@ State of the :kbd:`Ctrl` modifier.
 | *Getter*  | is_meta_pressed()       |
 +-----------+-------------------------+
 
-State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Windows key (sometimes called "meta" or "super" on Linux). On macOS, this represents the Command key, and is equivalent to :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>`.
-
-For better cross-system compatibility, use :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>` instead.
+State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Windows key (sometimes called "meta" or "super" on Linux). On macOS, this represents the Command key.
 
 ----
 
@@ -128,23 +129,16 @@ For better cross-system compatibility, use :ref:`command_pressed<class_InputEven
 
 State of the :kbd:`Shift` modifier.
 
-----
+Method Descriptions
+-------------------
 
-.. _class_InputEventWithModifiers_property_store_command:
+.. _class_InputEventWithModifiers_method_is_command_or_control_pressed:
 
-- :ref:`bool<class_bool>` **store_command**
+- :ref:`bool<class_bool>` **is_command_or_control_pressed** **(** **)** |const|
 
-+-----------+--------------------------+
-| *Default* | ``true``                 |
-+-----------+--------------------------+
-| *Setter*  | set_store_command(value) |
-+-----------+--------------------------+
-| *Getter*  | is_storing_command()     |
-+-----------+--------------------------+
+On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Command`) is pressed.
 
-If ``true``, pressing :kbd:`Cmd` on macOS or :kbd:`Ctrl` on all other platforms will both be serialized as :ref:`command_pressed<class_InputEventWithModifiers_property_command_pressed>`. If ``false``, those same keys will be serialized as :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` on macOS and :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` on all other platforms.
-
-This aids with cross-platform compatibility when developing e.g. on Windows for macOS, or vice-versa.
+On other platforms, returns ``true`` if :kbd:`Ctrl` is pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -271,11 +271,11 @@ Methods
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                   | :ref:`shaped_get_span_meta<class_TextServer_method_shaped_get_span_meta>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                                                |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                            | :ref:`shaped_set_span_update_font<class_TextServer_method_shaped_set_span_update_font>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`Array<class_Array>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={} **)**                                                                                   |
+| void                                                            | :ref:`shaped_set_span_update_font<class_TextServer_method_shaped_set_span_update_font>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={} **)**                                                                                     |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_object<class_TextServer_method_shaped_text_add_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1 **)**                                                                |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_string<class_TextServer_method_shaped_text_add_string>` **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`Array<class_Array>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={}, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**      |
+| :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_string<class_TextServer_method_shaped_text_add_string>` **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={}, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                            | :ref:`shaped_text_clear<class_TextServer_method_shaped_text_clear>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                                                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -543,6 +543,8 @@ enum **AutowrapMode**:
 
 .. _class_TextServer_constant_BREAK_ADAPTIVE:
 
+.. _class_TextServer_constant_BREAK_TRIM_EDGE_SPACES:
+
 flags **LineBreakFlag**:
 
 - **BREAK_NONE** = **0** --- Do not break the line.
@@ -553,7 +555,9 @@ flags **LineBreakFlag**:
 
 - **BREAK_GRAPHEME_BOUND** = **4** --- Break the line between any unconnected graphemes.
 
-- **BREAK_ADAPTIVE** = **8**
+- **BREAK_ADAPTIVE** = **8** --- Should be used only in conjunction with :ref:`BREAK_WORD_BOUND<class_TextServer_constant_BREAK_WORD_BOUND>`, break the line between any unconnected graphemes, if it's impossible to break it between the words.
+
+- **BREAK_TRIM_EDGE_SPACES** = **16** --- Remove edge spaces from the broken line segments.
 
 ----
 
@@ -1962,7 +1966,7 @@ Returns text span metadata.
 
 .. _class_TextServer_method_shaped_set_span_update_font:
 
-- void **shaped_set_span_update_font** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`Array<class_Array>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={} **)**
+- void **shaped_set_span_update_font** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={} **)**
 
 Changes text span font, font size and OpenType features, without changing the text.
 
@@ -1978,7 +1982,7 @@ Adds inline object to the text buffer, ``key`` must be unique. In the text, obje
 
 .. _class_TextServer_method_shaped_text_add_string:
 
-- :ref:`bool<class_bool>` **shaped_text_add_string** **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`Array<class_Array>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={}, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**
+- :ref:`bool<class_bool>` **shaped_text_add_string** **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={}, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**
 
 Adds text span and font to draw it to the text buffer.
 

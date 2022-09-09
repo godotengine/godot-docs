@@ -25,7 +25,7 @@ Properties
 +-------------------------+--------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`   | :ref:`fill_mode<class_ProgressBar_property_fill_mode>`             | ``0``    |
 +-------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` | ``true`` |
+| :ref:`bool<class_bool>` | :ref:`show_percentage<class_ProgressBar_property_show_percentage>` | ``true`` |
 +-------------------------+--------------------------------------------------------------------+----------+
 
 Theme Properties
@@ -44,9 +44,9 @@ Theme Properties
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 | :ref:`int<class_int>`           | :ref:`font_size<class_ProgressBar_theme_font_size_font_size>`               |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ProgressBar_theme_style_bg>`                                 |                                |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`background<class_ProgressBar_theme_style_background>`                 |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`fg<class_ProgressBar_theme_style_fg>`                                 |                                |
+| :ref:`StyleBox<class_StyleBox>` | :ref:`fill<class_ProgressBar_theme_style_fill>`                             |                                |
 +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
 
 Enumerations
@@ -91,16 +91,16 @@ The fill direction. See :ref:`FillMode<enum_ProgressBar_FillMode>` for possible 
 
 ----
 
-.. _class_ProgressBar_property_percent_visible:
+.. _class_ProgressBar_property_show_percentage:
 
-- :ref:`bool<class_bool>` **percent_visible**
+- :ref:`bool<class_bool>` **show_percentage**
 
 +-----------+----------------------------+
 | *Default* | ``true``                   |
 +-----------+----------------------------+
-| *Setter*  | set_percent_visible(value) |
+| *Setter*  | set_show_percentage(value) |
 +-----------+----------------------------+
-| *Getter*  | is_percent_visible()       |
+| *Getter*  | is_percentage_shown()      |
 +-----------+----------------------------+
 
 If ``true``, the fill percentage is displayed on the bar.
@@ -160,7 +160,7 @@ The size of the text outline.
 
 - :ref:`Font<class_Font>` **font**
 
-Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
+Font used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
 
 ----
 
@@ -168,21 +168,21 @@ Font used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar
 
 - :ref:`int<class_int>` **font_size**
 
-Font size used to draw the fill percentage if :ref:`percent_visible<class_ProgressBar_property_percent_visible>` is ``true``.
+Font size used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
 
 ----
 
-.. _class_ProgressBar_theme_style_bg:
+.. _class_ProgressBar_theme_style_background:
 
-- :ref:`StyleBox<class_StyleBox>` **bg**
+- :ref:`StyleBox<class_StyleBox>` **background**
 
 The style of the background.
 
 ----
 
-.. _class_ProgressBar_theme_style_fg:
+.. _class_ProgressBar_theme_style_fill:
 
-- :ref:`StyleBox<class_StyleBox>` **fg**
+- :ref:`StyleBox<class_StyleBox>` **fill**
 
 The style of the progress (i.e. the part that fills the bar).
 

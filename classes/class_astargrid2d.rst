@@ -12,7 +12,23 @@ AStarGrid2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A\* (or "A-Star") pathfinding tailored to find the shortest paths on 2D grids.
 
+Description
+-----------
+
+Compared to :ref:`AStar2D<class_AStar2D>` you don't need to manually create points or connect them together. It also supports multiple type of heuristics and modes for diagonal movement. This class also provides a jumping mode which is faster to calculate than without it in the :ref:`AStar2D<class_AStar2D>` class.
+
+In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`size<class_AStarGrid2D_property_size>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>` and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
+
+::
+
+    var astar_grid = AStarGrid2D.new()
+    astar_grid.size = Vector2i(32, 32)
+    astar_grid.cell_size = Vector2(16, 16)
+    astar_grid.update()
+    print(astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
+    print(astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (16, 16), (32, 32), (48, 48), (48, 64)
 
 Properties
 ----------
@@ -75,15 +91,40 @@ Enumerations
 
 enum **Heuristic**:
 
-- **HEURISTIC_EUCLIDEAN** = **0**
+- **HEURISTIC_EUCLIDEAN** = **0** --- The Euclidean heuristic to be used for the pathfinding using the following formula:
 
-- **HEURISTIC_MANHATTAN** = **1**
+::
 
-- **HEURISTIC_OCTILE** = **2**
+    dx = abs(to_id.x - from_id.x)
+    dy = abs(to_id.y - from_id.y)
+    result = sqrt(dx * dx + dy * dy)
 
-- **HEURISTIC_CHEBYSHEV** = **3**
+- **HEURISTIC_MANHATTAN** = **1** --- The Manhattan heuristic to be used for the pathfinding using the following formula:
 
-- **HEURISTIC_MAX** = **4**
+::
+
+    dx = abs(to_id.x - from_id.x)
+    dy = abs(to_id.y - from_id.y)
+    result = dx + dy
+
+- **HEURISTIC_OCTILE** = **2** --- The Octile heuristic to be used for the pathfinding using the following formula:
+
+::
+
+    dx = abs(to_id.x - from_id.x)
+    dy = abs(to_id.y - from_id.y)
+    f = sqrt(2) - 1
+    result = (dx < dy) ? f * dx + dy : f * dy + dx;
+
+- **HEURISTIC_CHEBYSHEV** = **3** --- The Chebyshev heuristic to be used for the pathfinding using the following formula:
+
+::
+
+    dx = abs(to_id.x - from_id.x)
+    dy = abs(to_id.y - from_id.y)
+    result = max(dx, dy)
+
+- **HEURISTIC_MAX** = **4** --- Represents the size of the :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` enum.
 
 ----
 
@@ -101,15 +142,15 @@ enum **Heuristic**:
 
 enum **DiagonalMode**:
 
-- **DIAGONAL_MODE_ALWAYS** = **0**
+- **DIAGONAL_MODE_ALWAYS** = **0** --- The pathfinding algorithm will ignore solid neighbors around the target cell and allow passing using diagonals.
 
-- **DIAGONAL_MODE_NEVER** = **1**
+- **DIAGONAL_MODE_NEVER** = **1** --- The pathfinding algorithm will ignore all diagonals and the way will be always orthogonal.
 
-- **DIAGONAL_MODE_AT_LEAST_ONE_WALKABLE** = **2**
+- **DIAGONAL_MODE_AT_LEAST_ONE_WALKABLE** = **2** --- The pathfinding algorithm will avoid using diagonals if at least two obstacles have been placed around the neighboring cells of the specific path segment.
 
-- **DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES** = **3**
+- **DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES** = **3** --- The pathfinding algorithm will avoid using diagonals if any obstacle has been placed around the neighboring cells of the specific path segment.
 
-- **DIAGONAL_MODE_MAX** = **4**
+- **DIAGONAL_MODE_MAX** = **4** --- Represents the size of the :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` enum.
 
 Property Descriptions
 ---------------------
@@ -126,6 +167,8 @@ Property Descriptions
 | *Getter*  | get_cell_size()      |
 +-----------+----------------------+
 
+The size of the point cell which will be applied to calculate the resulting point position returned by :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
 ----
 
 .. _class_AStarGrid2D_property_default_heuristic:
@@ -139,6 +182,8 @@ Property Descriptions
 +-----------+------------------------------+
 | *Getter*  | get_default_heuristic()      |
 +-----------+------------------------------+
+
+The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the path if :ref:`_compute_cost<class_AStarGrid2D_method__compute_cost>` and/or :ref:`_estimate_cost<class_AStarGrid2D_method__estimate_cost>` were not overridden.
 
 ----
 
@@ -154,6 +199,8 @@ Property Descriptions
 | *Getter*  | get_diagonal_mode()      |
 +-----------+--------------------------+
 
+A specific :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` mode which will force the path to avoid or accept the specified diagonals.
+
 ----
 
 .. _class_AStarGrid2D_property_jumping_enabled:
@@ -167,6 +214,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | is_jumping_enabled()       |
 +-----------+----------------------------+
+
+Enables or disables jumping to skip up the intermediate points and speeds up the searching algorithm.
 
 ----
 
@@ -182,6 +231,8 @@ Property Descriptions
 | *Getter*  | get_offset()      |
 +-----------+-------------------+
 
+The offset of the grid which will be applied to calculate the resulting point position returned by :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>`. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
 ----
 
 .. _class_AStarGrid2D_property_size:
@@ -196,6 +247,8 @@ Property Descriptions
 | *Getter*  | get_size()         |
 +-----------+--------------------+
 
+The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
 Method Descriptions
 -------------------
 
@@ -203,11 +256,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_compute_cost** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)** |virtual| |const|
 
+Called when computing the cost between two connected points.
+
+Note that this function is hidden in the default ``AStarGrid2D`` class.
+
 ----
 
 .. _class_AStarGrid2D_method__estimate_cost:
 
 - :ref:`float<class_float>` **_estimate_cost** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)** |virtual| |const|
+
+Called when estimating the cost between a point and the path's ending point.
+
+Note that this function is hidden in the default ``AStarGrid2D`` class.
 
 ----
 
@@ -215,11 +276,15 @@ Method Descriptions
 
 - void **clear** **(** **)**
 
+Clears the grid and sets the :ref:`size<class_AStarGrid2D_property_size>` to :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>`.
+
 ----
 
 .. _class_AStarGrid2D_method_get_id_path:
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_id_path** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**
+
+Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
 ----
 
@@ -227,11 +292,17 @@ Method Descriptions
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**
 
+Returns an array with the points that are in the path found by AStarGrid2D between the given points. The array is ordered from the starting point to the ending point of the path.
+
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
+
 ----
 
 .. _class_AStarGrid2D_method_is_dirty:
 
 - :ref:`bool<class_bool>` **is_dirty** **(** **)** |const|
+
+Indicates that the grid parameters were changed and :ref:`update<class_AStarGrid2D_method_update>` needs to be called.
 
 ----
 
@@ -239,11 +310,15 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_in_bounds** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
+Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id).
+
 ----
 
 .. _class_AStarGrid2D_method_is_in_boundsv:
 
 - :ref:`bool<class_bool>` **is_in_boundsv** **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|
+
+Returns ``true`` if the ``id`` vector is a valid grid coordinate.
 
 ----
 
@@ -251,17 +326,23 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **is_point_solid** **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|
 
+Returns ``true`` if a point is disabled for pathfinding. By default, all points are enabled.
+
 ----
 
 .. _class_AStarGrid2D_method_set_point_solid:
 
 - void **set_point_solid** **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`bool<class_bool>` solid=true **)**
 
+Disables or enables the specified point for pathfinding. Useful for making an obstacle. By default, all points are enabled.
+
 ----
 
 .. _class_AStarGrid2D_method_update:
 
 - void **update** **(** **)**
+
+Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`size<class_AStarGrid2D_property_size>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

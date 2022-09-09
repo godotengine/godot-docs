@@ -12,7 +12,19 @@ AudioStreamMicrophone
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Plays real-time audio input data.
 
+Description
+-----------
+
+When used directly in an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node, ``AudioStreamMicrophone`` plays back microphone input in real-time. This can be used in conjunction with :ref:`AudioEffectCapture<class_AudioEffectCapture>` to process the data or save it.
+
+\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
+
+Tutorials
+---------
+
+- `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

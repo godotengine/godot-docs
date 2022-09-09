@@ -12,6 +12,8 @@ PhysicsDirectBodyState2D
 
 **Inherits:** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`PhysicsDirectBodyState2DExtension<class_PhysicsDirectBodyState2DExtension>`
+
 Direct access object to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
 Description

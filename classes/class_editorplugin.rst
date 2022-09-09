@@ -668,7 +668,7 @@ Use :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` and :ref
     
     func _enter_tree():
         plugin_control = preload("my_plugin_control.tscn").instantiate()
-        get_editor_interface().get_editor_main_control().add_child(plugin_control)
+        get_editor_interface().get_editor_main_screen().add_child(plugin_control)
         plugin_control.hide()
     
     func _has_main_screen():
@@ -784,6 +784,8 @@ When a given node or resource is selected, the base type will be instantiated (e
 You can use the virtual method :ref:`_handles<class_EditorPlugin_method__handles>` to check if your custom object is being edited by checking the script or using the ``is`` keyword.
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
+
+\ **Note:** Custom types added this way are not true classes. They are just a helper to create a node with specific script.
 
 ----
 

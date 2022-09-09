@@ -12,12 +12,12 @@ JavaScriptObject
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A wrapper class for native JavaScript objects.
+A wrapper class for web native JavaScript objects.
 
 Description
 -----------
 
-JavaScriptObject is used to interact with JavaScript objects retrieved or created via :ref:`JavaScript.get_interface<class_JavaScript_method_get_interface>`, :ref:`JavaScript.create_object<class_JavaScript_method_create_object>`, or :ref:`JavaScript.create_callback<class_JavaScript_method_create_callback>`.
+JavaScriptObject is used to interact with JavaScript objects retrieved or created via :ref:`JavaScriptBridge.get_interface<class_JavaScriptBridge_method_get_interface>`, :ref:`JavaScriptBridge.create_object<class_JavaScriptBridge_method_create_object>`, or :ref:`JavaScriptBridge.create_callback<class_JavaScriptBridge_method_create_callback>`.
 
 Example:
 
@@ -25,19 +25,19 @@ Example:
 
     extends Node
     
-    var _my_js_callback = JavaScript.create_callback(self, "myCallback") # This reference must be kept
-    var console = JavaScript.get_interface("console")
+    var _my_js_callback = JavaScriptBridge.create_callback(self, "myCallback") # This reference must be kept
+    var console = JavaScriptBridge.get_interface("console")
     
     func _init():
-        var buf = JavaScript.create_object("ArrayBuffer", 10) # new ArrayBuffer(10)
+        var buf = JavaScriptBridge.create_object("ArrayBuffer", 10) # new ArrayBuffer(10)
         print(buf) # prints [JavaScriptObject:OBJECT_ID]
-        var uint8arr = JavaScript.create_object("Uint8Array", buf) # new Uint8Array(buf)
+        var uint8arr = JavaScriptBridge.create_object("Uint8Array", buf) # new Uint8Array(buf)
         uint8arr[1] = 255
         prints(uint8arr[1], uint8arr.byteLength) # prints 255 10
         console.log(uint8arr) # prints in browser console "Uint8Array(10) [ 0, 255, 0, 0, 0, 0, 0, 0, 0, 0 ]"
     
-        # Equivalent of JavaScript: Array.from(uint8arr).forEach(myCallback)
-        JavaScript.get_interface("Array").from(uint8arr).forEach(_my_js_callback)
+        # Equivalent of JavaScriptBridge: Array.from(uint8arr).forEach(myCallback)
+        JavaScriptBridge.get_interface("Array").from(uint8arr).forEach(_my_js_callback)
     
     func myCallback(args):
         # Will be called with the parameters passed to the "forEach" callback

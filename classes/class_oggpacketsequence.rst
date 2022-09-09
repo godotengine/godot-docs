@@ -22,13 +22,13 @@ A sequence of Ogg packets.
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------+---------+
-| :ref:`Array<class_Array>` | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``[]``  |
-+---------------------------+------------------------------------------------------------------------------+---------+
-| :ref:`Array<class_Array>` | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``  |
-+---------------------------+------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0`` |
-+---------------------------+------------------------------------------------------------------------------+---------+
++-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+| :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``PackedInt64Array()`` |
++-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+| :ref:`Array[]<class_Array>`                     | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``                 |
++-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+| :ref:`float<class_float>`                       | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0``                |
++-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
 
 Methods
 -------
@@ -42,10 +42,10 @@ Property Descriptions
 
 .. _class_OggPacketSequence_property_granule_positions:
 
-- :ref:`Array<class_Array>` **granule_positions**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **granule_positions**
 
 +-----------+-------------------------------------+
-| *Default* | ``[]``                              |
+| *Default* | ``PackedInt64Array()``              |
 +-----------+-------------------------------------+
 | *Setter*  | set_packet_granule_positions(value) |
 +-----------+-------------------------------------+
@@ -58,7 +58,7 @@ Contains the granule positions for each page in this packet sequence.
 
 .. _class_OggPacketSequence_property_packet_data:
 
-- :ref:`Array<class_Array>` **packet_data**
+- :ref:`Array[]<class_Array>` **packet_data**
 
 +-----------+------------------------+
 | *Default* | ``[]``                 |

@@ -21,7 +21,7 @@ A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_HTTPC
 
 Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
 
-\ **Warning:** See the notes and warnings on :ref:`HTTPClient<class_HTTPClient>` for limitations, especially regarding SSL security.
+\ **Warning:** See the notes and warnings on :ref:`HTTPClient<class_HTTPClient>` for limitations, especially regarding TLS security.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
@@ -189,7 +189,7 @@ Tutorials
 
 - :doc:`Making HTTP requests <../tutorials/networking/http_request_class>`
 
-- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
+- :doc:`TLS certificates <../tutorials/networking/ssl_certificates>`
 
 Properties
 ----------
@@ -222,9 +222,9 @@ Methods
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** |const|                                                                                                                                                                                                                                                                             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                                                                        |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -255,7 +255,7 @@ Enumerations
 
 .. _class_HTTPRequest_constant_RESULT_CONNECTION_ERROR:
 
-.. _class_HTTPRequest_constant_RESULT_SSL_HANDSHAKE_ERROR:
+.. _class_HTTPRequest_constant_RESULT_TLS_HANDSHAKE_ERROR:
 
 .. _class_HTTPRequest_constant_RESULT_NO_RESPONSE:
 
@@ -285,7 +285,7 @@ enum **Result**:
 
 - **RESULT_CONNECTION_ERROR** = **4** --- Request failed due to connection (read/write) error.
 
-- **RESULT_SSL_HANDSHAKE_ERROR** = **5** --- Request failed on SSL handshake.
+- **RESULT_TLS_HANDSHAKE_ERROR** = **5** --- Request failed on TLS handshake.
 
 - **RESULT_NO_RESPONSE** = **6** --- Request does not have a response (yet).
 
@@ -463,7 +463,7 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 .. _class_HTTPRequest_method_request:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
@@ -471,13 +471,13 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 \ **Note:** When ``method`` is :ref:`HTTPClient.METHOD_GET<class_HTTPClient_constant_METHOD_GET>`, the payload sent via ``request_data`` might be ignored by the server or even cause the server to reject the request (check `RFC 7231 section 4.3.1 <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.1>`__ for more details). As a workaround, you can send data as a query string in the URL (see :ref:`String.uri_encode<class_String_method_uri_encode>` for an example).
 
-\ **Note:** It's recommended to use transport encryption (SSL/TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
+\ **Note:** It's recommended to use transport encryption (TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
 ----
 
 .. _class_HTTPRequest_method_request_raw:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` ssl_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 

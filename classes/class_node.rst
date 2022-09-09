@@ -95,9 +95,9 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`_unhandled_key_input<class_Node_method__unhandled_key_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`add_child<class_Node_method_add_child>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` legible_unique_name=false, :ref:`InternalMode<enum_Node_InternalMode>` internal=0 **)**                              |
+| void                                              | :ref:`add_child<class_Node_method_add_child>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` force_readable_name=false, :ref:`InternalMode<enum_Node_InternalMode>` internal=0 **)**                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`add_sibling<class_Node_method_add_sibling>` **(** :ref:`Node<class_Node>` sibling, :ref:`bool<class_bool>` legible_unique_name=false **)**                                                                               |
+| void                                              | :ref:`add_sibling<class_Node_method_add_sibling>` **(** :ref:`Node<class_Node>` sibling, :ref:`bool<class_bool>` force_readable_name=false **)**                                                                               |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`add_to_group<class_Node_method_add_to_group>` **(** :ref:`StringName<class_StringName>` group, :ref:`bool<class_bool>` persistent=false **)**                                                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,8 +194,6 @@ Methods
 | void                                              | :ref:`propagate_notification<class_Node_method_propagate_notification>` **(** :ref:`int<class_int>` what **)**                                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`queue_free<class_Node_method_queue_free>` **(** **)**                                                                                                                                                                    |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`raise<class_Node_method_raise>` **(** **)**                                                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_and_skip<class_Node_method_remove_and_skip>` **(** **)**                                                                                                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -847,11 +845,11 @@ For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled
 
 .. _class_Node_method_add_child:
 
-- void **add_child** **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` legible_unique_name=false, :ref:`InternalMode<enum_Node_InternalMode>` internal=0 **)**
+- void **add_child** **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` force_readable_name=false, :ref:`InternalMode<enum_Node_InternalMode>` internal=0 **)**
 
-Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.
+Adds a child ``node``. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node.
 
-If ``legible_unique_name`` is ``true``, the child node will have a human-readable name based on the name of the node being instantiated instead of its type.
+If ``force_readable_name`` is ``true``, improves the readability of the added ``node``. If not named, the ``node`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
 If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``.The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
 
@@ -886,11 +884,11 @@ If you need the child node to be added below a specific node in the list of chil
 
 .. _class_Node_method_add_sibling:
 
-- void **add_sibling** **(** :ref:`Node<class_Node>` sibling, :ref:`bool<class_bool>` legible_unique_name=false **)**
+- void **add_sibling** **(** :ref:`Node<class_Node>` sibling, :ref:`bool<class_bool>` force_readable_name=false **)**
 
 Adds a ``sibling`` node to current's node parent, at the same level as that node, right below it.
 
-If ``legible_unique_name`` is ``true``, the child node will have a human-readable name based on the name of the node being instantiated instead of its type.
+If ``force_readable_name`` is ``true``, improves the readability of the added ``sibling``. If not named, the ``sibling`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
 Use :ref:`add_child<class_Node_method_add_child>` instead of this method if you don't need the child node to be added below a specific node in the list of children.
 
@@ -1428,14 +1426,6 @@ Notifies the current node and all its children recursively by calling :ref:`Obje
 - void **queue_free** **(** **)**
 
 Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to :ref:`Object.free<class_Object_method_free>`. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
-
-----
-
-.. _class_Node_method_raise:
-
-- void **raise** **(** **)**
-
-Moves this node to the bottom of parent node's children hierarchy. This is often useful in GUIs (:ref:`Control<class_Control>` nodes), because their order of drawing depends on their order in the tree. The top Node is drawn first, then any siblings below the top Node in the hierarchy are successively drawn on top of it. After using ``raise``, a Control will be drawn on top of its siblings.
 
 ----
 

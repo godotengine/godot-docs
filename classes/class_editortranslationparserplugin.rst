@@ -139,11 +139,11 @@ To use ``EditorTranslationParserPlugin``, register it using the :ref:`EditorPlug
 Methods
 -------
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                               |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` msgids, :ref:`Array<class_Array>` msgids_context_plural **)** |virtual| |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                     |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual| |
++---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -158,7 +158,7 @@ Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``
 
 .. _class_EditorTranslationParserPlugin_method__parse_file:
 
-- void **_parse_file** **(** :ref:`String<class_String>` path, :ref:`Array<class_Array>` msgids, :ref:`Array<class_Array>` msgids_context_plural **)** |virtual|
+- void **_parse_file** **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual|
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 

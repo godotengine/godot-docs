@@ -54,6 +54,10 @@ Properties
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_indirect_energy<class_Light3D_property_light_indirect_energy>`             | ``1.0``               |
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`light_intensity_lumens<class_Light3D_property_light_intensity_lumens>`           |                       |
++----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`light_intensity_lux<class_Light3D_property_light_intensity_lux>`                 |                       |
++----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                | :ref:`light_negative<class_Light3D_property_light_negative>`                           | ``false``             |
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`Texture2D<class_Texture2D>`      | :ref:`light_projector<class_Light3D_property_light_projector>`                         |                       |
@@ -61,6 +65,8 @@ Properties
 | :ref:`float<class_float>`              | :ref:`light_size<class_Light3D_property_light_size>`                                   | ``0.0``               |
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``0.5``               |
++----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`              | :ref:`light_temperature<class_Light3D_property_light_temperature>`                     |                       |
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`              | :ref:`light_volumetric_fog_energy<class_Light3D_property_light_volumetric_fog_energy>` | ``1.0``               |
 +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
@@ -82,6 +88,8 @@ Properties
 Methods
 -------
 
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`get_correlated_color<class_Light3D_method_get_correlated_color>` **(** **)** |const|                                           |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>` | :ref:`get_param<class_Light3D_method_get_param>` **(** :ref:`Param<enum_Light3D_Param>` param **)** |const|                          |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,6 +141,8 @@ Enumerations
 
 .. _class_Light3D_constant_PARAM_TRANSMITTANCE_BIAS:
 
+.. _class_Light3D_constant_PARAM_INTENSITY:
+
 .. _class_Light3D_constant_PARAM_MAX:
 
 enum **Param**:
@@ -177,7 +187,9 @@ enum **Param**:
 
 - **PARAM_TRANSMITTANCE_BIAS** = **19** --- Constant for accessing :ref:`shadow_transmittance_bias<class_Light3D_property_shadow_transmittance_bias>`.
 
-- **PARAM_MAX** = **20** --- Represents the size of the :ref:`Param<enum_Light3D_Param>` enum.
+- **PARAM_INTENSITY** = **20** --- Constant for accessing :ref:`light_intensity_lumens<class_Light3D_property_light_intensity_lumens>` and :ref:`light_intensity_lux<class_Light3D_property_light_intensity_lux>`. Only used when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``.
+
+- **PARAM_MAX** = **21** --- Represents the size of the :ref:`Param<enum_Light3D_Param>` enum.
 
 ----
 
@@ -390,6 +402,40 @@ Secondary multiplier used with indirect light (light bounces). Used with :ref:`V
 
 ----
 
+.. _class_Light3D_property_light_intensity_lumens:
+
+- :ref:`float<class_float>` **light_intensity_lumens**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+Used by positional lights (:ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>`) when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``. Sets the intensity of the light source measured in Lumens. Lumens are a measure of luminous flux, which is the total amount of visible light emitted by a light source per unit of time.
+
+For :ref:`SpotLight3D<class_SpotLight3D>`\ s, we assume that the area outside the visible cone is surrounded by a perfect light absorbing material. Accordingly, the apparent brightness of the cone area does not change as the cone increases and decreases in size.
+
+A typical household lightbulb can range from around 600 lumens to 1,200 lumens, a candle is about 13 lumens, while a streetlight can be approximately 60,000 lumens.
+
+----
+
+.. _class_Light3D_property_light_intensity_lux:
+
+- :ref:`float<class_float>` **light_intensity_lux**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+Used by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``. Sets the intensity of the light source measured in Lux. Lux is a measure pf luminous flux per unit area, it is equal to one lumen per square metre. Lux is the measure of how much light hits a surface at a given time.
+
+On a clear sunny day a surface in direct sunlight may be approximately 100,000 lux, a typical room in a home may be approximately 50 lux, while the moonlit ground may be approximately 0.1 lux.
+
+----
+
 .. _class_Light3D_property_light_negative:
 
 - :ref:`bool<class_bool>` **light_negative**
@@ -451,6 +497,22 @@ The size of the light in Godot units. Only available for :ref:`OmniLight3D<class
 +-----------+------------------+
 
 The intensity of the specular blob in objects affected by the light. At ``0``, the light becomes a pure diffuse light. When not baking emission, this can be used to avoid unrealistic reflections when placing lights above an emissive surface.
+
+----
+
+.. _class_Light3D_property_light_temperature:
+
+- :ref:`float<class_float>` **light_temperature**
+
++----------+------------------------+
+| *Setter* | set_temperature(value) |
++----------+------------------------+
+| *Getter* | get_temperature()      |
++----------+------------------------+
+
+Sets the color temperature of the light source, measured in Kelvin. This is used to calculate a correlated color temperature which tints the :ref:`light_color<class_Light3D_property_light_color>`.
+
+The sun on a cloudy day is approximately 6500 Kelvin, on a clear day it is between 5500 to 6000 Kelvin, and on a clear day at sunrise or sunset it ranges to around 1850 Kelvin.
 
 ----
 
@@ -582,6 +644,14 @@ If ``true``, reverses the backface culling of the mesh. This can be useful when 
 
 Method Descriptions
 -------------------
+
+.. _class_Light3D_method_get_correlated_color:
+
+- :ref:`Color<class_Color>` **get_correlated_color** **(** **)** |const|
+
+Returns the :ref:`Color<class_Color>` of an idealized blackbody at the given :ref:`light_temperature<class_Light3D_property_light_temperature>`. This value is calculated internally based on the :ref:`light_temperature<class_Light3D_property_light_temperature>`. This :ref:`Color<class_Color>` is multiplied by :ref:`light_color<class_Light3D_property_light_color>` before being sent to the :ref:`RenderingServer<class_RenderingServer>`.
+
+----
 
 .. _class_Light3D_method_get_param:
 

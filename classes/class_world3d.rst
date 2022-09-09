@@ -28,7 +28,7 @@ Properties
 ----------
 
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`CameraEffects<class_CameraEffects>`                         | :ref:`camera_effects<class_World3D_property_camera_effects>`             |
+| :ref:`CameraAttributes<class_CameraAttributes>`                   | :ref:`camera_attributes<class_World3D_property_camera_attributes>`       |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` | :ref:`direct_space_state<class_World3D_property_direct_space_state>`     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -46,15 +46,17 @@ Properties
 Property Descriptions
 ---------------------
 
-.. _class_World3D_property_camera_effects:
+.. _class_World3D_property_camera_attributes:
 
-- :ref:`CameraEffects<class_CameraEffects>` **camera_effects**
+- :ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
 
-+----------+---------------------------+
-| *Setter* | set_camera_effects(value) |
-+----------+---------------------------+
-| *Getter* | get_camera_effects()      |
-+----------+---------------------------+
++----------+------------------------------+
+| *Setter* | set_camera_attributes(value) |
++----------+------------------------------+
+| *Getter* | get_camera_attributes()      |
++----------+------------------------------+
+
+The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if none set on the :ref:`Camera3D<class_Camera3D>`.
 
 ----
 

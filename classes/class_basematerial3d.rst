@@ -114,7 +114,9 @@ Properties
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`emission_enabled<class_BaseMaterial3D_property_emission_enabled>`                                           | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                                       | :ref:`emission_energy<class_BaseMaterial3D_property_emission_energy>`                                             | ``1.0``               |
+| :ref:`float<class_float>`                                       | :ref:`emission_energy_multiplier<class_BaseMaterial3D_property_emission_energy_multiplier>`                       | ``1.0``               |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`                                       | :ref:`emission_intensity<class_BaseMaterial3D_property_emission_intensity>`                                       |                       |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`emission_on_uv2<class_BaseMaterial3D_property_emission_on_uv2>`                                             | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -1490,23 +1492,37 @@ The emitted light's color. See :ref:`emission_enabled<class_BaseMaterial3D_prope
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, the body emits light. Emitting light makes the object appear brighter. The object can also cast light on other objects if a :ref:`VoxelGI<class_VoxelGI>` is used and this object is used in baked lighting.
+If ``true``, the body emits light. Emitting light makes the object appear brighter. The object can also cast light on other objects if a :ref:`VoxelGI<class_VoxelGI>`, SDFGI, or :ref:`LightmapGI<class_LightmapGI>` is used and this object is used in baked lighting.
 
 ----
 
-.. _class_BaseMaterial3D_property_emission_energy:
+.. _class_BaseMaterial3D_property_emission_energy_multiplier:
 
-- :ref:`float<class_float>` **emission_energy**
+- :ref:`float<class_float>` **emission_energy_multiplier**
 
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_emission_energy(value) |
-+-----------+----------------------------+
-| *Getter*  | get_emission_energy()      |
-+-----------+----------------------------+
++-----------+---------------------------------------+
+| *Default* | ``1.0``                               |
++-----------+---------------------------------------+
+| *Setter*  | set_emission_energy_multiplier(value) |
++-----------+---------------------------------------+
+| *Getter*  | get_emission_energy_multiplier()      |
++-----------+---------------------------------------+
 
-The emitted light's strength. See :ref:`emission_enabled<class_BaseMaterial3D_property_emission_enabled>`.
+Multiplier for emitted light. See :ref:`emission_enabled<class_BaseMaterial3D_property_emission_enabled>`.
+
+----
+
+.. _class_BaseMaterial3D_property_emission_intensity:
+
+- :ref:`float<class_float>` **emission_intensity**
+
++----------+-------------------------------+
+| *Setter* | set_emission_intensity(value) |
++----------+-------------------------------+
+| *Getter* | get_emission_intensity()      |
++----------+-------------------------------+
+
+Luminance of emitted light, measured in nits (candela per square meter). Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled. The default is roughly equivalent to an indoor lightbulb.
 
 ----
 

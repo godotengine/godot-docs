@@ -36,6 +36,8 @@ Properties
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | ``0``     |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                         | :ref:`vertical<class_SplitContainer_property_vertical>`                     | ``false`` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -43,6 +45,21 @@ Methods
 +------+---------------------------------------------------------------------------------------+
 | void | :ref:`clamp_split_offset<class_SplitContainer_method_clamp_split_offset>` **(** **)** |
 +------+---------------------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`autohide<class_SplitContainer_theme_constant_autohide>`                             | ``1``  |
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_SplitContainer_theme_constant_minimum_grab_thickness>` | ``6``  |
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`separation<class_SplitContainer_theme_constant_separation>`                         | ``12`` |
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>`                               |        |
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`                               |        |
++-----------------------------------+-------------------------------------------------------------------------------------------+--------+
 
 Signals
 -------
@@ -121,6 +138,24 @@ Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitConta
 
 The initial offset of the splitting between the two :ref:`Control<class_Control>`\ s, with ``0`` being at the end of the first :ref:`Control<class_Control>`.
 
+----
+
+.. _class_SplitContainer_property_vertical:
+
+- :ref:`bool<class_bool>` **vertical**
+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_vertical(value) |
++-----------+---------------------+
+| *Getter*  | is_vertical()       |
++-----------+---------------------+
+
+If ``true``, the ``SplitContainer`` will arrange its children vertically, rather than horizontally.
+
+Can't be changed when using :ref:`HSplitContainer<class_HSplitContainer>` and :ref:`VSplitContainer<class_VSplitContainer>`.
+
 Method Descriptions
 -------------------
 
@@ -129,6 +164,59 @@ Method Descriptions
 - void **clamp_split_offset** **(** **)**
 
 Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_SplitContainer_theme_constant_autohide:
+
+- :ref:`int<class_int>` **autohide**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+
+----
+
+.. _class_SplitContainer_theme_constant_minimum_grab_thickness:
+
+- :ref:`int<class_int>` **minimum_grab_thickness**
+
++-----------+-------+
+| *Default* | ``6`` |
++-----------+-------+
+
+The minimum thickness of the area users can click on to grab the splitting line. If :ref:`separation<class_SplitContainer_theme_constant_separation>` or :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>` / :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`'s thickness are too small, this ensure that the splitting line can still be dragged.
+
+----
+
+.. _class_SplitContainer_theme_constant_separation:
+
+- :ref:`int<class_int>` **separation**
+
++-----------+--------+
+| *Default* | ``12`` |
++-----------+--------+
+
+The space between sides of the container.
+
+----
+
+.. _class_SplitContainer_theme_icon_h_grabber:
+
+- :ref:`Texture2D<class_Texture2D>` **h_grabber**
+
+The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``false``.
+
+----
+
+.. _class_SplitContainer_theme_icon_v_grabber:
+
+- :ref:`Texture2D<class_Texture2D>` **v_grabber**
+
+The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

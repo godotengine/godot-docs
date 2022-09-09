@@ -12,6 +12,8 @@ PhysicsServer2D
 
 **Inherits:** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`PhysicsServer2DExtension<class_PhysicsServer2DExtension>`
+
 Server interface for low-level 2D physics access.
 
 Description
@@ -556,6 +558,16 @@ enum **JointParam**:
 - **JOINT_PARAM_MAX_BIAS** = **1**
 
 - **JOINT_PARAM_MAX_FORCE** = **2**
+
+----
+
+.. _enum_PhysicsServer2D_PinJointParam:
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_SOFTNESS:
+
+enum **PinJointParam**:
+
+- **PIN_JOINT_SOFTNESS** = **0**
 
 ----
 

@@ -62,23 +62,15 @@ Properties
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`AmbientSource<enum_Environment_AmbientSource>`       | :ref:`ambient_light_source<class_Environment_property_ambient_light_source>`                                                 | ``0``                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`auto_exposure_enabled<class_Environment_property_auto_exposure_enabled>`                                               | ``false``                         |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`auto_exposure_max_luma<class_Environment_property_auto_exposure_max_luma>`                                             | ``8.0``                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`auto_exposure_min_luma<class_Environment_property_auto_exposure_min_luma>`                                             | ``0.05``                          |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`auto_exposure_scale<class_Environment_property_auto_exposure_scale>`                                                   | ``0.4``                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`auto_exposure_speed<class_Environment_property_auto_exposure_speed>`                                                   | ``0.5``                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`background_camera_feed_id<class_Environment_property_background_camera_feed_id>`                                       | ``1``                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`background_canvas_max_layer<class_Environment_property_background_canvas_max_layer>`                                   | ``0``                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`Color<class_Color>`                                  | :ref:`background_color<class_Environment_property_background_color>`                                                         | ``Color(0, 0, 0, 1)``             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`background_energy<class_Environment_property_background_energy>`                                                       | ``1.0``                           |
+| :ref:`float<class_float>`                                  | :ref:`background_energy_multiplier<class_Environment_property_background_energy_multiplier>`                                 | ``1.0``                           |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`background_intensity<class_Environment_property_background_intensity>`                                                 | ``30000.0``                       |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`BGMode<enum_Environment_BGMode>`                     | :ref:`background_mode<class_Environment_property_background_mode>`                                                           | ``0``                             |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -95,6 +87,8 @@ Properties
 | :ref:`Color<class_Color>`                                  | :ref:`fog_light_color<class_Environment_property_fog_light_color>`                                                           | ``Color(0.518, 0.553, 0.608, 1)`` |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`fog_light_energy<class_Environment_property_fog_light_energy>`                                                         | ``1.0``                           |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`fog_sky_affect<class_Environment_property_fog_sky_affect>`                                                             | ``1.0``                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`fog_sun_scatter<class_Environment_property_fog_sun_scatter>`                                                           | ``0.0``                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -231,6 +225,8 @@ Properties
 | :ref:`float<class_float>`                                  | :ref:`volumetric_fog_gi_inject<class_Environment_property_volumetric_fog_gi_inject>`                                         | ``1.0``                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`volumetric_fog_length<class_Environment_property_volumetric_fog_length>`                                               | ``64.0``                          |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`volumetric_fog_sky_affect<class_Environment_property_volumetric_fog_sky_affect>`                                       | ``1.0``                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`volumetric_fog_temporal_reprojection_amount<class_Environment_property_volumetric_fog_temporal_reprojection_amount>`   | ``0.9``                           |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -536,86 +532,6 @@ The ambient light source to use for rendering materials and global illumination.
 
 ----
 
-.. _class_Environment_property_auto_exposure_enabled:
-
-- :ref:`bool<class_bool>` **auto_exposure_enabled**
-
-+-----------+------------------------------------------+
-| *Default* | ``false``                                |
-+-----------+------------------------------------------+
-| *Setter*  | set_tonemap_auto_exposure_enabled(value) |
-+-----------+------------------------------------------+
-| *Getter*  | is_tonemap_auto_exposure_enabled()       |
-+-----------+------------------------------------------+
-
-If ``true``, enables the tonemapping auto exposure mode of the scene renderer. If ``true``, the renderer will automatically determine the exposure setting to adapt to the scene's illumination and the observed light.
-
-----
-
-.. _class_Environment_property_auto_exposure_max_luma:
-
-- :ref:`float<class_float>` **auto_exposure_max_luma**
-
-+-----------+--------------------------------------+
-| *Default* | ``8.0``                              |
-+-----------+--------------------------------------+
-| *Setter*  | set_tonemap_auto_exposure_max(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_tonemap_auto_exposure_max()      |
-+-----------+--------------------------------------+
-
-The maximum luminance value for the auto exposure.
-
-----
-
-.. _class_Environment_property_auto_exposure_min_luma:
-
-- :ref:`float<class_float>` **auto_exposure_min_luma**
-
-+-----------+--------------------------------------+
-| *Default* | ``0.05``                             |
-+-----------+--------------------------------------+
-| *Setter*  | set_tonemap_auto_exposure_min(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_tonemap_auto_exposure_min()      |
-+-----------+--------------------------------------+
-
-The minimum luminance value for the auto exposure.
-
-----
-
-.. _class_Environment_property_auto_exposure_scale:
-
-- :ref:`float<class_float>` **auto_exposure_scale**
-
-+-----------+---------------------------------------+
-| *Default* | ``0.4``                               |
-+-----------+---------------------------------------+
-| *Setter*  | set_tonemap_auto_exposure_grey(value) |
-+-----------+---------------------------------------+
-| *Getter*  | get_tonemap_auto_exposure_grey()      |
-+-----------+---------------------------------------+
-
-The scale of the auto exposure effect. Affects the intensity of auto exposure.
-
-----
-
-.. _class_Environment_property_auto_exposure_speed:
-
-- :ref:`float<class_float>` **auto_exposure_speed**
-
-+-----------+----------------------------------------+
-| *Default* | ``0.5``                                |
-+-----------+----------------------------------------+
-| *Setter*  | set_tonemap_auto_exposure_speed(value) |
-+-----------+----------------------------------------+
-| *Getter*  | get_tonemap_auto_exposure_speed()      |
-+-----------+----------------------------------------+
-
-The speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
-
-----
-
 .. _class_Environment_property_background_camera_feed_id:
 
 - :ref:`int<class_int>` **background_camera_feed_id**
@@ -664,19 +580,35 @@ The :ref:`Color<class_Color>` displayed for clear areas of the scene. Only effec
 
 ----
 
-.. _class_Environment_property_background_energy:
+.. _class_Environment_property_background_energy_multiplier:
 
-- :ref:`float<class_float>` **background_energy**
+- :ref:`float<class_float>` **background_energy_multiplier**
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_bg_energy(value) |
-+-----------+----------------------+
-| *Getter*  | get_bg_energy()      |
-+-----------+----------------------+
++-----------+---------------------------------+
+| *Default* | ``1.0``                         |
++-----------+---------------------------------+
+| *Setter*  | set_bg_energy_multiplier(value) |
++-----------+---------------------------------+
+| *Getter*  | get_bg_energy_multiplier()      |
++-----------+---------------------------------+
 
-The power of the light emitted by the background.
+Multiplier for background energy. Increase to make background brighter, decrease to make background dimmer.
+
+----
+
+.. _class_Environment_property_background_intensity:
+
+- :ref:`float<class_float>` **background_intensity**
+
++-----------+-------------------------+
+| *Default* | ``30000.0``             |
++-----------+-------------------------+
+| *Setter*  | set_bg_intensity(value) |
++-----------+-------------------------+
+| *Getter*  | get_bg_intensity()      |
++-----------+-------------------------+
+
+Luminance of background measured in nits (candela per square meter). Only used when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled. The default value is roughly equivalent to the sky at midday.
 
 ----
 
@@ -708,7 +640,7 @@ The background mode. See :ref:`BGMode<enum_Environment_BGMode>` for possible val
 | *Getter*  | get_fog_aerial_perspective()      |
 +-----------+-----------------------------------+
 
-Blend factor between the fog's color and the color of the background :ref:`Sky<class_Sky>`. Must have :ref:`background_mode<class_Environment_property_background_mode>` set to :ref:`BG_SKY<class_Environment_constant_BG_SKY>`.
+If set above ``0.0`` (exclusive), blends between the fog's color and the color of the background :ref:`Sky<class_Sky>`. This has a small performance cost when set above ``0.0``. Must have :ref:`background_mode<class_Environment_property_background_mode>` set to :ref:`BG_SKY<class_Environment_constant_BG_SKY>`.
 
 This is useful to simulate `aerial perspective <https://en.wikipedia.org/wiki/Aerial_perspective>`__ in large scenes with low density fog. However, it is not very useful for high-density fog, as the sky will shine through. When set to ``1.0``, the fog color comes completely from the :ref:`Sky<class_Sky>`. If set to ``0.0``, aerial perspective is disabled.
 
@@ -807,6 +739,24 @@ The fog's color.
 +-----------+-----------------------------+
 
 The fog's brightness. Higher values result in brighter fog.
+
+----
+
+.. _class_Environment_property_fog_sky_affect:
+
+- :ref:`float<class_float>` **fog_sky_affect**
+
++-----------+---------------------------+
+| *Default* | ``1.0``                   |
++-----------+---------------------------+
+| *Setter*  | set_fog_sky_affect(value) |
++-----------+---------------------------+
+| *Getter*  | get_fog_sky_affect()      |
++-----------+---------------------------+
+
+The factor to use when affecting the sky with non-volumetric fog. ``1.0`` means that fog can fully obscure the sky. Lower values reduce the impact of fog on sky rendering, with ``0.0`` not affecting sky rendering at all.
+
+\ **Note:** :ref:`fog_sky_affect<class_Environment_property_fog_sky_affect>` has no visual effect if :ref:`fog_aerial_perspective<class_Environment_property_fog_aerial_perspective>` is ``1.0``.
 
 ----
 
@@ -1907,6 +1857,22 @@ Scales the strength of Global Illumination used in the volumetric fog. A value o
 +-----------+----------------------------------+
 
 The distance over which the volumetric fog is computed. Increase to compute fog over a greater range, decrease to add more detail when a long range is not needed. For best quality fog, keep this as low as possible.
+
+----
+
+.. _class_Environment_property_volumetric_fog_sky_affect:
+
+- :ref:`float<class_float>` **volumetric_fog_sky_affect**
+
++-----------+--------------------------------------+
+| *Default* | ``1.0``                              |
++-----------+--------------------------------------+
+| *Setter*  | set_volumetric_fog_sky_affect(value) |
++-----------+--------------------------------------+
+| *Getter*  | get_volumetric_fog_sky_affect()      |
++-----------+--------------------------------------+
+
+The factor to use when affecting the sky with volumetric fog. ``1.0`` means that volumetric fog can fully obscure the sky. Lower values reduce the impact of volumetric fog on sky rendering, with ``0.0`` not affecting sky rendering at all.
 
 ----
 

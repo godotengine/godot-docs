@@ -31,11 +31,9 @@ Tutorials
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_theme_style_panel>`       |
-+---------------------------------+---------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel_fg<class_Panel_theme_style_panel_fg>` |
-+---------------------------------+---------------------------------------------------+
++---------------------------------+---------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_theme_style_panel>` |
++---------------------------------+---------------------------------------------+
 
 Theme Property Descriptions
 ---------------------------
@@ -45,12 +43,6 @@ Theme Property Descriptions
 - :ref:`StyleBox<class_StyleBox>` **panel**
 
 The style of this ``Panel``.
-
-----
-
-.. _class_Panel_theme_style_panel_fg:
-
-- :ref:`StyleBox<class_StyleBox>` **panel_fg**
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

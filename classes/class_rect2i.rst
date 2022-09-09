@@ -74,7 +74,7 @@ Methods
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2i<class_Rect2i>`     | :ref:`grow_side<class_Rect2i_method_grow_side>` **(** :ref:`int<class_int>` side, :ref:`int<class_int>` amount **)** |const|                                                                     |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`has_no_area<class_Rect2i_method_has_no_area>` **(** **)** |const|                                                                                                                          |
+| :ref:`bool<class_bool>`         | :ref:`has_area<class_Rect2i_method_has_area>` **(** **)** |const|                                                                                                                                |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`         | :ref:`has_point<class_Rect2i_method_has_point>` **(** :ref:`Vector2i<class_Vector2i>` point **)** |const|                                                                                        |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,7 +216,7 @@ Returns a copy of this ``Rect2i`` expanded so that the borders align with the gi
 
 - :ref:`int<class_int>` **get_area** **(** **)** |const|
 
-Returns the area of the ``Rect2i``. See also :ref:`has_no_area<class_Rect2i_method_has_no_area>`.
+Returns the area of the ``Rect2i``. See also :ref:`has_area<class_Rect2i_method_has_area>`.
 
 ----
 
@@ -254,13 +254,11 @@ Returns a copy of the ``Rect2i`` grown by the specified ``amount`` on the specif
 
 ----
 
-.. _class_Rect2i_method_has_no_area:
+.. _class_Rect2i_method_has_area:
 
-- :ref:`bool<class_bool>` **has_no_area** **(** **)** |const|
+- :ref:`bool<class_bool>` **has_area** **(** **)** |const|
 
-Returns ``true`` if the ``Rect2i`` is flat or empty, ``false`` otherwise. See also :ref:`get_area<class_Rect2i_method_get_area>`.
-
-\ **Note:** If the ``Rect2i`` has a negative size and is not flat or empty, :ref:`has_no_area<class_Rect2i_method_has_no_area>` will return ``true``.
+Returns ``true`` if the ``Rect2i`` has area, and ``false`` if the ``Rect2i`` is linear, empty, or has a negative :ref:`size<class_Rect2i_property_size>`. See also :ref:`get_area<class_Rect2i_method_get_area>`.
 
 ----
 

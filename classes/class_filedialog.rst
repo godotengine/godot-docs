@@ -66,27 +66,27 @@ Methods
 Theme Properties
 ----------------
 
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`file_icon_modulate<class_FileDialog_theme_color_file_icon_modulate>`     | ``Color(1, 1, 1, 1)``    |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`files_disabled<class_FileDialog_theme_color_files_disabled>`             | ``Color(1, 1, 1, 0.25)`` |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Color<class_Color>`         | :ref:`folder_icon_modulate<class_FileDialog_theme_color_folder_icon_modulate>` | ``Color(1, 1, 1, 1)``    |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`back_folder<class_FileDialog_theme_icon_back_folder>`                    |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`forward_folder<class_FileDialog_theme_icon_forward_folder>`              |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`                |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`reload<class_FileDialog_theme_icon_reload>`                              |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`toggle_hidden<class_FileDialog_theme_icon_toggle_hidden>`                |                          |
-+-----------------------------------+--------------------------------------------------------------------------------+--------------------------+
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`file_disabled_color<class_FileDialog_theme_color_file_disabled_color>` | ``Color(1, 1, 1, 0.25)`` |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`file_icon_color<class_FileDialog_theme_color_file_icon_color>`         | ``Color(1, 1, 1, 1)``    |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Color<class_Color>`         | :ref:`folder_icon_color<class_FileDialog_theme_color_folder_icon_color>`     | ``Color(1, 1, 1, 1)``    |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`back_folder<class_FileDialog_theme_icon_back_folder>`                  |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`file<class_FileDialog_theme_icon_file>`                                |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                            |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`forward_folder<class_FileDialog_theme_icon_forward_folder>`            |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`              |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`reload<class_FileDialog_theme_icon_reload>`                            |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`toggle_hidden<class_FileDialog_theme_icon_toggle_hidden>`              |                          |
++-----------------------------------+------------------------------------------------------------------------------+--------------------------+
 
 Signals
 -------
@@ -359,21 +359,9 @@ Invalidate and update the current dialog content list.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_FileDialog_theme_color_file_icon_modulate:
+.. _class_FileDialog_theme_color_file_disabled_color:
 
-- :ref:`Color<class_Color>` **file_icon_modulate**
-
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-
-The color modulation applied to the file icon.
-
-----
-
-.. _class_FileDialog_theme_color_files_disabled:
-
-- :ref:`Color<class_Color>` **files_disabled**
+- :ref:`Color<class_Color>` **file_disabled_color**
 
 +-----------+--------------------------+
 | *Default* | ``Color(1, 1, 1, 0.25)`` |
@@ -383,9 +371,21 @@ The color tint for disabled files (when the ``FileDialog`` is used in open folde
 
 ----
 
-.. _class_FileDialog_theme_color_folder_icon_modulate:
+.. _class_FileDialog_theme_color_file_icon_color:
 
-- :ref:`Color<class_Color>` **folder_icon_modulate**
+- :ref:`Color<class_Color>` **file_icon_color**
+
++-----------+-----------------------+
+| *Default* | ``Color(1, 1, 1, 1)`` |
++-----------+-----------------------+
+
+The color modulation applied to the file icon.
+
+----
+
+.. _class_FileDialog_theme_color_folder_icon_color:
+
+- :ref:`Color<class_Color>` **folder_icon_color**
 
 +-----------+-----------------------+
 | *Default* | ``Color(1, 1, 1, 1)`` |

@@ -48,7 +48,7 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_CheckBox_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`int<class_int>`             | :ref:`check_v_adjust<class_CheckBox_theme_constant_check_v_adjust>`                  | ``0``                               |
+| :ref:`int<class_int>`             | :ref:`check_v_offset<class_CheckBox_theme_constant_check_v_offset>`                  | ``0``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`int<class_int>`             | :ref:`h_separation<class_CheckBox_theme_constant_h_separation>`                      | ``4``                               |
 +-----------------------------------+--------------------------------------------------------------------------------------+-------------------------------------+
@@ -174,9 +174,9 @@ The ``CheckBox`` text's font color when it's pressed.
 
 ----
 
-.. _class_CheckBox_theme_constant_check_v_adjust:
+.. _class_CheckBox_theme_constant_check_v_offset:
 
-- :ref:`int<class_int>` **check_v_adjust**
+- :ref:`int<class_int>` **check_v_offset**
 
 +-----------+-------+
 | *Default* | ``0`` |

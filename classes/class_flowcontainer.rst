@@ -23,12 +23,47 @@ Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally in
 
 A line is filled with :ref:`Control<class_Control>` nodes until no more fit on the same line, similar to text in an autowrapped label.
 
+Properties
+----------
+
++-------------------------+--------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>` | :ref:`vertical<class_FlowContainer_property_vertical>` | ``false`` |
++-------------------------+--------------------------------------------------------+-----------+
+
 Methods
 -------
 
 +-----------------------+--------------------------------------------------------------------------------------+
 | :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
 +-----------------------+--------------------------------------------------------------------------------------+
+
+Theme Properties
+----------------
+
++-----------------------+----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`h_separation<class_FlowContainer_theme_constant_h_separation>` | ``4`` |
++-----------------------+----------------------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`v_separation<class_FlowContainer_theme_constant_v_separation>` | ``4`` |
++-----------------------+----------------------------------------------------------------------+-------+
+
+Property Descriptions
+---------------------
+
+.. _class_FlowContainer_property_vertical:
+
+- :ref:`bool<class_bool>` **vertical**
+
++-----------+---------------------+
+| *Default* | ``false``           |
++-----------+---------------------+
+| *Setter*  | set_vertical(value) |
++-----------+---------------------+
+| *Getter*  | is_vertical()       |
++-----------+---------------------+
+
+If ``true``, the ``FlowContainer`` will arrange its children vertically, rather than horizontally.
+
+Can't be changed when using :ref:`HFlowContainer<class_HFlowContainer>` and :ref:`VFlowContainer<class_VFlowContainer>`.
 
 Method Descriptions
 -------------------
@@ -38,6 +73,31 @@ Method Descriptions
 - :ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the current line count.
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_FlowContainer_theme_constant_h_separation:
+
+- :ref:`int<class_int>` **h_separation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The horizontal separation of children nodes.
+
+----
+
+.. _class_FlowContainer_theme_constant_v_separation:
+
+- :ref:`int<class_int>` **v_separation**
+
++-----------+-------+
+| *Default* | ``4`` |
++-----------+-------+
+
+The vertical separation of children nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

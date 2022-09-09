@@ -55,19 +55,19 @@ Properties
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_expand_margin_size<class_StyleBoxTexture_method_get_expand_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                                                                                               |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_margin_size<class_StyleBoxTexture_method_get_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                                                                                                             |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_all<class_StyleBoxTexture_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                                                                                                                     |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_individual<class_StyleBoxTexture_method_set_expand_margin_individual>` **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_size<class_StyleBoxTexture_method_set_expand_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**                                                                                       |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_margin_size<class_StyleBoxTexture_method_set_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**                                                                                                     |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_expand_margin_size<class_StyleBoxTexture_method_get_expand_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                         |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_margin_size<class_StyleBoxTexture_method_get_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                       |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_expand_margin_all<class_StyleBoxTexture_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                               |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_expand_margin_size<class_StyleBoxTexture_method_set_expand_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)** |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_margin_size<class_StyleBoxTexture_method_set_margin_size>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**               |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_margin_size_all<class_StyleBoxTexture_method_set_margin_size_all>` **(** :ref:`float<class_float>` size **)**                                                   |
++---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enumerations
 ------------
@@ -356,14 +356,6 @@ Sets the expand margin to ``size`` pixels for all margins.
 
 ----
 
-.. _class_StyleBoxTexture_method_set_expand_margin_individual:
-
-- void **set_expand_margin_individual** **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**
-
-Sets the expand margin for each margin to ``size_left``, ``size_top``, ``size_right``, and ``size_bottom`` pixels.
-
-----
-
 .. _class_StyleBoxTexture_method_set_expand_margin_size:
 
 - void **set_expand_margin_size** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
@@ -377,6 +369,14 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 - void **set_margin_size** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
 
 Sets the margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScope_Side>`.
+
+----
+
+.. _class_StyleBoxTexture_method_set_margin_size_all:
+
+- void **set_margin_size_all** **(** :ref:`float<class_float>` size **)**
+
+Sets the margin to ``size`` pixels for all sides.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

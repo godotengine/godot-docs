@@ -27,7 +27,7 @@ Properties
 ----------
 
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
-| :ref:`float<class_float>`         | :ref:`exposure<class_PhysicalSkyMaterial_property_exposure>`                         | ``0.1``                          |
+| :ref:`float<class_float>`         | :ref:`energy_multiplier<class_PhysicalSkyMaterial_property_energy_multiplier>`       | ``1.0``                          |
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`ground_color<class_PhysicalSkyMaterial_property_ground_color>`                 | ``Color(0.1, 0.07, 0.034, 1)``   |
 +-----------------------------------+--------------------------------------------------------------------------------------+----------------------------------+
@@ -53,19 +53,17 @@ Properties
 Property Descriptions
 ---------------------
 
-.. _class_PhysicalSkyMaterial_property_exposure:
+.. _class_PhysicalSkyMaterial_property_energy_multiplier:
 
-- :ref:`float<class_float>` **exposure**
+- :ref:`float<class_float>` **energy_multiplier**
 
-+-----------+---------------------+
-| *Default* | ``0.1``             |
-+-----------+---------------------+
-| *Setter*  | set_exposure(value) |
-+-----------+---------------------+
-| *Getter*  | get_exposure()      |
-+-----------+---------------------+
-
-Sets the exposure of the sky. Higher exposure values make the entire sky brighter.
++-----------+------------------------------+
+| *Default* | ``1.0``                      |
++-----------+------------------------------+
+| *Setter*  | set_energy_multiplier(value) |
++-----------+------------------------------+
+| *Getter*  | get_energy_multiplier()      |
++-----------+------------------------------+
 
 ----
 

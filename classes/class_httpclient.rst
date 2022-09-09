@@ -23,26 +23,26 @@ See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternativ
 
 \ **Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
 
-A ``HTTPClient`` should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports SSL and SSL server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
+A ``HTTPClient`` should be reused between multiple requests or to connect to different hosts instead of creating one client per request. Supports Transport Layer Security (TLS), including server certificate verification. HTTP status codes in the 2xx range indicate success, 3xx redirection (i.e. "try again, but over here"), 4xx something was wrong with the request, and 5xx something went wrong on the server's side.
 
 For more information on HTTP, see https://developer.mozilla.org/en-US/docs/Web/HTTP (or read RFC 2616 to get it straight from the source: https://tools.ietf.org/html/rfc2616).
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-\ **Note:** It's recommended to use transport encryption (SSL/TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
+\ **Note:** It's recommended to use transport encryption (TLS) and to avoid sending sensitive information (such as login credentials) in HTTP GET URL parameters. Consider using HTTP POST requests or HTTP headers for such information instead.
 
 \ **Note:** When performing HTTP requests from a project exported to Web, keep in mind the remote server may not allow requests from foreign origins due to `CORS <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`__. If you host the server in question, you should modify its backend to allow requests from foreign origins by adding the ``Access-Control-Allow-Origin: *`` HTTP header.
 
-\ **Note:** SSL/TLS support is currently limited to TLS 1.0, TLS 1.1, and TLS 1.2. Attempting to connect to a TLS 1.3-only server will return an error.
+\ **Note:** TLS support is currently limited to TLS 1.0, TLS 1.1, and TLS 1.2. Attempting to connect to a TLS 1.3-only server will return an error.
 
-\ **Warning:** SSL/TLS certificate revocation and certificate pinning are currently not supported. Revoked certificates are accepted as long as they are otherwise valid. If this is a concern, you may want to use automatically managed certificates with a short validity period.
+\ **Warning:** TLS certificate revocation and certificate pinning are currently not supported. Revoked certificates are accepted as long as they are otherwise valid. If this is a concern, you may want to use automatically managed certificates with a short validity period.
 
 Tutorials
 ---------
 
 - :doc:`HTTP client class <../tutorials/networking/http_client_class>`
 
-- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
+- :doc:`TLS certificates <../tutorials/networking/ssl_certificates>`
 
 Properties
 ----------
@@ -61,7 +61,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`close<class_HTTPClient_method_close>` **(** **)**                                                                                                                                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**                                     |
+| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_tls=false, :ref:`bool<class_bool>` verify_host=true **)**                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_response_body_length<class_HTTPClient_method_get_response_body_length>` **(** **)** |const|                                                                                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,7 +161,7 @@ enum **Method**:
 
 .. _class_HTTPClient_constant_STATUS_CONNECTION_ERROR:
 
-.. _class_HTTPClient_constant_STATUS_SSL_HANDSHAKE_ERROR:
+.. _class_HTTPClient_constant_STATUS_TLS_HANDSHAKE_ERROR:
 
 enum **Status**:
 
@@ -183,7 +183,7 @@ enum **Status**:
 
 - **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
 
-- **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
+- **STATUS_TLS_HANDSHAKE_ERROR** = **9** --- Status: Error in TLS handshake.
 
 ----
 
@@ -495,15 +495,15 @@ Closes the current connection, allowing reuse of this ``HTTPClient``.
 
 .. _class_HTTPClient_method_connect_to_host:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_tls=false, :ref:`bool<class_bool>` verify_host=true **)**
 
 Connects to a host. This needs to be done before any requests are sent.
 
 The host should not have http:// prepended but will strip the protocol identifier if provided.
 
-If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS (if ``use_ssl`` is enabled).
+If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS (if ``use_tls`` is enabled).
 
-``verify_host`` will check the SSL identity of the host if set to ``true``.
+``verify_host`` will check the TLS identity of the host if set to ``true``.
 
 ----
 

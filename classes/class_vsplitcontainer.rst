@@ -27,13 +27,15 @@ Tutorials
 Theme Properties
 ----------------
 
-+-----------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`autohide<class_VSplitContainer_theme_constant_autohide>`     | ``1``  |
-+-----------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`separation<class_VSplitContainer_theme_constant_separation>` | ``12`` |
-+-----------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`           |        |
-+-----------------------------------+--------------------------------------------------------------------+--------+
++-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`autohide<class_VSplitContainer_theme_constant_autohide>`                             | ``1``  |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_VSplitContainer_theme_constant_minimum_grab_thickness>` | ``6``  |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+| :ref:`int<class_int>`             | :ref:`separation<class_VSplitContainer_theme_constant_separation>`                         | ``12`` |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`                                   |        |
++-----------------------------------+--------------------------------------------------------------------------------------------+--------+
 
 Theme Property Descriptions
 ---------------------------
@@ -47,6 +49,18 @@ Theme Property Descriptions
 +-----------+-------+
 
 Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+
+----
+
+.. _class_VSplitContainer_theme_constant_minimum_grab_thickness:
+
+- :ref:`int<class_int>` **minimum_grab_thickness**
+
++-----------+-------+
+| *Default* | ``6`` |
++-----------+-------+
+
+The minimum thickness of the area users can click on to grab the splitting line. If :ref:`separation<class_VSplitContainer_theme_constant_separation>` or :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`'s thickness are too small, this ensure that the splitting line can still be dragged.
 
 ----
 

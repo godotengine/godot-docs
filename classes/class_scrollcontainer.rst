@@ -63,9 +63,9 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_ScrollContainer_theme_style_bg>` |
-+---------------------------------+-------------------------------------------------+
++---------------------------------+-------------------------------------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ScrollContainer_theme_style_panel>` |
++---------------------------------+-------------------------------------------------------+
 
 Signals
 -------
@@ -242,9 +242,9 @@ Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this ``Scr
 Theme Property Descriptions
 ---------------------------
 
-.. _class_ScrollContainer_theme_style_bg:
+.. _class_ScrollContainer_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **bg**
+- :ref:`StyleBox<class_StyleBox>` **panel**
 
 The background :ref:`StyleBox<class_StyleBox>` of the ``ScrollContainer``.
 

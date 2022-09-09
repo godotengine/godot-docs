@@ -20,7 +20,7 @@ Properties
 +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
 | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PackedFloat32Array()`` |
 +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`Array<class_Array>`                           | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
+| :ref:`Material[]<class_Material>`                   | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
 +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
 | :ref:`ImporterMesh<class_ImporterMesh>`             | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                          |
 +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
@@ -44,7 +44,7 @@ Property Descriptions
 
 .. _class_GLTFMesh_property_instance_materials:
 
-- :ref:`Array<class_Array>` **instance_materials**
+- :ref:`Material[]<class_Material>` **instance_materials**
 
 +-----------+-------------------------------+
 | *Default* | ``[]``                        |
