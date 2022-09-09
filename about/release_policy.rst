@@ -88,7 +88,7 @@ on GitHub.
 +-------------+----------------------+--------------------------------------------------------------------------+
 | **Version** | **Release date**     | **Support level**                                                        |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.0   | Q4 2022              | |unstable| *Alpha.* Current focus of development (unstable).             |
+| Godot 4.0   | H1 2023              | |unstable| *Alpha.* Current focus of development (unstable).             |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.6   | Q4 2022              | |supported| *Beta.* Receives new features as well as bug fixes while     |
 |             |                      | under development.                                                       |
