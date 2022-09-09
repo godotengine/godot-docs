@@ -172,10 +172,12 @@ dependencies. Running it will bring up the Project Manager.
 Development in Visual Studio
 ----------------------------
 
-Using an IDE is not required to compile Godot as SCons takes care of everything,
-but if you intend to do engine development or debugging of the C++ code on a
-Windows development environment, you may be interested in configuring things
-for use in Visual Studio.
+Using an IDE is not required to compile Godot, as SCons takes care of everything.
+But if you intend to do engine development or debugging of the engine's C++ code,
+you may be interested in configuring a code editor or an IDE.
+
+Folder-based editors don't require any particular setup to start working with Godot's
+codebase. To edit projects with Visual Studio they need to be set up as a solution.
 
 You can create a Visual Studio solution via SCons by running SCons with
 the ``vsproj=yes`` parameter, like this::
