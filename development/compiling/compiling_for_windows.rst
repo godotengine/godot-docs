@@ -187,7 +187,7 @@ the ``vsproj=yes`` parameter, like this::
 You will be able to open Godot's source in a Visual Studio solution now,
 and able to build Godot using Visual Studio's **Build** button.
 
-.. sealso:: See :ref:`doc_configuring_an_ide_vs` for further details.
+.. seealso:: See :ref:`doc_configuring_an_ide_vs` for further details.
 
 Cross-compiling for Windows from other operating systems
 --------------------------------------------------------

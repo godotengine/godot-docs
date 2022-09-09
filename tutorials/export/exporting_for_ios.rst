@@ -25,7 +25,7 @@ Export a Godot project to Xcode
 In the Godot editor, open the **Export** window from the **Project** menu. When the
 Export window opens, click **Add..** and select **iOS**.
 
-The **App Store Team ID** and (Bundle) **Identifier** options in the **Application** category 
+The **App Store Team ID** and (Bundle) **Identifier** options in the **Application** category
 are required. Leaving them blank will cause the exporter to throw an error.
 
 After you click **Export Project**, there are still two important options left:
