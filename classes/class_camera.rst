@@ -270,6 +270,8 @@ For reference, the default vertical field of view value (``70.0``) is equivalent
 
 The camera's frustum offset. This can be changed from the default to create "tilted frustum" effects such as `Y-shearing <https://zdoom.org/wiki/Y-shearing>`__.
 
+\ **Note:** Only effective if :ref:`projection<class_Camera_property_projection>` is :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`.
+
 ----
 
 .. _class_Camera_property_h_offset:
@@ -348,7 +350,7 @@ The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera_const
 | *Getter*  | get_size()      |
 +-----------+-----------------+
 
-The camera's size measured as 1/2 the width or height. Only applicable in orthogonal and frustum modes. Since :ref:`keep_aspect<class_Camera_property_keep_aspect>` locks on axis, ``size`` sets the other axis' size length.
+The camera's size in meters measured as the diameter of the width or height, depending on :ref:`keep_aspect<class_Camera_property_keep_aspect>`. Only applicable in orthogonal and frustum modes.
 
 ----
 
@@ -471,7 +473,7 @@ Enables or disables the given ``layer`` in the :ref:`cull_mask<class_Camera_prop
 
 - void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
-Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units.
+Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units. See also :ref:`frustum_offset<class_Camera_property_frustum_offset>`.
 
 ----
 

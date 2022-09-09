@@ -313,7 +313,7 @@ Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
 
 - :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
-Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh.
+Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh. Considers only surfaces using one of these primitive types: :ref:`PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`, :ref:`PRIMITIVE_TRIANGLE_STRIP<class_Mesh_constant_PRIMITIVE_TRIANGLE_STRIP>`, or :ref:`PRIMITIVE_TRIANGLE_FAN<class_Mesh_constant_PRIMITIVE_TRIANGLE_FAN>`.
 
 ----
 

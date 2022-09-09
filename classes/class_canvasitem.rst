@@ -21,7 +21,7 @@ Description
 
 Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. ``CanvasItem`` is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
 
-Any ``CanvasItem`` can draw. For this, :ref:`update<class_CanvasItem_method_update>` must be called, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the ``CanvasItem`` are provided (see ``draw_*`` functions). However, they can only be used inside the :ref:`Object._notification<class_Object_method__notification>`, signal or :ref:`_draw<class_CanvasItem_method__draw>` virtual functions.
+Any ``CanvasItem`` can draw. For this, :ref:`update<class_CanvasItem_method_update>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the ``CanvasItem`` are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
 Canvas items are drawn in tree order. By default, children are on top of their parents so a root ``CanvasItem`` will be drawn behind everything. This behavior can be changed on a per-item basis.
 
@@ -165,7 +165,9 @@ Signals
 
 - **draw** **(** **)**
 
-Emitted when the ``CanvasItem`` must redraw. This can only be connected realtime, as deferred will not allow drawing.
+Emitted when the ``CanvasItem`` must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_method__draw>` is called.
+
+\ **Note:** Deferred connections do not allow drawing through the ``draw_*`` methods.
 
 ----
 
@@ -241,7 +243,7 @@ Constants
 
 - **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = **35** --- The ``CanvasItem``'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
-- **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw.
+- **NOTIFICATION_DRAW** = **30** --- The ``CanvasItem`` is requested to draw (see :ref:`_draw<class_CanvasItem_method__draw>`).
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- The ``CanvasItem``'s visibility has changed.
 
@@ -377,7 +379,9 @@ Method Descriptions
 
 - void **_draw** **(** **)** |virtual|
 
-Overridable function called by the engine (if defined) to draw the canvas item.
+Called when ``CanvasItem`` has been requested to redraw (when :ref:`update<class_CanvasItem_method_update>` is called, either manually or by the engine).
+
+Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification<class_Object_method__notification>`.
 
 ----
 
@@ -719,7 +723,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_method__draw>`).
 
 ----
 
@@ -775,7 +779,7 @@ Show the ``CanvasItem`` if it's currently hidden. This is equivalent to setting 
 
 - void **update** **(** **)**
 
-Queue the ``CanvasItem`` for update. :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be called on idle time to request redraw.
+Queues the ``CanvasItem`` to redraw. During idle time, if ``CanvasItem`` is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

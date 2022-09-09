@@ -140,7 +140,7 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_physical_scancode_with_modifiers** **(** **)** |const|
 
-Returns the physical scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+Returns the physical scancode combined with modifier keys such as :kbd:`Shift` or :kbd:`Alt`. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
 To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_physical_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
 
@@ -150,7 +150,7 @@ To get a human-readable representation of the ``InputEventKey`` with modifiers, 
 
 - :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** |const|
 
-Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
+Returns the scancode combined with modifier keys such as :kbd:`Shift` or :kbd:`Alt`. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
 To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
 

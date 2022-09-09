@@ -39,6 +39,8 @@ Properties
 +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                    |
 +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`root_subfolder<class_FileDialog_property_root_subfolder>`             | ``""``                                                                                      |
++-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                   |
 +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | window_title                                                                | ``"Save a File"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
@@ -260,6 +262,22 @@ The dialog's open or save mode, which affects the selection behavior. See enum `
 +-----------+---------------------------------+
 
 If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to :ref:`MODE_OPEN_FILE<class_FileDialog_constant_MODE_OPEN_FILE>` will change the window title to "Open a File").
+
+----
+
+.. _class_FileDialog_property_root_subfolder:
+
+- :ref:`String<class_String>` **root_subfolder**
+
++-----------+---------------------------+
+| *Default* | ``""``                    |
++-----------+---------------------------+
+| *Setter*  | set_root_subfolder(value) |
++-----------+---------------------------+
+| *Getter*  | get_root_subfolder()      |
++-----------+---------------------------+
+
+If non-empty, the given sub-folder will be "root" of this ``FileDialog``, i.e. user won't be able to go to its parent directory.
 
 ----
 

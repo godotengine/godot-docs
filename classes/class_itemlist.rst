@@ -19,7 +19,7 @@ Description
 
 This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
 
-Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing Enter.
+Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing :kbd:`Enter`.
 
 Item text only supports single-line strings, newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
 
@@ -181,7 +181,7 @@ Signals
 
 - **item_activated** **(** :ref:`int<class_int>` index **)**
 
-Triggered when specified list item is activated via double-clicking or by pressing Enter.
+Triggered when specified list item is activated via double-clicking or by pressing :kbd:`Enter`.
 
 ----
 
@@ -258,7 +258,7 @@ enum **SelectMode**:
 
 - **SELECT_SINGLE** = **0** --- Only allow selecting a single item.
 
-- **SELECT_MULTI** = **1** --- Allows selecting multiple items by holding Ctrl or Shift.
+- **SELECT_MULTI** = **1** --- Allows selecting multiple items by holding :kbd:`Ctrl` or :kbd:`Shift`.
 
 Property Descriptions
 ---------------------
@@ -682,7 +682,7 @@ Sets the foreground color of the item specified by ``idx`` index to the specifie
 
 Disables (or enables) the item at the specified index.
 
-Disabled items cannot be selected and do not trigger activation signals (when double-clicking or pressing Enter).
+Disabled items cannot be selected and do not trigger activation signals (when double-clicking or pressing :kbd:`Enter`).
 
 ----
 

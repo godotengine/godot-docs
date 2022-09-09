@@ -24,9 +24,13 @@ The ``VisualInstance`` is used to connect a resource to a visual representation.
 Properties
 ----------
 
-+-----------------------+-----------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance_property_layers>` | ``1`` |
-+-----------------------+-----------------------------------------------------+-------+
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance_property_layers>`                                   | ``1``    |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance_property_sorting_offset>`                   | ``0.0``  |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance_property_sorting_use_aabb_center>` | ``true`` |
++---------------------------+---------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -65,6 +69,40 @@ Property Descriptions
 The render layer(s) this ``VisualInstance`` is drawn on.
 
 This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this ``VisualInstance`` is set to.
+
+----
+
+.. _class_VisualInstance_property_sorting_offset:
+
+- :ref:`float<class_float>` **sorting_offset**
+
++-----------+---------------------------+
+| *Default* | ``0.0``                   |
++-----------+---------------------------+
+| *Setter*  | set_sorting_offset(value) |
++-----------+---------------------------+
+| *Getter*  | get_sorting_offset()      |
++-----------+---------------------------+
+
+The sorting offset used by this ``VisualInstance``. Adjusting it to a higher value will make the ``VisualInstance`` reliably draw on top of other ``VisualInstance``\ s that are otherwise positioned at the same spot.
+
+----
+
+.. _class_VisualInstance_property_sorting_use_aabb_center:
+
+- :ref:`bool<class_bool>` **sorting_use_aabb_center**
+
++-----------+------------------------------------+
+| *Default* | ``true``                           |
++-----------+------------------------------------+
+| *Setter*  | set_sorting_use_aabb_center(value) |
++-----------+------------------------------------+
+| *Getter*  | is_sorting_use_aabb_center()       |
++-----------+------------------------------------+
+
+If ``true``, the object is sorted based on the :ref:`AABB<class_AABB>` center. Sorted based on the global position otherwise.
+
+The :ref:`AABB<class_AABB>` center based sorting is generally more accurate for 3D models. The position based sorting instead allows to better control the drawing order when working with :ref:`Particles<class_Particles>` and :ref:`CPUParticles<class_CPUParticles>`.
 
 Method Descriptions
 -------------------

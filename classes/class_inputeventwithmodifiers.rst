@@ -19,7 +19,7 @@ Base class for keys events with modifiers.
 Description
 -----------
 
-Contains keys events information with modifiers support like ``Shift`` or ``Alt``. See :ref:`Node._input<class_Node_method__input>`.
+Contains keys events information with modifiers support like :kbd:`Shift` or :kbd:`Alt`. See :ref:`Node._input<class_Node_method__input>`.
 
 Tutorials
 ---------
@@ -56,7 +56,7 @@ Property Descriptions
 | *Getter*  | get_alt()      |
 +-----------+----------------+
 
-State of the ``Alt`` modifier.
+State of the :kbd:`Alt` modifier.
 
 ----
 
@@ -72,7 +72,7 @@ State of the ``Alt`` modifier.
 | *Getter*  | get_command()      |
 +-----------+--------------------+
 
-State of the ``Command`` modifier.
+State of the :kbd:`Command` modifier.
 
 ----
 
@@ -88,7 +88,7 @@ State of the ``Command`` modifier.
 | *Getter*  | get_control()      |
 +-----------+--------------------+
 
-State of the ``Ctrl`` modifier.
+State of the :kbd:`Ctrl` modifier.
 
 ----
 
@@ -104,7 +104,7 @@ State of the ``Ctrl`` modifier.
 | *Getter*  | get_metakey()      |
 +-----------+--------------------+
 
-State of the ``Meta`` modifier.
+State of the :kbd:`Meta` modifier.
 
 ----
 
@@ -120,7 +120,7 @@ State of the ``Meta`` modifier.
 | *Getter*  | get_shift()      |
 +-----------+------------------+
 
-State of the ``Shift`` modifier.
+State of the :kbd:`Shift` modifier.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

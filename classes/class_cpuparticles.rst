@@ -1273,7 +1273,7 @@ Emission lifetime randomness ratio.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
-Initial scale applied to each particle.
+Initial scale applied to each particle. This can be set to a negative value to flip the particle on all axes.
 
 ----
 

@@ -818,7 +818,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_next()      |
 +-----------+-----------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Tab on a keyboard by default. You can change the key by editing the ``ui_focus_next`` input action.
+Tells Godot which node it should give keyboard focus to if the user presses :kbd:`Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_next`` input action.
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
@@ -836,7 +836,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 | *Getter*  | get_focus_previous()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab on a keyboard by default. You can change the key by editing the ``ui_focus_prev`` input action.
+Tells Godot which node it should give keyboard focus to if the user presses :kbd:`Shift + Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_prev`` input action.
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
@@ -1696,6 +1696,8 @@ Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attemp
 - void **grab_focus** **(** **)**
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
+
+\ **Note**: Using this method together with :ref:`Object.call_deferred<class_Object_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
 
 ----
 

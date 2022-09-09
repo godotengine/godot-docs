@@ -46,6 +46,8 @@ Properties
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`                                                                   | ``""``                                                                                           |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`application/boot_splash/minimum_display_time<class_ProjectSettings_property_application/boot_splash/minimum_display_time>`                                     | ``0``                                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>`                                                         | ``true``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`application/boot_splash/use_filter<class_ProjectSettings_property_application/boot_splash/use_filter>`                                                         | ``true``                                                                                         |
@@ -87,6 +89,10 @@ Properties
 | :ref:`int<class_int>`                         | :ref:`application/run/low_processor_mode_sleep_usec<class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec>`                                   | ``6900``                                                                                         |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                   | :ref:`application/run/main_scene<class_ProjectSettings_property_application/run/main_scene>`                                                                         | ``""``                                                                                           |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`audio/2d_panning_strength<class_ProjectSettings_property_audio/2d_panning_strength>`                                                                           | ``1.0``                                                                                          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`audio/3d_panning_strength<class_ProjectSettings_property_audio/3d_panning_strength>`                                                                           | ``1.0``                                                                                          |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                     | :ref:`audio/channel_disable_threshold_db<class_ProjectSettings_property_audio/channel_disable_threshold_db>`                                                         | ``-60.0``                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1134,6 +1140,18 @@ Path to an image used as the boot splash. If left empty, the default Godot Engin
 
 ----
 
+.. _class_ProjectSettings_property_application/boot_splash/minimum_display_time:
+
+- :ref:`int<class_int>` **application/boot_splash/minimum_display_time**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Minimum boot splash display time (in milliseconds). It is not recommended to set too high values for this setting.
+
+----
+
 .. _class_ProjectSettings_property_application/boot_splash/show_image:
 
 - :ref:`bool<class_bool>` **application/boot_splash/show_image**
@@ -1414,6 +1432,30 @@ Path to the main scene file that will be loaded when the project runs.
 
 ----
 
+.. _class_ProjectSettings_property_audio/2d_panning_strength:
+
+- :ref:`float<class_float>` **audio/2d_panning_strength**
+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
+
+The base strength of the panning effect for all AudioStreamPlayer2D nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer2D.panning_strength<class_AudioStreamPlayer2D_property_panning_strength>`.
+
+----
+
+.. _class_ProjectSettings_property_audio/3d_panning_strength:
+
+- :ref:`float<class_float>` **audio/3d_panning_strength**
+
++-----------+---------+
+| *Default* | ``1.0`` |
++-----------+---------+
+
+The base strength of the panning effect for all AudioStreamPlayer3D nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer3D.panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`.
+
+----
+
 .. _class_ProjectSettings_property_audio/channel_disable_threshold_db:
 
 - :ref:`float<class_float>` **audio/channel_disable_threshold_db**
@@ -1467,6 +1509,8 @@ Specifies the audio driver to use. This setting is platform-dependent as each pl
 +-----------+-----------+
 
 If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
+
+\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows 10 and later, make sure that apps are allowed to access the microphone in the OS' privacy settings.
 
 ----
 
@@ -6676,7 +6720,11 @@ If ``true``, allows falling back to the GLES2 driver if the GLES3 driver is not 
 | *Default* | ``4`` |
 +-----------+-------+
 
-Maximum anisotropic filter level used for textures with anisotropy enabled. Higher values will result in sharper textures when viewed from oblique angles, at the cost of performance. Only power-of-two values are valid (2, 4, 8, 16).
+Maximum anisotropic filter level used for textures with anisotropy enabled. Higher values will result in sharper textures when viewed from oblique angles, at the cost of performance. With the exception of ``1``, only power-of-two values are valid (``2``, ``4``, ``8``, ``16``). A value of ``1`` forcibly disables anisotropic filtering, even on textures where it is enabled.
+
+\ **Note:** For performance reasons, anisotropic filtering *is not enabled by default* on textures. For this setting to have an effect, anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**. However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this setting at run-time.
 
 ----
 

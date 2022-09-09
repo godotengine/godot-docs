@@ -667,7 +667,7 @@ enum **KeyList**:
 
 - **KEY_TAB** = **16777218** --- Tab key.
 
-- **KEY_BACKTAB** = **16777219** --- Shift+Tab key.
+- **KEY_BACKTAB** = **16777219** --- Shift + Tab key.
 
 - **KEY_BACKSPACE** = **16777220** --- Backspace key.
 
@@ -1944,6 +1944,8 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
+
 enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
@@ -1999,6 +2001,8 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **23** --- Hints that an image is compressed using lossy compression.
 
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **24** --- Hints that an image is compressed using lossless compression.
+
+- **PROPERTY_HINT_LOCALE_ID** = **40** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
 
 ----
 

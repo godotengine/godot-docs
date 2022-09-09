@@ -29,23 +29,23 @@ Tutorials
 Methods
 -------
 
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                     |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                           |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                       |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`has<class_ResourceLoader_method_has>` **(** :ref:`String<class_String>` path **)**                                                                                     |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                       |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`                                   | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)** |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` | :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                 |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                  |
-+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                                             |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                                                   |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                                               |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`has<class_ResourceLoader_method_has>` **(** :ref:`String<class_String>` path **)**                                                                                                             |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                                               |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`                                   | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)**                         |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` | :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)** |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                                          |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
 -------------------
@@ -104,7 +104,7 @@ The registered :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ s are qu
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
 
-If ``no_cache`` is ``true``, the resource cache will be bypassed and the resource will be loaded anew. Otherwise, the cached resource will be returned if it exists.
+If ``no_cache`` is ``true``, the resource cache will be bypassed, and the resource will be loaded anew. Otherwise, the cached resource will be returned if it exists.
 
 Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file.
 
@@ -114,11 +114,13 @@ GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` bui
 
 .. _class_ResourceLoader_method_load_interactive:
 
-- :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` **load_interactive** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
+- :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` **load_interactive** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)**
 
 Starts loading a resource interactively. The returned :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` object allows to load with high granularity, calling its :ref:`ResourceInteractiveLoader.poll<class_ResourceInteractiveLoader_method_poll>` method successively to load chunks.
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
+
+If ``no_cache`` is ``true``, the resource cache will be bypassed, and the resource will be loaded anew. Otherwise, the cached resource will be returned if it exists.
 
 ----
 

@@ -1486,7 +1486,9 @@ Sets a cone_twist_joint parameter (see :ref:`ConeTwistJointParam<enum_PhysicsSer
 
 - void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Destroys any of the objects created by PhysicsServer. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by PhysicsServer, an error will be sent to the console.
+Destroys an object created by the PhysicsServer.
+
+\ **Note:** See :ref:`VisualServer.free_rid<class_VisualServer_method_free_rid>` for details on how to handle RIDs for freed objects.
 
 ----
 

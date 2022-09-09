@@ -63,7 +63,9 @@ Property Descriptions
 | *Getter*  | get_custom_solver_bias()      |
 +-----------+-------------------------------+
 
-The shape's custom solver bias.
+The shape's custom solver bias. Defines how much bodies react to enforce contact separation when this shape is involved.
+
+When set to ``0.0``, the default value of ``0.3`` is used.
 
 Method Descriptions
 -------------------

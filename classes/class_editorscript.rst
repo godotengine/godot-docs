@@ -17,7 +17,7 @@ Base script that can be used to add extension functions to the editor.
 Description
 -----------
 
-Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing ``Ctrl+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
+Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
 
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 

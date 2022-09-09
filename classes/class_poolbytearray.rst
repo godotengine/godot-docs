@@ -45,6 +45,8 @@ Methods
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                      | :ref:`append_array<class_PoolByteArray_method_append_array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                                             |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                      | :ref:`clear<class_PoolByteArray_method_clear>` **(** **)**                                                                                                           |
++-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                                            |
 +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                     | :ref:`count<class_PoolByteArray_method_count>` **(** :ref:`int<class_int>` value **)**                                                                               |
@@ -112,6 +114,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolB
 - void **append_array** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
 
 Appends a ``PoolByteArray`` at the end of this array.
+
+----
+
+.. _class_PoolByteArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PoolByteArray_method_resize>` with a size of ``0``.
 
 ----
 

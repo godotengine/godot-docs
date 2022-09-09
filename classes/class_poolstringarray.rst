@@ -50,6 +50,8 @@ Methods
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                          | :ref:`append_array<class_PoolStringArray_method_append_array>` **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)** |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`clear<class_PoolStringArray_method_clear>` **(** **)**                                                                   |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                         | :ref:`count<class_PoolStringArray_method_count>` **(** :ref:`String<class_String>` value **)**                                 |
 +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                       | :ref:`empty<class_PoolStringArray_method_empty>` **(** **)**                                                                   |
@@ -105,6 +107,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolS
 - void **append_array** **(** :ref:`PoolStringArray<class_PoolStringArray>` array **)**
 
 Appends a ``PoolStringArray`` at the end of this array.
+
+----
+
+.. _class_PoolStringArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PoolStringArray_method_resize>` with a size of ``0``.
 
 ----
 

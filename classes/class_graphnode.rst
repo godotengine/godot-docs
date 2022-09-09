@@ -179,11 +179,27 @@ Emitted when the GraphNode is requested to be resized. Happens on dragging the r
 
 ----
 
+.. _class_GraphNode_signal_selected:
+
+- **selected** **(** **)**
+
+Emitted when the GraphNode is selected.
+
+----
+
 .. _class_GraphNode_signal_slot_updated:
 
 - **slot_updated** **(** :ref:`int<class_int>` idx **)**
 
 Emitted when any GraphNode's slot is updated.
+
+----
+
+.. _class_GraphNode_signal_unselected:
+
+- **unselected** **(** **)**
+
+Emitted when the GraphNode is unselected.
 
 Enumerations
 ------------

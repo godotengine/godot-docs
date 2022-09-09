@@ -35,6 +35,435 @@ Accessing the settings can be done using the following methods, such as:
 
 \ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
 
+Properties
+----------
+
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`docks/property_editor/auto_refresh_interval<class_EditorSettings_property_docks/property_editor/auto_refresh_interval>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`docks/property_editor/subresource_hue_tint<class_EditorSettings_property_docks/property_editor/subresource_hue_tint>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/start_create_dialog_fully_expanded<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color1<class_EditorSettings_property_editors/2d/bone_color1>`                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color2<class_EditorSettings_property_editors/2d/bone_color2>`                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_ik_color<class_EditorSettings_property_editors/2d/bone_ik_color>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/2d/constrain_editor_view<class_EditorSettings_property_editors/2d/constrain_editor_view>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/grid_color<class_EditorSettings_property_editors/2d/grid_color>`                                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/2d/pan_speed<class_EditorSettings_property_editors/2d/pan_speed>`                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/2d/scroll_to_pan<class_EditorSettings_property_editors/2d/scroll_to_pan>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/2d/simple_panning<class_EditorSettings_property_editors/2d/simple_panning>`                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/2d/warped_mouse_panning<class_EditorSettings_property_editors/2d/warped_mouse_panning>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/default_z_far<class_EditorSettings_property_editors/3d/default_z_far>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/default_z_near<class_EditorSettings_property_editors/3d/default_z_near>`                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_activation_modifier<class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier>`                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_base_speed<class_EditorSettings_property_editors/3d/freelook/freelook_base_speed>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_inertia<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/freelook/freelook_speed_zoom_link<class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/grid_division_level_bias<class_EditorSettings_property_editors/3d/grid_division_level_bias>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_max<class_EditorSettings_property_editors/3d/grid_division_level_max>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_min<class_EditorSettings_property_editors/3d/grid_division_level_min>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/grid_size<class_EditorSettings_property_editors/3d/grid_size>`                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xy_plane<class_EditorSettings_property_editors/3d/grid_xy_plane>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xz_plane<class_EditorSettings_property_editors/3d/grid_xz_plane>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_yz_plane<class_EditorSettings_property_editors/3d/grid_yz_plane>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/lightmap_baking_number_of_cpu_threads<class_EditorSettings_property_editors/3d/lightmap_baking_number_of_cpu_threads>`                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_numpad<class_EditorSettings_property_editors/3d/navigation/emulate_numpad>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_x_axis<class_EditorSettings_property_editors/3d/navigation/invert_x_axis>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_y_axis<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/pan_modifier<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/warped_mouse_panning<class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_modifier<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_style<class_EditorSettings_property_editors/3d/navigation/zoom_style>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_inertia<class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/translation_inertia<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/zoom_inertia<class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d/selection_box_color<class_EditorSettings_property_editors/3d/selection_box_color>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/instanced<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instanced>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/joint<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_future_color<class_EditorSettings_property_editors/animation/onion_layers_future_color>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/grid_map/pick_distance<class_EditorSettings_property_editors/grid_map/pick_distance>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/grid_map/preview_size<class_EditorSettings_property_editors/grid_map/preview_size>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`editors/poly_editor/point_grab_radius<class_EditorSettings_property_editors/poly_editor/point_grab_radius>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`editors/poly_editor/show_previous_outline<class_EditorSettings_property_editors/poly_editor/show_previous_outline>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`editors/visual_editors/minimap_opacity<class_EditorSettings_property_editors/visual_editors/minimap_opacity>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/display_mode<class_EditorSettings_property_filesystem/file_dialog/display_mode>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/editor/code_font<class_EditorSettings_property_interface/editor/code_font>`                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/dim_editor_on_dialog_popup<class_EditorSettings_property_interface/editor/dim_editor_on_dialog_popup>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/font_antialiased<class_EditorSettings_property_interface/editor/font_antialiased>`                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/editor/font_hinting<class_EditorSettings_property_interface/editor/font_hinting>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/editor/main_font<class_EditorSettings_property_interface/editor/main_font>`                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/editor/main_font_bold<class_EditorSettings_property_interface/editor/main_font_bold>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/editor/main_font_size<class_EditorSettings_property_interface/editor/main_font_size>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/quit_confirmation<class_EditorSettings_property_interface/editor/quit_confirmation>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/scene_tabs/minimum_width<class_EditorSettings_property_interface/scene_tabs/minimum_width>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/resize_if_many_tabs<class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_script_button<class_EditorSettings_property_interface/scene_tabs/show_script_button>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_thumbnail_on_hover<class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`interface/theme/accent_color<class_EditorSettings_property_interface/theme/accent_color>`                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/theme/border_size<class_EditorSettings_property_interface/theme/border_size>`                                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/theme/contrast<class_EditorSettings_property_interface/theme/contrast>`                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/theme/custom_theme<class_EditorSettings_property_interface/theme/custom_theme>`                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/theme/highlight_tabs<class_EditorSettings_property_interface/theme/highlight_tabs>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`interface/theme/use_graph_node_headers<class_EditorSettings_property_interface/theme/use_graph_node_headers>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`network/debug/remote_port<class_EditorSettings_property_network/debug/remote_port>`                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`network/ssl/editor_ssl_certificates<class_EditorSettings_property_network/ssl/editor_ssl_certificates>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`run/output/always_clear_output_on_play<class_EditorSettings_property_run/output/always_clear_output_on_play>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`run/output/always_close_output_on_stop<class_EditorSettings_property_run/output/always_close_output_on_stop>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`run/output/always_open_output_on_play<class_EditorSettings_property_run/output/always_open_output_on_play>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`run/window_placement/screen<class_EditorSettings_property_run/window_placement/screen>`                                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/code_folding<class_EditorSettings_property_text_editor/appearance/code_folding>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column>`             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>`             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/line_numbers_zero_padded<class_EditorSettings_property_text_editor/appearance/line_numbers_zero_padded>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_bookmark_gutter<class_EditorSettings_property_text_editor/appearance/show_bookmark_gutter>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_breakpoint_gutter<class_EditorSettings_property_text_editor/appearance/show_breakpoint_gutter>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_info_gutter<class_EditorSettings_property_text_editor/appearance/show_info_gutter>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_length_guidelines<class_EditorSettings_property_text_editor/appearance/show_line_length_guidelines>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_numbers<class_EditorSettings_property_text_editor/appearance/show_line_numbers>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/word_wrap<class_EditorSettings_property_text_editor/appearance/word_wrap>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/add_type_hints<class_EditorSettings_property_text_editor/completion/add_type_hints>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/auto_brace_complete<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`text_editor/completion/callhint_tooltip_offset<class_EditorSettings_property_text_editor/completion/callhint_tooltip_offset>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/put_callhint_tooltip_below_current_line<class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line>` |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/use_single_quotes<class_EditorSettings_property_text_editor/completion/use_single_quotes>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/block_caret<class_EditorSettings_property_text_editor/cursor/block_caret>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/caret_blink<class_EditorSettings_property_text_editor/cursor/caret_blink>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`text_editor/cursor/caret_blink_speed<class_EditorSettings_property_text_editor/cursor/caret_blink_speed>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/right_click_moves_caret<class_EditorSettings_property_text_editor/cursor/right_click_moves_caret>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/scroll_past_end_of_file<class_EditorSettings_property_text_editor/cursor/scroll_past_end_of_file>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_and_parse_scripts_on_save<class_EditorSettings_property_text_editor/files/auto_reload_and_parse_scripts_on_save>`               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_scripts_on_external_change<class_EditorSettings_property_text_editor/files/auto_reload_scripts_on_external_change>`             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/files/autosave_interval_secs<class_EditorSettings_property_text_editor/files/autosave_interval_secs>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/files/restore_scripts_on_load<class_EditorSettings_property_text_editor/files/restore_scripts_on_load>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/files/trim_trailing_whitespace_on_save>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/help/help_font_size<class_EditorSettings_property_text_editor/help/help_font_size>`                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/help/help_source_font_size<class_EditorSettings_property_text_editor/help/help_source_font_size>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/help/help_title_font_size<class_EditorSettings_property_text_editor/help/help_title_font_size>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/help/show_help_index<class_EditorSettings_property_text_editor/help/show_help_index>`                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/background_color<class_EditorSettings_property_text_editor/highlighting/background_color>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/base_type_color<class_EditorSettings_property_text_editor/highlighting/base_type_color>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/bookmark_color<class_EditorSettings_property_text_editor/highlighting/bookmark_color>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/brace_mismatch_color<class_EditorSettings_property_text_editor/highlighting/brace_mismatch_color>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/breakpoint_color<class_EditorSettings_property_text_editor/highlighting/breakpoint_color>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_background_color<class_EditorSettings_property_text_editor/highlighting/caret_background_color>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_color<class_EditorSettings_property_text_editor/highlighting/caret_color>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/code_folding_color<class_EditorSettings_property_text_editor/highlighting/code_folding_color>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/comment_color<class_EditorSettings_property_text_editor/highlighting/comment_color>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_background_color<class_EditorSettings_property_text_editor/highlighting/completion_background_color>`                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_existing_color<class_EditorSettings_property_text_editor/highlighting/completion_existing_color>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_font_color<class_EditorSettings_property_text_editor/highlighting/completion_font_color>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_scroll_color<class_EditorSettings_property_text_editor/highlighting/completion_scroll_color>`                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/highlighting/completion_selected_color>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/control_flow_keyword_color<class_EditorSettings_property_text_editor/highlighting/control_flow_keyword_color>`                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/engine_type_color<class_EditorSettings_property_text_editor/highlighting/engine_type_color>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/executing_line_color<class_EditorSettings_property_text_editor/highlighting/executing_line_color>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/function_color<class_EditorSettings_property_text_editor/highlighting/function_color>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_all_occurrences<class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_current_line<class_EditorSettings_property_text_editor/highlighting/highlight_current_line>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_type_safe_lines<class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines>`                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/keyword_color<class_EditorSettings_property_text_editor/highlighting/keyword_color>`                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_length_guideline_color<class_EditorSettings_property_text_editor/highlighting/line_length_guideline_color>`                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_number_color<class_EditorSettings_property_text_editor/highlighting/line_number_color>`                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/mark_color<class_EditorSettings_property_text_editor/highlighting/mark_color>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/member_variable_color<class_EditorSettings_property_text_editor/highlighting/member_variable_color>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/number_color<class_EditorSettings_property_text_editor/highlighting/number_color>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/highlighting/safe_line_number_color>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_border_color<class_EditorSettings_property_text_editor/highlighting/search_result_border_color>`                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_color<class_EditorSettings_property_text_editor/highlighting/search_result_color>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/selection_color<class_EditorSettings_property_text_editor/highlighting/selection_color>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/string_color<class_EditorSettings_property_text_editor/highlighting/string_color>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/symbol_color<class_EditorSettings_property_text_editor/highlighting/symbol_color>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/syntax_highlighting<class_EditorSettings_property_text_editor/highlighting/syntax_highlighting>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_color<class_EditorSettings_property_text_editor/highlighting/text_color>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_selected_color<class_EditorSettings_property_text_editor/highlighting/text_selected_color>`                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/user_type_color<class_EditorSettings_property_text_editor/highlighting/user_type_color>`                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/highlighting/word_highlighted_color>`                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/auto_indent<class_EditorSettings_property_text_editor/indent/auto_indent>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/convert_indent_on_save<class_EditorSettings_property_text_editor/indent/convert_indent_on_save>`                                           |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_spaces<class_EditorSettings_property_text_editor/indent/draw_spaces>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_tabs<class_EditorSettings_property_text_editor/indent/draw_tabs>`                                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/indent/size<class_EditorSettings_property_text_editor/indent/size>`                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/indent/type<class_EditorSettings_property_text_editor/indent/type>`                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/drag_and_drop_selection<class_EditorSettings_property_text_editor/navigation/drag_and_drop_selection>`                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/navigation/minimap_width<class_EditorSettings_property_text_editor/navigation/minimap_width>`                                                     |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/mouse_extra_buttons_navigate_history<class_EditorSettings_property_text_editor/navigation/mouse_extra_buttons_navigate_history>`       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/show_minimap<class_EditorSettings_property_text_editor/navigation/show_minimap>`                                                       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/navigation/smooth_scrolling>`                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/navigation/stay_in_script_editor_on_node_selected>`   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/navigation/v_scroll_speed>`                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>`                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`text_editor/theme/color_theme<class_EditorSettings_property_text_editor/theme/color_theme>`                                                                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`text_editor/theme/line_spacing<class_EditorSettings_property_text_editor/theme/line_spacing>`                                                                 |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`text_editor/tools/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically>`                   |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -87,6 +516,1279 @@ Constants
 .. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 
 - **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+
+Property Descriptions
+---------------------
+
+.. _class_EditorSettings_property_docks/filesystem/always_show_folders:
+
+- :ref:`bool<class_bool>` **docks/filesystem/always_show_folders**
+
+----
+
+.. _class_EditorSettings_property_docks/filesystem/thumbnail_size:
+
+- :ref:`int<class_int>` **docks/filesystem/thumbnail_size**
+
+----
+
+.. _class_EditorSettings_property_docks/property_editor/auto_refresh_interval:
+
+- :ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
+
+----
+
+.. _class_EditorSettings_property_docks/property_editor/subresource_hue_tint:
+
+- :ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
+
+----
+
+.. _class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded:
+
+- :ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_color1:
+
+- :ref:`Color<class_Color>` **editors/2d/bone_color1**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_color2:
+
+- :ref:`Color<class_Color>` **editors/2d/bone_color2**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_ik_color:
+
+- :ref:`Color<class_Color>` **editors/2d/bone_ik_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_outline_color:
+
+- :ref:`Color<class_Color>` **editors/2d/bone_outline_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_outline_size:
+
+- :ref:`int<class_int>` **editors/2d/bone_outline_size**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_selected_color:
+
+- :ref:`Color<class_Color>` **editors/2d/bone_selected_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/bone_width:
+
+- :ref:`int<class_int>` **editors/2d/bone_width**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/constrain_editor_view:
+
+- :ref:`bool<class_bool>` **editors/2d/constrain_editor_view**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/grid_color:
+
+- :ref:`Color<class_Color>` **editors/2d/grid_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/guides_color:
+
+- :ref:`Color<class_Color>` **editors/2d/guides_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/pan_speed:
+
+- :ref:`int<class_int>` **editors/2d/pan_speed**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/scroll_to_pan:
+
+- :ref:`bool<class_bool>` **editors/2d/scroll_to_pan**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/simple_panning:
+
+- :ref:`bool<class_bool>` **editors/2d/simple_panning**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/smart_snapping_line_color:
+
+- :ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/viewport_border_color:
+
+- :ref:`Color<class_Color>` **editors/2d/viewport_border_color**
+
+----
+
+.. _class_EditorSettings_property_editors/2d/warped_mouse_panning:
+
+- :ref:`bool<class_bool>` **editors/2d/warped_mouse_panning**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/default_fov:
+
+- :ref:`float<class_float>` **editors/3d/default_fov**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/default_z_far:
+
+- :ref:`float<class_float>` **editors/3d/default_z_far**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/default_z_near:
+
+- :ref:`float<class_float>` **editors/3d/default_z_near**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier:
+
+- :ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_base_speed:
+
+- :ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_inertia:
+
+- :ref:`float<class_float>` **editors/3d/freelook/freelook_inertia**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme:
+
+- :ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity:
+
+- :ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link:
+
+- :ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_division_level_bias:
+
+- :ref:`float<class_float>` **editors/3d/grid_division_level_bias**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_division_level_max:
+
+- :ref:`int<class_int>` **editors/3d/grid_division_level_max**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_division_level_min:
+
+- :ref:`int<class_int>` **editors/3d/grid_division_level_min**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_size:
+
+- :ref:`int<class_int>` **editors/3d/grid_size**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_xy_plane:
+
+- :ref:`bool<class_bool>` **editors/3d/grid_xy_plane**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_xz_plane:
+
+- :ref:`bool<class_bool>` **editors/3d/grid_xz_plane**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/grid_yz_plane:
+
+- :ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/lightmap_baking_number_of_cpu_threads:
+
+- :ref:`int<class_int>` **editors/3d/lightmap_baking_number_of_cpu_threads**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse:
+
+- :ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/emulate_numpad:
+
+- :ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/invert_x_axis:
+
+- :ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/invert_y_axis:
+
+- :ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/navigation_scheme:
+
+- :ref:`int<class_int>` **editors/3d/navigation/navigation_scheme**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/orbit_modifier:
+
+- :ref:`int<class_int>` **editors/3d/navigation/orbit_modifier**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/pan_modifier:
+
+- :ref:`int<class_int>` **editors/3d/navigation/pan_modifier**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning:
+
+- :ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/zoom_modifier:
+
+- :ref:`int<class_int>` **editors/3d/navigation/zoom_modifier**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation/zoom_style:
+
+- :ref:`int<class_int>` **editors/3d/navigation/zoom_style**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia:
+
+- :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity:
+
+- :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia:
+
+- :ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia:
+
+- :ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/primary_grid_color:
+
+- :ref:`Color<class_Color>` **editors/3d/primary_grid_color**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/primary_grid_steps:
+
+- :ref:`int<class_int>` **editors/3d/primary_grid_steps**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/secondary_grid_color:
+
+- :ref:`Color<class_Color>` **editors/3d/secondary_grid_color**
+
+----
+
+.. _class_EditorSettings_property_editors/3d/selection_box_color:
+
+- :ref:`Color<class_Color>` **editors/3d/selection_box_color**
+
+----
+
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instanced:
+
+- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instanced**
+
+----
+
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint:
+
+- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint**
+
+----
+
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape:
+
+- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/shape**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/autorename_animation_tracks:
+
+- :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/confirm_insert_track:
+
+- :ref:`bool<class_bool>` **editors/animation/confirm_insert_track**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/default_create_bezier_tracks:
+
+- :ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/default_create_reset_tracks:
+
+- :ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/onion_layers_future_color:
+
+- :ref:`Color<class_Color>` **editors/animation/onion_layers_future_color**
+
+----
+
+.. _class_EditorSettings_property_editors/animation/onion_layers_past_color:
+
+- :ref:`Color<class_Color>` **editors/animation/onion_layers_past_color**
+
+----
+
+.. _class_EditorSettings_property_editors/grid_map/pick_distance:
+
+- :ref:`float<class_float>` **editors/grid_map/pick_distance**
+
+----
+
+.. _class_EditorSettings_property_editors/grid_map/preview_size:
+
+- :ref:`int<class_int>` **editors/grid_map/preview_size**
+
+----
+
+.. _class_EditorSettings_property_editors/poly_editor/point_grab_radius:
+
+- :ref:`int<class_int>` **editors/poly_editor/point_grab_radius**
+
+----
+
+.. _class_EditorSettings_property_editors/poly_editor/show_previous_outline:
+
+- :ref:`bool<class_bool>` **editors/poly_editor/show_previous_outline**
+
+----
+
+.. _class_EditorSettings_property_editors/visual_editors/minimap_opacity:
+
+- :ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
+
+----
+
+.. _class_EditorSettings_property_filesystem/directories/autoscan_project_path:
+
+- :ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
+
+----
+
+.. _class_EditorSettings_property_filesystem/directories/default_project_path:
+
+- :ref:`String<class_String>` **filesystem/directories/default_project_path**
+
+----
+
+.. _class_EditorSettings_property_filesystem/file_dialog/display_mode:
+
+- :ref:`int<class_int>` **filesystem/file_dialog/display_mode**
+
+----
+
+.. _class_EditorSettings_property_filesystem/file_dialog/show_hidden_files:
+
+- :ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files**
+
+----
+
+.. _class_EditorSettings_property_filesystem/file_dialog/thumbnail_size:
+
+- :ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
+
+----
+
+.. _class_EditorSettings_property_filesystem/on_save/compress_binary_resources:
+
+- :ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources**
+
+----
+
+.. _class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename:
+
+- :ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/automatically_open_screenshots:
+
+- :ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/code_font:
+
+- :ref:`String<class_String>` **interface/editor/code_font**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/code_font_size:
+
+- :ref:`int<class_int>` **interface/editor/code_font_size**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/custom_display_scale:
+
+- :ref:`float<class_float>` **interface/editor/custom_display_scale**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/dim_editor_on_dialog_popup:
+
+- :ref:`bool<class_bool>` **interface/editor/dim_editor_on_dialog_popup**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/display_scale:
+
+- :ref:`int<class_int>` **interface/editor/display_scale**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/editor_language:
+
+- :ref:`String<class_String>` **interface/editor/editor_language**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/font_antialiased:
+
+- :ref:`bool<class_bool>` **interface/editor/font_antialiased**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/font_hinting:
+
+- :ref:`int<class_int>` **interface/editor/font_hinting**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec:
+
+- :ref:`float<class_float>` **interface/editor/low_processor_mode_sleep_usec**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/main_font:
+
+- :ref:`String<class_String>` **interface/editor/main_font**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/main_font_bold:
+
+- :ref:`String<class_String>` **interface/editor/main_font_bold**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/main_font_size:
+
+- :ref:`int<class_int>` **interface/editor/main_font_size**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/quit_confirmation:
+
+- :ref:`bool<class_bool>` **interface/editor/quit_confirmation**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/save_each_scene_on_quit:
+
+- :ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/separate_distraction_mode:
+
+- :ref:`bool<class_bool>` **interface/editor/separate_distraction_mode**
+
+----
+
+.. _class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec:
+
+- :ref:`float<class_float>` **interface/editor/unfocused_low_processor_mode_sleep_usec**
+
+----
+
+.. _class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page:
+
+- :ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
+
+----
+
+.. _class_EditorSettings_property_interface/scene_tabs/minimum_width:
+
+- :ref:`int<class_int>` **interface/scene_tabs/minimum_width**
+
+----
+
+.. _class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs:
+
+- :ref:`bool<class_bool>` **interface/scene_tabs/resize_if_many_tabs**
+
+----
+
+.. _class_EditorSettings_property_interface/scene_tabs/show_script_button:
+
+- :ref:`bool<class_bool>` **interface/scene_tabs/show_script_button**
+
+----
+
+.. _class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover:
+
+- :ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/accent_color:
+
+- :ref:`Color<class_Color>` **interface/theme/accent_color**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/additional_spacing:
+
+- :ref:`float<class_float>` **interface/theme/additional_spacing**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/base_color:
+
+- :ref:`Color<class_Color>` **interface/theme/base_color**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/border_size:
+
+- :ref:`int<class_int>` **interface/theme/border_size**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/contrast:
+
+- :ref:`float<class_float>` **interface/theme/contrast**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/custom_theme:
+
+- :ref:`String<class_String>` **interface/theme/custom_theme**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/highlight_tabs:
+
+- :ref:`bool<class_bool>` **interface/theme/highlight_tabs**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/icon_and_font_color:
+
+- :ref:`int<class_int>` **interface/theme/icon_and_font_color**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/preset:
+
+- :ref:`String<class_String>` **interface/theme/preset**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/relationship_line_opacity:
+
+- :ref:`float<class_float>` **interface/theme/relationship_line_opacity**
+
+----
+
+.. _class_EditorSettings_property_interface/theme/use_graph_node_headers:
+
+- :ref:`bool<class_bool>` **interface/theme/use_graph_node_headers**
+
+----
+
+.. _class_EditorSettings_property_network/debug/remote_host:
+
+- :ref:`String<class_String>` **network/debug/remote_host**
+
+----
+
+.. _class_EditorSettings_property_network/debug/remote_port:
+
+- :ref:`int<class_int>` **network/debug/remote_port**
+
+----
+
+.. _class_EditorSettings_property_network/http_proxy/host:
+
+- :ref:`String<class_String>` **network/http_proxy/host**
+
+----
+
+.. _class_EditorSettings_property_network/http_proxy/port:
+
+- :ref:`int<class_int>` **network/http_proxy/port**
+
+----
+
+.. _class_EditorSettings_property_network/ssl/editor_ssl_certificates:
+
+- :ref:`String<class_String>` **network/ssl/editor_ssl_certificates**
+
+----
+
+.. _class_EditorSettings_property_project_manager/sorting_order:
+
+- :ref:`int<class_int>` **project_manager/sorting_order**
+
+----
+
+.. _class_EditorSettings_property_run/auto_save/save_before_running:
+
+- :ref:`bool<class_bool>` **run/auto_save/save_before_running**
+
+----
+
+.. _class_EditorSettings_property_run/output/always_clear_output_on_play:
+
+- :ref:`bool<class_bool>` **run/output/always_clear_output_on_play**
+
+----
+
+.. _class_EditorSettings_property_run/output/always_close_output_on_stop:
+
+- :ref:`bool<class_bool>` **run/output/always_close_output_on_stop**
+
+----
+
+.. _class_EditorSettings_property_run/output/always_open_output_on_play:
+
+- :ref:`bool<class_bool>` **run/output/always_open_output_on_play**
+
+----
+
+.. _class_EditorSettings_property_run/output/font_size:
+
+- :ref:`int<class_int>` **run/output/font_size**
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/rect:
+
+- :ref:`int<class_int>` **run/window_placement/rect**
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/rect_custom_position:
+
+- :ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position**
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/screen:
+
+- :ref:`int<class_int>` **run/window_placement/screen**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/code_folding:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/code_folding**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column:
+
+- :ref:`int<class_int>` **text_editor/appearance/line_length_guideline_hard_column**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column:
+
+- :ref:`int<class_int>` **text_editor/appearance/line_length_guideline_soft_column**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/line_numbers_zero_padded:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/line_numbers_zero_padded**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/show_bookmark_gutter:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/show_bookmark_gutter**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/show_breakpoint_gutter:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/show_breakpoint_gutter**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/show_info_gutter:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/show_info_gutter**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/show_line_length_guidelines:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/show_line_length_guidelines**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/show_line_numbers:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/show_line_numbers**
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/word_wrap:
+
+- :ref:`bool<class_bool>` **text_editor/appearance/word_wrap**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/add_type_hints:
+
+- :ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/auto_brace_complete:
+
+- :ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/callhint_tooltip_offset:
+
+- :ref:`Vector2<class_Vector2>` **text_editor/completion/callhint_tooltip_offset**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/code_complete_delay:
+
+- :ref:`float<class_float>` **text_editor/completion/code_complete_delay**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/complete_file_paths:
+
+- :ref:`bool<class_bool>` **text_editor/completion/complete_file_paths**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/idle_parse_delay:
+
+- :ref:`float<class_float>` **text_editor/completion/idle_parse_delay**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line:
+
+- :ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line**
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/use_single_quotes:
+
+- :ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
+
+----
+
+.. _class_EditorSettings_property_text_editor/cursor/block_caret:
+
+- :ref:`bool<class_bool>` **text_editor/cursor/block_caret**
+
+----
+
+.. _class_EditorSettings_property_text_editor/cursor/caret_blink:
+
+- :ref:`bool<class_bool>` **text_editor/cursor/caret_blink**
+
+----
+
+.. _class_EditorSettings_property_text_editor/cursor/caret_blink_speed:
+
+- :ref:`float<class_float>` **text_editor/cursor/caret_blink_speed**
+
+----
+
+.. _class_EditorSettings_property_text_editor/cursor/right_click_moves_caret:
+
+- :ref:`bool<class_bool>` **text_editor/cursor/right_click_moves_caret**
+
+----
+
+.. _class_EditorSettings_property_text_editor/cursor/scroll_past_end_of_file:
+
+- :ref:`bool<class_bool>` **text_editor/cursor/scroll_past_end_of_file**
+
+----
+
+.. _class_EditorSettings_property_text_editor/files/auto_reload_and_parse_scripts_on_save:
+
+- :ref:`bool<class_bool>` **text_editor/files/auto_reload_and_parse_scripts_on_save**
+
+----
+
+.. _class_EditorSettings_property_text_editor/files/auto_reload_scripts_on_external_change:
+
+- :ref:`bool<class_bool>` **text_editor/files/auto_reload_scripts_on_external_change**
+
+----
+
+.. _class_EditorSettings_property_text_editor/files/autosave_interval_secs:
+
+- :ref:`int<class_int>` **text_editor/files/autosave_interval_secs**
+
+----
+
+.. _class_EditorSettings_property_text_editor/files/restore_scripts_on_load:
+
+- :ref:`bool<class_bool>` **text_editor/files/restore_scripts_on_load**
+
+----
+
+.. _class_EditorSettings_property_text_editor/files/trim_trailing_whitespace_on_save:
+
+- :ref:`bool<class_bool>` **text_editor/files/trim_trailing_whitespace_on_save**
+
+----
+
+.. _class_EditorSettings_property_text_editor/help/help_font_size:
+
+- :ref:`int<class_int>` **text_editor/help/help_font_size**
+
+----
+
+.. _class_EditorSettings_property_text_editor/help/help_source_font_size:
+
+- :ref:`int<class_int>` **text_editor/help/help_source_font_size**
+
+----
+
+.. _class_EditorSettings_property_text_editor/help/help_title_font_size:
+
+- :ref:`int<class_int>` **text_editor/help/help_title_font_size**
+
+----
+
+.. _class_EditorSettings_property_text_editor/help/show_help_index:
+
+- :ref:`bool<class_bool>` **text_editor/help/show_help_index**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/background_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/background_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/base_type_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/base_type_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/bookmark_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/bookmark_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/brace_mismatch_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/brace_mismatch_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/breakpoint_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/breakpoint_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/caret_background_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/caret_background_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/caret_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/caret_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/code_folding_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/code_folding_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/comment_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/comment_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/completion_background_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/completion_background_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/completion_existing_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/completion_existing_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/completion_font_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/completion_font_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/completion_scroll_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/completion_scroll_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/completion_selected_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/completion_selected_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/control_flow_keyword_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/control_flow_keyword_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/current_line_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/current_line_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/engine_type_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/engine_type_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/executing_line_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/executing_line_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/function_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/function_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences:
+
+- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_all_occurrences**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/highlight_current_line:
+
+- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_current_line**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines:
+
+- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_type_safe_lines**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/keyword_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/keyword_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/line_length_guideline_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/line_length_guideline_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/line_number_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/line_number_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/mark_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/mark_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/member_variable_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/member_variable_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/number_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/number_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/safe_line_number_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/safe_line_number_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/search_result_border_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/search_result_border_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/search_result_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/search_result_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/selection_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/selection_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/string_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/string_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/symbol_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/symbol_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/syntax_highlighting:
+
+- :ref:`bool<class_bool>` **text_editor/highlighting/syntax_highlighting**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/text_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/text_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/text_selected_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/text_selected_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/user_type_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/user_type_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/highlighting/word_highlighted_color:
+
+- :ref:`Color<class_Color>` **text_editor/highlighting/word_highlighted_color**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/auto_indent:
+
+- :ref:`bool<class_bool>` **text_editor/indent/auto_indent**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/convert_indent_on_save:
+
+- :ref:`bool<class_bool>` **text_editor/indent/convert_indent_on_save**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/draw_spaces:
+
+- :ref:`bool<class_bool>` **text_editor/indent/draw_spaces**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/draw_tabs:
+
+- :ref:`bool<class_bool>` **text_editor/indent/draw_tabs**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/size:
+
+- :ref:`int<class_int>` **text_editor/indent/size**
+
+----
+
+.. _class_EditorSettings_property_text_editor/indent/type:
+
+- :ref:`int<class_int>` **text_editor/indent/type**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/drag_and_drop_selection:
+
+- :ref:`bool<class_bool>` **text_editor/navigation/drag_and_drop_selection**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/minimap_width:
+
+- :ref:`int<class_int>` **text_editor/navigation/minimap_width**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/mouse_extra_buttons_navigate_history:
+
+- :ref:`bool<class_bool>` **text_editor/navigation/mouse_extra_buttons_navigate_history**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/show_minimap:
+
+- :ref:`bool<class_bool>` **text_editor/navigation/show_minimap**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/smooth_scrolling:
+
+- :ref:`bool<class_bool>` **text_editor/navigation/smooth_scrolling**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/stay_in_script_editor_on_node_selected:
+
+- :ref:`bool<class_bool>` **text_editor/navigation/stay_in_script_editor_on_node_selected**
+
+----
+
+.. _class_EditorSettings_property_text_editor/navigation/v_scroll_speed:
+
+- :ref:`int<class_int>` **text_editor/navigation/v_scroll_speed**
+
+----
+
+.. _class_EditorSettings_property_text_editor/script_list/show_members_overview:
+
+- :ref:`bool<class_bool>` **text_editor/script_list/show_members_overview**
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/color_theme:
+
+- :ref:`String<class_String>` **text_editor/theme/color_theme**
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/line_spacing:
+
+- :ref:`int<class_int>` **text_editor/theme/line_spacing**
+
+----
+
+.. _class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically:
+
+- :ref:`bool<class_bool>` **text_editor/tools/sort_members_outline_alphabetically**
 
 Method Descriptions
 -------------------

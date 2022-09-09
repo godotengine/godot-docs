@@ -50,6 +50,8 @@ Methods
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`append_array<class_PoolVector2Array_method_append_array>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)** |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_PoolVector2Array_method_clear>` **(** **)**                                                                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`count<class_PoolVector2Array_method_count>` **(** :ref:`Vector2<class_Vector2>` value **)**                                 |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`empty<class_PoolVector2Array_method_empty>` **(** **)**                                                                     |
@@ -103,6 +105,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolV
 - void **append_array** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` array **)**
 
 Appends a ``PoolVector2Array`` at the end of this array.
+
+----
+
+.. _class_PoolVector2Array_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PoolVector2Array_method_resize>` with a size of ``0``.
 
 ----
 

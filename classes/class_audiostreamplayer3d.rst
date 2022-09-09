@@ -60,6 +60,8 @@ Properties
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 | :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>`     | :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>`                                       | ``0``        |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+| :ref:`float<class_float>`                                          | :ref:`panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`                                         | ``1.0``      |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 | :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | ``1.0``      |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 | :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | ``false``    |
@@ -364,6 +366,22 @@ Sets the distance from which the :ref:`out_of_range_mode<class_AudioStreamPlayer
 +-----------+------------------------------+
 
 Decides if audio should pause when source is outside of :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` range.
+
+----
+
+.. _class_AudioStreamPlayer3D_property_panning_strength:
+
+- :ref:`float<class_float>` **panning_strength**
+
++-----------+-----------------------------+
+| *Default* | ``1.0``                     |
++-----------+-----------------------------+
+| *Setter*  | set_panning_strength(value) |
++-----------+-----------------------------+
+| *Getter*  | get_panning_strength()      |
++-----------+-----------------------------+
+
+Scales the panning strength for this node by multiplying the base :ref:`ProjectSettings.audio/3d_panning_strength<class_ProjectSettings_property_audio/3d_panning_strength>` with this factor. Higher values will pan audio from left to right more dramatically than lower values.
 
 ----
 

@@ -639,6 +639,8 @@ Removes the item at index ``idx`` from the menu.
 
 Sets the currently focused item as the given ``index``.
 
+Passing ``-1`` as the index makes so that no item is focused.
+
 ----
 
 .. _class_PopupMenu_method_set_hide_on_window_lose_focus:

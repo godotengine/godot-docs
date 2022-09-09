@@ -722,7 +722,7 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 - :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``).
+Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``). Use :ref:`clamp<class_@GDScript_method_clamp>` on the result of :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>` if this is not desired.
 
 ::
 
@@ -733,7 +733,7 @@ Returns an interpolation or extrapolation factor considering the range specified
     var ratio = inverse_lerp(20, 30, 27.5)
     # `ratio` is now 0.75.
 
-See also :ref:`lerp<class_@GDScript_method_lerp>` which performs the reverse of this operation.
+See also :ref:`lerp<class_@GDScript_method_lerp>` which performs the reverse of this operation, and :ref:`range_lerp<class_@GDScript_method_range_lerp>` to map a continuous series of values to another.
 
 ----
 
@@ -802,7 +802,7 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 - :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. Use :ref:`clamp<class_@GDScript_method_clamp>` on the result of :ref:`lerp<class_@GDScript_method_lerp>` if this is not desired.
 
 If the ``from`` and ``to`` arguments are of type :ref:`int<class_int>` or :ref:`float<class_float>`, the return value is a :ref:`float<class_float>`.
 
@@ -813,7 +813,7 @@ If both are of the same vector type (:ref:`Vector2<class_Vector2>`, :ref:`Vector
     lerp(0, 4, 0.75) # Returns 3.0
     lerp(Vector2(1, 5), Vector2(3, 2), 0.5) # Returns Vector2(2, 3.5)
 
-See also :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GDScript_method_lerp>`, combine it with :ref:`ease<class_@GDScript_method_ease>` or :ref:`smoothstep<class_@GDScript_method_smoothstep>`.
+See also :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GDScript_method_lerp>`, combine it with :ref:`ease<class_@GDScript_method_ease>` or :ref:`smoothstep<class_@GDScript_method_smoothstep>`. See also :ref:`range_lerp<class_@GDScript_method_range_lerp>` to map a continuous series of values to another.
 
 ----
 
@@ -1293,11 +1293,13 @@ Output:
 
 - :ref:`float<class_float>` **range_lerp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**
 
-Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``.
+Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GDScript_method_lerp>` and :ref:`inverse_lerp<class_@GDScript_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. Use :ref:`clamp<class_@GDScript_method_clamp>` on the result of :ref:`range_lerp<class_@GDScript_method_range_lerp>` if this is not desired.
 
 ::
 
     range_lerp(75, 0, 100, -1, 1) # Returns 0.5
+
+For complex use cases where you need multiple ranges, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
 
 ----
 

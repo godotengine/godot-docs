@@ -171,7 +171,7 @@ Emitted when user dragging connection from output port into empty space of the g
 
 - **copy_nodes_request** **(** **)**
 
-Emitted when the user presses ``Ctrl + C``.
+Emitted when the user presses :kbd:`Ctrl + C`.
 
 ----
 
@@ -217,7 +217,7 @@ Emitted when a GraphNode is selected.
 
 - **paste_nodes_request** **(** **)**
 
-Emitted when the user presses ``Ctrl + V``.
+Emitted when the user presses :kbd:`Ctrl + V`.
 
 ----
 

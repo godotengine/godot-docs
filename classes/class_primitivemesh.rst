@@ -12,7 +12,7 @@ PrimitiveMesh
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`, :ref:`TextMesh<class_TextMesh>`
+**Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`, :ref:`TextMesh<class_TextMesh>`, :ref:`TorusMesh<class_TorusMesh>`
 
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 

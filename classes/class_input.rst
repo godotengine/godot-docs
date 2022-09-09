@@ -83,7 +83,7 @@ Methods
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`              | :ref:`get_joy_vibration_strength<class_Input_method_get_joy_vibration_strength>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                    |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`              | :ref:`get_last_mouse_speed<class_Input_method_get_last_mouse_speed>` **(** **)** |const|                                                                                                                                                                                     |
+| :ref:`Vector2<class_Vector2>`              | :ref:`get_last_mouse_speed<class_Input_method_get_last_mouse_speed>` **(** **)**                                                                                                                                                                                             |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`              | :ref:`get_magnetometer<class_Input_method_get_magnetometer>` **(** **)** |const|                                                                                                                                                                                             |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,6 +156,8 @@ Enumerations
 
 .. _class_Input_constant_MOUSE_MODE_CONFINED:
 
+.. _class_Input_constant_MOUSE_MODE_CONFINED_HIDDEN:
+
 enum **MouseMode**:
 
 - **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
@@ -166,7 +168,9 @@ enum **MouseMode**:
 
 \ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
 
-- **MOUSE_MODE_CONFINED** = **3** --- Makes the mouse cursor visible but confines it to the game window.
+- **MOUSE_MODE_CONFINED** = **3** --- Confines the mouse cursor to the game window, and make it visible.
+
+- **MOUSE_MODE_CONFINED_HIDDEN** = **4** --- Confines the mouse cursor to the game window, and make it hidden.
 
 ----
 
@@ -468,9 +472,9 @@ Returns the strength of the joypad vibration: x is the strength of the weak moto
 
 .. _class_Input_method_get_last_mouse_speed:
 
-- :ref:`Vector2<class_Vector2>` **get_last_mouse_speed** **(** **)** |const|
+- :ref:`Vector2<class_Vector2>` **get_last_mouse_speed** **(** **)**
 
-Returns the mouse speed for the last time the cursor was moved, and this until the next frame where the mouse moves. This means that even if the mouse is not moving, this function will still return the value of the last motion.
+Returns the last mouse speed. To provide a precise and jitter-free speed, mouse speed is only calculated every 0.1s. Therefore, mouse speed will lag mouse movements.
 
 ----
 
@@ -713,11 +717,15 @@ Stops the vibration of the joypad.
 
 - void **vibrate_handheld** **(** :ref:`int<class_int>` duration_ms=500 **)**
 
-Vibrate Android and iOS devices.
+Vibrate handheld devices.
+
+\ **Note:** This method is implemented on Android, iOS, and HTML5.
 
 \ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
 
 \ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
+
+\ **Note:** Some web browsers such as Safari and Firefox for Android do not support this method.
 
 ----
 

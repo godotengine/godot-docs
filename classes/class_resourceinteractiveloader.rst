@@ -19,6 +19,13 @@ Description
 
 Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows loading resources with high granularity, which makes it mainly useful for displaying loading bars or percentages.
 
+Properties
+----------
+
++-------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`no_subresource_cache<class_ResourceInteractiveLoader_property_no_subresource_cache>` |
++-------------------------+--------------------------------------------------------------------------------------------+
+
 Methods
 -------
 
@@ -33,6 +40,21 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                               |
 +---------------------------------------+----------------------------------------------------------------------------------------------------+
+
+Property Descriptions
+---------------------
+
+.. _class_ResourceInteractiveLoader_property_no_subresource_cache:
+
+- :ref:`bool<class_bool>` **no_subresource_cache**
+
++----------+---------------------------------+
+| *Setter* | set_no_subresource_cache(value) |
++----------+---------------------------------+
+| *Getter* | get_no_subresource_cache()      |
++----------+---------------------------------+
+
+Configures whether nested resources, if included, should not be cached.
 
 Method Descriptions
 -------------------

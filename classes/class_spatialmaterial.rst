@@ -220,7 +220,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`uv1_triplanar<class_SpatialMaterial_property_uv1_triplanar>`                                   | ``false``               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                      | :ref:`uv1_triplanar_sharpness<class_SpatialMaterial_property_uv1_triplanar_sharpness>`               | ``1.0``                 |
+| :ref:`float<class_float>`                                      | :ref:`uv1_triplanar_sharpness<class_SpatialMaterial_property_uv1_triplanar_sharpness>`               |                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`Vector3<class_Vector3>`                                  | :ref:`uv2_offset<class_SpatialMaterial_property_uv2_offset>`                                         | ``Vector3( 0, 0, 0 )``  |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
@@ -228,7 +228,7 @@ Properties
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`uv2_triplanar<class_SpatialMaterial_property_uv2_triplanar>`                                   | ``false``               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                      | :ref:`uv2_triplanar_sharpness<class_SpatialMaterial_property_uv2_triplanar_sharpness>`               | ``1.0``                 |
+| :ref:`float<class_float>`                                      | :ref:`uv2_triplanar_sharpness<class_SpatialMaterial_property_uv2_triplanar_sharpness>`               |                         |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`vertex_color_is_srgb<class_SpatialMaterial_property_vertex_color_is_srgb>`                     | ``false``               |
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------+
@@ -768,7 +768,7 @@ If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular
 
 \ **Note:** Mesh tangents are needed for anisotropy to work. If the mesh does not contain tangents, the anisotropy effect will appear broken.
 
-\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**.
+\ **Note:** Material anisotropy should not to be confused with anisotropic texture filtering. Anisotropic texture filtering can be enabled by selecting a texture in the FileSystem dock, going to the Import dock, checking the **Anisotropic** checkbox then clicking **Reimport**. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/quality/filters/anisotropic_filter_level<class_ProjectSettings_property_rendering/quality/filters/anisotropic_filter_level>`.
 
 ----
 
@@ -2188,15 +2188,15 @@ If ``true``, instead of using ``UV`` textures will use a triplanar texture looku
 
 - :ref:`float<class_float>` **uv1_triplanar_sharpness**
 
-+-----------+------------------------------------------+
-| *Default* | ``1.0``                                  |
-+-----------+------------------------------------------+
-| *Setter*  | set_uv1_triplanar_blend_sharpness(value) |
-+-----------+------------------------------------------+
-| *Getter*  | get_uv1_triplanar_blend_sharpness()      |
-+-----------+------------------------------------------+
++----------+------------------------------------------+
+| *Setter* | set_uv1_triplanar_blend_sharpness(value) |
++----------+------------------------------------------+
+| *Getter* | get_uv1_triplanar_blend_sharpness()      |
++----------+------------------------------------------+
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
+
+\ **Note:** :ref:`uv1_triplanar_sharpness<class_SpatialMaterial_property_uv1_triplanar_sharpness>` is clamped between ``0.0`` and ``150.0`` (inclusive) as values outside that range can look broken depending on the mesh.
 
 ----
 
@@ -2252,15 +2252,15 @@ If ``true``, instead of using ``UV2`` textures will use a triplanar texture look
 
 - :ref:`float<class_float>` **uv2_triplanar_sharpness**
 
-+-----------+------------------------------------------+
-| *Default* | ``1.0``                                  |
-+-----------+------------------------------------------+
-| *Setter*  | set_uv2_triplanar_blend_sharpness(value) |
-+-----------+------------------------------------------+
-| *Getter*  | get_uv2_triplanar_blend_sharpness()      |
-+-----------+------------------------------------------+
++----------+------------------------------------------+
+| *Setter* | set_uv2_triplanar_blend_sharpness(value) |
++----------+------------------------------------------+
+| *Getter* | get_uv2_triplanar_blend_sharpness()      |
++----------+------------------------------------------+
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
+
+\ **Note:** :ref:`uv2_triplanar_sharpness<class_SpatialMaterial_property_uv2_triplanar_sharpness>` is clamped between ``0.0`` and ``150.0`` (inclusive) as values outside that range can look broken depending on the mesh.
 
 ----
 

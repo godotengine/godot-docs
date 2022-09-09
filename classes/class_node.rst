@@ -507,7 +507,7 @@ Implemented on all platforms.
 
 Implemented on all platforms.
 
-- **NOTIFICATION_WM_QUIT_REQUEST** = **1006** --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).
+- **NOTIFICATION_WM_QUIT_REQUEST** = **1006** --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or :kbd:`Alt + F4`).
 
 Implemented on desktop platforms.
 

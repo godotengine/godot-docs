@@ -92,7 +92,7 @@ Methods
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_Array>`                       | :ref:`map_get_regions<class_Navigation2DServer_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                         |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`map_is_active<class_Navigation2DServer_method_map_is_active>` **(** :ref:`RID<class_RID>` nap **)** |const|                                                                                                                                                             |
+| :ref:`bool<class_bool>`                         | :ref:`map_is_active<class_Navigation2DServer_method_map_is_active>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                             |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`map_set_active<class_Navigation2DServer_method_map_set_active>` **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` active **)** |const|                                                                                                                           |
 +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -255,7 +255,9 @@ Sets the current velocity of the agent.
 
 - void **free_rid** **(** :ref:`RID<class_RID>` rid **)** |const|
 
-Destroys the given RID.
+Destroys an object created by the Navigation2DServer.
+
+\ **Note:** See :ref:`VisualServer.free_rid<class_VisualServer_method_free_rid>` for details on how to handle RIDs for freed objects.
 
 ----
 
@@ -355,7 +357,7 @@ Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assig
 
 .. _class_Navigation2DServer_method_map_is_active:
 
-- :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` nap **)** |const|
+- :ref:`bool<class_bool>` **map_is_active** **(** :ref:`RID<class_RID>` map **)** |const|
 
 Returns ``true`` if the map is active.
 

@@ -17,7 +17,9 @@ Low-level hyper-text transfer protocol client.
 Description
 -----------
 
-Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases. **See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternative.**\ 
+Hyper-text transfer protocol client (sometimes called "User Agent"). Used to make HTTP requests to download web content, upload files and other data or to communicate with various services, among other use cases.
+
+See the :ref:`HTTPRequest<class_HTTPRequest>` node for a higher-level alternative.
 
 \ **Note:** This client only needs to connect to a host once (see :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>`) to send multiple requests. Because of this, methods that take URLs usually take just the part after the host instead of the full URL, as the client is already connected to a host. See :ref:`request<class_HTTPClient_method_request>` for a full example and to get started.
 

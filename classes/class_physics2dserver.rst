@@ -1202,7 +1202,9 @@ Sets a damped spring joint parameter. See :ref:`DampedStringParam<enum_Physics2D
 
 - void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Destroys any of the objects created by Physics2DServer. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by Physics2DServer, an error will be sent to the console.
+Destroys an object created by the Physics2DServer.
+
+\ **Note:** See :ref:`VisualServer.free_rid<class_VisualServer_method_free_rid>` for details on how to handle RIDs for freed objects.
 
 ----
 

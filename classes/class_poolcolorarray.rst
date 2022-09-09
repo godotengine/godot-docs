@@ -45,6 +45,8 @@ Methods
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                        | :ref:`append_array<class_PoolColorArray_method_append_array>` **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)** |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`clear<class_PoolColorArray_method_clear>` **(** **)**                                                                 |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                       | :ref:`count<class_PoolColorArray_method_count>` **(** :ref:`Color<class_Color>` value **)**                                 |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                     | :ref:`empty<class_PoolColorArray_method_empty>` **(** **)**                                                                 |
@@ -98,6 +100,14 @@ Appends an element at the end of the array (alias of :ref:`push_back<class_PoolC
 - void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
 
 Appends a ``PoolColorArray`` at the end of this array.
+
+----
+
+.. _class_PoolColorArray_method_clear:
+
+- void **clear** **(** **)**
+
+Clears the array. This is equivalent to using :ref:`resize<class_PoolColorArray_method_resize>` with a size of ``0``.
 
 ----
 
