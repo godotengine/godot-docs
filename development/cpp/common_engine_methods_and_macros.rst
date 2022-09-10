@@ -15,9 +15,20 @@ Print text
     // Prints a message to standard output.
     print_line("Message");
 
+    // Non-String arguments are automatically converted to String for printing.
+    // If passing several arguments, they will be concatenated together with a
+    // space between each argument.
+    print_line("There are", 123, "nodes");
+
     // Prints a message to standard output, but only when the engine
     // is started with the `--verbose` command line argument.
     print_verbose("Message");
+
+    // Prints a rich-formatted message using BBCode to standard output.
+    // This supports a subset of BBCode tags supported by RichTextLabel
+    // and will also appear formatted in the editor Output panel.
+    // On Windows, this requires Windows 10 or later to work in the terminal.
+    print_line_rich("[b]Bold[/b], [color=red]Red text[/color]")
 
     // Prints a formatted error or warning message with a trace.
     ERR_PRINT("Message");
@@ -54,15 +65,16 @@ makes for more readable code.
 Convert an integer or float to a string
 ---------------------------------------
 
-This is mainly useful when printing numbers directly.
+This is not needed when printing numbers using ``print_line()``, but you may
+still need to perform manual conversion for some other use cases.
 
 .. code-block:: cpp
 
-    // Prints "42" using integer-to-string conversion.
-    print_line(itos(42));
+    // Stores the string "42" using integer-to-string conversion.
+    String int_to_string = itos(42);
 
-    // Prints "123.45" using real-to-string conversion.
-    print_line(rtos(123.45));
+    // Stores the string "123.45" using real-to-string conversion.
+    String real_to_string = rtos(123.45);
 
 Internationalize a string
 -------------------------
