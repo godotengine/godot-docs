@@ -216,12 +216,19 @@ neighbors and lines only one cell wide are not supported.
 This template can be used for sideways or fully top-down perspectives.
 It's designed for a TileMap cell size of 64x64.
 
-Key:
+Key (applies to the two templates below):
 
 - Red: "on"
 - White: "off"
 
 .. image:: img/autotile_template_2x2.png
+
+**Template - Isometric:**
+
+This template uses the same bitmask as the template above, but the tiles are
+rotated clockwise to fit the isometric perspective.
+
+.. image:: img/autotile_template_2x2_isometric.png
 
 3x3 (minimal)
 ~~~~~~~~~~~~~
@@ -249,13 +256,19 @@ This template can be used for sideways or fully top-down perspectives.
 All templates below are designed for a TileMap cell size of 64x64, but you may
 have to use different subtile sizes for top-down templates as described below.
 
-Key:
+Key (applies to the two templates below):
 
 - Red: "on"
 - White: "off"
 
 .. image:: img/autotile_template_3x3_minimal.png
 
+**Template - Isometric:**
+
+This template uses the same bitmask as the template above, but the tiles are
+rotated clockwise to fit the isometric perspective.
+
+.. image:: img/autotile_template_3x3_minimal_isometric.png
 
 **Template - Generic 16 tiles:**
 
