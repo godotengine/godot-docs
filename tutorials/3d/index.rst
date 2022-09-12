@@ -14,6 +14,7 @@
    gi_probes
    baked_lightmaps
    environment_and_post_processing
+   volumetric_fog
    high_dynamic_range
    using_gridmaps
    using_multi_mesh_instance
