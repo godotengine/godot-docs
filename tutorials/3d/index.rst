@@ -21,3 +21,5 @@
    csg_tools
    procedural_geometry/index
    3d_text
+   mesh_lod
+   visibility_ranges
