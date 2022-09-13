@@ -88,7 +88,7 @@ of files.
 You can then browse the documentation by opening ``_build/html/index.html`` in
 your web browser.
 
-In case you of a ``MemoryError`` or ``EOFError``, you can remove the
+If you get a ``MemoryError`` or ``EOFError``, you can remove the
 ``classes/`` folder and run ``make`` again. This will drop the class references
 from the final HTML documentation but will keep the rest intact.
 
