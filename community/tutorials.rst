@@ -53,6 +53,21 @@ Text tutorials
 - `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
+Books
+--------------
+
+- `Game Development with Blender and Godot <https://www.amazon.com/dp/1801816026/>`__, Kumsal Obuz
+- `Moving from Unity to Godot <https://www.amazon.com/dp/B08B5R2Y5S/>`__, Alan Thorn
+- `Beginning Game Development with Godot <https://www.amazon.com/dp/1484274547/>`__, Maithili Dhule
+- `Godot from Zero to Proficiency (Proficient) <https://www.amazon.com/dp/B09SL31464/>`__, Patrick Felicia
+- `Godot from Zero to Proficiency (Advanced) <https://www.amazon.com/dp/B09HG58SGF/>`__, Patrick Felicia
+- `Godot from Zero to Proficiency (Intermediate) <https://www.amazon.com/dp/B099BBVVC2/>`__, Patrick Felicia
+- `Godot from Zero to Proficiency (Beginner) <https://www.amazon.com/dp/B0939XCJPF/>`__, Patrick Felicia
+- `Godot from Zero to Proficiency (Foundations) <https://www.amazon.com/dp/B08YQR3ZPP/>`__, Patrick Felicia
+- `Godot Engine Game Development Projects <https://www.amazon.com/dp/1788831500/>`__, Chris Bradfield
+- `Godot Engine Game Development in 24 Hours <https://www.amazon.com/dp/0134835093/>`__, Ariel Manzur, George Marques
+
+
 Devlogs
 -------
 
