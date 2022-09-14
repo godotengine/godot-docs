@@ -141,7 +141,7 @@ Changing current scene
 
 After a scene is loaded, you may want to change this scene for
 another one. One way to do this is to use the
-:ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene>`
+:ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>`
 function:
 
 .. tabs::
@@ -160,7 +160,7 @@ function:
 Rather than using file paths, one can also use ready-made
 :ref:`PackedScene <class_PackedScene>` resources using the equivalent
 function
-:ref:`SceneTree.change_scene_to_packed(PackedScene scene) <class_SceneTree_method_change_scene_to>`:
+:ref:`SceneTree.change_scene_to_packed(PackedScene scene) <class_SceneTree_method_change_scene_to_packed>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
