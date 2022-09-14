@@ -294,7 +294,7 @@ If one has a system that...
 
   For smaller games, a simpler alternative with less control would be to have
   a "Game" singleton that simply calls the
-  :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` method
+  :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>` method
   to swap out the main scene's content. This structure more or less keeps
   the "World" as the main game node.
 
