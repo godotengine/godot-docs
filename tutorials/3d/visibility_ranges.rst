@@ -3,8 +3,9 @@
 Visibility ranges (HLOD)
 ========================
 
-Along with mesh LOD and occlusion culling, visibility ranges are another tool
-to improve performance in large, complex 3D scenes.
+Along with :ref:`doc_mesh_lod` and :ref:`doc_occlusion_culling`,
+visibility ranges are another tool to improve performance in large,
+complex 3D scenes.
 
 On this page, you'll learn:
 

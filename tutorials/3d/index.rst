@@ -23,3 +23,4 @@
    3d_text
    mesh_lod
    visibility_ranges
+   occlusion_culling
