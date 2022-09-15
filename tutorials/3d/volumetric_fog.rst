@@ -1,7 +1,7 @@
 .. _doc_volumetric_fog:
 
-Volumetric fog
-==============
+Volumetric fog and fog volumes
+==============================
 
 .. note::
 
@@ -35,24 +35,21 @@ resource, you can edit the following properties:
   the lowest density you want to have globally. FogVolumes can be used to add to
   or subtract from this density in specific areas. A value of ``0.0`` disables
   global volumetric fog while allowing FogVolumes to display volumetric fog in
-  specific areas. Fog rendering is exponential as in real life. This means fog
-  will never *fully* obscure objects regardless of distance.
-- **Albedo:** The Color of the volumetric fog when interacting with lights. This
-  multiplies lights' color within the volumetric fog. Mist and fog have an
-  albedo close to white (``Color(1, 1, 1, 1)``) while smoke has a darker albedo.
-  This does not affect fog color within FogVolumes.
+  specific areas. Fog rendering is exponential as in real life.
+- **Albedo:** The Color of the volumetric fog when interacting with lights. Mist
+  and fog have an albedo close to white (``Color(1, 1, 1, 1)``) while smoke
+  has a darker albedo.
 - **Emission:** The emitted light from the volumetric fog. Even with emission,
   volumetric fog will not cast light onto other surfaces. Emission is useful to
   establish an ambient color. As the volumetric fog effect uses
   single-scattering only, fog tends to need a little bit of emission to soften
-  the harsh shadows. This does not affect fog color within FogVolumes.
+  the harsh shadows.
 - **Emission Energy:** The brightness of the emitted light from the volumetric
-  fog. This does not affect fog color within FogVolumes.
+  fog.
 - **GI Inject:** Scales the strength of Global Illumination used in the
   volumetric fog's albedo color. A value of ``0.0`` means that Global
   Illumination will not impact the volumetric fog. This has a small performance
-  cost when set above ``0.0``. FogVolumes do not display injected GI regardless
-  of their albedo color.
+  cost when set above ``0.0``.
 - **Anisotropy:** The direction of scattered light as it goes through the
   volumetric fog. A value close to ``1.0`` means almost all light is scattered
   forward. A value close to ``0.0`` means light is scattered equally in all
