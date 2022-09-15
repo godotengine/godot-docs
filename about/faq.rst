@@ -17,7 +17,7 @@ In short:
 * You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
 
 All the contents of this accompanying documentation are published under
-the permissive Creative Commons Attribution 3.0 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution
+the permissive Creative Commons Attribution 3.0 (`CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution
 to "Juan Linietsky, Ariel Manzur and the Godot Engine community."
 
 Logos and icons are generally under the same Creative Commons license. Note
