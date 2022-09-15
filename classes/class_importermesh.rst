@@ -40,7 +40,7 @@ Methods
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                            | :ref:`clear<class_ImporterMesh_method_clear>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`generate_lods<class_ImporterMesh_method_generate_lods>` **(** :ref:`float<class_float>` normal_merge_angle, :ref:`float<class_float>` normal_split_angle **)**                                                                                                                                                                                                         |
+| void                                            | :ref:`generate_lods<class_ImporterMesh_method_generate_lods>` **(** :ref:`float<class_float>` normal_merge_angle, :ref:`float<class_float>` normal_split_angle, :ref:`Array<class_Array>` bone_transform_array **)**                                                                                                                                                         |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                           | :ref:`get_blend_shape_count<class_ImporterMesh_method_get_blend_shape_count>` **(** **)** |const|                                                                                                                                                                                                                                                                            |
 +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,13 +125,15 @@ Removes all surfaces and blend shapes from this ``ImporterMesh``.
 
 .. _class_ImporterMesh_method_generate_lods:
 
-- void **generate_lods** **(** :ref:`float<class_float>` normal_merge_angle, :ref:`float<class_float>` normal_split_angle **)**
+- void **generate_lods** **(** :ref:`float<class_float>` normal_merge_angle, :ref:`float<class_float>` normal_split_angle, :ref:`Array<class_Array>` bone_transform_array **)**
 
 Generates all lods for this ImporterMesh.
 
-``normal_merge_angle`` and ``normal_split_angle`` are in degrees and used in the same way as the importer settings in ``lods``. As a good default, use 25 and 60 respectively.
+\ ``normal_merge_angle`` and ``normal_split_angle`` are in degrees and used in the same way as the importer settings in ``lods``. As a good default, use 25 and 60 respectively.
 
 The number of generated lods can be accessed using :ref:`get_surface_lod_count<class_ImporterMesh_method_get_surface_lod_count>`, and each LOD is available in :ref:`get_surface_lod_size<class_ImporterMesh_method_get_surface_lod_size>` and :ref:`get_surface_lod_indices<class_ImporterMesh_method_get_surface_lod_indices>`.
+
+\ ``bone_transform_array`` is an :ref:`Array<class_Array>` which can be either empty or contain :ref:`Transform3D<class_Transform3D>`\ s which, for each of the mesh's bone IDs, will apply mesh skinning when generating the LOD mesh variations. This is usually used to account for discrepancies in scale between the mesh itself and its skinning data.
 
 ----
 

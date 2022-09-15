@@ -62,11 +62,23 @@ Another interesting use for ``Tween``\ s is animating arbitrary sets of objects:
 
 In the example above, all children of a node are moved one after another to position (0, 0).
 
+You should avoid using more than one ``Tween`` per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the ``Tween`` to a variable:
+
+::
+
+    var tween
+    func animate():
+        if tween:
+            tween.kill() # Abort the previous animation.
+        tween = create_tween()
+
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
 \ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
 
 \ **Note:** All ``Tween``\ s will automatically start by default. To prevent a ``Tween`` from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it is created.
+
+\ **Note:** ``Tween``\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
 Methods
 -------
@@ -307,13 +319,13 @@ Returns the total time in seconds the ``Tween`` has been animating (i.e. the tim
 
 This method can be used for manual interpolation of a value, when you don't want ``Tween`` to do animating for you. It's similar to :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`, but with support for custom transition and easing.
 
-``initial_value`` is the starting value of the interpolation.
+\ ``initial_value`` is the starting value of the interpolation.
 
-``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
+\ ``delta_value`` is the change of the value in the interpolation, i.e. it's equal to ``final_value - initial_value``.
 
-``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
+\ ``elapsed_time`` is the time in seconds that passed after the interpolation started and it's used to control the position of the interpolation. E.g. when it's equal to half of the ``duration``, the interpolated value will be halfway between initial and final values. This value can also be greater than ``duration`` or lower than 0, which will extrapolate the value.
 
-``duration`` is the total time of the interpolation.
+\ ``duration`` is the total time of the interpolation.
 
 \ **Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
 

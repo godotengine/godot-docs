@@ -300,7 +300,7 @@ This is equivalent to using :ref:`add_constant_force<class_PhysicsDirectBodyStat
 
 Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -340,7 +340,7 @@ This is equivalent to using :ref:`apply_impulse<class_PhysicsDirectBodyState3D_m
 
 Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -352,7 +352,7 @@ Applies a positioned impulse to the body.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 

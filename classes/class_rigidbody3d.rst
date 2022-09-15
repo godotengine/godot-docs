@@ -129,7 +129,7 @@ Signals
 
 Emitted when a collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` occurs. Requires :ref:`contact_monitor<class_RigidBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -139,7 +139,7 @@ Emitted when a collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` 
 
 Emitted when the collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` ends. Requires :ref:`contact_monitor<class_RigidBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
 ----
 
@@ -149,13 +149,13 @@ Emitted when the collision with another :ref:`PhysicsBody3D<class_PhysicsBody3D>
 
 Emitted when one of this RigidBody3D's :ref:`Shape3D<class_Shape3D>`\ s collides with another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s. Requires :ref:`contact_monitor<class_RigidBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -165,13 +165,13 @@ Emitted when one of this RigidBody3D's :ref:`Shape3D<class_Shape3D>`\ s collides
 
 Emitted when the collision between one of this RigidBody3D's :ref:`Shape3D<class_Shape3D>`\ s and another :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape3D<class_Shape3D>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody3D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape3D<class_Shape3D>`\ s.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`MeshLibrary<class_MeshLibrary>`'s :ref:`CollisionObject3D<class_CollisionObject3D>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. :ref:`GridMap<class_GridMap>`\ s are detected if the Meshes have :ref:`Shape3D<class_Shape3D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+\ ``body_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of the other :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape3D<class_Shape3D>` of this RigidBody3D used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>`. Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -646,7 +646,7 @@ This is equivalent to using :ref:`add_constant_force<class_RigidBody3D_method_ad
 
 Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector3(0, 0, 0)``.
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -686,7 +686,7 @@ This is equivalent to using :ref:`apply_impulse<class_RigidBody3D_method_apply_i
 
 Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 
@@ -698,7 +698,7 @@ Applies a positioned impulse to the body.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
-``position`` is the offset from the body origin in global coordinates.
+\ ``position`` is the offset from the body origin in global coordinates.
 
 ----
 

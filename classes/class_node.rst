@@ -195,8 +195,6 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`queue_free<class_Node_method_queue_free>` **(** **)**                                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`remove_and_skip<class_Node_method_remove_and_skip>` **(** **)**                                                                                                                                                          |
-+---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_child<class_Node_method_remove_child>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                   |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`remove_from_group<class_Node_method_remove_from_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                            |
@@ -946,7 +944,7 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
 
-``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
 If ``recursive`` is ``true``, all child nodes are included, even if deeply nested. Nodes are checked in tree order, so this node's first direct child is checked first, then its own direct children, etc., before moving to the second direct child, and so on. If ``recursive`` is ``false``, only this node's direct children are matched.
 
@@ -966,9 +964,9 @@ Returns ``null`` if no matching ``Node`` is found.
 
 Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
 
-``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
-``type`` will check equality or inheritance, and is case-sensitive. ``"Object"`` will match a node whose type is ``"Node"`` but not the other way around.
+\ ``type`` will check equality or inheritance, and is case-sensitive. ``"Object"`` will match a node whose type is ``"Node"`` but not the other way around.
 
 If ``recursive`` is ``true``, all child nodes are included, even if deeply nested. Nodes are checked in tree order, so this node's first direct child is checked first, then its own direct children, etc., before moving to the second direct child, and so on. If ``recursive`` is ``false``, only this node's direct children are matched.
 
@@ -988,7 +986,7 @@ Returns an empty array if no matching nodes are found.
 
 Finds the first parent of the current node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
 
-``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
+\ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
 \ **Note:** As this method walks upwards in the scene tree, it can be slow in large, deeply nested scene trees. Whenever possible, consider using :ref:`get_node<class_Node_method_get_node>` with unique names instead (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`), or caching the node references into variable.
 
@@ -1351,7 +1349,7 @@ Returns ``true`` if the node is processing unhandled key input (see :ref:`set_pr
 
 - void **move_child** **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**
 
-Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful.
+Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful. If ``to_position`` is negative, the index will be counted from the end.
 
 \ **Note:** Internal children can only be moved within their expected "internal range" (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
@@ -1426,14 +1424,6 @@ Notifies the current node and all its children recursively by calling :ref:`Obje
 - void **queue_free** **(** **)**
 
 Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to :ref:`Object.free<class_Object_method_free>`. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
-
-----
-
-.. _class_Node_method_remove_and_skip:
-
-- void **remove_and_skip** **(** **)**
-
-Removes a node and sets all its children as children of the parent node (if it exists). All event subscriptions that pass by the removed node will be unsubscribed.
 
 ----
 

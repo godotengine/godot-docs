@@ -28,6 +28,10 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`_get_connection_state<class_WebRTCPeerConnectionExtension_method__get_connection_state>` **(** **)** |virtual| |const|                                                                                                               |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>`   | :ref:`_get_gathering_state<class_WebRTCPeerConnectionExtension_method__get_gathering_state>` **(** **)** |virtual| |const|                                                                                                                 |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>`   | :ref:`_get_signaling_state<class_WebRTCPeerConnectionExtension_method__get_signaling_state>` **(** **)** |virtual| |const|                                                                                                                 |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_initialize<class_WebRTCPeerConnectionExtension_method__initialize>` **(** :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|                                                                                              |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_poll<class_WebRTCPeerConnectionExtension_method__poll>` **(** **)** |virtual|                                                                                                                                                       |
@@ -67,6 +71,18 @@ Method Descriptions
 .. _class_WebRTCPeerConnectionExtension_method__get_connection_state:
 
 - :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **_get_connection_state** **(** **)** |virtual| |const|
+
+----
+
+.. _class_WebRTCPeerConnectionExtension_method__get_gathering_state:
+
+- :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` **_get_gathering_state** **(** **)** |virtual| |const|
+
+----
+
+.. _class_WebRTCPeerConnectionExtension_method__get_signaling_state:
+
+- :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **_get_signaling_state** **(** **)** |virtual| |const|
 
 ----
 

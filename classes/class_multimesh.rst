@@ -12,7 +12,7 @@ MultiMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Provides high-performance mesh instancing.
+Provides high-performance drawing of a mesh multiple times using GPU instancing.
 
 Description
 -----------
@@ -24,6 +24,10 @@ MultiMesh is much faster as it can draw thousands of instances with a single dra
 As a drawback, if the instances are too far away from each other, performance may be reduced as every single instance will always render (they are spatially indexed as one, for the whole object).
 
 Since instances may have any behavior, the AABB used for visibility must be provided by the user.
+
+\ **Note:** A MultiMesh is a single object, therefore the same maximum lights per object restriction applies. This means, that once the maximum lights are consumed by one or more instances, the rest of the MultiMesh instances will **not** receive any lighting.
+
+\ **Note:** Blend Shapes will be ignored if used in a MultiMesh.
 
 Tutorials
 ---------
@@ -118,11 +122,15 @@ Property Descriptions
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **color_array**
 
+See :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`.
+
 ----
 
 .. _class_MultiMesh_property_custom_data_array:
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array**
+
+See :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`.
 
 ----
 
@@ -154,7 +162,9 @@ By default, all instances are drawn but you can limit this with :ref:`visible_in
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
-Mesh to be drawn.
+:ref:`Mesh<class_Mesh>` resource to be instanced.
+
+The looks of the individual instances can be modified using :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` and :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`.
 
 ----
 
@@ -162,11 +172,15 @@ Mesh to be drawn.
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array**
 
+See :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>`.
+
 ----
 
 .. _class_MultiMesh_property_transform_array:
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array**
+
+See :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>`.
 
 ----
 
@@ -198,7 +212,7 @@ Format of transform used to transform mesh, either 2D or 3D.
 | *Getter*  | is_using_colors()     |
 +-----------+-----------------------+
 
-If ``true``, the ``MultiMesh`` will use color data (see :ref:`color_array<class_MultiMesh_property_color_array>`).
+If ``true``, the ``MultiMesh`` will use color data (see :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>`). Can only be set when :ref:`instance_count<class_MultiMesh_property_instance_count>` is ``0`` or less. This means that you need to call this method before setting the instance count, or temporarily reset it to ``0``.
 
 ----
 
@@ -214,7 +228,7 @@ If ``true``, the ``MultiMesh`` will use color data (see :ref:`color_array<class_
 | *Getter*  | is_using_custom_data()     |
 +-----------+----------------------------+
 
-If ``true``, the ``MultiMesh`` will use custom data (see :ref:`custom_data_array<class_MultiMesh_property_custom_data_array>`).
+If ``true``, the ``MultiMesh`` will use custom data (see :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>`). Can only be set when :ref:`instance_count<class_MultiMesh_property_instance_count>` is ``0`` or less. This means that you need to call this method before setting the instance count, or temporarily reset it to ``0``.
 
 ----
 
@@ -247,7 +261,7 @@ Returns the visibility axis-aligned bounding box in local space. See also :ref:`
 
 - :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** |const|
 
-Gets a specific instance's color.
+Gets a specific instance's color multiplier.
 
 ----
 
@@ -279,9 +293,9 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 - void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
-Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors.
+Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors. This allows for different color tinting per instance.
 
-For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the ``MultiMesh`` and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material. If the color doesn't look as expected, make sure the material's albedo color is set to pure white (``Color(1, 1, 1)``).
+For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_property_use_colors>` is ``true`` on the ``MultiMesh`` and :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` is ``true`` on the material. If you intend to set an absolute color instead of tinting, make sure the material's albedo color is set to pure white (``Color(1, 1, 1)``).
 
 ----
 
@@ -292,6 +306,8 @@ For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_prope
 Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 floating point numbers.
 
 For the custom data to be used, ensure that :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>` is ``true``.
+
+This custom instance data has to be manually accessed in your custom shader using ``INSTANCE_CUSTOM``.
 
 ----
 

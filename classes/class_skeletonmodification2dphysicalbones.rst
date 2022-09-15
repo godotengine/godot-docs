@@ -19,6 +19,8 @@ Description
 
 This modification takes the transforms of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and applies them to :ref:`Bone2D<class_Bone2D>` nodes. This allows the :ref:`Bone2D<class_Bone2D>` nodes to react to physics thanks to the linked :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes.
 
+Experimental. Physical bones may be changed in the future to perform the position update of :ref:`Bone2D<class_Bone2D>` on their own.
+
 Properties
 ----------
 

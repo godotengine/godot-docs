@@ -12,14 +12,16 @@ GraphEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
+GraphEdit is a control responsible for displaying and manipulating graph-like data using :ref:`GraphNode<class_GraphNode>`\ s. It provides access to creation, removal, connection, and disconnection of nodes.
 
 Description
 -----------
 
-GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNode slots is disabled by default.
+GraphEdit provides tools for creation, manipulation, and display of various graphs. Its main purpose in the engine is to power the visual programming systems, such as visual shaders, but it is also available for use in user projects.
 
-It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
+GraphEdit by itself is only an empty container, representing an infinite grid where :ref:`GraphNode<class_GraphNode>`\ s can be placed. Each :ref:`GraphNode<class_GraphNode>` represent a node in the graph, a single unit of data in the connected scheme. GraphEdit, in turn, helps to control various interactions with nodes and between nodes. When the user attempts to connect, disconnect, or close a :ref:`GraphNode<class_GraphNode>`, a signal is emitted in the GraphEdit, but no action is taken by default. It is the responsibility of the programmer utilizing this control to implement the necessary logic to determine how each request should be handled.
+
+\ **Performance:** It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
 Properties
 ----------
@@ -67,51 +69,51 @@ Properties
 Methods
 -------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`_get_connection_line<class_GraphEdit_method__get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |virtual| |const|                                                                                                   |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`_is_in_input_hotzone<class_GraphEdit_method__is_in_input_hotzone>` **(** :ref:`Object<class_Object>` graph_node, :ref:`int<class_int>` slot_index, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                         |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`_is_in_output_hotzone<class_GraphEdit_method__is_in_output_hotzone>` **(** :ref:`Object<class_Object>` graph_node, :ref:`int<class_int>` slot_index, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                       |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`_is_node_hover_valid<class_GraphEdit_method__is_node_hover_valid>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)** |virtual|                               |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                 |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                         |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`arrange_nodes<class_GraphEdit_method_arrange_nodes>` **(** **)**                                                                                                                                                                                                        |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`clear_connections<class_GraphEdit_method_clear_connections>` **(** **)**                                                                                                                                                                                                |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`               | :ref:`connect_node<class_GraphEdit_method_connect_node>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**                                                         |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**                                                   |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`force_connection_drag_end<class_GraphEdit_method_force_connection_drag_end>` **(** **)**                                                                                                                                                                                |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**                                                                                                                       |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                    |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_zoom_hbox<class_GraphEdit_method_get_zoom_hbox>` **(** **)**                                                                                                                                                                                                        |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**                                               |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|                                                                                                           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                           |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                   |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_connection_activity<class_GraphEdit_method_set_connection_activity>` **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)** |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_selected<class_GraphEdit_method_set_selected>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                             |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`_get_connection_line<class_GraphEdit_method__get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from_position, :ref:`Vector2<class_Vector2>` to_position **)** |virtual| |const|                                                                                           |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`_is_in_input_hotzone<class_GraphEdit_method__is_in_input_hotzone>` **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                                         |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`_is_in_output_hotzone<class_GraphEdit_method__is_in_output_hotzone>` **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                                       |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`_is_node_hover_valid<class_GraphEdit_method__is_node_hover_valid>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)** |virtual|                               |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                           |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                     |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                   |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`arrange_nodes<class_GraphEdit_method_arrange_nodes>` **(** **)**                                                                                                                                                                                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`clear_connections<class_GraphEdit_method_clear_connections>` **(** **)**                                                                                                                                                                                                          |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`               | :ref:`connect_node<class_GraphEdit_method_connect_node>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                                         |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                                   |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`force_connection_drag_end<class_GraphEdit_method_force_connection_drag_end>` **(** **)**                                                                                                                                                                                          |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from_node, :ref:`Vector2<class_Vector2>` to_node **)**                                                                                                                       |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                              |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_zoom_hbox<class_GraphEdit_method_get_zoom_hbox>` **(** **)**                                                                                                                                                                                                                  |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                               |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|                                                                                                                     |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                     |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                               |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                             |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_connection_activity<class_GraphEdit_method_set_connection_activity>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)** |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`set_selected<class_GraphEdit_method_set_selected>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                       |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -167,7 +169,7 @@ Emitted at the end of a connection drag.
 
 .. _class_GraphEdit_signal_connection_drag_started:
 
-- **connection_drag_started** **(** :ref:`String<class_String>` from, :ref:`int<class_int>` slot, :ref:`bool<class_bool>` is_output **)**
+- **connection_drag_started** **(** :ref:`String<class_String>` from_node, :ref:`int<class_int>` from_port, :ref:`bool<class_bool>` is_output **)**
 
 Emitted at the beginning of a connection drag.
 
@@ -175,25 +177,25 @@ Emitted at the beginning of a connection drag.
 
 .. _class_GraphEdit_signal_connection_from_empty:
 
-- **connection_from_empty** **(** :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot, :ref:`Vector2<class_Vector2>` release_position **)**
+- **connection_from_empty** **(** :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`Vector2<class_Vector2>` release_position **)**
 
-Emitted when user dragging connection from input port into empty space of the graph.
+Emitted when user drags a connection from an input port into the empty space of the graph.
 
 ----
 
 .. _class_GraphEdit_signal_connection_request:
 
-- **connection_request** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)**
+- **connection_request** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
 
-Emitted to the GraphEdit when the connection between the ``from_slot`` slot of the ``from`` GraphNode and the ``to_slot`` slot of the ``to`` GraphNode is attempted to be created.
+Emitted to the GraphEdit when the connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>` is attempted to be created.
 
 ----
 
 .. _class_GraphEdit_signal_connection_to_empty:
 
-- **connection_to_empty** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_Vector2>` release_position **)**
+- **connection_to_empty** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`Vector2<class_Vector2>` release_position **)**
 
-Emitted when user dragging connection from output port into empty space of the graph.
+Emitted when user drags a connection from an output port into the empty space of the graph.
 
 ----
 
@@ -215,9 +217,9 @@ Emitted when a GraphNode is attempted to be removed from the GraphEdit. Provides
 
 .. _class_GraphEdit_signal_disconnection_request:
 
-- **disconnection_request** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)**
+- **disconnection_request** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
 
-Emitted to the GraphEdit when the connection between ``from_slot`` slot of ``from`` GraphNode and ``to_slot`` slot of ``to`` GraphNode is attempted to be removed.
+Emitted to the GraphEdit when the connection between ``from_port`` of ``from_node`` :ref:`GraphNode<class_GraphNode>` and ``to_port`` of ``to_node`` :ref:`GraphNode<class_GraphNode>` is attempted to be removed.
 
 ----
 
@@ -566,7 +568,7 @@ Method Descriptions
 
 .. _class_GraphEdit_method__get_connection_line:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **_get_connection_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |virtual| |const|
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **_get_connection_line** **(** :ref:`Vector2<class_Vector2>` from_position, :ref:`Vector2<class_Vector2>` to_position **)** |virtual| |const|
 
 Virtual method which can be overridden to customize how connections are drawn.
 
@@ -574,20 +576,20 @@ Virtual method which can be overridden to customize how connections are drawn.
 
 .. _class_GraphEdit_method__is_in_input_hotzone:
 
-- :ref:`bool<class_bool>` **_is_in_input_hotzone** **(** :ref:`Object<class_Object>` graph_node, :ref:`int<class_int>` slot_index, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
+- :ref:`bool<class_bool>` **_is_in_input_hotzone** **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
 
 Returns whether the ``mouse_position`` is in the input hot zone.
 
-By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``graph_node``.\ :ref:`GraphNode.get_connection_input_position<class_GraphNode_method_get_connection_input_position>`\ (``slot_index``) (For output's case, call :ref:`GraphNode.get_connection_output_position<class_GraphNode_method_get_connection_output_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
+By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``in_node``.\ :ref:`GraphNode.get_connection_input_position<class_GraphNode_method_get_connection_input_position>`\ (``in_port``) (For output's case, call :ref:`GraphNode.get_connection_output_position<class_GraphNode_method_get_connection_output_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
 
 Below is a sample code to help get started:
 
 ::
 
-    func _is_in_input_hotzone(graph_node, slot_index, mouse_position):
-        var slot_size : Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
-        var slot_pos : Vector2 = graph_node.get_position() + graph_node.get_connection_input_position(slot_index) - slot_size / 2
-        var rect = Rect2(slot_pos, slot_size)
+    func _is_in_input_hotzone(in_node, in_port, mouse_position):
+        var port_size : Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
+        var port_pos : Vector2 = in_node.get_position() + in_node.get_connection_input_position(in_port) - port_size / 2
+        var rect = Rect2(port_pos, port_size)
     
         return rect.has_point(mouse_position)
 
@@ -595,7 +597,7 @@ Below is a sample code to help get started:
 
 .. _class_GraphEdit_method__is_in_output_hotzone:
 
-- :ref:`bool<class_bool>` **_is_in_output_hotzone** **(** :ref:`Object<class_Object>` graph_node, :ref:`int<class_int>` slot_index, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
+- :ref:`bool<class_bool>` **_is_in_output_hotzone** **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
 
 Returns whether the ``mouse_position`` is in the output hot zone. For more information on hot zones, see :ref:`_is_in_input_hotzone<class_GraphEdit_method__is_in_input_hotzone>`.
 
@@ -603,10 +605,10 @@ Below is a sample code to help get started:
 
 ::
 
-    func _is_in_output_hotzone(graph_node, slot_index, mouse_position):
-        var slot_size : Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
-        var slot_pos : Vector2 = graph_node.get_position() + graph_node.get_connection_output_position(slot_index) - slot_size / 2
-        var rect = Rect2(slot_pos, slot_size)
+    func _is_in_output_hotzone(in_node, in_port, mouse_position):
+        var port_size : Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
+        var port_pos : Vector2 = in_node.get_position() + in_node.get_connection_output_position(in_port) - port_size / 2
+        var rect = Rect2(port_pos, port_size)
     
         return rect.has_point(mouse_position)
 
@@ -614,7 +616,7 @@ Below is a sample code to help get started:
 
 .. _class_GraphEdit_method__is_node_hover_valid:
 
-- :ref:`bool<class_bool>` **_is_node_hover_valid** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_slot, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_slot **)** |virtual|
+- :ref:`bool<class_bool>` **_is_node_hover_valid** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)** |virtual|
 
 This virtual method can be used to insert additional error detection while the user is dragging a connection over a valid port.
 
@@ -627,7 +629,7 @@ In this example a connection to same node is suppressed:
 
  .. code-tab:: gdscript
 
-    func _is_node_hover_valid(from, from_slot, to, to_slot):
+    func _is_node_hover_valid(from, from_port, to, to_port):
         return from != to
 
  .. code-tab:: csharp
@@ -644,7 +646,9 @@ In this example a connection to same node is suppressed:
 
 - void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
 
-Makes possible the connection between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+Allows the connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+
+See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` and :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>`.
 
 ----
 
@@ -652,7 +656,7 @@ Makes possible the connection between two different slot types. The type is defi
 
 - void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
-Makes possible to disconnect nodes when dragging from the slot at the left if it has the specified type.
+Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>`.
 
 ----
 
@@ -660,7 +664,7 @@ Makes possible to disconnect nodes when dragging from the slot at the left if it
 
 - void **add_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
-Makes possible to disconnect nodes when dragging from the slot at the right if it has the specified type.
+Allows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>`.
 
 ----
 
@@ -682,17 +686,17 @@ Removes all connections between nodes.
 
 .. _class_GraphEdit_method_connect_node:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
 
-Create a connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection already exists, no connection is created.
+Create a connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`. If the connection already exists, no connection is created.
 
 ----
 
 .. _class_GraphEdit_method_disconnect_node:
 
-- void **disconnect_node** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**
+- void **disconnect_node** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
 
-Removes the connection between the ``from_port`` slot of the ``from`` GraphNode and the ``to_port`` slot of the ``to`` GraphNode. If the connection does not exist, no connection is removed.
+Removes the connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`. If the connection does not exist, no connection is removed.
 
 ----
 
@@ -710,9 +714,9 @@ This is best used together with :ref:`connection_drag_started<class_GraphEdit_si
 
 .. _class_GraphEdit_method_get_connection_line:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line** **(** :ref:`Vector2<class_Vector2>` from_node, :ref:`Vector2<class_Vector2>` to_node **)**
 
-Returns the points which would make up a connection between ``from`` and ``to``.
+Returns the points which would make up a connection between ``from_node`` and ``to_node``.
 
 ----
 
@@ -736,9 +740,9 @@ Gets the :ref:`HBoxContainer<class_HBoxContainer>` that contains the zooming and
 
 .. _class_GraphEdit_method_is_node_connected:
 
-- :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port **)**
+- :ref:`bool<class_bool>` **is_node_connected** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
 
-Returns ``true`` if the ``from_port`` slot of the ``from`` GraphNode is connected to the ``to_port`` slot of the ``to`` GraphNode.
+Returns ``true`` if the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` is connected to the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`.
 
 ----
 
@@ -746,7 +750,9 @@ Returns ``true`` if the ``from_port`` slot of the ``from`` GraphNode is connecte
 
 - :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|
 
-Returns whether it's possible to connect slots of the specified types.
+Returns whether it's possible to make a connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+
+See also :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` and :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>`.
 
 ----
 
@@ -754,7 +760,9 @@ Returns whether it's possible to connect slots of the specified types.
 
 - void **remove_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
 
-Makes it not possible to connect between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+Disallows the connection between two different port types previously allowed by :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>`. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
+
+See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>`.
 
 ----
 
@@ -762,7 +770,7 @@ Makes it not possible to connect between two different slot types. The type is d
 
 - void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
-Removes the possibility to disconnect nodes when dragging from the slot at the left if it has the specified type.
+Disallows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>`.
 
 ----
 
@@ -770,15 +778,15 @@ Removes the possibility to disconnect nodes when dragging from the slot at the l
 
 - void **remove_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
 
-Removes the possibility to disconnect nodes when dragging from the slot at the right if it has the specified type.
+Disallows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>`.
 
 ----
 
 .. _class_GraphEdit_method_set_connection_activity:
 
-- void **set_connection_activity** **(** :ref:`StringName<class_StringName>` from, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
+- void **set_connection_activity** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
 
-Sets the coloration of the connection between ``from``'s ``from_port`` and ``to``'s ``to_port`` with the color provided in the :ref:`activity<class_GraphEdit_theme_color_activity>` theme property.
+Sets the coloration of the connection between ``from_node``'s ``from_port`` and ``to_node``'s ``to_port`` with the color provided in the :ref:`activity<class_GraphEdit_theme_color_activity>` theme property.
 
 ----
 

@@ -291,6 +291,24 @@ enum **DockSlot**:
 
 - **DOCK_SLOT_MAX** = **8** --- Represents the size of the :ref:`DockSlot<enum_EditorPlugin_DockSlot>` enum.
 
+----
+
+.. _enum_EditorPlugin_AfterGUIInput:
+
+.. _class_EditorPlugin_constant_AFTER_GUI_INPUT_PASS:
+
+.. _class_EditorPlugin_constant_AFTER_GUI_INPUT_STOP:
+
+.. _class_EditorPlugin_constant_AFTER_GUI_INPUT_CUSTOM:
+
+enum **AfterGUIInput**:
+
+- **AFTER_GUI_INPUT_PASS** = **0** --- Forwards the :ref:`InputEvent<class_InputEvent>` to other EditorPlugins.
+
+- **AFTER_GUI_INPUT_STOP** = **1** --- Prevents the :ref:`InputEvent<class_InputEvent>` from reaching other Editor classes.
+
+- **AFTER_GUI_INPUT_CUSTOM** = **2** --- Pass the :ref:`InputEvent<class_InputEvent>` to other editor plugins except the main :ref:`Node3D<class_Node3D>` one. This can be used to prevent node selection changes and work with sub-gizmos instead.
+
 Method Descriptions
 -------------------
 
@@ -365,8 +383,8 @@ Called by the engine when the 3D editor's viewport is updated. Use the ``overlay
         if event is InputEventMouseMotion:
             # Redraw viewport when cursor is moved.
             update_overlays()
-            return true
-        return false
+            return EditorPlugin.AFTER_GUI_INPUT_STOP
+        return EditorPlugin.AFTER_GUI_INPUT_PASS
 
  .. code-tab:: csharp
 
@@ -376,15 +394,15 @@ Called by the engine when the 3D editor's viewport is updated. Use the ``overlay
         overlay.DrawCircle(overlay.GetLocalMousePosition(), 64, Colors.White);
     }
     
-    public override bool _Forward3dGuiInput(Godot.Camera3D camera, InputEvent @event)
+    public override EditorPlugin.AfterGUIInput _Forward3dGuiInput(Godot.Camera3D camera, InputEvent @event)
     {
         if (@event is InputEventMouseMotion)
         {
             // Redraw viewport when cursor is moved.
             UpdateOverlays();
-            return true;
+            return EditorPlugin.AFTER_GUI_INPUT_STOP;
         }
-        return false;
+        return EditorPlugin.AFTER_GUI_INPUT_PASS;
 
 
 
@@ -404,28 +422,28 @@ You need to enable calling of this method by using :ref:`set_force_draw_over_for
 
 - :ref:`int<class_int>` **_forward_3d_gui_input** **(** :ref:`Camera3D<class_Camera3D>` viewport_camera, :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` ``EditorPlugin`` consumes the ``event``, otherwise forwards ``event`` to other Editor classes. Example:
+Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented, and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. The return value decides whether the :ref:`InputEvent<class_InputEvent>` is consumed or forwarded to other ``EditorPlugin``\ s. See :ref:`AfterGUIInput<enum_EditorPlugin_AfterGUIInput>` for options. Example:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # Prevents the InputEvent to reach other Editor classes.
+    # Prevents the InputEvent from reaching other Editor classes.
     func _forward_3d_gui_input(camera, event):
         return EditorPlugin.AFTER_GUI_INPUT_STOP
 
  .. code-tab:: csharp
 
-    // Prevents the InputEvent to reach other Editor classes.
-    public override bool _Forward3dGuiInput(Camera3D camera, InputEvent @event)
+    // Prevents the InputEvent from reaching other Editor classes.
+    public override EditorPlugin.AfterGUIInput _Forward3dGuiInput(Camera3D camera, InputEvent @event)
     {
         return EditorPlugin.AFTER_GUI_INPUT_STOP;
     }
 
 
 
-Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
+Must ``return EditorPlugin.AFTER_GUI_INPUT_PASS`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
 
 
 .. tabs::
@@ -434,14 +452,14 @@ Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>
 
     # Consumes InputEventMouseMotion and forwards other InputEvent types.
     func _forward_3d_gui_input(camera, event):
-        return event is InputEventMouseMotion
+        return EditorPlugin.AFTER_GUI_INPUT_STOP if event is InputEventMouseMotion else EditorPlugin.AFTER_GUI_INPUT_PASS
 
  .. code-tab:: csharp
 
     // Consumes InputEventMouseMotion and forwards other InputEvent types.
-    public override bool _Forward3dGuiInput(Camera3D camera, InputEvent @event)
+    public override EditorPlugin.AfterGUIInput _Forward3dGuiInput(Camera3D camera, InputEvent @event)
     {
-        return @event is InputEventMouseMotion;
+        return @event is InputEventMouseMotion ? EditorPlugin.AFTER_GUI_INPUT_STOP : EditorPlugin.AFTER_GUI_INPUT_PASS;
     }
 
 
@@ -513,13 +531,13 @@ Called when there is a root node in the current edited scene, :ref:`_handles<cla
 
  .. code-tab:: gdscript
 
-    # Prevents the InputEvent to reach other Editor classes.
+    # Prevents the InputEvent from reaching other Editor classes.
     func _forward_canvas_gui_input(event):
         return true
 
  .. code-tab:: csharp
 
-    // Prevents the InputEvent to reach other Editor classes.
+    // Prevents the InputEvent from reaching other Editor classes.
     public override bool ForwardCanvasGuiInput(InputEvent @event)
     {
         return true;

@@ -170,7 +170,7 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **get_date_dict_from_system** **(** :ref:`bool<class_bool>` utc=false **)** |const|
 
-Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, and ``dst`` (Daylight Savings Time).
+Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, and ``weekday``.
 
 The returned values are in the system's local time when ``utc`` is ``false``, otherwise they are in UTC.
 
@@ -218,7 +218,7 @@ If ``weekday`` is ``false``, then the ``weekday`` entry is excluded (the calcula
 
 - :ref:`Dictionary<class_Dictionary>` **get_datetime_dict_from_system** **(** :ref:`bool<class_bool>` utc=false **)** |const|
 
-Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``hour``, ``minute``, and ``second``.
+Returns the current date as a dictionary of keys: ``year``, ``month``, ``day``, ``weekday``, ``hour``, ``minute``, ``second``, and ``dst`` (Daylight Savings Time).
 
 ----
 

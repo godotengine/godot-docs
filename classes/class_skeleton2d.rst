@@ -113,7 +113,7 @@ Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
 Sets the local pose transform, ``override_pose``, for the bone at ``bone_idx``.
 
-``strength`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+\ ``strength`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
 \ **Note:** The pose transform needs to be a local transform relative to the :ref:`Bone2D<class_Bone2D>` node at ``bone_idx``!
 

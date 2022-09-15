@@ -12,7 +12,32 @@ SkeletonIK3D
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+SkeletonIK3D is used to place the end bone of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain at a certain point in 3D by rotating all bones in the chain accordingly.
 
+Description
+-----------
+
+SkeletonIK3D is used to place the end bone of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain at a certain point in 3D by rotating all bones in the chain accordingly. A typical scenario for IK in games is to place a characters feet on the ground or a characters hands on a currently hold object. SkeletonIK uses FabrikInverseKinematic internally to solve the bone chain and applies the results to the :ref:`Skeleton3D<class_Skeleton3D>` ``bones_global_pose_override`` property for all affected bones in the chain. If fully applied this overwrites any bone transform from :ref:`Animation<class_Animation>`\ s or bone custom poses set by users. The applied amount can be controlled with the ``interpolation`` property.
+
+::
+
+    # Apply IK effect automatically on every new frame (not the current)
+    skeleton_ik_node.start()
+    
+    # Apply IK effect only on the current frame
+    skeleton_ik_node.start(true)
+    
+    # Stop IK effect and reset bones_global_pose_override on Skeleton
+    skeleton_ik_node.stop()
+    
+    # Apply full IK effect
+    skeleton_ik_node.set_interpolation(1.0)
+    
+    # Apply half IK effect
+    skeleton_ik_node.set_interpolation(0.5)
+    
+    # Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
+    skeleton_ik_node.set_interpolation(0.0)
 
 Tutorials
 ---------
@@ -72,6 +97,8 @@ Property Descriptions
 | *Getter*  | get_interpolation()      |
 +-----------+--------------------------+
 
+Interpolation value for how much the IK results are applied to the current skeleton bone chain. A value of ``1.0`` will overwrite all skeleton bone transforms completely while a value of ``0.0`` will visually disable the SkeletonIK. A value at or below ``0.01`` also calls :ref:`Skeleton3D.clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>`.
+
 ----
 
 .. _class_SkeletonIK3D_property_magnet:
@@ -85,6 +112,8 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_magnet_position()      |
 +-----------+----------------------------+
+
+Secondary target position (first is :ref:`target<class_SkeletonIK3D_property_target>` property or :ref:`target_node<class_SkeletonIK3D_property_target_node>`) for the IK chain. Use magnet position (pole target) to control the bending of the IK chain. Only works if the bone chain has more than 2 bones. The middle chain bone position will be linearly interpolated with the magnet position.
 
 ----
 
@@ -100,6 +129,8 @@ Property Descriptions
 | *Getter*  | get_max_iterations()      |
 +-----------+---------------------------+
 
+Number of iteration loops used by the IK solver to produce more accurate (and elegant) bone chain results.
+
 ----
 
 .. _class_SkeletonIK3D_property_min_distance:
@@ -113,6 +144,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_min_distance()      |
 +-----------+-------------------------+
+
+The minimum distance between bone and goal target. If the distance is below this value, the IK solver stops further iterations.
 
 ----
 
@@ -128,6 +161,8 @@ Property Descriptions
 | *Getter*  | is_override_tip_basis()       |
 +-----------+-------------------------------+
 
+If ``true`` overwrites the rotation of the tip bone with the rotation of the :ref:`target<class_SkeletonIK3D_property_target>` (or :ref:`target_node<class_SkeletonIK3D_property_target_node>` if defined).
+
 ----
 
 .. _class_SkeletonIK3D_property_root_bone:
@@ -141,6 +176,8 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_root_bone()      |
 +-----------+----------------------+
+
+The name of the current root bone, the first bone in the IK chain.
 
 ----
 
@@ -156,6 +193,8 @@ Property Descriptions
 | *Getter*  | get_target_transform()                              |
 +-----------+-----------------------------------------------------+
 
+First target of the IK chain where the tip bone is placed and, if :ref:`override_tip_basis<class_SkeletonIK3D_property_override_tip_basis>` is ``true``, how the tip bone is rotated. If a :ref:`target_node<class_SkeletonIK3D_property_target_node>` path is available the nodes transform is used instead and this property is ignored.
+
 ----
 
 .. _class_SkeletonIK3D_property_target_node:
@@ -169,6 +208,8 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_target_node()      |
 +-----------+------------------------+
+
+Target node :ref:`NodePath<class_NodePath>` for the IK chain. If available, the node's current :ref:`Transform3D<class_Transform3D>` is used instead of the :ref:`target<class_SkeletonIK3D_property_target>` property.
 
 ----
 
@@ -184,6 +225,8 @@ Property Descriptions
 | *Getter*  | get_tip_bone()      |
 +-----------+---------------------+
 
+The name of the current tip bone, the last bone in the IK chain placed at the :ref:`target<class_SkeletonIK3D_property_target>` transform (or :ref:`target_node<class_SkeletonIK3D_property_target_node>` if defined).
+
 ----
 
 .. _class_SkeletonIK3D_property_use_magnet:
@@ -198,6 +241,8 @@ Property Descriptions
 | *Getter*  | is_using_magnet()     |
 +-----------+-----------------------+
 
+If ``true``, instructs the IK solver to consider the secondary magnet target (pole target) when calculating the bone chain. Use the magnet position (pole target) to control the bending of the IK chain.
+
 Method Descriptions
 -------------------
 
@@ -205,11 +250,15 @@ Method Descriptions
 
 - :ref:`Skeleton3D<class_Skeleton3D>` **get_parent_skeleton** **(** **)** |const|
 
+Returns the parent :ref:`Skeleton3D<class_Skeleton3D>` Node that was present when SkeletonIK entered the :ref:`SceneTree<class_SceneTree>`. Returns null if the parent node was not a :ref:`Skeleton3D<class_Skeleton3D>` Node when SkeletonIK3D entered the :ref:`SceneTree<class_SceneTree>`.
+
 ----
 
 .. _class_SkeletonIK3D_method_is_running:
 
 - :ref:`bool<class_bool>` **is_running** **(** **)**
+
+Returns ``true`` if SkeletonIK is applying IK effects on continues frames to the :ref:`Skeleton3D<class_Skeleton3D>` bones. Returns ``false`` if SkeletonIK is stopped or :ref:`start<class_SkeletonIK3D_method_start>` was used with the ``one_time`` parameter set to ``true``.
 
 ----
 
@@ -217,11 +266,15 @@ Method Descriptions
 
 - void **start** **(** :ref:`bool<class_bool>` one_time=false **)**
 
+Starts applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3D>` bones but will only take effect starting on the next frame. If ``one_time`` is ``true``, this will take effect immediately but also reset on the next frame.
+
 ----
 
 .. _class_SkeletonIK3D_method_stop:
 
 - void **stop** **(** **)**
+
+Stops applying IK effects on each frame to the :ref:`Skeleton3D<class_Skeleton3D>` bones and also calls :ref:`Skeleton3D.clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>` to remove existing overrides on all bones.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

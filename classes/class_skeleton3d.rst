@@ -258,6 +258,8 @@ Removes the global pose override on all bones in the skeleton.
 
 - void **clear_bones_local_pose_override** **(** **)**
 
+Deprecated. Local pose overrides will be removed.
+
 Removes the local pose override on all bones in the skeleton.
 
 ----
@@ -438,6 +440,8 @@ This can be used to easily convert a global pose from :ref:`get_bone_global_pose
 
 - :ref:`Transform3D<class_Transform3D>` **global_pose_to_world_transform** **(** :ref:`Transform3D<class_Transform3D>` global_pose **)**
 
+Deprecated. Use :ref:`Node3D<class_Node3D>` apis instead.
+
 Takes the passed-in global pose and converts it to a world transform.
 
 This can be used to easily convert a global pose from :ref:`get_bone_global_pose<class_Skeleton3D_method_get_bone_global_pose>` to a global transform usable with a node's transform, like :ref:`Node3D.global_transform<class_Node3D_property_global_transform>` for example.
@@ -556,9 +560,9 @@ Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone po
 
 Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
-``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
-\ **Note:** The pose transform needs to be a global pose! Use :ref:`world_transform_to_global_pose<class_Skeleton3D_method_world_transform_to_global_pose>` to convert a world transform, like one you can get from a :ref:`Node3D<class_Node3D>`, to a global pose.
+\ **Note:** The pose transform needs to be a global pose! To convert a world transform from a :ref:`Node3D<class_Node3D>` to a global bone pose, multiply the :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>` of the node's :ref:`Node3D.global_transform<class_Node3D_property_global_transform>` by the desired world transform
 
 ----
 
@@ -566,9 +570,11 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 - void **set_bone_local_pose_override** **(** :ref:`int<class_int>` bone_idx, :ref:`Transform3D<class_Transform3D>` pose, :ref:`float<class_float>` amount, :ref:`bool<class_bool>` persistent=false **)**
 
+Deprecated. Local pose overrides will be removed.
+
 Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
 
-``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
+\ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
 \ **Note:** The pose transform needs to be a local pose! Use :ref:`global_pose_to_local_pose<class_Skeleton3D_method_global_pose_to_local_pose>` to convert a global pose to a local pose.
 
@@ -635,6 +641,8 @@ Unparents the bone at ``bone_idx`` and sets its rest position to that of its par
 .. _class_Skeleton3D_method_world_transform_to_global_pose:
 
 - :ref:`Transform3D<class_Transform3D>` **world_transform_to_global_pose** **(** :ref:`Transform3D<class_Transform3D>` world_transform **)**
+
+Deprecated. Use :ref:`Node3D<class_Node3D>` apis instead.
 
 Takes the passed-in global transform and converts it to a global pose.
 

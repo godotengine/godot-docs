@@ -156,7 +156,7 @@ If ``custom_context`` object is provided, it will be used for deducing target hi
 
 Returns the :ref:`UndoRedo<class_UndoRedo>` object associated with the given history ``id``.
 
-``id`` above ``0`` are mapped to the opened scene tabs (but it doesn't match their order). ``id`` of ``0`` or lower have special meaning (see :ref:`SpecialHistory<enum_EditorUndoRedoManager_SpecialHistory>`).
+\ ``id`` above ``0`` are mapped to the opened scene tabs (but it doesn't match their order). ``id`` of ``0`` or lower have special meaning (see :ref:`SpecialHistory<enum_EditorUndoRedoManager_SpecialHistory>`).
 
 Best used with :ref:`get_object_history_id<class_EditorUndoRedoManager_method_get_object_history_id>`. This method is only provided in case you need some more advanced methods of :ref:`UndoRedo<class_UndoRedo>` (but keep in mind that directly operating on the :ref:`UndoRedo<class_UndoRedo>` object might affect editor's stability).
 

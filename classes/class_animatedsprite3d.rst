@@ -27,24 +27,26 @@ Tutorials
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------+----------------+
-| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``&"default"`` |
-+-----------------------------------------+-------------------------------------------------------------+----------------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``          |
-+-----------------------------------------+-------------------------------------------------------------+----------------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |                |
-+-----------------------------------------+-------------------------------------------------------------+----------------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | ``false``      |
-+-----------------------------------------+-------------------------------------------------------------+----------------+
++-----------------------------------------+-----------------------------------------------------------------+----------------+
+| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite3D_property_animation>`     | ``&"default"`` |
++-----------------------------------------+-----------------------------------------------------------------+----------------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`             | ``0``          |
++-----------------------------------------+-----------------------------------------------------------------+----------------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`           |                |
++-----------------------------------------+-----------------------------------------------------------------+----------------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`         | ``false``      |
++-----------------------------------------+-----------------------------------------------------------------+----------------+
+| :ref:`float<class_float>`               | :ref:`speed_scale<class_AnimatedSprite3D_property_speed_scale>` | ``1.0``        |
++-----------------------------------------+-----------------------------------------------------------------+----------------+
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------+
-| void | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"" **)** |
-+------+----------------------------------------------------------------------------------------------------------+
-| void | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                              |
-+------+----------------------------------------------------------------------------------------------------------+
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)** |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                                                                       |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -126,14 +128,30 @@ The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s)
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
 
+----
+
+.. _class_AnimatedSprite3D_property_speed_scale:
+
+- :ref:`float<class_float>` **speed_scale**
+
++-----------+------------------------+
+| *Default* | ``1.0``                |
++-----------+------------------------+
+| *Setter*  | set_speed_scale(value) |
++-----------+------------------------+
+| *Getter*  | get_speed_scale()      |
++-----------+------------------------+
+
+The animation speed is multiplied by this value.
+
 Method Descriptions
 -------------------
 
 .. _class_AnimatedSprite3D_method_play:
 
-- void **play** **(** :ref:`StringName<class_StringName>` anim=&"" **)**
+- void **play** **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)**
 
-Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played.
+Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation will be played in reverse.
 
 ----
 

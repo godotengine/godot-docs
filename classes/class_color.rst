@@ -1145,7 +1145,7 @@ This is useful when determining light or dark color. Colors with a luminance sma
 
 Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is not case sensitive, and may be prefixed with a '#' character.
 
-``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied.
+\ ``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied.
 
 If ``rgba`` is invalid a Color(0.0, 0.0, 0.0, 1.0) is returned.
 

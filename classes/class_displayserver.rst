@@ -1921,17 +1921,17 @@ Hides the virtual keyboard if it is shown, does nothing otherwise.
 
 Shows the virtual keyboard if the platform has one.
 
-``existing_text`` parameter is useful for implementing your own :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
+\ ``existing_text`` parameter is useful for implementing your own :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
 
-``position`` parameter is the screen space :ref:`Rect2<class_Rect2>` of the edited text.
+\ ``position`` parameter is the screen space :ref:`Rect2<class_Rect2>` of the edited text.
 
-``type`` parameter allows configuring which type of virtual keyboard to show.
+\ ``type`` parameter allows configuring which type of virtual keyboard to show.
 
-``max_length`` limits the number of characters that can be entered if different from ``-1``.
+\ ``max_length`` limits the number of characters that can be entered if different from ``-1``.
 
-``cursor_start`` can optionally define the current text cursor position if ``cursor_end`` is not set.
+\ ``cursor_start`` can optionally define the current text cursor position if ``cursor_end`` is not set.
 
-``cursor_start`` and ``cursor_end`` can optionally define the current text selection.
+\ ``cursor_start`` and ``cursor_end`` can optionally define the current text selection.
 
 \ **Note:** This method is implemented on Android, iOS and Web.
 

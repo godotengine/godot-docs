@@ -77,6 +77,10 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`Node2D[]<class_Node2D>` | :ref:`get_overlapping_bodies<class_Area2D_method_get_overlapping_bodies>` **(** **)** |const|            |
 +-------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_overlapping_areas<class_Area2D_method_has_overlapping_areas>` **(** **)** |const|              |
++-------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`has_overlapping_bodies<class_Area2D_method_has_overlapping_bodies>` **(** **)** |const|            |
++-------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`overlaps_area<class_Area2D_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** |const| |
 +-------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`overlaps_body<class_Area2D_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** |const| |
@@ -91,7 +95,7 @@ Signals
 
 Emitted when another Area2D enters this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
-``area`` the other Area2D.
+\ ``area`` the other Area2D.
 
 ----
 
@@ -101,7 +105,7 @@ Emitted when another Area2D enters this Area2D. Requires :ref:`monitoring<class_
 
 Emitted when another Area2D exits this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
-``area`` the other Area2D.
+\ ``area`` the other Area2D.
 
 ----
 
@@ -111,13 +115,13 @@ Emitted when another Area2D exits this Area2D. Requires :ref:`monitoring<class_A
 
 Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s enters one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
-``area_rid`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``area`` the other Area2D.
+\ ``area`` the other Area2D.
 
-``area_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
+\ ``area_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -127,13 +131,13 @@ Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s enters one
 
 Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s exits one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
-``area_rid`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``area_rid`` the :ref:`RID<class_RID>` of the other Area2D's :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``area`` the other Area2D.
+\ ``area`` the other Area2D.
 
-``area_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
+\ ``area_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the other Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``area.shape_owner_get_owner(area.shape_find_owner(area_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -143,7 +147,7 @@ Emitted when one of another Area2D's :ref:`Shape2D<class_Shape2D>`\ s exits one 
 
 Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` enters this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -153,7 +157,7 @@ Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_
 
 Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` exits this Area2D. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
 ----
 
@@ -163,13 +167,13 @@ Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_
 
 Emitted when one of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s enters one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 ----
 
@@ -179,13 +183,13 @@ Emitted when one of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap
 
 Emitted when one of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s exits one of this Area2D's :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
-``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+\ ``body_rid`` the :ref:`RID<class_RID>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileSet<class_TileSet>`'s :ref:`CollisionObject2D<class_CollisionObject2D>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
+\ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`.
 
-``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
+\ ``body_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of the :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))``.
 
-``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
+\ ``local_shape_index`` the index of the :ref:`Shape2D<class_Shape2D>` of this Area2D used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node with ``self.shape_owner_get_owner(self.shape_find_owner(local_shape_index))``.
 
 Enumerations
 ------------
@@ -476,9 +480,29 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 - :ref:`Node2D[]<class_Node2D>` **get_overlapping_bodies** **(** **)** |const|
 
-Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. The overlapping body's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
+Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s and :ref:`TileMap<class_TileMap>`\ s. The overlapping body's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+
+----
+
+.. _class_Area2D_method_has_overlapping_areas:
+
+- :ref:`bool<class_bool>` **has_overlapping_areas** **(** **)** |const|
+
+Returns ``true`` if intersecting any ``Area2D``\ s, otherwise returns ``false``. The overlapping area's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
+
+For performance reasons (collisions are all processed at the same time) the list of overlapping areas is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+
+----
+
+.. _class_Area2D_method_has_overlapping_bodies:
+
+- :ref:`bool<class_bool>` **has_overlapping_bodies** **(** **)** |const|
+
+Returns ``true`` if intersecting any :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s or :ref:`TileMap<class_TileMap>`\ s, otherwise returns ``false``. The overlapping body's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
+
+For performance reasons (collisions are all processed at the same time) the list of overlapping bodies is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
 ----
 

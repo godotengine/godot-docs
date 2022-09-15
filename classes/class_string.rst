@@ -469,7 +469,7 @@ Returns the index of the **first** case-insensitive occurrence of the specified 
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -807,7 +807,7 @@ Returns the number of characters in the string.
 
 - :ref:`String<class_String>` **lpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``s to the left of the string.
+Formats a string to be at least ``min_length`` long by adding ``character``\ s to the left of the string.
 
 ----
 
@@ -1014,7 +1014,7 @@ Examples:
 
 - :ref:`String<class_String>` **rpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``s to the right of the string.
+Formats a string to be at least ``min_length`` long by adding ``character``\ s to the right of the string.
 
 ----
 

@@ -503,7 +503,7 @@ The host should not have http:// prepended but will strip the protocol identifie
 
 If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS (if ``use_tls`` is enabled).
 
-``verify_host`` will check the TLS identity of the host if set to ``true``.
+\ ``verify_host`` will check the TLS identity of the host if set to ``true``.
 
 ----
 

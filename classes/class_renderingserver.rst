@@ -6076,7 +6076,7 @@ If ``true``, sets the viewport active, else sets it inactive.
 
 Sets the stacking order for a viewport's canvas.
 
-``layer`` is the actual canvas layer, while ``sublayer`` specifies the stacking order of the canvas among those in the same layer.
+\ ``layer`` is the actual canvas layer, while ``sublayer`` specifies the stacking order of the canvas among those in the same layer.
 
 ----
 

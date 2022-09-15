@@ -713,6 +713,8 @@ enum **Hinting**:
 
 - **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
 
+\ **Note:** This hinting mode changes both horizontal and vertical glyph metrics. If applied to monospace font, some glyphs might have different width.
+
 ----
 
 .. _enum_TextServer_SubpixelPositioning:

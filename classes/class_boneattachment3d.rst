@@ -101,7 +101,9 @@ Returns the :ref:`NodePath<class_NodePath>` to the external :ref:`Skeleton3D<cla
 
 - :ref:`int<class_int>` **get_override_mode** **(** **)** |const|
 
-Returns the override mode for the BoneAttachment3D node.
+Deprecated. Local pose overrides will be removed.
+
+Returns the override mode for the BoneAttachment3D node (0=global / 1=local).
 
 ----
 
@@ -141,7 +143,9 @@ Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneA
 
 - void **set_override_mode** **(** :ref:`int<class_int>` override_mode **)**
 
-Sets the override mode for the BoneAttachment3D node. The override mode defines which of the bone poses the BoneAttachment3D node will override.
+Deprecated. Local pose overrides will be removed.
+
+Sets the override mode for the BoneAttachment3D node (0=global / 1=local). The override mode defines which of the bone poses the BoneAttachment3D node will override.
 
 ----
 

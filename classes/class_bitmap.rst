@@ -129,7 +129,7 @@ To get polygons covering the whole bitmap, pass:
 
     Rect2(Vector2(), get_size())
 
-``epsilon`` is passed to RDP to control how accurately the polygons cover the bitmap: a lower ``epsilon`` corresponds to more points in the polygons.
+\ ``epsilon`` is passed to RDP to control how accurately the polygons cover the bitmap: a lower ``epsilon`` corresponds to more points in the polygons.
 
 ----
 

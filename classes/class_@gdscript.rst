@@ -536,7 +536,7 @@ Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, a
 
 \ **Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
 
-The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
+The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. It must be a static string, so format strings can't be used. You can use this to provide additional details about why the assertion failed.
 
 ::
 
@@ -545,7 +545,7 @@ The optional ``message`` argument, if given, is shown in addition to the generic
     assert(speed < 20) # True, the program will continue
     assert(speed >= 0) # False, the program will stop
     assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check
-    assert(speed < 20, "speed = %f, but the speed limit is 20" % speed) # Show a message with clarifying details
+    assert(speed < 20, "the speed limit is 20") # Show a message
 
 ----
 

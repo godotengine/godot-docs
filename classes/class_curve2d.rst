@@ -145,7 +145,7 @@ Returns the cache of points as a :ref:`PackedVector2Array<class_PackedVector2Arr
 
 Returns the closest offset to ``to_point``. This offset is meant to be used in :ref:`sample_baked<class_Curve2D_method_sample_baked>`.
 
-``to_point`` must be in this curve's local space.
+\ ``to_point`` must be in this curve's local space.
 
 ----
 
@@ -155,7 +155,7 @@ Returns the closest offset to ``to_point``. This offset is meant to be used in :
 
 Returns the closest baked point (in curve's local space) to ``to_point``.
 
-``to_point`` must be in this curve's local space.
+\ ``to_point`` must be in this curve's local space.
 
 ----
 
@@ -253,9 +253,9 @@ Returns a list of points along the curve, with a curvature controlled point dens
 
 This approximation makes straight segments between each point, then subdivides those segments until the resulting shape is similar enough.
 
-``max_stages`` controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!
+\ ``max_stages`` controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!
 
-``tolerance_degrees`` controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
+\ ``tolerance_degrees`` controls how many degrees the midpoint of a segment may deviate from the real curve, before the segment has to be subdivided.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

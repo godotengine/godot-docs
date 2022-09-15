@@ -613,7 +613,7 @@ Creates an item in the tree and adds it as a child of ``parent``, which can be e
 
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
-The new item will be the ``idx``th child of parent, or it will be the last child if there are not enough siblings.
+The new item will be the ``idx``\ th child of parent, or it will be the last child if there are not enough siblings.
 
 ----
 

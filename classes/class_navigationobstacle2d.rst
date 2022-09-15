@@ -33,9 +33,13 @@ Properties
 Methods
 -------
 
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle2D_method_get_rid>` **(** **)** |const| |
-+-----------------------+-------------------------------------------------------------------------------+
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_navigation_map<class_NavigationObstacle2D_method_get_navigation_map>` **(** **)** |const|                              |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle2D_method_get_rid>` **(** **)** |const|                                                    |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_navigation_map<class_NavigationObstacle2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)** |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -73,11 +77,27 @@ The radius of the agent. Used only if :ref:`estimate_radius<class_NavigationObst
 Method Descriptions
 -------------------
 
+.. _class_NavigationObstacle2D_method_get_navigation_map:
+
+- :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract agent on the NavigationServer. If the agent map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle2D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the agent on the NavigationServer.
+
+----
+
 .. _class_NavigationObstacle2D_method_get_rid:
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+----
+
+.. _class_NavigationObstacle2D_method_set_navigation_map:
+
+- void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+
+Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``agent`` on the NavigationServer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

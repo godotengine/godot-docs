@@ -615,9 +615,9 @@ Sets the acceleration value of the accelerometer sensor. Can be used for debuggi
 
 Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
 
-``image``'s size must be lower than 256×256.
+\ ``image``'s size must be lower than 256×256.
 
-``hotspot`` must be within ``image``'s size.
+\ ``hotspot`` must be within ``image``'s size.
 
 \ **Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
 

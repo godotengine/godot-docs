@@ -316,7 +316,15 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`                                                                                                 | ``true``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/blender/enabled.android<class_ProjectSettings_property_filesystem/import/blender/enabled.android>`                                                                                 | ``false``                                                                                        |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/blender/enabled.web<class_ProjectSettings_property_filesystem/import/blender/enabled.web>`                                                                                         | ``false``                                                                                        |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`                                                                                                         | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx/enabled.android<class_ProjectSettings_property_filesystem/import/fbx/enabled.android>`                                                                                         | ``false``                                                                                        |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`filesystem/import/fbx/enabled.web<class_ProjectSettings_property_filesystem/import/fbx/enabled.web>`                                                                                                 | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`gui/common/default_scroll_deadzone<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`                                                                                               | ``0``                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -3023,6 +3031,30 @@ This requires configuring a path to a Blender executable in the editor settings 
 
 ----
 
+.. _class_ProjectSettings_property_filesystem/import/blender/enabled.android:
+
+- :ref:`bool<class_bool>` **filesystem/import/blender/enabled.android**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>` on Android where Blender can't easily be accessed from Godot.
+
+----
+
+.. _class_ProjectSettings_property_filesystem/import/blender/enabled.web:
+
+- :ref:`bool<class_bool>` **filesystem/import/blender/enabled.web**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>` on the Web where Blender can't easily be accessed from Godot.
+
+----
+
 .. _class_ProjectSettings_property_filesystem/import/fbx/enabled:
 
 - :ref:`bool<class_bool>` **filesystem/import/fbx/enabled**
@@ -3034,6 +3066,30 @@ This requires configuring a path to a Blender executable in the editor settings 
 If ``true``, Autodesk FBX 3D scene files with the ``.fbx`` extension will be imported by converting them to glTF 2.0.
 
 This requires configuring a path to a FBX2glTF executable in the editor settings at ``filesystem/import/fbx/fbx2gltf_path``.
+
+----
+
+.. _class_ProjectSettings_property_filesystem/import/fbx/enabled.android:
+
+- :ref:`bool<class_bool>` **filesystem/import/fbx/enabled.android**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Override for :ref:`filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>` on Android where FBX2glTF can't easily be accessed from Godot.
+
+----
+
+.. _class_ProjectSettings_property_filesystem/import/fbx/enabled.web:
+
+- :ref:`bool<class_bool>` **filesystem/import/fbx/enabled.web**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Override for :ref:`filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>` on the Web where FBX2glTF can't easily be accessed from Godot.
 
 ----
 

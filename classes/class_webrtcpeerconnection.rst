@@ -45,6 +45,10 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** |const|                                                                                    |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>`   | :ref:`get_gathering_state<class_WebRTCPeerConnection_method_get_gathering_state>` **(** **)** |const|                                                                                      |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>`   | :ref:`get_signaling_state<class_WebRTCPeerConnection_method_get_signaling_state>` **(** **)** |const|                                                                                      |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={} **)**                                                           |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`poll<class_WebRTCPeerConnection_method_poll>` **(** **)**                                                                                                                            |
@@ -114,6 +118,54 @@ enum **ConnectionState**:
 
 - **STATE_CLOSED** = **5** --- The peer connection is closed (after calling :ref:`close<class_WebRTCPeerConnection_method_close>` for example).
 
+----
+
+.. _enum_WebRTCPeerConnection_GatheringState:
+
+.. _class_WebRTCPeerConnection_constant_GATHERING_STATE_NEW:
+
+.. _class_WebRTCPeerConnection_constant_GATHERING_STATE_GATHERING:
+
+.. _class_WebRTCPeerConnection_constant_GATHERING_STATE_COMPLETE:
+
+enum **GatheringState**:
+
+- **GATHERING_STATE_NEW** = **0** --- The peer connection was just created and hasn't done any networking yet.
+
+- **GATHERING_STATE_GATHERING** = **1** --- The ICE agent is in the process of gathering candidates for the connection.
+
+- **GATHERING_STATE_COMPLETE** = **2** --- The ICE agent has finished gathering candidates. If something happens that requires collecting new candidates, such as a new interface being added or the addition of a new ICE server, the state will revert to gathering to gather those candidates.
+
+----
+
+.. _enum_WebRTCPeerConnection_SignalingState:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_STABLE:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_HAVE_LOCAL_OFFER:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_HAVE_REMOTE_OFFER:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_HAVE_LOCAL_PRANSWER:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_HAVE_REMOTE_PRANSWER:
+
+.. _class_WebRTCPeerConnection_constant_SIGNALING_STATE_CLOSED:
+
+enum **SignalingState**:
+
+- **SIGNALING_STATE_STABLE** = **0** --- There is no ongoing exchange of offer and answer underway. This may mean that the ``WebRTCPeerConnection`` is new (:ref:`STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`) or that negotiation is complete and a connection has been established (:ref:`STATE_CONNECTED<class_WebRTCPeerConnection_constant_STATE_CONNECTED>`).
+
+- **SIGNALING_STATE_HAVE_LOCAL_OFFER** = **1** --- The local peer has called :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>`, passing in SDP representing an offer (usually created by calling :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>`), and the offer has been applied successfully.
+
+- **SIGNALING_STATE_HAVE_REMOTE_OFFER** = **2** --- The remote peer has created an offer and used the signaling server to deliver it to the local peer, which has set the offer as the remote description by calling :ref:`set_remote_description<class_WebRTCPeerConnection_method_set_remote_description>`.
+
+- **SIGNALING_STATE_HAVE_LOCAL_PRANSWER** = **3** --- The offer sent by the remote peer has been applied and an answer has been created and applied by calling :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>`. This provisional answer describes the supported media formats and so forth, but may not have a complete set of ICE candidates included. Further candidates will be delivered separately later.
+
+- **SIGNALING_STATE_HAVE_REMOTE_PRANSWER** = **4** --- A provisional answer has been received and successfully applied in response to an offer previously sent and established by calling :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>`.
+
+- **SIGNALING_STATE_CLOSED** = **5** --- The ``WebRTCPeerConnection`` has been closed.
+
 Method Descriptions
 -------------------
 
@@ -178,6 +230,22 @@ If this functions returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`
 - :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **get_connection_state** **(** **)** |const|
 
 Returns the connection state. See :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>`.
+
+----
+
+.. _class_WebRTCPeerConnection_method_get_gathering_state:
+
+- :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` **get_gathering_state** **(** **)** |const|
+
+Returns the ICE :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` of the connection. This lets you detect, for example, when collection of ICE candidates has finished.
+
+----
+
+.. _class_WebRTCPeerConnection_method_get_signaling_state:
+
+- :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **get_signaling_state** **(** **)** |const|
+
+Returns the :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` on the local end of the connection while connecting or reconnecting to another peer.
 
 ----
 
