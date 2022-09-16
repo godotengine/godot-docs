@@ -10,7 +10,7 @@ LATEXDEPS     = latex dvipng
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
-$(error The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD make variable to point to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the directory with the executable to your PATH. If you don't have Sphinx installed, grab it from http://sphinx-doc.org/)
+$(error The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD make variable to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the executable's directory to your PATH. If you don't have Sphinx installed, grab it from http://sphinx-doc.org/)
 endif
 
 # Internal variables.
@@ -23,13 +23,13 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) -t i18n .
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest coverage gettext
 
 help:
-	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "Please run \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
 	@echo "  pickle     to make pickle files"
 	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
+	@echo "  htmlhelp   to make HTML files and an HTML help project"
 	@echo "  qthelp     to make HTML files and a qthelp project"
 	@echo "  applehelp  to make an Apple Help Book"
 	@echo "  devhelp    to make HTML files and a Devhelp project"
