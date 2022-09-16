@@ -208,7 +208,7 @@ current scene and replace it with the requested one.
         # Add it to the active scene, as child of root.
         get_tree().root.add_child(current_scene)
 
-        # Optionally, to make it compatible with the SceneTree.change_scene() API.
+        # Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
         get_tree().current_scene = current_scene
 
  .. code-tab:: csharp
@@ -241,7 +241,7 @@ current scene and replace it with the requested one.
         // Add it to the active scene, as child of root.
         GetTree().Root.AddChild(CurrentScene);
 
-        // Optionally, to make it compatible with the SceneTree.change_scene() API.
+        // Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
         GetTree().CurrentScene = CurrentScene;
     }
 
