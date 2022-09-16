@@ -6,11 +6,11 @@ Best practices for engine contributors
 Introduction
 ------------
 
-Godot has a large amount of users who have the ability to contribute, given the
-project itself is aimed mainly at users with the ability to do programming.
-Despite this, not all of them have the same level of experience working in large
-projects or in software engineering, which can lead to common misunderstandings
-and bad practices during the process of contributing code to the project.
+Godot has a large amount of users who have the ability to contribute because the
+project itself is aimed mainly at users who can code. That being said, not all
+of them have the same level of experience working in large projects or in
+software engineering, which can lead to common misunderstandings and bad
+practices during the process of contributing code to the project.
 
 Language
 --------
@@ -19,9 +19,8 @@ The scope of this document is to be a list of best practices for contributors to
 follow, as well as to create a language they can use to refer to common
 situations that arise in the process of submitting their contributions.
 
-While some may find it useful to extend this to general software development,
-our intention is to just restrict to situations that are most common in our
-project.
+While a generalized list of software development best practices might be useful,
+we'll focus on the situations that are most common in our project.
 
 Contributions are most of the time categorized as bug fixes, enhancements or new
 features. To abstract this idea, we will call them *Solutions*, because they
@@ -36,15 +35,14 @@ Best Practices
 Many contributors are extremely creative and just enjoy the process of designing
 abstract data structures, creating nice user interfaces, or simply love
 programming. Whatever the case may be, they come up with cool ideas, which may
-or may not be solving any real problems.
+or may not solve real problems.
 
 .. image:: img/best_practices1.png
 
-These are usually called *Solutions in search of a problem*. In an ideal world,
-they would not be harmful but, in reality, code takes time to write, takes space
-as source and binary and requires maintenance once it exists. Avoiding the
-addition of anything unnecessary is always considered a good practice in
-software development.
+These are usually called *solutions in search of a problem*. In an ideal world,
+they would not be harmful but, in reality, code takes time to write, takes up
+space and requires maintenance once it exists. Avoiding the addition of anything
+unnecessary is always considered a good practice in software development.
 
 #2: To solve the problem, it has to exist in the first place
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +55,7 @@ a good idea, but what constitutes what is necessary and what isn't?
 The answer to this question is that the problem needs to *exist* before it can
 be actually solved. It must not be speculation or a belief. The user must be
 using the software as intended to create something they *need*. In this process,
-the user may stumble into a problem that requires a solution to proceed, or in
+the user may stumble upon a problem that requires a solution to proceed, or in
 order to achieve greater productivity. In this case, *a solution is needed*.
 
 Believing that problems may arise in the future and that the software needs to
@@ -76,57 +74,54 @@ than it needs to be.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Software is designed to solve problems, but we can't expect it to solve *every
-problem that exists under the sun*. As a game engine, Godot will solve problems
-for you, so it helps you to make games better and faster, but it won't make the
-*entire game* for you. A line must be drawn somewhere.
+problem that exists under the sun*. As a game engine, Godot will help you make
+games better and faster, but it won't make an *entire game* for you. A line must
+be drawn somewhere.
 
 .. image:: img/best_practices3.png
 
-Whether a problem is worth solving is determined by the difficulty the user has
-to work around it. This difficulty can be expressed as:
+Whether a problem is worth solving is determined by the effort that is required
+to work around it. The required effort depends on:
 
 - The complexity of the problem
 - The frequency the problem
 
-If the problem is *too complex* for most users to solve, the software must offer
-a ready-made solution for it. Likewise, if the problem is easy for the user to
-work around, offering such a solution is unnecessary and it's up to the user to
-do it.
+If the problem is *too complex* for most users to solve, then the software
+should offer a ready-made solution for it. Likewise, if the problem is easy for
+the user to work around, offering such a solution is unnecessary.
 
-The exception, however, is when the user stumbles into this problem *frequently
+The exception, however, is when the user encounters a problem *frequently
 enough* that having to do the simple solution every time becomes an annoyance.
-In this case, the software must offer a solution to simplify this use case.
+In this case, the software should offer a solution to simplify the use case.
 
-In our experience, in most cases it's usually obvious to tell when a problem is
-complex or frequent, but cases may arise where drawing this line is difficult.
-This is why discussing with other developers (next point) is always advised.
+It's usually easy to tell if a problem is complex or frequent, but it can be
+difficult. This is why discussing with other developers (next point) is always
+advised.
 
 #4: The solution must be discussed with others
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is often the case that when users stumble upon problems, they are only
-immersed in their project, so they will naturally try to solve the problem
-from their perspective, thinking only about their use case.
-
-Because of this, user proposed solutions don't always contemplate other use
-cases that developers are often aware of, so they are often biased towards their
-own requirements.
+Often, users will be immersed in their own projects when they stumble upon
+problems. These users will naturally try to solve the problem from their
+perspective, thinking only about their own use case. As a result, user proposed
+solutions don't always contemplate all use cases and are often biased towards
+the user's own requirements.
 
 .. image:: img/best_practices4.png
 
 For developers, the perspective is different. They may find the user's problem
-too unique to justify a solution (instead of a user workaround), or maybe they
-will suggest a partial (usually simpler or lower level) solution that applies to
-a wider range of known problems, and leave the rest of the solution up to the
+too unique to justify a solution (instead of a workaround), or they might
+suggest a partial (usually simpler or lower level) solution that applies to a
+wider range of known problems and leave the rest of the solution up to the
 user.
 
-In any case, before attempting a contribution, it is important to discuss the
+In any case, before attempting to contribute, it is important to discuss the
 actual problems with the other developers or contributors, so a better agreement
 on implementation can be reached.
 
-The only exception, in this case, is when an area of code has a clear owner
-(agreed by the other contributors), who talks to users directly and has the most
-knowledge to implement a solution directly.
+The only exception is when an area of code has a clear agreed upon owner, who
+talks to users directly and has the most knowledge to implement a solution
+directly.
 
 Also, Godot's philosophy is to favor ease of use and maintenance over absolute
 performance. Performance optimizations will be considered, but they may not
@@ -137,9 +132,9 @@ complexity to the codebase.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For programmers, it is always a most enjoyable challenge to find the most
-optimal solutions to problems. Things, however, may go overboard sometimes and
-programmers will try to come up with solutions that solve as many problems as
-possible.
+optimal solutions to problems. It is possible to go overboard, though.
+Sometimes, contributors will try to come up with solutions that solve as many
+problems as possible.
 
 The situation will often take a turn for the worse when, in order to make this
 solution appear even more fantastic and flexible, the pure speculation-based
@@ -152,13 +147,14 @@ time, writing an individual solution to each problem results in code that
 is simpler and more maintainable.
 
 Additionally, solutions that target individual problems are better for the
-users, as they find something that does exactly what they need, without having
-to learn and remember a more complex system they will only need for simple
+users. Targeted solutions allow users find something that does exactly what they
+need, without having to learn a more complex system they will only need for simple
 tasks.
 
 Big and flexible solutions also have an additional drawback which is that, over
-time, they are rarely flexible enough for all users, who keep requesting more
-functions added (and making the API and codebase more and more complex).
+time, they are rarely flexible enough for all users. Users end up requesting
+more and more functionality which ends up making the API and codebase
+more and more complex.
 
 #6: Cater to common use cases, leave the door open for the rare ones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,14 +167,14 @@ who design software) to actually understand all future user needs. Trying to
 write very flexible structures that cater to many use cases at once is often a
 mistake.
 
-We may come up with something we believe is brilliant, but when it's actually
-used, we will find that users will never even use half of it, or that they will
-require features that don't quite accommodate our original design, forcing us to
-either throw it away or make it even more complex.
+We may come up with something we believe is brilliant but later find out that
+users will never even use half of it or that they require features that don't
+quite fit into our original design, forcing us to either throw it away
+or make it even more complex.
 
-The question is then, how to design software that gives users what *we know they
-need*, but that is flexible enough to allow them to do *what we don't know they
-might need* in the future?
+The question is then, how do we design software that both allows users to do
+*what we know they need to do* now and allows them to do *what we don't yet know
+they'll need to do* in the future?
 
 .. image:: img/best_practices6.png
 
@@ -211,13 +207,13 @@ contributors as a starting point to learning the codebase.
 .. image:: img/best_practices7.png
 
 
-The common reasoning for wanting to do this is that it's usually less code to
-simply add a hack in the core layers.
+A common reason for wanting to do this is that it's usually less code to simply
+add a hack in the core layers.
 
-Despite this, this practice is not advised. Generally, the code for a solution
-should be closer to where the problem originates, even if it involves more code,
-duplicated, more complex or is less efficient. More creativity might be needed,
-but this path is always the advised one.
+Doing so is not advised. Generally, the code for a solution should be closer to
+where the problem originates, even if it involves additional, duplicated, more
+complex, or less efficient code. More creativity might be needed, but this path
+is always the advised one.
 
 #8: Don't use complex canned solutions for simple problems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
