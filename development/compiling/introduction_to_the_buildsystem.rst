@@ -326,8 +326,8 @@ platform:
 
     android_debug.apk
     android_release.apk
-    webassembly_debug.zip
-    webassembly_release.zip
+    web_debug.zip
+    web_release.zip
     linux_server_32
     linux_server_64
     linux_x11_32_debug

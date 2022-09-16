@@ -33,76 +33,67 @@ usually configured by the Emscripten SDK, e.g. when invoking ``emsdk activate``
 and ``source ./emsdk_env.sh``/``emsdk_env.bat``.
 
 Open a terminal and navigate to the root directory of the engine source code.
-Then instruct SCons to build the JavaScript platform. Specify ``target`` as
+Then instruct SCons to build the Web platform. Specify ``target`` as
 either ``release`` for a release build or ``release_debug`` for a debug build::
 
-    scons platform=javascript tools=no target=release
-    scons platform=javascript tools=no target=release_debug
+    scons platform=web tools=no target=release
+    scons platform=web tools=no target=release_debug
 
 By default, the :ref:`JavaScript singleton <doc_javascript_eval>` will be built
 into the engine. Official export templates also have the JavaScript singleton
 enabled. Since ``eval()`` calls can be a security concern, the
 ``javascript_eval`` option can be used to build without the singleton::
 
-    scons platform=javascript tools=no target=release javascript_eval=no
-    scons platform=javascript tools=no target=release_debug javascript_eval=no
+    scons platform=web tools=no target=release javascript_eval=no
+    scons platform=web tools=no target=release_debug javascript_eval=no
 
 The engine will now be compiled to WebAssembly by Emscripten. Once finished,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
+``godot.web.opt.wasm32.zip`` for release or ``godot.web.opt.debug.wasm32.zip``
 for debug.
 
-Finally, rename the zip archive to ``webassembly_release.zip`` for the
+Finally, rename the zip archive to ``web_release.zip`` for the
 release template::
 
-    mv bin/godot.javascript.opt.zip bin/webassembly_release.zip
+    mv bin/godot.web.opt.wasm32.zip bin/web_release.zip
 
-And ``webassembly_debug.zip`` for the debug template::
+And ``web_debug.zip`` for the debug template::
 
-    mv bin/godot.javascript.opt.debug.zip bin/webassembly_debug.zip
+    mv bin/godot.web.opt.debug.wasm32.zip bin/web_debug.zip
 
-Threads and GDNative
---------------------
+GDExtension
+-----------
 
-The default export templates do not include threads and GDNative support for
+The default export templates do not include GDExtension support for
 performance and compatibility reasons. See the
 :ref:`export page <doc_javascript_export_options>` for more info.
 
-You can build the export templates using the option ``threads_enabled=yes`` or
-``gdnative_enabled=yes`` to enable threads or GDNative support::
+You can build the export templates using the option ``dlink_enabled=yes``
+to enable GDExtension support::
 
-    scons platform=javascript tools=no threads_enabled=yes target=release
-    scons platform=javascript tools=no threads_enabled=yes target=release_debug
-
-    scons platform=javascript tools=no gdnative_enabled=yes target=release
-    scons platform=javascript tools=no gdnative_enabled=yes target=release_debug
+    scons platform=web tools=no dlink_enabled=yes target=release
+    scons platform=web tools=no dlink_enabled=yes target=release_debug
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
-Its name will have either the ``.threads`` or ``.gdnative`` suffix.
+Its name will have ``_dlink`` added.
 
-Finally, rename the zip archives to ``webassembly_release_threads.zip`` and
-``webassembly_release_gdnative.zip`` for the release template::
+Finally, rename the zip archives to ``web_dlink_release.zip`` and
+``web_dlink_release.zip`` for the release template::
 
-    mv bin/godot.javascript.opt.threads.zip bin/webassembly_threads_release.zip
-    mv bin/godot.javascript.opt.gdnative.zip bin/webassembly_gdnative_release.zip
-
-And ``webassembly_debug_threads.zip`` and ``webassembly_debug_gdnative.zip`` for
-the debug template::
-
-    mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
-    mv bin/godot.javascript.opt.debug.gdnative.zip bin/webassembly_gdnative_debug.zip
+    mv bin/godot.web.opt.wasm32.dlink.zip bin/web_dlink_release.zip
+    mv bin/godot.web.opt.debug.wasm32.dlink.zip bin/web_dlink_debug.zip
 
 Building the editor
 -------------------
 
 It is also possible to build a version of the Godot editor that can run in the
-browser. The editor version requires threads support and is not recommended
+browser. The editor version is not recommended
 over the native build. You can build the editor with::
 
-    scons platform=javascript tools=yes threads_enabled=yes target=release_debug
+    scons platform=web tools=yes target=release_debug
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
-Its name will be ``godot.javascript.opt.tools.threads.zip``. You can upload the
+Its name will be ``godot.web.opt.tools.wasm32.zip``. You can upload the
 zip content to your web server and visit it with your browser to use the editor.
 
 Refer to the :ref:`export page <doc_javascript_export_options>` for the web
