@@ -180,11 +180,14 @@ has been pressed.
  .. code-tab:: cpp
 
     // This code goes in `hud.cpp`.
+    // The timer 'MessageTimer' has to be renamed to 'StartMessageTimer' and besides two more timers
+    // have to be created as children of 'HUD' 'GetReadyMessageTimer' and 'StartButtonTimer', because
+    // in GDNative there is no 'yield'
     #include "hud.hpp"
 
     void HUD::_ready() {
         _score_label = get_node<godot::Label>("ScoreLabel");
-        _message_label = get_node<godot::Label>("MessageLabel");
+        _message_label = get_node<godot::Label>("Message");
         _start_message_timer = get_node<godot::Timer>("StartMessageTimer");
         _get_ready_message_timer = get_node<godot::Timer>("GetReadyMessageTimer");
         _start_button = get_node<godot::Button>("StartButton");
@@ -313,10 +316,17 @@ signal of ``StartButton`` and add the following code to the new functions:
  .. code-tab:: cpp
 
     // This code goes in `hud.cpp`.
+    // Connect the 'timeout()' signals of 'StartMessageTimer' to '_on_StartMessageTimer_timeout',
+    // 'GetReadyMessageTimer' to '_on_GetReadyMessageTimer_timeout',
+    // and 'StartButtonTimer' to '_on_StartButtonTimer_timeout'
     void HUD::_on_StartButton_pressed() {
         _start_button_timer->stop();
         _start_button->hide();
         emit_signal("start_game");
+    }
+    
+    void HUD::_on_StartButtonTimer_timeout() {
+        _start_button->show();
     }
 
     void HUD::_on_StartMessageTimer_timeout() {
