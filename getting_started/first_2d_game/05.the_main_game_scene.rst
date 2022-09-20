@@ -23,7 +23,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
   every second
 - :ref:`Timer <class_Timer>` (named ``StartTimer``) - to give a delay before
   starting
-- :ref:`Position2D <class_Position2D>` (named ``StartPosition``) - to indicate
+- :ref:`Marker2D <class_Marker2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
 Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
@@ -239,7 +239,7 @@ new game:
         Score = 0;
 
         var player = GetNode<Player>("Player");
-        var startPosition = GetNode<Position2D>("StartPosition");
+        var startPosition = GetNode<Marker2D>("StartPosition");
         player.Start(startPosition.Position);
 
         GetNode<Timer>("StartTimer").Start();
@@ -328,7 +328,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         # Choose a random location on Path2D.
         var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-        mob_spawn_location.offset = randi()
+        mob_spawn_location.progress_ratio = randi()
 
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
@@ -360,7 +360,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.Offset = GD.Randi();
+        mobSpawnLocation.ProgressRatio = GD.Randi();
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
@@ -388,7 +388,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         godot::Node *mob = mob_scene->instance();
 
         // Choose a random location on Path2D.
-        _mob_spawn_location->set_offset((real_t)_random->randi());
+        _mob_spawn_location->set_progress_ratio((real_t)_random->randi());
 
         // Set the mob's direction perpendicular to the path direction.
         real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;
