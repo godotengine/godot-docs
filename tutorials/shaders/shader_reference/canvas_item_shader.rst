@@ -75,7 +75,7 @@ it manually with the following code:
 
     void vertex() {
 
-        VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
+        VERTEX = (WORLD_MATRIX * (EXTRA_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
     }
 
 .. note:: ``WORLD_MATRIX`` is actually a modelview matrix. It takes input in local space and transforms it
