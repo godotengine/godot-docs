@@ -243,4 +243,4 @@ This is useful when you want to generate a mesh and then use it later without ha
  .. code-tab:: gdscript GDScript
 
     # Saves mesh to a .tres file with compression enabled.
-    ResourceSaver.save("res://sphere.tres", mesh, ResourceSaver.FLAG_COMPRESS)
+    ResourceSaver.save(mesh, "res://sphere.tres", ResourceSaver.FLAG_COMPRESS)

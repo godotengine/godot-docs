@@ -339,7 +339,7 @@ as the value we got before.
 
 ::
 
-    return ResourceSaver.save("%s.%s" % [save_path, get_save_extension()], material)
+    return ResourceSaver.save(material, "%s.%s" % [save_path, get_save_extension()])
 
 This is the last part and quite an important one, because here we save the made
 resource to the disk. The path of the saved file is generated and informed by
@@ -375,7 +375,7 @@ would need to do something like the following:
 ::
 
     r_platform_variants.push_back("mobile")
-    return ResourceSaver.save("%s.%s.%s" % [save_path, "mobile", get_save_extension()], mobile_material)
+    return ResourceSaver.save(mobile_material, "%s.%s.%s" % [save_path, "mobile", get_save_extension()])
 
 The ``r_gen_files`` argument is meant for extra files that are generated during
 your import process and need to be kept. The editor will look at it to
@@ -392,7 +392,7 @@ in a different file:
     next_pass.albedo_color = color.inverted()
     var next_pass_path = "%s.next_pass.%s" % [save_path, get_save_extension()]
 
-    err = ResourceSaver.save(next_pass_path, next_pass)
+    err = ResourceSaver.save(next_pass, next_pass_path)
     if err != OK:
         return err
     r_gen_files.push_back(next_pass_path)
