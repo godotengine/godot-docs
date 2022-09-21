@@ -56,8 +56,8 @@ Serializing
 The next step is to serialize the data. This makes it much easier to
 read from and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
-has helper class :ref:`JSON<class_json>` to convert between dictionary and string, 
-Our node needs to contain a save function that returns this data. 
+has helper class :ref:`JSON<class_json>` to convert between dictionary and string,
+Our node needs to contain a save function that returns this data.
 The save function will look like this:
 
 .. tabs::
@@ -153,11 +153,8 @@ way to pull the data out of the file as well.
             # Call the node's save function.
             var node_data = node.call("save")
 
-            # Creates the helper class to interact with JSON
-            var json = JSON.new()
-
-            # Convert save data into a serialized JSON string
-            var json_string = json.stringify(node_data)
+            # JSON provides a static method to serialized JSON string
+            var json_string = JSON.stringify(node_data)
 
             # Store the save dictionary as a new line in the save file.
             save_game.store_line(json_string)
@@ -203,7 +200,8 @@ way to pull the data out of the file as well.
 
 
 Game saved! Now, to load, we'll read each
-line, use `parse()<class_json@parse>` method to read it back to a dict, and then iterate over
+line. Use the :ref:`parse<class_JSON_method_parse>` method to read the
+JSON string back to a dictionary, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
 load function:
@@ -232,12 +230,12 @@ load function:
         while save_game.get_position() < save_game.get_len():
             # Creates the helper class to interact with JSON
             var json = JSON.new()
-            
+
             # Check if there is any error while parsing the JSON string, skip in case of failure
             var parse_result = json.parse(json_string)
             if not parse_result == OK:
                 print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-                continue             
+                continue
 
             # Get the data from the JSON object
             var node_data = json.get_data()
