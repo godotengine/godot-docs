@@ -351,7 +351,7 @@ Let's see some examples.
             var my_res = MyResource.new()
 
             # This will NOT serialize the 'value' property.
-            ResourceSaver.save("res://my_res.tres", my_res)
+            ResourceSaver.save(my_res, "res://my_res.tres")
       .. code-tab:: csharp
 
         using System;
@@ -370,6 +370,6 @@ Let's see some examples.
                 var res = new MyResource();
 
                 // This will NOT serialize the 'Value' property.
-                ResourceSaver.Save("res://MyRes.tres", res);
+                ResourceSaver.Save(res, "res://MyRes.tres");
             }
         }
