@@ -689,7 +689,7 @@ We suggest to organize GDScript code this way:
 
 ::
 
-    01. tool
+    01. @tool
     02. class_name
     03. extends
     04. # docstring
@@ -724,7 +724,7 @@ This code order follows four rules of thumb:
 Class declaration
 ~~~~~~~~~~~~~~~~~
 
-If the code is meant to run in the editor, place the ``tool`` keyword on the
+If the code is meant to run in the editor, place the ``@tool`` annotation on the
 first line of the script.
 
 Follow with the `class_name` if necessary. You can turn a GDScript file into a

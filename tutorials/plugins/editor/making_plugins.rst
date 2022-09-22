@@ -167,7 +167,7 @@ To create a new node type, you can use the function
 :ref:`class_EditorPlugin` class. This function can add new types to the editor
 (nodes or resources). However, before you can create the type, you need a script
 that will act as the logic for the type. While that script doesn't have to use
-the ``@tool`` keyword, it can be added so the script runs in the editor.
+the ``@tool`` annotation, it can be added so the script runs in the editor.
 
 For this tutorial, we'll create a button that prints a message when
 clicked. For that, we'll need a script that extends from

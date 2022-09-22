@@ -36,7 +36,7 @@ use cases:
 How to use it
 -------------
 
-To turn a script into a tool, add the keyword ``@tool`` at the top of your code.
+To turn a script into a tool, add the ``@tool`` annotation at the top of your code.
 
 To check if you are currently in the editor, use: ``Engine.is_editor_hint()``.
 
@@ -351,6 +351,6 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
 .. warning::
 
     Using ``@tool`` improperly can yield many errors. It is advised to first
-    write the code how you want it, and only then add the ``@tool`` keyword to
+    write the code how you want it, and only then add the ``@tool`` annotation to
     the top. Also, make sure to separate code that runs in-editor from code that
     runs in-game. This way, you can find bugs more easily.
