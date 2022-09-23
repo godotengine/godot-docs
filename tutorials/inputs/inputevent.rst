@@ -165,7 +165,7 @@ This allows for:
 -  The same code to work on different devices with different inputs (e.g.,
    keyboard on PC, Joypad on console).
 -  Input to be reconfigured at run-time.
--  Can be programabily-triggered at run-time.
+-  Actions to be triggered programmatically at run-time.
 
 Actions can be created from the Project Settings menu in the **Input Map**
 tab.
