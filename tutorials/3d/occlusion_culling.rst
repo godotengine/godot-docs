@@ -60,9 +60,9 @@ performance gains.
     significantly.
 
     The greatest performance benefits can be observed when using the Forward
-    Mobile or Compatibility rendering backends, as neither of those feature a
+    Mobile rendering backend, as it does not feature a
     depth prepass for performance reasons. As a result, occlusion culling will
-    actively decrease shading overdraw with those rendering backends.
+    actively decrease shading overdraw with that rendering backend.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable
     benefit to occlusion culling in complex 3D scenes. However, in scenes with
@@ -154,7 +154,7 @@ for MultiMeshInstance3D setups or CSG nodes (due to the aforementioned limitatio
 After enabling the occlusion culling project setting mentioned above, add an
 OccluderInstance3D node to the scene containing your 3D level. Select the
 OccluderInstance3D node, then choose an occluder type to add in the **Occluder**
-roperty:
+property:
 
 - QuadOccluder3D (a single plane)
 - BoxOccluder3D (a cuboid)
