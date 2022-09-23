@@ -10,6 +10,7 @@ Shaders
    your_first_shader/index
    shader_materials
    visual_shaders
+   compute_shaders
    screen-reading_shaders
    converting_glsl_to_godot_shaders
    shaders_style_guide
