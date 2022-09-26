@@ -987,7 +987,7 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 Moves the file or directory to the system's recycle bin. See also :ref:`Directory.remove<class_Directory_method_remove>`.
 
-The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported project.
+The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported projects.
 
 \ **Note:** If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.
 
