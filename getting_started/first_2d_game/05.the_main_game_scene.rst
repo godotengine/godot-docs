@@ -23,7 +23,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
   every second
 - :ref:`Timer <class_Timer>` (named ``StartTimer``) - to give a delay before
   starting
-- :ref:`Position2D <class_Position2D>` (named ``StartPosition``) - to indicate
+- :ref:`Node2D <class_Node2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
 Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
