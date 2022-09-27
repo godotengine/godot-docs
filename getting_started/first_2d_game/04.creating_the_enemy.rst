@@ -24,7 +24,7 @@ Click Scene -> New Scene and add the following nodes:
 Don't forget to set the children so they can't be selected, like you did with
 the Player scene.
 
-In the :ref:`RigidDynamicBody2D <class_RigidDynamicBody2D>` properties, set ``Gravity Scale``
+In the properties of :ref:`RigidDynamicBody2D <class_RigidDynamicBody2D>` (named ``Mob``), set ``Gravity Scale``
 to ``0``, so the mob will not fall downward. In addition, under the
 :ref:`CollisionObject2D <class_CollisionObject2D>` section, click the ``Mask`` property and uncheck the first
 box. This will ensure the mobs do not collide with each other.
@@ -150,14 +150,14 @@ selects a random integer between ``0`` and ``n-1``.
             use ``randomize()`` in our ``Main`` scene, so we won't need it here.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
-Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node and
+Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node onto the ``Mob`` and
 add this code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _on_visible_on_screen_notifier_2d_screen_exited():
-        queue_free()
+        queue_free() #Destroys this node in the next frame
 
  .. code-tab:: csharp
 
