@@ -22,7 +22,7 @@ It is important that the plugin is placed in this **exact** location in your pro
 
 Back in Godot, create a new 3D scene and press the **Instance Child Scene** button
 (represented by a chain link icon) in the scene tree dock.
-Select the ``addons/godot_openxr/scenes/first_person_controller_vr.tscn`` subscene
+Select the ``addons/godot_openxr/demo/addons/godot-openxr/scenes/first_person_controller_vr.tscn`` subscene
 and add it to your scene.
 Right-click the added node and select **Editable Children** to gain access
 to some of the nodes in this subscene:
