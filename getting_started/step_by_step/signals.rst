@@ -246,7 +246,7 @@ this.
 
 .. image:: img/signals_15_scene_tree.png
 
-With the Timer node selected, go to the Inspector and check the **Autostart**
+With the Timer node selected, go to the Inspector and enable the **Autostart**
 property.
 
 .. image:: img/signals_18_timer_autostart.png
@@ -350,7 +350,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.connect("timeout", self, "_on_Timer_timeout")
+        timer.timeout.connect(_on_Timer_timeout)
 
 
     func _process(delta):
