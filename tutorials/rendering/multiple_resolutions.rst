@@ -273,7 +273,7 @@ Desktop game
   Note that this will make non-mipmapped textures grainy on low resolution devices,
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
@@ -296,11 +296,11 @@ Desktop game
     The ``viewport`` stretch mode provides low-resolution rendering that is then
     stretched to the final window size. If you are OK with sprites being able to
     move or rotate in "sub-pixel" positions or wish to have a high resolution 3D
-    viewport, you should use the ``2d`` stretch mode instead of the ``viewport``
+    viewport, you should use the ``canvas_items`` stretch mode instead of the ``viewport``
     stretch mode.
 
     Godot currently doesn't have a way to enforce integer scaling when using the
-    ``2d`` or ``viewport`` stretch mode, which means pixel art may look bad if the
+    ``canvas_items`` or ``viewport`` stretch mode, which means pixel art may look bad if the
     final window size is not a multiple of the base window size.
     To fix this, use an add-on such as the `Integer Resolution Handler <https://github.com/Yukitty/godot-addon-integer_resolution_handler>`__.
 
@@ -320,7 +320,7 @@ to change the display orientation project setting.
   Note that this will make non-mipmapped textures grainy on low resolution devices,
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
@@ -339,7 +339,7 @@ Mobile game in portrait mode
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
 - Set **Display > Window > Handheld > Orientation** to ``portrait``.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
