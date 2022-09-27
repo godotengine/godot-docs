@@ -72,14 +72,14 @@ ScoreLabel
 
 -  *Layout* : "Top Wide"
 -  *Text* : ``0``
--  *Align* : "Center"
+-  *Alignment* : "Center"
 
 Message
 ~~~~~~~~~~~~
 
 -  *Layout* : "HCenter Wide"
 -  *Text* : ``Dodge the Creeps!``
--  *Align* : "Center"
+-  *Alignment* : "Center"
 -  *Autowrap* : "On"
 
 StartButton
@@ -102,6 +102,7 @@ Now add this script to ``HUD``:
 
     extends CanvasLayer
 
+    # Notifies `Main` node that the button has been pressed
     signal start_game
 
  .. code-tab:: csharp
@@ -109,7 +110,7 @@ Now add this script to ``HUD``:
     public class HUD : CanvasLayer
     {
         // Don't forget to rebuild the project so the editor knows about the new signal.
-
+        
         [Signal]
         public delegate void StartGameEventHandler();
     }
@@ -155,8 +156,8 @@ Now add this script to ``HUD``:
 
     #endif // HUD_H
 
-The ``start_game`` signal tells the ``Main`` node that the button
-has been pressed.
+We now want to display a message temporarily, 
+such as "Get Ready", so we add the following code
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -202,8 +203,7 @@ has been pressed.
         godot::register_signal<HUD>("start_game", godot::Dictionary());
     }
 
-This function is called when we want to display a message
-temporarily, such as "Get Ready".
+We also need to process what happens when the player loses. The code below will show "Game Over" for 2 seconds, then return to the title screen and, after a brief pause, show the "Start" button.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -262,6 +262,8 @@ seconds, then return to the title screen and, after a brief pause, show the
           can be very useful to add delays such as in the above code, where we
           want to wait some time before showing the "Start" button.
 
+Add the code below to ``Main`` to update the score
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
@@ -282,10 +284,8 @@ seconds, then return to the title screen and, after a brief pause, show the
         _score_label->set_text(godot::Variant(p_score));
     }
 
-This function is called by ``Main`` whenever the score changes.
-
 Connect the ``timeout()`` signal of ``MessageTimer`` and the ``pressed()``
-signal of ``StartButton`` and add the following code to the new functions:
+signal of ``StartButton``, and add the following code to the new functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
