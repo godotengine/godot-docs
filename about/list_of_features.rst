@@ -617,7 +617,7 @@ The editor UI can easily be extended in many ways using add-ons.
      layouts.
    - :ref:`Draggable splitter <class_SplitContainer>` layouts.
 
-- Scale to multiple resolutions using the ``2d`` or ``viewport`` stretch modes.
+- Scale to multiple resolutions using the ``canvas_items`` or ``viewport`` stretch modes.
 - Support any aspect ratio using anchors and the ``expand`` stretch aspect.
 
 **Theming:**
