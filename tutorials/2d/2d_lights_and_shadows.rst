@@ -48,7 +48,7 @@ Nodes
 The demo uses four different nodes:
   * :ref:`CanvasModulate <class_CanvasModulate>`
   * :ref:`Sprite2D <class_Sprite2D>`
-  * :ref:`Light2D <class_Light2D>`
+  * :ref:`PointLight2D <class_PointLight2D>`
   * :ref:`LightOccluder2D <class_LightOccluder2D>`
 
 :ref:`CanvasModulate <class_CanvasModulate>` is used to darken the scene.
@@ -56,13 +56,13 @@ The demo uses four different nodes:
 :ref:`Sprite2Ds <class_Sprite2D>` are used to display the textures for the light blobs, the
 background, and for the shadow casters.
 
-:ref:`Light2Ds <class_Light2D>` are used to light the scene. The way a light typically works
+:ref:`PointLight2Ds <class_PointLight2D>` are used to light the scene. The way a light typically works
 is by adding a selected texture over the rest of the scene to simulate lighting. But it can be
 used in other ways, for example masking out parts of the scene.
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` are used to tell the shader which parts of
-the scene cast shadows. The shadows appear only on areas covered by the :ref:`Light2D <class_Light2D>` and
-their direction is based on the center of the :ref:`Light <class_Light2D>`.
+the scene cast shadows. The shadows appear only on areas covered by the :ref:`PointLight2D <class_PointLight2D>` and
+their direction is based on the center of the :ref:`Light <class_PointLight2D>`.
 
 Lights
 ------
@@ -115,7 +115,7 @@ background you choose. For this style of shadow it is most likely to be a floor 
 
 .. image:: img/light_shadow_background.png
 
-Next create three :ref:`Light2D's <class_Light2D>` and set their textures to the `light image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/light.png>`_. You can alter their
+Next create three :ref:`PointLight2D's <class_PointLight2D>` and set their textures to the `light image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/light.png>`_. You can alter their
 color in the top section. By default shadows are turned off and the ``mode`` is set to ``add``. This
 means that each light adds its own color to whatever is underneath.
 
@@ -125,7 +125,7 @@ Next add a child :ref:`Sprite2D <class_Sprite2D>` to each of the :ref:`Light <cl
 the :ref:`Sprite2D's <class_Sprite2D>` texture to the `blob image <https://raw.githubusercontent.com/godotengine/godot-demo-projects/master/2d/lights_and_shadows/spot.png>`_. Each of these
 should stay centered on the :ref:`Light <class_Light2D>` node. The blob is the image of the light
 itself while the :ref:`Light <class_Light2D>` shows the effect that the light has on the scene. The
-:ref:`LightOccluder2D's <class_LightOccluder2D>` will treat the position of the light as the center of the :ref:`Light <class_Light2D>`
+:ref:`LightOccluder2D's <class_LightOccluder2D>` which we will add later, will treat the position of the light as the center of the :ref:`Light <class_Light2D>`
 node, which is why we want the blob to be centered on its parent :ref:`Light <class_Light2D>`.
 
 .. image:: img/light_shadow_all_lights.png
@@ -188,7 +188,7 @@ lines of the polygon can be seen:
           left which would cast a shadow as well.
 
 When you have added the :ref:`LightOccluder2Ds <class_LightOccluder2D>` the shadows still won't
-appear. You need to go back into the :ref:`Light2Ds <class_Light2D>` and under the Shadow
+appear. You need to go back into the :ref:`PointLight2Ds <class_PointLight2D>` and under the Shadow
 section set ``Enable`` to ``on``. This turns on shadows with hard edges like in the image below.
 
 .. image:: img/light_shadow_filter0_pcf0.png
