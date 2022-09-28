@@ -19,6 +19,10 @@ Description
 
 2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to a custom audio bus.
 
+To give the area its shape, add a :ref:`CollisionShape2D<class_CollisionShape2D>` or a :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
+
+\ **Warning:** See :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` for a warning about possibly unexpected behavior when using that shape for an area.
+
 Tutorials
 ---------
 

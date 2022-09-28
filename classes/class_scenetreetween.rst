@@ -62,11 +62,23 @@ Another interesting use for ``SceneTreeTween``\ s is animating arbitrary sets of
 
 In the example above, all children of a node are moved one after another to position (0, 0).
 
+You should avoid using more than one ``SceneTreeTween`` per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the ``SceneTreeTween`` to a variable:
+
+::
+
+    var tween
+    func animate():
+        if tween:
+            tween.kill() # Abort the previous animation.
+        tween = create_tween()
+
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`Tween.EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
 \ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
 
 \ **Note:** All ``SceneTreeTween``\ s will automatically start by default. To prevent a ``SceneTreeTween`` from autostarting, you can call :ref:`stop<class_SceneTreeTween_method_stop>` immediately after it is created.
+
+\ **Note:** ``SceneTreeTween``\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
 Methods
 -------

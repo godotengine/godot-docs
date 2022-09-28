@@ -21,6 +21,8 @@ Concave polygon 2D shape resource for physics. It is made out of segments and is
 
 The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
+\ **Warning:** Using this shape for an :ref:`Area2D<class_Area2D>` (via a :ref:`CollisionShape2D<class_CollisionShape2D>` node) may give unexpected results: the area will only detect collisions with the segments in the ``ConcavePolygonShape2D`` (and not with any "inside" of the shape, for example).
+
 Properties
 ----------
 

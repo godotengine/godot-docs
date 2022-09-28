@@ -17,7 +17,11 @@ Area
 Description
 -----------
 
-3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to a custom audio bus.
+
+To give the area its shape, add a :ref:`CollisionShape<class_CollisionShape>` or a :ref:`CollisionPolygon<class_CollisionPolygon>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
+
+\ **Warning:** See :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` (also called "trimesh") for a warning about possibly unexpected behavior when using that shape for an area.
 
 Tutorials
 ---------

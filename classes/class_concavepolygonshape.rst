@@ -21,6 +21,8 @@ Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_
 
 \ **Note:** When used for collision, ``ConcavePolygonShape`` is intended to work with static :ref:`PhysicsBody<class_PhysicsBody>` nodes like :ref:`StaticBody<class_StaticBody>` and will not work with :ref:`KinematicBody<class_KinematicBody>` or :ref:`RigidBody<class_RigidBody>` with a mode other than Static.
 
+\ **Warning:** Using this shape for an :ref:`Area<class_Area>` (via a :ref:`CollisionShape<class_CollisionShape>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance<class_MeshInstance>` node) may give unexpected results: when using Godot Physics, the area will only detect collisions with the triangle faces in the ``ConcavePolygonShape`` (and not with any "inside" of the shape, for example), and when using Bullet Physics the area will not detect any collisions with the concave shape at all (this is a known bug).
+
 Tutorials
 ---------
 

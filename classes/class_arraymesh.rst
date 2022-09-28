@@ -254,6 +254,10 @@ Surfaces are created to be rendered using a ``primitive``, which may be any of t
 
 The ``arrays`` argument is an array of arrays. See :ref:`ArrayType<enum_ArrayMesh_ArrayType>` for the values used in this array. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this function into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array or be empty, except for :ref:`ARRAY_INDEX<class_ArrayMesh_constant_ARRAY_INDEX>` if it is used.
 
+\ ``compress_flags`` is a bitfield made of :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` values. It defaults to :ref:`Mesh.ARRAY_COMPRESS_DEFAULT<class_Mesh_constant_ARRAY_COMPRESS_DEFAULT>`.
+
+\ **Note:** The default ``compress_flags`` enable :ref:`Mesh.ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, which makes vertex colors stored as 8-bit unsigned integers. This will clamp overbright vertex colors to ``Color(1, 1, 1, 1)`` and reduce their precision. To store HDR vertex colors, remove the vertex color compression flag by passing ``Mesh.ARRAY_COMPRESS_DEFAULT ^ Mesh.ARRAY_COMPRESS_COLOR`` as the value of ``compress_flags``.
+
 ----
 
 .. _class_ArrayMesh_method_clear_blend_shapes:

@@ -195,6 +195,8 @@ enum **ArrayFormat**:
 
 - **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
 
+\ **Note:** If this flag is enabled, vertex colors will be stored as 8-bit unsigned integers. This will clamp overbright colors to ``Color(1, 1, 1, 1)`` and reduce colors' precision.
+
 - **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) UV coordinates array.
 
 - **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.
@@ -212,6 +214,8 @@ enum **ArrayFormat**:
 - **ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION** = **2097152** --- Flag used to mark that the array uses an octahedral representation of normal and tangent vectors rather than cartesian.
 
 - **ARRAY_COMPRESS_DEFAULT** = **2194432** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>`, :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>`, and :ref:`ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION<class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION>` quickly.
+
+\ **Note:** Since this flag enables :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, vertex colors will be stored as 8-bit unsigned integers. This will clamp overbright colors to ``Color(1, 1, 1, 1)`` and reduce colors' precision.
 
 ----
 

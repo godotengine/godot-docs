@@ -221,7 +221,7 @@ Clears all values on the theme.
 
 - void **clear_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears the :ref:`Color<class_Color>` at ``name`` if the theme has ``node_type``.
+Clears the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -229,7 +229,7 @@ Clears the :ref:`Color<class_Color>` at ``name`` if the theme has ``node_type``.
 
 - void **clear_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears the constant at ``name`` if the theme has ``node_type``.
+Clears the constant at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -237,7 +237,7 @@ Clears the constant at ``name`` if the theme has ``node_type``.
 
 - void **clear_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears the :ref:`Font<class_Font>` at ``name`` if the theme has ``node_type``.
+Clears the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -245,7 +245,7 @@ Clears the :ref:`Font<class_Font>` at ``name`` if the theme has ``node_type``.
 
 - void **clear_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears the icon at ``name`` if the theme has ``node_type``.
+Clears the icon at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -253,7 +253,7 @@ Clears the icon at ``name`` if the theme has ``node_type``.
 
 - void **clear_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``node_type``.
+Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -261,7 +261,7 @@ Clears :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``node_type`
 
 - void **clear_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Clears the theme item of ``data_type`` at ``name`` if the theme has ``node_type``.
+Clears the theme item of ``data_type`` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -293,7 +293,7 @@ Sets the theme's values to a copy of a given theme.
 
 - :ref:`Color<class_Color>` **get_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``node_type``.
+Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -301,7 +301,7 @@ Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``node_type``
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_color_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Color<class_Color>`'s name, for use in :ref:`get_color<class_Theme_method_get_color>`, if the theme has ``node_type``.
+Returns all the :ref:`Color<class_Color>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Color<class_Color>`'s name, for use in :ref:`get_color<class_Theme_method_get_color>`, if the theme has ``theme_type``.
 
 ----
 
@@ -317,7 +317,7 @@ Returns all the :ref:`Color<class_Color>` types as a :ref:`PoolStringArray<class
 
 - :ref:`int<class_int>` **get_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the constant at ``name`` if the theme has ``node_type``.
+Returns the constant at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -325,7 +325,7 @@ Returns the constant at ``name`` if the theme has ``node_type``.
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_constant_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each constant's name, for use in :ref:`get_constant<class_Theme_method_get_constant>`, if the theme has ``node_type``.
+Returns all the constants as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each constant's name, for use in :ref:`get_constant<class_Theme_method_get_constant>`, if the theme has ``theme_type``.
 
 ----
 
@@ -341,7 +341,7 @@ Returns all the constant types as a :ref:`PoolStringArray<class_PoolStringArray>
 
 - :ref:`Font<class_Font>` **get_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``node_type``. If such item does not exist and :ref:`default_font<class_Theme_property_default_font>` is set on the theme, the default font will be returned.
+Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``. If such item does not exist and :ref:`default_font<class_Theme_property_default_font>` is set on the theme, the default font will be returned.
 
 ----
 
@@ -349,7 +349,7 @@ Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``node_type``. 
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_font_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Font<class_Font>`'s name, for use in :ref:`get_font<class_Theme_method_get_font>`, if the theme has ``node_type``.
+Returns all the :ref:`Font<class_Font>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Font<class_Font>`'s name, for use in :ref:`get_font<class_Theme_method_get_font>`, if the theme has ``theme_type``.
 
 ----
 
@@ -365,7 +365,7 @@ Returns all the :ref:`Font<class_Font>` types as a :ref:`PoolStringArray<class_P
 
 - :ref:`Texture<class_Texture>` **get_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the theme has ``node_type``.
+Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the theme has ``theme_type``.
 
 ----
 
@@ -373,7 +373,7 @@ Returns the icon :ref:`Texture<class_Texture>` at ``name`` if the theme has ``no
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_icon_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Texture<class_Texture>`'s name, for use in :ref:`get_icon<class_Theme_method_get_icon>`, if the theme has ``node_type``.
+Returns all the icons as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`Texture<class_Texture>`'s name, for use in :ref:`get_icon<class_Theme_method_get_icon>`, if the theme has ``theme_type``.
 
 ----
 
@@ -389,9 +389,9 @@ Returns all the icon types as a :ref:`PoolStringArray<class_PoolStringArray>` fi
 
 - :ref:`StyleBox<class_StyleBox>` **get_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``node_type``.
+Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
 
-Valid ``name``\ s may be found using :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`. Valid ``node_type``\ s may be found using :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>`.
+Valid ``name``\ s may be found using :ref:`get_stylebox_list<class_Theme_method_get_stylebox_list>`. Valid ``theme_type``\ s may be found using :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>`.
 
 ----
 
@@ -399,9 +399,9 @@ Valid ``name``\ s may be found using :ref:`get_stylebox_list<class_Theme_method_
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_stylebox_list** **(** :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s name, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>`, if the theme has ``node_type``.
+Returns all the :ref:`StyleBox<class_StyleBox>`\ s as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each :ref:`StyleBox<class_StyleBox>`'s name, for use in :ref:`get_stylebox<class_Theme_method_get_stylebox>`, if the theme has ``theme_type``.
 
-Valid ``node_type``\ s may be found using :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>`.
+Valid ``theme_type``\ s may be found using :ref:`get_stylebox_types<class_Theme_method_get_stylebox_types>`.
 
 ----
 
@@ -417,9 +417,9 @@ Returns all the :ref:`StyleBox<class_StyleBox>` types as a :ref:`PoolStringArray
 
 - :ref:`Variant<class_Variant>` **get_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns the theme item of ``data_type`` at ``name`` if the theme has ``node_type``.
+Returns the theme item of ``data_type`` at ``name`` if the theme has ``theme_type``.
 
-Valid ``name``\ s may be found using :ref:`get_theme_item_list<class_Theme_method_get_theme_item_list>` or a data type specific method. Valid ``node_type``\ s may be found using :ref:`get_theme_item_types<class_Theme_method_get_theme_item_types>` or a data type specific method.
+Valid ``name``\ s may be found using :ref:`get_theme_item_list<class_Theme_method_get_theme_item_list>` or a data type specific method. Valid ``theme_type``\ s may be found using :ref:`get_theme_item_types<class_Theme_method_get_theme_item_types>` or a data type specific method.
 
 ----
 
@@ -427,9 +427,9 @@ Valid ``name``\ s may be found using :ref:`get_theme_item_list<class_Theme_metho
 
 - :ref:`PoolStringArray<class_PoolStringArray>` **get_theme_item_list** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns all the theme items of ``data_type`` as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each theme items's name, for use in :ref:`get_theme_item<class_Theme_method_get_theme_item>` or a data type specific method, if the theme has ``node_type``.
+Returns all the theme items of ``data_type`` as a :ref:`PoolStringArray<class_PoolStringArray>` filled with each theme items's name, for use in :ref:`get_theme_item<class_Theme_method_get_theme_item>` or a data type specific method, if the theme has ``theme_type``.
 
-Valid ``node_type``\ s may be found using :ref:`get_theme_item_types<class_Theme_method_get_theme_item_types>` or a data type specific method.
+Valid ``theme_type``\ s may be found using :ref:`get_theme_item_types<class_Theme_method_get_theme_item_types>` or a data type specific method.
 
 ----
 
@@ -447,7 +447,7 @@ Returns all the theme items of ``data_type`` types as a :ref:`PoolStringArray<cl
 
 Returns all the theme types as a :ref:`PoolStringArray<class_PoolStringArray>` filled with unique type names, for use in other ``get_*`` functions of this theme.
 
-\ **Note:** ``node_type`` has no effect and will be removed in future version.
+\ **Note:** ``theme_type`` has no effect and will be removed in future version.
 
 ----
 
@@ -471,9 +471,9 @@ Returns a list of all type variations for the given ``base_type``.
 
 - :ref:`bool<class_bool>` **has_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``node_type``.
+Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -481,9 +481,9 @@ Returns ``false`` if the theme does not have ``node_type``.
 
 - :ref:`bool<class_bool>` **has_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if constant with ``name`` is in ``node_type``.
+Returns ``true`` if constant with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -499,9 +499,9 @@ Returns ``true`` if this theme has a valid :ref:`default_font<class_Theme_proper
 
 - :ref:`bool<class_bool>` **has_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``node_type``.
+Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -509,9 +509,9 @@ Returns ``false`` if the theme does not have ``node_type``.
 
 - :ref:`bool<class_bool>` **has_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if icon :ref:`Texture<class_Texture>` with ``name`` is in ``node_type``.
+Returns ``true`` if icon :ref:`Texture<class_Texture>` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -519,9 +519,9 @@ Returns ``false`` if the theme does not have ``node_type``.
 
 - :ref:`bool<class_bool>` **has_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``node_type``.
+Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -529,9 +529,9 @@ Returns ``false`` if the theme does not have ``node_type``.
 
 - :ref:`bool<class_bool>` **has_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)** |const|
 
-Returns ``true`` if a theme item of ``data_type`` with ``name`` is in ``node_type``.
+Returns ``true`` if a theme item of ``data_type`` with ``name`` is in ``theme_type``.
 
-Returns ``false`` if the theme does not have ``node_type``.
+Returns ``false`` if the theme does not have ``theme_type``.
 
 ----
 
@@ -565,7 +565,7 @@ Removes the theme type, gracefully discarding defined theme items. If the type i
 
 - void **rename_color** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames the :ref:`Color<class_Color>` at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames the :ref:`Color<class_Color>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -573,7 +573,7 @@ Renames the :ref:`Color<class_Color>` at ``old_name`` to ``name`` if the theme h
 
 - void **rename_constant** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames the constant at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames the constant at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -581,7 +581,7 @@ Renames the constant at ``old_name`` to ``name`` if the theme has ``node_type``.
 
 - void **rename_font** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames the :ref:`Font<class_Font>` at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames the :ref:`Font<class_Font>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -589,7 +589,7 @@ Renames the :ref:`Font<class_Font>` at ``old_name`` to ``name`` if the theme has
 
 - void **rename_icon** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames the icon at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames the icon at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -597,7 +597,7 @@ Renames the icon at ``old_name`` to ``name`` if the theme has ``node_type``. If 
 
 - void **rename_stylebox** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames :ref:`StyleBox<class_StyleBox>` at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames :ref:`StyleBox<class_StyleBox>` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -605,7 +605,7 @@ Renames :ref:`StyleBox<class_StyleBox>` at ``old_name`` to ``name`` if the theme
 
 - void **rename_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` old_name, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type **)**
 
-Renames the theme item of ``data_type`` at ``old_name`` to ``name`` if the theme has ``node_type``. If ``name`` is already taken, this method fails.
+Renames the theme item of ``data_type`` at ``old_name`` to ``name`` if the theme has ``theme_type``. If ``name`` is already taken, this method fails.
 
 ----
 
@@ -613,9 +613,9 @@ Renames the theme item of ``data_type`` at ``old_name`` to ``name`` if the theme
 
 - void **set_color** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`Color<class_Color>` color **)**
 
-Sets the theme's :ref:`Color<class_Color>` to ``color`` at ``name`` in ``node_type``.
+Sets the theme's :ref:`Color<class_Color>` to ``color`` at ``name`` in ``theme_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 
@@ -623,9 +623,9 @@ Creates ``node_type`` if the theme does not have it.
 
 - void **set_constant** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`int<class_int>` constant **)**
 
-Sets the theme's constant to ``constant`` at ``name`` in ``node_type``.
+Sets the theme's constant to ``constant`` at ``name`` in ``theme_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 
@@ -633,9 +633,9 @@ Creates ``node_type`` if the theme does not have it.
 
 - void **set_font** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`Font<class_Font>` font **)**
 
-Sets the theme's :ref:`Font<class_Font>` to ``font`` at ``name`` in ``node_type``.
+Sets the theme's :ref:`Font<class_Font>` to ``font`` at ``name`` in ``theme_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 
@@ -643,9 +643,9 @@ Creates ``node_type`` if the theme does not have it.
 
 - void **set_icon** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`Texture<class_Texture>` texture **)**
 
-Sets the theme's icon :ref:`Texture<class_Texture>` to ``texture`` at ``name`` in ``node_type``.
+Sets the theme's icon :ref:`Texture<class_Texture>` to ``texture`` at ``name`` in ``theme_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 
@@ -653,9 +653,9 @@ Creates ``node_type`` if the theme does not have it.
 
 - void **set_stylebox** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`StyleBox<class_StyleBox>` texture **)**
 
-Sets theme's :ref:`StyleBox<class_StyleBox>` to ``stylebox`` at ``name`` in ``node_type``.
+Sets theme's :ref:`StyleBox<class_StyleBox>` to ``stylebox`` at ``name`` in ``theme_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 
@@ -663,11 +663,11 @@ Creates ``node_type`` if the theme does not have it.
 
 - void **set_theme_item** **(** :ref:`DataType<enum_Theme_DataType>` data_type, :ref:`String<class_String>` name, :ref:`String<class_String>` theme_type, :ref:`Variant<class_Variant>` value **)**
 
-Sets the theme item of ``data_type`` to ``value`` at ``name`` in ``node_type``.
+Sets the theme item of ``data_type`` to ``value`` at ``name`` in ``theme_type``.
 
 Does nothing if the ``value`` type does not match ``data_type``.
 
-Creates ``node_type`` if the theme does not have it.
+Creates ``theme_type`` if the theme does not have it.
 
 ----
 

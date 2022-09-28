@@ -246,9 +246,9 @@ Removes the given shape owner.
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-If ``value`` is ``true``, sets the specified ``bit`` in the the :ref:`collision_layer<class_CollisionObject_property_collision_layer>`.
+If ``value`` is ``true``, sets the specified ``bit`` in the :ref:`collision_layer<class_CollisionObject_property_collision_layer>`.
 
-If ``value`` is ``false``, clears the specified ``bit`` in the the :ref:`collision_layer<class_CollisionObject_property_collision_layer>`.
+If ``value`` is ``false``, clears the specified ``bit`` in the :ref:`collision_layer<class_CollisionObject_property_collision_layer>`.
 
 ----
 
@@ -256,9 +256,9 @@ If ``value`` is ``false``, clears the specified ``bit`` in the the :ref:`collisi
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-If ``value`` is ``true``, sets the specified ``bit`` in the the :ref:`collision_mask<class_CollisionObject_property_collision_mask>`.
+If ``value`` is ``true``, sets the specified ``bit`` in the :ref:`collision_mask<class_CollisionObject_property_collision_mask>`.
 
-If ``value`` is ``false``, clears the specified ``bit`` in the the :ref:`collision_mask<class_CollisionObject_property_collision_mask>`.
+If ``value`` is ``false``, clears the specified ``bit`` in the :ref:`collision_mask<class_CollisionObject_property_collision_mask>`.
 
 ----
 
