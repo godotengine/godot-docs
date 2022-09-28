@@ -100,25 +100,10 @@ a lot to learn. To make the most of it, you need good programming foundations.
 While we try to make the engine accessible, you will benefit a lot from knowing
 how to think like a programmer first.
 
-Godot relies on the object-oriented programming paradigm. Being comfortable with
-concepts such as classes and objects will help you code efficiently in it.
-
-If you are entirely new to programming, we recommend following the `CS50 open
-courseware`_ from Harvard University. It's a great free course that will teach
-you everything you need to know to be off to a good start. It will save you
-countless hours and hurdles learning any game engine afterward.
-
-.. note:: In CS50, you will learn multiple programming languages. Don't be
-          afraid of that: programming languages have many similarities. The
-          skills you learn with one language transfer well to others.
-
-We will provide you with more Godot-specific learning resources in
-:ref:`doc_learning_new_features`.
-
-In the next part, you will get an overview of the engine's essential concepts.
+In the next part, we'll show you a free and open-source app you can use to learn
+the basics of programming with Godot's GDScript programming language.
 
 .. _Blender: https://www.blender.org/
 .. _VSCode: https://github.com/godotengine/godot-vscode-plugin
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
 .. _official showcase videos: https://www.youtube.com/playlist?list=PLeG_dAglpVo6EpaO9A1nkwJZOwrfiLdQ8
-.. _CS50 open courseware: https://cs50.harvard.edu/x
