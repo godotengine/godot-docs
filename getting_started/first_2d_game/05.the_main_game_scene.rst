@@ -74,7 +74,7 @@ Main script
 ~~~~~~~~~~~
 
 Add a script to ``Main``. At the top of the script, we use 
-``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
+``export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
 to instance.
 
 .. tabs::
@@ -82,7 +82,7 @@ to instance.
 
     extends Node
 
-    @export var mob_scene: PackedScene
+    export var mob_scene: PackedScene
     var score
 
  .. code-tab:: csharp
