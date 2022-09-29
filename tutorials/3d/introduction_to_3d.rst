@@ -16,19 +16,19 @@ In 3D, math is a little more complex than in 2D, so also checking the
 developers, not mathematicians or engineers) will help pave the way for you
 to develop 3D games efficiently.
 
-Spatial node
+Node3D
 ~~~~~~~~~~~~
 
 :ref:`Node2D <class_Node2D>` is the base node for 2D.
 :ref:`Control <class_Control>` is the base node for everything GUI.
-Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
+Following this reasoning, the 3D engine uses the :ref:`Node3D <class_Node3D>`
 node for everything 3D.
 
 .. image:: img/tuto_3d1.png
 
-Spatial nodes have a local transform, which is relative to the parent
+:ref:`Node3D <class_Node3D>` nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
-Spatial). This transform can be accessed as a 4×3
+:ref:`Node3D <class_Node3D>`). This transform can be accessed as a 4×3
 :ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
@@ -110,7 +110,7 @@ Environments can also be overridden in the Camera.
 ~~~~~~~~~~~
 
 Editing 3D scenes is done in the 3D tab. This tab can be selected
-manually, but it will be automatically enabled when a Spatial node is
+manually, but it will be automatically enabled when a :ref:`Node3D <class_Node3D>` is
 selected.
 
 .. image:: img/tuto_3d3.png
