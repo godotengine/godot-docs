@@ -23,7 +23,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
   every second
 - :ref:`Timer <class_Timer>` (named ``StartTimer``) - to give a delay before
   starting
-- :ref:`Position2D <class_Position2D>` (named ``StartPosition``) - to indicate
+- :ref:`Marker2D <class_Marker2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
 Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
@@ -239,7 +239,7 @@ new game:
         Score = 0;
 
         var player = GetNode<Player>("Player");
-        var startPosition = GetNode<Position2D>("StartPosition");
+        var startPosition = GetNode<Marker2D>("StartPosition");
         player.Start(startPosition.Position);
 
         GetNode<Timer>("StartTimer").Start();
