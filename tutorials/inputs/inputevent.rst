@@ -119,6 +119,8 @@ Anatomy of an InputEvent
 anything and only contains some basic information, such as event ID
 (which is increased for each event), device index, etc.
 
+
+
 There are several specialized types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
@@ -157,8 +159,9 @@ Actions
 -------
 
 Actions are a grouping of zero or more InputEvents into a commonly
-understood title. They are not required to represent an InputEvent but are
-useful because they abstract various inputs when programming the game logic.
+understood title (such as "ui_left"). They are not required to represent an
+InputEvent but are useful because they abstract various inputs when
+programming the game logic.
 
 This allows for:
 
@@ -168,7 +171,7 @@ This allows for:
 -  Actions to be triggered programmatically at run-time.
 
 Actions can be created from the Project Settings menu in the **Input Map**
-tab.
+tab and assigned input events.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
 :ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
@@ -183,7 +186,7 @@ The Input singleton has a method for this:
 
     var ev = InputEventAction.new()
     # Set as move_left, pressed.
-    ev.action = "move_left"
+    ev.action = "ui_left"
     ev.pressed = true
     # Feedback.
     Input.parse_input_event(ev)
@@ -191,8 +194,8 @@ The Input singleton has a method for this:
  .. code-tab:: csharp
 
     var ev = new InputEventAction();
-    // Set as move_left, pressed.
-    ev.SetAction("move_left");
+    // Set as u_left, pressed.
+    ev.SetAction("ui_left");
     ev.SetPressed(true);
     // Feedback.
     Input.ParseInputEvent(ev);
