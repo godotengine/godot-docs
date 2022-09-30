@@ -17,7 +17,7 @@ developers, not mathematicians or engineers) will help pave the way for you
 to develop 3D games efficiently.
 
 Node3D
-~~~~~~~~~~~~
+~~~~~~
 
 :ref:`Node2D <class_Node2D>` is the base node for 2D.
 :ref:`Control <class_Control>` is the base node for everything GUI.
