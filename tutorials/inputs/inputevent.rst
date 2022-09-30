@@ -185,7 +185,7 @@ The Input singleton has a method for this:
  .. code-tab:: gdscript GDScript
 
     var ev = InputEventAction.new()
-    # Set as move_left, pressed.
+    # Set as ui_left, pressed.
     ev.action = "ui_left"
     ev.pressed = true
     # Feedback.
@@ -194,7 +194,7 @@ The Input singleton has a method for this:
  .. code-tab:: csharp
 
     var ev = new InputEventAction();
-    // Set as u_left, pressed.
+    // Set as ui_left, pressed.
     ev.SetAction("ui_left");
     ev.SetPressed(true);
     // Feedback.
