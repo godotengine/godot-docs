@@ -350,7 +350,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.connect("timeout", self, "_on_Timer_timeout")
+        timer.timeout.connect(_on_Timer_timeout)
 
 
     func _process(delta):
