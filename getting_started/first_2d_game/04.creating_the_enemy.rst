@@ -157,7 +157,7 @@ add this code:
  .. code-tab:: gdscript GDScript
 
     func _on_visible_on_screen_notifier_2d_screen_exited():
-        queue_free() #Destroys this node in the next frame
+        queue_free() # Destroys this node in the next frame.
 
  .. code-tab:: csharp
 
