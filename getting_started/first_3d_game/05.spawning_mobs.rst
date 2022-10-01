@@ -276,7 +276,10 @@ Let's code the mob spawning logic. We're going to:
     }
 
 Above, ``randf()`` produces a random value between ``0`` and ``1``, which is
-what the *PathFollow* node's ``progress_ratio`` expects: 0 is the start of the path, 1 is the end of the path. The path we have set is around the camera, so any random value between 0 and 1 is a random position alongside the edges of the camera!
+what the *PathFollow* node's ``progress_ratio`` expects:
+0 is the start of the path, 1 is the end of the path. 
+The path we have set is around the camera's viewport, so any random value between 0 and 1 
+is a random position alongside the edges of the viewport!
 
 Here is the complete ``Main.gd`` script so far, for reference.
 
