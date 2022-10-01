@@ -192,14 +192,14 @@ value you provided in the shader.
 Interacting with shaders from code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can change uniforms from code using the function ``set_shader_param()``
+You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
 ::
 
   var blue_value = 1.0
-  material.set_shader_param("blue", blue_value)
+  material.set_shader_parameter("blue", blue_value)
 
 Note that the name of the uniform is a string. The string must match exactly
 with how it is written in the shader, including spelling and case.
