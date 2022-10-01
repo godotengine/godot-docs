@@ -25,7 +25,8 @@ The plugin script will come with ``_enter_tree()`` and ``_exit_tree()``
 methods, but for a main screen plugin we need to add a few extra methods.
 Add five extra methods such that the script looks like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends EditorPlugin
@@ -54,6 +55,47 @@ Add five extra methods such that the script looks like this:
     func _get_plugin_icon():
         return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
 
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+    using System;
+
+    [Tool]
+    public partial class MainScreenPlugin : EditorPlugin
+    {
+        public override void _EnterTree()
+        {
+
+        }
+
+        public override void _ExitTree()
+        {
+
+        }
+
+        public override bool _HasMainScreen()
+        {
+            return true;
+        }
+
+        public override void _MakeVisible(bool visible)
+        {
+
+        }
+
+        public override string _GetPluginName()
+        {
+            return "Main Screen Plugin";
+        }
+
+        public override Texture2D _GetPluginIcon()
+        {
+            return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+        }
+    }
+    #endif
+
 The important part in this script is the ``_has_main_screen()`` function,
 which is overloaded so it returns ``true``. This function is automatically
 called by the editor on plugin activation, to tell it that this plugin
@@ -74,7 +116,8 @@ Next, let's add a button to our example main screen plugin.
 Add a ``Button`` node, and set the text to "Print Hello" or similar.
 Add a script to the button like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends Button
@@ -82,6 +125,21 @@ Add a script to the button like this:
 
     func _on_PrintHello_pressed():
         print("Hello from the main screen plugin!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    [Tool]
+    public partial class PrintHello : Button
+    {
+        public void OnPrintHelloPressed()
+        {
+            GD.Print("Hello from the main screen plugin!");
+        }
+    }
+
 
 Then connect the "pressed" signal to itself. If you need help with signals,
 see the :ref:`doc_signals` article.
@@ -95,7 +153,8 @@ We need to update the ``main_screen_plugin.gd`` script so the plugin
 instances our main panel scene and places it where it needs to be.
 Here is the full plugin script:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends EditorPlugin
@@ -135,6 +194,61 @@ Here is the full plugin script:
     func _get_plugin_icon():
         # Must return some kind of Texture for the icon.
         return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+    using System;
+
+    [Tool]
+    public partial class MainScreenPlugin : EditorPlugin
+    {
+        PackedScene MainPanel = ResourceLoader.Load<PackedScene>("res://addons/main_screen/main_panel.tscn");
+        Control MainPanelInstance;
+
+        public override void _EnterTree()
+        {
+            MainPanelInstance = (Control)MainPanel.Instantiate();
+            // Add the main panel to the editor's main viewport.
+            GetEditorInterface().GetEditorMainScreen().AddChild(MainPanelInstance);
+            // Hide the main panel. Very much required.
+            _MakeVisible(false);
+        }
+
+        public override void _ExitTree()
+        {
+            if (MainPanelInstance != null)
+            {
+                MainPanelInstance.QueueFree();
+            }
+        }
+
+        public override bool _HasMainScreen()
+        {
+            return true;
+        }
+
+        public override void _MakeVisible(bool visible)
+        {
+            if (MainPanelInstance != null)
+            {
+                MainPanelInstance.Visible = visible;
+            }
+        }
+
+        public override string _GetPluginName()
+        {
+            return "Main Screen Plugin";
+        }
+
+        public override Texture2D _GetPluginIcon()
+        {
+            // Must return some kind of Texture for the icon.
+            return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+        }
+    }
+    #endif
 
 A couple of specific lines were added. ``MainPanel`` is a constant that holds
 a reference to the scene, and we instance it into `main_panel_instance`.
