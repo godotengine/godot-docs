@@ -150,7 +150,7 @@ selects a random integer between ``0`` and ``n-1``.
             use ``randomize()`` in our ``Main`` scene, so we won't need it here.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
-Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node onto the ``Mob`` and
+Connect the ``screen_exited()`` signal of the :ref:`VisibleOnScreenNotifier2D <class_VisibleOnScreenNotifier2D>` node to the ``Mob`` and
 add this code:
 
 .. tabs::
