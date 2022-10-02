@@ -91,7 +91,7 @@ a function if possible. Otherwise, it does the same thing as **Step Over**.
 The **Keep Debugger Open** option keeps the debugger open after a scene
 has been closed.
 The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in Editor Settings -> Debugger.
+This option is also accessible in **Editor Settings > Debugger**.
 
 .. warning::
 
