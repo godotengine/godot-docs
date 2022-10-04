@@ -42,7 +42,7 @@ Let's use instancing in practice to see how it works in Godot. We invite
 you to download the ball's sample project we prepared for you:
 :download:`instancing.zip <files/instancing.zip>`.
 
-Extract the archive on your computer. To import it you need the project manager;
+Extract the archive on your computer. To import it, you need the project manager.
 The project manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (Ctrl+Shift+Q)
 
 In the project manager, click the *Import* button to import the project.
