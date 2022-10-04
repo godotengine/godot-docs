@@ -113,7 +113,7 @@ Editing 3D scenes is done in the 3D tab. This tab can be selected
 manually, but it will be automatically enabled when a :ref:`Node3D <class_Node3D>` is
 selected.
 
-.. image:: img/tuto_3d3.png
+.. image:: img/tuto_3d3.jpg
 
 Default 3D scene navigation controls are similar to Blender (aiming to
 have some sort of consistency in the free software pipeline..), but
