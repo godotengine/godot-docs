@@ -15,7 +15,7 @@ Node setup
 
 Click Scene -> New Scene and add the following nodes:
 
-- :ref:`RigidDynamicBody2D <class_RigidDynamicBody2D>` (named ``Mob``)
+- :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
    - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
    - :ref:`CollisionShape2D <class_CollisionShape2D>`
@@ -24,7 +24,7 @@ Click Scene -> New Scene and add the following nodes:
 Don't forget to set the children so they can't be selected, like you did with
 the Player scene.
 
-In the :ref:`RigidDynamicBody2D <class_RigidDynamicBody2D>` properties, set ``Gravity Scale``
+In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale``
 to ``0``, so the mob will not fall downward. In addition, under the
 :ref:`CollisionObject2D <class_CollisionObject2D>` section, click the ``Mask`` property and uncheck the first
 box. This will ensure the mobs do not collide with each other.
@@ -61,11 +61,11 @@ Add a script to the ``Mob`` like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidDynamicBody2D
+    extends RigidBody2D
 
  .. code-tab:: csharp
 
-    public class Mob : RigidDynamicBody2D
+    public class Mob : RigidBody2D
     {
         // Don't forget to rebuild the project.
     }
@@ -82,10 +82,10 @@ Add a script to the ``Mob`` like this:
 
     #include <AnimatedSprite2D.hpp>
     #include <Godot.hpp>
-    #include <RigidDynamicBody2D.hpp>
+    #include <RigidBody2D.hpp>
 
-    class Mob : public godot::RigidDynamicBody2D {
-        GODOT_CLASS(Mob, godot::RigidDynamicBody2D)
+    class Mob : public godot::RigidBody2D {
+        GODOT_CLASS(Mob, godot::RigidBody2D)
 
         godot::AnimatedSprite2D *_animated_sprite;
 
