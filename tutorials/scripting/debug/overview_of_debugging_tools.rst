@@ -72,6 +72,8 @@ Sync Script Changes
 Any script that is saved will be reloaded on the running game. When used
 remotely on a device, this is more efficient with the network filesystem.
 
+.. _doc_debugger_tools_and_options:
+
 Script editor debug tools and options
 -------------------------------------
 
@@ -87,8 +89,9 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Keep Debugger Open** option keeps the debugger open after a scene
-has been closed. And the **Debug with External Editor** option lets you
-debug your game with an external editor.
+has been closed.
+The **Debug with External Editor** option lets you debug your game with an external editor.
+This option is also accessible in **Editor Settings > Debugger**.
 
 .. warning::
 

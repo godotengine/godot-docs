@@ -14,7 +14,7 @@ On this page, you'll learn:
   (and alternatives you can explore if it doesn't meet your expectations).
 
 Introduction
--------
+------------
 
 Historically, level of detail in 3D games involved manually authoring meshes
 with lower geometry density, then configuring the distance thresholds at which
