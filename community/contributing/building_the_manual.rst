@@ -7,39 +7,62 @@ This page explains how to build a local copy of the Godot manual using the
 Sphinx docs engine. This allows you to have local HTML files and build the
 documentation as a PDF, EPUB, or LaTeX file, for example.
 
-To get started, you need to:
+Before you get started, make sure that you have:
 
-1. Clone the `godot-docs repository <https://github.com/godotengine/godot-docs/>`__.
-2. Install `Sphinx <https://www.sphinx-doc.org/>`__
-3. To build the docs as HTML files, install the `readthedocs.org theme
-   <https://github.com/snide/sphinx_rtd_theme>`__.
-4. Install the Sphinx extensions defined in the `godot-docs repository
-   <https://github.com/godotengine/godot-docs/>`__ ``requirements.txt`` file.
+- `Git <https://git-scm.com/>`_
+- `make <https://www.gnu.org/software/make/>`_ (unless you’re using Windows)
+- `Python <https://www.python.org/>`_ 3
 
-We recommend using `pip <https://pip.pypa.io>`__, Python’s package manager to
-install all these tools. It comes pre-installed with `Python
-<https://www.python.org/>`__. Ensure that you install and use Python 3. Here are
-the commands to clone the repository and then install all requirements.
+.. note:: Python 3 should come with the ``pip3`` command. You may need to write
+    ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``.
+    If both approaches fail, `make sure that you have pip3 installed
+    <https://pip.pypa.io/en/stable/installation/>`__.
 
-.. note:: You may need to write ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``.
-          If both approaches fail, `check that you have pip3 installed <https://pip.pypa.io/en/stable/installation/>`__.
+1.  *(Optional)* Set up a virtual environment. Virtual environments prevent
+    potential conflicts between the Python packages in ``requirements.txt`` and
+    other Python packages that are installed on your system.
 
-.. code:: sh
+    a.  Create the virtual environment:
 
-    git clone https://github.com/godotengine/godot-docs.git
-    pip3 install -r requirements.txt
+        - On Windows, run ``py -m venv godot-docs-venv``
+        - On other platforms, run ``python3 -m venv godot-docs-venv``
 
+    b.  Activate the virtual environment:
 
-With the programs installed, you can build the HTML documentation from the root
-folder of this repository with the following command:
+        - On Windows, run ``godot-docs-venv\Scripts\activate.bat``
+        - On other platforms, run ``source godot-docs-venv/bin/activate``
 
-.. code:: sh
+    c.  *(Optional)* Update pre-installed packages:
 
-    # On Linux and macOS
-    make html
+        - On Windows, run ``py -m pip install --upgrade pip setuptools``
+        - On other platforms, run ``pip3 install --upgrade pip setuptools``
 
-    # On Windows, you need to execute the ``make.bat`` file instead.
-    make.bat html
+2.  Clone the docs repo:
+
+    .. code:: sh
+
+        git clone https://github.com/godotengine/godot-docs.git
+
+3.  Change directory into the docs repo:
+
+    .. code:: sh
+
+        cd godot-docs
+
+4.  Install the required packages:
+
+    .. code:: sh
+
+        pip3 install -r requirements.txt
+
+5.  Build the docs:
+
+    .. code:: sh
+
+        make html
+
+.. note:: On Windows, that command will run ``make.bat`` instead of GNU Make (or
+          an alternative).
 
 If you run into errors, you may try the following command:
 
@@ -65,7 +88,7 @@ of files.
 You can then browse the documentation by opening ``_build/html/index.html`` in
 your web browser.
 
-In case you of a ``MemoryError`` or ``EOFError``, you can remove the
+If you get a ``MemoryError`` or ``EOFError``, you can remove the
 ``classes/`` folder and run ``make`` again. This will drop the class references
 from the final HTML documentation but will keep the rest intact.
 
@@ -87,18 +110,3 @@ You can also specify a list of files to build, which can greatly speed up compil
 .. code:: sh
 
   sphinx-build -b html ./ _build classes/class_node.rst classes/class_resource.rst
-
-Building with Sphinx and virtualenv
------------------------------------
-
-If you want your Sphinx installation scoped to the project, you can install
-sphinx-build using virtualenv. To do so, run this command from this repository's
-root folder:
-
-.. code:: sh
-
-   virtualenv --system-site-packages env/
-   . env/bin/activate
-   pip3 install -r requirements.txt
-
-Then, run ``make html`` as shown above.
