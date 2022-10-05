@@ -157,7 +157,7 @@ Actions
 -------
 
 Actions are a grouping of zero or more InputEvents into a commonly
-understood title (such as "ui_left"). They are not required to represent an
+understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
 InputEvent but are useful because they abstract various inputs when
 programming the game logic.
 
