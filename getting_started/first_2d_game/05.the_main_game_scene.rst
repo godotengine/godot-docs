@@ -356,7 +356,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        var mob = (Mob)MobScene.Instance();
+        var mob = MobScene.Instance<Mob>();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
