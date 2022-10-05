@@ -156,16 +156,20 @@ There are several specialized types of InputEvent, described in the table below:
 Actions
 -------
 
-An InputEvent may or may not represent a predefined action. Actions are
-useful because they abstract the input device when programming the game
-logic. This allows for:
+Actions are a grouping of zero or more InputEvents into a commonly
+understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
+InputEvent but are useful because they abstract various inputs when
+programming the game logic.
+
+This allows for:
 
 -  The same code to work on different devices with different inputs (e.g.,
    keyboard on PC, Joypad on console).
 -  Input to be reconfigured at run-time.
+-  Actions to be triggered programmatically at run-time.
 
 Actions can be created from the Project Settings menu in the **Input Map**
-tab.
+tab and assigned input events.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_method_is_action>`,
 :ref:`InputEvent.is_pressed() <class_InputEvent_method_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
@@ -179,8 +183,8 @@ The Input singleton has a method for this:
  .. code-tab:: gdscript GDScript
 
     var ev = InputEventAction.new()
-    # Set as move_left, pressed.
-    ev.action = "move_left"
+    # Set as ui_left, pressed.
+    ev.action = "ui_left"
     ev.pressed = true
     # Feedback.
     Input.parse_input_event(ev)
@@ -188,8 +192,8 @@ The Input singleton has a method for this:
  .. code-tab:: csharp
 
     var ev = new InputEventAction();
-    // Set as move_left, pressed.
-    ev.SetAction("move_left");
+    // Set as ui_left, pressed.
+    ev.SetAction("ui_left");
     ev.SetPressed(true);
     // Feedback.
     Input.ParseInputEvent(ev);
