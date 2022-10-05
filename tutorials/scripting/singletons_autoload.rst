@@ -115,7 +115,7 @@ Custom scene switcher
 
 This tutorial will demonstrate building a scene switcher using autoloads.
 For basic scene switching, you can use the
-:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
+:ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>`
 method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
 
@@ -208,7 +208,7 @@ current scene and replace it with the requested one.
         # Add it to the active scene, as child of root.
         get_tree().root.add_child(current_scene)
 
-        # Optionally, to make it compatible with the SceneTree.change_scene() API.
+        # Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
         get_tree().current_scene = current_scene
 
  .. code-tab:: csharp
@@ -241,7 +241,7 @@ current scene and replace it with the requested one.
         // Add it to the active scene, as child of root.
         GetTree().Root.AddChild(CurrentScene);
 
-        // Optionally, to make it compatible with the SceneTree.change_scene() API.
+        // Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
         GetTree().CurrentScene = CurrentScene;
     }
 
