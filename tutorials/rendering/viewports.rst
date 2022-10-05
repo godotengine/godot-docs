@@ -53,8 +53,8 @@ Listener
 Godot supports 3D sound (in both 2D and 3D nodes); more on this can be
 found in the :ref:`Audio Streams Tutorial<doc_audio_streams>`. For this type of sound to be
 audible, the :ref:`Viewport <class_Viewport>` needs to be enabled as a listener (for 2D or 3D).
-If you are using a custom :ref:`Viewport <class_Viewport>` to display your :ref:`World <class_World>`, don't forget
-to enable this!
+If you are using a custom :ref:`Viewport <class_Viewport>` to display your :ref:`World3D <class_World3D>` or
+:ref:`World2D <class_World2D>`, don't forget to enable this!
 
 Cameras (2D & 3D)
 -----------------
@@ -81,7 +81,7 @@ or make it the current camera by calling:
     camera.make_current()
 
 By default, cameras will render all objects in their world. In 3D, cameras can use their
-:ref:`cull_mask <class_Camera_property_cull_mask>` property combined with the
+:ref:`cull_mask <class_Camera3D_property_cull_mask>` property combined with the
 :ref:`VisualInstance's <class_VisualInstance>` :ref:`layer <class_VisualInstance_property_layers>`
 property to restrict which objects are rendered.
 
@@ -106,22 +106,22 @@ settings. For more information on scaling and stretching visit the :ref:`Multipl
 Worlds
 ------
 
-For 3D, a :ref:`Viewport <class_Viewport>` will contain a :ref:`World <class_World>`. This
+For 3D, a :ref:`Viewport <class_Viewport>` will contain a :ref:`World3D <class_World3D>`. This
 is basically the universe that links physics and rendering together.
-Spatial-based nodes will register using the :ref:`World <class_World>` of the closest
-:ref:`Viewport <class_Viewport>`. By default, newly created :ref:`Viewports <class_Viewport>` do not contain a :ref:`World <class_World>` but
+Spatial-based nodes will register using the :ref:`World3D <class_World3D>` of the closest :ref:`Viewport <class_Viewport>`.
+By default, newly created :ref:`Viewports <class_Viewport>` do not contain a :ref:`World3D <class_World3D>` but
 use the same as their parent :ref:`Viewport <class_Viewport>` (the root :ref:`Viewport <class_Viewport>` always contains a
-:ref:`World <class_World>`, which is the one objects are rendered to by default). A :ref:`World <class_World>` can
+:ref:`World3D <class_World3D>`, which is the one objects are rendered to by default). A :ref:`World3D <class_World3D>` can
 be set in a :ref:`Viewport <class_Viewport>` using the "world" property, and that will separate
 all children nodes of that :ref:`Viewport <class_Viewport>` from interacting with the parent
-:ref:`Viewport's <class_Viewport>` :ref:`World <class_World>`. This is especially useful in scenarios where, for
+:ref:`Viewport's <class_Viewport>` :ref:`World3D <class_World3D>`. This is especially useful in scenarios where, for
 example, you might want to show a separate character in 3D imposed over
 the game (like in StarCraft).
 
 As a helper for situations where you want to create :ref:`Viewports <class_Viewport>` that
-display single objects and don't want to create a :ref:`World <class_World>`, :ref:`Viewport <class_Viewport>` has
-the option to use its own :ref:`World <class_World>`. This is useful when you want to
-instance 3D characters or objects in a 2D :ref:`World <class_World2D>`.
+display single objects and don't want to create a :ref:`World3D <class_World3D>`, :ref:`Viewport <class_Viewport>` has
+the option to use its own :ref:`World3D <class_World3D>`. This is useful when you want to
+instance 3D characters or objects in a 2D :ref:`World2D <class_World2D>`.
 
 For 2D, each :ref:`Viewport <class_Viewport>` always contains its own :ref:`World2D <class_World2D>`.
 This suffices in most cases, but in case sharing them may be desired, it

@@ -65,7 +65,7 @@ For nodes, there are many functions available:
   method will return the canvas RID in the server.
 * For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
   method will return the viewport RID in the server.
-* For 3D, the :ref:`World <class_World>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+* For 3D, the :ref:`World3D <class_World3D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
   and :ref:`Spatial <class_Spatial>` nodes)
   contains functions to get the *RenderingServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
