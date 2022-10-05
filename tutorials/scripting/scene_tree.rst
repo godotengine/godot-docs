@@ -174,6 +174,6 @@ function
 These are quick and useful ways to switch scenes but have the drawback
 that the game will stall until the new scene is loaded and running. At
 some point in the development of your game, it may be preferable to create proper loading
-screens with progress bar, animated indicators or thread (background)
-loading. This must be done manually using autoloads (see next chapter)
+screens with progress bar, animated indicators or threaded (background)
+loading. This must be done manually using :ref:`doc_singletons_autoload`
 and :ref:`doc_background_loading`.
