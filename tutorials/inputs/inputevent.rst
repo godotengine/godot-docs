@@ -119,8 +119,6 @@ Anatomy of an InputEvent
 anything and only contains some basic information, such as event ID
 (which is increased for each event), device index, etc.
 
-
-
 There are several specialized types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
