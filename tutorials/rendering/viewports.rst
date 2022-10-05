@@ -59,7 +59,7 @@ If you are using a custom :ref:`Viewport <class_Viewport>` to display your :ref:
 Cameras (2D & 3D)
 -----------------
 
-When using a :ref:`Camera <class_Camera>` /
+When using a :ref:`Camera3D <class_Camera3D>` /
 :ref:`Camera2D <class_Camera2D>`, cameras will always display on the
 closest parent :ref:`Viewport <class_Viewport>` (going towards the root). For example, in the
 following hierarchy:
@@ -82,14 +82,14 @@ or make it the current camera by calling:
 
 By default, cameras will render all objects in their world. In 3D, cameras can use their
 :ref:`cull_mask <class_Camera3D_property_cull_mask>` property combined with the
-:ref:`VisualInstance's <class_VisualInstance>` :ref:`layer <class_VisualInstance_property_layers>`
+:ref:`VisualInstance3D's <class_VisualInstance3D>` :ref:`layer <class_VisualInstance3D_property_layers>`
 property to restrict which objects are rendered.
 
 Scale & stretching
 ------------------
 
 :ref:`Viewports <class_Viewport>` have a "size" property, which represents the size of the :ref:`Viewport <class_Viewport>`
-in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`ViewportContainers <class_viewportcontainer>`,
+in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`ViewportContainers <class_ViewportContainer>`,
 these values are overridden, but for all others, this sets their resolution.
 
 It is also possible to scale the 2D content and make the :ref:`Viewport <class_Viewport>` resolution
@@ -162,13 +162,13 @@ it using (for example):
 Viewport Container
 ------------------
 
-If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer <class_viewportcontainer>`, it will become active and display anything it has inside. The layout looks like this:
+If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer <class_ViewportContainer>`, it will become active and display anything it has inside. The layout looks like this:
 
 .. image:: img/container.png
 
-The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`ViewportContainer <class_viewportcontainer>` completely
-if :ref:`Stretch<class_viewportcontainer_property_stretch>` is set to ``true`` in :ref:`ViewportContainer <class_viewportcontainer>`.
-Note: The size of the :ref:`ViewportContainer <class_viewportcontainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
+The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`ViewportContainer <class_ViewportContainer>` completely
+if :ref:`Stretch<class_ViewportContainer_property_stretch>` is set to ``true`` in :ref:`ViewportContainer <class_ViewportContainer>`.
+Note: The size of the :ref:`ViewportContainer <class_ViewportContainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
 
 Rendering
 ---------
