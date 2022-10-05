@@ -250,7 +250,7 @@ help you and your team avoid mistakes when setting up scenes.
 
 When using node configuration warnings, when any value that should affect or
 remove the warning changes, you need to call
-:ref:`update_configuration_warning<class_Node_method_update_configuration_warning>` .
+:ref:`update_configuration_warnings<class_Node_method_update_configuration_warnings>` .
 By default, the warning only updates when closing and reopening the scene.
 
 .. tabs::
