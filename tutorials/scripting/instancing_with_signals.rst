@@ -97,7 +97,7 @@ Here is the code for the player using signals to emit the bullet:
     func _input(event):
         if event is InputEventMouseButton:
             if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-                emit_signal("shoot", Bullet, rotation, position)
+                shoot.emit(Bullet, rotation, position)
 
     func _process(delta):
         look_at(get_global_mouse_position())
