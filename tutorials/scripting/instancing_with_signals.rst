@@ -63,7 +63,7 @@ You could do this by adding the bullet to the main scene directly:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var bullet_instance = Bullet.instance()
+    var bullet_instance = Bullet.instantiate()
     get_parent().add_child(bullet_instance)
 
  .. code-tab:: csharp
@@ -96,7 +96,7 @@ Here is the code for the player using signals to emit the bullet:
 
     func _input(event):
         if event is InputEventMouseButton:
-            if event.button_index == BUTTON_LEFT and event.pressed:
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
                 emit_signal("shoot", Bullet, rotation, position)
 
     func _process(delta):
@@ -135,11 +135,11 @@ In the main scene, we then connect the player's signal (it will appear in the
  .. code-tab:: gdscript GDScript
 
     func _on_Player_shoot(Bullet, direction, location):
-        var b = Bullet.instance()
-        add_child(b)
-        b.rotation = direction
-        b.position = location
-        b.velocity = b.velocity.rotated(direction)
+        var spawned_bullet = Bullet.instantiate()
+        add_child(spawned_bullet)
+        spawned_bullet.rotation = direction
+        spawned_bullet.position = location
+        spawned_bullet.velocity = spawned_bullet.velocity.rotated(direction)
 
  .. code-tab:: csharp
 
