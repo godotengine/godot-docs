@@ -4,6 +4,9 @@
 3D Navigation Overview
 ======================
 
+Godot provides multiple objects, classes and servers to facilitate grid-based or mesh-based navigation and pathfinding for 2D and 3D games. 
+The following section provides a quick overview over all available navigation related objects in Godot for 3D scenes and their primary use.
+
 Godot provides the following objects and classes for 3D navigation:
 
 - :ref:`Astar3D<class_Astar3D>`
