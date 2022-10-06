@@ -129,7 +129,7 @@ Here is the code for the player using signals to emit the bullet:
     }
 
 In the main scene, we then connect the player's signal (it will appear in the
-"Node" tab).
+"Node" tab of the Inspector)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
