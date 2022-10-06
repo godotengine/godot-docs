@@ -170,8 +170,8 @@ is required in the submission form here as well.
     in the AssetLib search results and on the asset's page). Should be an image
     in either the PNG or JPG format.
     
-    The **icon** should be a square, its aspect ratio should be 1:1. It should
-    also ideally have a minimum resolution of 64x64 pixels.
+    The **icon** must be square (1:1 aspect ratio). It should have a minimum
+    resolution of 128×128 pixels.
   
 * **License**:
     The license under which you are distributing the asset. The list
