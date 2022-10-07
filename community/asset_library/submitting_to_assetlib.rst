@@ -110,9 +110,6 @@ library a better place for all users.
   keep with their project, so a copy ensures they always have those files handy
   (and helps them fulfill your licensing terms).
 
-* The **icon** should be a square, its aspect ratio should be 1:1. It should
-  also ideally have a minimum resolution of 64x64 pixels.
-
 * While the asset library allows more than just GitHub, consider
   hosting your asset's source code on **GitHub**. Other services may not
   work reliably, and a lack of familiarity can be a barrier to contributors.
@@ -172,6 +169,10 @@ is required in the submission form here as well.
     The URL to your asset's icon (which will be used as a thumbnail
     in the AssetLib search results and on the asset's page). Should be an image
     in either the PNG or JPG format.
+    
+    The **icon** must be square (1:1 aspect ratio). It should have a minimum
+    resolution of 128×128 pixels.
+  
 * **License**:
     The license under which you are distributing the asset. The list
     includes a variety of free and open-source software licenses, such as GPL
