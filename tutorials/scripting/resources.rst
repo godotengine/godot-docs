@@ -19,10 +19,13 @@ do anything on their own: instead, nodes use the data contained in resources.
 Anything Godot saves or loads from disk is a resource. Be it a scene (a ``.tscn``
 or an ``.scn`` file), an image, a script... Here are some :ref:`Resource <class_Resource>` examples:
 
-:ref:`Texture <class_Texture>`, :ref:`Script <class_Script>`, :ref:`Mesh
-<class_Mesh>`, :ref:`Animation <class_Animation>`, :ref:`AudioStream
-<class_AudioStream>`, :ref:`Font <class_Font>`, :ref:`Translation
-<class_Translation>`.
+- :ref:`Texture <class_Texture>`
+- :ref:`Script <class_Script>`
+- :ref:`Mesh <class_Mesh>`
+- :ref:`Animation <class_Animation>`
+- :ref:`AudioStream <class_AudioStream>`
+- :ref:`Font <class_Font>`
+- :ref:`Translation <class_Translation>`
 
 When the engine loads a resource from disk, **it only loads it once**. If a copy
 of that resource is already in memory, trying to load the resource again will
