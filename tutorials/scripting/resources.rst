@@ -265,13 +265,13 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
             print(stats.health) 
             # Prints "10"
   
-
+  .. code-tab:: csharp
         // Bot.cs
         using System;
         using Godot;
 
         namespace ExampleProject {
-            public class Bot : KinematicBody
+            public class Bot : CharacterBody3D
             {
                 [Export]
                 public Resource Stats;
