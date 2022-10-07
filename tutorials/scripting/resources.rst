@@ -113,7 +113,7 @@ resources of type :ref:`PackedScene <class_PackedScene>`. The
 scene is packed inside a :ref:`Resource <class_Resource>`.
 
 To get an instance of the scene, you have to use the
-:ref:`PackedScene.instance() <class_PackedScene_method_instance>` method.
+:ref:`PackedScene.instantiate() <class_PackedScene_method_instantiate>` method.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
