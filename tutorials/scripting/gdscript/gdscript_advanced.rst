@@ -364,9 +364,9 @@ The range() function can take 3 arguments:
 
 ::
 
-    range(n) # Will go from 0 to n-1.
-    range(b, n) # Will go from b to n-1.
-    range(b, n, s) # Will go from b to n-1, in steps of s.
+    range(n) # Will count from 0 to n in steps of 1. The parameter n is exclusive.
+    range(b, n) # Will count from b to n in steps of 1. The parameters b is inclusive. The parameter n is exclusive.
+    range(b, n, s) # Will count from b to n, in steps of s. The parameters b is inclusive. The parameter n is exclusive.
 
 Some examples involving C-style for loops:
 
