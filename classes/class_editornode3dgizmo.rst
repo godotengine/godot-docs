@@ -59,9 +59,9 @@ Methods
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                          | :ref:`clear<class_EditorNode3DGizmo_method_clear>` **(** **)**                                                                                                                                                                                                                                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` | :ref:`get_plugin<class_EditorNode3DGizmo_method_get_plugin>` **(** **)** |const|                                                                                                                                                                                                                                        |
+| :ref:`Node3D<class_Node3D>`                                   | :ref:`get_node_3d<class_EditorNode3DGizmo_method_get_node_3d>` **(** **)** |const|                                                                                                                                                                                                                                      |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node3D<class_Node3D>`                                   | :ref:`get_spatial_node<class_EditorNode3DGizmo_method_get_spatial_node>` **(** **)** |const|                                                                                                                                                                                                                            |
+| :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` | :ref:`get_plugin<class_EditorNode3DGizmo_method_get_plugin>` **(** **)** |const|                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedInt32Array<class_PackedInt32Array>`               | :ref:`get_subgizmo_selection<class_EditorNode3DGizmo_method_get_subgizmo_selection>` **(** **)** |const|                                                                                                                                                                                                                |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,7 +69,7 @@ Methods
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                          | :ref:`set_hidden<class_EditorNode3DGizmo_method_set_hidden>` **(** :ref:`bool<class_bool>` hidden **)**                                                                                                                                                                                                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                          | :ref:`set_spatial_node<class_EditorNode3DGizmo_method_set_spatial_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                       |
+| void                                                          | :ref:`set_node_3d<class_EditorNode3DGizmo_method_set_node_3d>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Method Descriptions
@@ -237,19 +237,19 @@ Removes everything in the gizmo including meshes, collisions and handles.
 
 ----
 
+.. _class_EditorNode3DGizmo_method_get_node_3d:
+
+- :ref:`Node3D<class_Node3D>` **get_node_3d** **(** **)** |const|
+
+Returns the :ref:`Node3D<class_Node3D>` node associated with this gizmo.
+
+----
+
 .. _class_EditorNode3DGizmo_method_get_plugin:
 
 - :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` **get_plugin** **(** **)** |const|
 
 Returns the :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` that owns this gizmo. It's useful to retrieve materials using :ref:`EditorNode3DGizmoPlugin.get_material<class_EditorNode3DGizmoPlugin_method_get_material>`.
-
-----
-
-.. _class_EditorNode3DGizmo_method_get_spatial_node:
-
-- :ref:`Node3D<class_Node3D>` **get_spatial_node** **(** **)** |const|
-
-Returns the Node3D node associated with this gizmo.
 
 ----
 
@@ -277,9 +277,9 @@ Sets the gizmo's hidden state. If ``true``, the gizmo will be hidden. If ``false
 
 ----
 
-.. _class_EditorNode3DGizmo_method_set_spatial_node:
+.. _class_EditorNode3DGizmo_method_set_node_3d:
 
-- void **set_spatial_node** **(** :ref:`Node<class_Node>` node **)**
+- void **set_node_3d** **(** :ref:`Node<class_Node>` node **)**
 
 Sets the reference :ref:`Node3D<class_Node3D>` node for the gizmo. ``node`` must inherit from :ref:`Node3D<class_Node3D>`.
 

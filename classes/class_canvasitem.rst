@@ -328,6 +328,8 @@ Property Descriptions
 | *Getter*  | is_clipping_children()   |
 +-----------+--------------------------+
 
+Allows the current node to clip children nodes, essentially acting as a mask.
+
 ----
 
 .. _class_CanvasItem_property_light_mask:
@@ -724,17 +726,17 @@ Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner u
     # If using this method in a script that redraws constantly, move the
     # `default_font` declaration to a member variable assigned in `_ready()`
     # so the Control is only created once.
-    var default_font = Control.new().get_font("font")
-    var default_font_size = Control.new().get_font_size("font_size")
-    draw_string(default_font, Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, font_size)
+    var default_font = ThemeDB.fallback_font
+    var default_font_size = ThemeDB.fallback_font_size
+    draw_string(default_font, Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, default_font_size)
 
  .. code-tab:: csharp
 
     // If using this method in a script that redraws constantly, move the
-    // `default_font` declaration to a member variable assigned in `_ready()`
+    // `default_font` declaration to a member variable assigned in `_Ready()`
     // so the Control is only created once.
-    Font defaultFont = new Control().GetFont("font");
-    int defaultFontSize = new Control().GetFontSize("font_size");
+    Font defaultFont = ThemeDB.FallbackFont;
+    int defaultFontSize = ThemeDB.FallbackFontSize;
     DrawString(defaultFont, new Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, defaultFontSize);
 
 

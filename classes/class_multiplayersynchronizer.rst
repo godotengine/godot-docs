@@ -19,7 +19,7 @@ Description
 
 By default, ``MultiplayerSynchronizer`` synchronizes configured properties to all peers.
 
-Visiblity can be handled directly with :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+Visibility can be handled directly with :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
 
 
 
@@ -195,7 +195,7 @@ Queries the current visibility for peer ``peer``.
 
 - void **remove_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
 
-Removes a peer visiblity filter from this synchronizer.
+Removes a peer visibility filter from this synchronizer.
 
 ----
 

@@ -25,52 +25,115 @@ A ``Tween`` can be created by using either :ref:`SceneTree.create_tween<class_Sc
 
 A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the ``Tween`` object, using :ref:`tween_property<class_Tween_method_tween_property>`, :ref:`tween_interval<class_Tween_method_tween_interval>`, :ref:`tween_callback<class_Tween_method_tween_callback>` or :ref:`tween_method<class_Tween_method_tween_method>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
     tween.tween_property($Sprite, "modulate", Color.red, 1)
     tween.tween_property($Sprite, "scale", Vector2(), 1)
     tween.tween_callback($Sprite.queue_free)
 
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
+    tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f);
+    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+
+
+
 This sequence will make the ``$Sprite`` node turn red, then shrink, before finally calling :ref:`Node.queue_free<class_Node_method_queue_free>` to free the sprite. :ref:`Tweener<class_Tweener>`\ s are executed one after another by default. This behavior can be changed using :ref:`parallel<class_Tween_method_parallel>` and :ref:`set_parallel<class_Tween_method_set_parallel>`.
 
 When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` methods, a chained method call can be used to tweak the properties of this :ref:`Tweener<class_Tweener>`. For example, if you want to set a different transition type in the above example, you can use :ref:`set_trans<class_Tween_method_set_trans>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
     tween.tween_property($Sprite, "modulate", Color.red, 1).set_trans(Tween.TRANS_SINE)
     tween.tween_property($Sprite, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
     tween.tween_callback($Sprite.queue_free)
 
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f).SetTrans(Tween.TransitionType.Sine);
+    tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f).SetTrans(Tween.TransitionType.Bounce);
+    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+
+
+
 Most of the ``Tween`` methods can be chained this way too. In the following example the ``Tween`` is bound to the running script's node and a default transition is set for its :ref:`Tweener<class_Tweener>`\ s:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
     tween.tween_property($Sprite, "modulate", Color.red, 1)
     tween.tween_property($Sprite, "scale", Vector2(), 1)
     tween.tween_callback($Sprite.queue_free)
 
+ .. code-tab:: csharp
+
+    var tween = GetTree().CreateTween().BindNode(this).SetTrans(Tween.TransitionType.Elastic);
+    tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
+    tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f);
+    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+
+
+
 Another interesting use for ``Tween``\ s is animating arbitrary sets of objects:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     for sprite in get_children():
         tween.tween_property(sprite, "position", Vector2(0, 0), 1)
 
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    foreach (Node sprite in GetChildren())
+        tween.TweenProperty(sprite, "position", Vector2.Zero, 1.0f);
+
+
+
 In the example above, all children of a node are moved one after another to position (0, 0).
 
 You should avoid using more than one ``Tween`` per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the ``Tween`` to a variable:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween
     func animate():
         if tween:
             tween.kill() # Abort the previous animation.
         tween = create_tween()
+
+ .. code-tab:: csharp
+
+    private Tween tween;
+    
+    public void Animate()
+    {
+        if (tween != null)
+            tween.Kill(); // Abort the previous animation
+        tween = CreateTween();
+    }
+
+
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
@@ -282,12 +345,24 @@ For a shorter way to create and bind a ``Tween``, you can use :ref:`Node.create_
 
 Used to chain two :ref:`Tweener<class_Tweener>`\ s after :ref:`set_parallel<class_Tween_method_set_parallel>` is called with ``true``.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween().set_parallel(true)
     tween.tween_property(...)
     tween.tween_property(...) # Will run parallelly with above.
     tween.chain().tween_property(...) # Will run after two above are finished.
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween().SetParallel(true);
+    tween.TweenProperty(...);
+    tween.TweenProperty(...); // Will run parallelly with above.
+    tween.Chain().TweenProperty(...); // Will run after two above are finished.
+
+
 
 ----
 
@@ -361,12 +436,24 @@ Aborts all tweening operations and invalidates the ``Tween``.
 
 Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one. Example:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_property(...)
     tween.parallel().tween_property(...)
     tween.parallel().tween_property(...)
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(...);
+    tween.Parallel().TweenProperty(...);
+    tween.Parallel().TweenProperty(...);
+
+
 
 All :ref:`Tweener<class_Tweener>`\ s in the example will run at the same time.
 
@@ -470,18 +557,40 @@ Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method
 
 Example: object that keeps shooting every 1 second.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween().set_loops()
     tween.tween_callback(shoot).set_delay(1)
 
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween().SetLoops();
+    tween.TweenCallback(new Callable(Shoot)).SetDelay(1.0f);
+
+
+
 Example: turning a sprite red and then blue, with 2 second delay.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
     tween.tween_callback($Sprite.set_modulate.bind(Color.red)).set_delay(2)
     tween.tween_callback($Sprite.set_modulate.bind(Color.blue)).set_delay(2)
+
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    Sprite2D sprite = GetNode<Sprite2D>("Sprite");
+    tween.TweenCallback(new Callable(() => sprite.Modulate = Colors.Red)).SetDelay(2.0f);
+    tween.TweenCallback(new Callable(() => sprite.Modulate = Colors.Blue)).SetDelay(2.0f);
+
+
 
 ----
 
@@ -493,15 +602,29 @@ Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This metho
 
 Example: creating an interval in code execution.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     # ... some code
     await create_tween().tween_interval(2).finished
     # ... more code
 
+ .. code-tab:: csharp
+
+    // ... some code
+    await ToSignal(CreateTween().TweenInterval(2.0f), Tween.SignalName.Finished);
+    // ... more code
+
+
+
 Example: creating an object that moves back and forth and jumps every few seconds.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween().set_loops()
     tween.tween_property($Sprite, "position:x", 200.0, 1).as_relative()
@@ -510,6 +633,18 @@ Example: creating an object that moves back and forth and jumps every few second
     tween.tween_property($Sprite, "position:x", -200.0, 1).as_relative()
     tween.tween_callback(jump)
     tween.tween_interval(2)
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween().SetLoops();
+    tween.TweenProperty(GetNode("Sprite"), "position:x", 200.0f, 1.0f).AsRelative();
+    tween.TweenCallback(new Callable(Jump));
+    tween.TweenInterval(2.0f);
+    tween.TweenProperty(GetNode("Sprite"), "position:x", -200.0f, 1.0f).AsRelative();
+    tween.TweenCallback(new Callable(Jump));
+    tween.TweenInterval(2.0f);
+
+
 
 ----
 
@@ -521,14 +656,27 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
 
 Example: making a 3D object look from one point to another point.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_method(look_at.bind(Vector3.UP), Vector3(-1, 0, -1), Vector3(1, 0, -1), 1) # The look_at() method takes up vector as second argument.
 
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenMethod(new Callable(() => LookAt(Vector3.Up)), new Vector3(-1.0f, 0.0f, -1.0f), new Vector3(1.0f, 0.0f, -1.0f), 1.0f); // The LookAt() method takes up vector as second argument.
+
+
+
 Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate method and after a delay.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func _ready():
         var tween = create_tween()
@@ -536,6 +684,23 @@ Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate me
     
     func set_label_text(value: int):
         $Label.text = "Counting " + str(value)
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        base._Ready();
+    
+        Tween tween = CreateTween();
+        tween.TweenMethod(new Callable(SetLabelText), 0.0f, 10.0f, 1.0f).SetDelay(1.0f);
+    }
+    
+    private void SetLabelText(int value)
+    {
+        GetNode<Label>("Label").Text = $"Counting {value}";
+    }
+
+
 
 ----
 
@@ -545,11 +710,22 @@ Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate me
 
 Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts. For example:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_property($Sprite, "position", Vector2(100, 200), 1)
     tween.tween_property($Sprite, "position", Vector2(200, 300), 1)
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(GetNode("Sprite"), "position", new Vector2(100.0f, 200.0f), 1.0f);
+    tween.TweenProperty(GetNode("Sprite"), "position", new Vector2(200.0f, 300.0f), 1.0f);
+
+
 
 will move the sprite to position (100, 200) and then to (200, 300). If you use :ref:`PropertyTweener.from<class_PropertyTweener_method_from>` or :ref:`PropertyTweener.from_current<class_PropertyTweener_method_from_current>`, the starting position will be overwritten by the given value instead. See other methods in :ref:`PropertyTweener<class_PropertyTweener>` to see how the tweening can be tweaked further.
 
@@ -557,11 +733,22 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 
 Example: moving object twice from the same position, with different transition types.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1).as_relative().set_trans(Tween.TRANS_SINE)
     tween.tween_property($Sprite, "position", Vector2.RIGHT * 300, 1).as_relative().from_current().set_trans(Tween.TRANS_EXPO)
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(GetNode("Sprite"), "position", Vector2.Right * 300.0f, 1.0f).AsRelative().SetTrans(Tween.TransitionType.Sine);
+    tween.TweenProperty(GetNode("Sprite"), "position", Vector2.Right * 300.0f, 1.0f).AsRelative().FromCurrent().SetTrans(Tween.TransitionType.Expo);
+
+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

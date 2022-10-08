@@ -33,24 +33,38 @@ Properties
 Theme Properties
 ----------------
 
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSlider_theme_icon_grabber>`                                |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_VSlider_theme_icon_grabber_disabled>`              |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_VSlider_theme_icon_grabber_highlight>`            |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_VSlider_theme_icon_tick>`                                      |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_VSlider_theme_style_grabber_area>`                     |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_VSlider_theme_style_grabber_area_highlight>` |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_VSlider_theme_style_slider>`                                 |
-+-----------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`             | :ref:`grabber_offset<class_VSlider_theme_constant_grabber_offset>`              | ``0`` |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSlider_theme_icon_grabber>`                                |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_VSlider_theme_icon_grabber_disabled>`              |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_VSlider_theme_icon_grabber_highlight>`            |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_VSlider_theme_icon_tick>`                                      |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_VSlider_theme_style_grabber_area>`                     |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_VSlider_theme_style_grabber_area_highlight>` |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_VSlider_theme_style_slider>`                                 |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_VSlider_theme_constant_grabber_offset:
+
+- :ref:`int<class_int>` **grabber_offset**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Horizontal offset of the grabber.
+
+----
 
 .. _class_VSlider_theme_icon_grabber:
 

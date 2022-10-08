@@ -32,11 +32,23 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_from_images** **(** :ref:`Image[]<class_Image>` images **)**
 
+Creates an ``ImageTextureLayered`` from an array of :ref:`Image<class_Image>`\ s. The first image decides the width, height, image format and mipmapping setting. The other images must have the same width, height, image format and mipmapping setting.
+
+Each :ref:`Image<class_Image>` represents one ``layer``.
+
 ----
 
 .. _class_ImageTextureLayered_method_update_layer:
 
 - void **update_layer** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
+
+Replaces the existing :ref:`Image<class_Image>` data at the given ``layer`` with this new image.
+
+The given :ref:`Image<class_Image>` must have the same width, height, image format and mipmapping setting (a ``bool`` value) as the rest of the referenced images.
+
+If the image format is unsupported, it will be decompressed and converted to a similar and supported :ref:`Format<enum_Image_Format>`.
+
+The update is immediate: synced with the draw.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

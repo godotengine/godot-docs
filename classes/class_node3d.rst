@@ -12,7 +12,7 @@ Node3D
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
+**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
 
 Most basic 3D game object, parent of all 3D-related nodes.
 
@@ -211,6 +211,8 @@ Constants
 
 .. _class_Node3D_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
+.. _class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
+
 - **NOTIFICATION_TRANSFORM_CHANGED** = **2000** --- Node3D nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Node3D_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has at least one valid gizmo.
@@ -220,6 +222,10 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 - **NOTIFICATION_EXIT_WORLD** = **42** --- Node3D nodes receives this notification when they are unregistered from current :ref:`World3D<class_World3D>` resource.
 
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43** --- Node3D nodes receives this notification when their visibility changes.
+
+- **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = **44** --- Node3D nodes receives this notification when their local transform changes. This is not received when the transform of a parent node is changed.
+
+In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_local_transform<class_Node3D_method_set_notify_local_transform>`.
 
 Property Descriptions
 ---------------------
@@ -575,7 +581,7 @@ The local up axis (+Y) points as close to the ``up`` vector as possible while st
 
 The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero, and the direction from the node's position to the ``target`` vector cannot be parallel to the ``up`` vector.
 
-Operations take place in global space.
+Operations take place in global space, which means that the node must be in the scene tree.
 
 ----
 

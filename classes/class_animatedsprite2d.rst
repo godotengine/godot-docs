@@ -19,6 +19,10 @@ Description
 
 ``AnimatedSprite2D`` is similar to the :ref:`Sprite2D<class_Sprite2D>` node, except it carries multiple textures as animation frames. Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which allows you to import image files (or a folder containing said files) to provide the animation frames for the sprite. The :ref:`SpriteFrames<class_SpriteFrames>` resource can be configured in the editor via the SpriteFrames bottom panel.
 
+After setting up :ref:`frames<class_AnimatedSprite2D_property_frames>`, :ref:`play<class_AnimatedSprite2D_method_play>` may be called. It's also possible to select an :ref:`animation<class_AnimatedSprite2D_property_animation>` and toggle :ref:`playing<class_AnimatedSprite2D_property_playing>`, even within the editor.
+
+To pause the current animation, call :ref:`stop<class_AnimatedSprite2D_method_stop>` or set :ref:`playing<class_AnimatedSprite2D_property_playing>` to ``false``. Alternatively, setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0`` also preserves the current frame's elapsed time.
+
 \ **Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
 Tutorials
@@ -202,7 +206,7 @@ The texture's drawing offset.
 | *Getter*  | is_playing()       |
 +-----------+--------------------+
 
-If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing.
+If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing. Setting this property to ``false`` is the equivalent of calling :ref:`stop<class_AnimatedSprite2D_method_stop>`.
 
 ----
 
@@ -218,7 +222,7 @@ If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is 
 | *Getter*  | get_speed_scale()      |
 +-----------+------------------------+
 
-The animation speed is multiplied by this value.
+The animation speed is multiplied by this value. If set to a negative value, the animation is played in reverse. If set to ``0``, the animation is paused, preserving the current frame's elapsed time.
 
 Method Descriptions
 -------------------
@@ -227,7 +231,7 @@ Method Descriptions
 
 - void **play** **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)**
 
-Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation will be played in reverse.
+Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation is played in reverse.
 
 ----
 
@@ -235,7 +239,9 @@ Plays the animation named ``anim``. If no ``anim`` is provided, the current anim
 
 - void **stop** **(** **)**
 
-Stops the current animation (does not reset the frame counter).
+Stops the current :ref:`animation<class_AnimatedSprite2D_property_animation>` at the current :ref:`frame<class_AnimatedSprite2D_property_frame>`.
+
+\ **Note:** This method resets the current frame's elapsed time. If this behavior is undesired, consider setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0``, instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -22,25 +22,23 @@ Tutorials
 Properties
 ----------
 
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`StringName<class_StringName>`                                    | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>`                       | ``&""``          |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`String<class_String>`                                            | :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>`                     | ``""``           |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`                                        | :ref:`advance_expression_base_node<class_AnimationNodeStateMachineTransition_property_advance_expression_base_node>` | ``NodePath("")`` |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`                                 | ``false``        |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`                                                | :ref:`disabled<class_AnimationNodeStateMachineTransition_property_disabled>`                                         | ``false``        |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`                                                  | :ref:`priority<class_AnimationNodeStateMachineTransition_property_priority>`                                         | ``1``            |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` | :ref:`switch_mode<class_AnimationNodeStateMachineTransition_property_switch_mode>`                                   | ``0``            |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`Curve<class_Curve>`                                              | :ref:`xfade_curve<class_AnimationNodeStateMachineTransition_property_xfade_curve>`                                   |                  |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`                                              | :ref:`xfade_time<class_AnimationNodeStateMachineTransition_property_xfade_time>`                                     | ``0.0``          |
-+------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+------------------+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`StringName<class_StringName>`                                    | :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>`   | ``&""``   |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`String<class_String>`                                            | :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>` | ``""``    |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                | :ref:`auto_advance<class_AnimationNodeStateMachineTransition_property_auto_advance>`             | ``false`` |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                                | :ref:`disabled<class_AnimationNodeStateMachineTransition_property_disabled>`                     | ``false`` |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`int<class_int>`                                                  | :ref:`priority<class_AnimationNodeStateMachineTransition_property_priority>`                     | ``1``     |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`SwitchMode<enum_AnimationNodeStateMachineTransition_SwitchMode>` | :ref:`switch_mode<class_AnimationNodeStateMachineTransition_property_switch_mode>`               | ``0``     |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`Curve<class_Curve>`                                              | :ref:`xfade_curve<class_AnimationNodeStateMachineTransition_property_xfade_curve>`               |           |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+| :ref:`float<class_float>`                                              | :ref:`xfade_time<class_AnimationNodeStateMachineTransition_property_xfade_time>`                 | ``0.0``   |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
 
 Signals
 -------
@@ -115,22 +113,6 @@ Turn on auto advance when this condition is set. The provided name will become a
 +-----------+-------------------------------+
 
 Use an expression as a condition for state machine transitions. It is possible to create complex animation advance conditions for switching between states and gives much greater flexibility for creating complex state machines by directly interfacing with the script code.
-
-----
-
-.. _class_AnimationNodeStateMachineTransition_property_advance_expression_base_node:
-
-- :ref:`NodePath<class_NodePath>` **advance_expression_base_node**
-
-+-----------+-----------------------------------------+
-| *Default* | ``NodePath("")``                        |
-+-----------+-----------------------------------------+
-| *Setter*  | set_advance_expression_base_node(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | get_advance_expression_base_node()      |
-+-----------+-----------------------------------------+
-
-The path to the :ref:`Node<class_Node>` used to evaluate an :ref:`Expression<class_Expression>` if one is not explicitly specified internally.
 
 ----
 

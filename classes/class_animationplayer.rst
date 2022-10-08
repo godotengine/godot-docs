@@ -19,7 +19,7 @@ Description
 
 An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of :ref:`AnimationLibrary<class_AnimationLibrary>` resources and custom blend times between animation transitions.
 
-Some methods and properties use a single key to refence an animation directly. These keys are formatted as the key for the library, followed by a forward slash, then the key for the animation whithin the library, for example ``"movement/run"``. If the library's key is an empty string (known as the default library), the forward slash is omitted, being the same key used by the library.
+Some methods and properties use a single key to reference an animation directly. These keys are formatted as the key for the library, followed by a forward slash, then the key for the animation within the library, for example ``"movement/run"``. If the library's key is an empty string (known as the default library), the forward slash is omitted, being the same key used by the library.
 
 \ ``AnimationPlayer`` is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an ``AnimationPlayer`` node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>`, but it requires doing everything by code.
 
@@ -142,6 +142,14 @@ Emitted when a queued animation plays after the previous animation finished. See
 Notifies when an animation finished playing.
 
 \ **Note:** This signal is not emitted if an animation is looping.
+
+----
+
+.. _class_AnimationPlayer_signal_animation_list_changed:
+
+- **animation_list_changed** **(** **)**
+
+Notifies when an animation list is changed.
 
 ----
 
@@ -578,7 +586,7 @@ Queues an animation for playback once the current one is done.
 
 - void **remove_animation_library** **(** :ref:`StringName<class_StringName>` name **)**
 
-Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` assosiated with the key ``name``.
+Removes the :ref:`AnimationLibrary<class_AnimationLibrary>` associated with the key ``name``.
 
 ----
 

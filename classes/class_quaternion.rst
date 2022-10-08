@@ -244,7 +244,7 @@ Method Descriptions
 
 Returns the angle between this quaternion and ``to``. This is the magnitude of the angle you would need to rotate by to get from one to the other.
 
-\ **Note:** This method has an abnormally high number of floating-point errors, so methods such as ``is_zero_approx`` will not work reliably.
+\ **Note:** The magnitude of the floating-point error for this method is abnormally high, so methods such as ``is_zero_approx`` will not work reliably.
 
 ----
 

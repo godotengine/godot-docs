@@ -35,18 +35,38 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false`` |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | ``false`` |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | ``1.0``   |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |           |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------+
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 1)`` |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false``             |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | ``false``             |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | ``1.0``               |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |                       |
++-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_CollisionShape2D_property_debug_color:
+
+- :ref:`Color<class_Color>` **debug_color**
+
++-----------+------------------------+
+| *Default* | ``Color(0, 0, 0, 1)``  |
++-----------+------------------------+
+| *Setter*  | set_debug_color(value) |
++-----------+------------------------+
+| *Getter*  | get_debug_color()      |
++-----------+------------------------+
+
+The collision shape debug color.
+
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 1)`` value documented here is a placeholder, and not the actual default debug color.
+
+----
 
 .. _class_CollisionShape2D_property_disabled:
 

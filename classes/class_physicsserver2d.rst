@@ -37,6 +37,10 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`area_get_canvas_instance_id<class_PhysicsServer2D_method_area_get_canvas_instance_id>` **(** :ref:`RID<class_RID>` area **)** |const|                                                                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`area_get_collision_layer<class_PhysicsServer2D_method_area_get_collision_layer>` **(** :ref:`RID<class_RID>` area **)** |const|                                                                                                                                                                  |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                             | :ref:`area_get_collision_mask<class_PhysicsServer2D_method_area_get_collision_mask>` **(** :ref:`RID<class_RID>` area **)** |const|                                                                                                                                                                    |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                             | :ref:`area_get_object_instance_id<class_PhysicsServer2D_method_area_get_object_instance_id>` **(** :ref:`RID<class_RID>` area **)** |const|                                                                                                                                                            |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                                     | :ref:`area_get_param<class_PhysicsServer2D_method_area_get_param>` **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` param **)** |const|                                                                                                                      |
@@ -681,6 +685,22 @@ Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Are
 .. _class_PhysicsServer2D_method_area_get_canvas_instance_id:
 
 - :ref:`int<class_int>` **area_get_canvas_instance_id** **(** :ref:`RID<class_RID>` area **)** |const|
+
+----
+
+.. _class_PhysicsServer2D_method_area_get_collision_layer:
+
+- :ref:`int<class_int>` **area_get_collision_layer** **(** :ref:`RID<class_RID>` area **)** |const|
+
+Returns the physics layer or layers an area belongs to.
+
+----
+
+.. _class_PhysicsServer2D_method_area_get_collision_mask:
+
+- :ref:`int<class_int>` **area_get_collision_mask** **(** :ref:`RID<class_RID>` area **)** |const|
+
+Returns the physics layer or layers an area can contact with.
 
 ----
 

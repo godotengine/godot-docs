@@ -67,9 +67,9 @@ flags **SaverFlags**:
 
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8** --- Do not save editor-specific metadata (identified by their ``__editor`` prefix).
 
-- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`File.big_endian<class_File_property_big_endian>`).
+- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`FileAccess.big_endian<class_FileAccess_property_big_endian>`).
 
-- **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`File.COMPRESSION_ZSTD<class_File_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
+- **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`FileAccess.COMPRESSION_ZSTD<class_FileAccess_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
 
 - **FLAG_REPLACE_SUBRESOURCE_PATHS** = **64** --- Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
 

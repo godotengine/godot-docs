@@ -19,12 +19,12 @@ Description
 
 ``EditorNode3DGizmoPlugin`` allows you to define a new type of Gizmo. There are two main ways to do so: extending ``EditorNode3DGizmoPlugin`` for the simpler gizmos, or creating a new :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` type. See the tutorial in the documentation for more info.
 
-To use ``EditorNode3DGizmoPlugin``, register it using the :ref:`EditorPlugin.add_spatial_gizmo_plugin<class_EditorPlugin_method_add_spatial_gizmo_plugin>` method first.
+To use ``EditorNode3DGizmoPlugin``, register it using the :ref:`EditorPlugin.add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>` method first.
 
 Tutorials
 ---------
 
-- :doc:`Spatial gizmo plugins <../tutorials/plugins/editor/spatial_gizmos>`
+- :doc:`Node3D gizmo plugins <../tutorials/plugins/editor/spatial_gizmos>`
 
 Methods
 -------

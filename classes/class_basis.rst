@@ -270,7 +270,7 @@ Constructs a pure scale basis matrix with no rotation or shearing. The scale val
 
 - :ref:`Vector3<class_Vector3>` **get_euler** **(** :ref:`int<class_int>` order=2 **)** |const|
 
-Returns the basis's rotation in the form of Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+Returns the basis's rotation in the form of Euler angles. The Euler order depends on the ``order`` parameter, by default it uses the YXZ convention: when decomposing, first Z, then X, and Y last. The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 Consider using the :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>` quaternion instead of Euler angles.
 

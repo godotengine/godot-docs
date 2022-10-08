@@ -17,12 +17,30 @@ GLTFTexture
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`src_image<class_GLTFTexture_property_src_image>` | ``0`` |
-+-----------------------+--------------------------------------------------------+-------+
++-----------------------+--------------------------------------------------------+--------+
+| :ref:`int<class_int>` | :ref:`sampler<class_GLTFTexture_property_sampler>`     | ``-1`` |
++-----------------------+--------------------------------------------------------+--------+
+| :ref:`int<class_int>` | :ref:`src_image<class_GLTFTexture_property_src_image>` | ``0``  |
++-----------------------+--------------------------------------------------------+--------+
 
 Property Descriptions
 ---------------------
+
+.. _class_GLTFTexture_property_sampler:
+
+- :ref:`int<class_int>` **sampler**
+
++-----------+--------------------+
+| *Default* | ``-1``             |
++-----------+--------------------+
+| *Setter*  | set_sampler(value) |
++-----------+--------------------+
+| *Getter*  | get_sampler()      |
++-----------+--------------------+
+
+ID of the texture sampler to use when sampling the image. If -1, then the default texture sampler is used (linear filtering, and repeat wrapping in both axes).
+
+----
 
 .. _class_GLTFTexture_property_src_image:
 

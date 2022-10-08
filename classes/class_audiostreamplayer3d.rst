@@ -23,7 +23,7 @@ By default, audio is heard from the camera position. This can be changed by addi
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-\ **Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
 
 Tutorials
 ---------
@@ -70,9 +70,9 @@ Properties
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 | :ref:`bool<class_bool>`                                            | :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>`                                               | ``false``     |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
-| :ref:`float<class_float>`                                          | :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>`                                                           | ``0.0``       |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 | :ref:`float<class_float>`                                          | :ref:`unit_size<class_AudioStreamPlayer3D_property_unit_size>`                                                       | ``10.0``      |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
+| :ref:`float<class_float>`                                          | :ref:`volume_db<class_AudioStreamPlayer3D_property_volume_db>`                                                       | ``0.0``       |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------+
 
 Methods
@@ -429,22 +429,6 @@ If ``true``, the playback is paused. You can resume it by setting :ref:`stream_p
 
 ----
 
-.. _class_AudioStreamPlayer3D_property_unit_db:
-
-- :ref:`float<class_float>` **unit_db**
-
-+-----------+--------------------+
-| *Default* | ``0.0``            |
-+-----------+--------------------+
-| *Setter*  | set_unit_db(value) |
-+-----------+--------------------+
-| *Getter*  | get_unit_db()      |
-+-----------+--------------------+
-
-The base sound level unaffected by dampening, in decibels.
-
-----
-
 .. _class_AudioStreamPlayer3D_property_unit_size:
 
 - :ref:`float<class_float>` **unit_size**
@@ -458,6 +442,22 @@ The base sound level unaffected by dampening, in decibels.
 +-----------+----------------------+
 
 The factor for the attenuation effect. Higher values make the sound audible over a larger distance.
+
+----
+
+.. _class_AudioStreamPlayer3D_property_volume_db:
+
+- :ref:`float<class_float>` **volume_db**
+
++-----------+----------------------+
+| *Default* | ``0.0``              |
++-----------+----------------------+
+| *Setter*  | set_volume_db(value) |
++-----------+----------------------+
+| *Getter*  | get_volume_db()      |
++-----------+----------------------+
+
+The base sound level unaffected by dampening, in decibels.
 
 Method Descriptions
 -------------------

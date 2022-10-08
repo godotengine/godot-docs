@@ -29,6 +29,8 @@ The cost of entering this region from another region can be controlled with the 
 
 The cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>` multiplier.
 
+\ **Note:** This node caches changes to its properties, so if you make changes to the underlying region :ref:`RID<class_RID>` in :ref:`NavigationServer3D<class_NavigationServer3D>`, they will not be reflected in this node's properties.
+
 Properties
 ----------
 

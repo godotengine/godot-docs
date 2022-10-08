@@ -17,7 +17,7 @@ Operating System functions.
 Description
 -----------
 
-Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, date and time, timers, environment variables, execution of binaries, command line, etc.
+Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.
 
 Tutorials
 ---------
@@ -38,8 +38,6 @@ Methods
 
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`alert<class_OS_method_alert>` **(** :ref:`String<class_String>` text, :ref:`String<class_String>` title="Alert!" **)**                                                                                                                                                  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`can_use_threads<class_OS_method_can_use_threads>` **(** **)** |const|                                                                                                                                                                                                   |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>` **(** **)**                                                                                                                                                                                                       |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,6 +66,8 @@ Methods
 | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` **(** **)**                                                                                                                                                                                       |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_data_dir<class_OS_method_get_data_dir>` **(** **)** |const|                                                                                                                                                                                                         |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_distribution_name<class_OS_method_get_distribution_name>` **(** **)** |const|                                                                                                                                                                                       |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_environment<class_OS_method_get_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                              |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -111,6 +111,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>` **(** **)** |const|                                                                                                                                                                                               |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`get_version<class_OS_method_get_version>` **(** **)** |const|                                                                                                                                                                                                           |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_environment<class_OS_method_has_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                              |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_feature<class_OS_method_has_feature>` **(** :ref:`String<class_String>` tag_name **)** |const|                                                                                                                                                                      |
@@ -132,6 +134,8 @@ Methods
 | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`move_to_trash<class_OS_method_move_to_trash>` **(** :ref:`String<class_String>` path **)** |const|                                                                                                                                                                      |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` **(** **)**                                                                                                                                                                                                         |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` **(** :ref:`bool<class_bool>` block=true **)**                                                                                                                                                          |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                    |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -330,14 +334,6 @@ Method Descriptions
 - void **alert** **(** :ref:`String<class_String>` text, :ref:`String<class_String>` title="Alert!" **)**
 
 Displays a modal dialog box using the host OS' facilities. Execution is blocked until the dialog is closed.
-
-----
-
-.. _class_OS_method_can_use_threads:
-
-- :ref:`bool<class_bool>` **can_use_threads** **(** **)** |const|
-
-Returns ``true`` if the current host platform is using multiple threads.
 
 ----
 
@@ -600,6 +596,20 @@ The returned array will be empty if the system MIDI driver has not previously be
 Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
+
+----
+
+.. _class_OS_method_get_distribution_name:
+
+- :ref:`String<class_String>` **get_distribution_name** **(** **)** |const|
+
+Returns the name of the distribution for Linux and BSD platforms (e.g. Ubuntu, Manjaro, OpenBSD, etc.).
+
+Returns the same value as :ref:`get_name<class_OS_method_get_name>` for stock Android ROMs, but attempts to return the custom ROM name for popular Android derivatives such as LineageOS.
+
+Returns the same value as :ref:`get_name<class_OS_method_get_name>` for other platforms.
+
+\ **Note:** This method is not supported on the web platform. It returns an empty string.
 
 ----
 
@@ -893,6 +903,26 @@ Not to be confused with :ref:`get_data_dir<class_OS_method_get_data_dir>`, which
 
 ----
 
+.. _class_OS_method_get_version:
+
+- :ref:`String<class_String>` **get_version** **(** **)** |const|
+
+Returns the exact production and build version of the operating system. This is different from the branded version used in marketing. This helps to distinguish between different releases of operating systems, including minor versions, and insider and custom builds.
+
+For Windows, the major and minor version are returned, as well as the build number. For example, the returned string can look like ``10.0.9926`` for a build of Windows 10, and it can look like ``6.1.7601`` for a build of Windows 7 SP1.
+
+For rolling distributions, such as Arch Linux, an empty string is returned.
+
+For macOS and iOS, the major and minor version are returned, as well as the patch number.
+
+For UWP, the device family version is returned.
+
+For Android, the SDK version and the incremental build number are returned. If it's a custom ROM, it attempts to return its version instead.
+
+\ **Note:** This method is not supported on the web platform. It returns an empty string.
+
+----
+
 .. _class_OS_method_has_environment:
 
 - :ref:`bool<class_bool>` **has_environment** **(** :ref:`String<class_String>` variable **)** |const|
@@ -985,16 +1015,26 @@ Kill (terminate) the process identified by the given process ID (``pid``), e.g. 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **move_to_trash** **(** :ref:`String<class_String>` path **)** |const|
 
-Moves the file or directory to the system's recycle bin. See also :ref:`Directory.remove<class_Directory_method_remove>`.
+Moves the file or directory to the system's recycle bin. See also :ref:`DirAccess.remove<class_DirAccess_method_remove>`.
 
-The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported project.
+The method takes only global paths, so you may need to use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>`. Do not use it for files in ``res://`` as it will not work in exported projects.
 
 \ **Note:** If the user has disabled the recycle bin on their system, the file will be permanently deleted instead.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var file_to_remove = "user://slot1.sav"
     OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
+
+ .. code-tab:: csharp
+
+    var fileToRemove = "user://slot1.sav";
+    OS.MoveToTrash(ProjectSettings.GlobalizePath(fileToRemove));
+
+
 
 ----
 
@@ -1005,6 +1045,16 @@ The method takes only global paths, so you may need to use :ref:`ProjectSettings
 Initialises the singleton for the system MIDI driver.
 
 \ **Note:** This method is implemented on Linux, macOS and Windows.
+
+----
+
+.. _class_OS_method_read_string_from_stdin:
+
+- :ref:`String<class_String>` **read_string_from_stdin** **(** :ref:`bool<class_bool>` block=true **)**
+
+Reads a user input string from the standard input (usually the terminal).
+
+\ **Note:** This method is implemented on Linux, macOS and Windows. Non-blocking reads are not currently supported on any platform.
 
 ----
 

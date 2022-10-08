@@ -28,7 +28,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
 
  .. code-tab:: gdscript
 
-    tool
+    @tool
     extends EditorImportPlugin
     
     func _get_importer_name():
@@ -63,7 +63,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
         # Fill the Mesh with data read in "file", left as an exercise to the reader.
     
         var filename = save_path + "." + _get_save_extension()
-        return ResourceSaver.save(filename, mesh)
+        return ResourceSaver.save(mesh, filename)
 
  .. code-tab:: csharp
 
@@ -123,7 +123,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
             var mesh = new ArrayMesh();
             // Fill the Mesh with data read in "file", left as an exercise to the reader.
             String filename = savePath + "." + GetSaveExtension();
-            return (int)ResourceSaver.Save(filename, mesh);
+            return (int)ResourceSaver.Save(mesh, filename);
         }
     }
 

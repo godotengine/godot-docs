@@ -382,7 +382,7 @@ The :ref:`MeshLibrary<class_MeshLibrary>` item index located at the given grid c
 
 - :ref:`Basis<class_Basis>` **get_cell_item_basis** **(** :ref:`Vector3i<class_Vector3i>` position **)** |const|
 
-Returns the basis that gives the specificed cell its orientation.
+Returns the basis that gives the specified cell its orientation.
 
 ----
 

@@ -91,7 +91,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**
 
-Adds the ``animation`` to the library, accesible by the key ``name``.
+Adds the ``animation`` to the library, accessible by the key ``name``.
 
 ----
 

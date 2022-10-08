@@ -29,6 +29,8 @@ Methods
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>`   | :ref:`convex_hull<class_Geometry2D_method_convex_hull>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points **)**                                                                                                                                                                       |
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`decompose_polygon_in_convex<class_Geometry2D_method_decompose_polygon_in_convex>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                                                                                      |
++-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`exclude_polygons<class_Geometry2D_method_exclude_polygons>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**                                                                                           |
 +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                         | :ref:`get_closest_point_to_segment<class_Geometry2D_method_get_closest_point_to_segment>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                                                        |
@@ -164,6 +166,14 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a
 
 ----
 
+.. _class_Geometry2D_method_decompose_polygon_in_convex:
+
+- :ref:`PackedVector2Array[]<class_PackedVector2Array>` **decompose_polygon_in_convex** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+
+Decomposes the ``polygon`` into multiple convex hulls and returns an array of :ref:`PackedVector2Array<class_PackedVector2Array>`.
+
+----
+
 .. _class_Geometry2D_method_exclude_polygons:
 
 - :ref:`PackedVector2Array[]<class_PackedVector2Array>` **exclude_polygons** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**
@@ -254,7 +264,7 @@ Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) inte
 
 - :ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` sizes **)**
 
-Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is an array of :ref:`Vector2<class_Vector2>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2<class_Vector2>`.
+Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a :ref:`PackedVector2Array<class_PackedVector2Array>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2i<class_Vector2i>`.
 
 ----
 

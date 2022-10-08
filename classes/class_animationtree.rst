@@ -56,6 +56,15 @@ Methods
 | void                                  | :ref:`rename_parameter<class_AnimationTree_method_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)** |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_AnimationTree_signal_animation_player_changed:
+
+- **animation_player_changed** **(** **)**
+
+Emitted when the :ref:`anim_player<class_AnimationTree_property_anim_player>` is changed.
+
 Enumerations
 ------------
 

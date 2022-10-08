@@ -17,11 +17,11 @@ Cubemap
 Description
 -----------
 
-A cubemap is a 6-sided texture typically used for faking reflections in 3D rendering. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
+A cubemap is made of 6 textures organized in layers. They are typically used for faking reflections (see :ref:`ReflectionProbe<class_ReflectionProbe>`) in 3D rendering. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
 
 This resource is typically used as a uniform in custom shaders. Few core Godot methods make use of Cubemap resources.
 
-\ **Note:** Godot doesn't support using cubemaps as a :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`. You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__ to convert a cube map to an equirectangular sky map.
+\ **Note:** Godot doesn't support using cubemaps in a :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`. You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__ to convert a cubemap to an equirectangular sky map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -79,7 +79,7 @@ State of the :kbd:`Alt` modifier.
 | *Getter*  | is_command_or_control_autoremap()       |
 +-----------+-----------------------------------------+
 
-Automaticaly use :kbd:`Meta` (:kbd:`Command`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
+Automatically use :kbd:`Meta` (:kbd:`Command`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
 
 ----
 

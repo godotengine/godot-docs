@@ -151,9 +151,9 @@ Motion vector to define the length and direction of the motion to test.
 | *Getter*  | is_recovery_as_collision_enabled()       |
 +-----------+------------------------------------------+
 
-If set to ``true``, any depenetration from the recovery phase is reported as a collision; this is used e.g. by :ref:`CharacterBody2D.move_and_slide<class_CharacterBody2D_method_move_and_slide>` for improving floor detection when floor snapping is disabled.
+If set to ``true``, any depenetration from the recovery phase is reported as a collision; this is used e.g. by :ref:`CharacterBody2D<class_CharacterBody2D>` for improving floor detection during floor snapping.
 
-If set to ``false``, only collisions resulting from the motion are reported; this is used e.g. by :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`.
+If set to ``false``, only collisions resulting from the motion are reported, which is generally the desired behaviour.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

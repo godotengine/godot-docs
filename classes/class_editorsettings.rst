@@ -905,9 +905,9 @@ The navigation scheme to use in the 3D editor. Changing this setting will affect
 
 - **Godot** Middle mouse button to orbit, :kbd:`Shift + Middle mouse button` to pan. :kbd:`Mouse wheel` to zoom.
 
-- **Maya:** :kbd:`Alt + Left mouse buttton` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Mouse wheel` to zoom.
+- **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Mouse wheel` to zoom.
 
-- **Modo:** :kbd:`Alt + Left mouse buttton` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
+- **Modo:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
 
 See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
 
@@ -1143,7 +1143,7 @@ If ``true``, allows panning by holding down :kbd:`Space` in the 2D editor viewpo
 
 - :ref:`int<class_int>` **editors/panning/sub_editors_panning_scheme**
 
-Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of affected subeditors is: animation blend tree editor, :ref:`Polygon2D<class_Polygon2D>` editor, tileset editor, texture region editor, visual shader editor and visual script editor. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
+Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of affected subeditors is: animation blend tree editor, :ref:`Polygon2D<class_Polygon2D>` editor, tileset editor, texture region editor and visual shader editor. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
 
 ----
 
@@ -1193,7 +1193,7 @@ The color to use for the TileMap editor's grid.
 
 - :ref:`float<class_float>` **editors/visual_editors/lines_curvature**
 
-The curvature to use for connection lines in the visual script and visual shader editors. Higher values will make connection lines appear more curved, with values above ``0.5`` resulting in more "angular" turns in the middle of connection lines.
+The curvature to use for connection lines in the visual shader editor. Higher values will make connection lines appear more curved, with values above ``0.5`` resulting in more "angular" turns in the middle of connection lines.
 
 ----
 
@@ -1201,7 +1201,7 @@ The curvature to use for connection lines in the visual script and visual shader
 
 - :ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
 
-The opacity of the minimap displayed in the bottom-right corner of the visual script and visual shader editors.
+The opacity of the minimap displayed in the bottom-right corner of the visual shader editor.
 
 ----
 

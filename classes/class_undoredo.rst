@@ -85,13 +85,13 @@ Methods
 -------
 
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                  |
+| void                        | :ref:`add_do_method<class_UndoRedo_method_add_do_method>` **(** :ref:`Callable<class_Callable>` callable **)**                                                                                      |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`add_do_property<class_UndoRedo_method_add_do_property>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**     |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`add_do_reference<class_UndoRedo_method_add_do_reference>` **(** :ref:`Object<class_Object>` object **)**                                                                                      |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|                              |
+| void                        | :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` **(** :ref:`Callable<class_Callable>` callable **)**                                                                                  |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                        | :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>` **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)** |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,9 +161,9 @@ Method Descriptions
 
 .. _class_UndoRedo_method_add_do_method:
 
-- void **add_do_method** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- void **add_do_method** **(** :ref:`Callable<class_Callable>` callable **)**
 
-Register a ``method`` that will be called when the action is committed.
+Register a :ref:`Callable<class_Callable>` that will be called when the action is committed.
 
 ----
 
@@ -185,9 +185,9 @@ Register a reference for "do" that will be erased if the "do" history is lost. T
 
 .. _class_UndoRedo_method_add_undo_method:
 
-- void **add_undo_method** **(** :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+- void **add_undo_method** **(** :ref:`Callable<class_Callable>` callable **)**
 
-Register a ``method`` that will be called when the action is undone.
+Register a :ref:`Callable<class_Callable>` that will be called when the action is undone.
 
 ----
 

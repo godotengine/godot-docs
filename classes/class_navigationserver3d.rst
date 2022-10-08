@@ -144,6 +144,8 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`process<class_NavigationServer3D_method_process>` **(** :ref:`float<class_float>` delta_time **)**                                                                                                                                                                      |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`query_path<class_NavigationServer3D_method_query_path>` **(** :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` parameters, :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result **)** |const|                      |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`region_bake_navmesh<class_NavigationServer3D_method_region_bake_navmesh>` **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Node<class_Node>` node **)** |const|                                                                                            |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer3D_method_region_create>` **(** **)** |const|                                                                                                                                                                                       |
@@ -616,6 +618,14 @@ Process the collision avoidance agents.
 The result of this process is needed by the physics server, so this must be called in the main thread.
 
 \ **Note:** This function is not thread safe.
+
+----
+
+.. _class_NavigationServer3D_method_query_path:
+
+- void **query_path** **(** :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` parameters, :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result **)** |const|
+
+Queries a path in a given navigation map. Start and target position and other parameters are defined through :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>`. Updates the provided :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result object with the path among other results requested by the query.
 
 ----
 

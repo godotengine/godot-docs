@@ -134,6 +134,8 @@ Methods
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>` **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` radius **)** |const|                                                                                         |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                | :ref:`query_path<class_NavigationServer2D_method_query_path>` **(** :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>` parameters, :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result **)** |const|                      |
++-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer2D_method_region_create>` **(** **)** |const|                                                                                                                                                                                       |
 +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_connection_pathway_end<class_NavigationServer2D_method_region_get_connection_pathway_end>` **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` connection **)** |const|                                                                                |
@@ -550,6 +552,14 @@ Set the map edge connection margin used to weld the compatible region edges.
 - void **map_set_link_connection_radius** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` radius **)** |const|
 
 Set the map's link connection radius used to connect links to navigation polygons.
+
+----
+
+.. _class_NavigationServer2D_method_query_path:
+
+- void **query_path** **(** :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>` parameters, :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result **)** |const|
+
+Queries a path in a given navigation map. Start and target position and other parameters are defined through :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>`. Updates the provided :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result object with the path among other results requested by the query.
 
 ----
 

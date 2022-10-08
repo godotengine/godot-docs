@@ -40,6 +40,8 @@ Properties
 +---------------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`         | :ref:`inverse_inertia<class_PhysicsDirectBodyState3D_property_inverse_inertia>`               |
 +---------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>`             | :ref:`inverse_inertia_tensor<class_PhysicsDirectBodyState3D_property_inverse_inertia_tensor>` |
++---------------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`             | :ref:`inverse_mass<class_PhysicsDirectBodyState3D_property_inverse_mass>`                     |
 +---------------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`         | :ref:`linear_velocity<class_PhysicsDirectBodyState3D_property_linear_velocity>`               |
@@ -168,6 +170,18 @@ The body's center of mass position in the body's local coordinate system.
 +----------+-----------------------+
 
 The inverse of the inertia of the body.
+
+----
+
+.. _class_PhysicsDirectBodyState3D_property_inverse_inertia_tensor:
+
+- :ref:`Basis<class_Basis>` **inverse_inertia_tensor**
+
++----------+------------------------------+
+| *Getter* | get_inverse_inertia_tensor() |
++----------+------------------------------+
+
+The inverse of the inertia tensor of the body.
 
 ----
 

@@ -777,6 +777,12 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 | *Getter*  | is_handling_input_locally()     |
 +-----------+---------------------------------+
 
+If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the the first parent viewport that is set to handle input locally.
+
+A :ref:`SubViewportContainer<class_SubViewportContainer>` will automatically set this property to ``false`` for the ``Viewport`` contained inside of it.
+
+See also :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` and :ref:`is_input_handled<class_Viewport_method_is_input_handled>`.
+
 ----
 
 .. _class_Viewport_property_mesh_lod_threshold:
@@ -1372,11 +1378,31 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 
 - :ref:`bool<class_bool>` **is_input_handled** **(** **)** |const|
 
+Returns whether the current :ref:`InputEvent<class_InputEvent>` has been handled. Input events are not handled until :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` has been called during the lifetime of an :ref:`InputEvent<class_InputEvent>`.
+
+This is usually done as part of input handling methods like :ref:`Node._input<class_Node_method__input>`, :ref:`Control._gui_input<class_Control_method__gui_input>` or others, as well as in corresponding signal handlers.
+
+If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is set to ``false``, this method will try finding the first parent viewport that is set to handle input locally, and return its value for :ref:`is_input_handled<class_Viewport_method_is_input_handled>` instead.
+
 ----
 
 .. _class_Viewport_method_push_input:
 
 - void **push_input** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` in_local_coords=false **)**
+
+Triggers the given ``event`` in this ``Viewport``. This can be used to pass an :ref:`InputEvent<class_InputEvent>` between viewports, or to locally apply inputs that were sent over the network or saved to a file.
+
+If ``in_local_coords`` is ``false``, the event's position is in the embedder's coordinates and will be converted to viewport coordinates. If ``in_local_coords`` is ``true``, the event's position is in viewport coordinates.
+
+While this method serves a similar purpose as :ref:`Input.parse_input_event<class_Input_method_parse_input_event>`, it does not remap the specified ``event`` based on project settings like :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
+
+Calling this method will propagate calls to child nodes for following methods in the given order:
+
+- :ref:`Node._input<class_Node_method__input>`\ 
+
+- :ref:`Control._gui_input<class_Control_method__gui_input>` for :ref:`Control<class_Control>` nodes
+
+If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
 ----
 
@@ -1389,6 +1415,24 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 .. _class_Viewport_method_push_unhandled_input:
 
 - void **push_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` in_local_coords=false **)**
+
+Triggers the given :ref:`InputEvent<class_InputEvent>` in this ``Viewport``. This can be used to pass input events between viewports, or to locally apply inputs that were sent over the network or saved to a file.
+
+If ``in_local_coords`` is ``false``, the event's position is in the embedder's coordinates and will be converted to viewport coordinates. If ``in_local_coords`` is ``true``, the event's position is in viewport coordinates.
+
+While this method serves a similar purpose as :ref:`Input.parse_input_event<class_Input_method_parse_input_event>`, it does not remap the specified ``event`` based on project settings like :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
+
+Calling this method will propagate calls to child nodes for following methods in the given order:
+
+- :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
+
+- :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
+If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
+
+If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
 ----
 

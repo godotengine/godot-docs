@@ -44,7 +44,7 @@ Signals
 
 .. _class_FileSystemDock_signal_folder_moved:
 
-- **folder_moved** **(** :ref:`String<class_String>` old_folder, :ref:`String<class_String>` new_file **)**
+- **folder_moved** **(** :ref:`String<class_String>` old_folder, :ref:`String<class_String>` new_folder **)**
 
 ----
 

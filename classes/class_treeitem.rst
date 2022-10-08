@@ -126,6 +126,8 @@ Methods
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Tree<class_Tree>`                                           | :ref:`get_tree<class_TreeItem_method_get_tree>` **(** **)** |const|                                                                                                                                                                                      |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`is_any_collapsed<class_TreeItem_method_is_any_collapsed>` **(** :ref:`bool<class_bool>` only_visible=false **)**                                                                                                                                   |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`is_button_disabled<class_TreeItem_method_is_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|                                                                                                   |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`is_checked<class_TreeItem_method_is_checked>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                                     |
@@ -157,6 +159,8 @@ Methods
 | void                                                              | :ref:`set_cell_mode<class_TreeItem_method_set_cell_mode>` **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**                                                                                                 |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_checked<class_TreeItem_method_set_checked>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**                                                                                                                          |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_collapsed_recursive<class_TreeItem_method_set_collapsed_recursive>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                 |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                              | :ref:`set_custom_as_button<class_TreeItem_method_set_custom_as_button>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**                                                                                                         |
 +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -656,6 +660,16 @@ Returns the :ref:`Tree<class_Tree>` that owns this TreeItem.
 
 ----
 
+.. _class_TreeItem_method_is_any_collapsed:
+
+- :ref:`bool<class_bool>` **is_any_collapsed** **(** :ref:`bool<class_bool>` only_visible=false **)**
+
+Returns ``true`` if this ``TreeItem``, or any of its descendants, is collapsed.
+
+If ``only_visible`` is ``true`` it ignores non-visible ``TreeItem``\ s.
+
+----
+
 .. _class_TreeItem_method_is_button_disabled:
 
 - :ref:`bool<class_bool>` **is_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
@@ -783,6 +797,14 @@ Sets the given column's cell mode to ``mode``. See :ref:`TreeCellMode<enum_TreeI
 - void **set_checked** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**
 
 If ``true``, the given ``column`` is checked. Clears column's indeterminate status.
+
+----
+
+.. _class_TreeItem_method_set_collapsed_recursive:
+
+- void **set_collapsed_recursive** **(** :ref:`bool<class_bool>` enable **)**
+
+Collapses or uncollapses this ``TreeItem`` and all the descendants of this item.
 
 ----
 

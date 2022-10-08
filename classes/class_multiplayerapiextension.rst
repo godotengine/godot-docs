@@ -19,7 +19,7 @@ Description
 
 This class can be used to augment or replace the default :ref:`MultiplayerAPI<class_MultiplayerAPI>` implementation via script or extensions.
 
-The following example augment the default implemenation (:ref:`SceneMultiplayer<class_SceneMultiplayer>`) by logging every RPC being made, and every object being configured for replication.
+The following example augment the default implementation (:ref:`SceneMultiplayer<class_SceneMultiplayer>`) by logging every RPC being made, and every object being configured for replication.
 
 
 .. tabs::

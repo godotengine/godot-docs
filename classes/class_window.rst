@@ -285,6 +285,14 @@ Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICA
 
 ----
 
+.. _class_Window_signal_titlebar_changed:
+
+- **titlebar_changed** **(** **)**
+
+Emitted when window title bar decorations are changed, e.g. macOS window enter/exit full screen mode, or extend-to-title flag is changed.
+
+----
+
 .. _class_Window_signal_visibility_changed:
 
 - **visibility_changed** **(** **)**
@@ -297,7 +305,7 @@ Emitted when ``Window`` is made visible or disappears.
 
 - **window_input** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
-Emitted when the ``Window`` is currently focused and receives any input, passing the received event as an argument.
+Emitted when the ``Window`` is currently focused and receives any input, passing the received event as an argument. The event's position, if present, is in the embedder's coordinate system.
 
 Enumerations
 ------------
@@ -316,21 +324,21 @@ Enumerations
 
 enum **Mode**:
 
-- **MODE_WINDOWED** = **0** --- Windowed mode, i.e. ``Window`` doesn't occupy whole screen (unless set to the size of the screen).
+- **MODE_WINDOWED** = **0** --- Windowed mode, i.e. ``Window`` doesn't occupy the whole screen (unless set to the size of the screen).
 
-- **MODE_MINIMIZED** = **1** --- Minimized window mode, i.e. ``Window`` is not visible and available on window manager's window list. Normally happens when the minimize button is presesd.
+- **MODE_MINIMIZED** = **1** --- Minimized window mode, i.e. ``Window`` is not visible and available on window manager's window list. Normally happens when the minimize button is pressed.
 
-- **MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. ``Window`` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is presesd.
+- **MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. ``Window`` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is pressed.
 
-- **MODE_FULLSCREEN** = **3** --- Fullscreen window mode. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
+- **MODE_FULLSCREEN** = **3** --- Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux, a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
+Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
-- **MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive fullscreen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`MODE_FULLSCREEN<class_Window_constant_MODE_FULLSCREEN>`.
+- **MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive full screen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`MODE_FULLSCREEN<class_Window_constant_MODE_FULLSCREEN>`.
 
-Only one window in exclusive fullscreen mode can be visible on a given screen at a time. If multiple windows are in exclusive fullscreen mode for the same screen, the last one being set to this mode takes precedence.
+Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
+Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 ----
 
@@ -354,19 +362,23 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 enum **Flags**:
 
-- **FLAG_RESIZE_DISABLED** = **0** --- The window's ability to be resized. Set with :ref:`unresizable<class_Window_property_unresizable>`.
+- **FLAG_RESIZE_DISABLED** = **0** --- The window can't be resizing by dragging its resize grip. It's still possible to resize the window using :ref:`size<class_Window_property_size>`. This flag is ignored for full screen windows. Set with :ref:`unresizable<class_Window_property_unresizable>`.
 
-- **FLAG_BORDERLESS** = **1** --- Borderless window. Set with :ref:`borderless<class_Window_property_borderless>`.
+- **FLAG_BORDERLESS** = **1** --- The window do not have native title bar and other decorations. This flag is ignored for full-screen windows. Set with :ref:`borderless<class_Window_property_borderless>`.
 
-- **FLAG_ALWAYS_ON_TOP** = **2** --- Flag for making the window always on top of all other windows. Set with :ref:`always_on_top<class_Window_property_always_on_top>`.
+- **FLAG_ALWAYS_ON_TOP** = **2** --- The window is floating on top of all other windows. This flag is ignored for full-screen windows. Set with :ref:`always_on_top<class_Window_property_always_on_top>`.
 
-- **FLAG_TRANSPARENT** = **3** --- Flag for per-pixel transparency. Set with :ref:`transparent<class_Window_property_transparent>`.
+- **FLAG_TRANSPARENT** = **3** --- The window background can be transparent.
 
-- **FLAG_NO_FOCUS** = **4** --- The window's ability to gain focus. Set with :ref:`unfocusable<class_Window_property_unfocusable>`.
+\ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``. Set with :ref:`transparent<class_Window_property_transparent>`.
 
-- **FLAG_POPUP** = **5** --- Whether the window is popup or a regular window. Set with :ref:`popup_window<class_Window_property_popup_window>`.
+- **FLAG_NO_FOCUS** = **4** --- The window can't be focused. No-focus window will ignore all input, except mouse clicks. Set with :ref:`unfocusable<class_Window_property_unfocusable>`.
 
-- **FLAG_EXTEND_TO_TITLE** = **6** --- Window contents is expanded to the full size of the window, window title bar is transparent.
+- **FLAG_POPUP** = **5** --- Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have ``transient parent`` set (see :ref:`transient<class_Window_property_transient>`).
+
+- **FLAG_EXTEND_TO_TITLE** = **6** --- Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons. Set with :ref:`extend_to_title<class_Window_property_extend_to_title>`.
+
+\ **Note:** This flag is implemented on macOS.
 
 - **FLAG_MAX** = **7** --- Max value of the :ref:`Flags<enum_Window_Flags>`.
 
@@ -670,7 +682,7 @@ If non-zero, the ``Window`` can't be resized to be smaller than this size.
 
 Set's the window's current mode.
 
-\ **Note:** Fullscreen mode is not exclusive fullscreen on Windows and Linux.
+\ **Note:** Fullscreen mode is not exclusive full screen on Windows and Linux.
 
 ----
 
@@ -782,7 +794,7 @@ The window's title. If the ``Window`` is non-embedded, title styles set in :ref:
 | *Getter*  | is_transient()       |
 +-----------+----------------------+
 
-If ``true``, the ``Window`` is transient, i.e. it's considered a child of another ``Window``. Transient windows can't be in fullscreen mode and will return focus to their parent when closed.
+If ``true``, the ``Window`` is transient, i.e. it's considered a child of another ``Window``. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
 Note that behavior might be different depending on the platform.
 
@@ -800,7 +812,11 @@ Note that behavior might be different depending on the platform.
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, the ``Window``'s background can be transparent. This is best used with embedded windows. Currently non-embedded ``Window`` transparency is implemented only for MacOS.
+If ``true``, the ``Window``'s background can be transparent. This is best used with embedded windows.
+
+\ **Note:** For native windows, this flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
+
+\ **Note:** Transparency support is implemented on Linux, macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
 ----
 

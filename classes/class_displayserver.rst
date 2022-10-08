@@ -320,6 +320,8 @@ Methods
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>` **(** :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` vsync_mode, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                                                                                                                                        |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`window_set_window_buttons_offset<class_DisplayServer_method_window_set_window_buttons_offset>` **(** :ref:`Vector2i<class_Vector2i>` offset, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                                                                                                                                     |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>` **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                                                                                                                                   |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -606,21 +608,21 @@ enum **CursorShape**:
 
 enum **WindowMode**:
 
-- **WINDOW_MODE_WINDOWED** = **0**
+- **WINDOW_MODE_WINDOWED** = **0** --- Windowed mode, i.e. :ref:`Window<class_Window>` doesn't occupy the whole screen (unless set to the size of the screen).
 
-- **WINDOW_MODE_MINIMIZED** = **1**
+- **WINDOW_MODE_MINIMIZED** = **1** --- Minimized window mode, i.e. :ref:`Window<class_Window>` is not visible and available on window manager's window list. Normally happens when the minimize button is pressed.
 
-- **WINDOW_MODE_MAXIMIZED** = **2**
+- **WINDOW_MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. :ref:`Window<class_Window>` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is pressed.
 
-- **WINDOW_MODE_FULLSCREEN** = **3** --- Fullscreen window mode. Note that this is not *exclusive* fullscreen. On Windows and Linux, a borderless window is used to emulate fullscreen. On macOS, a new desktop is used to display the running project.
+- **WINDOW_MODE_FULLSCREEN** = **3** --- Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux, a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
+Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
-- **WINDOW_MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive fullscreen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>`.
+- **WINDOW_MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive full screen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>`.
 
-Only one window in exclusive fullscreen mode can be visible on a given screen at a time. If multiple windows are in exclusive fullscreen mode for the same screen, the last one being set to this mode takes precedence.
+Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
 
-Regardless of the platform, enabling fullscreen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling fullscreen mode.
+Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 ----
 
@@ -644,23 +646,31 @@ Regardless of the platform, enabling fullscreen will change the window size to m
 
 enum **WindowFlags**:
 
-- **WINDOW_FLAG_RESIZE_DISABLED** = **0** --- Window can't be resizing by dragging its resize grip. It's still possible to resize the window using :ref:`window_set_size<class_DisplayServer_method_window_set_size>`. This flag is ignored for full screen windows.
+- **WINDOW_FLAG_RESIZE_DISABLED** = **0** --- The window can't be resizing by dragging its resize grip. It's still possible to resize the window using :ref:`window_set_size<class_DisplayServer_method_window_set_size>`. This flag is ignored for full screen windows.
 
-- **WINDOW_FLAG_BORDERLESS** = **1** --- Window do not have native title bar and other decorations. This flag is ignored for full-screen windows.
+- **WINDOW_FLAG_BORDERLESS** = **1** --- The window do not have native title bar and other decorations. This flag is ignored for full-screen windows.
 
-- **WINDOW_FLAG_ALWAYS_ON_TOP** = **2** --- Window is floating above other regular windows. This flag is ignored for full-screen windows.
+- **WINDOW_FLAG_ALWAYS_ON_TOP** = **2** --- The window is floating on top of all other windows. This flag is ignored for full-screen windows.
 
-- **WINDOW_FLAG_TRANSPARENT** = **3** --- Window is will be destroyed with its transient parent and displayed on top of non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+- **WINDOW_FLAG_TRANSPARENT** = **3** --- The window background can be transparent.
 
-- **WINDOW_FLAG_NO_FOCUS** = **4** --- Window can't be focused. No-focus window will ignore all input, except mouse clicks.
+\ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
 
-- **WINDOW_FLAG_POPUP** = **5** --- Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have :ref:`WINDOW_FLAG_TRANSPARENT<class_DisplayServer_constant_WINDOW_FLAG_TRANSPARENT>` set.
+\ **Note:** Transparency support is implemented on Linux, macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+
+- **WINDOW_FLAG_NO_FOCUS** = **4** --- The window can't be focused. No-focus window will ignore all input, except mouse clicks.
+
+- **WINDOW_FLAG_POPUP** = **5** --- Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have ``transient parent`` set (see :ref:`window_set_transient<class_DisplayServer_method_window_set_transient>`).
 
 - **WINDOW_FLAG_EXTEND_TO_TITLE** = **6** --- Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons.
 
+Use :ref:`window_set_window_buttons_offset<class_DisplayServer_method_window_set_window_buttons_offset>` to adjust minimize/maximize/close buttons offset.
+
+Use :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_safe_title_margins>` to determine area under the title bar that is not covered by decorations.
+
 \ **Note:** This flag is implemented on macOS.
 
-- **WINDOW_FLAG_MAX** = **7**
+- **WINDOW_FLAG_MAX** = **7** --- Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
 ----
 
@@ -680,21 +690,31 @@ enum **WindowFlags**:
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_DPI_CHANGE:
 
+.. _class_DisplayServer_constant_WINDOW_EVENT_TITLEBAR_CHANGE:
+
 enum **WindowEvent**:
 
-- **WINDOW_EVENT_MOUSE_ENTER** = **0**
+- **WINDOW_EVENT_MOUSE_ENTER** = **0** --- Sent when the mouse pointer enters the window, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_MOUSE_EXIT** = **1**
+- **WINDOW_EVENT_MOUSE_EXIT** = **1** --- Sent when the mouse pointer exits the window, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_FOCUS_IN** = **2**
+- **WINDOW_EVENT_FOCUS_IN** = **2** --- Sent when the window grabs focus, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_FOCUS_OUT** = **3**
+- **WINDOW_EVENT_FOCUS_OUT** = **3** --- Sent when the window loses focus, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_CLOSE_REQUEST** = **4**
+- **WINDOW_EVENT_CLOSE_REQUEST** = **4** --- Sent when the user has attempted to close the window (e.g. close button is pressed), see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_GO_BACK_REQUEST** = **5**
+- **WINDOW_EVENT_GO_BACK_REQUEST** = **5** --- Sent when the device "Back" button is pressed, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
 
-- **WINDOW_EVENT_DPI_CHANGE** = **6**
+\ **Note:** This event is implemented on Android.
+
+- **WINDOW_EVENT_DPI_CHANGE** = **6** --- Sent when the window is moved to the display with different DPI, or display DPI is changed, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+
+\ **Note:** This flag is implemented on macOS.
+
+- **WINDOW_EVENT_TITLEBAR_CHANGE** = **7** --- Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` is set or window entered/exited full screen mode), see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+
+\ **Note:** This flag is implemented on macOS.
 
 ----
 
@@ -2169,7 +2189,7 @@ Sets the minimum size for the given window to ``min_size`` (in pixels).
 
 Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
-\ **Note:** Setting the window to fullscreen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
+\ **Note:** Setting the window to full screen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
 
 ----
 
@@ -2256,6 +2276,10 @@ Sets the title of the given window to ``title``.
 
 - void **window_set_transient** **(** :ref:`int<class_int>` window_id, :ref:`int<class_int>` parent_window_id **)**
 
+Sets window transient parent. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+
+Note that behavior might be different depending on the platform.
+
 ----
 
 .. _class_DisplayServer_method_window_set_vsync_mode:
@@ -2267,6 +2291,16 @@ Sets the V-Sync mode of the given window.
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
 Depending on the platform and used renderer, the engine will fall back to :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>`, if the desired mode is not supported.
+
+----
+
+.. _class_DisplayServer_method_window_set_window_buttons_offset:
+
+- void **window_set_window_buttons_offset** **(** :ref:`Vector2i<class_Vector2i>` offset, :ref:`int<class_int>` window_id=0 **)**
+
+When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` flag is set, set offset to the center of the first titlebar button.
+
+\ **Note:** This flag is implemented on macOS.
 
 ----
 

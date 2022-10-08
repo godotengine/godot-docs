@@ -48,6 +48,8 @@ Methods
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`show_popup<class_MenuButton_method_show_popup>` **(** **)**                                                        |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -144,6 +146,14 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 - void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
+
+----
+
+.. _class_MenuButton_method_show_popup:
+
+- void **show_popup** **(** **)**
+
+Adjusts popup position and sizing for the ``MenuButton``, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
 
 Theme Property Descriptions
 ---------------------------

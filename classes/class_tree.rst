@@ -70,6 +70,8 @@ Properties
 +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`drop_mode_flags<class_Tree_property_drop_mode_flags>`                     | ``0``                                                                     |
 +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`enable_recursive_folding<class_Tree_property_enable_recursive_folding>`   | ``true``                                                                  |
++------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
 +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`hide_folding<class_Tree_property_hide_folding>`                           | ``false``                                                                 |
@@ -513,6 +515,22 @@ The number of columns.
 The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data<class_Control_method__can_drop_data>` is recommended.
 
 This controls the drop sections, i.e. the decision and drawing of possible drop locations based on the mouse position.
+
+----
+
+.. _class_Tree_property_enable_recursive_folding:
+
+- :ref:`bool<class_bool>` **enable_recursive_folding**
+
++-----------+-------------------------------------+
+| *Default* | ``true``                            |
++-----------+-------------------------------------+
+| *Setter*  | set_enable_recursive_folding(value) |
++-----------+-------------------------------------+
+| *Getter*  | is_recursive_folding_enabled()      |
++-----------+-------------------------------------+
+
+If ``true``, recursive folding is enabled for this ``Tree``. Holding down Shift while clicking the fold arrow collapses or uncollapses the :ref:`TreeItem<class_TreeItem>` and all its descendants.
 
 ----
 

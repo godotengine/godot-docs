@@ -71,6 +71,8 @@ Methods
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`call_deferred<class_Callable_method_call_deferred>` **(** ... **)** |vararg| |const|                  |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`callv<class_Callable_method_callv>` **(** :ref:`Array<class_Array>` arguments **)** |const|           |
++-------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>` | :ref:`get_method<class_Callable_method_get_method>` **(** **)** |const|                                     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`         | :ref:`get_object<class_Callable_method_get_object>` **(** **)** |const|                                     |
@@ -153,6 +155,14 @@ Calls the method represented by this ``Callable`` in deferred mode, i.e. during 
 
     func _ready():
         grab_focus.call_deferred()
+
+----
+
+.. _class_Callable_method_callv:
+
+- :ref:`Variant<class_Variant>` **callv** **(** :ref:`Array<class_Array>` arguments **)** |const|
+
+Calls the method represented by this ``Callable``. Contrary to :ref:`call<class_Callable_method_call>`, this method does not take a variable number of arguments but expects all arguments to be passed via a single :ref:`Array<class_Array>`.
 
 ----
 

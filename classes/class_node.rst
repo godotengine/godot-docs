@@ -632,7 +632,7 @@ The name of the node. This name is unique among the siblings (other child nodes 
 
 The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
 
-\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/misc/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/plugins/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 
@@ -827,7 +827,7 @@ For gameplay input, this and :ref:`_unhandled_key_input<class_Node_method__unhan
 
 - void **_unhandled_key_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShortcut<class_InputEventShortcut>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
+Called when an :ref:`InputEventKey<class_InputEventKey>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
 
 It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>`.
 
@@ -836,6 +836,8 @@ To consume the input event and stop it propagating further to other nodes, :ref:
 This method can be used to handle Unicode character input with :kbd:`Alt`, :kbd:`Alt + Ctrl`, and :kbd:`Alt + Shift` modifiers, after shortcuts were handled.
 
 For gameplay input, this and :ref:`_unhandled_input<class_Node_method__unhandled_input>` are usually a better fit than :ref:`_input<class_Node_method__input>` as they allow the GUI to intercept the events first.
+
+This method also performs better than :ref:`_unhandled_input<class_Node_method__unhandled_input>`, since unrelated events such as :ref:`InputEventMouseMotion<class_InputEventMouseMotion>` are automatically filtered.
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
 
@@ -876,7 +878,7 @@ If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_consta
 
 If you need the child node to be added below a specific node in the list of children, use :ref:`add_sibling<class_Node_method_add_sibling>` instead of this method.
 
-\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/misc/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/plugins/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added ``Node`` will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 
 ----
 
@@ -920,9 +922,18 @@ Returns ``true`` if the node can process while the scene tree is paused (see :re
 
 Creates a new :ref:`Tween<class_Tween>` and binds it to this node. This is equivalent of doing:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     get_tree().create_tween().bind_node(self)
+
+ .. code-tab:: csharp
+
+    GetTree().CreateTween().BindNode(this);
+
+
 
 ----
 
@@ -1036,13 +1047,28 @@ Returns an array listing the groups that the node is a member of.
 
 \ **Note:** The engine uses some group names internally (all starting with an underscore). To avoid conflicts with internal groups, do not add custom groups whose name starts with an underscore. To exclude internal groups while looping over :ref:`get_groups<class_Node_method_get_groups>`, use the following snippet:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     # Stores the node's non-internal groups only (as an array of Strings).
     var non_internal_groups = []
     for group in get_groups():
         if not group.begins_with("_"):
             non_internal_groups.push_back(group)
+
+ .. code-tab:: csharp
+
+    // Stores the node's non-internal groups only (as a List of strings).
+    List<string> nonInternalGroups = new List<string>();
+    foreach (string group in GetGroups())
+    {
+        if (!group.BeginsWith("_"))
+            nonInternalGroups.Add(group);
+    }
+
+
 
 ----
 

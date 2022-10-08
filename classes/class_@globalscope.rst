@@ -1621,9 +1621,9 @@ enum **MouseButton**:
 
 - **MOUSE_BUTTON_NONE** = **0** --- Enum value which doesn't correspond to any mouse button. This is used to initialize :ref:`MouseButton<enum_@GlobalScope_MouseButton>` properties with a generic state.
 
-- **MOUSE_BUTTON_LEFT** = **1** --- Left mouse button.
+- **MOUSE_BUTTON_LEFT** = **1** --- Primary mouse button, usually the left button.
 
-- **MOUSE_BUTTON_RIGHT** = **2** --- Right mouse button.
+- **MOUSE_BUTTON_RIGHT** = **2** --- Secondary mouse button, usually the right button.
 
 - **MOUSE_BUTTON_MIDDLE** = **3** --- Middle mouse button.
 
@@ -1639,9 +1639,9 @@ enum **MouseButton**:
 
 - **MOUSE_BUTTON_XBUTTON2** = **9** --- Extra mouse button 2 (only present on some mice).
 
-- **MOUSE_BUTTON_MASK_LEFT** = **1** --- Left mouse button mask.
+- **MOUSE_BUTTON_MASK_LEFT** = **1** --- Primary mouse button mask, usually for the left button.
 
-- **MOUSE_BUTTON_MASK_RIGHT** = **2** --- Right mouse button mask.
+- **MOUSE_BUTTON_MASK_RIGHT** = **2** --- Secondary mouse button mask, usually for the right button.
 
 - **MOUSE_BUTTON_MASK_MIDDLE** = **4** --- Middle mouse button mask.
 
@@ -2200,11 +2200,11 @@ enum **PropertyHint**:
 
 - **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_less"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_less"``.
 
-Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians"`` for editing radian angles in degrees, ``"degrees"`` to hint at an angle and ``"no_slider"`` to hide the slider.
+Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians"`` for editing radian angles in degrees, ``"degrees"`` to hint at an angle and ``"hide_slider"`` to hide the slider.
 
 - **PROPERTY_HINT_ENUM** = **2** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
 
-The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
+The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. Whitespaces are **not** removed from either end of a name. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
 - **PROPERTY_HINT_ENUM_SUGGESTION** = **3** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
@@ -2367,6 +2367,8 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_BASIC_SETTING:
 
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_READ_ONLY:
+
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_ARRAY:
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
@@ -2432,6 +2434,8 @@ enum **PropertyUsageFlags**:
 - **PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT** = **67108864**
 
 - **PROPERTY_USAGE_EDITOR_BASIC_SETTING** = **134217728**
+
+- **PROPERTY_USAGE_READ_ONLY** = **268435456** --- The property is read-only in the editor inspector.
 
 - **PROPERTY_USAGE_ARRAY** = **536870912**
 

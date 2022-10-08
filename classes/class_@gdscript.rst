@@ -328,7 +328,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
-If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for paramters, ``@export_group("", "")``.
+If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
 
 Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups to your groups.
 
@@ -397,7 +397,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_co
 
 Export a numeric property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your ``EditorSettings.interface/inspector/default_float_step`` setting.
 
-If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"no_slider"`` hint will hide the slider element of the editor widget.
+If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"hide_slider"`` hint will hide the slider element of the editor widget.
 
 Hints also allow to indicate the units for the edited value. Using ``"radians"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock. ``"degrees"`` allows to add a degree sign as a unit suffix. Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
 
@@ -458,7 +458,7 @@ Add a custom icon to the current script. The icon is displayed in the Scene dock
 
 - **@onready** **(** **)**
 
-Mark the following property as assigned on :ref:`Node<class_Node>`'s ready state change. Values for these properties are no assigned immediately upon the node's creation, and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
+Mark the following property as assigned on :ref:`Node<class_Node>`'s ready state change. Values for these properties are not assigned immediately upon the node's creation, and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
 
 ::
 
@@ -592,7 +592,7 @@ Converts a ``dictionary`` (previously created with :ref:`inst_to_dict<class_@GDS
 
 - :ref:`Array<class_Array>` **get_stack** **(** **)**
 
-Returns an array of dictionaries representing the current call stack.
+Returns an array of dictionaries representing the current call stack. See also :ref:`print_stack<class_@GDScript_method_print_stack>`.
 
 ::
 
@@ -610,6 +610,8 @@ would print
 ::
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
+
+\ **Note:** :ref:`get_stack<class_@GDScript_method_get_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`get_stack<class_@GDScript_method_get_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
 \ **Note:** Not supported for calling from threads. Instead, this will return an empty array.
 
@@ -710,13 +712,15 @@ Output in the console would look something like this:
 
 - void **print_stack** **(** **)**
 
-Prints a stack trace at the current code location. Only works when running with debugger turned on.
+Prints a stack trace at the current code location. See also :ref:`get_stack<class_@GDScript_method_get_stack>`.
 
 Output in the console would look something like this:
 
 ::
 
     Frame 0 - res://test.gd:16 in function '_process'
+
+\ **Note:** :ref:`print_stack<class_@GDScript_method_print_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`print_stack<class_@GDScript_method_print_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
 \ **Note:** Not supported for calling from threads. Instead of the stack trace, this will print the thread ID.
 

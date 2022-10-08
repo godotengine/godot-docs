@@ -17,7 +17,7 @@ Data buffer stream peer.
 Description
 -----------
 
-Data buffer stream peer that uses a byte array as the stream. This object can be used to handle binary data from network sessions. To handle binary data stored in files, :ref:`File<class_File>` can be used directly.
+Data buffer stream peer that uses a byte array as the stream. This object can be used to handle binary data from network sessions. To handle binary data stored in files, :ref:`FileAccess<class_FileAccess>` can be used directly.
 
 A ``StreamPeerBuffer`` object keeps an internal cursor which is the offset in bytes to the start of the buffer. Get and put operations are performed at the cursor position and will move the cursor accordingly.
 

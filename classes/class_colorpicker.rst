@@ -50,13 +50,19 @@ Properties
 Methods
 -------
 
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** |const|                           |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**                   |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_recent_preset<class_ColorPicker_method_add_recent_preset>` **(** :ref:`Color<class_Color>` color **)**     |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)**               |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`erase_recent_preset<class_ColorPicker_method_erase_recent_preset>` **(** :ref:`Color<class_Color>` color **)** |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** |const|                                         |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`get_recent_presets<class_ColorPicker_method_get_recent_presets>` **(** **)** |const|                           |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -78,6 +84,10 @@ Theme Properties
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_ColorPicker_theme_icon_expanded_arrow>`             |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow<class_ColorPicker_theme_icon_folded_arrow>`                 |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`               |         |
@@ -85,6 +95,12 @@ Theme Properties
 | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_bg<class_ColorPicker_theme_icon_sample_bg>`                       |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`               |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`shape_circle<class_ColorPicker_theme_icon_shape_circle>`                 |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`shape_rect<class_ColorPicker_theme_icon_shape_rect>`                     |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`shape_rect_wheel<class_ColorPicker_theme_icon_shape_rect_wheel>`         |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 
 Signals
@@ -287,6 +303,16 @@ Adds the given color to a list of color presets. The presets are displayed in th
 
 ----
 
+.. _class_ColorPicker_method_add_recent_preset:
+
+- void **add_recent_preset** **(** :ref:`Color<class_Color>` color **)**
+
+Adds the given color to a list of color recent presets so that it can be picked later. Recent presets are the colors that were picked recently, a new preset is automatically created and added to recent presets when you pick a new color.
+
+\ **Note:** The recent presets list is only for *this* color picker.
+
+----
+
 .. _class_ColorPicker_method_erase_preset:
 
 - void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
@@ -295,11 +321,27 @@ Removes the given color from the list of color presets of this color picker.
 
 ----
 
+.. _class_ColorPicker_method_erase_recent_preset:
+
+- void **erase_recent_preset** **(** :ref:`Color<class_Color>` color **)**
+
+Removes the given color from the list of color recent presets of this color picker.
+
+----
+
 .. _class_ColorPicker_method_get_presets:
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **get_presets** **(** **)** |const|
 
 Returns the list of colors in the presets of the color picker.
+
+----
+
+.. _class_ColorPicker_method_get_recent_presets:
+
+- :ref:`PackedColorArray<class_PackedColorArray>` **get_recent_presets** **(** **)** |const|
+
+Returns the list of colors in the recent presets of the color picker.
 
 Theme Property Descriptions
 ---------------------------
@@ -386,6 +428,22 @@ Custom texture for the hue selection slider on the right.
 
 ----
 
+.. _class_ColorPicker_theme_icon_expanded_arrow:
+
+- :ref:`Texture2D<class_Texture2D>` **expanded_arrow**
+
+The icon for color preset drop down menu when expanded.
+
+----
+
+.. _class_ColorPicker_theme_icon_folded_arrow:
+
+- :ref:`Texture2D<class_Texture2D>` **folded_arrow**
+
+The icon for color preset drop down menu when folded.
+
+----
+
 .. _class_ColorPicker_theme_icon_overbright_indicator:
 
 - :ref:`Texture2D<class_Texture2D>` **overbright_indicator**
@@ -411,6 +469,30 @@ The indicator used to signalize that the color value is outside the 0-1 range.
 - :ref:`Texture2D<class_Texture2D>` **screen_picker**
 
 The icon for the screen color picker button.
+
+----
+
+.. _class_ColorPicker_theme_icon_shape_circle:
+
+- :ref:`Texture2D<class_Texture2D>` **shape_circle**
+
+The icon for circular picker shapes.
+
+----
+
+.. _class_ColorPicker_theme_icon_shape_rect:
+
+- :ref:`Texture2D<class_Texture2D>` **shape_rect**
+
+The icon for rectangular picker shapes.
+
+----
+
+.. _class_ColorPicker_theme_icon_shape_rect_wheel:
+
+- :ref:`Texture2D<class_Texture2D>` **shape_rect_wheel**
+
+The icon for rectangular wheel picker shapes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

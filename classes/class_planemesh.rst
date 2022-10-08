@@ -12,6 +12,8 @@ PlaneMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`QuadMesh<class_QuadMesh>`
+
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 Description
@@ -51,9 +53,9 @@ enum **Orientation**:
 
 - **FACE_X** = **0** --- ``PlaneMesh`` will face the positive X-axis.
 
-- **FACE_Y** = **1** --- ``PlaneMesh`` will face the positive Y-axis. This matches the behaviour of the ``PlaneMesh`` in Godot 3.x.
+- **FACE_Y** = **1** --- ``PlaneMesh`` will face the positive Y-axis. This matches the behavior of the ``PlaneMesh`` in Godot 3.x.
 
-- **FACE_Z** = **2** --- ``PlaneMesh`` will face the positive Z-axis. This matches the behvaiour of the QuadMesh in Godot 3.x.
+- **FACE_Z** = **2** --- ``PlaneMesh`` will face the positive Z-axis. This matches the behavior of the QuadMesh in Godot 3.x.
 
 Property Descriptions
 ---------------------

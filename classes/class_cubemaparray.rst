@@ -12,7 +12,18 @@ CubemapArray
 
 **Inherits:** :ref:`ImageTextureLayered<class_ImageTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A single composite texture resource which consists of multiple :ref:`Cubemap<class_Cubemap>`\ s.
 
+Description
+-----------
+
+``CubemapArray``\ s are made of an array of :ref:`Cubemap<class_Cubemap>`\ s. Accordingly, like :ref:`Cubemap<class_Cubemap>`\ s they are made of multiple textures the amount of which must be divisible by 6 (one image for each face of the cube). The primary benefit of ``CubemapArray``\ s is that they can be accessed in shader code using a single texture reference. In other words, you can pass multiple :ref:`Cubemap<class_Cubemap>`\ s into a shader using a single ``CubemapArray``.
+
+Generally, ``CubemapArray``\ s provide a more efficient way for storing multiple :ref:`Cubemap<class_Cubemap>`\ s, than storing multiple :ref:`Cubemap<class_Cubemap>`\ s themselves in an array.
+
+Internally Godot, uses ``CubemapArray``\ s for many effects including the :ref:`Sky<class_Sky>`, if you set :ref:`ProjectSettings.rendering/reflections/sky_reflections/texture_array_reflections<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>` to ``true``.
+
+\ **Note:** ``CubemapArray`` is not supported in the OpenGL 3 rendering backend.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

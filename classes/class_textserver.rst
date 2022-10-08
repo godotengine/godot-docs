@@ -431,6 +431,8 @@ LCD sub-pixel anti-aliasing mode is suitable only for rendering horizontal, unsc
 
 .. _class_TextServer_constant_FONT_LCD_SUBPIXEL_LAYOUT_VBGR:
 
+.. _class_TextServer_constant_FONT_LCD_SUBPIXEL_LAYOUT_MAX:
+
 enum **FontLCDSubpixelLayout**:
 
 - **FONT_LCD_SUBPIXEL_LAYOUT_NONE** = **0** --- Unknown or unsupported sub-pixel layout, LCD sub-pixel anti-aliasing is disabled.
@@ -442,6 +444,8 @@ enum **FontLCDSubpixelLayout**:
 - **FONT_LCD_SUBPIXEL_LAYOUT_VRGB** = **3** --- Vertical RGB sub-pixel layout.
 
 - **FONT_LCD_SUBPIXEL_LAYOUT_VBGR** = **4** --- Vertical BGR sub-pixel layout.
+
+- **FONT_LCD_SUBPIXEL_LAYOUT_MAX** = **5**
 
 ----
 

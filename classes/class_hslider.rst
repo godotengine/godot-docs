@@ -24,24 +24,38 @@ Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min
 Theme Properties
 ----------------
 
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
-+-----------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
-+-----------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`int<class_int>`             | :ref:`grabber_offset<class_HSlider_theme_constant_grabber_offset>`              | ``0`` |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_HSlider_theme_style_slider>`                                 |       |
++-----------------------------------+---------------------------------------------------------------------------------+-------+
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_HSlider_theme_constant_grabber_offset:
+
+- :ref:`int<class_int>` **grabber_offset**
+
++-----------+-------+
+| *Default* | ``0`` |
++-----------+-------+
+
+Vertical offset of the grabber.
+
+----
 
 .. _class_HSlider_theme_icon_grabber:
 

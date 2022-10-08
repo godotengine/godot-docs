@@ -658,7 +658,7 @@ This is useful to simulate `aerial perspective <https://en.wikipedia.org/wiki/Ae
 | *Getter*  | get_fog_density()      |
 +-----------+------------------------+
 
-The exponential fog density to use. Higher values result in a more dense fog.
+The *exponential* fog density to use. Higher values result in a more dense fog. Fog rendering is exponential as in real life.
 
 ----
 
@@ -1726,7 +1726,9 @@ The :ref:`Color<class_Color>` of the volumetric fog when interacting with lights
 | *Getter*  | get_volumetric_fog_ambient_inject()      |
 +-----------+------------------------------------------+
 
-Scales the strength of ambient light used in the volumetric fog. A value of ``0`` means that ambient light will not impact the volumetric fog.
+Scales the strength of ambient light used in the volumetric fog. A value of ``0.0`` means that ambient light will not impact the volumetric fog. :ref:`volumetric_fog_ambient_inject<class_Environment_property_volumetric_fog_ambient_inject>` has a small performance cost when set above ``0.0``.
+
+\ **Note:** This has no visible effect if :ref:`volumetric_fog_density<class_Environment_property_volumetric_fog_density>` is ``0.0`` or if :ref:`volumetric_fog_albedo<class_Environment_property_volumetric_fog_albedo>` is a fully black color.
 
 ----
 
@@ -1742,7 +1744,7 @@ Scales the strength of ambient light used in the volumetric fog. A value of ``0`
 | *Getter*  | get_volumetric_fog_anisotropy()      |
 +-----------+--------------------------------------+
 
-The direction of scattered light as it goes through the volumetric fog. A value close ``1`` means almost all light is scattered forward. A value close to ``0`` means light is scattered equally in all directions. A value close to ``-1`` means light is scattered mostly backward. Fog and mist scatter light slightly forward, while smoke scatters light equally in all directions.
+The direction of scattered light as it goes through the volumetric fog. A value close to ``1.0`` means almost all light is scattered forward. A value close to ``0.0`` means light is scattered equally in all directions. A value close to ``-1.0`` means light is scattered mostly backward. Fog and mist scatter light slightly forward, while smoke scatters light equally in all directions.
 
 ----
 
@@ -1758,7 +1760,9 @@ The direction of scattered light as it goes through the volumetric fog. A value 
 | *Getter*  | get_volumetric_fog_density()      |
 +-----------+-----------------------------------+
 
-The base density of the volumetric fog. Set this to the lowest density you want to have globally.
+The base *exponential* density of the volumetric fog. Set this to the lowest density you want to have globally. :ref:`FogVolume<class_FogVolume>`\ s can be used to add to or subtract from this density in specific areas. Fog rendering is exponential as in real life.
+
+A value of ``0.0`` disables global volumetric fog while allowing :ref:`FogVolume<class_FogVolume>`\ s to display volumetric fog in specific areas.
 
 ----
 
@@ -1824,6 +1828,8 @@ The brightness of the emitted light from the volumetric fog.
 
 Enables the volumetric fog effect. Volumetric fog uses a screen-aligned froxel buffer to calculate accurate volumetric scattering in the short to medium range. Volumetric fog interacts with :ref:`FogVolume<class_FogVolume>`\ s and lights to calculate localized and global fog. Volumetric fog uses a PBR single-scattering model based on extinction, scattering, and emission which it exposes to users as density, albedo, and emission.
 
+\ **Note:** Volumetric fog is only available in the forward plus renderer. It is not available in the mobile renderer or the compatibility renderer.
+
 ----
 
 .. _class_Environment_property_volumetric_fog_gi_inject:
@@ -1838,7 +1844,9 @@ Enables the volumetric fog effect. Volumetric fog uses a screen-aligned froxel b
 | *Getter*  | get_volumetric_fog_gi_inject()      |
 +-----------+-------------------------------------+
 
-Scales the strength of Global Illumination used in the volumetric fog. A value of ``0.0`` means that Global Illumination will not impact the volumetric fog.
+Scales the strength of Global Illumination used in the volumetric fog's albedo color. A value of ``0.0`` means that Global Illumination will not impact the volumetric fog. :ref:`volumetric_fog_gi_inject<class_Environment_property_volumetric_fog_gi_inject>` has a small performance cost when set above ``0.0``.
+
+\ **Note:** This has no visible effect if :ref:`volumetric_fog_density<class_Environment_property_volumetric_fog_density>` is ``0.0`` or if :ref:`volumetric_fog_albedo<class_Environment_property_volumetric_fog_albedo>` is a fully black color.
 
 \ **Note:** Only :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) are taken into account when using :ref:`volumetric_fog_gi_inject<class_Environment_property_volumetric_fog_gi_inject>`. Global illumination from :ref:`LightmapGI<class_LightmapGI>`, :ref:`ReflectionProbe<class_ReflectionProbe>` and SSIL (see :ref:`ssil_enabled<class_Environment_property_ssil_enabled>`) will be ignored by volumetric fog.
 
@@ -1856,7 +1864,7 @@ Scales the strength of Global Illumination used in the volumetric fog. A value o
 | *Getter*  | get_volumetric_fog_length()      |
 +-----------+----------------------------------+
 
-The distance over which the volumetric fog is computed. Increase to compute fog over a greater range, decrease to add more detail when a long range is not needed. For best quality fog, keep this as low as possible.
+The distance over which the volumetric fog is computed. Increase to compute fog over a greater range, decrease to add more detail when a long range is not needed. For best quality fog, keep this as low as possible. See also :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>`.
 
 ----
 
@@ -1873,6 +1881,8 @@ The distance over which the volumetric fog is computed. Increase to compute fog 
 +-----------+--------------------------------------+
 
 The factor to use when affecting the sky with volumetric fog. ``1.0`` means that volumetric fog can fully obscure the sky. Lower values reduce the impact of volumetric fog on sky rendering, with ``0.0`` not affecting sky rendering at all.
+
+\ **Note:** :ref:`volumetric_fog_sky_affect<class_Environment_property_volumetric_fog_sky_affect>` also affects :ref:`FogVolume<class_FogVolume>`\ s, even if :ref:`volumetric_fog_density<class_Environment_property_volumetric_fog_density>` is ``0.0``. If you notice :ref:`FogVolume<class_FogVolume>`\ s are disappearing when looking towards the sky, set :ref:`volumetric_fog_sky_affect<class_Environment_property_volumetric_fog_sky_affect>` to ``1.0``.
 
 ----
 
@@ -1904,7 +1914,7 @@ The amount by which to blend the last frame with the current frame. A higher num
 | *Getter*  | is_volumetric_fog_temporal_reprojection_enabled()       |
 +-----------+---------------------------------------------------------+
 
-Enables temporal reprojection in the volumetric fog. Temporal reprojection blends the current frame's volumetric fog with the last frame's volumetric fog to smooth out jagged edges. The performance cost is minimal, however it does lead to moving :ref:`FogVolume<class_FogVolume>`\ s and :ref:`Light3D<class_Light3D>`\ s "ghosting" and leaving a trail behind them. When temporal reprojection is enabled, try to avoid moving :ref:`FogVolume<class_FogVolume>`\ s or :ref:`Light3D<class_Light3D>`\ s too fast.
+Enables temporal reprojection in the volumetric fog. Temporal reprojection blends the current frame's volumetric fog with the last frame's volumetric fog to smooth out jagged edges. The performance cost is minimal; however, it leads to moving :ref:`FogVolume<class_FogVolume>`\ s and :ref:`Light3D<class_Light3D>`\ s "ghosting" and leaving a trail behind them. When temporal reprojection is enabled, try to avoid moving :ref:`FogVolume<class_FogVolume>`\ s or :ref:`Light3D<class_Light3D>`\ s too fast. Short-lived dynamic lighting effects should have :ref:`Light3D.light_volumetric_fog_energy<class_Light3D_property_light_volumetric_fog_energy>` set to ``0.0`` to avoid ghosting.
 
 Method Descriptions
 -------------------

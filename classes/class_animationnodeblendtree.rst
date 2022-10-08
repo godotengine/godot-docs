@@ -56,6 +56,15 @@ Methods
 | void                                      | :ref:`set_node_position<class_AnimationNodeBlendTree_method_set_node_position>` **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**                                             |
 +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_AnimationNodeBlendTree_signal_node_changed:
+
+- **node_changed** **(** :ref:`StringName<class_StringName>` node_name **)**
+
+Emitted when the input port information is changed.
+
 Constants
 ---------
 

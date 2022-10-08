@@ -70,6 +70,8 @@ Methods
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_inverse_inertia<class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia>` **(** **)** |virtual| |const|                                                                               |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_Basis>`                                         | :ref:`_get_inverse_inertia_tensor<class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia_tensor>` **(** **)** |virtual| |const|                                                                 |
++-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                         | :ref:`_get_inverse_mass<class_PhysicsDirectBodyState3DExtension_method__get_inverse_mass>` **(** **)** |virtual| |const|                                                                                     |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_linear_velocity<class_PhysicsDirectBodyState3DExtension_method__get_linear_velocity>` **(** **)** |virtual| |const|                                                                               |
@@ -263,6 +265,12 @@ Method Descriptions
 .. _class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia:
 
 - :ref:`Vector3<class_Vector3>` **_get_inverse_inertia** **(** **)** |virtual| |const|
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia_tensor:
+
+- :ref:`Basis<class_Basis>` **_get_inverse_inertia_tensor** **(** **)** |virtual| |const|
 
 ----
 

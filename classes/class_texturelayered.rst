@@ -14,12 +14,22 @@ TextureLayered
 
 **Inherited By:** :ref:`CompressedTextureLayered<class_CompressedTextureLayered>`, :ref:`ImageTextureLayered<class_ImageTextureLayered>`, :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>`
 
-Base class for 3D texture types.
+Base class for texture types which contain the data of multiple :ref:`Image<class_Image>`\ s. Each image is of the same size and format.
 
 Description
 -----------
 
-Base class for :ref:`Texture2DArray<class_Texture2DArray>`, :ref:`Cubemap<class_Cubemap>` and :ref:`CubemapArray<class_CubemapArray>`. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types. Data is set on a per-layer basis. For :ref:`Texture2DArray<class_Texture2DArray>`\ s, the layer specifies the array layer.
+Base class for :ref:`Texture2DArray<class_Texture2DArray>`, :ref:`Cubemap<class_Cubemap>` and :ref:`CubemapArray<class_CubemapArray>`. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types.
+
+Data is set on a per-layer basis. For :ref:`Texture2DArray<class_Texture2DArray>`\ s, the layer specifies the array layer.
+
+All images need to have the same width, height and number of mipmap levels.
+
+A ``TextureLayered`` can be loaded with ``method ResourceFormatLoader.load``.
+
+To create such a texture file yourself, re-import your image files using the Godot Editor import presets.
+
+Internally, Godot maps these files to their respective counterparts in the target rendering driver (GLES3, Vulkan).
 
 Methods
 -------
@@ -152,6 +162,8 @@ Returns an :ref:`Image<class_Image>` resource with the data from specified ``lay
 
 - :ref:`int<class_int>` **get_layers** **(** **)** |const|
 
+Returns the number of referenced :ref:`Image<class_Image>`\ s.
+
 ----
 
 .. _class_TextureLayered_method_get_width:
@@ -165,6 +177,8 @@ Returns the width of the texture. Width is typically represented by the X-axis.
 .. _class_TextureLayered_method_has_mipmaps:
 
 - :ref:`bool<class_bool>` **has_mipmaps** **(** **)** |const|
+
+Returns ``true`` if the layers have generated mipmaps.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

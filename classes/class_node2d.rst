@@ -221,6 +221,10 @@ The node's scale. Unscaled value: ``(1, 1)``.
 | *Getter*  | get_skew()      |
 +-----------+-----------------+
 
+Slants the node.
+
+\ **Note:** Skew is X axis only.
+
 ----
 
 .. _class_Node2D_property_transform:

@@ -281,9 +281,19 @@ Returns the size of a bounding box of a single-line string, taking kerning and a
 
 For example, to get the string size as displayed by a single-line Label, use:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var string_size = $Label.get_theme_font("font").get_string_size($Label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, $Label.get_theme_font_size("font_size"))
+
+ .. code-tab:: csharp
+
+    Label label = GetNode<Label>("Label");
+    Vector2 stringSize = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size"));
+
+
 
 \ **Note:** Real height of the string is context-dependent and can be significantly different from the value returned by :ref:`get_height<class_Font_method_get_height>`.
 

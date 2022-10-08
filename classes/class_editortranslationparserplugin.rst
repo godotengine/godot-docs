@@ -32,7 +32,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
 
  .. code-tab:: gdscript
 
-    tool
+    @tool
     extends EditorTranslationParserPlugin
     
     func _parse_file(path, msgids, msgids_context_plural):
@@ -101,7 +101,7 @@ To add a translatable string associated with context or plural, add it to ``msgi
 
 
 
-\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`File<class_File>` type.
+\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type.
 
 For example:
 

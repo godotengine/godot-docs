@@ -2691,7 +2691,7 @@ Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_BaseMat
 
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
 
-Returns the :ref:`Texture<class_Texture>` associated with the specified :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`.
+Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`.
 
 ----
 

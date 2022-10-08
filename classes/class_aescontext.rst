@@ -63,6 +63,7 @@ This class provides access to AES encryption/decryption of raw data. Both AES-EC
     public class Example : Node
     {
         public AESContext Aes = new AESContext();
+    
         public override void _Ready()
         {
             string key = "My secret key!!!"; // Key must be either 16 or 32 bytes.

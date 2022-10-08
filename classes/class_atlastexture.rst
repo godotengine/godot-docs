@@ -12,14 +12,16 @@ AtlasTexture
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Crops out one part of a texture, such as a texture from a texture atlas.
+A texture that crops out part of another Texture2D.
 
 Description
 -----------
 
-:ref:`Texture2D<class_Texture2D>` resource that crops out one part of the :ref:`atlas<class_AtlasTexture_property_atlas>` texture, defined by :ref:`region<class_AtlasTexture_property_region>`. The main use case is cropping out textures from a texture atlas, which is a big texture file that packs multiple smaller textures. Consists of a :ref:`Texture2D<class_Texture2D>` for the :ref:`atlas<class_AtlasTexture_property_atlas>`, a :ref:`region<class_AtlasTexture_property_region>` that defines the area of :ref:`atlas<class_AtlasTexture_property_atlas>` to use, and a :ref:`margin<class_AtlasTexture_property_margin>` that defines the border width.
+:ref:`Texture2D<class_Texture2D>` resource that draws only part of its :ref:`atlas<class_AtlasTexture_property_atlas>` texture, as defined by the :ref:`region<class_AtlasTexture_property_region>`. An additional :ref:`margin<class_AtlasTexture_property_margin>` can also be set, which is useful for small adjustments.
 
-\ ``AtlasTexture`` cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, cannot be tiled in nodes such as :ref:`TextureRect<class_TextureRect>`, and does not work properly if used inside of other ``AtlasTexture`` resources. Multiple ``AtlasTexture`` resources can be used to crop multiple textures from the atlas. Using a texture atlas helps to optimize video memory costs and render calls compared to using multiple small files.
+Multiple ``AtlasTexture`` resources can be cropped from the same :ref:`atlas<class_AtlasTexture_property_atlas>`. Packing many smaller textures into a singular large texture helps to optimize video memory costs and render calls.
+
+\ **Note:** ``AtlasTexture`` cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, and may not tile properly in nodes such as :ref:`TextureRect<class_TextureRect>`, when inside other ``AtlasTexture`` resources.
 
 Properties
 ----------
@@ -47,7 +49,7 @@ Property Descriptions
 | *Getter* | get_atlas()      |
 +----------+------------------+
 
-The texture that contains the atlas. Can be any :ref:`Texture2D<class_Texture2D>` subtype.
+The texture that contains the atlas. Can be any type inheriting from :ref:`Texture2D<class_Texture2D>`, including another ``AtlasTexture``.
 
 ----
 
@@ -63,7 +65,7 @@ The texture that contains the atlas. Can be any :ref:`Texture2D<class_Texture2D>
 | *Getter*  | has_filter_clip()      |
 +-----------+------------------------+
 
-If ``true``, clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
+If ``true``, the area outside of the :ref:`region<class_AtlasTexture_property_region>` is clipped to avoid bleeding of the surrounding texture pixels.
 
 ----
 
@@ -79,7 +81,7 @@ If ``true``, clips the area outside of the region to avoid bleeding of the surro
 | *Getter*  | get_margin()          |
 +-----------+-----------------------+
 
-The margin around the region. The :ref:`Rect2<class_Rect2>`'s :ref:`Rect2.size<class_Rect2_property_size>` parameter ("w" and "h" in the editor) resizes the texture so it fits within the margin.
+The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful for small adjustments. If the :ref:`Rect2.size<class_Rect2_property_size>` of this property ("w" and "h" in the editor) is set, the drawn texture is resized to fit within the margin.
 
 ----
 
@@ -95,7 +97,7 @@ The margin around the region. The :ref:`Rect2<class_Rect2>`'s :ref:`Rect2.size<c
 | *Getter*  | get_region()          |
 +-----------+-----------------------+
 
-The AtlasTexture's used region.
+The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

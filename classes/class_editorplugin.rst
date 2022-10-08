@@ -92,11 +92,11 @@ Methods
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                                              |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                                  |
++-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer, :ref:`bool<class_bool>` first_priority=false **)** |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_scene_post_import_plugin<class_EditorPlugin_method_add_scene_post_import_plugin>` **(** :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>` scene_import_plugin, :ref:`bool<class_bool>` first_priority=false **)**       |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`add_spatial_gizmo_plugin<class_EditorPlugin_method_add_spatial_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_tool_menu_item<class_EditorPlugin_method_add_tool_menu_item>` **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` callable **)**                                                                                        |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,11 +138,11 @@ Methods
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_inspector_plugin<class_EditorPlugin_method_remove_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                                        |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`remove_node_3d_gizmo_plugin<class_EditorPlugin_method_remove_node_3d_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                            |
++-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_scene_format_importer_plugin<class_EditorPlugin_method_remove_scene_format_importer_plugin>` **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer **)**                                         |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_scene_post_import_plugin<class_EditorPlugin_method_remove_scene_post_import_plugin>` **(** :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>` scene_import_plugin **)**                                               |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`remove_spatial_gizmo_plugin<class_EditorPlugin_method_remove_spatial_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                            |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_tool_menu_item<class_EditorPlugin_method_remove_tool_menu_item>` **(** :ref:`String<class_String>` name **)**                                                                                                                            |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -600,7 +600,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         # You can use a custom icon:
         return preload("res://addons/my_plugin/my_plugin_icon.svg")
         # Or use a built-in icon:
-        return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
 
  .. code-tab:: csharp
 
@@ -609,7 +609,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         // You can use a custom icon:
         return ResourceLoader.Load<Texture2D>("res://addons/my_plugin/my_plugin_icon.svg");
         // Or use a built-in icon:
-        return GetEditorInterface().GetBaseControl().GetIcon("Node", "EditorIcons");
+        return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
     }
 
 
@@ -865,6 +865,16 @@ Registers a new :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`. Inspe
 
 ----
 
+.. _class_EditorPlugin_method_add_node_3d_gizmo_plugin:
+
+- void **add_node_3d_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**
+
+Registers a new :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>`. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a :ref:`Node3D<class_Node3D>`.
+
+See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
+
+----
+
 .. _class_EditorPlugin_method_add_scene_format_importer_plugin:
 
 - void **add_scene_format_importer_plugin** **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer, :ref:`bool<class_bool>` first_priority=false **)**
@@ -882,16 +892,6 @@ If ``first_priority`` is ``true``, the new import plugin is inserted first in th
 Add a :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>`. These plugins allow customizing the import process of 3D assets by adding new options to the import dialogs.
 
 If ``first_priority`` is ``true``, the new import plugin is inserted first in the list and takes precedence over pre-existing plugins.
-
-----
-
-.. _class_EditorPlugin_method_add_spatial_gizmo_plugin:
-
-- void **add_spatial_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**
-
-Registers a new :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>`. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a :ref:`Node3D<class_Node3D>`.
-
-See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
 
 ----
 
@@ -1061,6 +1061,14 @@ Removes an inspector plugin registered by :ref:`add_import_plugin<class_EditorPl
 
 ----
 
+.. _class_EditorPlugin_method_remove_node_3d_gizmo_plugin:
+
+- void **remove_node_3d_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**
+
+Removes a gizmo plugin registered by :ref:`add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>`.
+
+----
+
 .. _class_EditorPlugin_method_remove_scene_format_importer_plugin:
 
 - void **remove_scene_format_importer_plugin** **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer **)**
@@ -1074,14 +1082,6 @@ Removes a scene format importer registered by :ref:`add_scene_format_importer_pl
 - void **remove_scene_post_import_plugin** **(** :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>` scene_import_plugin **)**
 
 Remove the :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>`, added with :ref:`add_scene_post_import_plugin<class_EditorPlugin_method_add_scene_post_import_plugin>`.
-
-----
-
-.. _class_EditorPlugin_method_remove_spatial_gizmo_plugin:
-
-- void **remove_spatial_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**
-
-Removes a gizmo plugin registered by :ref:`add_spatial_gizmo_plugin<class_EditorPlugin_method_add_spatial_gizmo_plugin>`.
 
 ----
 

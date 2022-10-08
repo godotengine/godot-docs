@@ -21,7 +21,10 @@ Compared to :ref:`AStar2D<class_AStar2D>` you don't need to manually create poin
 
 In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`size<class_AStarGrid2D_property_size>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>` and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var astar_grid = AStarGrid2D.new()
     astar_grid.size = Vector2i(32, 32)
@@ -29,6 +32,17 @@ In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`size<c
     astar_grid.update()
     print(astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
     print(astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (16, 16), (32, 32), (48, 48), (48, 64)
+
+ .. code-tab:: csharp
+
+    AStarGrid2D astarGrid = new AStarGrid2D();
+    astarGrid.Size = new Vector2i(32, 32);
+    astarGrid.CellSize = new Vector2i(16, 16);
+    astarGrid.Update();
+    GD.Print(astarGrid.GetIdPath(Vector2i.Zero, new Vector2i(3, 4))); // prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
+    GD.Print(astarGrid.GetPointPath(Vector2i.Zero, new Vector2i(3, 4))); // prints (0, 0), (16, 16), (32, 32), (48, 48), (48, 64)
+
+
 
 Properties
 ----------
@@ -57,7 +71,7 @@ Methods
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`clear<class_AStarGrid2D_method_clear>` **(** **)**                                                                                                                    |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_id_path<class_AStarGrid2D_method_get_id_path>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**                         |
+| :ref:`Vector2i[]<class_Vector2i>`                   | :ref:`get_id_path<class_AStarGrid2D_method_get_id_path>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**                         |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**                   |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -282,7 +296,7 @@ Clears the grid and sets the :ref:`size<class_AStarGrid2D_property_size>` to :re
 
 .. _class_AStarGrid2D_method_get_id_path:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_id_path** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**
+- :ref:`Vector2i[]<class_Vector2i>` **get_id_path** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**
 
 Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 

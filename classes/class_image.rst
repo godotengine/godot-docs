@@ -674,8 +674,6 @@ Flips the image vertically.
 
 Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``.
 
-\ **Note:** Mipmap generation is done on the CPU, is single-threaded and is *always* done on the main thread. This means generating mipmaps will result in noticeable stuttering during gameplay, even if :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>` is called from a :ref:`Thread<class_Thread>`.
-
 ----
 
 .. _class_Image_method_get_data:

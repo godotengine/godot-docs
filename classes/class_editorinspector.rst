@@ -36,6 +36,13 @@ Properties
 | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | horizontal_scroll_mode | ``0`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_horizontal_scroll_mode>`) |
 +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
 
+Methods
+-------
+
++-----------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>` **(** **)** |const| |
++-----------------------------+----------------------------------------------------------------------------------------------+
+
 Signals
 -------
 
@@ -110,6 +117,15 @@ Emitted when a resource is selected in the inspector.
 - **restart_requested** **(** **)**
 
 Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
+
+Method Descriptions
+-------------------
+
+.. _class_EditorInspector_method_get_selected_path:
+
+- :ref:`String<class_String>` **get_selected_path** **(** **)** |const|
+
+Gets the path of the currently selected property.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -226,7 +226,7 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedByteArray
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)** |const|
 
-Returns a new ``PackedByteArray`` with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+Returns a new ``PackedByteArray`` with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants.
 
 ----
 
@@ -346,7 +346,7 @@ Decodes a size of a :ref:`Variant<class_Variant>` from the bytes starting at ``b
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)** |const|
 
-Returns a new ``PackedByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+Returns a new ``PackedByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants.
 
 ----
 
@@ -354,7 +354,7 @@ Returns a new ``PackedByteArray`` with the data decompressed. Set ``buffer_size`
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |const|
 
-Returns a new ``PackedByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
+Returns a new ``PackedByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
 
 This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, whereas ``decompress`` knows it's output buffer size from the beginning.
 

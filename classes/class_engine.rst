@@ -23,13 +23,13 @@ Properties
 ----------
 
 +---------------------------+---------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`max_fps<class_Engine_property_max_fps>`                                   | ``0``    |
++---------------------------+---------------------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`             | ``0.5``  |
 +---------------------------+---------------------------------------------------------------------------------+----------+
 | :ref:`int<class_int>`     | :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` | ``60``   |
 +---------------------------+---------------------------------------------------------------------------------+----------+
 | :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`         | ``true`` |
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`target_fps<class_Engine_property_target_fps>`                             | ``0``    |
 +---------------------------+---------------------------------------------------------------------------------+----------+
 | :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                             | ``1.0``  |
 +---------------------------+---------------------------------------------------------------------------------+----------+
@@ -90,6 +90,32 @@ Methods
 Property Descriptions
 ---------------------
 
+.. _class_Engine_property_max_fps:
+
+- :ref:`int<class_int>` **max_fps**
+
++-----------+--------------------+
+| *Default* | ``0``              |
++-----------+--------------------+
+| *Setter*  | set_max_fps(value) |
++-----------+--------------------+
+| *Getter*  | get_max_fps()      |
++-----------+--------------------+
+
+The maximum number of frames per second that can be rendered. A value of ``0`` means "no limit". The actual number of frames per second may still be below this value if the CPU or GPU cannot keep up with the project logic and rendering.
+
+Limiting the FPS can be useful to reduce system power consumption, which reduces heat and noise emissions (and improves battery life on mobile devices).
+
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled`` or ``Adaptive``, it takes precedence and the forced FPS number cannot exceed the monitor's refresh rate.
+
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled``, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using a FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Disabled``, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
+
+See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
+
+----
+
 .. _class_Engine_property_physics_jitter_fix:
 
 - :ref:`float<class_float>` **physics_jitter_fix**
@@ -120,7 +146,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 | *Getter*  | get_physics_ticks_per_second()      |
 +-----------+-------------------------------------+
 
-The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`target_fps<class_Engine_property_target_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
+The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
 \ **Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
 
@@ -143,22 +169,6 @@ If ``false``, stops printing error and warning messages to the console and edito
 \ **Warning:** If you set this to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. If this is set to ``false`` in a ``@tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
 
 \ **Note:** This property does not impact the editor's Errors tab when running a project from the editor.
-
-----
-
-.. _class_Engine_property_target_fps:
-
-- :ref:`int<class_int>` **target_fps**
-
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_target_fps(value) |
-+-----------+-----------------------+
-| *Getter*  | get_target_fps()      |
-+-----------+-----------------------+
-
-The desired frames per second. If the hardware cannot keep up, this setting may not be respected. A value of 0 means no limit. See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.debug/settings/fps/force_fps<class_ProjectSettings_property_debug/settings/fps/force_fps>`.
 
 ----
 
@@ -187,12 +197,24 @@ Returns the name of the CPU architecture the Godot binary was built for. Possibl
 
 To detect whether the current CPU architecture is 64-bit, you can use the fact that all 64-bit architecture names have ``64`` in their name:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     if "64" in Engine.get_architecture_name():
         print("Running on 64-bit CPU.")
     else:
         print("Running on 32-bit CPU.")
+
+ .. code-tab:: csharp
+
+    if (Engine.GetArchitectureName().Contains("64"))
+        GD.Print("Running on 64-bit CPU.");
+    else
+        GD.Print("Running on 32-bit CPU.");
+
+
 
 \ **Note:** :ref:`get_architecture_name<class_Engine_method_get_architecture_name>` does *not* return the name of the host CPU architecture. For example, if running an x86_32 Godot binary on a x86_64 system, the returned value will be ``x86_32``.
 
@@ -284,11 +306,28 @@ Returns the total number of frames passed since engine initialization which is a
 
 \ :ref:`get_physics_frames<class_Engine_method_get_physics_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func _physics_process(_delta):
         if Engine.get_physics_frames() % 2 == 0:
             pass  # Run expensive logic only once every 2 physics frames here.
+
+ .. code-tab:: csharp
+
+    public override void _PhysicsProcess(double delta)
+    {
+        base._PhysicsProcess(delta);
+    
+        if (Engine.GetPhysicsFrames() % 2 == 0)
+        {
+            // Run expensive logic only once every 2 physics frames here.
+        }
+    }
+
+
 
 ----
 
@@ -308,11 +347,28 @@ Returns the total number of frames passed since engine initialization which is a
 
 \ :ref:`get_process_frames<class_Engine_method_get_process_frames>` can be used to run expensive logic less often without relying on a :ref:`Timer<class_Timer>`:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func _process(_delta):
         if Engine.get_process_frames() % 2 == 0:
             pass  # Run expensive logic only once every 2 process (render) frames here.
+
+ .. code-tab:: csharp
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+    
+        if (Engine.GetProcessFrames() % 2 == 0)
+        {
+            // Run expensive logic only once every 2 physics frames here.
+        }
+    }
+
+
 
 ----
 
@@ -415,12 +471,24 @@ Returns ``true`` if a singleton with given ``name`` exists in global scope.
 
 Returns ``true`` if the script is currently running inside the editor, ``false`` otherwise. This is useful for ``@tool`` scripts to conditionally draw editor helpers, or prevent accidentally running "game" code that would affect the scene state while in the editor:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     if Engine.is_editor_hint():
         draw_gizmos()
     else:
         simulate_physics()
+
+ .. code-tab:: csharp
+
+    if (Engine.IsEditorHint())
+        DrawGizmos();
+    else
+        SimulatePhysics();
+
+
 
 See :doc:`Running code in the editor <../tutorials/plugins/running_code_in_the_editor>` in the documentation for more information.
 

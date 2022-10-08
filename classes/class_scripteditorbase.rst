@@ -35,7 +35,7 @@ Signals
 
 - **edited_script_changed** **(** **)**
 
-Emitted after script validation. For visual scripts on modification.
+Emitted after script validation.
 
 ----
 
@@ -47,11 +47,19 @@ Emitted when the user requests a specific documentation page.
 
 ----
 
+.. _class_ScriptEditorBase_signal_go_to_method:
+
+- **go_to_method** **(** :ref:`Object<class_Object>` script, :ref:`String<class_String>` method **)**
+
+Emitted when the user requests to view a specific method of a script, similar to :ref:`request_open_script_at_line<class_ScriptEditorBase_signal_request_open_script_at_line>`.
+
+----
+
 .. _class_ScriptEditorBase_signal_name_changed:
 
 - **name_changed** **(** **)**
 
-Emitted after script validation or when the edited resource has changed. Not used by visual scripts.
+Emitted after script validation or when the edited resource has changed.
 
 ----
 
@@ -59,7 +67,7 @@ Emitted after script validation or when the edited resource has changed. Not use
 
 - **replace_in_files_requested** **(** :ref:`String<class_String>` text **)**
 
-Emitted when the user request to find and replace text in the file system. Not used by visual scripts.
+Emitted when the user request to find and replace text in the file system.
 
 ----
 
@@ -75,7 +83,7 @@ Emitted when the user requests contextual help.
 
 - **request_open_script_at_line** **(** :ref:`Object<class_Object>` script, :ref:`int<class_int>` line **)**
 
-Emitted when the user requests a script.
+Emitted when the user requests to view a specific line of a script, similar to :ref:`go_to_method<class_ScriptEditorBase_signal_go_to_method>`.
 
 ----
 
@@ -91,7 +99,7 @@ Emitted when the user contextual goto and the item is in the same script.
 
 - **search_in_files_requested** **(** :ref:`String<class_String>` text **)**
 
-Emitted when the user request to search text in the file system. Not used by visual scripts.
+Emitted when the user request to search text in the file system.
 
 Method Descriptions
 -------------------
@@ -108,7 +116,7 @@ Adds a :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the open
 
 - :ref:`Control<class_Control>` **get_base_editor** **(** **)** |const|
 
-Returns the underlying :ref:`Control<class_Control>` used for editing scripts. This can be either :ref:`CodeEdit<class_CodeEdit>` (for text scripts) or :ref:`GraphEdit<class_GraphEdit>` (for visual scripts).
+Returns the underlying :ref:`Control<class_Control>` used for editing scripts. For text scripts, this is a :ref:`CodeEdit<class_CodeEdit>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

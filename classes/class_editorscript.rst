@@ -28,7 +28,7 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
 
  .. code-tab:: gdscript
 
-    tool
+    @tool
     extends EditorScript
     
     func _run():

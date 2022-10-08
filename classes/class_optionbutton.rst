@@ -94,6 +94,8 @@ Methods
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                              | :ref:`set_item_tooltip<class_OptionButton_method_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`show_popup<class_OptionButton_method_show_popup>` **(** **)**                                                                                                                 |
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -412,6 +414,14 @@ Sets the text of the item at index ``idx``.
 - void **set_item_tooltip** **(** :ref:`int<class_int>` idx, :ref:`String<class_String>` tooltip **)**
 
 Sets the tooltip of the item at index ``idx``.
+
+----
+
+.. _class_OptionButton_method_show_popup:
+
+- void **show_popup** **(** **)**
+
+Adjusts popup position and sizing for the ``OptionButton``, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
 
 Theme Property Descriptions
 ---------------------------

@@ -42,6 +42,8 @@ Methods
 -------
 
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                | :ref:`_set_read_only<class_EditorProperty_method__set_read_only>` **(** :ref:`bool<class_bool>` read_only **)** |virtual|                                                                                                                          |
++-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`_update_property<class_EditorProperty_method__update_property>` **(** **)** |virtual|                                                                                                                                                        |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`add_focusable<class_EditorProperty_method_add_focusable>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                  |
@@ -263,6 +265,14 @@ Used by the inspector, set to ``true`` when the property is read-only.
 
 Method Descriptions
 -------------------
+
+.. _class_EditorProperty_method__set_read_only:
+
+- void **_set_read_only** **(** :ref:`bool<class_bool>` read_only **)** |virtual|
+
+Called when the read-only status of the property is changed. It may be used to change custom controls into a read-only or modifiable state.
+
+----
 
 .. _class_EditorProperty_method__update_property:
 

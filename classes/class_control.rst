@@ -25,13 +25,13 @@ For more information on Godot's UI system, anchors, offsets, and containers, see
 
 \ **User Interface nodes and input**\ 
 
-Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node_method__input>`. :ref:`Node._input<class_Node_method__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls ``MainLoop._input_event``.
+Godot propagates input events via viewports. Each :ref:`Viewport<class_Viewport>` is responsible for propagating :ref:`InputEvent<class_InputEvent>`\ s to their child nodes. As the :ref:`SceneTree.root<class_SceneTree_property_root>` is a :ref:`Window<class_Window>`, this already happens automatically for all UI elements in your game.
 
-\ **FIXME:** No longer valid after DisplayServer split and Input refactoring.
+Input events are propagated through the :ref:`SceneTree<class_SceneTree>` from the root node to all child nodes by calling :ref:`Node._input<class_Node_method__input>`. For UI elements specifically, it makes more sense to override the virtual method :ref:`_gui_input<class_Control_method__gui_input>`, which filters out unrelated input events, such as by checking z-order, :ref:`mouse_filter<class_Control_property_mouse_filter>`, focus, or if the event was inside of the control's bounding box.
 
 Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
 
-Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
+Only one ``Control`` node can be in focus. Only the node in focus will receive events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
 Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
@@ -307,7 +307,7 @@ Signals
 
 - **focus_entered** **(** **)**
 
-Emitted when the node gains keyboard focus.
+Emitted when the node gains focus.
 
 ----
 
@@ -315,7 +315,7 @@ Emitted when the node gains keyboard focus.
 
 - **focus_exited** **(** **)**
 
-Emitted when the node loses keyboard focus.
+Emitted when the node loses focus.
 
 ----
 
@@ -402,7 +402,7 @@ enum **FocusMode**:
 
 - **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`focus_mode<class_Control_property_focus_mode>`.
 
-- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`focus_mode<class_Control_property_focus_mode>`.
+- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click, using the arrows and the Tab keys on the keyboard, or using the D-pad buttons on a gamepad. Use with :ref:`focus_mode<class_Control_property_focus_mode>`.
 
 ----
 
@@ -866,7 +866,7 @@ The minimum size of the node's bounding rectangle. If you set it to a value grea
 | *Getter*  | get_focus_mode()      |
 +-----------+-----------------------+
 
-The focus access mode for the control (None, Click or All). Only one Control can be focused at the same time, and it will receive keyboard signals.
+The focus access mode for the control (None, Click or All). Only one Control can be focused at the same time, and it will receive keyboard, gamepad, and mouse signals.
 
 ----
 
@@ -882,7 +882,7 @@ The focus access mode for the control (None, Click or All). Only one Control can
 | *Getter*  | get_focus_neighbor()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses the down arrow on the keyboard or down on a gamepad by default. You can change the key by editing the ``ui_down`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the down arrow on the keyboard or down on a gamepad by default. You can change the key by editing the ``ui_down`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 ----
 
@@ -898,7 +898,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_neighbor()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses the left arrow on the keyboard or left on a gamepad by default. You can change the key by editing the ``ui_left`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the left of this one.
+Tells Godot which node it should give focus to if the user presses the left arrow on the keyboard or left on a gamepad by default. You can change the key by editing the ``ui_left`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the left of this one.
 
 ----
 
@@ -914,7 +914,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_neighbor()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the ``ui_right`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the ``ui_right`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 ----
 
@@ -930,7 +930,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_neighbor()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the ``ui_top`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the ``ui_top`` input action. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 
 ----
 
@@ -946,7 +946,7 @@ Tells Godot which node it should give keyboard focus to if the user presses the 
 | *Getter*  | get_focus_next()      |
 +-----------+-----------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses :kbd:`Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_next`` input action.
+Tells Godot which node it should give focus to if the user presses :kbd:`Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_next`` input action.
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
@@ -964,7 +964,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 | *Getter*  | get_focus_previous()      |
 +-----------+---------------------------+
 
-Tells Godot which node it should give keyboard focus to if the user presses :kbd:`Shift + Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_prev`` input action.
+Tells Godot which node it should give focus to if the user presses :kbd:`Shift + Tab` on a keyboard by default. You can change the key by editing the ``ui_focus_prev`` input action.
 
 If this property is not set, Godot will select a "best guess" based on surrounding nodes in the scene tree.
 
@@ -1998,7 +1998,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 Returns the tooltip text ``at_position`` in local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
 
-\ **Note:** This method can be overriden to customise its behaviour. If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
+\ **Note:** This method can be overridden to customise its behaviour. If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
 
 ----
 
@@ -2187,7 +2187,7 @@ Returns ``true`` if layout is right-to-left.
 
 - void **release_focus** **(** **)**
 
-Give up the focus. No other control will be able to receive keyboard input.
+Give up the focus. No other control will be able to receive input.
 
 ----
 

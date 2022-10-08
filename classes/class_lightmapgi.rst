@@ -35,7 +35,7 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`float<class_float>`                               | :ref:`bias<class_LightmapGI_property_bias>`                                           | ``0.0005`` |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-| :ref:`int<class_int>`                                   | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``1``      |
+| :ref:`int<class_int>`                                   | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``3``      |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
@@ -47,9 +47,9 @@ Properties
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`Sky<class_Sky>`                                   | :ref:`environment_custom_sky<class_LightmapGI_property_environment_custom_sky>`       |            |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-| :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` | :ref:`environment_mode<class_LightmapGI_property_environment_mode>`                   | ``0``      |
+| :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` | :ref:`environment_mode<class_LightmapGI_property_environment_mode>`                   | ``1``      |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-| :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>`   | :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`       | ``0``      |
+| :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>`   | :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`       | ``2``      |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 | :ref:`bool<class_bool>`                                 | :ref:`interior<class_LightmapGI_property_interior>`                                   | ``false``  |
 +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
@@ -193,7 +193,7 @@ The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_p
 - :ref:`int<class_int>` **bounces**
 
 +-----------+--------------------+
-| *Default* | ``1``              |
+| *Default* | ``3``              |
 +-----------+--------------------+
 | *Setter*  | set_bounces(value) |
 +-----------+--------------------+
@@ -283,7 +283,7 @@ The sky to use as a source of environment lighting. Only effective if :ref:`envi
 - :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **environment_mode**
 
 +-----------+-----------------------------+
-| *Default* | ``0``                       |
+| *Default* | ``1``                       |
 +-----------+-----------------------------+
 | *Setter*  | set_environment_mode(value) |
 +-----------+-----------------------------+
@@ -299,7 +299,7 @@ The environment mode to use when baking lightmaps.
 - :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **generate_probes_subdiv**
 
 +-----------+----------------------------+
-| *Default* | ``0``                      |
+| *Default* | ``2``                      |
 +-----------+----------------------------+
 | *Setter*  | set_generate_probes(value) |
 +-----------+----------------------------+
