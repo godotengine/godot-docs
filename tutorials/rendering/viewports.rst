@@ -89,7 +89,7 @@ Scale & stretching
 ------------------
 
 :ref:`Viewports <class_Viewport>` have a "size" property, which represents the size of the :ref:`Viewport <class_Viewport>`
-in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`ViewportContainers <class_ViewportContainer>`,
+in pixels. For :ref:`Viewports <class_Viewport>` which are children of :ref:`SubViewportContainers <class_SubViewportContainer>`,
 these values are overridden, but for all others, this sets their resolution.
 
 It is also possible to scale the 2D content and make the :ref:`Viewport <class_Viewport>` resolution
@@ -162,13 +162,13 @@ it using (for example):
 Viewport Container
 ------------------
 
-If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`ViewportContainer <class_ViewportContainer>`, it will become active and display anything it has inside. The layout looks like this:
+If the :ref:`Viewport <class_Viewport>` is a child of a :ref:`SubViewportContainer <class_SubViewportContainer>`, it will become active and display anything it has inside. The layout looks like this:
 
 .. image:: img/container.png
 
-The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`ViewportContainer <class_ViewportContainer>` completely
-if :ref:`Stretch<class_ViewportContainer_property_stretch>` is set to ``true`` in :ref:`ViewportContainer <class_ViewportContainer>`.
-Note: The size of the :ref:`ViewportContainer <class_ViewportContainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
+The :ref:`Viewport <class_Viewport>` will cover the area of its parent :ref:`SubViewportContainer <class_SubViewportContainer>` completely
+if :ref:`Stretch<class_SubViewportContainer_property_stretch>` is set to ``true`` in :ref:`SubViewportContainer <class_SubViewportContainer>`.
+Note: The size of the :ref:`SubViewportContainer <class_SubViewportContainer>` cannot be smaller than the size of the :ref:`Viewport <class_Viewport>`.
 
 Rendering
 ---------

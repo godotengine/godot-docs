@@ -12,7 +12,7 @@ uses the depth buffer. You should already be familiar with post-processing
 generally and, in particular, with the methods outlined in the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`.
 
 In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>`
-and then rendered the Viewport in a :ref:`ViewportContainer <class_ViewportContainer>`
+and then rendered the Viewport in a :ref:`SubViewportContainer <class_SubViewportContainer>`
 to the main scene. One limitation of this method is that we could not access the
 depth buffer because the depth buffer is only available in spatial shaders and
 Viewports do not maintain depth information.

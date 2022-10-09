@@ -427,8 +427,8 @@ performance significantly while keeping the HUD and other 2D elements crisp.
 
 This is done by using the root Viewport node only for 2D elements, then creating
 a Viewport node to display the 3D world and displaying it using a
-ViewportContainer or TextureRect node. There will effectively be two viewports
-in the final project. One upside of using TextureRect over ViewportContainer is
+SubViewportContainer or TextureRect node. There will effectively be two viewports
+in the final project. One upside of using TextureRect over SubViewportContainer is
 that it allows enable linear filtering. This makes scaled 3D viewports look
 better in many cases.
 

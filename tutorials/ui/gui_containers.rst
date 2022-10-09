@@ -152,11 +152,11 @@ Mouse wheel and touch drag (when touch is available) are also valid ways to pan 
 As in the example above, one of the most common ways to use this container is together with a *VBoxContainer* as child.
 
 
-ViewportContainer
-^^^^^^^^^^^^^^^^^
+SubViewportContainer
+^^^^^^^^^^^^^^^^^^^^
 
 This is a special control that will only accept a single *Viewport* node as child, and it will display
-it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`).
+it as if it was an image (via :ref:`SubViewportContainer <class_SubViewportContainer>`).
 
 Creating custom Containers
 --------------------------
