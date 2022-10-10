@@ -34,7 +34,7 @@ the jump and squash mechanics.
 For now, we're going to create a basic rig for our character's 3D model. This
 will allow us to rotate the model later via code while it plays an animation.
 
-Add a :ref:`Node3D <class_Node3D>` node as a child of ``Player`` and name it ``Pivot``.
+Add a :ref:`Node3D <class_Node3D>` node as a child of ``Player`` and name it ``Pivot``
 
 .. image:: img/02.player_input/adding_node3D.webp
 
@@ -147,7 +147,7 @@ your interface should look like this.
 
 |image15|
 
-We have the ``jump`` action left to set up. Bind the Space key and the gamepad's
+The final action to set up is the ``jump`` action. Bind the Space key and the gamepad's
 A button.
 
 |image16|
