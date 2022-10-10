@@ -16,7 +16,8 @@ Hitbox with the Area node
 -------------------------
 
 Head back to the ``Player.tscn`` scene and add a new child node :ref:`Area3D <class_Area3D>`. Name it
-``MobDetector``. Add a :ref:`CollisionShape3D <class_CollisionShape3D>` node as a child of it.
+``MobDetector``
+Add a :ref:`CollisionShape3D <class_CollisionShape3D>` node as a child of it.
 
 |image0|
 
@@ -48,12 +49,12 @@ the mask to the "enemies" layer.
 
 When areas detect a collision, they emit signals. We're going to connect
 one to the ``Player`` node. Select ``MobDetector`` and go to *Inspector*'s *Node* tab, double-click the
-``body_entered`` signal and connect it to the ``Player``.
+``body_entered`` signal and connect it to the ``Player``
 
 |image4|
 
-The *MobDetector* will emit ``body_entered`` when a *CharacterBody3D* or a
-*RigidBody* node enters it. As it only masks the "enemies" physics
+The *MobDetector* will emit ``body_entered`` when a :ref:`CharacterBody3D <class_CharacterBody3D>` or a
+:ref:`RigidBody3D <class_RigidBody3D>` node enters it. As it only masks the "enemies" physics
 layers, it will only detect the ``Mob`` nodes.
 
 Code-wise, we're going to do two things: emit a signal we'll later use
@@ -100,7 +101,7 @@ a ``die()`` function that helps us put a descriptive label on the code.
     }
 
 Try the game again by pressing :kbd:`F5`. If everything is set up correctly,
-the character should die when an enemy runs into the collider. Note that without a ``Player``, the line
+the character should die when an enemy runs into the collider. Note that without a ``Player``, the following line
 
 .. tabs::
    .. code-tab:: gdscript GDScript
@@ -312,7 +313,7 @@ Next is ``Mob.gd``.
         }
     }
 
-Finally, the longest script, ``Player.gd``.
+Finally, the longest script, ``Player.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
