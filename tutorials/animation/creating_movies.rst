@@ -148,17 +148,9 @@ PNG
 ^^^
 
 PNG image sequence for video and WAV for audio. Features lossless video
-compression, at the cost of large file sizes and slow encoding. This is designed
-to be
+compression, at the cost of large file sizes and slow encoding. This is designed to be
 :ref:`encoded to a video file with an external tool after recording <doc_creating_movies_converting_avi>`.
-
-Transparency is supported, but the root viewport **must** have its
-``transparent_bg`` property set to ``true`` for transparency to be visible on
-the output image. This can be achieved by enabling the **Rendering > Transparent
-Background** advanced project setting. **Display > Window > Size > Transparent**
-and **Display > Window > Per Pixel Transparency > Enabled** can optionally be
-enabled to allow transparency to be previewed while recording the video, but
-they do not have to be enabled for the output image to contain transparency.
+Transparency is currently not supported, even if the root viewport is set to be transparent.
 
 To use PNG, specify a ``.png`` file to be created in the
 **Editor > Movie Writer > Movie File** project setting. The generated ``.wav``
@@ -298,11 +290,6 @@ well-suited for platforms that will re-encode your videos to reduce their size
 To get a smaller file at the cost of quality, *increase* the CRF value in the
 above command.
 
-To get a file with a better size/quality ratio (at the cost of slower encoding
-times), add ``-preset veryslow`` before ``-crf 15`` in the above command. On the
-contrary, ``-preset veryfast`` can be used to achieve faster encoding at the
-cost of a worse size/quality ratio.
-
 .. _doc_creating_movies_converting_image_sequence:
 
 Converting PNG image sequence + WAV audio to a video
@@ -323,15 +310,7 @@ or sped up, and audio will be out of sync with the video.
 
 ::
 
-    ffmpeg -r 60 -i input%08d.png -i input.wav -crf 15 output.mp4
-
-If you recorded a PNG image sequence with transparency enabled, you need to use
-a video format that supports storing transparency. MP4/H.264 doesn't support
-storing transparency, so you can use WebM/VP9 as an alternative:
-
-::
-
-    ffmpeg -r 60 -i input%08d.png -i input.wav -c:v libvpx-vp9 -crf 15 -pix_fmt yuva420p output.webm
+    ffmpeg -i input%08d.png -i input.wav -r 60 -crf 15 output.mp4
 
 .. _doc_creating_movies_motion_blur:
 
@@ -357,7 +336,7 @@ while preserving its existing aspect ratio:
 
 ::
 
-    ffmpeg -i input.avi -vf "scale=-1:1080" -crf 15 output.mp4
+    ffmpeg -i input.avi -vf "scale=-1:1080" -crf 15 -preset veryfast output.mp4
 
 
 .. _doc_creating_movies_reducing_framerate:
