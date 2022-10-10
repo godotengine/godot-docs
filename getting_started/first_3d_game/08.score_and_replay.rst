@@ -13,7 +13,7 @@ In the main scene, add a new child node :ref:`Control <class_Control>` to ``Main
 ``UserInterface``. You will automatically be taken to the 2D screen, where you can
 edit your User Interface (UI).
 
-Add a :ref:`Label <class_Label>` node and rename it to ``ScoreLabel``.
+Add a :ref:`Label <class_Label>` node and name it ``ScoreLabel``
 
 |image0|
 
@@ -60,11 +60,11 @@ By default, a theme only has one property, the *Default Font*.
     interfaces, but that is beyond the scope of this series. To learn more about
     creating and editing themes, see :ref:`doc_gui_skinning`.
 
-Click the *Default Font* property and create a new *DynamicFont*.
+Click the *Default Font* property and create a new :ref:`FontVariation <class_FontVariation>`
 
 |image7|
 
-Expand the *DynamicFont* by clicking on it and expand its *Font* section. There,
+Expand the :ref:`FontVariation <class_FontVariation>` by clicking on it and expand its *Font* section. There,
 you will see an empty *Font Data* field.
 
 |image8|
@@ -72,7 +72,7 @@ you will see an empty *Font Data* field.
 This one expects a font file like the ones you have on your computer. Two common
 font file formats are TrueType Font (TTF) and OpenType Font (OTF).
 
-In the *FileSystem* dock, Expand the ``fonts`` directory and click and drag the
+In the *FileSystem* dock, expand the ``fonts`` directory and click and drag the
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Font Data*.
 The text will reappear in the theme preview.
 
@@ -117,7 +117,7 @@ Alternatively, you can double-click the ``Main.gd`` file in the *FileSystem*
 dock.
 
 At the bottom of the ``_on_mob_timer_timeout()`` function, add the following
-line.
+line:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -194,7 +194,7 @@ We'll now add the ability to play again after dying. When the player dies, we'll
 display a message on the screen and wait for input.
 
 Head back to the ``Main.tscn`` scene, select the ``UserInterface`` node, add a
-child node:ref:`ColorRect <class_ColorRect>`, and name it ``Retry``. This node fills a
+child node *ColorRect*, and name it ``Retry``. This node fills a
 rectangle with a uniform color and will serve as an overlay to darken the
 screen.
 
@@ -207,7 +207,7 @@ Open it and apply the *Full Rect* command.
 
 |image13|
 
-Nothing happens. Well, almost nothing: only the four green pins move to the
+Nothing happens. Well, almost nothing; only the four green pins move to the
 corners of the selection box.
 
 |image14|
@@ -217,9 +217,9 @@ margins relative to their parent's bounding box. Here, the ``UserInterface`` nod
 has a small size and the ``Retry`` one is limited by it.
 
 Select the ``UserInterface`` and apply *Layout -> Full Rect* to it as well. The
-*Retry* node should now span the whole viewport.
+``Retry`` node should now span the whole viewport.
 
-Let's change its color so it darkens the game area. Select *Retry* and in the
+Let's change its color so it darkens the game area. Select ``Retry`` and in the
 *Inspector*, set its *Color* to something both dark and transparent. To do so,
 in the color picker, drag the *A* slider to the left. It controls the color's
 Alpha channel, that is to say, its opacity/transparency.
