@@ -366,6 +366,15 @@ Image options
 
   Target width of the image.
 
+- **region**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | x,y,width,height in pixels                 |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Region rect of the image.
 
 .. _doc_bbcode_in_richtextlabel_image_alignment:
 
