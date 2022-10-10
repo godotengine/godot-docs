@@ -140,7 +140,7 @@ node and add a child node :ref:`DirectionalLight <class_DirectionalLight3D>`.
 
 .. image:: img/01.game_setup/create_directional_light3d.webp
 
-We need to move it and rotate it.
+We need to move and rotate the :ref:`DirectionalLight <class_DirectionalLight3D>` node.
 Move it up by clicking and dragging on the manipulator's green arrow
 and click and drag on the red arc to rotate it around the X axis, until the
 ground is lit.
