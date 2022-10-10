@@ -325,4 +325,4 @@ Here is the complete ``Mob.gd`` script for reference.
 .. |image7| image:: img/04.mob_scene/08.mob_attach_script.png
 .. |image8| image:: img/04.mob_scene/09.switch_to_3d_workspace.png
 .. |image9| image:: img/04.mob_scene/10.node_dock.webp
-.. |image10| image:: img/04.mob_scene/11.connect_signal.png
+.. |image10| image:: img/04.mob_scene/11.connect_signal.webp
