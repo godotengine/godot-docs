@@ -185,7 +185,7 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
 
         # Vertical Velocity
     	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
-	    	target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+	        target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
         # Moving the Character
         velocity = target_velocity
