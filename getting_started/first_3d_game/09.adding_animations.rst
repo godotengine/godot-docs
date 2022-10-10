@@ -78,7 +78,7 @@ corresponding property. The keyframe gets inserted where your time cursor is in
 the timeline.
 
 Let's insert our first keys. Here, we will animate both the translation and the
-rotation of the *Character* node.
+rotation of the ``Character`` node.
 
 Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
 
