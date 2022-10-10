@@ -63,8 +63,8 @@ its shape. If you click the icon, a popup appears to give you more information.
 
 .. image:: img/01.game_setup/07.collision_shape_warning.png
 
-To create a shape, with the :ref:`CollisionShape3D <class_CollisionShape3D>` selected, head to the *Inspector*
-and click the *[empty]* field next to the *Shape* property. Create a new *Box
+To create a shape, select the :ref:`CollisionShape3D <class_CollisionShape3D>` node, head to the *Inspector*
+and click the *<empty>* field next to the *Shape* property. Create a new *Box
 Shape3D*.
 
 .. image:: img/01.game_setup/08.create_box_shape3D.jpg
