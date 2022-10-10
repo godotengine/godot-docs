@@ -63,7 +63,7 @@ one. Then, toggle **off** the *Mask* by clicking on it.
 
 |image3|
 
-As I mentioned above, the *Mask* property allows a node to listen to interaction
+As mentioned before, the *Mask* property allows a node to listen to interaction
 with other physics objects, but we don't need it to have collisions. ``Ground`` doesn't need to listen to anything; it's just there to prevent
 creatures from falling.
 
