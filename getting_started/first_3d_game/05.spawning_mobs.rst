@@ -58,7 +58,7 @@ top-left corner. Alternatively, you can press the keypad's 7 key.
 
 |image6|
 
-The grid is a bit distracting for me. You can toggle it by going to the *View*
+The grid may be distracting. You can toggle it by going to the *View*
 menu in the toolbar and clicking *View Grid*.
 
 |image7|
@@ -195,7 +195,7 @@ We want to spawn mobs at regular time intervals. To do this, we need to go back
 to the scene and add a timer. Before that, though, we need to assign the
 ``Mob.tscn`` file to the ``mob_scene`` property above (otherwise it's null!)
 
-Head back to the 3D screen and select the *Main* node. Drag ``Mob.tscn`` from
+Head back to the 3D screen and select the ``Main`` node. Drag ``Mob.tscn`` from
 the *FileSystem* dock to the *Mob Scene* slot in the *Inspector*.
 
 |image20|
