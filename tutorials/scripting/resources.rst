@@ -202,10 +202,10 @@ the Inspector's creation dialog. This will auto-add your script to the Resource
 object you create.
 
 Let's see some examples.
-Create a :ref:`Resource <class_Resource>` and name it ``bot_stats``
-It should appear in your file tab with the full name ``bot_stats.tres``
+Create a :ref:`Resource <class_Resource>` and name it ``bot_stats``.
+It should appear in your file tab with the full name ``bot_stats.tres``.
 Without a script, it's useless, so let's add some data and logic!
-Attach a script to it named ``bot_stats`` (or just create a new script, and then drag it to it)
+Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
 .. tabs::
   .. code-tab:: gdscript GDScript
