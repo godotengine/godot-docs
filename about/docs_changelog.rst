@@ -110,11 +110,6 @@ Scripting
 - :ref:`doc_what_is_gdnative`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
 
-VR
-^^
-
-- :ref:`doc_developing_for_oculus_quest`
-
 User Interface (UI)
 ^^^^^^^^^^^^^^^^^^^
 
@@ -169,12 +164,6 @@ Networking
 ^^^^^^^^^^
 
 - :ref:`doc_webrtc`
-
-VR
-^^
-
-- :ref:`doc_vr_starter_tutorial_part_one`
-- :ref:`doc_vr_starter_tutorial_part_two`
 
 Plugins
 ^^^^^^^

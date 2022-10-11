@@ -247,7 +247,7 @@ More information can be found on the :ref:`doc_godot_notifications` page.
 References
 ----------
 
-:ref:`Reference <class_reference>` inherits from Object and holds a
+:ref:`Reference <class_ReferenceCounted>` inherits from Object and holds a
 reference count. It is the base for reference counted object types.
 Declaring them must be done using Ref<> template. For example:
 
