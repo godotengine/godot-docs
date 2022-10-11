@@ -16,7 +16,8 @@ To create a navigation region using the SceneTree add a ``NavigationRegion3D`` o
 All regions require a navigationmesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigationmeshes.
 
 NavigationRegions will automatically push ``global_transform`` changes to the region on the NavigationServer which makes them suitable for moving platforms.
-The NavigationServer will attempt to connect navmeshes of individual regions when they are close enough. For more detail see :ref:`doc_navigation_connecting_navmesh`.
+The NavigationServer will attempt to connect navmeshes of individual regions when they are close enough. For more detail see :ref:`doc_navigation_connecting_navmesh`. 
+To connect NavigationRegions over arbitrary distances see :ref:`doc_navigation_using_navigationlinks` to learn how to create and use ``NavigationLinks``.
 
 .. warning::
 

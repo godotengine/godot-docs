@@ -6,6 +6,8 @@ Connecting NavigationMeshes
 Different NavigationMeshes are automatically merged by the NavigationServer 
 when at least two vertex positions of one edge exactly overlap.
 
+To connect over arbitrary distances see :ref:`doc_navigation_using_navigationlinks`.
+
 .. image:: img/navigation_vertex_merge.png
 
 The same is true for multiple NavigationPolygon resources. As long as their 
