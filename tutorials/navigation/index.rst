@@ -15,3 +15,5 @@ Navigation
    navigation_using_navigationservers
    navigation_using_navigationagents
    navigation_using_agent_avoidance
+   navigation_debug_tools
+   navigation_connecting_navmesh
