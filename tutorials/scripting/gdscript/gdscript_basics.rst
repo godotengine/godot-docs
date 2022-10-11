@@ -1100,7 +1100,7 @@ is best to use ``for i in array.size()``.
 	    array[i] = "Hello World"
 
 
-The loop variable is local to the for-loop. and assigning to it will not change
+The loop variable is local to the for-loop and assigning to it will not change
 the value on the array. Objects passed by reference (such as nodes) can still
 be manipulated by calling methods on the loop variable.
 
