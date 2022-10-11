@@ -892,6 +892,14 @@ argument, unlike Python).
 
 A function can ``return`` at any point. The default return value is ``null``.
 
+If a function contains only one line of code, it can be written on one line::
+
+    func square(a): return a * a
+
+    func hello_world(): print("Hello World")
+
+    func empty_function(): pass
+
 Functions can also have type specification for the arguments and for the return
 value. Types for arguments can be added in a similar way to variables::
 
@@ -928,7 +936,7 @@ return early with the ``return`` keyword, but they can't return any value.
 Referencing functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-Functions are first-class items in terms of the Callable object. Referencing a
+Functions are first-class items in terms of the :ref:`Callable <class_Callable>` object. Referencing a
 function by name without calling it will automatically generate the proper
 callable. This can be used to pass functions as arguments.
 
@@ -952,6 +960,32 @@ callable. This can be used to pass functions as arguments.
           the ``()`` operator directly. This behavior is implemented to avoid
           performance issues on direct function calls.
 
+Lambda functions
+^^^^^^^^^^^^^^^^
+
+Lambda functions allow you to declare functions that do not belong to a class. Instead a :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
+This can be useful to create Callables to pass around without polluting the class scope.
+
+::
+
+    var lambda = func(x): print(x)
+    lambda.call(42) # Prints "42"
+
+Lambda functions can be named for debugging purposes::
+
+    var lambda = func my_lambda(x):
+        print(x)
+
+Lambda functions capture the local environment. Local variables are passed by value, so they won't be updated in the lambda if changed in the local function::
+
+    var x = 42
+    var my_lambda = func(): print(x)
+    my_lambda.call() # Prints "42"
+    x = "Hello"
+    my_lambda.call() # Prints "42"
+
+.. note:: The values of the outer scope behave like constants. Therefore, if you declare an array or dictionary, it can still be modified afterwards.
+
 Static functions
 ^^^^^^^^^^^^^^^^
 
@@ -961,6 +995,8 @@ useful to make libraries of helper functions::
 
     static func sum2(a, b):
         return a + b
+
+Lambdas cannot be declared static.
 
 
 Statements and control flow
