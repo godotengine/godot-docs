@@ -17,11 +17,15 @@ arrange user interfaces, etc. **Resources** are **data containers**. They don't
 do anything on their own: instead, nodes use the data contained in resources.
 
 Anything Godot saves or loads from disk is a resource. Be it a scene (a ``.tscn``
-or an ``.scn`` file), an image, a script... Here are some ``Resource`` examples:
-:ref:`Texture <class_Texture>`, :ref:`Script <class_Script>`, :ref:`Mesh
-<class_Mesh>`, :ref:`Animation <class_Animation>`, :ref:`AudioStream
-<class_AudioStream>`, :ref:`Font <class_Font>`, :ref:`Translation
-<class_Translation>`.
+or an ``.scn`` file), an image, a script... Here are some :ref:`Resource <class_Resource>` examples:
+
+- :ref:`Texture <class_Texture>`
+- :ref:`Script <class_Script>`
+- :ref:`Mesh <class_Mesh>`
+- :ref:`Animation <class_Animation>`
+- :ref:`AudioStream <class_AudioStream>`
+- :ref:`Font <class_Font>`
+- :ref:`Translation <class_Translation>`
 
 When the engine loads a resource from disk, **it only loads it once**. If a copy
 of that resource is already in memory, trying to load the resource again will
@@ -43,7 +47,7 @@ There are two ways to save resources. They can be:
 1. **External** to a scene, saved on the disk as individual files.
 2. **Built-in**, saved inside the ``.tscn`` or the ``.scn`` file they're attached to.
 
-To be more specific, here's a :ref:`Texture <class_Texture>`
+To be more specific, here's a :ref:`Texture2D <class_Texture2D>`
 in a :ref:`Sprite2D <class_Sprite2D>` node:
 
 .. image:: img/spriteprop.png
@@ -75,8 +79,9 @@ There are two ways to load resources from code. First, you can use the ``load()`
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = load("res://robi.png") # Godot loads the Resource when it reads the line.
-            get_node("sprite").texture = res
+        # Godot loads the Resource when it reads this very line.
+        var imported_resource = load("res://robi.png") 
+        $sprite.texture = imported_resource
 
  .. code-tab:: csharp
 
@@ -88,15 +93,16 @@ There are two ways to load resources from code. First, you can use the ``load()`
     }
 
 You can also ``preload`` resources. Unlike ``load``, this function will read the
-file from disk and load it at compile-time. As a result, you cannot call preload
+file from disk and load it at compile-time. As a result, you cannot call ``preload``
 with a variable path: you need to use a constant string.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-            var res = preload("res://robi.png") # Godot loads the resource at compile-time
-            get_node("sprite").texture = res
+        # Godot loads the resource at compile-time
+        var imported_resource = preload("res://robi.png")
+        get_node("sprite").texture = imported_resource
 
  .. code-tab:: csharp
 
@@ -107,16 +113,16 @@ Loading scenes
 
 Scenes are also resources, but there is a catch. Scenes saved to disk are
 resources of type :ref:`PackedScene <class_PackedScene>`. The
-scene is packed inside a resource.
+scene is packed inside a :ref:`Resource <class_Resource>`.
 
 To get an instance of the scene, you have to use the
-:ref:`PackedScene.instance() <class_PackedScene_method_instance>` method.
+:ref:`PackedScene.instantiate() <class_PackedScene_method_instantiate>` method.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _on_shoot():
-            var bullet = preload("res://bullet.tscn").instance()
+            var bullet = preload("res://bullet.tscn").instantiate()
             add_child(bullet)
 
 
@@ -134,8 +140,8 @@ This method creates the nodes in the scene's hierarchy, configures them, and
 returns the root node of the scene. You can then add it as a child of any other
 node.
 
-The approach has several advantages. As the :ref:`PackedScene.instance()
-<class_PackedScene_method_instance>` function is fast, you can create new
+The approach has several advantages. As the :ref:`PackedScene.instantiate()
+<class_PackedScene_method_instantiate>` function is fast, you can create new
 enemies, bullets, effects, etc. without having to load them again from disk each
 time. Remember that, as always, images, meshes, etc. are all shared between the
 scene instances.
@@ -143,7 +149,7 @@ scene instances.
 Freeing resources
 -----------------
 
-When a ``Resource`` is no longer in use, it will automatically free itself.
+When a :ref:`Resource <class_Resource>` is no longer in use, it will automatically free itself.
 Since, in most cases, Resources are contained in Nodes, when you free a node,
 the engine frees all the resources it owns as well if no other node uses them.
 
@@ -196,15 +202,18 @@ the Inspector's creation dialog. This will auto-add your script to the Resource
 object you create.
 
 Let's see some examples.
+Create a :ref:`Resource <class_Resource>` and name it ``bot_stats``.
+It should appear in your file tab with the full name ``bot_stats.tres``.
+Without a script, it's useless, so let's add some data and logic!
+Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
 .. tabs::
   .. code-tab:: gdscript GDScript
-
-    # bot_stats.gd
     extends Resource
-    export(int) var health
-    export(Resource) var sub_resource
-    export(Array, String) var strings
+    
+    @export var health : int
+    @export var sub_resource : Resource
+    @export var strings : PackedStringArray
 
     # Make sure that every parameter has a default value.
     # Otherwise, there will be problems with creating and editing
@@ -213,16 +222,7 @@ Let's see some examples.
         health = p_health
         sub_resource = p_sub_resource
         strings = p_strings
-
-    # bot.gd
-    extends KinematicBody
-
-    export(Resource) var stats
-
-    func _ready():
-        # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
-        if stats:
-            print(stats.health) # Prints '10'.
+        
   .. code-tab:: csharp
 
         // BotStats.cs
@@ -252,13 +252,29 @@ Let's see some examples.
                 }
             }
         }
+      
+Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, and add the following script to it:
+       
+.. tabs::
+  .. code-tab:: gdscript GDScript
+    extends CharacterBody3D
 
+    @export var stats : Resource
+
+    func _ready():
+        # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
+        if stats:
+            stats.health = 10
+            print(stats.health) 
+            # Prints "10"
+  
+  .. code-tab:: csharp
         // Bot.cs
         using System;
         using Godot;
 
         namespace ExampleProject {
-            public class Bot : KinematicBody
+            public class Bot : CharacterBody3D
             {
                 [Export]
                 public Resource Stats;
@@ -271,6 +287,8 @@ Let's see some examples.
                 }
             }
         }
+        
+Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we named ``bot``, and drag&drop the ``bot_stats.tres`` resource onto the Inspector. It should print 10! Obviously, this setup can be used for more advanced features than this, but as long you really understand *how* it all worked, you should figure out everything else related to Resources.
 
 .. note::
 
@@ -345,7 +363,7 @@ Let's see some examples.
 
         class MyResource:
             extends Resource
-            export var value = 5
+            @export var value = 5
 
         func _ready():
             var my_res = MyResource.new()
