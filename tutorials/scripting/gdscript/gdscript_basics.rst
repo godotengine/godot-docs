@@ -1161,6 +1161,7 @@ be manipulated by calling methods on the loop variable.
 
     for node in node_array:
         node.add_to_group("Cool_Group") # This has an effect
+
 match
 ^^^^^
 

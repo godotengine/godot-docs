@@ -652,7 +652,7 @@ File formats
    - Text-based formats are human-readable and more friendly to version control.
    - Binary formats are faster to save/load for large scenes/resources.
 
-- Read and write text or binary files using :ref:`class_File`.
+- Read and write text or binary files using :ref:`class_FileAccess`.
 
    - Can optionally be compressed or encrypted.
 
