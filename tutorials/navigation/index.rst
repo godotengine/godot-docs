@@ -12,3 +12,6 @@ Navigation
    navigation_different_actor_locomotion
    navigation_using_navigationobstacles
    navigation_using_navigationmeshes
+   navigation_using_navigationservers
+   navigation_using_navigationagents
+   navigation_using_agent_avoidance
