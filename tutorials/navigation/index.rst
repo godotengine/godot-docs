@@ -20,3 +20,4 @@ Navigation
    navigation_using_navigationlayers
    navigation_different_actor_area_access
    navigation_using_navigationpaths
+   navigation_using_navigationregions
