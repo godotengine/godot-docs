@@ -131,7 +131,7 @@ a scene's data between scene changes (adding the scene to the root node).
         GetTree().GetRoot().AddChild(scene);
 
 Perhaps instead they wish to display multiple scenes at the same time using
-:ref:`ViewportContainers <class_ViewportContainer>`. This is optimal in
+:ref:`SubViewportContainers <class_SubViewportContainer>`. This is optimal in
 cases where the intent is to render different content in different parts of the
 screen. Minimaps and split-screen multiplayer are good examples.
 
