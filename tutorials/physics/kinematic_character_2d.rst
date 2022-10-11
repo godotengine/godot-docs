@@ -210,7 +210,7 @@ This adds simple walking support by pressing left and right:
 
         # The second parameter of "move_and_slide" is the normal pointing up.
         # In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
-        move_and_slide(velocity, Vector2(0, -1))
+        velocity = move_and_slide(velocity, Vector2(0, -1))
 
  .. code-tab:: csharp
 
@@ -245,7 +245,7 @@ This adds simple walking support by pressing left and right:
 
             // The second parameter of "MoveAndSlide" is the normal pointing up.
             // In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
-            MoveAndSlide(velocity, new Vector2(0, -1));
+            velocity = MoveAndSlide(velocity, new Vector2(0, -1));
         }
     }
 
