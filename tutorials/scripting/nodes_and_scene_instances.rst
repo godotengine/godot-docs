@@ -71,20 +71,20 @@ To get the Tween node, you would use the following code.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var tween
+    var animation_player
 
     func _ready():
-        tween = get_node("ShieldBar/Tween")
+        animation_player = get_node("ShieldBar/AnimationPlayer")
 
  .. code-tab:: csharp
 
-    private Tween _tween;
+    private AnimationPlayer _animation_player;
 
     public override void _Ready()
     {
         base._Ready();
 
-        _tween = GetNode<Tween>("ShieldBar/Tween");
+        _animation_player = GetNode<AnimationPlayer>("ShieldBar/AnimationPlayer");
     }
 
 .. note:: As with file paths, you can use ".." to get a parent node. The best
@@ -110,7 +110,7 @@ place it before the name or path of the node you want to get.
 .. code-block:: gdscript
 
     @onready var sprite2d = $Sprite2D
-    @onready var tween = $ShieldBar/Tween
+    @onready var animation_player = $ShieldBar/AnimationPlayer
 
 Creating nodes
 --------------
