@@ -177,11 +177,11 @@ following code, which we saw two lessons ago:
 
  .. code-tab:: csharp C#
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        Rotation += AngularSpeed * delta;
+        Rotation += AngularSpeed * (float)delta;
         var velocity = Vector2.Up.Rotated(Rotation) * Speed;
-        Position += velocity * delta;
+        Position += velocity * (float)delta;
     }
 
 Your complete ``Sprite2D.gd`` code should look like the following.
@@ -213,11 +213,11 @@ Your complete ``Sprite2D.gd`` code should look like the following.
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * delta;
+            Rotation += AngularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * Speed;
-            Position += velocity * delta;
+            Position += velocity * (float)delta;
         }
 
         public void OnButtonPressed()
@@ -305,7 +305,7 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
     public override void _Ready()
     {
         var timer = GetNode<Timer>("Timer");
-        timer.Connect("timeout", this, nameof(OnTimerTimeout));
+        timer.Timeout += OnTimerTimeout;
     }
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
@@ -378,14 +378,14 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         public override void _Ready()
         {
             var timer = GetNode<Timer>("Timer");
-            timer.Connect("timeout", this, nameof(OnTimerTimeout));
+            timer.Timeout += OnTimerTimeout;
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * delta;
+            Rotation += AngularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * Speed;
-            Position += velocity * delta;
+            Position += velocity * (float)delta;
         }
 
         public void OnButtonPressed()
@@ -457,7 +457,7 @@ To emit a signal in your scripts, call ``emit_signal()``.
 
         if (Health < 0)
         {
-            EmitSignal(nameof(HealthDepleted));
+            EmitSignal(SignalName.HealthDepleted);
         }
     }
 
@@ -509,7 +509,7 @@ To emit values along with the signal, add them as extra arguments to the
     {
         var oldHealth = Health;
         Health -= amount;
-        EmitSignal(nameof(HealthChanged), oldHealth, Health);
+        EmitSignal(SignalName.HealthChanged, oldHealth, Health);
     }
 
 Summary
