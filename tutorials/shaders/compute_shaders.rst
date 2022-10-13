@@ -91,7 +91,7 @@ After that we can load the newly created shader file "compute_example.glsl" and 
     // Load GLSL shader
     var shaderFile = GD.Load<RDShaderFile>("res://compute_example.glsl");
     var shaderBytecode = shaderFile.GetSpirv();
-    var shader = rd.ShaderCreateFromSpirv(shaderBytecode);
+    var shader = rd.ShaderCreateFromSpirv(shaderBytecode.BytecodeCompute);
 
 
 Provide input data
