@@ -427,6 +427,8 @@ Godot supports two UV channels per material. Secondary UV is often useful for
 ambient occlusion or emission (baked light). UVs can be scaled and offset,
 which is useful when using repeating textures.
 
+.. _doc_standard_material_3d_triplanar_mapping:
+
 Triplanar Mapping
 ~~~~~~~~~~~~~~~~~
 
