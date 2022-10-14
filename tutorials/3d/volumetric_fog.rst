@@ -25,6 +25,11 @@ On this page, you'll learn:
     The Godot demo projects repository contains a
     `volumetric fog demo <https://github.com/godotengine/godot-demo-projects/tree/4.0-dev/3d/volumetric_fog>`__.
 
+Here is a comparison between traditional fog (which does not interact with lighting)
+and volumetric fog, which is able to interact with lighting:
+
+.. image:: img/volumetric_fog_comparison.png
+
 Volumetric fog properties
 -------------------------
 
@@ -94,7 +99,25 @@ shadows on a light will also make those shadows visible on volumetric fog.
 
 If fog light interaction is not desired for artistic reasons, this can be
 globally disabled by setting **Volumetric Fog > Albedo** to a pure black color
-in the Environment resource.
+in the Environment resource. Fog light interaction can also be disabled for
+specific lights by setting its **Volumetric Fog Energy** to ``0``. Doing so will
+also improve performance slightly by excluding the light from volumetric fog
+computations.
+
+Using volumetric fog as a volumetric lighting solution
+------------------------------------------------------
+
+While not physically accurate, it is possible to tune volumetric fog's settings
+to work as volumetric *lighting* solution. This means that unlit parts of the
+environment will not be darkened anymore by fog, but light will still be able to
+make fog brighter in specific areas.
+
+This can be done by setting volumetric fog density to the lowest permitted value
+*greater than zero* (``0.0001``), then increasing the **Volumetric Fog Energy**
+property on lights to much higher values than the default to compensate. Values
+between ``10000`` and ``100000`` usually work well for this.
+
+.. image:: img/volumetric_fog_lighting.png
 
 Balancing performance and quality
 ---------------------------------
