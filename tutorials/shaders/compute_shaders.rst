@@ -173,7 +173,7 @@ The steps we need to do to compute our result are:
     var compute_list := rd.compute_list_begin()
     rd.compute_list_bind_compute_pipeline(compute_list, pipeline)
     rd.compute_list_bind_uniform_set(compute_list, uniform_set, 0)
-    rd.compute_list_dispatch(compute_list, 5, 1, 1)
+    rd.compute_list_dispatch(compute_list, 2, 1, 1)
     rd.compute_list_end()
 
  .. code-tab:: csharp
@@ -183,7 +183,7 @@ The steps we need to do to compute our result are:
     var computeList = rd.ComputeListBegin();
     rd.ComputeListBindComputePipeline(computeList, pipeline);
     rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
-    rd.ComputeListDispatch(computeList, xGroups: 5, yGroups: 1, zGroups: 1);
+    rd.ComputeListDispatch(computeList, xGroups: 2, yGroups: 1, zGroups: 1);
     rd.ComputeListEnd();
 
 Note that we are dispatching the compute shader with 5 work groups in the x-axis, and one in the others.
@@ -238,8 +238,8 @@ Let's retrieve the data and print the results to our console.
     var outputBytes = rd.BufferGetData(outputBuffer);
     var output = new double[input.Length];
     Buffer.BlockCopy(outputBytes, 0, output, 0, outputBytes.Length);
-    GD.Print("Input: ", input)
-    GD.Print("Output: ", output)
+	GD.Print("Input: ", string.Join(", ",input));
+	GD.Print("Output: ", string.Join(", ",output));
 
 Conclusion
 ----------
