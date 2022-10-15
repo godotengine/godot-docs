@@ -32,13 +32,13 @@ symbols, since these would make the download size significantly larger.
 To get profiling data that best matches the production environment, you should
 compile binaries with the following SCons options:
 
-- For editor binaries: ``target=release_debug use_lto=yes``
-- For debug export templates: ``target=release_debug use_lto=yes``
-- For release export templates: ``tools=no target=release debug_symbols=yes``
+- For editor binaries: ``target=editor use_lto=yes``
+- For debug export templates: ``target=template_debug use_lto=yes``
+- For release export templates: ``target=template_release debug_symbols=yes``
 
   - ``debug_symbols=yes`` is required as export templates are stripped from debugging symbols by default.
 
-It is possible to run a profiler on less optimized builds (e.g. ``target=debug`` without LTO),
+It is possible to run a profiler on less optimized builds (e.g. ``target=template_debug`` without LTO),
 but results will naturally be less representative of real world conditions.
 
 .. warning::

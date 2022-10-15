@@ -58,9 +58,9 @@ Generate the glue
 Glue sources are the wrapper functions that will be called by managed methods.
 These source files must be generated before building your final binaries. In
 order to generate them, first, you must build a temporary Godot binary with the
-options ``tools=yes`` and ``mono_glue=no``::
+options ``target=editor`` and ``mono_glue=no``::
 
-    scons p=<platform> tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=<platform> target=editor module_mono_enabled=yes mono_glue=no
 
 After the build finishes, you need to run the compiled executable with the
 parameter ``--generate-mono-glue`` followed by the path to an output directory.
@@ -77,8 +77,8 @@ without having to repeat this process.
 ``<godot_binary>`` refers to the tools binary you compiled above with the Mono
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
-``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.linuxbsd.tools.64.mono``
-or ``bin/godot.windows.tools.64.mono.exe``. Be especially aware of the **.mono**
+``bin/godot.<platform>.editor.<bits>.mono``, e.g. ``bin/godot.linuxbsd.editor.64.mono``
+or ``bin/godot.windows.editor.64.mono.exe``. Be especially aware of the **.mono**
 suffix! If you've previously compiled Godot without Mono support, you might have
 similarly named binaries without this suffix. These binaries can't be used to
 generate the Mono glue.
@@ -104,11 +104,11 @@ Once you have generated the Mono glue, you can build the final binary with
 ``mono_glue=yes``. This is the default value for ``mono_glue``, so you can also
 omit it. To build a Mono-enabled editor::
 
-    scons p=<platform> tools=yes module_mono_enabled=yes mono_glue=yes
+    scons p=<platform> target=editor module_mono_enabled=yes mono_glue=yes
 
 And Mono-enabled export templates::
 
-    scons p=<platform> tools=no module_mono_enabled=yes mono_glue=yes
+    scons p=<platform> target=template_release module_mono_enabled=yes mono_glue=yes
 
 If everything went well, apart from the normal output, SCons should have created
 the following files in the ``bin`` directory:
@@ -136,16 +136,16 @@ Example (Windows)
 ::
 
     # Build temporary binary
-    scons p=windows tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=windows target=editor module_mono_enabled=yes mono_glue=no
     # Generate glue sources
     bin\godot.windows.tools.64.mono --generate-mono-glue modules/mono/glue
 
     ### Build binaries normally
     # Editor
-    scons p=windows target=release_debug tools=yes module_mono_enabled=yes
+    scons p=windows target=editor module_mono_enabled=yes
     # Export templates
-    scons p=windows target=release_debug tools=no module_mono_enabled=yes
-    scons p=windows target=release tools=no module_mono_enabled=yes
+    scons p=windows target=template_debug module_mono_enabled=yes
+    scons p=windows target=template_release module_mono_enabled=yes
 
 Example (Linux, \*BSD)
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -153,16 +153,16 @@ Example (Linux, \*BSD)
 ::
 
     # Build temporary binary
-    scons p=linuxbsd tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=linuxbsd target=editor module_mono_enabled=yes mono_glue=no
     # Generate glue sources
-    bin/godot.linuxbsd.tools.64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.editor.64.mono --generate-mono-glue modules/mono/glue
 
     ### Build binaries normally
     # Editor
-    scons p=linuxbsd target=release_debug tools=yes module_mono_enabled=yes
+    scons p=linuxbsd target=editor module_mono_enabled=yes
     # Export templates
-    scons p=linuxbsd target=release_debug tools=no module_mono_enabled=yes
-    scons p=linuxbsd target=release tools=no module_mono_enabled=yes
+    scons p=linuxbsd target=template_debug module_mono_enabled=yes
+    scons p=linuxbsd target=template_release module_mono_enabled=yes
 
 .. _compiling_with_mono_data_directory:
 

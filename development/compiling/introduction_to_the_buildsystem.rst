@@ -98,22 +98,22 @@ Resulting binary
 The resulting binaries will be placed in the ``bin/`` subdirectory,
 generally with this naming convention::
 
-    godot.<platform>.[opt].[tools/debug].<architecture>[extension]
+    godot.<platform>.[editor/template_release/template_debug].[dev_build].<architecture>[extension]
 
 For the previous build attempt, the result would look like this::
 
     ls bin
-    bin/godot.linuxbsd.tools.64
+    bin/godot.linuxbsd.editor.x86_64
 
-This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
-whole editor) compiled in, and is meant for 64 bits.
+This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has the
+whole editor compiled in, and is meant for 64 bits.
 
 A Windows binary with the same configuration will look like this:
 
 .. code-block:: console
 
     C:\godot> dir bin/
-    godot.windows.tools.64.exe
+    godot.windows.editor.64.exe
 
 Copy that binary to any location you like, as it contains the project manager,
 editor and all means to execute the game. However, it lacks the data to export
@@ -124,44 +124,38 @@ you can build them yourself).
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
 
-.. _doc_introduction_to_the_buildsystem_tools:
-
-Tools
------
-
-Tools are enabled by default in all PC targets (Linux, Windows, macOS),
-disabled for everything else. Disabling tools produces a binary that can
-run projects but that does not include the editor or the project
-manager.
-
-::
-
-    scons platform=<platform> tools=yes/no
-
 .. _doc_introduction_to_the_buildsystem_target:
 
 Target
 ------
 
-Target controls optimization and debug flags. Each mode means:
+Target controls if the editor is contained and used debug flags.
+All builds are optimized. Each mode means:
 
--  **debug**: Build with C++ debugging symbols, runtime checks (performs
-   checks and reports error) and none to little optimization.
--  **release_debug**: Build without C++ debugging symbols and
-   optimization, but keep the runtime checks (performs checks and
-   reports errors). Official editor binaries use this configuration.
--  **release**: Build without symbols, with optimization and with little
-   to no runtime checks. This target can't be used together with
-   ``tools=yes``, as the editor requires some debug functionality and run-time
-   checks to run.
+-  **editor**: Build with editor, optimized, with debugging code
+-  **template_debug**: Build with C++ debugging symbols
+-  **template_release**: Build without symbols
+
+The editor is enabled by default in all PC targets (Linux, Windows, macOS),
+disabled for everything else. Disabling the editor produces a binary that can
+run projects but that does not include the editor or the project manager.
 
 ::
 
-    scons platform=<platform> target=debug/release_debug/release
+    scons platform=<platform> target=editor/template_debug/template_release
 
-This flag appends the ``.debug`` suffix (for debug), or ``.tools`` (for debug
-with tools enabled). When optimization is enabled (release), it appends
-the ``.opt`` suffix.
+Dev build
+---------
+
+When doing enigine development the ``dev_build`` option can be used together
+with ``target`` to enable dev-specific code.
+
+::
+
+    scons platform=<platform> dev_build=yes
+
+This flag appends the ``.dev`` suffix (for development) to the generated
+binary name.
 
 Bits
 ----

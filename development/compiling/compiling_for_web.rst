@@ -34,18 +34,18 @@ and ``source ./emsdk_env.sh``/``emsdk_env.bat``.
 
 Open a terminal and navigate to the root directory of the engine source code.
 Then instruct SCons to build the Web platform. Specify ``target`` as
-either ``release`` for a release build or ``release_debug`` for a debug build::
+either ``template_release`` for a release build or ``template_debug`` for a debug build::
 
-    scons platform=web tools=no target=release
-    scons platform=web tools=no target=release_debug
+    scons platform=web target=template_release
+    scons platform=web target=template_debug
 
 By default, the :ref:`JavaScript singleton <doc_javascript_eval>` will be built
 into the engine. Official export templates also have the JavaScript singleton
 enabled. Since ``eval()`` calls can be a security concern, the
 ``javascript_eval`` option can be used to build without the singleton::
 
-    scons platform=web tools=no target=release javascript_eval=no
-    scons platform=web tools=no target=release_debug javascript_eval=no
+    scons platform=web target=template_release javascript_eval=no
+    scons platform=web target=template_debug javascript_eval=no
 
 The engine will now be compiled to WebAssembly by Emscripten. Once finished,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
@@ -71,8 +71,8 @@ performance and compatibility reasons. See the
 You can build the export templates using the option ``dlink_enabled=yes``
 to enable GDExtension support::
 
-    scons platform=web tools=no dlink_enabled=yes target=release
-    scons platform=web tools=no dlink_enabled=yes target=release_debug
+    scons platform=web dlink_enabled=yes target=template_release
+    scons platform=web dlink_enabled=yes target=template_debug
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will have ``_dlink`` added.
@@ -90,7 +90,7 @@ It is also possible to build a version of the Godot editor that can run in the
 browser. The editor version is not recommended
 over the native build. You can build the editor with::
 
-    scons platform=web tools=yes target=release_debug
+    scons platform=web target=editor
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will be ``godot.web.opt.tools.wasm32.zip``. You can upload the

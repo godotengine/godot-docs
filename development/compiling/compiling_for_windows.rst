@@ -157,7 +157,7 @@ dependencies. Running it will bring up the Project Manager.
 
 .. note:: If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
-          SCons option ``target=release_debug``.
+          SCons option ``target=template_release``.
 
           If you are compiling Godot with MinGW, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
@@ -269,10 +269,10 @@ Creating Windows export templates
 Windows export templates are created by compiling Godot without the editor,
 with the following flags::
 
-    C:\godot> scons platform=windows tools=no target=release_debug bits=32
-    C:\godot> scons platform=windows tools=no target=release bits=32
-    C:\godot> scons platform=windows tools=no target=release_debug bits=64
-    C:\godot> scons platform=windows tools=no target=release bits=64
+    C:\godot> scons platform=windows target=template_debug bits=32
+    C:\godot> scons platform=windows target=template_release bits=32
+    C:\godot> scons platform=windows target=template_debug bits=64
+    C:\godot> scons platform=windows target=template_release bits=64
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier
