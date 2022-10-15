@@ -8,7 +8,7 @@ physics tab:
 
 .. important::
     By default, a single Blender object with rigid body enabled will export as
-    three nodes: a PhysicsBody, a CollisionShape, and a MeshInstance.
+    three nodes: a PhysicsBody, a CollisionShape, and a MeshInstance3D.
 
 Body type
 ---------

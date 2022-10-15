@@ -27,13 +27,13 @@ two main drawbacks of using a Viewport:
 1. The depth buffer cannot be accessed
 2. The effect of the post-processing shader is not visible in the editor
 
-To get around the limitation on using the depth buffer, use a :ref:`MeshInstance <class_MeshInstance>`
+To get around the limitation on using the depth buffer, use a :ref:`MeshInstance3D <class_MeshInstance3D>`
 with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a
 shader and to access the depth texture of the scene. Next, use a vertex shader
 to make the quad cover the screen at all times so that the post-processing
 effect will be applied at all times, including in the editor.
 
-First, create a new MeshInstance and set its mesh to a QuadMesh. This creates a quad
+First, create a new MeshInstance3D and set its mesh to a QuadMesh. This creates a quad
 centered at position ``(0, 0, 0)`` with a width and height of ``1``. Set the width
 and height to ``2``. Right now, the quad occupies a position in world space at the
 origin; however, we want it to move with the camera so that it always covers the
@@ -156,15 +156,15 @@ screen quad. The reason for this is explained `here <https://michaldrobot.com/20
 However, the benefit is quite small and only beneficial when running especially
 complex fragment shaders.
 
-Set the Mesh in the MeshInstance to an :ref:`ArrayMesh <class_ArrayMesh>`. An
+Set the Mesh in the MeshInstance3D to an :ref:`ArrayMesh <class_ArrayMesh>`. An
 ArrayMesh is a tool that allows you to easily construct a Mesh from Arrays for
 vertices, normals, colors, etc.
 
-Now, attach a script to the MeshInstance and use the following code:
+Now, attach a script to the MeshInstance3D and use the following code:
 
 ::
 
-  extends MeshInstance
+  extends MeshInstance3D
 
   func _ready():
     # Create a single triangle out of vertices:
@@ -194,4 +194,4 @@ Assign the same vertex shader from above and everything should look exactly the 
 The one drawback to using an ArrayMesh over using a QuadMesh is that the ArrayMesh
 is not visible in the editor because the triangle is not constructed until the scene
 is run. To get around that, construct a single triangle Mesh in a modelling program
-and use that in the MeshInstance instead.
+and use that in the MeshInstance3D instead.

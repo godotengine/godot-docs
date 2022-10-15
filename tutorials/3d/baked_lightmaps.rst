@@ -152,7 +152,7 @@ cover the scene with the volume as you do with ``GIProbe``:
 Setting up meshes
 ~~~~~~~~~~~~~~~~~
 
-For a **MeshInstance** node to take part in the baking process, it needs to have
+For a **MeshInstance3D** node to take part in the baking process, it needs to have
 the **Use in Baked Light** property enabled.
 
 .. image:: img/baked_light_use.png

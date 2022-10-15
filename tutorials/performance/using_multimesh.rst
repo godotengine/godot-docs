@@ -53,7 +53,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends MultiMeshInstance
+    extends MultiMeshInstance3D
 
 
     func _ready():
@@ -77,7 +77,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
     using Godot;
     using System;
 
-    public class YourClassName : MultiMeshInstance
+    public class YourClassName : MultiMeshInstance3D
     {
         public override void _Ready()
         {

@@ -110,7 +110,7 @@ save a file with that node in it. Some example nodes are:
     transform = Transform( 1.0 , 0.0 , -0.0 , 0.0 , -4.371138828673793e-08 , 1.0 , -0.0 , -1.0 , -4.371138828673793e-08 ,0.0 ,0.0 ,-0.0  )
 
 
-    [node type="MeshInstance" name="Sphere" parent="SpherePhysics"]
+    [node type="MeshInstance3D" name="Sphere" parent="SpherePhysics"]
 
     mesh = SubResource(9)
     transform = Transform( 1.0 , 0.0 , -0.0 , 0.0 , 1.0 , -0.0 , -0.0 , -0.0 , 1.0 ,0.0 ,0.0 ,-0.0  )
@@ -141,13 +141,13 @@ NodePath
 
 A tree structure is not enough to represent the whole scene. Godot uses a
 ``NodePath(Path/To/Node)`` structure to refer to another node or attribute of
-the node anywhere in the scene tree. For instance, MeshInstance uses
+the node anywhere in the scene tree. For instance, MeshInstance3D uses
 ``NodePath()`` to point to its skeleton. Likewise, Animation tracks use
 ``NodePath()`` to point to node properties to animate.
 
 ::
 
-    [node name="mesh" type="MeshInstance" parent="Armature001"]
+    [node name="mesh" type="MeshInstance3D" parent="Armature001"]
 
     mesh = SubResource(1)
     skeleton = NodePath("..:")
@@ -158,7 +158,7 @@ the node anywhere in the scene tree. For instance, MeshInstance uses
     [sub_resource id=3 type="Animation"]
 
     ...
-    tracks/0/type = "transform
+    tracks/0/type = "transform"
     tracks/0/path = NodePath("Cube:")
     ...
 
@@ -213,7 +213,7 @@ to a single bone in a Skeleton node. The BoneAttachment has a
 ``bone_name=NameOfBone`` attribute, and the corresponding bone being the parent has the
 BoneAttachment node in its ``bound_children`` list.
 
-An example of one MeshInstance parented to a bone in Skeleton:
+An example of one MeshInstance3D parented to a bone in Skeleton:
 
 ::
 
@@ -231,7 +231,7 @@ An example of one MeshInstance parented to a bone in Skeleton:
 
     bone_name = "Bone"
 
-    [node name="Cylinder" type="MeshInstance" parent="Armature/BoneAttachment"]
+    [node name="Cylinder" type="MeshInstance3D" parent="Armature/BoneAttachment"]
 
     mesh = SubResource(1)
     transform = Transform(1.0, 0.0, 0.0, 0.0, 1.86265e-09, 1.0, 0.0, -1.0, 0.0, 0.0219986, -0.0343127, 2.25595)
@@ -262,7 +262,7 @@ AnimationPlayer. The root node is stored as
 Resources
 ---------
 
-Resources are components that make up the nodes. For example, a MeshInstance
+Resources are components that make up the nodes. For example, a MeshInstance3D
 node will have an accompanying ArrayMesh resource. The ArrayMesh resource
 may be either internal or external to the TSCN file.
 

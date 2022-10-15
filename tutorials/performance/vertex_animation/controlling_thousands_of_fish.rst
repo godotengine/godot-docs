@@ -3,7 +3,7 @@
 Controlling thousands of fish with Particles
 ============================================
 
-The problem with :ref:`MeshInstances <class_MeshInstance>` is that it is expensive to
+The problem with :ref:`MeshInstance3D <class_MeshInstance3D>` is that it is expensive to
 update their transform array. It is great for placing many static objects around the
 scene. But it is still difficult to move the objects around the scene.
 

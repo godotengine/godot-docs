@@ -56,7 +56,7 @@ entire scenes (exactly as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
-which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
+which can be then put inside a :ref:`MeshInstance3D <class_MeshInstance3D>`
 node for display.
 
 Generated geometry

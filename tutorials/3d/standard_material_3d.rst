@@ -15,7 +15,7 @@ This tutorial explains the parameters present in both materials.
 
 There are 4 ways to add these materials to an object. A material can be added in
 the *Material* property of the mesh. It can be added in the *Material* property of
-the node using the mesh (such as a MeshInstance node), the *Material Override* property
+the node using the mesh (such as a MeshInstance3D node), the *Material Override* property
 of the node using the mesh, and the *Material Overlay*.
 
 .. image:: img/add_material.png
