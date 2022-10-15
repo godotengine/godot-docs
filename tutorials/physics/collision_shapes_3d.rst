@@ -58,7 +58,7 @@ of convex shapes. For large and complex objects such as a whole level, we
 recommend using concave shapes instead.
 
 You can generate one or several convex collision shapes from the editor by
-selecting a MeshInstance and using the **Mesh** menu at the top of the 3D
+selecting a MeshInstance3D and using the **Mesh** menu at the top of the 3D
 viewport. The editor exposes two generation modes:
 
 - **Create Single Convex Collision Sibling** uses the Quickhull algorithm. It
@@ -97,7 +97,7 @@ have an actual "volume". You can place objects both *outside* of the shape as
 well as *inside*.
 
 You can generate a concave collision shape from the editor by selecting a
-MeshInstance and using the **Mesh** menu at the top of the 3D viewport. The
+MeshInstance3D and using the **Mesh** menu at the top of the 3D viewport. The
 editor exposes two options:
 
 - **Create Trimesh Static Body** is a convenient option. It creates a StaticBody

@@ -164,7 +164,7 @@ memory management from the Reference type.
 This comes with many distinct advantages over alternative data
 structures, such as JSON, CSV, or custom TXT files. Users can only import these
 assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a
-:ref:`File <class_File>` to parse. What sets Resources apart is their
+:ref:`FileAccess <class_FileAccess>` to parse. What sets Resources apart is their
 inheritance of :ref:`Object <class_Object>`, :ref:`RefCounted <class_RefCounted>`,
 and :ref:`Resource <class_Resource>` features:
 

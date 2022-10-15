@@ -334,3 +334,5 @@ source,destination
 /tutorials/viewports/using_viewport_as_texture.html,/tutorials/shaders/using_viewport_as_texture.html
 /tutorials/viewports/viewports.html,/tutorials/rendering/viewports.html
 /tutorials/physics/using_kinematic_body_2d.html,/tutorials/physics/using_character_body_2d.html
+/tutorials/plugins/editor/spatial_gizmos.html,/tutorials/plugins/editor/3d_gizmos.html
+/tutorials/3d/procedural_geometry/immediategeometry.html,/tutorials/3d/procedural_geometry/immediatemesh.html

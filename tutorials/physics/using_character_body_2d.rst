@@ -342,7 +342,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
             shoot()
 
     func shoot():
-        # "Muzzle" is a Position2D placed at the barrel of the gun.
+        # "Muzzle" is a Marker2D placed at the barrel of the gun.
         var b = Bullet.instance()
         b.start($Muzzle.global_position, rotation)
         get_parent().add_child(b)
@@ -386,7 +386,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
         public void Shoot()
         {
-            // "Muzzle" is a Position2D placed at the barrel of the gun
+            // "Muzzle" is a Marker2D placed at the barrel of the gun
             var b = (Bullet)_bullet.Instance();
             b.Start(GetNode<Node2D>("Muzzle").GlobalPosition, Rotation);
             GetParent().AddChild(b);

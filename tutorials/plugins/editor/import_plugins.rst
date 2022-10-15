@@ -302,7 +302,7 @@ method. Our sample code is a bit long, so let's split in a few parts:
         file.close()
 
 The first part of our import method opens and reads the source file. We use the
-:ref:`File <class_File>` class to do that, passing the ``source_file``
+:ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
 
 If there's an error when opening the file, we return it to let the editor know
@@ -410,7 +410,7 @@ system is scanned, making the custom resource appear on the FileSystem dock. If
 you select it and focus the Import dock, you can see the only option to select
 there.
 
-Create a MeshInstance node in the scene, and for its Mesh property set up a new
+Create a MeshInstance3D node in the scene, and for its Mesh property set up a new
 SphereMesh. Unfold the Material section in the Inspector and then drag the file
 from the FileSystem dock to the material property. The object will update in the
 viewport with the blue color of the imported material.

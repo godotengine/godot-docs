@@ -13,7 +13,7 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Spatial
+    public class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;

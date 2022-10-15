@@ -144,7 +144,7 @@ Nodes
 Root Type
 ^^^^^^^^^
 
-By default, the type of the root node in imported scenes is "Spatial", but this can be modified.
+By default, the type of the root node in imported scenes is "Node3D", but this can be modified.
 
 Root Name
 ^^^^^^^^^
@@ -504,7 +504,7 @@ A mesh node with the ``-wheel`` suffix will be imported as a child to a
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
-A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody`.
+A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody3D`.
 
 Animation loop (-loop, -cycle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

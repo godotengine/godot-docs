@@ -29,7 +29,7 @@ the jump and squash mechanics.
 For now, we're going to create a basic rig for our character's 3D model. This
 will allow us to rotate the model later via code while it plays an animation.
 
-Add a *Spatial* node as a child of *Player* and name it *Pivot*. Then, in the
+Add a *Node3D* node as a child of *Player* and name it *Pivot*. Then, in the
 FileSystem dock, expand the ``art/`` folder by double-clicking it and drag and
 drop ``player.glb`` onto the *Pivot* node.
 

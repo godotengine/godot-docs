@@ -3,7 +3,7 @@
 Controlling thousands of fish with Particles
 ============================================
 
-The problem with :ref:`MeshInstances <class_MeshInstance>` is that it is expensive to
+The problem with :ref:`MeshInstance3D <class_MeshInstance3D>` is that it is expensive to
 update their transform array. It is great for placing many static objects around the
 scene. But it is still difficult to move the objects around the scene.
 
@@ -11,7 +11,7 @@ To make each instance move in an interesting way, we will use a
 :ref:`GPUParticles3D <class_GPUParticles3D>` node. Particles take advantage of GPU acceleration
 by computing and setting the per-instance information in a :ref:`Shader <class_Shader>`.
 
-.. note:: Particles are not available in GLES2, instead use :ref:`CPUParticles <class_CPUParticles>`,
+.. note:: Particles are not available in GLES2, instead use :ref:`CPUParticles3D <class_CPUParticles3D>`,
           which do the same thing as Particles, but do not benefit from GPU acceleration.
 
 First create a Particles node. Then, under "Draw Passes" set the Particle's "Draw Pass 1" to your
@@ -52,7 +52,7 @@ These functions come from the default :ref:`ParticleProcessMaterial <class_Parti
 They are used to generate a random number from each particle's ``RANDOM_SEED``.
 
 A unique thing about particle shaders is that some built-in variables are saved across frames.
-``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the Spatial shader of the mesh, and
+``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the shader of the mesh, and
 also in the particle shader the next time it is run.
 
 Next, setup your ``vertex`` function. Particles shaders only contain a vertex function

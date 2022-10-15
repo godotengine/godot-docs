@@ -28,7 +28,7 @@ In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 :ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
-For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_method_get_world>`.
+For 3D, it's :ref:`Node3D.get_world().space <class_Node3D_method_get_world>`.
 
 The resulting space :ref:`RID <class_RID>` can be used in
 :ref:`PhysicsServer <class_PhysicsServer>` and
@@ -232,8 +232,8 @@ picking. There is not much need to do this because
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
-To cast a ray from the screen, you need a :ref:`Camera <class_Camera>`
-node. A ``Camera`` can be in two projection modes: perspective and
+To cast a ray from the screen, you need a :ref:`Camera3D <class_Camera3D>`
+node. A ``Camera3D`` can be in two projection modes: perspective and
 orthogonal. Because of this, both the ray origin and direction must be
 obtained. This is because ``origin`` changes in orthogonal mode, while
 ``normal`` changes in perspective mode:
@@ -249,9 +249,9 @@ To obtain it using a camera, the following code can be used:
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-              var camera = $Camera
-              var from = camera.project_ray_origin(event.position)
-              var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
+              var camera3d = $Camera3D
+              var from = camera3d.project_ray_origin(event.position)
+              var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
 
  .. code-tab:: csharp
 
@@ -261,9 +261,9 @@ To obtain it using a camera, the following code can be used:
     {
         if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
         {
-            var camera = GetNode<Camera>("Camera");
-            var from = camera.ProjectRayOrigin(eventMouseButton.Position);
-            var to = from + camera.ProjectRayNormal(eventMouseButton.Position) * RayLength;
+            var camera3d = GetNode<Camera3D>("Camera3D");
+            var from = camera3d.ProjectRayOrigin(eventMouseButton.Position);
+            var to = from + camera3d.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
     }
 

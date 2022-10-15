@@ -232,7 +232,7 @@ at the end of ``_physics_process()``.
     public override void _PhysicsProcess(float delta)
     {
         // ...
-        var pivot = GetNode<Spatial>("Pivot");
+        var pivot = GetNode<Node3D>("Pivot");
         pivot.Rotation = new Vector3(Mathf.Pi / 6f * _velocity.y / JumpImpulse, pivot.Rotation.y, pivot.Rotation.z);
     }
 
@@ -394,7 +394,7 @@ Here's the *Player* script.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Spatial>("Pivot").LookAt(Translation + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").LookAt(Translation + direction, Vector3.Up);
                 GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
             }
             else
@@ -427,7 +427,7 @@ Here's the *Player* script.
                 }
             }
 
-            var pivot = GetNode<Spatial>("Pivot");
+            var pivot = GetNode<Node3D>("Pivot");
             pivot.Rotation = new Vector3(Mathf.Pi / 6f * _velocity.y / JumpImpulse, pivot.Rotation.y, pivot.Rotation.z);
         }
 

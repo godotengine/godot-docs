@@ -79,14 +79,14 @@ There are a few reasons this may happen:
 Say no to Euler angles
 ======================
 
-The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Spatial` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
+The result of all this is that you should **not use** the ``rotation`` property of :ref:`class_Node3D` nodes in Godot for games. It's there to be used mainly in the editor, for coherence with the 2D engine, and for simple rotations (generally just one axis, or even two in limited cases). As much as you may be tempted, don't use it.
 
 Instead, there is a better way to solve your rotation problems.
 
 Introducing transforms
 ----------------------
 
-Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`class_Spatial` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Spatial-derived type.
+Godot uses the :ref:`class_Transform3D` datatype for orientations. Each :ref:`class_Node3D` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Node3D-derived type.
 
 It is also possible to access the world coordinate transform via the ``global_transform`` property.
 
@@ -165,7 +165,7 @@ It is possible to rotate a transform, either by multiplying its basis by another
     // shortened
     transform.basis = transform.basis.Rotated(axis, rotationAmount);
 
-A method in Spatial simplifies this:
+A method in Node3D simplifies this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -217,7 +217,7 @@ There are two different ways to handle this. The first is to *orthonormalize* th
 
 This will make all axes have ``1.0`` length again and be ``90`` degrees from each other. However, any scale applied to the transform will be lost.
 
-It is recommended you not scale nodes that are going to be manipulated; scale their children nodes instead (such as MeshInstance). If you absolutely must scale the node, then re-apply it at the end:
+It is recommended you not scale nodes that are going to be manipulated; scale their children nodes instead (such as MeshInstance3D). If you absolutely must scale the node, then re-apply it at the end:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -367,8 +367,8 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: gdscript GDScript
 
     # Convert basis to quaternion, keep in mind scale is lost
-    var a = Quat(transform.basis)
-    var b = Quat(transform2.basis)
+    var a = Quaternion(transform.basis)
+    var b = Quaternion(transform2.basis)
     # Interpolate using spherical-linear interpolation (SLERP).
     var c = a.slerp(b,0.5) # find halfway point between a and b
     # Apply back
@@ -377,14 +377,14 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: csharp
 
     // Convert basis to quaternion, keep in mind scale is lost
-    var a = transform.basis.Quat();
-    var b = transform2.basis.Quat();
+    var a = transform.basis.Quaternion();
+    var b = transform2.basis.Quaternion();
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back
     transform.basis = new Basis(c);
 
-The :ref:`class_Quat` type reference has more information on the datatype (it
+The :ref:`class_Quaternion` type reference has more information on the datatype (it
 can also do transform accumulation, transform points, etc., though this is used
 less often). If you interpolate or apply operations to quaternions many times,
 keep in mind they need to be eventually normalized. Otherwise, they will also

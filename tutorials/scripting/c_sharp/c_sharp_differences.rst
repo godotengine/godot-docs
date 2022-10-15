@@ -275,12 +275,12 @@ GDScript          C#
 ``get_area()``    ``Area``
 ================  ==================================================================
 
-Quat
-----
+Quaternion
+----------
 
-Structs cannot have parameterless constructors in C#. Therefore, ``new Quat()``
+Structs cannot have parameterless constructors in C#. Therefore, ``new Quaternion()``
 initializes all primitive members to their default value.
-Please use ``Quat.Identity`` for the equivalent of ``Quat()`` in GDScript and C++.
+Please use ``Quaternion.Identity`` for the equivalent of ``Quaternion()`` in GDScript and C++.
 
 The following methods were converted to a property with a different name:
 

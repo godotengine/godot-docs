@@ -108,7 +108,7 @@ Worlds
 
 For 3D, a :ref:`Viewport <class_Viewport>` will contain a :ref:`World3D <class_World3D>`. This
 is basically the universe that links physics and rendering together.
-Spatial-based nodes will register using the :ref:`World3D <class_World3D>` of the closest :ref:`Viewport <class_Viewport>`.
+Node3D-based nodes will register using the :ref:`World3D <class_World3D>` of the closest :ref:`Viewport <class_Viewport>`.
 By default, newly created :ref:`Viewports <class_Viewport>` do not contain a :ref:`World3D <class_World3D>` but
 use the same as their parent :ref:`Viewport <class_Viewport>` (the root :ref:`Viewport <class_Viewport>` always contains a
 :ref:`World3D <class_World3D>`, which is the one objects are rendered to by default). A :ref:`World3D <class_World3D>` can

@@ -126,7 +126,7 @@ Our level will contain these objects:
 - a desk,
 - a bookshelf.
 
-Create a scene with a Spatial node as root node.
+Create a scene with a Node3D node as root node.
 
 .. tip:: The default lighting of the environment doesn't provide clear shading
          at some angles. Change the display mode using **Display Overdraw** in
@@ -182,7 +182,7 @@ spheres will cut a hole into the mattress.
 
 .. image:: img/csg_pillow_hole.png
 
-Try to re-parent the ``pillow`` node to the root ``Spatial`` node; the hole will
+Try to re-parent the ``pillow`` node to the root ``Node3D`` node; the hole will
 disappear.
 
 .. note:: This is to illustrate the effect of CSG processing order.
@@ -271,14 +271,14 @@ There are two ways to apply a material to a CSG node:
 
 To apply triplanar mapping to a CSG node, select it, go to the Inspector, click
 the **[empty]** text next to **Material Override** (or **Material** for
-individual CSG nodes). Choose **New SpatialMaterial**. Click the newly created
+individual CSG nodes). Choose **New StandardMaterial3D**. Click the newly created
 material's icon to edit it. Unfold the **Albedo** section and load a texture
 into the **Texture** property. Now, unfold the **Uv1** section and check
 **Triplanar**. You can change the texture offset and scale on each axis by
 playing with the **Scale** and **Offset** properties just above. Higher values
 in the **Scale** property will cause the texture to repeat more often.
 
-.. tip:: You can copy a SpatialMaterial to reuse it across CSG nodes. To do so,
+.. tip:: You can copy a StandardMaterial3D to reuse it across CSG nodes. To do so,
          click the dropdown arrow next to a material property in the Inspector
          and choose **Copy**. To paste it, select the node you'd like to apply
          the material onto, click the dropdown arrow next to its material

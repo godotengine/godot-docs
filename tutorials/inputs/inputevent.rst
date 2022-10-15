@@ -89,12 +89,12 @@ received input, in order:
    :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
-4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
+4. If no one wanted the event so far, and a :ref:`Camera3D <class_Camera3D>` is assigned
    to the Viewport with :ref:`Object Picking <class_viewport_property_physics_object_picking>` turned on, a ray to the physics world (in the ray direction from
    the click) will be cast. (For the root viewport, this can also be enabled in :ref:`Project Settings <class_ProjectSettings_property_physics/common/enable_object_picking>`) If this ray hits an object, it will call the
    :ref:`CollisionObject._input_event() <class_CollisionObject_method__input_event>` function in the relevant
    physics object (bodies receive this callback by default, but areas do
-   not. This can be configured through :ref:`Area <class_Area>` properties).
+   not. This can be configured through :ref:`Area3D <class_Area3D>` properties).
 5. Finally, if the event was unhandled, it will be passed to the next
    Viewport in the tree, otherwise it will be ignored.
 
