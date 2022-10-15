@@ -8,7 +8,7 @@ update their transform array. It is great for placing many static objects around
 scene. But it is still difficult to move the objects around the scene.
 
 To make each instance move in an interesting way, we will use a
-:ref:`Particles <class_Particles>` node. Particles take advantage of GPU acceleration
+:ref:`GPUParticles3D <class_GPUParticles3D>` node. Particles take advantage of GPU acceleration
 by computing and setting the per-instance information in a :ref:`Shader <class_Shader>`.
 
 .. note:: Particles are not available in GLES2, instead use :ref:`CPUParticles <class_CPUParticles>`,
@@ -48,7 +48,7 @@ Then add the following two functions:
     return x;
   }
 
-These functions come from the default :ref:`ParticlesMaterial <class_ParticlesMaterial>`.
+These functions come from the default :ref:`ParticleProcessMaterial <class_ParticleProcessMaterial>`.
 They are used to generate a random number from each particle's ``RANDOM_SEED``.
 
 A unique thing about particle shaders is that some built-in variables are saved across frames.
@@ -138,7 +138,7 @@ This code gives you the following behavior:
 
 .. image:: img/scene.gif
 
-Using a ParticlesMaterial you can make the fish behavior as simple or complex as you like. In this
+Using a ParticleProcessMaterial you can make the fish behavior as simple or complex as you like. In this
 tutorial we only set Velocity, but in your own Shaders you can also set ``COLOR``, rotation, scale
 (through ``TRANSFORM``). Please refer to the :ref:`Particles Shader Reference <doc_particle_shader>`
 for more information on particle shaders.

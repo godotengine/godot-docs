@@ -96,7 +96,7 @@ Using the following pseudocode:
 
         Position3D p1 = GetNode<Position3D>("Position1");
         Position3D p2 = GetNode<Position3D>("Position2");
-        CSGMesh monkey = GetNode<CSGMesh>("Monkey");
+        CSGMesh3D monkey = GetNode<CSGMesh3D>("Monkey");
 
         monkey.Transform = p1.Transform.InterpolateWith(p2.Transform, _t);
     }

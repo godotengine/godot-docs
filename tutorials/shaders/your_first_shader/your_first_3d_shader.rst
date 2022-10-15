@@ -42,8 +42,8 @@ program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes
 importing Meshes.
 
 There are multiple node types that you can use to draw a mesh. The main one is
-:ref:`MeshInstance <class_meshinstance>`, but you can also use :ref:`Particles
-<class_particles>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
+:ref:`MeshInstance <class_meshinstance>`, but you can also use :ref:`GPUParticles3D
+<class_GPUParticles3D>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
 :ref:`MultiMeshInstance <class_multimeshinstance>`), or others.
 
 Typically, a material is associated with a given surface in a mesh, but some
