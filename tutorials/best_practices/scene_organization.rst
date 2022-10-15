@@ -57,10 +57,10 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.connect("signal_name", object_with_method, "method_on_the_object")
+       $Child.signal_name.connect(method_on_the_object)
 
        # Child
-       emit_signal("signal_name") # Triggers parent-defined behavior.
+       signal_name.emit() # Triggers parent-defined behavior.
 
      .. code-tab:: csharp
 

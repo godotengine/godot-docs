@@ -340,7 +340,7 @@ Here's the *Player* script.
 
 
    func die():
-       emit_signal("hit")
+       hit.emit()
        queue_free()
 
 
@@ -478,7 +478,7 @@ And the *Mob*'s script.
 
 
     func squash():
-       emit_signal("squashed")
+       squashed.emit()
        queue_free()
 
 
