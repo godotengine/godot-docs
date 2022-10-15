@@ -1686,7 +1686,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
-signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
+signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the

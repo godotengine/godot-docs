@@ -193,7 +193,7 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
-:ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
+:ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
 
 Getting data from the servers
 -----------------------------

@@ -9,7 +9,7 @@ This can for example be used to simulate cloth or to create more realistic chara
 Basic set-up
 ~~~~~~~~~~~~
 
-A :ref:`SoftBody <class_SoftBody>` node is used for soft body simulations.
+A :ref:`SoftBody3D <class_SoftBody3D>` node is used for soft body simulations.
 
 We will create a bouncy cube to demonstrate the setup of a soft body.
 

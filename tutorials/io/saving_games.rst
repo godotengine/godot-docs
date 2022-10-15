@@ -351,7 +351,7 @@ Binary serialization
 
 :ref:`Binary serialization<doc_binary_serialization_api>` is an alternative
 approach for storing game state, and you can use it with the functions
-``get_var`` and ``store_var`` of :ref:`class_File`.
+``get_var`` and ``store_var`` of :ref:`class_FileAccess`.
 
 * Binary serialization should produce smaller files than JSON.
 * Binary serialization can handle most common data types.

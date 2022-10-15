@@ -346,7 +346,7 @@ Adding a camera
 
 Let's add the camera next. Like we did with our *Player*\ 's *Pivot*, we're
 going to create a basic rig. Right-click on the *Main* node again and select
-*Add Child Node* this time. Create a new *Position3D*, name it *CameraPivot*,
+*Add Child Node* this time. Create a new *Marker3D*, name it *CameraPivot*,
 and add a *Camera* node as a child of it. Your scene tree should look like this.
 
 |image3|

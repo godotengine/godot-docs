@@ -4,7 +4,7 @@ Using the SurfaceTool
 =====================
 
 The :ref:`SurfaceTool <class_surfacetool>` provides a useful interface for constructing geometry.
-The interface is similar to the :ref:`ImmediateGeometry <class_immediategeometry>` node. You
+The interface is similar to the :ref:`ImmediateMesh <class_ImmediateMesh>` node. You
 set each per-vertex attribute (e.g. normal, uv, color) and then when you add a vertex it
 captures the attributes.
 

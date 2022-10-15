@@ -21,7 +21,7 @@ shaders can build on themselves each run, unlike other shaders that discard the
 data they have calculated once they draw to the frame buffer.
 
 .. note:: Particle shaders are only available in the GLES3 backend. If you need
-          particles in GLES2, use :ref:`CPUParticles <class_CPUParticles>`.
+          particles in GLES2, use :ref:`CPUParticles3D <class_CPUParticles3D>`.
 
 Render modes
 ^^^^^^^^^^^^

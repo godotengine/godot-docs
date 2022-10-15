@@ -78,7 +78,7 @@ Immediate geometry
 
 If, instead, you need to generate simple geometry that
 will be updated often, Godot provides a special node,
-:ref:`ImmediateGeometry <class_ImmediateGeometry>`,
+:ref:`ImmediateMesh <class_ImmediateMesh>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
 lines, triangles, etc.
 

@@ -15,7 +15,7 @@ How to control a rigid body
 A rigid body's behavior can be altered by setting its properties, such as mass and weight.
 A physics material needs to be added to the rigid body to adjust its friction and bounce,
 and set if it's absorbent and/or rough. These properties can be set in the Inspector or via code.
-See :ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsMaterial <class_PhysicsMaterial>` for
+See :ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsMaterial <class_PhysicsMaterial>` for
 the full list of properties and their effects.
 
 There are several ways to control a rigid body's movement, depending on your desired application.

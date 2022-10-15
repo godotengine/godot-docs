@@ -11,7 +11,7 @@ To make each instance move in an interesting way, we will use a
 :ref:`GPUParticles3D <class_GPUParticles3D>` node. Particles take advantage of GPU acceleration
 by computing and setting the per-instance information in a :ref:`Shader <class_Shader>`.
 
-.. note:: Particles are not available in GLES2, instead use :ref:`CPUParticles <class_CPUParticles>`,
+.. note:: Particles are not available in GLES2, instead use :ref:`CPUParticles3D <class_CPUParticles3D>`,
           which do the same thing as Particles, but do not benefit from GPU acceleration.
 
 First create a Particles node. Then, under "Draw Passes" set the Particle's "Draw Pass 1" to your

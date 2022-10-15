@@ -1,9 +1,9 @@
-.. _doc_immediategeometry:
+.. _doc_immediatemesh:
 
-Using ImmediateGeometry
-=======================
+Using ImmediateMesh
+===================
 
-Unlike the SurfaceTool or ArrayMesh, :ref:`ImmediateGeometry <class_ImmediateGeometry>` is an actual
+Unlike the SurfaceTool or ArrayMesh, :ref:`ImmediateMesh <class_ImmediateMesh>` is an actual
 node. Being a node makes it quick to add to a scene and get visual output. It uses an OpenGL 1.x-style
 API like SurfaceTool, but it's actually designed to create meshes on the fly.
 
@@ -40,7 +40,7 @@ The example code below draws a single triangle.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    extends ImmediateGeometry
+    extends ImmediateMesh
 
     func _process(_delta):
         # Clean up before drawing.

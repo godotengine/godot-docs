@@ -185,7 +185,7 @@ Procedural geometry series:
   - :ref:`doc_arraymesh`
   - :ref:`doc_surfacetool`
   - :ref:`doc_meshdatatool`
-  - :ref:`doc_immediategeometry`
+  - :ref:`doc_immediatemesh`
 
 Optimization
 ^^^^^^^^^^^^

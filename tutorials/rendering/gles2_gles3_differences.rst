@@ -15,7 +15,7 @@ Particles
 ---------
 
 GLES2 cannot use the :ref:`GPUParticles3D <class_GPUParticles3D>` or :ref:`GPUParticles2D <class_GPUParticles2D>` nodes
-as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CPUParticles>` or
+as they require advanced GPU features. Instead, use :ref:`CPUParticles3D <class_CPUParticles3D>` or
 :ref:`CPUParticles2D <class_CPUParticles2D>`, which provides a similar interface to a
 :ref:`ParticleProcessMaterial <class_ParticleProcessMaterial>`.
 
@@ -100,17 +100,17 @@ can only use the first six levels of glow; the seventh one won't do anything.
 GIProbes
 --------
 
-.. FIXME: Removed reference to class_BakedLightmap in master/4.0 version to
+.. FIXME: Removed references to no longer existing classes in master/4.0 version to
    silence warning, but the whole page will likely end up rewritten or removed
    in 4.0.
 
-:ref:`GIProbes <class_GIProbe>` do not work in GLES2. Instead use Baked Lightmaps.
+GIProbes do not work in GLES2. Instead use Baked Lightmaps.
 For a description of how baked lightmaps work see the :ref:`Baked Lightmaps tutorial <doc_baked_lightmaps>`.
 
 Contact shadows
 ---------------
 
-The ``shadow_contact`` property of :ref:`Lights <class_Light>` is not supported in GLES2 and so does nothing.
+The ``shadow_contact`` property of lights is not supported in GLES2 and so does nothing.
 
 Light performance
 -----------------

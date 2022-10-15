@@ -504,7 +504,7 @@ A mesh node with the ``-wheel`` suffix will be imported as a child to a
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
-A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody`.
+A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody3D`.
 
 Animation loop (-loop, -cycle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

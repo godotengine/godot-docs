@@ -53,8 +53,8 @@ Here is example pseudo-code for going from point A to B using interpolation:
     {
         _t += delta * 0.4f;
 
-        Position2D a = GetNode<Position2D>("A");
-        Position2D b = GetNode<Position2D>("B");
+        Marker2D a = GetNode<Marker2D>("A");
+        Marker2D b = GetNode<Marker2D>("B");
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
 
         sprite.Position = a.Position.Lerp(b.Position, _t);
@@ -94,8 +94,8 @@ Using the following pseudocode:
     {
         _t += delta;
 
-        Position3D p1 = GetNode<Position3D>("Position1");
-        Position3D p2 = GetNode<Position3D>("Position2");
+        Marker3D p1 = GetNode<Marker3D>("Position1");
+        Marker3D p2 = GetNode<Marker3D>("Position2");
         CSGMesh3D monkey = GetNode<CSGMesh3D>("Monkey");
 
         monkey.Transform = p1.Transform.InterpolateWith(p2.Transform, _t);

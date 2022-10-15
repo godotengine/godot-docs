@@ -86,7 +86,7 @@ Instead, there is a better way to solve your rotation problems.
 Introducing transforms
 ----------------------
 
-Godot uses the :ref:`class_Transform` datatype for orientations. Each :ref:`class_Node3D` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Node3D-derived type.
+Godot uses the :ref:`class_Transform3D` datatype for orientations. Each :ref:`class_Node3D` node contains a ``transform`` property which is relative to the parent's transform, if the parent is a Node3D-derived type.
 
 It is also possible to access the world coordinate transform via the ``global_transform`` property.
 
