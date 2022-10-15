@@ -121,7 +121,7 @@ node, including classes it extends, like ``Node2D``, ``CanvasItem``, and
 ``Node``.
 
 .. note:: In GDScript, if you omit the line with the ``extends`` keyword, your
-          class will implicitly extend :ref:`Reference <class_Reference>`, which
+          class will implicitly extend :ref:`RefCounted <class_RefCounted>`, which
           Godot uses to manage your application's memory.
 
 Inherited properties include the ones you can see in the Inspector dock, like
