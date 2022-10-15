@@ -33,7 +33,7 @@ This is how it's done in the `Third Person Shooter demo <https://github.com/godo
 
 .. image:: img/animtree1.png
 
-A new scene was created for the player with a ``KinematicBody`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
+A new scene was created for the player with a ``CharacterBody3D`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
 and an ``AnimationTree`` node was created.
 
 Creating a tree
@@ -211,7 +211,7 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 
     animTree.GetRootMotionTransform();
 
-This can be fed to functions such as :ref:`KinematicBody.move_and_slide <class_KinematicBody_method_move_and_slide>` to control the character movement.
+This can be fed to functions such as :ref:`CharacterBody3D.move_and_slide <class_CharacterBody3D_method_move_and_slide>` to control the character movement.
 
 There is also a tool node, ``RootMotionView``, that can be placed in a scene and will act as a custom floor for your
 character and animations (this node is disabled by default during the game).

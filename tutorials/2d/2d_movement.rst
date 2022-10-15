@@ -10,7 +10,7 @@ Every beginner has been there: "How do I move my character?" Depending on the
 style of game you're making, you may have special requirements, but in general
 the movement in most 2D games is based on a small number of designs.
 
-We'll use :ref:`KinematicBody2D <class_KinematicBody2D>` for these examples,
+We'll use :ref:`CharacterBody2D <class_CharacterBody2D>` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 
 .. _doc_2d_movement_setup:
@@ -18,7 +18,7 @@ but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 Setup
 -----
 
-Each example below uses the same scene setup. Start with a ``KinematicBody2D`` with two
+Each example below uses the same scene setup. Start with a ``CharacterBody2D`` with two
 children: ``Sprite2D`` and ``CollisionShape2D``. You can use the Godot icon ("icon.png")
 for the Sprite2D's texture or use any other 2D image you have.
 
@@ -41,7 +41,7 @@ Add a script to the kinematic body and add the following code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     export (int) var speed = 200
 
@@ -68,7 +68,7 @@ Add a script to the kinematic body and add the following code:
     using Godot;
     using System;
 
-    public class Movement : KinematicBody2D
+    public class Movement : CharacterBody2D
     {
         [Export] public int speed = 200;
 
@@ -129,7 +129,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     export (int) var speed = 200
     export (float) var rotation_speed = 1.5
@@ -159,7 +159,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
     using Godot;
     using System;
 
-    public class Movement : KinematicBody2D
+    public class Movement : CharacterBody2D
     {
         [Export] public int speed = 200;
         [Export] public float rotationSpeed = 1.5f;
@@ -216,7 +216,7 @@ is set by the mouse position instead of the keyboard. The character will always
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     export (int) var speed = 200
 
@@ -239,7 +239,7 @@ is set by the mouse position instead of the keyboard. The character will always
     using Godot;
     using System;
 
-    public class Movement : KinematicBody2D
+    public class Movement : CharacterBody2D
     {
         [Export] public int speed = 200;
 
@@ -291,7 +291,7 @@ on the screen will cause the player to move to the target location.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     export (int) var speed = 200
 
@@ -313,7 +313,7 @@ on the screen will cause the player to move to the target location.
     using Godot;
     using System;
 
-    public class Movement : KinematicBody2D
+    public class Movement : CharacterBody2D
     {
         [Export] public int speed = 200;
 

@@ -149,7 +149,7 @@ Type casting is a key concept in typed languages.
 Casting is the conversion of a value from one type to another.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
-collide with the Player, a ``KinematicBody2D`` with a script called
+collide with the Player, a ``CharacterBody2D`` with a script called
 ``PlayerController`` attached to it. You use the ``on_body_entered``
 signal to detect the collision. With typed code, the body you detect is
 going to be a generic ``PhysicsBody2D``, and not your
@@ -198,7 +198,7 @@ don't care about the node's type as long as it has the methods you need
 to call.
 
 You can use casting to tell Godot the type you expect when you get a
-node: ``($Timer as Timer)``, ``($Player as KinematicBody2D)``, etc.
+node: ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
 Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 

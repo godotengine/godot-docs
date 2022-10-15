@@ -52,7 +52,7 @@ one to the *Player* node. In the *Node* tab, double-click the
 
 |image4|
 
-The *MobDetector* will emit ``body_entered`` when a *KinematicBody* or a
+The *MobDetector* will emit ``body_entered`` when a *CharacterBody3D* or a
 *RigidBody* node enters it. As it only masks the "enemies" physics
 layers, it will only detect the *Mob* nodes.
 
@@ -228,7 +228,7 @@ Next is ``Mob.gd``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Emitted when the player jumped on the mob.
    signal squashed
@@ -264,7 +264,7 @@ Next is ``Mob.gd``.
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    public class Mob : CharacterBody3D
     {
         // Emitted when the played jumped on the mob.
         [Signal]
@@ -311,7 +311,7 @@ Finally, the longest script, ``Player.gd``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Emitted when a mob hit the player.
    signal hit
@@ -373,7 +373,7 @@ Finally, the longest script, ``Player.gd``.
 
  .. code-tab:: csharp
 
-    public class Player : KinematicBody
+    public class Player : CharacterBody3D
     {
         // Emitted when the player was hit by a mob.
         [Signal]
@@ -435,7 +435,7 @@ Finally, the longest script, ``Player.gd``.
 
             for (int index = 0; index < GetSlideCount(); index++)
             {
-                KinematicCollision collision = GetSlideCollision(index);
+                KinematicCollision3D collision = GetSlideCollision(index);
                 if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
                 {
                     if (Vector3.Up.Dot(collision.Normal) > 0.1f)

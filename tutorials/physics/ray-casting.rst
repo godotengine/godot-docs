@@ -163,13 +163,13 @@ as shown in the following image:
 
 To avoid self-intersection, the ``intersect_ray()`` function can take an
 optional third parameter which is an array of exceptions. This is an
-example of how to use it from a KinematicBody2D or any other
+example of how to use it from a CharacterBody2D or any other
 collision object node:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
@@ -177,7 +177,7 @@ collision object node:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -202,7 +202,7 @@ member variable:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         var space_state = get_world().direct_space_state
@@ -211,7 +211,7 @@ member variable:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {

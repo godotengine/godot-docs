@@ -9,7 +9,7 @@ next lesson, we'll spawn them randomly around the playable area.
 Let's design the monsters themselves in a new scene. The node structure is going
 to be similar to the *Player* scene.
 
-Create a scene with, once again, a *KinematicBody* node as its root. Name it
+Create a scene with, once again, a *CharacterBody3D* node as its root. Name it
 *Mob*. Add a *Spatial* node as a child of it, name it *Pivot*. And drag and drop
 the file ``mob.glb`` from the *FileSystem* dock onto the *Pivot* to add the
 monster's 3D model to the scene. You can rename the newly created *mob* node
@@ -100,7 +100,7 @@ the ``velocity``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Minimum speed of the mob in meters per second.
    @export var min_speed = 10
@@ -115,7 +115,7 @@ the ``velocity``.
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    public class Mob : CharacterBody3D
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -135,7 +135,7 @@ the ``velocity``.
     }
 
 Similarly to the player, we move the mob every frame by calling
-``KinematicBody``\ 's ``move_and_slide()`` method. This time, we don't update
+``CharacterBody3D``\ 's ``move_and_slide()`` method. This time, we don't update
 the ``velocity`` every frame: we want the monster to move at a constant speed
 and leave the screen, even if it were to hit an obstacle.
 
@@ -254,7 +254,7 @@ Here is the complete ``Mob.gd`` script for reference.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Minimum speed of the mob in meters per second.
    @export var min_speed = 10
@@ -281,7 +281,7 @@ Here is the complete ``Mob.gd`` script for reference.
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    public class Mob : CharacterBody3D
     {
         // Minimum speed of the mob in meters per second
         [Export]

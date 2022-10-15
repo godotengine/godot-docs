@@ -270,14 +270,14 @@ From the Oxford dictionary:
 
 ::
 
-    Create a KinematicBody2D node, a CollisionShape2D node and a sprite node.
+    Create a CharacterBody2D node, a CollisionShape2D node and a sprite node.
 
 **Do** add a comma before `and` or `or`, for the last
 element of a list with more than two elements.
 
 ::
 
-    Create a KinematicBody2D node, a CollisionShape2D node, and a sprite node.
+    Create a CharacterBody2D node, a CollisionShape2D node, and a sprite node.
 
 
 How to write methods and classes
@@ -483,7 +483,7 @@ The Animation, Debugger, etc. at the bottom of the viewport are
 
 Foldable areas of the Inspector are ``sections``. The node's parent
 class names, which you can't fold, are ``Classes`` e.g. the
-``KinematicBody2D class``. And individual lines with key-value pairs are
+``CharacterBody2D class``. And individual lines with key-value pairs are
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
 

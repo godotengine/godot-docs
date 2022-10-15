@@ -157,7 +157,7 @@ called ``move_and_slide()``.
 
 That's all you need to jump!
 
-The ``is_on_floor()`` method is a tool from the ``KinematicBody`` class. It
+The ``is_on_floor()`` method is a tool from the ``CharacterBody3D`` class. It
 returns ``true`` if the body collided with the floor in this frame. That's why
 we apply gravity to the *Player*: so we collide with the floor instead of
 floating over it like the monsters.
@@ -258,7 +258,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
         for (int index = 0; index < GetSlideCount(); index++)
         {
             // We check every collision that occurred this frame.
-            KinematicCollision collision = GetSlideCollision(index);
+            KinematicCollision3D collision = GetSlideCollision(index);
             // If we collide with a monster...
             if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
             {
@@ -276,11 +276,11 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
  That's a lot of new functions. Here's some more information about them.
 
 The functions ``get_slide_count()`` and ``get_slide_collision()`` both come from
-the :ref:`KinematicBody<class_KinematicBody>` class and are related to
+the :ref:`CharacterBody3D<class_CharacterBody3D>` class and are related to
 ``move_and_slide()``.
 
 ``get_slide_collision()`` returns a
-:ref:`KinematicCollision<class_KinematicCollision>` object that holds
+:ref:`KinematicCollision3D<class_KinematicCollision3D>` object that holds
 information about where and how the collision occurred. For example, we use its
 ``collider`` property to check if we collided with a "mob" by calling
 ``is_in_group()`` on it: ``collision.collider.is_in_group("mob")``.
