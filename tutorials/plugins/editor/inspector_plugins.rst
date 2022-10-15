@@ -141,6 +141,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
     #if TOOLS
     using Godot;
 
+    [Tool]
     public class MyInspectorPlugin : EditorInspectorPlugin
     {
         public override bool CanHandle(Object @object)
@@ -247,6 +248,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
     #if TOOLS
     using Godot;
 
+    [Tool]
     public class RandomIntEditor : EditorProperty
     {
         // The main control for editing the property.
