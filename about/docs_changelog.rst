@@ -304,7 +304,6 @@ Miscellaneous
 - :ref:`doc_jitter_stutter`
 - :ref:`doc_running_code_in_the_editor`
 - :ref:`doc_change_scenes_manually`
-- :ref:`doc_gles2_gles3_differences`
 
 Compiling
 ^^^^^^^^^

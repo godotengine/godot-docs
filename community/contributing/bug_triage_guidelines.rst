@@ -112,7 +112,7 @@ feature request, or one that is not precise enough to be worked on.
 -  *Buildsystem*: relates to building issues, either linked to the SCons
    buildsystem or to compiler peculiarities.
 -  *Codestyle*: relates to the programming style used within the codebase.
--  *Core*: anything related to the core engine. Specific topics are split off seperately as they crop up.
+-  *Core*: anything related to the core engine. Specific topics are split off separately as they crop up.
 -  *Dotnet*: relates to the C# / Dotnet bindings.
 -  *Editor*: relates to issues in the editor (mainly UI).
 -  *Export*: relates to the export system and templates.
