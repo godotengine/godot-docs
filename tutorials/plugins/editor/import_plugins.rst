@@ -302,7 +302,7 @@ method. Our sample code is a bit long, so let's split in a few parts:
         file.close()
 
 The first part of our import method opens and reads the source file. We use the
-:ref:`File <class_File>` class to do that, passing the ``source_file``
+:ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
 
 If there's an error when opening the file, we return it to let the editor know
