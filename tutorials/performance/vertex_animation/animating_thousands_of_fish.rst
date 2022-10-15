@@ -28,7 +28,7 @@ Here is the fish we will be using for the example images, you can use any fish m
           shared with a creative commons license. CC0 1.0 Universal (CC0 1.0) Public Domain
           Dedication https://creativecommons.org/publicdomain/zero/1.0/
 
-Typically, you would use bones and a :ref:`Skeleton <class_Skeleton>` to animate objects. However,
+Typically, you would use bones and a :ref:`Skeleton3D <class_Skeleton3D>` to animate objects. However,
 bones are animated on the CPU and so you end having to calculate thousands of operations every
 frame and it becomes impossible to have thousands of objects. Using vertex animation in a vertex
 shader, you avoid using bones and can instead calculate the full animation in a few lines of code

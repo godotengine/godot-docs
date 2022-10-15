@@ -92,7 +92,7 @@ by other applications for security reasons.
 
 On HTML5 exports, ``user://`` will refer to a virtual filesystem stored on the
 device via IndexedDB. (Interaction with the main filesystem can still be performed
-through the :ref:`JavaScript <class_JavaScript>` singleton.)
+through the :ref:`JavaScriptBridge <class_JavaScriptBridge>` singleton.)
 
 Converting paths to absolute paths or "local" paths
 ---------------------------------------------------

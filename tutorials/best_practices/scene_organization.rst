@@ -89,7 +89,7 @@ initialize it:
        // Child
        Call(MethodName); // Call parent-defined method (which child must own).
 
-3. Initialize a :ref:`FuncRef <class_FuncRef>` property. Safer than a method
+3. Initialize a :ref:`Callable <class_Callable>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
 
    .. tabs::
@@ -371,8 +371,8 @@ own place in the hierarchy as a sibling or some other relation.
      them. As nodes with no transform, Nodes will not pass along such
      information to their children.
   2. The **imperative** solution: Use the ``set_as_toplevel`` setter for the
-     :ref:`CanvasItem <class_CanvasItem_method_set_as_toplevel>` or
-     :ref:`Node3D <class_Node3D_method_set_as_toplevel>` node. This will make
+     :ref:`CanvasItem <class_CanvasItem_method_set_as_top_level>` or
+     :ref:`Node3D <class_Node3D_method_set_as_top_level>` node. This will make
      the node ignore its inherited transform.
 
 .. note::

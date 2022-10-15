@@ -42,8 +42,8 @@ cases you'll want to assign collision bodies to the meshes.
 Collisions
 ----------
 
-You can manually assign a :ref:`class_StaticBody` and
-:ref:`class_CollisionShape` to each mesh. Alternatively, you can use the "Mesh" menu
+You can manually assign a :ref:`class_StaticBody3D` and
+:ref:`class_CollisionShape3D` to each mesh. Alternatively, you can use the "Mesh" menu
 to automatically create the collision body based on the mesh data.
 
 .. image:: img/gridmap_create_body.png
