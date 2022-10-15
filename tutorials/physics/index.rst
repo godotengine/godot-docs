@@ -15,3 +15,4 @@ Physics
    soft_body
    collision_shapes_2d
    collision_shapes_3d
+   large_world_coordinates
