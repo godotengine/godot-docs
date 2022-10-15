@@ -26,7 +26,7 @@ By default :ref:`class_RichTextLabel` functions exactly the same as the normal l
 has the :ref:`property_text <class_RichTextLabel_property_text>` property, which you can
 edit to have uniformly formatted text. To be able to use BBCodes and rich text formatting
 you need to turn on the BBCode mode by setting :ref:`bbcode_enabled <class_RichTextLabel_property_bbcode_enabled>`.
-After that you can edit the :ref:`bbcode_text <class_RichTextLabel_property_bbcode_text>`
+After that you can edit the :ref:`text <class_RichTextLabel_property_text>`
 property using available tags. Both properties are located in the "Bb Code" section of
 the Inspector.
 

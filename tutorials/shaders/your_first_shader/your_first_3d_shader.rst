@@ -278,7 +278,7 @@ again, where it says "Perspective", and select "Display Normal".
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
-First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
+First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
 
 .. image:: img/light.png
 

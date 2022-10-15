@@ -282,7 +282,7 @@ Plugins
 ^^^^^^^
 
 - :ref:`doc_making_main_screen_plugins`
-- :ref:`doc_spatial_gizmo_plugins`
+- :ref:`doc_3d_gizmo_plugins`
 
 Platform-specific
 ^^^^^^^^^^^^^^^^^

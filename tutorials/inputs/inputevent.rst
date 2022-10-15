@@ -71,7 +71,7 @@ received input, in order:
 
 1. First of all, the standard :ref:`Node._input() <class_Node_method__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_method_set_process_input>`).
-   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the event will
+   If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the event will
    not spread any more. This ensures that you can filter all events of interest, even before the GUI.
    For gameplay input, :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
@@ -87,7 +87,7 @@ received input, in order:
 3. If so far no one consumed the event, the unhandled input callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
-   If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_method_set_input_as_handled>`, and the
+   If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
 4. If no one wanted the event so far, and a :ref:`Camera3D <class_Camera3D>` is assigned
    to the Viewport with :ref:`Object Picking <class_viewport_property_physics_object_picking>` turned on, a ray to the physics world (in the ray direction from

@@ -14,7 +14,7 @@ do this in 2D and 3D.
 Godot stores all the low level game information in servers, while the
 scene is only a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, nodes like
-:ref:`RayCast <class_RayCast>` and :ref:`RayCast2D <class_RayCast2D>`
+:ref:`RayCast3D <class_RayCast3D>` and :ref:`RayCast2D <class_RayCast2D>`
 will work, as they return every frame what the result of a raycast
 is.
 

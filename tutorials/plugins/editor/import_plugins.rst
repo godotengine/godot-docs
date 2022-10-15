@@ -94,21 +94,21 @@ Let's begin to code our plugin, one method at time:
     extends EditorImportPlugin
 
 
-    func get_importer_name():
+    func _get_importer_name():
         return "demos.sillymaterial"
 
 The first method is the
-:ref:`get_importer_name()<class_EditorImportPlugin_method_get_importer_name>`. This is a
+:ref:`_get_importer_name()<class_EditorImportPlugin_method__get_importer_name>`. This is a
 unique name for your plugin that is used by Godot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
 
 ::
 
-    func get_visible_name():
+    func _get_visible_name():
         return "Silly Material"
 
-The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` method is
+The :ref:`_get_visible_name()<class_EditorImportPlugin_method__get_visible_name>` method is
 responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
@@ -118,11 +118,11 @@ descriptive name for your plugin.
 
 ::
 
-    func get_recognized_extensions():
+    func _get_recognized_extensions():
         return ["mtxt"]
 
 Godot's import system detects file types by their extension. In the
-:ref:`get_recognized_extensions()<class_EditorImportPlugin_method_get_recognized_extensions>`
+:ref:`_get_recognized_extensions()<class_EditorImportPlugin_method__get_recognized_extensions>`
 method you return an array of strings to represent each extension that this
 plugin can understand. If an extension is recognized by more than one plugin,
 the user can select which one to use when importing the files.
@@ -134,7 +134,7 @@ the user can select which one to use when importing the files.
 
 ::
 
-    func get_save_extension():
+    func _get_save_extension():
         return "material"
 
 The imported files are saved in the ``.import`` folder at the project's root.
@@ -150,7 +150,7 @@ way by the engine.
 
 ::
 
-    func get_resource_type():
+    func _get_resource_type():
         return "StandardMaterial3D"
 
 The imported resource has a specific type, so the editor can know which property
@@ -196,14 +196,14 @@ plugin:
     func get_preset_count():
         return Presets.size()
 
-The :ref:`get_preset_count() <class_EditorImportPlugin_method_get_preset_count>` method
+The :ref:`_get_preset_count() <class_EditorImportPlugin_method__get_preset_count>` method
 returns the amount of presets that this plugins defines. We only have one preset
 now, but we can make this method future-proof by returning the size of our
 ``Presets`` enumeration.
 
 ::
 
-    func get_preset_name(preset):
+    func _get_preset_name(preset):
         match preset:
             Presets.DEFAULT:
                 return "Default"
@@ -212,7 +212,7 @@ now, but we can make this method future-proof by returning the size of our
 
 
 Here we have the
-:ref:`get_preset_name() <class_EditorImportPlugin_method_get_preset_name>` method, which
+:ref:`_get_preset_name() <class_EditorImportPlugin_method__get_preset_name>` method, which
 gives names to the presets as they will be presented to the user, so be sure to
 use short and clear names.
 
@@ -226,7 +226,7 @@ you do this you have to be careful when you add more presets.
 
 ::
 
-    func get_import_options(preset):
+    func _get_import_options(preset):
         match preset:
             Presets.DEFAULT:
                 return [{
@@ -237,7 +237,7 @@ you do this you have to be careful when you add more presets.
                 return []
 
 This is the method which defines the available options.
-:ref:`get_import_options() <class_EditorImportPlugin_method_get_import_options>` returns
+:ref:`_get_import_options() <class_EditorImportPlugin_method__get_import_options>` returns
 an array of dictionaries, and each dictionary contains a few keys that are
 checked to customize the option as its shown to the user. The following table
 shows the possible keys:
@@ -271,11 +271,11 @@ of options first and then change it based on the preset.
 
 ::
 
-    func get_option_visibility(option, options):
+    func _get_option_visibility(option, options):
         return true
 
 For the
-:ref:`get_option_visibility() <class_EditorImportPlugin_method_get_option_visibility>`
+:ref:`_get_option_visibility() <class_EditorImportPlugin_method__get_option_visibility>`
 method, we simply return ``true`` because all of our options (i.e. the single
 one we defined) are visible all the time.
 
@@ -286,12 +286,12 @@ The ``import`` method
 ---------------------
 
 The heavy part of the process, responsible for converting the files into
-resources, is covered by the :ref:`import() <class_EditorImportPlugin_method_import>`
+resources, is covered by the :ref:`_import() <class_EditorImportPlugin_method__import>`
 method. Our sample code is a bit long, so let's split in a few parts:
 
 ::
 
-    func import(source_file, save_path, options, r_platform_variants, r_gen_files):
+    func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
         var file = File.new()
         var err = file.open(source_file, File.READ)
         if err != OK:

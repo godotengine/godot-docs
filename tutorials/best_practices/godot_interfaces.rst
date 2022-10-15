@@ -276,7 +276,7 @@ following checks, in order:
   - Note that this happens even for non-legal symbol names such as in the
     case of :ref:`TileSet <class_TileSet>`'s "1/tile_name" property. This
     refers to the name of the tile with ID 1, i.e.
-    :ref:`TileSet.tile_get_name(1) <class_TileSet_method_tile_get_name>`.
+    ``TileSet.tile_get_name(1)``.
 
 As a result, this duck-typed system can locate a property either in the script,
 the object's class, or any class that object inherits, but only for things
@@ -451,7 +451,7 @@ accesses:
       // name or group can fill in for it. Also note that in C#, these methods
       // will be slower than static accesses with traditional interfaces.
 
-- Outsource the access to a :ref:`FuncRef <class_FuncRef>`. These may be useful
+- Outsource the access to a :ref:`Callable <class_Callable>`. These may be useful
   in cases where one needs the max level of freedom from dependencies. In
   this case, one relies on an external context to setup the method.
 

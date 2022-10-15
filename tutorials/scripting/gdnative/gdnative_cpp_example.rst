@@ -642,7 +642,7 @@ node. In the **Node** dock, we can find our new signal and link it up by pressin
 the **Connect** button or double-clicking the signal. We've added a script on
 our main node and implemented our signal like this:
 
-.. code-block:: GDScript
+.. code-block:: gdscript
 
     extends Node
 
