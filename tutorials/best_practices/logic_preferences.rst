@@ -130,7 +130,7 @@ consider:
       would be to unload the entire script. If they are instead loaded
       properties, then one can set them to ``null`` and remove all references
       to the resource entirely (which, as a
-      :ref:`Reference <class_Reference>`-extending type, will cause the
+      :ref:`RefCounted <class_RefCounted>`-extending type, will cause the
       resources to delete themselves from memory).
 
 Large levels: static vs. dynamic

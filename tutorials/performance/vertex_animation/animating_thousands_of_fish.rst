@@ -271,5 +271,5 @@ moving. You can move them by updating the per-instance transform for each fish e
 doing so will be faster than moving thousands of MeshInstances per frame, it'll still likely be
 slow.
 
-In the next tutorial we will cover how to use :ref:`Particles <class_Particles>` to take advantage
+In the next tutorial we will cover how to use :ref:`GPUParticles3D <class_GPUParticles3D>` to take advantage
 of the GPU and move each fish around individually while still receiving the benefits of instancing.

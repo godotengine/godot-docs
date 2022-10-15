@@ -282,7 +282,7 @@ Here's the *Player* script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Emitted when the player was hit by a mob.
    signal hit
@@ -349,7 +349,7 @@ Here's the *Player* script.
 
  .. code-tab:: csharp
 
-    public class Player : KinematicBody
+    public class Player : CharacterBody3D
     {
         // Emitted when the player was hit by a mob.
         [Signal]
@@ -416,7 +416,7 @@ Here's the *Player* script.
 
             for (int index = 0; index < GetSlideCount(); index++)
             {
-                KinematicCollision collision = GetSlideCollision(index);
+                KinematicCollision3D collision = GetSlideCollision(index);
                 if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
                 {
                     if (Vector3.Up.Dot(collision.Normal) > 0.1f)
@@ -449,7 +449,7 @@ And the *Mob*'s script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # Emitted when the player jumped on the mob.
    signal squashed
@@ -487,7 +487,7 @@ And the *Mob*'s script.
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    public class Mob : CharacterBody3D
     {
         // Emitted when the played jumped on the mob.
         [Signal]

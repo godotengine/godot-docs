@@ -52,7 +52,7 @@ Most Godot nodes and resources contain these RIDs from the servers internally, a
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
 can be directly casted to an RID. Not all resources contain an RID, though: in such cases, the RID will be empty. The resource can then be passed to server APIs as an RID.
 
-.. Warning::  Resources are reference-counted (see :ref:`Reference <class_Reference>`), and
+.. Warning::  Resources are reference-counted (see :ref:`RefCounted <class_RefCounted>`), and
               references to a resource's RID are *not* counted when determining whether
               the resource is still in use. Make sure to keep a reference to the resource
               outside the server, or else both it and its RID will be erased.

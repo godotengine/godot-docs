@@ -29,7 +29,7 @@ is to get a reference to an existing object from another acquired instance.
     Object obj = node.Object; // Property access.
     Object obj = node.GetObject(); // Method access.
 
-The same principle applies for :ref:`Reference <class_Reference>` objects.
+The same principle applies for :ref:`RefCounted <class_RefCounted>` objects.
 While users often access :ref:`Node <class_Node>` and
 :ref:`Resource <class_Resource>` this way, alternative measures are available.
 

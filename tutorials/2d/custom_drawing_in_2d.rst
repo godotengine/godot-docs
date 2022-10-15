@@ -58,7 +58,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+call :ref:`CanvasItem.queue_redraw() <class_CanvasItem_method_queue_redraw>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be

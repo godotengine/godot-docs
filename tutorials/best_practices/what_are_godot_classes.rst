@@ -41,8 +41,8 @@ available from the ``ClassDB``.
 .. note::
 
     Even scripts that don't use the ``extends`` keyword implicitly inherit from the engine's base
-    :ref:`Reference <class_Reference>` class. As a result, you can instantiate scripts without the
-    ``extends`` keyword from code. Since they extend ``Reference`` though, you cannot attach them to
+    :ref:`RefCounted <class_RefCounted>` class. As a result, you can instantiate scripts without the
+    ``extends`` keyword from code. Since they extend ``RefCounted`` though, you cannot attach them to
     a :ref:`Node <class_Node>`.
 
 Scenes

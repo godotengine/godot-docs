@@ -247,14 +247,14 @@ More information can be found on the :ref:`doc_godot_notifications` page.
 References
 ----------
 
-:ref:`Reference <class_ReferenceCounted>` inherits from Object and holds a
+:ref:`RefCounted <class_RefCounted>` inherits from Object and holds a
 reference count. It is the base for reference counted object types.
 Declaring them must be done using Ref<> template. For example:
 
 .. code-block:: cpp
 
-    class MyReference: public Reference {
-        GDCLASS(MyReference, Reference);
+    class MyReference: public RefCounted {
+        GDCLASS(MyReference, RefCounted);
     };
 
     Ref<MyReference> myref(memnew(MyReference));
@@ -265,7 +265,7 @@ templates point to it.
 References:
 ~~~~~~~~~~~
 
--  `core/object/reference.h <https://github.com/godotengine/godot/blob/master/core/object/reference.h>`__
+-  `core/object/reference.h <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h>`__
 
 Resources:
 ----------

@@ -19,7 +19,7 @@ character.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # How fast the player moves in meters per second.
    @export var speed = 14
@@ -30,7 +30,7 @@ character.
 
  .. code-tab:: csharp
 
-    public class Player : KinematicBody
+    public class Player : CharacterBody3D
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -214,8 +214,8 @@ The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this
 property later to code the jump.
 
-On the last line, we call ``KinematicBody.move_and_slide()``. It's a powerful
-method of the ``KinematicBody`` class that allows you to move a character
+On the last line, we call ``CharacterBody3D.move_and_slide()``. It's a powerful
+method of the ``CharacterBody3D`` class that allows you to move a character
 smoothly. If it hits a wall midway through a motion, the engine will try to
 smooth it out for you.
 
@@ -233,7 +233,7 @@ Here is the complete ``Player.gd`` code for reference.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+   extends CharacterBody3D
 
    # How fast the player moves in meters per second.
    @export var speed = 14
@@ -266,7 +266,7 @@ Here is the complete ``Player.gd`` code for reference.
 
  .. code-tab:: csharp
 
-    public class Player : KinematicBody
+    public class Player : CharacterBody3D
     {
         // How fast the player moves in meters per second.
         [Export]

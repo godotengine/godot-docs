@@ -1,6 +1,6 @@
-.. _doc_using_kinematic_body_2d:
+.. _doc_using_character_body_2d:
 
-Using KinematicBody2D
+Using CharacterBody2D
 =====================
 
 Introduction
@@ -10,32 +10,32 @@ Godot offers several collision objects to provide both collision detection
 and response. Trying to decide which one to use for your project can be confusing.
 You can avoid problems and simplify development if you understand how each of them
 works and what their pros and cons are. In this tutorial, we'll look at the
-:ref:`KinematicBody2D <class_KinematicBody2D>` node and show some examples
+:ref:`CharacterBody2D <class_CharacterBody2D>` node and show some examples
 of how to use it.
 
 .. note:: This document assumes you're familiar with Godot's various physics
           bodies. Please read :ref:`doc_physics_introduction` first.
 
-What is a kinematic body?
+What is a character body?
 -------------------------
 
-``KinematicBody2D`` is for implementing bodies that are controlled via code.
-Kinematic bodies detect collisions with other bodies when moving, but are not affected by
+``CharacterBody2D`` is for implementing bodies that are controlled via code.
+Character bodies detect collisions with other bodies when moving, but are not affected by
 engine physics properties, like gravity or friction. While this means that you
 have to write some code to create their behavior, it also means you have more
 precise control over how they move and react.
 
-.. tip:: A `KinematicBody2D` can be affected by gravity and other forces,
+.. tip:: A `CharacterBody2D` can be affected by gravity and other forces,
         but you must calculate the movement in code. The physics engine will
-        not move a `KinematicBody2D`.
+        not move a `CharacterBody2D`.
 
 Movement and collision
 ----------------------
 
-When moving a ``KinematicBody2D``, you should not set its ``position`` property
+When moving a ``CharacterBody2D``, you should not set its ``position`` property
 directly. Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
 These methods move the body along a given vector and instantly stop if
-a collision is detected with another body. After a KinematicBody2D has collided,
+a collision is detected with another body. After a CharacterBody2D has collided,
 any *collision response* must be coded manually.
 
 .. warning:: You should only do Kinematic body movement in the ``_physics_process()`` callback.
@@ -129,7 +129,7 @@ and ``get_slide_collision()``:
     for i in get_slide_count():
         var collision = get_slide_collision(i)
         print("I collided with ", collision.collider.name)
-        
+
  .. code-tab:: csharp
 
     // Using MoveAndCollide.
@@ -216,7 +216,7 @@ Movement and walls
 
 If you've downloaded the sample project, this example is in "BasicMovement.tscn".
 
-For this example, add a ``KinematicBody2D`` with two children: a ``Sprite2D`` and a
+For this example, add a ``CharacterBody2D`` with two children: a ``Sprite2D`` and a
 ``CollisionShape2D``. Use the Godot "icon.png" as the Sprite2D's texture (drag it
 from the Filesystem dock to the *Texture* property of the ``Sprite2D``). In the
 ``CollisionShape2D``'s *Shape* property, select "New RectangleShape2D" and
@@ -224,12 +224,12 @@ size the rectangle to fit over the sprite image.
 
 .. note:: See :ref:`doc_2d_movement` for examples of implementing 2D movement schemes.
 
-Attach a script to the KinematicBody2D and add the following code:
+Attach a script to the CharacterBody2D and add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var speed = 250
     var velocity = Vector2()
@@ -256,7 +256,7 @@ Attach a script to the KinematicBody2D and add the following code:
     using Godot;
     using System;
 
-    public class KBExample : KinematicBody2D
+    public class KBExample : CharacterBody2D
     {
         public int Speed = 250;
         private Vector2 _velocity = new Vector2();
@@ -294,7 +294,7 @@ some obstacles. Add a :ref:`StaticBody2D <class_StaticBody2D>` with a
 rectangular collision shape. For visibility, you can use a sprite, a
 Polygon2D, or turn on "Visible Collision Shapes" from the "Debug" menu.
 
-Run the scene again and try moving into the obstacle. You'll see that the ``KinematicBody2D``
+Run the scene again and try moving into the obstacle. You'll see that the ``CharacterBody2D``
 can't penetrate the obstacle. However, try moving into the obstacle at an angle and
 you'll find that the obstacle acts like glue - it feels like the body gets stuck.
 
@@ -325,7 +325,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var Bullet = preload("res://Bullet.tscn")
     var speed = 200
@@ -360,7 +360,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
     using Godot;
     using System;
 
-    public class KBExample : KinematicBody2D
+    public class KBExample : CharacterBody2D
     {
         private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
         public int Speed = 200;
@@ -411,7 +411,7 @@ And the code for the Bullet:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var speed = 750
     var velocity = Vector2()
@@ -436,7 +436,7 @@ And the code for the Bullet:
     using Godot;
     using System;
 
-    public class Bullet : KinematicBody2D
+    public class Bullet : CharacterBody2D
     {
         public int Speed = 750;
         private Vector2 _velocity = new Vector2();
@@ -498,7 +498,7 @@ Here's the code for the player body:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     export (int) var run_speed = 100
     export (int) var jump_speed = -400
@@ -533,7 +533,7 @@ Here's the code for the player body:
     using Godot;
     using System;
 
-    public class KBExample : KinematicBody2D
+    public class KBExample : CharacterBody2D
     {
         [Export] public int RunSpeed = 100;
         [Export] public int JumpSpeed = -400;

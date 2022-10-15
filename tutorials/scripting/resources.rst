@@ -80,7 +80,7 @@ There are two ways to load resources from code. First, you can use the ``load()`
 
     func _ready():
         # Godot loads the Resource when it reads this very line.
-        var imported_resource = load("res://robi.png") 
+        var imported_resource = load("res://robi.png")
         $sprite.texture = imported_resource
 
  .. code-tab:: csharp
@@ -165,7 +165,7 @@ This comes with many distinct advantages over alternative data
 structures, such as JSON, CSV, or custom TXT files. Users can only import these
 assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a
 :ref:`File <class_File>` to parse. What sets Resources apart is their
-inheritance of :ref:`Object <class_Object>`, :ref:`Reference <class_Reference>`,
+inheritance of :ref:`Object <class_Object>`, :ref:`RefCounted <class_RefCounted>`,
 and :ref:`Resource <class_Resource>` features:
 
 - They can define constants, so constants from other data fields or objects are not needed.
@@ -210,7 +210,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 .. tabs::
   .. code-tab:: gdscript GDScript
     extends Resource
-    
+
     @export var health : int
     @export var sub_resource : Resource
     @export var strings : PackedStringArray
@@ -222,7 +222,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
         health = p_health
         sub_resource = p_sub_resource
         strings = p_strings
-        
+
   .. code-tab:: csharp
 
         // BotStats.cs
@@ -252,9 +252,9 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 }
             }
         }
-      
+
 Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, and add the following script to it:
-       
+
 .. tabs::
   .. code-tab:: gdscript GDScript
     extends CharacterBody3D
@@ -265,9 +265,9 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
         # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
         if stats:
             stats.health = 10
-            print(stats.health) 
+            print(stats.health)
             # Prints "10"
-  
+
   .. code-tab:: csharp
         // Bot.cs
         using System;
@@ -287,7 +287,7 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
                 }
             }
         }
-        
+
 Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we named ``bot``, and drag&drop the ``bot_stats.tres`` resource onto the Inspector. It should print 10! Obviously, this setup can be used for more advanced features than this, but as long you really understand *how* it all worked, you should figure out everything else related to Resources.
 
 .. note::

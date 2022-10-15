@@ -193,7 +193,7 @@ Curve2D, Curve3D, Path and Path2D
 
 There are two objects that contain curves: :ref:`Curve3D <class_Curve3D>` and :ref:`Curve2D <class_Curve2D>` (for 3D and 2D respectively).
 
-They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path <class_Path>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
+They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path3D <class_Path3D>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
 
 .. image:: img/bezier_path_2d.png
 

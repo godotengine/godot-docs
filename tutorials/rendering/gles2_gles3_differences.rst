@@ -14,12 +14,12 @@ of bugs. There may be differences that are unintentional, but they should be rep
 Particles
 ---------
 
-GLES2 cannot use the :ref:`Particles <class_Particles>` or :ref:`Particles2D <class_Particles2D>` nodes
+GLES2 cannot use the :ref:`GPUParticles3D <class_GPUParticles3D>` or :ref:`GPUParticles2D <class_GPUParticles2D>` nodes
 as they require advanced GPU features. Instead, use :ref:`CPUParticles <class_CPUParticles>` or
 :ref:`CPUParticles2D <class_CPUParticles2D>`, which provides a similar interface to a
-:ref:`ParticlesMaterial <class_ParticlesMaterial>`.
+:ref:`ParticleProcessMaterial <class_ParticleProcessMaterial>`.
 
-.. tip:: Particles and Particles2D can be converted to their CPU equivalent node with the "Convert to
+.. tip:: Particles and GPUParticles2D can be converted to their CPU equivalent node with the "Convert to
          CPUParticles" option in the editor.
 
 ``SCREEN_TEXTURE`` mip-maps

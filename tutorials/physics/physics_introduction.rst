@@ -47,7 +47,7 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
     ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
     etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <doc_rigid_body>`
 
-- :ref:`KinematicBody2D <class_KinematicBody2D>`
+- :ref:`CharacterBody2D <class_CharacterBody2D>`
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
@@ -233,16 +233,6 @@ A sleeping body acts like a static body, and its forces are not calculated by
 the physics engine. The body will wake up when forces are applied, either by
 a collision or via code.
 
-Rigid body modes
-~~~~~~~~~~~~~~~~
-
-A rigid body can be set to one of four modes:
-
--   **Rigid** - The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
--   **Static** - The body behaves like a :ref:`StaticBody2D <class_StaticBody2D>` and does not move.
--   **Character** - Similar to "Rigid" mode, but the body cannot rotate.
--   **Kinematic** - The body behaves like a :ref:`KinematicBody2D <class_KinematicBody2D>` and must be moved by code.
-
 Using RigidBody2D
 ~~~~~~~~~~~~~~~~~
 
@@ -330,28 +320,28 @@ Contact monitoring via signals can be enabled via the :ref:`contact_monitor <cla
 property. See :ref:`RigidBody2D <class_RigidBody2D>` for the list of available
 signals.
 
-KinematicBody2D
+CharacterBody2D
 ---------------
 
-:ref:`KinematicBody2D <class_KinematicBody2D>` bodies detect collisions with
+:ref:`CharacterBody2D <class_CharacterBody2D>` bodies detect collisions with
 other bodies, but are not affected by physics properties like gravity or friction.
 Instead, they must be controlled by the user via code. The physics engine will
-not move a kinematic body.
+not move a character body.
 
-When moving a kinematic body, you should not set its ``position`` directly.
+When moving a character body, you should not set its ``position`` directly.
 Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
 These methods move the body along a given vector, and it will instantly stop
 if a collision is detected with another body. After the body has collided,
 any collision response must be coded manually.
 
-Kinematic collision response
+Character collision response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After a collision, you may want the body to bounce, to slide along a wall,
 or to alter the properties of the object it hit. The way you handle collision
-response depends on which method you used to move the KinematicBody2D.
+response depends on which method you used to move the CharacterBody2D.
 
-:ref:`move_and_collide <class_KinematicBody2D_method_move_and_collide>`
+:ref:`move_and_collide <class_CharacterBody2D_method_move_and_collide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using ``move_and_collide()``, the function returns a
@@ -365,7 +355,7 @@ occurred:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -376,7 +366,7 @@ occurred:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    class Body : CharacterBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -395,7 +385,7 @@ Or to bounce off of the colliding object:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -406,7 +396,7 @@ Or to bounce off of the colliding object:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    class Body : CharacterBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -418,7 +408,7 @@ Or to bounce off of the colliding object:
         }
     }
 
-:ref:`move_and_slide <class_KinematicBody2D_method_move_and_slide>`
+:ref:`move_and_slide <class_CharacterBody2D_method_move_and_slide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sliding is a common collision response; imagine a player moving along walls
@@ -437,7 +427,7 @@ the ground (including slopes) and jump when standing on the ground:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var run_speed = 350
     var jump_speed = -1000
@@ -465,7 +455,7 @@ the ground (including slopes) and jump when standing on the ground:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    class Body : CharacterBody2D
     {
         private float _runSpeed = 350;
         private float _jumpSpeed = -1000;
