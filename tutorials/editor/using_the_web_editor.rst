@@ -46,7 +46,7 @@ Due to limitations on the Godot or Web platform side, the following features
 are currently missing:
 
 - No C#/Mono support.
-- No GDNative support.
+- No GDExtension support.
 - No debugging support. This means GDScript debugging/profiling, live scene
   editing, the Remote Scene tree dock and other features that rely on the debugger
   protocol will not work.

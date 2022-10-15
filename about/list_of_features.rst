@@ -413,7 +413,7 @@ Scripting
 - Supports all platforms.
 - Using an external editor is recommended to benefit from IDE functionality.
 
-**GDNative (C, C++, Rust, D, ...):**
+**GDExtension (C, C++, Rust, D, ...):**
 
 - When you need it, link to native libraries for higher performance and third-party integrations.
 

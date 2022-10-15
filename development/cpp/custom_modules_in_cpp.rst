@@ -397,7 +397,7 @@ Improving the build system for development
 
     This shared library support is not designed to support distributing a module
     to other users without recompiling the engine. For that purpose, use
-    :ref:`GDNative <doc_what_is_gdnative>` instead.
+    a GDExtension instead.
 
 So far, we defined a clean SCsub that allows us to add the sources
 of our new module as part of the Godot binary.

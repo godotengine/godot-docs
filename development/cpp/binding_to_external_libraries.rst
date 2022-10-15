@@ -156,7 +156,7 @@ can link to them instead by adding them as submodules (from within the modules/t
     Please note that Git submodules are not used in the Godot repository. If
     you are developing a module to be merged into the main Godot repository, you should not
     use submodules. If your module doesn't get merged in, you can always try to implement
-    the external library as a GDNative C++ plugin.
+    the external library as a GDExtension.
 
 To add include directories for the compiler to look at you can append it to the
 environment's paths:

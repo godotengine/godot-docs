@@ -28,21 +28,9 @@ Launch Godot and create a new project.
     You need the .NET Core 3.1 SDK, and an editor such as VS Code.
     See :ref:`doc_c_sharp_setup`.
 
- .. tab:: GDNative C++
+ .. tab:: C++
 
-    Download :download:`dodge_assets_with_gdnative.zip
-    <files/dodge_assets_with_gdnative.zip>`.
-    The archive contains the images and sounds you'll be using
-    to make the game. It also contains a starter GDNative project
-    including a ``SConstruct`` file, a ``dodge_the_creeps.gdnlib``
-    file, a ``player.gdns`` file, and an ``entry.cpp`` file.
-
-    Ensure that you have the required dependencies to use GDNative C++.
-    You need a C++ compiler such as GCC or Clang or MSVC that supports C++14.
-    On Windows you can download Visual Studio 2019 and select the C++ workload.
-    You also need SCons to use the build system (the SConstruct file).
-    Then you need to `download the Godot C++ bindings <https://github.com/godotengine/godot-cpp>`_
-    and place them in your project.
+    The C++ part of this tutorial wasn't rewritten for the new GDExtension system yet.
 
 Your project folder should look like this.
 
