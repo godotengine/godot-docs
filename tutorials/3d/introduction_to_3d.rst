@@ -193,7 +193,7 @@ Cameras
 -------
 
 No matter how many objects are placed in the 3D space, nothing will be
-displayed unless a :ref:`Camera <class_Camera>` is
+displayed unless a :ref:`Camera3D <class_Camera3D>` is
 also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 

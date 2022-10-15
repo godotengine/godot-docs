@@ -15,7 +15,7 @@ of making a procedural planet like the one below:
 .. note:: This tutorial does not cover how to code a dynamic atmosphere like the one this planet has.
 
 This tutorial assumes you are familiar with how to set up a basic scene including:
-a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
+a :ref:`Camera3D <class_Camera3D>`, a :ref:`light source <class_OmniLight>`, a
 :ref:`Mesh Instance <class_MeshInstance>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
 and applying a :ref:`StandardMaterial3D <class_StandardMaterial3D>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
