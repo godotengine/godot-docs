@@ -144,7 +144,7 @@ Nodes
 Root Type
 ^^^^^^^^^
 
-By default, the type of the root node in imported scenes is "Spatial", but this can be modified.
+By default, the type of the root node in imported scenes is "Node3D", but this can be modified.
 
 Root Name
 ^^^^^^^^^

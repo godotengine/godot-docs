@@ -66,7 +66,7 @@ For nodes, there are many functions available:
 * For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
   method will return the viewport RID in the server.
 * For 3D, the :ref:`World3D <class_World3D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
-  and :ref:`Spatial <class_Spatial>` nodes)
+  and :ref:`Node3D <class_Node3D>` nodes)
   contains functions to get the *RenderingServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
 * For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
@@ -132,7 +132,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Spatial
+    extends Node3D
 
 
     # RenderingServer expects references to be kept around.

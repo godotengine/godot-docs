@@ -561,8 +561,8 @@ in a 3D grid.
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
-:ref:`Quat <class_Quat>`
-^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Quaternion <class_Quaternion>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.

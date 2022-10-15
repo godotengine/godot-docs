@@ -71,7 +71,7 @@ opening the project, you should see an empty editor.
 .. image:: img/nodes_and_scenes_01_empty_editor.png
 
 In an empty scene, the Scene dock on the left shows several options to add a
-root node quickly. "2D Scene" adds a Node2D node, "3D Scene" adds a Spatial
+root node quickly. "2D Scene" adds a Node2D node, "3D Scene" adds a Node3D
 node, and "User Interface" adds a Control node. These presets
 are here for convenience; they are not mandatory. "Other Node" lets you select any
 node to be the root node. In an empty scene, "Other Node" is equivalent to pressing

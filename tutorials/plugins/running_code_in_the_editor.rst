@@ -300,7 +300,7 @@ If you are using ``@tool``:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        var node = Spatial.new()
+        var node = Node3D.new()
         add_child(node) # Parent could be any node in the scene
 
         # The line below is required to make the node visible in the Scene tree dock
@@ -311,7 +311,7 @@ If you are using ``@tool``:
 
     public override void _Ready()
     {
-        var node = new Spatial();
+        var node = new Node3D();
         AddChild(node); // Parent could be any node in the scene
 
         // The line below is required to make the node visible in the Scene tree dock
@@ -327,7 +327,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
     func _run():
         # `parent` could be any node in the scene.
         var parent = get_scene().find_node("Parent")
-        var node = Spatial.new()
+        var node = Node3D.new()
         parent.add_child(node)
 
         # The line below is required to make the node visible in the Scene tree dock
@@ -340,7 +340,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
     {
         // `parent` could be any node in the scene.
         var parent = GetScene().FindNode("Parent");
-        var node = new Spatial();
+        var node = new Node3D();
         parent.AddChild(node);
 
         // The line below is required to make the node visible in the Scene tree dock

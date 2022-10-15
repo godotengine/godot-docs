@@ -44,7 +44,7 @@ viewport.
 Adding placeholder cylinders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's add the placeholder meshes. Add a new *Spatial* node as a child of the
+Let's add the placeholder meshes. Add a new *Node3D* node as a child of the
 *Main* node and name it *Cylinders*. We'll use it to group the cylinders. As a
 child of it, add a *MeshInstance* node.
 
@@ -101,7 +101,7 @@ last one.
 
 |image12|
 
-In the *Inspector*, expand the *Material* section and assign a *SpatialMaterial*
+In the *Inspector*, expand the *Material* section and assign a *StandardMaterial3D*
 to slot *0*.
 
 |image13|

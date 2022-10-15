@@ -176,7 +176,7 @@ the object. The default is *Burley*. Other modes are also available:
   (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
   It is recommended you disable sky contribution from your environment's
-  ambient light settings or disable ambient light in the spatial material
+  ambient light settings or disable ambient light in the StandardMaterial3D
   to achieve a better effect.
 
 .. image:: img/spatial_material6.png

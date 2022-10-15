@@ -10,7 +10,7 @@ Let's design the monsters themselves in a new scene. The node structure is going
 to be similar to the *Player* scene.
 
 Create a scene with, once again, a *CharacterBody3D* node as its root. Name it
-*Mob*. Add a *Spatial* node as a child of it, name it *Pivot*. And drag and drop
+*Mob*. Add a *Node3D* node as a child of it, name it *Pivot*. And drag and drop
 the file ``mob.glb`` from the *FileSystem* dock onto the *Pivot* to add the
 monster's 3D model to the scene. You can rename the newly created *mob* node
 into *Character*.

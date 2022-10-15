@@ -28,7 +28,7 @@ In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 :ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
-For 3D, it's :ref:`Spatial.get_world().space <class_Spatial_method_get_world>`.
+For 3D, it's :ref:`Node3D.get_world().space <class_Node3D_method_get_world>`.
 
 The resulting space :ref:`RID <class_RID>` can be used in
 :ref:`PhysicsServer <class_PhysicsServer>` and

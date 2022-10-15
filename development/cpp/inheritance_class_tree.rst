@@ -21,8 +21,8 @@ Node2D
 
 .. image:: img/Node2D.png
 
-Spatial
--------
+Node3D
+------
 
 .. image:: img/Spatial.png
 

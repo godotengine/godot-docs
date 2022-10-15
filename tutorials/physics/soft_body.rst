@@ -13,7 +13,7 @@ A :ref:`SoftBody <class_SoftBody>` node is used for soft body simulations.
 
 We will create a bouncy cube to demonstrate the setup of a soft body.
 
-Create a new scene with a ``Spatial`` node as root. Then, create a ``Softbody`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
+Create a new scene with a ``Node3D`` node as root. Then, create a ``Softbody`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
 
 .. image:: img/softbody_cube.png
 

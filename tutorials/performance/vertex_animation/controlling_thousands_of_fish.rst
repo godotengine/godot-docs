@@ -52,7 +52,7 @@ These functions come from the default :ref:`ParticleProcessMaterial <class_Parti
 They are used to generate a random number from each particle's ``RANDOM_SEED``.
 
 A unique thing about particle shaders is that some built-in variables are saved across frames.
-``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the Spatial shader of the mesh, and
+``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the shader of the mesh, and
 also in the particle shader the next time it is run.
 
 Next, setup your ``vertex`` function. Particles shaders only contain a vertex function

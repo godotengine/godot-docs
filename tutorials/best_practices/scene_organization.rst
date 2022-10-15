@@ -274,7 +274,7 @@ of Main. In addition, one will need a primary GUI for their game that manages
 the various menus and widgets the project needs.
 
     - Node "Main" (main.gd)
-        - Node2D/Spatial "World" (game_world.gd)
+        - Node2D/Node3D "World" (game_world.gd)
         - Control "GUI" (gui.gd)
 
 When changing levels, one can then swap out the children of the "World" node.
@@ -319,7 +319,7 @@ own place in the hierarchy as a sibling or some other relation.
 
   In some cases, one needs these separated nodes to *also* position themselves
   relative to each other. One can use the
-  :ref:`RemoteTransform <class_RemoteTransform>` /
+  :ref:`RemoteTransform <class_RemoteTransform3D>` /
   :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
@@ -372,7 +372,7 @@ own place in the hierarchy as a sibling or some other relation.
      information to their children.
   2. The **imperative** solution: Use the ``set_as_toplevel`` setter for the
      :ref:`CanvasItem <class_CanvasItem_method_set_as_toplevel>` or
-     :ref:`Spatial <class_Spatial_method_set_as_toplevel>` node. This will make
+     :ref:`Node3D <class_Node3D_method_set_as_toplevel>` node. This will make
      the node ignore its inherited transform.
 
 .. note::

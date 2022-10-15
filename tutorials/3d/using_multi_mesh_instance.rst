@@ -31,7 +31,7 @@ on. In the tree example, this would be the landscape.
 The other node is used as the source, the mesh that you want to have duplicated.
 In the tree case, this would be the tree itself.
 
-In our example, we would use a :ref:`Spatial <class_Spatial>` node as the root node of
+In our example, we would use a :ref:`Node3D <class_Node3D>` node as the root node of
 the scene. Your scene tree would look like this:
 
 .. image:: img/multimesh_scene_tree.png

@@ -14,7 +14,7 @@ generally and, in particular, with the methods outlined in the :ref:`custom post
 In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>`
 and then rendered the Viewport in a :ref:`SubViewportContainer <class_SubViewportContainer>`
 to the main scene. One limitation of this method is that we could not access the
-depth buffer because the depth buffer is only available in spatial shaders and
+depth buffer because the depth buffer is only available in shaders and
 Viewports do not maintain depth information.
 
 Full screen quad
@@ -28,7 +28,7 @@ two main drawbacks of using a Viewport:
 2. The effect of the post-processing shader is not visible in the editor
 
 To get around the limitation on using the depth buffer, use a :ref:`MeshInstance <class_MeshInstance>`
-with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a spatial
+with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a
 shader and to access the depth texture of the scene. Next, use a vertex shader
 to make the quad cover the screen at all times so that the post-processing
 effect will be applied at all times, including in the editor.

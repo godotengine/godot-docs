@@ -418,7 +418,7 @@ Finally, the longest script, ``Player.gd``.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Spatial>("Pivot").LookAt(Translation + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").LookAt(Translation + direction, Vector3.Up);
             }
 
             _velocity.x = direction.x * Speed;

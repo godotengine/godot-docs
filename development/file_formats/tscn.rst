@@ -59,11 +59,11 @@ where resource_type is one of:
 
 Below every heading comes zero or more ``key = value`` pairs. The
 values can be complex datatypes such as Arrays, Transforms, Colors, and
-so on. For example, a spatial node looks like:
+so on. For example, a Node3D looks like:
 
 ::
 
-    [node name="Cube" type="Spatial" parent="."]
+    [node name="Cube" type="Node3D" parent="."]
     transform=Transform( 1.0, 0.0, 0.0 ,0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0 )
 
 
@@ -92,10 +92,10 @@ the path should be ``"."``. Here is an example scene tree
 
 ::
 
-    [node name="Player" type="Spatial"]             ; The scene root
-    [node name="Arm" parent="." type="Spatial"]     ; Parented to the scene root
-    [node name="Hand" parent="Arm" type="Spatial"]
-    [node name="Finger" parent="Arm/Hand" type="Spatial"]
+    [node name="Player" type="Node3D"]             ; The scene root
+    [node name="Arm" parent="." type="Node3D"]     ; Parented to the scene root
+    [node name="Hand" parent="Arm" type="Node3D"]
+    [node name="Finger" parent="Arm/Hand" type="Node3D"]
 
 
 Similar to the internal resource, the document for each node is currently
@@ -166,7 +166,7 @@ the node anywhere in the scene tree. For instance, MeshInstance uses
 Skeleton
 ~~~~~~~~
 
-The Skeleton node inherits the Spatial node, but also may have a list of bones
+The Skeleton node inherits the Node3D node, but also may have a list of bones
 described in key-value pairs in the format ``bones/Id/Attribute=Value``. The
 bone attributes consist of:
 

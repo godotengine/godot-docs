@@ -33,7 +33,7 @@ scene to see an example of how to set up the mesh library.
 
 .. image:: img/gridmap_meshlibrary1.png
 
-As you can see, this scene has a :ref:`class_Spatial` node as its root, and
+As you can see, this scene has a :ref:`class_Node3D` node as its root, and
 a number of :ref:`class_MeshInstance` node children.
 
 If you don't need any physics in your scene, then you're done. However, in most
