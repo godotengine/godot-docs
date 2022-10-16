@@ -197,15 +197,15 @@ following parameters:
 
 ::
 
-    scons platform=linuxbsd target=template_release bits=32
-    scons platform=linuxbsd target=template_debug bits=32
+    scons platform=linuxbsd target=template_release arch=x86_32
+    scons platform=linuxbsd target=template_debug arch=x86_32
 
 -  (64 bits)
 
 ::
 
-    scons platform=linuxbsd target=template_release bits=64
-    scons platform=linuxbsd target=template_debug bits=64
+    scons platform=linuxbsd target=template_release arch=x86_64
+    scons platform=linuxbsd target=template_debug arch=x86_64
 
 Note that cross-compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.

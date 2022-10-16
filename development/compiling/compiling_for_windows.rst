@@ -149,8 +149,8 @@ option to any SCons command you see below.
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
 ``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
-your CPU architecture, but this can be overridden using ``bits=64`` or
-``bits=32``.
+your CPU architecture, but this can be overridden using ``arch=x86_64`` or
+``arch=x86_32``.
 
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
@@ -269,10 +269,10 @@ Creating Windows export templates
 Windows export templates are created by compiling Godot without the editor,
 with the following flags::
 
-    C:\godot> scons platform=windows target=template_debug bits=32
-    C:\godot> scons platform=windows target=template_release bits=32
-    C:\godot> scons platform=windows target=template_debug bits=64
-    C:\godot> scons platform=windows target=template_release bits=64
+    C:\godot> scons platform=windows target=template_debug arch=x86_32
+    C:\godot> scons platform=windows target=template_release arch=x86_32
+    C:\godot> scons platform=windows target=template_debug arch=x86_64
+    C:\godot> scons platform=windows target=template_release arch=x86_64
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier

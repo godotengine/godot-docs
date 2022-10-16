@@ -157,24 +157,23 @@ with ``target`` to enable dev-specific code.
 This flag appends the ``.dev`` suffix (for development) to the generated
 binary name.
 
-Bits
-----
+Architecture
+------------
 
-Bits is meant to control the CPU or OS version intended to run the
+The ``arch`` option is meant to control the CPU or OS version intended to run the
 binaries. It is focused mostly on desktop platforms and ignored everywhere
 else.
 
--  **32**: Build binaries for 32-bit platforms.
--  **64**: Build binaries for 64-bit platforms.
--  **default**: Build for the architecture that matches the host platform.
+Supported values for the ``arch`` option are **auto**, **x86_32**, **x86_64**,
+**arm32**, **arm64**, **rv64**, **ppc32**, **ppc64** and **wasm32**.
 
 ::
 
-    scons platform=<platform> bits=default/32/64
+    scons platform=<platform> arch=auto/'auto/x86_32/x86_64/arm32/arm64/rv64/ppc32/ppc64/wasm32
 
-This flag appends ``.32`` or ``.64`` suffixes to resulting binaries when
-relevant. If ``bits=default`` is used, the suffix will match the detected
-architecture.
+This flag appends the value of ``arch`` to resulting binaries when
+relevant.  The default value ``arch=auto`` builds for the architecture
+that matches the host platform.
 
 .. _doc_buildsystem_custom_modules:
 
