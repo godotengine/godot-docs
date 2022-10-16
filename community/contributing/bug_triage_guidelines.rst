@@ -106,22 +106,25 @@ feature request, or one that is not precise enough to be worked on.
 
 -  *2D*: relates to 2D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *3D*.
 -  *3D*: relates to 3D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *2D*.
+-  *Animation*: relates to the Animation system, editors and importers.
 -  *Assetlib*: relates to issues with the asset library.
 -  *Audio*: relates to the audio features (low and high level).
 -  *Buildsystem*: relates to building issues, either linked to the SCons
    buildsystem or to compiler peculiarities.
 -  *Codestyle*: relates to the programming style used within the codebase.
--  *Core*: anything related to the core engine. It might be further
-   split later on as it's a pretty big topic.
+-  *Core*: anything related to the core engine. Specific topics are split off separately as they crop up.
+-  *Dotnet*: relates to the C# / Dotnet bindings.
 -  *Editor*: relates to issues in the editor (mainly UI).
--  *GDNative*: relates to the GDNative module.
+-  *Export*: relates to the export system and templates.
+-  *GDExtension*: relates to the GDExtension system for native extensions.
 -  *GDScript*: relates to GDScript.
 -  *GUI*: relates to GUI (Control) nodes.
 -  *Import*: relates to the resource import system.
 -  *Input*: relates to input system.
--  *Mono*: relates to the C# / Mono bindings.
 -  *Navigation*: relates to the navigation system (including A* and navmeshes).
--  *Network*: relates to networking.
+-  *Network*: relates to (lot-level) networking.
+-  *Multiplayer*: relates to multiplayer (high-level networking) systems.
+-  *Particles*: particles, particle systems and their editors.
 -  *Physics*: relates to the physics engine (2D/3D).
 -  *Plugin*: relates to problems encountered while writing plugins.
 -  *Porting*: relates to some specific platforms or exporting projects.

@@ -20,7 +20,7 @@ reasons:
 
 To get your pull request merged, it needs to follow the C++ usage guidelines
 outlined here. Of course, you can use features not allowed here in your own C++
-modules or GDNative scripts.
+modules or GDExtensions.
 
 .. note::
 

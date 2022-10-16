@@ -107,7 +107,6 @@ Scripting
 - :ref:`doc_debugger_panel`
 - :ref:`doc_creating_script_templates`
 - :ref:`doc_evaluating_expressions`
-- :ref:`doc_what_is_gdnative`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
 
 User Interface (UI)
@@ -305,7 +304,6 @@ Miscellaneous
 - :ref:`doc_jitter_stutter`
 - :ref:`doc_running_code_in_the_editor`
 - :ref:`doc_change_scenes_manually`
-- :ref:`doc_gles2_gles3_differences`
 
 Compiling
 ^^^^^^^^^

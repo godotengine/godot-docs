@@ -27,9 +27,6 @@ To create a new project:
 
 .. image:: img/editor_ui_intro_project_manager_04.png
 
-.. seealso:: For more information about rendering backends, see
-             :ref:`doc_gles2_gles3_differences`.
-
 Using the file browser
 ~~~~~~~~~~~~~~~~~~~~~~
 

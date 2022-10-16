@@ -24,9 +24,8 @@ Available scripting languages
 -----------------------------
 
 Godot offers **four gameplay programming languages**: GDScript, C#,
-and, via its GDNative technology, C and C++. There are more
-:ref:`community-supported languages <doc_what_is_gdnative_third_party_bindings>`,
-but these are the official ones.
+and, via its GDExtension technology, C and C++. There are more
+community-supported languages, but these are the official ones.
 
 You can use multiple languages in a single project. For instance, in a team, you
 could code gameplay logic in GDScript as it's fast to write, and use C# or C++ to
@@ -125,10 +124,10 @@ or ClojureCLR. However, C# is the only officially supported .NET option.
           in GDScript, C#, or C++ won't have a significant impact on
           performance.
 
-C and C++ via GDNative
-~~~~~~~~~~~~~~~~~~~~~~
+C and C++ via GDExtension
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GDNative allows you to write game code in C or C++ without needing to recompile
+GDExtension allows you to write game code in C or C++ without needing to recompile
 or even restart Godot.
 
 .. image:: img/scripting_cpp.png
@@ -136,10 +135,10 @@ or even restart Godot.
 You can use any version of the language or mix compiler brands and versions for
 the generated shared libraries, thanks to our use of an internal C API Bridge.
 
-GDNative is the best choice for performance. You don't need to use it
+GDExtension is the best choice for performance. You don't need to use it
 throughout an entire game, as you can write other parts in GDScript or C#.
 
-When working with GDNative, the available types, functions, and properties
+When working with GDExtension, the available types, functions, and properties
 closely resemble Godot's actual C++ API.
 
 Summary

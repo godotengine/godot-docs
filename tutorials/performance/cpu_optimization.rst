@@ -154,7 +154,7 @@ will be able to work as fast as possible.
 Godot usually takes care of such low-level details for you. For example, the
 Server APIs make sure data is optimized for caching already for things like
 rendering and physics. Still, you should be especially aware of caching when
-using :ref:`GDNative <toc-tutorials-gdnative>`.
+writing GDExtensions.
 
 Languages
 =========
@@ -198,7 +198,7 @@ C++
 Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
 machines on different platforms. Options for using C++ include
-:ref:`GDNative <toc-tutorials-gdnative>` and
+GDExtensions and
 :ref:`custom modules <doc_custom_modules_in_c++>`.
 
 Threads
@@ -225,10 +225,10 @@ SceneTree
 
 Although Nodes are an incredibly powerful and versatile concept, be aware that
 every node has a cost. Built-in functions such as `_process()` and
-`_physics_process()` propagate through the tree. This housekeeping can reduce 
-performance when you have a very large numbers of nodes (how many exactly 
-depends on the target platform and can range from thousands to tens of 
-thousands so ensure that you profile performance on all target platforms 
+`_physics_process()` propagate through the tree. This housekeeping can reduce
+performance when you have a very large numbers of nodes (how many exactly
+depends on the target platform and can range from thousands to tens of
+thousands so ensure that you profile performance on all target platforms
 during development).
 
 Each node is handled individually in the Godot renderer. Therefore, a smaller

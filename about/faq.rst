@@ -82,8 +82,7 @@ we recommend that you first do some due diligence yourself. Searching through
 discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
 great way to start your troubleshooting.
 
-As for new languages, support is possible via third parties using the GDNative /
-NativeScript / PluginScript facilities. (See the question about plugins below.)
+As for new languages, support is possible via third parties with GDExtensions. (See the question about plugins below.)
 Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
@@ -366,10 +365,9 @@ For extending Godot, like creating Godot Editor plugins or adding support
 for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
 and tool scripts.
 
-Also, see the official blog posts on these topics:
+Also, see the official blog post on GDExtension, a way to develop native extensions for Godot:
 
-* `A look at the GDNative architecture <https://godotengine.org/article/look-gdnative-architecture>`_
-* `GDNative is here! <https://godotengine.org/article/dlscript-here>`_
+* `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
 
 You can also take a look at the GDScript implementation, the Godot modules,
 as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
@@ -547,7 +545,7 @@ The vast majority of games do not need this and Godot provides handy helpers
 to do the job for most cases when you do.
 
 If a game that really needs to process such large amount of objects is
-needed, our recommendation is to use C++ and GDNative for the high
+needed, our recommendation is to use C++ and GDExtension for the high
 performance parts and GDScript (or C#) for the rest of the game.
 
 How can I support Godot development or contribute?
