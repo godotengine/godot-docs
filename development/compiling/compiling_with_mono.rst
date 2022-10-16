@@ -77,8 +77,8 @@ without having to repeat this process.
 ``<godot_binary>`` refers to the tools binary you compiled above with the Mono
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
-``bin/godot.<platform>.editor.<bits>.mono``, e.g. ``bin/godot.linuxbsd.editor.64.mono``
-or ``bin/godot.windows.editor.64.mono.exe``. Be especially aware of the **.mono**
+``bin/godot.<platform>.editor.<arch>.mono``, e.g. ``bin/godot.linuxbsd.editor.x86_64.mono``
+or ``bin/godot.windows.editor.x86_32.mono.exe``. Be especially aware of the **.mono**
 suffix! If you've previously compiled Godot without Mono support, you might have
 similarly named binaries without this suffix. These binaries can't be used to
 generate the Mono glue.
@@ -181,8 +181,8 @@ Export templates
 
 The name of the data directory for an export template differs based on the
 configuration it was built with. The format is
-``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.linuxbsd.32.release_debug`` or
-``data.mono.windows.64.release``.
+``data.mono.<platform>.<arch>.<target>``, e.g. ``data.mono.linuxbsd.x86_32.release_debug`` or
+``data.mono.windows.x86_64.release``.
 
 This directory must be placed with its original name next to the Godot export
 templates. When exporting a project, Godot will also copy this directory with
@@ -195,9 +195,9 @@ the contents of the data directory can be placed in the following locations
 inside the ZIP archive:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``/osx_template.app/Contents/Resources/GodotSharp/Mono/etc``  |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/etc`` | ``/osx_template.app/Contents/Resources/GodotSharp/Mono/etc``  |
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 Editor
@@ -215,13 +215,13 @@ Godot editor is distributed as a bundle, the contents of the data directory may
 be placed in the following locations:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Api``      | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Api``      |
+| ``bin/data.mono.<platform>.<arch>.<target>/Api``      | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Api``      |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/lib`` | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``<bundle_name>.app/Contents/Resources/GodotSharp/Mono/etc``  |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/etc`` | ``<bundle_name>.app/Contents/Resources/GodotSharp/Mono/etc``  |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
+| ``bin/data.mono.<platform>.<arch>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 The ``Mono`` subdirectory is optional. It will be needed when distributing the
