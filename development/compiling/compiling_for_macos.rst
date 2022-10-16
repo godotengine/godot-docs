@@ -94,23 +94,27 @@ editor binary built with ``target=release_debug``::
         mkdir -p Godot.app/Contents/Frameworks
         cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
 
-Compiling a headless/server build
----------------------------------
+Running a headless/server build
+-------------------------------
 
-To compile a *headless* build which provides editor functionality to export
-projects in an automated manner, use::
+To run in *headless* mode which provides editor functionality to export
+projects in an automated manner, use the normal build::
 
-    scons platform=server target=editor --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos target=editor --jobs=$(sysctl -n hw.logicalcpu)
+
+And then use the ``--headless`` command line argument::
+
+    ./bin/godot.macos.editor.x86_64 --headless
 
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
 
-    scons platform=server target=template_debug --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos target=template_debug --jobs=$(sysctl -n hw.logicalcpu)
 
 To compile a release *server* build which is optimized to run dedicated game servers,
 use::
 
-    scons platform=server target=template_release --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=macos target=template_release production=yes --jobs=$(sysctl -n hw.logicalcpu)
 
 Building export templates
 -------------------------
