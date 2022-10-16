@@ -247,7 +247,7 @@ care - altering the ``position``, ``linear_velocity``, or other physics properti
 of a rigid body can result in unexpected behavior. If you need to alter any
 of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>`
 callback instead of ``_physics_process()``. In this callback, you have access
-to the body's :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`,
+to the body's :ref:`PhysicsDirectBodyState2D <class_PhysicsDirectBodyState2D>`,
 which allows for safely changing properties and synchronizing them with
 the physics engine.
 
@@ -311,9 +311,9 @@ Contact reporting
 
 By default, rigid bodies do not keep track of contacts, because this can
 require a huge amount of memory if many bodies are in the scene. To enable
-contact reporting, set the :ref:`contacts_reported <class_RigidBody2D_property_contacts_reported>`
+contact reporting, set the :ref:`max_contacts_reported <class_RigidBody2D_property_max_contacts_reported>`
 property to a non-zero value. The contacts can then be obtained via
-:ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_method_get_contact_count>`
+:ref:`PhysicsDirectBodyState2D.get_contact_count() <class_PhysicsDirectBodyState2D_method_get_contact_count>`
 and related functions.
 
 Contact monitoring via signals can be enabled via the :ref:`contact_monitor <class_RigidBody2D_property_contact_monitor>`
@@ -341,7 +341,7 @@ After a collision, you may want the body to bounce, to slide along a wall,
 or to alter the properties of the object it hit. The way you handle collision
 response depends on which method you used to move the CharacterBody2D.
 
-:ref:`move_and_collide <class_CharacterBody2D_method_move_and_collide>`
+:ref:`move_and_collide <class_PhysicsBody2D_method_move_and_collide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using ``move_and_collide()``, the function returns a
@@ -355,7 +355,7 @@ occurred:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends CharacterBody2D
+    extends PhysicsBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -366,7 +366,7 @@ occurred:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -385,7 +385,7 @@ Or to bounce off of the colliding object:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends CharacterBody2D
+    extends PhysicsBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -396,7 +396,7 @@ Or to bounce off of the colliding object:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 

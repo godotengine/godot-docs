@@ -28,11 +28,11 @@ In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 :ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.
-For 3D, it's :ref:`Node3D.get_world().space <class_Node3D_method_get_world>`.
+For 3D, it's :ref:`Node3D.get_world_3d().space <class_Node3D_method_get_world_3d>`.
 
 The resulting space :ref:`RID <class_RID>` can be used in
-:ref:`PhysicsServer <class_PhysicsServer>` and
-:ref:`Physics2DServer <class_Physics2DServer>` respectively for 3D and 2D.
+:ref:`PhysicsServer3D <class_PhysicsServer3D>` and
+:ref:`PhysicsServer2D <class_PhysicsServer2D>` respectively for 3D and 2D.
 
 Accessing space
 ---------------
@@ -45,8 +45,8 @@ callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
 To perform queries into physics space, the
-:ref:`Physics2DDirectSpaceState <class_Physics2DDirectSpaceState>`
-and :ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
+:ref:`PhysicsDirectSpaceState2D <class_PhysicsDirectSpaceState2D>`
+and :ref:`PhysicsDirectSpaceState3D <class_PhysicsDirectSpaceState3D>`
 must be used.
 
 Use the following code in 2D:
@@ -100,7 +100,7 @@ Raycast query
 -------------
 
 For performing a 2D raycast query, the method
-:ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_method_intersect_ray>`
+:ref:`PhysicsDirectSpaceState2D.intersect_ray() <class_PhysicsDirectSpaceState2D_method_intersect_ray>`
 may be used. For example:
 
 .. tabs::
@@ -228,7 +228,7 @@ See :ref:`doc_physics_introduction_collision_layer_code_example` for details on 
 
 Casting a ray from screen to 3D physics space is useful for object
 picking. There is not much need to do this because
-:ref:`CollisionObject <class_CollisionObject>`
+:ref:`CollisionObject3D <class_CollisionObject3D>`
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 

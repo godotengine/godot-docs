@@ -249,8 +249,9 @@ From scripts
 ^^^^^^^^^^^^
 
 To configure stretching at runtime from a script, use the
-``get_tree().set_screen_stretch()`` method (see
-:ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
+``get_tree().root.content_scale_mode`` (see
+:ref:`Window.content_scale_mode <class_Window_property_content_scale_mode>`
+and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
 
 Common use case scenarios
 -------------------------

@@ -237,7 +237,7 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 .. image:: img/texturepath.png
 
 Every frame, the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent
-color if :ref:`Transparent Bg<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_Viewport_property_render_target_clear_mode>` to Never or Next Frame.
+color if :ref:`Transparent Bg<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting ``Clear Mode`` to Never or Next Frame.
 As the name implies, Never means the texture will never be cleared, while next frame will
 clear the texture on the next frame and then set itself to Never.
 

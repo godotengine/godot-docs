@@ -163,7 +163,7 @@ Noise is a very popular tool for faking the look of terrain. Think of it as
 similar to the cosine function where you have repeating hills except, with
 noise, each hill has a different height.
 
-Godot provides the :ref:`NoiseTexture <class_noisetexture>` resource for
+Godot provides the :ref:`NoiseTexture2D <class_noisetexture2D>` resource for
 generating a noise texture that can be accessed from a shader.
 
 To access a texture in a shader add the following code near the top of your

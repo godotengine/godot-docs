@@ -68,7 +68,7 @@ Transform interpolation
 -----------------------
 
 It is also possible to interpolate whole transforms (make sure they have either uniform scale or, at least, the same non-uniform scale).
-For this, the function :ref:`Transform.interpolate_with() <class_Transform_method_interpolate_with>` can be used.
+For this, the function :ref:`Transform3D.interpolate_with() <class_Transform3D_method_interpolate_with>` can be used.
 
 Here is an example of transforming a monkey from Position1 to Position2:
 
