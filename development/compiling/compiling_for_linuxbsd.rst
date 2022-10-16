@@ -161,23 +161,27 @@ manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-Compiling a headless/server build
----------------------------------
+Running a headless/server build
+-------------------------------
 
-To compile a *headless* build which provides editor functionality to export
-projects in an automated manner, use::
+To run in *headless* mode which provides editor functionality to export
+projects in an automated manner, use the normal build::
 
-    scons -j8 platform=server target=editor
+    scons -j8 platform=linuxbsd target=editor
+
+And then use the ``--headless`` command line argument::
+
+    ./bin/godot.linuxbsd.editor.x86_64 --headless
 
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
 
-    scons -j8 platform=server target=template_debug
+    scons -j8 platform=linuxbsd target=template_debug
 
 To compile a *server* build which is optimized to run dedicated game servers,
 use::
 
-    scons -j8 platform=server target=template_release
+    scons -j8 platform=linuxbsd target=template_release production=yes
 
 Building export templates
 -------------------------
