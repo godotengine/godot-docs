@@ -149,7 +149,7 @@ manager.
 
 .. note:: If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
-          SCons option ``target=template_release``.
+          SCons options ``target=template_release production=yes``.
 
           If you are compiling Godot with GCC, you can make the binary
           even smaller and faster by adding the SCons option ``use_lto=yes``.
