@@ -58,15 +58,15 @@ Generate the glue
 Glue sources are the wrapper functions that will be called by managed methods.
 These source files must be generated before building your final binaries. In
 order to generate them, first, you must build a temporary Godot binary with the
-options ``target=editor`` and ``mono_glue=no``::
+options ``target=editor``::
 
-    scons p=<platform> target=editor module_mono_enabled=yes mono_glue=no
+    scons p=<platform> target=editor module_mono_enabled=yes
 
 After the build finishes, you need to run the compiled executable with the
-parameter ``--generate-mono-glue`` followed by the path to an output directory.
+parameters ``--headless --generate-mono-glue`` followed by the path to an output directory.
 This path must be ``modules/mono/glue`` in the Godot directory::
 
-    <godot_binary> --generate-mono-glue modules/mono/glue
+    <godot_binary> --headless --generate-mono-glue modules/mono/glue
 
 This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``,
 the C# solution for the Godot API at ``modules/mono/glue/GodotSharp/GodotSharp/Generated``,
@@ -86,10 +86,6 @@ generate the Mono glue.
 Notes
 ^^^^^
 
-- **Do not build your final binaries with** ``mono_glue=no``.
-  This disables C# scripting. This option must be used only for the temporary
-  binary that will generate the glue. Godot will print a warning at startup if
-  it was built without the glue sources.
 - The glue sources must be regenerated every time the ClassDB-registered API
   changes. That is, for example, when a new method is registered to the
   scripting API or one of the parameters of such a method changes.
@@ -100,15 +96,14 @@ Notes
 Rebuild with Mono glue
 ----------------------
 
-Once you have generated the Mono glue, you can build the final binary with
-``mono_glue=yes``. This is the default value for ``mono_glue``, so you can also
-omit it. To build a Mono-enabled editor::
+Once you have generated the Mono glue, you can generate the final binary with
+the ``build_assemblies.py`` script.::
 
-    scons p=<platform> target=editor module_mono_enabled=yes mono_glue=yes
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform={PLATFORM_NAME}
 
 And Mono-enabled export templates::
 
-    scons p=<platform> target=template_release module_mono_enabled=yes mono_glue=yes
+    scons p=<platform> target=template_release module_mono_enabled=yes
 
 If everything went well, apart from the normal output, SCons should have created
 the following files in the ``bin`` directory:
@@ -136,9 +131,11 @@ Example (Windows)
 ::
 
     # Build temporary binary
-    scons p=windows target=editor module_mono_enabled=yes mono_glue=no
+    scons p=windows target=editor module_mono_enabled=yes
     # Generate glue sources
-    bin\godot.windows.tools.64.mono --generate-mono-glue modules/mono/glue
+    bin\godot.windows.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    # Generate binaries
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
     ### Build binaries normally
     # Editor
@@ -153,9 +150,11 @@ Example (Linux, \*BSD)
 ::
 
     # Build temporary binary
-    scons p=linuxbsd target=editor module_mono_enabled=yes mono_glue=no
+    scons p=linuxbsd target=editor module_mono_enabled=yes
     # Generate glue sources
-    bin/godot.linuxbsd.editor.64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    # Generate binaries
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
 
     ### Build binaries normally
     # Editor
@@ -374,11 +373,6 @@ the Mono module:
 - **module_mono_enabled**\ =yes | **no**
 
   - Build Godot with the Mono module enabled.
-
-- **mono_glue**\ =\ **yes** | no
-
-  - Whether to include the glue source files in the build
-    and define ``MONO_GLUE_DISABLED`` as a preprocessor macro.
 
 - **mono_prefix**\ =path
 
