@@ -34,8 +34,8 @@ rendering, physics, sound, etc. The scene system is built on top of them and use
 The most common servers are:
 
 * :ref:`RenderingServer <class_RenderingServer>`: handles everything related to graphics.
-* :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
-* :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
+* :ref:`PhysicsServer3D <class_PhysicsServer3D>`: handles everything related to 3D physics.
+* :ref:`PhysicsServer2D <class_PhysicsServer2D>`: handles everything related to 2D physics.
 * :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
 Explore their APIs and you will realize that all the functions provided are low-level
@@ -73,9 +73,9 @@ For nodes, there are many functions available:
   and :ref:`CanvasItem <class_CanvasItem>` nodes)
   contains functions to get the *RenderingServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
-* The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
-  *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
-  and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
+* The :ref:`VisualInstance3D<class_VisualInstance3D>` class, allows getting the scenario *instance* and
+  *instance base* via the :ref:`VisualInstance3D.get_instance() <class_VisualInstance3D_method_get_instance>`
+  and :ref:`VisualInstance3D.get_base() <class_VisualInstance3D_method_get_base>` respectively.
 
 Try exploring the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
@@ -157,7 +157,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
 Creating a 2D RigidBody and moving a sprite with it
 ---------------------------------------------------
 
-This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <class_Physics2DServer>` API,
+This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`PhysicsServer2D <class_PhysicsServer2D>` API,
 and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
@@ -193,12 +193,12 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
-:ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
+:ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsServer3D <class_PhysicsServer3D>` respectively).
 
 Getting data from the servers
 -----------------------------
 
-Try to **never** request any information from ``RenderingServer``, ``PhysicsServer`` or ``Physics2DServer``
+Try to **never** request any information from ``RenderingServer``, ``PhysicsServer2D`` or ``PhysicsServer3D``
 by calling functions unless you know what you are doing. These servers will often run asynchronously
 for performance and calling any function that returns a value will stall them and force them to process
 anything pending until the function is actually called. This will severely decrease performance if you

@@ -18,7 +18,7 @@ Setting up the ragdoll
 Creating physical bones
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Like many other features in the engine, there is a node to set up a ragdoll: the :ref:`PhysicalBone <class_PhysicalBone>` node. To simplify the setup, you can generate ``PhysicalBone`` nodes with the "Create physical skeleton" feature in the skeleton node.
+Like many other features in the engine, there is a node to set up a ragdoll: the :ref:`PhysicalBone3D <class_PhysicalBone3D>` node. To simplify the setup, you can generate ``PhysicalBone`` nodes with the "Create physical skeleton" feature in the skeleton node.
 
 Open the platformer demo in Godot, and then the Robi scene. Select the ``Skeleton`` node. A skeleton button appears on the top bar menu:
 

@@ -217,7 +217,7 @@ in another context without any extra changes to its API.
 
   To avoid creating and maintaining such documentation, one converts the
   dependent node ("child" above) into a tool script that implements
-  :ref:`_get_configuration_warning() <class_Node_method__get_configuration_warning>`.
+  ``_get_configuration_warning()``.
   Returning a non-empty string from it will make the Scene dock generate a
   warning icon with the string as a tooltip by the node. This is the same icon
   that appears for nodes such as the
@@ -370,9 +370,9 @@ own place in the hierarchy as a sibling or some other relation.
   1. The **declarative** solution: place a :ref:`Node <class_Node>` in between
      them. As nodes with no transform, Nodes will not pass along such
      information to their children.
-  2. The **imperative** solution: Use the ``set_as_toplevel`` setter for the
-     :ref:`CanvasItem <class_CanvasItem_method_set_as_top_level>` or
-     :ref:`Node3D <class_Node3D_method_set_as_top_level>` node. This will make
+  2. The **imperative** solution: Use the ``top_level`` property for the
+     :ref:`CanvasItem <class_CanvasItem_property_top_level>` or
+     :ref:`Node3D <class_Node3D_property_top_level>` node. This will make
      the node ignore its inherited transform.
 
 .. note::

@@ -137,8 +137,8 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
     }
 
 There are some more overridable functions like
-:ref:`Node._get_configuration_warning()
-<class_Node_method__get_configuration_warning>`. Specialized node types provide
+:ref:`Node._get_configuration_warnings()
+<class_Node_method__get_configuration_warnings>`. Specialized node types provide
 more callbacks like :ref:`CanvasItem._draw() <class_CanvasItem_method__draw>` to
 draw programmatically or :ref:`Control._gui_input()
 <class_Control_method__gui_input>` to handle clicks and input on UI elements.

@@ -134,9 +134,9 @@ specifically add :ref:`class_EditorProperty`-based controls.
             return true
         else:
             return false
-            
+
  .. code-tab:: csharp
- 
+
     // MyInspectorPlugin.cs
     #if TOOLS
     using Godot;
@@ -190,6 +190,8 @@ You can display your custom widget in two ways. Use just the default ``add_child
 method to display it to the right of the property name, and use ``add_child()``
 followed by ``set_bottom_editor()`` to position it below the name.
 
+.. FIXME: The second tab has the C# lexer for hightlighting disabled for now, as the provided code causes errors.
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
@@ -237,11 +239,11 @@ followed by ``set_bottom_editor()`` to position it below the name.
         current_value = new_value
         refresh_control_text()
         updating = false
-    
+
     func refresh_control_text():
         property_control.text = "Value: " + str(current_value)
 
- .. code-tab:: csharp
+ .. code-tab:: none C#
 
     // RandomIntEditor.cs
     #if TOOLS
