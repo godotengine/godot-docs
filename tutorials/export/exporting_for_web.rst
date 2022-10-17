@@ -81,7 +81,7 @@ JavaScript APIs, include CSS, or run JavaScript code.
                To customize the generated file, use the **Custom HTML shell**
                option.
 
-.. warning:: **Export types** other then *Regular* are not yet supported by the
+.. warning:: **Export types** other than *Regular* are not yet supported by the
              C# version.
 
 Limitations
