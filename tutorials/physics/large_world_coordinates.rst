@@ -28,7 +28,7 @@ In practice, this means that as the player moves away from the world origin
 will decrease.
 
 This loss of precision can result in objects appearing to "vibrate" when far
-away from the world origin, as the model's vertices will be snapping to the
+away from the world origin, as the model's position will snap to the
 nearest value that can be represented in a floating-point number. This can also
 result in physics glitches that only occur when the player is far from the world
 origin.
@@ -123,7 +123,7 @@ precise at high values. The maximum value that can be represented is also
 greatly increased by going from a single-precision float to a double-precision
 float.
 
-To avoid vertex snapping issues when far away from the world origin, Godot's 3D
+To avoid model snapping issues when far away from the world origin, Godot's 3D
 rendering engine will increase its precision for rendering operations when large
 world coordinates are enabled. The shaders do not use double-precision floats
 for performance reasons, but an `alternative solution <https://github.com/godotengine/godot/pull/66178>`__
@@ -229,7 +229,7 @@ some limitations when it comes to 3D rendering precision:
   visible jittering when far away from the world origin.
 
 2D rendering currently doesn't benefit from increased precision when large world
-coordinates are enabled. This can cause visible vertex snapping to occur when
+coordinates are enabled. This can cause visible model snapping to occur when
 far away from the world origin (starting from a few million pixels at typical
 zoom levels). 2D physics calculations will still benefit from increased
 precision though.
