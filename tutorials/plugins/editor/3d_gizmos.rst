@@ -91,7 +91,7 @@ or all the handle related ones.
         create_handle_material("handles")
 
 
-    func redraw(gizmo):
+    func _redraw(gizmo):
         gizmo.clear()
 
         var node3d = gizmo.get_node3d()
@@ -112,7 +112,7 @@ or all the handle related ones.
 
     # ...
 
-Note that we created a material in the `_init` method, and retrieved it in the `redraw`
+Note that we created a material in the `_init` method, and retrieved it in the `_redraw`
 method using :ref:`get_material()<class_EditorNode3DGizmoPlugin_method_get_material>`. This
 method retrieves one of the material's variants depending on the state of the gizmo
 (selected and/or editable).
@@ -136,7 +136,7 @@ So the final plugin would look somewhat like this:
         return node is MyCustomNode3D
 
 
-    func redraw(gizmo):
+    func _redraw(gizmo):
         gizmo.clear()
 
         var node3d = gizmo.get_node3d()
@@ -158,7 +158,7 @@ So the final plugin would look somewhat like this:
     # You should implement the rest of handle-related callbacks
     # (_get_handle_name(), _get_handle_value(), _commit_handle(), ...).
 
-Note that we just added some handles in the redraw method, but we still need to implement
+Note that we just added some handles in the `_redraw` method, but we still need to implement
 the rest of handle-related callbacks in :ref:`EditorNode3DGizmoPlugin <class_EditorNode3DGizmoPlugin>`
 to get properly working handles.
 
@@ -207,7 +207,7 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
     var gizmo_size = 3.0
 
 
-    func redraw():
+    func _redraw():
         clear()
 
         var node3d = get_node3d()
@@ -232,6 +232,6 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
     # You should implement the rest of handle-related callbacks
     # (_get_handle_name(), _get_handle_value(), _commit_handle(), ...).
 
-Note that we just added some handles in the redraw method, but we still need to implement
+Note that we just added some handles in the `_redraw` method, but we still need to implement
 the rest of handle-related callbacks in :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`
 to get properly working handles.
