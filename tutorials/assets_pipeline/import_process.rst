@@ -29,9 +29,9 @@ non imported files, only the :ref:`FileAccess <class_FileAccess>` class can.
 Changing import parameters
 --------------------------
 
-To change the import parameters of an asset in Godot (again, keep in mind
-import parameters are only present in non-native Godot resource types)
-select the relevant resource in the filesystem dock:
+To change the import parameters of an asset in Godot (again, keep in mind,
+import parameters are only present in non-native Godot resource types).
+Select the relevant resource in the filesystem dock:
 
 .. image:: img/asset_workflow1.png
 
