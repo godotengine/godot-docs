@@ -262,7 +262,7 @@ seconds, then return to the title screen and, after a brief pause, show the
           can be very useful to add delays such as in the above code, where we
           want to wait some time before showing the "Start" button.
 
-Add the code below to ``Main`` to update the score
+Add the code below to ``HUD`` to update the score
 
 .. tabs::
  .. code-tab:: gdscript GDScript
