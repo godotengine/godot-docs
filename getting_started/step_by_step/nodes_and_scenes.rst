@@ -26,7 +26,7 @@ All nodes have the following attributes:
 - You can extend them with new properties and functions.
 - You can add them to another node as a child.
 
-The last attribute is key. **Together, nodes form a tree**, which is a powerful
+The last attribute is key - **Together, nodes form a tree**. This is a powerful
 feature to organize projects. Since different nodes have different functions,
 combining them produces more complex behavior. As we saw before, you can build a
 playable character the camera follows using a kinematic body node named
