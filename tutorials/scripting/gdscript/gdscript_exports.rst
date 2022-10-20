@@ -305,7 +305,7 @@ Setting exported variables from a tool script
 When changing an exported variable's value from a script in
 :ref:`doc_gdscript_tool_mode`, the value in the inspector won't be updated
 automatically. To update it, call
-:ref:`notify_property_list_changed_notify() <class_Object_method_notify_property_list_changed>`
+:ref:`notify_property_list_changed() <class_Object_method_notify_property_list_changed>`
 after setting the exported variable's value.
 
 Advanced exports
