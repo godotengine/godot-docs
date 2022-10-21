@@ -137,14 +137,22 @@ floating-point precision issues (and thus, glitches or artifacts) in
 delicate areas such as rendering or physics. Make sure your artists
 always work in the right scale!
 
-The Y coordinate is used for "up", though for most objects that need
-alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z
-axis is used as a "pointing towards" direction. This convention roughly
-means that:
+The Y coordinate is used for "up". As for the horizontal X/Z axes, Godot uses a
+**right-handed** coordinate system. This means that for most objects that need
+alignment (such as lights or cameras), the Z axis is used as a "pointing
+towards" direction. This convention roughly means that:
 
 -  **X** is sides
 -  **Y** is up/down
 -  **Z** is front/back
+
+See this chart for comparison with other 3D software:
+
+.. figure:: img/introduction_to_3d_coordinate_systems.webp
+   :align: center
+   :alt: 3D coordinate systems comparison chart
+
+   Image by `Freya Holmér <https://twitter.com/FreyaHolmer>`__
 
 Space and manipulation gizmos
 -----------------------------
