@@ -99,13 +99,15 @@ value written in the script.
 .. image:: img/export_variable.png
 
 The ``_ready()`` function is called when a node enters the scene tree, which is
-a good time to find the size of the game window:
+a good time to find the size of the game window and position the player in the
+center of the screen:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
         screen_size = get_viewport_rect().size
+        position = screen_size / 2
 
  .. code-tab:: csharp
 
