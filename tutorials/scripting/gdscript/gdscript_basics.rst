@@ -1417,8 +1417,6 @@ Exports
 
     Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
 
-.. _doc_gdscript_tool_mode:
-
 
 Properties
 ~~~~~~~~~~
@@ -1467,6 +1465,8 @@ you can use a different notation to use existing class functions::
         get = get_my_prop, set = set_my_prop
 
 This can also be done in the same line.
+
+.. _doc_gdscript_tool_mode:
 
 Tool mode
 ~~~~~~~~~
