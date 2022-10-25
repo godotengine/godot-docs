@@ -77,21 +77,45 @@ remotely on a device, this is more efficient with the network filesystem.
 Script editor debug tools and options
 -------------------------------------
 
-The script editor has its own set of debug tools for use with breakpoints and
-two options. The breakpoint tools can also be found in the **Debugger** tab
+The script editor has its own set of debug tools that can be used to debug
+during execution.
+
+Breakpoints
++++++++++++
+
+Breakpoints can be set to pause execution while the game is running. By
+clicking on left side of a script you can place a red dot which tells to engine
+to pause prior to executing that line. Breakpoints can also be toggled with the
+F9 key while hovering a given line.
+
+.. image:: img/overview_debug_breakpoint.png
+
+Breakpoints allow for precise control over code execution, letting you know when
+specific parts of code are executed and allowing you to analyze the state at that
+particular point in the script. This removes the need for print statements that
+notify you when specific regions of code are reached and grant you much more
+information and control during execution.
+
+Breakpoints also allow you to step through code line by line to gain a better
+understanding of the execution flow of your scripts. While at paused at a
+beakpoint, you can use the **Step Over (F10)** command to go to the next line of
+code. **Step Into (F11)** does the same thing as **Step Over**, but when reaching
+a function, it will step into the function execution rather than stepping over it.
+**Continue (F12)** makes the game continue normal execution from from the point
+where it is currently stopped.
+
+The breakpoint tools can also be found in the **Debugger** tab
 of the debugger.
 
 .. image:: img/overview_script_editor.png
 
-The **Break** button causes a break in the script like a breakpoint would.
-**Continue** makes the game continue after pausing at a breakpoint.
-**Step Over** goes to the next line of code, and **Step Into** goes into
-a function if possible. Otherwise, it does the same thing as **Step Over**.
+There are several features here that function the same as breakpoints, including the
+**Break** button which causes a break in the script like a breakpoint would.
 
 The **Keep Debugger Open** option keeps the debugger open after a scene
-has been closed.
-The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in **Editor Settings > Debugger**.
+has been closed and the **Debug with External Editor** option lets you debug your
+game with an external editor. This option is also accessible in
+**Editor Settings > Debugger**.
 
 .. warning::
 
