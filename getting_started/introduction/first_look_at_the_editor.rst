@@ -19,7 +19,7 @@ The Project manager
 -------------------
 
 When you launch Godot, the first window you see is the Project Manager. In the
-default tab, "Projects," you can manage existing projects, import or create new
+default tab **Local Projects**, you can manage existing projects, import or create new
 ones, and more.
 
 .. image:: img/editor_intro_project_manager.png
