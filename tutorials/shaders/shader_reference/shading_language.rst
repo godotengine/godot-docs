@@ -748,9 +748,10 @@ used, and how the editor should allow users to modify it.
     uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : source_color = vec4(1.0);
+    uniform sampler2D image : source_color;
 
 It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
+hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
 engine renders in linear color space.
 
 Full list of hints below:
