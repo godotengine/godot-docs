@@ -16,7 +16,7 @@ at run-time. You can use it to run native code without compiling it with the eng
 Differences between GDExtension and C++ modules
 -----------------------------------------------
 
-You can use both GDExtension and :ref:`C++ modules <doc_custom_modules_in_c++>` to
+You can use both GDExtension and :ref:`C++ modules <doc_custom_modules_in_cpp>` to
 run C or C++ code in a Godot project.
 
 They also both allow you to integrate third-party libraries into Godot. The one
@@ -47,7 +47,7 @@ Also:
 Advantages of C++ modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We recommend :ref:`C++ modules <doc_custom_modules_in_c++>` in cases where
+We recommend :ref:`C++ modules <doc_custom_modules_in_cpp>` in cases where
 GDExtension isn't enough:
 
 - C++ modules provide deeper integration into the engine. GDExtension's access is not as deep as

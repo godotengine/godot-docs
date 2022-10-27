@@ -37,7 +37,7 @@ The editor's code is fully self-contained in the
 of the Godot source repository.
 
 Some editor functionality is also implemented via
-:ref:`modules <doc_custom_modules_in_c++>`. Some of these are only enabled in
+:ref:`modules <doc_custom_modules_in_cpp>`. Some of these are only enabled in
 editor builds to decrease the binary size of export templates. See the
 `modules/ <https://github.com/godotengine/godot/tree/master/modules>`__ folder
 in the Godot source repository.
