@@ -269,10 +269,12 @@ Creating Windows export templates
 Windows export templates are created by compiling Godot without the editor,
 with the following flags::
 
-    C:\godot> scons platform=windows tools=no target=release_debug bits=32
-    C:\godot> scons platform=windows tools=no target=release bits=32
-    C:\godot> scons platform=windows tools=no target=release_debug bits=64
-    C:\godot> scons platform=windows tools=no target=release bits=64
+    C:\godot> scons platform=windows tools=no target=template_debug bits=32
+    C:\godot> scons platform=windows tools=no target=template_release bits=32
+    C:\godot> scons platform=windows tools=no target=template_debug bits=64
+    C:\godot> scons platform=windows tools=no target=template_release bits=64
+
+Note: If you would like to make export templates for a build of godot that has 64 bit floats, append ``float=64`` to the end of the commands above.
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier
