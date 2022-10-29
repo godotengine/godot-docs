@@ -19,6 +19,8 @@ Description
 
 RemoteTransform3D pushes its own :ref:`Transform3D<class_Transform3D>` to another :ref:`Node3D<class_Node3D>` derived Node (called the remote node) in the scene.
 
+PS: RemoteTransform3D must be child of the node you want the transform to be pushed!
+
 It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
 
 Properties
