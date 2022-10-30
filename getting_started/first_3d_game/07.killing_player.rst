@@ -181,7 +181,7 @@ Starting with ``Main.gd``.
         # And give it a random offset.
         mob_spawn_location.progress_ratio = randf()
 
-        var player_position = $Player.transform.origin
+        var player_position = $Player.position
         mob.initialize(mob_spawn_location.position, player_position)
 
         # Spawn the mob by adding it to the Main scene.
@@ -215,7 +215,7 @@ Starting with ``Main.gd``.
             mobSpawnLocation.UnitOffset = GD.Randf();
 
             // Communicate the spawn location and the player's location to the mob.
-            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+            Vector3 playerPosition = GetNode<Player>("Player").position;
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
 
             // Spawn the mob by adding it to the Main scene.
@@ -374,14 +374,14 @@ Finally, the longest script, ``Player.gd``:
             var collision = get_slide_collision(index)
 
             # If the collision is with ground
-            if (collision.get_collider(index) == null):
-                return
+            if (collision.get_collider() == null):
+                continue
 
             # If the collider is with a mob
-            if collision.get_collider(index).is_in_group("mob"):
-                var mob = collision.get_collider(index)
+            if collision.get_collider().is_in_group("mob"):
+                var mob = collision.get_collider()
                 # we check that we are hitting it from above.
-                if Vector3.UP.dot(collision.get_normal(index)) > 0.1:
+                if Vector3.UP.dot(collision.get_normal()) > 0.1:
                     # If so, we squash it and bounce.
                     mob.squash()
                     target_velocity.y = bounce_impulse

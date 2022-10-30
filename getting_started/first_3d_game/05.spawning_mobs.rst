@@ -248,7 +248,7 @@ Let's code the mob spawning logic. We're going to:
         # And give it a random offset.
         mob_spawn_location.progress_ratio = randf()
 
-        var player_position = $Player.transform.origin
+        var player_position = $Player.position
         mob.initialize(mob_spawn_location.position, player_position)
 
         # Spawn the mob by adding it to the Main scene.
@@ -268,7 +268,7 @@ Let's code the mob spawning logic. We're going to:
         // And give it a random offset.
         mobSpawnLocation.UnitOffset = GD.Randf();
 
-        Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+        Vector3 playerPosition = GetNode<Player>("Player").position;
         mob.Initialize(mobSpawnLocation.Translation, playerPosition);
 
         AddChild(mob);
@@ -304,7 +304,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
         # And give it a random offset.
         mob_spawn_location.progress_ratio = randf()
 
-        var player_position = $Player.transform.origin
+        var player_position = $Player.position
         mob.initialize(mob_spawn_location.position, player_position)
 
         # Spawn the mob by adding it to the Main scene.
@@ -331,7 +331,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             mobSpawnLocation.UnitOffset = GD.Randf();
 
-            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+            Vector3 playerPosition = GetNode<Player>("Player").position;
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
 
             AddChild(mob);
