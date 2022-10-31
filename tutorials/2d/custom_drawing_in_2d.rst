@@ -75,7 +75,7 @@ redrawn if modified:
         # If the texture variable is modified externally,
         # this callback is called.
         texture = value  # Texture was changed.
-        update()  # Update the node's visual representation.
+        queue_redraw()  # Trigger a redraw of the node.
 
     func _draw():
         draw_texture(texture, Vector2())
@@ -95,7 +95,7 @@ redrawn if modified:
             set
             {
                 _texture = value;
-                Update();
+                QueueRedraw();
             }
         }
 
@@ -106,7 +106,7 @@ redrawn if modified:
     }
 
 In some cases, it may be desired to draw every frame. For this,
-call ``update()`` from the ``_process()`` callback, like this:
+call ``queue_redraw()`` from the ``_process()`` callback, like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -118,7 +118,7 @@ call ``update()`` from the ``_process()`` callback, like this:
         pass
 
     func _process(delta):
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
@@ -131,7 +131,7 @@ call ``update()`` from the ``_process()`` callback, like this:
 
         public override void _Process(float delta)
         {
-            Update();
+            QueueRedraw();
         }
     }
 
@@ -342,7 +342,7 @@ work correctly, but the angle values will grow bigger and bigger over time until
 they reach the maximum integer value Godot can manage (``2^31 - 1``).
 When this happens, Godot may crash or produce unexpected behavior.
 
-Finally, we must not forget to call the ``update()`` function, which automatically
+Finally, we must not forget to call the ``queue_redraw()`` function, which automatically
 calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
 .. tabs::
@@ -356,7 +356,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
@@ -371,7 +371,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
             _angleFrom = Mathf.Wrap(_angleFrom, 0, 360);
             _angleTo = Mathf.Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
@@ -425,7 +425,7 @@ smaller value, which directly depends on the rendering speed.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
@@ -440,7 +440,7 @@ smaller value, which directly depends on the rendering speed.
             _angleFrom = Wrap(_angleFrom, 0, 360);
             _angleTo = Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
