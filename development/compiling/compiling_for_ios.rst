@@ -36,13 +36,13 @@ Open a Terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    $ scons p=ios target=debug
+    $ scons p=ios target=template_debug
 
 for a debug build, or:
 
 ::
 
-    $ scons p=ios target=release
+    $ scons p=ios target=template_release
 
 for a release build (check ``platform/ios/detect.py`` for the compiler
 flags used for each configuration).
@@ -51,8 +51,8 @@ Alternatively, you can run
 
 ::
 
-    $ scons p=ios target=debug ios_simulator=yes arch=x86_64
-    $ scons p=ios target=debug ios_simulator=yes arch=arm64
+    $ scons p=ios target=template_debug ios_simulator=yes arch=x86_64
+    $ scons p=ios target=template_debug ios_simulator=yes arch=arm64
 
 for a Simulator libraries.
 
@@ -69,6 +69,9 @@ should be placed in ``libgodot.ios.debug.xcframework`` and ``libgodot.ios.releas
 
     $ cp libgodot.ios.opt.arm64.a ios_xcode/libgodot.ios.release.xcframework/ios-arm64/libgodot.a
     $ lipo -create libgodot.ios.opt.arm64.simulator.a libgodot.ios.opt.x86_64.simulator.a -output  ios_xcode/libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+
+The MoltenVK static ``.xcframework`` folder must also be placed in the ``ios_xcode``
+folder once it has been created.
 
 Run
 ---
