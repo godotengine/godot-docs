@@ -330,6 +330,14 @@ to change the display orientation project setting.
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
 
+.. tip::
+
+    To better support tablets and foldable phones (which frequently feature
+    displays with aspect ratios close to 4:3), consider using a base resolution
+    that has a 4:3 aspect ratio while following the rest of the instructions
+    here. For instance, you can set the base window width to ``1280`` and the
+    base window height to ``960``.
+
 Mobile game in portrait mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -348,6 +356,14 @@ Mobile game in portrait mode
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+.. tip::
+
+    To better support tablets and foldable phones (which frequently feature
+    displays with aspect ratios close to 4:3), consider using a base resolution
+    that has a 3:4 aspect ratio while following the rest of the instructions
+    here. For instance, you can set the base window width to ``960`` and the
+    base window height to ``1280``.
 
 Non-game application
 ^^^^^^^^^^^^^^^^^^^^
