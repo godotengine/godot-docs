@@ -10,7 +10,7 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
 
   This article makes references to "[something]-time" operations. This
   terminology comes from algorithm analysis'
-  `Big O Notation <https://www.youtube.com/watch?v=D6xkbGLQesk>`_.
+  `Big O Notation <https://towardsdatascience.com/introduction-to-big-o-notation-820d2e25d3fd>`_.
 
   Long-story short, it describes the worst-case scenario of runtime length.
   In laymen's terms:
