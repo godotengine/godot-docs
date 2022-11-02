@@ -40,7 +40,7 @@ Array vs. Dictionary vs. Object
 -------------------------------
 
 Godot stores all variables in the scripting API in the
-`Variant <https://docs.godotengine.org/en/latest/development/cpp/variant_class.html>`_
+:ref:`Variant <doc_variant_class>` class.
 class. Variants can store Variant-compatible data structures such as
 :ref:`Array <class_Array>` and :ref:`Dictionary <class_Dictionary>` as well as
 :ref:`Object <class_Object>` s.
