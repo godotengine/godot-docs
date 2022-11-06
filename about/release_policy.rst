@@ -88,7 +88,7 @@ on GitHub.
 +-------------+----------------------+--------------------------------------------------------------------------+
 | **Version** | **Release date**     | **Support level**                                                        |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.0   | Q4 2022              | |unstable| *Alpha.* Current focus of development (unstable).             |
+| Godot 4.0   | Q4 2022              | |unstable| *Beta.* Current focus of development (unstable).              |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.6   | Q4 2022              | |supported| *Beta.* Receives new features as well as bug fixes while     |
 |             |                      | under development.                                                       |
@@ -129,6 +129,10 @@ on GitHub.
 
 Pre-release Godot versions aren't intended to be used in production and are
 provided for testing purposes only.
+
+.. seealso::
+
+    See :ref:`doc_upgrading_to_godot_4` for instructions on migrating a project.
 
 .. _doc_release_policy_when_is_next_release_out:
 
