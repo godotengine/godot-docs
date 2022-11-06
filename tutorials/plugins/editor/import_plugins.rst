@@ -292,10 +292,9 @@ method. Our sample code is a bit long, so let's split in a few parts:
 ::
 
     func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
-        var file = File.new()
-        var err = file.open(source_file, File.READ)
-        if err != OK:
-            return err
+        var file = FileAccess.open(source_file, FileAccess.READ)
+        if file == null:
+            return FileAccess.get_open_error()
 
         var line = file.get_line()
 
@@ -305,7 +304,9 @@ The first part of our import method opens and reads the source file. We use the
 :ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
 
-If there's an error when opening the file, we return it to let the editor know
+If there's an error when opening the file, the ``file`` variable will be null.
+We use the :ref:`FileAccess <class_FileAccess>` ``get_open_error`` function to
+obtain the error from opening the file, and return it to let the editor know
 that the import wasn't successful.
 
 ::
@@ -375,7 +376,7 @@ would need to do something like the following:
 ::
 
     r_platform_variants.push_back("mobile")
-    return ResourceSaver.save(mobile_material, "%s.%s.%s" % [save_path, "mobile", get_save_extension()])
+    return ResourceSaver.save(mobile_material, "%s.%s.%s" % [save_path, "mobile", _get_save_extension()])
 
 The ``r_gen_files`` argument is meant for extra files that are generated during
 your import process and need to be kept. The editor will look at it to
