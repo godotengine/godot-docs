@@ -298,8 +298,6 @@ method. Our sample code is a bit long, so let's split in a few parts:
 
         var line = file.get_line()
 
-        file.close()
-
 The first part of our import method opens and reads the source file. We use the
 :ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
