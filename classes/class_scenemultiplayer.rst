@@ -33,22 +33,52 @@ Properties
 +---------------------------------+---------------------------------------------------------------------------------------+------------------+
 | :ref:`bool<class_bool>`         | :ref:`allow_object_decoding<class_SceneMultiplayer_property_allow_object_decoding>`   | ``false``        |
 +---------------------------------+---------------------------------------------------------------------------------------+------------------+
+| :ref:`Callable<class_Callable>` | :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>`                   |                  |
++---------------------------------+---------------------------------------------------------------------------------------+------------------+
+| :ref:`float<class_float>`       | :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>`                     | ``3.0``          |
++---------------------------------+---------------------------------------------------------------------------------------+------------------+
 | :ref:`bool<class_bool>`         | :ref:`refuse_new_connections<class_SceneMultiplayer_property_refuse_new_connections>` | ``false``        |
 +---------------------------------+---------------------------------------------------------------------------------------+------------------+
 | :ref:`NodePath<class_NodePath>` | :ref:`root_path<class_SceneMultiplayer_property_root_path>`                           | ``NodePath("")`` |
++---------------------------------+---------------------------------------------------------------------------------------+------------------+
+| :ref:`bool<class_bool>`         | :ref:`server_relay<class_SceneMultiplayer_property_server_relay>`                     | ``true``         |
 +---------------------------------+---------------------------------------------------------------------------------------+------------------+
 
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear<class_SceneMultiplayer_method_clear>` **(** **)**                                                                                                                                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`send_bytes<class_SceneMultiplayer_method_send_bytes>` **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` mode=2, :ref:`int<class_int>` channel=0 **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_SceneMultiplayer_method_clear>` **(** **)**                                                                                                                                                                                           |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`complete_auth<class_SceneMultiplayer_method_complete_auth>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                  |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`disconnect_peer<class_SceneMultiplayer_method_disconnect_peer>` **(** :ref:`int<class_int>` id **)**                                                                                                                                              |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_authenticating_peers<class_SceneMultiplayer_method_get_authenticating_peers>` **(** **)**                                                                                                                                                     |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`send_auth<class_SceneMultiplayer_method_send_auth>` **(** :ref:`int<class_int>` id, :ref:`PackedByteArray<class_PackedByteArray>` data **)**                                                                                                      |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`send_bytes<class_SceneMultiplayer_method_send_bytes>` **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` mode=2, :ref:`int<class_int>` channel=0 **)** |
++-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
+
+.. _class_SceneMultiplayer_signal_peer_authenticating:
+
+- **peer_authenticating** **(** :ref:`int<class_int>` id **)**
+
+Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` connects to a new peer and a valid :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>` is set. In this case, the :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` will not be emitted until :ref:`complete_auth<class_SceneMultiplayer_method_complete_auth>` is called with given peer ``id``. While in this state, the peer will not be included in the list returned by :ref:`MultiplayerAPI.get_peers<class_MultiplayerAPI_method_get_peers>` (but in the one returned by :ref:`get_authenticating_peers<class_SceneMultiplayer_method_get_authenticating_peers>`), and only authentication data will be sent or received. See :ref:`send_auth<class_SceneMultiplayer_method_send_auth>` for sending authentication data.
+
+----
+
+.. _class_SceneMultiplayer_signal_peer_authentication_failed:
+
+- **peer_authentication_failed** **(** :ref:`int<class_int>` id **)**
+
+Emitted when this MultiplayerAPI's :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` disconnects from a peer for which authentication had not yet completed. See :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>`.
+
+----
 
 .. _class_SceneMultiplayer_signal_peer_packet:
 
@@ -74,6 +104,36 @@ Property Descriptions
 If ``true``, the MultiplayerAPI will allow encoding and decoding of object during RPCs.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threat such as remote code execution.
+
+----
+
+.. _class_SceneMultiplayer_property_auth_callback:
+
+- :ref:`Callable<class_Callable>` **auth_callback**
+
++----------+--------------------------+
+| *Setter* | set_auth_callback(value) |
++----------+--------------------------+
+| *Getter* | get_auth_callback()      |
++----------+--------------------------+
+
+The callback to execute when when receiving authentication data sent via :ref:`send_auth<class_SceneMultiplayer_method_send_auth>`. If the :ref:`Callable<class_Callable>` is empty (default), peers will be automatically accepted as soon as they connect.
+
+----
+
+.. _class_SceneMultiplayer_property_auth_timeout:
+
+- :ref:`float<class_float>` **auth_timeout**
+
++-----------+-------------------------+
+| *Default* | ``3.0``                 |
++-----------+-------------------------+
+| *Setter*  | set_auth_timeout(value) |
++-----------+-------------------------+
+| *Getter*  | get_auth_timeout()      |
++-----------+-------------------------+
+
+If set to a value greater than ``0.0``, the maximum amount of time peers can stay in the authenticating state, after which the authentication will automatically fail. See the :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>` and :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signals.
 
 ----
 
@@ -109,6 +169,24 @@ The root path to use for RPCs and replication. Instead of an absolute path, a re
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
 
+----
+
+.. _class_SceneMultiplayer_property_server_relay:
+
+- :ref:`bool<class_bool>` **server_relay**
+
++-----------+---------------------------------+
+| *Default* | ``true``                        |
++-----------+---------------------------------+
+| *Setter*  | set_server_relay_enabled(value) |
++-----------+---------------------------------+
+| *Getter*  | is_server_relay_enabled()       |
++-----------+---------------------------------+
+
+Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is ``false``, clients won't be automatically notified of other peers and won't be able to send them packets through the server.
+
+\ **Note:** Support for this feature may depend on the current :ref:`MultiplayerPeer<class_MultiplayerPeer>` configuration. See :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`.
+
 Method Descriptions
 -------------------
 
@@ -117,6 +195,40 @@ Method Descriptions
 - void **clear** **(** **)**
 
 Clears the current SceneMultiplayer network state (you shouldn't call this unless you know what you are doing).
+
+----
+
+.. _class_SceneMultiplayer_method_complete_auth:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **complete_auth** **(** :ref:`int<class_int>` id **)**
+
+Mark the authentication step as completed for the remote peer identified by ``id``. The :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` signal will be emitted for this peer once the remote side also completes the authentication. No further authentication messages are expected to be received from this peer.
+
+If a peer disconnects before completing authentication, either due to a network issue, the :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>` expiring, or manually calling :ref:`disconnect_peer<class_SceneMultiplayer_method_disconnect_peer>`, the :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signal will be emitted instead of :ref:`MultiplayerAPI.peer_disconnected<class_MultiplayerAPI_signal_peer_disconnected>`.
+
+----
+
+.. _class_SceneMultiplayer_method_disconnect_peer:
+
+- void **disconnect_peer** **(** :ref:`int<class_int>` id **)**
+
+Disconnects the peer identified by ``id``, removing it from the list of connected peers, and closing the underlying connection with it.
+
+----
+
+.. _class_SceneMultiplayer_method_get_authenticating_peers:
+
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_authenticating_peers** **(** **)**
+
+Returns the IDs of the peers currently trying to authenticate with this :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+
+----
+
+.. _class_SceneMultiplayer_method_send_auth:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **send_auth** **(** :ref:`int<class_int>` id, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
+
+Sends the specified ``data`` to the remote peer identified by ``id`` as part of an authentication message. This can be used to authenticate peers, and control when :ref:`MultiplayerAPI.peer_connected<class_MultiplayerAPI_signal_peer_connected>` is emitted (and the remote peer accepted as one of the connected peers).
 
 ----
 

@@ -157,6 +157,8 @@ Methods
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`       | :ref:`min<class_Array_method_min>` **(** **)** |const|                                                                                                                                         |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`       | :ref:`pick_random<class_Array_method_pick_random>` **(** **)** |const|                                                                                                                         |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`       | :ref:`pop_at<class_Array_method_pop_at>` **(** :ref:`int<class_int>` position **)**                                                                                                            |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`       | :ref:`pop_back<class_Array_method_pop_back>` **(** **)**                                                                                                                                       |
@@ -227,6 +229,8 @@ Constructs an empty ``Array``.
 ----
 
 - :ref:`Array<class_Array>` **Array** **(** :ref:`Array<class_Array>` base, :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**
+
+Creates a typed array from the ``base`` array. The base array can't be already typed. See :ref:`set_typed<class_Array_method_set_typed>` for more details.
 
 ----
 
@@ -463,6 +467,8 @@ Assigns the given value to all elements in the array. This can typically be used
 
 
 
+\ **Note:** If ``value`` is of a reference type (:ref:`Object<class_Object>`-derived, ``Array``, :ref:`Dictionary<class_Dictionary>`, etc.) then the array is filled with the references to the same object, i.e. no duplicates are created.
+
 ----
 
 .. _class_Array_method_filter:
@@ -516,17 +522,23 @@ Returns the first element of the array. Prints an error and returns ``null`` if 
 
 - :ref:`int<class_int>` **get_typed_builtin** **(** **)** |const|
 
+Returns the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant for a typed array. If the ``Array`` is not typed, returns :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`.
+
 ----
 
 .. _class_Array_method_get_typed_class_name:
 
 - :ref:`StringName<class_StringName>` **get_typed_class_name** **(** **)** |const|
 
+Returns a class name of a typed ``Array`` of type :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`.
+
 ----
 
 .. _class_Array_method_get_typed_script:
 
 - :ref:`Variant<class_Variant>` **get_typed_script** **(** **)** |const|
+
+Returns the script associated with a typed array tied to a class name.
 
 ----
 
@@ -554,8 +566,6 @@ Returns ``true`` if the array contains the given value.
     GD.Print(arr.Contains("outside")); // False
     GD.Print(arr.Contains(7)); // True
     GD.Print(arr.Contains("7")); // False
-
-
 
 
 
@@ -617,11 +627,15 @@ Returns ``true`` if the array is empty.
 
 - :ref:`bool<class_bool>` **is_read_only** **(** **)** |const|
 
+Returns ``true`` if the array is read-only. See :ref:`set_read_only<class_Array_method_set_read_only>`. Arrays are automatically read-only if declared with ``const`` keyword.
+
 ----
 
 .. _class_Array_method_is_typed:
 
 - :ref:`bool<class_bool>` **is_typed** **(** **)** |const|
+
+Returns ``true`` if the array is typed. Typed arrays can only store elements of their associated type and provide type safety for the ``[]`` operator. Methods of typed array still return :ref:`Variant<class_Variant>`.
 
 ----
 
@@ -659,6 +673,19 @@ Returns the maximum value contained in the array if all elements are of comparab
 - :ref:`Variant<class_Variant>` **min** **(** **)** |const|
 
 Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
+
+----
+
+.. _class_Array_method_pick_random:
+
+- :ref:`Variant<class_Variant>` **pick_random** **(** **)** |const|
+
+Returns a random value from the target array.
+
+::
+
+    var array: Array\ :ref:`int<class_int>` = [1, 2, 3, 4]
+    print(array.pick_random())  # Prints either of the four numbers.
 
 ----
 
@@ -769,11 +796,17 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 - void **set_read_only** **(** :ref:`bool<class_bool>` enable **)**
 
+Makes the ``Array`` read-only, i.e. disabled modifying of the array's elements. Does not apply to nested content, e.g. content of nested arrays.
+
 ----
 
 .. _class_Array_method_set_typed:
 
 - void **set_typed** **(** :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**
+
+Makes the ``Array`` typed. The ``type`` should be one of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constants. ``class_name`` is optional and can only be provided for :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`. ``script`` can only be provided if ``class_name`` is not empty.
+
+The method fails if an array is already typed.
 
 ----
 
@@ -884,6 +917,8 @@ Sorts the array using a custom method. The custom method receives two arguments 
 .. _class_Array_method_typed_assign:
 
 - :ref:`bool<class_bool>` **typed_assign** **(** :ref:`Array<class_Array>` array **)**
+
+Assigns a different ``Array`` to this array reference. It the array is typed, the new array's type must be compatible and its elements will be automatically converted.
 
 Operator Descriptions
 ---------------------

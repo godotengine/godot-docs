@@ -26,9 +26,11 @@ A line is filled with :ref:`Control<class_Control>` nodes until no more fit on t
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`vertical<class_FlowContainer_property_vertical>` | ``false`` |
-+-------------------------+--------------------------------------------------------+-----------+
++--------------------------------------------------------+----------------------------------------------------------+-----------+
+| :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` | :ref:`alignment<class_FlowContainer_property_alignment>` | ``0``     |
++--------------------------------------------------------+----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                | :ref:`vertical<class_FlowContainer_property_vertical>`   | ``false`` |
++--------------------------------------------------------+----------------------------------------------------------+-----------+
 
 Methods
 -------
@@ -46,8 +48,43 @@ Theme Properties
 | :ref:`int<class_int>` | :ref:`v_separation<class_FlowContainer_theme_constant_v_separation>` | ``4`` |
 +-----------------------+----------------------------------------------------------------------+-------+
 
+Enumerations
+------------
+
+.. _enum_FlowContainer_AlignmentMode:
+
+.. _class_FlowContainer_constant_ALIGNMENT_BEGIN:
+
+.. _class_FlowContainer_constant_ALIGNMENT_CENTER:
+
+.. _class_FlowContainer_constant_ALIGNMENT_END:
+
+enum **AlignmentMode**:
+
+- **ALIGNMENT_BEGIN** = **0** --- The child controls will be arranged at the beginning of the container, i.e. top if orientation is vertical, left if orientation is horizontal (right for RTL layout).
+
+- **ALIGNMENT_CENTER** = **1** --- The child controls will be centered in the container.
+
+- **ALIGNMENT_END** = **2** --- The child controls will be arranged at the end of the container, i.e. bottom if orientation is vertical, right if orientation is horizontal (left for RTL layout).
+
 Property Descriptions
 ---------------------
+
+.. _class_FlowContainer_property_alignment:
+
+- :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` **alignment**
+
++-----------+----------------------+
+| *Default* | ``0``                |
++-----------+----------------------+
+| *Setter*  | set_alignment(value) |
++-----------+----------------------+
+| *Getter*  | get_alignment()      |
++-----------+----------------------+
+
+The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_FlowContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_FlowContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_FlowContainer_constant_ALIGNMENT_END>`).
+
+----
 
 .. _class_FlowContainer_property_vertical:
 

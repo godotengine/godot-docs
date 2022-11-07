@@ -26,7 +26,9 @@ Tutorials
 
 - :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Particles Demo <https://godotengine.org/asset-library/asset/118>`__
+
+- `2D Dodge The Creeps Demo (uses GPUParticles2D for the trail behind the player) <https://godotengine.org/asset-library/asset/515>`__
 
 Properties
 ----------
@@ -226,7 +228,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter*  | get_fixed_fps()      |
 +-----------+----------------------+
 
-The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+The particle system's frame rate is fixed to a value. For example, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
 ----
 

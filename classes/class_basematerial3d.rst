@@ -180,7 +180,7 @@ Properties
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                                       | :ref:`proximity_fade_distance<class_BaseMaterial3D_property_proximity_fade_distance>`                             | ``1.0``               |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`proximity_fade_enable<class_BaseMaterial3D_property_proximity_fade_enable>`                                 | ``false``             |
+| :ref:`bool<class_bool>`                                         | :ref:`proximity_fade_enabled<class_BaseMaterial3D_property_proximity_fade_enabled>`                               | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
 | :ref:`bool<class_bool>`                                         | :ref:`refraction_enabled<class_BaseMaterial3D_property_refraction_enabled>`                                       | ``false``             |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -687,7 +687,7 @@ enum **Flags**:
 
 - **FLAG_SUBSURFACE_MODE_SKIN** = **18** --- Enables the skin mode for subsurface scattering which is used to improve the look of subsurface scattering when used for human skin.
 
-- **FLAG_PARTICLE_TRAILS_MODE** = **19**
+- **FLAG_PARTICLE_TRAILS_MODE** = **19** --- Enables parts of the shader required for :ref:`GPUParticles3D<class_GPUParticles3D>` trails to function. This also requires using a mesh with appropriate skinning, such as :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or :ref:`TubeTrailMesh<class_TubeTrailMesh>`. Enabling this feature outside of materials used in :ref:`GPUParticles3D<class_GPUParticles3D>` meshes will break material rendering.
 
 - **FLAG_ALBEDO_TEXTURE_MSDF** = **20** --- Enables multichannel signed distance field rendering shader.
 
@@ -1104,7 +1104,7 @@ The color used by the backlight effect. Represents the light passing through an 
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
-If ``true``, the backlight effect is enabled.
+If ``true``, the backlight effect is enabled. See also :ref:`subsurf_scatter_transmittance_enabled<class_BaseMaterial3D_property_subsurf_scatter_transmittance_enabled>`.
 
 ----
 
@@ -1946,6 +1946,8 @@ Texture used to specify the normal at a given pixel. The :ref:`normal_texture<cl
 | *Getter* | get_texture()      |
 +----------+--------------------+
 
+The Occlusion/Roughness/Metallic texture to use. This is a more efficient replacement of :ref:`ao_texture<class_BaseMaterial3D_property_ao_texture>`, :ref:`roughness_texture<class_BaseMaterial3D_property_roughness_texture>` and :ref:`metallic_texture<class_BaseMaterial3D_property_metallic_texture>` in :ref:`ORMMaterial3D<class_ORMMaterial3D>`. Ambient occlusion is stored in the red channel. Roughness map is stored in the green channel. Metallic map is stored in the blue channel. The alpha channel is ignored.
+
 ----
 
 .. _class_BaseMaterial3D_property_particles_anim_h_frames:
@@ -2022,17 +2024,17 @@ Distance over which the fade effect takes place. The larger the distance the lon
 
 ----
 
-.. _class_BaseMaterial3D_property_proximity_fade_enable:
+.. _class_BaseMaterial3D_property_proximity_fade_enabled:
 
-- :ref:`bool<class_bool>` **proximity_fade_enable**
+- :ref:`bool<class_bool>` **proximity_fade_enabled**
 
-+-----------+-----------------------------+
-| *Default* | ``false``                   |
-+-----------+-----------------------------+
-| *Setter*  | set_proximity_fade(value)   |
-+-----------+-----------------------------+
-| *Getter*  | is_proximity_fade_enabled() |
-+-----------+-----------------------------+
++-----------+-----------------------------------+
+| *Default* | ``false``                         |
++-----------+-----------------------------------+
+| *Setter*  | set_proximity_fade_enabled(value) |
++-----------+-----------------------------------+
+| *Getter*  | is_proximity_fade_enabled()       |
++-----------+-----------------------------------+
 
 If ``true``, the proximity fade effect is enabled. The proximity fade effect fades out each pixel based on its distance to another object.
 
@@ -2256,7 +2258,7 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 
 The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`.
 
-\ **Note:** Only applies to the specular blob. Does not affect specular reflections from the Sky, SSR, or ReflectionProbes.
+\ **Note:** :ref:`specular_mode<class_BaseMaterial3D_property_specular_mode>` only applies to the specular blob. It does not affect specular reflections from the sky, screen-space reflections, :ref:`VoxelGI<class_VoxelGI>`, SDFGI or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. To disable reflections from these sources as well, set :ref:`metallic_specular<class_BaseMaterial3D_property_metallic_specular>` to ``0.0`` instead.
 
 ----
 
@@ -2288,7 +2290,7 @@ If ``true``, subsurface scattering is enabled. Emulates light that penetrates an
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
 
-If ``true``, subsurface scattering will use a special mode optimized for the color and density of human skin.
+If ``true``, subsurface scattering will use a special mode optimized for the color and density of human skin, such as boosting the intensity of the red channel in subsurface scattering.
 
 ----
 
@@ -2334,6 +2336,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 | *Getter*  | get_transmittance_boost()      |
 +-----------+--------------------------------+
 
+The intensity of the subsurface scattering transmittance effect.
+
 ----
 
 .. _class_BaseMaterial3D_property_subsurf_scatter_transmittance_color:
@@ -2347,6 +2351,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 +-----------+--------------------------------+
 | *Getter*  | get_transmittance_color()      |
 +-----------+--------------------------------+
+
+The color to multiply the subsurface scattering transmittance effect with. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
 
 ----
 
@@ -2362,6 +2368,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 | *Getter*  | get_transmittance_depth()      |
 +-----------+--------------------------------+
 
+The depth of the subsurface scattering transmittance effect.
+
 ----
 
 .. _class_BaseMaterial3D_property_subsurf_scatter_transmittance_enabled:
@@ -2376,6 +2384,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 | *Getter*  | get_feature()      |
 +-----------+--------------------+
 
+If ``true``, enables subsurface scattering transmittance. Only effective if :ref:`subsurf_scatter_enabled<class_BaseMaterial3D_property_subsurf_scatter_enabled>` is ``true``. See also :ref:`backlight_enabled<class_BaseMaterial3D_property_backlight_enabled>`.
+
 ----
 
 .. _class_BaseMaterial3D_property_subsurf_scatter_transmittance_texture:
@@ -2387,6 +2397,8 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 +----------+--------------------+
 | *Getter* | get_texture()      |
 +----------+--------------------+
+
+The texture to use for multiplying the intensity of the subsurface scattering transmitteance intensity. See also :ref:`subsurf_scatter_texture<class_BaseMaterial3D_property_subsurf_scatter_texture>`. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
 
 ----
 
@@ -2451,6 +2463,8 @@ If ``true``, transparency is enabled on the body. See also :ref:`blend_mode<clas
 +-----------+-----------------+
 | *Getter*  | get_flag()      |
 +-----------+-----------------+
+
+If ``true``, enables parts of the shader required for :ref:`GPUParticles3D<class_GPUParticles3D>` trails to function. This also requires using a mesh with appropriate skinning, such as :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or :ref:`TubeTrailMesh<class_TubeTrailMesh>`. Enabling this feature outside of materials used in :ref:`GPUParticles3D<class_GPUParticles3D>` meshes will break material rendering.
 
 ----
 

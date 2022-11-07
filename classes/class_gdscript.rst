@@ -17,7 +17,7 @@ A script implemented in the GDScript programming language.
 Description
 -----------
 
-A script implemented in the GDScript programming language. The script extends the functionality of all objects that instance it.
+A script implemented in the GDScript programming language. The script extends the functionality of all objects that instantiate it.
 
 \ :ref:`new<class_GDScript_method_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 

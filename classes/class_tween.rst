@@ -434,7 +434,9 @@ Aborts all tweening operations and invalidates the ``Tween``.
 
 - :ref:`Tween<class_Tween>` **parallel** **(** **)**
 
-Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one. Example:
+Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -555,7 +557,7 @@ Stops the tweening and resets the ``Tween`` to its initial state. This will not 
 
 Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method can be used to call an arbitrary method in any object. Use :ref:`Callable.bind<class_Callable_method_bind>` to bind additional arguments for the call.
 
-Example: object that keeps shooting every 1 second.
+\ **Example:** Object that keeps shooting every 1 second:
 
 
 .. tabs::
@@ -572,7 +574,7 @@ Example: object that keeps shooting every 1 second.
 
 
 
-Example: turning a sprite red and then blue, with 2 second delay.
+\ **Example:** Turning a sprite red and then blue, with 2 second delay:
 
 
 .. tabs::
@@ -600,7 +602,7 @@ Example: turning a sprite red and then blue, with 2 second delay.
 
 Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This method can be used to create delays in the tween animation, as an alternative to using the delay in other :ref:`Tweener<class_Tweener>`\ s, or when there's no animation (in which case the ``Tween`` acts as a timer). ``time`` is the length of the interval, in seconds.
 
-Example: creating an interval in code execution.
+\ **Example:** Creating an interval in code execution:
 
 
 .. tabs::
@@ -619,7 +621,7 @@ Example: creating an interval in code execution.
 
 
 
-Example: creating an object that moves back and forth and jumps every few seconds.
+\ **Example:** Creating an object that moves back and forth and jumps every few seconds:
 
 
 .. tabs::
@@ -654,7 +656,7 @@ Example: creating an object that moves back and forth and jumps every few second
 
 Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is similar to a combination of :ref:`tween_callback<class_Tween_method_tween_callback>` and :ref:`tween_property<class_Tween_method_tween_property>`. It calls a method over time with a tweened value provided as an argument. The value is tweened between ``from`` and ``to`` over the time specified by ``duration``, in seconds. Use :ref:`Callable.bind<class_Callable_method_bind>` to bind additional arguments for the call. You can use :ref:`MethodTweener.set_ease<class_MethodTweener_method_set_ease>` and :ref:`MethodTweener.set_trans<class_MethodTweener_method_set_trans>` to tweak the easing and transition of the value or :ref:`MethodTweener.set_delay<class_MethodTweener_method_set_delay>` to delay the tweening.
 
-Example: making a 3D object look from one point to another point.
+\ **Example:** Making a 3D object look from one point to another point:
 
 
 .. tabs::
@@ -671,7 +673,7 @@ Example: making a 3D object look from one point to another point.
 
 
 
-Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate method and after a delay.
+\ **Example:** Setting the text of a :ref:`Label<class_Label>`, using an intermediate method and after a delay:
 
 
 .. tabs::
@@ -708,7 +710,9 @@ Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate me
 
 - :ref:`PropertyTweener<class_PropertyTweener>` **tween_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**
 
-Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts. For example:
+Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -731,7 +735,7 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 
 \ **Note:** You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
 
-Example: moving object twice from the same position, with different transition types.
+\ **Example:** Moving an object twice from the same position, with different transition types:
 
 
 .. tabs::

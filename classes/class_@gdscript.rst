@@ -76,11 +76,11 @@ Constants
 
 - **INF** = **inf** --- Positive floating-point infinity. This is the result of floating-point division when the divisor is ``0.0``. For negative infinity, use ``-INF``. Dividing by ``-0.0`` will result in negative infinity if the numerator is positive, so dividing by ``0.0`` is not the same as dividing by ``-0.0`` (despite ``0.0 == -0.0`` returning ``true``).
 
-\ **Note:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
+\ **Warning:** Numeric infinity is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer number by ``0`` will not result in :ref:`INF<class_@GDScript_constant_INF>` and will result in a run-time error instead.
 
 - **NAN** = **nan** --- "Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
-\ **Note:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
+\ **Warning:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
 Annotations
 -----------
@@ -120,7 +120,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_
 
 - **@export_color_no_alpha** **(** **)**
 
-Export a :ref:`Color<class_Color>` property without an alpha (fixed as ``1.0``).
+Export a :ref:`Color<class_Color>` property without transparency (its alpha fixed as ``1.0``).
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA>`.
 
@@ -156,7 +156,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPE
 
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String
     @export_enum("Warrior", "Magician", "Thief") var character_class: int
-    @export_enum("Walking:30", "Running:60", "Riding:200") var character_speed: int
+    @export_enum("Slow:30", "Average:60", "Very Fast:200") var character_speed: int
 
 ----
 
@@ -330,7 +330,7 @@ Define a new group for the following exported properties. This helps to organize
 
 If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
 
-Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups to your groups.
+Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups within groups.
 
 See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PROPERTY_USAGE_GROUP>`.
 
@@ -359,7 +359,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_cons
 
 ::
 
-    @export_multiline var character_bio
+    @export_multiline var character_biography
 
 ----
 
@@ -444,13 +444,13 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 - **@icon** **(** :ref:`String<class_String>` icon_path **)**
 
-Add a custom icon to the current script. The icon is displayed in the Scene dock for every node that the script is attached to. For named classes the icon is also displayed in various editor dialogs.
+Add a custom icon to the current script. After loading an icon at ``icon_path``, the icon is displayed in the Scene dock for every node that the script is attached to. For named classes, the icon is also displayed in various editor dialogs.
 
 ::
 
     @icon("res://path/to/class/icon.svg")
 
-\ **Note:** Only the script can have a custom icon. Inner classes are not supported yet.
+\ **Note:** Only the script can have a custom icon. Inner classes are not supported.
 
 ----
 
@@ -495,7 +495,7 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
 
 - **@warning_ignore** **(** :ref:`String<class_String>` warning, ... **)** |vararg|
 
-Mark the following statement to ignore the specified warning. See :doc:`GDScript warning system <../tutorials/scripting/gdscript/warning_system>`.
+Mark the following statement to ignore the specified ``warning``. See :doc:`GDScript warning system <../tutorials/scripting/gdscript/warning_system>`.
 
 ::
 
@@ -512,19 +512,13 @@ Method Descriptions
 
 - :ref:`Color<class_Color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
-Returns a color constructed from integer red, green, blue, and alpha channels. Each channel should have 8 bits of information ranging from 0 to 255.
-
-\ ``r8`` red channel
-
-\ ``g8`` green channel
-
-\ ``b8`` blue channel
-
-\ ``a8`` alpha channel
+Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value.
 
 ::
 
-    red = Color8(255, 0, 0)
+    var red = Color8(255, 0, 0)             # Same as Color(1, 0, 0)
+    var dark_blue = Color8(0, 0, 51)        # Same as Color(0, 0, 0.2).
+    var my_color = Color8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
 
 ----
 
@@ -534,9 +528,9 @@ Returns a color constructed from integer red, green, blue, and alpha channels. E
 
 Asserts that the ``condition`` is ``true``. If the ``condition`` is ``false``, an error is generated. When running from the editor, the running project will also be paused until you resume it. This can be used as a stronger form of :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` for reporting errors to project developers or add-on users.
 
-\ **Note:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
+An optional ``message`` can be shown in addition to the generic "Assertion failed" message. You can use this to provide additional details about why the assertion failed.
 
-The optional ``message`` argument, if given, is shown in addition to the generic "Assertion failed" message. It must be a static string, so format strings can't be used. You can use this to provide additional details about why the assertion failed.
+\ **Warning:** For performance reasons, the code inside :ref:`assert<class_@GDScript_method_assert>` is only executed in debug builds or when running the project from the editor. Don't include code that has side effects in an :ref:`assert<class_@GDScript_method_assert>` call. Otherwise, the project will behave differently when exported in release mode.
 
 ::
 
@@ -553,7 +547,7 @@ The optional ``message`` argument, if given, is shown in addition to the generic
 
 - :ref:`String<class_String>` **char** **(** :ref:`int<class_int>` char **)**
 
-Returns a character as a String of the given Unicode code point (which is compatible with ASCII code).
+Returns a single character (as a :ref:`String<class_String>`) of the given Unicode code point (which is compatible with ASCII code).
 
 ::
 
@@ -567,16 +561,16 @@ Returns a character as a String of the given Unicode code point (which is compat
 
 - :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
 
-Converts from a type to another in the best way possible. The ``type`` parameter uses the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+Converts ``what`` to ``type`` in the best way possible. The ``type`` uses the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ::
 
-    a = Vector2(1, 0)
-    # Prints 1
-    print(a.length())
-    a = convert(a, TYPE_STRING)
-    # Prints 6 as "(1, 0)" is 6 characters
-    print(a.length())
+    var a = [4, 2.5, 1.2]
+    print(a is Array) # Prints true
+    
+    var b = convert(a, TYPE_PACKED_BYTE_ARRAY)
+    print(b)          # Prints [4, 2, 1]
+    print(b is Array) # Prints false
 
 ----
 
@@ -584,7 +578,7 @@ Converts from a type to another in the best way possible. The ``type`` parameter
 
 - :ref:`Object<class_Object>` **dict_to_inst** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)**
 
-Converts a ``dictionary`` (previously created with :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>`) back to an Object instance. Useful for deserializing.
+Converts a ``dictionary`` (created with :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>`) back to an Object instance. Can be useful for deserializing.
 
 ----
 
@@ -605,15 +599,15 @@ Returns an array of dictionaries representing the current call stack. See also :
     func bar():
         print(get_stack())
 
-would print
+Starting from ``_ready()``, ``bar()`` would print:
 
 ::
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
-\ **Note:** :ref:`get_stack<class_@GDScript_method_get_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`get_stack<class_@GDScript_method_get_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
+\ **Note:** This function only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`get_stack<class_@GDScript_method_get_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
-\ **Note:** Not supported for calling from threads. Instead, this will return an empty array.
+\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will return an empty array.
 
 ----
 
@@ -621,7 +615,7 @@ would print
 
 - :ref:`Dictionary<class_Dictionary>` **inst_to_dict** **(** :ref:`Object<class_Object>` instance **)**
 
-Returns the passed ``instance`` converted to a Dictionary (useful for serializing).
+Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
 
 ::
 
@@ -644,14 +638,15 @@ Prints out:
 
 - :ref:`int<class_int>` **len** **(** :ref:`Variant<class_Variant>` var **)**
 
-Returns length of Variant ``var``. Length is the character count of String, element count of Array, size of Dictionary, etc.
-
-\ **Note:** Generates a fatal error if Variant can not provide a length.
+Returns the length of the given Variant ``var``. The length can be the character count of a :ref:`String<class_String>`, the element count of any array type or the size of a :ref:`Dictionary<class_Dictionary>`. For every other Variant type, a run-time error is generated and execution is stopped.
 
 ::
 
     a = [1, 2, 3, 4]
     len(a) # Returns 4
+    
+    b = "Hello!"
+    len(b) # Returns 6
 
 ----
 
@@ -659,20 +654,20 @@ Returns length of Variant ``var``. Length is the character count of String, elem
 
 - :ref:`Resource<class_Resource>` **load** **(** :ref:`String<class_String>` path **)**
 
-Loads a resource from the filesystem located at ``path``. The resource is loaded on the method call (unless it's referenced already elsewhere, e.g. in another script or in the scene), which might cause slight delay, especially when loading scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
+Returns a :ref:`Resource<class_Resource>` from the filesystem located at the absolute ``path``. Unless it's already referenced elsewhere (such as in another script or in the scene), the resource is loaded from disk on function call, which might cause a slight delay, especially when loading large scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
 
 \ **Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
-    # Load a scene called main located in the root of the project directory and cache it in a variable.
+    # Load a scene called "main" located in the root of the project directory and cache it in a variable.
     var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
-\ **Important:** The path must be absolute, a local path will just return ``null``.
+\ **Important:** The path must be absolute. A relative path will always return ``null``.
 
-This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
+This function is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 
-\ **Note:** You have to import the files into the engine first to load them using :ref:`load<class_@GDScript_method_load>`. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
+\ **Note:** Files have to be imported into the engine first to load them using this function. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
 
 ----
 
@@ -680,13 +675,13 @@ This method is a simplified version of :ref:`ResourceLoader.load<class_ResourceL
 
 - :ref:`Resource<class_Resource>` **preload** **(** :ref:`String<class_String>` path **)**
 
-Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. The resource is loaded during script parsing, i.e. is loaded with the script and :ref:`preload<class_@GDScript_method_preload>` effectively acts as a reference to that resource. Note that the method requires a constant path. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
+Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. During run-time, the resource is loaded when the script is being parsed. This function effectively acts as a reference to that resource. Note that this function requires ``path`` to be a constant :ref:`String<class_String>`. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
 \ **Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
 
 ::
 
-    # Instance a scene.
+    # Create instance of a scene.
     var diamond = preload("res://diamond.tscn").instantiate()
 
 ----
@@ -697,14 +692,14 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
 
 Like :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`, but includes the current stack frame when running with the debugger turned on.
 
-Output in the console would look something like this:
+The output in the console may look like the following:
 
 ::
 
     Test print
-       At: res://test.gd:15:_process()
+    At: res://test.gd:15:_process()
 
-\ **Note:** Not supported for calling from threads. Instead of the stack frame, this will print the thread ID.
+\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will instead print the thread ID.
 
 ----
 
@@ -714,15 +709,15 @@ Output in the console would look something like this:
 
 Prints a stack trace at the current code location. See also :ref:`get_stack<class_@GDScript_method_get_stack>`.
 
-Output in the console would look something like this:
+The output in the console may look like the following:
 
 ::
 
     Frame 0 - res://test.gd:16 in function '_process'
 
-\ **Note:** :ref:`print_stack<class_@GDScript_method_print_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`print_stack<class_@GDScript_method_print_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
+\ **Note:** This function only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`print_stack<class_@GDScript_method_print_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
-\ **Note:** Not supported for calling from threads. Instead of the stack trace, this will print the thread ID.
+\ **Note:** Calling this function from a :ref:`Thread<class_Thread>` is not supported. Doing so will instead print the thread ID.
 
 ----
 
@@ -788,7 +783,7 @@ Output:
 
 - :ref:`String<class_String>` **str** **(** ... **)** |vararg|
 
-Converts one or more arguments to string in the best way possible.
+Converts one or more arguments to a :ref:`String<class_String>` in the best way possible.
 
 ::
 
@@ -803,7 +798,7 @@ Converts one or more arguments to string in the best way possible.
 
 - :ref:`bool<class_bool>` **type_exists** **(** :ref:`StringName<class_StringName>` type **)**
 
-Returns whether the given :ref:`Object<class_Object>`-derived class exists in :ref:`ClassDB<class_ClassDB>`. Note that :ref:`Variant<class_Variant>` data types are not registered in :ref:`ClassDB<class_ClassDB>`.
+Returns ``true`` if the given :ref:`Object<class_Object>`-derived class exists in :ref:`ClassDB<class_ClassDB>`. Note that :ref:`Variant<class_Variant>` data types are not registered in :ref:`ClassDB<class_ClassDB>`.
 
 ::
 

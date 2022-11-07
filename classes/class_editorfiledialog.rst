@@ -14,6 +14,11 @@ EditorFileDialog
 
 A modified version of :ref:`FileDialog<class_FileDialog>` used by the editor.
 
+Description
+-----------
+
+``EditorFileDialog`` is an enhanced version of :ref:`FileDialog<class_FileDialog>` available only to editor plugins. Additional features include list of favorited/recent files and ability to see files as thumbnails grid instead of list.
+
 Properties
 ----------
 
@@ -257,7 +262,7 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 | *Getter*  | is_showing_hidden_files()    |
 +-----------+------------------------------+
 
-If ``true``, hidden files and directories will be visible in the ``EditorFileDialog``.
+If ``true``, hidden files and directories will be visible in the ``EditorFileDialog``. This property is synchronized with :ref:`EditorSettings.filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`.
 
 Method Descriptions
 -------------------

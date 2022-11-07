@@ -86,6 +86,8 @@ Methods
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b **)** |const|                                                    |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_finite<class_Basis_method_is_finite>` **(** **)** |const|                                                                                            |
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`           | :ref:`looking_at<class_Basis_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |static| |
 +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_Basis>`           | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)** |const|                                                                                |
@@ -127,18 +129,6 @@ Operators
 Constants
 ---------
 
-.. _class_Basis_constant_EULER_ORDER_XYZ:
-
-.. _class_Basis_constant_EULER_ORDER_XZY:
-
-.. _class_Basis_constant_EULER_ORDER_YXZ:
-
-.. _class_Basis_constant_EULER_ORDER_YZX:
-
-.. _class_Basis_constant_EULER_ORDER_ZXY:
-
-.. _class_Basis_constant_EULER_ORDER_ZYX:
-
 .. _class_Basis_constant_IDENTITY:
 
 .. _class_Basis_constant_FLIP_X:
@@ -146,18 +136,6 @@ Constants
 .. _class_Basis_constant_FLIP_Y:
 
 .. _class_Basis_constant_FLIP_Z:
-
-- **EULER_ORDER_XYZ** = **0**
-
-- **EULER_ORDER_XZY** = **1**
-
-- **EULER_ORDER_YXZ** = **2**
-
-- **EULER_ORDER_YZX** = **3**
-
-- **EULER_ORDER_ZXY** = **4**
-
-- **EULER_ORDER_ZYX** = **5**
 
 - **IDENTITY** = **Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)** --- The identity basis, with no rotation or scaling applied.
 
@@ -256,6 +234,8 @@ A negative determinant means the basis has a negative scale. A zero determinant 
 
 - :ref:`Basis<class_Basis>` **from_euler** **(** :ref:`Vector3<class_Vector3>` euler, :ref:`int<class_int>` order=2 **)** |static|
 
+Constructs a pure rotation Basis matrix from Euler angles in the specified Euler rotation order. By default, use YXZ order (most common). See the :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` enum for possible values.
+
 ----
 
 .. _class_Basis_method_from_scale:
@@ -305,6 +285,14 @@ Returns the inverse of the matrix.
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b **)** |const|
 
 Returns ``true`` if this basis and ``b`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+----
+
+.. _class_Basis_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

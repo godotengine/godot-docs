@@ -277,7 +277,9 @@ Method Descriptions
 
 - :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
 
-Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in local coordinates. Can be used to detect if the Sprite2D was clicked. Example:
+Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in local coordinates. Can be used to detect if the Sprite2D was clicked.
+
+\ **Example:**\ 
 
 
 .. tabs::

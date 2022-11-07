@@ -58,7 +58,7 @@ Emitted when the object being edited by the inspector has changed.
 
 - **object_id_selected** **(** :ref:`int<class_int>` id **)**
 
-Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree inspector.
+Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree Inspector.
 
 ----
 

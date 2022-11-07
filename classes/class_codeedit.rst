@@ -17,7 +17,7 @@ Multiline text control intended for editing code.
 Description
 -----------
 
-CodeEdit is a specialised :ref:`TextEdit<class_TextEdit>` designed for editing plain text code files. It contains a bunch of features commonly found in code editors such as line numbers, line folding, code completion, indent management and string / comment management.
+CodeEdit is a specialized :ref:`TextEdit<class_TextEdit>` designed for editing plain text code files. It contains a bunch of features commonly found in code editors such as line numbers, line folding, code completion, indent management and string / comment management.
 
 \ **Note:** By default ``CodeEdit`` always use left-to-right text direction to correctly display source code.
 
@@ -235,7 +235,7 @@ Theme Properties
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_readonly_color<class_CodeEdit_theme_color_font_readonly_color>`                         | ``Color(0.875, 0.875, 0.875, 0.5)`` |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_CodeEdit_theme_color_font_selected_color>`                         | ``Color(0, 0, 0, 1)``               |
+| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_CodeEdit_theme_color_font_selected_color>`                         | ``Color(0, 0, 0, 0)``               |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`line_length_guideline_color<class_CodeEdit_theme_color_line_length_guideline_color>`         | ``Color(0.3, 0.5, 0.8, 0.1)``       |
 +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1426,10 +1426,10 @@ Sets the font :ref:`Color<class_Color>` when :ref:`TextEdit.editable<class_TextE
 - :ref:`Color<class_Color>` **font_selected_color**
 
 +-----------+-----------------------+
-| *Default* | ``Color(0, 0, 0, 1)`` |
+| *Default* | ``Color(0, 0, 0, 0)`` |
 +-----------+-----------------------+
 
-Sets the :ref:`Color<class_Color>` of the selected text. :ref:`TextEdit.override_selected_font_color<class_TextEdit_property_override_selected_font_color>` has to be enabled.
+Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
 
 ----
 

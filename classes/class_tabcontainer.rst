@@ -547,7 +547,7 @@ The size of the tab text outline.
 
 The space at the left or right edges of the tab bar, accordingly with the current :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`.
 
-The margin is ignored with ``ALIGNMENT_RIGHT`` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup<class_TabContainer_method_set_popup>`). The margin is always ignored with ``ALIGNMENT_CENTER``.
+The margin is ignored with :ref:`TabBar.ALIGNMENT_RIGHT<class_TabBar_constant_ALIGNMENT_RIGHT>` if the tabs are clipped (see :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`) or a popup has been set (see :ref:`set_popup<class_TabContainer_method_set_popup>`). The margin is always ignored with :ref:`TabBar.ALIGNMENT_CENTER<class_TabBar_constant_ALIGNMENT_CENTER>`.
 
 ----
 

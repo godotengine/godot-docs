@@ -19,8 +19,6 @@ Description
 
 OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
 
-
-
 To use simulated bold font variant:
 
 

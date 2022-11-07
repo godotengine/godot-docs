@@ -179,6 +179,8 @@ Methods
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_equal_approx<class_@GlobalScope_method_is_equal_approx>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                                                                                                                                         |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`is_finite<class_@GlobalScope_method_is_finite>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                  |
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_inf<class_@GlobalScope_method_is_inf>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                        |
 +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`is_instance_id_valid<class_@GlobalScope_method_is_instance_id_valid>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                                                                                                               |
@@ -381,9 +383,9 @@ enum **Orientation**:
 
 enum **ClockDirection**:
 
-- **CLOCKWISE** = **0**
+- **CLOCKWISE** = **0** --- Clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<class_Image_method_rotate_90>`).
 
-- **COUNTERCLOCKWISE** = **1**
+- **COUNTERCLOCKWISE** = **1** --- Counter-clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<class_Image_method_rotate_90>`).
 
 ----
 
@@ -482,6 +484,36 @@ enum **InlineAlignment**:
 - **INLINE_ALIGNMENT_IMAGE_MASK** = **3** --- A bit mask for ``INLINE_ALIGNMENT_*_TO`` alignment constants.
 
 - **INLINE_ALIGNMENT_TEXT_MASK** = **12** --- A bit mask for ``INLINE_ALIGNMENT_TO_*`` alignment constants.
+
+----
+
+.. _enum_@GlobalScope_EulerOrder:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_XYZ:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_XZY:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_YXZ:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_YZX:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_ZXY:
+
+.. _class_@GlobalScope_constant_EULER_ORDER_ZYX:
+
+enum **EulerOrder**:
+
+- **EULER_ORDER_XYZ** = **0** --- Specifies that Euler angles should be in XYZ order. When composing, the order is X, Y, Z. When decomposing, the order is reversed, first Z, then Y, and X last.
+
+- **EULER_ORDER_XZY** = **1** --- Specifies that Euler angles should be in XZY order. When composing, the order is X, Z, Y. When decomposing, the order is reversed, first Y, then Z, and X last.
+
+- **EULER_ORDER_YXZ** = **2** --- Specifies that Euler angles should be in YXZ order. When composing, the order is Y, X, Z. When decomposing, the order is reversed, first Z, then X, and Y last.
+
+- **EULER_ORDER_YZX** = **3** --- Specifies that Euler angles should be in YZX order. When composing, the order is Y, Z, X. When decomposing, the order is reversed, first X, then Z, and Y last.
+
+- **EULER_ORDER_ZXY** = **4** --- Specifies that Euler angles should be in ZXY order. When composing, the order is Z, X, Y. When decomposing, the order is reversed, first Y, then X, and Z last.
+
+- **EULER_ORDER_ZYX** = **5** --- Specifies that Euler angles should be in ZYX order. When composing, the order is Z, Y, X. When decomposing, the order is reversed, first X, then Y, and Z last.
 
 ----
 
@@ -1303,25 +1335,25 @@ enum **Key**:
 
 - **KEY_SLASH** = **47** --- / key.
 
-- **KEY_0** = **48** --- Number 0.
+- **KEY_0** = **48** --- Number 0 key.
 
-- **KEY_1** = **49** --- Number 1.
+- **KEY_1** = **49** --- Number 1 key.
 
-- **KEY_2** = **50** --- Number 2.
+- **KEY_2** = **50** --- Number 2 key.
 
-- **KEY_3** = **51** --- Number 3.
+- **KEY_3** = **51** --- Number 3 key.
 
-- **KEY_4** = **52** --- Number 4.
+- **KEY_4** = **52** --- Number 4 key.
 
-- **KEY_5** = **53** --- Number 5.
+- **KEY_5** = **53** --- Number 5 key.
 
-- **KEY_6** = **54** --- Number 6.
+- **KEY_6** = **54** --- Number 6 key.
 
-- **KEY_7** = **55** --- Number 7.
+- **KEY_7** = **55** --- Number 7 key.
 
-- **KEY_8** = **56** --- Number 8.
+- **KEY_8** = **56** --- Number 8 key.
 
-- **KEY_9** = **57** --- Number 9.
+- **KEY_9** = **57** --- Number 9 key.
 
 - **KEY_COLON** = **58** --- : key.
 
@@ -1621,9 +1653,9 @@ enum **MouseButton**:
 
 - **MOUSE_BUTTON_NONE** = **0** --- Enum value which doesn't correspond to any mouse button. This is used to initialize :ref:`MouseButton<enum_@GlobalScope_MouseButton>` properties with a generic state.
 
-- **MOUSE_BUTTON_LEFT** = **1** --- Primary mouse button, usually the left button.
+- **MOUSE_BUTTON_LEFT** = **1** --- Primary mouse button, usually assigned to the left button.
 
-- **MOUSE_BUTTON_RIGHT** = **2** --- Secondary mouse button, usually the right button.
+- **MOUSE_BUTTON_RIGHT** = **2** --- Secondary mouse button, usually assigned to the right button.
 
 - **MOUSE_BUTTON_MIDDLE** = **3** --- Middle mouse button.
 
@@ -1635,9 +1667,9 @@ enum **MouseButton**:
 
 - **MOUSE_BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button (only present on some mice).
 
-- **MOUSE_BUTTON_XBUTTON1** = **8** --- Extra mouse button 1 (only present on some mice).
+- **MOUSE_BUTTON_XBUTTON1** = **8** --- Extra mouse button 1. This is sometimes present, usually to the sides of the mouse.
 
-- **MOUSE_BUTTON_XBUTTON2** = **9** --- Extra mouse button 2 (only present on some mice).
+- **MOUSE_BUTTON_XBUTTON2** = **9** --- Extra mouse button 2. This is sometimes present, usually to the sides of the mouse.
 
 - **MOUSE_BUTTON_MASK_LEFT** = **1** --- Primary mouse button mask, usually for the left button.
 
@@ -1735,7 +1767,7 @@ enum **JoyButton**:
 
 - **JOY_BUTTON_DPAD_RIGHT** = **14** --- Game controller D-pad right button.
 
-- **JOY_BUTTON_MISC1** = **15** --- Game controller SDL miscellaneous button. Corresponds to Xbox share button, PS5 microphone button, Nintendo capture button.
+- **JOY_BUTTON_MISC1** = **15** --- Game controller SDL miscellaneous button. Corresponds to Xbox share button, PS5 microphone button, Nintendo Switch capture button.
 
 - **JOY_BUTTON_PADDLE1** = **16** --- Game controller SDL paddle 1 button.
 
@@ -1751,11 +1783,11 @@ enum **JoyButton**:
 
 - **JOY_BUTTON_MAX** = **128** --- The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
 
-	- Android: Up to 36 buttons.
+	- **Android:** Up to 36 buttons.
 
-	- Linux: Up to 80 buttons.
+	- **Linux:** Up to 80 buttons.
 
-	- Windows and macOS: Up to 128 buttons.
+	- **Windows** and **macOS:** Up to 128 buttons.
 
 ----
 
@@ -1985,18 +2017,23 @@ enum **MIDIMessage**:
 
 enum **Error**:
 
-- **OK** = **0** --- Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred. Note that many functions don't return an error code but will print error messages to standard output.
+- **OK** = **0** --- Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred.
 
-Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failure codes are positive integers, it can also be used in boolean checks, e.g.:
+Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other error constants are positive integers, it can also be used in boolean checks.
+
+\ **Example:**\ 
 
 ::
 
-    var err = method_that_returns_error()
-    if err != OK:
-        print("Failure!")
-    # Or, equivalent:
-    if err:
-        print("Still failing!")
+    var error = method_that_returns_error()
+    if error != OK:
+        printerr("Failure!")
+    
+    # Or, alternatively:
+    if error:
+        printerr("Still failing!")
+
+\ **Note:** Many functions do not return an error code, but will print error messages to standard output.
 
 - **FAILED** = **1** --- Generic error.
 
@@ -2088,11 +2125,13 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 - **ERR_SKIP** = **45** --- Skip error.
 
-- **ERR_HELP** = **46** --- Help error.
+- **ERR_HELP** = **46** --- Help error. Used internally when passing ``--version`` or ``--help`` as executable options.
 
-- **ERR_BUG** = **47** --- Bug error.
+- **ERR_BUG** = **47** --- Bug error, caused by an implementation issue in the method.
 
-- **ERR_PRINTER_ON_FIRE** = **48** --- Printer on fire error. (This is an easter egg, no engine methods return this error code.)
+\ **Note:** If a built-in method returns this code, please open an issue on `the GitHub Issue Tracker <https://github.com/godotengine/godot/issues>`__.
+
+- **ERR_PRINTER_ON_FIRE** = **48** --- Printer on fire error (This is an easter egg, no built-in methods return this error code).
 
 ----
 
@@ -2196,72 +2235,76 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 enum **PropertyHint**:
 
-- **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
+- **PROPERTY_HINT_NONE** = **0** --- The property has no hint for the editor.
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_less"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_less"``.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that an :ref:`int<class_int>` or :ref:`float<class_float>` property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_less"`` to allow manual input going respectively above the max or below the min values.
+
+\ **Example:** ``"-360,360,1,or_greater,or_less"``.
 
 Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians"`` for editing radian angles in degrees, ``"degrees"`` to hint at an angle and ``"hide_slider"`` to hide the slider.
 
-- **PROPERTY_HINT_ENUM** = **2** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
+- **PROPERTY_HINT_ENUM** = **2** --- Hints that an :ref:`int<class_int>`, :ref:`float<class_float>`, or :ref:`String<class_String>` property is an enumerated value to pick in a list specified via a hint string.
 
 The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. Whitespaces are **not** removed from either end of a name. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
-- **PROPERTY_HINT_ENUM_SUGGESTION** = **3** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+- **PROPERTY_HINT_ENUM_SUGGESTION** = **3** --- Hints that a :ref:`String<class_String>` property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
-Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>` a property with this hint still accepts arbitrary values and can be empty. The list of values serves to suggest possible values.
+Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`, a property with this hint still accepts arbitrary values and can be empty. The list of values serves to suggest possible values.
 
-- **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"positive_only"`` to exclude in/out easing and limit values to be greater than or equal to zero.
+- **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a :ref:`float<class_float>` property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"positive_only"`` to exclude in/out easing and limit values to be greater than or equal to zero.
 
-- **PROPERTY_HINT_LINK** = **5** --- Hints that a vector property should allow linking values (e.g. to edit both ``x`` and ``y`` together).
+- **PROPERTY_HINT_LINK** = **5** --- Hints that a vector property should allow its components to be linked. For example, this allows :ref:`Vector2.x<class_Vector2_property_x>` and :ref:`Vector2.y<class_Vector2_property_y>` to be edited together.
 
-- **PROPERTY_HINT_FLAGS** = **6** --- Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
+- **PROPERTY_HINT_FLAGS** = **6** --- Hints that an :ref:`int<class_int>` property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
 
-- **PROPERTY_HINT_LAYERS_2D_RENDER** = **7** --- Hints that an integer property is a bitmask using the optionally named 2D render layers.
+- **PROPERTY_HINT_LAYERS_2D_RENDER** = **7** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 2D render layers.
 
-- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **8** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
+- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **8** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 2D physics layers.
 
-- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **9** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
+- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **9** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 2D navigation layers.
 
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **10** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **10** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 3D render layers.
 
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **11** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **11** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 3D physics layers.
 
-- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D navigation layers.
+- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **12** --- Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 3D navigation layers.
 
-- **PROPERTY_HINT_FILE** = **13** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_FILE** = **13** --- Hints that a :ref:`String<class_String>` property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_DIR** = **14** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_DIR** = **14** --- Hints that a :ref:`String<class_String>` property is a path to a directory. Editing it will show a file dialog for picking the path.
 
-- **PROPERTY_HINT_GLOBAL_FILE** = **15** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+- **PROPERTY_HINT_GLOBAL_FILE** = **15** --- Hints that a :ref:`String<class_String>` property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards, like ``"*.png,*.jpg"``.
 
-- **PROPERTY_HINT_GLOBAL_DIR** = **16** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
+- **PROPERTY_HINT_GLOBAL_DIR** = **16** --- Hints that a :ref:`String<class_String>` property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
 
 - **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture2D"``). Editing it will show a popup menu of valid resource types to instantiate.
 
-- **PROPERTY_HINT_MULTILINE_TEXT** = **18** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
+- **PROPERTY_HINT_MULTILINE_TEXT** = **18** --- Hints that a :ref:`String<class_String>` property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
 
-- **PROPERTY_HINT_EXPRESSION** = **19** --- Hints that a string property is an :ref:`Expression<class_Expression>`.
+- **PROPERTY_HINT_EXPRESSION** = **19** --- Hints that a :ref:`String<class_String>` property is an :ref:`Expression<class_Expression>`.
 
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **20** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
+- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **20** --- Hints that a :ref:`String<class_String>` property should show a placeholder text on its input field, if empty. The hint string is the placeholder text to use.
 
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **21** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **21** --- Hints that a :ref:`Color<class_Color>` property should be edited without affecting its transparency (:ref:`Color.a<class_Color_property_a>` is not editable).
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **22** --- Hints that an image is compressed using lossy compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **22** --- Hints that an image is compressed using lossy compression. The editor does not internally use this property hint.
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **23** --- Hints that an image is compressed using lossless compression.
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **23** --- Hints that an image is compressed using lossless compression. The editor does not internally use this property hint.
 
 - **PROPERTY_HINT_OBJECT_ID** = **24**
 
-- **PROPERTY_HINT_TYPE_STRING** = **25** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
+- **PROPERTY_HINT_TYPE_STRING** = **25** --- Hints that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types.
+
+\ **Example:**\ 
 
 ::
 
-    hint_string = "%s:" % [TYPE_INT] # Array of inteters.
+    hint_string = "%s:" % [TYPE_INT] # Array of integers.
     hint_string = "%s:%s:" % [TYPE_ARRAY, TYPE_REAL] # Two-dimensional array of floats.
     hint_string = "%s/%s:Resource" % [TYPE_OBJECT, TYPE_OBJECT] # Array of resources.
     hint_string = "%s:%s/%s:Resource" % [TYPE_ARRAY, TYPE_OBJECT, TYPE_OBJECT] # Two-dimensional array of resources.
 
-\ **Note:** The final colon is required to specify for properly detecting built-in types.
+\ **Note:** The final colon is required for properly detecting built-in types.
 
 - **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **26**
 
@@ -2281,7 +2324,7 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **34**
 
-- **PROPERTY_HINT_OBJECT_TOO_BIG** = **35**
+- **PROPERTY_HINT_OBJECT_TOO_BIG** = **35** --- Hints that a property's size (in bytes) is too big to be displayed, when debugging a running project. The debugger uses this hint internally.
 
 - **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **36**
 
@@ -2291,21 +2334,23 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_INT_IS_OBJECTID** = **39**
 
-- **PROPERTY_HINT_INT_IS_POINTER** = **41**
+- **PROPERTY_HINT_INT_IS_POINTER** = **40**
 
-- **PROPERTY_HINT_ARRAY_TYPE** = **40**
+- **PROPERTY_HINT_ARRAY_TYPE** = **41**
 
-- **PROPERTY_HINT_LOCALE_ID** = **42** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
+- **PROPERTY_HINT_LOCALE_ID** = **42** --- Hints that a :ref:`String<class_String>` property is a locale code. Editing it will show a locale dialog for picking language and country.
 
-- **PROPERTY_HINT_LOCALIZABLE_STRING** = **43** --- Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
+- **PROPERTY_HINT_LOCALIZABLE_STRING** = **43** --- Hints that a :ref:`Dictionary<class_Dictionary>` property is string translation map. Dictionary keys are locale codes and, values are translated strings.
 
 - **PROPERTY_HINT_NODE_TYPE** = **44**
 
-- **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = **45** --- Hints that a quaternion property should disable the temporary euler editor.
+- **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = **45** --- Hints that a :ref:`Quaternion<class_Quaternion>` property should disable the temporary euler editor.
 
-- **PROPERTY_HINT_PASSWORD** = **46** --- Hints that a string property is a password, and every character is replaced with the secret character.
+- **PROPERTY_HINT_PASSWORD** = **46** --- Hints that a :ref:`String<class_String>` property is a password. Every character of the string is displayed as the secret character (typically ``*``).
 
-- **PROPERTY_HINT_MAX** = **47**
+An optional placeholder text can be shown on its input field, similarly to :ref:`PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT>`.
+
+- **PROPERTY_HINT_MAX** = **47** --- Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
 ----
 
@@ -2379,15 +2424,15 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 enum **PropertyUsageFlags**:
 
-- **PROPERTY_USAGE_NONE** = **0**
+- **PROPERTY_USAGE_NONE** = **0** --- The property is not stored, and does not display in the editor. This is the default for non-exported properties.
 
 - **PROPERTY_USAGE_STORAGE** = **2** --- The property is serialized and saved in the scene file (default).
 
-- **PROPERTY_USAGE_EDITOR** = **4** --- The property is shown in the editor inspector (default).
+- **PROPERTY_USAGE_EDITOR** = **4** --- The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (default).
 
-- **PROPERTY_USAGE_CHECKABLE** = **8** --- The property can be checked in the editor inspector.
+- **PROPERTY_USAGE_CHECKABLE** = **8** --- The property can be checked in the :ref:`EditorInspector<class_EditorInspector>`.
 
-- **PROPERTY_USAGE_CHECKED** = **16** --- The property is checked in the editor inspector.
+- **PROPERTY_USAGE_CHECKED** = **16** --- The property is checked in the :ref:`EditorInspector<class_EditorInspector>`.
 
 - **PROPERTY_USAGE_INTERNATIONALIZED** = **32** --- The property is a translatable string.
 
@@ -2419,9 +2464,9 @@ enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_INTERNAL** = **524288**
 
-- **PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE** = **1048576**
+- **PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE** = **1048576** --- If the property is a :ref:`Resource<class_Resource>`, a new copy of it is always created when calling :ref:`Node.duplicate<class_Node_method_duplicate>` or :ref:`Resource.duplicate<class_Resource_method_duplicate>`.
 
-- **PROPERTY_USAGE_HIGH_END_GFX** = **2097152**
+- **PROPERTY_USAGE_HIGH_END_GFX** = **2097152** --- The property is only shown in the editor if modern renderers are supported (GLES3 is excluded).
 
 - **PROPERTY_USAGE_NODE_PATH_FROM_SCENE_ROOT** = **4194304**
 
@@ -2435,9 +2480,9 @@ enum **PropertyUsageFlags**:
 
 - **PROPERTY_USAGE_EDITOR_BASIC_SETTING** = **134217728**
 
-- **PROPERTY_USAGE_READ_ONLY** = **268435456** --- The property is read-only in the editor inspector.
+- **PROPERTY_USAGE_READ_ONLY** = **268435456** --- The property is read-only in the :ref:`EditorInspector<class_EditorInspector>`.
 
-- **PROPERTY_USAGE_ARRAY** = **536870912**
+- **PROPERTY_USAGE_ARRAY** = **536870912** --- The property is an array.
 
 - **PROPERTY_USAGE_DEFAULT** = **6** --- Default usage (storage, editor and network).
 
@@ -2475,13 +2520,13 @@ enum **MethodFlags**:
 
 - **METHOD_FLAG_VIRTUAL** = **8** --- Flag for a virtual method.
 
-- **METHOD_FLAG_VARARG** = **16**
+- **METHOD_FLAG_VARARG** = **16** --- Flag for a method with a variable number of arguments.
 
-- **METHOD_FLAG_STATIC** = **32**
+- **METHOD_FLAG_STATIC** = **32** --- Flag for a static method.
 
-- **METHOD_FLAG_OBJECT_CORE** = **64** --- Used internally. Allows to not dump core virtuals such as ``_notification`` to the JSON API.
+- **METHOD_FLAG_OBJECT_CORE** = **64** --- Used internally. Allows to not dump core virtual methods (such as :ref:`Object._notification<class_Object_method__notification>`) to the JSON API.
 
-- **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags.
+- **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags (normal).
 
 ----
 
@@ -2573,7 +2618,7 @@ enum **Variant.Type**:
 
 - **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
 
-- **TYPE_FLOAT** = **3** --- Variable is of type :ref:`float<class_float>` (real).
+- **TYPE_FLOAT** = **3** --- Variable is of type :ref:`float<class_float>`.
 
 - **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_String>`.
 
@@ -2591,9 +2636,9 @@ enum **Variant.Type**:
 
 - **TYPE_TRANSFORM2D** = **11** --- Variable is of type :ref:`Transform2D<class_Transform2D>`.
 
-- **TYPE_VECTOR4** = **12**
+- **TYPE_VECTOR4** = **12** --- Variable is of type :ref:`Vector4<class_Vector4>`.
 
-- **TYPE_VECTOR4I** = **13**
+- **TYPE_VECTOR4I** = **13** --- Variable is of type :ref:`Vector4i<class_Vector4i>`.
 
 - **TYPE_PLANE** = **14** --- Variable is of type :ref:`Plane<class_Plane>`.
 
@@ -2605,7 +2650,7 @@ enum **Variant.Type**:
 
 - **TYPE_TRANSFORM3D** = **18** --- Variable is of type :ref:`Transform3D<class_Transform3D>`.
 
-- **TYPE_PROJECTION** = **19**
+- **TYPE_PROJECTION** = **19** --- Variable is of type :ref:`Projection<class_Projection>`.
 
 - **TYPE_COLOR** = **20** --- Variable is of type :ref:`Color<class_Color>`.
 
@@ -2886,6 +2931,8 @@ The :ref:`Marshalls<class_Marshalls>` singleton.
 
 - :ref:`NativeExtensionManager<class_NativeExtensionManager>` **NativeExtensionManager**
 
+The :ref:`NativeExtensionManager<class_NativeExtensionManager>` singleton.
+
 ----
 
 .. _class_@GlobalScope_property_NavigationMeshGenerator:
@@ -3053,7 +3100,7 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **abs** **(** :ref:`Variant<class_Variant>` x **)**
 
-Returns the absolute value of a :ref:`Variant<class_Variant>` parameter ``x`` (i.e. non-negative value). Variant types :ref:`int<class_int>`, :ref:`float<class_float>` (real), :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
+Returns the absolute value of a :ref:`Variant<class_Variant>` parameter ``x`` (i.e. non-negative value). Variant types :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
 
 ::
 
@@ -3163,7 +3210,7 @@ Important note: The Y coordinate comes first, by convention.
 
 - :ref:`float<class_float>` **bezier_interpolate** **(** :ref:`float<class_float>` start, :ref:`float<class_float>` control_1, :ref:`float<class_float>` control_2, :ref:`float<class_float>` end, :ref:`float<class_float>` t **)**
 
-Returns the point at the given ``t`` on a one-dimnesional `Bezier curve <https://en.wikipedia.org/wiki/B%C3%A9zier_curve>`__ defined by the given ``control_1``, ``control_2``, and ``end`` points.
+Returns the point at the given ``t`` on a one-dimensional `Bezier curve <https://en.wikipedia.org/wiki/B%C3%A9zier_curve>`__ defined by the given ``control_1``, ``control_2``, and ``end`` points.
 
 ----
 
@@ -3200,7 +3247,7 @@ Rounds ``x`` upward (towards positive infinity), returning the smallest whole nu
 
 See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`round<class_@GlobalScope_method_round>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, you can use :ref:`ceilf<class_@GlobalScope_method_ceilf>`, :ref:`ceili<class_@GlobalScope_method_ceili>`, :ref:`Vector2.ceil<class_Vector2_method_ceil>`, :ref:`Vector3.ceil<class_Vector3_method_ceil>` or :ref:`Vector4.ceil<class_Vector4_method_ceil>` instead.
+\ **Note:** For better type safety, see :ref:`ceilf<class_@GlobalScope_method_ceilf>`, :ref:`ceili<class_@GlobalScope_method_ceili>`, :ref:`Vector2.ceil<class_Vector2_method_ceil>`, :ref:`Vector3.ceil<class_Vector3_method_ceil>` and :ref:`Vector4.ceil<class_Vector4_method_ceil>`.
 
 ----
 
@@ -3210,7 +3257,7 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`round<class_@Globa
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
-A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, specialzied in floats.
+A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning a :ref:`float<class_float>`.
 
 ----
 
@@ -3220,7 +3267,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, specialzied 
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
-A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>` that returns integer.
+A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning an :ref:`int<class_int>`.
 
 ----
 
@@ -3228,7 +3275,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>` that returns 
 
 - :ref:`Variant<class_Variant>` **clamp** **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` min, :ref:`Variant<class_Variant>` max **)**
 
-Clamps the :ref:`Variant<class_Variant>` ``value`` and returns a value not less than ``min`` and not more than ``max``. Variant types :ref:`int<class_int>`, :ref:`float<class_float>` (real), :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
+Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Variant types :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
 
 ::
 
@@ -3256,17 +3303,15 @@ Clamps the :ref:`Variant<class_Variant>` ``value`` and returns a value not less 
 
 - :ref:`float<class_float>` **clampf** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
-Clamps the float ``value`` and returns a value not less than ``min`` and not more than ``max``.
+Clamps the ``value``, returning a :ref:`float<class_float>` not less than ``min`` and not more than ``max``.
 
 ::
 
     var speed = 42.1
-    # a is 20.0
-    var a = clampf(speed, 1.0, 20.0)
+    var a = clampf(speed, 1.0, 20.5) # a is 20.5
     
     speed = -10.0
-    # a is -1.0
-    a = clampf(speed, -1.0, 1.0)
+    var b = clampf(speed, -1.0, 1.0) # b is -1.0
 
 ----
 
@@ -3274,17 +3319,15 @@ Clamps the float ``value`` and returns a value not less than ``min`` and not mor
 
 - :ref:`int<class_int>` **clampi** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**
 
-Clamps the integer ``value`` and returns a value not less than ``min`` and not more than ``max``.
+Clamps the ``value``, returning an :ref:`int<class_int>` not less than ``min`` and not more than ``max``.
 
 ::
 
     var speed = 42
-    # a is 20
-    var a = clampi(speed, 1, 20)
+    var a = clampi(speed, 1, 20) # a is 20
     
     speed = -10
-    # a is -1
-    a = clampi(speed, -1, 1)
+    var b = clampi(speed, -1, 1) # b is -1
 
 ----
 
@@ -3310,8 +3353,7 @@ Returns the hyperbolic cosine of ``x`` in radians.
 
 ::
 
-    # Prints 1.543081
-    print(cosh(1))
+    print(cosh(1)) # Prints 1.543081
 
 ----
 
@@ -3319,7 +3361,7 @@ Returns the hyperbolic cosine of ``x`` in radians.
 
 - :ref:`float<class_float>` **cubic_interpolate** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` pre, :ref:`float<class_float>` post, :ref:`float<class_float>` weight **)**
 
-Cubic interpolates between two values by the factor defined in ``weight`` with pre and post values.
+Cubic interpolates between two values by the factor defined in ``weight`` with ``pre`` and ``post`` values.
 
 ----
 
@@ -3327,7 +3369,7 @@ Cubic interpolates between two values by the factor defined in ``weight`` with p
 
 - :ref:`float<class_float>` **cubic_interpolate_angle** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` pre, :ref:`float<class_float>` post, :ref:`float<class_float>` weight **)**
 
-Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with pre and post values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
+Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
 ----
 
@@ -3335,7 +3377,7 @@ Cubic interpolates between two rotation values with shortest path by the factor 
 
 - :ref:`float<class_float>` **cubic_interpolate_angle_in_time** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` pre, :ref:`float<class_float>` post, :ref:`float<class_float>` weight, :ref:`float<class_float>` to_t, :ref:`float<class_float>` pre_t, :ref:`float<class_float>` post_t **)**
 
-Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with pre and post values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
+Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
 It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
 
@@ -3345,9 +3387,9 @@ It can perform smoother interpolation than ``cubic_interpolate()`` by the time v
 
 - :ref:`float<class_float>` **cubic_interpolate_in_time** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` pre, :ref:`float<class_float>` post, :ref:`float<class_float>` weight, :ref:`float<class_float>` to_t, :ref:`float<class_float>` pre_t, :ref:`float<class_float>` post_t **)**
 
-Cubic interpolates between two values by the factor defined in ``weight`` with pre and post values.
+Cubic interpolates between two values by the factor defined in ``weight`` with ``pre`` and ``post`` values.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_@GlobalScope_method_cubic_interpolate>` by the time values.
 
 ----
 
@@ -3367,8 +3409,7 @@ Converts an angle expressed in degrees to radians.
 
 ::
 
-    # r is 3.141593
-    var r = deg_to_rad(180)
+    var r = deg_to_rad(180) # r is 3.141593
 
 ----
 
@@ -3398,7 +3439,14 @@ See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to
 
 - :ref:`String<class_String>` **error_string** **(** :ref:`int<class_int>` error **)**
 
-Returns a human-readable name for the given error code.
+Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>` code.
+
+::
+
+    print(OK)                              # Prints 0
+    print(error_string(OK))                # Prints OK
+    print(error_string(ERR_BUSY))          # Prints Busy
+    print(error_string(ERR_OUT_OF_MEMORY)) # Prints Out of memory
 
 ----
 
@@ -3426,14 +3474,12 @@ Rounds ``x`` downward (towards negative infinity), returning the largest whole n
 
 ::
 
-    # a is 2.0
-    var a = floor(2.99)
-    # a is -3.0
-    a = floor(-2.99)
+    var a = floor(2.99) # a is 2.0
+    a = floor(-2.99)    # a is -3.0
 
 See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalScope_method_round>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, you can use :ref:`floorf<class_@GlobalScope_method_floorf>`, :ref:`floori<class_@GlobalScope_method_floori>`, :ref:`Vector2.floor<class_Vector2_method_floor>`, :ref:`Vector3.floor<class_Vector3_method_floor>` or :ref:`Vector4.floor<class_Vector4_method_floor>` instead.
+\ **Note:** For better type safety, see :ref:`floorf<class_@GlobalScope_method_floorf>`, :ref:`floori<class_@GlobalScope_method_floori>`, :ref:`Vector2.floor<class_Vector2_method_floor>`, :ref:`Vector3.floor<class_Vector3_method_floor>` and :ref:`Vector4.floor<class_Vector4_method_floor>`.
 
 ----
 
@@ -3443,7 +3489,7 @@ See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalS
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
-A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, specialzied in floats.
+A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning a :ref:`float<class_float>`.
 
 ----
 
@@ -3453,7 +3499,9 @@ A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, specialzie
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
-Equivalent of doing ``int(x)``.
+A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning an :ref:`int<class_int>`.
+
+\ **Note:** This function is *not* the same as ``int(x)``, which rounds towards 0.
 
 ----
 
@@ -3461,12 +3509,11 @@ Equivalent of doing ``int(x)``.
 
 - :ref:`float<class_float>` **fmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-Returns the floating-point remainder of ``x/y``, keeping the sign of ``x``.
+Returns the floating-point remainder of ``x`` divided by ``y``, keeping the sign of ``x``.
 
 ::
 
-    # Remainder is 1.5
-    var remainder = fmod(7, 5.5)
+    var remainder = fmod(7, 5.5) # remainder is 1.5
 
 For the integer remainder operation, use the ``%`` operator.
 
@@ -3476,25 +3523,27 @@ For the integer remainder operation, use the ``%`` operator.
 
 - :ref:`float<class_float>` **fposmod** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)**
 
-Returns the floating-point modulus of ``x/y`` that wraps equally in positive and negative.
+Returns the floating-point modulus of ``x`` divided by ``y``, wrapping equally in positive and negative.
 
 ::
 
+    print(" (x)  (fmod(x, 1.5))   (fposmod(x, 1.5))")
     for i in 7:
-        var x = 0.5 * i - 1.5
-        print("%4.1f %4.1f %4.1f" % [x, fmod(x, 1.5), fposmod(x, 1.5)])
+        var x = i * 0.5 - 1.5
+        print("%4.1f           %4.1f  | %4.1f" % [x, fmod(x, 1.5), fposmod(x, 1.5)])
 
 Produces:
 
 ::
 
-    -1.5 -0.0  0.0
-    -1.0 -1.0  0.5
-    -0.5 -0.5  1.0
-     0.0  0.0  0.0
-     0.5  0.5  0.5
-     1.0  1.0  1.0
-     1.5  0.0  0.0
+     (x)  (fmod(x, 1.5))   (fposmod(x, 1.5))
+    -1.5           -0.0  |  0.0
+    -1.0           -1.0  |  0.5
+    -0.5           -0.5  |  1.0
+     0.0            0.0  |  0.0
+     0.5            0.5  |  0.5
+     1.0            1.0  |  1.0
+     1.5            0.0  |  0.0
 
 ----
 
@@ -3502,7 +3551,7 @@ Produces:
 
 - :ref:`int<class_int>` **hash** **(** :ref:`Variant<class_Variant>` variable **)**
 
-Returns the integer hash of the variable passed.
+Returns the integer hash of the passed ``variable``.
 
 ::
 
@@ -3514,7 +3563,7 @@ Returns the integer hash of the variable passed.
 
 - :ref:`Object<class_Object>` **instance_from_id** **(** :ref:`int<class_int>` instance_id **)**
 
-Returns the Object that corresponds to ``instance_id``. All Objects have a unique instance ID.
+Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All Objects have a unique instance ID. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
 ::
 
@@ -3536,12 +3585,13 @@ Returns an interpolation or extrapolation factor considering the range specified
 
     # The interpolation ratio in the `lerp()` call below is 0.75.
     var middle = lerp(20, 30, 0.75)
-    # `middle` is now 27.5.
+    # middle is now 27.5.
+    
     # Now, we pretend to have forgotten the original ratio and want to get it back.
     var ratio = inverse_lerp(20, 30, 27.5)
-    # `ratio` is now 0.75.
+    # ratio is now 0.75.
 
-See also :ref:`lerp<class_@GlobalScope_method_lerp>` which performs the reverse of this operation, and :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
+See also :ref:`lerp<class_@GlobalScope_method_lerp>`, which performs the reverse of this operation, and :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
 ----
 
@@ -3551,9 +3601,17 @@ See also :ref:`lerp<class_@GlobalScope_method_lerp>` which performs the reverse 
 
 Returns ``true`` if ``a`` and ``b`` are approximately equal to each other.
 
-Here, approximately equal means that ``a`` and ``b`` are within a small internal epsilon of each other, which scales with the magnitude of the numbers.
+Here, "approximately equal" means that ``a`` and ``b`` are within a small internal epsilon of each other, which scales with the magnitude of the numbers.
 
 Infinity values of the same sign are considered equal.
+
+----
+
+.. _class_@GlobalScope_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** :ref:`float<class_float>` x **)**
+
+Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`, positive infinity, or negative infinity.
 
 ----
 
@@ -3561,7 +3619,7 @@ Infinity values of the same sign are considered equal.
 
 - :ref:`bool<class_bool>` **is_inf** **(** :ref:`float<class_float>` x **)**
 
-Returns whether ``x`` is an infinity value (either positive infinity or negative infinity).
+Returns ``true`` if ``x`` is either positive infinity or negative infinity.
 
 ----
 
@@ -3577,7 +3635,7 @@ Returns ``true`` if the Object that corresponds to ``id`` is a valid object (e.g
 
 - :ref:`bool<class_bool>` **is_instance_valid** **(** :ref:`Variant<class_Variant>` instance **)**
 
-Returns whether ``instance`` is a valid object (e.g. has not been deleted from memory).
+Returns ``true`` if ``instance`` is a valid Object (e.g. has not been deleted from memory).
 
 ----
 
@@ -3585,7 +3643,7 @@ Returns whether ``instance`` is a valid object (e.g. has not been deleted from m
 
 - :ref:`bool<class_bool>` **is_nan** **(** :ref:`float<class_float>` x **)**
 
-Returns whether ``x`` is a NaN ("Not a Number" or invalid) value.
+Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value.
 
 ----
 
@@ -3595,7 +3653,7 @@ Returns whether ``x`` is a NaN ("Not a Number" or invalid) value.
 
 Returns ``true`` if ``x`` is zero or almost zero.
 
-This method is faster than using :ref:`is_equal_approx<class_@GlobalScope_method_is_equal_approx>` with one value as zero.
+This function is faster than using :ref:`is_equal_approx<class_@GlobalScope_method_is_equal_approx>` with one value as zero.
 
 ----
 
@@ -3603,9 +3661,9 @@ This method is faster than using :ref:`is_equal_approx<class_@GlobalScope_method
 
 - :ref:`Variant<class_Variant>` **lerp** **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`Variant<class_Variant>` weight **)**
 
-Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`lerp<class_@GlobalScope_method_lerp>` if this is not desired.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
 
-Both ``from`` and ``to`` must have matching types. Supported types: :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`, :ref:`Color<class_Color>`, :ref:`Quaternion<class_Quaternion>`, :ref:`Basis<class_Basis>`.
+Both ``from`` and ``to`` must be the same type. Supported types: :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`, :ref:`Color<class_Color>`, :ref:`Quaternion<class_Quaternion>`, :ref:`Basis<class_Basis>`.
 
 ::
 
@@ -3613,7 +3671,7 @@ Both ``from`` and ``to`` must have matching types. Supported types: :ref:`float<
 
 See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. See also :ref:`remap<class_@GlobalScope_method_remap>` to map a continuous series of values to another.
 
-\ **Note:** For better type safety, you can use :ref:`lerpf<class_@GlobalScope_method_lerpf>`, :ref:`Vector2.lerp<class_Vector2_method_lerp>`, :ref:`Vector3.lerp<class_Vector3_method_lerp>`, :ref:`Vector4.lerp<class_Vector4_method_lerp>`, :ref:`Color.lerp<class_Color_method_lerp>`, :ref:`Quaternion.slerp<class_Quaternion_method_slerp>` or :ref:`Basis.slerp<class_Basis_method_slerp>` instead.
+\ **Note:** For better type safety, use :ref:`lerpf<class_@GlobalScope_method_lerpf>`, :ref:`Vector2.lerp<class_Vector2_method_lerp>`, :ref:`Vector3.lerp<class_Vector3_method_lerp>`, :ref:`Vector4.lerp<class_Vector4_method_lerp>`, :ref:`Color.lerp<class_Color_method_lerp>`, :ref:`Quaternion.slerp<class_Quaternion_method_slerp>` or :ref:`Basis.slerp<class_Basis_method_slerp>`.
 
 ----
 
@@ -3621,7 +3679,7 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 - :ref:`float<class_float>` **lerp_angle** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two angles (in radians) by a normalized value.
+Linearly interpolates between two angles (in radians) by a ``weight`` value between 0.0 and 1.0.
 
 Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`. To perform eased interpolation with :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
 
@@ -3635,7 +3693,7 @@ Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correct
         rotation = lerp_angle(min_angle, max_angle, elapsed)
         elapsed += delta
 
-\ **Note:** This method lerps through the shortest path between ``from`` and ``to``. However, when these two angles are approximately ``PI + k * TAU`` apart for any integer ``k``, it's not obvious which way they lerp due to floating-point precision errors. For example, ``lerp_angle(0, PI, weight)`` lerps counter-clockwise, while ``lerp_angle(0, PI + 5 * TAU, weight)`` lerps clockwise.
+\ **Note:** This function lerps through the shortest path between ``from`` and ``to``. However, when these two angles are approximately ``PI + k * TAU`` apart for any integer ``k``, it's not obvious which way they lerp due to floating-point precision errors. For example, ``lerp_angle(0, PI, weight)`` lerps counter-clockwise, while ``lerp_angle(0, PI + 5 * TAU, weight)`` lerps clockwise.
 
 ----
 
@@ -3643,7 +3701,7 @@ Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correct
 
 - :ref:`float<class_float>` **lerpf** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
-Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*.
+Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf<class_@GlobalScope_method_clampf>` on the result of this function.
 
 ::
 
@@ -3657,7 +3715,9 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 - :ref:`float<class_float>` **linear_to_db** **(** :ref:`float<class_float>` lin **)**
 
-Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear). Example:
+Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
+
+\ **Example:**\ 
 
 ::
 
@@ -3672,7 +3732,7 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 - :ref:`float<class_float>` **log** **(** :ref:`float<class_float>` x **)**
 
-Natural logarithm. The amount of time needed to reach a certain level of continuous growth.
+Returns the natural logarithm of ``x``. This is the amount of time needed to reach a certain level of continuous growth.
 
 \ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
 
@@ -3688,7 +3748,7 @@ Natural logarithm. The amount of time needed to reach a certain level of continu
 
 - :ref:`Variant<class_Variant>` **max** **(** ... **)** |vararg|
 
-Returns the maximum of the given values. This method can take any number of arguments.
+Returns the maximum of the given values. This function can take any number of arguments.
 
 ::
 
@@ -3700,11 +3760,11 @@ Returns the maximum of the given values. This method can take any number of argu
 
 - :ref:`float<class_float>` **maxf** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
-Returns the maximum of two float values.
+Returns the maximum of two :ref:`float<class_float>` values.
 
 ::
 
-    maxf(3.6, 24) # Returns 24.0
+    maxf(3.6, 24)   # Returns 24.0
     maxf(-3.99, -4) # Returns -3.99
 
 ----
@@ -3713,11 +3773,11 @@ Returns the maximum of two float values.
 
 - :ref:`int<class_int>` **maxi** **(** :ref:`int<class_int>` a, :ref:`int<class_int>` b **)**
 
-Returns the maximum of two int values.
+Returns the maximum of two :ref:`int<class_int>` values.
 
 ::
 
-    maxi(1, 2) # Returns 2
+    maxi(1, 2)   # Returns 2
     maxi(-3, -4) # Returns -3
 
 ----
@@ -3726,7 +3786,7 @@ Returns the maximum of two int values.
 
 - :ref:`Variant<class_Variant>` **min** **(** ... **)** |vararg|
 
-Returns the minimum of the given values. This method can take any number of arguments.
+Returns the minimum of the given values. This function can take any number of arguments.
 
 ::
 
@@ -3738,11 +3798,11 @@ Returns the minimum of the given values. This method can take any number of argu
 
 - :ref:`float<class_float>` **minf** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**
 
-Returns the minimum of two float values.
+Returns the minimum of two :ref:`float<class_float>` values.
 
 ::
 
-    minf(3.6, 24) # Returns 3.6
+    minf(3.6, 24)   # Returns 3.6
     minf(-3.99, -4) # Returns -4.0
 
 ----
@@ -3751,11 +3811,11 @@ Returns the minimum of two float values.
 
 - :ref:`int<class_int>` **mini** **(** :ref:`int<class_int>` a, :ref:`int<class_int>` b **)**
 
-Returns the minimum of two int values.
+Returns the minimum of two :ref:`int<class_int>` values.
 
 ::
 
-    mini(1, 2) # Returns 1
+    mini(1, 2)   # Returns 1
     mini(-3, -4) # Returns -4
 
 ----
@@ -3770,8 +3830,8 @@ Use a negative ``delta`` value to move away.
 
 ::
 
-    move_toward(5, 10, 4) # Returns 9
-    move_toward(10, 5, 4) # Returns 6
+    move_toward(5, 10, 4)    # Returns 9
+    move_toward(10, 5, 4)    # Returns 6
     move_toward(10, 5, -1.5) # Returns 11.5
 
 ----
@@ -3780,7 +3840,7 @@ Use a negative ``delta`` value to move away.
 
 - :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
-Returns the nearest equal or larger power of 2 for integer ``value``.
+Returns the nearest equal or larger power of 2 for the integer ``value``.
 
 In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such that ``value <= a`` for some non-negative integer ``n``.
 
@@ -3790,10 +3850,10 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(4) # Returns 4
     nearest_po2(5) # Returns 8
     
-    nearest_po2(0) # Returns 0 (this may not be what you expect)
-    nearest_po2(-1) # Returns 0 (this may not be what you expect)
+    nearest_po2(0)  # Returns 0 (this may not be expected)
+    nearest_po2(-1) # Returns 0 (this may not be expected)
 
-\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for non-positive values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for negative values of ``value`` (in reality, 1 is the smallest integer power of 2).
 
 ----
 
@@ -3801,20 +3861,20 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
 
 - :ref:`float<class_float>` **pingpong** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` length **)**
 
-Returns the ``value`` wrapped between ``0`` and the ``length``. If the limit is reached, the next value the function returned is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
+Wraps ``value`` between ``0`` and the ``length``. If the limit is reached, the next value the function returns is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
 
 ::
 
-    pingpong(-3.0, 3.0) # Returns 3
-    pingpong(-2.0, 3.0) # Returns 2
-    pingpong(-1.0, 3.0) # Returns 1
-    pingpong(0.0, 3.0) # Returns 0
-    pingpong(1.0, 3.0) # Returns 1
-    pingpong(2.0, 3.0) # Returns 2
-    pingpong(3.0, 3.0) # Returns 3
-    pingpong(4.0, 3.0) # Returns 2
-    pingpong(5.0, 3.0) # Returns 1
-    pingpong(6.0, 3.0) # Returns 0
+    pingpong(-3.0, 3.0) # Returns 3.0
+    pingpong(-2.0, 3.0) # Returns 2.0
+    pingpong(-1.0, 3.0) # Returns 1.0
+    pingpong(0.0, 3.0)  # Returns 0.0
+    pingpong(1.0, 3.0)  # Returns 1.0
+    pingpong(2.0, 3.0)  # Returns 2.0
+    pingpong(3.0, 3.0)  # Returns 3.0
+    pingpong(4.0, 3.0)  # Returns 2.0
+    pingpong(5.0, 3.0)  # Returns 1.0
+    pingpong(6.0, 3.0)  # Returns 0.0
 
 ----
 
@@ -3822,24 +3882,26 @@ Returns the ``value`` wrapped between ``0`` and the ``length``. If the limit is 
 
 - :ref:`int<class_int>` **posmod** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)**
 
-Returns the integer modulus of ``x/y`` that wraps equally in positive and negative.
+Returns the integer modulus of ``x`` divided by ``y`` that wraps equally in positive and negative.
 
 ::
 
+    print("#(i)  (i % 3)   (posmod(i, 3))")
     for i in range(-3, 4):
-        print("%2d %2d %2d" % [i, i % 3, posmod(i, 3)])
+        print("%2d       %2d  | %2d" % [i, i % 3, posmod(i, 3)])
 
 Produces:
 
 ::
 
-    -3  0  0
-    -2 -2  1
-    -1 -1  2
-    0  0  0
-    1  1  1
-    2  2  2
-    3  0  0
+    (i)  (i % 3)   (posmod(i, 3))
+    -3        0  |  0
+    -2       -2  |  1
+    -1       -1  |  2
+     0        0  |  0
+     1        1  |  1
+     2        2  |  2
+     3        0  |  0
 
 ----
 
@@ -3848,6 +3910,8 @@ Produces:
 - :ref:`float<class_float>` **pow** **(** :ref:`float<class_float>` base, :ref:`float<class_float>` exp **)**
 
 Returns the result of ``base`` raised to the power of ``exp``.
+
+In GDScript, this is the equivalent of the ``**`` operator.
 
 ::
 
@@ -3866,7 +3930,7 @@ Converts one or more arguments of any type to string in the best way possible an
     var a = [1, 2, 3]
     print("a", "b", a) # Prints ab[1, 2, 3]
 
-\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
 ----
 
@@ -3910,13 +3974,14 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 - void **printraw** **(** ... **)** |vararg|
 
-Prints one or more arguments to strings in the best way possible to console. No newline is added at the end.
+Prints one or more arguments to strings in the best way possible to console. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
 
 ::
 
     printraw("A")
     printraw("B")
-    # Prints AB
+    printraw("C")
+    # Prints ABC
 
 \ **Note:** Due to limitations with Godot's built-in console, this only prints to the terminal. If you need to print in the editor, use another method, such as :ref:`print<class_@GlobalScope_method_print>`.
 
@@ -3956,7 +4021,7 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
     push_error("test error") # Prints "test error" to debugger and terminal as error call
 
-\ **Note:** Errors printed this way will not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
+\ **Note:** This function does not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
 
 ----
 
@@ -3981,6 +4046,8 @@ Converts an angle expressed in radians to degrees.
 ::
 
     rad_to_deg(0.523599) # Returns 30
+    rad_to_deg(PI)       # Returns 180
+    rad_to_deg(PI * 2)   # Returns 360
 
 ----
 
@@ -3988,7 +4055,16 @@ Converts an angle expressed in radians to degrees.
 
 - :ref:`PackedInt64Array<class_PackedInt64Array>` **rand_from_seed** **(** :ref:`int<class_int>` seed **)**
 
-Random from seed: pass a ``seed``, and an array with both number and new seed is returned. "Seed" here refers to the internal state of the pseudo random number generator. The internal state of the current implementation is 64 bits.
+Given a ``seed``, returns a :ref:`PackedInt64Array<class_PackedInt64Array>` of size ``2``, where its first element is the randomized :ref:`int<class_int>` value, and the second element is the same as ``seed``. Passing the same ``seed`` consistently returns the same array.
+
+\ **Note:** "Seed" here refers to the internal state of the pseudo random number generator, currently implemented as a 64 bit integer.
+
+::
+
+    var a = rand_from_seed(4)
+    
+    print(a[0])	# Prints 2879024997
+    print(a[1])	# Prints 4
 
 ----
 
@@ -4008,11 +4084,12 @@ Returns a random floating point value between ``0.0`` and ``1.0`` (inclusive).
 
 - :ref:`float<class_float>` **randf_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
 
-Returns a random floating point value on the interval between ``from`` and ``to`` (inclusive).
+Returns a random floating point value between ``from`` and ``to`` (inclusive).
 
 ::
 
-    prints(randf_range(-10, 10), randf_range(-10, 10)) # Prints e.g. -3.844535 7.45315
+    randf_range(0, 20.5) # Returns e.g. 7.45315
+    randf_range(-10, 10) # Returns e.g. -3.844535
 
 ----
 
@@ -4047,8 +4124,8 @@ Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). 
 
 ::
 
-    print(randi_range(0, 1)) # Prints 0 or 1
-    print(randi_range(-10, 1000)) # Prints any number from -10 to 1000
+    randi_range(0, 1)      # Returns either 0 or 1
+    randi_range(-10, 1000) # Returns random integer between -10 and 1000
 
 ----
 
@@ -4056,9 +4133,9 @@ Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). 
 
 - void **randomize** **(** **)**
 
-Randomizes the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+Randomizes the seed (or the internal state) of the random number generator. The current implementation uses a number based on the device's time.
 
-\ **Note:** This method is called automatically when the project is run. If you need to fix the seed to have reproducible results, use :ref:`seed<class_@GlobalScope_method_seed>` to initialize the random number generator.
+\ **Note:** This function is called automatically when the project is run. If you need to fix the seed to have consistent, reproducible results, use :ref:`seed<class_@GlobalScope_method_seed>` to initialize the random number generator.
 
 ----
 
@@ -4066,13 +4143,13 @@ Randomizes the seed (or the internal state) of the random number generator. Curr
 
 - :ref:`float<class_float>` **remap** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` istart, :ref:`float<class_float>` istop, :ref:`float<class_float>` ostart, :ref:`float<class_float>` ostop **)**
 
-Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`remap<class_@GlobalScope_method_remap>` if this is not desired.
+Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
 
 ::
 
     remap(75, 0, 100, -1, 1) # Returns 0.5
 
-For complex use cases where you need multiple ranges, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
+For complex use cases where multiple ranges are needed, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
 
 ----
 
@@ -4080,7 +4157,7 @@ For complex use cases where you need multiple ranges, consider using :ref:`Curve
 
 - :ref:`int<class_int>` **rid_allocate_id** **(** **)**
 
-Allocate a unique ID which can be used by the implementation to construct a RID. This is used mainly from native extensions to implement servers.
+Allocates a unique ID which can be used by the implementation to construct a RID. This is used mainly from native extensions to implement servers.
 
 ----
 
@@ -4088,7 +4165,7 @@ Allocate a unique ID which can be used by the implementation to construct a RID.
 
 - :ref:`RID<class_RID>` **rid_from_int64** **(** :ref:`int<class_int>` base **)**
 
-Create a RID from an int64. This is used mainly from native extensions to build servers.
+Creates a RID from a ``base``. This is used mainly from native extensions to build servers.
 
 ----
 
@@ -4096,7 +4173,7 @@ Create a RID from an int64. This is used mainly from native extensions to build 
 
 - :ref:`Variant<class_Variant>` **round** **(** :ref:`Variant<class_Variant>` x **)**
 
-Rounds ``x`` to the nearest whole number, with halfway cases rounded away from zero. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`.
+Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`.
 
 ::
 
@@ -4106,7 +4183,7 @@ Rounds ``x`` to the nearest whole number, with halfway cases rounded away from z
 
 See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`ceil<class_@GlobalScope_method_ceil>`, and :ref:`snapped<class_@GlobalScope_method_snapped>`.
 
-\ **Note:** For better type safety, you can use :ref:`roundf<class_@GlobalScope_method_roundf>`, :ref:`roundi<class_@GlobalScope_method_roundi>`, :ref:`Vector2.round<class_Vector2_method_round>`, :ref:`Vector3.round<class_Vector3_method_round>` or :ref:`Vector4.round<class_Vector4_method_round>` instead.
+\ **Note:** For better type safety, use :ref:`roundf<class_@GlobalScope_method_roundf>`, :ref:`roundi<class_@GlobalScope_method_roundi>`, :ref:`Vector2.round<class_Vector2_method_round>`, :ref:`Vector3.round<class_Vector3_method_round>` or :ref:`Vector4.round<class_Vector4_method_round>`, instead.
 
 ----
 
@@ -4114,9 +4191,9 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`ceil<class_@Global
 
 - :ref:`float<class_float>` **roundf** **(** :ref:`float<class_float>` x **)**
 
-Rounds ``x`` to the nearest whole number, with halfway cases rounded away from zero.
+Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
-A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, specialzied in floats.
+A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning a :ref:`float<class_float>`.
 
 ----
 
@@ -4124,9 +4201,9 @@ A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, specialzie
 
 - :ref:`int<class_int>` **roundi** **(** :ref:`float<class_float>` x **)**
 
-Rounds ``x`` to the nearest whole number, with halfway cases rounded away from zero.
+Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
-A type-safe version of :ref:`round<class_@GlobalScope_method_round>` that returns integer.
+A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning an :ref:`int<class_int>`.
 
 ----
 
@@ -4134,12 +4211,16 @@ A type-safe version of :ref:`round<class_@GlobalScope_method_round>` that return
 
 - void **seed** **(** :ref:`int<class_int>` base **)**
 
-Sets seed for the random number generator.
+Sets the seed for the random number generator to ``base``. Setting the seed manually can ensure consistent, repeatable results for most random functions.
 
 ::
 
-    var my_seed = "Godot Rocks"
-    seed(my_seed.hash())
+    var my_seed = "Godot Rocks".hash()
+    seed(my_seed)
+    var a = randf() + randi()
+    seed(my_seed)
+    var b = randf() + randi()
+    # a and b are now identical
 
 ----
 
@@ -4147,7 +4228,7 @@ Sets seed for the random number generator.
 
 - :ref:`Variant<class_Variant>` **sign** **(** :ref:`Variant<class_Variant>` x **)**
 
-Returns the sign of ``x`` as same type of :ref:`Variant<class_Variant>` as ``x`` with each component being -1, 0 and 1 for each negative, zero and positive values respectivelu. Variant types :ref:`int<class_int>`, :ref:`float<class_float>` (real), :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
+Returns the sign of ``x`` as same type of :ref:`Variant<class_Variant>` as ``x`` with each component being -1, 0 and 1 for each negative, zero and positive values respectively. Variant types :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>` and :ref:`Vector3i<class_Vector3i>` are supported.
 
 ::
 
@@ -4163,13 +4244,13 @@ Returns the sign of ``x`` as same type of :ref:`Variant<class_Variant>` as ``x``
 
 - :ref:`float<class_float>` **signf** **(** :ref:`float<class_float>` x **)**
 
-Returns the sign of ``x`` as a float: -1.0 or 1.0. Returns 0.0 if ``x`` is 0.
+Returns the sign of ``x`` as a :ref:`float<class_float>`: -1.0 or 1.0. Returns 0.0 if ``x`` is 0.0.
 
 ::
 
-    sign(-6.0) # Returns -1.0
+    sign(-6.5) # Returns -1.0
     sign(0.0)  # Returns 0.0
-    sign(6.0)  # Returns 1.0
+    sign(6.5)  # Returns 1.0
 
 ----
 
@@ -4177,7 +4258,7 @@ Returns the sign of ``x`` as a float: -1.0 or 1.0. Returns 0.0 if ``x`` is 0.
 
 - :ref:`int<class_int>` **signi** **(** :ref:`int<class_int>` x **)**
 
-Returns the sign of ``x`` as an integer: -1 or 1. Returns 0 if ``x`` is 0.
+Returns the sign of ``x`` as an :ref:`int<class_int>`: -1 or 1. Returns 0 if ``x`` is 0.
 
 ::
 
@@ -4240,7 +4321,7 @@ Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``
 
 - :ref:`float<class_float>` **snapped** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` step **)**
 
-Snaps float value ``x`` to a given ``step``. This can also be used to round a floating point number to an arbitrary number of decimals.
+Snaps the float value ``x`` to a given ``step``. This can also be used to round a floating point number to an arbitrary number of decimals.
 
 ::
 
@@ -4259,9 +4340,11 @@ Returns the square root of ``x``, where ``x`` is a non-negative number.
 
 ::
 
-    sqrt(9) # Returns 3
+    sqrt(9)     # Returns 3
+    sqrt(10.24) # Returns 3.2
+    sqrt(-1)    # Returns NaN
 
-\ **Note:** Negative values of ``x`` return NaN. If you need negative inputs, use ``System.Numerics.Complex`` in C#.
+\ **Note:** Negative values of ``x`` return NaN ("Not a Number"). in C#, if you need negative inputs, use ``System.Numerics.Complex``.
 
 ----
 
@@ -4273,12 +4356,9 @@ Returns the position of the first non-zero digit, after the decimal point. Note 
 
 ::
 
-    # n is 0
-    var n = step_decimals(5)
-    # n is 4
-    n = step_decimals(1.0005)
-    # n is 9
-    n = step_decimals(0.000000005)
+    var n = step_decimals(5)       # n is 0
+    n = step_decimals(1.0005)      # n is 4
+    n = step_decimals(0.000000005) # n is 9
 
 ----
 
@@ -4286,7 +4366,7 @@ Returns the position of the first non-zero digit, after the decimal point. Note 
 
 - :ref:`String<class_String>` **str** **(** ... **)** |vararg|
 
-Converts one or more arguments of any type to string in the best way possible.
+Converts one or more arguments of any :ref:`Variant<class_Variant>` type to :ref:`String<class_String>` in the best way possible.
 
 ----
 
@@ -4294,13 +4374,13 @@ Converts one or more arguments of any type to string in the best way possible.
 
 - :ref:`Variant<class_Variant>` **str_to_var** **(** :ref:`String<class_String>` string **)**
 
-Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@GlobalScope_method_var_to_str>` to the original value.
+Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@GlobalScope_method_var_to_str>` to the original :ref:`Variant<class_Variant>`.
 
 ::
 
-    var a = '{ "a": 1, "b": 2 }'
-    var b = str_to_var(a)
-    print(b["a"]) # Prints 1
+    var a = '{ "a": 1, "b": 2 }' # a is a String
+    var b = str_to_var(a)        # b is a Dictionary
+    print(b["a"])                # Prints 1
 
 ----
 
@@ -4325,7 +4405,7 @@ Returns the hyperbolic tangent of ``x``.
 ::
 
     var a = log(2.0) # Returns 0.693147
-    tanh(a)      # Returns 0.6
+    tanh(a)          # Returns 0.6
 
 ----
 
@@ -4333,7 +4413,7 @@ Returns the hyperbolic tangent of ``x``.
 
 - :ref:`int<class_int>` **typeof** **(** :ref:`Variant<class_Variant>` variable **)**
 
-Returns the internal type of the given Variant object, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+Returns the internal type of the given ``variable``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
 ::
 
@@ -4361,7 +4441,7 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding 
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes_with_objects** **(** :ref:`Variant<class_Variant>` variable **)**
 
-Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include code). Deserialization can be done with :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
+Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
 
 ----
 
@@ -4369,14 +4449,14 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects 
 
 - :ref:`String<class_String>` **var_to_str** **(** :ref:`Variant<class_Variant>` variable **)**
 
-Converts a Variant ``variable`` to a formatted string that can later be parsed using :ref:`str_to_var<class_@GlobalScope_method_str_to_var>`.
+Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`String<class_String>` that can then be parsed using :ref:`str_to_var<class_@GlobalScope_method_str_to_var>`.
 
 ::
 
     a = { "a": 1, "b": 2 }
     print(var_to_str(a))
 
-prints
+Prints:
 
 ::
 
@@ -4391,7 +4471,7 @@ prints
 
 - :ref:`Variant<class_Variant>` **weakref** **(** :ref:`Variant<class_Variant>` obj **)**
 
-Returns a weak reference to an object, or ``null`` if the argument is invalid.
+Returns a weak reference to an object, or ``null`` if ``obj`` is invalid.
 
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 
@@ -4401,11 +4481,9 @@ A weak reference to an object is not enough to keep the object alive: when the o
 
 - :ref:`Variant<class_Variant>` **wrap** **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` min, :ref:`Variant<class_Variant>` max **)**
 
-Wraps the :ref:`Variant<class_Variant>` ``value`` between ``min`` and ``max``.
+Wraps the :ref:`Variant<class_Variant>` ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 
-Usable for creating loop-alike behavior or infinite surfaces.
-
-Variant types :ref:`int<class_int>` and :ref:`float<class_float>` (real) are supported. If any of the argument is :ref:`float<class_float>` the result will be :ref:`float<class_float>`, otherwise it is :ref:`int<class_int>`.
+Variant types :ref:`int<class_int>` and :ref:`float<class_float>` are supported. If any of the arguments is :ref:`float<class_float>` this function returns a :ref:`float<class_float>`, otherwise it returns an :ref:`int<class_int>`.
 
 ::
 
@@ -4424,9 +4502,7 @@ Variant types :ref:`int<class_int>` and :ref:`float<class_float>` (real) are sup
 
 - :ref:`float<class_float>` **wrapf** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
-Wraps float ``value`` between ``min`` and ``max``.
-
-Usable for creating loop-alike behavior or infinite surfaces.
+Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 
 ::
 
@@ -4453,9 +4529,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 - :ref:`int<class_int>` **wrapi** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**
 
-Wraps integer ``value`` between ``min`` and ``max``.
-
-Usable for creating loop-alike behavior or infinite surfaces.
+Wraps the integer ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 
 ::
 

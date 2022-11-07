@@ -26,15 +26,15 @@ StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` |
-+---------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`content_margin_left<class_StyleBox_property_content_margin_left>`     |
-+---------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`content_margin_right<class_StyleBox_property_content_margin_right>`   |
-+---------------------------+-----------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`content_margin_top<class_StyleBox_property_content_margin_top>`       |
-+---------------------------+-----------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_left<class_StyleBox_property_content_margin_left>`     | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_right<class_StyleBox_property_content_margin_right>`   | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`content_margin_top<class_StyleBox_property_content_margin_top>`       | ``-1.0`` |
++---------------------------+-----------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -78,11 +78,13 @@ Property Descriptions
 
 - :ref:`float<class_float>` **content_margin_bottom**
 
-+----------+---------------------------+
-| *Setter* | set_default_margin(value) |
-+----------+---------------------------+
-| *Getter* | get_default_margin()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ``-1.0``                  |
++-----------+---------------------------+
+| *Setter*  | set_default_margin(value) |
++-----------+---------------------------+
+| *Getter*  | get_default_margin()      |
++-----------+---------------------------+
 
 The bottom margin for the contents of this style box. Increasing this value reduces the space available to the contents from the bottom.
 
@@ -98,11 +100,13 @@ It is up to the code using this style box to decide what these contents are: for
 
 - :ref:`float<class_float>` **content_margin_left**
 
-+----------+---------------------------+
-| *Setter* | set_default_margin(value) |
-+----------+---------------------------+
-| *Getter* | get_default_margin()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ``-1.0``                  |
++-----------+---------------------------+
+| *Setter*  | set_default_margin(value) |
++-----------+---------------------------+
+| *Getter*  | get_default_margin()      |
++-----------+---------------------------+
 
 The left margin for the contents of this style box.	Increasing this value reduces the space available to the contents from the left.
 
@@ -114,11 +118,13 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 - :ref:`float<class_float>` **content_margin_right**
 
-+----------+---------------------------+
-| *Setter* | set_default_margin(value) |
-+----------+---------------------------+
-| *Getter* | get_default_margin()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ``-1.0``                  |
++-----------+---------------------------+
+| *Setter*  | set_default_margin(value) |
++-----------+---------------------------+
+| *Getter*  | get_default_margin()      |
++-----------+---------------------------+
 
 The right margin for the contents of this style box. Increasing this value reduces the space available to the contents from the right.
 
@@ -130,11 +136,13 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 - :ref:`float<class_float>` **content_margin_top**
 
-+----------+---------------------------+
-| *Setter* | set_default_margin(value) |
-+----------+---------------------------+
-| *Getter* | get_default_margin()      |
-+----------+---------------------------+
++-----------+---------------------------+
+| *Default* | ``-1.0``                  |
++-----------+---------------------------+
+| *Setter*  | set_default_margin(value) |
++-----------+---------------------------+
+| *Getter*  | get_default_margin()      |
++-----------+---------------------------+
 
 The top margin for the contents of this style box. Increasing this value reduces the space available to the contents from the top.
 

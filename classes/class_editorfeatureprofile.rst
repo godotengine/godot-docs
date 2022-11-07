@@ -67,6 +67,8 @@ Enumerations
 
 .. _class_EditorFeatureProfile_constant_FEATURE_IMPORT_DOCK:
 
+.. _class_EditorFeatureProfile_constant_FEATURE_HISTORY_DOCK:
+
 .. _class_EditorFeatureProfile_constant_FEATURE_MAX:
 
 enum **Feature**:
@@ -85,7 +87,9 @@ enum **Feature**:
 
 - **FEATURE_IMPORT_DOCK** = **6** --- The Import dock. If this feature is disabled, the Import dock won't be visible.
 
-- **FEATURE_MAX** = **7** --- Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
+- **FEATURE_HISTORY_DOCK** = **7** --- The History dock. If this feature is disabled, the History dock won't be visible.
+
+- **FEATURE_MAX** = **8** --- Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 
 Method Descriptions
 -------------------
@@ -110,7 +114,7 @@ Returns ``true`` if the class specified by ``class_name`` is disabled. When disa
 
 - :ref:`bool<class_bool>` **is_class_editor_disabled** **(** :ref:`StringName<class_StringName>` class_name **)** |const|
 
-Returns ``true`` if editing for the class specified by ``class_name`` is disabled. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
+Returns ``true`` if editing for the class specified by ``class_name`` is disabled. When disabled, the class will still appear in the Create New Node dialog but the Inspector will be read-only when selecting a node that extends the class.
 
 ----
 
@@ -118,7 +122,7 @@ Returns ``true`` if editing for the class specified by ``class_name`` is disable
 
 - :ref:`bool<class_bool>` **is_class_property_disabled** **(** :ref:`StringName<class_StringName>` class_name, :ref:`StringName<class_StringName>` property **)** |const|
 
-Returns ``true`` if ``property`` is disabled in the class specified by ``class_name``. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by ``class_name``.
+Returns ``true`` if ``property`` is disabled in the class specified by ``class_name``. When a property is disabled, it won't appear in the Inspector when selecting a node that extends the class specified by ``class_name``.
 
 ----
 
@@ -158,7 +162,7 @@ If ``disable`` is ``true``, disables the class specified by ``class_name``. When
 
 - void **set_disable_class_editor** **(** :ref:`StringName<class_StringName>` class_name, :ref:`bool<class_bool>` disable **)**
 
-If ``disable`` is ``true``, disables editing for the class specified by ``class_name``. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
+If ``disable`` is ``true``, disables editing for the class specified by ``class_name``. When disabled, the class will still appear in the Create New Node dialog but the Inspector will be read-only when selecting a node that extends the class.
 
 ----
 
@@ -166,7 +170,7 @@ If ``disable`` is ``true``, disables editing for the class specified by ``class_
 
 - void **set_disable_class_property** **(** :ref:`StringName<class_StringName>` class_name, :ref:`StringName<class_StringName>` property, :ref:`bool<class_bool>` disable **)**
 
-If ``disable`` is ``true``, disables editing for ``property`` in the class specified by ``class_name``. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by ``class_name``.
+If ``disable`` is ``true``, disables editing for ``property`` in the class specified by ``class_name``. When a property is disabled, it won't appear in the Inspector when selecting a node that extends the class specified by ``class_name``.
 
 ----
 

@@ -360,6 +360,8 @@ Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum initial rotation applied to each particle, in degrees.
+
 ----
 
 .. _class_CPUParticles2D_property_angle_min:
@@ -373,6 +375,8 @@ Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`angle_max<class_CPUParticles2D_property_angle_max>`.
 
 ----
 
@@ -402,6 +406,8 @@ Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
+
 ----
 
 .. _class_CPUParticles2D_property_angular_velocity_min:
@@ -415,6 +421,8 @@ Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`angular_velocity_max<class_CPUParticles2D_property_angular_velocity_max>`.
 
 ----
 
@@ -444,6 +452,8 @@ Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum animation offset that corresponds to frame index in the texture. ``0`` is the first frame, ``1`` is the last one. See :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>`.
+
 ----
 
 .. _class_CPUParticles2D_property_anim_offset_min:
@@ -457,6 +467,8 @@ Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`anim_offset_max<class_CPUParticles2D_property_anim_offset_max>`.
 
 ----
 
@@ -486,6 +498,10 @@ Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum particle animation speed. Animation speed of ``1`` means that the particles will make full ``0`` to ``1`` offset cycle during lifetime, ``2`` means ``2`` cycles etc.
+
+With animation speed greater than ``1``, remember to enable :ref:`CanvasItemMaterial.particles_anim_loop<class_CanvasItemMaterial_property_particles_anim_loop>` property if you want the animation to repeat.
+
 ----
 
 .. _class_CPUParticles2D_property_anim_speed_min:
@@ -499,6 +515,8 @@ Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`anim_speed_max<class_CPUParticles2D_property_anim_speed_max>`.
 
 ----
 
@@ -572,6 +590,8 @@ Damping will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+The maximum rate at which particles lose velocity. For example value of ``100`` means that the particle will go from ``100`` velocity to ``0`` in ``1`` second.
+
 ----
 
 .. _class_CPUParticles2D_property_damping_min:
@@ -585,6 +605,8 @@ Damping will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`damping_max<class_CPUParticles2D_property_damping_max>`.
 
 ----
 
@@ -750,7 +772,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter*  | get_fixed_fps()      |
 +-----------+----------------------+
 
-The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+The particle system's frame rate is fixed to a value. For example, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
 ----
 
@@ -812,6 +834,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum initial hue variation applied to each particle. It will shift the particle color's hue.
+
 ----
 
 .. _class_CPUParticles2D_property_hue_variation_min:
@@ -825,6 +849,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`hue_variation_max<class_CPUParticles2D_property_hue_variation_max>`.
 
 ----
 
@@ -840,6 +866,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum initial velocity magnitude for each particle. Direction comes from :ref:`direction<class_CPUParticles2D_property_direction>` and :ref:`spread<class_CPUParticles2D_property_spread>`.
+
 ----
 
 .. _class_CPUParticles2D_property_initial_velocity_min:
@@ -853,6 +881,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`initial_velocity_max<class_CPUParticles2D_property_initial_velocity_max>`.
 
 ----
 
@@ -914,6 +944,8 @@ Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum linear acceleration applied to each particle in the direction of motion.
+
 ----
 
 .. _class_CPUParticles2D_property_linear_accel_min:
@@ -927,6 +959,8 @@ Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`linear_accel_max<class_CPUParticles2D_property_linear_accel_max>`.
 
 ----
 
@@ -988,6 +1022,8 @@ Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
+
 ----
 
 .. _class_CPUParticles2D_property_orbit_velocity_min:
@@ -1001,6 +1037,8 @@ Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`orbit_velocity_max<class_CPUParticles2D_property_orbit_velocity_max>`.
 
 ----
 
@@ -1062,6 +1100,8 @@ Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum radial acceleration applied to each particle. Makes particle accelerate away from the origin or towards it if negative.
+
 ----
 
 .. _class_CPUParticles2D_property_radial_accel_min:
@@ -1075,6 +1115,8 @@ Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`radial_accel_max<class_CPUParticles2D_property_radial_accel_max>`.
 
 ----
 
@@ -1120,6 +1162,8 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum initial scale applied to each particle.
+
 ----
 
 .. _class_CPUParticles2D_property_scale_amount_min:
@@ -1134,6 +1178,8 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
+Minimum equivalent of :ref:`scale_amount_max<class_CPUParticles2D_property_scale_amount_max>`.
+
 ----
 
 .. _class_CPUParticles2D_property_scale_curve_x:
@@ -1146,6 +1192,10 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 | *Getter* | get_scale_curve_x()      |
 +----------+--------------------------+
 
+Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`.
+
+\ :ref:`split_scale<class_CPUParticles2D_property_split_scale>` must be enabled.
+
 ----
 
 .. _class_CPUParticles2D_property_scale_curve_y:
@@ -1157,6 +1207,10 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 +----------+--------------------------+
 | *Getter* | get_scale_curve_y()      |
 +----------+--------------------------+
+
+Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`.
+
+\ :ref:`split_scale<class_CPUParticles2D_property_split_scale>` must be enabled.
 
 ----
 
@@ -1187,6 +1241,8 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 +-----------+------------------------+
 | *Getter*  | get_split_scale()      |
 +-----------+------------------------+
+
+If ``true``, the scale curve will be split into x and y components. See :ref:`scale_curve_x<class_CPUParticles2D_property_scale_curve_x>` and :ref:`scale_curve_y<class_CPUParticles2D_property_scale_curve_y>`.
 
 ----
 
@@ -1232,6 +1288,8 @@ Each particle's tangential acceleration will vary along this :ref:`Curve<class_C
 | *Getter*  | get_param_max()      |
 +-----------+----------------------+
 
+Maximum tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
+
 ----
 
 .. _class_CPUParticles2D_property_tangential_accel_min:
@@ -1245,6 +1303,8 @@ Each particle's tangential acceleration will vary along this :ref:`Curve<class_C
 +-----------+----------------------+
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
+
+Minimum equivalent of :ref:`tangential_accel_max<class_CPUParticles2D_property_tangential_accel_max>`.
 
 ----
 
@@ -1283,11 +1343,15 @@ Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parame
 
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
 
+Returns the maximum value range for the given parameter.
+
 ----
 
 .. _class_CPUParticles2D_method_get_param_min:
 
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+
+Returns the minimum value range for the given parameter.
 
 ----
 
@@ -1319,11 +1383,15 @@ Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter
 
 - void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
 
+Sets the maximum value for the given parameter.
+
 ----
 
 .. _class_CPUParticles2D_method_set_param_min:
 
 - void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
+
+Sets the minimum value for the given parameter.
 
 ----
 

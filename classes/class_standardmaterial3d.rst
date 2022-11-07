@@ -17,7 +17,7 @@ Physically based rendering (PBR) material that can be applied to 3D objects.
 Description
 -----------
 
-StandardMaterial3D's properties are inherited from :ref:`BaseMaterial3D<class_BaseMaterial3D>`.
+``StandardMaterial3D``'s properties are inherited from :ref:`BaseMaterial3D<class_BaseMaterial3D>`. ``StandardMaterial3D`` uses separate textures for ambient occlusion, roughness and metallic maps. To use a single ORM map for all 3 textures, use an :ref:`ORMMaterial3D<class_ORMMaterial3D>` instead.
 
 Tutorials
 ---------

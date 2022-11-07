@@ -96,6 +96,8 @@ Property Descriptions
 | *Getter*  | get_horizontal_alignment()      |
 +-----------+---------------------------------+
 
+Sets text alignment within the line as if the line was horizontal.
+
 ----
 
 .. _class_TextLine_property_direction:

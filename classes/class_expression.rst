@@ -31,7 +31,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     var expression = Expression.new()
     
     func _ready():
-        $LineEdit.connect("text_submitted", self, "_on_text_submitted")
+        $LineEdit.text_submitted.connect(self._on_text_submitted)
     
     func _on_text_submitted(command):
         var error = expression.parse(command)
@@ -48,7 +48,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     
     public override void _Ready()
     {
-        GetNode("LineEdit").Connect("text_submitted", this, nameof(OnTextEntered));
+        GetNode("LineEdit").TextSubmitted += OnTextEntered;
     }
     
     private void OnTextEntered(string command)

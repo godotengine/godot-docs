@@ -62,6 +62,8 @@ Properties
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`String<class_String>`                                       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``    |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_SpinBox_property_select_all_on_focus>`       | ``false`` |
++-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`String<class_String>`                                       | :ref:`suffix<class_SpinBox_property_suffix>`                                 | ``""``    |
 +-------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                                           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>` | ``false`` |
@@ -145,6 +147,22 @@ If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
 +-----------+-------------------+
 
 Adds the specified ``prefix`` string before the numerical value of the ``SpinBox``.
+
+----
+
+.. _class_SpinBox_property_select_all_on_focus:
+
+- :ref:`bool<class_bool>` **select_all_on_focus**
+
++-----------+--------------------------------+
+| *Default* | ``false``                      |
++-----------+--------------------------------+
+| *Setter*  | set_select_all_on_focus(value) |
++-----------+--------------------------------+
+| *Getter*  | is_select_all_on_focus()       |
++-----------+--------------------------------+
+
+If ``true``, the ``SpinBox`` will select the whole text when the :ref:`LineEdit<class_LineEdit>` gains focus. Clicking the up and down arrows won't trigger this behavior.
 
 ----
 

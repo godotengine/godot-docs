@@ -19,7 +19,7 @@ A base type for the parameters within the visual shader graph.
 Description
 -----------
 
-A parameter represents a variable in the shader which is set externally, i.e. from the :ref:`ShaderMaterial<class_ShaderMaterial>`. Parameters are exposed as properties in the :ref:`ShaderMaterial<class_ShaderMaterial>` and can be assigned from the inspector or from a script.
+A parameter represents a variable in the shader which is set externally, i.e. from the :ref:`ShaderMaterial<class_ShaderMaterial>`. Parameters are exposed as properties in the :ref:`ShaderMaterial<class_ShaderMaterial>` and can be assigned from the Inspector or from a script.
 
 Properties
 ----------

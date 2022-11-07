@@ -245,7 +245,7 @@ Signals
 
 - **id_focused** **(** :ref:`int<class_int>` id **)**
 
-Emitted when user navigated to an item of some ``id`` using ``ui_up`` or ``ui_down`` action.
+Emitted when the user navigated to an item of some ``id`` using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input action.
 
 ----
 
@@ -254,6 +254,8 @@ Emitted when user navigated to an item of some ``id`` using ``ui_up`` or ``ui_do
 - **id_pressed** **(** :ref:`int<class_int>` id **)**
 
 Emitted when an item of some ``id`` is pressed or its accelerator is activated.
+
+\ **Note:** If ``id`` is negative (either explicitly or due to overflow), this will return the corresponding index instead.
 
 ----
 

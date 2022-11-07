@@ -70,6 +70,8 @@ Methods
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_Object>`   | :ref:`get_collider<class_ShapeCast3D_method_get_collider>` **(** :ref:`int<class_int>` index **)** |const|                                                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`         | :ref:`get_collider_rid<class_ShapeCast3D_method_get_collider_rid>` **(** :ref:`int<class_int>` index **)** |const|                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_collider_shape<class_ShapeCast3D_method_get_collider_shape>` **(** :ref:`int<class_int>` index **)** |const|                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`         | :ref:`get_collision_count<class_ShapeCast3D_method_get_collision_count>` **(** **)** |const|                                                                     |
@@ -322,6 +324,14 @@ The fraction from the ``ShapeCast3D``'s origin to its :ref:`target_position<clas
 - :ref:`Object<class_Object>` **get_collider** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the collided :ref:`Object<class_Object>` of one of the multiple collisions at ``index``, or ``null`` if no object is intersecting the shape (i.e. :ref:`is_colliding<class_ShapeCast3D_method_is_colliding>` returns ``false``).
+
+----
+
+.. _class_ShapeCast3D_method_get_collider_rid:
+
+- :ref:`RID<class_RID>` **get_collider_rid** **(** :ref:`int<class_int>` index **)** |const|
+
+Returns the :ref:`RID<class_RID>` of the collided object of one of the multiple collisions at ``index``.
 
 ----
 

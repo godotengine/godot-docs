@@ -21,6 +21,11 @@ Description
 
 This resource is used in :ref:`EditorScenePostImport<class_EditorScenePostImport>`. Some parameters are referring to bones in :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`Skin<class_Skin>`, :ref:`Animation<class_Animation>`, and some other nodes are rewritten based on the parameters of ``SkeletonProfile``.
 
+Tutorials
+---------
+
+- :doc:`Retargeting 3D Skeletons <../tutorials/assets_pipeline/retargeting_3d_skeletons>`
+
 Properties
 ----------
 

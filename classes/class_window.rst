@@ -328,7 +328,7 @@ enum **Mode**:
 
 - **MODE_MINIMIZED** = **1** --- Minimized window mode, i.e. ``Window`` is not visible and available on window manager's window list. Normally happens when the minimize button is pressed.
 
-- **MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. ``Window`` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is pressed.
+- **MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. ``Window`` will occupy whole screen area except task bar and still display its borders. Normally happens when the maximize button is pressed.
 
 - **MODE_FULLSCREEN** = **3** --- Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux, a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
 

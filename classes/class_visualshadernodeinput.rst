@@ -62,7 +62,7 @@ Property Descriptions
 | *Getter*  | get_input_name()      |
 +-----------+-----------------------+
 
-One of the several input constants in lower-case style like: "vertex"(``VERTEX``) or "point_size"(``POINT_SIZE``).
+One of the several input constants in lower-case style like: "vertex" (``VERTEX``) or "point_size" (``POINT_SIZE``).
 
 Method Descriptions
 -------------------

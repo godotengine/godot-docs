@@ -60,7 +60,7 @@ enum **TrackingConfidence**:
 
 - **XR_TRACKING_CONFIDENCE_NONE** = **0** --- No tracking information is available for this pose.
 
-- **XR_TRACKING_CONFIDENCE_LOW** = **1** --- Tracking information may be inaccurate or estimated. For instance with inside out tracking this would indicate a controller may be (partially) obscured.
+- **XR_TRACKING_CONFIDENCE_LOW** = **1** --- Tracking information may be inaccurate or estimated. For example, with inside out tracking this would indicate a controller may be (partially) obscured.
 
 - **XR_TRACKING_CONFIDENCE_HIGH** = **2** --- Tracking information is deemed accurate and up to date.
 
@@ -131,7 +131,7 @@ The name of this pose. Pose names are often driven by an action map setup by the
 
 - ``root`` defines a root location, often used for tracked objects that do not have further nodes.
 
-- ``aim`` defines the tip of a controller with the orientation pointing outwards, for instance: add your raycasts to this.
+- ``aim`` defines the tip of a controller with the orientation pointing outwards, for example: add your raycasts to this.
 
 - ``grip`` defines the location where the user grips the controller
 

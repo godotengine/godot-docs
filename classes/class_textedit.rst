@@ -71,8 +71,6 @@ Properties
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>`                      | mouse_default_cursor_shape                                                                                  | ``1`` (overrides :ref:`Control<class_Control_property_mouse_default_cursor_shape>`) |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                           | :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>`                   | ``false``                                                                           |
-+-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`placeholder_text<class_TextEdit_property_placeholder_text>`                                           | ``""``                                                                              |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>`                         | ``false``                                                                           |
@@ -124,7 +122,11 @@ Methods
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`add_caret<class_TextEdit_method_add_caret>` **(** :ref:`int<class_int>` line, :ref:`int<class_int>` col **)**                                                                                                                                                   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_caret_at_carets<class_TextEdit_method_add_caret_at_carets>` **(** :ref:`bool<class_bool>` below **)**                                                                                                                                                       |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`add_gutter<class_TextEdit_method_add_gutter>` **(** :ref:`int<class_int>` at=-1 **)**                                                                                                                                                                           |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                              | :ref:`add_selection_for_next_occurrence<class_TextEdit_method_add_selection_for_next_occurrence>` **(** **)**                                                                                                                                                         |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`adjust_carets_after_edit<class_TextEdit_method_adjust_carets_after_edit>` **(** :ref:`int<class_int>` caret, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_col, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_col **)**                 |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -175,6 +177,8 @@ Methods
 | :ref:`GutterType<enum_TextEdit_GutterType>`       | :ref:`get_gutter_type<class_TextEdit_method_get_gutter_type>` **(** :ref:`int<class_int>` gutter **)** |const|                                                                                                                                                        |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_gutter_width<class_TextEdit_method_get_gutter_width>` **(** :ref:`int<class_int>` gutter **)** |const|                                                                                                                                                      |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`HScrollBar<class_HScrollBar>`               | :ref:`get_h_scroll_bar<class_TextEdit_method_get_h_scroll_bar>` **(** **)** |const|                                                                                                                                                                                   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_indent_level<class_TextEdit_method_get_indent_level>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                        |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -251,6 +255,8 @@ Methods
 | :ref:`int<class_int>`                             | :ref:`get_total_gutter_width<class_TextEdit_method_get_total_gutter_width>` **(** **)** |const|                                                                                                                                                                       |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_total_visible_line_count<class_TextEdit_method_get_total_visible_line_count>` **(** **)** |const|                                                                                                                                                           |
++---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`VScrollBar<class_VScrollBar>`               | :ref:`get_v_scroll_bar<class_TextEdit_method_get_v_scroll_bar>` **(** **)** |const|                                                                                                                                                                                   |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_version<class_TextEdit_method_get_version>` **(** **)** |const|                                                                                                                                                                                             |
 +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -401,7 +407,7 @@ Theme Properties
 +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`font_readonly_color<class_TextEdit_theme_color_font_readonly_color>`               | ``Color(0.875, 0.875, 0.875, 0.5)`` |
 +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_TextEdit_theme_color_font_selected_color>`               | ``Color(1, 1, 1, 1)``               |
+| :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_TextEdit_theme_color_font_selected_color>`               | ``Color(0, 0, 0, 0)``               |
 +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
 | :ref:`Color<class_Color>`         | :ref:`search_result_border_color<class_TextEdit_theme_color_search_result_border_color>` | ``Color(0.3, 0.3, 0.3, 0.4)``       |
 +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1039,22 +1045,6 @@ The width, in pixels, of the minimap.
 
 ----
 
-.. _class_TextEdit_property_override_selected_font_color:
-
-- :ref:`bool<class_bool>` **override_selected_font_color**
-
-+-----------+-----------------------------------------+
-| *Default* | ``false``                               |
-+-----------+-----------------------------------------+
-| *Setter*  | set_override_selected_font_color(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | is_overriding_selected_font_color()     |
-+-----------+-----------------------------------------+
-
-If ``true``, custom ``font_selected_color`` will be used for selected text.
-
-----
-
 .. _class_TextEdit_property_placeholder_text:
 
 - :ref:`String<class_String>` **placeholder_text**
@@ -1370,11 +1360,27 @@ Adds a new caret at the given location. Returns the index of the new caret, or `
 
 ----
 
+.. _class_TextEdit_method_add_caret_at_carets:
+
+- void **add_caret_at_carets** **(** :ref:`bool<class_bool>` below **)**
+
+Adds an additional caret above or below every caret. If ``below`` is true the new caret will be added below and above otherwise.
+
+----
+
 .. _class_TextEdit_method_add_gutter:
 
 - void **add_gutter** **(** :ref:`int<class_int>` at=-1 **)**
 
 Register a new gutter to this ``TextEdit``. Use ``at`` to have a specific gutter order. A value of ``-1`` appends the gutter to the right.
+
+----
+
+.. _class_TextEdit_method_add_selection_for_next_occurrence:
+
+- void **add_selection_for_next_occurrence** **(** **)**
+
+Adds a selection and a caret for the next occurrence of the current selection. If there is no active selection, selects word under caret.
 
 ----
 
@@ -1575,6 +1581,14 @@ Returns the type of the gutter at the given index.
 - :ref:`int<class_int>` **get_gutter_width** **(** :ref:`int<class_int>` gutter **)** |const|
 
 Returns the width of the gutter at the given index.
+
+----
+
+.. _class_TextEdit_method_get_h_scroll_bar:
+
+- :ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar** **(** **)** |const|
+
+Returns the :ref:`HScrollBar<class_HScrollBar>` used by ``TextEdit``.
 
 ----
 
@@ -1885,6 +1899,14 @@ Returns the total width of all gutters and internal padding.
 - :ref:`int<class_int>` **get_total_visible_line_count** **(** **)** |const|
 
 Returns the number of lines that may be drawn.
+
+----
+
+.. _class_TextEdit_method_get_v_scroll_bar:
+
+- :ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar** **(** **)** |const|
+
+Returns the :ref:`VScrollBar<class_VScrollBar>` of the ``TextEdit``.
 
 ----
 
@@ -2549,10 +2571,10 @@ Sets the font :ref:`Color<class_Color>` when :ref:`editable<class_TextEdit_prope
 - :ref:`Color<class_Color>` **font_selected_color**
 
 +-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
+| *Default* | ``Color(0, 0, 0, 0)`` |
 +-----------+-----------------------+
 
-Sets the :ref:`Color<class_Color>` of the selected text. :ref:`override_selected_font_color<class_TextEdit_property_override_selected_font_color>` has to be enabled.
+Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
 
 ----
 

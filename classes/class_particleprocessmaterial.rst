@@ -145,6 +145,8 @@ Properties
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`float<class_float>`                                          | :ref:`spread<class_ParticleProcessMaterial_property_spread>`                                                           | ``45.0``                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------+
+| :ref:`int<class_int>`                                              | :ref:`sub_emitter_amount_at_collision<class_ParticleProcessMaterial_property_sub_emitter_amount_at_collision>`         |                            |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`int<class_int>`                                              | :ref:`sub_emitter_amount_at_end<class_ParticleProcessMaterial_property_sub_emitter_amount_at_end>`                     |                            |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------+
 | :ref:`float<class_float>`                                          | :ref:`sub_emitter_frequency<class_ParticleProcessMaterial_property_sub_emitter_frequency>`                             |                            |
@@ -1089,7 +1091,7 @@ Maximum linear acceleration applied to each particle in the direction of motion.
 | *Getter*  | get_param_min()      |
 +-----------+----------------------+
 
-Minimum equivalent of :ref:`linear_accel_min<class_ParticleProcessMaterial_property_linear_accel_min>`.
+Minimum equivalent of :ref:`linear_accel_max<class_ParticleProcessMaterial_property_linear_accel_max>`.
 
 ----
 
@@ -1290,6 +1292,22 @@ Minimum equivalent of :ref:`scale_max<class_ParticleProcessMaterial_property_sca
 +-----------+-------------------+
 
 Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
+
+----
+
+.. _class_ParticleProcessMaterial_property_sub_emitter_amount_at_collision:
+
+- :ref:`int<class_int>` **sub_emitter_amount_at_collision**
+
++----------+--------------------------------------------+
+| *Setter* | set_sub_emitter_amount_at_collision(value) |
++----------+--------------------------------------------+
+| *Getter* | get_sub_emitter_amount_at_collision()      |
++----------+--------------------------------------------+
+
+Sub particle amount on collision.
+
+Maximum amount set in the sub particles emitter.
 
 ----
 

@@ -145,6 +145,14 @@ Notifies when an animation finished playing.
 
 ----
 
+.. _class_AnimationPlayer_signal_animation_libraries_updated:
+
+- **animation_libraries_updated** **(** **)**
+
+Notifies when the animation libraries have changed.
+
+----
+
 .. _class_AnimationPlayer_signal_animation_list_changed:
 
 - **animation_list_changed** **(** **)**
@@ -247,7 +255,7 @@ The key of the animation to play when the scene loads.
 
 The key of the currently playing animation. If no animation is playing, the property's value is an empty string. Changing this value does not restart the animation. See :ref:`play<class_AnimationPlayer_method_play>` for more information on playing animations.
 
-\ **Note:** while this property appears in the inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
+\ **Note:** While this property appears in the Inspector, it's not meant to be edited, and it's not saved in the scene. This property is mainly used to get the currently playing animation, and internally for animation playback tracks. For more information, see :ref:`Animation<class_Animation>`.
 
 ----
 
@@ -367,7 +375,7 @@ The process notification in which to update animations.
 | *Getter*  | get_speed_scale()      |
 +-----------+------------------------+
 
-The speed scaling ratio. For instance, if this value is 1, then the animation plays at normal speed. If it's 0.5, then it plays at half speed. If it's 2, then it plays at double speed.
+The speed scaling ratio. For example, if this value is 1, then the animation plays at normal speed. If it's 0.5, then it plays at half speed. If it's 2, then it plays at double speed.
 
 ----
 

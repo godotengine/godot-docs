@@ -122,7 +122,7 @@ Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>
 
 Attempts to parse the ``json_string`` provided.
 
-Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns ``OK`` and the result can be retrieved using :ref:`data<class_JSON_property_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
+Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` and the result can be retrieved using :ref:`data<class_JSON_property_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
 
 Non-static variant of :ref:`parse_string<class_JSON_method_parse_string>`, if you want custom error handling.
 

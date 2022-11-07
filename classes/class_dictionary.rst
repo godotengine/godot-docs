@@ -472,17 +472,23 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Dictionary<class_Dictionary>` right **)**
 
+Returns ``true`` if the dictionaries differ, i.e. their key or value lists are different (including the order).
+
 ----
 
 .. _class_Dictionary_operator_eq_bool:
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Dictionary<class_Dictionary>` right **)**
 
+Returns ``true`` if both dictionaries have the same contents, i.e. their keys list and value list are equal.
+
 ----
 
 .. _class_Dictionary_operator_idx_Variant:
 
 - :ref:`Variant<class_Variant>` **operator []** **(** :ref:`Variant<class_Variant>` key **)**
+
+Returns a value at the given ``key`` or ``null`` and error if the key does not exist. For safe access, use :ref:`get<class_Dictionary_method_get>` or :ref:`has<class_Dictionary_method_has>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -107,7 +107,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`get_incoming_connections<class_Object_method_get_incoming_connections>` **(** **)** |const|                                                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`get_indexed<class_Object_method_get_indexed>` **(** :ref:`NodePath<class_NodePath>` property **)** |const|                                                                                                                   |
+| :ref:`Variant<class_Variant>`                     | :ref:`get_indexed<class_Object_method_get_indexed>` **(** :ref:`NodePath<class_NodePath>` property_path **)** |const|                                                                                                              |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`get_instance_id<class_Object_method_get_instance_id>` **(** **)** |const|                                                                                                                                                    |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,7 +153,7 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_deferred<class_Object_method_set_deferred>` **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**                                                                                |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_indexed<class_Object_method_set_indexed>` **(** :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` value **)**                                                                                      |
+| void                                              | :ref:`set_indexed<class_Object_method_set_indexed>` **(** :ref:`NodePath<class_NodePath>` property_path, :ref:`Variant<class_Variant>` value **)**                                                                                 |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`set_message_translation<class_Object_method_set_message_translation>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                             |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -312,7 +312,9 @@ Adds a user-defined ``signal``. Arguments are optional, but can be added as an :
 
 - :ref:`Variant<class_Variant>` **call** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Calls the ``method`` on the object and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
+Calls the ``method`` on the object and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -337,7 +339,9 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 - :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Calls the ``method`` on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
+Calls the ``method`` on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -568,7 +572,9 @@ If you try to disconnect a connection that does not exist, the method will print
 
 - :ref:`Error<enum_@GlobalScope_Error>` **emit_signal** **(** :ref:`StringName<class_StringName>` signal, ... **)** |vararg|
 
-Emits the given ``signal``. The signal must exist, so it should be a built-in signal of this class or one of its parent classes, or a user-defined signal. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example:
+Emits the given ``signal``. The signal must exist, so it should be a built-in signal of this class or one of its parent classes, or a user-defined signal. This method supports a variable number of arguments, so parameters are passed as a comma separated list.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -633,9 +639,11 @@ Each :ref:`Dictionary<class_Dictionary>` contains three String entries:
 
 .. _class_Object_method_get_indexed:
 
-- :ref:`Variant<class_Variant>` **get_indexed** **(** :ref:`NodePath<class_NodePath>` property **)** |const|
+- :ref:`Variant<class_Variant>` **get_indexed** **(** :ref:`NodePath<class_NodePath>` property_path **)** |const|
 
-Gets the object's property indexed by the given :ref:`NodePath<class_NodePath>`. The node path should be relative to the current object and can use the colon character (``:``) to access nested properties. Examples: ``"position:x"`` or ``"material:next_pass:blend_mode"``.
+Gets the object's property indexed by the given ``property_path``. The path should be a :ref:`NodePath<class_NodePath>` relative to the current object and can use the colon character (``:``) to access nested properties.
+
+\ **Examples:** ``"position:x"`` or ``"material:next_pass:blend_mode"``.
 
 \ **Note:** Even though the method takes :ref:`NodePath<class_NodePath>` argument, it doesn't support actual paths to :ref:`Node<class_Node>`\ s in the scene tree, only colon-separated sub-property paths. For the purpose of nodes, use :ref:`Node.get_node_and_resource<class_Node_method_get_node_and_resource>` instead.
 
@@ -659,7 +667,7 @@ Returns the object's metadata entry for the given ``name``.
 
 Throws error if the entry does not exist, unless ``default`` is not ``null`` (in which case the default value will be returned). See also :ref:`has_meta<class_Object_method_has_meta>`, :ref:`set_meta<class_Object_method_set_meta>` and :ref:`remove_meta<class_Object_method_remove_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the inspector and should not be edited.
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited.
 
 ----
 
@@ -719,7 +727,7 @@ Returns the list of signals as an :ref:`Array<class_Array>` of dictionaries.
 
 Returns ``true`` if a metadata entry is found with the given ``name``. See also :ref:`get_meta<class_Object_method_get_meta>`, :ref:`set_meta<class_Object_method_set_meta>` and :ref:`remove_meta<class_Object_method_remove_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the inspector and should not be edited.
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited.
 
 ----
 
@@ -805,7 +813,7 @@ Notify the editor that the property list has changed by emitting the :ref:`prope
 
 Removes a given entry from the object's metadata. See also :ref:`has_meta<class_Object_method_has_meta>`, :ref:`get_meta<class_Object_method_get_meta>` and :ref:`set_meta<class_Object_method_set_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the inspector and should not be edited.
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited.
 
 ----
 
@@ -839,9 +847,11 @@ Assigns a new value to the given property, after the current frame's physics ste
 
 .. _class_Object_method_set_indexed:
 
-- void **set_indexed** **(** :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` value **)**
+- void **set_indexed** **(** :ref:`NodePath<class_NodePath>` property_path, :ref:`Variant<class_Variant>` value **)**
 
-Assigns a new value to the property identified by the :ref:`NodePath<class_NodePath>`. The node path should be relative to the current object and can use the colon character (``:``) to access nested properties. Example:
+Assigns a new value to the property identified by the ``property_path``. The path should be a :ref:`NodePath<class_NodePath>` relative to the current object and can use the colon character (``:``) to access nested properties.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -880,7 +890,7 @@ Adds, changes or removes a given entry in the object's metadata. Metadata are se
 
 To remove a given entry from the object's metadata, use :ref:`remove_meta<class_Object_method_remove_meta>`. Metadata is also removed if its value is set to ``null``. This means you can also use ``set_meta("name", null)`` to remove metadata for ``"name"``. See also :ref:`has_meta<class_Object_method_has_meta>` and :ref:`get_meta<class_Object_method_get_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the inspector and should not be edited.
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited.
 
 ----
 

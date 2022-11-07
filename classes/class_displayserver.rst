@@ -12,7 +12,14 @@ DisplayServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
+Singleton for window management functions.
 
+Description
+-----------
+
+``DisplayServer`` handles everything related to window management. This is separated from :ref:`OS<class_OS>` as a single operating system may support multiple display servers.
+
+\ **Headless mode:** Starting the engine with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` disables all rendering and window management functions. Most functions from ``DisplayServer`` will return dummy values in this case.
 
 Methods
 -------
@@ -28,15 +35,11 @@ Methods
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`clipboard_set_primary<class_DisplayServer_method_clipboard_set_primary>` **(** :ref:`String<class_String>` clipboard_primary **)**                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`create_sub_window<class_DisplayServer_method_create_sub_window>` **(** :ref:`WindowMode<enum_DisplayServer_WindowMode>` mode, :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` vsync_mode, :ref:`int<class_int>` flags, :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**                                                                                                                                                                                          |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`CursorShape<enum_DisplayServer_CursorShape>`             | :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>` **(** :ref:`Resource<class_Resource>` cursor, :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2(0, 0) **)**                                                                                                                                                                                                                         |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>` **(** :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape **)**                                                                                                                                                                                                                                                                                                                                      |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`delete_sub_window<class_DisplayServer_method_delete_sub_window>` **(** :ref:`int<class_int>` window_id **)**                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>` **(** :ref:`String<class_String>` title, :ref:`String<class_String>` description, :ref:`String<class_String>` existing_text, :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,6 +88,8 @@ Methods
 | :ref:`Key<enum_@GlobalScope_Key>`                              | :ref:`global_menu_get_item_accelerator<class_DisplayServer_method_global_menu_get_item_accelerator>` **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                      |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Callable<class_Callable>`                                | :ref:`global_menu_get_item_callback<class_DisplayServer_method_global_menu_get_item_callback>` **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                            |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`global_menu_get_item_count<class_DisplayServer_method_global_menu_get_item_count>` **(** :ref:`String<class_String>` menu_root **)** |const|                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture2D<class_Texture2D>`                              | :ref:`global_menu_get_item_icon<class_DisplayServer_method_global_menu_get_item_icon>` **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx **)** |const|                                                                                                                                                                                                                                                                                                    |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -242,8 +247,6 @@ Methods
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`warp_mouse<class_DisplayServer_method_warp_mouse>` **(** :ref:`Vector2i<class_Vector2i>` position **)**                                                                                                                                                                                                                                                                                                                                                                  |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`window_attach_instance_id<class_DisplayServer_method_window_attach_instance_id>` **(** :ref:`int<class_int>` instance_id, :ref:`int<class_int>` window_id=0 **)**                                                                                                                                                                                                                                                                                                        |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`window_can_draw<class_DisplayServer_method_window_can_draw>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`window_get_active_popup<class_DisplayServer_method_window_get_active_popup>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                         |
@@ -268,11 +271,13 @@ Methods
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_real_size<class_DisplayServer_method_window_get_real_size>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_safe_title_margins>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                           |
+| :ref:`Vector3i<class_Vector3i>`                                | :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_safe_title_margins>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                           |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_size<class_DisplayServer_method_window_get_size>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                       |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VSyncMode<enum_DisplayServer_VSyncMode>`                 | :ref:`window_get_vsync_mode<class_DisplayServer_method_window_get_vsync_mode>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                           |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`window_is_maximize_allowed<class_DisplayServer_method_window_is_maximize_allowed>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                 |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`window_maximize_on_title_dbl_click<class_DisplayServer_method_window_maximize_on_title_dbl_click>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                   |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -372,45 +377,45 @@ Enumerations
 
 enum **Feature**:
 
-- **FEATURE_GLOBAL_MENU** = **0**
+- **FEATURE_GLOBAL_MENU** = **0** --- Display server supports global menu. This allows the application to display its menu items in the operating system's top bar. **macOS**
 
-- **FEATURE_SUBWINDOWS** = **1**
+- **FEATURE_SUBWINDOWS** = **1** --- Display server supports multiple windows that can be moved outside of the main window. **Windows, macOS, Linux (X11)**
 
-- **FEATURE_TOUCHSCREEN** = **2**
+- **FEATURE_TOUCHSCREEN** = **2** --- Display server supports touchscreen input. **Windows, Linux (X11), Android, iOS, Web**
 
-- **FEATURE_MOUSE** = **3**
+- **FEATURE_MOUSE** = **3** --- Display server supports mouse input. **Windows, macOS, Linux (X11), Android, Web**
 
-- **FEATURE_MOUSE_WARP** = **4**
+- **FEATURE_MOUSE_WARP** = **4** --- Display server supports warping mouse coordinates to keep the mouse cursor constrained within an area, but looping when one of the edges is reached. **Windows, macOS, Linux (X11)**
 
-- **FEATURE_CLIPBOARD** = **5**
+- **FEATURE_CLIPBOARD** = **5** --- Display server supports setting and getting clipboard data. See also :ref:`FEATURE_CLIPBOARD_PRIMARY<class_DisplayServer_constant_FEATURE_CLIPBOARD_PRIMARY>`. **Windows, macOS, Linux (X11), Android, iOS, Web**
 
-- **FEATURE_VIRTUAL_KEYBOARD** = **6**
+- **FEATURE_VIRTUAL_KEYBOARD** = **6** --- Display server supports popping up a virtual keyboard when requested to input text without a physical keyboard. **Android, iOS, Web**
 
-- **FEATURE_CURSOR_SHAPE** = **7**
+- **FEATURE_CURSOR_SHAPE** = **7** --- Display server supports setting the mouse cursor shape to be different from the default. **Windows, macOS, Linux (X11), Android, Web**
 
-- **FEATURE_CUSTOM_CURSOR_SHAPE** = **8**
+- **FEATURE_CUSTOM_CURSOR_SHAPE** = **8** --- Display server supports setting the mouse cursor shape to a custom image. **Windows, macOS, Linux (X11), Web**
 
-- **FEATURE_NATIVE_DIALOG** = **9**
+- **FEATURE_NATIVE_DIALOG** = **9** --- Display server supports spawning dialogs using the operating system's native look-and-feel. **macOS**
 
-- **FEATURE_IME** = **10**
+- **FEATURE_IME** = **10** --- Display server supports `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__, which is commonly used for inputting Chinese/Japanese/Korean text. This is handled by the operating system, rather than by Godot. **Windows, macOS, Linux (X11)**
 
-- **FEATURE_WINDOW_TRANSPARENCY** = **11**
+- **FEATURE_WINDOW_TRANSPARENCY** = **11** --- Display server supports windows can use per-pixel transparency to make windows behind them partially or fully visible. **Windows, macOS, Linux (X11)**
 
-- **FEATURE_HIDPI** = **12**
+- **FEATURE_HIDPI** = **12** --- Display server supports querying the operating system's display scale factor. This allows for *reliable* automatic hiDPI display detection, as opposed to guessing based on the screen resolution and reported display DPI (which can be unreliable due to broken monitor EDID). **Windows, macOS**
 
-- **FEATURE_ICON** = **13**
+- **FEATURE_ICON** = **13** --- Display server supports changing the window icon (usually displayed in the top-left corner). **Windows, macOS, Linux (X11)**
 
-- **FEATURE_NATIVE_ICON** = **14**
+- **FEATURE_NATIVE_ICON** = **14** --- Display server supports changing the window icon (usually displayed in the top-left corner). **Windows, macOS**
 
-- **FEATURE_ORIENTATION** = **15**
+- **FEATURE_ORIENTATION** = **15** --- Display server supports changing the screen orientation. **Android, iOS**
 
-- **FEATURE_SWAP_BUFFERS** = **16**
+- **FEATURE_SWAP_BUFFERS** = **16** --- Display server supports V-Sync status can be changed from the default (which is forced to be enabled platforms not supporting this feature). **Windows, macOS, Linux (X11)**
 
-- **FEATURE_CLIPBOARD_PRIMARY** = **18**
+- **FEATURE_CLIPBOARD_PRIMARY** = **18** --- Display server supports Primary clipboard can be used. This is a different clipboard from :ref:`FEATURE_CLIPBOARD<class_DisplayServer_constant_FEATURE_CLIPBOARD>`. **Linux (X11)**
 
-- **FEATURE_TEXT_TO_SPEECH** = **19** --- Display server supports text-to-speech. See ``tts_*`` methods.
+- **FEATURE_TEXT_TO_SPEECH** = **19** --- Display server supports text-to-speech. See ``tts_*`` methods. **Windows, macOS, Linux (X11), Android, iOS, Web**
 
-- **FEATURE_EXTEND_TO_TITLE** = **20** --- Display server supports expanding window content to the title. See :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`.
+- **FEATURE_EXTEND_TO_TITLE** = **20** --- Display server supports expanding window content to the title. See :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`. **macOS**
 
 ----
 
@@ -460,19 +465,19 @@ enum **MouseMode**:
 
 enum **ScreenOrientation**:
 
-- **SCREEN_LANDSCAPE** = **0**
+- **SCREEN_LANDSCAPE** = **0** --- Default landscape orientation.
 
-- **SCREEN_PORTRAIT** = **1**
+- **SCREEN_PORTRAIT** = **1** --- Default portrait orienstation.
 
-- **SCREEN_REVERSE_LANDSCAPE** = **2**
+- **SCREEN_REVERSE_LANDSCAPE** = **2** --- Reverse landscape orientation (upside down).
 
-- **SCREEN_REVERSE_PORTRAIT** = **3**
+- **SCREEN_REVERSE_PORTRAIT** = **3** --- Reverse portrait orientation (upside down).
 
-- **SCREEN_SENSOR_LANDSCAPE** = **4**
+- **SCREEN_SENSOR_LANDSCAPE** = **4** --- Automatic landscape orientation (default or reverse depending on sensor).
 
-- **SCREEN_SENSOR_PORTRAIT** = **5**
+- **SCREEN_SENSOR_PORTRAIT** = **5** --- Automatic portrait orientation (default or reverse depending on sensor).
 
-- **SCREEN_SENSOR** = **6**
+- **SCREEN_SENSOR** = **6** --- Automatic landscape or portrait orientation (default or reverse depending on sensor).
 
 ----
 
@@ -556,41 +561,41 @@ enum **VirtualKeyboardType**:
 
 enum **CursorShape**:
 
-- **CURSOR_ARROW** = **0**
+- **CURSOR_ARROW** = **0** --- Arrow cursor shape. This is the default when not pointing anything that overrides the mouse cursor, such as a :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`.
 
-- **CURSOR_IBEAM** = **1**
+- **CURSOR_IBEAM** = **1** --- I-beam cursor shape. This is used by default when hovering a control that accepts text input, such as :ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`.
 
-- **CURSOR_POINTING_HAND** = **2**
+- **CURSOR_POINTING_HAND** = **2** --- Pointing hand cursor shape. This is used by default when hovering a :ref:`LinkButton<class_LinkButton>` or an URL tag in a :ref:`RichTextLabel<class_RichTextLabel>`.⋅
 
-- **CURSOR_CROSS** = **3**
+- **CURSOR_CROSS** = **3** --- Crosshair cursor. This is intended to be displayed when the user needs precise aim over an element, such as a rectangle selection tool or a color picker.
 
-- **CURSOR_WAIT** = **4**
+- **CURSOR_WAIT** = **4** --- Wait cursor. On most cursor themes, this displays a spinning icon *besides* the arrow. Intended to be used for non-blocking operations (when the user can do something else at the moment). See also :ref:`CURSOR_BUSY<class_DisplayServer_constant_CURSOR_BUSY>`.
 
-- **CURSOR_BUSY** = **5**
+- **CURSOR_BUSY** = **5** --- Wait cursor. On most cursor themes, this *replaces* the arrow with a spinning icon. Intended to be used for blocking operations (when the user can't do anything else at the moment). See also :ref:`CURSOR_WAIT<class_DisplayServer_constant_CURSOR_WAIT>`.
 
-- **CURSOR_DRAG** = **6**
+- **CURSOR_DRAG** = **6** --- Dragging hand cursor. This is displayed during drag-and-drop operations. See also :ref:`CURSOR_CAN_DROP<class_DisplayServer_constant_CURSOR_CAN_DROP>`.
 
-- **CURSOR_CAN_DROP** = **7**
+- **CURSOR_CAN_DROP** = **7** --- "Can drop" cursor. This is displayed during drag-and-drop operations if hovering over a :ref:`Control<class_Control>` that can accept the drag-and-drop event. On most cursor themes, this displays a dragging hand with an arrow symbol besides it. See also :ref:`CURSOR_DRAG<class_DisplayServer_constant_CURSOR_DRAG>`.
 
-- **CURSOR_FORBIDDEN** = **8**
+- **CURSOR_FORBIDDEN** = **8** --- Forbidden cursor. This is displayed during drag-and-drop operations if the hovered :ref:`Control<class_Control>` can't accept the drag-and-drop event.
 
-- **CURSOR_VSIZE** = **9**
+- **CURSOR_VSIZE** = **9** --- Vertical resize cursor. Intended to be displayed when the hovered :ref:`Control<class_Control>` can be vertically resized using the mouse. See also :ref:`CURSOR_VSPLIT<class_DisplayServer_constant_CURSOR_VSPLIT>`.
 
-- **CURSOR_HSIZE** = **10**
+- **CURSOR_HSIZE** = **10** --- Horizontal resize cursor. Intended to be displayed when the hovered :ref:`Control<class_Control>` can be horizontally resized using the mouse. See also :ref:`CURSOR_HSPLIT<class_DisplayServer_constant_CURSOR_HSPLIT>`.
 
-- **CURSOR_BDIAGSIZE** = **11**
+- **CURSOR_BDIAGSIZE** = **11** --- Secondary diagonal resize cursor (top-right/bottom-left). Intended to be displayed when the hovered :ref:`Control<class_Control>` can be resized on both axes at once using the mouse.
 
-- **CURSOR_FDIAGSIZE** = **12**
+- **CURSOR_FDIAGSIZE** = **12** --- Main diagonal resize cursor (top-left/bottom-right). Intended to be displayed when the hovered :ref:`Control<class_Control>` can be resized on both axes at once using the mouse.
 
-- **CURSOR_MOVE** = **13**
+- **CURSOR_MOVE** = **13** --- Move cursor. Intended to be displayed when the hovered :ref:`Control<class_Control>` can be moved using the mouse.
 
-- **CURSOR_VSPLIT** = **14**
+- **CURSOR_VSPLIT** = **14** --- Vertical split cursor. This is displayed when hovering a :ref:`Control<class_Control>` with splits that can be vertically resized using the mouse, such as :ref:`VSplitContainer<class_VSplitContainer>`. On some cursor themes, this cursor may have the same appearance as :ref:`CURSOR_VSIZE<class_DisplayServer_constant_CURSOR_VSIZE>`.
 
-- **CURSOR_HSPLIT** = **15**
+- **CURSOR_HSPLIT** = **15** --- Horizontal split cursor. This is displayed when hovering a :ref:`Control<class_Control>` with splits that can be horizontally resized using the mouse, such as :ref:`HSplitContainer<class_HSplitContainer>`. On some cursor themes, this cursor may have the same appearance as :ref:`CURSOR_HSIZE<class_DisplayServer_constant_CURSOR_HSIZE>`.
 
-- **CURSOR_HELP** = **16**
+- **CURSOR_HELP** = **16** --- Help cursor. On most cursor themes, this displays a question mark icon instead of the mouse cursor. Intended to be used when the user has requested help on the next element that will be clicked.
 
-- **CURSOR_MAX** = **17**
+- **CURSOR_MAX** = **17** --- Represents the size of the :ref:`CursorShape<enum_DisplayServer_CursorShape>` enum.
 
 ----
 
@@ -614,7 +619,7 @@ enum **WindowMode**:
 
 - **WINDOW_MODE_MAXIMIZED** = **2** --- Maximized window mode, i.e. :ref:`Window<class_Window>` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is pressed.
 
-- **WINDOW_MODE_FULLSCREEN** = **3** --- Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux, a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
+- **WINDOW_MODE_FULLSCREEN** = **3** --- Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux (X11), a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
 
 Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
@@ -656,7 +661,7 @@ enum **WindowFlags**:
 
 \ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
 
-\ **Note:** Transparency support is implemented on Linux, macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+\ **Note:** Transparency support is implemented on Linux (X11), macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
 - **WINDOW_FLAG_NO_FOCUS** = **4** --- The window can't be focused. No-focus window will ignore all input, except mouse clicks.
 
@@ -730,15 +735,15 @@ enum **WindowEvent**:
 
 enum **VSyncMode**:
 
-- **VSYNC_DISABLED** = **0** --- No vertical synchronization, which means the engine will display frames as fast as possible (tearing may be visible).
+- **VSYNC_DISABLED** = **0** --- No vertical synchronization, which means the engine will display frames as fast as possible (tearing may be visible). Framerate is unlimited (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
 
-- **VSYNC_ENABLED** = **1** --- Default vertical synchronization mode, the image is displayed only on vertical blanking intervals (no tearing is visible).
+- **VSYNC_ENABLED** = **1** --- Default vertical synchronization mode, the image is displayed only on vertical blanking intervals (no tearing is visible). Framerate is limited by the monitor refresh rate (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
 
-- **VSYNC_ADAPTIVE** = **2** --- Behaves like :ref:`VSYNC_DISABLED<class_DisplayServer_constant_VSYNC_DISABLED>` when the framerate drops below the screen's refresh rate to reduce stuttering (tearing may be visible), otherwise vertical synchronization is enabled to avoid tearing.
+- **VSYNC_ADAPTIVE** = **2** --- Behaves like :ref:`VSYNC_DISABLED<class_DisplayServer_constant_VSYNC_DISABLED>` when the framerate drops below the screen's refresh rate to reduce stuttering (tearing may be visible). Otherwise, vertical synchronization is enabled to avoid tearing. Framerate is limited by the monitor refresh rate (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
 
-- **VSYNC_MAILBOX** = **3** --- Displays the most recent image in the queue on vertical blanking intervals, while rendering to the other images (no tearing is visible).
+- **VSYNC_MAILBOX** = **3** --- Displays the most recent image in the queue on vertical blanking intervals, while rendering to the other images (no tearing is visible). Framerate is unlimited (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
 
-Although not guaranteed, the images can be rendered as fast as possible, which may reduce input lag.
+Although not guaranteed, the images can be rendered as fast as possible, which may reduce input lag (also called "Fast" V-Sync mode). :ref:`VSYNC_MAILBOX<class_DisplayServer_constant_VSYNC_MAILBOX>` works best when at least twice as many frames as the display refresh rate are rendered.
 
 ----
 
@@ -754,13 +759,13 @@ enum **HandleType**:
 
 - **DISPLAY_HANDLE** = **0** --- Display handle:
 
-	- Linux: ``X11::Display*`` for the display.
+	- Linux (X11): ``X11::Display*`` for the display.
 
 - **WINDOW_HANDLE** = **1** --- Window handle:
 
 	- Windows: ``HWND`` for the window.
 
-	- Linux: ``X11::Window*`` for the window.
+	- Linux (X11): ``X11::Window*`` for the window.
 
 	- macOS: ``NSWindow*`` for the window.
 
@@ -805,11 +810,11 @@ Constants
 
 .. _class_DisplayServer_constant_INVALID_WINDOW_ID:
 
-- **SCREEN_OF_MAIN_WINDOW** = **-1**
+- **SCREEN_OF_MAIN_WINDOW** = **-1** --- Represents the screen where the main window is located. This is usually the default value in functions that allow specifying one of several screens.
 
-- **MAIN_WINDOW_ID** = **0**
+- **MAIN_WINDOW_ID** = **0** --- The ID of the main window spawned by the engine, which can be passed to methods expecting a ``window_id``.
 
-- **INVALID_WINDOW_ID** = **-1**
+- **INVALID_WINDOW_ID** = **-1** --- The ID that refers to a nonexisting window. This is be returned by some ``DisplayServer`` methods if no window matches the requested result.
 
 Method Descriptions
 -------------------
@@ -826,9 +831,9 @@ Returns the user's clipboard as a string if possible.
 
 - :ref:`String<class_String>` **clipboard_get_primary** **(** **)** |const|
 
-Returns the user's primary clipboard as a string if possible.
+Returns the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard as a string if possible. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
-\ **Note:** This method is only implemented on Linux.
+\ **Note:** This method is only implemented on Linux (X11).
 
 ----
 
@@ -852,15 +857,9 @@ Sets the user's clipboard content to the given string.
 
 - void **clipboard_set_primary** **(** :ref:`String<class_String>` clipboard_primary **)**
 
-Sets the user's primary clipboard content to the given string.
+Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard content to the given string. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
-\ **Note:** This method is only implemented on Linux.
-
-----
-
-.. _class_DisplayServer_method_create_sub_window:
-
-- :ref:`int<class_int>` **create_sub_window** **(** :ref:`WindowMode<enum_DisplayServer_WindowMode>` mode, :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` vsync_mode, :ref:`int<class_int>` flags, :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**
+\ **Note:** This method is only implemented on Linux (X11).
 
 ----
 
@@ -868,11 +867,15 @@ Sets the user's primary clipboard content to the given string.
 
 - :ref:`CursorShape<enum_DisplayServer_CursorShape>` **cursor_get_shape** **(** **)** |const|
 
+Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
+
 ----
 
 .. _class_DisplayServer_method_cursor_set_custom_image:
 
 - void **cursor_set_custom_image** **(** :ref:`Resource<class_Resource>` cursor, :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2(0, 0) **)**
+
+Sets a custom mouse cursor image for the defined ``shape``. This means the user's operating system and mouse cursor theme will no longer influence the mouse cursor's appearance. The image must be ``256x256`` or smaller for correct appearance. ``hotspot`` can optionally be set to define the area where the cursor will click. By default, ``hotspot`` is set to ``Vector2(0, 0)``, which is the top-left corner of the image. See also :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
 
 ----
 
@@ -880,11 +883,7 @@ Sets the user's primary clipboard content to the given string.
 
 - void **cursor_set_shape** **(** :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape **)**
 
-----
-
-.. _class_DisplayServer_method_delete_sub_window:
-
-- void **delete_sub_window** **(** :ref:`int<class_int>` window_id **)**
+Sets the default mouse cursor shape. The cursor's appearance will vary depending on the user's operating system and mouse cursor theme. See also :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` and :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>`.
 
 ----
 
@@ -892,11 +891,19 @@ Sets the user's primary clipboard content to the given string.
 
 - :ref:`Error<enum_@GlobalScope_Error>` **dialog_input_text** **(** :ref:`String<class_String>` title, :ref:`String<class_String>` description, :ref:`String<class_String>` existing_text, :ref:`Callable<class_Callable>` callback **)**
 
+Shows a text input dialog which uses the operating system's native look-and-feel. ``callback`` will be called with a :ref:`String<class_String>` argument equal to the text field's contents when the dialog is closed for any reason.
+
+\ **Note:** This method is implemented on macOS.
+
 ----
 
 .. _class_DisplayServer_method_dialog_show:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **dialog_show** **(** :ref:`String<class_String>` title, :ref:`String<class_String>` description, :ref:`PackedStringArray<class_PackedStringArray>` buttons, :ref:`Callable<class_Callable>` callback **)**
+
+Shows a text dialog which uses the operating system's native look-and-feel. ``callback`` will be called when the dialog is closed for any reason.
+
+\ **Note:** This method is implemented on macOS.
 
 ----
 
@@ -904,11 +911,19 @@ Sets the user's primary clipboard content to the given string.
 
 - void **enable_for_stealing_focus** **(** :ref:`int<class_int>` process_id **)**
 
+Allows the ``process_id`` PID to steal focus from this window. In other words, this disables the operating system's focus stealing protection for the specified PID.
+
+\ **Note:** This method is implemented on Windows.
+
 ----
 
 .. _class_DisplayServer_method_force_process_and_drop_events:
 
 - void **force_process_and_drop_events** **(** **)**
+
+Forces window manager processing while ignoring all :ref:`InputEvent<class_InputEvent>`\ s. See also :ref:`process_events<class_DisplayServer_method_process_events>`.
+
+\ **Note:** This method is implemented on Windows and macOS.
 
 ----
 
@@ -944,11 +959,17 @@ Returns the unobscured area of the display where interactive controls should be 
 
 - :ref:`String<class_String>` **get_name** **(** **)** |const|
 
+Returns the name of the ``DisplayServer`` currently in use. Most operating systems only have a single ``DisplayServer``, but Linux has access to more than one ``DisplayServer`` (although only X11 is currently implemented in Godot).
+
+The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux), ``Android``, ``iOS``, ``web`` (HTML5) and ``headless`` (when started with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`).
+
 ----
 
 .. _class_DisplayServer_method_get_screen_count:
 
 - :ref:`int<class_int>` **get_screen_count** **(** **)** |const|
+
+Returns the number of displays available.
 
 ----
 
@@ -956,17 +977,36 @@ Returns the unobscured area of the display where interactive controls should be 
 
 - :ref:`bool<class_bool>` **get_swap_cancel_ok** **(** **)**
 
+Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in dialogs. This is enabled by default on Windows and UWP to follow interface conventions, and be toggled by changing :ref:`ProjectSettings.gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`.
+
+\ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`dialog_show<class_DisplayServer_method_dialog_show>`.
+
 ----
 
 .. _class_DisplayServer_method_get_window_at_screen_position:
 
 - :ref:`int<class_int>` **get_window_at_screen_position** **(** :ref:`Vector2i<class_Vector2i>` position **)** |const|
 
+Returns the ID of the window at the specified screen ``position`` (in pixels). On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+
+::
+
+    * (0, 0)        +-------+
+                    |       |
+    +-------------+ |       |
+    |             | |       |
+    |             | |       |
+    +-------------+ +-------+
+
 ----
 
 .. _class_DisplayServer_method_get_window_list:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_window_list** **(** **)** |const|
+
+Returns the list of Godot window IDs belonging to this process.
+
+\ **Note:** Native dialogs are not included in this list.
 
 ----
 
@@ -1181,6 +1221,16 @@ Returns the accelerator of the item at index ``idx``. Accelerators are special c
 - :ref:`Callable<class_Callable>` **global_menu_get_item_callback** **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx **)** |const|
 
 Returns the callback of the item at index ``idx``.
+
+\ **Note:** This method is implemented on macOS.
+
+----
+
+.. _class_DisplayServer_method_global_menu_get_item_count:
+
+- :ref:`int<class_int>` **global_menu_get_item_count** **(** :ref:`String<class_String>` menu_root **)** |const|
+
+Returns number of items in the global menu with ID ``menu_root``.
 
 \ **Note:** This method is implemented on macOS.
 
@@ -1510,17 +1560,27 @@ Sets the :ref:`String<class_String>` tooltip of the item at the specified index 
 
 - :ref:`bool<class_bool>` **has_feature** **(** :ref:`Feature<enum_DisplayServer_Feature>` feature **)** |const|
 
+Returns ``true`` if the specified ``feature`` is supported by the current ``DisplayServer``, ``false`` otherwise.
+
 ----
 
 .. _class_DisplayServer_method_ime_get_selection:
 
 - :ref:`Vector2i<class_Vector2i>` **ime_get_selection** **(** **)** |const|
 
+Returns the text selection in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ composition string, with the :ref:`Vector2i<class_Vector2i>`'s ``x`` component being the caret position and ``y`` being the length of the selection.
+
+\ **Note:** This method is implemented on macOS.
+
 ----
 
 .. _class_DisplayServer_method_ime_get_text:
 
 - :ref:`String<class_String>` **ime_get_text** **(** **)** |const|
+
+Returns the composition string contained within the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ window.
+
+\ **Note:** This method is implemented on macOS.
 
 ----
 
@@ -1530,7 +1590,7 @@ Sets the :ref:`String<class_String>` tooltip of the item at the specified index 
 
 Returns ``true`` if OS is using dark mode.
 
-\ **Note:** This method is implemented on macOS, Windows and Linux.
+\ **Note:** This method is implemented on macOS, Windows and Linux (X11).
 
 ----
 
@@ -1540,7 +1600,7 @@ Returns ``true`` if OS is using dark mode.
 
 Returns ``true`` if OS supports dark mode.
 
-\ **Note:** This method is implemented on macOS, Windows and Linux.
+\ **Note:** This method is implemented on macOS, Windows and Linux (X11).
 
 ----
 
@@ -1550,7 +1610,7 @@ Returns ``true`` if OS supports dark mode.
 
 Returns active keyboard layout index.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1560,7 +1620,7 @@ Returns active keyboard layout index.
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1570,7 +1630,7 @@ Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout
 
 Returns the number of keyboard layouts.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1580,7 +1640,7 @@ Returns the number of keyboard layouts.
 
 Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1590,7 +1650,7 @@ Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``in
 
 Returns the localized name of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1598,9 +1658,9 @@ Returns the localized name of the keyboard layout at position ``index``.
 
 - void **keyboard_set_current_layout** **(** :ref:`int<class_int>` index **)**
 
-Sets active keyboard layout.
+Sets the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -1608,11 +1668,15 @@ Sets active keyboard layout.
 
 - :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **mouse_get_button_state** **(** **)** |const|
 
+Returns the current state of mouse buttons (whether each button is pressed) as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to :ref:`Input.get_mouse_button_mask<class_Input_method_get_mouse_button_mask>`.
+
 ----
 
 .. _class_DisplayServer_method_mouse_get_mode:
 
 - :ref:`MouseMode<enum_DisplayServer_MouseMode>` **mouse_get_mode** **(** **)** |const|
+
+Returns the current mouse mode. See also :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`.
 
 ----
 
@@ -1628,11 +1692,15 @@ Returns the mouse cursor's current position.
 
 - void **mouse_set_mode** **(** :ref:`MouseMode<enum_DisplayServer_MouseMode>` mouse_mode **)**
 
+Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_method_mouse_get_mode>`.
+
 ----
 
 .. _class_DisplayServer_method_process_events:
 
 - void **process_events** **(** **)**
+
+Perform window manager processing, including input flushing. See also :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>`, :ref:`Input.flush_buffered_events<class_Input_method_flush_buffered_events>` and :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`.
 
 ----
 
@@ -1655,7 +1723,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
-\ **Note:** This method is implemented on Android, Linux, macOS and Windows. Returns ``72`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, Linux (X11), macOS and Windows. Returns ``72`` on unsupported platforms.
 
 ----
 
@@ -1675,11 +1743,28 @@ Returns the greatest scale factor of all screens.
 
 - :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` **screen_get_orientation** **(** :ref:`int<class_int>` screen=-1 **)** |const|
 
+Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation<class_DisplayServer_method_screen_set_orientation>`.
+
+\ **Note:** This method is implemented on Android and iOS.
+
 ----
 
 .. _class_DisplayServer_method_screen_get_position:
 
 - :ref:`Vector2i<class_Vector2i>` **screen_get_position** **(** :ref:`int<class_int>` screen=-1 **)** |const|
+
+Returns the screen's top-left corner position in pixels. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+
+::
+
+    * (0, 0)        +-------+
+                    |       |
+    +-------------+ |       |
+    |             | |       |
+    |             | |       |
+    +-------------+ +-------+
+
+See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
 ----
 
@@ -1717,11 +1802,15 @@ Returns the scale factor of the specified screen by index.
 
 - :ref:`Vector2i<class_Vector2i>` **screen_get_size** **(** :ref:`int<class_int>` screen=-1 **)** |const|
 
+Returns the screen's size in pixels. See also :ref:`screen_get_position<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>`.
+
 ----
 
 .. _class_DisplayServer_method_screen_get_usable_rect:
 
 - :ref:`Rect2i<class_Rect2i>` **screen_get_usable_rect** **(** :ref:`int<class_int>` screen=-1 **)** |const|
+
+Returns the portion of the screen that is not obstructed by a status bar in pixels. See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
 ----
 
@@ -1729,11 +1818,15 @@ Returns the scale factor of the specified screen by index.
 
 - :ref:`bool<class_bool>` **screen_is_kept_on** **(** **)** |const|
 
+Returns ``true`` if the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_set_keep_on<class_DisplayServer_method_screen_set_keep_on>`.
+
 ----
 
 .. _class_DisplayServer_method_screen_is_touchscreen:
 
 - :ref:`bool<class_bool>` **screen_is_touchscreen** **(** :ref:`int<class_int>` screen=-1 **)** |const|
+
+Returns ``true`` if the screen can send touch events or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
 
 ----
 
@@ -1741,11 +1834,15 @@ Returns the scale factor of the specified screen by index.
 
 - void **screen_set_keep_on** **(** :ref:`bool<class_bool>` enable **)**
 
+Sets whether the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_is_kept_on<class_DisplayServer_method_screen_is_kept_on>`.
+
 ----
 
 .. _class_DisplayServer_method_screen_set_orientation:
 
 - void **screen_set_orientation** **(** :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` orientation, :ref:`int<class_int>` screen=-1 **)**
+
+Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>`.
 
 ----
 
@@ -1753,11 +1850,15 @@ Returns the scale factor of the specified screen by index.
 
 - void **set_icon** **(** :ref:`Image<class_Image>` image **)**
 
+Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. To use icons in the operating system's native format, use :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` instead.
+
 ----
 
 .. _class_DisplayServer_method_set_native_icon:
 
 - void **set_native_icon** **(** :ref:`String<class_String>` filename **)**
+
+Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. The file at ``filename`` must be in ``.ico`` format on Windows or ``.icns`` on macOS. By using specially crafted ``.ico`` or ``.icns`` icons, :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` allows specifying different icons depending on the size the icon is displayed at. This size is determined by the operating system and user preferences (including the display scale factor). To use icons in other formats, use :ref:`set_icon<class_DisplayServer_method_set_icon>` instead.
 
 ----
 
@@ -1815,7 +1916,7 @@ Each :ref:`Dictionary<class_Dictionary>` contains two :ref:`String<class_String>
 
 - ``language`` is language code in ``lang_Variant`` format. ``lang`` part is a 2 or 3-letter code based on the ISO-639 standard, in lowercase. And ``Variant`` part is an engine dependent string describing country, region or/and dialect.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1825,7 +1926,7 @@ Each :ref:`Dictionary<class_Dictionary>` contains two :ref:`String<class_String>
 
 Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1835,7 +1936,7 @@ Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifier
 
 Returns ``true`` if the synthesizer is in a paused state.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1845,7 +1946,7 @@ Returns ``true`` if the synthesizer is in a paused state.
 
 Returns ``true`` if the synthesizer is generating speech, or have utterance waiting in the queue.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1855,7 +1956,7 @@ Returns ``true`` if the synthesizer is generating speech, or have utterance wait
 
 Puts the synthesizer into a paused state.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1865,7 +1966,7 @@ Puts the synthesizer into a paused state.
 
 Resumes the synthesizer if it was paused.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1875,13 +1976,13 @@ Resumes the synthesizer if it was paused.
 
 Adds a callback, which is called when the utterance has started, finished, canceled or reached a text boundary.
 
-- ``TTS_UTTERANCE_STARTED``, ``TTS_UTTERANCE_ENDED``, and ``TTS_UTTERANCE_CANCELED`` callable's method should take one :ref:`int<class_int>` parameter, the utterance id.
+- :ref:`TTS_UTTERANCE_STARTED<class_DisplayServer_constant_TTS_UTTERANCE_STARTED>`, :ref:`TTS_UTTERANCE_ENDED<class_DisplayServer_constant_TTS_UTTERANCE_ENDED>`, and :ref:`TTS_UTTERANCE_CANCELED<class_DisplayServer_constant_TTS_UTTERANCE_CANCELED>` callable's method should take one :ref:`int<class_int>` parameter, the utterance id.
 
-- ``TTS_UTTERANCE_BOUNDARY`` callable's method should take two :ref:`int<class_int>` parameters, the index of the character and the utterance id.
+- :ref:`TTS_UTTERANCE_BOUNDARY<class_DisplayServer_constant_TTS_UTTERANCE_BOUNDARY>` callable's method should take two :ref:`int<class_int>` parameters, the index of the character and the utterance id.
 
 \ **Note:** The granularity of the boundary callbacks is engine dependent.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1901,11 +2002,11 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 - ``utterance_id`` is passed as a parameter to the callback functions.
 
-\ **Note:** On Windows and Linux, utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak<class_DisplayServer_method_tts_speak>`.
+\ **Note:** On Windows and Linux (X11), utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak<class_DisplayServer_method_tts_speak>`.
 
 \ **Note:** The granularity of pitch, rate, and volume is engine and voice dependent. Values may be truncated.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1915,7 +2016,7 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 Stops synthesis in progress and removes all utterances from the queue.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
 ----
 
@@ -1965,15 +2066,11 @@ Sets the mouse cursor position to the given ``position`` relative to an origin a
 
 ----
 
-.. _class_DisplayServer_method_window_attach_instance_id:
-
-- void **window_attach_instance_id** **(** :ref:`int<class_int>` instance_id, :ref:`int<class_int>` window_id=0 **)**
-
-----
-
 .. _class_DisplayServer_method_window_can_draw:
 
 - :ref:`bool<class_bool>` **window_can_draw** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns ``true`` if anything can be drawn in the window specified by ``window_id``, ``false`` otherwise. Using the ``--disable-render-loop`` command line argument or a headless build will return ``false``.
 
 ----
 
@@ -1989,11 +2086,15 @@ Returns ID of the active popup window, or :ref:`INVALID_WINDOW_ID<class_DisplayS
 
 - :ref:`int<class_int>` **window_get_attached_instance_id** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
+Returns the :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` of the :ref:`Window<class_Window>` the ``window_id`` is attached to. also :ref:`window_get_attached_instance_id<class_DisplayServer_method_window_get_attached_instance_id>`.
+
 ----
 
 .. _class_DisplayServer_method_window_get_current_screen:
 
 - :ref:`int<class_int>` **window_get_current_screen** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen<class_DisplayServer_method_window_set_current_screen>`.
 
 ----
 
@@ -2009,11 +2110,15 @@ Returns the current value of the given window's ``flag``.
 
 - :ref:`Vector2i<class_Vector2i>` **window_get_max_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
+Returns the window's maximum size (in pixels). See also :ref:`window_set_max_size<class_DisplayServer_method_window_set_max_size>`.
+
 ----
 
 .. _class_DisplayServer_method_window_get_min_size:
 
 - :ref:`Vector2i<class_Vector2i>` **window_get_min_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns the window's minimum size (in pixels). See also :ref:`window_set_min_size<class_DisplayServer_method_window_set_min_size>`.
 
 ----
 
@@ -2031,7 +2136,7 @@ Returns the mode of the given window.
 
 Returns internal structure pointers for use in plugins.
 
-\ **Note:** This method is implemented on Android, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, Linux (X11), macOS and Windows.
 
 ----
 
@@ -2055,19 +2160,23 @@ Returns the position of the given window to on the screen.
 
 - :ref:`Vector2i<class_Vector2i>` **window_get_real_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
+Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>`.
+
 ----
 
 .. _class_DisplayServer_method_window_get_safe_title_margins:
 
-- :ref:`Vector2i<class_Vector2i>` **window_get_safe_title_margins** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+- :ref:`Vector3i<class_Vector3i>` **window_get_safe_title_margins** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
-Returns left and right margins of the title that are safe to use (contains no buttons or other elements) when :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` flag is set.
+Returns left margins (``x``), right margins (``y``) and height (``z``) of the title that are safe to use (contains no buttons or other elements) when :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` flag is set.
 
 ----
 
 .. _class_DisplayServer_method_window_get_size:
 
 - :ref:`Vector2i<class_Vector2i>` **window_get_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_real_size<class_DisplayServer_method_window_get_real_size>`, :ref:`window_set_size<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
 ----
 
@@ -2076,6 +2185,14 @@ Returns left and right margins of the title that are safe to use (contains no bu
 - :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` **window_get_vsync_mode** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
 Returns the V-Sync mode of the given window.
+
+----
+
+.. _class_DisplayServer_method_window_is_maximize_allowed:
+
+- :ref:`bool<class_bool>` **window_is_maximize_allowed** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns ``true`` if the given window can be maximized (the maximize button is enabled).
 
 ----
 
@@ -2103,11 +2220,15 @@ Returns ``true``, if double-click on a window title should minimize it.
 
 - void **window_move_to_foreground** **(** :ref:`int<class_int>` window_id=0 **)**
 
+Moves the window specified by ``window_id`` to the foreground, so that it is visible over other windows.
+
 ----
 
 .. _class_DisplayServer_method_window_request_attention:
 
 - void **window_request_attention** **(** :ref:`int<class_int>` window_id=0 **)**
+
+Makes the window specified by ``window_id`` request attention, which is materialized by the window title and taskbar entry blinking until the window is focused. This usually has no visible effect if the window is currently focused. The exact behavior varies depending on the operating system.
 
 ----
 
@@ -2115,11 +2236,17 @@ Returns ``true``, if double-click on a window title should minimize it.
 
 - void **window_set_current_screen** **(** :ref:`int<class_int>` screen, :ref:`int<class_int>` window_id=0 **)**
 
+Moves the window specified by ``window_id`` to the specified ``screen``. See also :ref:`window_get_current_screen<class_DisplayServer_method_window_get_current_screen>`.
+
 ----
 
 .. _class_DisplayServer_method_window_set_drop_files_callback:
 
 - void **window_set_drop_files_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
+
+Sets the ``callback`` that should be called when files are dropped from the operating system's file manager to the window specified by ``window_id``.
+
+\ **Note:** This method is implemented on Windows, macOS, Linux (X11) and Web.
 
 ----
 
@@ -2147,11 +2274,15 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 - void **window_set_ime_active** **(** :ref:`bool<class_bool>` active, :ref:`int<class_int>` window_id=0 **)**
 
+Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ should be enabled for the window specified by ``window_id``. See also :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`.
+
 ----
 
 .. _class_DisplayServer_method_window_set_ime_position:
 
 - void **window_set_ime_position** **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`int<class_int>` window_id=0 **)**
+
+Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup for the specified ``window_id``. Only effective if :ref:`window_set_ime_active<class_DisplayServer_method_window_set_ime_active>` was set to ``true`` for the specified ``window_id``.
 
 ----
 
@@ -2159,11 +2290,15 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 - void **window_set_input_event_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
 
+Sets the ``callback`` that should be called when any :ref:`InputEvent<class_InputEvent>` is sent to the window specified by ``window_id``.
+
 ----
 
 .. _class_DisplayServer_method_window_set_input_text_callback:
 
 - void **window_set_input_text_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
+
+Sets the ``callback`` that should be called when text is entered using the virtual keyboard to the window specified by ``window_id``.
 
 ----
 
@@ -2171,15 +2306,21 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 - void **window_set_max_size** **(** :ref:`Vector2i<class_Vector2i>` max_size, :ref:`int<class_int>` window_id=0 **)**
 
+Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
+
+\ **Note:** Using third-party tools, it is possible for users to disable window geometry restrictions and therefore bypass this limit.
+
 ----
 
 .. _class_DisplayServer_method_window_set_min_size:
 
 - void **window_set_min_size** **(** :ref:`Vector2i<class_Vector2i>` min_size, :ref:`int<class_int>` window_id=0 **)**
 
-Sets the minimum size for the given window to ``min_size`` (in pixels).
+Sets the minimum size for the given window to ``min_size`` (in pixels). Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
 
 \ **Note:** By default, the main window has a minimum size of ``Vector2i(64, 64)``. This prevents issues that can arise when the window is resized to a near-zero size.
+
+\ **Note:** Using third-party tools, it is possible for users to disable window geometry restrictions and therefore bypass this limit.
 
 ----
 
@@ -2228,9 +2369,9 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 
 
-\ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux and macOS it is.
+\ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux (X11) and macOS it is.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 
 ----
 
@@ -2246,7 +2387,18 @@ Sets the bounding box of control, or menu item that was used to open the popup w
 
 - void **window_set_position** **(** :ref:`Vector2i<class_Vector2i>` position, :ref:`int<class_int>` window_id=0 **)**
 
-Sets the position of the given window to ``position``.
+Sets the position of the given window to ``position``. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
+
+::
+
+    * (0, 0)        +-------+
+                    |       |
+    +-------------+ |       |
+    |             | |       |
+    |             | |       |
+    +-------------+ +-------+
+
+See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>` and :ref:`window_set_size<class_DisplayServer_method_window_set_size>`.
 
 ----
 
@@ -2254,13 +2406,15 @@ Sets the position of the given window to ``position``.
 
 - void **window_set_rect_changed_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
 
+Sets the ``callback`` that will be called when the window specified by ``window_id`` is moved or resized.
+
 ----
 
 .. _class_DisplayServer_method_window_set_size:
 
 - void **window_set_size** **(** :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` window_id=0 **)**
 
-Sets the size of the given window to ``size``.
+Sets the size of the given window to ``size`` (in pixels). See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
 ----
 
@@ -2269,6 +2423,8 @@ Sets the size of the given window to ``size``.
 - void **window_set_title** **(** :ref:`String<class_String>` title, :ref:`int<class_int>` window_id=0 **)**
 
 Sets the title of the given window to ``title``.
+
+\ **Note:** Avoid changing the window title every frame, as this can cause performance issues on certain window managers. Try to change the window title only a few times per second at most.
 
 ----
 
@@ -2307,6 +2463,8 @@ When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_
 .. _class_DisplayServer_method_window_set_window_event_callback:
 
 - void **window_set_window_event_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
+
+Sets the ``callback`` that will be called when an event occurs in the window specified by ``window_id``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

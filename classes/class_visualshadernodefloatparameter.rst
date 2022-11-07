@@ -106,7 +106,7 @@ Enables usage of the :ref:`default_value<class_VisualShaderNodeFloatParameter_pr
 | *Getter*  | get_hint()      |
 +-----------+-----------------+
 
-A hint applied to the uniform, which controls the values it can take when set through the inspector.
+A hint applied to the uniform, which controls the values it can take when set through the Inspector.
 
 ----
 

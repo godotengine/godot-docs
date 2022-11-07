@@ -1764,6 +1764,8 @@ The base *exponential* density of the volumetric fog. Set this to the lowest den
 
 A value of ``0.0`` disables global volumetric fog while allowing :ref:`FogVolume<class_FogVolume>`\ s to display volumetric fog in specific areas.
 
+To make volumetric fog work as a volumetric *lighting* solution, set :ref:`volumetric_fog_density<class_Environment_property_volumetric_fog_density>` to the lowest non-zero value (``0.0001``) then increase lights' :ref:`Light3D.light_volumetric_fog_energy<class_Light3D_property_light_volumetric_fog_energy>` to values between ``10000`` and ``100000`` to compensate for the very low density.
+
 ----
 
 .. _class_Environment_property_volumetric_fog_detail_spread:

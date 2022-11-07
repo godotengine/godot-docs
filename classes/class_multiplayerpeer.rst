@@ -14,14 +14,14 @@ MultiplayerPeer
 
 **Inherited By:** :ref:`ENetMultiplayerPeer<class_ENetMultiplayerPeer>`, :ref:`MultiplayerPeerExtension<class_MultiplayerPeerExtension>`, :ref:`WebRTCMultiplayerPeer<class_WebRTCMultiplayerPeer>`, :ref:`WebSocketMultiplayerPeer<class_WebSocketMultiplayerPeer>`
 
-A high-level network interface to simplify multiplayer interactions.
+Abstract class for specialized :ref:`PacketPeer<class_PacketPeer>`\ s used by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 Description
 -----------
 
-Manages the connection to multiplayer peers. Assigns unique IDs to each client connected to the server. See also :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
+Manages the connection with one or more remote peers acting as server or client and assigning unique IDs to each of them. See also :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
-\ **Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
+\ **Note:** The :ref:`MultiplayerAPI<class_MultiplayerAPI>` protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
@@ -46,44 +46,38 @@ Properties
 Methods
 -------
 
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`generate_unique_id<class_MultiplayerPeer_method_generate_unique_id>` **(** **)** |const|            |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_MultiplayerPeer_method_get_connection_status>` **(** **)** |const|      |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`get_packet_peer<class_MultiplayerPeer_method_get_packet_peer>` **(** **)** |const|                  |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`get_unique_id<class_MultiplayerPeer_method_get_unique_id>` **(** **)** |const|                      |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`poll<class_MultiplayerPeer_method_poll>` **(** **)**                                                |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`set_target_peer<class_MultiplayerPeer_method_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`close<class_MultiplayerPeer_method_close>` **(** **)**                                                                                     |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`disconnect_peer<class_MultiplayerPeer_method_disconnect_peer>` **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` force=false **)** |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`generate_unique_id<class_MultiplayerPeer_method_generate_unique_id>` **(** **)** |const|                                                   |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_MultiplayerPeer_method_get_connection_status>` **(** **)** |const|                                             |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`get_packet_channel<class_MultiplayerPeer_method_get_packet_channel>` **(** **)** |const|                                                   |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`get_packet_mode<class_MultiplayerPeer_method_get_packet_mode>` **(** **)** |const|                                                         |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`get_packet_peer<class_MultiplayerPeer_method_get_packet_peer>` **(** **)** |const|                                                         |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                          | :ref:`get_unique_id<class_MultiplayerPeer_method_get_unique_id>` **(** **)** |const|                                                             |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                        | :ref:`is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>` **(** **)** |const|                                     |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`poll<class_MultiplayerPeer_method_poll>` **(** **)**                                                                                       |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`set_target_peer<class_MultiplayerPeer_method_set_target_peer>` **(** :ref:`int<class_int>` id **)**                                        |
++----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
-
-.. _class_MultiplayerPeer_signal_connection_failed:
-
-- **connection_failed** **(** **)**
-
-Emitted when a connection attempt fails.
-
-----
-
-.. _class_MultiplayerPeer_signal_connection_succeeded:
-
-- **connection_succeeded** **(** **)**
-
-Emitted when a connection attempt succeeds.
-
-----
 
 .. _class_MultiplayerPeer_signal_peer_connected:
 
 - **peer_connected** **(** :ref:`int<class_int>` id **)**
 
-Emitted by the server when a client connects.
+Emitted when a remote peer connects.
 
 ----
 
@@ -91,15 +85,7 @@ Emitted by the server when a client connects.
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
-Emitted by the server when a client disconnects.
-
-----
-
-.. _class_MultiplayerPeer_signal_server_disconnected:
-
-- **server_disconnected** **(** **)**
-
-Emitted by clients when the server disconnects.
+Emitted when a remote peer has disconnected.
 
 Enumerations
 ------------
@@ -114,11 +100,11 @@ Enumerations
 
 enum **ConnectionStatus**:
 
-- **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
+- **CONNECTION_DISCONNECTED** = **0** --- The MultiplayerPeer is disconnected.
 
-- **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
+- **CONNECTION_CONNECTING** = **1** --- The MultiplayerPeer is currently connecting to a server.
 
-- **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
+- **CONNECTION_CONNECTED** = **2** --- This MultiplayerPeer is connected.
 
 ----
 
@@ -145,9 +131,9 @@ Constants
 
 .. _class_MultiplayerPeer_constant_TARGET_PEER_SERVER:
 
-- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to all connected peers.
 
-- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the remote peer acting as server.
 
 Property Descriptions
 ---------------------
@@ -198,10 +184,26 @@ The channel to use to send packets. Many network APIs such as ENet and WebRTC al
 | *Getter*  | get_transfer_mode()      |
 +-----------+--------------------------+
 
-The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`.
+The manner in which to send packets to the target peer. See :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`, and the :ref:`set_target_peer<class_MultiplayerPeer_method_set_target_peer>` method.
 
 Method Descriptions
 -------------------
+
+.. _class_MultiplayerPeer_method_close:
+
+- void **close** **(** **)**
+
+Immediately close the multiplayer peer returning to the state :ref:`CONNECTION_DISCONNECTED<class_MultiplayerPeer_constant_CONNECTION_DISCONNECTED>`. Connected peers will be dropped without emitting :ref:`peer_disconnected<class_MultiplayerPeer_signal_peer_disconnected>`.
+
+----
+
+.. _class_MultiplayerPeer_method_disconnect_peer:
+
+- void **disconnect_peer** **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` force=false **)**
+
+Disconnects the given ``peer`` from this host. If ``force`` is ``true`` the :ref:`peer_disconnected<class_MultiplayerPeer_signal_peer_disconnected>` signal will not be emitted for this peer.
+
+----
 
 .. _class_MultiplayerPeer_method_generate_unique_id:
 
@@ -219,11 +221,27 @@ Returns the current state of the connection. See :ref:`ConnectionStatus<enum_Mul
 
 ----
 
+.. _class_MultiplayerPeer_method_get_packet_channel:
+
+- :ref:`int<class_int>` **get_packet_channel** **(** **)** |const|
+
+Returns the channel over which the next available packet was received. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+
+----
+
+.. _class_MultiplayerPeer_method_get_packet_mode:
+
+- :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_packet_mode** **(** **)** |const|
+
+Returns the :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+
+----
+
 .. _class_MultiplayerPeer_method_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** |const|
 
-Returns the ID of the ``MultiplayerPeer`` who sent the most recent packet.
+Returns the ID of the ``MultiplayerPeer`` who sent the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
 
 ----
 
@@ -232,6 +250,14 @@ Returns the ID of the ``MultiplayerPeer`` who sent the most recent packet.
 - :ref:`int<class_int>` **get_unique_id** **(** **)** |const|
 
 Returns the ID of this ``MultiplayerPeer``.
+
+----
+
+.. _class_MultiplayerPeer_method_is_server_relay_supported:
+
+- :ref:`bool<class_bool>` **is_server_relay_supported** **(** **)** |const|
+
+Returns true if the server can act as a relay in the current configuration (i.e. if the higher level :ref:`MultiplayerAPI<class_MultiplayerAPI>` should notify connected clients of other peers, and implement a relay protocol to allow communication between them).
 
 ----
 

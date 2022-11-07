@@ -57,7 +57,7 @@ Method Descriptions
 
 - :ref:`Image<class_Image>` **convert_to_image** **(** **)** |const|
 
-Returns an image of the same size as the bitmap and with a :ref:`Format<enum_Image_Format>` of type ``FORMAT_L8``. ``true`` bits of the bitmap are being converted into white pixels, and ``false`` bits into black.
+Returns an image of the same size as the bitmap and with a :ref:`Format<enum_Image_Format>` of type :ref:`Image.FORMAT_L8<class_Image_constant_FORMAT_L8>`. ``true`` bits of the bitmap are being converted into white pixels, and ``false`` bits into black.
 
 ----
 

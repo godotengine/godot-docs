@@ -35,9 +35,9 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` |
-+---------------------------------+-------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------------------+--------------------+
+| :ref:`Vector2i<class_Vector2i>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2i(0, 0)`` |
++---------------------------------+-------------------------------------------------------------------+--------------------+
 
 Methods
 -------
@@ -354,11 +354,13 @@ Property Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **lightmap_size_hint**
 
-+----------+-------------------------------+
-| *Setter* | set_lightmap_size_hint(value) |
-+----------+-------------------------------+
-| *Getter* | get_lightmap_size_hint()      |
-+----------+-------------------------------+
++-----------+-------------------------------+
+| *Default* | ``Vector2i(0, 0)``            |
++-----------+-------------------------------+
+| *Setter*  | set_lightmap_size_hint(value) |
++-----------+-------------------------------+
+| *Getter*  | get_lightmap_size_hint()      |
++-----------+-------------------------------+
 
 Sets a hint to be used for lightmap resolution.
 
@@ -491,7 +493,7 @@ Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh. Considers only
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space. Not affected by ``custom_aabb``. See also :ref:`VisualInstance3D.get_transformed_aabb<class_VisualInstance3D_method_get_transformed_aabb>`.
+Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space. Not affected by ``custom_aabb``.
 
 \ **Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 

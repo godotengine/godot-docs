@@ -208,7 +208,7 @@ Maximum angle (in radians) where a slope is still considered a floor (or a ceili
 
 Sets a snapping distance. When set to a value different from ``0.0``, the body is kept attached to slopes when calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. The snapping vector is determined by the given distance along the opposite direction of the :ref:`up_direction<class_CharacterBody2D_property_up_direction>`.
 
-As long as the snapping vector is in contact with the ground and the body moves against `up_direction`, the body will remain attached to the surface. Snapping is not applied if the body moves along `up_direction`, so it will be able to detach from the ground when jumping.
+As long as the snapping vector is in contact with the ground and the body moves against :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, the body will remain attached to the surface. Snapping is not applied if the body moves along :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, so it will be able to detach from the ground when jumping.
 
 ----
 

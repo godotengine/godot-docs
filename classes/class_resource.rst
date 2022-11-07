@@ -19,7 +19,9 @@ Base class for all resources.
 Description
 -----------
 
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`RefCounted<class_RefCounted>`, resources are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instantiated from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
+Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`RefCounted<class_RefCounted>`, resources are reference-counted and freed when no longer in use. They can also be nested within other resources, and saved on disk. Once loaded from disk, further attempts to load a resource by :ref:`resource_path<class_Resource_property_resource_path>` returns the same reference. :ref:`PackedScene<class_PackedScene>`, one of the most common :ref:`Object<class_Object>`\ s in a Godot project, is also a resource, uniquely capable of storing and instantiating the :ref:`Node<class_Node>`\ s it contains as many times as desired.
+
+In GDScript, resources can loaded from disk by their :ref:`resource_path<class_Resource_property_resource_path>` using :ref:`@GDScript.load<class_@GDScript_method_load>` or :ref:`@GDScript.preload<class_@GDScript_method_preload>`.
 
 \ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
 
@@ -67,15 +69,17 @@ Signals
 
 - **changed** **(** **)**
 
-Emitted whenever the resource changes.
+Emitted when the resource changes, usually when one of its properties is modified. See also :ref:`emit_changed<class_Resource_method_emit_changed>`.
 
-\ **Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
+\ **Note:** This signal is not emitted automatically for properties of custom resources. If necessary, a setter needs to be created to emit the signal.
 
 ----
 
 .. _class_Resource_signal_setup_local_to_scene_requested:
 
 - **setup_local_to_scene_requested** **(** **)**
+
+Emitted when :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` is called, usually by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``. Custom behavior can be defined by connecting this signal.
 
 Property Descriptions
 ---------------------
@@ -92,7 +96,9 @@ Property Descriptions
 | *Getter*  | is_local_to_scene()       |
 +-----------+---------------------------+
 
-If ``true``, the resource will be made unique in each instance of its local scene. It can thus be modified in a scene instance without impacting other instances of that same scene.
+If ``true``, the resource is duplicated for each instance of all scenes using it. At run-time, the resource can be modified in one scene without affecting other instances (see :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`).
+
+\ **Note:** Changing this property at run-time has no effect on already created duplicate resources.
 
 ----
 
@@ -108,7 +114,7 @@ If ``true``, the resource will be made unique in each instance of its local scen
 | *Getter*  | get_name()      |
 +-----------+-----------------+
 
-The name of the resource. This is an optional identifier. If :ref:`resource_name<class_Resource_property_resource_name>` is not empty, its value will be displayed to represent the current resource in the editor inspector. For built-in scripts, the :ref:`resource_name<class_Resource_property_resource_name>` will be displayed as the tab name in the script editor.
+An optional name for this resource. When defined, its value is displayed to represent the resource in the Inspector dock. For built-in scripts, the name is displayed as part of the tab name in the script editor.
 
 ----
 
@@ -124,7 +130,9 @@ The name of the resource. This is an optional identifier. If :ref:`resource_name
 | *Getter*  | get_path()      |
 +-----------+-----------------+
 
-The path to the resource. In case it has its own file, it will return its filepath. If it's tied to the scene, it will return the scene's path, followed by the resource's index.
+The unique path to this resource. If it has been saved to disk, the value will be its filepath. If the resource is exclusively contained within a scene, the value will be the :ref:`PackedScene<class_PackedScene>`'s filepath, followed by an unique identifier.
+
+\ **Note:** Setting this property manually may fail if a resource with the same path has already been previously loaded. If necessary, use :ref:`take_over_path<class_Resource_method_take_over_path>`.
 
 Method Descriptions
 -------------------
@@ -133,19 +141,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_get_rid** **(** **)** |virtual|
 
+Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid<class_Resource_method_get_rid>` is called.
+
 ----
 
 .. _class_Resource_method_duplicate:
 
 - :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** |const|
 
-Duplicates the resource, returning a new resource with the exported members copied. **Note:** To duplicate the resource the constructor is called without arguments. This method will error when the constructor doesn't have default values.
+Duplicates this resource, returning a new resource with its ``export``\ ed or :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` properties copied from the original.
 
-By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing ``true`` to the ``subresources`` argument which will copy the subresources.
+If ``subresources`` is ``false``, a shallow copy is returned. Nested resources within subresources are not duplicated and are shared from the original resource. This behavior can be overridden by the :ref:`@GlobalScope.PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE>` flag.
 
-\ **Note:** If ``subresources`` is ``true``, this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
-
-\ **Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
+\ **Note:** For custom resources, this method will fail if :ref:`Object._init<class_Object_method__init>` has been defined with required parameters.
 
 ----
 
@@ -153,17 +161,17 @@ By default, sub-resources are shared between resource copies for efficiency. Thi
 
 - void **emit_changed** **(** **)**
 
-Emits the :ref:`changed<class_Resource_signal_changed>` signal.
+Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is called automatically for built-in resources.
 
-If external objects which depend on this resource should be updated, this method must be called manually whenever the state of this resource has changed (such as modification of properties).
-
-The method is equivalent to:
+\ **Note:** For custom resources, it's recommended to call this method whenever a meaningful change occurs, such as a modified property. This ensures that custom :ref:`Object<class_Object>`\ s depending on the resource are properly updated.
 
 ::
 
-    emit_signal("changed")
-
-\ **Note:** This method is called automatically for built-in resources.
+    var damage:
+        set(new_value):
+            if damage != new_value:
+                damage = new_value
+                emit_changed()
 
 ----
 
@@ -171,7 +179,7 @@ The method is equivalent to:
 
 - :ref:`Node<class_Node>` **get_local_scene** **(** **)** |const|
 
-If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is enabled and the resource was loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the local scene where this resource's unique copy is in use. Otherwise, returns ``null``.
+If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true`` and the resource has been loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the root :ref:`Node<class_Node>` of the scene where this resource is used. Otherwise, returns ``null``.
 
 ----
 
@@ -179,7 +187,7 @@ If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene
 
 - :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
-Returns the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture2D<class_Texture2D>`, :ref:`Mesh<class_Mesh>`, etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
+Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resources (such as :ref:`Texture2D<class_Texture2D>`, :ref:`Mesh<class_Mesh>`, and so on) are high-level abstractions of resources stored in a specialized server (:ref:`DisplayServer<class_DisplayServer>`, :ref:`RenderingServer<class_RenderingServer>`, etc.), so this function will return the original :ref:`RID<class_RID>`.
 
 ----
 
@@ -187,9 +195,23 @@ Returns the RID of the resource (or an empty RID). Many resources (such as :ref:
 
 - void **setup_local_to_scene** **(** **)**
 
-This method is called when a resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` enabled is loaded from a :ref:`PackedScene<class_PackedScene>` instantiation. Its behavior can be customized by connecting :ref:`setup_local_to_scene_requested<class_Resource_signal_setup_local_to_scene_requested>` from script.
+Emits the :ref:`setup_local_to_scene_requested<class_Resource_signal_setup_local_to_scene_requested>` signal. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
 
-For most resources, this method performs no base logic. :ref:`ViewportTexture<class_ViewportTexture>` performs custom logic to properly set the proxy texture and flags in the local viewport.
+For most resources, this method performs no logic of its own. Custom behavior can be defined by connecting :ref:`setup_local_to_scene_requested<class_Resource_signal_setup_local_to_scene_requested>` from a script, **not** by overriding this method.
+
+\ **Example:** Assign a random value to ``health`` for every duplicated Resource from an instantiated scene, excluding the original.
+
+::
+
+    extends Resource
+    
+    var health = 0
+    
+    func _init():
+        setup_local_to_scene_requested.connect(randomize_health)
+    
+    func randomize_health():
+        health = randi_range(10, 40)
 
 ----
 
@@ -197,7 +219,7 @@ For most resources, this method performs no base logic. :ref:`ViewportTexture<cl
 
 - void **take_over_path** **(** :ref:`String<class_String>` path **)**
 
-Sets the path of the resource, potentially overriding an existing cache entry for this path. This differs from setting :ref:`resource_path<class_Resource_property_resource_path>`, as the latter would error out if another resource was already cached for the given path.
+Sets the :ref:`resource_path<class_Resource_property_resource_path>` to ``path``, potentially overriding an existing cache entry for this path. Further attempts to load an overridden resource by path will instead return this resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

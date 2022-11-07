@@ -35,7 +35,9 @@ Method Descriptions
 
 - :ref:`CallbackTweener<class_CallbackTweener>` **set_delay** **(** :ref:`float<class_float>` delay **)**
 
-Makes the callback call delayed by given time in seconds. Example:
+Makes the callback call delayed by given time in seconds.
+
+\ **Example:**\ 
 
 ::
 

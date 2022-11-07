@@ -282,9 +282,21 @@ Returns ``true`` if the vectors are not equal.
 
 - :ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
+Gets the remainder of each component of the ``Vector4i`` with the components of the given ``Vector4i``. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector4i(10, -20, 30, -40) % Vector4i(7, 8, 9, 10))  # Prints "(3, -4, 3, 0)"
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`int<class_int>` right **)**
+
+Gets the remainder of each component of the ``Vector4i`` with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector4i(10, -20, 30, -40) % 7)  # Prints "(3, -6, 2, -5)"
 
 ----
 

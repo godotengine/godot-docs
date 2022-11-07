@@ -110,6 +110,8 @@ The background of the area below the grabber.
 
 - :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
 
+The background of the area below the grabber, to the left of the grabber.
+
 ----
 
 .. _class_VSlider_theme_style_slider:

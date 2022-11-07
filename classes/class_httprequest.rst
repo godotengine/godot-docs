@@ -51,7 +51,6 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         if error != OK:
             push_error("An error occurred in the HTTP request.")
     
-    
     # Called when the HTTP request is completed.
     func _http_request_completed(result, response_code, headers, body):
         var json = JSON.new()
@@ -121,7 +120,6 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         var error = http_request.request("https://via.placeholder.com/512")
         if error != OK:
             push_error("An error occurred in the HTTP request.")
-    
     
     # Called when the HTTP request is completed.
     func _http_request_completed(result, response_code, headers, body):

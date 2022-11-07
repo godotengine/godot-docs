@@ -413,9 +413,9 @@ enum **FontAntialiasing**:
 
 - **FONT_ANTIALIASING_LCD** = **2** --- Font glyphs are rasterized for LCD screens.
 
-LCD sub-pixel layout is determined by the value of ``gui/theme/lcd_subpixel_layout`` project settings.
+LCD subpixel layout is determined by the value of ``gui/theme/lcd_subpixel_layout`` project settings.
 
-LCD sub-pixel anti-aliasing mode is suitable only for rendering horizontal, unscaled text in 2D.
+LCD subpixel anti-aliasing mode is suitable only for rendering horizontal, unscaled text in 2D.
 
 ----
 
@@ -435,15 +435,15 @@ LCD sub-pixel anti-aliasing mode is suitable only for rendering horizontal, unsc
 
 enum **FontLCDSubpixelLayout**:
 
-- **FONT_LCD_SUBPIXEL_LAYOUT_NONE** = **0** --- Unknown or unsupported sub-pixel layout, LCD sub-pixel anti-aliasing is disabled.
+- **FONT_LCD_SUBPIXEL_LAYOUT_NONE** = **0** --- Unknown or unsupported subpixel layout, LCD subpixel antialiasing is disabled.
 
-- **FONT_LCD_SUBPIXEL_LAYOUT_HRGB** = **1** --- Horizontal RGB sub-pixel layout.
+- **FONT_LCD_SUBPIXEL_LAYOUT_HRGB** = **1** --- Horizontal RGB subpixel layout.
 
-- **FONT_LCD_SUBPIXEL_LAYOUT_HBGR** = **2** --- Horizontal BGR sub-pixel layout.
+- **FONT_LCD_SUBPIXEL_LAYOUT_HBGR** = **2** --- Horizontal BGR subpixel layout.
 
-- **FONT_LCD_SUBPIXEL_LAYOUT_VRGB** = **3** --- Vertical RGB sub-pixel layout.
+- **FONT_LCD_SUBPIXEL_LAYOUT_VRGB** = **3** --- Vertical RGB subpixel layout.
 
-- **FONT_LCD_SUBPIXEL_LAYOUT_VBGR** = **4** --- Vertical BGR sub-pixel layout.
+- **FONT_LCD_SUBPIXEL_LAYOUT_VBGR** = **4** --- Vertical BGR subpixel layout.
 
 - **FONT_LCD_SUBPIXEL_LAYOUT_MAX** = **5**
 
@@ -903,7 +903,7 @@ flags **FontStyle**:
 
 enum **StructuredTextParser**:
 
-- **STRUCTURED_TEXT_DEFAULT** = **0** --- Use default behavior. Same as ``STRUCTURED_TEXT_NONE`` unless specified otherwise in the control description.
+- **STRUCTURED_TEXT_DEFAULT** = **0** --- Use default behavior. Same as :ref:`STRUCTURED_TEXT_NONE<class_TextServer_constant_STRUCTURED_TEXT_NONE>` unless specified otherwise in the control description.
 
 - **STRUCTURED_TEXT_URI** = **1** --- BiDi override for URI.
 
@@ -1306,7 +1306,7 @@ Returns font style name.
 
 - :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **font_get_subpixel_positioning** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
-Returns font sub-pixel glyph positioning mode.
+Returns font subpixel glyph positioning mode.
 
 ----
 
@@ -1338,7 +1338,7 @@ Returns font cache texture image data.
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **font_get_texture_offsets** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |const|
 
-Returns array containing the first free pixel in the each column of texture. Should be the same size as texture width or empty.
+Returns array containing glyph packing data.
 
 ----
 
@@ -1716,7 +1716,7 @@ Sets the font style name.
 
 - void **font_set_subpixel_positioning** **(** :ref:`RID<class_RID>` font_rid, :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` subpixel_positioning **)**
 
-Sets font sub-pixel glyph positioning mode.
+Sets font subpixel glyph positioning mode.
 
 ----
 
@@ -1732,7 +1732,7 @@ Sets font cache texture image data.
 
 - void **font_set_texture_offsets** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`PackedInt32Array<class_PackedInt32Array>` offset **)**
 
-Sets array containing the first free pixel in the each column of texture. Should be the same size as texture width or empty.
+Sets array containing glyph packing data.
 
 ----
 
@@ -2350,7 +2350,7 @@ Sets custom punctuation character list, used for word breaking. If set to empty 
 
 - void **shaped_text_set_direction** **(** :ref:`RID<class_RID>` shaped, :ref:`Direction<enum_TextServer_Direction>` direction=0 **)**
 
-Sets desired text direction. If set to ``TEXT_DIRECTION_AUTO``, direction will be detected based on the buffer contents and current locale.
+Sets desired text direction. If set to :ref:`DIRECTION_AUTO<class_TextServer_constant_DIRECTION_AUTO>`, direction will be detected based on the buffer contents and current locale.
 
 \ **Note:** Direction is ignored if server does not support :ref:`FEATURE_BIDI_LAYOUT<class_TextServer_constant_FEATURE_BIDI_LAYOUT>` feature (supported by :ref:`TextServerAdvanced<class_TextServerAdvanced>`).
 

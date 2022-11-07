@@ -102,7 +102,7 @@ Setting this to ``0.0`` disables simplification entirely, but vertices in the ex
 
 The occluder resource for this ``OccluderInstance3D``. You can generate an occluder resource by selecting an ``OccluderInstance3D`` node then using the **Bake Occluders** button at the top of the editor.
 
-You can also draw your own 2D occluder polygon by adding a new :ref:`PolygonOccluder3D<class_PolygonOccluder3D>` resource to the :ref:`occluder<class_OccluderInstance3D_property_occluder>` property in the inspector.
+You can also draw your own 2D occluder polygon by adding a new :ref:`PolygonOccluder3D<class_PolygonOccluder3D>` resource to the :ref:`occluder<class_OccluderInstance3D_property_occluder>` property in the Inspector.
 
 Alternatively, you can select a primitive occluder to use: :ref:`QuadOccluder3D<class_QuadOccluder3D>`, :ref:`BoxOccluder3D<class_BoxOccluder3D>` or :ref:`SphereOccluder3D<class_SphereOccluder3D>`.
 

@@ -254,7 +254,7 @@ Returns the name of this interface (OpenXR, OpenVR, OpenHMD, ARKit, etc).
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_play_area** **(** **)** |const|
 
-Returns an array of vectors that denotes the physical play area mapped to the virtual space around the :ref:`XROrigin3D<class_XROrigin3D>` point. The points form a convex polygon that can be used to react to or visualise the play area. This returns an empty array if this feature is not supported or if the information is not yet available.
+Returns an array of vectors that denotes the physical play area mapped to the virtual space around the :ref:`XROrigin3D<class_XROrigin3D>` point. The points form a convex polygon that can be used to react to or visualize the play area. This returns an empty array if this feature is not supported or if the information is not yet available.
 
 ----
 
@@ -302,7 +302,7 @@ While currently not used, you can activate additional interfaces. You may wish t
 
 - :ref:`bool<class_bool>` **is_initialized** **(** **)** |const|
 
-Is ``true`` if this interface has been initialised.
+Is ``true`` if this interface has been initialized.
 
 ----
 

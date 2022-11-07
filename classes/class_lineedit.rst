@@ -111,6 +111,8 @@ Properties
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                       | :ref:`secret_character<class_LineEdit_property_secret_character>`                                           | ``"•"``                                                                             |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_LineEdit_property_select_all_on_focus>`                                     | ``false``                                                                           |
++-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`selecting_enabled<class_LineEdit_property_selecting_enabled>`                                         | ``true``                                                                            |
 +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                           | :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`                                 | ``true``                                                                            |
@@ -743,6 +745,22 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 +-----------+-----------------------------+
 
 The character to use to mask secret input (defaults to "•"). Only a single character can be used as the secret character.
+
+----
+
+.. _class_LineEdit_property_select_all_on_focus:
+
+- :ref:`bool<class_bool>` **select_all_on_focus**
+
++-----------+--------------------------------+
+| *Default* | ``false``                      |
++-----------+--------------------------------+
+| *Setter*  | set_select_all_on_focus(value) |
++-----------+--------------------------------+
+| *Getter*  | is_select_all_on_focus()       |
++-----------+--------------------------------+
+
+If ``true``, the ``LineEdit`` will select the whole text when it gains focus.
 
 ----
 

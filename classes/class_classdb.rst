@@ -77,7 +77,7 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **can_instantiate** **(** :ref:`StringName<class_StringName>` class **)** |const|
 
-Returns ``true`` if you can instance objects from the specified ``class``, ``false`` in other case.
+Returns ``true`` if objects can be instantiated from the specified ``class``, otherwise returns ``false``.
 
 ----
 

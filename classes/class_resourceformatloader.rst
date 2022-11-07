@@ -43,6 +43,8 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_Variant>`                     | :ref:`_load<class_ResourceFormatLoader_method__load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` original_path, :ref:`bool<class_bool>` use_sub_threads, :ref:`int<class_int>` cache_mode **)** |virtual| |const| |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatLoader_method__recognize_path>` **(** :ref:`String<class_String>` path, :ref:`StringName<class_StringName>` type **)** |virtual| |const|                                                         |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`_rename_dependencies<class_ResourceFormatLoader_method__rename_dependencies>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` renames **)** |virtual| |const|                                            |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -131,6 +133,16 @@ Tells which resource class this loader can load.
 Loads a resource when the engine finds this loader to be compatible. If the loaded resource is the result of an import, ``original_path`` will target the source file. Returns a :ref:`Resource<class_Resource>` object on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
 The ``cache_mode`` property defines whether and how the cache should be used or updated when loading the resource. See :ref:`CacheMode<enum_ResourceFormatLoader_CacheMode>` for details.
+
+----
+
+.. _class_ResourceFormatLoader_method__recognize_path:
+
+- :ref:`bool<class_bool>` **_recognize_path** **(** :ref:`String<class_String>` path, :ref:`StringName<class_StringName>` type **)** |virtual| |const|
+
+Tells whether or not this loader should load a resource from its resource path for a given type.
+
+If it is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatLoader_method__get_recognized_extensions>`, and if the type is within the ones provided by :ref:`_get_resource_type<class_ResourceFormatLoader_method__get_resource_type>`.
 
 ----
 

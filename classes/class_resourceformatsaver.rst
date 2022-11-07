@@ -29,6 +29,8 @@ Methods
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -48,6 +50,16 @@ Returns the list of extensions available for saving the resource object, provide
 - :ref:`bool<class_bool>` **_recognize** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
 Returns whether the given resource object can be saved by this saver.
+
+----
+
+.. _class_ResourceFormatSaver_method__recognize_path:
+
+- :ref:`bool<class_bool>` **_recognize_path** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|
+
+Returns ``true`` if this saver handles a given save path and ``false`` otherwise.
+
+If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>`.
 
 ----
 

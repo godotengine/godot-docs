@@ -27,7 +27,9 @@ This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks w
 
 - Shadow (with blur and offset)
 
-Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
+
+\ **Example:**\ 
 
 ::
 

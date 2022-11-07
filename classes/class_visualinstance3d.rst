@@ -24,9 +24,9 @@ The ``VisualInstance3D`` is used to connect a resource to a visual representatio
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` |
-+-----------------------+-------------------------------------------------------+
++-----------------------+-------------------------------------------------------+-------+
+| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` | ``1`` |
++-----------------------+-------------------------------------------------------+-------+
 
 Methods
 -------
@@ -42,8 +42,6 @@ Methods
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>` | :ref:`get_layer_mask_value<class_VisualInstance3D_method_get_layer_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance3D_method_get_transformed_aabb>` **(** **)** |const|                                                           |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_base<class_VisualInstance3D_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                                |
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                    | :ref:`set_layer_mask_value<class_VisualInstance3D_method_set_layer_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
@@ -56,11 +54,13 @@ Property Descriptions
 
 - :ref:`int<class_int>` **layers**
 
-+----------+-----------------------+
-| *Setter* | set_layer_mask(value) |
-+----------+-----------------------+
-| *Getter* | get_layer_mask()      |
-+----------+-----------------------+
++-----------+-----------------------+
+| *Default* | ``1``                 |
++-----------+-----------------------+
+| *Setter*  | set_layer_mask(value) |
++-----------+-----------------------+
+| *Getter*  | get_layer_mask()      |
++-----------+-----------------------+
 
 The render layer(s) this ``VisualInstance3D`` is drawn on.
 
@@ -81,7 +81,7 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
-Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance3D``. See also :ref:`get_transformed_aabb<class_VisualInstance3D_method_get_transformed_aabb>`.
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance3D``.
 
 ----
 
@@ -106,16 +106,6 @@ Returns the RID of this instance. This RID is the same as the RID returned by :r
 - :ref:`bool<class_bool>` **get_layer_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`layers<class_VisualInstance3D_property_layers>` is enabled, given a ``layer_number`` between 1 and 20.
-
-----
-
-.. _class_VisualInstance3D_method_get_transformed_aabb:
-
-- :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** |const|
-
-Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance3D``.
-
-Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Node3D<class_Node3D>`'s :ref:`Transform3D<class_Transform3D>`. See also :ref:`get_aabb<class_VisualInstance3D_method_get_aabb>`.
 
 ----
 

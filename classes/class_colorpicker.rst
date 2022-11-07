@@ -29,23 +29,31 @@ Tutorials
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`                                | :ref:`color<class_ColorPicker_property_color>`                     | ``Color(1, 1, 1, 1)``                                                          |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`     | :ref:`color_mode<class_ColorPicker_property_color_mode>`           | ``0``                                                                          |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | ``false``                                                                      |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | ``true``                                                                       |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` | :ref:`picker_shape<class_ColorPicker_property_picker_shape>`       | ``0``                                                                          |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | ``true``                                                                       |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | ``true``                                                                       |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                  | vertical                                                           | ``true`` (overrides :ref:`BoxContainer<class_BoxContainer_property_vertical>`) |
-+----------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------+
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`can_add_swatches<class_ColorPicker_property_can_add_swatches>`       | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                                | :ref:`color<class_ColorPicker_property_color>`                             | ``Color(1, 1, 1, 1)``                                                          |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`     | :ref:`color_mode<class_ColorPicker_property_color_mode>`                   | ``0``                                                                          |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`color_modes_visible<class_ColorPicker_property_color_modes_visible>` | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`             | ``false``                                                                      |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`                   | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`hex_visible<class_ColorPicker_property_hex_visible>`                 | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` | :ref:`picker_shape<class_ColorPicker_property_picker_shape>`               | ``0``                                                                          |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`presets_visible<class_ColorPicker_property_presets_visible>`         | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`sampler_visible<class_ColorPicker_property_sampler_visible>`         | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | :ref:`sliders_visible<class_ColorPicker_property_sliders_visible>`         | ``true``                                                                       |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                  | vertical                                                                   | ``true`` (overrides :ref:`BoxContainer<class_BoxContainer_property_vertical>`) |
++----------------------------------------------------------+----------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -83,6 +91,8 @@ Theme Properties
 | :ref:`Texture2D<class_Texture2D>` | :ref:`bar_arrow<class_ColorPicker_theme_icon_bar_arrow>`                       |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
++-----------------------------------+--------------------------------------------------------------------------------+---------+
+| :ref:`Texture2D<class_Texture2D>` | :ref:`color_okhsl_hue<class_ColorPicker_theme_icon_color_okhsl_hue>`           |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
 | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_ColorPicker_theme_icon_expanded_arrow>`             |         |
 +-----------------------------------+--------------------------------------------------------------------------------+---------+
@@ -167,6 +177,8 @@ OKHSL is a new color space similar to HSL but that better match perception by le
 
 .. _class_ColorPicker_constant_SHAPE_OKHSL_CIRCLE:
 
+.. _class_ColorPicker_constant_SHAPE_NONE:
+
 enum **PickerShapeType**:
 
 - **SHAPE_HSV_RECTANGLE** = **0** --- HSV Color Model rectangle color space.
@@ -177,8 +189,26 @@ enum **PickerShapeType**:
 
 - **SHAPE_OKHSL_CIRCLE** = **3** --- HSL OK Color Model circle color space.
 
+- **SHAPE_NONE** = **4** --- The color space shape and the shape select button are hidden. Can't be selected from the shapes popup.
+
 Property Descriptions
 ---------------------
+
+.. _class_ColorPicker_property_can_add_swatches:
+
+- :ref:`bool<class_bool>` **can_add_swatches**
+
++-----------+-----------------------------+
+| *Default* | ``true``                    |
++-----------+-----------------------------+
+| *Setter*  | set_can_add_swatches(value) |
++-----------+-----------------------------+
+| *Getter*  | are_swatches_enabled()      |
++-----------+-----------------------------+
+
+If ``true``, it's possible to add presets under Swatches. If ``false``, the button to add presets is disabled.
+
+----
 
 .. _class_ColorPicker_property_color:
 
@@ -209,6 +239,22 @@ The currently selected color.
 +-----------+-----------------------+
 
 The currently selected color mode. See :ref:`ColorModeType<enum_ColorPicker_ColorModeType>`.
+
+----
+
+.. _class_ColorPicker_property_color_modes_visible:
+
+- :ref:`bool<class_bool>` **color_modes_visible**
+
++-----------+--------------------------+
+| *Default* | ``true``                 |
++-----------+--------------------------+
+| *Setter*  | set_modes_visible(value) |
++-----------+--------------------------+
+| *Getter*  | are_modes_visible()      |
++-----------+--------------------------+
+
+If ``true``, the color mode buttons are visible.
 
 ----
 
@@ -244,6 +290,22 @@ If ``true``, shows an alpha channel slider (opacity).
 
 ----
 
+.. _class_ColorPicker_property_hex_visible:
+
+- :ref:`bool<class_bool>` **hex_visible**
+
++-----------+------------------------+
+| *Default* | ``true``               |
++-----------+------------------------+
+| *Setter*  | set_hex_visible(value) |
++-----------+------------------------+
+| *Getter*  | is_hex_visible()       |
++-----------+------------------------+
+
+If ``true``, the hex color code input field is visible.
+
+----
+
 .. _class_ColorPicker_property_picker_shape:
 
 - :ref:`PickerShapeType<enum_ColorPicker_PickerShapeType>` **picker_shape**
@@ -260,22 +322,6 @@ The shape of the color space view. See :ref:`PickerShapeType<enum_ColorPicker_Pi
 
 ----
 
-.. _class_ColorPicker_property_presets_enabled:
-
-- :ref:`bool<class_bool>` **presets_enabled**
-
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_presets_enabled(value) |
-+-----------+----------------------------+
-| *Getter*  | are_presets_enabled()      |
-+-----------+----------------------------+
-
-If ``true``, the "add preset" button is enabled.
-
-----
-
 .. _class_ColorPicker_property_presets_visible:
 
 - :ref:`bool<class_bool>` **presets_visible**
@@ -288,7 +334,39 @@ If ``true``, the "add preset" button is enabled.
 | *Getter*  | are_presets_visible()      |
 +-----------+----------------------------+
 
-If ``true``, saved color presets are visible.
+If ``true``, the Swatches and Recent Colors presets are visible.
+
+----
+
+.. _class_ColorPicker_property_sampler_visible:
+
+- :ref:`bool<class_bool>` **sampler_visible**
+
++-----------+----------------------------+
+| *Default* | ``true``                   |
++-----------+----------------------------+
+| *Setter*  | set_sampler_visible(value) |
++-----------+----------------------------+
+| *Getter*  | is_sampler_visible()       |
++-----------+----------------------------+
+
+If ``true``, the color sampler and color preview are visible.
+
+----
+
+.. _class_ColorPicker_property_sliders_visible:
+
+- :ref:`bool<class_bool>` **sliders_visible**
+
++-----------+----------------------------+
+| *Default* | ``true``                   |
++-----------+----------------------------+
+| *Setter*  | set_sliders_visible(value) |
++-----------+----------------------------+
+| *Getter*  | are_sliders_visible()      |
++-----------+----------------------------+
+
+If ``true``, the color sliders are visible.
 
 Method Descriptions
 -------------------
@@ -366,6 +444,8 @@ The width of the hue selection slider.
 | *Default* | ``10`` |
 +-----------+--------+
 
+The minimum width of the color labels next to sliders.
+
 ----
 
 .. _class_ColorPicker_theme_constant_margin:
@@ -428,6 +508,14 @@ Custom texture for the hue selection slider on the right.
 
 ----
 
+.. _class_ColorPicker_theme_icon_color_okhsl_hue:
+
+- :ref:`Texture2D<class_Texture2D>` **color_okhsl_hue**
+
+Custom texture for the H slider in the OKHSL color mode.
+
+----
+
 .. _class_ColorPicker_theme_icon_expanded_arrow:
 
 - :ref:`Texture2D<class_Texture2D>` **expanded_arrow**
@@ -456,11 +544,15 @@ The indicator used to signalize that the color value is outside the 0-1 range.
 
 - :ref:`Texture2D<class_Texture2D>` **picker_cursor**
 
+The image displayed over the color box/circle (depending on the :ref:`picker_shape<class_ColorPicker_property_picker_shape>`), marking the currently selected color.
+
 ----
 
 .. _class_ColorPicker_theme_icon_sample_bg:
 
 - :ref:`Texture2D<class_Texture2D>` **sample_bg**
+
+Background panel for the color preview box (visible when the color is translucent).
 
 ----
 

@@ -80,15 +80,15 @@ Properties
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>`                                         | :ref:`offset<class_Camera2D_property_offset>`                                         | ``Vector2(0, 0)`` |
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                                               | :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` | ``false``         |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`                                             | :ref:`position_smoothing_speed<class_Camera2D_property_position_smoothing_speed>`     | ``5.0``           |
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 | :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` | :ref:`process_callback<class_Camera2D_property_process_callback>`                     | ``1``             |
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 | :ref:`bool<class_bool>`                                               | :ref:`rotation_smoothing_enabled<class_Camera2D_property_rotation_smoothing_enabled>` | ``false``         |
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 | :ref:`float<class_float>`                                             | :ref:`rotation_smoothing_speed<class_Camera2D_property_rotation_smoothing_speed>`     | ``5.0``           |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>`                   | ``false``         |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                                             | :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`                       | ``5.0``           |
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 | :ref:`Vector2<class_Vector2>`                                         | :ref:`zoom<class_Camera2D_property_zoom>`                                             | ``Vector2(1, 1)`` |
 +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
@@ -452,7 +452,7 @@ Right scroll limit in pixels. The camera stops moving when reaching this value, 
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
-This property has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
+This property has no effect if :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``false``.
 
 \ **Note:** To immediately update the camera's position to be within limits without smoothing, even with this setting enabled, invoke :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`.
 
@@ -487,6 +487,38 @@ Top scroll limit in pixels. The camera stops moving when reaching this value, bu
 +-----------+-------------------+
 
 The camera's relative offset. Useful for looking around or camera shake animations. The offsetted camera can go past the limits defined in :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_left<class_Camera2D_property_limit_left>` and :ref:`limit_right<class_Camera2D_property_limit_right>`.
+
+----
+
+.. _class_Camera2D_property_position_smoothing_enabled:
+
+- :ref:`bool<class_bool>` **position_smoothing_enabled**
+
++-----------+---------------------------------------+
+| *Default* | ``false``                             |
++-----------+---------------------------------------+
+| *Setter*  | set_position_smoothing_enabled(value) |
++-----------+---------------------------------------+
+| *Getter*  | is_position_smoothing_enabled()       |
++-----------+---------------------------------------+
+
+If ``true``, the camera's view smoothly moves towards its target position at :ref:`position_smoothing_speed<class_Camera2D_property_position_smoothing_speed>`.
+
+----
+
+.. _class_Camera2D_property_position_smoothing_speed:
+
+- :ref:`float<class_float>` **position_smoothing_speed**
+
++-----------+-------------------------------------+
+| *Default* | ``5.0``                             |
++-----------+-------------------------------------+
+| *Setter*  | set_position_smoothing_speed(value) |
++-----------+-------------------------------------+
+| *Getter*  | get_position_smoothing_speed()      |
++-----------+-------------------------------------+
+
+Speed in pixels per second of the camera's smoothing effect when :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``true``.
 
 ----
 
@@ -537,38 +569,6 @@ If ``true``, the camera's view smoothly rotates, via asymptotic smoothing, to al
 +-----------+-------------------------------------+
 
 The angular, asymptotic speed of the camera's rotation smoothing effect when :ref:`rotation_smoothing_enabled<class_Camera2D_property_rotation_smoothing_enabled>` is ``true``.
-
-----
-
-.. _class_Camera2D_property_smoothing_enabled:
-
-- :ref:`bool<class_bool>` **smoothing_enabled**
-
-+-----------+------------------------------------+
-| *Default* | ``false``                          |
-+-----------+------------------------------------+
-| *Setter*  | set_enable_follow_smoothing(value) |
-+-----------+------------------------------------+
-| *Getter*  | is_follow_smoothing_enabled()      |
-+-----------+------------------------------------+
-
-If ``true``, the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_property_smoothing_speed>`.
-
-----
-
-.. _class_Camera2D_property_smoothing_speed:
-
-- :ref:`float<class_float>` **smoothing_speed**
-
-+-----------+-----------------------------+
-| *Default* | ``5.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_follow_smoothing(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_follow_smoothing()      |
-+-----------+-----------------------------+
-
-Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true``.
 
 ----
 
@@ -637,7 +637,7 @@ Returns the center of the screen from this camera's point of view, in global coo
 
 Returns this camera's target position, in global coordinates.
 
-\ **Note:** The returned value is not the same as :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the drag properties. It is also not the same as the current position if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``true`` (see :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>`).
+\ **Note:** The returned value is not the same as :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the drag properties. It is also not the same as the current position if :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``true`` (see :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>`).
 
 ----
 
@@ -647,7 +647,7 @@ Returns this camera's target position, in global coordinates.
 
 Sets the camera's position immediately to its current smoothing destination.
 
-This method has no effect if :ref:`smoothing_enabled<class_Camera2D_property_smoothing_enabled>` is ``false``.
+This method has no effect if :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``false``.
 
 ----
 

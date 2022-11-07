@@ -21,7 +21,7 @@ This is a generic mobile VR implementation where you need to provide details abo
 
 Note that even though there is no positional tracking, the camera will assume the headset is at a height of 1.85 meters. You can change this by setting :ref:`eye_height<class_MobileVRInterface_property_eye_height>`.
 
-You can initialise this interface as follows:
+You can initialize this interface as follows:
 
 ::
 

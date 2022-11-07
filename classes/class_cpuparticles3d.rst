@@ -855,7 +855,7 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 | *Getter*  | get_fixed_fps()      |
 +-----------+----------------------+
 
-The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the particle system itself.
+The particle system's frame rate is fixed to a value. For example, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the particle system itself.
 
 ----
 
@@ -1480,11 +1480,15 @@ Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parame
 
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param **)** |const|
 
+Returns the maximum value range for the given parameter.
+
 ----
 
 .. _class_CPUParticles3D_method_get_param_min:
 
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param **)** |const|
+
+Returns the minimum value range for the given parameter.
 
 ----
 
@@ -1516,7 +1520,7 @@ Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter
 
 - void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the maximum value for the given parameter
+Sets the maximum value for the given parameter.
 
 ----
 
@@ -1524,7 +1528,7 @@ Sets the maximum value for the given parameter
 
 - void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the minimum value for the given parameter
+Sets the minimum value for the given parameter.
 
 ----
 

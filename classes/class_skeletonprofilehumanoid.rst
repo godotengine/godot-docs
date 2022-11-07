@@ -19,6 +19,11 @@ Description
 
 A :ref:`SkeletonProfile<class_SkeletonProfile>` as a preset that is optimized for the human form. This exists for standardization, so all parameters are read-only.
 
+Tutorials
+---------
+
+- :doc:`Retargeting 3D Skeletons <../tutorials/assets_pipeline/retargeting_3d_skeletons>`
+
 Properties
 ----------
 

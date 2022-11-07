@@ -21,11 +21,7 @@ By default, ``MultiplayerSynchronizer`` synchronizes configured properties to al
 
 Visibility can be handled directly with :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
 
-
-
 \ :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`\ s will handle nodes according to visibility of synchronizers as long as the node at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` was spawned by one.
-
-
 
 Internally, ``MultiplayerSynchronizer`` uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
 
@@ -176,8 +172,6 @@ Method Descriptions
 - void **add_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
 
 Adds a peer visibility filter for this synchronizer.
-
-
 
 \ ``filter`` should take a peer id :ref:`int<class_int>` and return a :ref:`bool<class_bool>`.
 

@@ -45,7 +45,9 @@ Method Descriptions
 
 - :ref:`PropertyTweener<class_PropertyTweener>` **as_relative** **(** **)**
 
-When called, the final value will be used as a relative value instead. Example:
+When called, the final value will be used as a relative value instead.
+
+\ **Example:**\ 
 
 ::
 
@@ -58,12 +60,14 @@ When called, the final value will be used as a relative value instead. Example:
 
 - :ref:`PropertyTweener<class_PropertyTweener>` **from** **(** :ref:`Variant<class_Variant>` value **)**
 
-Sets a custom initial value to the ``PropertyTweener``. Example:
+Sets a custom initial value to the ``PropertyTweener``.
+
+\ **Example:**\ 
 
 ::
 
     var tween = get_tree().create_tween()
-    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100) #this will move the node from position (100, 100) to (200, 100)
+    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100)) #this will move the node from position (100, 100) to (200, 100)
 
 ----
 

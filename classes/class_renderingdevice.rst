@@ -2120,6 +2120,10 @@ enum **PipelineSpecializationConstantType**:
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Z:
 
+.. _class_RenderingDevice_constant_LIMIT_MAX_VIEWPORT_DIMENSIONS_X:
+
+.. _class_RenderingDevice_constant_LIMIT_MAX_VIEWPORT_DIMENSIONS_Y:
+
 enum **Limit**:
 
 - **LIMIT_MAX_BOUND_UNIFORM_SETS** = **0**
@@ -2191,6 +2195,10 @@ enum **Limit**:
 - **LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Y** = **33**
 
 - **LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Z** = **34**
+
+- **LIMIT_MAX_VIEWPORT_DIMENSIONS_X** = **35**
+
+- **LIMIT_MAX_VIEWPORT_DIMENSIONS_Y** = **36**
 
 ----
 
@@ -2422,7 +2430,7 @@ Method Descriptions
 
 - void **draw_list_set_blend_constants** **(** :ref:`int<class_int>` draw_list, :ref:`Color<class_Color>` color **)**
 
-Sets blend constants for draw list, blend constants are used only if the graphics pipeline is created with ``DYNAMIC_STATE_BLEND_CONSTANTS`` flag set.
+Sets blend constants for draw list, blend constants are used only if the graphics pipeline is created with :ref:`DYNAMIC_STATE_BLEND_CONSTANTS<class_RenderingDevice_constant_DYNAMIC_STATE_BLEND_CONSTANTS>` flag set.
 
 ----
 

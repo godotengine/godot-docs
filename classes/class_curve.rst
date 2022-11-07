@@ -191,7 +191,7 @@ Recomputes the baked cache of points for the curve.
 
 - void **clean_dupes** **(** **)**
 
-Removes points that are closer than ``CMP_EPSILON`` (0.00001) units to their neighbor on the curve.
+Removes duplicate points, i.e. points that are less than 0.00001 units (engine epsilon value) away from their neighbor on the curve.
 
 ----
 

@@ -316,6 +316,8 @@ If ``true``, the light only appears in the editor and will not be visible at run
 
 The light's angular size in degrees. Increasing this will make shadows softer at greater distances. Only available for :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. For reference, the Sun from the Earth is approximately ``0.5``.
 
+\ **Note:** :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+
 ----
 
 .. _class_Light3D_property_light_bake_mode:
@@ -481,6 +483,8 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 +-----------+------------------+
 
 The size of the light in Godot units. Only available for :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Increasing this value will make the light fade out slower and shadows appear blurrier. This can be used to simulate area lights to an extent.
+
+\ **Note:** :ref:`light_size<class_Light3D_property_light_size>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
 
 ----
 

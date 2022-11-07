@@ -27,10 +27,9 @@ To generate a random float number (within a given range) based on a time-dependa
 
     var rng = RandomNumberGenerator.new()
     func _ready():
-        rng.randomize()
         var my_random_number = rng.randf_range(-10.0, 10.0)
 
-\ **Note:** The default values of :ref:`seed<class_RandomNumberGenerator_property_seed>` and :ref:`state<class_RandomNumberGenerator_property_state>` properties are pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
+\ **Note:** The default values of :ref:`seed<class_RandomNumberGenerator_property_seed>` and :ref:`state<class_RandomNumberGenerator_property_state>` properties are pseudo-random, and change when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
 
 Tutorials
 ---------

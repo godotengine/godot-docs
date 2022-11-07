@@ -38,8 +38,6 @@ Supported font formats:
 \ **Note:** If a none of the font data sources contain glyphs for a character used in a string, the character in question will be replaced with a box displaying its hexadecimal code.
 
 
-
-
 .. tabs::
 
  .. code-tab:: gdscript
@@ -477,7 +475,7 @@ Font style name.
 | *Getter*  | get_subpixel_positioning()      |
 +-----------+---------------------------------+
 
-Font glyph sub-pixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
+Font glyph subpixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
 
 Method Descriptions
 -------------------
@@ -716,7 +714,7 @@ Returns a copy of the font cache texture image.
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_texture_offsets** **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |const|
 
-Returns a copy of the array containing the first free pixel in the each column of texture. Should be the same size as texture width or empty.
+Returns a copy of the array containing glyph packing data.
 
 ----
 
@@ -956,7 +954,7 @@ Sets font cache texture image.
 
 - void **set_texture_offsets** **(** :ref:`int<class_int>` cache_index, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`PackedInt32Array<class_PackedInt32Array>` offset **)**
 
-Sets array containing the first free pixel in the each column of texture. Should be the same size as texture width or empty (for the fonts without dynamic glyph generation support).
+Sets array containing glyph packing data.
 
 ----
 

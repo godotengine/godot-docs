@@ -229,7 +229,7 @@ Show or hide the TileMap's collision shapes. If set to :ref:`VISIBILITY_MODE_DEF
 | *Getter*  | get_navigation_visibility_mode()      |
 +-----------+---------------------------------------+
 
-Show or hide the TileMap's collision shapes. If set to :ref:`VISIBILITY_MODE_DEFAULT<class_TileMap_constant_VISIBILITY_MODE_DEFAULT>`, this depends on the show navigation debug settings.
+Show or hide the TileMap's navigation meshes. If set to :ref:`VISIBILITY_MODE_DEFAULT<class_TileMap_constant_VISIBILITY_MODE_DEFAULT>`, this depends on the show navigation debug settings.
 
 ----
 

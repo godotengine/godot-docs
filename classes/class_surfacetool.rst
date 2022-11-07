@@ -149,21 +149,21 @@ Enumerations
 
 enum **CustomFormat**:
 
-- **CUSTOM_RGBA8_UNORM** = **0** --- Limits range of data passed to `set_custom` to unsigned normalized 0 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`.
+- **CUSTOM_RGBA8_UNORM** = **0** --- Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` to unsigned normalized 0 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_UNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_UNORM>`.
 
-- **CUSTOM_RGBA8_SNORM** = **1** --- Limits range of data passed to `set_custom` to signed normalized -1 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_SNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_SNORM>`.
+- **CUSTOM_RGBA8_SNORM** = **1** --- Limits range of data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` to signed normalized -1 to 1 stored in 8 bits per channel. See :ref:`Mesh.ARRAY_CUSTOM_RGBA8_SNORM<class_Mesh_constant_ARRAY_CUSTOM_RGBA8_SNORM>`.
 
-- **CUSTOM_RG_HALF** = **2** --- Stores data passed to `set_custom` as half precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>`.
+- **CUSTOM_RG_HALF** = **2** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as half precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_HALF<class_Mesh_constant_ARRAY_CUSTOM_RG_HALF>`.
 
-- **CUSTOM_RGBA_HALF** = **3** --- Stores data passed to `set_custom` as half precision floats and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`.
+- **CUSTOM_RGBA_HALF** = **3** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as half precision floats and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_HALF<class_Mesh_constant_ARRAY_CUSTOM_RGBA_HALF>`.
 
-- **CUSTOM_R_FLOAT** = **4** --- Stores data passed to `set_custom` as full precision floats, and uses only red color channel. See :ref:`Mesh.ARRAY_CUSTOM_R_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_R_FLOAT>`.
+- **CUSTOM_R_FLOAT** = **4** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red color channel. See :ref:`Mesh.ARRAY_CUSTOM_R_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_R_FLOAT>`.
 
-- **CUSTOM_RG_FLOAT** = **5** --- Stores data passed to `set_custom` as full precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT>`.
+- **CUSTOM_RG_FLOAT** = **5** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red and green color channels. See :ref:`Mesh.ARRAY_CUSTOM_RG_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT>`.
 
-- **CUSTOM_RGB_FLOAT** = **6** --- Stores data passed to `set_custom` as full precision floats, and uses only red, green and blue color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGB_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGB_FLOAT>`.
+- **CUSTOM_RGB_FLOAT** = **6** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses only red, green and blue color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGB_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGB_FLOAT>`.
 
-- **CUSTOM_RGBA_FLOAT** = **7** --- Stores data passed to `set_custom` as full precision floats, and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGBA_FLOAT>`.
+- **CUSTOM_RGBA_FLOAT** = **7** --- Stores data passed to :ref:`set_custom<class_SurfaceTool_method_set_custom>` as full precision floats, and uses all color channels. See :ref:`Mesh.ARRAY_CUSTOM_RGBA_FLOAT<class_Mesh_constant_ARRAY_CUSTOM_RGBA_FLOAT>`.
 
 - **CUSTOM_MAX** = **8** --- Used to indicate a disabled custom channel.
 
@@ -293,6 +293,8 @@ Deprecated. Unused internally and neglects to preserve normals or UVs. Consider 
 Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
 
 \ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+
+\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. If you don't specify any smooth group for each vertex, :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` will smooth normals for you.
 
 ----
 

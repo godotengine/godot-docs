@@ -23,6 +23,10 @@ Methods
 -------
 
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`_close<class_MultiplayerPeerExtension_method__close>` **(** **)** |virtual|                                                                                       |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`_disconnect_peer<class_MultiplayerPeerExtension_method__disconnect_peer>` **(** :ref:`int<class_int>` p_peer, :ref:`bool<class_bool>` p_force **)** |virtual|     |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`_get_available_packet_count<class_MultiplayerPeerExtension_method__get_available_packet_count>` **(** **)** |virtual| |const|                                     |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` | :ref:`_get_connection_status<class_MultiplayerPeerExtension_method__get_connection_status>` **(** **)** |virtual| |const|                                               |
@@ -62,6 +66,22 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_MultiplayerPeerExtension_method__close:
+
+- void **_close** **(** **)** |virtual|
+
+Called when the multiplayer peer should be immediately closed (see :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>`).
+
+----
+
+.. _class_MultiplayerPeerExtension_method__disconnect_peer:
+
+- void **_disconnect_peer** **(** :ref:`int<class_int>` p_peer, :ref:`bool<class_bool>` p_force **)** |virtual|
+
+Called when the connected ``p_peer`` should be forcibly disconnected (see :ref:`MultiplayerPeer.disconnect_peer<class_MultiplayerPeer_method_disconnect_peer>`).
+
+----
 
 .. _class_MultiplayerPeerExtension_method__get_available_packet_count:
 

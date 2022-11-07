@@ -21,7 +21,7 @@ This class constructs a full mesh of :ref:`WebRTCPeerConnection<class_WebRTCPeer
 
 You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :ref:`add_peer<class_WebRTCMultiplayerPeer_method_add_peer>` or remove them via :ref:`remove_peer<class_WebRTCMultiplayerPeer_method_remove_peer>`. Peers must be added in :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>` state to allow it to create the appropriate channels. This class will not create offers nor set descriptions, it will only poll them, and notify connections and disconnections.
 
-\ :ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>` and :ref:`MultiplayerPeer.server_disconnected<class_MultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayerPeer_method_initialize>`. Beside that data transfer works like in a :ref:`MultiplayerPeer<class_MultiplayerPeer>`.
+When creating the peer via :ref:`create_client<class_WebRTCMultiplayerPeer_method_create_client>` or :ref:`create_server<class_WebRTCMultiplayerPeer_method_create_server>` the :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>` method will return ``true`` enabling peer exchange and packet relaying when supported by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` implementation.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
@@ -31,15 +31,17 @@ Methods
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_peer<class_WebRTCMultiplayerPeer_method_add_peer>` **(** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` peer, :ref:`int<class_int>` peer_id, :ref:`int<class_int>` unreliable_lifetime=1 **)** |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`close<class_WebRTCMultiplayerPeer_method_close>` **(** **)**                                                                                                                                                |
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_client<class_WebRTCMultiplayerPeer_method_create_client>` **(** :ref:`int<class_int>` peer_id, :ref:`Array<class_Array>` channels_config=[] **)**                                                    |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_mesh<class_WebRTCMultiplayerPeer_method_create_mesh>` **(** :ref:`int<class_int>` peer_id, :ref:`Array<class_Array>` channels_config=[] **)**                                                        |
++---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_server<class_WebRTCMultiplayerPeer_method_create_server>` **(** :ref:`Array<class_Array>` channels_config=[] **)**                                                                                   |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peer<class_WebRTCMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peers<class_WebRTCMultiplayerPeer_method_get_peers>` **(** **)**                                                                                                                                        |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebRTCMultiplayerPeer_method_has_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`initialize<class_WebRTCMultiplayerPeer_method_initialize>` **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false, :ref:`Array<class_Array>` channels_config=[] **)**      |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                  | :ref:`remove_peer<class_WebRTCMultiplayerPeer_method_remove_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                      |
 +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -57,11 +59,31 @@ Three channels will be created for reliable, unreliable, and ordered transport. 
 
 ----
 
-.. _class_WebRTCMultiplayerPeer_method_close:
+.. _class_WebRTCMultiplayerPeer_method_create_client:
 
-- void **close** **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`int<class_int>` peer_id, :ref:`Array<class_Array>` channels_config=[] **)**
 
-Close all the add peer connections and channels, freeing all resources.
+Initialize the multiplayer peer as a client with the given ``peer_id`` (must be between 2 and 2147483647). In this mode, you should only call :ref:`add_peer<class_WebRTCMultiplayerPeer_method_add_peer>` once and with ``peer_id`` of ``1``. This mode enables :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`, allowing the upper :ref:`MultiplayerAPI<class_MultiplayerAPI>` layer to perform peer exchange and packet relaying.
+
+You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
+
+----
+
+.. _class_WebRTCMultiplayerPeer_method_create_mesh:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **create_mesh** **(** :ref:`int<class_int>` peer_id, :ref:`Array<class_Array>` channels_config=[] **)**
+
+Initialize the multiplayer peer as a mesh (i.e. all peers connect to each other) with the given ``peer_id`` (must be between 1 and 2147483647).
+
+----
+
+.. _class_WebRTCMultiplayerPeer_method_create_server:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`Array<class_Array>` channels_config=[] **)**
+
+Initialize the multiplayer peer as a server (with unique ID of ``1``). This mode enables :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`, allowing the upper :ref:`MultiplayerAPI<class_MultiplayerAPI>` layer to perform peer exchange and packet relaying.
+
+You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
 
 ----
 
@@ -86,20 +108,6 @@ Returns a dictionary which keys are the peer ids and values the peer representat
 - :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` peer_id **)**
 
 Returns ``true`` if the given ``peer_id`` is in the peers map (it might not be connected though).
-
-----
-
-.. _class_WebRTCMultiplayerPeer_method_initialize:
-
-- :ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false, :ref:`Array<class_Array>` channels_config=[] **)**
-
-Initialize the multiplayer peer with the given ``peer_id`` (must be between 1 and 2147483647).
-
-If ``server_compatibilty`` is ``false`` (default), the multiplayer peer will be immediately in state :ref:`MultiplayerPeer.CONNECTION_CONNECTED<class_MultiplayerPeer_constant_CONNECTION_CONNECTED>` and :ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>` will not be emitted.
-
-If ``server_compatibilty`` is ``true`` the peer will suppress all :ref:`MultiplayerPeer.peer_connected<class_MultiplayerPeer_signal_peer_connected>` signals until a peer with id :ref:`MultiplayerPeer.TARGET_PEER_SERVER<class_MultiplayerPeer_constant_TARGET_PEER_SERVER>` connects and then emit :ref:`MultiplayerPeer.connection_succeeded<class_MultiplayerPeer_signal_connection_succeeded>`. After that the signal :ref:`MultiplayerPeer.peer_connected<class_MultiplayerPeer_signal_peer_connected>` will be emitted for every already connected peer, and any new peer that might connect. If the server peer disconnects after that, signal :ref:`MultiplayerPeer.server_disconnected<class_MultiplayerPeer_signal_server_disconnected>` will be emitted and state will become :ref:`MultiplayerPeer.CONNECTION_CONNECTED<class_MultiplayerPeer_constant_CONNECTION_CONNECTED>`.
-
-You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` which will be used to create extra channels (WebRTC only supports one transfer mode per channel).
 
 ----
 

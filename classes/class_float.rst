@@ -210,9 +210,17 @@ Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``
 
 - :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
 
+Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given ``float``.
+
 ----
 
 - :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given ``float``. Returns a :ref:`Vector4<class_Vector4>`.
+
+::
+
+    print(0.9 * Vector4i(10, 15, 20, -10)) # Prints "(9, 13.5, 18, -9)"
 
 ----
 
@@ -232,9 +240,21 @@ Multiplies a ``float`` and an :ref:`int<class_int>`. The result is a ``float``.
 
 - :ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
 
+Raises a ``float`` to a power of a ``float``.
+
+::
+
+    print(39.0625**0.25) # 2.5
+
 ----
 
 - :ref:`float<class_float>` **operator **** **(** :ref:`int<class_int>` right **)**
+
+Raises a ``float`` to a power of an :ref:`int<class_int>`. The result is a ``float``.
+
+::
+
+    print(0.9**3) # 0.729
 
 ----
 
@@ -284,7 +304,7 @@ Divides a ``float`` by an :ref:`int<class_int>`. The result is a ``float``.
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` the left float is less than the right one.
+Returns ``true`` if the left float is less than the right one.
 
 ----
 
@@ -298,7 +318,7 @@ Returns ``true`` if this ``float`` is less than the given :ref:`int<class_int>`.
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` the left integer is less than or equal to the right one.
+Returns ``true`` if the left float is less than or equal to the right one.
 
 ----
 
@@ -328,7 +348,7 @@ Returns ``true`` if the ``float`` and the given :ref:`int<class_int>` are equal.
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` the left float is greater than the right one.
+Returns ``true`` if the left float is greater than the right one.
 
 ----
 
@@ -342,7 +362,7 @@ Returns ``true`` if this ``float`` is greater than the given :ref:`int<class_int
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` the left float is greater than or equal to the right one.
+Returns ``true`` if the left float is greater than or equal to the right one.
 
 ----
 

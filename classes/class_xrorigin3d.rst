@@ -33,12 +33,30 @@ Tutorials
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`world_scale<class_XROrigin3D_property_world_scale>` | ``1.0`` |
-+---------------------------+-----------------------------------------------------------+---------+
++---------------------------+-----------------------------------------------------------+-----------+
+| :ref:`bool<class_bool>`   | :ref:`current<class_XROrigin3D_property_current>`         | ``false`` |
++---------------------------+-----------------------------------------------------------+-----------+
+| :ref:`float<class_float>` | :ref:`world_scale<class_XROrigin3D_property_world_scale>` | ``1.0``   |
++---------------------------+-----------------------------------------------------------+-----------+
 
 Property Descriptions
 ---------------------
+
+.. _class_XROrigin3D_property_current:
+
+- :ref:`bool<class_bool>` **current**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_current(value) |
++-----------+--------------------+
+| *Getter*  | is_current()       |
++-----------+--------------------+
+
+Is this XROrigin3D node the current origin used by the :ref:`XRServer<class_XRServer>`?
+
+----
 
 .. _class_XROrigin3D_property_world_scale:
 

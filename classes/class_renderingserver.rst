@@ -35,6 +35,8 @@ In 3D, all visible objects are comprised of a resource and an instance. A resour
 
 In 2D, all visible objects are some form of canvas item. In order to be visible, a canvas item needs to be the child of a canvas attached to a viewport, or it needs to be the child of another canvas item that is eventually attached to the canvas.
 
+\ **Headless mode:** Starting the engine with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` disables all rendering and window management functions. Most functions from ``RenderingServer`` will return dummy values in this case.
+
 Tutorials
 ---------
 
@@ -158,6 +160,8 @@ Methods
 | void                                                                             | :ref:`canvas_item_set_transform<class_RenderingServer_method_canvas_item_set_transform>` **(** :ref:`RID<class_RID>` item, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                             | :ref:`canvas_item_set_use_parent_material<class_RenderingServer_method_canvas_item_set_use_parent_material>` **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                             | :ref:`canvas_item_set_visibility_layer<class_RenderingServer_method_canvas_item_set_visibility_layer>` **(** :ref:`RID<class_RID>` item, :ref:`int<class_int>` visibility_layer **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                             | :ref:`canvas_item_set_visibility_notifier<class_RenderingServer_method_canvas_item_set_visibility_notifier>` **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enable, :ref:`Rect2<class_Rect2>` area, :ref:`Callable<class_Callable>` enter_callable, :ref:`Callable<class_Callable>` exit_callable **)**                                                                                                                                                                                                                                                                                                                                                                 |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -838,6 +842,8 @@ Methods
 | void                                                                             | :ref:`viewport_remove_canvas<class_RenderingServer_method_viewport_remove_canvas>` **(** :ref:`RID<class_RID>` viewport, :ref:`RID<class_RID>` canvas **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                             | :ref:`viewport_set_active<class_RenderingServer_method_viewport_set_active>` **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
++----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                                             | :ref:`viewport_set_canvas_cull_mask<class_RenderingServer_method_viewport_set_canvas_cull_mask>` **(** :ref:`RID<class_RID>` viewport, :ref:`int<class_int>` canvas_cull_mask **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                             | :ref:`viewport_set_canvas_stacking<class_RenderingServer_method_viewport_set_canvas_stacking>` **(** :ref:`RID<class_RID>` viewport, :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` layer, :ref:`int<class_int>` sublayer **)**                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2828,7 +2834,9 @@ enum **CanvasItemTextureRepeat**:
 
 .. _class_RenderingServer_constant_CANVAS_GROUP_MODE_DISABLED:
 
-.. _class_RenderingServer_constant_CANVAS_GROUP_MODE_OPAQUE:
+.. _class_RenderingServer_constant_CANVAS_GROUP_MODE_CLIP_ONLY:
+
+.. _class_RenderingServer_constant_CANVAS_GROUP_MODE_CLIP_AND_DRAW:
 
 .. _class_RenderingServer_constant_CANVAS_GROUP_MODE_TRANSPARENT:
 
@@ -2836,9 +2844,11 @@ enum **CanvasGroupMode**:
 
 - **CANVAS_GROUP_MODE_DISABLED** = **0**
 
-- **CANVAS_GROUP_MODE_OPAQUE** = **1**
+- **CANVAS_GROUP_MODE_CLIP_ONLY** = **1**
 
-- **CANVAS_GROUP_MODE_TRANSPARENT** = **2**
+- **CANVAS_GROUP_MODE_CLIP_AND_DRAW** = **2**
+
+- **CANVAS_GROUP_MODE_TRANSPARENT** = **3**
 
 ----
 
@@ -3534,6 +3544,14 @@ Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
 - void **canvas_item_set_use_parent_material** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
 Sets if the :ref:`CanvasItem<class_CanvasItem>` uses its parent's material.
+
+----
+
+.. _class_RenderingServer_method_canvas_item_set_visibility_layer:
+
+- void **canvas_item_set_visibility_layer** **(** :ref:`RID<class_RID>` item, :ref:`int<class_int>` visibility_layer **)**
+
+Sets the rendering visibility layer associated with this :ref:`CanvasItem<class_CanvasItem>`. Only :ref:`Viewport<class_Viewport>` nodes with a matching rendering mask will render this :ref:`CanvasItem<class_CanvasItem>`.
 
 ----
 
@@ -6067,6 +6085,14 @@ Detaches a viewport from a canvas and vice versa.
 - void **viewport_set_active** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` active **)**
 
 If ``true``, sets the viewport active, else sets it inactive.
+
+----
+
+.. _class_RenderingServer_method_viewport_set_canvas_cull_mask:
+
+- void **viewport_set_canvas_cull_mask** **(** :ref:`RID<class_RID>` viewport, :ref:`int<class_int>` canvas_cull_mask **)**
+
+Sets the rendering mask associated with this :ref:`Viewport<class_Viewport>`. Only :ref:`CanvasItem<class_CanvasItem>` nodes with a matching rendering visibility layer will be rendered by this :ref:`Viewport<class_Viewport>`.
 
 ----
 

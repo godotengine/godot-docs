@@ -21,6 +21,11 @@ This class contains a hashmap that uses a list of bone names in :ref:`SkeletonPr
 
 By assigning the actual :ref:`Skeleton3D<class_Skeleton3D>` bone name as the key value, it maps the :ref:`Skeleton3D<class_Skeleton3D>` to the :ref:`SkeletonProfile<class_SkeletonProfile>`.
 
+Tutorials
+---------
+
+- :doc:`Retargeting 3D Skeletons <../tutorials/assets_pipeline/retargeting_3d_skeletons>`
+
 Properties
 ----------
 

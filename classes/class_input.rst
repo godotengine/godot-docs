@@ -454,7 +454,7 @@ Returns the magnetic field strength in micro-Tesla for all axes of the device's 
 
 - :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_mouse_button_mask** **(** **)** |const|
 
-Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together.
+Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to :ref:`DisplayServer.mouse_get_button_state<class_DisplayServer_method_mouse_get_button_state>`.
 
 ----
 
@@ -568,7 +568,7 @@ Returns ``true`` if you are pressing the key in the physical location on the 101
 
 Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code. Also generates :ref:`Node._input<class_Node_method__input>` calls.
 
-Example:
+\ **Example:**\ 
 
 
 .. tabs::
@@ -707,7 +707,7 @@ Vibrate handheld devices.
 
 Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the currently focused Window Manager game window.
 
-Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to ``MOUSE_MODE_CONFINED`` or ``MOUSE_MODE_CONFINED_HIDDEN``.
+Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to :ref:`MOUSE_MODE_CONFINED<class_Input_constant_MOUSE_MODE_CONFINED>` or :ref:`MOUSE_MODE_CONFINED_HIDDEN<class_Input_constant_MOUSE_MODE_CONFINED_HIDDEN>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -31,19 +31,15 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------------+----------------------------------------------------------------------+----------+
-| :ref:`ENetConnection<class_ENetConnection>` | :ref:`host<class_ENetMultiplayerPeer_property_host>`                 |          |
-+---------------------------------------------+----------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                     | :ref:`server_relay<class_ENetMultiplayerPeer_property_server_relay>` | ``true`` |
-+---------------------------------------------+----------------------------------------------------------------------+----------+
++---------------------------------------------+------------------------------------------------------+
+| :ref:`ENetConnection<class_ENetConnection>` | :ref:`host<class_ENetMultiplayerPeer_property_host>` |
++---------------------------------------------+------------------------------------------------------+
 
 Methods
 -------
 
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`add_mesh_peer<class_ENetMultiplayerPeer_method_add_mesh_peer>` **(** :ref:`int<class_int>` peer_id, :ref:`ENetConnection<class_ENetConnection>` host **)**                                                                                                                                         |
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`close_connection<class_ENetMultiplayerPeer_method_close_connection>` **(** :ref:`int<class_int>` wait_usec=100 **)**                                                                                                                                                                               |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` channel_count=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` local_port=0 **)** |
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,22 +65,6 @@ Property Descriptions
 
 The underlying :ref:`ENetConnection<class_ENetConnection>` created after :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>` and :ref:`create_server<class_ENetMultiplayerPeer_method_create_server>`.
 
-----
-
-.. _class_ENetMultiplayerPeer_property_server_relay:
-
-- :ref:`bool<class_bool>` **server_relay**
-
-+-----------+---------------------------------+
-| *Default* | ``true``                        |
-+-----------+---------------------------------+
-| *Setter*  | set_server_relay_enabled(value) |
-+-----------+---------------------------------+
-| *Getter*  | is_server_relay_enabled()       |
-+-----------+---------------------------------+
-
-Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is ``false``, clients won't be automatically notified of other peers and won't be able to send them packets through the server.
-
 Method Descriptions
 -------------------
 
@@ -98,19 +78,11 @@ Add a new remote peer with the given ``peer_id`` connected to the given ``host``
 
 ----
 
-.. _class_ENetMultiplayerPeer_method_close_connection:
-
-- void **close_connection** **(** :ref:`int<class_int>` wait_usec=100 **)**
-
-Closes the connection. Ignored if no connection is currently established. If this is a server it tries to notify all clients before forcibly disconnecting them. If this is a client it simply closes the connection to the server.
-
-----
-
 .. _class_ENetMultiplayerPeer_method_create_client:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` channel_count=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` local_port=0 **)**
 
-Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``channel_count`` parameter can be used to specify the number of ENet channels allocated for the connection. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`close_connection<class_ENetMultiplayerPeer_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``local_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
+Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``channel_count`` parameter can be used to specify the number of ENet channels allocated for the connection. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``local_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
 
 ----
 
@@ -126,7 +98,7 @@ Initialize this :ref:`MultiplayerPeer<class_MultiplayerPeer>` in mesh mode. The 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` max_channels=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
-Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_ENetMultiplayerPeer_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`close_connection<class_ENetMultiplayerPeer_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
+Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_ENetMultiplayerPeer_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
 ----
 

@@ -385,7 +385,7 @@ Removes the point associated with the given ``id`` from the points pool.
 
 - void **reserve_space** **(** :ref:`int<class_int>` num_nodes **)**
 
-Reserves space internally for ``num_nodes`` points, useful if you're adding a known large number of points at once, for a grid for instance. New capacity must be greater or equals to old capacity.
+Reserves space internally for ``num_nodes`` points, useful if you're adding a known large number of points at once, such as points on a grid. New capacity must be greater or equals to old capacity.
 
 ----
 

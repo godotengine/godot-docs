@@ -376,11 +376,15 @@ Returns the total number of frames passed since engine initialization which is a
 
 - :ref:`ScriptLanguage<class_ScriptLanguage>` **get_script_language** **(** :ref:`int<class_int>` index **)** |const|
 
+Returns an instance of a :ref:`ScriptLanguage<class_ScriptLanguage>` with the given index.
+
 ----
 
 .. _class_Engine_method_get_script_language_count:
 
 - :ref:`int<class_int>` **get_script_language_count** **(** **)**
+
+Returns the number of available script languages. Use with :ref:`get_script_language<class_Engine_method_get_script_language>`.
 
 ----
 
@@ -395,6 +399,8 @@ Returns a global singleton with given ``name``. Often used for plugins, e.g. God
 .. _class_Engine_method_get_singleton_list:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_singleton_list** **(** **)** |const|
+
+Returns a list of available global singletons.
 
 ----
 
@@ -508,17 +514,23 @@ Returns ``true`` if the game is inside the fixed process and physics phase of th
 
 - void **register_script_language** **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**
 
+Registers a :ref:`ScriptLanguage<class_ScriptLanguage>` instance to be available with ``ScriptServer``.
+
 ----
 
 .. _class_Engine_method_register_singleton:
 
 - void **register_singleton** **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)**
 
+Registers the given object as a singleton, globally available under ``name``.
+
 ----
 
 .. _class_Engine_method_unregister_singleton:
 
 - void **unregister_singleton** **(** :ref:`StringName<class_StringName>` name **)**
+
+Unregisters the singleton registered under ``name``. The singleton object is not freed. Only works with user-defined singletons created with :ref:`register_singleton<class_Engine_method_register_singleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

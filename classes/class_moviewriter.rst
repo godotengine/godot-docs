@@ -17,7 +17,7 @@ Abstract class for non-real-time video recording encoders.
 Description
 -----------
 
-Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` command line argument, this forces the reported ``delta`` in :ref:`Node._process<class_Node_method__process>` functions to be identical across frames, regardless of how long it actually took to render the frame. This can be used to record high-quality videos with perfect frame pacing regardless of your hardware's capabilities.
+Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, this forces the reported ``delta`` in :ref:`Node._process<class_Node_method__process>` functions to be identical across frames, regardless of how long it actually took to render the frame. This can be used to record high-quality videos with perfect frame pacing regardless of your hardware's capabilities.
 
 Godot has 2 built-in ``MovieWriter``\ s:
 
@@ -88,7 +88,7 @@ Called when the engine determines whether this ``MovieWriter`` is able to handle
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_write_begin** **(** :ref:`Vector2i<class_Vector2i>` movie_size, :ref:`int<class_int>` fps, :ref:`String<class_String>` base_path **)** |virtual|
 
-Called once before the engine starts writing video and audio data. ``movie_size`` is the width and height of the video to save. ``fps`` is the number of frames per second specified in the project settings or using the ``--fixed-fps <fps>`` command line argument.
+Called once before the engine starts writing video and audio data. ``movie_size`` is the width and height of the video to save. ``fps`` is the number of frames per second specified in the project settings or using the ``--fixed-fps <fps>`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 ----
 

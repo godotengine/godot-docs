@@ -141,7 +141,7 @@ The MIDI channel of this input event. There are 16 channels, so this value range
 | *Getter*  | get_controller_number()      |
 +-----------+------------------------------+
 
-If the message is ``MIDI_MESSAGE_CONTROL_CHANGE``, this indicates the controller number, otherwise this is zero. Controllers include devices such as pedals and levers.
+If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, this indicates the controller number, otherwise this is zero. Controllers include devices such as pedals and levers.
 
 ----
 
@@ -157,7 +157,7 @@ If the message is ``MIDI_MESSAGE_CONTROL_CHANGE``, this indicates the controller
 | *Getter*  | get_controller_value()      |
 +-----------+-----------------------------+
 
-If the message is ``MIDI_MESSAGE_CONTROL_CHANGE``, this indicates the controller value, otherwise this is zero. Controllers include devices such as pedals and levers.
+If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE>`, this indicates the controller value, otherwise this is zero. Controllers include devices such as pedals and levers.
 
 ----
 
@@ -193,7 +193,7 @@ Returns a value indicating the type of message for this MIDI signal. This is a m
 
 For MIDI messages between 0x80 and 0xEF, only the left half of the bits are returned as this value, as the other part is the channel (ex: 0x94 becomes 0x9). For MIDI messages from 0xF0 to 0xFF, the value is returned as-is.
 
-Notes will return ``MIDI_MESSAGE_NOTE_ON`` when activated, but they might not always return ``MIDI_MESSAGE_NOTE_OFF`` when deactivated, therefore your code should treat the input as stopped if some period of time has passed.
+Notes will return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` when activated, but they might not always return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` when deactivated, therefore your code should treat the input as stopped if some period of time has passed.
 
 For more information, see the MIDI message status byte list chart linked above.
 
@@ -243,7 +243,7 @@ The pressure of the MIDI signal. This value ranges from 0 to 127. For many devic
 | *Getter*  | get_velocity()      |
 +-----------+---------------------+
 
-The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice.
+The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice. Note that some MIDI devices may send a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` message with zero velocity and expect this to be treated the same as a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` message, but device implementations vary so Godot reports event data exactly as received.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

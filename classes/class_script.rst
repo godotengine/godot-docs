@@ -19,7 +19,7 @@ A class stored as a resource.
 Description
 -----------
 
-A class stored as a resource. A script extends the functionality of all objects that instance it.
+A class stored as a resource. A script extends the functionality of all objects that instantiate it.
 
 This is the base class for all scripts and should not be used directly. Trying to create a new script with this class will result in an error.
 

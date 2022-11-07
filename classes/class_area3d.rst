@@ -66,7 +66,7 @@ Properties
 +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`float<class_float>`                       | :ref:`reverb_bus_amount<class_Area3D_property_reverb_bus_amount>`                       | ``0.0``               |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                         | :ref:`reverb_bus_enable<class_Area3D_property_reverb_bus_enable>`                       | ``false``             |
+| :ref:`bool<class_bool>`                         | :ref:`reverb_bus_enabled<class_Area3D_property_reverb_bus_enabled>`                     | ``false``             |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
 | :ref:`StringName<class_StringName>`             | :ref:`reverb_bus_name<class_Area3D_property_reverb_bus_name>`                           | ``&"Master"``         |
 +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
@@ -491,9 +491,9 @@ The degree to which this area applies reverb to its associated audio. Ranges fro
 
 ----
 
-.. _class_Area3D_property_reverb_bus_enable:
+.. _class_Area3D_property_reverb_bus_enabled:
 
-- :ref:`bool<class_bool>` **reverb_bus_enable**
+- :ref:`bool<class_bool>` **reverb_bus_enabled**
 
 +-----------+---------------------------+
 | *Default* | ``false``                 |
@@ -511,15 +511,15 @@ If ``true``, the area applies reverb to its associated audio.
 
 - :ref:`StringName<class_StringName>` **reverb_bus_name**
 
-+-----------+-----------------------+
-| *Default* | ``&"Master"``         |
-+-----------+-----------------------+
-| *Setter*  | set_reverb_bus(value) |
-+-----------+-----------------------+
-| *Getter*  | get_reverb_bus()      |
-+-----------+-----------------------+
++-----------+----------------------------+
+| *Default* | ``&"Master"``              |
++-----------+----------------------------+
+| *Setter*  | set_reverb_bus_name(value) |
++-----------+----------------------------+
+| *Getter*  | get_reverb_bus_name()      |
++-----------+----------------------------+
 
-The reverb bus name to use for this area's associated audio.
+The name of the reverb bus to use for this area's associated audio.
 
 ----
 

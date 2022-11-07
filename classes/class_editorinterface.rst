@@ -74,6 +74,8 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`inspect_object<class_EditorInterface_method_inspect_object>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="", :ref:`bool<class_bool>` inspector_only=false **)**        |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                   | :ref:`is_movie_maker_enabled<class_EditorInterface_method_is_movie_maker_enabled>` **(** **)** |const|                                                                                                              |
++-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_playing_scene<class_EditorInterface_method_is_playing_scene>` **(** **)** |const|                                                                                                                          |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** |const|                                                                                     |
@@ -99,6 +101,8 @@ Methods
 | void                                                      | :ref:`select_file<class_EditorInterface_method_select_file>` **(** :ref:`String<class_String>` file **)**                                                                                                           |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                                                                     |
++-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                      | :ref:`set_movie_maker_enabled<class_EditorInterface_method_set_movie_maker_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                    |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**                                                          |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -196,6 +200,8 @@ Returns the editor control responsible for main screen plugins and tools. Use it
 .. _class_EditorInterface_method_get_editor_paths:
 
 - :ref:`EditorPaths<class_EditorPaths>` **get_editor_paths** **(** **)**
+
+Returns the :ref:`EditorPaths<class_EditorPaths>` singleton.
 
 ----
 
@@ -303,6 +309,14 @@ Shows the given property on the given ``object`` in the editor's Inspector dock.
 
 ----
 
+.. _class_EditorInterface_method_is_movie_maker_enabled:
+
+- :ref:`bool<class_bool>` **is_movie_maker_enabled** **(** **)** |const|
+
+Returns ``true`` if Movie Maker mode is enabled in the editor. See also :ref:`set_movie_maker_enabled<class_EditorInterface_method_set_movie_maker_enabled>`. See :ref:`MovieWriter<class_MovieWriter>` for more information.
+
+----
+
 .. _class_EditorInterface_method_is_playing_scene:
 
 - :ref:`bool<class_bool>` **is_playing_scene** **(** **)** |const|
@@ -379,7 +393,7 @@ Restarts the editor. This closes the editor and then opens the same project. If 
 
 - :ref:`Error<enum_@GlobalScope_Error>` **save_scene** **(** **)**
 
-Saves the scene. Returns either ``OK`` or ``ERR_CANT_CREATE`` (see :ref:`@GlobalScope<class_@GlobalScope>` constants).
+Saves the scene. Returns either :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>`.
 
 ----
 
@@ -404,6 +418,14 @@ Selects the file, with the path provided by ``file``, in the FileSystem dock.
 - void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
 
 Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the text of the tab in question exactly (``2D``, ``3D``, ``Script``, ``AssetLib``).
+
+----
+
+.. _class_EditorInterface_method_set_movie_maker_enabled:
+
+- void **set_movie_maker_enabled** **(** :ref:`bool<class_bool>` enabled **)**
+
+Sets whether Movie Maker mode is enabled in the editor. See also :ref:`is_movie_maker_enabled<class_EditorInterface_method_is_movie_maker_enabled>`. See :ref:`MovieWriter<class_MovieWriter>` for more information.
 
 ----
 

@@ -214,6 +214,8 @@ The polygon's list of vertices. The final point will be connected to the first.
 | *Getter*  | get_polygons()      |
 +-----------+---------------------+
 
+The list of polygons, in case more than one is being represented. Every individual polygon is stored as a :ref:`PackedInt32Array<class_PackedInt32Array>` where each :ref:`int<class_int>` is an index to a point in :ref:`polygon<class_Polygon2D_property_polygon>`. If empty, this property will be ignored, and the resulting single polygon will be composed of all points in :ref:`polygon<class_Polygon2D_property_polygon>`, using the order they are stored in.
+
 ----
 
 .. _class_Polygon2D_property_skeleton:

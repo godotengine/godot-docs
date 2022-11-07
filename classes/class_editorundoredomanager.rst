@@ -56,6 +56,23 @@ Methods
 | :ref:`bool<class_bool>`         | :ref:`is_committing_action<class_EditorUndoRedoManager_method_is_committing_action>` **(** **)** |const|                                                                                                                     |
 +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+.. _class_EditorUndoRedoManager_signal_history_changed:
+
+- **history_changed** **(** **)**
+
+Emitted when the list of actions in any history has changed, either when an action is commited or a history is cleared.
+
+----
+
+.. _class_EditorUndoRedoManager_signal_version_changed:
+
+- **version_changed** **(** **)**
+
+Emitted when the version of any history has changed as a result of undo or redo call.
+
 Enumerations
 ------------
 

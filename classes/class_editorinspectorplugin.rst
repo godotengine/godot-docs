@@ -12,7 +12,7 @@ EditorInspectorPlugin
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Plugin for adding custom property editors on inspector.
+Plugin for adding custom property editors on the inspector.
 
 Description
 -----------

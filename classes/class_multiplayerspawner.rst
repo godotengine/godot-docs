@@ -21,8 +21,6 @@ Spawnable scenes can be configured in the editor or through code (see :ref:`add_
 
 Also supports custom node spawns through :ref:`spawn<class_MultiplayerSpawner_method_spawn>`, calling :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` on all peers.
 
-
-
 Internally, ``MultiplayerSpawner`` uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify spawns passing the spawned node as the ``object`` and itself as the ``configuration``, and :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify despawns in a similar way.
 
 Properties
@@ -85,8 +83,6 @@ Property Descriptions
 
 Maximum nodes that is allowed to be spawned by this spawner. Includes both spawnable scenes and custom spawns.
 
-
-
 When set to ``0`` (the default), there is no limit.
 
 ----
@@ -114,9 +110,7 @@ Method Descriptions
 
 Method called on all peers when a custom spawn was requested by the authority using :ref:`spawn<class_MultiplayerSpawner_method_spawn>`. Should return a :ref:`Node<class_Node>` that is not in the scene tree.
 
-
-
-\ **Note:** Spawned nodes should **not** be added to the scene with `add_child`. This is done automatically.
+\ **Note:** Spawned nodes should **not** be added to the scene with :ref:`Node.add_child<class_Node_method_add_child>`. This is done automatically.
 
 ----
 
@@ -157,8 +151,6 @@ Returns the count of spawnable scene paths.
 - :ref:`Node<class_Node>` **spawn** **(** :ref:`Variant<class_Variant>` data=null **)**
 
 Requests a custom spawn, with ``data`` passed to :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
-
-
 
 \ **Note:** Spawnable scenes are spawned automatically. :ref:`spawn<class_MultiplayerSpawner_method_spawn>` is only needed for custom spawns.
 

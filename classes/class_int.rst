@@ -103,8 +103,6 @@ Operators
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator **<class_int_operator_pow_int>` **(** :ref:`int<class_int>` right **)**                     |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`operator +<class_int_operator_sum_String>` **(** :ref:`String<class_String>` right **)**             |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
 +-------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`               | :ref:`operator +<class_int_operator_sum_int>` **(** :ref:`int<class_int>` right **)**                      |
@@ -186,13 +184,13 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if operands are different from each other.
+Returns ``true`` if this ``int`` is not equivalent to the given :ref:`float<class_float>`.
 
 ----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if operands are different from each other.
+Returns ``true`` if the integers are not equal.
 
 ----
 
@@ -276,9 +274,13 @@ Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``
 
 - :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
 
+Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given ``int``.
+
 ----
 
 - :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given ``int``.
 
 ----
 
@@ -298,19 +300,25 @@ Multiplies two ``int``\ s.
 
 - :ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
 
+Raises an ``int`` to a power of a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+::
+
+    print(8**0.25) # 1.68179283050743
+
 ----
 
 - :ref:`int<class_int>` **operator **** **(** :ref:`int<class_int>` right **)**
 
-----
+Raises an ``int`` to a power of a ``int``.
 
-.. _class_int_operator_sum_String:
+::
 
-- :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
-
-Adds Unicode character with code ``int`` to the :ref:`String<class_String>`.
+    print(5**5) # 3125
 
 ----
+
+.. _class_int_operator_sum_float:
 
 - :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
 
@@ -371,7 +379,7 @@ Returns ``true`` if this ``int`` is less than the given :ref:`float<class_float>
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` the left integer is less than the right one.
+Returns ``true`` if the left integer is less than the right one.
 
 ----
 
@@ -398,7 +406,7 @@ Returns ``true`` if this ``int`` is less than or equal to the given :ref:`float<
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` the left integer is less than or equal to the right one.
+Returns ``true`` if the left integer is less than or equal to the right one.
 
 ----
 
@@ -426,7 +434,7 @@ Returns ``true`` if this ``int`` is greater than the given :ref:`float<class_flo
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` the left integer is greater than the right one.
+Returns ``true`` if the left integer is greater than the right one.
 
 ----
 
@@ -440,7 +448,7 @@ Returns ``true`` if this ``int`` is greater than or equal to the given :ref:`flo
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` the left integer is greater than or equal to the right one.
+Returns ``true`` if the left integer is greater than or equal to the right one.
 
 ----
 

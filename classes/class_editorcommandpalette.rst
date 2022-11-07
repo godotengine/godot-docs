@@ -19,7 +19,7 @@ Description
 
 Object that holds all the available Commands and their shortcuts text. These Commands can be accessed through **Editor > Command Palette** menu.
 
-Command key names use slash delimiters to distinguish sections Example: ``"example/command1"`` then ``example`` will be the section name.
+Command key names use slash delimiters to distinguish sections, for example: ``"example/command1"`` then ``example`` will be the section name.
 
 
 .. tabs::

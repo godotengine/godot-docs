@@ -74,6 +74,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` **(** :ref:`Plane<class_Plane>` to_plane **)** |const|                                         |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_finite<class_Plane_method_is_finite>` **(** **)** |const|                                                                                        |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                            |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Plane<class_Plane>`     | :ref:`normalized<class_Plane_method_normalized>` **(** **)** |const|                                                                                      |
@@ -277,6 +279,14 @@ Returns the intersection point of a segment from position ``from`` to position `
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` to_plane **)** |const|
 
 Returns ``true`` if this plane and ``to_plane`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+
+----
+
+.. _class_Plane_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this plane is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

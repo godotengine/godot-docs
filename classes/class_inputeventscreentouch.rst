@@ -29,16 +29,34 @@ Tutorials
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`       | ``0``             |
-+-------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_property_position>` | ``Vector2(0, 0)`` |
-+-------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`   | ``false``         |
-+-------------------------------+----------------------------------------------------------------+-------------------+
++-------------------------------+--------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`       | :ref:`double_tap<class_InputEventScreenTouch_property_double_tap>` | ``false``         |
++-------------------------------+--------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`           | ``0``             |
++-------------------------------+--------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_property_position>`     | ``Vector2(0, 0)`` |
++-------------------------------+--------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`       | ``false``         |
++-------------------------------+--------------------------------------------------------------------+-------------------+
 
 Property Descriptions
 ---------------------
+
+.. _class_InputEventScreenTouch_property_double_tap:
+
+- :ref:`bool<class_bool>` **double_tap**
+
++-----------+-----------------------+
+| *Default* | ``false``             |
++-----------+-----------------------+
+| *Setter*  | set_double_tap(value) |
++-----------+-----------------------+
+| *Getter*  | is_double_tap()       |
++-----------+-----------------------+
+
+If ``true``, the touch's state is a double tap.
+
+----
 
 .. _class_InputEventScreenTouch_property_index:
 

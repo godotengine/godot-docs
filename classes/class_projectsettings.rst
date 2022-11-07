@@ -172,6 +172,8 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/standalone_ternary<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`                                                                               | ``1``                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/static_called_on_instance<class_ProjectSettings_property_debug/gdscript/warnings/static_called_on_instance>`                                                                 | ``1``                                                                                            |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                                                                   | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                                                             | ``1``                                                                                            |
@@ -270,7 +272,13 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                                                             | ``0``                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`display/window/ios/allow_high_refresh_rate<class_ProjectSettings_property_display/window/ios/allow_high_refresh_rate>`                                                                               | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`display/window/ios/hide_home_indicator<class_ProjectSettings_property_display/window/ios/hide_home_indicator>`                                                                                       | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`display/window/ios/hide_status_bar<class_ProjectSettings_property_display/window/ios/hide_status_bar>`                                                                                               | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`display/window/ios/suppress_ui_gesture<class_ProjectSettings_property_display/window/ios/suppress_ui_gesture>`                                                                                       | ``true``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`                                                                         | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -408,6 +416,8 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_swap_input_direction<class_ProjectSettings_property_input/ui_swap_input_direction>`                                                                                                         |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_add_selection_for_next_occurrence<class_ProjectSettings_property_input/ui_text_add_selection_for_next_occurrence>`                                                                     |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_backspace<class_ProjectSettings_property_input/ui_text_backspace>`                                                                                                                     |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_backspace_all_to_left<class_ProjectSettings_property_input/ui_text_backspace_all_to_left>`                                                                                             |                                                                                                  |
@@ -417,6 +427,14 @@ Properties
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_backspace_word<class_ProjectSettings_property_input/ui_text_backspace_word>`                                                                                                           |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_backspace_word.macos<class_ProjectSettings_property_input/ui_text_backspace_word.macos>`                                                                                               |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_add_above<class_ProjectSettings_property_input/ui_text_caret_add_above>`                                                                                                         |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_add_above.macos<class_ProjectSettings_property_input/ui_text_caret_add_above.macos>`                                                                                             |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_add_below<class_ProjectSettings_property_input/ui_text_caret_add_below>`                                                                                                         |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_add_below.macos<class_ProjectSettings_property_input/ui_text_caret_add_below.macos>`                                                                                             |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_document_end<class_ProjectSettings_property_input/ui_text_caret_document_end>`                                                                                                   |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -453,6 +471,8 @@ Properties
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_word_right<class_ProjectSettings_property_input/ui_text_caret_word_right>`                                                                                                       |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_caret_word_right.macos<class_ProjectSettings_property_input/ui_text_caret_word_right.macos>`                                                                                           |                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_clear_carets_and_selection<class_ProjectSettings_property_input/ui_text_clear_carets_and_selection>`                                                                                   |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_completion_accept<class_ProjectSettings_property_input/ui_text_completion_accept>`                                                                                                     |                                                                                                  |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1196,8 +1216,6 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/descriptor_pools/max_descriptors_per_pool<class_ProjectSettings_property_rendering/rendering_device/descriptor_pools/max_descriptors_per_pool>`                           | ``64``                                                                                           |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`                                                                                                 | ``"vulkan"``                                                                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.android<class_ProjectSettings_property_rendering/rendering_device/driver.android>`                                                                                 | ``"vulkan"``                                                                                     |
@@ -1215,6 +1233,8 @@ Properties
 | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/max_size_mb<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/max_size_mb>`                                                         | ``128``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px>`                     | ``64``                                                                                           |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/vulkan/max_descriptors_per_pool<class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool>`                                               | ``64``                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`rendering/scaling_3d/fsr_sharpness<class_ProjectSettings_property_rendering/scaling_3d/fsr_sharpness>`                                                                                               | ``0.2``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1261,6 +1281,8 @@ Properties
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2>`                                                                     | ``true``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc>`                                                                     | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`                                                                                                   | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>`                                                                                                                               | ``0``                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1557,7 +1579,7 @@ Changes to this setting will only be applied upon restarting the application.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, disables printing to standard output. This is equivalent to starting the editor or project with the ``--quiet`` command line argument. See also :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`.
+If ``true``, disables printing to standard output. This is equivalent to starting the editor or project with the ``--quiet`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`. See also :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`.
 
 Changes to this setting will only be applied upon restarting the application.
 
@@ -1711,7 +1733,7 @@ Specifies the audio driver to use. This setting is platform-dependent as each pl
 
 The ``Dummy`` audio driver disables all audio playback and recording, which is useful for non-game applications as it reduces CPU usage. It also prevents the engine from appearing as an application playing audio in the OS' audio mixer.
 
-\ **Note:** The driver in use can be overridden at runtime via the ``--audio-driver`` command line argument.
+\ **Note:** The driver in use can be overridden at runtime via the ``--audio-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 ----
 
@@ -2165,6 +2187,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/static_called_on_instance:
+
+- :ref:`int<class_int>` **debug/gdscript/warnings/static_called_on_instance**
+
++-----------+-------+
+| *Default* | ``1`` |
++-----------+-------+
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a static method from an instance of a class instead of from the class directly.
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors:
 
 - :ref:`bool<class_bool>` **debug/gdscript/warnings/treat_warnings_as_errors**
@@ -2425,7 +2459,7 @@ Print GPU profile information to standard output every second. This includes how
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Print more information to standard output when running. It displays information such as memory leaks, which scenes and resources are being loaded, etc. This can also be enabled using the ``--verbose`` or ``-v`` command line argument, even on an exported project. See also :ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` and :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
+Print more information to standard output when running. It displays information such as memory leaks, which scenes and resources are being loaded, etc. This can also be enabled using the ``--verbose`` or ``-v`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, even on an exported project. See also :ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` and :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
 
 ----
 
@@ -2757,6 +2791,18 @@ The default screen orientation to use on mobile devices. See :ref:`ScreenOrienta
 
 ----
 
+.. _class_ProjectSettings_property_display/window/ios/allow_high_refresh_rate:
+
+- :ref:`bool<class_bool>` **display/window/ios/allow_high_refresh_rate**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, iOS devices that support high refresh rate/"ProMotion" will be allowed to render at up to 120 frames per second.
+
+----
+
 .. _class_ProjectSettings_property_display/window/ios/hide_home_indicator:
 
 - :ref:`bool<class_bool>` **display/window/ios/hide_home_indicator**
@@ -2769,6 +2815,32 @@ If ``true``, the home indicator is hidden automatically. This only affects iOS d
 
 ----
 
+.. _class_ProjectSettings_property_display/window/ios/hide_status_bar:
+
+- :ref:`bool<class_bool>` **display/window/ios/hide_status_bar**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, the status bar is hidden while the app is running.
+
+----
+
+.. _class_ProjectSettings_property_display/window/ios/suppress_ui_gesture:
+
+- :ref:`bool<class_bool>` **display/window/ios/suppress_ui_gesture**
+
++-----------+----------+
+| *Default* | ``true`` |
++-----------+----------+
+
+If ``true``, it will require two swipes to access iOS UI that uses gestures.
+
+\ **Note:** This setting has no effect on the home indicator if ``hide_home_indicator`` is ``true``.
+
+----
+
 .. _class_ProjectSettings_property_display/window/per_pixel_transparency/allowed:
 
 - :ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed**
@@ -2777,7 +2849,7 @@ If ``true``, the home indicator is hidden automatically. This only affects iOS d
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, allows per-pixel transparency for the window background. This affects performance, so leave it on ``false`` unless you need it.
+If ``true``, allows per-pixel transparency for the window background. This affects performance, so leave it on ``false`` unless you need it. See also :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`.
 
 ----
 
@@ -2869,9 +2941,9 @@ Allows the window to be resizable by default.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-Main window background can be transparent.
+If ``true``, enables a window manager hint that the main window background *can* be transparent. This does not make the background actually transparent. For the background to be transparent, the root viewport must also be made transparent by enabling :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`.
 
-\ **Note:** To use transparent splash screen, set :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>` to ``Color(0, 0, 0, 0)``.
+\ **Note:** To use a transparent splash screen, set :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>` to ``Color(0, 0, 0, 0)``.
 
 \ **Note:** This setting has no effect if :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
 
@@ -2969,7 +3041,7 @@ If ``true``, requests V-Sync to be disabled when writing a movie (similar to set
 
 The number of frames per second to record in the video when writing a movie. Simulation speed will adjust to always match the specified framerate, which means the engine will appear to run slower at higher :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>` values. Certain FPS values will require you to adjust :ref:`editor/movie_writer/mix_rate<class_ProjectSettings_property_editor/movie_writer/mix_rate>` to prevent audio from desynchronizing over time.
 
-This can be specified manually on the command line using the ``--fixed-fps <fps>`` command line argument.
+This can be specified manually on the command line using the ``--fixed-fps <fps>`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 ----
 
@@ -3193,7 +3265,9 @@ Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_pr
 
 - :ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
 
-If ``true``, swaps Cancel and OK buttons in dialogs on Windows and UWP to follow interface conventions.
+If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows and UWP to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+
+\ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show<class_DisplayServer_method_dialog_show>`.
 
 ----
 
@@ -3297,7 +3371,7 @@ MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_m
 | *Default* | ``1`` |
 +-----------+-------+
 
-Default font glyph sub-pixel positioning mode. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
+Default font glyph subpixel positioning mode. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
 
 ----
 
@@ -3309,7 +3383,7 @@ Default font glyph sub-pixel positioning mode. See :ref:`FontFile.subpixel_posit
 | *Default* | ``1.0`` |
 +-----------+---------+
 
-The default scale factor for :ref:`Control<class_Control>`\ s, when not overriden by a :ref:`Theme<class_Theme>`.
+The default scale factor for :ref:`Control<class_Control>`\ s, when not overridden by a :ref:`Theme<class_Theme>`.
 
 \ **Note:** This property is only read when the project starts. To change the default scale at runtime, set :ref:`ThemeDB.fallback_base_scale<class_ThemeDB_property_fallback_base_scale>` instead.
 
@@ -3323,7 +3397,7 @@ The default scale factor for :ref:`Control<class_Control>`\ s, when not override
 | *Default* | ``1`` |
 +-----------+-------+
 
-LCD sub-pixel layout used for font anti-aliasing. See :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>`.
+LCD subpixel layout used for font anti-aliasing. See :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>`.
 
 ----
 
@@ -3589,6 +3663,22 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :
 
 ----
 
+.. _class_ProjectSettings_property_input/ui_text_add_selection_for_next_occurrence:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_add_selection_for_next_occurrence**
+
+If a selection is currently active with the last caret in text fields, searches for the next occurrence of the selection, adds a caret and selects the next occurrence.
+
+If no selection is currently active with the last caret in text fields, selects the word currently under the caret.
+
+The action can be performed sequentially for all occurrences of the selection of the last caret and for all existing carets.
+
+The viewport is adjusted to the latest newly added caret.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+----
+
 .. _class_ProjectSettings_property_input/ui_text_backspace:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace**
@@ -3632,6 +3722,38 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete all characters
 - :ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_word.macos**
 
 macOS specific override for the shortcut to delete a word.
+
+----
+
+.. _class_ProjectSettings_property_input/ui_text_caret_add_above:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret above every caret of a text
+
+----
+
+.. _class_ProjectSettings_property_input/ui_text_caret_add_above.macos:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above.macos**
+
+macOS specific override for the shortcut to add a caret above every caret
+
+----
+
+.. _class_ProjectSettings_property_input/ui_text_caret_add_below:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below**
+
+Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret below every caret of a text
+
+----
+
+.. _class_ProjectSettings_property_input/ui_text_caret_add_below.macos:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below.macos**
+
+macOS specific override for the shortcut to add a caret below every caret
 
 ----
 
@@ -3800,6 +3922,18 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_right.macos**
 
 macOS specific override for the shortcut to move the text cursor forward one word.
+
+----
+
+.. _class_ProjectSettings_property_input/ui_text_clear_carets_and_selection:
+
+- :ref:`Dictionary<class_Dictionary>` **input/ui_text_clear_carets_and_selection**
+
+If there's only one caret active and with a selection, clears the selection.
+
+In case there's more than one caret active, removes the secondary carets and clears their selections.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -3981,7 +4115,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select all text.
 
 If no selection is currently active, selects the word currently under the caret in text fields. If a selection is currently active, deselects the current selection.
 
-\ **Note:** Currently, this is only implemented in :ref:`TextEdit<class_TextEdit>`, not :ref:`LineEdit<class_LineEdit>`.
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
 ----
 
@@ -3999,7 +4133,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to submit a text field.
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_text_toggle_insert_mode**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to toggle *instert mode* in a text field. While in insert mode, inserting new text overrides the character after the cursor, unless the next character is a new line.
+Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* in a text field. While in insert mode, inserting new text overrides the character after the cursor, unless the next character is a new line.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
@@ -4049,7 +4183,7 @@ Enabling this can greatly improve the responsiveness to input, specially in devi
 
 Specifies the tablet driver to use. If left empty, the default driver will be used.
 
-\ **Note:** The driver in use can be overridden at runtime via the ``--tablet-driver`` command line argument.
+\ **Note:** The driver in use can be overridden at runtime via the ``--tablet-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 ----
 
@@ -4287,9 +4421,9 @@ Specifies the :ref:`TextServer<class_TextServer>` to use. If left empty, the def
 
 "ICU / HarfBuzz / Graphite" is the most advanced text driver, supporting right-to-left typesetting and complex scripts (for languages like Arabic, Hebrew, etc). The "Fallback" text driver does not support right-to-left typesetting and complex scripts.
 
-\ **Note:** The driver in use can be overridden at runtime via the ``--text-driver`` command line argument.
+\ **Note:** The driver in use can be overridden at runtime via the ``--text-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
-\ **Note:** There is an additional ``Dummy`` text driver available, which disables all text rendering and font-related functionality. This driver is not listed in the project settings, but it can be enabled when running the editor or project using the ``--text-driver Dummy`` command line argument.
+\ **Note:** There is an additional ``Dummy`` text driver available, which disables all text rendering and font-related functionality. This driver is not listed in the project settings, but it can be enabled when running the editor or project using the ``--text-driver Dummy`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 ----
 
@@ -7101,7 +7235,11 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, uses a fast post-processing dithering filter on the default screen :ref:`Viewport<class_Viewport>` to make banding significantly less visible. In some cases, the dithering pattern may be slightly noticable. Note that this will make losslessly compressed (PNG etc.) screenshots larger.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`.
+
+In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+
+\ **Note:** This property is only read when the project starts. To set debanding at run-time, set :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>` on the root :ref:`Viewport<class_Viewport>` instead.
 
 ----
 
@@ -7303,7 +7441,7 @@ Sets the quality for rough screen-space reflections. Turning off will make all s
 | *Default* | ``0.5`` |
 +-----------+---------+
 
-Quality target to use when :ref:`rendering/environment/ssao/quality<class_ProjectSettings_property_rendering/environment/ssao/quality>` is set to ``ULTRA``. A value of ``0.0`` provides a quality and speed similar to ``MEDIUM`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance.
+Quality target to use when :ref:`rendering/environment/ssao/quality<class_ProjectSettings_property_rendering/environment/ssao/quality>` is set to ``Ultra``. A value of ``0.0`` provides a quality and speed similar to ``Medium`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance.
 
 ----
 
@@ -7363,7 +7501,7 @@ If ``true``, screen-space ambient occlusion will be rendered at half size and th
 | *Default* | ``2`` |
 +-----------+-------+
 
-Sets the quality of the screen-space ambient occlusion effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``ULTRA`` will use the :ref:`rendering/environment/ssao/adaptive_target<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>` setting.
+Sets the quality of the screen-space ambient occlusion effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``Ultra`` will use the :ref:`rendering/environment/ssao/adaptive_target<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>` setting.
 
 ----
 
@@ -7375,7 +7513,7 @@ Sets the quality of the screen-space ambient occlusion effect. Higher values tak
 | *Default* | ``0.5`` |
 +-----------+---------+
 
-Quality target to use when :ref:`rendering/environment/ssil/quality<class_ProjectSettings_property_rendering/environment/ssil/quality>` is set to ``ULTRA``. A value of ``0.0`` provides a quality and speed similar to ``MEDIUM`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance. When using the adaptive target, the performance cost scales with the complexity of the scene.
+Quality target to use when :ref:`rendering/environment/ssil/quality<class_ProjectSettings_property_rendering/environment/ssil/quality>` is set to ``Ultra``. A value of ``0.0`` provides a quality and speed similar to ``Medium`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance. When using the adaptive target, the performance cost scales with the complexity of the scene.
 
 ----
 
@@ -7435,7 +7573,7 @@ If ``true``, screen-space indirect lighting will be rendered at half size and th
 | *Default* | ``2`` |
 +-----------+-------+
 
-Sets the quality of the screen-space indirect lighting effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``ULTRA`` will use the :ref:`rendering/environment/ssil/adaptive_target<class_ProjectSettings_property_rendering/environment/ssil/adaptive_target>` setting.
+Sets the quality of the screen-space indirect lighting effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``Ultra`` will use the :ref:`rendering/environment/ssil/adaptive_target<class_ProjectSettings_property_rendering/environment/ssil/adaptive_target>` setting.
 
 ----
 
@@ -8293,16 +8431,6 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 ----
 
-.. _class_ProjectSettings_property_rendering/rendering_device/descriptor_pools/max_descriptors_per_pool:
-
-- :ref:`int<class_int>` **rendering/rendering_device/descriptor_pools/max_descriptors_per_pool**
-
-+-----------+--------+
-| *Default* | ``64`` |
-+-----------+--------+
-
-----
-
 .. _class_ProjectSettings_property_rendering/rendering_device/driver:
 
 - :ref:`String<class_String>` **rendering/rendering_device/driver**
@@ -8398,6 +8526,16 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 .. _class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px:
 
 - :ref:`int<class_int>` **rendering/rendering_device/staging_buffer/texture_upload_region_size_px**
+
++-----------+--------+
+| *Default* | ``64`` |
++-----------+--------+
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool:
+
+- :ref:`int<class_int>` **rendering/rendering_device/vulkan/max_descriptors_per_pool**
 
 +-----------+--------+
 | *Default* | ``64`` |
@@ -8695,6 +8833,18 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 ----
 
+.. _class_ProjectSettings_property_rendering/transparent_background:
+
+- :ref:`bool<class_bool>` **rendering/transparent_background**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+If ``true``, enables :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` on the root viewport. This allows per-pixel transparency to be effective after also enabling :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`.
+
+----
+
 .. _class_ProjectSettings_property_rendering/vrs/mode:
 
 - :ref:`int<class_int>` **rendering/vrs/mode**
@@ -8769,7 +8919,7 @@ Action map configuration to load by default.
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true`` Godot will setup and initialise OpenXR on startup.
+If ``true`` Godot will setup and initialize OpenXR on startup.
 
 ----
 

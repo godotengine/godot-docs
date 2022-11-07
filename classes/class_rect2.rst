@@ -88,6 +88,8 @@ Methods
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                   |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_finite<class_Rect2_method_is_finite>` **(** **)** |const|                                                                                                                                              |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_Rect2>`     | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                                          |
 +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -305,6 +307,14 @@ If ``include_borders`` is ``true``, they will also be considered overlapping if 
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
 
 Returns ``true`` if this ``Rect2`` and ``rect`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+----
+
+.. _class_Rect2_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this ``Rect2`` is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

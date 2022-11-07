@@ -355,7 +355,7 @@ Time ratio between each emission. If ``0``, particles are emitted continuously. 
 | *Getter*  | get_fixed_fps()      |
 +-----------+----------------------+
 
-The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+The particle system's frame rate is fixed to a value. For example, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
 ----
 

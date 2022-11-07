@@ -90,8 +90,6 @@ Methods
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`darkened<class_Color_method_darkened>` **(** :ref:`float<class_float>` amount **)** |const|                                                                                                  |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`find_named_color<class_Color_method_find_named_color>` **(** :ref:`String<class_String>` name **)** |static|                                                                                 |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`from_hsv<class_Color_method_from_hsv>` **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` alpha=1.0 **)** |static|       |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`from_ok_hsl<class_Color_method_from_ok_hsl>` **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` l, :ref:`float<class_float>` alpha=1.0 **)** |static| |
@@ -101,12 +99,6 @@ Methods
 | :ref:`Color<class_Color>`   | :ref:`from_string<class_Color_method_from_string>` **(** :ref:`String<class_String>` str, :ref:`Color<class_Color>` default **)** |static|                                                         |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`   | :ref:`get_luminance<class_Color_method_get_luminance>` **(** **)** |const|                                                                                                                         |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`   | :ref:`get_named_color<class_Color_method_get_named_color>` **(** :ref:`int<class_int>` idx **)** |static|                                                                                          |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_named_color_count<class_Color_method_get_named_color_count>` **(** **)** |static|                                                                                                        |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_named_color_name<class_Color_method_get_named_color_name>` **(** :ref:`int<class_int>` idx **)** |static|                                                                                |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_Color>`   | :ref:`hex<class_Color_method_hex>` **(** :ref:`int<class_int>` hex **)** |static|                                                                                                                  |
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1037,12 +1029,6 @@ Returns a new color resulting from making this color darker by the specified per
 
 ----
 
-.. _class_Color_method_find_named_color:
-
-- :ref:`int<class_int>` **find_named_color** **(** :ref:`String<class_String>` name **)** |static|
-
-----
-
 .. _class_Color_method_from_hsv:
 
 - :ref:`Color<class_Color>` **from_hsv** **(** :ref:`float<class_float>` h, :ref:`float<class_float>` s, :ref:`float<class_float>` v, :ref:`float<class_float>` alpha=1.0 **)** |static|
@@ -1089,11 +1075,15 @@ Constructs a color from an `OK HSL profile <https://bottosson.github.io/posts/co
 
 - :ref:`Color<class_Color>` **from_rgbe9995** **(** :ref:`int<class_int>` rgbe **)** |static|
 
+Encodes a ``Color`` from a RGBE9995 format integer. See :ref:`Image.FORMAT_RGBE9995<class_Image_constant_FORMAT_RGBE9995>`.
+
 ----
 
 .. _class_Color_method_from_string:
 
 - :ref:`Color<class_Color>` **from_string** **(** :ref:`String<class_String>` str, :ref:`Color<class_Color>` default **)** |static|
+
+Creates a ``Color`` from string, which can be either a HTML color code or a named color. Fallbacks to ``default`` if the string does not denote any valid color.
 
 ----
 
@@ -1105,25 +1095,7 @@ Returns the luminance of the color in the ``[0.0, 1.0]`` range.
 
 This is useful when determining light or dark color. Colors with a luminance smaller than 0.5 can be generally considered dark.
 
-\ **Note:** :ref:`get_luminance<class_Color_method_get_luminance>` relies on the colour being in the linear color space to return an accurate relative luminance value. If the color is in the sRGB color space, use :ref:`srgb_to_linear<class_Color_method_srgb_to_linear>` to convert it to the linear color space first.
-
-----
-
-.. _class_Color_method_get_named_color:
-
-- :ref:`Color<class_Color>` **get_named_color** **(** :ref:`int<class_int>` idx **)** |static|
-
-----
-
-.. _class_Color_method_get_named_color_count:
-
-- :ref:`int<class_int>` **get_named_color_count** **(** **)** |static|
-
-----
-
-.. _class_Color_method_get_named_color_name:
-
-- :ref:`String<class_String>` **get_named_color_name** **(** :ref:`int<class_int>` idx **)** |static|
+\ **Note:** :ref:`get_luminance<class_Color_method_get_luminance>` relies on the color being in the linear color space to return an accurate relative luminance value. If the color is in the sRGB color space, use :ref:`srgb_to_linear<class_Color_method_srgb_to_linear>` to convert it to the linear color space first.
 
 ----
 
@@ -1131,11 +1103,19 @@ This is useful when determining light or dark color. Colors with a luminance sma
 
 - :ref:`Color<class_Color>` **hex** **(** :ref:`int<class_int>` hex **)** |static|
 
+Returns the ``Color`` associated with the provided integer number, with 8 bits per channel in ARGB order. The integer should be 32-bit. Best used with hexadecimal notation.
+
+::
+
+    modulate = Color.hex(0xffff0000) # red
+
 ----
 
 .. _class_Color_method_hex64:
 
 - :ref:`Color<class_Color>` **hex64** **(** :ref:`int<class_int>` hex **)** |static|
+
+Same as :ref:`hex<class_Color_method_hex>`, but takes 64-bit integer and the color uses 16 bits per channel.
 
 ----
 

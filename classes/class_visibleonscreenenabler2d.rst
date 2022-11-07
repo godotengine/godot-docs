@@ -12,7 +12,12 @@ VisibleOnScreenEnabler2D
 
 **Inherits:** :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Automatically disables another node if not visible on screen.
 
+Description
+-----------
+
+VisibleOnScreenEnabler2D detects when it is visible on screen (just like :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>`) and automatically enables or disables the target node. The target node is disabled when ``VisibleOnScreenEnabler2D`` is not visible on screen (including when :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` is ``false``), and enabled when the enabler is visible. The disabling is achieved by changing :ref:`Node.process_mode<class_Node_property_process_mode>`.
 
 Properties
 ----------
@@ -36,11 +41,11 @@ Enumerations
 
 enum **EnableMode**:
 
-- **ENABLE_MODE_INHERIT** = **0**
+- **ENABLE_MODE_INHERIT** = **0** --- Corresponds to :ref:`Node.PROCESS_MODE_INHERIT<class_Node_constant_PROCESS_MODE_INHERIT>`.
 
-- **ENABLE_MODE_ALWAYS** = **1**
+- **ENABLE_MODE_ALWAYS** = **1** --- Corresponds to :ref:`Node.PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_ALWAYS>`.
 
-- **ENABLE_MODE_WHEN_PAUSED** = **2**
+- **ENABLE_MODE_WHEN_PAUSED** = **2** --- Corresponds to [constant Node.PROCESS_MODE_WHEN_PAUSED.
 
 Property Descriptions
 ---------------------
@@ -57,6 +62,8 @@ Property Descriptions
 | *Getter*  | get_enable_mode()      |
 +-----------+------------------------+
 
+Determines how the node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_ProcessMode>`. Disabled node uses :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
+
 ----
 
 .. _class_VisibleOnScreenEnabler2D_property_enable_node_path:
@@ -70,6 +77,8 @@ Property Descriptions
 +-----------+-----------------------------+
 | *Getter*  | get_enable_node_path()      |
 +-----------+-----------------------------+
+
+The path to the target node, relative to the ``VisibleOnScreenEnabler2D``. The target node is cached; it's only assigned when setting this property (if the ``VisibleOnScreenEnabler2D`` is inside scene tree) and every time the ``VisibleOnScreenEnabler2D`` enters the scene tree. If the path is invalid, nothing will happen.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

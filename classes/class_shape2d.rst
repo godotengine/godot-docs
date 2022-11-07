@@ -47,6 +47,8 @@ Methods
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`draw<class_Shape2D_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                     |
 +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_Rect2>`                           | :ref:`get_rect<class_Shape2D_method_get_rect>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
++-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -123,6 +125,14 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 - void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Color<class_Color>` color **)**
 
 Draws a solid shape onto a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`RenderingServer<class_RenderingServer>` API filled with the specified ``color``. The exact drawing method is specific for each shape and cannot be configured.
+
+----
+
+.. _class_Shape2D_method_get_rect:
+
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
+
+Returns a :ref:`Rect2<class_Rect2>` representing the shapes boundary.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -21,6 +21,8 @@ Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref
 
 To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
+\ **Note:** When local to scene, this texture uses :ref:`Resource.setup_local_to_scene<class_Resource_method_setup_local_to_scene>` to set the proxy texture and flags in the local viewport.
+
 Tutorials
 ---------
 
@@ -35,9 +37,11 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")`` |
-+---------------------------------+--------------------------------------------------------------------+------------------+
++---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | resource_local_to_scene                                            | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")``                                                                      |
++---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------

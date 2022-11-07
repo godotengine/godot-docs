@@ -80,6 +80,8 @@ Methods
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|                                     |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform2D_method_is_finite>` **(** **)** |const|                                                                                             |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`looking_at<class_Transform2D_method_looking_at>` **(** :ref:`Vector2<class_Vector2>` target=Vector2(0, 0) **)** |const|                                        |
 +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_Transform2D>` | :ref:`orthonormalized<class_Transform2D_method_orthonormalized>` **(** **)** |const|                                                                                 |
@@ -295,6 +297,14 @@ Returns the inverse of the transform, under the assumption that the transformati
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|
 
 Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+----
+
+.. _class_Transform2D_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

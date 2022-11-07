@@ -104,6 +104,8 @@ Methods
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` **(** :ref:`AABB<class_AABB>` aabb **)** |const|                                               |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_finite<class_AABB_method_is_finite>` **(** **)** |const|                                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                                   |
 +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -368,6 +370,8 @@ Returns ``true`` if the ``AABB`` is on both sides of a plane.
 
 - :ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
 
+Returns ``true`` if the given ray intersects with this ``AABB``. Ray length is infinite.
+
 ----
 
 .. _class_AABB_method_intersects_segment:
@@ -383,6 +387,14 @@ Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` an
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)** |const|
 
 Returns ``true`` if this ``AABB`` and ``aabb`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+
+----
+
+.. _class_AABB_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this ``AABB`` is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

@@ -23,8 +23,6 @@ Tiles can either be from a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, 
 
 Tiles are referenced by using three IDs: their source ID, their atlas coordinates ID and their alternative tile ID.
 
-
-
 A TileSet can be configured so that its tiles expose more or less properties. To do so, the TileSet resources uses property layers, that you can add or remove depending on your needs.
 
 For example, adding a physics layer allows giving collision shapes to your tiles. Each layer having dedicated properties (physics layer an mask), you may add several TileSet physics layers for each type of collision you need.

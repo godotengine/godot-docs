@@ -155,7 +155,7 @@ Signals
 
 - **item_focused** **(** :ref:`int<class_int>` index **)**
 
-Emitted when the user navigates to an item using the ``ui_up`` or ``ui_down`` actions. The index of the item selected is passed as argument.
+Emitted when the user navigates to an item using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input actions. The index of the item selected is passed as argument.
 
 ----
 

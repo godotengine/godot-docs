@@ -19,6 +19,8 @@ Description
 
 Cylinder shape for collisions. Like :ref:`CapsuleShape3D<class_CapsuleShape3D>`, but without hemispheres at the cylinder's ends.
 
+\ **Note:** There are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape3D<class_CapsuleShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` instead is recommended.
+
 \ **Performance:** Being a primitive collision shape, ``CylinderShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). ``CylinderShape3D`` is also more demanding compared to :ref:`CapsuleShape3D<class_CapsuleShape3D>`.
 
 Tutorials

@@ -53,8 +53,6 @@ Constructors
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`Quaternion<class_Quaternion_constructor_Quaternion>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quaternion<class_Quaternion>` | :ref:`Quaternion<class_Quaternion_constructor_Quaternion>` **(** :ref:`Vector3<class_Vector3>` euler_yxz **)**                                                                            |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`Quaternion<class_Quaternion_constructor_Quaternion>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                     |
 +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`Quaternion<class_Quaternion_constructor_Quaternion>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)** |
@@ -70,15 +68,19 @@ Methods
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`exp<class_Quaternion_method_exp>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                      |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quaternion<class_Quaternion>` | :ref:`from_euler<class_Quaternion_method_from_euler>` **(** :ref:`Vector3<class_Vector3>` euler **)** |static|                                                                                                                                                                                                                                                                                   |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`           | :ref:`get_angle<class_Quaternion_method_get_angle>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`       | :ref:`get_axis<class_Quaternion_method_get_axis>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                            |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`       | :ref:`get_euler<class_Quaternion_method_get_euler>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                          |
+| :ref:`Vector3<class_Vector3>`       | :ref:`get_euler<class_Quaternion_method_get_euler>` **(** :ref:`int<class_int>` order=2 **)** |const|                                                                                                                                                                                                                                                                                            |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quaternion<class_Quaternion>` | :ref:`inverse<class_Quaternion_method_inverse>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                              |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` **(** :ref:`Quaternion<class_Quaternion>` to **)** |const|                                                                                                                                                                                                                                                                       |
++-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`             | :ref:`is_finite<class_Quaternion_method_is_finite>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                          |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`             | :ref:`is_normalized<class_Quaternion_method_is_normalized>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                  |
 +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -221,10 +223,6 @@ Constructs a quaternion that will rotate around the given axis by the specified 
 
 ----
 
-- :ref:`Quaternion<class_Quaternion>` **Quaternion** **(** :ref:`Vector3<class_Vector3>` euler_yxz **)**
-
-----
-
 - :ref:`Quaternion<class_Quaternion>` **Quaternion** **(** :ref:`Basis<class_Basis>` from **)**
 
 Constructs a quaternion from the given :ref:`Basis<class_Basis>`.
@@ -262,6 +260,14 @@ Returns the dot product of two quaternions.
 
 ----
 
+.. _class_Quaternion_method_from_euler:
+
+- :ref:`Quaternion<class_Quaternion>` **from_euler** **(** :ref:`Vector3<class_Vector3>` euler **)** |static|
+
+Constructs a Quaternion from Euler angles in YXZ rotation order.
+
+----
+
 .. _class_Quaternion_method_get_angle:
 
 - :ref:`float<class_float>` **get_angle** **(** **)** |const|
@@ -276,9 +282,9 @@ Returns the dot product of two quaternions.
 
 .. _class_Quaternion_method_get_euler:
 
-- :ref:`Vector3<class_Vector3>` **get_euler** **(** **)** |const|
+- :ref:`Vector3<class_Vector3>` **get_euler** **(** :ref:`int<class_int>` order=2 **)** |const|
 
-Returns Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+Returns the quaternion's rotation in the form of Euler angles. The Euler order depends on the ``order`` parameter, for example using the YXZ convention: since this method decomposes, first Z, then X, and Y last. See the :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` enum for possible values. The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 ----
 
@@ -295,6 +301,14 @@ Returns the inverse of the quaternion.
 - :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Quaternion<class_Quaternion>` to **)** |const|
 
 Returns ``true`` if this quaternion and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+
+----
+
+.. _class_Quaternion_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this quaternion is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
 
 ----
 

@@ -203,7 +203,7 @@ Method Descriptions
 
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 
@@ -215,7 +215,7 @@ Copies the ``from`` file to the ``to`` destination. Both arguments should be pat
 
 If ``chmod_flags`` is different than ``-1``, the Unix permissions for the destination path will be set to the provided value, if available on the current operating system.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 
@@ -397,7 +397,7 @@ Closes the current stream opened with :ref:`list_dir_begin<class_DirAccess_metho
 
 Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_DirAccess_method_make_dir_recursive>`).
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 
@@ -415,7 +415,7 @@ Static version of :ref:`make_dir<class_DirAccess_method_make_dir>`. Supports onl
 
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_DirAccess_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 
@@ -445,7 +445,7 @@ Permanently deletes the target file or an empty directory. The argument can be r
 
 If you don't want to delete the file/directory permanently, use :ref:`OS.move_to_trash<class_OS_method_move_to_trash>` instead.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 
@@ -463,7 +463,7 @@ Static version of :ref:`remove<class_DirAccess_method_remove>`. Supports only ab
 
 Renames (move) the ``from`` file or directory to the ``to`` destination. Both arguments should be paths to files or directories, either relative or absolute. If the destination file or directory exists and is not access-protected, it will be overwritten.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
+Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
 ----
 

@@ -19,32 +19,34 @@ Description
 
 2D Agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. ``NavigationAgent2D`` is physics safe.
 
-\ **Note:** After :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` is used it is required to use the :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
+\ **Note:** After setting :ref:`target_location<class_NavigationAgent2D_property_target_location>` it is required to use the :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`             | ``false`` |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``    |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0`` |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`             | ``1``     |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`             | ``500.0`` |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`     | ``1.0``   |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`             | ``3.0``   |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent2D_property_radius>`                                   | ``10.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>` | ``1.0``   |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                       | ``20.0``  |
-+---------------------------+------------------------------------------------------------------------------------------+-----------+
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`       | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`             | ``false``         |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`         | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``            |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0``         |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`int<class_int>`         | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`             | ``1``             |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`             | ``500.0``         |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`     | ``1.0``           |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`             | ``3.0``           |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`radius<class_NavigationAgent2D_property_radius>`                                   | ``10.0``          |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>` | ``1.0``           |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`target_location<class_NavigationAgent2D_property_target_location>`                 | ``Vector2(0, 0)`` |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
+| :ref:`float<class_float>`     | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                       | ``20.0``          |
++-------------------------------+------------------------------------------------------------------------------------------+-------------------+
 
 Methods
 -------
@@ -66,8 +68,6 @@ Methods
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                               | :ref:`get_rid<class_NavigationAgent2D_method_get_rid>` **(** **)** |const|                                                                                                 |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`get_target_location<class_NavigationAgent2D_method_get_target_location>` **(** **)** |const|                                                                         |
-+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_navigation_finished<class_NavigationAgent2D_method_is_navigation_finished>` **(** **)**                                                                           |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`is_target_reachable<class_NavigationAgent2D_method_is_target_reachable>` **(** **)**                                                                                 |
@@ -77,8 +77,6 @@ Methods
 | void                                                | :ref:`set_navigation_layer_value<class_NavigationAgent2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_navigation_map<class_NavigationAgent2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                              |
-+-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` **(** :ref:`Vector2<class_Vector2>` location **)**                                          |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>` **(** :ref:`Vector2<class_Vector2>` velocity **)**                                                        |
 +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -106,13 +104,13 @@ Notifies when the navigation path changes.
 
 - **target_reached** **(** **)**
 
-Notifies when the player defined target, set with :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>`, is reached.
+Notifies when the player-defined :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reached.
 
 ----
 
 .. _class_NavigationAgent2D_signal_velocity_computed:
 
-- **velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
+- **velocity_computed** **(** :ref:`Vector2<class_Vector2>` safe_velocity **)**
 
 Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>`. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>` is true.
 
@@ -265,6 +263,22 @@ The distance threshold before the final target point is considered to be reached
 
 ----
 
+.. _class_NavigationAgent2D_property_target_location:
+
+- :ref:`Vector2<class_Vector2>` **target_location**
+
++-----------+----------------------------+
+| *Default* | ``Vector2(0, 0)``          |
++-----------+----------------------------+
+| *Setter*  | set_target_location(value) |
++-----------+----------------------------+
+| *Getter*  | get_target_location()      |
++-----------+----------------------------+
+
+The user-defined target location. Setting this property will clear the current navigation path.
+
+----
+
 .. _class_NavigationAgent2D_property_time_horizon:
 
 - :ref:`float<class_float>` **time_horizon**
@@ -286,7 +300,7 @@ Method Descriptions
 
 - :ref:`float<class_float>` **distance_to_target** **(** **)** |const|
 
-Returns the distance to the target location, using the agent's global position. The user must set the target location with :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>` in order for this to be accurate.
+Returns the distance to the target location, using the agent's global position. The user must set :ref:`target_location<class_NavigationAgent2D_property_target_location>` in order for this to be accurate.
 
 ----
 
@@ -346,14 +360,6 @@ Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer2D<
 
 ----
 
-.. _class_NavigationAgent2D_method_get_target_location:
-
-- :ref:`Vector2<class_Vector2>` **get_target_location** **(** **)** |const|
-
-Returns the user defined :ref:`Vector2<class_Vector2>` after setting the target location.
-
-----
-
 .. _class_NavigationAgent2D_method_is_navigation_finished:
 
 - :ref:`bool<class_bool>` **is_navigation_finished** **(** **)**
@@ -366,7 +372,7 @@ Returns true if the navigation path's final location has been reached.
 
 - :ref:`bool<class_bool>` **is_target_reachable** **(** **)**
 
-Returns true if the target location is reachable. The target location is set using :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>`.
+Returns true if :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reachable.
 
 ----
 
@@ -374,7 +380,7 @@ Returns true if the target location is reachable. The target location is set usi
 
 - :ref:`bool<class_bool>` **is_target_reached** **(** **)** |const|
 
-Returns true if the target location is reached. The target location is set using :ref:`set_target_location<class_NavigationAgent2D_method_set_target_location>`. It may not always be possible to reach the target location. It should always be possible to reach the final location though. See :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>`.
+Returns true if :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reached. It may not always be possible to reach the target location. It should always be possible to reach the final location though. See :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>`.
 
 ----
 
@@ -391,14 +397,6 @@ Based on ``value``, enables or disables the specified layer in the :ref:`navigat
 - void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationAgent node should use and also updates the ``agent`` on the NavigationServer.
-
-----
-
-.. _class_NavigationAgent2D_method_set_target_location:
-
-- void **set_target_location** **(** :ref:`Vector2<class_Vector2>` location **)**
-
-Sets the user desired final location. This will clear the current navigation path.
 
 ----
 

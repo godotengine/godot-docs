@@ -31,7 +31,7 @@ Button is the standard themed button. It can contain text and an icon, and will 
     func _ready():
         var button = Button.new()
         button.text = "Click me"
-        button.connect("pressed", self, "_button_pressed")
+        button.pressed.connect(self._button_pressed)
         add_child(button)
     
     func _button_pressed():
@@ -43,7 +43,7 @@ Button is the standard themed button. It can contain text and an icon, and will 
     {
         var button = new Button();
         button.Text = "Click me";
-        button.Connect("pressed", this, nameof(ButtonPressed));
+        button.Pressed += ButtonPressed;
         AddChild(button);
     }
     

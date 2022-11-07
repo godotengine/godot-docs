@@ -261,7 +261,7 @@ Initializes the interface, returns ``true`` on success.
 
 - :ref:`bool<class_bool>` **_is_initialized** **(** **)** |virtual| |const|
 
-Returns ``true`` if this interface has been initialised.
+Returns ``true`` if this interface has been initialized.
 
 ----
 

@@ -21,11 +21,7 @@ An atlas is a grid of tiles laid out on a texture. Each tile in the grid must be
 
 Each tile can also have a size in the grid coordinates, making it more or less cells in the atlas.
 
-
-
 Alternatives version of a tile can be created using :ref:`create_alternative_tile<class_TileSetAtlasSource_method_create_alternative_tile>`, which are then indexed using an alternative ID. The main tile (the one in the grid), is accessed with an alternative ID equal to 0.
-
-
 
 Each tile alternate has a set of properties that is defined by the source's :ref:`TileSet<class_TileSet>` layers. Those properties are stored in a TileData object that can be accessed and modified using :ref:`get_tile_data<class_TileSetAtlasSource_method_get_tile_data>`.
 

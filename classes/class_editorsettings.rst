@@ -220,6 +220,8 @@ Properties
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                                         |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`interface/editor/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`                                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                                               |
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`   | :ref:`interface/editor/code_font<class_EditorSettings_property_interface/editor/code_font>`                                                                                         |
@@ -597,7 +599,7 @@ The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`fil
 
 - :ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
 
-The refresh interval to use for the inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector more often, but take up more CPU time.
+The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector more often, but take up more CPU time.
 
 ----
 
@@ -605,7 +607,7 @@ The refresh interval to use for the inspector dock's properties. The effect of t
 
 - :ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
 
-The tint intensity to use for the subresources background in the inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
+The tint intensity to use for the subresources background in the Inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
 
 ----
 
@@ -1031,7 +1033,7 @@ The color to use for the selection box that surrounds selected nodes in the 3D e
 
 - :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instantiated**
 
-The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>` in question is part of an instanced scene file (from the perspective of the current scene).
+The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>` in question is part of an instantiated scene file (from the perspective of the current scene).
 
 ----
 
@@ -1277,6 +1279,20 @@ If ``true``, when saving a file, the editor will rename the old file to a differ
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons:
+
+- :ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons**
+
+How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
+
+- **Auto** follows the platform convention: Cancel first on macOS and Linux, OK first on Windows.
+
+- **Cancel First** forces the ordering Cancel/OK.
+
+- **OK First** forces the ordering OK/Cancel.
+
+----
+
 .. _class_EditorSettings_property_interface/editor/automatically_open_screenshots:
 
 - :ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
@@ -1411,7 +1427,7 @@ If set to **Auto**, the font hinting mode will be set to match the current opera
 
 - :ref:`int<class_int>` **interface/editor/font_subpixel_positioning**
 
-The subpixel positioning mode to use when rendering editor font glyphs. This affects both the main and code fonts. **Disabled** is the fastest to render and uses the least memory. **Auto** only uses subpixel positioning for small font sizes (where the benefit is the most noticeable). **One half of a pixel** and **One quarter of a pixel** force the same subpixel positioning mode for all editor fonts, regardless of their size (with **One quarter of a pixel** being the highest-quality option).
+The subpixel positioning mode to use when rendering editor font glyphs. This affects both the main and code fonts. **Disabled** is the fastest to render and uses the least memory. **Auto** only uses subpixel positioning for small font sizes (where the benefit is the most noticeable). **One Half of a Pixel** and **One Quarter of a Pixel** force the same subpixel positioning mode for all editor fonts, regardless of their size (with **One Quarter of a Pixel** being the highest-quality option).
 
 ----
 
@@ -1835,7 +1851,7 @@ If ``true``, displays line length guidelines to help you keep line lengths in ch
 
 - :ref:`bool<class_bool>` **text_editor/appearance/gutters/highlight_type_safe_lines**
 
-If ``true``, highlights type-safe lines by displaying their line number color with :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>` instead of :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines will run faster in Godot 4.0 and later thanks to typed instructions.
+If ``true``, highlights type-safe lines by displaying their line number color with :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>` instead of :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines may run faster thanks to typed instructions.
 
 ----
 
@@ -1851,7 +1867,7 @@ If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``
 
 - :ref:`bool<class_bool>` **text_editor/appearance/gutters/show_bookmark_gutter**
 
-If ``true``, displays a gutter at the left containing icons for bookmarks.
+If ``true``, displays icons for bookmarks in a gutter at the left. Bookmarks remain functional when this setting is disabled.
 
 ----
 
@@ -1867,7 +1883,7 @@ If ``true``, displays a gutter at the left containing icons for methods with sig
 
 - :ref:`bool<class_bool>` **text_editor/appearance/gutters/show_line_numbers**
 
-If ``true``, displays line numbers in the gutter at the left.
+If ``true``, displays line numbers in a gutter at the left.
 
 ----
 
@@ -2049,7 +2065,7 @@ The number of pixels to scroll with every mouse wheel increment. Higher values m
 
 - :ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
 
-If ``true``, adds static typing hints such as ``-> void`` and ``: int`` when performing method definition autocompletion.
+If ``true``, adds static typing hints such as ``-> void`` and ``: int`` when using code autocompletion or when creating onready variables by drag and dropping nodes into the script editor while pressing the :kbd:`Ctrl` key.
 
 ----
 
@@ -2183,7 +2199,7 @@ The script editor's background color. If set to a translucent color, the editor 
 
 - :ref:`Color<class_Color>` **text_editor/theme/highlighting/base_type_color**
 
-The script editor's base type color (used for types like :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, ...).
+The script editor's base type color (used for types like :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
 
 ----
 
@@ -2341,7 +2357,7 @@ The script editor's function call color.
 
 - :ref:`Color<class_Color>` **text_editor/theme/highlighting/keyword_color**
 
-The script editor's non-control flow keyword color (used for keywords like ``var``, ``func``, some built-in methods, ...).
+The script editor's non-control flow keyword color (used for keywords like ``var``, ``func``, ``extends``, ...).
 
 ----
 
@@ -2349,7 +2365,7 @@ The script editor's non-control flow keyword color (used for keywords like ``var
 
 - :ref:`Color<class_Color>` **text_editor/theme/highlighting/line_length_guideline_color**
 
-The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with an opacity twice as low.
+The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with half of its opacity.
 
 ----
 
@@ -2457,7 +2473,7 @@ The script editor's background color for text. This should be set to a transluce
 
 - :ref:`Color<class_Color>` **text_editor/theme/highlighting/user_type_color**
 
-The script editor's color for user-defined types (using ``@class_name``).
+The script editor's color for user-defined types (using ``class_name``).
 
 ----
 

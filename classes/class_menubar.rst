@@ -29,8 +29,6 @@ Properties
 +--------------------------------------------------+----------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                          | :ref:`prefer_global_menu<class_MenuBar_property_prefer_global_menu>` | ``true``  |
 +--------------------------------------------------+----------------------------------------------------------------------+-----------+
-| :ref:`Node<class_Node>`                          | :ref:`shortcut_context<class_MenuBar_property_shortcut_context>`     |           |
-+--------------------------------------------------+----------------------------------------------------------------------+-----------+
 | :ref:`int<class_int>`                            | :ref:`start_index<class_MenuBar_property_start_index>`               | ``-1``    |
 +--------------------------------------------------+----------------------------------------------------------------------+-----------+
 | :ref:`bool<class_bool>`                          | :ref:`switch_on_hover<class_MenuBar_property_switch_on_hover>`       | ``true``  |
@@ -152,20 +150,6 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 +-----------+-------------------------------+
 
 If ``true``, ``MenuBar`` will use system global menu when supported.
-
-----
-
-.. _class_MenuBar_property_shortcut_context:
-
-- :ref:`Node<class_Node>` **shortcut_context**
-
-+----------+-----------------------------+
-| *Setter* | set_shortcut_context(value) |
-+----------+-----------------------------+
-| *Getter* | get_shortcut_context()      |
-+----------+-----------------------------+
-
-The :ref:`Node<class_Node>` which must be a parent of the focused GUI :ref:`Control<class_Control>` for the shortcut to be activated. If ``null``, the shortcut can be activated when any control is focused (a global shortcut). This allows shortcuts to be accepted only when the user has a certain area of the GUI focused.
 
 ----
 

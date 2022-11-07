@@ -24,7 +24,7 @@ Properties
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                      | :ref:`depth_bias_constant_factor<class_RDPipelineRasterizationState_property_depth_bias_constant_factor>` | ``0.0``   |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                        | :ref:`depth_bias_enable<class_RDPipelineRasterizationState_property_depth_bias_enable>`                   | ``false`` |
+| :ref:`bool<class_bool>`                                        | :ref:`depth_bias_enabled<class_RDPipelineRasterizationState_property_depth_bias_enabled>`                 | ``false`` |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
 | :ref:`float<class_float>`                                      | :ref:`depth_bias_slope_factor<class_RDPipelineRasterizationState_property_depth_bias_slope_factor>`       | ``0.0``   |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------+
@@ -86,17 +86,17 @@ Property Descriptions
 
 ----
 
-.. _class_RDPipelineRasterizationState_property_depth_bias_enable:
+.. _class_RDPipelineRasterizationState_property_depth_bias_enabled:
 
-- :ref:`bool<class_bool>` **depth_bias_enable**
+- :ref:`bool<class_bool>` **depth_bias_enabled**
 
-+-----------+------------------------------+
-| *Default* | ``false``                    |
-+-----------+------------------------------+
-| *Setter*  | set_depth_bias_enable(value) |
-+-----------+------------------------------+
-| *Getter*  | get_depth_bias_enable()      |
-+-----------+------------------------------+
++-----------+-------------------------------+
+| *Default* | ``false``                     |
++-----------+-------------------------------+
+| *Setter*  | set_depth_bias_enabled(value) |
++-----------+-------------------------------+
+| *Getter*  | get_depth_bias_enabled()      |
++-----------+-------------------------------+
 
 ----
 

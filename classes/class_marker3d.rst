@@ -19,6 +19,30 @@ Description
 
 Generic 3D position hint for editing. It's just like a plain :ref:`Node3D<class_Node3D>`, but it displays as a cross in the 3D editor at all times.
 
+Properties
+----------
+
++---------------------------+-------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`gizmo_extents<class_Marker3D_property_gizmo_extents>` | ``0.25`` |
++---------------------------+-------------------------------------------------------------+----------+
+
+Property Descriptions
+---------------------
+
+.. _class_Marker3D_property_gizmo_extents:
+
+- :ref:`float<class_float>` **gizmo_extents**
+
++-----------+--------------------------+
+| *Default* | ``0.25``                 |
++-----------+--------------------------+
+| *Setter*  | set_gizmo_extents(value) |
++-----------+--------------------------+
+| *Getter*  | get_gizmo_extents()      |
++-----------+--------------------------+
+
+Size of the gizmo cross that appears in the editor.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

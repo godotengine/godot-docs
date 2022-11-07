@@ -134,7 +134,7 @@ A contact is detected if object A is in any of the layers that object B scans, o
 | *Getter*  | get_collision_mask()      |
 +-----------+---------------------------+
 
-The physics layers this CSG shape scans for collisions. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+The physics layers this CSG shape scans for collisions. Only effective if :ref:`use_collision<class_CSGShape3D_property_use_collision>` is ``true``. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 ----
 
@@ -149,6 +149,8 @@ The physics layers this CSG shape scans for collisions. See `Collision layers an
 +-----------+-------------------------------+
 | *Getter*  | get_collision_priority()      |
 +-----------+-------------------------------+
+
+The priority used to solve colliding when occurring penetration. Only effective if :ref:`use_collision<class_CSGShape3D_property_use_collision>` is ``true``. The higher the priority is, the lower the penetration into the object will be. This can for example be used to prevent the player from breaking through the boundaries of a level.
 
 ----
 
@@ -196,7 +198,7 @@ Snap makes the mesh snap to a given distance so that the faces of two meshes can
 | *Getter*  | is_using_collision()     |
 +-----------+--------------------------+
 
-Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
+Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden. See also :ref:`collision_mask<class_CSGShape3D_property_collision_mask>` and :ref:`collision_priority<class_CSGShape3D_property_collision_priority>`.
 
 Method Descriptions
 -------------------

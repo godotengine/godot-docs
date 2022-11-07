@@ -172,11 +172,15 @@ Emitted when user changes the workspace (**2D**, **3D**, **Script**, **AssetLib*
 
 - **project_settings_changed** **(** **)**
 
+Emitted when any project setting has changed.
+
 ----
 
 .. _class_EditorPlugin_signal_resource_saved:
 
 - **resource_saved** **(** :ref:`Resource<class_Resource>` resource **)**
+
+Emitted when the given ``resource`` was saved on disc.
 
 ----
 
@@ -422,7 +426,9 @@ You need to enable calling of this method by using :ref:`set_force_draw_over_for
 
 - :ref:`int<class_int>` **_forward_3d_gui_input** **(** :ref:`Camera3D<class_Camera3D>` viewport_camera, :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented, and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. The return value decides whether the :ref:`InputEvent<class_InputEvent>` is consumed or forwarded to other ``EditorPlugin``\ s. See :ref:`AfterGUIInput<enum_EditorPlugin_AfterGUIInput>` for options. Example:
+Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented, and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. The return value decides whether the :ref:`InputEvent<class_InputEvent>` is consumed or forwarded to other ``EditorPlugin``\ s. See :ref:`AfterGUIInput<enum_EditorPlugin_AfterGUIInput>` for options.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -443,7 +449,9 @@ Called when there is a root node in the current edited scene, :ref:`_handles<cla
 
 
 
-Must ``return EditorPlugin.AFTER_GUI_INPUT_PASS`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
+Must ``return EditorPlugin.AFTER_GUI_INPUT_PASS`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -524,7 +532,9 @@ You need to enable calling of this method by using :ref:`set_force_draw_over_for
 
 - :ref:`bool<class_bool>` **_forward_canvas_gui_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 2D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` ``EditorPlugin`` consumes the ``event``, otherwise forwards ``event`` to other Editor classes. Example:
+Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_method__handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 2D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` ``EditorPlugin`` consumes the ``event``, otherwise forwards ``event`` to other Editor classes.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -545,7 +555,9 @@ Called when there is a root node in the current edited scene, :ref:`_handles<cla
 
 
 
-Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes. Example:
+Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
+
+\ **Example:**\ 
 
 
 .. tabs::

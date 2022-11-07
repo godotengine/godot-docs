@@ -74,7 +74,7 @@ Collection of actions for this action set.
 | *Getter*  | get_localized_name()      |
 +-----------+---------------------------+
 
-The localised name of this action set.
+The localized name of this action set.
 
 ----
 

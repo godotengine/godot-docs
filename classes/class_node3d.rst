@@ -52,7 +52,7 @@ Properties
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` | :ref:`rotation_edit_mode<class_Node3D_property_rotation_edit_mode>` | ``0``                                               |
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`RotationOrder<enum_Node3D_RotationOrder>`       | :ref:`rotation_order<class_Node3D_property_rotation_order>`         | ``2``                                               |
+| :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>`       | :ref:`rotation_order<class_Node3D_property_rotation_order>`         | ``2``                                               |
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 | :ref:`Vector3<class_Vector3>`                         | :ref:`scale<class_Node3D_property_scale>`                           | ``Vector3(1, 1, 1)``                                |
 +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
@@ -169,36 +169,6 @@ enum **RotationEditMode**:
 - **ROTATION_EDIT_MODE_QUATERNION** = **1**
 
 - **ROTATION_EDIT_MODE_BASIS** = **2**
-
-----
-
-.. _enum_Node3D_RotationOrder:
-
-.. _class_Node3D_constant_ROTATION_ORDER_XYZ:
-
-.. _class_Node3D_constant_ROTATION_ORDER_XZY:
-
-.. _class_Node3D_constant_ROTATION_ORDER_YXZ:
-
-.. _class_Node3D_constant_ROTATION_ORDER_YZX:
-
-.. _class_Node3D_constant_ROTATION_ORDER_ZXY:
-
-.. _class_Node3D_constant_ROTATION_ORDER_ZYX:
-
-enum **RotationOrder**:
-
-- **ROTATION_ORDER_XYZ** = **0**
-
-- **ROTATION_ORDER_XZY** = **1**
-
-- **ROTATION_ORDER_YXZ** = **2**
-
-- **ROTATION_ORDER_YZX** = **3**
-
-- **ROTATION_ORDER_ZXY** = **4**
-
-- **ROTATION_ORDER_ZYX** = **5**
 
 Constants
 ---------
@@ -354,7 +324,7 @@ Specify how rotation (and scale) will be presented in the editor.
 
 .. _class_Node3D_property_rotation_order:
 
-- :ref:`RotationOrder<enum_Node3D_RotationOrder>` **rotation_order**
+- :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` **rotation_order**
 
 +-----------+---------------------------+
 | *Default* | ``2``                     |
@@ -383,6 +353,8 @@ Specify the axis rotation order of the :ref:`rotation<class_Node3D_property_rota
 Scale part of the local transformation.
 
 \ **Note:** Mixed negative scales in 3D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, the scale values will either be all positive or all negative.
+
+\ **Note:** Not all nodes are visually scaled by the :ref:`scale<class_Node3D_property_scale>` property. For example, :ref:`Light3D<class_Light3D>`\ s are not visually affected by :ref:`scale<class_Node3D_property_scale>`.
 
 ----
 

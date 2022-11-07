@@ -10,7 +10,16 @@
 Projection
 ==========
 
+3D projection (4x4 matrix).
 
+Description
+-----------
+
+A 4x4 matrix used for 3D projective transformations. It can represent transformations such as translation, rotation, scaling, shearing, and perspective division. It consists of four :ref:`Vector4<class_Vector4>` columns.
+
+For purely linear transformations (translation, rotation, and scale), it is recommended to use :ref:`Transform3D<class_Transform3D>`, as it is more performant and has a lower memory footprint.
+
+Used internally as :ref:`Camera3D<class_Camera3D>`'s projection matrix.
 
 Properties
 ----------
@@ -129,21 +138,21 @@ Constants
 
 .. _class_Projection_constant_ZERO:
 
-- **PLANE_NEAR** = **0**
+- **PLANE_NEAR** = **0** --- The index value of the projection's near clipping plane.
 
-- **PLANE_FAR** = **1**
+- **PLANE_FAR** = **1** --- The index value of the projection's far clipping plane.
 
-- **PLANE_LEFT** = **2**
+- **PLANE_LEFT** = **2** --- The index value of the projection's left clipping plane.
 
-- **PLANE_TOP** = **3**
+- **PLANE_TOP** = **3** --- The index value of the projection's top clipping plane.
 
-- **PLANE_RIGHT** = **4**
+- **PLANE_RIGHT** = **4** --- The index value of the projection's right clipping plane.
 
-- **PLANE_BOTTOM** = **5**
+- **PLANE_BOTTOM** = **5** --- The index value of the projection bottom clipping plane.
 
-- **IDENTITY** = **Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)**
+- **IDENTITY** = **Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)** --- A ``Projection`` with no transformation defined. When applied to other data structures, no transformation is performed.
 
-- **ZERO** = **Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)**
+- **ZERO** = **Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)** --- A ``Projection`` with all values initialized to 0. When applied to other data structures, they will be zeroed.
 
 Property Descriptions
 ---------------------
@@ -156,6 +165,8 @@ Property Descriptions
 | *Default* | ``Vector4(0, 0, 0, 1)`` |
 +-----------+-------------------------+
 
+The projection matrix's W vector (column 3). Equivalent to array index ``3``.
+
 ----
 
 .. _class_Projection_property_x:
@@ -165,6 +176,8 @@ Property Descriptions
 +-----------+-------------------------+
 | *Default* | ``Vector4(1, 0, 0, 0)`` |
 +-----------+-------------------------+
+
+The projection matrix's X vector (column 0). Equivalent to array index ``0``.
 
 ----
 
@@ -176,6 +189,8 @@ Property Descriptions
 | *Default* | ``Vector4(0, 1, 0, 0)`` |
 +-----------+-------------------------+
 
+The projection matrix's Y vector (column 1). Equivalent to array index ``1``.
+
 ----
 
 .. _class_Projection_property_z:
@@ -186,6 +201,8 @@ Property Descriptions
 | *Default* | ``Vector4(0, 0, 1, 0)`` |
 +-----------+-------------------------+
 
+The projection matrix's Z vector (column 2). Equivalent to array index ``2``.
+
 Constructor Descriptions
 ------------------------
 
@@ -193,13 +210,19 @@ Constructor Descriptions
 
 - :ref:`Projection<class_Projection>` **Projection** **(** **)**
 
+Constructs a default-initialized ``Projection`` set to :ref:`IDENTITY<class_Projection_constant_IDENTITY>`.
+
 ----
 
 - :ref:`Projection<class_Projection>` **Projection** **(** :ref:`Projection<class_Projection>` from **)**
 
+Constructs a ``Projection`` as a copy of the given ``Projection``.
+
 ----
 
 - :ref:`Projection<class_Projection>` **Projection** **(** :ref:`Transform3D<class_Transform3D>` from **)**
+
+Constructs a Projection as a copy of the given :ref:`Transform3D<class_Transform3D>`.
 
 ----
 
@@ -214,11 +237,15 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **create_depth_correction** **(** :ref:`bool<class_bool>` flip_y **)** |static|
 
+Creates a new ``Projection`` that projects positions from a depth range of ``-1`` to ``1`` to one that ranges from ``0`` to ``1``, and flips the projected positions vertically, according to ``flip_y``.
+
 ----
 
 .. _class_Projection_method_create_fit_aabb:
 
 - :ref:`Projection<class_Projection>` **create_fit_aabb** **(** :ref:`AABB<class_AABB>` aabb **)** |static|
+
+Creates a new ``Projection`` that scales a given projection to fit around a given :ref:`AABB<class_AABB>` in projection space.
 
 ----
 
@@ -226,11 +253,17 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **create_for_hmd** **(** :ref:`int<class_int>` eye, :ref:`float<class_float>` aspect, :ref:`float<class_float>` intraocular_dist, :ref:`float<class_float>` display_width, :ref:`float<class_float>` display_to_lens, :ref:`float<class_float>` oversample, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |static|
 
+Creates a new ``Projection`` for projecting positions onto a head-mounted display with the given X:Y aspect ratio, distance between eyes, display width, distance to lens, oversampling factor, and depth clipping planes.
+
+\ ``eye`` creates the projection for the left eye when set to 1, or the right eye when set to 2.
+
 ----
 
 .. _class_Projection_method_create_frustum:
 
 - :ref:`Projection<class_Projection>` **create_frustum** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom, :ref:`float<class_float>` top, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |static|
+
+Creates a new ``Projection`` that projects positions in a frustum with the given clipping planes.
 
 ----
 
@@ -238,11 +271,17 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **create_frustum_aspect** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` aspect, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far, :ref:`bool<class_bool>` flip_fov=false **)** |static|
 
+Creates a new ``Projection`` that projects positions in a frustum with the given size, X:Y aspect ratio, offset, and clipping planes.
+
+\ ``flip_fov`` determines whether the projection's field of view is flipped over its diagonal.
+
 ----
 
 .. _class_Projection_method_create_light_atlas_rect:
 
 - :ref:`Projection<class_Projection>` **create_light_atlas_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |static|
+
+Creates a new ``Projection`` that projects positions into the given :ref:`Rect2<class_Rect2>`.
 
 ----
 
@@ -250,11 +289,17 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **create_orthogonal** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom, :ref:`float<class_float>` top, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |static|
 
+Creates a new ``Projection`` that projects positions using an orthogonal projection with the given clipping planes.
+
 ----
 
 .. _class_Projection_method_create_orthogonal_aspect:
 
 - :ref:`Projection<class_Projection>` **create_orthogonal_aspect** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` aspect, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far, :ref:`bool<class_bool>` flip_fov=false **)** |static|
+
+Creates a new ``Projection`` that projects positions using an orthogonal projection with the given size, X:Y aspect ratio, and clipping planes.
+
+\ ``flip_fov`` determines whether the projection's field of view is flipped over its diagonal.
 
 ----
 
@@ -262,11 +307,21 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **create_perspective** **(** :ref:`float<class_float>` fovy, :ref:`float<class_float>` aspect, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far, :ref:`bool<class_bool>` flip_fov=false **)** |static|
 
+Creates a new ``Projection`` that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping planes.
+
+\ ``flip_fov`` determines whether the projection's field of view is flipped over its diagonal.
+
 ----
 
 .. _class_Projection_method_create_perspective_hmd:
 
 - :ref:`Projection<class_Projection>` **create_perspective_hmd** **(** :ref:`float<class_float>` fovy, :ref:`float<class_float>` aspect, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far, :ref:`bool<class_bool>` flip_fov, :ref:`int<class_int>` eye, :ref:`float<class_float>` intraocular_dist, :ref:`float<class_float>`  convergence_dist **)** |static|
+
+Creates a new ``Projection`` that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping distances. The projection is adjusted for a head-mounted display with the given distance between eyes and distance to a point that can be focused on.
+
+\ ``eye`` creates the projection for the left eye when set to 1, or the right eye when set to 2.
+
+\ ``flip_fov`` determines whether the projection's field of view is flipped over its diagonal.
 
 ----
 
@@ -274,11 +329,17 @@ Method Descriptions
 
 - :ref:`float<class_float>` **determinant** **(** **)** |const|
 
+Returns a scalar value that is the signed factor by which areas are scaled by this matrix. If the sign is negative, the matrix flips the orientation of the area.
+
+The determinant can be used to calculate the invertibility of a matrix or solve linear systems of equations involving the matrix, among other applications.
+
 ----
 
 .. _class_Projection_method_flipped_y:
 
 - :ref:`Projection<class_Projection>` **flipped_y** **(** **)** |const|
+
+Returns a copy of this ``Projection`` with the signs of the values of the Y column flipped.
 
 ----
 
@@ -286,11 +347,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_aspect** **(** **)** |const|
 
+Returns the X:Y aspect ratio of this ``Projection``'s viewport.
+
 ----
 
 .. _class_Projection_method_get_far_plane_half_extents:
 
 - :ref:`Vector2<class_Vector2>` **get_far_plane_half_extents** **(** **)** |const|
+
+Returns the dimensions of the far clipping plane of the projection, divided by two.
 
 ----
 
@@ -298,11 +363,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_fov** **(** **)** |const|
 
+Returns the horizontal field of view of the projection (in degrees).
+
 ----
 
 .. _class_Projection_method_get_fovy:
 
 - :ref:`float<class_float>` **get_fovy** **(** :ref:`float<class_float>` fovx, :ref:`float<class_float>` aspect **)** |static|
+
+Returns the vertical field of view of the projection (in degrees) associated with the given horizontal field of view (in degrees) and aspect ratio.
 
 ----
 
@@ -310,11 +379,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_lod_multiplier** **(** **)** |const|
 
+Returns the factor by which the visible level of detail is scaled by this ``Projection``.
+
 ----
 
 .. _class_Projection_method_get_pixels_per_meter:
 
 - :ref:`int<class_int>` **get_pixels_per_meter** **(** :ref:`int<class_int>` for_pixel_width **)** |const|
+
+Returns the number of pixels with the given pixel width displayed per meter, after this ``Projection`` is applied.
 
 ----
 
@@ -322,11 +395,17 @@ Method Descriptions
 
 - :ref:`Plane<class_Plane>` **get_projection_plane** **(** :ref:`int<class_int>` plane **)** |const|
 
+Returns the clipping plane of this ``Projection`` whose index is given by ``plane``.
+
+\ ``plane`` should be equal to one of :ref:`PLANE_NEAR<class_Projection_constant_PLANE_NEAR>`, :ref:`PLANE_FAR<class_Projection_constant_PLANE_FAR>`, :ref:`PLANE_LEFT<class_Projection_constant_PLANE_LEFT>`, :ref:`PLANE_TOP<class_Projection_constant_PLANE_TOP>`, :ref:`PLANE_RIGHT<class_Projection_constant_PLANE_RIGHT>`, or :ref:`PLANE_BOTTOM<class_Projection_constant_PLANE_BOTTOM>`.
+
 ----
 
 .. _class_Projection_method_get_viewport_half_extents:
 
 - :ref:`Vector2<class_Vector2>` **get_viewport_half_extents** **(** **)** |const|
+
+Returns the dimensions of the viewport plane that this ``Projection`` projects positions onto, divided by two.
 
 ----
 
@@ -334,11 +413,15 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_z_far** **(** **)** |const|
 
+Returns the distance for this ``Projection`` beyond which positions are clipped.
+
 ----
 
 .. _class_Projection_method_get_z_near:
 
 - :ref:`float<class_float>` **get_z_near** **(** **)** |const|
+
+Returns the distance for this ``Projection`` before which positions are clipped.
 
 ----
 
@@ -346,11 +429,15 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **inverse** **(** **)** |const|
 
+Returns a ``Projection`` that performs the inverse of this ``Projection``'s projective transformation.
+
 ----
 
 .. _class_Projection_method_is_orthogonal:
 
 - :ref:`bool<class_bool>` **is_orthogonal** **(** **)** |const|
+
+Returns ``true`` if this ``Projection`` performs an orthogonal projection.
 
 ----
 
@@ -358,11 +445,17 @@ Method Descriptions
 
 - :ref:`Projection<class_Projection>` **jitter_offseted** **(** :ref:`Vector2<class_Vector2>` offset **)** |const|
 
+Returns a ``Projection`` with the X and Y values from the given :ref:`Vector2<class_Vector2>` added to the first and second values of the final column respectively.
+
 ----
 
 .. _class_Projection_method_perspective_znear_adjusted:
 
 - :ref:`Projection<class_Projection>` **perspective_znear_adjusted** **(** :ref:`float<class_float>` new_znear **)** |const|
+
+Returns a ``Projection`` with the near clipping distance adjusted to be ``new_znear``.
+
+\ **Note:** The original ``Projection`` must be a perspective projection.
 
 Operator Descriptions
 ---------------------
@@ -371,15 +464,23 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`Projection<class_Projection>` right **)**
 
+Returns ``true`` if the projections are not equal.
+
+\ **Note:** Due to floating-point precision errors, this may return ``true``, even if the projections are virtually equal. An ``is_equal_approx`` method may be added in a future version of Godot.
+
 ----
 
 .. _class_Projection_operator_mul_Projection:
 
 - :ref:`Projection<class_Projection>` **operator *** **(** :ref:`Projection<class_Projection>` right **)**
 
+Returns a ``Projection`` that applies the combined transformations of this ``Projection`` and ``right``.
+
 ----
 
 - :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
+
+Projects (multiplies) the given :ref:`Vector4<class_Vector4>` by this ``Projection`` matrix.
 
 ----
 
@@ -387,11 +488,19 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`Projection<class_Projection>` right **)**
 
+Returns ``true`` if the projections are equal.
+
+\ **Note:** Due to floating-point precision errors, this may return ``false``, even if the projections are virtually equal. An ``is_equal_approx`` method may be added in a future version of Godot.
+
 ----
 
 .. _class_Projection_operator_idx_Vector4:
 
 - :ref:`Vector4<class_Vector4>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+Returns the column of the ``Projection`` with the given index.
+
+Indices are in the following order: x, y, z, w.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -46,6 +46,8 @@ An Animation resource contains data used to animate everything in the engine. An
 
 Animations are just data containers, and must be added to nodes such as an :ref:`AnimationPlayer<class_AnimationPlayer>` to be played back. Animation tracks have different types, each with its own set of dedicated methods. Check :ref:`TrackType<enum_Animation_TrackType>` to see available types.
 
+\ **Note:** For 3D position/rotation/scale, using the dedicated :ref:`TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` and :ref:`TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` track types instead of :ref:`TYPE_VALUE<class_Animation_constant_TYPE_VALUE>` is recommended for performance reasons.
+
 Tutorials
 ---------
 
@@ -227,15 +229,15 @@ Enumerations
 
 enum **TrackType**:
 
-- **TYPE_VALUE** = **0** --- Value tracks set values in node properties, but only those which can be Interpolated.
+- **TYPE_VALUE** = **0** --- Value tracks set values in node properties, but only those which can be interpolated. For 3D position/rotation/scale, using the dedicated :ref:`TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` and :ref:`TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` track types instead of :ref:`TYPE_VALUE<class_Animation_constant_TYPE_VALUE>` is recommended for performance reasons.
 
-- **TYPE_POSITION_3D** = **1**
+- **TYPE_POSITION_3D** = **1** --- 3D position track (values are stored in :ref:`Vector3<class_Vector3>`\ s).
 
-- **TYPE_ROTATION_3D** = **2**
+- **TYPE_ROTATION_3D** = **2** --- 3D rotation track (values are stored in :ref:`Quaternion<class_Quaternion>`\ s).
 
-- **TYPE_SCALE_3D** = **3**
+- **TYPE_SCALE_3D** = **3** --- 3D scale track (values are stored in :ref:`Vector3<class_Vector3>`\ s).
 
-- **TYPE_BLEND_SHAPE** = **4**
+- **TYPE_BLEND_SHAPE** = **4** --- Blend shape track.
 
 - **TYPE_METHOD** = **5** --- Method tracks call functions with given arguments per key.
 
@@ -265,7 +267,7 @@ enum **InterpolationType**:
 
 - **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
 
-- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
+- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation. This looks smoother than linear interpolation, but is more expensive to interpolate. Stick to :ref:`INTERPOLATION_LINEAR<class_Animation_constant_INTERPOLATION_LINEAR>` for complex 3D animations imported from external software, even if it requires using a higher animation framerate in return.
 
 - **INTERPOLATION_LINEAR_ANGLE** = **3** --- Linear interpolation with shortest path rotation.
 
@@ -533,6 +535,8 @@ Sets the value of the key identified by ``key_idx`` to the given value. The ``tr
 
 - :ref:`int<class_int>` **blend_shape_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`float<class_float>` amount **)**
 
+Inserts a key in a given blend shape track. Returns the key index.
+
 ----
 
 .. _class_Animation_method_clear:
@@ -546,6 +550,10 @@ Clear the animation (clear all tracks and reset all).
 .. _class_Animation_method_compress:
 
 - void **compress** **(** :ref:`int<class_int>` page_size=8192, :ref:`int<class_int>` fps=120, :ref:`float<class_float>` split_tolerance=4.0 **)**
+
+Compress the animation and all its tracks in-place. This will make :ref:`track_is_compressed<class_Animation_method_track_is_compressed>` return ``true`` once called on this ``Animation``. Compressed tracks require less memory to be played, and are designed to be used for complex 3D animations (such as cutscenes) imported from external 3D software. Compression is lossy, but the difference is usually not noticeable in real world conditions.
+
+\ **Note:** Compressed tracks have various limitations (such as not being editable from the editor), so only use compressed animations if you actually need them.
 
 ----
 
@@ -601,6 +609,8 @@ Returns the arguments values to be called on a method track for a given key in a
 
 - :ref:`int<class_int>` **position_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Vector3<class_Vector3>` position **)**
 
+Inserts a key in a given 3D position track. Returns the key index.
+
 ----
 
 .. _class_Animation_method_remove_track:
@@ -615,11 +625,15 @@ Removes a track by specifying the track index.
 
 - :ref:`int<class_int>` **rotation_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Quaternion<class_Quaternion>` rotation **)**
 
+Inserts a key in a given 3D rotation track. Returns the key index.
+
 ----
 
 .. _class_Animation_method_scale_track_insert_key:
 
 - :ref:`int<class_int>` **scale_track_insert_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Vector3<class_Vector3>` scale **)**
+
+Inserts a key in a given 3D scale track. Returns the key index.
 
 ----
 
@@ -706,6 +720,8 @@ Inserts a generic key in a given track. Returns the key index.
 .. _class_Animation_method_track_is_compressed:
 
 - :ref:`bool<class_bool>` **track_is_compressed** **(** :ref:`int<class_int>` track_idx **)** |const|
+
+Returns ``true`` if the track is compressed, ``false`` otherwise. See also :ref:`compress<class_Animation_method_compress>`.
 
 ----
 

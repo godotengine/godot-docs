@@ -96,6 +96,8 @@ Methods
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector3_method_is_equal_approx>` **(** :ref:`Vector3<class_Vector3>` to **)** |const|                                                                                                                                                                                                                                       |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`is_finite<class_Vector3_method_is_finite>` **(** **)** |const|                                                                                                                                                                                                                                                                                    |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Vector3_method_is_normalized>` **(** **)** |const|                                                                                                                                                                                                                                                                            |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`       | :ref:`is_zero_approx<class_Vector3_method_is_zero_approx>` **(** **)** |const|                                                                                                                                                                                                                                                                          |
@@ -446,11 +448,19 @@ Returns ``true`` if this vector and ``to`` are approximately equal, by running :
 
 ----
 
+.. _class_Vector3_method_is_finite:
+
+- :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+
+----
+
 .. _class_Vector3_method_is_normalized:
 
 - :ref:`bool<class_bool>` **is_normalized** **(** **)** |const|
 
-Returns ``true`` if the vector is normalized, ``false`` otherwise.
+Returns ``true`` if the vector is :ref:`normalized<class_Vector3_method_normalized>`, ``false`` otherwise.
 
 ----
 
@@ -526,7 +536,7 @@ Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not
 
 - :ref:`Vector3<class_Vector3>` **normalized** **(** **)** |const|
 
-Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
+Returns the vector scaled to unit length. Equivalent to ``v / v.length()``. See also :ref:`is_normalized<class_Vector3_method_is_normalized>`.
 
 ----
 
@@ -534,11 +544,19 @@ Returns the vector scaled to unit length. Equivalent to ``v / v.length()``.
 
 - :ref:`Vector3<class_Vector3>` **octahedron_decode** **(** :ref:`Vector2<class_Vector2>` uv **)** |static|
 
+Returns the ``Vector3`` from an octahedral-compressed form created using :ref:`octahedron_encode<class_Vector3_method_octahedron_encode>` (stored as a :ref:`Vector2<class_Vector2>`).
+
 ----
 
 .. _class_Vector3_method_octahedron_encode:
 
 - :ref:`Vector2<class_Vector2>` **octahedron_encode** **(** **)** |const|
+
+Returns the octahedral-encoded (oct32) form of this ``Vector3`` as a :ref:`Vector2<class_Vector2>`. Since a :ref:`Vector2<class_Vector2>` occupies 1/3 less memory compared to ``Vector3``, this form of compression can be used to pass greater amounts of :ref:`normalized<class_Vector3_method_normalized>` ``Vector3``\ s without increasing storage or memory requirements. See also :ref:`octahedron_decode<class_Vector3_method_octahedron_decode>`.
+
+\ **Note:** :ref:`octahedron_encode<class_Vector3_method_octahedron_encode>` can only be used for :ref:`normalized<class_Vector3_method_normalized>` vectors. :ref:`octahedron_encode<class_Vector3_method_octahedron_encode>` does *not* check whether this ``Vector3`` is normalized, and will return a value that does not decompress to the original value if the ``Vector3`` is not normalized.
+
+\ **Note:** Octahedral compression is *lossy*, although visual differences are rarely perceptible in real world scenarios.
 
 ----
 

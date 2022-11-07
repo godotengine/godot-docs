@@ -19,7 +19,7 @@ Description
 
 ``VoxelGIData`` contains baked voxel global illumination for use in a :ref:`VoxelGI<class_VoxelGI>` node. ``VoxelGIData`` also offers several properties to adjust the final appearance of the global illumination. These properties can be adjusted at run-time without having to bake the :ref:`VoxelGI<class_VoxelGI>` node again.
 
-\ **Note:** To prevent text-based scene files (``.tscn``) from growing too much and becoming slow to load and save, always save ``VoxelGIData`` to an external binary resource file (``.res``) instead of embedding it within the scene. This can be done by clicking the dropdown arrow next to the ``VoxelGIData`` resource, choosing **Edit**, clicking the floppy disk icon at the top of the inspector then choosing **Save As...**.
+\ **Note:** To prevent text-based scene files (``.tscn``) from growing too much and becoming slow to load and save, always save ``VoxelGIData`` to an external binary resource file (``.res``) instead of embedding it within the scene. This can be done by clicking the dropdown arrow next to the ``VoxelGIData`` resource, choosing **Edit**, clicking the floppy disk icon at the top of the Inspector then choosing **Save As...**.
 
 Tutorials
 ---------

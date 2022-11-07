@@ -874,7 +874,7 @@ Causes the ``Tree`` to jump to the specified :ref:`TreeItem<class_TreeItem>`.
 
 - void **set_column_custom_minimum_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**
 
-Overrides the calculated minimum width of a column. It can be set to `0` to restore the default behavior. Columns that have the "Expand" flag will use their "min_width" in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`.
+Overrides the calculated minimum width of a column. It can be set to ``0`` to restore the default behavior. Columns that have the "Expand" flag will use their "min_width" in a similar fashion to :ref:`Control.size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`.
 
 ----
 

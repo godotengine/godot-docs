@@ -60,8 +60,6 @@ Properties
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                                             | ``true``                                                                  |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                     | :ref:`override_selected_font_color<class_RichTextLabel_property_override_selected_font_color>`                   | ``false``                                                                 |
-+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                                       | :ref:`progress_bar_delay<class_RichTextLabel_property_progress_bar_delay>`                                       | ``1000``                                                                  |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                                     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                                 | ``true``                                                                  |
@@ -95,7 +93,7 @@ Methods
 -------
 
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**                                                                                 |
+| void                                | :ref:`add_image<class_RichTextLabel_method_add_image>` **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0) **)**                             |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                | :ref:`add_text<class_RichTextLabel_method_add_text>` **(** :ref:`String<class_String>` text **)**                                                                                                                                                                                                                                                                                      |
 +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,61 +217,65 @@ Methods
 Theme Properties
 ----------------
 
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`default_color<class_RichTextLabel_theme_color_default_color>`                       | ``Color(1, 1, 1, 1)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_RichTextLabel_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_RichTextLabel_theme_color_font_selected_color>`           | ``Color(0, 0, 0, 1)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_RichTextLabel_theme_color_font_shadow_color>`               | ``Color(0, 0, 0, 0)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`selection_color<class_RichTextLabel_theme_color_selection_color>`                   | ``Color(0.1, 0.1, 1, 0.8)`` |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`table_border<class_RichTextLabel_theme_color_table_border>`                         | ``Color(0, 0, 0, 0)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`table_even_row_bg<class_RichTextLabel_theme_color_table_even_row_bg>`               | ``Color(0, 0, 0, 0)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`       | :ref:`table_odd_row_bg<class_RichTextLabel_theme_color_table_odd_row_bg>`                 | ``Color(0, 0, 0, 0)``       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`line_separation<class_RichTextLabel_theme_constant_line_separation>`                | ``0``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_RichTextLabel_theme_constant_outline_size>`                      | ``0``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_RichTextLabel_theme_constant_shadow_offset_x>`                | ``1``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_RichTextLabel_theme_constant_shadow_offset_y>`                | ``1``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_RichTextLabel_theme_constant_shadow_outline_size>`        | ``1``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`table_h_separation<class_RichTextLabel_theme_constant_table_h_separation>`          | ``3``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`table_v_separation<class_RichTextLabel_theme_constant_table_v_separation>`          | ``3``                       |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | :ref:`bold_font<class_RichTextLabel_theme_font_bold_font>`                                |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | :ref:`bold_italics_font<class_RichTextLabel_theme_font_bold_italics_font>`                |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | :ref:`italics_font<class_RichTextLabel_theme_font_italics_font>`                          |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | :ref:`mono_font<class_RichTextLabel_theme_font_mono_font>`                                |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Font<class_Font>`         | :ref:`normal_font<class_RichTextLabel_theme_font_normal_font>`                            |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`bold_font_size<class_RichTextLabel_theme_font_size_bold_font_size>`                 |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`bold_italics_font_size<class_RichTextLabel_theme_font_size_bold_italics_font_size>` |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`italics_font_size<class_RichTextLabel_theme_font_size_italics_font_size>`           |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`mono_font_size<class_RichTextLabel_theme_font_size_mono_font_size>`                 |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`           | :ref:`normal_font_size<class_RichTextLabel_theme_font_size_normal_font_size>`             |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_RichTextLabel_theme_style_focus>`                                       |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_RichTextLabel_theme_style_normal>`                                     |                             |
-+---------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`default_color<class_RichTextLabel_theme_color_default_color>`                          | ``Color(1, 1, 1, 1)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_RichTextLabel_theme_color_font_outline_color>`                | ``Color(1, 1, 1, 1)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_RichTextLabel_theme_color_font_selected_color>`              | ``Color(0, 0, 0, 0)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_RichTextLabel_theme_color_font_shadow_color>`                  | ``Color(0, 0, 0, 0)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`selection_color<class_RichTextLabel_theme_color_selection_color>`                      | ``Color(0.1, 0.1, 1, 0.8)`` |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`table_border<class_RichTextLabel_theme_color_table_border>`                            | ``Color(0, 0, 0, 0)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`table_even_row_bg<class_RichTextLabel_theme_color_table_even_row_bg>`                  | ``Color(0, 0, 0, 0)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Color<class_Color>`       | :ref:`table_odd_row_bg<class_RichTextLabel_theme_color_table_odd_row_bg>`                    | ``Color(0, 0, 0, 0)``       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`line_separation<class_RichTextLabel_theme_constant_line_separation>`                   | ``0``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`outline_size<class_RichTextLabel_theme_constant_outline_size>`                         | ``0``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_RichTextLabel_theme_constant_shadow_offset_x>`                   | ``1``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_RichTextLabel_theme_constant_shadow_offset_y>`                   | ``1``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_RichTextLabel_theme_constant_shadow_outline_size>`           | ``1``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`table_h_separation<class_RichTextLabel_theme_constant_table_h_separation>`             | ``3``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`table_v_separation<class_RichTextLabel_theme_constant_table_v_separation>`             | ``3``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`text_highlight_h_padding<class_RichTextLabel_theme_constant_text_highlight_h_padding>` | ``3``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`text_highlight_v_padding<class_RichTextLabel_theme_constant_text_highlight_v_padding>` | ``3``                       |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Font<class_Font>`         | :ref:`bold_font<class_RichTextLabel_theme_font_bold_font>`                                   |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Font<class_Font>`         | :ref:`bold_italics_font<class_RichTextLabel_theme_font_bold_italics_font>`                   |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Font<class_Font>`         | :ref:`italics_font<class_RichTextLabel_theme_font_italics_font>`                             |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Font<class_Font>`         | :ref:`mono_font<class_RichTextLabel_theme_font_mono_font>`                                   |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`Font<class_Font>`         | :ref:`normal_font<class_RichTextLabel_theme_font_normal_font>`                               |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`bold_font_size<class_RichTextLabel_theme_font_size_bold_font_size>`                    |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`bold_italics_font_size<class_RichTextLabel_theme_font_size_bold_italics_font_size>`    |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`italics_font_size<class_RichTextLabel_theme_font_size_italics_font_size>`              |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`mono_font_size<class_RichTextLabel_theme_font_size_mono_font_size>`                    |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`int<class_int>`           | :ref:`normal_font_size<class_RichTextLabel_theme_font_size_normal_font_size>`                |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_RichTextLabel_theme_style_focus>`                                          |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
+| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_RichTextLabel_theme_style_normal>`                                        |                             |
++---------------------------------+----------------------------------------------------------------------------------------------+-----------------------------+
 
 Signals
 -------
@@ -596,22 +598,6 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``.
 
 ----
 
-.. _class_RichTextLabel_property_override_selected_font_color:
-
-- :ref:`bool<class_bool>` **override_selected_font_color**
-
-+-----------+-----------------------------------------+
-| *Default* | ``false``                               |
-+-----------+-----------------------------------------+
-| *Setter*  | set_override_selected_font_color(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | is_overriding_selected_font_color()     |
-+-----------+-----------------------------------------+
-
-If ``true``, the label uses the custom font color.
-
-----
-
 .. _class_RichTextLabel_property_progress_bar_delay:
 
 - :ref:`int<class_int>` **progress_bar_delay**
@@ -847,11 +833,13 @@ Method Descriptions
 
 .. _class_RichTextLabel_method_add_image:
 
-- void **add_image** **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**
+- void **add_image** **(** :ref:`Texture2D<class_Texture2D>` image, :ref:`int<class_int>` width=0, :ref:`int<class_int>` height=0, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0) **)**
 
-Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image and a ``color`` to tint the image.
+Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image, a ``color`` to tint the image and a ``region`` to only use parts of the image.
 
 If ``width`` or ``height`` is set to 0, the image size will be adjusted in order to keep the original aspect ratio.
+
+If ``width`` and ``height`` are not set, but ``region`` is, the region's rect will be used.
 
 ----
 
@@ -1387,10 +1375,10 @@ The default tint of text outline.
 - :ref:`Color<class_Color>` **font_selected_color**
 
 +-----------+-----------------------+
-| *Default* | ``Color(0, 0, 0, 1)`` |
+| *Default* | ``Color(0, 0, 0, 0)`` |
 +-----------+-----------------------+
 
-The color of selected text, used when :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is ``true``.
+The color of selected text, used when :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is ``true``. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
 
 ----
 
@@ -1535,6 +1523,30 @@ The horizontal separation of elements in a table.
 +-----------+-------+
 
 The vertical separation of elements in a table.
+
+----
+
+.. _class_RichTextLabel_theme_constant_text_highlight_h_padding:
+
+- :ref:`int<class_int>` **text_highlight_h_padding**
+
++-----------+-------+
+| *Default* | ``3`` |
++-----------+-------+
+
+The horizontal padding around a highlighting and background color box.
+
+----
+
+.. _class_RichTextLabel_theme_constant_text_highlight_v_padding:
+
+- :ref:`int<class_int>` **text_highlight_v_padding**
+
++-----------+-------+
+| *Default* | ``3`` |
++-----------+-------+
+
+The vertical padding around a highlighting and background color box.
 
 ----
 

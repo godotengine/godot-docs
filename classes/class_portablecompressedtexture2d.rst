@@ -140,7 +140,7 @@ Initializes the compressed texture from a base image. The compression mode must 
 
 If this image will be used as a normal map, the "normal map" flag is recommended, to ensure optimum quality.
 
-If lossy compression is requested, the quality setting can optionally be provided. This maps to Lossy WEBP compression quality.
+If lossy compression is requested, the quality setting can optionally be provided. This maps to Lossy WebP compression quality.
 
 ----
 

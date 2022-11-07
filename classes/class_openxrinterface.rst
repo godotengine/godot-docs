@@ -19,12 +19,26 @@ Description
 
 The OpenXR interface allows Godot to interact with OpenXR runtimes and make it possible to create XR experiences and games.
 
-Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialised when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
+Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialized when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
 
 Tutorials
 ---------
 
 - :doc:`Setting up XR <../tutorials/xr/setting_up_xr>`
+
+Properties
+----------
+
++---------------------------+----------------------------------------------------------------------------------+---------+
+| :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>` | ``0.0`` |
++---------------------------+----------------------------------------------------------------------------------+---------+
+
+Methods
+-------
+
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_available_display_refresh_rates<class_OpenXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const| |
++---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -66,6 +80,32 @@ Informs our OpenXR session is stopping.
 - **session_visible** **(** **)**
 
 Informs our OpenXR session is now visible (output is being sent to the HMD).
+
+Property Descriptions
+---------------------
+
+.. _class_OpenXRInterface_property_display_refresh_rate:
+
+- :ref:`float<class_float>` **display_refresh_rate**
+
++-----------+---------------------------------+
+| *Default* | ``0.0``                         |
++-----------+---------------------------------+
+| *Setter*  | set_display_refresh_rate(value) |
++-----------+---------------------------------+
+| *Getter*  | get_display_refresh_rate()      |
++-----------+---------------------------------+
+
+The display refresh rate for the current HMD. Only functional if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+
+Method Descriptions
+-------------------
+
+.. _class_OpenXRInterface_method_get_available_display_refresh_rates:
+
+- :ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
+
+Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

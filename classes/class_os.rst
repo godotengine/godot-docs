@@ -17,7 +17,9 @@ Operating System functions.
 Description
 -----------
 
-Operating System functions. OS wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.
+Operating System functions. ``OS`` wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.
+
+\ **Note:** In Godot 4, ``OS`` functions related to window management were moved to the :ref:`DisplayServer<class_DisplayServer>` singleton.
 
 Tutorials
 ---------
@@ -113,6 +115,8 @@ Methods
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                       | :ref:`get_version<class_OS_method_get_version>` **(** **)** |const|                                                                                                                                                                                                           |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>` **(** **)** |const|                                                                                                                                                                       |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_environment<class_OS_method_has_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                              |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`has_feature<class_OS_method_has_feature>` **(** :ref:`String<class_String>` tag_name **)** |const|                                                                                                                                                                      |
@@ -155,17 +159,17 @@ Methods
 Enumerations
 ------------
 
-.. _enum_OS_VideoDriver:
+.. _enum_OS_RenderingDriver:
 
-.. _class_OS_constant_VIDEO_DRIVER_VULKAN:
+.. _class_OS_constant_RENDERING_DRIVER_VULKAN:
 
-.. _class_OS_constant_VIDEO_DRIVER_OPENGL_3:
+.. _class_OS_constant_RENDERING_DRIVER_OPENGL3:
 
-enum **VideoDriver**:
+enum **RenderingDriver**:
 
-- **VIDEO_DRIVER_VULKAN** = **0** --- The Vulkan rendering backend. It requires Vulkan 1.0 support and automatically uses features from Vulkan 1.1 and 1.2 if available.
+- **RENDERING_DRIVER_VULKAN** = **0** --- The Vulkan rendering driver. It requires Vulkan 1.0 support and automatically uses features from Vulkan 1.1 and 1.2 if available.
 
-- **VIDEO_DRIVER_OPENGL_3** = **1** --- The OpenGL 3 rendering backend. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
+- **RENDERING_DRIVER_OPENGL3** = **1** --- The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
 
 ----
 
@@ -494,7 +498,7 @@ Returns the keycode of the given string (e.g. "Escape").
 
 - :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
 
-Returns the *global* cache data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* cache data directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -571,7 +575,7 @@ For example, in the command line below, ``--fullscreen`` will not be returned in
 
 - :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
 
-Returns the *global* user configuration directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* user configuration directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -583,7 +587,7 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 Returns an array of MIDI device names.
 
-The returned array will be empty if the system MIDI driver has not previously been initialised with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`.
+The returned array will be empty if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`.
 
 \ **Note:** This method is implemented on Linux, macOS and Windows.
 
@@ -593,7 +597,7 @@ The returned array will be empty if the system MIDI driver has not previously be
 
 - :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
 
-Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+Returns the *global* user data directory according to the operating system's standards. On the Linux/BSD platform, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -920,6 +924,20 @@ For UWP, the device family version is returned.
 For Android, the SDK version and the incremental build number are returned. If it's a custom ROM, it attempts to return its version instead.
 
 \ **Note:** This method is not supported on the web platform. It returns an empty string.
+
+----
+
+.. _class_OS_method_get_video_adapter_driver_info:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info** **(** **)** |const|
+
+Returns the video adapter driver name and version for the user's currently active graphics card.
+
+The first element holds the driver name, such as ``nvidia``, ``amdgpu``, etc.
+
+The second element holds the driver version. For e.g. the ``nvidia`` driver on a Linux/BSD platform, the version is in the format ``510.85.02``. For Windows, the driver's format is ``31.0.15.1659``.
+
+\ **Note:** This method is only supported on the platforms Linux/BSD and Windows when not running in headless mode. It returns an empty array on other platforms.
 
 ----
 

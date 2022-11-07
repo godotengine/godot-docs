@@ -71,6 +71,8 @@ The single-scattering :ref:`Color<class_Color>` of the :ref:`FogVolume<class_Fog
 
 The density of the :ref:`FogVolume<class_FogVolume>`. Denser objects are more opaque, but may suffer from under-sampling artifacts that look like stripes. Negative values can be used to subtract fog from other :ref:`FogVolume<class_FogVolume>`\ s or global volumetric fog.
 
+\ **Note:** Due to limited precision, :ref:`density<class_FogMaterial_property_density>` values between ``-0.001`` and ``0.001`` (exclusive) act like ``0.0``. This does not apply to :ref:`Environment.volumetric_fog_density<class_Environment_property_volumetric_fog_density>`.
+
 ----
 
 .. _class_FogMaterial_property_density_texture:

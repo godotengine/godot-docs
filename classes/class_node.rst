@@ -181,7 +181,7 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`is_processing_unhandled_key_input<class_Node_method_is_processing_unhandled_key_input>` **(** **)** |const|                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`move_child<class_Node_method_move_child>` **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**                                                                                              |
+| void                                              | :ref:`move_child<class_Node_method_move_child>` **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_index **)**                                                                                                 |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                              | :ref:`print_orphan_nodes<class_Node_method_print_orphan_nodes>` **(** **)**                                                                                                                                                    |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -725,7 +725,7 @@ Corresponds to the :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_configuration_warnings** **(** **)** |virtual| |const|
 
-The elements in the array returned from this method are displayed as warnings in the Scene Dock if the script that overrides it is a ``tool`` script.
+The elements in the array returned from this method are displayed as warnings in the Scene dock if the script that overrides it is a ``tool`` script.
 
 Returning an empty array produces no warnings.
 
@@ -1373,9 +1373,9 @@ Returns ``true`` if the node is processing unhandled key input (see :ref:`set_pr
 
 .. _class_Node_method_move_child:
 
-- void **move_child** **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_position **)**
+- void **move_child** **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_index **)**
 
-Moves a child node to a different position (order) among the other children. Since calls, signals, etc are performed by tree order, changing the order of children nodes may be useful. If ``to_position`` is negative, the index will be counted from the end.
+Moves a child node to a different index (order) among the other children. Since calls, signals, etc. are performed by tree order, changing the order of children nodes may be useful. If ``to_index`` is negative, the index will be counted from the end.
 
 \ **Note:** Internal children can only be moved within their expected "internal range" (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
@@ -1414,7 +1414,7 @@ Prints the tree to stdout. Used mainly for debugging purposes. This version disp
 
 - void **print_tree_pretty** **(** **)**
 
-Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the scene inspector. It is useful for inspecting larger trees.
+Similar to :ref:`print_tree<class_Node_method_print_tree>`, this prints the tree to stdout. This version displays a more graphical representation similar to what is displayed in the Scene Dock. It is useful for inspecting larger trees.
 
 \ **Example output:**\ 
 
@@ -1497,7 +1497,7 @@ Requests that ``_ready`` be called again. Note that the method won't be called i
 
 - :ref:`Error<enum_@GlobalScope_Error>` **rpc** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behaviour depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns ``null``.
+Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behavior depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns ``null``.
 
 \ **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. You also need to keep track of the connection state, either by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals like ``server_disconnected`` or by checking ``get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED``.
 
