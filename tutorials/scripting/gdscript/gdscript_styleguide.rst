@@ -536,7 +536,7 @@ Variables    snake_case    :code:`particle_effect`
 Signals      snake_case    :code:`signal door_opened #always in passed tense`
 Constants    CONSTANT_CASE :code:`const MAX_SPEED = 200`
 Enum names   PascalCase    :code:`enum Element`
-Enum members CONSTANT_CASE :code:`{EARTH, WATER, AIR, FIRE,}`
+Enum members CONSTANT_CASE :code:`{EARTH, WATER, AIR, FIRE}`
 ============ ============= ==================================
 
 File names
