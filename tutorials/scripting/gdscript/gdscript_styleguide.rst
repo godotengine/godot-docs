@@ -533,7 +533,7 @@ Class names   PascalCase   :code:`class_name YAMLParser`
 Node names   PascalCase    :code:`const Weapon = preload("res://weapon.gd")`
 Functions    snake_case    :code:`func load_level():`
 Variables    snake_case    :code:`particle_effect`
-Signals      snake_case    :code:`signal door_opened #always in passed tense`
+Signals      snake_case    :code:`signal door_opened`, always in past tense
 Constants    CONSTANT_CASE :code:`const MAX_SPEED = 200`
 Enum names   PascalCase    :code:`enum Element`
 Enum members CONSTANT_CASE :code:`{EARTH, WATER, AIR, FIRE}`
