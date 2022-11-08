@@ -528,7 +528,7 @@ code.
 ============ ============= ==================================
 Type         Convention    Example
 ============ ============= ==================================
-File names   snake_case    :code:`yaml_parsed.gd`
+File names   snake_case    :code:`yaml_parser.gd`
 Class names   PascalCase   :code:`class_name YAMLParser`
 Node names   PascalCase    :code:`const Weapon = preload("res://weapon.gd")`
 Functions    snake_case    :code:`func load_level():`
