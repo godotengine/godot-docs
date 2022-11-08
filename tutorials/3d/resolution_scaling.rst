@@ -178,6 +178,8 @@ to oversharpening.
     scaling mode to **FSR 1.0** then adjust FSR sharpness as needed. This allows
     using FSR 1.0 while rendering at a near-native resolution.
 
+.. _doc_resolution_scaling_mipmap_bias:
+
 Mipmap bias
 ^^^^^^^^^^^
 
