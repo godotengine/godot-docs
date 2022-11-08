@@ -31,6 +31,8 @@ Ultimately, a transform notification can be requested, which will notify the nod
 
 \ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GDScript.deg2rad<class_@GDScript_method_deg2rad>`.
 
+\ **Note:** The method :ref:`draw_line<class_CanvasItem_method_draw_line>` and its siblings draw relative to the position of the CanvasItem that is calling the methods. That is, the point (0, 0) is equivalent to the global position of the CanvasItem. When using a child of :ref:`Node2D<class_Node2D>`, use :ref:`to_local<class_Node2D_method_to_local` to convert a global position to a local position.
+
 Tutorials
 ---------
 
