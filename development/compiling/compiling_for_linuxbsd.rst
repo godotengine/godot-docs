@@ -149,13 +149,16 @@ manager.
 
 .. note:: If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
-          SCons option ``production=yes``.
+          SCons option `production=yes`.
           
-          If you wish, you can also enable features piecemeal such as 
-          `optimize=speed_trace`, or `use_lto=yes` which will enable
+          If you wish, you can also enable features piecemeal with 
+          `optimize=speed` and/or `lto=full` which will enable
           speed optimizations and link-time optimizations independently.
+          
           In particular, you may not be able to build with LTO on with a weaker computer, 
-          as it can use quite a lot of RAM (up to 7GB).
+          as it can use quite a lot of RAM (up to 7GB). In this case, you may still be able to get
+          some benefits with weaker (but more memory-friendly) settings such as `lto=thin`, or
+          `lto=auto` which should choose a reasonable configuration for your machine.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
