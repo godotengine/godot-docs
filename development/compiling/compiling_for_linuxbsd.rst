@@ -149,35 +149,18 @@ manager.
 
 .. note:: If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
-          SCons option ``target=release_debug``.
-
-          If you are compiling Godot with GCC, you can make the binary
-          even smaller and faster by adding the SCons option ``use_lto=yes``.
-          As link-time optimization is a memory-intensive process,
-          this will require about 7 GB of available RAM while compiling.
+          SCons option ``production=yes``.
+          
+          If you wish, you can also enable features piecemeal such as 
+          `optimize=speed_trace`, or `use_lto=yes` which will enable
+          speed optimizations and link-time optimizations independently.
+          In particular, you may not be able to build with LTO on with a weaker computer, 
+          as it can use quite a lot of RAM (up to 7GB).
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
-
-Compiling a headless/server build
----------------------------------
-
-To compile a *headless* build which provides editor functionality to export
-projects in an automated manner, use::
-
-    scons -j8 platform=server tools=yes target=release_debug
-
-To compile a debug *server* build which can be used with
-:ref:`remote debugging tools <doc_command_line_tutorial>`, use::
-
-    scons -j8 platform=server tools=no target=release_debug
-
-To compile a *server* build which is optimized to run dedicated game servers,
-use::
-
-    scons -j8 platform=server tools=no target=release
 
 Building export templates
 -------------------------
@@ -197,15 +180,15 @@ following parameters:
 
 ::
 
-    scons platform=linuxbsd tools=no target=release bits=32
-    scons platform=linuxbsd tools=no target=release_debug bits=32
+    scons platform=linuxbsd tools=no production=yes bits=32
+    scons platform=linuxbsd tools=no production=yes optimize=speed_trace bits=32
 
 -  (64 bits)
 
 ::
 
-    scons platform=linuxbsd tools=no target=release bits=64
-    scons platform=linuxbsd tools=no target=release_debug bits=64
+    scons platform=linuxbsd tools=no optimize=speed bits=64
+    scons platform=linuxbsd tools=no target=speed_trace bits=64
 
 Note that cross-compiling for the opposite bits (64/32) as your host
 platform is not always straight-forward and might need a chroot environment.
