@@ -92,6 +92,8 @@ Example for using 4 cores:
 
     scons platform=linuxbsd -j 4
 
+.. _doc_introduction_to_the_buildsystem_resulting_binary:
+
 Resulting binary
 ----------------
 
