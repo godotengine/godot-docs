@@ -44,7 +44,11 @@ Here is a complete class example based on these guidelines:
 
     func _init():
         add_to_group("state_machine")
-
+        
+        
+    func _enter_tree():
+        print("this happens before the ready method!")
+        
 
     func _ready():
         connect("state_changed", self, "_on_state_changed")
@@ -87,6 +91,12 @@ Here is a complete class example based on these guidelines:
     func _on_state_changed(previous, new):
         print("state changed")
         emit_signal("state_changed")
+        
+    class State:
+        var foo = 0
+
+        func _init():
+            print("Hello!")
 
 .. _formatting:
 
@@ -703,10 +713,12 @@ We suggest to organize GDScript code this way:
     11. onready variables
 
     12. optional built-in virtual _init method
-    13. built-in virtual _ready method
-    14. remaining built-in virtual methods
-    15. public methods
-    16. private methods
+    13. optional built-in virtual _enter_tree() method
+    14. built-in virtual _ready method
+    15. remaining built-in virtual methods
+    16. public methods
+    17. private methods
+    18. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
