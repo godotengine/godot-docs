@@ -1210,7 +1210,7 @@ There are 6 pattern types:
     Matches the contents of a variable/enum::
 
         match typeof(x):
-            TYPE_REAL:
+            TYPE_FLOAT:
                 print("float")
             TYPE_STRING:
                 print("text")
