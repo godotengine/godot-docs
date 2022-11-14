@@ -241,7 +241,9 @@ A few user-controlled parameters are available to better tweak the technique:
 - **Depth Tolerance** can be used for screen-space-ray hit tolerance to gaps. The bigger the value, the more gaps will be ignored.
 - **Roughness** will apply a screen-space blur to approximate roughness in objects with this material characteristic.
 
-Keep in mind that screen-space-reflections only work for reflecting opaque geometry. Transparent objects can't be reflected.
+Keep in mind that screen-space-reflections only work for reflecting opaque
+geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
+This also applies to shaders that use ``SCREEN_TEXTURE`` or ``DEPTH_TEXTURE``.
 
 Screen-Space Ambient Occlusion (SSAO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
