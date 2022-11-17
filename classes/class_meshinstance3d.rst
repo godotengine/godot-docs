@@ -160,6 +160,10 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a 
 
 - :ref:`int<class_int>` **find_blend_shape_by_name** **(** :ref:`StringName<class_StringName>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_MeshInstance3D_method_get_active_material:
@@ -174,11 +178,19 @@ Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<
 
 - :ref:`int<class_int>` **get_blend_shape_count** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_MeshInstance3D_method_get_blend_shape_value:
 
 - :ref:`float<class_float>` **get_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -201,6 +213,10 @@ Returns the number of surface override materials. This is equivalent to :ref:`Me
 .. _class_MeshInstance3D_method_set_blend_shape_value:
 
 - void **set_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx, :ref:`float<class_float>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

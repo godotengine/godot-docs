@@ -12,7 +12,9 @@ FileSystemDock
 
 **Inherits:** :ref:`VBoxContainer<class_VBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -60,9 +62,9 @@ Signals
 
 ----
 
-.. _class_FileSystemDock_signal_instance:
+.. _class_FileSystemDock_signal_instantiate:
 
-- **instance** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
+- **instantiate** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
 
 Method Descriptions
 -------------------
@@ -70,6 +72,10 @@ Method Descriptions
 .. _class_FileSystemDock_method_navigate_to_path:
 
 - void **navigate_to_path** **(** :ref:`String<class_String>` path **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,7 +12,9 @@ PolygonPathFinder
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -42,11 +44,19 @@ Method Descriptions
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **find_path** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PolygonPathFinder_method_get_bounds:
 
 - :ref:`Rect2<class_Rect2>` **get_bounds** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -54,11 +64,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PolygonPathFinder_method_get_intersections:
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_intersections** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -66,11 +84,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_point_penalty** **(** :ref:`int<class_int>` idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PolygonPathFinder_method_is_point_inside:
 
 - :ref:`bool<class_bool>` **is_point_inside** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -78,11 +104,19 @@ Method Descriptions
 
 - void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PolygonPathFinder_method_setup:
 
 - void **setup** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedInt32Array<class_PackedInt32Array>` connections **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

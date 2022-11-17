@@ -105,11 +105,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_can_do_next_pass** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Material_method__can_use_render_priority:
 
 - :ref:`bool<class_bool>` **_can_use_render_priority** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -117,17 +125,29 @@ Method Descriptions
 
 - :ref:`Mode<enum_Shader_Mode>` **_get_shader_mode** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Material_method__get_shader_rid:
 
 - :ref:`RID<class_RID>` **_get_shader_rid** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Material_method_inspect_native_shader_code:
 
 - void **inspect_native_shader_code** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

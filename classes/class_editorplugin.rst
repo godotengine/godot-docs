@@ -84,7 +84,7 @@ Methods
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_custom_type<class_EditorPlugin_method_add_custom_type>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` base, :ref:`Script<class_Script>` script, :ref:`Texture2D<class_Texture2D>` icon **)**                          |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>` **(** :ref:`Script<class_Script>` script **)**                                                                                                                              |
+| void                                                      | :ref:`add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>` **(** :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` script **)**                                                                                                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`add_export_plugin<class_EditorPlugin_method_add_export_plugin>` **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**                                                                                                          |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,7 +130,7 @@ Methods
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_custom_type<class_EditorPlugin_method_remove_custom_type>` **(** :ref:`String<class_String>` type **)**                                                                                                                                  |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`remove_debugger_plugin<class_EditorPlugin_method_remove_debugger_plugin>` **(** :ref:`Script<class_Script>` script **)**                                                                                                                        |
+| void                                                      | :ref:`remove_debugger_plugin<class_EditorPlugin_method_remove_debugger_plugin>` **(** :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` script **)**                                                                                            |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                      | :ref:`remove_export_plugin<class_EditorPlugin_method_remove_export_plugin>` **(** :ref:`EditorExportPlugin<class_EditorExportPlugin>` plugin **)**                                                                                                    |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -821,7 +821,7 @@ During run-time, this will be a simple object with a script so this function doe
 
 .. _class_EditorPlugin_method_add_debugger_plugin:
 
-- void **add_debugger_plugin** **(** :ref:`Script<class_Script>` script **)**
+- void **add_debugger_plugin** **(** :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` script **)**
 
 Adds a :ref:`Script<class_Script>` as debugger plugin to the Debugger. The script must extend :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`.
 
@@ -1043,7 +1043,7 @@ Removes a custom type added by :ref:`add_custom_type<class_EditorPlugin_method_a
 
 .. _class_EditorPlugin_method_remove_debugger_plugin:
 
-- void **remove_debugger_plugin** **(** :ref:`Script<class_Script>` script **)**
+- void **remove_debugger_plugin** **(** :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` script **)**
 
 Removes the debugger plugin with given script from the Debugger.
 

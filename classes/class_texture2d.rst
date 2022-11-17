@@ -69,11 +69,19 @@ Method Descriptions
 
 - void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|
 
+Called when the entire ``Texture2D`` is requested to be drawn over a :ref:`CanvasItem<class_CanvasItem>`, with the top-left offset specified in ``pos``. ``modulate`` specifies a multiplier for the colors being drawn, while ``transpose`` specifies whether drawing should be performed in column-major order instead of row-major order (resulting in 90-degree clockwise rotation).
+
+\ **Note:** This is only used in 2D rendering, not 3D.
+
 ----
 
 .. _class_Texture2D_method__draw_rect:
 
 - void **_draw_rect** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose **)** |virtual| |const|
+
+Called when the ``Texture2D`` is requested to be drawn onto :ref:`CanvasItem<class_CanvasItem>`'s specified ``rect``. ``modulate`` specifies a multiplier for the colors being drawn, while ``transpose`` specifies whether drawing should be performed in column-major order instead of row-major order (resulting in 90-degree clockwise rotation).
+
+\ **Note:** This is only used in 2D rendering, not 3D.
 
 ----
 
@@ -81,11 +89,17 @@ Method Descriptions
 
 - void **_draw_rect_region** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate, :ref:`bool<class_bool>` transpose, :ref:`bool<class_bool>` clip_uv **)** |virtual| |const|
 
+Called when a part of the ``Texture2D`` specified by ``src_rect``'s coordinates is requested to be drawn onto :ref:`CanvasItem<class_CanvasItem>`'s specified ``rect``. ``modulate`` specifies a multiplier for the colors being drawn, while ``transpose`` specifies whether drawing should be performed in column-major order instead of row-major order (resulting in 90-degree clockwise rotation).
+
+\ **Note:** This is only used in 2D rendering, not 3D.
+
 ----
 
 .. _class_Texture2D_method__get_height:
 
 - :ref:`int<class_int>` **_get_height** **(** **)** |virtual| |const|
+
+Called when the ``Texture2D``'s height is queried.
 
 ----
 
@@ -93,17 +107,23 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_width** **(** **)** |virtual| |const|
 
+Called when the ``Texture2D``'s width is queried.
+
 ----
 
 .. _class_Texture2D_method__has_alpha:
 
 - :ref:`bool<class_bool>` **_has_alpha** **(** **)** |virtual| |const|
 
+Called when the presence of an alpha channel in the ``Texture2D`` is queried.
+
 ----
 
 .. _class_Texture2D_method__is_pixel_opaque:
 
 - :ref:`bool<class_bool>` **_is_pixel_opaque** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |virtual| |const|
+
+Called when a pixel's opaque state in the ``Texture2D`` is queried at the specified ``(x, y)`` position.
 
 ----
 
@@ -135,7 +155,7 @@ Draws a part of the texture using a :ref:`CanvasItem<class_CanvasItem>` with the
 
 - :ref:`int<class_int>` **get_height** **(** **)** |const|
 
-Returns the texture height.
+Returns the texture height in pixels.
 
 ----
 
@@ -153,7 +173,7 @@ Returns an :ref:`Image<class_Image>` that is a copy of data from this ``Texture2
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
 
-Returns the texture size.
+Returns the texture size in pixels.
 
 ----
 
@@ -161,7 +181,7 @@ Returns the texture size.
 
 - :ref:`int<class_int>` **get_width** **(** **)** |const|
 
-Returns the texture width.
+Returns the texture width in pixels.
 
 ----
 

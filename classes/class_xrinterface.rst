@@ -51,9 +51,13 @@ Methods
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedVector3Array<class_PackedVector3Array>`    | :ref:`get_play_area<class_XRInterface_method_get_play_area>` **(** **)** |const|                                                                                                                                                                                                                                                        |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Projection<class_Projection>`                    | :ref:`get_projection_for_view<class_XRInterface_method_get_projection_for_view>` **(** :ref:`int<class_int>` view, :ref:`float<class_float>` aspect, :ref:`float<class_float>` near, :ref:`float<class_float>` far **)**                                                                                                                |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_Vector2>`                          | :ref:`get_render_target_size<class_XRInterface_method_get_render_target_size>` **(** **)**                                                                                                                                                                                                                                              |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` | :ref:`get_tracking_status<class_XRInterface_method_get_tracking_status>` **(** **)** |const|                                                                                                                                                                                                                                            |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform3D<class_Transform3D>`                  | :ref:`get_transform_for_view<class_XRInterface_method_get_transform_for_view>` **(** :ref:`int<class_int>` view, :ref:`Transform3D<class_Transform3D>` cam_transform **)**                                                                                                                                                              |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                  | :ref:`get_view_count<class_XRInterface_method_get_view_count>` **(** **)**                                                                                                                                                                                                                                                              |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -258,6 +262,14 @@ Returns an array of vectors that denotes the physical play area mapped to the vi
 
 ----
 
+.. _class_XRInterface_method_get_projection_for_view:
+
+- :ref:`Projection<class_Projection>` **get_projection_for_view** **(** :ref:`int<class_int>` view, :ref:`float<class_float>` aspect, :ref:`float<class_float>` near, :ref:`float<class_float>` far **)**
+
+Returns the projection matrix for a view/eye.
+
+----
+
 .. _class_XRInterface_method_get_render_target_size:
 
 - :ref:`Vector2<class_Vector2>` **get_render_target_size** **(** **)**
@@ -271,6 +283,18 @@ Returns the resolution at which we should render our intermediate results before
 - :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` **get_tracking_status** **(** **)** |const|
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+
+----
+
+.. _class_XRInterface_method_get_transform_for_view:
+
+- :ref:`Transform3D<class_Transform3D>` **get_transform_for_view** **(** :ref:`int<class_int>` view, :ref:`Transform3D<class_Transform3D>` cam_transform **)**
+
+Returns the transform for a view/eye.
+
+\ ``view`` is the view/eye index.
+
+\ ``cam_transform`` is the transform that maps device coordinates to scene coordinates, typically the global_transform of the current XROrigin3D.
 
 ----
 

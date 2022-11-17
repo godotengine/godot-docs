@@ -12,7 +12,9 @@ NativeExtension
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -59,11 +61,19 @@ Method Descriptions
 
 - void **close_library** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_NativeExtension_method_get_minimum_library_initialization_level:
 
 - :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -71,17 +81,29 @@ Method Descriptions
 
 - void **initialize_library** **(** :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` level **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_NativeExtension_method_is_library_open:
 
 - :ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_NativeExtension_method_open_library:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

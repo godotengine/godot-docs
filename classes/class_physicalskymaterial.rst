@@ -65,6 +65,10 @@ Property Descriptions
 | *Getter*  | get_energy_multiplier()      |
 +-----------+------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicalSkyMaterial_property_ground_color:

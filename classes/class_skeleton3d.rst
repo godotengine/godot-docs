@@ -195,6 +195,10 @@ Property Descriptions
 | *Getter*  | get_animate_physical_bones()      |
 +-----------+-----------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_property_motion_scale:
@@ -226,6 +230,10 @@ Multiplies the position 3D track animation.
 +-----------+---------------------------+
 | *Getter*  | is_show_rest_only()       |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Method Descriptions
 -------------------
@@ -267,6 +275,10 @@ Removes the local pose override on all bones in the skeleton.
 .. _class_Skeleton3D_method_create_skin_from_rest_transforms:
 
 - :ref:`Skin<class_Skin>` **create_skin_from_rest_transforms** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -388,17 +400,29 @@ Returns the pose transform of the specified bone. Pose is applied on top of the 
 
 - :ref:`Vector3<class_Vector3>` **get_bone_pose_position** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_method_get_bone_pose_rotation:
 
 - :ref:`Quaternion<class_Quaternion>` **get_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_method_get_bone_pose_scale:
 
 - :ref:`Vector3<class_Vector3>` **get_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -584,6 +608,10 @@ Sets the local pose transform, ``pose``, for the bone at ``bone_idx``.
 
 - void **set_bone_name** **(** :ref:`int<class_int>` bone_idx, :ref:`String<class_String>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_method_set_bone_parent:
@@ -600,17 +628,29 @@ Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If
 
 - void **set_bone_pose_position** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` position **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_method_set_bone_pose_rotation:
 
 - void **set_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx, :ref:`Quaternion<class_Quaternion>` rotation **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skeleton3D_method_set_bone_pose_scale:
 
 - void **set_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` scale **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

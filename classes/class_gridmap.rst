@@ -346,11 +346,19 @@ Clear all cells.
 
 - void **clear_baked_meshes** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GridMap_method_get_bake_mesh_instance:
 
 - :ref:`RID<class_RID>` **get_bake_mesh_instance** **(** :ref:`int<class_int>` idx **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -472,6 +480,10 @@ Returns the map coordinates of the cell containing the given ``local_position``.
 
 - void **make_baked_meshes** **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GridMap_method_map_to_local:
@@ -485,6 +497,10 @@ Returns the position of a grid cell in the GridMap's local coordinate space. To 
 .. _class_GridMap_method_resource_changed:
 
 - void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

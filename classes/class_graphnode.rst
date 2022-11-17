@@ -721,6 +721,10 @@ Color of the title text.
 | *Default* | ``22`` |
 +-----------+--------+
 
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GraphNode_theme_constant_close_offset:

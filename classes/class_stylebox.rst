@@ -155,11 +155,19 @@ Method Descriptions
 
 - void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_StyleBox_method__get_center_size:
 
 - :ref:`Vector2<class_Vector2>` **_get_center_size** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -167,17 +175,29 @@ Method Descriptions
 
 - :ref:`Rect2<class_Rect2>` **_get_draw_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_StyleBox_method__get_style_margin:
 
 - :ref:`float<class_float>` **_get_style_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_StyleBox_method__test_mask:
 
 - :ref:`bool<class_bool>` **_test_mask** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

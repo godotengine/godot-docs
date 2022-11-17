@@ -12,7 +12,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`MenuBar<class_MenuBar>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
+**Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`MenuBar<class_MenuBar>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
 
 All user interface nodes inherit from Control. A control's anchors and offsets adapt its position and size relative to its parent.
 
@@ -89,6 +89,8 @@ Properties
 | :ref:`GrowDirection<enum_Control_GrowDirection>`     | :ref:`grow_vertical<class_Control_property_grow_vertical>`                                   | ``1``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`LayoutDirection<enum_Control_LayoutDirection>` | :ref:`layout_direction<class_Control_property_layout_direction>`                             | ``0``             |
++------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+| :ref:`bool<class_bool>`                              | :ref:`localize_numeral_system<class_Control_property_localize_numeral_system>`               | ``true``          |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 | :ref:`CursorShape<enum_Control_CursorShape>`         | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`         | ``0``             |
 +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
@@ -1032,6 +1034,24 @@ Controls layout direction and text writing direction. Right-to-left layouts are 
 
 ----
 
+.. _class_Control_property_localize_numeral_system:
+
+- :ref:`bool<class_bool>` **localize_numeral_system**
+
++-----------+------------------------------------+
+| *Default* | ``true``                           |
++-----------+------------------------------------+
+| *Setter*  | set_localize_numeral_system(value) |
++-----------+------------------------------------+
+| *Getter*  | is_localizing_numeral_system()     |
++-----------+------------------------------------+
+
+If ``true``, automatically converts code line numbers, list indices, :ref:`SpinBox<class_SpinBox>` and :ref:`ProgressBar<class_ProgressBar>` values from the Western Arabic (0..9) to the numeral systems used in current locale.
+
+\ **Note:** Numbers within the text are not automatically converted, it can be done manually, using :ref:`TextServer.format_number<class_TextServer_method_format_number>`.
+
+----
+
 .. _class_Control_property_mouse_default_cursor_shape:
 
 - :ref:`CursorShape<enum_Control_CursorShape>` **mouse_default_cursor_shape**
@@ -1216,7 +1236,7 @@ The node's rotation around its pivot, in radians. See :ref:`pivot_offset<class_C
 
 The node's scale, relative to its :ref:`size<class_Control_property_size>`. Change this property to scale the node around its :ref:`pivot_offset<class_Control_property_pivot_offset>`. The Control's :ref:`tooltip_text<class_Control_property_tooltip_text>` will also scale according to this value.
 
-\ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/viewports/multiple_resolutions>` instead of scaling Controls individually.
+\ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/rendering/multiple_resolutions>` instead of scaling Controls individually.
 
 \ **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using ``await get_tree().process_frame`` then set its :ref:`scale<class_Control_property_scale>` property.
 

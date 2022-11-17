@@ -12,7 +12,9 @@ PhysicalBone3D
 
 **Inherits:** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -389,11 +391,19 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 - void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicalBone3D_method_apply_impulse:
 
 - void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -401,17 +411,29 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 - :ref:`int<class_int>` **get_bone_id** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicalBone3D_method_get_simulate_physics:
 
 - :ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicalBone3D_method_is_simulating_physics:
 
 - :ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

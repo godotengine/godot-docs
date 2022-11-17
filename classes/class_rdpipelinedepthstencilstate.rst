@@ -12,7 +12,9 @@ RDPipelineDepthStencilState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -76,6 +78,10 @@ Property Descriptions
 | *Getter*  | get_back_op_compare()      |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_back_op_compare_mask:
@@ -89,6 +95,10 @@ Property Descriptions
 +-----------+---------------------------------+
 | *Getter*  | get_back_op_compare_mask()      |
 +-----------+---------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -104,6 +114,10 @@ Property Descriptions
 | *Getter*  | get_back_op_depth_fail()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_back_op_fail:
@@ -117,6 +131,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_back_op_fail()      |
 +-----------+-------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -132,6 +150,10 @@ Property Descriptions
 | *Getter*  | get_back_op_pass()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_back_op_reference:
@@ -145,6 +167,10 @@ Property Descriptions
 +-----------+------------------------------+
 | *Getter*  | get_back_op_reference()      |
 +-----------+------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -160,6 +186,10 @@ Property Descriptions
 | *Getter*  | get_back_op_write_mask()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_depth_compare_operator:
@@ -173,6 +203,10 @@ Property Descriptions
 +-----------+-----------------------------------+
 | *Getter*  | get_depth_compare_operator()      |
 +-----------+-----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -188,6 +222,10 @@ Property Descriptions
 | *Getter*  | get_depth_range_max()      |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_depth_range_min:
@@ -201,6 +239,10 @@ Property Descriptions
 +-----------+----------------------------+
 | *Getter*  | get_depth_range_min()      |
 +-----------+----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -216,6 +258,10 @@ Property Descriptions
 | *Getter*  | get_enable_depth_range()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_enable_depth_test:
@@ -229,6 +275,10 @@ Property Descriptions
 +-----------+------------------------------+
 | *Getter*  | get_enable_depth_test()      |
 +-----------+------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -244,6 +294,10 @@ Property Descriptions
 | *Getter*  | get_enable_depth_write()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_enable_stencil:
@@ -257,6 +311,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_enable_stencil()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -272,6 +330,10 @@ Property Descriptions
 | *Getter*  | get_front_op_compare()      |
 +-----------+-----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_front_op_compare_mask:
@@ -285,6 +347,10 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | get_front_op_compare_mask()      |
 +-----------+----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -300,6 +366,10 @@ Property Descriptions
 | *Getter*  | get_front_op_depth_fail()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_front_op_fail:
@@ -313,6 +383,10 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_front_op_fail()      |
 +-----------+--------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -328,6 +402,10 @@ Property Descriptions
 | *Getter*  | get_front_op_pass()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_front_op_reference:
@@ -342,6 +420,10 @@ Property Descriptions
 | *Getter*  | get_front_op_reference()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineDepthStencilState_property_front_op_write_mask:
@@ -355,6 +437,10 @@ Property Descriptions
 +-----------+--------------------------------+
 | *Getter*  | get_front_op_write_mask()      |
 +-----------+--------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

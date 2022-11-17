@@ -407,11 +407,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_create_font** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__create_shaped_text:
 
 - :ref:`RID<class_RID>` **_create_shaped_text** **(** :ref:`Direction<enum_TextServer_Direction>` direction, :ref:`Orientation<enum_TextServer_Orientation>` orientation **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -419,11 +427,19 @@ Method Descriptions
 
 - void **_draw_hex_code_box** **(** :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` size, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` index, :ref:`Color<class_Color>` color **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_clear_glyphs:
 
 - void **_font_clear_glyphs** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -431,11 +447,19 @@ Method Descriptions
 
 - void **_font_clear_kerning_map** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_clear_size_cache:
 
 - void **_font_clear_size_cache** **(** :ref:`RID<class_RID>` font_rid **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -443,11 +467,19 @@ Method Descriptions
 
 - void **_font_clear_textures** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_draw_glyph:
 
 - void **_font_draw_glyph** **(** :ref:`RID<class_RID>` font_rid, :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` size, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` index, :ref:`Color<class_Color>` color **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -455,11 +487,19 @@ Method Descriptions
 
 - void **_font_draw_glyph_outline** **(** :ref:`RID<class_RID>` font_rid, :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` size, :ref:`int<class_int>` outline_size, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` index, :ref:`Color<class_Color>` color **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_antialiasing:
 
 - :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **_font_get_antialiasing** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -467,11 +507,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_font_get_ascent** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_descent:
 
 - :ref:`float<class_float>` **_font_get_descent** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -479,11 +527,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_font_get_embolden** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_face_count:
 
 - :ref:`int<class_int>` **_font_get_face_count** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -491,11 +547,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_font_get_face_index** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_fixed_size:
 
 - :ref:`int<class_int>` **_font_get_fixed_size** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -503,11 +567,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_font_get_generate_mipmaps** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_global_oversampling:
 
 - :ref:`float<class_float>` **_font_get_global_oversampling** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -515,11 +587,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_font_get_glyph_advance** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_glyph_contours:
 
 - :ref:`Dictionary<class_Dictionary>` **_font_get_glyph_contours** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` index **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -527,11 +607,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_font_get_glyph_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` char, :ref:`int<class_int>` variation_selector **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_glyph_list:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_font_get_glyph_list** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -539,11 +627,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_font_get_glyph_offset** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_glyph_size:
 
 - :ref:`Vector2<class_Vector2>` **_font_get_glyph_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -551,11 +647,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_font_get_glyph_texture_idx** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_glyph_texture_rid:
 
 - :ref:`RID<class_RID>` **_font_get_glyph_texture_rid** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -563,11 +667,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_font_get_glyph_texture_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_glyph_uv_rect:
 
 - :ref:`Rect2<class_Rect2>` **_font_get_glyph_uv_rect** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -575,11 +687,19 @@ Method Descriptions
 
 - :ref:`Hinting<enum_TextServer_Hinting>` **_font_get_hinting** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_kerning:
 
 - :ref:`Vector2<class_Vector2>` **_font_get_kerning** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`Vector2i<class_Vector2i>` glyph_pair **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -587,11 +707,19 @@ Method Descriptions
 
 - :ref:`Vector2i[]<class_Vector2i>` **_font_get_kerning_list** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_language_support_override:
 
 - :ref:`bool<class_bool>` **_font_get_language_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` language **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -599,11 +727,19 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_font_get_language_support_overrides** **(** :ref:`RID<class_RID>` font_rid **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_msdf_pixel_range:
 
 - :ref:`int<class_int>` **_font_get_msdf_pixel_range** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -611,11 +747,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_font_get_msdf_size** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_name:
 
 - :ref:`String<class_String>` **_font_get_name** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -623,11 +767,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_font_get_opentype_feature_overrides** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_oversampling:
 
 - :ref:`float<class_float>` **_font_get_oversampling** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -635,11 +787,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_font_get_scale** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_script_support_override:
 
 - :ref:`bool<class_bool>` **_font_get_script_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -647,11 +807,19 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_font_get_script_support_overrides** **(** :ref:`RID<class_RID>` font_rid **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_size_cache_list:
 
 - :ref:`Vector2i[]<class_Vector2i>` **_font_get_size_cache_list** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -659,11 +827,19 @@ Method Descriptions
 
 - :ref:`FontStyle<enum_TextServer_FontStyle>` **_font_get_style** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_style_name:
 
 - :ref:`String<class_String>` **_font_get_style_name** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -671,11 +847,19 @@ Method Descriptions
 
 - :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **_font_get_subpixel_positioning** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_supported_chars:
 
 - :ref:`String<class_String>` **_font_get_supported_chars** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -683,11 +867,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_font_get_texture_count** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_texture_image:
 
 - :ref:`Image<class_Image>` **_font_get_texture_image** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -695,11 +887,19 @@ Method Descriptions
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_font_get_texture_offsets** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_transform:
 
 - :ref:`Transform2D<class_Transform2D>` **_font_get_transform** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -707,11 +907,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_font_get_underline_position** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_get_underline_thickness:
 
 - :ref:`float<class_float>` **_font_get_underline_thickness** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -719,11 +927,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_font_get_variation_coordinates** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_has_char:
 
 - :ref:`bool<class_bool>` **_font_has_char** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` char **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -731,11 +947,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_font_is_force_autohinter** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_is_language_supported:
 
 - :ref:`bool<class_bool>` **_font_is_language_supported** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` language **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -743,11 +967,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_font_is_multichannel_signed_distance_field** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_is_script_supported:
 
 - :ref:`bool<class_bool>` **_font_is_script_supported** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -755,11 +987,19 @@ Method Descriptions
 
 - void **_font_remove_glyph** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_remove_kerning:
 
 - void **_font_remove_kerning** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`Vector2i<class_Vector2i>` glyph_pair **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -767,11 +1007,19 @@ Method Descriptions
 
 - void **_font_remove_language_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` language **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_remove_script_support_override:
 
 - void **_font_remove_script_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -779,11 +1027,19 @@ Method Descriptions
 
 - void **_font_remove_size_cache** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_remove_texture:
 
 - void **_font_remove_texture** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -791,11 +1047,19 @@ Method Descriptions
 
 - void **_font_render_glyph** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` index **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_render_range:
 
 - void **_font_render_range** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` start, :ref:`int<class_int>` end **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -803,11 +1067,19 @@ Method Descriptions
 
 - void **_font_set_antialiasing** **(** :ref:`RID<class_RID>` font_rid, :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` antialiasing **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_ascent:
 
 - void **_font_set_ascent** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` ascent **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -815,11 +1087,19 @@ Method Descriptions
 
 - void **_font_set_data** **(** :ref:`RID<class_RID>` font_rid, :ref:`PackedByteArray<class_PackedByteArray>` data **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_data_ptr:
 
 - void **_font_set_data_ptr** **(** :ref:`RID<class_RID>` font_rid, const uint8_t* data_ptr, :ref:`int<class_int>` data_size **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -827,11 +1107,19 @@ Method Descriptions
 
 - void **_font_set_descent** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_embolden:
 
 - void **_font_set_embolden** **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` strength **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -839,11 +1127,19 @@ Method Descriptions
 
 - void **_font_set_face_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` face_index **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_fixed_size:
 
 - void **_font_set_fixed_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` fixed_size **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -851,11 +1147,19 @@ Method Descriptions
 
 - void **_font_set_force_autohinter** **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` force_autohinter **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_generate_mipmaps:
 
 - void **_font_set_generate_mipmaps** **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` generate_mipmaps **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -863,11 +1167,19 @@ Method Descriptions
 
 - void **_font_set_global_oversampling** **(** :ref:`float<class_float>` oversampling **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_glyph_advance:
 
 - void **_font_set_glyph_advance** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph, :ref:`Vector2<class_Vector2>` advance **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -875,11 +1187,19 @@ Method Descriptions
 
 - void **_font_set_glyph_offset** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph, :ref:`Vector2<class_Vector2>` offset **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_glyph_size:
 
 - void **_font_set_glyph_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph, :ref:`Vector2<class_Vector2>` gl_size **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -887,11 +1207,19 @@ Method Descriptions
 
 - void **_font_set_glyph_texture_idx** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph, :ref:`int<class_int>` texture_idx **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_glyph_uv_rect:
 
 - void **_font_set_glyph_uv_rect** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph, :ref:`Rect2<class_Rect2>` uv_rect **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -899,11 +1227,19 @@ Method Descriptions
 
 - void **_font_set_hinting** **(** :ref:`RID<class_RID>` font_rid, :ref:`Hinting<enum_TextServer_Hinting>` hinting **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_kerning:
 
 - void **_font_set_kerning** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`Vector2i<class_Vector2i>` glyph_pair, :ref:`Vector2<class_Vector2>` kerning **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -911,11 +1247,19 @@ Method Descriptions
 
 - void **_font_set_language_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` language, :ref:`bool<class_bool>` supported **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_msdf_pixel_range:
 
 - void **_font_set_msdf_pixel_range** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` msdf_pixel_range **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -923,11 +1267,19 @@ Method Descriptions
 
 - void **_font_set_msdf_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` msdf_size **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_multichannel_signed_distance_field:
 
 - void **_font_set_multichannel_signed_distance_field** **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` msdf **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -935,11 +1287,19 @@ Method Descriptions
 
 - void **_font_set_name** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` name **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_opentype_feature_overrides:
 
 - void **_font_set_opentype_feature_overrides** **(** :ref:`RID<class_RID>` font_rid, :ref:`Dictionary<class_Dictionary>` overrides **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -947,11 +1307,19 @@ Method Descriptions
 
 - void **_font_set_oversampling** **(** :ref:`RID<class_RID>` font_rid, :ref:`float<class_float>` oversampling **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_scale:
 
 - void **_font_set_scale** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` scale **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -959,11 +1327,19 @@ Method Descriptions
 
 - void **_font_set_script_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script, :ref:`bool<class_bool>` supported **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_style:
 
 - void **_font_set_style** **(** :ref:`RID<class_RID>` font_rid, :ref:`FontStyle<enum_TextServer_FontStyle>` style **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -971,11 +1347,19 @@ Method Descriptions
 
 - void **_font_set_style_name** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` name_style **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_subpixel_positioning:
 
 - void **_font_set_subpixel_positioning** **(** :ref:`RID<class_RID>` font_rid, :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` subpixel_positioning **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -983,11 +1367,19 @@ Method Descriptions
 
 - void **_font_set_texture_image** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`Image<class_Image>` image **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_texture_offsets:
 
 - void **_font_set_texture_offsets** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` texture_index, :ref:`PackedInt32Array<class_PackedInt32Array>` offset **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -995,11 +1387,19 @@ Method Descriptions
 
 - void **_font_set_transform** **(** :ref:`RID<class_RID>` font_rid, :ref:`Transform2D<class_Transform2D>` transform **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_underline_position:
 
 - void **_font_set_underline_position** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_position **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1007,11 +1407,19 @@ Method Descriptions
 
 - void **_font_set_underline_thickness** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_thickness **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_set_variation_coordinates:
 
 - void **_font_set_variation_coordinates** **(** :ref:`RID<class_RID>` font_rid, :ref:`Dictionary<class_Dictionary>` variation_coordinates **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1019,11 +1427,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_font_supported_feature_list** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__font_supported_variation_list:
 
 - :ref:`Dictionary<class_Dictionary>` **_font_supported_variation_list** **(** :ref:`RID<class_RID>` font_rid **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1031,11 +1447,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_format_number** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__free_rid:
 
 - void **_free_rid** **(** :ref:`RID<class_RID>` rid **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1043,11 +1467,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_features** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__get_hex_code_box_size:
 
 - :ref:`Vector2<class_Vector2>` **_get_hex_code_box_size** **(** :ref:`int<class_int>` size, :ref:`int<class_int>` index **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1055,11 +1487,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__get_support_data_filename:
 
 - :ref:`String<class_String>` **_get_support_data_filename** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1067,11 +1507,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_support_data_info** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__has:
 
 - :ref:`bool<class_bool>` **_has** **(** :ref:`RID<class_RID>` rid **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1079,11 +1527,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_has_feature** **(** :ref:`Feature<enum_TextServer_Feature>` feature **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__is_confusable:
 
 - :ref:`int<class_int>` **_is_confusable** **(** :ref:`String<class_String>` string, :ref:`PackedStringArray<class_PackedStringArray>` dict **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1091,11 +1547,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_locale_right_to_left** **(** :ref:`String<class_String>` locale **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__is_valid_identifier:
 
 - :ref:`bool<class_bool>` **_is_valid_identifier** **(** :ref:`String<class_String>` string **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1103,11 +1567,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_load_support_data** **(** :ref:`String<class_String>` filename **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__name_to_tag:
 
 - :ref:`int<class_int>` **_name_to_tag** **(** :ref:`String<class_String>` name **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1115,11 +1587,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_parse_number** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__parse_structured_text:
 
 - :ref:`Vector2i[]<class_Vector2i>` **_parse_structured_text** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1127,11 +1607,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_percent_sign** **(** :ref:`String<class_String>` language **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__save_support_data:
 
 - :ref:`bool<class_bool>` **_save_support_data** **(** :ref:`String<class_String>` filename **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1139,11 +1627,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_get_span_count** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_get_span_meta:
 
 - :ref:`Variant<class_Variant>` **_shaped_get_span_meta** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1151,11 +1647,19 @@ Method Descriptions
 
 - void **_shaped_set_span_update_font** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_add_object:
 
 - :ref:`bool<class_bool>` **_shaped_text_add_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align, :ref:`int<class_int>` length **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1163,11 +1667,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_shaped_text_add_string** **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features, :ref:`String<class_String>` language, :ref:`Variant<class_Variant>` meta **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_clear:
 
 - void **_shaped_text_clear** **(** :ref:`RID<class_RID>` shaped **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1175,11 +1687,19 @@ Method Descriptions
 
 - void **_shaped_text_draw** **(** :ref:`RID<class_RID>` shaped, :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` clip_l, :ref:`float<class_float>` clip_r, :ref:`Color<class_Color>` color **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_draw_outline:
 
 - void **_shaped_text_draw_outline** **(** :ref:`RID<class_RID>` shaped, :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` clip_l, :ref:`float<class_float>` clip_r, :ref:`int<class_int>` outline_size, :ref:`Color<class_Color>` color **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1187,11 +1707,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_shaped_text_fit_to_width** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_ascent:
 
 - :ref:`float<class_float>` **_shaped_text_get_ascent** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1199,11 +1727,19 @@ Method Descriptions
 
 - void **_shaped_text_get_carets** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` position, CaretInfo* caret **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_custom_punctuation:
 
 - :ref:`String<class_String>` **_shaped_text_get_custom_punctuation** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1211,11 +1747,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_shaped_text_get_descent** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_direction:
 
 - :ref:`Direction<enum_TextServer_Direction>` **_shaped_text_get_direction** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1223,11 +1767,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_get_dominant_direction_in_range** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` start, :ref:`int<class_int>` end **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_ellipsis_glyph_count:
 
 - :ref:`int<class_int>` **_shaped_text_get_ellipsis_glyph_count** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1235,11 +1787,19 @@ Method Descriptions
 
 - const Glyph* **_shaped_text_get_ellipsis_glyphs** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_ellipsis_pos:
 
 - :ref:`int<class_int>` **_shaped_text_get_ellipsis_pos** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1247,11 +1807,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_get_glyph_count** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_glyphs:
 
 - const Glyph* **_shaped_text_get_glyphs** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1259,11 +1827,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_shaped_text_get_grapheme_bounds** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` pos **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_inferred_direction:
 
 - :ref:`Direction<enum_TextServer_Direction>` **_shaped_text_get_inferred_direction** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1271,11 +1847,19 @@ Method Descriptions
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_shaped_text_get_line_breaks** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`int<class_int>` start, :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` break_flags **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_line_breaks_adv:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_shaped_text_get_line_breaks_adv** **(** :ref:`RID<class_RID>` shaped, :ref:`PackedFloat32Array<class_PackedFloat32Array>` width, :ref:`int<class_int>` start, :ref:`bool<class_bool>` once, :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` break_flags **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1283,11 +1867,19 @@ Method Descriptions
 
 - :ref:`Rect2<class_Rect2>` **_shaped_text_get_object_rect** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_objects:
 
 - :ref:`Array<class_Array>` **_shaped_text_get_objects** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1295,11 +1887,19 @@ Method Descriptions
 
 - :ref:`Orientation<enum_TextServer_Orientation>` **_shaped_text_get_orientation** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_parent:
 
 - :ref:`RID<class_RID>` **_shaped_text_get_parent** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1307,11 +1907,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_shaped_text_get_preserve_control** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_preserve_invalid:
 
 - :ref:`bool<class_bool>` **_shaped_text_get_preserve_invalid** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1319,11 +1927,19 @@ Method Descriptions
 
 - :ref:`Vector2i<class_Vector2i>` **_shaped_text_get_range** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_selection:
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **_shaped_text_get_selection** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` start, :ref:`int<class_int>` end **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1331,11 +1947,19 @@ Method Descriptions
 
 - :ref:`Vector2<class_Vector2>` **_shaped_text_get_size** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_spacing:
 
 - :ref:`int<class_int>` **_shaped_text_get_spacing** **(** :ref:`RID<class_RID>` shaped, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1343,11 +1967,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_get_trim_pos** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_underline_position:
 
 - :ref:`float<class_float>` **_shaped_text_get_underline_position** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1355,11 +1987,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_shaped_text_get_underline_thickness** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_get_width:
 
 - :ref:`float<class_float>` **_shaped_text_get_width** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1367,11 +2007,19 @@ Method Descriptions
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_shaped_text_get_word_breaks** **(** :ref:`RID<class_RID>` shaped, :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` grapheme_flags **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_hit_test_grapheme:
 
 - :ref:`int<class_int>` **_shaped_text_hit_test_grapheme** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` coord **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1379,11 +2027,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_hit_test_position** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` coord **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_is_ready:
 
 - :ref:`bool<class_bool>` **_shaped_text_is_ready** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1391,11 +2047,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_next_grapheme_pos** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` pos **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_overrun_trim_to_width:
 
 - void **_shaped_text_overrun_trim_to_width** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`TextOverrunFlag<enum_TextServer_TextOverrunFlag>` trim_flags **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1403,11 +2067,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_shaped_text_prev_grapheme_pos** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` pos **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_resize_object:
 
 - :ref:`bool<class_bool>` **_shaped_text_resize_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1415,11 +2087,19 @@ Method Descriptions
 
 - void **_shaped_text_set_bidi_override** **(** :ref:`RID<class_RID>` shaped, :ref:`Array<class_Array>` override **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_set_custom_punctuation:
 
 - void **_shaped_text_set_custom_punctuation** **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` punct **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1427,11 +2107,19 @@ Method Descriptions
 
 - void **_shaped_text_set_direction** **(** :ref:`RID<class_RID>` shaped, :ref:`Direction<enum_TextServer_Direction>` direction **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_set_orientation:
 
 - void **_shaped_text_set_orientation** **(** :ref:`RID<class_RID>` shaped, :ref:`Orientation<enum_TextServer_Orientation>` orientation **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1439,11 +2127,19 @@ Method Descriptions
 
 - void **_shaped_text_set_preserve_control** **(** :ref:`RID<class_RID>` shaped, :ref:`bool<class_bool>` enabled **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_set_preserve_invalid:
 
 - void **_shaped_text_set_preserve_invalid** **(** :ref:`RID<class_RID>` shaped, :ref:`bool<class_bool>` enabled **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1451,11 +2147,19 @@ Method Descriptions
 
 - void **_shaped_text_set_spacing** **(** :ref:`RID<class_RID>` shaped, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_shape:
 
 - :ref:`bool<class_bool>` **_shaped_text_shape** **(** :ref:`RID<class_RID>` shaped **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1463,11 +2167,19 @@ Method Descriptions
 
 - const Glyph* **_shaped_text_sort_logical** **(** :ref:`RID<class_RID>` shaped **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_substr:
 
 - :ref:`RID<class_RID>` **_shaped_text_substr** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` start, :ref:`int<class_int>` length **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1475,11 +2187,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_shaped_text_tab_align** **(** :ref:`RID<class_RID>` shaped, :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__shaped_text_update_breaks:
 
 - :ref:`bool<class_bool>` **_shaped_text_update_breaks** **(** :ref:`RID<class_RID>` shaped **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1487,11 +2207,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_shaped_text_update_justification_ops** **(** :ref:`RID<class_RID>` shaped **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__spoof_check:
 
 - :ref:`bool<class_bool>` **_spoof_check** **(** :ref:`String<class_String>` string **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1499,11 +2227,19 @@ Method Descriptions
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **_string_get_word_breaks** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__string_to_lower:
 
 - :ref:`String<class_String>` **_string_to_lower** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1511,17 +2247,29 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_string_to_upper** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__strip_diacritics:
 
 - :ref:`String<class_String>` **_strip_diacritics** **(** :ref:`String<class_String>` string **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TextServerExtension_method__tag_to_name:
 
 - :ref:`String<class_String>` **_tag_to_name** **(** :ref:`int<class_int>` tag **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

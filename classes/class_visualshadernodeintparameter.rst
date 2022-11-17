@@ -12,7 +12,9 @@ VisualShaderNodeIntParameter
 
 **Inherits:** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -69,6 +71,10 @@ Property Descriptions
 | *Getter*  | get_default_value()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_default_value_enabled:
@@ -82,6 +88,10 @@ Property Descriptions
 +-----------+----------------------------------+
 | *Getter*  | is_default_value_enabled()       |
 +-----------+----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -97,6 +107,10 @@ Property Descriptions
 | *Getter*  | get_hint()      |
 +-----------+-----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_max:
@@ -110,6 +124,10 @@ Property Descriptions
 +-----------+----------------+
 | *Getter*  | get_max()      |
 +-----------+----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -125,6 +143,10 @@ Property Descriptions
 | *Getter*  | get_min()      |
 +-----------+----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_step:
@@ -138,6 +160,10 @@ Property Descriptions
 +-----------+-----------------+
 | *Getter*  | get_step()      |
 +-----------+-----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -52,6 +52,10 @@ Property Descriptions
 | *Getter*  | get_indices()          |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ArrayOccluder3D_property_vertices:
@@ -66,12 +70,20 @@ Property Descriptions
 | *Getter*  | get_vertices()           |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
 .. _class_ArrayOccluder3D_method_set_arrays:
 
 - void **set_arrays** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

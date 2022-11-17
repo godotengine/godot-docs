@@ -47,6 +47,10 @@ Property Descriptions
 | *Getter*  | get_input_buffer_max_size()      |
 +-----------+----------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PacketPeerStream_property_output_buffer_max_size:
@@ -60,6 +64,10 @@ Property Descriptions
 +-----------+-----------------------------------+
 | *Getter*  | get_output_buffer_max_size()      |
 +-----------+-----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

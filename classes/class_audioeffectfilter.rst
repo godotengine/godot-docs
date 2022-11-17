@@ -93,6 +93,10 @@ Threshold frequency for the filter, in Hz.
 | *Getter*  | get_db()      |
 +-----------+---------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectFilter_property_gain:

@@ -724,6 +724,8 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
+\ **Note:** :ref:`inertia<class_RigidBody2D_property_inertia>` is required for this to work. To have :ref:`inertia<class_RigidBody2D_property_inertia>`, an active :ref:`CollisionShape2D<class_CollisionShape2D>` must be a child of the node, or you can manually set :ref:`inertia<class_RigidBody2D_property_inertia>`.
+
 ----
 
 .. _class_RigidBody2D_method_apply_torque_impulse:
@@ -733,6 +735,8 @@ Applies a rotational force without affecting position. A force is time dependent
 Applies a rotational impulse to the body without affecting the position.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ **Note:** :ref:`inertia<class_RigidBody2D_property_inertia>` is required for this to work. To have :ref:`inertia<class_RigidBody2D_property_inertia>`, an active :ref:`CollisionShape2D<class_CollisionShape2D>` must be a child of the node, or you can manually set :ref:`inertia<class_RigidBody2D_property_inertia>`.
 
 ----
 

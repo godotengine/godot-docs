@@ -492,6 +492,10 @@ Method Descriptions
 
 - void **adjust_bcs** **(** :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Image_method_blend_rect:
@@ -554,6 +558,10 @@ Compresses the image to use less memory. Can not directly access pixel data whil
 
 - :ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels** **(** :ref:`CompressMode<enum_Image_CompressMode>` mode, :ref:`UsedChannels<enum_Image_UsedChannels>` channels, :ref:`float<class_float>` lossy_quality=0.7 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Image_method_compute_image_metrics:
@@ -586,7 +594,7 @@ Copies ``src`` image to this image.
 
 - :ref:`Image<class_Image>` **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`Format<enum_Image_Format>` format **)** |static|
 
-Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true`` then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 ----
 
@@ -627,6 +635,10 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 .. _class_Image_method_detect_used_channels:
 
 - :ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels** **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

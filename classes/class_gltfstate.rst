@@ -12,7 +12,9 @@ GLTFState
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -135,6 +137,10 @@ Property Descriptions
 | *Getter*  | get_base_path()      |
 +-----------+----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_property_buffers:
@@ -148,6 +154,10 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_buffers()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -163,6 +173,10 @@ Property Descriptions
 | *Getter*  | get_create_animations()      |
 +-----------+------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_property_glb_data:
@@ -176,6 +190,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_glb_data()        |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -191,6 +209,10 @@ Property Descriptions
 | *Getter*  | get_json()      |
 +-----------+-----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_property_major_version:
@@ -204,6 +226,10 @@ Property Descriptions
 +-----------+--------------------------+
 | *Getter*  | get_major_version()      |
 +-----------+--------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -219,6 +245,10 @@ Property Descriptions
 | *Getter*  | get_minor_version()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_property_root_nodes:
@@ -232,6 +262,10 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_root_nodes()       |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -247,6 +281,10 @@ Property Descriptions
 | *Getter*  | get_scene_name()      |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_property_use_named_skin_binds:
@@ -260,6 +298,10 @@ Property Descriptions
 +-----------+---------------------------------+
 | *Getter*  | get_use_named_skin_binds()      |
 +-----------+---------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Method Descriptions
 -------------------
@@ -275,6 +317,10 @@ Appends an extension to the list of extensions used by this GLTF file during ser
 .. _class_GLTFState_method_get_accessors:
 
 - :ref:`GLTFAccessor[]<class_GLTFAccessor>` **get_accessors** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -292,11 +338,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`AnimationPlayer<class_AnimationPlayer>` **get_animation_player** **(** :ref:`int<class_int>` idx **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_animation_players_count:
 
 - :ref:`int<class_int>` **get_animation_players_count** **(** :ref:`int<class_int>` idx **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -304,11 +358,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`GLTFAnimation[]<class_GLTFAnimation>` **get_animations** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_buffer_views:
 
 - :ref:`GLTFBufferView[]<class_GLTFBufferView>` **get_buffer_views** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -316,11 +378,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`GLTFCamera[]<class_GLTFCamera>` **get_cameras** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_images:
 
 - :ref:`Texture2D[]<class_Texture2D>` **get_images** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -328,11 +398,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`GLTFLight[]<class_GLTFLight>` **get_lights** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_materials:
 
 - :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` **get_materials** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -340,11 +418,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`GLTFMesh[]<class_GLTFMesh>` **get_meshes** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_nodes:
 
 - :ref:`GLTFNode[]<class_GLTFNode>` **get_nodes** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -352,11 +438,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`Node<class_Node>` **get_scene_node** **(** :ref:`int<class_int>` idx **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_skeleton_to_node:
 
 - :ref:`Dictionary<class_Dictionary>` **get_skeleton_to_node** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -364,11 +458,19 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 - :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` **get_skeletons** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_skins:
 
 - :ref:`GLTFSkin[]<class_GLTFSkin>` **get_skins** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -384,11 +486,19 @@ Retrieves the array of texture samplers that are used by the textures contained 
 
 - :ref:`GLTFTexture[]<class_GLTFTexture>` **get_textures** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_get_unique_animation_names:
 
 - :ref:`String[]<class_String>` **get_unique_animation_names** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -396,11 +506,19 @@ Retrieves the array of texture samplers that are used by the textures contained 
 
 - :ref:`String[]<class_String>` **get_unique_names** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_accessors:
 
 - void **set_accessors** **(** :ref:`GLTFAccessor[]<class_GLTFAccessor>` accessors **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -418,11 +536,19 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 - void **set_animations** **(** :ref:`GLTFAnimation[]<class_GLTFAnimation>` animations **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_buffer_views:
 
 - void **set_buffer_views** **(** :ref:`GLTFBufferView[]<class_GLTFBufferView>` buffer_views **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -430,11 +556,19 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 - void **set_cameras** **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_images:
 
 - void **set_images** **(** :ref:`Texture2D[]<class_Texture2D>` images **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -442,11 +576,19 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 - void **set_lights** **(** :ref:`GLTFLight[]<class_GLTFLight>` lights **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_materials:
 
 - void **set_materials** **(** :ref:`BaseMaterial3D[]<class_BaseMaterial3D>` materials **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -454,11 +596,19 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 - void **set_meshes** **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_nodes:
 
 - void **set_nodes** **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -466,17 +616,29 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 - void **set_skeleton_to_node** **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_skeletons:
 
 - void **set_skeletons** **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_skins:
 
 - void **set_skins** **(** :ref:`GLTFSkin[]<class_GLTFSkin>` skins **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -492,17 +654,29 @@ Sets the array of texture samplers that are used by the textures contained in th
 
 - void **set_textures** **(** :ref:`GLTFTexture[]<class_GLTFTexture>` textures **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_unique_animation_names:
 
 - void **set_unique_animation_names** **(** :ref:`String[]<class_String>` unique_animation_names **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFState_method_set_unique_names:
 
 - void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

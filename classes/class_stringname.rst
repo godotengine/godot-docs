@@ -97,9 +97,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -107,11 +115,19 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_StringName_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -119,9 +135,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -129,11 +153,19 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_StringName_operator_gte_bool:
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

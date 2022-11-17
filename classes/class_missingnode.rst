@@ -17,7 +17,7 @@ This is an internal editor class intended for keeping data of nodes of unknown t
 Description
 -----------
 
-This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can´t be manually instantiated or placed in the scene. Ignore it if you don't know what it is.
+This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can't be manually instantiated or placed in the scene. Ignore it if you don't know what it is.
 
 Properties
 ----------
@@ -41,6 +41,10 @@ Property Descriptions
 | *Getter* | get_original_class()      |
 +----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_MissingNode_property_recording_properties:
@@ -52,6 +56,10 @@ Property Descriptions
 +----------+---------------------------------+
 | *Getter* | is_recording_properties()       |
 +----------+---------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

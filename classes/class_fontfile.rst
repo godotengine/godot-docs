@@ -544,11 +544,19 @@ Returns number of the font cache entries.
 
 - :ref:`float<class_float>` **get_cache_descent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_FontFile_method_get_cache_scale:
 
 - :ref:`float<class_float>` **get_cache_scale** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -556,11 +564,19 @@ Returns number of the font cache entries.
 
 - :ref:`float<class_float>` **get_cache_underline_position** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_FontFile_method_get_cache_underline_thickness:
 
 - :ref:`float<class_float>` **get_cache_underline_thickness** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -834,11 +850,19 @@ Renders the range of characters to the font cache texture.
 
 - void **set_cache_ascent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` ascent **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_FontFile_method_set_cache_descent:
 
 - void **set_cache_descent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -846,17 +870,29 @@ Renders the range of characters to the font cache texture.
 
 - void **set_cache_scale** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` scale **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_FontFile_method_set_cache_underline_position:
 
 - void **set_cache_underline_position** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_position **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_FontFile_method_set_cache_underline_thickness:
 
 - void **set_cache_underline_thickness** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_thickness **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

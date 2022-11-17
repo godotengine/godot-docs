@@ -49,17 +49,29 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_export_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFDocumentExtension_method__export_post:
 
 - :ref:`int<class_int>` **_export_post** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFDocumentExtension_method__export_preflight:
 
 - :ref:`int<class_int>` **_export_preflight** **(** :ref:`Node<class_Node>` root **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -75,11 +87,19 @@ Returns an array of the GLTF extensions supported by this GLTFDocumentExtension 
 
 - :ref:`int<class_int>` **_import_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFDocumentExtension_method__import_post:
 
 - :ref:`int<class_int>` **_import_post** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -87,11 +107,19 @@ Returns an array of the GLTF extensions supported by this GLTFDocumentExtension 
 
 - :ref:`int<class_int>` **_import_post_parse** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFDocumentExtension_method__import_preflight:
 
 - :ref:`int<class_int>` **_import_preflight** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

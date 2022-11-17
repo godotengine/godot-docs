@@ -12,7 +12,9 @@ WebRTCPeerConnectionExtension
 
 **Inherits:** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -48,11 +50,19 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_add_ice_candidate** **(** :ref:`String<class_String>` p_sdp_mid_name, :ref:`int<class_int>` p_sdp_mline_index, :ref:`String<class_String>` p_sdp_name **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__close:
 
 - void **_close** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -60,11 +70,19 @@ Method Descriptions
 
 - :ref:`Object<class_Object>` **_create_data_channel** **(** :ref:`String<class_String>` p_label, :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__create_offer:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_create_offer** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -72,11 +90,19 @@ Method Descriptions
 
 - :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **_get_connection_state** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__get_gathering_state:
 
 - :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` **_get_gathering_state** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -84,11 +110,19 @@ Method Descriptions
 
 - :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **_get_signaling_state** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__initialize:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_initialize** **(** :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -96,17 +130,29 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_poll** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__set_local_description:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_set_local_description** **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_WebRTCPeerConnectionExtension_method__set_remote_description:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_set_remote_description** **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

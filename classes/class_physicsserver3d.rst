@@ -1094,6 +1094,10 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 - void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_area_set_collision_layer:
@@ -1134,6 +1138,10 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 - void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_area_set_param:
@@ -1163,6 +1171,10 @@ Substitutes a given area shape by another. The old shape is selected by its inde
 .. _class_PhysicsServer3D_method_area_set_shape_disabled:
 
 - void **area_set_shape_disabled** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1316,6 +1328,10 @@ Removes all shapes from a body.
 
 - :ref:`RID<class_RID>` **body_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_body_get_collision_layer:
@@ -1446,6 +1462,10 @@ Returns a body state.
 
 - :ref:`bool<class_bool>` **body_is_axis_locked** **(** :ref:`RID<class_RID>` body, :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>` axis **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_body_is_continuous_collision_detection_enabled:
@@ -1493,6 +1513,10 @@ Restores the default inertia and center of mass based on shapes to cancel any cu
 .. _class_PhysicsServer3D_method_body_set_axis_lock:
 
 - void **body_set_axis_lock** **(** :ref:`RID<class_RID>` body, :ref:`BodyAxis<enum_PhysicsServer3D_BodyAxis>` axis, :ref:`bool<class_bool>` lock **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1624,6 +1648,10 @@ Substitutes a given body shape by another. The old shape is selected by its inde
 
 - void **body_set_shape_disabled** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_body_set_shape_transform:
@@ -1662,17 +1690,29 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 - :ref:`RID<class_RID>` **box_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_capsule_shape_create:
 
 - :ref:`RID<class_RID>` **capsule_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_concave_polygon_shape_create:
 
 - :ref:`RID<class_RID>` **concave_polygon_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1696,17 +1736,29 @@ Sets a cone_twist_joint parameter (see :ref:`ConeTwistJointParam<enum_PhysicsSer
 
 - :ref:`RID<class_RID>` **convex_polygon_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_custom_shape_create:
 
 - :ref:`RID<class_RID>` **custom_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_cylinder_shape_create:
 
 - :ref:`RID<class_RID>` **cylinder_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1762,6 +1814,10 @@ Returns information about the current state of the 3D physics engine. See :ref:`
 
 - :ref:`RID<class_RID>` **heightmap_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_hinge_joint_get_flag:
@@ -1800,11 +1856,19 @@ Sets a hinge_joint parameter (see :ref:`HingeJointParam<enum_PhysicsServer3D_Hin
 
 - void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_joint_create:
 
 - :ref:`RID<class_RID>` **joint_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1828,11 +1892,19 @@ Returns the type of the Joint3D.
 
 - void **joint_make_cone_twist** **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Transform3D<class_Transform3D>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform3D<class_Transform3D>` local_ref_B **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_joint_make_generic_6dof:
 
 - void **joint_make_generic_6dof** **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Transform3D<class_Transform3D>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform3D<class_Transform3D>` local_ref_B **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1840,17 +1912,29 @@ Returns the type of the Joint3D.
 
 - void **joint_make_hinge** **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Transform3D<class_Transform3D>` hinge_A, :ref:`RID<class_RID>` body_B, :ref:`Transform3D<class_Transform3D>` hinge_B **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_joint_make_pin:
 
 - void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Vector3<class_Vector3>` local_A, :ref:`RID<class_RID>` body_B, :ref:`Vector3<class_Vector3>` local_B **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_joint_make_slider:
 
 - void **joint_make_slider** **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Transform3D<class_Transform3D>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform3D<class_Transform3D>` local_ref_B **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1914,6 +1998,10 @@ Sets a pin_joint parameter (see :ref:`PinJointParam<enum_PhysicsServer3D_PinJoin
 
 - :ref:`RID<class_RID>` **separation_ray_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_set_active:
@@ -1967,6 +2055,10 @@ Gets a slider_joint parameter (see :ref:`SliderJointParam<enum_PhysicsServer3D_S
 .. _class_PhysicsServer3D_method_soft_body_get_bounds:
 
 - :ref:`AABB<class_AABB>` **soft_body_get_bounds** **(** :ref:`RID<class_RID>` body **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2022,11 +2114,19 @@ Sets the value for a space parameter. A list of available parameters is on the :
 
 - :ref:`RID<class_RID>` **sphere_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer3D_method_world_boundary_shape_create:
 
 - :ref:`RID<class_RID>` **world_boundary_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

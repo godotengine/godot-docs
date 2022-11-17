@@ -899,6 +899,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_x/enabled:
@@ -912,6 +916,10 @@ Target speed for the motor at the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_x()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -927,6 +935,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_x/stiffness:
@@ -940,6 +952,10 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -955,6 +971,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_y/enabled:
@@ -968,6 +988,10 @@ Target speed for the motor at the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_y()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -983,6 +1007,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_y/stiffness:
@@ -996,6 +1024,10 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1011,6 +1043,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_z/enabled:
@@ -1024,6 +1060,10 @@ Target speed for the motor at the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_z()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1039,6 +1079,10 @@ Target speed for the motor at the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_angular_spring_z/stiffness:
@@ -1052,6 +1096,10 @@ Target speed for the motor at the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1499,6 +1547,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_x/enabled:
@@ -1512,6 +1564,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_x()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1527,6 +1583,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_x/stiffness:
@@ -1540,6 +1600,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_x()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1555,6 +1619,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_y/enabled:
@@ -1568,6 +1636,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_y()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1583,6 +1655,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_y/stiffness:
@@ -1596,6 +1672,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+--------------------+
 | *Getter*  | get_param_y()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1611,6 +1691,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_z/enabled:
@@ -1624,6 +1708,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 +-----------+-------------------+
 | *Getter*  | get_flag_z()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1639,6 +1727,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_property_linear_spring_z/stiffness:
@@ -1653,6 +1745,10 @@ The speed that the linear motor will attempt to reach on the Z axis.
 | *Getter*  | get_param_z()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -1660,11 +1756,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_get_flag_y:
 
 - :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1672,11 +1776,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_get_param_x:
 
 - :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1684,11 +1796,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_get_param_z:
 
 - :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1696,11 +1816,19 @@ Method Descriptions
 
 - void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_set_flag_y:
 
 - void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1708,11 +1836,19 @@ Method Descriptions
 
 - void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_set_param_x:
 
 - void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1720,11 +1856,19 @@ Method Descriptions
 
 - void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Generic6DOFJoint3D_method_set_param_z:
 
 - void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

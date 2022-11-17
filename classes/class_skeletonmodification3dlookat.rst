@@ -139,6 +139,10 @@ Sets the amount of extra rotation to be applied after the LookAt modification ex
 
 - void **set_lock_rotation_plane** **(** :ref:`int<class_int>` plane **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_SkeletonModification3DLookAt_method_set_lock_rotation_to_plane:

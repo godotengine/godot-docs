@@ -12,7 +12,9 @@ GLTFSkin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -63,6 +65,10 @@ Property Descriptions
 | *Getter* | get_godot_skin()      |
 +----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_property_joints:
@@ -76,6 +82,10 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_joints()           |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -91,6 +101,10 @@ Property Descriptions
 | *Getter*  | get_joints_original()      |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_property_non_joints:
@@ -104,6 +118,10 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_non_joints()       |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -119,6 +137,10 @@ Property Descriptions
 | *Getter*  | get_roots()            |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_property_skeleton:
@@ -132,6 +154,10 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_skeleton()      |
 +-----------+---------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -147,6 +173,10 @@ Property Descriptions
 | *Getter*  | get_skin_root()      |
 +-----------+----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -154,11 +184,19 @@ Method Descriptions
 
 - :ref:`Transform3D[]<class_Transform3D>` **get_inverse_binds** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_method_get_joint_i_to_bone_i:
 
 - :ref:`Dictionary<class_Dictionary>` **get_joint_i_to_bone_i** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -166,11 +204,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **get_joint_i_to_name** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_method_set_inverse_binds:
 
 - void **set_inverse_binds** **(** :ref:`Transform3D[]<class_Transform3D>` inverse_binds **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -178,11 +224,19 @@ Method Descriptions
 
 - void **set_joint_i_to_bone_i** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_bone_i **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkin_method_set_joint_i_to_name:
 
 - void **set_joint_i_to_name** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_name **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

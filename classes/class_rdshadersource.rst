@@ -12,7 +12,9 @@ RDShaderSource
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -55,6 +57,10 @@ Property Descriptions
 | *Getter*  | get_language()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSource_property_source_compute:
@@ -68,6 +74,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_stage_source()      |
 +-----------+-------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -83,6 +93,10 @@ Property Descriptions
 | *Getter*  | get_stage_source()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSource_property_source_tesselation_control:
@@ -96,6 +110,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_stage_source()      |
 +-----------+-------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -111,6 +129,10 @@ Property Descriptions
 | *Getter*  | get_stage_source()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSource_property_source_vertex:
@@ -125,6 +147,10 @@ Property Descriptions
 | *Getter*  | get_stage_source()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -132,11 +158,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSource_method_set_stage_source:
 
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

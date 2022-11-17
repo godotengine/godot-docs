@@ -70,7 +70,7 @@ Properties
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`bool<class_bool>`                         | :ref:`trail_enabled<class_GPUParticles2D_property_trail_enabled>`                           | ``false``                       |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
-| :ref:`float<class_float>`                       | :ref:`trail_length_secs<class_GPUParticles2D_property_trail_length_secs>`                   | ``0.3``                         |
+| :ref:`float<class_float>`                       | :ref:`trail_lifetime<class_GPUParticles2D_property_trail_lifetime>`                         | ``0.3``                         |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
 | :ref:`int<class_int>`                           | :ref:`trail_section_subdivisions<class_GPUParticles2D_property_trail_section_subdivisions>` | ``4``                           |
 +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
@@ -165,6 +165,10 @@ Number of particles emitted in one emission cycle.
 +-----------+--------------------------------+
 | *Getter*  | get_collision_base_size()      |
 +-----------+--------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -416,19 +420,25 @@ Particle texture. If ``null``, particles will be squares.
 | *Getter*  | is_trail_enabled()       |
 +-----------+--------------------------+
 
+If ``true``, enables particle trails using a mesh skinning system.
+
+\ **Note:** Unlike :ref:`GPUParticles3D<class_GPUParticles3D>`, the number of trail sections and subdivisions is set with the :ref:`trail_sections<class_GPUParticles2D_property_trail_sections>` and :ref:`trail_section_subdivisions<class_GPUParticles2D_property_trail_section_subdivisions>` properties.
+
 ----
 
-.. _class_GPUParticles2D_property_trail_length_secs:
+.. _class_GPUParticles2D_property_trail_lifetime:
 
-- :ref:`float<class_float>` **trail_length_secs**
+- :ref:`float<class_float>` **trail_lifetime**
 
-+-----------+-------------------------+
-| *Default* | ``0.3``                 |
-+-----------+-------------------------+
-| *Setter*  | set_trail_length(value) |
-+-----------+-------------------------+
-| *Getter*  | get_trail_length()      |
-+-----------+-------------------------+
++-----------+---------------------------+
+| *Default* | ``0.3``                   |
++-----------+---------------------------+
+| *Setter*  | set_trail_lifetime(value) |
++-----------+---------------------------+
+| *Getter*  | get_trail_lifetime()      |
++-----------+---------------------------+
+
+The amount of time the particle's trail should represent (in seconds). Only effective if :ref:`trail_enabled<class_GPUParticles2D_property_trail_enabled>` is ``true``.
 
 ----
 
@@ -444,6 +454,8 @@ Particle texture. If ``null``, particles will be squares.
 | *Getter*  | get_trail_section_subdivisions()      |
 +-----------+---------------------------------------+
 
+The number of subdivisions to use for the particle trail rendering. Higher values can result in smoother trail curves, at the cost of performance due to increased mesh complexity. See also :ref:`trail_sections<class_GPUParticles2D_property_trail_sections>`. Only effective if :ref:`trail_enabled<class_GPUParticles2D_property_trail_enabled>` is ``true``.
+
 ----
 
 .. _class_GPUParticles2D_property_trail_sections:
@@ -457,6 +469,8 @@ Particle texture. If ``null``, particles will be squares.
 +-----------+---------------------------+
 | *Getter*  | get_trail_sections()      |
 +-----------+---------------------------+
+
+The number of sections to use for the particle trail rendering. Higher values can result in smoother trail curves, at the cost of performance due to increased mesh complexity. See also :ref:`trail_section_subdivisions<class_GPUParticles2D_property_trail_section_subdivisions>`. Only effective if :ref:`trail_enabled<class_GPUParticles2D_property_trail_enabled>` is ``true``.
 
 ----
 

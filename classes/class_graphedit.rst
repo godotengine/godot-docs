@@ -807,6 +807,10 @@ Theme Property Descriptions
 | *Default* | ``Color(1, 1, 1, 1)`` |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GraphEdit_theme_color_grid_major:
@@ -885,11 +889,19 @@ The horizontal range within which a port can be grabbed (outer side).
 
 - :ref:`Texture2D<class_Texture2D>` **layout**
 
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GraphEdit_theme_icon_minimap:
 
 - :ref:`Texture2D<class_Texture2D>` **minimap**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

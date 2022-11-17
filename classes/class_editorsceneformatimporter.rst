@@ -72,11 +72,19 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_EditorSceneFormatImporter_method__get_import_flags:
 
 - :ref:`int<class_int>` **_get_import_flags** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -84,17 +92,29 @@ Method Descriptions
 
 - void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_EditorSceneFormatImporter_method__get_option_visibility:
 
 - :ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_EditorSceneFormatImporter_method__import_scene:
 
 - :ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

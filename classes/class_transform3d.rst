@@ -181,6 +181,10 @@ Constructs a Transform3D from a :ref:`Basis<class_Basis>` and :ref:`Vector3<clas
 
 - :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Projection<class_Projection>` from **)**
 
+.. container:: contribute
+
+	There is currently no description for this constructor. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)**

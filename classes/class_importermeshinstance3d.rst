@@ -12,7 +12,9 @@ ImporterMeshInstance3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -38,6 +40,10 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ImporterMeshInstance3D_property_skeleton_path:
@@ -52,6 +58,10 @@ Property Descriptions
 | *Getter*  | get_skeleton_path()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ImporterMeshInstance3D_property_skin:
@@ -63,6 +73,10 @@ Property Descriptions
 +----------+-----------------+
 | *Getter* | get_skin()      |
 +----------+-----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

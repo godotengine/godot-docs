@@ -108,9 +108,9 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`audio/driver/output_latency.web<class_ProjectSettings_property_audio/driver/output_latency.web>`                                                                                                     | ``50``                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`audio/general/2d_panning_strength<class_ProjectSettings_property_audio/general/2d_panning_strength>`                                                                                                 | ``1.0``                                                                                          |
+| :ref:`float<class_float>`                         | :ref:`audio/general/2d_panning_strength<class_ProjectSettings_property_audio/general/2d_panning_strength>`                                                                                                 | ``0.5``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                         | :ref:`audio/general/3d_panning_strength<class_ProjectSettings_property_audio/general/3d_panning_strength>`                                                                                                 | ``1.0``                                                                                          |
+| :ref:`float<class_float>`                         | :ref:`audio/general/3d_panning_strength<class_ProjectSettings_property_audio/general/3d_panning_strength>`                                                                                                 | ``0.5``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`audio/video/video_delay_compensation_ms<class_ProjectSettings_property_audio/video/video_delay_compensation_ms>`                                                                                     | ``0``                                                                                            |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -123,6 +123,8 @@ Properties
 | :ref:`bool<class_bool>`                           | :ref:`compression/formats/zstd/long_distance_matching<class_ProjectSettings_property_compression/formats/zstd/long_distance_matching>`                                                                     | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`                                                                                   | ``27``                                                                                           |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`debug/disable_touch<class_ProjectSettings_property_debug/disable_touch>`                                                                                                                             | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`debug/file_logging/enable_file_logging<class_ProjectSettings_property_debug/file_logging/enable_file_logging>`                                                                                       | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -996,6 +998,8 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`physics/common/enable_object_picking<class_ProjectSettings_property_physics/common/enable_object_picking>`                                                                                           | ``true``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>`                                                                               | ``8``                                                                                            |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                                                                 | ``0.5``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`                                                                                     | ``60``                                                                                           |
@@ -1133,6 +1137,8 @@ Properties
 | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`                                 | ``2048``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/ultra_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_ray_count>`                                             | ``1024``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/primitive_meshes/texel_size<class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size>`                                                               | ``0.2``                                                                                          |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/probe_capture/update_speed<class_ProjectSettings_property_rendering/lightmapping/probe_capture/update_speed>`                                                                 | ``15``                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1272,8 +1278,6 @@ Properties
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rendering/textures/lossless_compression/webp_compression_level<class_ProjectSettings_property_rendering/textures/lossless_compression/webp_compression_level>`                                       | ``2``                                                                                            |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_bptc>`                                                                     | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc>`                                                                       | ``false``                                                                                        |
@@ -1281,6 +1285,10 @@ Properties
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2>`                                                                     | ``true``                                                                                         |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc>`                                                                     | ``true``                                                                                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                             | :ref:`rendering/textures/webp_compression/compression_method<class_ProjectSettings_property_rendering/textures/webp_compression/compression_method>`                                                       | ``2``                                                                                            |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                         | :ref:`rendering/textures/webp_compression/lossless_compression_factor<class_ProjectSettings_property_rendering/textures/webp_compression/lossless_compression_factor>`                                     | ``25``                                                                                           |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                           | :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`                                                                                                   | ``false``                                                                                        |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1425,7 +1433,7 @@ If ``true``, applies linear filtering when scaling the image (recommended for hi
 | *Default* | ``""`` |
 +-----------+--------+
 
-This user directory is used for storing persistent data (``user://`` filesystem). If left empty, ``user://`` resolves to a project-specific folder in Godot's own configuration folder (see :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`). If a custom directory name is defined, this name will be used instead and appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
+This user directory is used for storing persistent data (``user://`` filesystem). If a custom directory name is defined, this name will be appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
 
 The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` setting must be enabled for this to take effect.
 
@@ -1523,7 +1531,9 @@ Specifies a file to override project settings. For example: ``user://custom_sett
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, the project will save user data to its own user directory (see :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>`). This setting is only effective on desktop platforms. A name must be set in the :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` setting for this to take effect. If ``false``, the project will save user data to ``(OS user data directory)/Godot/app_userdata/(project name)``.
+If ``true``, the project will save user data to its own user directory. If :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` is empty, ``<OS user data directory>/<project name>`` directory will be used. If ``false``, the project will save user data to ``<OS user data directory>/Godot/app_userdata/<project name>``.
+
+See also `File paths in Godot projects <../tutorials/io/data_paths.html#accessing-persistent-user-data-user>`__. This setting is only effective on desktop platforms.
 
 ----
 
@@ -1808,10 +1818,12 @@ Safer override for :ref:`audio/driver/output_latency<class_ProjectSettings_prope
 - :ref:`float<class_float>` **audio/general/2d_panning_strength**
 
 +-----------+---------+
-| *Default* | ``1.0`` |
+| *Default* | ``0.5`` |
 +-----------+---------+
 
-The base strength of the panning effect for all AudioStreamPlayer2D nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer2D.panning_strength<class_AudioStreamPlayer2D_property_panning_strength>`.
+The base strength of the panning effect for all :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer2D.panning_strength<class_AudioStreamPlayer2D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
+
+The default value of ``0.5`` is tuned for headphones. When using speakers, you may find lower values to sound better as speakers have a lower stereo separation compared to headphones.
 
 ----
 
@@ -1820,10 +1832,12 @@ The base strength of the panning effect for all AudioStreamPlayer2D nodes. The p
 - :ref:`float<class_float>` **audio/general/3d_panning_strength**
 
 +-----------+---------+
-| *Default* | ``1.0`` |
+| *Default* | ``0.5`` |
 +-----------+---------+
 
-The base strength of the panning effect for all AudioStreamPlayer3D nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer3D.panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`.
+The base strength of the panning effect for all :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer3D.panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
+
+The default value of ``0.5`` is tuned for headphones. When using speakers, you may find lower values to sound better as speakers have a lower stereo separation compared to headphones.
 
 ----
 
@@ -1896,6 +1910,18 @@ Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v
 +-----------+--------+
 
 Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard. Higher values can result in better compression, but will require more memory when compressing and decompressing.
+
+----
+
+.. _class_ProjectSettings_property_debug/disable_touch:
+
+- :ref:`bool<class_bool>` **debug/disable_touch**
+
++-----------+-----------+
+| *Default* | ``false`` |
++-----------+-----------+
+
+Disable touch input. Only has effect on iOS.
 
 ----
 
@@ -2747,7 +2773,7 @@ Position offset for tooltips, relative to the mouse cursor's hotspot.
 | *Default* | ``true`` |
 +-----------+----------+
 
-If ``true``, allows HiDPI display on Windows, macOS, Android, iOS and Web. If ``false``, the platform's low-DPI fallback will be used on HiDPI displays, which causes the window to be displayed in a blurry or pixelated manner (and can cause various window management bugs). Therefore, it is recommended to make your project scale to :doc:`multiple resolutions <../tutorials/viewports/multiple_resolutions>` instead of disabling this setting.
+If ``true``, allows HiDPI display on Windows, macOS, Android, iOS and Web. If ``false``, the platform's low-DPI fallback will be used on HiDPI displays, which causes the window to be displayed in a blurry or pixelated manner (and can cause various window management bugs). Therefore, it is recommended to make your project scale to :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` instead of disabling this setting.
 
 \ **Note:** This setting has no effect on Linux as DPI-awareness fallbacks are not supported there.
 
@@ -3660,6 +3686,10 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :
 .. _class_ProjectSettings_property_input/ui_swap_input_direction:
 
 - :ref:`Dictionary<class_Dictionary>` **input/ui_swap_input_direction**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7107,6 +7137,20 @@ Enables :ref:`Viewport.physics_object_picking<class_Viewport_property_physics_ob
 
 ----
 
+.. _class_ProjectSettings_property_physics/common/max_physics_steps_per_frame:
+
+- :ref:`int<class_int>` **physics/common/max_physics_steps_per_frame**
+
++-----------+-------+
+| *Default* | ``8`` |
++-----------+-------+
+
+Controls the maximum number of physics steps that can be simulated each rendered frame. The default value is tuned to avoid "spiral of death" situations where expensive physics simulations trigger more expensive simulations indefinitely. However, the game will appear to slow down if the rendering FPS is less than ``1 / max_physics_steps_per_frame`` of :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`. This occurs even if ``delta`` is consistently used in physics calculations. To avoid this, increase :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` if you have increased :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` significantly above its default value.
+
+\ **Note:** This property is only read when the project starts. To change the maximum number of simulated physics steps per frame at runtime, set :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` instead.
+
+----
+
 .. _class_ProjectSettings_property_physics/common/physics_jitter_fix:
 
 - :ref:`float<class_float>` **physics/common/physics_jitter_fix**
@@ -7135,7 +7179,7 @@ The number of fixed iterations per second. This controls how often physics simul
 
 \ **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` instead.
 
-\ **Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
+\ **Note:** Only :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` physics ticks may be simulated per rendered frame at most. If more physics ticks have to be simulated per rendered frame to keep up with rendering, the project will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended to also increase :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` if increasing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` significantly above its default value.
 
 ----
 
@@ -7147,6 +7191,10 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Default* | ``1`` |
 +-----------+-------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/2d/sdf/scale:
@@ -7156,6 +7204,10 @@ The number of fixed iterations per second. This controls how often physics simul
 +-----------+-------+
 | *Default* | ``1`` |
 +-----------+-------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7167,6 +7219,10 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Default* | ``2048`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel:
@@ -7177,6 +7233,10 @@ The number of fixed iterations per second. This controls how often physics simul
 | *Default* | ``false`` |
 +-----------+-----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel:
@@ -7186,6 +7246,10 @@ The number of fixed iterations per second. This controls how often physics simul
 +-----------+-----------+
 | *Default* | ``false`` |
 +-----------+-----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7265,6 +7329,10 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 | *Default* | ``0.25`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled:
@@ -7275,6 +7343,10 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 | *Default* | ``true`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/limit:
@@ -7284,6 +7356,10 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 +-----------+----------+
 | *Default* | ``0.18`` |
 +-----------+----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7767,6 +7843,10 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 | *Default* | ``5`` |
 +-----------+-------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights:
@@ -7776,6 +7856,10 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 +-----------+-------+
 | *Default* | ``2`` |
 +-----------+-------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7787,6 +7871,10 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 | *Default* | ``1`` |
 +-----------+-------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality:
@@ -7796,6 +7884,10 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 +-----------+-------+
 | *Default* | ``0`` |
 +-----------+-------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -7928,6 +8020,18 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 +-----------+----------+
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_ULTRA<class_LightmapGI_constant_BAKE_QUALITY_ULTRA>`.
+
+----
+
+.. _class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size:
+
+- :ref:`float<class_float>` **rendering/lightmapping/primitive_meshes/texel_size**
+
++-----------+---------+
+| *Default* | ``0.2`` |
++-----------+---------+
+
+The texel_size that is used to calculate the :ref:`Mesh.lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` on :ref:`PrimitiveMesh<class_PrimitiveMesh>` resources if :ref:`PrimitiveMesh.add_uv2<class_PrimitiveMesh_property_add_uv2>` is enabled.
 
 ----
 
@@ -8139,6 +8243,10 @@ Enables the use of physically based units for light sources. Physically based un
 | *Default* | ``512`` |
 +-----------+---------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/limits/forward_renderer/threaded_render_minimum_instances:
@@ -8149,6 +8257,10 @@ Enables the use of physically based units for light sources. Physically based un
 | *Default* | ``500`` |
 +-----------+---------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/limits/global_shader_variables/buffer_size:
@@ -8158,6 +8270,10 @@ Enables the use of physically based units for light sources. Physically based un
 +-----------+-----------+
 | *Default* | ``65536`` |
 +-----------+-----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -8205,6 +8321,10 @@ Max number of positional lights renderable in a frame. If more lights than this 
 | *Default* | ``1000`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/limits/spatial_indexer/update_iterations_per_frame:
@@ -8215,6 +8335,10 @@ Max number of positional lights renderable in a frame. If more lights than this 
 | *Default* | ``10`` |
 +-----------+--------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/limits/time/time_rollover_secs:
@@ -8224,6 +8348,10 @@ Max number of positional lights renderable in a frame. If more lights than this 
 +-----------+----------+
 | *Default* | ``3600`` |
 +-----------+----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -8511,6 +8639,10 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 | *Default* | ``256`` |
 +-----------+---------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/rendering_device/staging_buffer/max_size_mb:
@@ -8520,6 +8652,10 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 +-----------+---------+
 | *Default* | ``128`` |
 +-----------+---------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -8531,6 +8667,10 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 | *Default* | ``64`` |
 +-----------+--------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool:
@@ -8540,6 +8680,10 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 +-----------+--------+
 | *Default* | ``64`` |
 +-----------+--------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -8587,6 +8731,10 @@ Scales the 3D render buffer based on the viewport size uses an image filter spec
 | *Default* | ``true`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/shader_compiler/shader_cache/enabled:
@@ -8609,6 +8757,10 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 | *Default* | ``false`` |
 +-----------+-----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/shader_compiler/shader_cache/strip_debug.release:
@@ -8619,6 +8771,10 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 | *Default* | ``true`` |
 +-----------+----------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_rendering/shader_compiler/shader_cache/use_zstd_compression:
@@ -8628,6 +8784,10 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 +-----------+----------+
 | *Default* | ``true`` |
 +-----------+----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -8765,18 +8925,6 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 ----
 
-.. _class_ProjectSettings_property_rendering/textures/lossless_compression/webp_compression_level:
-
-- :ref:`int<class_int>` **rendering/textures/lossless_compression/webp_compression_level**
-
-+-----------+-------+
-| *Default* | ``2`` |
-+-----------+-------+
-
-The default compression level for lossless WebP. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. Supported values are 0 to 9. Note that compression levels above 6 are very slow and offer very little savings.
-
-----
-
 .. _class_ProjectSettings_property_rendering/textures/vram_compression/import_bptc:
 
 - :ref:`bool<class_bool>` **rendering/textures/vram_compression/import_bptc**
@@ -8833,6 +8981,30 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 ----
 
+.. _class_ProjectSettings_property_rendering/textures/webp_compression/compression_method:
+
+- :ref:`int<class_int>` **rendering/textures/webp_compression/compression_method**
+
++-----------+-------+
+| *Default* | ``2`` |
++-----------+-------+
+
+The default compression method for WebP. Affects both lossy and lossless WebP. A higher value results in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression method. Supported values are 0 to 6. Note that compression methods above 4 are very slow and offer very little savings.
+
+----
+
+.. _class_ProjectSettings_property_rendering/textures/webp_compression/lossless_compression_factor:
+
+- :ref:`float<class_float>` **rendering/textures/webp_compression/lossless_compression_factor**
+
++-----------+--------+
+| *Default* | ``25`` |
++-----------+--------+
+
+The default compression factor for lossless WebP. Decompression speed is mostly unaffected by the compression factor. Supported values are 0 to 100.
+
+----
+
 .. _class_ProjectSettings_property_rendering/transparent_background:
 
 - :ref:`bool<class_bool>` **rendering/transparent_background**
@@ -8877,6 +9049,10 @@ If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` 
 | *Default* | ``0.3`` |
 +-----------+---------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_threading/worker_pool/max_threads:
@@ -8887,6 +9063,10 @@ If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` 
 | *Default* | ``-1`` |
 +-----------+--------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ProjectSettings_property_threading/worker_pool/use_system_threads_for_low_priority_tasks:
@@ -8896,6 +9076,10 @@ If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` 
 +-----------+----------+
 | *Default* | ``true`` |
 +-----------+----------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

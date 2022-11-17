@@ -51,6 +51,10 @@ Property Descriptions
 | *Getter*  | get_bar_beats()      |
 +-----------+----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioStreamMP3_property_beat_count:
@@ -65,6 +69,10 @@ Property Descriptions
 | *Getter*  | get_beat_count()      |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioStreamMP3_property_bpm:
@@ -78,6 +86,10 @@ Property Descriptions
 +-----------+----------------+
 | *Getter*  | get_bpm()      |
 +-----------+----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

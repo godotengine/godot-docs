@@ -219,6 +219,10 @@ Adds the specified ``node`` to the shader.
 
 - void **add_varying** **(** :ref:`String<class_String>` name, :ref:`VaryingMode<enum_VisualShader_VaryingMode>` mode, :ref:`VaryingType<enum_VisualShader_VaryingType>` type **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShader_method_can_connect_nodes:
@@ -289,11 +293,19 @@ Returns the position of the specified node within the shader graph.
 
 - :ref:`int<class_int>` **get_valid_node_id** **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShader_method_has_varying:
 
 - :ref:`bool<class_bool>` **has_varying** **(** :ref:`String<class_String>` name **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -316,6 +328,10 @@ Removes the specified node from the shader.
 .. _class_VisualShader_method_remove_varying:
 
 - void **remove_varying** **(** :ref:`String<class_String>` name **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

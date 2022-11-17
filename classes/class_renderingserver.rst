@@ -811,6 +811,8 @@ Methods
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                                                      | :ref:`texture_get_path<class_RenderingServer_method_texture_get_path>` **(** :ref:`RID<class_RID>` texture **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                                            | :ref:`texture_get_rd_texture<class_RenderingServer_method_texture_get_rd_texture>` **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` srgb=false **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                                            | :ref:`texture_proxy_create<class_RenderingServer_method_texture_proxy_create>` **(** :ref:`RID<class_RID>` base **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                                             | :ref:`texture_proxy_update<class_RenderingServer_method_texture_proxy_update>` **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` proxy_to **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -3173,6 +3175,10 @@ Method Descriptions
 
 - :ref:`Image[]<class_Image>` **bake_render_uv2** **(** :ref:`RID<class_RID>` base, :ref:`RID[]<class_RID>` material_overrides, :ref:`Vector2i<class_Vector2i>` image_size **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_camera_attributes_create:
@@ -3189,11 +3195,19 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 - void **camera_attributes_set_auto_exposure** **(** :ref:`RID<class_RID>` camera_attributes, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` min_sensitivity, :ref:`float<class_float>` max_sensitivity, :ref:`float<class_float>` speed, :ref:`float<class_float>` scale **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_camera_attributes_set_dof_blur:
 
 - void **camera_attributes_set_dof_blur** **(** :ref:`RID<class_RID>` camera_attributes, :ref:`bool<class_bool>` far_enable, :ref:`float<class_float>` far_distance, :ref:`float<class_float>` far_transition, :ref:`bool<class_bool>` near_enable, :ref:`float<class_float>` near_distance, :ref:`float<class_float>` near_transition, :ref:`float<class_float>` amount **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3201,11 +3215,19 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 - void **camera_attributes_set_dof_blur_bokeh_shape** **(** :ref:`DOFBokehShape<enum_RenderingServer_DOFBokehShape>` shape **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_camera_attributes_set_dof_blur_quality:
 
 - void **camera_attributes_set_dof_blur_quality** **(** :ref:`DOFBlurQuality<enum_RenderingServer_DOFBlurQuality>` quality, :ref:`bool<class_bool>` use_jitter **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3244,6 +3266,10 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 .. _class_RenderingServer_method_camera_set_camera_attributes:
 
 - void **camera_set_camera_attributes** **(** :ref:`RID<class_RID>` camera, :ref:`RID<class_RID>` effects **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3325,11 +3351,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_circle** **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` radius, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_clip_ignore:
 
 - void **canvas_item_add_clip_ignore** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` ignore **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3337,11 +3371,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_lcd_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_line:
 
 - void **canvas_item_add_line** **(** :ref:`RID<class_RID>` item, :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3349,11 +3391,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_mesh** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region:
 
 - void **canvas_item_add_msdf_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3361,11 +3411,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_multimesh** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_nine_patch:
 
 - void **canvas_item_add_nine_patch** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` source, :ref:`RID<class_RID>` texture, :ref:`Vector2<class_Vector2>` topleft, :ref:`Vector2<class_Vector2>` bottomright, :ref:`NinePatchAxisMode<enum_RenderingServer_NinePatchAxisMode>` x_axis_mode=0, :ref:`NinePatchAxisMode<enum_RenderingServer_NinePatchAxisMode>` y_axis_mode=0, :ref:`bool<class_bool>` draw_center=true, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3373,11 +3431,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_particles** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` particles, :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_polygon:
 
 - void **canvas_item_add_polygon** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`RID<class_RID>` texture **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3385,11 +3451,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_polyline** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_primitive:
 
 - void **canvas_item_add_primitive** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs, :ref:`RID<class_RID>` texture, :ref:`float<class_float>` width=1.0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3397,11 +3471,19 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_rect** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_set_transform:
 
 - void **canvas_item_add_set_transform** **(** :ref:`RID<class_RID>` item, :ref:`Transform2D<class_Transform2D>` transform **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3409,17 +3491,29 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 - void **canvas_item_add_texture_rect** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` tile=false, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_texture_rect_region:
 
 - void **canvas_item_add_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false, :ref:`bool<class_bool>` clip_uv=true **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_add_triangle_array:
 
 - void **canvas_item_add_triangle_array** **(** :ref:`RID<class_RID>` item, :ref:`PackedInt32Array<class_PackedInt32Array>` indices, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`PackedInt32Array<class_PackedInt32Array>` bones=PackedInt32Array(), :ref:`PackedFloat32Array<class_PackedFloat32Array>` weights=PackedFloat32Array(), :ref:`RID<class_RID>` texture, :ref:`int<class_int>` count=-1 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3435,17 +3529,29 @@ Clears the :ref:`CanvasItem<class_CanvasItem>` and removes all commands in it.
 
 - :ref:`RID<class_RID>` **canvas_item_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_canvas_group_mode:
 
 - void **canvas_item_set_canvas_group_mode** **(** :ref:`RID<class_RID>` item, :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>` mode, :ref:`float<class_float>` clear_margin=5.0, :ref:`bool<class_bool>` fit_empty=false, :ref:`float<class_float>` fit_margin=0.0, :ref:`bool<class_bool>` blur_mipmaps=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_clip:
 
 - void **canvas_item_set_clip** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` clip **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3461,11 +3567,19 @@ Sets the :ref:`CanvasItem<class_CanvasItem>` to copy a rect to the backbuffer.
 
 - void **canvas_item_set_custom_rect** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` use_custom_rect, :ref:`Rect2<class_Rect2>` rect=Rect2(0, 0, 0, 0) **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_default_texture_filter:
 
 - void **canvas_item_set_default_texture_filter** **(** :ref:`RID<class_RID>` item, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3473,17 +3587,29 @@ Sets the :ref:`CanvasItem<class_CanvasItem>` to copy a rect to the backbuffer.
 
 - void **canvas_item_set_default_texture_repeat** **(** :ref:`RID<class_RID>` item, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_distance_field_mode:
 
 - void **canvas_item_set_distance_field_mode** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_draw_behind_parent:
 
 - void **canvas_item_set_draw_behind_parent** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3499,6 +3625,10 @@ Sets the index for the :ref:`CanvasItem<class_CanvasItem>`.
 
 - void **canvas_item_set_light_mask** **(** :ref:`RID<class_RID>` item, :ref:`int<class_int>` mask **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_material:
@@ -3513,11 +3643,19 @@ Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
 
 - void **canvas_item_set_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_parent:
 
 - void **canvas_item_set_parent** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` parent **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3525,17 +3663,29 @@ Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
 
 - void **canvas_item_set_self_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_sort_children_by_y:
 
 - void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_transform:
 
 - void **canvas_item_set_transform** **(** :ref:`RID<class_RID>` item, :ref:`Transform2D<class_Transform2D>` transform **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3559,11 +3709,19 @@ Sets the rendering visibility layer associated with this :ref:`CanvasItem<class_
 
 - void **canvas_item_set_visibility_notifier** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enable, :ref:`Rect2<class_Rect2>` area, :ref:`Callable<class_Callable>` enter_callable, :ref:`Callable<class_Callable>` exit_callable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_item_set_visible:
 
 - void **canvas_item_set_visible** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` visible **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3622,6 +3780,10 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 .. _class_RenderingServer_method_canvas_light_occluder_set_as_sdf_collision:
 
 - void **canvas_light_occluder_set_as_sdf_collision** **(** :ref:`RID<class_RID>` occluder, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3823,6 +3985,10 @@ Sets the shape of the occluder polygon.
 
 - void **canvas_set_disable_scale** **(** :ref:`bool<class_bool>` disable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_set_item_mirroring:
@@ -3845,11 +4011,19 @@ Modulates all colors in the given canvas.
 
 - void **canvas_set_shadow_texture_size** **(** :ref:`int<class_int>` size **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_texture_create:
 
 - :ref:`RID<class_RID>` **canvas_texture_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3857,11 +4031,19 @@ Modulates all colors in the given canvas.
 
 - void **canvas_texture_set_channel** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasTextureChannel<enum_RenderingServer_CanvasTextureChannel>` channel, :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_texture_set_shading_parameters:
 
 - void **canvas_texture_set_shading_parameters** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`Color<class_Color>` base_color, :ref:`float<class_float>` shininess **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3869,11 +4051,19 @@ Modulates all colors in the given canvas.
 
 - void **canvas_texture_set_texture_filter** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_canvas_texture_set_texture_repeat:
 
 - void **canvas_texture_set_texture_repeat** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3881,11 +4071,19 @@ Modulates all colors in the given canvas.
 
 - :ref:`RenderingDevice<class_RenderingDevice>` **create_local_rendering_device** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decal_create:
 
 - :ref:`RID<class_RID>` **decal_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3893,11 +4091,19 @@ Modulates all colors in the given canvas.
 
 - void **decal_set_albedo_mix** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` albedo_mix **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decal_set_cull_mask:
 
 - void **decal_set_cull_mask** **(** :ref:`RID<class_RID>` decal, :ref:`int<class_int>` mask **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3905,11 +4111,19 @@ Modulates all colors in the given canvas.
 
 - void **decal_set_distance_fade** **(** :ref:`RID<class_RID>` decal, :ref:`bool<class_bool>` enabled, :ref:`float<class_float>` begin, :ref:`float<class_float>` length **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decal_set_emission_energy:
 
 - void **decal_set_emission_energy** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` energy **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3917,11 +4131,19 @@ Modulates all colors in the given canvas.
 
 - void **decal_set_extents** **(** :ref:`RID<class_RID>` decal, :ref:`Vector3<class_Vector3>` extents **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decal_set_fade:
 
 - void **decal_set_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` above, :ref:`float<class_float>` below **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3929,11 +4151,19 @@ Modulates all colors in the given canvas.
 
 - void **decal_set_modulate** **(** :ref:`RID<class_RID>` decal, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decal_set_normal_fade:
 
 - void **decal_set_normal_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` fade **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3941,11 +4171,19 @@ Modulates all colors in the given canvas.
 
 - void **decal_set_texture** **(** :ref:`RID<class_RID>` decal, :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` type, :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_decals_set_filter:
 
 - void **decals_set_filter** **(** :ref:`DecalFilter<enum_RenderingServer_DecalFilter>` filter **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3965,17 +4203,29 @@ To place in a scene, attach this directional light to an instance using :ref:`in
 
 - void **directional_shadow_atlas_set_size** **(** :ref:`int<class_int>` size, :ref:`bool<class_bool>` is_16bits **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_directional_soft_shadow_filter_set_quality:
 
 - void **directional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` quality **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_bake_panorama:
 
 - :ref:`Image<class_Image>` **environment_bake_panorama** **(** :ref:`RID<class_RID>` environment, :ref:`bool<class_bool>` bake_irradiance, :ref:`Vector2i<class_Vector2i>` size **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -3993,11 +4243,19 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 - void **environment_glow_set_use_bicubic_upscale** **(** :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_glow_set_use_high_quality:
 
 - void **environment_glow_set_use_high_quality** **(** :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4012,6 +4270,10 @@ Sets the values to be used with the "Adjustment" post-process effect. See :ref:`
 .. _class_RenderingServer_method_environment_set_ambient_light:
 
 - void **environment_set_ambient_light** **(** :ref:`RID<class_RID>` env, :ref:`Color<class_Color>` color, :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` ambient=0, :ref:`float<class_float>` energy=1.0, :ref:`float<class_float>` sky_contibution=0.0, :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` reflection_source=0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4051,11 +4313,19 @@ Sets the maximum layer to use if using Canvas background mode.
 
 - void **environment_set_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`Color<class_Color>` light_color, :ref:`float<class_float>` light_energy, :ref:`float<class_float>` sun_scatter, :ref:`float<class_float>` density, :ref:`float<class_float>` height, :ref:`float<class_float>` height_density, :ref:`float<class_float>` aerial_perspective, :ref:`float<class_float>` sky_affect **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_set_glow:
 
 - void **environment_set_glow** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`PackedFloat32Array<class_PackedFloat32Array>` levels, :ref:`float<class_float>` intensity, :ref:`float<class_float>` strength, :ref:`float<class_float>` mix, :ref:`float<class_float>` bloom_threshold, :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` blend_mode, :ref:`float<class_float>` hdr_bleed_threshold, :ref:`float<class_float>` hdr_bleed_scale, :ref:`float<class_float>` hdr_luminance_cap, :ref:`float<class_float>` glow_map_strength, :ref:`RID<class_RID>` glow_map **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4063,11 +4333,19 @@ Sets the maximum layer to use if using Canvas background mode.
 
 - void **environment_set_sdfgi** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` cascades, :ref:`float<class_float>` min_cell_size, :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>` y_scale, :ref:`bool<class_bool>` use_occlusion, :ref:`float<class_float>` bounce_feedback, :ref:`bool<class_bool>` read_sky, :ref:`float<class_float>` energy, :ref:`float<class_float>` normal_bias, :ref:`float<class_float>` probe_bias **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_set_sdfgi_frames_to_converge:
 
 - void **environment_set_sdfgi_frames_to_converge** **(** :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` frames **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4075,11 +4353,19 @@ Sets the maximum layer to use if using Canvas background mode.
 
 - void **environment_set_sdfgi_frames_to_update_light** **(** :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` frames **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_set_sdfgi_ray_count:
 
 - void **environment_set_sdfgi_ray_count** **(** :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` ray_count **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4143,6 +4429,10 @@ Sets the variables to be used with the "screen space reflections" post-process e
 
 - void **environment_set_ssr_roughness_quality** **(** :ref:`EnvironmentSSRRoughnessQuality<enum_RenderingServer_EnvironmentSSRRoughnessQuality>` quality **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_environment_set_tonemap:
@@ -4156,6 +4446,10 @@ Sets the variables to be used with the "tonemap" post-process effect. See :ref:`
 .. _class_RenderingServer_method_environment_set_volumetric_fog:
 
 - void **environment_set_volumetric_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` density, :ref:`Color<class_Color>` albedo, :ref:`Color<class_Color>` emission, :ref:`float<class_float>` emission_energy, :ref:`float<class_float>` anisotropy, :ref:`float<class_float>` length, :ref:`float<class_float>` p_detail_spread, :ref:`float<class_float>` gi_inject, :ref:`bool<class_bool>` temporal_reprojection, :ref:`float<class_float>` temporal_reprojection_amount, :ref:`float<class_float>` ambient_inject, :ref:`float<class_float>` sky_affect **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4211,11 +4505,19 @@ Sets the shape of the fog volume to either :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<clas
 
 - void **force_draw** **(** :ref:`bool<class_bool>` swap_buffers=true, :ref:`float<class_float>` frame_step=0.0 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_force_sync:
 
 - void **force_sync** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4231,17 +4533,29 @@ Tries to free an object in the RenderingServer.
 
 - :ref:`float<class_float>` **get_frame_setup_time_cpu** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_get_rendering_device:
 
 - :ref:`RenderingDevice<class_RenderingDevice>` **get_rendering_device** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_get_rendering_info:
 
 - :ref:`int<class_int>` **get_rendering_info** **(** :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` info **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4329,11 +4643,19 @@ If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SD
 
 - void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` name, :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` type, :ref:`Variant<class_Variant>` default_value **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_global_shader_parameter_get:
 
 - :ref:`Variant<class_Variant>` **global_shader_parameter_get** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4341,11 +4663,19 @@ If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SD
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **global_shader_parameter_get_list** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_global_shader_parameter_get_type:
 
 - :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **global_shader_parameter_get_type** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4353,17 +4683,29 @@ If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SD
 
 - void **global_shader_parameter_remove** **(** :ref:`StringName<class_StringName>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_global_shader_parameter_set:
 
 - void **global_shader_parameter_set** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_global_shader_parameter_set_override:
 
 - void **global_shader_parameter_set_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4433,17 +4775,29 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 - :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_instance_geometry_get_shader_parameter_default_value:
 
 - :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter_default_value** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_instance_geometry_get_shader_parameter_list:
 
 - :ref:`Dictionary[]<class_Dictionary>` **instance_geometry_get_shader_parameter_list** **(** :ref:`RID<class_RID>` instance **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4467,11 +4821,19 @@ Sets the flag for a given :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags
 
 - void **instance_geometry_set_lightmap** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap, :ref:`Rect2<class_Rect2>` lightmap_uv_scale, :ref:`int<class_int>` lightmap_slice **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_instance_geometry_set_lod_bias:
 
 - void **instance_geometry_set_lod_bias** **(** :ref:`RID<class_RID>` instance, :ref:`float<class_float>` lod_bias **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4494,6 +4856,10 @@ Sets a material that will override the material for all surfaces on the mesh ass
 .. _class_RenderingServer_method_instance_geometry_set_shader_parameter:
 
 - void **instance_geometry_set_shader_parameter** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter, :ref:`Variant<class_Variant>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4554,6 +4920,10 @@ Sets a margin to increase the size of the AABB when culling objects from the vie
 .. _class_RenderingServer_method_instance_set_ignore_culling:
 
 - void **instance_set_ignore_culling** **(** :ref:`RID<class_RID>` instance, :ref:`bool<class_bool>` enabled **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4671,11 +5041,19 @@ Sets whether to use a dual paraboloid or a cubemap for the shadow map. Dual para
 
 - void **light_projectors_set_filter** **(** :ref:`LightProjectorFilter<enum_RenderingServer_LightProjectorFilter>` filter **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_light_set_bake_mode:
 
 - void **light_set_bake_mode** **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_RenderingServer_LightBakeMode>` bake_mode **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4706,6 +5084,10 @@ Sets the distance fade for this Light3D. This acts as a form of level of detail 
 .. _class_RenderingServer_method_light_set_max_sdfgi_cascade:
 
 - void **light_set_max_sdfgi_cascade** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` cascade **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4753,11 +5135,19 @@ If ``true``, light will cast shadows. Equivalent to :ref:`Light3D.shadow_enabled
 
 - :ref:`RID<class_RID>` **lightmap_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_get_probe_capture_bsp_tree:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **lightmap_get_probe_capture_bsp_tree** **(** :ref:`RID<class_RID>` lightmap **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4765,17 +5155,29 @@ If ``true``, light will cast shadows. Equivalent to :ref:`Light3D.shadow_enabled
 
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **lightmap_get_probe_capture_points** **(** :ref:`RID<class_RID>` lightmap **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_get_probe_capture_sh:
 
 - :ref:`PackedColorArray<class_PackedColorArray>` **lightmap_get_probe_capture_sh** **(** :ref:`RID<class_RID>` lightmap **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_get_probe_capture_tetrahedra:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **lightmap_get_probe_capture_tetrahedra** **(** :ref:`RID<class_RID>` lightmap **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4791,11 +5193,19 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **lightmap_set_probe_bounds** **(** :ref:`RID<class_RID>` lightmap, :ref:`AABB<class_AABB>` bounds **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_set_probe_capture_data:
 
 - void **lightmap_set_probe_capture_data** **(** :ref:`RID<class_RID>` lightmap, :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` point_sh, :ref:`PackedInt32Array<class_PackedInt32Array>` tetrahedra, :ref:`PackedInt32Array<class_PackedInt32Array>` bsp_tree **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4803,17 +5213,29 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **lightmap_set_probe_capture_update_speed** **(** :ref:`float<class_float>` speed **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_set_probe_interior:
 
 - void **lightmap_set_probe_interior** **(** :ref:`RID<class_RID>` lightmap, :ref:`bool<class_bool>` interior **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_lightmap_set_textures:
 
 - void **lightmap_set_textures** **(** :ref:`RID<class_RID>` lightmap, :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` uses_sh **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4879,11 +5301,19 @@ Sets a shader material's shader.
 
 - void **mesh_add_surface** **(** :ref:`RID<class_RID>` mesh, :ref:`Dictionary<class_Dictionary>` surface **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_add_surface_from_arrays:
 
 - void **mesh_add_surface_from_arrays** **(** :ref:`RID<class_RID>` mesh, :ref:`PrimitiveType<enum_RenderingServer_PrimitiveType>` primitive, :ref:`Array<class_Array>` arrays, :ref:`Array<class_Array>` blend_shapes=[], :ref:`Dictionary<class_Dictionary>` lods={}, :ref:`int<class_int>` compress_format=0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4910,6 +5340,10 @@ To place in a scene, attach this mesh to an instance using :ref:`instance_set_ba
 .. _class_RenderingServer_method_mesh_create_from_surfaces:
 
 - :ref:`RID<class_RID>` **mesh_create_from_surfaces** **(** :ref:`Dictionary[]<class_Dictionary>` surfaces, :ref:`int<class_int>` blend_shape_count=0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -4941,6 +5375,10 @@ Returns a mesh's custom aabb.
 
 - :ref:`Dictionary<class_Dictionary>` **mesh_get_surface** **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_get_surface_count:
@@ -4971,6 +5409,10 @@ Sets a mesh's custom aabb.
 
 - void **mesh_set_shadow_mesh** **(** :ref:`RID<class_RID>` mesh, :ref:`RID<class_RID>` shadow_mesh **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_surface_get_arrays:
@@ -4993,11 +5435,19 @@ Returns a mesh's surface's arrays for blend shapes.
 
 - :ref:`int<class_int>` **mesh_surface_get_format_attribute_stride** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` vertex_count **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_surface_get_format_offset:
 
 - :ref:`int<class_int>` **mesh_surface_get_format_offset** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` vertex_count, :ref:`int<class_int>` array_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5005,11 +5455,19 @@ Returns a mesh's surface's arrays for blend shapes.
 
 - :ref:`int<class_int>` **mesh_surface_get_format_skin_stride** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` vertex_count **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_surface_get_format_vertex_stride:
 
 - :ref:`int<class_int>` **mesh_surface_get_format_vertex_stride** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` vertex_count **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5033,11 +5491,19 @@ Sets a mesh's surface's material.
 
 - void **mesh_surface_update_attribute_region** **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_mesh_surface_update_skin_region:
 
 - void **mesh_surface_update_skin_region** **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5045,11 +5511,19 @@ Sets a mesh's surface's material.
 
 - void **mesh_surface_update_vertex_region** **(** :ref:`RID<class_RID>` mesh, :ref:`int<class_int>` surface, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_multimesh_allocate_data:
 
 - void **multimesh_allocate_data** **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` instances, :ref:`MultimeshTransformFormat<enum_RenderingServer_MultimeshTransformFormat>` transform_format, :ref:`bool<class_bool>` color_format=false, :ref:`bool<class_bool>` custom_data_format=false **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5076,6 +5550,10 @@ Calculates and returns the axis-aligned bounding box that encloses all instances
 .. _class_RenderingServer_method_multimesh_get_buffer:
 
 - :ref:`PackedFloat32Array<class_PackedFloat32Array>` **multimesh_get_buffer** **(** :ref:`RID<class_RID>` multimesh **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5171,6 +5649,10 @@ Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when m
 
 - void **multimesh_set_buffer** **(** :ref:`RID<class_RID>` multimesh, :ref:`PackedFloat32Array<class_PackedFloat32Array>` buffer **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_multimesh_set_mesh:
@@ -5193,11 +5675,19 @@ Sets the number of instances visible at a given time. If -1, all instances that 
 
 - :ref:`RID<class_RID>` **occluder_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_occluder_set_mesh:
 
 - void **occluder_set_mesh** **(** :ref:`RID<class_RID>` occluder, :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5217,11 +5707,19 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 - :ref:`RID<class_RID>` **particles_collision_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_height_field_update:
 
 - void **particles_collision_height_field_update** **(** :ref:`RID<class_RID>` particles_collision **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5229,11 +5727,19 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 - void **particles_collision_set_attractor_attenuation** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` curve **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_set_attractor_directionality:
 
 - void **particles_collision_set_attractor_directionality** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` amount **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5241,11 +5747,19 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 - void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` setrngth **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_set_box_extents:
 
 - void **particles_collision_set_box_extents** **(** :ref:`RID<class_RID>` particles_collision, :ref:`Vector3<class_Vector3>` extents **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5253,11 +5767,19 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 - void **particles_collision_set_collision_type** **(** :ref:`RID<class_RID>` particles_collision, :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` type **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_set_cull_mask:
 
 - void **particles_collision_set_cull_mask** **(** :ref:`RID<class_RID>` particles_collision, :ref:`int<class_int>` mask **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5265,17 +5787,29 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 - void **particles_collision_set_field_texture** **(** :ref:`RID<class_RID>` particles_collision, :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_set_height_field_resolution:
 
 - void **particles_collision_set_height_field_resolution** **(** :ref:`RID<class_RID>` particles_collision, :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` resolution **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_collision_set_sphere_radius:
 
 - void **particles_collision_set_sphere_radius** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` radius **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5294,6 +5828,10 @@ To place in a scene, attach these particles to an instance using :ref:`instance_
 .. _class_RenderingServer_method_particles_emit:
 
 - void **particles_emit** **(** :ref:`RID<class_RID>` particles, :ref:`Transform3D<class_Transform3D>` transform, :ref:`Vector3<class_Vector3>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` emit_flags **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5348,6 +5886,10 @@ Sets the number of particles to be drawn and allocates the memory for them. Equi
 .. _class_RenderingServer_method_particles_set_collision_base_size:
 
 - void **particles_set_collision_base_size** **(** :ref:`RID<class_RID>` particles, :ref:`float<class_float>` size **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5427,6 +5969,10 @@ If ``true``, uses fractional delta which smooths the movement of the particles. 
 
 - void **particles_set_interpolate** **(** :ref:`RID<class_RID>` particles, :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_set_lifetime:
@@ -5440,6 +5986,10 @@ Sets the lifetime of each particle in the system. Equivalent to :ref:`GPUParticl
 .. _class_RenderingServer_method_particles_set_mode:
 
 - void **particles_set_mode** **(** :ref:`RID<class_RID>` particles, :ref:`ParticlesMode<enum_RenderingServer_ParticlesMode>` mode **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5489,11 +6039,19 @@ Sets the speed scale of the particle system. Equivalent to :ref:`GPUParticles3D.
 
 - void **particles_set_subemitter** **(** :ref:`RID<class_RID>` particles, :ref:`RID<class_RID>` subemitter_particles **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_set_trail_bind_poses:
 
 - void **particles_set_trail_bind_poses** **(** :ref:`RID<class_RID>` particles, :ref:`Transform3D[]<class_Transform3D>` bind_poses **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5501,11 +6059,19 @@ Sets the speed scale of the particle system. Equivalent to :ref:`GPUParticles3D.
 
 - void **particles_set_trails** **(** :ref:`RID<class_RID>` particles, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` length_sec **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_particles_set_transform_align:
 
 - void **particles_set_transform_align** **(** :ref:`RID<class_RID>` particles, :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` align **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5520,6 +6086,10 @@ If ``true``, particles use local coordinates. If ``false`` they use global coord
 .. _class_RenderingServer_method_positional_soft_shadow_filter_set_quality:
 
 - void **positional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` quality **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5539,17 +6109,29 @@ To place in a scene, attach this reflection probe to an instance using :ref:`ins
 
 - void **reflection_probe_set_ambient_color** **(** :ref:`RID<class_RID>` probe, :ref:`Color<class_Color>` color **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_reflection_probe_set_ambient_energy:
 
 - void **reflection_probe_set_ambient_energy** **(** :ref:`RID<class_RID>` probe, :ref:`float<class_float>` energy **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_reflection_probe_set_ambient_mode:
 
 - void **reflection_probe_set_ambient_mode** **(** :ref:`RID<class_RID>` probe, :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` mode **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5613,6 +6195,10 @@ Sets the max distance away from the probe an object can be before it is culled. 
 
 - void **reflection_probe_set_mesh_lod_threshold** **(** :ref:`RID<class_RID>` probe, :ref:`float<class_float>` pixels **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_reflection_probe_set_origin_offset:
@@ -5626,6 +6212,10 @@ Sets the origin offset to be used when this reflection probe is in box project m
 .. _class_RenderingServer_method_reflection_probe_set_resolution:
 
 - void **reflection_probe_set_resolution** **(** :ref:`RID<class_RID>` probe, :ref:`int<class_int>` resolution **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5661,6 +6251,10 @@ The scenario is the 3D world that all the visual instances exist in.
 
 - void **scenario_set_camera_attributes** **(** :ref:`RID<class_RID>` scenario, :ref:`RID<class_RID>` effects **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_scenario_set_environment:
@@ -5682,6 +6276,10 @@ Sets the fallback environment to be used by this scenario. The fallback environm
 .. _class_RenderingServer_method_screen_space_roughness_limiter_set_active:
 
 - void **screen_space_roughness_limiter_set_active** **(** :ref:`bool<class_bool>` enable, :ref:`float<class_float>` amount, :ref:`float<class_float>` limit **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5741,11 +6339,19 @@ Returns a default texture from a shader searched by name.
 
 - :ref:`Variant<class_Variant>` **shader_get_parameter_default** **(** :ref:`RID<class_RID>` shader, :ref:`StringName<class_StringName>` name **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_shader_set_code:
 
 - void **shader_set_code** **(** :ref:`RID<class_RID>` shader, :ref:`String<class_String>` code **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5763,11 +6369,19 @@ Sets a shader's default texture. Overwrites the texture given by name.
 
 - void **shader_set_path_hint** **(** :ref:`RID<class_RID>` shader, :ref:`String<class_String>` path **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_skeleton_allocate_data:
 
 - void **skeleton_allocate_data** **(** :ref:`RID<class_RID>` skeleton, :ref:`int<class_int>` bones, :ref:`bool<class_bool>` is_2d_skeleton=false **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5825,11 +6439,19 @@ Returns the number of bones allocated for this skeleton.
 
 - void **skeleton_set_base_transform_2d** **(** :ref:`RID<class_RID>` skeleton, :ref:`Transform2D<class_Transform2D>` base_transform **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_sky_bake_panorama:
 
 - :ref:`Image<class_Image>` **sky_bake_panorama** **(** :ref:`RID<class_RID>` sky, :ref:`float<class_float>` energy, :ref:`bool<class_bool>` bake_irradiance, :ref:`Vector2i<class_Vector2i>` size **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5855,11 +6477,19 @@ Sets the material that the sky uses to render the background and reflection maps
 
 - void **sky_set_mode** **(** :ref:`RID<class_RID>` sky, :ref:`SkyMode<enum_RenderingServer_SkyMode>` mode **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_sky_set_radiance_size:
 
 - void **sky_set_radiance_size** **(** :ref:`RID<class_RID>` sky, :ref:`int<class_int>` radiance_size **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5879,11 +6509,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - void **sub_surface_scattering_set_quality** **(** :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` quality **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_sub_surface_scattering_set_scale:
 
 - void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale, :ref:`float<class_float>` depth_scale **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5891,11 +6529,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - :ref:`RID<class_RID>` **texture_2d_create** **(** :ref:`Image<class_Image>` image **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_2d_get:
 
 - :ref:`Image<class_Image>` **texture_2d_get** **(** :ref:`RID<class_RID>` texture **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5903,11 +6549,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - :ref:`Image<class_Image>` **texture_2d_layer_get** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_2d_layered_create:
 
 - :ref:`RID<class_RID>` **texture_2d_layered_create** **(** :ref:`Image[]<class_Image>` layers, :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` layered_type **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5915,11 +6569,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - :ref:`RID<class_RID>` **texture_2d_layered_placeholder_create** **(** :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` layered_type **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_2d_placeholder_create:
 
 - :ref:`RID<class_RID>` **texture_2d_placeholder_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5927,11 +6589,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_3d_create:
 
 - :ref:`RID<class_RID>` **texture_3d_create** **(** :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`bool<class_bool>` mipmaps, :ref:`Image[]<class_Image>` data **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5939,11 +6609,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - :ref:`Image[]<class_Image>` **texture_3d_get** **(** :ref:`RID<class_RID>` texture **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_3d_placeholder_create:
 
 - :ref:`RID<class_RID>` **texture_3d_placeholder_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5951,11 +6629,27 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - void **texture_3d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image[]<class_Image>` data **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_get_path:
 
 - :ref:`String<class_String>` **texture_get_path** **(** :ref:`RID<class_RID>` texture **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+----
+
+.. _class_RenderingServer_method_texture_get_rd_texture:
+
+- :ref:`RID<class_RID>` **texture_get_rd_texture** **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` srgb=false **)** |const|
+
+Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDevice<class_RenderingDevice>`.
 
 ----
 
@@ -5963,11 +6657,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - :ref:`RID<class_RID>` **texture_proxy_create** **(** :ref:`RID<class_RID>` base **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_proxy_update:
 
 - void **texture_proxy_update** **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` proxy_to **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5975,11 +6677,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - void **texture_replace** **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` by_texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_set_force_redraw_if_visible:
 
 - void **texture_set_force_redraw_if_visible** **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -5987,11 +6697,19 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 - void **texture_set_path** **(** :ref:`RID<class_RID>` texture, :ref:`String<class_String>` path **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_texture_set_size_override:
 
 - void **texture_set_size_override** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6050,17 +6768,29 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 - :ref:`float<class_float>` **viewport_get_measured_render_time_cpu** **(** :ref:`RID<class_RID>` viewport **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_get_measured_render_time_gpu:
 
 - :ref:`float<class_float>` **viewport_get_measured_render_time_gpu** **(** :ref:`RID<class_RID>` viewport **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_get_render_info:
 
 - :ref:`int<class_int>` **viewport_get_render_info** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` type, :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` info **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6134,11 +6864,19 @@ Sets the debug draw mode of a viewport. See :ref:`ViewportDebugDraw<enum_Renderi
 
 - void **viewport_set_default_canvas_item_texture_filter** **(** :ref:`RID<class_RID>` viewport, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_default_canvas_item_texture_repeat:
 
 - void **viewport_set_default_canvas_item_texture_repeat** **(** :ref:`RID<class_RID>` viewport, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6153,6 +6891,10 @@ If ``true``, the viewport's canvas is not rendered.
 .. _class_RenderingServer_method_viewport_set_disable_3d:
 
 - void **viewport_set_disable_3d** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` disable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6184,6 +6926,10 @@ Sets the viewport's global transformation matrix.
 
 - void **viewport_set_measure_render_time** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_msaa_2d:
@@ -6206,11 +6952,19 @@ Sets the multisample anti-aliasing mode for 3D. See :ref:`ViewportMSAA<enum_Rend
 
 - void **viewport_set_occlusion_culling_build_quality** **(** :ref:`ViewportOcclusionCullingBuildQuality<enum_RenderingServer_ViewportOcclusionCullingBuildQuality>` quality **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_occlusion_rays_per_thread:
 
 - void **viewport_set_occlusion_rays_per_thread** **(** :ref:`int<class_int>` rays_per_thread **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6280,11 +7034,19 @@ The scenario contains information about environment information, reflection atla
 
 - void **viewport_set_screen_space_aa** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` mode **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_sdf_oversize_and_scale:
 
 - void **viewport_set_sdf_oversize_and_scale** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` oversize, :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` scale **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6300,11 +7062,19 @@ Sets the viewport's width and height.
 
 - void **viewport_set_snap_2d_transforms_to_pixel** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_snap_2d_vertices_to_pixel:
 
 - void **viewport_set_snap_2d_vertices_to_pixel** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6338,11 +7108,19 @@ Sets when the viewport should be updated. See :ref:`ViewportUpdateMode<enum_Rend
 
 - void **viewport_set_use_debanding** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_viewport_set_use_occlusion_culling:
 
 - void **viewport_set_use_occlusion_culling** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6382,11 +7160,19 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 - :ref:`RID<class_RID>` **visibility_notifier_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_visibility_notifier_set_aabb:
 
 - void **visibility_notifier_set_aabb** **(** :ref:`RID<class_RID>` notifier, :ref:`AABB<class_AABB>` aabb **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6394,11 +7180,19 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 - void **visibility_notifier_set_callbacks** **(** :ref:`RID<class_RID>` notifier, :ref:`Callable<class_Callable>` enter_callable, :ref:`Callable<class_Callable>` exit_callable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_allocate_data:
 
 - void **voxel_gi_allocate_data** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`Transform3D<class_Transform3D>` to_cell_xform, :ref:`AABB<class_AABB>` aabb, :ref:`Vector3i<class_Vector3i>` octree_size, :ref:`PackedByteArray<class_PackedByteArray>` octree_cells, :ref:`PackedByteArray<class_PackedByteArray>` data_cells, :ref:`PackedByteArray<class_PackedByteArray>` distance_field, :ref:`PackedInt32Array<class_PackedInt32Array>` level_counts **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6406,11 +7200,19 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 - :ref:`RID<class_RID>` **voxel_gi_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_get_data_cells:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_data_cells** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6418,11 +7220,19 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_distance_field** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_get_level_counts:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **voxel_gi_get_level_counts** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6430,17 +7240,29 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_octree_cells** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_get_octree_size:
 
 - :ref:`Vector3i<class_Vector3i>` **voxel_gi_get_octree_size** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_get_to_cell_xform:
 
 - :ref:`Transform3D<class_Transform3D>` **voxel_gi_get_to_cell_xform** **(** :ref:`RID<class_RID>` voxel_gi **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6456,11 +7278,19 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **voxel_gi_set_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` bias **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_set_dynamic_range:
 
 - void **voxel_gi_set_dynamic_range** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` range **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6468,11 +7298,19 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **voxel_gi_set_energy** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` energy **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_set_interior:
 
 - void **voxel_gi_set_interior** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6480,11 +7318,19 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **voxel_gi_set_normal_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` bias **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_set_propagation:
 
 - void **voxel_gi_set_propagation** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` amount **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -6492,11 +7338,19 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 - void **voxel_gi_set_quality** **(** :ref:`VoxelGIQuality<enum_RenderingServer_VoxelGIQuality>` quality **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingServer_method_voxel_gi_set_use_two_bounces:
 
 - void **voxel_gi_set_use_two_bounces** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

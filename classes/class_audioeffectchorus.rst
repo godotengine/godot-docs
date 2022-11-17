@@ -528,11 +528,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_delay_ms:
 
 - :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -540,11 +548,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_level_db:
 
 - :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -552,11 +568,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_get_voice_rate_hz:
 
 - :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -564,11 +588,19 @@ Method Descriptions
 
 - void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_set_voice_delay_ms:
 
 - void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -576,11 +608,19 @@ Method Descriptions
 
 - void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_set_voice_level_db:
 
 - void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -588,11 +628,19 @@ Method Descriptions
 
 - void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectChorus_method_set_voice_rate_hz:
 
 - void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

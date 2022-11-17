@@ -12,7 +12,9 @@ RDSamplerState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -64,6 +66,10 @@ Property Descriptions
 | *Getter*  | get_anisotropy_max()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_border_color:
@@ -77,6 +83,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_border_color()      |
 +-----------+-------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -92,6 +102,10 @@ Property Descriptions
 | *Getter*  | get_compare_op()      |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_enable_compare:
@@ -105,6 +119,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_enable_compare()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -120,6 +138,10 @@ Property Descriptions
 | *Getter*  | get_lod_bias()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_mag_filter:
@@ -133,6 +155,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_mag_filter()      |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -148,6 +174,10 @@ Property Descriptions
 | *Getter*  | get_max_lod()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_min_filter:
@@ -161,6 +191,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_min_filter()      |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -176,6 +210,10 @@ Property Descriptions
 | *Getter*  | get_min_lod()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_mip_filter:
@@ -189,6 +227,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_mip_filter()      |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -204,6 +246,10 @@ Property Descriptions
 | *Getter*  | get_repeat_u()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_repeat_v:
@@ -217,6 +263,10 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_repeat_v()      |
 +-----------+---------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -232,6 +282,10 @@ Property Descriptions
 | *Getter*  | get_repeat_w()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_unnormalized_uvw:
@@ -246,6 +300,10 @@ Property Descriptions
 | *Getter*  | get_unnormalized_uvw()      |
 +-----------+-----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDSamplerState_property_use_anisotropy:
@@ -259,6 +317,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_use_anisotropy()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

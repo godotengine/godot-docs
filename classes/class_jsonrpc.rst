@@ -136,11 +136,19 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 - :ref:`String<class_String>` **process_string** **(** :ref:`String<class_String>` action **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_JSONRPC_method_set_scope:
 
 - void **set_scope** **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

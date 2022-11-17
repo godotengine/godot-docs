@@ -237,6 +237,8 @@ The global illumination mode to use for the whole geometry. To avoid inconsisten
 | *Getter*  | is_ignoring_occlusion_culling()     |
 +-----------+-------------------------------------+
 
+If ``true``, disables occlusion culling for this instance.  Useful for gizmos that must be rendered even when occlusion culling is in use.
+
 ----
 
 .. _class_GeometryInstance3D_property_lod_bias:
@@ -250,6 +252,10 @@ The global illumination mode to use for the whole geometry. To avoid inconsisten
 +-----------+---------------------+
 | *Getter*  | get_lod_bias()      |
 +-----------+---------------------+
+
+Changes how quickly the mesh transitions to a lower level of detail.  A value of 0 will force the mesh to its lowest level of detail, a value of 1 will use the default settings, and larger values will keep the mesh in a higher level of detail at farther distances.
+
+Useful for testing level of detail transitions in the editor.
 
 ----
 
@@ -394,6 +400,8 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **get_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
+Get the value of a shader parameter as set on this instance.
+
 ----
 
 .. _class_GeometryInstance3D_method_set_custom_aabb:
@@ -407,6 +415,8 @@ Overrides the bounding box of this node with a custom one. To remove it, set an 
 .. _class_GeometryInstance3D_method_set_instance_shader_parameter:
 
 - void **set_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+
+Set the value of a shader parameter for this instance only.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

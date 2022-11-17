@@ -184,6 +184,10 @@ Method Descriptions
 
 - void **allocate** **(** :ref:`Transform3D<class_Transform3D>` to_cell_xform, :ref:`AABB<class_AABB>` aabb, :ref:`Vector3<class_Vector3>` octree_size, :ref:`PackedByteArray<class_PackedByteArray>` octree_cells, :ref:`PackedByteArray<class_PackedByteArray>` data_cells, :ref:`PackedByteArray<class_PackedByteArray>` distance_field, :ref:`PackedInt32Array<class_PackedInt32Array>` level_counts **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VoxelGIData_method_get_bounds:
@@ -200,11 +204,19 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_data_cells** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VoxelGIData_method_get_level_counts:
 
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_level_counts** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -212,17 +224,29 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_octree_cells** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VoxelGIData_method_get_octree_size:
 
 - :ref:`Vector3<class_Vector3>` **get_octree_size** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VoxelGIData_method_get_to_cell_xform:
 
 - :ref:`Transform3D<class_Transform3D>` **get_to_cell_xform** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

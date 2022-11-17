@@ -101,6 +101,10 @@ The background of the area to the left of the grabber.
 
 - :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
 
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_HSlider_theme_style_slider:

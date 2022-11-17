@@ -12,7 +12,9 @@ RDPipelineColorBlendState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -42,6 +44,10 @@ Property Descriptions
 | *Getter*  | get_attachments()      |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendState_property_blend_constant:
@@ -55,6 +61,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_blend_constant()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -70,6 +80,10 @@ Property Descriptions
 | *Getter*  | get_enable_logic_op()      |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendState_property_logic_op:
@@ -83,6 +97,10 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_logic_op()      |
 +-----------+---------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

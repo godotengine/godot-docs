@@ -656,6 +656,10 @@ Adds a shape to the area, along with a transform matrix. Shapes are usually refe
 
 - void **area_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_area_attach_object_instance_id:
@@ -685,6 +689,10 @@ Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Are
 .. _class_PhysicsServer2D_method_area_get_canvas_instance_id:
 
 - :ref:`int<class_int>` **area_get_canvas_instance_id** **(** :ref:`RID<class_RID>` area **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -772,6 +780,10 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 - void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_area_set_collision_layer:
@@ -811,6 +823,10 @@ Sets the function to call when any body/area enters or exits the area. This call
 .. _class_PhysicsServer2D_method_area_set_monitorable:
 
 - void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -972,6 +988,10 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 - void **body_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_body_attach_object_instance_id:
@@ -1001,6 +1021,10 @@ Creates a physics body.
 .. _class_PhysicsServer2D_method_body_get_canvas_instance_id:
 
 - :ref:`int<class_int>` **body_get_canvas_instance_id** **(** :ref:`RID<class_RID>` body **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1338,11 +1362,19 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 - :ref:`RID<class_RID>` **capsule_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_circle_shape_create:
 
 - :ref:`RID<class_RID>` **circle_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1350,11 +1382,19 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 - :ref:`RID<class_RID>` **concave_polygon_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_convex_polygon_shape_create:
 
 - :ref:`RID<class_RID>` **convex_polygon_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1394,11 +1434,19 @@ Returns information about the current state of the 2D physics engine. See :ref:`
 
 - void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_joint_create:
 
 - :ref:`RID<class_RID>` **joint_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1422,17 +1470,29 @@ Returns a joint's type (see :ref:`JointType<enum_PhysicsServer2D_JointType>`).
 
 - void **joint_make_damped_spring** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_joint_make_groove:
 
 - void **joint_make_groove** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` groove1_a, :ref:`Vector2<class_Vector2>` groove2_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_joint_make_pin:
 
 - void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1448,17 +1508,29 @@ Sets a joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` f
 
 - :ref:`RID<class_RID>` **rectangle_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_segment_shape_create:
 
 - :ref:`RID<class_RID>` **segment_shape_create** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2D_method_separation_ray_shape_create:
 
 - :ref:`RID<class_RID>` **separation_ray_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1545,6 +1617,10 @@ Sets the value for a space parameter. See :ref:`SpaceParameter<enum_PhysicsServe
 .. _class_PhysicsServer2D_method_world_boundary_shape_create:
 
 - :ref:`RID<class_RID>` **world_boundary_shape_create** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

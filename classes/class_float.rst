@@ -31,15 +31,17 @@ Tutorials
 Constructors
 ------------
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** **)**                                |
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`float<class_float>` from **)** |
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`bool<class_bool>` from **)**   |
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`int<class_int>` from **)**     |
-+---------------------------+----------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** **)**                                  |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`float<class_float>` from **)**   |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`String<class_String>` from **)** |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`bool<class_bool>` from **)**     |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`float<class_float_constructor_float>` **(** :ref:`int<class_int>` from **)**       |
++---------------------------+------------------------------------------------------------------------------------------+
 
 Operators
 ---------
@@ -124,6 +126,12 @@ Constructs a default-initialized ``float`` set to ``0.0``.
 - :ref:`float<class_float>` **float** **(** :ref:`float<class_float>` from **)**
 
 Constructs a ``float`` as a copy of the given ``float``.
+
+----
+
+- :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
+
+Converts a :ref:`String<class_String>` to a ``float``, following the same rules as :ref:`String.to_float<class_String_method_to_float>`.
 
 ----
 

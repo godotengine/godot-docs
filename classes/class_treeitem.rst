@@ -606,11 +606,19 @@ Returns a dictionary containing the range parameters for a given column. The key
 
 - :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** :ref:`int<class_int>` column **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TreeItem_method_get_structured_text_bidi_override_options:
 
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** :ref:`int<class_int>` column **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -691,6 +699,10 @@ Returns ``true`` if the given ``column`` is checked.
 .. _class_TreeItem_method_is_custom_set_as_button:
 
 - :ref:`bool<class_bool>` **is_custom_set_as_button** **(** :ref:`int<class_int>` column **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -821,6 +833,10 @@ Collapses or uncollapses this ``TreeItem`` and all the descendants of this item.
 .. _class_TreeItem_method_set_custom_as_button:
 
 - void **set_custom_as_button** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -970,11 +986,19 @@ If ``true``, the given column is selectable.
 
 - void **set_structured_text_bidi_override** **(** :ref:`int<class_int>` column, :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TreeItem_method_set_structured_text_bidi_override_options:
 
 - void **set_structured_text_bidi_override_options** **(** :ref:`int<class_int>` column, :ref:`Array<class_Array>` args **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1021,6 +1045,10 @@ Sets the given column's tooltip text.
 .. _class_TreeItem_method_uncollapse_tree:
 
 - void **uncollapse_tree** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -197,6 +197,10 @@ The lower this value, the more the rotation gets slowed down.
 | *Getter*  | get_param()      |
 +-----------+------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_HingeJoint3D_property_angular_limit/upper:

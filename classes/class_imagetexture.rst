@@ -52,6 +52,13 @@ Tutorials
 
 - :doc:`Importing images <../tutorials/assets_pipeline/importing_images>`
 
+Properties
+----------
+
++-------------------------+-------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | resource_local_to_scene | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++-------------------------+-------------------------+----------------------------------------------------------------------------------------+
+
 Methods
 -------
 

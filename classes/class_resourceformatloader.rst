@@ -74,11 +74,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_exists** **(** :ref:`String<class_String>` path **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ResourceFormatLoader_method__get_classes_used:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_classes_used** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -113,6 +121,10 @@ Gets the class name of the resource associated with the given path. If the loade
 .. _class_ResourceFormatLoader_method__get_resource_uid:
 
 - :ref:`int<class_int>` **_get_resource_uid** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

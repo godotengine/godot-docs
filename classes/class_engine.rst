@@ -22,17 +22,19 @@ The ``Engine`` singleton allows you to query and modify the project's run-time p
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`max_fps<class_Engine_property_max_fps>`                                   | ``0``    |
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`             | ``0.5``  |
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` | ``60``   |
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`         | ``true`` |
-+---------------------------+---------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                             | ``1.0``  |
-+---------------------------+---------------------------------------------------------------------------------+----------+
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`max_fps<class_Engine_property_max_fps>`                                         | ``0``    |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` | ``8``    |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`physics_jitter_fix<class_Engine_property_physics_jitter_fix>`                   | ``0.5``  |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`int<class_int>`     | :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`       | ``60``   |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`               | ``true`` |
++---------------------------+---------------------------------------------------------------------------------------+----------+
+| :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                                   | ``1.0``  |
++---------------------------+---------------------------------------------------------------------------------------+----------+
 
 Methods
 -------
@@ -116,6 +118,22 @@ See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_
 
 ----
 
+.. _class_Engine_property_max_physics_steps_per_frame:
+
+- :ref:`int<class_int>` **max_physics_steps_per_frame**
+
++-----------+----------------------------------------+
+| *Default* | ``8``                                  |
++-----------+----------------------------------------+
+| *Setter*  | set_max_physics_steps_per_frame(value) |
++-----------+----------------------------------------+
+| *Getter*  | get_max_physics_steps_per_frame()      |
++-----------+----------------------------------------+
+
+Controls the maximum number of physics steps that can be simulated each rendered frame. The default value is tuned to avoid "spiral of death" situations where expensive physics simulations trigger more expensive simulations indefinitely. However, the game will appear to slow down if the rendering FPS is less than ``1 / max_physics_steps_per_frame`` of :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`. This occurs even if ``delta`` is consistently used in physics calculations. To avoid this, increase :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` if you have increased :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` significantly above its default value.
+
+----
+
 .. _class_Engine_property_physics_jitter_fix:
 
 - :ref:`float<class_float>` **physics_jitter_fix**
@@ -148,7 +166,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_method__physics_process>` methods are run. This value should generally always be set to ``60`` or above, as Godot doesn't interpolate the physics step. As a result, values lower than ``60`` will look stuttery. This value can be increased to make input more reactive or work around collision tunneling issues, but keep in mind doing so will increase CPU usage. See also :ref:`max_fps<class_Engine_property_max_fps>` and :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
-\ **Note:** Only 8 physics ticks may be simulated per rendered frame at most. If more than 8 physics ticks have to be simulated per rendered frame to keep up with rendering, the game will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended not to increase :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` above 240. Otherwise, the game will slow down when the rendering framerate goes below 30 FPS.
+\ **Note:** Only :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` physics ticks may be simulated per rendered frame at most. If more physics ticks have to be simulated per rendered frame to keep up with rendering, the project will appear to slow down (even if ``delta`` is used consistently in physics calculations). Therefore, it is recommended to also increase :ref:`max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` if increasing :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` significantly above its default value.
 
 ----
 

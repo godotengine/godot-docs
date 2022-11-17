@@ -75,6 +75,10 @@ Method Descriptions
 
 - :ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualInstance3D_method_get_aabb:

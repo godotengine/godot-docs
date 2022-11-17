@@ -524,6 +524,10 @@ Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
 - void **set_enable_tagging_used_audio_streams** **(** :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioServer_method_swap_bus_effects:

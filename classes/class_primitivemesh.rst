@@ -25,11 +25,15 @@ Properties
 ----------
 
 +---------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`bool<class_bool>`         | :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>`         | ``false``                  |
++---------------------------------+--------------------------------------------------------------+----------------------------+
 | :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB(0, 0, 0, 0, 0, 0)`` |
 +---------------------------------+--------------------------------------------------------------+----------------------------+
 | :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                  |
 +---------------------------------+--------------------------------------------------------------+----------------------------+
 | :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                            |
++---------------------------------+--------------------------------------------------------------+----------------------------+
+| :ref:`float<class_float>`       | :ref:`uv2_padding<class_PrimitiveMesh_property_uv2_padding>` | ``2.0``                    |
 +---------------------------------+--------------------------------------------------------------+----------------------------+
 
 Methods
@@ -43,6 +47,22 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_PrimitiveMesh_property_add_uv2:
+
+- :ref:`bool<class_bool>` **add_uv2**
+
++-----------+--------------------+
+| *Default* | ``false``          |
++-----------+--------------------+
+| *Setter*  | set_add_uv2(value) |
++-----------+--------------------+
+| *Getter*  | get_add_uv2()      |
++-----------+--------------------+
+
+If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padding<class_PrimitiveMesh_property_uv2_padding>` setting. UV2 is needed for lightmapping.
+
+----
 
 .. _class_PrimitiveMesh_property_custom_aabb:
 
@@ -90,12 +110,32 @@ This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMa
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
 
+----
+
+.. _class_PrimitiveMesh_property_uv2_padding:
+
+- :ref:`float<class_float>` **uv2_padding**
+
++-----------+------------------------+
+| *Default* | ``2.0``                |
++-----------+------------------------+
+| *Setter*  | set_uv2_padding(value) |
++-----------+------------------------+
+| *Getter*  | get_uv2_padding()      |
++-----------+------------------------+
+
+If :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>` is set, specifies the padding in pixels applied along seams of the mesh. If at generation the size of the lightmap texture can't be determined, the UVs are calculated assuming a texture size of 1024x1024.
+
 Method Descriptions
 -------------------
 
 .. _class_PrimitiveMesh_method__create_mesh_array:
 
 - :ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

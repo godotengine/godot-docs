@@ -79,6 +79,10 @@ Property Descriptions
 | *Getter*  | get_camera()      |
 +-----------+-------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_children:
@@ -92,6 +96,10 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_children()         |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -107,6 +115,10 @@ Property Descriptions
 | *Getter*  | get_height()      |
 +-----------+-------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_joint:
@@ -120,6 +132,10 @@ Property Descriptions
 +-----------+------------------+
 | *Getter*  | get_joint()      |
 +-----------+------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -135,6 +151,10 @@ Property Descriptions
 | *Getter*  | get_light()      |
 +-----------+------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_mesh:
@@ -148,6 +168,10 @@ Property Descriptions
 +-----------+-----------------+
 | *Getter*  | get_mesh()      |
 +-----------+-----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -163,6 +187,10 @@ Property Descriptions
 | *Getter*  | get_parent()      |
 +-----------+-------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_position:
@@ -176,6 +204,10 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_position()       |
 +-----------+----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -191,6 +223,10 @@ Property Descriptions
 | *Getter*  | get_rotation()             |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_scale:
@@ -204,6 +240,10 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_scale()          |
 +-----------+----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -219,6 +259,10 @@ Property Descriptions
 | *Getter*  | get_skeleton()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_skin:
@@ -233,6 +277,10 @@ Property Descriptions
 | *Getter*  | get_skin()      |
 +-----------+-----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFNode_property_xform:
@@ -246,6 +294,10 @@ Property Descriptions
 +-----------+-----------------------------------------------------+
 | *Getter*  | get_xform()                                         |
 +-----------+-----------------------------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Method Descriptions
 -------------------

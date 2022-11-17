@@ -905,6 +905,10 @@ If ``true``, the objects rendered by viewport become subjects of mouse picking p
 | *Getter*  | get_positional_shadow_atlas_16_bits()      |
 +-----------+--------------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Viewport_property_positional_shadow_atlas_quad_0:
@@ -1055,6 +1059,10 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 | *Getter*  | get_sdf_oversize()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Viewport_property_sdf_scale:
@@ -1068,6 +1076,10 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 +-----------+----------------------+
 | *Getter*  | get_sdf_scale()      |
 +-----------+----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1083,6 +1095,10 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 | *Getter*  | is_snap_2d_transforms_to_pixel_enabled() |
 +-----------+------------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Viewport_property_snap_2d_vertices_to_pixel:
@@ -1096,6 +1112,10 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 +-----------+----------------------------------------+
 | *Getter*  | is_snap_2d_vertices_to_pixel_enabled() |
 +-----------+----------------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1334,6 +1354,10 @@ Returns the :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalSh
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` type, :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Viewport_method_get_screen_transform:
@@ -1453,6 +1477,10 @@ If an earlier method marks the input as handled via :ref:`set_input_as_handled<c
 .. _class_Viewport_method_push_text_input:
 
 - void **push_text_input** **(** :ref:`String<class_String>` text **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

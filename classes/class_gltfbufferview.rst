@@ -12,7 +12,9 @@ GLTFBufferView
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -44,6 +46,10 @@ Property Descriptions
 | *Getter*  | get_buffer()      |
 +-----------+-------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFBufferView_property_byte_length:
@@ -57,6 +63,10 @@ Property Descriptions
 +-----------+------------------------+
 | *Getter*  | get_byte_length()      |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -72,6 +82,10 @@ Property Descriptions
 | *Getter*  | get_byte_offset()      |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFBufferView_property_byte_stride:
@@ -86,6 +100,10 @@ Property Descriptions
 | *Getter*  | get_byte_stride()      |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFBufferView_property_indices:
@@ -99,6 +117,10 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_indices()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

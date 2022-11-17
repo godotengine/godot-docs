@@ -12,7 +12,9 @@ PhysicsServer2DExtension
 
 **Inherits:** :ref:`PhysicsServer2D<class_PhysicsServer2D>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -298,11 +300,19 @@ Method Descriptions
 
 - void **_area_add_shape** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform, :ref:`bool<class_bool>` disabled **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_attach_canvas_instance_id:
 
 - void **_area_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -310,11 +320,19 @@ Method Descriptions
 
 - void **_area_attach_object_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_clear_shapes:
 
 - void **_area_clear_shapes** **(** :ref:`RID<class_RID>` area **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -322,11 +340,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_area_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_get_canvas_instance_id:
 
 - :ref:`int<class_int>` **_area_get_canvas_instance_id** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -334,11 +360,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_area_get_collision_layer** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_get_collision_mask:
 
 - :ref:`int<class_int>` **_area_get_collision_mask** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -346,11 +380,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_area_get_object_instance_id** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_get_param:
 
 - :ref:`Variant<class_Variant>` **_area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` param **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -358,11 +400,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_area_get_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_get_shape_count:
 
 - :ref:`int<class_int>` **_area_get_shape_count** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -370,11 +420,19 @@ Method Descriptions
 
 - :ref:`Transform2D<class_Transform2D>` **_area_get_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_get_space:
 
 - :ref:`RID<class_RID>` **_area_get_space** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -382,11 +440,19 @@ Method Descriptions
 
 - :ref:`Transform2D<class_Transform2D>` **_area_get_transform** **(** :ref:`RID<class_RID>` area **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_remove_shape:
 
 - void **_area_remove_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -394,11 +460,19 @@ Method Descriptions
 
 - void **_area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_collision_layer:
 
 - void **_area_set_collision_layer** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` layer **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -406,11 +480,19 @@ Method Descriptions
 
 - void **_area_set_collision_mask** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` mask **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_monitor_callback:
 
 - void **_area_set_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -418,11 +500,19 @@ Method Descriptions
 
 - void **_area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_param:
 
 - void **_area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -430,11 +520,19 @@ Method Descriptions
 
 - void **_area_set_pickable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` pickable **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_shape:
 
 - void **_area_set_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -442,11 +540,19 @@ Method Descriptions
 
 - void **_area_set_shape_disabled** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_shape_transform:
 
 - void **_area_set_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -454,11 +560,19 @@ Method Descriptions
 
 - void **_area_set_space** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` space **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__area_set_transform:
 
 - void **_area_set_transform** **(** :ref:`RID<class_RID>` area, :ref:`Transform2D<class_Transform2D>` transform **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -466,11 +580,19 @@ Method Descriptions
 
 - void **_body_add_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_add_constant_central_force:
 
 - void **_body_add_constant_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -478,11 +600,19 @@ Method Descriptions
 
 - void **_body_add_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_add_constant_torque:
 
 - void **_body_add_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -490,11 +620,19 @@ Method Descriptions
 
 - void **_body_add_shape** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform, :ref:`bool<class_bool>` disabled **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_apply_central_force:
 
 - void **_body_apply_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -502,11 +640,19 @@ Method Descriptions
 
 - void **_body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_apply_force:
 
 - void **_body_apply_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -514,11 +660,19 @@ Method Descriptions
 
 - void **_body_apply_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_apply_torque:
 
 - void **_body_apply_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -526,11 +680,19 @@ Method Descriptions
 
 - void **_body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_attach_canvas_instance_id:
 
 - void **_body_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -538,11 +700,19 @@ Method Descriptions
 
 - void **_body_attach_object_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_clear_shapes:
 
 - void **_body_clear_shapes** **(** :ref:`RID<class_RID>` body **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -550,11 +720,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_body_collide_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` body_shape, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` shape_xform, :ref:`Vector2<class_Vector2>` motion, void* results, :ref:`int<class_int>` result_max, int32_t* result_count **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_create:
 
 - :ref:`RID<class_RID>` **_body_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -562,11 +740,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_body_get_canvas_instance_id** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_collision_exceptions:
 
 - :ref:`RID[]<class_RID>` **_body_get_collision_exceptions** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -574,11 +760,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_body_get_collision_layer** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_collision_mask:
 
 - :ref:`int<class_int>` **_body_get_collision_mask** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -586,11 +780,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_body_get_collision_priority** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_constant_force:
 
 - :ref:`Vector2<class_Vector2>` **_body_get_constant_force** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -598,11 +800,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_body_get_constant_torque** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_contacts_reported_depth_threshold:
 
 - :ref:`float<class_float>` **_body_get_contacts_reported_depth_threshold** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -610,11 +820,19 @@ Method Descriptions
 
 - :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **_body_get_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_direct_state:
 
 - :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` **_body_get_direct_state** **(** :ref:`RID<class_RID>` body **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -622,11 +840,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_body_get_max_contacts_reported** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_mode:
 
 - :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **_body_get_mode** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -634,11 +860,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_body_get_object_instance_id** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_param:
 
 - :ref:`Variant<class_Variant>` **_body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` param **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -646,11 +880,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_body_get_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_shape_count:
 
 - :ref:`int<class_int>` **_body_get_shape_count** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -658,11 +900,19 @@ Method Descriptions
 
 - :ref:`Transform2D<class_Transform2D>` **_body_get_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_get_space:
 
 - :ref:`RID<class_RID>` **_body_get_space** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -670,11 +920,19 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **_body_get_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_PhysicsServer2D_BodyState>` state **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_is_omitting_force_integration:
 
 - :ref:`bool<class_bool>` **_body_is_omitting_force_integration** **(** :ref:`RID<class_RID>` body **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -682,11 +940,19 @@ Method Descriptions
 
 - void **_body_remove_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_remove_shape:
 
 - void **_body_remove_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -694,11 +960,19 @@ Method Descriptions
 
 - void **_body_reset_mass_properties** **(** :ref:`RID<class_RID>` body **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_axis_velocity:
 
 - void **_body_set_axis_velocity** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` axis_velocity **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -706,11 +980,19 @@ Method Descriptions
 
 - void **_body_set_collision_layer** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_collision_mask:
 
 - void **_body_set_collision_mask** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -718,11 +1000,19 @@ Method Descriptions
 
 - void **_body_set_collision_priority** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` priority **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_constant_force:
 
 - void **_body_set_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -730,11 +1020,19 @@ Method Descriptions
 
 - void **_body_set_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_contacts_reported_depth_threshold:
 
 - void **_body_set_contacts_reported_depth_threshold** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` threshold **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -742,11 +1040,19 @@ Method Descriptions
 
 - void **_body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body, :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` mode **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_force_integration_callback:
 
 - void **_body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -754,11 +1060,19 @@ Method Descriptions
 
 - void **_body_set_max_contacts_reported** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` amount **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_mode:
 
 - void **_body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` mode **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -766,11 +1080,19 @@ Method Descriptions
 
 - void **_body_set_omit_force_integration** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_param:
 
 - void **_body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` param, :ref:`Variant<class_Variant>` value **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -778,11 +1100,19 @@ Method Descriptions
 
 - void **_body_set_pickable** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` pickable **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_shape:
 
 - void **_body_set_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -790,11 +1120,19 @@ Method Descriptions
 
 - void **_body_set_shape_as_one_way_collision** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` margin **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_shape_disabled:
 
 - void **_body_set_shape_disabled** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -802,11 +1140,19 @@ Method Descriptions
 
 - void **_body_set_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_space:
 
 - void **_body_set_space** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -814,11 +1160,19 @@ Method Descriptions
 
 - void **_body_set_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_PhysicsServer2D_BodyState>` state, :ref:`Variant<class_Variant>` value **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__body_set_state_sync_callback:
 
 - void **_body_set_state_sync_callback** **(** :ref:`RID<class_RID>` body, :ref:`Callable<class_Callable>` callable **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -826,11 +1180,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_body_test_motion** **(** :ref:`RID<class_RID>` body, :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`bool<class_bool>` collide_separation_ray, :ref:`bool<class_bool>` recovery_as_collision, PhysicsServer2DExtensionMotionResult* result **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__capsule_shape_create:
 
 - :ref:`RID<class_RID>` **_capsule_shape_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -838,11 +1200,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_circle_shape_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__concave_polygon_shape_create:
 
 - :ref:`RID<class_RID>` **_concave_polygon_shape_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -850,11 +1220,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_convex_polygon_shape_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__damped_spring_joint_get_param:
 
 - :ref:`float<class_float>` **_damped_spring_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` param **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -862,11 +1240,19 @@ Method Descriptions
 
 - void **_damped_spring_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` param, :ref:`float<class_float>` value **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__end_sync:
 
 - void **_end_sync** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -874,11 +1260,19 @@ Method Descriptions
 
 - void **_finish** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__flush_queries:
 
 - void **_flush_queries** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -886,11 +1280,19 @@ Method Descriptions
 
 - void **_free_rid** **(** :ref:`RID<class_RID>` rid **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__get_process_info:
 
 - :ref:`int<class_int>` **_get_process_info** **(** :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>` process_info **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -898,11 +1300,19 @@ Method Descriptions
 
 - void **_init** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__is_flushing_queries:
 
 - :ref:`bool<class_bool>` **_is_flushing_queries** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -910,11 +1320,19 @@ Method Descriptions
 
 - void **_joint_clear** **(** :ref:`RID<class_RID>` joint **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__joint_create:
 
 - :ref:`RID<class_RID>` **_joint_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -922,11 +1340,19 @@ Method Descriptions
 
 - void **_joint_disable_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint, :ref:`bool<class_bool>` disable **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__joint_get_param:
 
 - :ref:`float<class_float>` **_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -934,11 +1360,19 @@ Method Descriptions
 
 - :ref:`JointType<enum_PhysicsServer2D_JointType>` **_joint_get_type** **(** :ref:`RID<class_RID>` joint **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__joint_is_disabled_collisions_between_bodies:
 
 - :ref:`bool<class_bool>` **_joint_is_disabled_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -946,11 +1380,19 @@ Method Descriptions
 
 - void **_joint_make_damped_spring** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__joint_make_groove:
 
 - void **_joint_make_groove** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` a_groove1, :ref:`Vector2<class_Vector2>` a_groove2, :ref:`Vector2<class_Vector2>` b_anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -958,11 +1400,19 @@ Method Descriptions
 
 - void **_joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__joint_set_param:
 
 - void **_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -970,11 +1420,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__pin_joint_set_param:
 
 - void **_pin_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -982,11 +1440,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_rectangle_shape_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__segment_shape_create:
 
 - :ref:`RID<class_RID>` **_segment_shape_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -994,11 +1460,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_separation_ray_shape_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__set_active:
 
 - void **_set_active** **(** :ref:`bool<class_bool>` active **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1006,11 +1480,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_shape_collide** **(** :ref:`RID<class_RID>` shape_A, :ref:`Transform2D<class_Transform2D>` xform_A, :ref:`Vector2<class_Vector2>` motion_A, :ref:`RID<class_RID>` shape_B, :ref:`Transform2D<class_Transform2D>` xform_B, :ref:`Vector2<class_Vector2>` motion_B, void* results, :ref:`int<class_int>` result_max, int32_t* result_count **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__shape_get_custom_solver_bias:
 
 - :ref:`float<class_float>` **_shape_get_custom_solver_bias** **(** :ref:`RID<class_RID>` shape **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1018,11 +1500,19 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **_shape_get_data** **(** :ref:`RID<class_RID>` shape **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__shape_get_type:
 
 - :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **_shape_get_type** **(** :ref:`RID<class_RID>` shape **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1030,11 +1520,19 @@ Method Descriptions
 
 - void **_shape_set_custom_solver_bias** **(** :ref:`RID<class_RID>` shape, :ref:`float<class_float>` bias **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__shape_set_data:
 
 - void **_shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_Variant>` data **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1042,11 +1540,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_space_create** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__space_get_contact_count:
 
 - :ref:`int<class_int>` **_space_get_contact_count** **(** :ref:`RID<class_RID>` space **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1054,11 +1560,19 @@ Method Descriptions
 
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **_space_get_contacts** **(** :ref:`RID<class_RID>` space **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__space_get_direct_state:
 
 - :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_space_get_direct_state** **(** :ref:`RID<class_RID>` space **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1066,11 +1580,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_space_get_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` param **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__space_is_active:
 
 - :ref:`bool<class_bool>` **_space_is_active** **(** :ref:`RID<class_RID>` space **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1078,11 +1600,19 @@ Method Descriptions
 
 - void **_space_set_active** **(** :ref:`RID<class_RID>` space, :ref:`bool<class_bool>` active **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__space_set_debug_contacts:
 
 - void **_space_set_debug_contacts** **(** :ref:`RID<class_RID>` space, :ref:`int<class_int>` max_contacts **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1090,11 +1620,19 @@ Method Descriptions
 
 - void **_space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` param, :ref:`float<class_float>` value **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__step:
 
 - void **_step** **(** :ref:`float<class_float>` step **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1102,11 +1640,19 @@ Method Descriptions
 
 - void **_sync** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsServer2DExtension_method__world_boundary_shape_create:
 
 - :ref:`RID<class_RID>` **_world_boundary_shape_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

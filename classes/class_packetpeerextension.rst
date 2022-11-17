@@ -12,7 +12,9 @@ PacketPeerExtension
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -34,11 +36,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_available_packet_count** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PacketPeerExtension_method__get_max_packet_size:
 
 - :ref:`int<class_int>` **_get_max_packet_size** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -46,11 +56,19 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_get_packet** **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PacketPeerExtension_method__put_packet:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_put_packet** **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

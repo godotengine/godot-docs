@@ -127,6 +127,10 @@ Property Descriptions
 | *Getter*  | get_bone_size()      |
 +-----------+----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_SkeletonProfile_property_group_size:
@@ -140,6 +144,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_group_size()      |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

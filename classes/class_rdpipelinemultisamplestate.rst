@@ -12,7 +12,9 @@ RDPipelineMultisampleState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -46,6 +48,10 @@ Property Descriptions
 | *Getter*  | get_enable_alpha_to_coverage()      |
 +-----------+-------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineMultisampleState_property_enable_alpha_to_one:
@@ -59,6 +65,10 @@ Property Descriptions
 +-----------+--------------------------------+
 | *Getter*  | get_enable_alpha_to_one()      |
 +-----------+--------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -74,6 +84,10 @@ Property Descriptions
 | *Getter*  | get_enable_sample_shading()      |
 +-----------+----------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineMultisampleState_property_min_sample_shading:
@@ -87,6 +101,10 @@ Property Descriptions
 +-----------+-------------------------------+
 | *Getter*  | get_min_sample_shading()      |
 +-----------+-------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -102,6 +120,10 @@ Property Descriptions
 | *Getter*  | get_sample_count()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineMultisampleState_property_sample_masks:
@@ -115,6 +137,10 @@ Property Descriptions
 +-----------+-------------------------+
 | *Getter*  | get_sample_masks()      |
 +-----------+-------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

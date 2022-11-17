@@ -12,14 +12,25 @@ PlaceholderTexture2D
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Placeholder class for a 2-dimensional texture.
 
+Description
+-----------
+
+This class is used when loading a project that uses a :ref:`Texture2D<class_Texture2D>` subclass in 2 conditions:
+
+- When running the project exported in dedicated server mode, only the texture's dimensions are kept (as they may be relied upon for gameplay purposes or positioning of other elements). This allows reducing the exported PCK's size significantly.
+
+- When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaceholderTexture2D_property_size>` | ``Vector2(1, 1)`` |
-+-------------------------------+-------------------------------------------------------+-------------------+
++-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | resource_local_to_scene                               | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaceholderTexture2D_property_size>` | ``Vector2(1, 1)``                                                                      |
++-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -35,6 +46,8 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_size()        |
 +-----------+-------------------+
+
+The texture's size (in pixels).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

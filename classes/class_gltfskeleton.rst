@@ -12,7 +12,9 @@ GLTFSkeleton
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -57,6 +59,10 @@ Property Descriptions
 | *Getter*  | get_joints()           |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkeleton_property_roots:
@@ -71,6 +77,10 @@ Property Descriptions
 | *Getter*  | get_roots()            |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -78,11 +88,19 @@ Method Descriptions
 
 - :ref:`BoneAttachment3D<class_BoneAttachment3D>` **get_bone_attachment** **(** :ref:`int<class_int>` idx **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkeleton_method_get_bone_attachment_count:
 
 - :ref:`int<class_int>` **get_bone_attachment_count** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -90,11 +108,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **get_godot_bone_node** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkeleton_method_get_godot_skeleton:
 
 - :ref:`Skeleton3D<class_Skeleton3D>` **get_godot_skeleton** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -102,17 +128,29 @@ Method Descriptions
 
 - :ref:`String[]<class_String>` **get_unique_names** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkeleton_method_set_godot_bone_node:
 
 - void **set_godot_bone_node** **(** :ref:`Dictionary<class_Dictionary>` godot_bone_node **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GLTFSkeleton_method_set_unique_names:
 
 - void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

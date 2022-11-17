@@ -12,7 +12,9 @@ RDPipelineColorBlendStateAttachment
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -63,6 +65,10 @@ Property Descriptions
 | *Getter*  | get_alpha_blend_op()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendStateAttachment_property_color_blend_op:
@@ -76,6 +82,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_color_blend_op()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -91,6 +101,10 @@ Property Descriptions
 | *Getter*  | get_dst_alpha_blend_factor()      |
 +-----------+-----------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendStateAttachment_property_dst_color_blend_factor:
@@ -104,6 +118,10 @@ Property Descriptions
 +-----------+-----------------------------------+
 | *Getter*  | get_dst_color_blend_factor()      |
 +-----------+-----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -119,6 +137,10 @@ Property Descriptions
 | *Getter*  | get_enable_blend()      |
 +-----------+-------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendStateAttachment_property_src_alpha_blend_factor:
@@ -132,6 +154,10 @@ Property Descriptions
 +-----------+-----------------------------------+
 | *Getter*  | get_src_alpha_blend_factor()      |
 +-----------+-----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -147,6 +173,10 @@ Property Descriptions
 | *Getter*  | get_src_color_blend_factor()      |
 +-----------+-----------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendStateAttachment_property_write_a:
@@ -160,6 +190,10 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_write_a()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -175,6 +209,10 @@ Property Descriptions
 | *Getter*  | get_write_b()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineColorBlendStateAttachment_property_write_g:
@@ -188,6 +226,10 @@ Property Descriptions
 +-----------+--------------------+
 | *Getter*  | get_write_g()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -203,12 +245,20 @@ Property Descriptions
 | *Getter*  | get_write_r()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
 .. _class_RDPipelineColorBlendStateAttachment_method_set_as_mix:
 
 - void **set_as_mix** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

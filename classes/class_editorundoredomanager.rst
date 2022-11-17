@@ -63,7 +63,7 @@ Signals
 
 - **history_changed** **(** **)**
 
-Emitted when the list of actions in any history has changed, either when an action is commited or a history is cleared.
+Emitted when the list of actions in any history has changed, either when an action is committed or a history is cleared.
 
 ----
 

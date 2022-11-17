@@ -154,6 +154,10 @@ Controls whether horizontal scrollbar can be used and when it should be visible.
 | *Getter*  | get_deadzone()      |
 +-----------+---------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScrollContainer_property_scroll_horizontal:

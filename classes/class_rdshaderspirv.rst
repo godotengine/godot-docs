@@ -12,7 +12,9 @@ RDShaderSPIRV
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -67,6 +69,10 @@ Property Descriptions
 | *Getter*  | get_stage_bytecode()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_property_bytecode_fragment:
@@ -80,6 +86,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_stage_bytecode()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -95,6 +105,10 @@ Property Descriptions
 | *Getter*  | get_stage_bytecode()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_property_bytecode_tesselation_evaluation:
@@ -108,6 +122,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_stage_bytecode()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -123,6 +141,10 @@ Property Descriptions
 | *Getter*  | get_stage_bytecode()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_property_compile_error_compute:
@@ -136,6 +158,10 @@ Property Descriptions
 +-----------+--------------------------------+
 | *Getter*  | get_stage_compile_error()      |
 +-----------+--------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -151,6 +177,10 @@ Property Descriptions
 | *Getter*  | get_stage_compile_error()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_property_compile_error_tesselation_control:
@@ -164,6 +194,10 @@ Property Descriptions
 +-----------+--------------------------------+
 | *Getter*  | get_stage_compile_error()      |
 +-----------+--------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -179,6 +213,10 @@ Property Descriptions
 | *Getter*  | get_stage_compile_error()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_property_compile_error_vertex:
@@ -193,6 +231,10 @@ Property Descriptions
 | *Getter*  | get_stage_compile_error()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -200,11 +242,19 @@ Method Descriptions
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_method_get_stage_compile_error:
 
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -212,11 +262,19 @@ Method Descriptions
 
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderSPIRV_method_set_stage_compile_error:
 
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

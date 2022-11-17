@@ -12,7 +12,9 @@ RDShaderFile
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -47,6 +49,10 @@ Property Descriptions
 | *Getter*  | get_base_error()      |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 Method Descriptions
 -------------------
 
@@ -54,17 +60,29 @@ Method Descriptions
 
 - :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv** **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderFile_method_get_version_list:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_version_list** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDShaderFile_method_set_bytecode:
 
 - void **set_bytecode** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -31,31 +31,31 @@ Tutorials
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>`         | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>`             | ``Vector2(0, 0)``                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` | ``Vector2(0, 0)``                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`           | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>`                 | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>`           | ``Vector2(0, 0)``                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`sleeping<class_PhysicsDirectBodyState2D_property_sleeping>`                         | ``false``                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`step<class_PhysicsDirectBodyState2D_property_step>`                                 | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>`     | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>`               | ``Vector2(0, 0)``                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>`       | ``0.0``                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_PhysicsDirectBodyState2D_property_transform>`                       | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+---------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------------+
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>`         |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>`             |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`           |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>`                 |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>`           |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`sleeping<class_PhysicsDirectBodyState2D_property_sleeping>`                         |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`step<class_PhysicsDirectBodyState2D_property_step>`                                 |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>`     |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`         | :ref:`total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>`               |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>`       |
++---------------------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_PhysicsDirectBodyState2D_property_transform>`                       |
++---------------------------------------+-------------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -121,13 +121,11 @@ Property Descriptions
 
 - :ref:`float<class_float>` **angular_velocity**
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_angular_velocity(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_angular_velocity()      |
-+-----------+-----------------------------+
++----------+-----------------------------+
+| *Setter* | set_angular_velocity(value) |
++----------+-----------------------------+
+| *Getter* | get_angular_velocity()      |
++----------+-----------------------------+
 
 The body's rotational velocity in *radians* per second.
 
@@ -137,11 +135,9 @@ The body's rotational velocity in *radians* per second.
 
 - :ref:`Vector2<class_Vector2>` **center_of_mass**
 
-+-----------+----------------------+
-| *Default* | ``Vector2(0, 0)``    |
-+-----------+----------------------+
-| *Getter*  | get_center_of_mass() |
-+-----------+----------------------+
++----------+----------------------+
+| *Getter* | get_center_of_mass() |
++----------+----------------------+
 
 The body's center of mass position relative to the body's center in the global coordinate system.
 
@@ -151,11 +147,9 @@ The body's center of mass position relative to the body's center in the global c
 
 - :ref:`Vector2<class_Vector2>` **center_of_mass_local**
 
-+-----------+----------------------------+
-| *Default* | ``Vector2(0, 0)``          |
-+-----------+----------------------------+
-| *Getter*  | get_center_of_mass_local() |
-+-----------+----------------------------+
++----------+----------------------------+
+| *Getter* | get_center_of_mass_local() |
++----------+----------------------------+
 
 The body's center of mass position in the body's local coordinate system.
 
@@ -165,11 +159,9 @@ The body's center of mass position in the body's local coordinate system.
 
 - :ref:`float<class_float>` **inverse_inertia**
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Getter*  | get_inverse_inertia() |
-+-----------+-----------------------+
++----------+-----------------------+
+| *Getter* | get_inverse_inertia() |
++----------+-----------------------+
 
 The inverse of the inertia of the body.
 
@@ -179,11 +171,9 @@ The inverse of the inertia of the body.
 
 - :ref:`float<class_float>` **inverse_mass**
 
-+-----------+--------------------+
-| *Default* | ``0.0``            |
-+-----------+--------------------+
-| *Getter*  | get_inverse_mass() |
-+-----------+--------------------+
++----------+--------------------+
+| *Getter* | get_inverse_mass() |
++----------+--------------------+
 
 The inverse of the mass of the body.
 
@@ -193,13 +183,11 @@ The inverse of the mass of the body.
 
 - :ref:`Vector2<class_Vector2>` **linear_velocity**
 
-+-----------+----------------------------+
-| *Default* | ``Vector2(0, 0)``          |
-+-----------+----------------------------+
-| *Setter*  | set_linear_velocity(value) |
-+-----------+----------------------------+
-| *Getter*  | get_linear_velocity()      |
-+-----------+----------------------------+
++----------+----------------------------+
+| *Setter* | set_linear_velocity(value) |
++----------+----------------------------+
+| *Getter* | get_linear_velocity()      |
++----------+----------------------------+
 
 The body's linear velocity in pixels per second.
 
@@ -209,13 +197,11 @@ The body's linear velocity in pixels per second.
 
 - :ref:`bool<class_bool>` **sleeping**
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_sleep_state(value) |
-+-----------+------------------------+
-| *Getter*  | is_sleeping()          |
-+-----------+------------------------+
++----------+------------------------+
+| *Setter* | set_sleep_state(value) |
++----------+------------------------+
+| *Getter* | is_sleeping()          |
++----------+------------------------+
 
 If ``true``, this body is currently sleeping (not active).
 
@@ -225,11 +211,9 @@ If ``true``, this body is currently sleeping (not active).
 
 - :ref:`float<class_float>` **step**
 
-+-----------+------------+
-| *Default* | ``0.0``    |
-+-----------+------------+
-| *Getter*  | get_step() |
-+-----------+------------+
++----------+------------+
+| *Getter* | get_step() |
++----------+------------+
 
 The timestep (delta) used for the simulation.
 
@@ -239,11 +223,9 @@ The timestep (delta) used for the simulation.
 
 - :ref:`float<class_float>` **total_angular_damp**
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Getter*  | get_total_angular_damp() |
-+-----------+--------------------------+
++----------+--------------------------+
+| *Getter* | get_total_angular_damp() |
++----------+--------------------------+
 
 The rate at which the body stops rotating, if there are not any other forces moving it.
 
@@ -253,11 +235,9 @@ The rate at which the body stops rotating, if there are not any other forces mov
 
 - :ref:`Vector2<class_Vector2>` **total_gravity**
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Getter*  | get_total_gravity() |
-+-----------+---------------------+
++----------+---------------------+
+| *Getter* | get_total_gravity() |
++----------+---------------------+
 
 The total gravity vector being currently applied to this body.
 
@@ -267,11 +247,9 @@ The total gravity vector being currently applied to this body.
 
 - :ref:`float<class_float>` **total_linear_damp**
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Getter*  | get_total_linear_damp() |
-+-----------+-------------------------+
++----------+-------------------------+
+| *Getter* | get_total_linear_damp() |
++----------+-------------------------+
 
 The rate at which the body stops moving, if there are not any other forces moving it.
 
@@ -281,13 +259,11 @@ The rate at which the body stops moving, if there are not any other forces movin
 
 - :ref:`Transform2D<class_Transform2D>` **transform**
 
-+-----------+-----------------------------------+
-| *Default* | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+-----------+-----------------------------------+
-| *Setter*  | set_transform(value)              |
-+-----------+-----------------------------------+
-| *Getter*  | get_transform()                   |
-+-----------+-----------------------------------+
++----------+----------------------+
+| *Setter* | set_transform(value) |
++----------+----------------------+
+| *Getter* | get_transform()      |
++----------+----------------------+
 
 The body's transformation matrix.
 
@@ -372,6 +348,8 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
+\ **Note:** :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` is required for this to work. To have :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`, an active :ref:`CollisionShape2D<class_CollisionShape2D>` must be a child of the node, or you can manually set :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`.
+
 ----
 
 .. _class_PhysicsDirectBodyState2D_method_apply_torque_impulse:
@@ -381,6 +359,8 @@ Applies a rotational force without affecting position. A force is time dependent
 Applies a rotational impulse to the body without affecting the position.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
+
+\ **Note:** :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` is required for this to work. To have :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`, an active :ref:`CollisionShape2D<class_CollisionShape2D>` must be a child of the node, or you can manually set :ref:`inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>`.
 
 ----
 

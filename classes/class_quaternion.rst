@@ -215,6 +215,10 @@ Constructs a ``Quaternion`` as a copy of the given ``Quaternion``.
 
 - :ref:`Quaternion<class_Quaternion>` **Quaternion** **(** :ref:`Vector3<class_Vector3>` arc_from, :ref:`Vector3<class_Vector3>` arc_to **)**
 
+.. container:: contribute
+
+	There is currently no description for this constructor. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`Quaternion<class_Quaternion>` **Quaternion** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
@@ -258,6 +262,10 @@ Returns the dot product of two quaternions.
 
 - :ref:`Quaternion<class_Quaternion>` **exp** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Quaternion_method_from_euler:
@@ -272,11 +280,19 @@ Constructs a Quaternion from Euler angles in YXZ rotation order.
 
 - :ref:`float<class_float>` **get_angle** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Quaternion_method_get_axis:
 
 - :ref:`Vector3<class_Vector3>` **get_axis** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -339,6 +355,10 @@ Returns the length of the quaternion, squared.
 .. _class_Quaternion_method_log:
 
 - :ref:`Quaternion<class_Quaternion>` **log** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

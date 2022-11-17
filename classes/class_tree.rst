@@ -155,6 +155,8 @@ Methods
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_column_title_language<class_Tree_method_set_column_title_language>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` language **)**                                     |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_selected<class_Tree_method_set_selected>` **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column **)**                                                               |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Theme Properties
 ----------------
@@ -675,6 +677,10 @@ Returns the column index at ``position``, or -1 if no item is there.
 
 - :ref:`int<class_int>` **get_column_expand_ratio** **(** :ref:`int<class_int>` column **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Tree_method_get_column_title:
@@ -848,11 +854,19 @@ To tell whether a column of an item is selected, use :ref:`TreeItem.is_selected<
 
 - :ref:`bool<class_bool>` **is_column_clipping_content** **(** :ref:`int<class_int>` column **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Tree_method_is_column_expanding:
 
 - :ref:`bool<class_bool>` **is_column_expanding** **(** :ref:`int<class_int>` column **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -867,6 +881,10 @@ Causes the ``Tree`` to jump to the specified :ref:`TreeItem<class_TreeItem>`.
 .. _class_Tree_method_set_column_clip_content:
 
 - void **set_column_clip_content** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -889,6 +907,10 @@ If ``true``, the column will have the "Expand" flag of :ref:`Control<class_Contr
 .. _class_Tree_method_set_column_expand_ratio:
 
 - void **set_column_expand_ratio** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` ratio **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -913,6 +935,14 @@ Sets column title base writing direction.
 - void **set_column_title_language** **(** :ref:`int<class_int>` column, :ref:`String<class_String>` language **)**
 
 Sets language code of column title used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+
+----
+
+.. _class_Tree_method_set_selected:
+
+- void **set_selected** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column **)**
+
+Selects the specified :ref:`TreeItem<class_TreeItem>` and column.
 
 Theme Property Descriptions
 ---------------------------

@@ -12,7 +12,9 @@ ScriptExtension
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -88,11 +90,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_can_instantiate** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__editor_can_reload_from_file:
 
 - :ref:`bool<class_bool>` **_editor_can_reload_from_file** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -100,11 +110,19 @@ Method Descriptions
 
 - :ref:`Script<class_Script>` **_get_base_script** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_constants:
 
 - :ref:`Dictionary<class_Dictionary>` **_get_constants** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -112,11 +130,19 @@ Method Descriptions
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_documentation** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_instance_base_type:
 
 - :ref:`StringName<class_StringName>` **_get_instance_base_type** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -124,11 +150,19 @@ Method Descriptions
 
 - :ref:`ScriptLanguage<class_ScriptLanguage>` **_get_language** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_member_line:
 
 - :ref:`int<class_int>` **_get_member_line** **(** :ref:`StringName<class_StringName>` member **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -136,11 +170,19 @@ Method Descriptions
 
 - :ref:`StringName[]<class_StringName>` **_get_members** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_method_info:
 
 - :ref:`Dictionary<class_Dictionary>` **_get_method_info** **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -148,11 +190,19 @@ Method Descriptions
 
 - :ref:`Variant<class_Variant>` **_get_property_default_value** **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_rpc_config:
 
 - :ref:`Variant<class_Variant>` **_get_rpc_config** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -160,11 +210,19 @@ Method Descriptions
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_script_method_list** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_script_property_list:
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_script_property_list** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -172,11 +230,19 @@ Method Descriptions
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_script_signal_list** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__get_source_code:
 
 - :ref:`String<class_String>` **_get_source_code** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -184,11 +250,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_has_method** **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__has_property_default_value:
 
 - :ref:`bool<class_bool>` **_has_property_default_value** **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -196,11 +270,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_has_script_signal** **(** :ref:`StringName<class_StringName>` signal **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__has_source_code:
 
 - :ref:`bool<class_bool>` **_has_source_code** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -208,11 +290,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_inherits_script** **(** :ref:`Script<class_Script>` script **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__instance_create:
 
 - void* **_instance_create** **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -220,11 +310,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_instance_has** **(** :ref:`Object<class_Object>` object **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__is_placeholder_fallback_enabled:
 
 - :ref:`bool<class_bool>` **_is_placeholder_fallback_enabled** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -232,11 +330,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_tool** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__is_valid:
 
 - :ref:`bool<class_bool>` **_is_valid** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -244,11 +350,19 @@ Method Descriptions
 
 - void **_placeholder_erased** **(** void* placeholder **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__placeholder_instance_create:
 
 - void* **_placeholder_instance_create** **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -256,17 +370,29 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_reload** **(** :ref:`bool<class_bool>` keep_state **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__set_source_code:
 
 - void **_set_source_code** **(** :ref:`String<class_String>` code **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptExtension_method__update_exports:
 
 - void **_update_exports** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

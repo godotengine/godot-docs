@@ -1008,6 +1008,10 @@ Width of the single indentation level.
 | *Default* | ``2`` |
 +-----------+-------+
 
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PopupMenu_theme_constant_item_start_padding:
@@ -1017,6 +1021,10 @@ Width of the single indentation level.
 +-----------+-------+
 | *Default* | ``2`` |
 +-----------+-------+
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

@@ -65,8 +65,6 @@ Methods
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`_is_initialized<class_XRInterfaceExtension_method__is_initialized>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                                               |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`_notification<class_XRInterfaceExtension_method__notification>` **(** :ref:`int<class_int>` what **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                | :ref:`_post_draw_viewport<class_XRInterfaceExtension_method__post_draw_viewport>` **(** :ref:`RID<class_RID>` render_target, :ref:`Rect2<class_Rect2>` screen_rect **)** |virtual|                                                                                                                                                                                                                                                                                                    |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                             | :ref:`_pre_draw_viewport<class_XRInterfaceExtension_method__pre_draw_viewport>` **(** :ref:`RID<class_RID>` render_target **)** |virtual|                                                                                                                                                                                                                                                                                                                                             |
@@ -247,6 +245,10 @@ Returns the number of views this interface requires, 1 for mono, 2 for stereosco
 
 - :ref:`RID<class_RID>` **_get_vrs_texture** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_XRInterfaceExtension_method__initialize:
@@ -262,14 +264,6 @@ Initializes the interface, returns ``true`` on success.
 - :ref:`bool<class_bool>` **_is_initialized** **(** **)** |virtual| |const|
 
 Returns ``true`` if this interface has been initialized.
-
-----
-
-.. _class_XRInterfaceExtension_method__notification:
-
-- void **_notification** **(** :ref:`int<class_int>` what **)** |virtual|
-
-Informs the interface of an applicable system notification.
 
 ----
 
@@ -357,11 +351,19 @@ Blits our render results to screen optionally applying lens distortion. This can
 
 - :ref:`RID<class_RID>` **get_color_texture** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_XRInterfaceExtension_method_get_depth_texture:
 
 - :ref:`RID<class_RID>` **get_depth_texture** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -376,6 +378,10 @@ Returns a valid :ref:`RID<class_RID>` for a texture to which we should render th
 .. _class_XRInterfaceExtension_method_get_velocity_texture:
 
 - :ref:`RID<class_RID>` **get_velocity_texture** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

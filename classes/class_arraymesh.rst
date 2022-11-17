@@ -44,10 +44,12 @@ The most basic example is the creation of a single triangle:
 
  .. code-tab:: csharp
 
-    var vertices = new Godot.Collections.Array<Vector3>();
-    vertices.Add(new Vector3(0, 1, 0));
-    vertices.Add(new Vector3(1, 0, 0));
-    vertices.Add(new Vector3(0, 0, 1));
+    var vertices = new Vector3[]
+    {
+        new Vector3(0, 1, 0),
+        new Vector3(1, 0, 0),
+        new Vector3(0, 0, 1),
+    };
     
     // Initialize the ArrayMesh.
     var arrMesh = new ArrayMesh();
@@ -57,7 +59,7 @@ The most basic example is the creation of a single triangle:
     
     // Create the Mesh.
     arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, arrays);
-    var m = new MeshInstance();
+    var m = new MeshInstance3D();
     m.Mesh = arrMesh;
 
 
@@ -171,6 +173,10 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 +----------+------------------------+
 | *Getter* | get_shadow_mesh()      |
 +----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Method Descriptions
 -------------------
@@ -311,17 +317,29 @@ Sets a name for a given surface.
 
 - void **surface_update_attribute_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ArrayMesh_method_surface_update_skin_region:
 
 - void **surface_update_skin_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ArrayMesh_method_surface_update_vertex_region:
 
 - void **surface_update_vertex_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PackedByteArray<class_PackedByteArray>` data **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

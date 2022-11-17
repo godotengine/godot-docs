@@ -12,7 +12,9 @@ RenderingDevice
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -193,6 +195,8 @@ Methods
 | :ref:`RID<class_RID>`                                      | :ref:`uniform_set_create<class_RenderingDevice_method_uniform_set_create>` **(** :ref:`RDUniform[]<class_RDUniform>` uniforms, :ref:`RID<class_RID>` shader, :ref:`int<class_int>` shader_set **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`uniform_set_is_valid<class_RenderingDevice_method_uniform_set_is_valid>` **(** :ref:`RID<class_RID>` uniform_set **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
++------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                      | :ref:`vertex_array_create<class_RenderingDevice_method_vertex_array_create>` **(** :ref:`int<class_int>` vertex_count, :ref:`int<class_int>` vertex_format, :ref:`RID[]<class_RID>` src_buffers **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_RID>`                                      | :ref:`vertex_buffer_create<class_RenderingDevice_method_vertex_buffer_create>` **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`bool<class_bool>` use_as_storage=false **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2256,11 +2260,19 @@ Method Descriptions
 
 - void **barrier** **(** :ref:`int<class_int>` from=7, :ref:`int<class_int>` to=7 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_buffer_clear:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **buffer_clear** **(** :ref:`RID<class_RID>` buffer, :ref:`int<class_int>` offset, :ref:`int<class_int>` size_bytes, :ref:`int<class_int>` post_barrier=7 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2268,11 +2280,19 @@ Method Descriptions
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **buffer_get_data** **(** :ref:`RID<class_RID>` buffer **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_buffer_update:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **buffer_update** **(** :ref:`RID<class_RID>` buffer, :ref:`int<class_int>` offset, :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data, :ref:`int<class_int>` post_barrier=7 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2280,11 +2300,19 @@ Method Descriptions
 
 - void **capture_timestamp** **(** :ref:`String<class_String>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_compute_list_add_barrier:
 
 - void **compute_list_add_barrier** **(** :ref:`int<class_int>` compute_list **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2292,11 +2320,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **compute_list_begin** **(** :ref:`bool<class_bool>` allow_draw_overlap=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_compute_list_bind_compute_pipeline:
 
 - void **compute_list_bind_compute_pipeline** **(** :ref:`int<class_int>` compute_list, :ref:`RID<class_RID>` compute_pipeline **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2304,11 +2340,19 @@ Method Descriptions
 
 - void **compute_list_bind_uniform_set** **(** :ref:`int<class_int>` compute_list, :ref:`RID<class_RID>` uniform_set, :ref:`int<class_int>` set_index **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_compute_list_dispatch:
 
 - void **compute_list_dispatch** **(** :ref:`int<class_int>` compute_list, :ref:`int<class_int>` x_groups, :ref:`int<class_int>` y_groups, :ref:`int<class_int>` z_groups **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2316,11 +2360,19 @@ Method Descriptions
 
 - void **compute_list_end** **(** :ref:`int<class_int>` post_barrier=7 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_compute_list_set_push_constant:
 
 - void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list, :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`int<class_int>` size_bytes **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2328,11 +2380,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **compute_pipeline_create** **(** :ref:`RID<class_RID>` shader, :ref:`RDPipelineSpecializationConstant[]<class_RDPipelineSpecializationConstant>` specialization_constants=[] **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_compute_pipeline_is_valid:
 
 - :ref:`bool<class_bool>` **compute_pipeline_is_valid** **(** :ref:`RID<class_RID>` compute_pieline **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2340,11 +2400,19 @@ Method Descriptions
 
 - :ref:`RenderingDevice<class_RenderingDevice>` **create_local_device** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_command_begin_label:
 
 - void **draw_command_begin_label** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2352,11 +2420,19 @@ Method Descriptions
 
 - void **draw_command_end_label** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_command_insert_label:
 
 - void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2364,11 +2440,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **draw_list_begin** **(** :ref:`RID<class_RID>` framebuffer, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`Array<class_Array>` storage_textures=[] **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_begin_for_screen:
 
 - :ref:`int<class_int>` **draw_list_begin_for_screen** **(** :ref:`int<class_int>` screen=0, :ref:`Color<class_Color>` clear_color=Color(0, 0, 0, 1) **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2376,11 +2460,19 @@ Method Descriptions
 
 - :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_begin_split** **(** :ref:`RID<class_RID>` framebuffer, :ref:`int<class_int>` splits, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`RID[]<class_RID>` storage_textures=[] **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_bind_index_array:
 
 - void **draw_list_bind_index_array** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` index_array **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2388,11 +2480,19 @@ Method Descriptions
 
 - void **draw_list_bind_render_pipeline** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` render_pipeline **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_bind_uniform_set:
 
 - void **draw_list_bind_uniform_set** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` uniform_set, :ref:`int<class_int>` set_index **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2400,11 +2500,19 @@ Method Descriptions
 
 - void **draw_list_bind_vertex_array** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` vertex_array **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_disable_scissor:
 
 - void **draw_list_disable_scissor** **(** :ref:`int<class_int>` draw_list **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2412,17 +2520,29 @@ Method Descriptions
 
 - void **draw_list_draw** **(** :ref:`int<class_int>` draw_list, :ref:`bool<class_bool>` use_indices, :ref:`int<class_int>` instances, :ref:`int<class_int>` procedural_vertex_count=0 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_enable_scissor:
 
 - void **draw_list_enable_scissor** **(** :ref:`int<class_int>` draw_list, :ref:`Rect2<class_Rect2>` rect=Rect2(0, 0, 0, 0) **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_end:
 
 - void **draw_list_end** **(** :ref:`int<class_int>` post_barrier=7 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2438,11 +2558,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`int<class_int>` size_bytes **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_draw_list_switch_to_next_pass:
 
 - :ref:`int<class_int>` **draw_list_switch_to_next_pass** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2450,11 +2578,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_switch_to_next_pass_split** **(** :ref:`int<class_int>` splits **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_framebuffer_create:
 
 - :ref:`RID<class_RID>` **framebuffer_create** **(** :ref:`RID[]<class_RID>` textures, :ref:`int<class_int>` validate_with_format=-1, :ref:`int<class_int>` view_count=1 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2462,11 +2598,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **framebuffer_create_empty** **(** :ref:`Vector2i<class_Vector2i>` size, :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` samples=0, :ref:`int<class_int>` validate_with_format=-1 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_framebuffer_create_multipass:
 
 - :ref:`RID<class_RID>` **framebuffer_create_multipass** **(** :ref:`RID[]<class_RID>` textures, :ref:`RDFramebufferPass[]<class_RDFramebufferPass>` passes, :ref:`int<class_int>` validate_with_format=-1, :ref:`int<class_int>` view_count=1 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2474,11 +2618,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **framebuffer_format_create** **(** :ref:`RDAttachmentFormat[]<class_RDAttachmentFormat>` attachments, :ref:`int<class_int>` view_count=1 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_framebuffer_format_create_empty:
 
 - :ref:`int<class_int>` **framebuffer_format_create_empty** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` samples=0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2486,11 +2638,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **framebuffer_format_create_multipass** **(** :ref:`RDAttachmentFormat[]<class_RDAttachmentFormat>` attachments, :ref:`RDFramebufferPass[]<class_RDFramebufferPass>` passes, :ref:`int<class_int>` view_count=1 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_framebuffer_format_get_texture_samples:
 
 - :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **framebuffer_format_get_texture_samples** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` render_pass=0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2498,11 +2658,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **framebuffer_get_format** **(** :ref:`RID<class_RID>` framebuffer **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_framebuffer_is_valid:
 
 - :ref:`bool<class_bool>` **framebuffer_is_valid** **(** :ref:`RID<class_RID>` framebuffer **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2510,11 +2678,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_full_barrier:
 
 - void **full_barrier** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2522,11 +2698,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **get_captured_timestamp_cpu_time** **(** :ref:`int<class_int>` index **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_get_captured_timestamp_gpu_time:
 
 - :ref:`int<class_int>` **get_captured_timestamp_gpu_time** **(** :ref:`int<class_int>` index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2534,11 +2718,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`String<class_String>` **get_captured_timestamp_name** **(** :ref:`int<class_int>` index **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_get_captured_timestamps_count:
 
 - :ref:`int<class_int>` **get_captured_timestamps_count** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2546,11 +2738,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **get_captured_timestamps_frame** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_get_device_name:
 
 - :ref:`String<class_String>` **get_device_name** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2558,11 +2758,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`String<class_String>` **get_device_pipeline_cache_uuid** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_get_device_vendor_name:
 
 - :ref:`String<class_String>` **get_device_vendor_name** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2570,11 +2778,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **get_driver_resource** **(** :ref:`DriverResource<enum_RenderingDevice_DriverResource>` resource, :ref:`RID<class_RID>` rid, :ref:`int<class_int>` index **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_get_frame_delay:
 
 - :ref:`int<class_int>` **get_frame_delay** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2582,11 +2798,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **get_memory_usage** **(** :ref:`MemoryType<enum_RenderingDevice_MemoryType>` type **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_index_array_create:
 
 - :ref:`RID<class_RID>` **index_array_create** **(** :ref:`RID<class_RID>` index_buffer, :ref:`int<class_int>` index_offset, :ref:`int<class_int>` index_count **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2594,11 +2818,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **index_buffer_create** **(** :ref:`int<class_int>` size_indices, :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>` format, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`bool<class_bool>` use_restart_indices=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_limit_get:
 
 - :ref:`int<class_int>` **limit_get** **(** :ref:`Limit<enum_RenderingDevice_Limit>` limit **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2606,11 +2838,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **render_pipeline_create** **(** :ref:`RID<class_RID>` shader, :ref:`int<class_int>` framebuffer_format, :ref:`int<class_int>` vertex_format, :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` primitive, :ref:`RDPipelineRasterizationState<class_RDPipelineRasterizationState>` rasterization_state, :ref:`RDPipelineMultisampleState<class_RDPipelineMultisampleState>` multisample_state, :ref:`RDPipelineDepthStencilState<class_RDPipelineDepthStencilState>` stencil_state, :ref:`RDPipelineColorBlendState<class_RDPipelineColorBlendState>` color_blend_state, :ref:`int<class_int>` dynamic_state_flags=0, :ref:`int<class_int>` for_render_pass=0, :ref:`RDPipelineSpecializationConstant[]<class_RDPipelineSpecializationConstant>` specialization_constants=[] **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_render_pipeline_is_valid:
 
 - :ref:`bool<class_bool>` **render_pipeline_is_valid** **(** :ref:`RID<class_RID>` render_pipeline **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2618,11 +2858,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **sampler_create** **(** :ref:`RDSamplerState<class_RDSamplerState>` state **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_screen_get_framebuffer_format:
 
 - :ref:`int<class_int>` **screen_get_framebuffer_format** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2630,11 +2878,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`int<class_int>` **screen_get_height** **(** :ref:`int<class_int>` screen=0 **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_screen_get_width:
 
 - :ref:`int<class_int>` **screen_get_width** **(** :ref:`int<class_int>` screen=0 **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2642,11 +2898,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_String>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_shader_compile_binary_from_spirv:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **shader_compile_binary_from_spirv** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` spirv_data, :ref:`String<class_String>` name="" **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2654,11 +2918,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **shader_compile_spirv_from_source** **(** :ref:`RDShaderSource<class_RDShaderSource>` shader_source, :ref:`bool<class_bool>` allow_cache=true **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_shader_create_from_bytecode:
 
 - :ref:`RID<class_RID>` **shader_create_from_bytecode** **(** :ref:`PackedByteArray<class_PackedByteArray>` binary_data **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2666,11 +2938,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **shader_create_from_spirv** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` spirv_data, :ref:`String<class_String>` name="" **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_shader_get_vertex_input_attribute_mask:
 
 - :ref:`int<class_int>` **shader_get_vertex_input_attribute_mask** **(** :ref:`RID<class_RID>` shader **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2678,11 +2958,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **storage_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`int<class_int>` usage=0 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_submit:
 
 - void **submit** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2690,11 +2978,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - void **sync** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_buffer_create:
 
 - :ref:`RID<class_RID>` **texture_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray() **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2702,11 +2998,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`Error<enum_@GlobalScope_Error>` **texture_clear** **(** :ref:`RID<class_RID>` texture, :ref:`Color<class_Color>` color, :ref:`int<class_int>` base_mipmap, :ref:`int<class_int>` mipmap_count, :ref:`int<class_int>` base_layer, :ref:`int<class_int>` layer_count, :ref:`int<class_int>` post_barrier=7 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_copy:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **texture_copy** **(** :ref:`RID<class_RID>` from_texture, :ref:`RID<class_RID>` to_texture, :ref:`Vector3<class_Vector3>` from_pos, :ref:`Vector3<class_Vector3>` to_pos, :ref:`Vector3<class_Vector3>` size, :ref:`int<class_int>` src_mipmap, :ref:`int<class_int>` dst_mipmap, :ref:`int<class_int>` src_layer, :ref:`int<class_int>` dst_layer, :ref:`int<class_int>` post_barrier=7 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2714,11 +3018,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **texture_create** **(** :ref:`RDTextureFormat<class_RDTextureFormat>` format, :ref:`RDTextureView<class_RDTextureView>` view, :ref:`PackedByteArray[]<class_PackedByteArray>` data=[] **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_create_shared:
 
 - :ref:`RID<class_RID>` **texture_create_shared** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2726,11 +3038,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **texture_create_shared_from_slice** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` mipmaps=1, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_get_data:
 
 - :ref:`PackedByteArray<class_PackedByteArray>` **texture_get_data** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2738,11 +3058,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`bool<class_bool>` **texture_is_format_supported_for_usage** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`int<class_int>` usage_flags **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_is_shared:
 
 - :ref:`bool<class_bool>` **texture_is_shared** **(** :ref:`RID<class_RID>` texture **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2750,11 +3078,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`bool<class_bool>` **texture_is_valid** **(** :ref:`RID<class_RID>` texture **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_texture_resolve_multisample:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **texture_resolve_multisample** **(** :ref:`RID<class_RID>` from_texture, :ref:`RID<class_RID>` to_texture, :ref:`int<class_int>` post_barrier=7 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2762,11 +3098,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`Error<enum_@GlobalScope_Error>` **texture_update** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer, :ref:`PackedByteArray<class_PackedByteArray>` data, :ref:`int<class_int>` post_barrier=7 **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_uniform_buffer_create:
 
 - :ref:`RID<class_RID>` **uniform_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray() **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -2774,11 +3118,27 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **uniform_set_create** **(** :ref:`RDUniform[]<class_RDUniform>` uniforms, :ref:`RID<class_RID>` shader, :ref:`int<class_int>` shader_set **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_uniform_set_is_valid:
 
 - :ref:`bool<class_bool>` **uniform_set_is_valid** **(** :ref:`RID<class_RID>` uniform_set **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+----
+
+.. _class_RenderingDevice_method_vertex_array_create:
+
+- :ref:`RID<class_RID>` **vertex_array_create** **(** :ref:`int<class_int>` vertex_count, :ref:`int<class_int>` vertex_format, :ref:`RID[]<class_RID>` src_buffers **)**
+
+Creates a vertex array based on the specified buffers.
 
 ----
 
@@ -2786,11 +3146,19 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 - :ref:`RID<class_RID>` **vertex_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`bool<class_bool>` use_as_storage=false **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RenderingDevice_method_vertex_format_create:
 
 - :ref:`int<class_int>` **vertex_format_create** **(** :ref:`RDVertexAttribute[]<class_RDVertexAttribute>` vertex_descriptions **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

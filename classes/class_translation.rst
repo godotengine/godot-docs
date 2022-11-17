@@ -57,6 +57,8 @@ Methods
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringName<class_StringName>`               | :ref:`get_plural_message<class_Translation_method_get_plural_message>` **(** :ref:`StringName<class_StringName>` src_message, :ref:`StringName<class_StringName>` src_plural_message, :ref:`int<class_int>` n, :ref:`StringName<class_StringName>` context="" **)** |const|          |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_translated_message_list<class_Translation_method_get_translated_message_list>` **(** **)** |const|                                                                                                                                                                         |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Property Descriptions
 ---------------------
@@ -153,6 +155,14 @@ Returns all the messages (keys).
 Returns a message's translation involving plurals.
 
 The number ``n`` is the number or quantity of the plural object. It will be used to guide the translation system to fetch the correct plural form for the selected language.
+
+----
+
+.. _class_Translation_method_get_translated_message_list:
+
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_translated_message_list** **(** **)** |const|
+
+Returns all the messages (translated text).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

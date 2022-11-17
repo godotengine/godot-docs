@@ -1321,6 +1321,10 @@ Maximum amount set in the sub particles emitter.
 | *Getter* | get_sub_emitter_amount_at_end()      |
 +----------+--------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ParticleProcessMaterial_property_sub_emitter_frequency:
@@ -1332,6 +1336,10 @@ Maximum amount set in the sub particles emitter.
 +----------+----------------------------------+
 | *Getter* | get_sub_emitter_frequency()      |
 +----------+----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1347,6 +1355,10 @@ Maximum amount set in the sub particles emitter.
 | *Getter*  | get_sub_emitter_keep_velocity()      |
 +-----------+--------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ParticleProcessMaterial_property_sub_emitter_mode:
@@ -1360,6 +1372,10 @@ Maximum amount set in the sub particles emitter.
 +-----------+-----------------------------+
 | *Getter*  | get_sub_emitter_mode()      |
 +-----------+-----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

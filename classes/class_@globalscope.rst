@@ -2181,10 +2181,6 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other error
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA:
 
-.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSY:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
-
 .. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_ID:
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING:
@@ -2287,15 +2283,9 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 - **PROPERTY_HINT_COLOR_NO_ALPHA** = **21** --- Hints that a :ref:`Color<class_Color>` property should be edited without affecting its transparency (:ref:`Color.a<class_Color_property_a>` is not editable).
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **22** --- Hints that an image is compressed using lossy compression. The editor does not internally use this property hint.
+- **PROPERTY_HINT_OBJECT_ID** = **22**
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **23** --- Hints that an image is compressed using lossless compression. The editor does not internally use this property hint.
-
-- **PROPERTY_HINT_OBJECT_ID** = **24**
-
-- **PROPERTY_HINT_TYPE_STRING** = **25** --- Hints that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types.
-
-\ **Example:**\ 
+- **PROPERTY_HINT_TYPE_STRING** = **23** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
 
 ::
 
@@ -2306,51 +2296,49 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 \ **Note:** The final colon is required for properly detecting built-in types.
 
-- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **26**
+- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **24**
 
-- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **27**
+- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **25**
 
-- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **28**
+- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **26**
 
-- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **29**
+- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **27**
 
-- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **30**
+- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **28**
 
-- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **31**
+- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **29**
 
-- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **32**
+- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **30**
 
-- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **33**
+- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **31**
 
-- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **34**
+- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **32**
 
-- **PROPERTY_HINT_OBJECT_TOO_BIG** = **35** --- Hints that a property's size (in bytes) is too big to be displayed, when debugging a running project. The debugger uses this hint internally.
+- **PROPERTY_HINT_OBJECT_TOO_BIG** = **33**
 
-- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **36**
+- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **34**
 
-- **PROPERTY_HINT_SAVE_FILE** = **37**
+- **PROPERTY_HINT_SAVE_FILE** = **35**
 
-- **PROPERTY_HINT_GLOBAL_SAVE_FILE** = **38**
+- **PROPERTY_HINT_GLOBAL_SAVE_FILE** = **36**
 
-- **PROPERTY_HINT_INT_IS_OBJECTID** = **39**
+- **PROPERTY_HINT_INT_IS_OBJECTID** = **37**
 
-- **PROPERTY_HINT_INT_IS_POINTER** = **40**
+- **PROPERTY_HINT_INT_IS_POINTER** = **38**
 
-- **PROPERTY_HINT_ARRAY_TYPE** = **41**
+- **PROPERTY_HINT_ARRAY_TYPE** = **39**
 
-- **PROPERTY_HINT_LOCALE_ID** = **42** --- Hints that a :ref:`String<class_String>` property is a locale code. Editing it will show a locale dialog for picking language and country.
+- **PROPERTY_HINT_LOCALE_ID** = **40** --- Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
 
-- **PROPERTY_HINT_LOCALIZABLE_STRING** = **43** --- Hints that a :ref:`Dictionary<class_Dictionary>` property is string translation map. Dictionary keys are locale codes and, values are translated strings.
+- **PROPERTY_HINT_LOCALIZABLE_STRING** = **41** --- Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
 
-- **PROPERTY_HINT_NODE_TYPE** = **44**
+- **PROPERTY_HINT_NODE_TYPE** = **42**
 
-- **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = **45** --- Hints that a :ref:`Quaternion<class_Quaternion>` property should disable the temporary euler editor.
+- **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = **43** --- Hints that a quaternion property should disable the temporary euler editor.
 
-- **PROPERTY_HINT_PASSWORD** = **46** --- Hints that a :ref:`String<class_String>` property is a password. Every character of the string is displayed as the secret character (typically ``*``).
+- **PROPERTY_HINT_PASSWORD** = **44** --- Hints that a string property is a password, and every character is replaced with the secret character.
 
-An optional placeholder text can be shown on its input field, similarly to :ref:`PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT>`.
-
-- **PROPERTY_HINT_MAX** = **47** --- Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
+- **PROPERTY_HINT_MAX** = **45**
 
 ----
 

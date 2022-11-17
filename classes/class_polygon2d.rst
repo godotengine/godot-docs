@@ -104,6 +104,10 @@ If ``true``, polygon edges will be anti-aliased.
 | *Default* | ``[]`` |
 +-----------+--------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Polygon2D_property_color:
@@ -133,6 +137,10 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 +-----------+----------------------------------+
 | *Getter*  | get_internal_vertex_count()      |
 +-----------+----------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -229,6 +237,10 @@ The list of polygons, in case more than one is being represented. Every individu
 +-----------+---------------------+
 | *Getter*  | get_skeleton()      |
 +-----------+---------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

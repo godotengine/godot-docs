@@ -12,7 +12,9 @@ TileData
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -116,6 +118,10 @@ Property Descriptions
 | *Getter*  | get_flip_h()      |
 +-----------+-------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TileData_property_flip_v:
@@ -129,6 +135,10 @@ Property Descriptions
 +-----------+-------------------+
 | *Getter*  | get_flip_v()      |
 +-----------+-------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -158,6 +168,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 | *Getter*  | get_modulate()        |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TileData_property_probability:
@@ -171,6 +185,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 +-----------+------------------------+
 | *Getter*  | get_probability()      |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -186,6 +204,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 | *Getter*  | get_terrain()      |
 +-----------+--------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TileData_property_terrain_set:
@@ -199,6 +221,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 +-----------+------------------------+
 | *Getter*  | get_terrain_set()      |
 +-----------+------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -214,6 +240,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 | *Getter*  | get_texture_offset()      |
 +-----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TileData_property_transpose:
@@ -227,6 +257,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 +-----------+----------------------+
 | *Getter*  | get_transpose()      |
 +-----------+----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -242,6 +276,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 | *Getter*  | get_y_sort_origin()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_TileData_property_z_index:
@@ -255,6 +293,10 @@ The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a 
 +-----------+--------------------+
 | *Getter*  | get_z_index()      |
 +-----------+--------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Method Descriptions
 -------------------

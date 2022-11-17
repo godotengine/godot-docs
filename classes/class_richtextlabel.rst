@@ -1159,6 +1159,10 @@ Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration
 
 - void **push_font_size** **(** :ref:`int<class_int>` font_size **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RichTextLabel_method_push_hint:

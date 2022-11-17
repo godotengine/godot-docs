@@ -62,11 +62,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_beat_count** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioStream_method__get_bpm:
 
 - :ref:`float<class_float>` **_get_bpm** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -74,11 +82,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_get_length** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioStream_method__get_stream_name:
 
 - :ref:`String<class_String>` **_get_stream_name** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -86,11 +102,19 @@ Method Descriptions
 
 - :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioStream_method__is_monophonic:
 
 - :ref:`bool<class_bool>` **_is_monophonic** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

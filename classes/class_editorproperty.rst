@@ -132,7 +132,7 @@ Emit it if you want to key a property with a single value.
 
 Emit it if you want to mark (or unmark) the value of a property for being saved regardless of being equal to the default value.
 
-The default value is the one the property will get when the node is just instantiated and can come from an ancestor scene in the inheritance/instancing chain, a script or a builtin class.
+The default value is the one the property will get when the node is just instantiated and can come from an ancestor scene in the inheritance/instantiation chain, a script or a builtin class.
 
 ----
 

@@ -86,6 +86,10 @@ Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
 | *Getter*  | get_soft_clip_ratio()      |
 +-----------+----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AudioEffectLimiter_property_threshold_db:

@@ -623,9 +623,11 @@ enum **WindowMode**:
 
 Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
-- **WINDOW_MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive full screen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>`.
+- **WINDOW_MODE_EXCLUSIVE_FULLSCREEN** = **4** --- Exclusive full screen window mode. This mode is implemented on Windows and macOS only. On other platforms, it is equivalent to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>`.
 
-Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
+\ **On Windows:** Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
+
+\ **On macOS:** Exclusive full-screen mode prevents Dock and Menu from showing up when the mouse pointer is hovering the edge of the screen.
 
 Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
@@ -755,6 +757,8 @@ Although not guaranteed, the images can be rendered as fast as possible, which m
 
 .. _class_DisplayServer_constant_WINDOW_VIEW:
 
+.. _class_DisplayServer_constant_OPENGL_CONTEXT:
+
 enum **HandleType**:
 
 - **DISPLAY_HANDLE** = **0** --- Display handle:
@@ -775,9 +779,21 @@ enum **HandleType**:
 
 - **WINDOW_VIEW** = **2** --- Window view:
 
+	- Windows: ``HDC`` for the window (only with the GL Compatibility renderer).
+
 	- macOS: ``NSView*`` for the window main view.
 
 	- iOS: ``UIView*`` for the window main view.
+
+- **OPENGL_CONTEXT** = **3** --- OpenGL context (only with the GL Compatibility renderer):
+
+	- Windows: ``HGLRC`` for the window.
+
+	- Linux: ``GLXContext*`` for the window.
+
+	- MacOS: ``NSOpenGLContext*`` for the window.
+
+	- Android: ``EGLContext`` for the window.
 
 ----
 

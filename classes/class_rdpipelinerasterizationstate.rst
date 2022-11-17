@@ -12,7 +12,9 @@ RDPipelineRasterizationState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -56,6 +58,10 @@ Property Descriptions
 | *Getter*  | get_cull_mode()      |
 +-----------+----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_depth_bias_clamp:
@@ -69,6 +75,10 @@ Property Descriptions
 +-----------+-----------------------------+
 | *Getter*  | get_depth_bias_clamp()      |
 +-----------+-----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -84,6 +94,10 @@ Property Descriptions
 | *Getter*  | get_depth_bias_constant_factor()      |
 +-----------+---------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_depth_bias_enabled:
@@ -97,6 +111,10 @@ Property Descriptions
 +-----------+-------------------------------+
 | *Getter*  | get_depth_bias_enabled()      |
 +-----------+-------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -112,6 +130,10 @@ Property Descriptions
 | *Getter*  | get_depth_bias_slope_factor()      |
 +-----------+------------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_discard_primitives:
@@ -125,6 +147,10 @@ Property Descriptions
 +-----------+-------------------------------+
 | *Getter*  | get_discard_primitives()      |
 +-----------+-------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -140,6 +166,10 @@ Property Descriptions
 | *Getter*  | get_enable_depth_clamp()      |
 +-----------+-------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_front_face:
@@ -153,6 +183,10 @@ Property Descriptions
 +-----------+-----------------------+
 | *Getter*  | get_front_face()      |
 +-----------+-----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -168,6 +202,10 @@ Property Descriptions
 | *Getter*  | get_line_width()      |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_patch_control_points:
@@ -182,6 +220,10 @@ Property Descriptions
 | *Getter*  | get_patch_control_points()      |
 +-----------+---------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RDPipelineRasterizationState_property_wireframe:
@@ -195,6 +237,10 @@ Property Descriptions
 +-----------+----------------------+
 | *Getter*  | get_wireframe()      |
 +-----------+----------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

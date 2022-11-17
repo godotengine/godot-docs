@@ -14,7 +14,9 @@ WebRTCDataChannel
 
 **Inherited By:** :ref:`WebRTCDataChannelExtension<class_WebRTCDataChannelExtension>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------

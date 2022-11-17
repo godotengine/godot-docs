@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
-- :doc:`Using KinematicBody2D <../tutorials/physics/using_kinematic_body_2d>`
+- :doc:`Using CharacterBody2D <../tutorials/physics/using_character_body_2d>`
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
 

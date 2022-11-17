@@ -348,7 +348,7 @@ Returns a copy of the string with special characters escaped using the C languag
 
 - :ref:`String<class_String>` **c_unescape** **(** **)** |const|
 
-Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\?``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
+Returns a copy of the string with escaped characters replaced by their meanings. Supported escape sequences are ``\'``, ``\"``, ``\\``, ``\a``, ``\b``, ``\f``, ``\n``, ``\r``, ``\t``, ``\v``.
 
 \ **Note:** Unlike the GDScript parser, this method doesn't support the ``\uXXXX`` escape sequence.
 
@@ -919,6 +919,10 @@ Converts a signed :ref:`int<class_int>` to a string representation of a number.
 
 - :ref:`String<class_String>` **num_scientific** **(** :ref:`float<class_float>` number **)** |static|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_String_method_num_uint64:
@@ -1384,9 +1388,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`bool<class_bool>` **operator !=** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1394,11 +1406,19 @@ Operator Descriptions
 
 - :ref:`String<class_String>` **operator %** **(** :ref:`Variant<class_Variant>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_String_operator_sum_String:
 
 - :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1406,11 +1426,19 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator <** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_String_operator_lte_bool:
 
 - :ref:`bool<class_bool>` **operator <=** **(** :ref:`String<class_String>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1418,9 +1446,17 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 - :ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -1428,17 +1464,29 @@ Operator Descriptions
 
 - :ref:`bool<class_bool>` **operator >** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_String_operator_gte_bool:
 
 - :ref:`bool<class_bool>` **operator >=** **(** :ref:`String<class_String>` right **)**
 
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_String_operator_idx_String:
 
 - :ref:`String<class_String>` **operator []** **(** :ref:`int<class_int>` index **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

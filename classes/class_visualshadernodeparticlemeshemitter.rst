@@ -12,7 +12,9 @@ VisualShaderNodeParticleMeshEmitter
 
 **Inherits:** :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -38,6 +40,10 @@ Property Descriptions
 | *Getter* | get_mesh()      |
 +----------+-----------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShaderNodeParticleMeshEmitter_property_surface_index:
@@ -52,6 +58,10 @@ Property Descriptions
 | *Getter*  | get_surface_index()      |
 +-----------+--------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces:
@@ -65,6 +75,10 @@ Property Descriptions
 +-----------+-----------------------------+
 | *Getter*  | is_use_all_surfaces()       |
 +-----------+-----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

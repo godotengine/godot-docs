@@ -12,7 +12,9 @@ ScriptLanguageExtension
 
 **Inherits:** :ref:`ScriptLanguage<class_ScriptLanguage>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -263,11 +265,19 @@ Method Descriptions
 
 - void **_add_global_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__add_named_global_constant:
 
 - void **_add_named_global_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -275,11 +285,19 @@ Method Descriptions
 
 - void* **_alloc_instance_binding_data** **(** :ref:`Object<class_Object>` object **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__auto_indent_code:
 
 - :ref:`String<class_String>` **_auto_indent_code** **(** :ref:`String<class_String>` code, :ref:`int<class_int>` from_line, :ref:`int<class_int>` to_line **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -287,11 +305,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_can_inherit_from_file** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__complete_code:
 
 - :ref:`Dictionary<class_Dictionary>` **_complete_code** **(** :ref:`String<class_String>` code, :ref:`String<class_String>` path, :ref:`Object<class_Object>` owner **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -299,11 +325,19 @@ Method Descriptions
 
 - :ref:`Object<class_Object>` **_create_script** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__debug_get_current_stack_info:
 
 - :ref:`Dictionary[]<class_Dictionary>` **_debug_get_current_stack_info** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -311,11 +345,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_debug_get_error** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__debug_get_globals:
 
 - :ref:`Dictionary<class_Dictionary>` **_debug_get_globals** **(** :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -323,11 +365,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_debug_get_stack_level_count** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__debug_get_stack_level_function:
 
 - :ref:`String<class_String>` **_debug_get_stack_level_function** **(** :ref:`int<class_int>` level **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -335,11 +385,19 @@ Method Descriptions
 
 - void* **_debug_get_stack_level_instance** **(** :ref:`int<class_int>` level **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__debug_get_stack_level_line:
 
 - :ref:`int<class_int>` **_debug_get_stack_level_line** **(** :ref:`int<class_int>` level **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -347,11 +405,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_locals** **(** :ref:`int<class_int>` level, :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__debug_get_stack_level_members:
 
 - :ref:`Dictionary<class_Dictionary>` **_debug_get_stack_level_members** **(** :ref:`int<class_int>` level, :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -359,11 +425,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_debug_parse_stack_level_expression** **(** :ref:`int<class_int>` level, :ref:`String<class_String>` expression, :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__execute_file:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_execute_file** **(** :ref:`String<class_String>` path **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -371,11 +445,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_find_function** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` function_name **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__finish:
 
 - void **_finish** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -383,11 +465,19 @@ Method Descriptions
 
 - void **_frame** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__free_instance_binding_data:
 
 - void **_free_instance_binding_data** **(** void* data **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -395,11 +485,19 @@ Method Descriptions
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_built_in_templates** **(** :ref:`StringName<class_StringName>` object **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_comment_delimiters:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_comment_delimiters** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -407,11 +505,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_extension** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_global_class_name:
 
 - :ref:`Dictionary<class_Dictionary>` **_get_global_class_name** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -419,11 +525,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_public_annotations:
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_public_annotations** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -431,11 +545,19 @@ Method Descriptions
 
 - :ref:`Dictionary<class_Dictionary>` **_get_public_constants** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_public_functions:
 
 - :ref:`Dictionary[]<class_Dictionary>` **_get_public_functions** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -443,11 +565,19 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_reserved_words:
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_reserved_words** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -455,11 +585,19 @@ Method Descriptions
 
 - :ref:`PackedStringArray<class_PackedStringArray>` **_get_string_delimiters** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__get_type:
 
 - :ref:`String<class_String>` **_get_type** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -467,11 +605,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_handles_global_class_type** **(** :ref:`String<class_String>` type **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__has_named_classes:
 
 - :ref:`bool<class_bool>` **_has_named_classes** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -479,11 +625,19 @@ Method Descriptions
 
 - void **_init** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__is_control_flow_keyword:
 
 - :ref:`bool<class_bool>` **_is_control_flow_keyword** **(** :ref:`String<class_String>` keyword **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -491,11 +645,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_using_templates** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__lookup_code:
 
 - :ref:`Dictionary<class_Dictionary>` **_lookup_code** **(** :ref:`String<class_String>` code, :ref:`String<class_String>` symbol, :ref:`String<class_String>` path, :ref:`Object<class_Object>` owner **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -503,11 +665,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **_make_function** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` function_name, :ref:`PackedStringArray<class_PackedStringArray>` function_args **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__make_template:
 
 - :ref:`Script<class_Script>` **_make_template** **(** :ref:`String<class_String>` template, :ref:`String<class_String>` class_name, :ref:`String<class_String>` base_class_name **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -515,11 +685,19 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **_open_in_external_editor** **(** :ref:`Script<class_Script>` script, :ref:`int<class_int>` line, :ref:`int<class_int>` column **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__overrides_external_editor:
 
 - :ref:`bool<class_bool>` **_overrides_external_editor** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -527,11 +705,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_profiling_get_accumulated_data** **(** ScriptLanguageExtensionProfilingInfo* info_array, :ref:`int<class_int>` info_max **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__profiling_get_frame_data:
 
 - :ref:`int<class_int>` **_profiling_get_frame_data** **(** ScriptLanguageExtensionProfilingInfo* info_array, :ref:`int<class_int>` info_max **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -539,11 +725,19 @@ Method Descriptions
 
 - void **_profiling_start** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__profiling_stop:
 
 - void **_profiling_stop** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -551,11 +745,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_refcount_decremented_instance_binding** **(** :ref:`Object<class_Object>` object **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__refcount_incremented_instance_binding:
 
 - void **_refcount_incremented_instance_binding** **(** :ref:`Object<class_Object>` object **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -563,11 +765,19 @@ Method Descriptions
 
 - void **_reload_all_scripts** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__reload_tool_script:
 
 - void **_reload_tool_script** **(** :ref:`Script<class_Script>` script, :ref:`bool<class_bool>` soft_reload **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -575,11 +785,19 @@ Method Descriptions
 
 - void **_remove_named_global_constant** **(** :ref:`StringName<class_StringName>` name **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__supports_builtin_mode:
 
 - :ref:`bool<class_bool>` **_supports_builtin_mode** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -587,11 +805,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_supports_documentation** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__thread_enter:
 
 - void **_thread_enter** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -599,17 +825,29 @@ Method Descriptions
 
 - void **_thread_exit** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__validate:
 
 - :ref:`Dictionary<class_Dictionary>` **_validate** **(** :ref:`String<class_String>` script, :ref:`String<class_String>` path, :ref:`bool<class_bool>` validate_functions, :ref:`bool<class_bool>` validate_errors, :ref:`bool<class_bool>` validate_warnings, :ref:`bool<class_bool>` validate_safe_lines **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_ScriptLanguageExtension_method__validate_path:
 
 - :ref:`String<class_String>` **_validate_path** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

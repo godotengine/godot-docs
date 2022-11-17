@@ -433,11 +433,11 @@ enum **Transparency**:
 
 - **TRANSPARENCY_ALPHA** = **1** --- The material will use the texture's alpha values for transparency.
 
-- **TRANSPARENCY_ALPHA_SCISSOR** = **2** --- The material will cut off all values below a threshold, the rest will remain opaque.
+- **TRANSPARENCY_ALPHA_SCISSOR** = **2** --- The material will cut off all values below a threshold, the rest will remain opaque. The opaque portions will be rendering in the depth prepass.
 
 - **TRANSPARENCY_ALPHA_HASH** = **3** --- The material will cut off all values below a spatially-deterministic threshold, the rest will remain opaque.
 
-- **TRANSPARENCY_ALPHA_DEPTH_PRE_PASS** = **4** --- The material will use the texture's alpha value for transparency, but will still be rendered in the pre-pass.
+- **TRANSPARENCY_ALPHA_DEPTH_PRE_PASS** = **4** --- The material will use the texture's alpha value for transparency, but will still be rendered in the depth prepass.
 
 - **TRANSPARENCY_MAX** = **5** --- Represents the size of the :ref:`Transparency<enum_BaseMaterial3D_Transparency>` enum.
 
@@ -573,11 +573,13 @@ enum **AlphaAntiAliasing**:
 
 enum **DepthDrawMode**:
 
-- **DEPTH_DRAW_OPAQUE_ONLY** = **0** --- Default depth draw mode. Depth is drawn only for opaque objects.
+- **DEPTH_DRAW_OPAQUE_ONLY** = **0** --- Default depth draw mode. Depth is drawn only for opaque objects during the opaque prepass (if any) and during the opaque pass.
 
-- **DEPTH_DRAW_ALWAYS** = **1** --- Depth draw is calculated for both opaque and transparent objects.
+- **DEPTH_DRAW_ALWAYS** = **1** --- Objects will write to depth during the opaque and the transparent passes. Transparent objects that are close to the camera may obscure other transparent objects behind them.
 
-- **DEPTH_DRAW_DISABLED** = **2** --- No depth draw.
+\ **Note:** This does not influence whether transparent objects are included in the depth prepass or not. For that, see :ref:`Transparency<enum_BaseMaterial3D_Transparency>`.
+
+- **DEPTH_DRAW_DISABLED** = **2** --- Objects will not write their depth to the depth buffer, even during the depth prepass (if enabled).
 
 ----
 
@@ -647,7 +649,7 @@ enum **CullMode**:
 
 enum **Flags**:
 
-- **FLAG_DISABLE_DEPTH_TEST** = **0** --- Disables the depth test, so this object is drawn on top of all others. However, objects drawn after it in the draw order may cover it.
+- **FLAG_DISABLE_DEPTH_TEST** = **0** --- Disables the depth test, so this object is drawn on top of all others drawn before it. This puts the object in the transparent draw pass where it is sorted based on distance to camera. Objects drawn after it in the draw order may cover it. This also disables writing to depth.
 
 - **FLAG_ALBEDO_FROM_VERTEX_COLOR** = **1** --- Set ``ALBEDO`` to the per-vertex color specified in the mesh.
 

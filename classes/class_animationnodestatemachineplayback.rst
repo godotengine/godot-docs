@@ -76,6 +76,10 @@ Method Descriptions
 
 - :ref:`float<class_float>` **get_current_length** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AnimationNodeStateMachinePlayback_method_get_current_node:

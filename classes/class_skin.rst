@@ -12,7 +12,9 @@ Skin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -48,11 +50,19 @@ Method Descriptions
 
 - void **add_bind** **(** :ref:`int<class_int>` bone, :ref:`Transform3D<class_Transform3D>` pose **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_add_named_bind:
 
 - void **add_named_bind** **(** :ref:`String<class_String>` name, :ref:`Transform3D<class_Transform3D>` pose **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -60,11 +70,19 @@ Method Descriptions
 
 - void **clear_binds** **(** **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_get_bind_bone:
 
 - :ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -72,11 +90,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **get_bind_count** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_get_bind_name:
 
 - :ref:`StringName<class_StringName>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -84,11 +110,19 @@ Method Descriptions
 
 - :ref:`Transform3D<class_Transform3D>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_set_bind_bone:
 
 - void **set_bind_bone** **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -96,17 +130,29 @@ Method Descriptions
 
 - void **set_bind_count** **(** :ref:`int<class_int>` bind_count **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_set_bind_name:
 
 - void **set_bind_name** **(** :ref:`int<class_int>` bind_index, :ref:`StringName<class_StringName>` name **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Skin_method_set_bind_pose:
 
 - void **set_bind_pose** **(** :ref:`int<class_int>` bind_index, :ref:`Transform3D<class_Transform3D>` pose **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

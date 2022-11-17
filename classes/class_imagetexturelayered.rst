@@ -14,7 +14,12 @@ ImageTextureLayered
 
 **Inherited By:** :ref:`Cubemap<class_Cubemap>`, :ref:`CubemapArray<class_CubemapArray>`, :ref:`Texture2DArray<class_Texture2DArray>`
 
+Base class for texture types which contain the data of multiple :ref:`ImageTexture<class_ImageTexture>`\ s. Each image is of the same size and format.
 
+Description
+-----------
+
+Base class for :ref:`Texture2DArray<class_Texture2DArray>`, :ref:`Cubemap<class_Cubemap>` and :ref:`CubemapArray<class_CubemapArray>`. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types. See also :ref:`Texture3D<class_Texture3D>`.
 
 Methods
 -------
@@ -32,7 +37,7 @@ Method Descriptions
 
 - :ref:`Error<enum_@GlobalScope_Error>` **create_from_images** **(** :ref:`Image[]<class_Image>` images **)**
 
-Creates an ``ImageTextureLayered`` from an array of :ref:`Image<class_Image>`\ s. The first image decides the width, height, image format and mipmapping setting. The other images must have the same width, height, image format and mipmapping setting.
+Creates an ``ImageTextureLayered`` from an array of :ref:`Image<class_Image>`\ s. See :ref:`Image.create<class_Image_method_create>` for the expected data format. The first image decides the width, height, image format and mipmapping setting. The other images *must* have the same width, height, image format and mipmapping setting.
 
 Each :ref:`Image<class_Image>` represents one ``layer``.
 
@@ -48,7 +53,7 @@ The given :ref:`Image<class_Image>` must have the same width, height, image form
 
 If the image format is unsupported, it will be decompressed and converted to a similar and supported :ref:`Format<enum_Image_Format>`.
 
-The update is immediate: synced with the draw.
+The update is immediate: it's synchronized with drawing.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

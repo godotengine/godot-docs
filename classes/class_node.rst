@@ -338,7 +338,7 @@ enum **ProcessMode**:
 
 .. _class_Node_constant_DUPLICATE_SCRIPTS:
 
-.. _class_Node_constant_DUPLICATE_USE_INSTANCING:
+.. _class_Node_constant_DUPLICATE_USE_INSTANTIATION:
 
 enum **DuplicateFlags**:
 
@@ -348,7 +348,7 @@ enum **DuplicateFlags**:
 
 - **DUPLICATE_SCRIPTS** = **4** --- Duplicate the node's scripts.
 
-- **DUPLICATE_USE_INSTANCING** = **8** --- Duplicate using instancing.
+- **DUPLICATE_USE_INSTANTIATION** = **8** --- Duplicate using instancing.
 
 An instance stays linked to the original so when the original changes, the instance changes too.
 
@@ -1467,7 +1467,7 @@ Removes a child node. The node is NOT deleted and must be deleted manually.
 
 - void **remove_from_group** **(** :ref:`StringName<class_StringName>` group **)**
 
-Removes a node from a group. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
+Removes a node from the ``group``. Does nothing if the node is not in the ``group``. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
 
 ----
 

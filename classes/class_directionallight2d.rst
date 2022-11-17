@@ -12,7 +12,12 @@ DirectionalLight2D
 
 **Inherits:** :ref:`Light2D<class_Light2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+Directional light from a distance.
 
+Description
+-----------
+
+A directional light is a type of :ref:`Light2D<class_Light2D>` node that models an infinite number of parallel rays covering the entire scene. It is used for lights with strong intensity that are located far away from the scene (for example: to model sunlight or moonlight).
 
 Properties
 ----------
@@ -53,6 +58,8 @@ The height of the light. Used with 2D normal mapping. Ranges from 0 (parallel to
 +-----------+-------------------------+
 | *Getter*  | get_max_distance()      |
 +-----------+-------------------------+
+
+Maximum distance this light covers. Increasing this value will make directional shadows visible from further away, at the cost of lower overall shadow detail and performance (due to more objects being included in shadow rendering).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -30,13 +30,15 @@ This resource is intended to be created from code.
 Properties
 ----------
 
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`_data<class_PortableCompressedTexture2D_property__data>`                                   | ``PackedByteArray()`` |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                       | :ref:`keep_compressed_buffer<class_PortableCompressedTexture2D_property_keep_compressed_buffer>` | ``false``             |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`size_override<class_PortableCompressedTexture2D_property_size_override>`                   | ``Vector2(0, 0)``     |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------+-----------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`_data<class_PortableCompressedTexture2D_property__data>`                                   | ``PackedByteArray()``                                                                  |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`keep_compressed_buffer<class_PortableCompressedTexture2D_property_keep_compressed_buffer>` | ``false``                                                                              |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | resource_local_to_scene                                                                          | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`size_override<class_PortableCompressedTexture2D_property_size_override>`                   | ``Vector2(0, 0)``                                                                      |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Methods
 -------
@@ -95,6 +97,10 @@ Property Descriptions
 | *Default* | ``PackedByteArray()`` |
 +-----------+-----------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PortableCompressedTexture2D_property_keep_compressed_buffer:
@@ -138,7 +144,7 @@ Method Descriptions
 
 Initializes the compressed texture from a base image. The compression mode must be provided.
 
-If this image will be used as a normal map, the "normal map" flag is recommended, to ensure optimum quality.
+\ ``normal_map`` is recommended to ensure optimum quality if this image will be used as a normal map.
 
 If lossy compression is requested, the quality setting can optionally be provided. This maps to Lossy WebP compression quality.
 

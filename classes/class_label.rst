@@ -170,6 +170,10 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 | *Getter* | get_label_settings()      |
 +----------+---------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_Label_property_language:

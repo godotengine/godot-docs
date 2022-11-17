@@ -57,15 +57,17 @@ It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854
 Constructors
 ------------
 
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** **)**                                |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`int<class_int>` from **)**     |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`bool<class_bool>` from **)**   |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`float<class_float>` from **)** |
-+-----------------------+----------------------------------------------------------------------------------+
++-----------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** **)**                                  |
++-----------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`int<class_int>` from **)**       |
++-----------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`String<class_String>` from **)** |
++-----------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`bool<class_bool>` from **)**     |
++-----------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`float<class_float>` from **)**   |
++-----------------------+------------------------------------------------------------------------------------+
 
 Operators
 ---------
@@ -164,6 +166,12 @@ Constructs a default-initialized ``int`` set to ``0``.
 - :ref:`int<class_int>` **int** **(** :ref:`int<class_int>` from **)**
 
 Constructs an ``int`` as a copy of the given ``int``.
+
+----
+
+- :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
+
+Converts a :ref:`String<class_String>` to an ``int``, following the same rules as :ref:`String.to_int<class_String_method_to_int>`.
 
 ----
 

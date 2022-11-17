@@ -99,6 +99,10 @@ If ``true``, the destination animation is played back from the beginning when sw
 | *Getter* | get_xfade_curve()      |
 +----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AnimationNodeTransition_property_xfade_time:
@@ -122,11 +126,19 @@ Method Descriptions
 
 - :ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AnimationNodeTransition_method_is_input_set_as_auto_advance:
 
 - :ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -134,11 +146,19 @@ Method Descriptions
 
 - void **set_input_as_auto_advance** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_AnimationNodeTransition_method_set_input_caption:
 
 - void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

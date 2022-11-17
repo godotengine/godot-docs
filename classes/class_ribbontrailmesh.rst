@@ -12,7 +12,9 @@ RibbonTrailMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Properties
 ----------
@@ -59,6 +61,10 @@ Property Descriptions
 | *Getter* | get_curve()      |
 +----------+------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RibbonTrailMesh_property_section_length:
@@ -72,6 +78,10 @@ Property Descriptions
 +-----------+---------------------------+
 | *Getter*  | get_section_length()      |
 +-----------+---------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -87,6 +97,10 @@ Property Descriptions
 | *Getter*  | get_section_segments()      |
 +-----------+-----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RibbonTrailMesh_property_sections:
@@ -100,6 +114,10 @@ Property Descriptions
 +-----------+---------------------+
 | *Getter*  | get_sections()      |
 +-----------+---------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -115,6 +133,10 @@ Property Descriptions
 | *Getter*  | get_shape()      |
 +-----------+------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_RibbonTrailMesh_property_size:
@@ -128,6 +150,10 @@ Property Descriptions
 +-----------+-----------------+
 | *Getter*  | get_size()      |
 +-----------+-----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,7 +12,16 @@ CompressedTexture3D
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Texture with 3 dimensions, optionally compressed.
 
+Description
+-----------
+
+``CompressedTexture3D`` is the VRAM-compressed counterpart of :ref:`ImageTexture3D<class_ImageTexture3D>`. The file extension for ``CompressedTexture3D`` files is ``.ctex3d``. This file format is internal to Godot; it is created by importing other image formats with the import system.
+
+\ ``CompressedTexture3D`` uses VRAM compression, which allows to reduce memory usage on the GPU when rendering the texture. This also improves loading times, as VRAM-compressed textures are faster to load compared to textures using lossless compression. VRAM compression can exhibit noticeable artifacts and is intended to be used for 3D rendering, not 2D.
+
+See :ref:`Texture3D<class_Texture3D>` for a general description of 3D textures.
 
 Properties
 ----------
@@ -43,12 +52,16 @@ Property Descriptions
 | *Getter*  | get_load_path() |
 +-----------+-----------------+
 
+The ``CompressedTexture3D``'s file path to a ``.ctex3d`` file.
+
 Method Descriptions
 -------------------
 
 .. _class_CompressedTexture3D_method_load:
 
 - :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+
+Loads the texture from the specified ``path``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

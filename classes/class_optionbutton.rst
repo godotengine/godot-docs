@@ -311,6 +311,10 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 - :ref:`int<class_int>` **get_selectable_item** **(** :ref:`bool<class_bool>` from_last=false **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_OptionButton_method_get_selected_id:
@@ -333,6 +337,10 @@ Gets the metadata of the selected item. Metadata for items can be set using :ref
 
 - :ref:`bool<class_bool>` **has_selectable_items** **(** **)** |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_OptionButton_method_is_item_disabled:
@@ -346,6 +354,10 @@ Returns ``true`` if the item at index ``idx`` is disabled.
 .. _class_OptionButton_method_is_item_separator:
 
 - :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

@@ -42,6 +42,8 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorCommandPalette<class_EditorCommandPalette>`   | :ref:`get_command_palette<class_EditorInterface_method_get_command_palette>` **(** **)** |const|                                                                                                                    |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                               | :ref:`get_current_directory<class_EditorInterface_method_get_current_directory>` **(** **)** |const|                                                                                                                |
++-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_String>`                               | :ref:`get_current_path<class_EditorInterface_method_get_current_path>` **(** **)** |const|                                                                                                                          |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)**                                                                                                                        |
@@ -68,7 +70,7 @@ Methods
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ScriptEditor<class_ScriptEditor>`                   | :ref:`get_script_editor<class_EditorInterface_method_get_script_editor>` **(** **)**                                                                                                                                |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                               | :ref:`get_selected_path<class_EditorInterface_method_get_selected_path>` **(** **)** |const|                                                                                                                        |
+| :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`get_selected_paths<class_EditorInterface_method_get_selected_paths>` **(** **)** |const|                                                                                                                      |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSelection<class_EditorSelection>`             | :ref:`get_selection<class_EditorInterface_method_get_selection>` **(** **)**                                                                                                                                        |
 +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -168,6 +170,14 @@ Returns the main container of Godot editor's window. For example, you can use it
 Returns the editor's :ref:`EditorCommandPalette<class_EditorCommandPalette>` instance.
 
 \ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
+
+----
+
+.. _class_EditorInterface_method_get_current_directory:
+
+- :ref:`String<class_String>` **get_current_directory** **(** **)** |const|
+
+Returns the current directory being viewed in the :ref:`FileSystemDock<class_FileSystemDock>`. If a file is selected, its base directory will be returned using :ref:`String.get_base_dir<class_String_method_get_base_dir>` instead.
 
 ----
 
@@ -285,11 +295,11 @@ Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
 ----
 
-.. _class_EditorInterface_method_get_selected_path:
+.. _class_EditorInterface_method_get_selected_paths:
 
-- :ref:`String<class_String>` **get_selected_path** **(** **)** |const|
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_selected_paths** **(** **)** |const|
 
-Returns the path of the directory currently selected in the :ref:`FileSystemDock<class_FileSystemDock>`. If a file is selected, its base directory will be returned using :ref:`String.get_base_dir<class_String_method_get_base_dir>` instead.
+Returns an array containing the paths of the currently selected files (and directories) in the :ref:`FileSystemDock<class_FileSystemDock>`.
 
 ----
 

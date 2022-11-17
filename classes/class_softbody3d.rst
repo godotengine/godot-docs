@@ -148,6 +148,10 @@ The physics layers this SoftBody3D **scans**. Collision objects can scan one or 
 | *Getter*  | get_damping_coefficient()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_SoftBody3D_property_disable_mode:
@@ -178,6 +182,10 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 | *Getter*  | get_drag_coefficient()      |
 +-----------+-----------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_SoftBody3D_property_linear_stiffness:
@@ -191,6 +199,10 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 +-----------+-----------------------------+
 | *Getter*  | get_linear_stiffness()      |
 +-----------+-----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -221,6 +233,10 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 +-----------+---------------------------------+
 | *Getter*  | get_pressure_coefficient()      |
 +-----------+---------------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -308,6 +324,10 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sof
 .. _class_SoftBody3D_method_get_physics_rid:
 
 - :ref:`RID<class_RID>` **get_physics_rid** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 

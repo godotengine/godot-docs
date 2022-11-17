@@ -12,7 +12,9 @@ PhysicsDirectBodyState3DExtension
 
 **Inherits:** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 Methods
 -------
@@ -116,11 +118,19 @@ Method Descriptions
 
 - void **_add_constant_central_force** **(** :ref:`Vector3<class_Vector3>` force **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__add_constant_force:
 
 - void **_add_constant_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -128,11 +138,19 @@ Method Descriptions
 
 - void **_add_constant_torque** **(** :ref:`Vector3<class_Vector3>` torque **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__apply_central_force:
 
 - void **_apply_central_force** **(** :ref:`Vector3<class_Vector3>` force **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -140,11 +158,19 @@ Method Descriptions
 
 - void **_apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__apply_force:
 
 - void **_apply_force** **(** :ref:`Vector3<class_Vector3>` force, :ref:`Vector3<class_Vector3>` position **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -152,11 +178,19 @@ Method Descriptions
 
 - void **_apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__apply_torque:
 
 - void **_apply_torque** **(** :ref:`Vector3<class_Vector3>` torque **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -164,11 +198,19 @@ Method Descriptions
 
 - void **_apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_angular_velocity:
 
 - :ref:`Vector3<class_Vector3>` **_get_angular_velocity** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -176,11 +218,19 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **_get_center_of_mass** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_center_of_mass_local:
 
 - :ref:`Vector3<class_Vector3>` **_get_center_of_mass_local** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -188,11 +238,19 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **_get_constant_force** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_constant_torque:
 
 - :ref:`Vector3<class_Vector3>` **_get_constant_torque** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -200,11 +258,19 @@ Method Descriptions
 
 - :ref:`RID<class_RID>` **_get_contact_collider** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_contact_collider_id:
 
 - :ref:`int<class_int>` **_get_contact_collider_id** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -212,11 +278,19 @@ Method Descriptions
 
 - :ref:`Object<class_Object>` **_get_contact_collider_object** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_contact_collider_position:
 
 - :ref:`Vector3<class_Vector3>` **_get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -224,11 +298,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_contact_collider_shape** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_contact_collider_velocity_at_position:
 
 - :ref:`Vector3<class_Vector3>` **_get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -236,11 +318,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_contact_count** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_contact_impulse:
 
 - :ref:`float<class_float>` **_get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -248,11 +338,19 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **_get_contact_local_normal** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_contact_local_position:
 
 - :ref:`Vector3<class_Vector3>` **_get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -260,11 +358,19 @@ Method Descriptions
 
 - :ref:`int<class_int>` **_get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia:
 
 - :ref:`Vector3<class_Vector3>` **_get_inverse_inertia** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -272,11 +378,19 @@ Method Descriptions
 
 - :ref:`Basis<class_Basis>` **_get_inverse_inertia_tensor** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_inverse_mass:
 
 - :ref:`float<class_float>` **_get_inverse_mass** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -284,11 +398,19 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **_get_linear_velocity** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_principal_inertia_axes:
 
 - :ref:`Basis<class_Basis>` **_get_principal_inertia_axes** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -296,11 +418,19 @@ Method Descriptions
 
 - :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **_get_space_state** **(** **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_step:
 
 - :ref:`float<class_float>` **_get_step** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -308,11 +438,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_get_total_angular_damp** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_total_gravity:
 
 - :ref:`Vector3<class_Vector3>` **_get_total_gravity** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -320,11 +458,19 @@ Method Descriptions
 
 - :ref:`float<class_float>` **_get_total_linear_damp** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__get_transform:
 
 - :ref:`Transform3D<class_Transform3D>` **_get_transform** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -332,11 +478,19 @@ Method Descriptions
 
 - :ref:`Vector3<class_Vector3>` **_get_velocity_at_local_position** **(** :ref:`Vector3<class_Vector3>` local_position **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__integrate_forces:
 
 - void **_integrate_forces** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -344,11 +498,19 @@ Method Descriptions
 
 - :ref:`bool<class_bool>` **_is_sleeping** **(** **)** |virtual| |const|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__set_angular_velocity:
 
 - void **_set_angular_velocity** **(** :ref:`Vector3<class_Vector3>` velocity **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -356,11 +518,19 @@ Method Descriptions
 
 - void **_set_constant_force** **(** :ref:`Vector3<class_Vector3>` force **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__set_constant_torque:
 
 - void **_set_constant_torque** **(** :ref:`Vector3<class_Vector3>` torque **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -368,17 +538,29 @@ Method Descriptions
 
 - void **_set_linear_velocity** **(** :ref:`Vector3<class_Vector3>` velocity **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__set_sleep_state:
 
 - void **_set_sleep_state** **(** :ref:`bool<class_bool>` enabled **)** |virtual|
 
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_PhysicsDirectBodyState3DExtension_method__set_transform:
 
 - void **_set_transform** **(** :ref:`Transform3D<class_Transform3D>` transform **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

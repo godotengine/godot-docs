@@ -78,7 +78,7 @@ Properties
 +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
 | :ref:`bool<class_bool>`                                   | :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>`             | ``false``                     |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-| :ref:`float<class_float>`                                 | :ref:`trail_length_secs<class_GPUParticles3D_property_trail_length_secs>`     | ``0.3``                       |
+| :ref:`float<class_float>`                                 | :ref:`trail_lifetime<class_GPUParticles3D_property_trail_lifetime>`           | ``0.3``                       |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
 | :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` | :ref:`transform_align<class_GPUParticles3D_property_transform_align>`         | ``0``                         |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
@@ -209,6 +209,10 @@ Number of particles to emit.
 | *Getter*  | get_collision_base_size()      |
 +-----------+--------------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GPUParticles3D_property_draw_order:
@@ -308,6 +312,10 @@ The number of draw passes when rendering particles.
 +----------+-----------------+
 | *Getter* | get_skin()      |
 +----------+-----------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
@@ -513,6 +521,10 @@ Speed scaling ratio. A value of ``0`` can be used to pause the particles.
 | *Getter*  | get_sub_emitter()      |
 +-----------+------------------------+
 
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 ----
 
 .. _class_GPUParticles3D_property_trail_enabled:
@@ -527,19 +539,27 @@ Speed scaling ratio. A value of ``0`` can be used to pause the particles.
 | *Getter*  | is_trail_enabled()       |
 +-----------+--------------------------+
 
+If ``true``, enables particle trails using a mesh skinning system. Designed to work with :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` and :ref:`TubeTrailMesh<class_TubeTrailMesh>`.
+
+\ **Note:** :ref:`BaseMaterial3D.use_particle_trails<class_BaseMaterial3D_property_use_particle_trails>` must also be enabled on the particle mesh's material. Otherwise, setting :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>` to ``true`` will have no effect.
+
+\ **Note:** Unlike :ref:`GPUParticles2D<class_GPUParticles2D>`, the number of trail sections and subdivisions is set in the :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or the :ref:`TubeTrailMesh<class_TubeTrailMesh>`'s properties.
+
 ----
 
-.. _class_GPUParticles3D_property_trail_length_secs:
+.. _class_GPUParticles3D_property_trail_lifetime:
 
-- :ref:`float<class_float>` **trail_length_secs**
+- :ref:`float<class_float>` **trail_lifetime**
 
-+-----------+-------------------------+
-| *Default* | ``0.3``                 |
-+-----------+-------------------------+
-| *Setter*  | set_trail_length(value) |
-+-----------+-------------------------+
-| *Getter*  | get_trail_length()      |
-+-----------+-------------------------+
++-----------+---------------------------+
+| *Default* | ``0.3``                   |
++-----------+---------------------------+
+| *Setter*  | set_trail_lifetime(value) |
++-----------+---------------------------+
+| *Getter*  | get_trail_lifetime()      |
++-----------+---------------------------+
+
+The amount of time the particle's trail should represent (in seconds). Only effective if :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>` is ``true``.
 
 ----
 
@@ -554,6 +574,10 @@ Speed scaling ratio. A value of ``0`` can be used to pause the particles.
 +-----------+----------------------------+
 | *Getter*  | get_transform_align()      |
 +-----------+----------------------------+
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 ----
 
