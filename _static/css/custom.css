@@ -63,6 +63,9 @@
     --highlight-operator-color: #666666;
     --highlight-string-color: #4070a0;
 
+    --contribute-background-color: #d7dee8;
+    --contribute-text-color: #646e72;
+
     --admonition-note-background-color: #e7f2fa;
     --admonition-note-color: #404040;
     --admonition-note-title-background-color: #6ab0de;
@@ -153,6 +156,9 @@
         --highlight-function-color: #57b3ff;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+
+        --contribute-background-color: #25282d;
+        --contribute-text-color: #7f939b;
 
         --admonition-note-background-color: #303d4f;
         --admonition-note-color: #bfeeff;
@@ -727,6 +733,18 @@ code,
 .highlight .sd /* Literal.String.Doc */,
 .highlight .sh /* Literal.String.Heredoc */ {
     color: var(--highlight-string-color);
+}
+
+/* Call to action for missing documentation */
+.rst-content .contribute {
+    background-color: var(--contribute-background-color);
+    color: var(--contribute-text-color);
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.rst-content .contribute > p {
+    margin-bottom: 0;
 }
 
 /* Admonition tweaks */
