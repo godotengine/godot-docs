@@ -95,15 +95,17 @@ this feature. There are still several ways to avoid this problem:
 
 - Only make materials transparent if you actually need it. If a material only
   has a small transparent part, consider splitting it into a separate material.
-  This will allow the opaque part to cast shadows and may also improve
-  performance.
+  This will allow the opaque part to cast shadows and will also improve performance.
 
 - If your texture mostly has fully opaque and fully transparent areas, you can
   use alpha testing instead of alpha blending. This transparency mode is faster
-  to render and doesn't suffer from transparency issues. Enable
-  **Transparency > Transparency** to **Alpha Scissor** in StandardMaterial3D,
-  and adjust **Transparency > Alpha Scissor Threshold** accordingly if needed.
-  Note that MSAA will not anti-alias the texture's edges, but FXAA will.
+  to render and doesn't suffer from transparency issues. Enable **Transparency >
+  Transparency** to **Alpha Scissor** in StandardMaterial3D, and adjust
+  **Transparency > Alpha Scissor Threshold** accordingly if needed. Note that
+  MSAA will not antialias the texture's edges unless alpha antialiasing is
+  enabled in the material's properties. However, FXAA, TAA and supersampling
+  will be able to antialias the texture's edges regardless of whether alpha
+  antialiasing is enabled on the material.
 
 - If you need to render semi-transparent areas of the texture, alpha scissor
   isn't suitable. Instead, setting the StandardMaterial3D's
@@ -112,11 +114,14 @@ this feature. There are still several ways to avoid this problem:
 
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of
-  **PixelAlpha**. This will make the material opaque. This way, it can also
-  cast shadows.
+  **PixelAlpha**. This will make the material opaque, which also speeds up rendering.
 
 Multi-sample antialiasing
 -------------------------
+
+.. seealso::
+
+    Antialiasing is explained in detail on the :ref:`doc_3d_antialiasing` page.
 
 Multi-sample antialiasing (MSAA) takes multiple *coverage* samples at the edges
 of polygons when rendering objects. It does not increase the number of *color*
@@ -130,14 +135,24 @@ There are several ways to work around this limitation depending on your performa
 
 - To make specular aliasing less noticeable, open the Project Settings and enable
   **Rendering > Quality > Screen Space Filters > Screen Space Roughness Limiter**.
-  This filter has a moderate cost on performance. It should be enabled only if
+  This filter has a moderate cost on performance, so it should only be enabled if
   you actually need it.
 
-- Enable FXAA in addition to (or instead of) MSAA. Since FXAA is a screen-space
-  antialiasing method, it will smooth out anything. As a downside, it will also
-  make the scene appear blurrier, especially at resolutions below 1440p.
+- Enable fast approximate antialiasing (FXAA) in addition to (or instead of)
+  MSAA. Since FXAA is a screen-space antialiasing method, it will smooth out
+  anything. As a downside, FXAA also makes the scene appear blurrier, especially
+  at resolutions below 1440p. FXAA also lacks temporal information, which means
+  its impact on specular aliasing is limited.
 
-- Render the scene at a higher resolution, then display it in a ViewportTexture
-  that matches the window size. Make sure to enable **Filter** on the
-  ViewportTexture flags. This technique is called *supersampling* and is very
-  slow. Its use is generally only recommended for offline rendering.
+- Enable temporal antialiasing (TAA) in addition to (or instead of) MSAA. Since
+  TAA is a screen-space antialiasing method, it will smooth out anything. As a
+  downside, TAA also makes the scene appear blurrier, especially at resolutions
+  below 1440p. TAA provides superior quality compared to FXAA and can
+  effectively combat specular aliasing. However, TAA has a greater performance
+  cost compared to FXAA, and TAA can introduce ghosting artifacts with fast
+  movement.
+
+- Render the scene at a higher resolution by increasing the **Scaling 3D >
+  Scale** project setting above ``1.0``. This technique is called supersample
+  antialiasing (SSAA) and is very slow. Its use is generally only recommended
+  for offline rendering.

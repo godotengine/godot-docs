@@ -450,15 +450,13 @@ Antialiased drawing
 ^^^^^^^^^^^^^^^^^^^
 
 Godot offers method parameters in :ref:`draw_line<class_CanvasItem_method_draw_line>`
-to enable antialiasing, but it doesn't work reliably in all situations
-(for instance, on mobile/web platforms, or when HDR is enabled).
-There is also no ``antialiased`` parameter available in
-:ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+to enable antialiasing, but not all custom drawing methods offer this ``antialiased``
+parameter.
 
-As a workaround, install and use the
-`Antialiased Line2D add-on <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__
-(which also supports antialiased Polygon2D drawing). Note that this add-on relies
-on high-level nodes, rather than low-level ``_draw()`` functions.
+For custom drawing methods that don't provide an ``antialiased`` parameter,
+you can enable 2D MSAA instead, which affects rendering in the entire viewport.
+This provides high-quality antialiasing, but a higher performance cost and only
+on specific elements. See :ref:`doc_2d_antialiasing` for more information.
 
 Tools
 -----
