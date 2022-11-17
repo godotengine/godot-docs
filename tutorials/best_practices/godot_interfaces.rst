@@ -285,7 +285,7 @@ which extend Object.
 Godot provides a variety of options for performing runtime checks on these
 accesses:
 
-- A duck-typed property access. These will property check (as described above).
+- A duck-typed property access. These will be property checks (as described above).
   If the operation isn't supported by the object, execution will halt.
 
   .. tabs::
