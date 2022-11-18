@@ -6,6 +6,9 @@
 
 .. _doc_class_reference:
 
+All classes
+===========
+
 Globals
 =======
 
@@ -21,8 +24,9 @@ Nodes
 
 .. toctree::
     :maxdepth: 1
-    :name: toc-class-ref-globals
+    :name: toc-class-ref-nodes
 
+    class_node
     class_acceptdialog
     class_animatablebody2d
     class_animatablebody3d
@@ -264,8 +268,9 @@ Resources
 
 .. toctree::
     :maxdepth: 1
-    :name: toc-class-ref-globals
+    :name: toc-class-ref-resources
 
+    class_resource
     class_animatedtexture
     class_animation
     class_animationlibrary
@@ -643,17 +648,16 @@ Resources
     class_worldboundaryshape3d
     class_x509certificate
 
-Objects
-=======
+Other objects
+=============
 
 .. toctree::
     :maxdepth: 1
-    :name: toc-class-ref-globals
+    :name: toc-class-ref-objects
 
-    class_aabb
+    class_object
     class_aescontext
     class_animationtrackeditplugin
-    class_array
     class_astar2d
     class_astar3d
     class_astargrid2d
@@ -664,18 +668,13 @@ Objects
     class_audiostreamplayback
     class_audiostreamplaybackoggvorbis
     class_audiostreamplaybackresampled
-    class_basis
-    class_bool
-    class_callable
     class_callbacktweener
     class_camerafeed
     class_cameraserver
     class_charfxtransform
     class_classdb
-    class_color
     class_configfile
     class_crypto
-    class_dictionary
     class_diraccess
     class_displayserver
     class_dtlsserver
@@ -712,7 +711,6 @@ Objects
     class_engineprofiler
     class_expression
     class_fileaccess
-    class_float
     class_geometry2d
     class_geometry3d
     class_godotsharp
@@ -723,7 +721,6 @@ Objects
     class_imageformatloaderextension
     class_input
     class_inputmap
-    class_int
     class_intervaltweener
     class_ip
     class_javaclass
@@ -758,21 +755,10 @@ Objects
     class_navigationserver3d
     class_node
     class_node3dgizmo
-    class_nodepath
-    class_object
     class_oggpacketsequenceplayback
     class_openxrinterface
     class_os
-    class_packedbytearray
-    class_packedcolorarray
     class_packeddatacontainerref
-    class_packedfloat32array
-    class_packedfloat64array
-    class_packedint32array
-    class_packedint64array
-    class_packedstringarray
-    class_packedvector2array
-    class_packedvector3array
     class_packetpeer
     class_packetpeerdtls
     class_packetpeerextension
@@ -805,11 +791,8 @@ Objects
     class_physicstestmotionparameters3d
     class_physicstestmotionresult2d
     class_physicstestmotionresult3d
-    class_plane
-    class_projection
     class_projectsettings
     class_propertytweener
-    class_quaternion
     class_randomnumbergenerator
     class_rdattachmentformat
     class_rdframebufferpass
@@ -825,8 +808,6 @@ Objects
     class_rdtextureview
     class_rduniform
     class_rdvertexattribute
-    class_rect2
-    class_rect2i
     class_refcounted
     class_regex
     class_regexmatch
@@ -839,7 +820,6 @@ Objects
     class_resourceloader
     class_resourcesaver
     class_resourceuid
-    class_rid
     class_scenemultiplayer
     class_scenestate
     class_scenetree
@@ -847,7 +827,6 @@ Objects
     class_scriptlanguage
     class_scriptlanguageextension
     class_semaphore
-    class_signal
     class_skinreference
     class_streampeer
     class_streampeerbuffer
@@ -855,8 +834,6 @@ Objects
     class_streampeergzip
     class_streampeertcp
     class_streampeertls
-    class_string
-    class_stringname
     class_surfacetool
     class_tcpserver
     class_textline
@@ -871,8 +848,6 @@ Objects
     class_thread
     class_tiledata
     class_time
-    class_transform2d
-    class_transform3d
     class_translationserver
     class_treeitem
     class_trianglemesh
@@ -882,13 +857,6 @@ Objects
     class_undoredo
     class_upnp
     class_upnpdevice
-    class_variant
-    class_vector2
-    class_vector2i
-    class_vector3
-    class_vector3i
-    class_vector4
-    class_vector4i
     class_weakref
     class_webrtcdatachannel
     class_webrtcdatachannelextension
@@ -907,4 +875,50 @@ Objects
     class_xrserver
     class_zippacker
     class_zipreader
+
+Variant types
+=============
+
+.. toctree::
+    :maxdepth: 1
+    :name: toc-class-ref-variants
+
+    class_aabb
+    class_array
+    class_basis
+    class_bool
+    class_callable
+    class_color
+    class_dictionary
+    class_float
+    class_int
+    class_nodepath
+    class_object
+    class_packedbytearray
+    class_packedcolorarray
+    class_packedfloat32array
+    class_packedfloat64array
+    class_packedint32array
+    class_packedint64array
+    class_packedstringarray
+    class_packedvector2array
+    class_packedvector3array
+    class_plane
+    class_projection
+    class_quaternion
+    class_rect2
+    class_rect2i
+    class_rid
+    class_signal
+    class_string
+    class_stringname
+    class_transform2d
+    class_transform3d
+    class_variant
+    class_vector2
+    class_vector2i
+    class_vector3
+    class_vector3i
+    class_vector4
+    class_vector4i
 
