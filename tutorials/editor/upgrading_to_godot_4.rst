@@ -97,7 +97,7 @@ Automatically renamed nodes and resources
 
 The list below refers to the nodes' new names in Godot 4.0. In the transition
 between Godot 3.x and 4.0, dozens of nodes were renamed. 3D nodes had a ``3D``
-prefix added to them for consistency with their 2D counterparts. This conversion
+suffix added to them for consistency with their 2D counterparts. This conversion
 is automatic.
 
 For ease of searching, this table lists all nodes and resources that were
@@ -167,10 +167,6 @@ renamed in a way that does not involve only adding a ``3D`` suffix to the old na
 | Physics2DShapeQueryParameters           | PhysicsShapeQueryParameters2D             |
 +-----------------------------------------+-------------------------------------------+
 | Physics2DTestMotionResult               | PhysicsTestMotionResult2D                 |
-+-----------------------------------------+-------------------------------------------+
-| PhysicsDirectBodyState                  | PhysicsDirectBodyState3D                  |
-+-----------------------------------------+-------------------------------------------+
-| PhysicsDirectSpaceState                 | PhysicsDirectSpaceState3D                 |
 +-----------------------------------------+-------------------------------------------+
 | PlaneShape                              | WorldBoundaryShape3D                      |
 +-----------------------------------------+-------------------------------------------+
@@ -317,6 +313,7 @@ Due to how the project upgrade tool works, not all
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
 - Camera2D's ``make_current()`` is now ``set_current()``.
+- CanvasItem's ``update()`` is now ``queue_redraw()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
   (note the leading underscore, which denotes a virtual method).
@@ -324,6 +321,9 @@ Due to how the project upgrade tool works, not all
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
 - GraphNode's ``get_offset()`` is now ``get_position_offset()``.
+- GridMap's ``world_to_map()`` is now ``local_to_map()``.
+- GridMap's ``map_to_world()`` is now ``map_to_local()``.
+- Image's ``get_rect()`` is now ``get_region()``.
 - ItemList's ``get_v_scroll()`` is now ``get_v_scroll_bar()``.
 - MultiPlayerAPI's ``get_network_connected_peers()`` is now ``get_peers()``.
 - MultiPlayerAPI's ``get_network_peer()`` is now ``get_peer()``.
@@ -335,6 +335,8 @@ Due to how the project upgrade tool works, not all
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
+- TileMap's ``world_to_map()`` is now ``local_to_map()``.
+- TileMap's ``map_to_world()`` is now ``map_to_local()``.
 
 **Properties**
 
@@ -346,8 +348,10 @@ Due to how the project upgrade tool works, not all
     ``set_progress()`` and ``get_progress()`` respectively.
 
 - Control's ``margin`` is now ``offset``.
+- Label's ``percent_visible`` is now ``visible_ratio``.
 - MultiPlayerAPI's ``refuse_new_network_connections`` is now ``refuse_new_connections``.
 - PathFollow2D and PathFollow3D's ``offset`` is now ``progress``.
+- TextureProgressBar's ``percent_visible`` is now ``show_percentage``.
 - The ``extents`` property on CSG nodes and VoxelGI will have to be replaced
   with ``size``, with the set value halved (as they're no longer half-extents).
   This also affects its setter/getter methods ``set_extents()`` and
@@ -410,11 +414,23 @@ break backwards compatibility due to different default behavior.
 The most notable examples of this are:
 
 - Built-in scripts that are :ref:`tool scripts <doc_running_code_in_the_editor>`
-  do not get the the ``tool`` keyword converted to the ``@tool`` annotation.
+  do not get the ``tool`` keyword converted to the ``@tool`` annotation.
 - ``randomize()`` is now automatically called on project load, so deterministic
   randomness with the global RandomNumberGenerate instance requires manually
   setting a seed in a script's ``_ready()`` function.
-- ``OS.get_system_time_secs()`` should be converted to ``Time.get_time_dict_from_system()["second"]``.
+- AnimatedTexture's ``fps`` property was replaced by ``speed_scale``, which
+  works the same as AnimationPlayer's ``playback_speed`` property.
+- AnimatedSprite2D and AnimatedSprite3D now allow negative ``speed_scale``
+  values. This may break animations if you relied on ``speed_scale`` being
+  internally clamped to ``0.0``.
+- BaseButton's signals are now ``button_up`` and ``button_down``. The
+  ``pressed`` property is now ``button_pressed``.
+- Camera2D's ``rotating`` property was replaced by ``ignore_rotation``, which
+  has inverted behavior.
+- Camera2D's ``zoom`` property was inverted: higher values are now more zoomed
+  in, instead of less.
+- ``OS.get_system_time_secs()`` should be converted to
+  ``Time.get_time_dict_from_system()["second"]``.
 - A :ref:`class_StreamPeerTCP` must have ``poll()`` called on it to update its
   state, instead of relying on ``get_status()`` automatically polling:
   `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__
@@ -429,50 +445,50 @@ This lists all nodes that were replaced by another node requiring different
 configuration. The setup must be done from scratch again, as the project
 converter doesn't support updating existing setups:
 
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| Removed node        | Closest approximation | Comment                                                              |
-+=====================+=======================+======================================================================+
-| AnimationTreePlayer | AnimationTree         | AnimationTreePlayer was deprecated since Godot 3.1.                  |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| BakedLightmap       | LightmapGI            | See :ref:`doc_baked_lightmaps`.                                      |
-+---------------------+-----------------------+                                                                      |
-| BakedLightmapData   | LightmapGIData        |                                                                      |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| BitmapFont          | FontFile              | See :ref:`doc_gui_using_fonts`.                                      |
-+---------------------+-----------------------+                                                                      |
-| DynamicFont         | FontFile              |                                                                      |
-+---------------------+-----------------------+                                                                      |
-| DynamicFontData     | FontFile              |                                                                      |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| Navigation3D        | Node3D                | Replaced by other Navigation nodes.                                  |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| Navigation2D        | Node2D                | Replaced by other Navigation nodes.                                  |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| OpenSimplexNoise    | FastNoiseLite         | Has different parameters and more noise types such as cellular. No   |
-|                     |                       | support for 4D noise as it's absent from the FastNoiseLite library.  |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| ToolButton          | Button                | ToolButton was Button with the **Flat** property enabled by default. |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| YSort               | Node2D                | Node2D has a new **Y Sort** property in 4.0.                         |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| ProximityGroup      | Node3D                | :ref:`class_VisibleOnScreenNotifier3D` can act as a replacement.     |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| Portal              | Node3D                | Portal and room occlusion culling was replaced by raster             |
-|                     |                       | :ref:`occlusion culling <doc_occlusion_culling>`                     |
-|                     |                       | (OccluderInstance3D node), which requires a different setup process. |
-+---------------------+-----------------------+                                                                      |
-| Room                | Node3D                |                                                                      |
-+---------------------+-----------------------+                                                                      |
-| RoomManager         | Node3D                |                                                                      |
-+---------------------+-----------------------+                                                                      |
-| RoomGroup           | Node3D                |                                                                      |
-+---------------------+-----------------------+----------------------------------------------------------------------+
-| Occluder            | Node3D                | Geometry occlusion culling was replaced by raster                    |
-|                     |                       | :ref:`occlusion culling <doc_occlusion_culling>`                     |
-|                     |                       | (OccluderInstance3D node), which requires a different setup process. |
-+---------------------+-----------------------+                                                                      |
-| OccluderShapeSphere | Resource              |                                                                      |
-+---------------------+-----------------------+----------------------------------------------------------------------+
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| Removed node        | Closest approximation | Comment                                                                    |
++=====================+=======================+============================================================================+
+| AnimationTreePlayer | AnimationTree         | AnimationTreePlayer was deprecated since Godot 3.1.                        |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| BakedLightmap       | LightmapGI            | See :ref:`doc_baked_lightmaps`.                                            |
++---------------------+-----------------------+                                                                            |
+| BakedLightmapData   | LightmapGIData        |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| BitmapFont          | FontFile              | See :ref:`doc_gui_using_fonts`.                                            |
++---------------------+-----------------------+                                                                            |
+| DynamicFont         | FontFile              |                                                                            |
++---------------------+-----------------------+                                                                            |
+| DynamicFontData     | FontFile              |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <navigation_introduction_2d>`. |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| Navigation3D        | Node3D                | Replaced by :ref:`other 3D Navigation nodes <navigation_introduction_3d>`. |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| OpenSimplexNoise    | FastNoiseLite         | Has different parameters and more noise types such as cellular. No         |
+|                     |                       | support for 4D noise as it's absent from the FastNoiseLite library.        |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| ToolButton          | Button                | ToolButton was Button with the **Flat** property enabled by default.       |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| YSort               | Node2D                | Node2D has a new **Y Sort** property in 4.0.                               |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| ProximityGroup      | Node3D                | :ref:`class_VisibleOnScreenNotifier3D` can act as a replacement.           |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| Portal              | Node3D                | Portal and room occlusion culling was replaced by raster                   |
+|                     |                       | :ref:`occlusion culling <doc_occlusion_culling>`                           |
+|                     |                       | (OccluderInstance3D node), which requires a different setup process.       |
++---------------------+-----------------------+                                                                            |
+| Room                | Node3D                |                                                                            |
++---------------------+-----------------------+                                                                            |
+| RoomManager         | Node3D                |                                                                            |
++---------------------+-----------------------+                                                                            |
+| RoomGroup           | Node3D                |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| Occluder            | Node3D                | Geometry occlusion culling was replaced by raster                          |
+|                     |                       | :ref:`occlusion culling <doc_occlusion_culling>`                           |
+|                     |                       | (OccluderInstance3D node), which requires a different setup process.       |
++---------------------+-----------------------+                                                                            |
+| OccluderShapeSphere | Resource              |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
 
 If loading an old project, the node will be replaced with its
 *Closest approximation* automatically (even if not using the project upgrade tool).
