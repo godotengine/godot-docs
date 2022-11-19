@@ -195,6 +195,40 @@ const registerSidebarObserver = (function(){
 
     const observer = new MutationObserver(observerCallback);
     observer.observe(sidebarContainer, observerConfig);
+
+    // Default TOC tree has links that immediately navigate to the selected page. Our
+    // theme adds an extra button to fold and unfold the tree without navigating away.
+    // But that means that the buttons are added after the initial load, so we need to
+    // improvise to detect clicks on these buttons.
+    const registerLinkHandler = (linkChildren) => {
+      linkChildren.forEach(it => {
+        if (it.nodeType === Node.ELEMENT_NODE && it.classList.contains('toctree-expand')) {
+          it.addEventListener('click', () => {
+            callback();
+          });
+        }
+      });
+    }
+
+    const navigationSections = document.querySelectorAll('.wy-menu-vertical ul');
+    navigationSections.forEach(it => {
+      if (typeof it.previousSibling === 'undefined' || it.previousSibling.tagName != 'A') {
+        return;
+      }
+
+      const navigationLink = it.previousSibling;
+      registerLinkHandler(navigationLink.childNodes);
+
+      const linkObserverConfig = { childList: true };
+      const linkObserverCallback = (mutationsList, observer) => {
+        for (let mutation of mutationsList) {
+          registerLinkHandler(mutation.addedNodes);
+        }
+      };
+
+      const linkObserver = new MutationObserver(linkObserverCallback);
+      linkObserver.observe(navigationLink, linkObserverConfig);
+    });
   };
 })();
 
@@ -239,42 +273,46 @@ $(document).ready(() => {
   document.head.appendChild(instantPageScript);
 
   // Make sections in the sidebar togglable.
-  let has_current = false;
-  let menu_headers = document.querySelectorAll(".wy-menu-vertical .caption[role=heading]");
-  menu_headers.forEach(it => {
-      let connected_menu = it.nextElementSibling;
+  let hasCurrent = false;
+  let menuHeaders = document.querySelectorAll('.wy-menu-vertical .caption[role=heading]');
+  menuHeaders.forEach(it => {
+      let connectedMenu = it.nextElementSibling;
 
       // Enable toggling.
-      it.addEventListener("click", () => {
-          if (connected_menu.classList.contains("active")) {
-            connected_menu.classList.remove("active");
-            it.classList.remove("active");
+      it.addEventListener('click', () => {
+          if (connectedMenu.classList.contains('active')) {
+            connectedMenu.classList.remove('active');
+            it.classList.remove('active');
           } else {
-            connected_menu.classList.add("active");
-            it.classList.add("active");
+            connectedMenu.classList.add('active');
+            it.classList.add('active');
           }
 
           // Hide other sections.
-          menu_headers.forEach(ot => {
-            if (ot !== it && ot.classList.contains("active")) {
-              ot.nextElementSibling.classList.remove("active");
-              ot.classList.remove("active");
+          menuHeaders.forEach(ot => {
+            if (ot !== it && ot.classList.contains('active')) {
+              ot.nextElementSibling.classList.remove('active');
+              ot.classList.remove('active');
             }
           });
+
+          registerOnScrollEvent(mediaQuery);
       }, true);
 
       // Set the default state, expand our current section.
-      if (connected_menu.classList.contains("current")) {
-        connected_menu.classList.add("active");
-        it.classList.add("active");
+      if (connectedMenu.classList.contains('current')) {
+        connectedMenu.classList.add('active');
+        it.classList.add('active');
 
-        has_current = true;
+        hasCurrent = true;
       }
   });
 
   // Unfold the first (general information) section on the home page.
-  if (!has_current && menu_headers.length > 0) {
-    menu_headers[0].classList.add("active");
-    menu_headers[0].nextElementSibling.classList.add("active");
+  if (!hasCurrent && menuHeaders.length > 0) {
+    menuHeaders[0].classList.add('active');
+    menuHeaders[0].nextElementSibling.classList.add('active');
+
+    registerOnScrollEvent(mediaQuery);
   }
 });
