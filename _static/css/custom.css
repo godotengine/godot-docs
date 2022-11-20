@@ -844,11 +844,17 @@ kbd.compound > .kbd,
     opacity: var(--logo-opacity);
 }
 
+.wy-side-nav-search > a {
+    padding: 0;
+    margin-bottom: 0.404em;
+    margin-top: 0.404em;
+}
+
 .wy-side-nav-search > a img.logo {
     /* Fixed size to prevent reflows and support hiDPI displays */
     /* A 5 pixel margin is added on each side. The logo itself displays at 200×200 at 100% scaling. */
-    width: 210px;
-    height: 210px;
+    width: 270px;
+    height: 70px;
 }
 
 .wy-side-nav-search {
@@ -936,6 +942,7 @@ kbd.compound > .kbd,
 /* Version branch label below the logo */
 .wy-side-nav-search > div.version {
     color: var(--navbar-level-3-color);
+    font-size: 14px;
     opacity: 0.9;
 }
 
