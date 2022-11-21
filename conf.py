@@ -189,14 +189,14 @@ html_extra_path = ["robots.txt"]
 html_css_files = [
     'css/algolia.css',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
-    "css/custom.css",
+    "css/custom.css?1",
 ]
 
 if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js",
+    "js/custom.js?1",
     ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
     ('js/algolia.js', {'defer': 'defer'})
 ]
