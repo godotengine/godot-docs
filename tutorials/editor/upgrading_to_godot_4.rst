@@ -3,8 +3,6 @@
 Upgrading to Godot 4
 ====================
 
-TODO: https://github.com/godotengine/godot-proposals/issues/387#issuecomment-1251909261
-
 Should I upgrade to Godot 4?
 ----------------------------
 
@@ -74,14 +72,8 @@ To use the project upgrade tool:
     Only Godot 3.0 and later projects can be upgraded using the project
     conversion tool found in the Godot 4 editor.
 
-    Projects made using Godot versions older than 3.0 must follow a 2-step
-    process:
-
-    1. Upgrade the project to Godot 3 using the **Tools > Export to Godot 3.0**
-       option in the Godot 2.1.6 editor. Open the upgraded project in the Godot
-       3.x editor, then manually fix the project to make sure it looks and
-       runs correctly.
-    2. Only *after* performing step 1, you may upgrade the project to Godot 4.
+    It's recommended to ensure that your project is up-to-date with the latest
+    3.x stable release before running the project upgrade tool.
 
 Fixing the project after running the project upgrade tool
 ---------------------------------------------------------
@@ -95,13 +87,16 @@ manual.
 Automatically renamed nodes and resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The list below refers to the nodes' new names in Godot 4.0. In the transition
-between Godot 3.x and 4.0, dozens of nodes were renamed. 3D nodes had a ``3D``
-suffix added to them for consistency with their 2D counterparts. This conversion
-is automatic.
+The list below refers to nodes which were simply renamed for consistency or
+clarity in Godot 4.0. The project upgrade tool renames them automatically in
+your scripts.
 
-For ease of searching, this table lists all nodes and resources that were
-renamed in a way that does not involve only adding a ``3D`` suffix to the old name:
+One noteworthy set of renames is 3D nodes, which all got a ``3D`` suffix added for
+consistency with their 2D counterparts. For example, ``Area`` is now ``Area3D``.
+
+For ease of searching, this table lists all nodes and resources that were renamed
+and are automatically converted, excluding the ones which only involved adding
+a ``3D`` suffix to the old name:
 
 +-----------------------------------------+-------------------------------------------+
 | Old name (Godot 3.x)                    | New name (Godot 4)                        |
@@ -263,9 +258,6 @@ renamed in a way that does not involve only adding a ``3D`` suffix to the old na
 | VisualShaderNodeUniformRef              | VisualShaderNodeParameterRef              |
 +-----------------------------------------+-------------------------------------------+
 
-If you cannot find a node or resource in the list below, refer to the above
-table to find its new name.
-
 .. _doc_upgrading_to_godot_4_manual_rename:
 
 Manually renaming methods, properties, signals and constants
@@ -273,7 +265,10 @@ Manually renaming methods, properties, signals and constants
 
 Due to how the project upgrade tool works, not all
 :abbr:`API (Application Programming Interface)` renames can be performed automatically.
+The list below contains all renames that must be performed manually using the script editor.
 
+If you cannot find a node or resource in the list below, refer to the above
+table to find its new name.
 
 .. tip::
 
@@ -418,26 +413,46 @@ The most notable examples of this are:
 - ``randomize()`` is now automatically called on project load, so deterministic
   randomness with the global RandomNumberGenerate instance requires manually
   setting a seed in a script's ``_ready()`` function.
-- AnimatedTexture's ``fps`` property was replaced by ``speed_scale``, which
-  works the same as AnimationPlayer's ``playback_speed`` property.
-- AnimatedSprite2D and AnimatedSprite3D now allow negative ``speed_scale``
-  values. This may break animations if you relied on ``speed_scale`` being
-  internally clamped to ``0.0``.
-- BaseButton's signals are now ``button_up`` and ``button_down``. The
-  ``pressed`` property is now ``button_pressed``.
-- Camera2D's ``rotating`` property was replaced by ``ignore_rotation``, which
-  has inverted behavior.
+- ``call_group()``, ``set_group()`` and ``notify_group()`` are now immediate by
+  default. If calling an expensive function, this may result in stuttering when
+  used on a group containing a large number of nodes. To use deferred calls like
+  before, replace ``call_group(...)`` with
+  ``call_group_flags(SceneTree.GROUP_CALL_DEFERRED, ...)`` (and do the same with
+  ``set_group()`` and ``notify_group()`` respectively).
+- :ref:`class_AABB`'s ``has_no_surface()`` was inverted and renamed to ``has_surface()``.
+- :ref:`class_AABB` and :ref:`class_Rect2`'s ``has_no_area()`` was inverted and
+  renamed to ``has_area()``.
+- :ref:`class_AnimatedTexture`'s ``fps`` property was replaced by ``speed_scale``,
+  which works the same as AnimationPlayer's ``playback_speed`` property.
+- :ref:`class_AnimatedSprite2D` and :ref:`class_AnimatedSprite3D` now allow
+  negative ``speed_scale`` values. This may break animations if you relied on
+  ``speed_scale`` being internally clamped to ``0.0``.
+- :ref:`class_BaseButton`'s signals are now ``button_up`` and ``button_down``.
+  The ``pressed`` property is now ``button_pressed``.
+- :ref:`class_Camera2D`'s ``rotating`` property was replaced by
+  ``ignore_rotation``, which has inverted behavior.
 - Camera2D's ``zoom`` property was inverted: higher values are now more zoomed
   in, instead of less.
+- :ref:`class_Node`'s ``remove_and_skip()`` method was removed.
+  If you need to reimplement it in a script, you can use the
+  `old C++ implementation <https://github.com/godotengine/godot/blob/7936b3cc4c657e4b273b376068f095e1e0e4d82a/scene/main/node.cpp#L1910-L1945>`__
+  as a reference.
 - ``OS.get_system_time_secs()`` should be converted to
   ``Time.get_time_dict_from_system()["second"]``.
+- :ref:`class_ResourceSaver`'s ``save()`` method now has its arguments swapped around
+  (``resource: Resource, path: String``). This also applies to
+  :ref:`class_ResourceFormatSaver`'s ``_save()`` method.
 - A :ref:`class_StreamPeerTCP` must have ``poll()`` called on it to update its
   state, instead of relying on ``get_status()`` automatically polling:
   `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__
 - ``is_connected_to_host()`` was removed from StreamPeerTCP and PacketPeerUDP as
   per `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__.
   ``get_status()`` can be used in StreamPeerTCP instead.
-  ``is_socket_connected()`` can be used in PacketPeerUDP instead.
+  ``is_socket_connected()`` can be used in :ref:`class_PacketPeerUDP` instead.
+- In ``_get_property_list()``, the ``or_lesser`` property hint string is now ``or_less``.
+- In ``_get_property_list()``, the ``noslider`` property hint string is now ``no_slider``.
+- VisualShaderNodeVec4Parameter now takes a :ref:`class_Vector4` as parameter
+  instead of a :ref:`class_Quaternion`.
 
 **Removed or replaced nodes/resources**
 
