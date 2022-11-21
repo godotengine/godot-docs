@@ -292,7 +292,42 @@ the performance of C# in Godot — while generally in the same order of magnitud
 — is roughly **~4×** that of GDScript in some naive cases. C++ is still
 a little faster; the specifics are going to vary according to your use case.
 GDScript is likely fast enough for most general scripting workloads.
-C# is faster, but requires some expensive marshalling when talking to Godot.
+
+Most properties of Godot C# objects that are based on ``Godot.Object``
+(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require some expensive marshalling as they are
+talking to Godots C++ core.
+Any code that needs to access or modify such properties multiple times should assign values into a local
+variable and overwrite their values only once if possible:
+
+.. code-block:: csharp
+
+    using Godot;
+    using System;
+
+    public class YourCustomClass : Node3D
+    {
+        private void ExpensiveReposition()
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                // Position is read and set 10 times which incurs expensive marshalling.
+                // Furthermore the object is repositioned 10 times in 3D space which takes additional time.
+                Position += new Vector(i, i);
+            }
+        }
+
+        private void Reposition()
+        {
+            // a variable is used to avoid re-marshalling Position on every loop
+            var newPosition = Position;
+            for (var i = 0; i < 10; i++)
+            {
+                newPosition += new Vector(i, i);
+            }
+            // setting the position only once avoid expensive marshalling and repositioning in 3D space
+            Position = newPosition;
+        }
+    }
 
 Using NuGet packages in Godot
 -----------------------------
