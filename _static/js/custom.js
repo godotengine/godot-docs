@@ -233,6 +233,14 @@ const registerSidebarObserver = (function(){
 })();
 
 $(document).ready(() => {
+  // Remove the search match highlights from the page, and adjust the URL in the
+  // navigation history.
+  const url = new URL(location.href);
+  if (url.searchParams.has('highlight')) {
+    Documentation.hideSearchWords();
+  }
+
+  // Initialize handlers for page scrolling and our custom sidebar.
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
 
   registerOnScrollEvent(mediaQuery);
