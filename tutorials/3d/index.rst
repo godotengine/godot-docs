@@ -10,6 +10,7 @@
    3d_rendering_limitations
    standard_material_3d
    lights_and_shadows
+   physical_light_and_camera_units
    reflection_probes
    gi_probes
    baked_lightmaps

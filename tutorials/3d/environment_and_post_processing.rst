@@ -173,6 +173,11 @@ The tone mapping options are:
   between ``6.0`` and ``8.0``. Higher values result in less blown out highlights,
   but make the scene appear slightly darker as a whole.
 
+.. seealso::
+
+    See :ref:`doc_physical_light_and_camera_units` if you wish to use real world
+    units to configure your camera's exposure, field of view and depth of field.
+
 Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
 
