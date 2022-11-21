@@ -318,13 +318,13 @@ variable and overwrite their values only once if possible:
 
         private void Reposition()
         {
-            // a variable is used to avoid re-marshalling Position on every loop
+            // A variable is used to avoid re-marshalling Position on every loop.
             var newPosition = Position;
             for (var i = 0; i < 10; i++)
             {
                 newPosition += new Vector(i, i);
             }
-            // setting the position only once avoid expensive marshalling and repositioning in 3D space
+            // Setting the position only once avoid expensive marshalling and repositioning in 3D space.
             Position = newPosition;
         }
     }
