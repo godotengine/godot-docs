@@ -1026,6 +1026,22 @@ kbd.compound > .kbd,
     margin-right: 0;
 }
 
+/* Make the expand icon a bit easier to hit. */
+.wy-menu-vertical li a button.toctree-expand {
+    position: relative;
+    width: 12px;
+    height: 18px;
+}
+
+.wy-menu-vertical li a button.toctree-expand:before {
+    position: absolute;
+    top: -3px;
+    left: -6px;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+}
+
 /* Banner panel in sidebar */
 .wy-nav-side .ethical-rtd.fixed {
     position: fixed;
