@@ -324,7 +324,7 @@ variable and overwrite their values only once if possible:
             {
                 newPosition += new Vector(i, i);
             }
-            // Setting the position only once avoid expensive marshalling and repositioning in 3D space.
+            // Setting Position only once avoid expensive marshalling and repositioning in 3D space.
             Position = newPosition;
         }
     }
