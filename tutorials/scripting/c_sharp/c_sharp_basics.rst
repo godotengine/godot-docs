@@ -294,8 +294,8 @@ a little faster; the specifics are going to vary according to your use case.
 GDScript is likely fast enough for most general scripting workloads.
 
 Most properties of Godot C# objects that are based on ``Godot.Object``
-(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require some expensive marshalling as they are
-talking to Godots C++ core.
+(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require some
+expensive marshalling as they are talking to Godot's C++ core.
 Any code that needs to access or modify such properties multiple times should assign values into a local
 variable and overwrite their values only once if possible:
 
