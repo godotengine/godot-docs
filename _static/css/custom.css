@@ -50,6 +50,11 @@
     --search-credits-color: #b3b3b3; /* derived from --footer-color */
     --search-credits-link-color: #4392c5; /* derived from --link-color */
 
+    --search-odd-color: rgb(133 160 253 / 24%);
+    --search-even-color: rgb(202 209 239 / 30%);
+    --search-highlighted-color: rgb(255 205 0 / 25%);
+    --search-context-color: #6c6e72;
+
     --highlight-background-color: #f5ffe1;
     --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
@@ -143,6 +148,11 @@
         --search-credits-background-color: #202123; /* derived from --navbar-background-color */
         --search-credits-color: #6b6b6b; /* derived from --footer-color */
         --search-credits-link-color: #628fb1; /* derived from --link-color */
+
+        --search-odd-color: #202326;
+        --search-even-color: #25282b;
+        --search-highlighted-color: rgb(255 205 0 / 16%);
+        --search-context-color: #aaa;
 
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
@@ -342,10 +352,54 @@ a.btn:hover {
     display: none;
 }
 
+/* Stylize horizontal separator, mainly for the search results page. */
 hr,
 #search-results .search li:first-child,
 #search-results .search li {
     border-color: var(--hr-color);
+}
+
+/* Stylize the search results page. */
+#search-results .search-summary {
+    color: var(--footer-color);
+}
+
+#search-results .context {
+    color: var(--search-context-color);
+    padding-left: 14px;
+    position: relative;
+}
+
+#search-results .context:before {
+    content: "•";
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 120%;
+}
+
+#search-results .search li {
+    background-color: var(--search-odd-color);
+    padding: 16px 14px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 18px;
+}
+
+#search-results .search li:first-child {
+    border: none;
+    padding: 16px 14px;
+    margin-top: 20px;
+}
+
+#search-results .search li:nth-child(2n) {
+    background-color: var(--search-even-color);
+}
+
+/* Add more visual separation for the title of a search result island. */
+#search-results .search li > a:first-child {
+    font-weight: 600;
+    font-size: 140%;
 }
 
 /* JavaScript documentation directives */
@@ -427,8 +481,7 @@ html.writer-html5 .rst-content dl.field-list > dd strong {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
-footer,
-#search-results .context {
+footer {
     color: var(--footer-color);
 }
 
@@ -1115,7 +1168,7 @@ kbd.compound > .kbd,
 }
 /* Still slightly highlight matched parts on the dedicated search results page. */
 .rst-content #search-results .highlighted {
-    background-color: #ffcd0029;
+    background-color: var(--search-highlighted-color);
     border-radius: 2px;
     color: var(--body-color);
     font-weight: 600;
