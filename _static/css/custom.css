@@ -1030,6 +1030,7 @@ kbd.compound > .kbd,
 .wy-menu-vertical li a button.toctree-expand {
     position: relative;
     width: 12px;
+    min-width: 12px; /* Forces the size to stay this way in the flexbox model. */
     height: 18px;
 }
 

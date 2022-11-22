@@ -324,3 +324,8 @@ $(document).ready(() => {
     registerOnScrollEvent(mediaQuery);
   }
 });
+
+// Override the default implementation from doctools.js to avoid this behavior.
+Documentation.highlightSearchWords = function() {
+  // Nope.
+}
