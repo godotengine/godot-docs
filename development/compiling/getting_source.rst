@@ -1,11 +1,11 @@
 .. _doc_getting_source:
 
-Getting the source
+سورس کد های گودت
 ==================
 
 .. highlight:: shell
 
-Downloading the Godot source code
+دانلود سورس کد های گودت
 ---------------------------------
 
 Before :ref:`getting into the SCons build system <doc_introduction_to_the_buildsystem>`
