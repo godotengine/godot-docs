@@ -312,7 +312,7 @@ variable and overwrite their values only once if possible:
             {
                 // Position is read and set 10 times which incurs expensive marshalling.
                 // Furthermore the object is repositioned 10 times in 3D space which takes additional time.
-                Position += new Vector(i, i);
+                Position += new Vector3(i, i);
             }
         }
 
@@ -322,7 +322,7 @@ variable and overwrite their values only once if possible:
             var newPosition = Position;
             for (var i = 0; i < 10; i++)
             {
-                newPosition += new Vector(i, i);
+                newPosition += new Vector3(i, i);
             }
             // Setting Position only once avoid expensive marshalling and repositioning in 3D space.
             Position = newPosition;
