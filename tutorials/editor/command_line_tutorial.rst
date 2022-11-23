@@ -46,6 +46,8 @@ Command line reference
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Command                                  | Description                                                                                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--``                                   | Separator for user-provided arguments. Following arguments are not used by the engine, but can be read from `OS.get_cmdline_user_args()`.                    |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-e``, ``--editor``                     | Start the editor instead of running the scene (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                    |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-p``, ``--project-manager``            | Start the project manager, even if a project is auto-detected (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                    |
@@ -73,6 +75,8 @@ Command line reference
 | ``--audio-driver <driver>``              | Audio driver. Use ``--help`` first to display the list of available drivers.                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--display-driver <driver>``            | Display driver (and rendering driver). Use ``--help`` first to display the list of available drivers.                                                        |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--rendering-method <renderer>``        | Renderer name. Requires driver support.                                                                                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--rendering-driver <driver>``          | Rendering driver (depends on display driver). Use ``--help`` first to display the list of available drivers.                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,6 +113,8 @@ Command line reference
 | ``--position <X>,<Y>``             | Request window position.                                                   |
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--single-window``                | Use a single window (no separate subwindows).                              |
++------------------------------------+----------------------------------------------------------------------------+
+| ``--xr-mode <mode>``               | Select XR mode (default/off/on).                                           |
 +------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
@@ -159,37 +165,43 @@ Command line reference
 
 **Standalone tools**
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Command                                | Description                                                                                                                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-s``, ``--script <script>``          | Run a script.                                                                                                                                   |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--check-only``                       | Only parse for errors and quit (use with ``--script``).                                                                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export <preset> <path>``           | Export the project using the given preset and matching release template (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be       |
-|                                        | enabled). The preset name should match one defined in export_presets.cfg. ``<path>`` should be absolute or relative to the project directory,   |
-|                                        | and include the filename for the binary (e.g. 'builds/game.exe'). The target directory should exist.                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-debug <preset> <path>``     | Like ``--export``, but use debug template (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                           |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-pack <preset> <path>``      | Like ``--export``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK or ZIP     |
-|                                        | format (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--convert-3to4``                     | Converts project from Godot 3.x to Godot 4.x.                                                                                                   |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--validate-conversion-3to4``         | Shows what elements will be renamed when converting project from Godot 3.x to Godot 4.x.                                                        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--doctool <path>``                   | Dump the engine API reference to the given ``<path>`` in XML format, merging if existing files are found                                        |
-|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--no-docbase``                       | Disallow dumping the base types (used with ``--doctool``, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--build-solutions``                  | Build the scripting solutions (e.g. for C# projects, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                 |
-|                                        | Implies ``--editor`` and requires a valid project to edit.                                                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--dump-extension-api``               | Generate JSON dump of the Godot API for GDExtension bindings named 'extension_api.json' in the current folder                                   |
-|                                        | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| Command                                                          | Description                                                                                                                                     |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``-s``, ``--script <script>``                                    | Run a script.                                                                                                                                   |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--check-only``                                                 | Only parse for errors and quit (use with ``--script``).                                                                                         |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-release <preset> <path>``                             | Export the project using the given preset and matching release template (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be       |
+|                                                                  | enabled). The preset name should match one defined in export_presets.cfg. ``<path>`` should be absolute or relative to the project directory,   |
+|                                                                  | and include the filename for the binary (e.g. 'builds/game.exe'). The target directory should exist.                                            |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-debug <preset> <path>``                               | Like ``--export-release``, but use debug template (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                   |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-pack <preset> <path>``                                | Like ``--export-release``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK    |
+|                                                                  | or ZIP format (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                       |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--convert-3to4 [<max_file_kb>] [<max_line_size>]``             | Converts project from Godot 3.x to Godot 4.x.                                                                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--validate-conversion-3to4 [<max_file_kb>] [<max_line_size>]`` | Shows what elements will be renamed when converting project from Godot 3.x to Godot 4.x.                                                        |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--doctool <path>``                                             | Dump the engine API reference to the given ``<path>`` in XML format, merging if existing files are found                                        |
+|                                                                  | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--no-docbase``                                                 | Disallow dumping the base types (used with ``--doctool``, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).            |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--build-solutions``                                            | Build the scripting solutions (e.g. for C# projects, :ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                 |
+|                                                                  | Implies ``--editor`` and requires a valid project to edit.                                                                                      |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+|  ``--dump-gdextension-interface``                                | Generate GDExtension header file 'gdnative_interface.h' in the current folder. This file is the base file required to implement a GDExtension.  |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--dump-extension-api``                                         | Generate JSON dump of the Godot API for GDExtension bindings named 'extension_api.json' in the current folder                                   |
+|                                                                  | (:ref:`tools <doc_introduction_to_the_buildsystem_tools>` must be enabled).                                                                     |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--startup-benchmark``                                          | Benchmark the startup time and print it to console.                                                                                             |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--startup-benchmark-file <path>``                              | Benchmark the startup time and save it to a given file in JSON format.                                                                          |
++------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Path
 ----
@@ -197,7 +209,7 @@ Path
 It is recommended that your Godot editor binary be in your ``PATH`` environment
 variable, so it can be executed easily from any place by typing ``godot``.
 You can do so on Linux by placing the Godot binary in ``/usr/local/bin`` and
-making sure it is called ``godot``.
+making sure it is called ``godot`` (case-sensitive).
 
 Setting the project path
 ------------------------
