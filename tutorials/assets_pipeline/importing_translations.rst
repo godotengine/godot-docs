@@ -47,7 +47,7 @@ without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`__.
 .. warning::
 
     By default, Microsoft Excel will always save CSV files with ANSI encoding
-    rather than UTF-8. There is no built-in way to do this, but there are
+    rather than UTF-8. There is no built-in way to save as UTF-8, but there are
     workarounds as described
     `here <https://stackoverflow.com/questions/4221176/excel-to-csv-with-utf8-encoding>`__.
 
