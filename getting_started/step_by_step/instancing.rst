@@ -178,7 +178,7 @@ You can come up with a diagram like this for almost any type of game. Each
 rectangle represents an entity that's visible in the game from the player's
 perspective. The arrows tell you which scene owns which.
 
-Once you have a diagram, we recommended creating a scene for each element listed
+Once you have a diagram, we recommend creating a scene for each element listed
 in it to develop your game. You'll use instancing, either by code or directly in
 the editor, to build your tree of scenes.
 
