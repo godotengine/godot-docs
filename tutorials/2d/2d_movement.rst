@@ -60,7 +60,8 @@ Add a script to the character body and add the following code:
 
     public partial class Movement : CharacterBody2D
     {
-        [Export] public int speed = 400;
+        [Export]
+        public int Speed { get; set; } = 400;
 
         public void GetInput()
         {
