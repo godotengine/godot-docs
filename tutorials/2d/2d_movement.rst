@@ -191,7 +191,7 @@ is set by the mouse position instead of the keyboard. The character will always
             Velocity = Transform.x * Input.GetAxis("down", "up") * speed;
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             GetInput();
             MoveAndSlide();
