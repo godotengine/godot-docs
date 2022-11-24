@@ -58,7 +58,7 @@ Add a script to the character body and add the following code:
     using Godot;
     using System;
 
-    public class Movement : CharacterBody2D
+    public partial class Movement : CharacterBody2D
     {
         [Export] public int speed = 400;
 
