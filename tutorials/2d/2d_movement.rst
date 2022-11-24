@@ -66,7 +66,7 @@ Add a script to the character body and add the following code:
         public void GetInput()
         {
 
-            Vector2 input_direction = Input.getVector("left", "right", "up", "down")
+            Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
             Velocity = inputDirection * speed;
         }
 
