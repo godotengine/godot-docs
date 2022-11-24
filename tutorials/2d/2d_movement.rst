@@ -262,7 +262,7 @@ on the screen will cause the player to move to the target location.
         {
             velocity = Position.DirectionTo(target) * speed;
             // LookAt(target);
-            if (Position.DistanceTo(target) > 5)
+            if (Position.DistanceTo(target) > 10)
             {
                 MoveAndSlide();
             }
