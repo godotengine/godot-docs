@@ -188,7 +188,7 @@ is set by the mouse position instead of the keyboard. The character will always
         public void GetInput()
         {
             LookAt(GetGlobalMousePosition());
-            Velocity = Transform.x * Input.get_axis("down", "up") * speed
+            Velocity = Transform.x * Input.GetAxis("down", "up") * speed;
         }
 
         public override void _PhysicsProcess(float delta)
