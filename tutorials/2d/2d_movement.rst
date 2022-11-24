@@ -70,7 +70,7 @@ Add a script to the character body and add the following code:
             Velocity = inputDirection * speed;
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             GetInput();
             MoveAndSlide();
@@ -138,7 +138,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
             Velocity = Transform.x * Input.GetAxis("down", "up") * speed;
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             GetInput();
             Rotation += rotationDir * rotationSpeed * delta;
@@ -258,7 +258,7 @@ on the screen will cause the player to move to the target location.
             }
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             velocity = Position.DirectionTo(target) * speed;
             // LookAt(target);
