@@ -36,32 +36,22 @@ fact that the player can move diagonally by pressing two keys at the same time.
 
 .. image:: img/movement_8way.gif
 
-Add a script to the kinematic body and add the following code:
+Add a script to the character body and add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends CharacterBody2D
 
-    export (int) var speed = 200
-
-    var velocity = Vector2()
+    @export var speed = 400
 
     func get_input():
-        velocity = Vector2()
-        if Input.is_action_pressed("right"):
-            velocity.x += 1
-        if Input.is_action_pressed("left"):
-            velocity.x -= 1
-        if Input.is_action_pressed("down"):
-            velocity.y += 1
-        if Input.is_action_pressed("up"):
-            velocity.y -= 1
-        velocity = velocity.normalized() * speed
+        var input_direction = Input.get_vector("left", "right", "up", "down")
+        velocity = input_direction * speed
 
     func _physics_process(delta):
         get_input()
-        velocity = move_and_slide(velocity)
+        move_and_slide()
 
  .. code-tab:: csharp
 
@@ -70,43 +60,27 @@ Add a script to the kinematic body and add the following code:
 
     public class Movement : CharacterBody2D
     {
-        [Export] public int speed = 200;
-
-        public Vector2 velocity = new Vector2();
+        [Export] public int speed = 400;
 
         public void GetInput()
         {
-            velocity = new Vector2();
 
-            if (Input.IsActionPressed("right"))
-                velocity.x += 1;
-
-            if (Input.IsActionPressed("left"))
-                velocity.x -= 1;
-
-            if (Input.IsActionPressed("down"))
-                velocity.y += 1;
-
-            if (Input.IsActionPressed("up"))
-                velocity.y -= 1;
-
-            velocity = velocity.Normalized() * speed;
+            Vector2 input_direction = Input.getVector("left", "right", "up", "down")
+            Velocity = inputDirection * speed;
         }
 
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            velocity = MoveAndSlide(velocity);
+            MoveAndSlide();
         }
     }
 
-In the ``get_input()`` function, we check for the four key events and sum them
-up to get the velocity vector. This has the benefit of making two opposite keys
-cancel each other out, but will also result in diagonal movement being faster
-due to the two directions being added together.
+In the ``get_input()`` function, we use `Input.get_vector()` to check for the
+four key events and sum return a direction vector.
 
-We can prevent that if we *normalize* the velocity, which means we set
-its *length* to ``1``, and multiply by the desired speed.
+We can then set our velocity by multiplying this direction vector, which has a
+length of ``1``, by our desired speed.
 
 .. tip:: If you've never used vector math before, or need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
@@ -131,28 +105,19 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     extends CharacterBody2D
 
-    export (int) var speed = 200
-    export (float) var rotation_speed = 1.5
+    @export var speed = 400
+    @export var rotation_speed = 1.5
 
-    var velocity = Vector2()
-    var rotation_dir = 0
+    var rotation_direction = 0
 
     func get_input():
-        rotation_dir = 0
-        velocity = Vector2()
-        if Input.is_action_pressed("right"):
-            rotation_dir += 1
-        if Input.is_action_pressed("left"):
-            rotation_dir -= 1
-        if Input.is_action_pressed("down"):
-            velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
-            velocity = Vector2(speed, 0).rotated(rotation)
+        rotation_direction = Input.get_axis("left", "right")
+        velocity = transform.x * Input.get_axis("down", "up") * speed
 
     func _physics_process(delta):
         get_input()
-        rotation += rotation_dir * rotation_speed * delta
-        velocity = move_and_slide(velocity)
+        rotation += rotation_direction * rotation_speed * delta
+        move_and_slide()
 
  .. code-tab:: csharp
 
@@ -161,48 +126,30 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     public class Movement : CharacterBody2D
     {
-        [Export] public int speed = 200;
+        [Export] public int speed = 400;
         [Export] public float rotationSpeed = 1.5f;
 
-        public Vector2 velocity = new Vector2();
         public int rotationDir = 0;
 
         public void GetInput()
         {
-            rotationDir = 0;
-            velocity = new Vector2();
-
-            if (Input.IsActionPressed("right"))
-                rotationDir += 1;
-
-            if (Input.IsActionPressed("left"))
-                rotationDir -= 1;
-
-            if (Input.IsActionPressed("down"))
-                velocity = new Vector2(-speed, 0).Rotated(Rotation);
-
-            if (Input.IsActionPressed("up"))
-                velocity = new Vector2(speed, 0).Rotated(Rotation);
-
-            velocity = velocity.Normalized() * speed;
+            rotationDir = Input.getAxis("left", "right")
+            Velocity = Transform.x * Input.get_axis("down", "up") * speed
         }
 
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
             Rotation += rotationDir * rotationSpeed * delta;
-            velocity = MoveAndSlide(velocity);
+            MoveAndSlide();
         }
     }
 
-Here we've added two new variables to track our rotation direction and speed.
-Again, pressing both keys at once will cancel out and result in no rotation.
+Here we've added two variables to track our rotation direction and speed.
 The rotation is applied directly to the body's ``rotation`` property.
 
-To set the velocity, we use the ``Vector2.rotated()`` method, so that it points
-in the same direction as the body. ``rotated()`` is a useful vector function
-that you can use in many circumstances where you would otherwise need to apply
-trigonometric functions.
+To set the velocity, we use the body's ``transform.x`` which is a vector pointing
+in the body's "forward" direction, and multiply that by the speed.
 
 Rotation + movement (mouse)
 ---------------------------
@@ -218,21 +165,15 @@ is set by the mouse position instead of the keyboard. The character will always
 
     extends CharacterBody2D
 
-    export (int) var speed = 200
-
-    var velocity = Vector2()
+    @export var speed = 400
 
     func get_input():
         look_at(get_global_mouse_position())
-        velocity = Vector2()
-        if Input.is_action_pressed("down"):
-            velocity = Vector2(-speed, 0).rotated(rotation)
-        if Input.is_action_pressed("up"):
-            velocity = Vector2(speed, 0).rotated(rotation)
+        velocity = transform.x * Input.get_axis("down", "up") * speed
 
     func _physics_process(delta):
         get_input()
-        velocity = move_and_slide(velocity)
+        move_and_slide()
 
  .. code-tab:: csharp
 
@@ -241,33 +182,23 @@ is set by the mouse position instead of the keyboard. The character will always
 
     public class Movement : CharacterBody2D
     {
-        [Export] public int speed = 200;
-
-        public Vector2 velocity = new Vector2();
+        [Export] public int speed = 400;
 
         public void GetInput()
         {
             LookAt(GetGlobalMousePosition());
-            velocity = new Vector2();
-
-            if (Input.IsActionPressed("down"))
-                velocity = new Vector2(-speed, 0).Rotated(Rotation);
-
-            if (Input.IsActionPressed("up"))
-                velocity = new Vector2(speed, 0).Rotated(Rotation);
-
-            velocity = velocity.Normalized() * speed;
+            Velocity = Transform.x * Input.get_axis("down", "up") * speed
         }
 
         public override void _PhysicsProcess(float delta)
         {
             GetInput();
-            velocity = MoveAndSlide(velocity);
+            MoveAndSlide();
         }
     }
 
 Here we're using the :ref:`Node2D <class_Node2D>` ``look_at()`` method to
-point the player towards a given position. Without this function, you
+point the player towards the mouse's position. Without this function, you
 could get the same effect by setting the angle like this:
 
 .. tabs::
@@ -293,10 +224,9 @@ on the screen will cause the player to move to the target location.
 
     extends CharacterBody2D
 
-    export (int) var speed = 200
+    @export var speed = 400
 
-    var target = Vector2()
-    var velocity = Vector2()
+    var target = position
 
     func _input(event):
         if event.is_action_pressed("click"):
@@ -305,8 +235,8 @@ on the screen will cause the player to move to the target location.
     func _physics_process(delta):
         velocity = position.direction_to(target) * speed
         # look_at(target)
-        if position.distance_to(target) > 5:
-            velocity = move_and_slide(velocity)
+        if position.distance_to(target) > 10:
+            move_and_slide()
 
  .. code-tab:: csharp
 
@@ -315,10 +245,9 @@ on the screen will cause the player to move to the target location.
 
     public class Movement : CharacterBody2D
     {
-        [Export] public int speed = 200;
+        [Export] public int speed = 400;
 
         public Vector2 target = new Vector2();
-        public Vector2 velocity = new Vector2();
 
         public override void _Input(InputEvent @event)
         {
@@ -334,7 +263,7 @@ on the screen will cause the player to move to the target location.
             // LookAt(target);
             if (Position.DistanceTo(target) > 5)
             {
-                velocity = MoveAndSlide(velocity);
+                MoveAndSlide();
             }
         }
     }
