@@ -247,7 +247,7 @@ on the screen will cause the player to move to the target location.
     using Godot;
     using System;
 
-    public class Movement : CharacterBody2D
+    public partial class Movement : CharacterBody2D
     {
         [Export]
         public int Speed { get; set; } = 400;
