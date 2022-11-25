@@ -77,7 +77,7 @@ Add a script to the character body and add the following code:
         }
     }
 
-In the ``get_input()`` function, we use `Input.get_vector()` to check for the
+In the ``get_input()`` function, we use :ref:`Input <class_Input>` ``get_vector()`` to check for the
 four key events and sum return a direction vector.
 
 We can then set our velocity by multiplying this direction vector, which has a
