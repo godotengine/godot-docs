@@ -318,13 +318,13 @@ HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
 support for the singleton to improve security. With such templates, and on
 platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
 ``null``. The availability of the singleton can be checked with the
-``javascript`` :ref:`feature tag <doc_feature_tags>`:
+``web`` :ref:`feature tag <doc_feature_tags>`:
 
 .. tabs::
  .. code-tab:: gdscript
 
     func my_func3():
-        if OS.has_feature('javascript'):
+        if OS.has_feature('web'):
             JavaScriptBridge.eval("""
                 console.log('The JavaScriptBridge singleton is available')
             """)
@@ -335,9 +335,9 @@ platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
     
     private void MyFunc3()
     {
-        if (OS.HasFeature("javascript"))
+        if (OS.HasFeature("web"))
         {
-            JavaScriptBridge.eval("console.log('The JavaScriptBridge singleton is available')");
+            JavaScriptBridge.Eval("console.log('The JavaScriptBridge singleton is available')");
         }
         else
         {
