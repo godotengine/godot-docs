@@ -137,8 +137,8 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
         public void GetInput()
         {
-            rotationDir = Input.GetAxis("left", "right");
-            Velocity = Transform.x * Input.GetAxis("down", "up") * speed;
+            _rotationDirection = Input.GetAxis("left", "right");
+            Velocity = Transform.x * Input.GetAxis("down", "up") * Speed;
         }
 
         public override void _PhysicsProcess(double delta)
