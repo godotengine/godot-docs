@@ -67,7 +67,7 @@ Add a script to the character body and add the following code:
         {
 
             Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-            Velocity = inputDirection * speed;
+            Velocity = inputDirection * Speed;
         }
 
         public override void _PhysicsProcess(double delta)
