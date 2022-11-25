@@ -25,7 +25,7 @@ for the Sprite2D's texture or use any other 2D image you have.
 Open ``Project -> Project Settings`` and select the "Input Map" tab. Add the following
 input actions (see :ref:`InputEvent <doc_inputevent>` for details):
 
-.. image:: img/movement_inputs.png
+.. image:: img/movement_inputs.webp
 
 8-way movement
 --------------
@@ -259,7 +259,7 @@ on the screen will cause the player to move to the target location.
         {
             if (@event.IsActionPressed("click"))
             {
-                target = GetGlobalMousePosition();
+                _target = GetGlobalMousePosition();
             }
         }
 
