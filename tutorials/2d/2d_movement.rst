@@ -249,7 +249,8 @@ on the screen will cause the player to move to the target location.
 
     public class Movement : CharacterBody2D
     {
-        [Export] public int speed = 400;
+        [Export]
+        public int Speed { get; set; } = 400;
 
         public Vector2 target = new Vector2();
 
