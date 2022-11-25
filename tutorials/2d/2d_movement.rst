@@ -186,7 +186,8 @@ is set by the mouse position instead of the keyboard. The character will always
 
     public partial class Movement : CharacterBody2D
     {
-        [Export] public int speed = 400;
+        [Export]
+        public int Speed { get; set; } = 400;
 
         public void GetInput()
         {
