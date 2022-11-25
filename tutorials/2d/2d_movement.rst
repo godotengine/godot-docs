@@ -127,8 +127,11 @@ while up/down moves it forward or backward in whatever direction it's facing.
 
     public partial class Movement : CharacterBody2D
     {
-        [Export] public int speed = 400;
-        [Export] public float rotationSpeed = 1.5f;
+        [Export]
+        public int Speed { get; set; } = 400;
+
+        [Export]
+        public float RotationSpeed { get; set; } = 1.5f;
 
         public int rotationDir = 0;
 
