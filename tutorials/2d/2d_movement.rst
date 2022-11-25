@@ -252,7 +252,7 @@ on the screen will cause the player to move to the target location.
         [Export]
         public int Speed { get; set; } = 400;
 
-        public Vector2 target = new Vector2();
+        private Vector2 _target;
 
         public override void _Input(InputEvent @event)
         {
