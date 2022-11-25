@@ -184,7 +184,7 @@ is set by the mouse position instead of the keyboard. The character will always
     using Godot;
     using System;
 
-    public class Movement : CharacterBody2D
+    public partial class Movement : CharacterBody2D
     {
         [Export] public int speed = 400;
 
