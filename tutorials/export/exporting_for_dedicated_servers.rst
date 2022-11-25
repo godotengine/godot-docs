@@ -124,8 +124,8 @@ or server binary is detected:
 .. tabs::
  .. code-tab:: gdscript
 
-    # Note: Feature tags are case-sensitive! It's "Server", not "server".
-    if OS.has_feature("Server"):
+    # Note: Feature tags are case-sensitive! It's "server", not "Server".
+    if OS.has_feature("server"):
         # Run your server startup code here...
         # Note that using this check may break unit testing scripts when
         # running them with headless or server binaries.
@@ -133,8 +133,8 @@ or server binary is detected:
 
  .. code-tab:: csharp
 
-    // Note: Feature tags are case-sensitive! It's "Server", not "server".
-    if (OS.HasFeature("Server"))
+    // Note: Feature tags are case-sensitive! It's "server", not "Server".
+    if (OS.HasFeature("server"))
     {
         // Run your server startup code here...
         // Note that using this check may break unit testing scripts when
