@@ -125,7 +125,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
     using Godot;
     using System;
 
-    public class Movement : CharacterBody2D
+    public partial class Movement : CharacterBody2D
     {
         [Export] public int speed = 400;
         [Export] public float rotationSpeed = 1.5f;
