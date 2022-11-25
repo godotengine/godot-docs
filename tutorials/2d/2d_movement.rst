@@ -265,7 +265,7 @@ on the screen will cause the player to move to the target location.
 
         public override void _PhysicsProcess(double delta)
         {
-            velocity = Position.DirectionTo(target) * speed;
+            velocity = Position.DirectionTo(_target) * Speed;
             // LookAt(target);
             if (Position.DistanceTo(target) > 10)
             {
