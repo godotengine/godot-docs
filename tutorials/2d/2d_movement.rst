@@ -144,7 +144,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         public override void _PhysicsProcess(double delta)
         {
             GetInput();
-            Rotation += rotationDir * rotationSpeed * delta;
+            Rotation += _rotationDirection * RotationSpeed * (float)delta;
             MoveAndSlide();
         }
     }
