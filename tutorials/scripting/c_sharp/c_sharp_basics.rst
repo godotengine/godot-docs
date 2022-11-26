@@ -329,11 +329,11 @@ a single code location:
         }
     }
 
-Passing raw arrays (such as ``byte[]``) or `string` to Godot's C# API requires marshalling which is
+Passing raw arrays (such as ``byte[]``) or ``string`` to Godot's C# API requires marshalling which is
 comparatively pricey.
 
-The implicit conversion from `string` to `NodePath` or `StringName` incur both the native interop and marshalling
-costs as the `string` has to be marshalled and passed to the respective native constructor via a native call.
+The implicit conversion from ``string`` to ``NodePath`` or ``StringName`` incur both the native interop and marshalling
+costs as the ``string`` has to be marshalled and passed to the respective native constructor.
 
 Using NuGet packages in Godot
 -----------------------------
