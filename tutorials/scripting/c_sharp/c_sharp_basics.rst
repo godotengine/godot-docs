@@ -294,10 +294,10 @@ a little faster; the specifics are going to vary according to your use case.
 GDScript is likely fast enough for most general scripting workloads.
 
 Most properties of Godot C# objects that are based on ``Godot.Object``
-(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require some
-expensive marshalling as they are talking to Godot's C++ core.
-Any code that needs to access or modify such properties multiple times should assign values into a local
-variable and overwrite their values only once if possible:
+(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they are
+talking to Godot's C++ core.
+Consider assigning values of such properties into a local variable if you need to modify or read them multiple times at
+a single code location:
 
 .. code-block:: csharp
 
@@ -310,7 +310,7 @@ variable and overwrite their values only once if possible:
         {
             for (var i = 0; i < 10; i++)
             {
-                // Position is read and set 10 times which incurs expensive marshalling.
+                // Position is read and set 10 times which incurs native interop.
                 // Furthermore the object is repositioned 10 times in 3D space which takes additional time.
                 Position += new Vector3(i, i);
             }
@@ -318,16 +318,22 @@ variable and overwrite their values only once if possible:
 
         private void Reposition()
         {
-            // A variable is used to avoid re-marshalling Position on every loop.
+            // A variable is used to avoid native interop for Position on every loop.
             var newPosition = Position;
             for (var i = 0; i < 10; i++)
             {
                 newPosition += new Vector3(i, i);
             }
-            // Setting Position only once avoid expensive marshalling and repositioning in 3D space.
+            // Setting Position only once avoids native interop and repositioning in 3D space.
             Position = newPosition;
         }
     }
+
+Passing raw arrays (such as ``byte[]``) or `string` to Godot's C# API requires marshalling which is
+comparatively pricey.
+
+The implicit conversion from `string` to `NodePath` or `StringName` incur both the native interop and marshalling
+costs as the `string` has to be marshalled and passed to the respective native constructor via a native call.
 
 Using NuGet packages in Godot
 -----------------------------
