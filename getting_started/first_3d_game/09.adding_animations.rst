@@ -191,7 +191,7 @@ vector, add the following code.
 
    func _physics_process(delta):
        #...
-       #if direction != Vector3.ZERO:
+       if direction != Vector3.ZERO:
            #...
            $AnimationPlayer.playback_speed = 4
        else:
