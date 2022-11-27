@@ -136,8 +136,7 @@ way to pull the data out of the file as well.
     # Go through everything in the persist category and ask them to return a
     # dict of relevant variables.
     func save_game():
-        var save_game = File.new()
-        save_game.open("user://savegame.save", File.WRITE)
+        var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
             # Check the node is an instanced scene so it can be instanced again during load.
@@ -158,7 +157,6 @@ way to pull the data out of the file as well.
 
             # Store the save dictionary as a new line in the save file.
             save_game.store_line(json_string)
-        save_game.close()
 
  .. code-tab:: csharp
 
@@ -168,8 +166,7 @@ way to pull the data out of the file as well.
     // dict of relevant variables.
     public void SaveGame()
     {
-        var saveGame = new File();
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Write);
+        using var saveGame = FileAccess.Open("user://savegame.save", (int)FileAccess.ModeFlags.Write);
 
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
@@ -194,8 +191,6 @@ way to pull the data out of the file as well.
             // Store the save dictionary as a new line in the save file.
             saveGame.StoreLine(JSON.Print(nodeData));
         }
-
-        saveGame.Close();
     }
 
 
@@ -212,8 +207,7 @@ load function:
     # Note: This can be called from anywhere inside the tree. This function
     # is path independent.
     func load_game():
-        var save_game = File.new()
-        if not save_game.file_exists("user://savegame.save"):
+        if not FileAccess.file_exists("user://savegame.save"):
             return # Error! We don't have a save to load.
 
         # We need to revert the game state so we're not cloning objects
@@ -226,8 +220,8 @@ load function:
 
         # Load the file line by line and process that dictionary to restore
         # the object it represents.
-        save_game.open("user://savegame.save", File.READ)
-        while save_game.get_position() < save_game.get_len():
+        var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+        while save_game.get_position() < save_game.get_length():
             # Creates the helper class to interact with JSON
             var json = JSON.new()
 
@@ -251,16 +245,13 @@ load function:
                     continue
                 new_object.set(i, node_data[i])
 
-        save_game.close()
-
  .. code-tab:: csharp
 
     // Note: This can be called from anywhere inside the tree. This function is
     // path independent.
     public void LoadGame()
     {
-        var saveGame = new File();
-        if (!saveGame.FileExists("user://savegame.save"))
+        if (!FileAccess.FileExists("user://savegame.save"))
             return; // Error! We don't have a save to load.
 
         // We need to revert the game state so we're not cloning objects during loading.
@@ -273,9 +264,9 @@ load function:
 
         // Load the file line by line and process that dictionary to restore the object
         // it represents.
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
+        using var saveGame = FileAccess.Open("user://savegame.save", (int)FileAccess.ModeFlags.Read);
 
-        while (saveGame.GetPosition() < saveGame.GetLen())
+        while (saveGame.GetPosition() < saveGame.GetLength())
         {
             // Get the saved dictionary from the next line in the save file
             var nodeData = new Godot.Collections.Dictionary<string, object>((Godot.Collections.Dictionary)JSON.Parse(saveGame.GetLine()).Result);
@@ -295,8 +286,6 @@ load function:
                 newObject.Set(key, entry.Value);
             }
         }
-
-        saveGame.Close();
     }
 
 
