@@ -21,16 +21,16 @@ called **GDScript**:
    As shown in the image above, you must enable **Advanced Settings** in order to see the GDScript section.
 
 You can find a list of warnings for the active GDScript file in the
-script editor's status bar. The example below has 3 warnings:
+script editor's status bar. The example below has 2 warnings:
 
 .. figure:: img/typed_gdscript_warning_example.png
    :alt: Warning system example
 
    Warning system example
 
-To ignore specific warnings in one file, insert a special comment of the
-form ``# warning-ignore:warning-id``, or click on the ignore link to the
-right of the warning's description. Godot will add a comment above the
+To ignore specific warnings in one file, insert an annotation of the
+form ``@warning_ignore(warning_id)``, or click on the ignore link to the
+left of the warning's entry. Godot will add an annotation above the
 corresponding line and the code won't trigger the corresponding warning
 anymore:
 
@@ -39,9 +39,13 @@ anymore:
 
    Warning system ignore example
 
-You can also choose to ignore not just one but all warnings of a certain
-type in this file with ``# warning-ignore-all:warning-id``. To ignore all
-warnings of all types in a file add the comment ``# warnings-disable`` to it.
+If the list of warnings is not visible, make sure to click on the yellow
+warning symbol on the bottom right of the editor pane.
+
+To ignore all instances of a warning in one file, you can insert the annotation
+below the scripts `extends` statement. You can also choose to ignore multiple warnings
+by passing their ids as a comma separated list to the annotation, e.g.
+``@warning_ignore(unused_variable, unreachable_code)``
 
 Warnings won't prevent the game from running, but you can turn them into
 errors if you'd like. This way your game won't compile unless you fix
