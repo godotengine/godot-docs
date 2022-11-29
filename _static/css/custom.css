@@ -1049,6 +1049,8 @@ kbd.compound > .kbd,
     /* Make long words always display on a single line, keep wrapping for multiple words */
     /* This fixes the class reference titles' display with very long class names */
     display: flex;
+    padding-right: .4045em;
+    overflow-wrap: anywhere;
 }
 
 .wy-menu-vertical li.current a,
