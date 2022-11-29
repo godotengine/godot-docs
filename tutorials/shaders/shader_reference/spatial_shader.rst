@@ -286,7 +286,9 @@ Below are examples of common variables calculated using the built-ins:
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **DEPTH_TEXTURE**       | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **DEPTH**               | Custom depth value (0..1).                                                                       |
+| out float **DEPTH**               | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
+|                                   | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |
+|                                   | will leave them uninitialized.                                                                   |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**             | Screen UV coordinate for current pixel.                                                          |
 +-----------------------------------+--------------------------------------------------------------------------------------------------+
