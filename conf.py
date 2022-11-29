@@ -196,7 +196,7 @@ if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js?2", # Increment the number at the end when the file changes to bust the cache.
+    "js/custom.js?3", # Increment the number at the end when the file changes to bust the cache.
     ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
     ('js/algolia.js', {'defer': 'defer'})
 ]
