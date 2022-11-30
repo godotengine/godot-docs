@@ -92,8 +92,12 @@ be called after generating geometry and before committing the mesh using ``commi
 ``commit_to_arrays()``. Calling ``generate_normals(true)`` will flip the resulting normals. As a side
 note, ``generate_normals()`` only works if the primitive type is set to ``Mesh.PRIMITIVE_TRIANGLES``.
 
-If you don't add custom tangents, they can be added with ``generate_tangents()``, but it requires
-that each vertex have UVs and normals set already.
+You may notice that normal mapping or other material properties look broken on
+the generated mesh. This is because normal mapping **requires** the mesh to
+feature *tangents*, which are separate from *normals*. You can either add custom
+tangents manually, or generate them automatically with with
+``generate_tangents()``. This method requires that each vertex have UVs and
+normals set already.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
