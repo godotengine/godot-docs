@@ -109,7 +109,8 @@ may be used. For example:
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
         # use global coordinates, not local to node
-        var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
+        var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
@@ -117,7 +118,8 @@ may be used. For example:
     {
         var spaceState = GetWorld2d().DirectSpaceState;
         // use global coordinates, not local to node
-        var result = spaceState.IntersectRay(new Vector2(), new Vector2(50, 100));
+        var query = PhysicsRayQueryParameters2D.create(new Vector2(), new Vector2(50, 100));
+        var result = spaceState.IntersectRay(query);
     }
 
 The result is a dictionary. If the ray didn't hit anything, the dictionary will
@@ -173,7 +175,9 @@ collision object node:
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var result = space_state.intersect_ray(global_position, enemy_position, [self])
+        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position)
+        query.exclude = [self]
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
@@ -182,7 +186,9 @@ collision object node:
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new Godot.Collections.Array { this });
+            var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition);
+            query.exclude = new Godot.Collections.Array { this };
+            var result = spaceState.IntersectRay(query);
         }
     }
 
@@ -206,8 +212,9 @@ member variable:
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var result = space_state.intersect_ray(global_position, enemy_position,
-                                [self], collision_mask)
+        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position, 
+            collision_mask, [self]) 
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
@@ -216,8 +223,9 @@ member variable:
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition,
-                            new Godot.Collections.Array { this }, CollisionMask);
+            var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition,
+                CollisionMask, new Godot.Collections.Array { this });
+            var result = spaceState.IntersectRay(query);
         }
     }
 
