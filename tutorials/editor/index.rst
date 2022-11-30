@@ -61,3 +61,12 @@ a project that's only 2D or only 3D and don't want to see what you don't need.
    :name: toc-editor-features
 
    managing_editor_features
+
+Upgrading to Godot 4
+--------------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-upgrading
+
+   upgrading_to_godot_4
