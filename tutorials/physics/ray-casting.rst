@@ -163,10 +163,9 @@ as shown in the following image:
 
 .. image:: img/raycast_falsepositive.png
 
-To avoid self-intersection, the ``intersect_ray()`` function can take an
-optional third parameter which is an array of exceptions. This is an
-example of how to use it from a CharacterBody2D or any other
-collision object node:
+To avoid self-intersection, the ``intersect_ray()`` parameters object can take an
+array of exceptions via its ``exclude`` property. This is an example of how to use it 
+from a CharacterBody2D or any other collision object node:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -201,9 +200,9 @@ While the exceptions method works fine for excluding the parent body, it becomes
 very inconvenient if you need a large and/or dynamic list of exceptions. In
 this case, it is much more efficient to use the collision layer/mask system.
 
-The optional fourth argument for ``intersect_ray()`` is a collision mask. For
-example, to use the same mask as the parent body, use the ``collision_mask``
-member variable:
+The ``intersect_ray()`` parameters object can also be supplied a collision mask.
+For example, to use the same mask as the parent body, use the ``collision_mask``
+member variable. The array of exceptions can be supplied as the last argument as well:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
