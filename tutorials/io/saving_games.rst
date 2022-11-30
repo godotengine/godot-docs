@@ -241,7 +241,7 @@ load function:
             var node_data = json.get_data()
 
             # Firstly, we need to create the object and add it to the tree and set its position.
-            var new_object = load(node_data["filename"]).instance()
+            var new_object = load(node_data["filename"]).instantiate()
             get_node(node_data["parent"]).add_child(new_object)
             new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 
@@ -282,7 +282,7 @@ load function:
 
             // Firstly, we need to create the object and add it to the tree and set its position.
             var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
-            var newObject = (Node)newObjectScene.Instance();
+            var newObject = (Node)newObjectScene.Instantiate();
             GetNode(nodeData["Parent"].ToString()).AddChild(newObject);
             newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 

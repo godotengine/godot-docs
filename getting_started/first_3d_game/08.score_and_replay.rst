@@ -388,7 +388,7 @@ Here is the complete ``Main.gd`` script for reference.
 
 
    func _on_MobTimer_timeout():
-       var mob = mob_scene.instance()
+       var mob = mob_scene.instantiate()
 
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        mob_spawn_location.unit_offset = randf()
@@ -429,7 +429,7 @@ Here is the complete ``Main.gd`` script for reference.
 
         public void OnMobTimerTimeout()
         {
-            Mob mob = (Mob)MobScene.Instance();
+            Mob mob = (Mob)MobScene.Instantiate();
 
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             mobSpawnLocation.UnitOffset = GD.Randf();

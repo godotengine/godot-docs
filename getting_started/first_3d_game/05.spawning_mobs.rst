@@ -236,7 +236,7 @@ Let's code the mob spawning logic. We're going to:
 
    func _on_MobTimer_timeout():
        # Create a new instance of the Mob scene.
-       var mob = mob_scene.instance()
+       var mob = mob_scene.instantiate()
 
        # Choose a random location on the SpawnPath.
        # We store the reference to the SpawnLocation node.
@@ -255,7 +255,7 @@ Let's code the mob spawning logic. We're going to:
     public void OnMobTimerTimeout()
     {
         // Create a new instance of the Mob scene.
-        Mob mob = (Mob)MobScene.Instance();
+        Mob mob = (Mob)MobScene.Instantiate();
 
         // Choose a random location on the SpawnPath.
         // We store the reference to the SpawnLocation node.
@@ -288,7 +288,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
 
    func _on_MobTimer_timeout():
-       var mob = mob_scene.instance()
+       var mob = mob_scene.instantiate()
 
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        mob_spawn_location.unit_offset = randf()
@@ -313,7 +313,7 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
         public void OnMobTimerTimeout()
         {
-            Mob mob = (Mob)MobScene.Instance();
+            Mob mob = (Mob)MobScene.Instantiate();
 
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             mobSpawnLocation.UnitOffset = GD.Randf();

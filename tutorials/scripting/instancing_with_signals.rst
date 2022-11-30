@@ -68,7 +68,7 @@ You could do this by adding the bullet to the main scene directly:
 
  .. code-tab:: csharp
 
-    Node bulletInstance = Bullet.Instance();
+    Node bulletInstance = Bullet.Instantiate();
     GetParent().AddChild(bulletInstance);
 
 However, this will lead to a different problem. Now if you try to test your
@@ -145,7 +145,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 
     public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
     {
-        var bulletInstance = (Bullet)bullet.Instance();
+        var bulletInstance = (Bullet)bullet.Instantiate();
         AddChild(bulletInstance);
         bulletInstance.Rotation = direction;
         bulletInstance.Position = location;
