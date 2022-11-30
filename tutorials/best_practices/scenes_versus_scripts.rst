@@ -30,8 +30,8 @@ a change in API:
         const MyScene = preload("my_scene.tscn")
         var node = Node.new()
         var my_node = MyNode.new() # Same method call
-        var my_scene = MyScene.instance() # Different method call
-        var my_inherited_scene = MyScene.instance(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
+        var my_scene = MyScene.instantiate() # Different method call
+        var my_inherited_scene = MyScene.instantiate(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
 
       .. code-tab:: csharp
 
@@ -51,8 +51,8 @@ a change in API:
             {
                 ANode = new Node();
                 MyNode = new MyNode(); // Same syntax
-                MyScene = MySceneScn.Instance(); // Different. Instantiated from a PackedScene
-                MyInheritedScene = MySceneScn.Instance(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
+                MyScene = MySceneScn.Instantiate(); // Different. Instantiated from a PackedScene
+                MyInheritedScene = MySceneScn.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
             }
         }
 
@@ -217,4 +217,4 @@ In the end, the best approach is to consider the following:
       # main.gd
       extends Node
       func _ready():
-          add_child(Game.MyScene.instance())
+          add_child(Game.MyScene.instantiate())
