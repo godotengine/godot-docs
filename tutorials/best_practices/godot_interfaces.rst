@@ -472,7 +472,7 @@ accesses:
     @onready var child = $Child
 
     func _ready():
-        child.fn = funcref(self, "print_me")
+        child.fn = Callable(self, "print_me")
         child.my_method()
 
     func print_me():
@@ -483,7 +483,7 @@ accesses:
     // Child.cs
     public class Child : Node
     {
-        public FuncRef FN = null;
+        public Callable FN = null;
 
         public void MyMethod()
         {
@@ -500,7 +500,7 @@ accesses:
         public void _Ready()
         {
             Child = GetNode("Child");
-            Child.Set("FN", GD.FuncRef(this, "PrintMe"));
+            Child.Set("FN", GD.Callable(this, "PrintMe"));
             Child.MyMethod();
         }
 

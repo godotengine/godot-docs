@@ -96,7 +96,7 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.func_property = funcref(object_with_method, "method_on_the_object")
+       $Child.func_property = Callable(object_with_method, "method_on_the_object")
 
        # Child
        func_property.call_func() # Call parent-defined method (can come from anywhere).
@@ -104,7 +104,7 @@ initialize it:
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Set("FuncProperty", GD.FuncRef(ObjectWithMethod, "MethodOnTheObject"));
+       GetNode("Child").Set("FuncProperty", GD.Callable(ObjectWithMethod, "MethodOnTheObject"));
 
        // Child
        FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere).
