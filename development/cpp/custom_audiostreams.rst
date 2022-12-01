@@ -88,7 +88,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 
 	Ref<AudioStreamPlayback> AudioStreamMyTone::instance_playback() {
 		Ref<AudioStreamPlaybackMyTone> talking_tree;
-		talking_tree.instance();
+		talking_tree.instantiate();
 		talking_tree->base = Ref<AudioStreamMyTone>(this);
 		return talking_tree;
 	}

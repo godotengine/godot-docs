@@ -337,10 +337,10 @@ when ``load`` is called.
     void register_json_types() {
     	ClassDB::register_class<JsonResource>();
 
-    	json_loader.instance();
+    	json_loader.instantiate();
     	ResourceLoader::add_resource_format_loader(json_loader);
 
-    	json_saver.instance();
+    	json_saver.instantiate();
     	ResourceSaver::add_resource_format_saver(json_saver);
     }
 

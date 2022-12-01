@@ -132,7 +132,7 @@ To get an instance of the scene, you have to use the
 
     public void OnShoot()
     {
-        Node bullet = _bulletScene.Instance();
+        Node bullet = _bulletScene.Instantiate();
         AddChild(bullet);
     }
 
