@@ -152,20 +152,20 @@ a feature branch:
     $ git branch better-project-manager
 
     # Change the current branch to the new one
-    $ git checkout better-project-manager
+    $ git switch better-project-manager
 
 This command is equivalent:
 
 ::
 
     # Change the current branch to a new named one, based on the current branch
-    $ git checkout -b better-project-manager
+    $ git switch -c better-project-manager
 
 If you want to go back to the ``master`` branch, you'd use:
 
 ::
 
-    $ git checkout master
+    $ git switch master
 
 You can see which branch you are currently on with the ``git branch``
 command:
@@ -183,7 +183,7 @@ you can specify a custom base branch after the new branch's name:
 
 ::
 
-    $ git checkout -b my-new-feature master
+    $ git switch -c my-new-feature master
 
 Updating your branch
 --------------------
@@ -267,7 +267,7 @@ before staging it, while it is staged, and after it has been committed.
 
 - ``git diff`` will show you the current unstaged changes, i.e. the
   differences between your working directory and the staging area.
-- ``git checkout -- <files>`` will undo the unstaged changes to the given
+- ``git restore <files>`` will undo the unstaged changes to the given
   files.
 - ``git add <files>`` will *stage* the changes on the listed files.
 - ``git diff --staged`` will show the current staged changes, i.e. the
@@ -387,7 +387,7 @@ branch, push it to your fork, and the PR will be updated automatically:
 ::
 
     # Check out your branch again if you had changed in the meantime
-    $ git checkout better-project-manager
+    $ git switch better-project-manager
 
     # Fix a mistake
     $ nano editor/project_manager.cpp
@@ -406,7 +406,7 @@ fixes. The above example would then become:
 ::
 
     # Check out your branch again if you had changed in the meantime
-    $ git checkout better-project-manager
+    $ git switch better-project-manager
 
     # Fix a mistake
     $ nano editor/project_manager.cpp
