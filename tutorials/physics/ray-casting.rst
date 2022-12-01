@@ -186,7 +186,7 @@ from a CharacterBody2D or any other collision object node:
         {
             var spaceState = GetWorld2d().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition);
-            query.exclude = new Godot.Collections.Array { this };
+            query.Exclude = new Godot.Collections.Array { this };
             var result = spaceState.IntersectRay(query);
         }
     }
