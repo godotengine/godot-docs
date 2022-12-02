@@ -144,7 +144,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         var instance = RenderingServer.instance_create()
         # Set the scenario from the world, this ensures it
         # appears with the same objects as the scene.
-        var scenario = get_world().scenario
+        var scenario = get_world_3d().scenario
         RenderingServer.instance_set_scenario(instance, scenario)
         # Add a mesh to it.
         # Remember, keep the reference.
