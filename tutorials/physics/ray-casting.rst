@@ -87,7 +87,7 @@ And in 3D:
  .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-        var space_state = get_world().direct_space_state
+        var space_state = get_world_3d().direct_space_state
 
  .. code-tab:: csharp
 
@@ -205,7 +205,7 @@ member variable:
     extends CharacterBody2D
 
     func _physics_process(delta):
-        var space_state = get_world().direct_space_state
+        var space_state = get_world_2d().direct_space_state
         var result = space_state.intersect_ray(global_position, enemy_position,
                                 [self], collision_mask)
 
