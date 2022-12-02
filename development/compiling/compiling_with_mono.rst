@@ -74,7 +74,7 @@ and the C# solution for the editor tools at ``modules/mono/glue/GodotSharp/Godot
 Once these files are generated, you can build Godot for all the desired targets
 without having to repeat this process.
 
-``<godot_binary>`` refers to the tools binary you compiled above with the Mono
+``<godot_binary>`` refers to the editor binary you compiled above with the Mono
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
 ``bin/godot.<platform>.editor.<arch>.mono``, e.g. ``bin/godot.linuxbsd.editor.x86_64.mono``
@@ -130,11 +130,11 @@ Example (Windows)
 
 ::
 
-    # Build temporary binary
+    # Build editor binary
     scons p=windows target=editor module_mono_enabled=yes
     # Generate glue sources
     bin\godot.windows.editor.x86_64.mono --generate-mono-glue modules/mono/glue
-    # Generate binaries
+    # Build .NET assemblies
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
     ### Build binaries normally

@@ -147,7 +147,7 @@ run projects but that does not include the editor or the project manager.
 Dev build
 ---------
 
-When doing enigine development the ``dev_build`` option can be used together
+When doing engine development the ``dev_build`` option can be used together
 with ``target`` to enable dev-specific code.
 
 ::
