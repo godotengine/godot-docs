@@ -750,7 +750,7 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0);
 
 It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
+hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
 engine renders in linear color space.
 
 Full list of hints below:
