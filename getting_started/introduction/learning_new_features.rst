@@ -116,7 +116,7 @@ information:
    the code you write affects nodes in your scenes. As a result, you should
    think of those scenes as part of your source code.
 
-   .. image:: img/key_concepts_scene_tree.png
+   .. image:: img/key_concepts_scene_tree.webp
 
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system
