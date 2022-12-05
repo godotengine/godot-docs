@@ -1539,10 +1539,12 @@ Exports
     Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
 
 
-Properties
-~~~~~~~~~~
+.. _doc_gdscript_basics_setters_getters:
 
-Sometimes you want a class' member variable to do more than just hold data and actually perform
+Properties (setters and getters)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes, you want a class' member variable to do more than just hold data and actually perform
 some validation or computation whenever its value change. It may also be desired to
 encapsulate its access in some way.
 

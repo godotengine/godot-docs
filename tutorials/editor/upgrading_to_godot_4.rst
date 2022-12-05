@@ -20,12 +20,25 @@ Along with the new features present in 4.0, upgrading gives the following advant
   will continue to be supported for some time after 4.0 is released, but it will
   eventually stop receiving support.
 
+See :ref:`doc_docs_changelog` for a list of pages documenting new features in Godot 4.0.
+
 Disadvantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't *need* any features present in Godot 4.0, you may want to stay on
 Godot 3.x for the following reasons:
 
+- `Godot 3.x is tried and true, while Godot 4 remains in its early stages. <https://godotengine.org/article/release-management-4-0-and-beyond>`__
+
+  - Godot 4.0 is expected to contain workflow and performance issues that Godot
+    3.x doesn't have. If stability is crucial to your project, it's recommended to
+    wait for the first minor release in the 4.x series to land, along with its
+    respective patch release. This means staying on Godot 3.x until Godot 4.1.1 is
+    released.
+
+- Godot 4 has fewer third-party tutorials available compared to Godot 3.x.
+  If you're new to game engines, you may have a better experience using Godot 3.x
+  as a result.
 - Godot 4's baseline hardware requirements (such as memory usage) are slightly
   higher, both for the editor and exported projects. This was required for the
   implementation of some core optimizations.
@@ -38,6 +51,39 @@ Godot 3.x for the following reasons:
     on such hardware after upgrading.
     `Software OpenGL implementations <https://github.com/pal1000/mesa-dist-win>`__
     can be used to bypass this limitation, but they're too slow for gaming.
+
+Caveats of upgrading
+^^^^^^^^^^^^^^^^^^^^
+
+Since Godot 4 is a complete rewrite in many aspects, some features have
+unfortunately been lost in the process. Some of these features may be restored
+in future Godot releases:
+
+- Bullet physics was removed in favor of GodotPhysics. This only affects 3D
+  projects that used the default physics engine (which was Bullet) and didn't
+  manually change it to GodotPhysics. There are no plans to re-add Bullet physics
+  in core, but a third-party add-on could be created for it thanks to
+  GDExtension.
+- Rendering in 2D is no longer performed in HDR, which means "overbright"
+  modulate values have no visible effect. This is planned to be restored at some
+  point in the future.
+- While rendering still happens in HDR in 3D when using the Forward Plus or
+  Forward Mobile backends, Viewports cannot return HDR data anymore. This is
+  planned to be restored at some point in the future.
+
+Preparing before the upgrade (optional)
+---------------------------------------
+
+If you want to be ready to upgrade to Godot 4 in the future, consider using
+:ref:`class_Tweener` and the :ref:`class_Time` singleton in your project. These
+classes are both available in Godot 3.5 and later.
+
+This way, you won't be relying on the deprecated Tween node and OS time
+functions, both of which are removed in Godot 4.0.
+
+It's also a good idea to rename external shaders so that their extension is
+``.gdshader`` instead of ``.shader``. Godot 3.x supports both extensions, but
+only ``.gdshader`` is supported in Godot 4.0.
 
 Running the project upgrade tool
 --------------------------------
@@ -400,6 +446,26 @@ Godot 3.x, you will have to change its code to call :ref:`class_RenderingServer`
 methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
+Updating external shaders
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Only shaders that are built-in to a scene file are modified by the project
+upgrade tool.** This means external shaders (saved to ``.gdshader`` files)
+need to be updated manually.
+
+The ``.shader`` file extension is also no longer supported, which means you must
+rename ``.shader`` files to ``.gdshader`` and update references accordingly in
+scene/resource files using an external text editor.
+
+Some notable renames you will need to perform in shaders are:
+
+- Texture filter and repeat modes are now set on individual uniforms, rather
+  than the texture files themselves.
+- ``hint_albedo`` is now ``source_color``.
+- :ref:`Projection matrix variables were renamed. <doc_spatial_shader>`
+
+See :ref:`doc_shading_language` for more information.
+
 Updating scripts to take backwards-incompatible changes into account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -408,8 +474,27 @@ break backwards compatibility due to different default behavior.
 
 The most notable examples of this are:
 
+- Both :ref:`class_String` and :ref:`class_StringName` are now exposed to
+  GDScript. This allows for greater optimization, as StringName is specifically
+  designed to be used for "constant" strings that are created once and reused
+  many times. These types are not equivalent to each other, which means
+  ``"example") == &"example"`` returns ``false`` (``&`` creates a StringName).
+  This should be taken into account for ``if`` and ``match`` comparisons in
+  particular, as you may have to replace ``"example"`` with ``&"example"``.
+- :ref:`GDScript setter and getter syntax <doc_gdscript_basics_setters_getters>`
+  was changed, but it's only partially converted by the conversion tool. In most
+  cases, manual changes are required to make setters and getters working again.
+- :ref:`GDScript signal connection syntax <doc_gdscript_signals>` was changed.
+  The conversion tool will use the string-based syntax which is still present in
+  Godot 4, but it's recommended to switch to the :ref:`class_Signal`-based syntax
+  described on the linked page. This way, strings are no longer involved,
+  which avoids issues with signal name errors that can only be discovered at run-time.
 - Built-in scripts that are :ref:`tool scripts <doc_running_code_in_the_editor>`
   do not get the ``tool`` keyword converted to the ``@tool`` annotation.
+- The Tween node was removed in favor of Tweeners, which are also available in
+  Godot 3.5 and later. See the
+  `original pull request <https://github.com/godotengine/godot/pull/41794>`__
+  for details.
 - ``randomize()`` is now automatically called on project load, so deterministic
   randomness with the global RandomNumberGenerate instance requires manually
   setting a seed in a script's ``_ready()`` function.
@@ -419,6 +504,10 @@ The most notable examples of this are:
   before, replace ``call_group(...)`` with
   ``call_group_flags(SceneTree.GROUP_CALL_DEFERRED, ...)`` (and do the same with
   ``set_group()`` and ``notify_group()`` respectively).
+- The ``rotation_degrees`` property was removed in favor of ``rotation`` property,
+  which is still in radians but is automatically displayed as degrees in the
+  editor. This breaks animations, as these are not converted automatically by the
+  conversion tool.
 - :ref:`class_AABB`'s ``has_no_surface()`` was inverted and renamed to ``has_surface()``.
 - :ref:`class_AABB` and :ref:`class_Rect2`'s ``has_no_area()`` was inverted and
   renamed to ``has_area()``.
@@ -475,9 +564,9 @@ converter doesn't support updating existing setups:
 +---------------------+-----------------------+                                                                            |
 | DynamicFontData     | FontFile              |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
-| Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <navigation_introduction_2d>`. |
+| Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <doc_navigation_overview_2d>`. |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
-| Navigation3D        | Node3D                | Replaced by :ref:`other 3D Navigation nodes <navigation_introduction_3d>`. |
+| Navigation3D        | Node3D                | Replaced by :ref:`other 3D Navigation nodes <doc_navigation_overview_3d>`. |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | OpenSimplexNoise    | FastNoiseLite         | Has different parameters and more noise types such as cellular. No         |
 |                     |                       | support for 4D noise as it's absent from the FastNoiseLite library.        |
@@ -529,6 +618,14 @@ example, the following code snippet in Godot 3.x must be modified to work in 4.0
 
     See the `changelog <https://github.com/godotengine/godot/blob/master/CHANGELOG.md>`__
     for a full list of changes between Godot 3.x and 4.
+
+ArrayMesh resource compatibility breakage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you've saved an ArrayMesh resource to a ``.res`` or ``.tres`` file, the
+format used in 4.0 is not compatible with the one used in 3.x. You will need to
+go through the process of importing the source mesh file and saving it as an
+ArrayMesh resource again.
 
 List of automatically renamed methods, properties, signals and constants
 ------------------------------------------------------------------------
