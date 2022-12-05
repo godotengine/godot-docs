@@ -14,10 +14,12 @@ EditorDebuggerPlugin
 
 A base class to implement debugger plugins.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``EditorDebuggerPlugin`` provides functions related to the editor side of the debugger.
+**EditorDebuggerPlugin** provides functions related to the editor side of the debugger.
 
 To interact with the debugger, an instance of this class must be added to the editor via :ref:`EditorPlugin.add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>`.
 
@@ -64,59 +66,88 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                   | :ref:`_capture<class_EditorDebuggerPlugin_method__capture>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual| |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                   | :ref:`_has_capture<class_EditorDebuggerPlugin_method__has_capture>` **(** :ref:`String<class_String>` capture **)** |virtual| |const|                                                   |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`_setup_session<class_EditorDebuggerPlugin_method__setup_session>` **(** :ref:`int<class_int>` session_id **)** |virtual|                                                          |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` | :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>` **(** :ref:`int<class_int>` id **)**                                                                                  |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                 | :ref:`get_sessions<class_EditorDebuggerPlugin_method_get_sessions>` **(** **)**                                                                                                         |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`_capture<class_EditorDebuggerPlugin_method__capture>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual| |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`_has_capture<class_EditorDebuggerPlugin_method__has_capture>` **(** :ref:`String<class_String>` capture **)** |virtual| |const|                                                   |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`_setup_session<class_EditorDebuggerPlugin_method__setup_session>` **(** :ref:`int<class_int>` session_id **)** |virtual|                                                          |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` | :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>` **(** :ref:`int<class_int>` id **)**                                                                                  |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                                 | :ref:`get_sessions<class_EditorDebuggerPlugin_method_get_sessions>` **(** **)**                                                                                                         |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorDebuggerPlugin_method__capture:
 
-- :ref:`bool<class_bool>` **_capture** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_capture** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual|
 
 Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the message (which you can retrieve via :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerPlugin_method__has_capture:
 
-- :ref:`bool<class_bool>` **_has_capture** **(** :ref:`String<class_String>` capture **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_has_capture** **(** :ref:`String<class_String>` capture **)** |virtual| |const|
 
 Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passes to the :ref:`_capture<class_EditorDebuggerPlugin_method__capture>` method.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerPlugin_method__setup_session:
 
-- void **_setup_session** **(** :ref:`int<class_int>` session_id **)** |virtual|
+.. rst-class:: classref-method
+
+void **_setup_session** **(** :ref:`int<class_int>` session_id **)** |virtual|
 
 Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created (the session may be inactive during this stage).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerPlugin_method_get_session:
 
-- :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-method
+
+:ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session** **(** :ref:`int<class_int>` id **)**
 
 Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the given ``id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerPlugin_method_get_sessions:
 
-- :ref:`Array<class_Array>` **get_sessions** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_sessions** **(** **)**
 
 Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` currently available to this debugger plugin.
 

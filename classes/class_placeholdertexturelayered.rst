@@ -16,6 +16,8 @@ PlaceholderTextureLayered
 
 Placeholder class for a 2-dimensional texture array.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,45 +27,56 @@ This class is used when loading a project that uses a :ref:`TextureLayered<class
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------------+--------------------+
-| :ref:`int<class_int>`           | :ref:`layers<class_PlaceholderTextureLayered_property_layers>` | ``1``              |
-+---------------------------------+----------------------------------------------------------------+--------------------+
-| :ref:`Vector2i<class_Vector2i>` | :ref:`size<class_PlaceholderTextureLayered_property_size>`     | ``Vector2i(1, 1)`` |
-+---------------------------------+----------------------------------------------------------------+--------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------+--------------------+
+   | :ref:`int<class_int>`           | :ref:`layers<class_PlaceholderTextureLayered_property_layers>` | ``1``              |
+   +---------------------------------+----------------------------------------------------------------+--------------------+
+   | :ref:`Vector2i<class_Vector2i>` | :ref:`size<class_PlaceholderTextureLayered_property_size>`     | ``Vector2i(1, 1)`` |
+   +---------------------------------+----------------------------------------------------------------+--------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaceholderTextureLayered_property_layers:
 
-- :ref:`int<class_int>` **layers**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1``             |
-+-----------+-------------------+
-| *Setter*  | set_layers(value) |
-+-----------+-------------------+
-| *Getter*  | get_layers()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_layers** **(** **)**
 
 The number of layers in the texture array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PlaceholderTextureLayered_property_size:
 
-- :ref:`Vector2i<class_Vector2i>` **size**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``Vector2i(1, 1)`` |
-+-----------+--------------------+
-| *Setter*  | set_size(value)    |
-+-----------+--------------------+
-| *Getter*  | get_size()         |
-+-----------+--------------------+
+:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2i<class_Vector2i>` value **)**
+- :ref:`Vector2i<class_Vector2i>` **get_size** **(** **)**
 
 The size of each texture layer (in pixels).
 

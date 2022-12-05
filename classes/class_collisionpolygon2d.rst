@@ -14,123 +14,155 @@ CollisionPolygon2D
 
 Defines a 2D collision polygon.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Provides a concave or convex 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices. See also :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`.
 
-In the editor, a ``CollisionPolygon2D`` can be generated from a :ref:`Sprite2D<class_Sprite2D>`'s outline by selecting a :ref:`Sprite2D<class_Sprite2D>` node, going to the **Sprite2D** menu at the top of the 2D editor viewport then choosing **Create CollisionPolygon2D Sibling**.
+In the editor, a **CollisionPolygon2D** can be generated from a :ref:`Sprite2D<class_Sprite2D>`'s outline by selecting a :ref:`Sprite2D<class_Sprite2D>` node, going to the **Sprite2D** menu at the top of the 2D editor viewport then choosing **Create CollisionPolygon2D Sibling**.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             | ``0``                    |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 | ``false``                |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               | ``false``                |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` | ``1.0``                  |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   | ``PackedVector2Array()`` |
-+-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` | :ref:`build_mode<class_CollisionPolygon2D_property_build_mode>`                             | ``0``                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon2D_property_disabled>`                                 | ``false``                |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`one_way_collision<class_CollisionPolygon2D_property_one_way_collision>`               | ``false``                |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`one_way_collision_margin<class_CollisionPolygon2D_property_one_way_collision_margin>` | ``1.0``                  |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon2D_property_polygon>`                                   | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_CollisionPolygon2D_BuildMode:
 
-.. _class_CollisionPolygon2D_constant_BUILD_SOLIDS:
-
-.. _class_CollisionPolygon2D_constant_BUILD_SEGMENTS:
+.. rst-class:: classref-enumeration
 
 enum **BuildMode**:
 
-- **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
+.. _class_CollisionPolygon2D_constant_BUILD_SOLIDS:
 
-- **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **BUILD_SOLIDS** = ``0``
+
+Collisions will include the polygon and its contained area.
+
+.. _class_CollisionPolygon2D_constant_BUILD_SEGMENTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **BUILD_SEGMENTS** = ``1``
+
+Collisions will only include the polygon edges.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CollisionPolygon2D_property_build_mode:
 
-- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_build_mode(value) |
-+-----------+-----------------------+
-| *Getter*  | get_build_mode()      |
-+-----------+-----------------------+
+:ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_build_mode** **(** :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` value **)**
+- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **get_build_mode** **(** **)**
 
 Collision build mode. Use one of the :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon2D_property_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_disabled(value) |
-+-----------+---------------------+
-| *Getter*  | is_disabled()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_disabled** **(** **)**
 
 If ``true``, no collisions will be detected.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon2D_property_one_way_collision:
 
-- :ref:`bool<class_bool>` **one_way_collision**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``false``                      |
-+-----------+--------------------------------+
-| *Setter*  | set_one_way_collision(value)   |
-+-----------+--------------------------------+
-| *Getter*  | is_one_way_collision_enabled() |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **one_way_collision** = ``false``
 
-If ``true``, only edges that face up, relative to ``CollisionPolygon2D``'s rotation, will collide with other objects.
+.. rst-class:: classref-property-setget
 
-\ **Note:** This property has no effect if this ``CollisionPolygon2D`` is a child of an :ref:`Area2D<class_Area2D>` node.
+- void **set_one_way_collision** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_one_way_collision_enabled** **(** **)**
+
+If ``true``, only edges that face up, relative to **CollisionPolygon2D**'s rotation, will collide with other objects.
+
+\ **Note:** This property has no effect if this **CollisionPolygon2D** is a child of an :ref:`Area2D<class_Area2D>` node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon2D_property_one_way_collision_margin:
 
-- :ref:`float<class_float>` **one_way_collision_margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``1.0``                             |
-+-----------+-------------------------------------+
-| *Setter*  | set_one_way_collision_margin(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_one_way_collision_margin()      |
-+-----------+-------------------------------------+
+:ref:`float<class_float>` **one_way_collision_margin** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_one_way_collision_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_one_way_collision_margin** **(** **)**
 
 The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the polygon at a high velocity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon2D_property_polygon:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector2Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_polygon(value)       |
-+-----------+--------------------------+
-| *Getter*  | get_polygon()            |
-+-----------+--------------------------+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
 
 The polygon's list of vertices. The final point will be connected to the first. The returned value is a clone of the :ref:`PackedVector2Array<class_PackedVector2Array>`, not a reference.
 

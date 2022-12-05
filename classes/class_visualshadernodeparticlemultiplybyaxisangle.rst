@@ -16,27 +16,37 @@ VisualShaderNodeParticleMultiplyByAxisAngle
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode:
 
-- :ref:`bool<class_bool>` **degrees_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_degrees_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | is_degrees_mode()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **degrees_mode** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_degrees_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_degrees_mode** **(** **)**
 
 .. container:: contribute
 

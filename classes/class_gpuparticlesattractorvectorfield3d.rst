@@ -14,52 +14,67 @@ GPUParticlesAttractorVectorField3D
 
 Box-shaped 3D particle attractor with strength varying within the box, affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Box-shaped 3D particle attractor with strength varying within the box, affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
-Unlike :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`, ``GPUParticlesAttractorVectorField3D`` uses a :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` to affect attraction strength within the box. This can be used to create complex attraction scenarios where particles travel in different directions depending on their location. This can be useful for weather effects such as sandstorms.
+Unlike :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`, **GPUParticlesAttractorVectorField3D** uses a :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` to affect attraction strength within the box. This can be used to create complex attraction scenarios where particles travel in different directions depending on their location. This can be useful for weather effects such as sandstorms.
 
 \ **Note:** Particle attractors only affect :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------+---------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_GPUParticlesAttractorVectorField3D_property_extents>` | ``Vector3(1, 1, 1)`` |
-+-----------------------------------+---------------------------------------------------------------------------+----------------------+
-| :ref:`Texture3D<class_Texture3D>` | :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` |                      |
-+-----------------------------------+---------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+---------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_GPUParticlesAttractorVectorField3D_property_extents>` | ``Vector3(1, 1, 1)`` |
+   +-----------------------------------+---------------------------------------------------------------------------+----------------------+
+   | :ref:`Texture3D<class_Texture3D>` | :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` |                      |
+   +-----------------------------------+---------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GPUParticlesAttractorVectorField3D_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 The extents of the vector field box in 3D units.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesAttractorVectorField3D_property_texture:
 
-- :ref:`Texture3D<class_Texture3D>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture3D<class_Texture3D>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture3D<class_Texture3D>` value **)**
+- :ref:`Texture3D<class_Texture3D>` **get_texture** **(** **)**
 
 The 3D texture to be used. Values are linearly interpolated between the texture's pixels.
 

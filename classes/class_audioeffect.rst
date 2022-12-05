@@ -16,29 +16,46 @@ AudioEffect
 
 Audio effect for audio.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base resource for audio bus. Applies an audio effect on the bus that the resource is applied on.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`_instantiate<class_AudioEffect_method__instantiate>` **(** **)** |virtual| |
-+-------------------------------------------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+----------------------------------------------------------------------------------+
+   | :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`_instantiate<class_AudioEffect_method__instantiate>` **(** **)** |virtual| |
+   +-------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioEffect_method__instantiate:
 
-- :ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate** **(** **)** |virtual|
 
 .. container:: contribute
 

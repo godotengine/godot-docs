@@ -12,160 +12,225 @@ StringName
 
 An optimized string type for unique names.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``StringName``\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). ``StringName`` ensures that only one instance of a given name exists (so two ``StringName``\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+**StringName**\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). **StringName** ensures that only one instance of a given name exists (so two **StringName**\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
 
-You will usually just pass a :ref:`String<class_String>` to methods expecting a ``StringName`` and it will be automatically converted, but you may occasionally want to construct a ``StringName`` ahead of time with ``StringName`` or the literal syntax ``&"example"``.
+You will usually just pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted, but you may occasionally want to construct a **StringName** ahead of time with **StringName** or, in GDScript, the literal syntax ``&"example"``.
 
 See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed node paths.
+
+.. rst-class:: classref-reftable-group
 
 Constructors
 ------------
 
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** **)**                                          |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** :ref:`StringName<class_StringName>` from **)** |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** :ref:`String<class_String>` from **)**         |
-+-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** **)**                                          |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** :ref:`StringName<class_StringName>` from **)** |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`StringName<class_StringName_constructor_StringName>` **(** :ref:`String<class_String>` from **)**         |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+---------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`hash<class_StringName_method_hash>` **(** **)** |const| |
-+-----------------------+---------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`hash<class_StringName_method_hash>` **(** **)** |const| |
+   +-----------------------+---------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`String<class_String>` right **)**          |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator \<<class_StringName_operator_lt_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator \<=<class_StringName_operator_lte_bool>` **(** :ref:`StringName<class_StringName>` right **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`String<class_String>` right **)**           |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_bool>` **(** :ref:`StringName<class_StringName>` right **)**   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ><class_StringName_operator_gt_bool>` **(** :ref:`StringName<class_StringName>` right **)**    |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator >=<class_StringName_operator_gte_bool>` **(** :ref:`StringName<class_StringName>` right **)**  |
-+-------------------------+---------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_String>` **(** :ref:`String<class_String>` right **)**              |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_StringName_operator_neq_StringName>` **(** :ref:`StringName<class_StringName>` right **)**  |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<<class_StringName_operator_lt_StringName>` **(** :ref:`StringName<class_StringName>` right **)**   |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<=<class_StringName_operator_lte_StringName>` **(** :ref:`StringName<class_StringName>` right **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_String>` **(** :ref:`String<class_String>` right **)**               |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_StringName_operator_eq_StringName>` **(** :ref:`StringName<class_StringName>` right **)**   |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ><class_StringName_operator_gt_StringName>` **(** :ref:`StringName<class_StringName>` right **)**    |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator >=<class_StringName_operator_gte_StringName>` **(** :ref:`StringName<class_StringName>` right **)**  |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_StringName_constructor_StringName:
 
-- :ref:`StringName<class_StringName>` **StringName** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs an empty ``StringName``.
+:ref:`StringName<class_StringName>` **StringName** **(** **)**
 
-----
+Constructs an empty **StringName**.
 
-- :ref:`StringName<class_StringName>` **StringName** **(** :ref:`StringName<class_StringName>` from **)**
-
-Constructs a ``StringName`` as a copy of the given ``StringName``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`StringName<class_StringName>` **StringName** **(** :ref:`String<class_String>` from **)**
+.. rst-class:: classref-constructor
 
-Creates a new ``StringName`` from the given :ref:`String<class_String>`. ``StringName("example")`` is equivalent to ``&"example"``.
+:ref:`StringName<class_StringName>` **StringName** **(** :ref:`StringName<class_StringName>` from **)**
+
+Constructs a **StringName** as a copy of the given **StringName**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`StringName<class_StringName>` **StringName** **(** :ref:`String<class_String>` from **)**
+
+Creates a new **StringName** from the given :ref:`String<class_String>`. In GDScript, ``StringName("example")`` is equivalent to ``&"example"``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StringName_method_hash:
 
-- :ref:`int<class_int>` **hash** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the 32-bit hash value representing the ``StringName``'s contents.
+:ref:`int<class_int>` **hash** **(** **)** |const|
+
+Returns the 32-bit hash value representing the **StringName**'s contents.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_StringName_operator_neq_bool:
+.. _class_StringName_operator_neq_String:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)**
+.. rst-class:: classref-operator
 
-.. container:: contribute
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`String<class_String>` right **)**
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if this **StringName** is not equivalent to the given :ref:`String<class_String>`.
 
-----
-
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`StringName<class_StringName>` right **)**
-
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_StringName_operator_lt_bool:
+.. _class_StringName_operator_neq_StringName:
 
-- :ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
+.. rst-class:: classref-operator
 
-.. container:: contribute
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`StringName<class_StringName>` right **)**
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the **StringName** and ``right`` do not refer to the same name. Comparisons between **StringName**\ s are much faster than regular :ref:`String<class_String>` comparisons.
 
-----
-
-.. _class_StringName_operator_lte_bool:
-
-- :ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
-
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_StringName_operator_eq_bool:
+.. _class_StringName_operator_lt_StringName:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)**
+.. rst-class:: classref-operator
 
-.. container:: contribute
+:ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
 
-----
-
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)**
-
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_StringName_operator_gt_bool:
+.. _class_StringName_operator_lte_StringName:
 
-- :ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
+.. rst-class:: classref-operator
 
-.. container:: contribute
+:ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_StringName_operator_gte_bool:
+.. _class_StringName_operator_eq_String:
 
-- :ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
+.. rst-class:: classref-operator
 
-.. container:: contribute
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`String<class_String>` right **)**
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if this **StringName** is equivalent to the given :ref:`String<class_String>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_operator_eq_StringName:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`StringName<class_StringName>` right **)**
+
+Returns ``true`` if the **StringName** and ``right`` refer to the same name. Comparisons between **StringName**\ s are much faster than regular :ref:`String<class_String>` comparisons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_operator_gt_StringName:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
+
+Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_operator_gte_StringName:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
+
+Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -14,6 +14,8 @@ SubViewportContainer
 
 Control for holding :ref:`SubViewport<class_SubViewport>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,45 +25,56 @@ A :ref:`Container<class_Container>` node that holds a :ref:`SubViewport<class_Su
 
 \ **Note:** The SubViewportContainer forwards mouse-enter and mouse-exit notifications to its sub-viewports.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`stretch<class_SubViewportContainer_property_stretch>`               | ``false`` |
-+-------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` | ``1``     |
-+-------------------------+---------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`stretch<class_SubViewportContainer_property_stretch>`               | ``false`` |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` | ``1``     |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SubViewportContainer_property_stretch:
 
-- :ref:`bool<class_bool>` **stretch**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_stretch(value)   |
-+-----------+----------------------+
-| *Getter*  | is_stretch_enabled() |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **stretch** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_stretch_enabled** **(** **)**
 
 If ``true``, the sub-viewport will be automatically resized to the control's size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SubViewportContainer_property_stretch_shrink:
 
-- :ref:`int<class_int>` **stretch_shrink**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_stretch_shrink(value) |
-+-----------+---------------------------+
-| *Getter*  | get_stretch_shrink()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **stretch_shrink** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch_shrink** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_stretch_shrink** **(** **)**
 
 Divides the sub-viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
 

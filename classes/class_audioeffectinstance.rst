@@ -18,31 +18,48 @@ AudioEffectInstance
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_process<class_AudioEffectInstance_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_method__process_silence>` **(** **)** |virtual| |const|                                                           |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_process<class_AudioEffectInstance_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_method__process_silence>` **(** **)** |virtual| |const|                                                           |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioEffectInstance_method__process:
 
-- void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
+.. rst-class:: classref-method
+
+void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AudioEffectInstance_method__process_silence:
 
-- :ref:`bool<class_bool>` **_process_silence** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_process_silence** **(** **)** |virtual| |const|
 
 .. container:: contribute
 

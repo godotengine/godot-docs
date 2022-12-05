@@ -14,6 +14,8 @@ ImageFormatLoaderExtension
 
 Base class for creating :ref:`ImageFormatLoader<class_ImageFormatLoader>` extensions (adding support for extra image formats).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,49 +23,74 @@ The engine supports multiple image formats out of the box (PNG, SVG, JPEG, WebP 
 
 Be sure to respect the documented return types and values. You should create an instance of it, and call :ref:`add_format_loader<class_ImageFormatLoaderExtension_method_add_format_loader>` to register that loader during the initialization phase.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                                                                          |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_load_image<class_ImageFormatLoaderExtension_method__load_image>` **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, :ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` flags, :ref:`float<class_float>` scale **)** |virtual| |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`add_format_loader<class_ImageFormatLoaderExtension_method_add_format_loader>` **(** **)**                                                                                                                                                                              |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`remove_format_loader<class_ImageFormatLoaderExtension_method_remove_format_loader>` **(** **)**                                                                                                                                                                        |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_load_image<class_ImageFormatLoaderExtension_method__load_image>` **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, :ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` flags, :ref:`float<class_float>` scale **)** |virtual| |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`add_format_loader<class_ImageFormatLoaderExtension_method_add_format_loader>` **(** **)**                                                                                                                                                                              |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`remove_format_loader<class_ImageFormatLoaderExtension_method_remove_format_loader>` **(** **)**                                                                                                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ImageFormatLoaderExtension_method__get_recognized_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
 
 Returns the list of file extensions for this image format. Files with the given extensions will be treated as image file and loaded using this class.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageFormatLoaderExtension_method__load_image:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **_load_image** **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, :ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` flags, :ref:`float<class_float>` scale **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_load_image** **(** :ref:`Image<class_Image>` image, :ref:`FileAccess<class_FileAccess>` fileaccess, :ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` flags, :ref:`float<class_float>` scale **)** |virtual|
 
 Loads the content of ``fileaccess`` into the provided ``image``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageFormatLoaderExtension_method_add_format_loader:
 
-- void **add_format_loader** **(** **)**
+.. rst-class:: classref-method
+
+void **add_format_loader** **(** **)**
 
 Add this format loader to the engine, allowing it to recognize the file extensions returned by :ref:`_get_recognized_extensions<class_ImageFormatLoaderExtension_method__get_recognized_extensions>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageFormatLoaderExtension_method_remove_format_loader:
 
-- void **remove_format_loader** **(** **)**
+.. rst-class:: classref-method
+
+void **remove_format_loader** **(** **)**
 
 Remove this format loader from the engine.
 

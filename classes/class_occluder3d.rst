@@ -16,36 +16,55 @@ Occluder3D
 
 Occluder shape resource for use with occlusion culling in :ref:`OccluderInstance3D<class_OccluderInstance3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Occluder3D`` stores an occluder shape that can be used by the engine's occlusion culling system.
+**Occluder3D** stores an occluder shape that can be used by the engine's occlusion culling system.
 
 See :ref:`OccluderInstance3D<class_OccluderInstance3D>`'s documentation for instructions on setting up occlusion culling.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_indices<class_Occluder3D_method_get_indices>` **(** **)** |const|   |
-+-----------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_vertices<class_Occluder3D_method_get_vertices>` **(** **)** |const| |
-+-----------------------------------------------------+-------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_indices<class_Occluder3D_method_get_indices>` **(** **)** |const|   |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_vertices<class_Occluder3D_method_get_vertices>` **(** **)** |const| |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Occluder3D_method_get_indices:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices** **(** **)** |const|
 
 Returns the occluder shape's vertex indices.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Occluder3D_method_get_vertices:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)** |const|
 
 Returns the occluder shape's vertex positions.
 

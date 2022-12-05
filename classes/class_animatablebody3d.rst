@@ -14,6 +14,8 @@ AnimatableBody3D
 
 Physics body for 3D physics which moves only by script or animation. Useful for moving platforms and doors.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -22,6 +24,8 @@ Animatable body for 3D physics.
 An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path. It is ideal for implementing moving objects in the environment, such as moving platforms or doors.
 
 When the body is moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``physics``), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,27 +36,37 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`sync_to_physics<class_AnimatableBody3D_property_sync_to_physics>` | ``true`` |
-+-------------------------+-------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`sync_to_physics<class_AnimatableBody3D_property_sync_to_physics>` | ``true`` |
+   +-------------------------+-------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimatableBody3D_property_sync_to_physics:
 
-- :ref:`bool<class_bool>` **sync_to_physics**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``true``                     |
-+-----------+------------------------------+
-| *Setter*  | set_sync_to_physics(value)   |
-+-----------+------------------------------+
-| *Getter*  | is_sync_to_physics_enabled() |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **sync_to_physics** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sync_to_physics** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_sync_to_physics_enabled** **(** **)**
 
 If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`.
 

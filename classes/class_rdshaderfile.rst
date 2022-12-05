@@ -16,69 +16,100 @@ RDShaderFile
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`base_error<class_RDShaderFile_property_base_error>` | ``""`` |
-+-----------------------------+-----------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`base_error<class_RDShaderFile_property_base_error>` | ``""`` |
+   +-----------------------------+-----------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`         | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>` **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|                                                   |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>` **(** **)** |const|                                                                                     |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>` **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)** |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`         | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>` **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|                                                   |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>` **(** **)** |const|                                                                                     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>` **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)** |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RDShaderFile_property_base_error:
 
-- :ref:`String<class_String>` **base_error**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``""``                |
-+-----------+-----------------------+
-| *Setter*  | set_base_error(value) |
-+-----------+-----------------------+
-| *Getter*  | get_base_error()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **base_error** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_error** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_error** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RDShaderFile_method_get_spirv:
 
-- :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv** **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv** **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RDShaderFile_method_get_version_list:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_version_list** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_version_list** **(** **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RDShaderFile_method_set_bytecode:
 
-- void **set_bytecode** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)**
+.. rst-class:: classref-method
+
+void **set_bytecode** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)**
 
 .. container:: contribute
 

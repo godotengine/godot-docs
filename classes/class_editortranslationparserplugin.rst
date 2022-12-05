@@ -14,10 +14,12 @@ EditorTranslationParserPlugin
 
 Plugin for adding custom parsers to extract strings that are to be translated from custom files (.csv, .json etc.).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``EditorTranslationParserPlugin`` is invoked when a file is being parsed to extract strings that require translation. To define the parsing and string extraction logic, override the :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` method in script.
+**EditorTranslationParserPlugin** is invoked when a file is being parsed to extract strings that require translation. To define the parsing and string extraction logic, override the :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` method in script.
 
 Add the extracted strings to argument ``msgids`` or ``msgids_context_plural`` if context or plural is used.
 
@@ -134,31 +136,48 @@ For example:
 
 
 
-To use ``EditorTranslationParserPlugin``, register it using the :ref:`EditorPlugin.add_translation_parser_plugin<class_EditorPlugin_method_add_translation_parser_plugin>` method first.
+To use **EditorTranslationParserPlugin**, register it using the :ref:`EditorPlugin.add_translation_parser_plugin<class_EditorPlugin_method_add_translation_parser_plugin>` method first.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                     |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual| |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual| |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorTranslationParserPlugin_method__get_recognized_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
 
 Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorTranslationParserPlugin_method__parse_file:
 
-- void **_parse_file** **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual|
+.. rst-class:: classref-method
+
+void **_parse_file** **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual|
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 

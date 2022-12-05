@@ -14,10 +14,12 @@ CompressedTexture2D
 
 Texture with 2 dimensions, optionally compressed.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-A texture that is loaded from a ``.ctex`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. ``CompressedTexture2D`` can use one of 4 compression methods (including a lack of any compression):
+A texture that is loaded from a ``.ctex`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. **CompressedTexture2D** can use one of 4 compression methods (including a lack of any compression):
 
 - Uncompressed (uncompressed on the GPU)
 
@@ -31,45 +33,68 @@ Only **VRAM Compressed** actually reduces the memory usage on the GPU. The **Los
 
 Using **VRAM Compressed** also improves loading times, as VRAM-compressed textures are faster to load compared to textures using lossless or lossy compression. VRAM compression can exhibit noticeable artifacts and is intended to be used for 3D rendering, not 2D.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`load_path<class_CompressedTexture2D_property_load_path>` | ``""``                                                                                 |
-+-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | resource_local_to_scene                                        | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
-+-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`load_path<class_CompressedTexture2D_property_load_path>` | ``""``                                                                                 |
+   +-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | resource_local_to_scene                                        | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +-----------------------------+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_CompressedTexture2D_method_load>` **(** :ref:`String<class_String>` path **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_CompressedTexture2D_method_load>` **(** :ref:`String<class_String>` path **)** |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CompressedTexture2D_property_load_path:
 
-- :ref:`String<class_String>` **load_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | load(value)     |
-+-----------+-----------------+
-| *Getter*  | get_load_path() |
-+-----------+-----------------+
+:ref:`String<class_String>` **load_path** = ``""``
 
-The ``CompressedTexture2D``'s file path to a ``.ctex`` file.
+.. rst-class:: classref-property-setget
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+- :ref:`String<class_String>` **get_load_path** **(** **)**
+
+The **CompressedTexture2D**'s file path to a ``.ctex`` file.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CompressedTexture2D_method_load:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Loads the texture from the specified ``path``.
 

@@ -14,6 +14,8 @@ AnimationNodeBlend3
 
 Blends two of three animations linearly inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -26,6 +28,8 @@ This node has three inputs:
 - A -blend animation to blend with when the blend amount is in the ``[-1.0, 0.0]`` range.
 
 - A +blend animation to blend with when the blend amount is in the ``[0.0, 1.0]`` range
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

@@ -14,24 +14,39 @@ WeakRef
 
 Holds an :ref:`Object<class_Object>`, but does not contribute to the reference count if the object is a reference.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A weakref can hold a :ref:`RefCounted<class_RefCounted>`, without contributing to the reference counter. A weakref can be created from an :ref:`Object<class_Object>` using :ref:`@GlobalScope.weakref<class_@GlobalScope_method_weakref>`. If this object is not a reference, weakref still works, however, it does not have any effect on the object. Weakrefs are useful in cases where multiple classes have variables that refer to each other. Without weakrefs, using these classes could lead to memory leaks, since both references keep each other from being released. Making part of the variables a weakref can prevent this cyclic dependency, and allows the references to be released.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>` **(** **)** |const| |
-+-------------------------------+------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>` **(** **)** |const| |
+   +-------------------------------+------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WeakRef_method_get_ref:
 
-- :ref:`Variant<class_Variant>` **get_ref** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_ref** **(** **)** |const|
 
 Returns the :ref:`Object<class_Object>` this weakref is referring to. Returns ``null`` if that object no longer exists.
 

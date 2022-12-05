@@ -14,145 +14,188 @@ NavigationPathQueryParameters3D
 
 Parameters to be sent to a 3D navigation path query.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class contains the start and target position and other parameters to be used with :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`RID<class_RID>`                                                                  | :ref:`map<class_NavigationPathQueryParameters3D_property_map>`                                     |                      |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationPathQueryParameters3D_property_navigation_layers>`         | ``1``                |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationPathQueryParameters3D_property_path_postprocessing>`     | ``0``                |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>` | ``0``                |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                                          | :ref:`start_position<class_NavigationPathQueryParameters3D_property_start_position>`               | ``Vector3(0, 0, 0)`` |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                                          | :ref:`target_position<class_NavigationPathQueryParameters3D_property_target_position>`             | ``Vector3(0, 0, 0)`` |
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`RID<class_RID>`                                                                  | :ref:`map<class_NavigationPathQueryParameters3D_property_map>`                                     |                      |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationPathQueryParameters3D_property_navigation_layers>`         | ``1``                |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationPathQueryParameters3D_property_path_postprocessing>`     | ``0``                |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>` | ``0``                |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                          | :ref:`start_position<class_NavigationPathQueryParameters3D_property_start_position>`               | ``Vector3(0, 0, 0)`` |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                          | :ref:`target_position<class_NavigationPathQueryParameters3D_property_target_position>`             | ``Vector3(0, 0, 0)`` |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_NavigationPathQueryParameters3D_PathfindingAlgorithm:
 
-.. _class_NavigationPathQueryParameters3D_constant_PATHFINDING_ALGORITHM_ASTAR:
+.. rst-class:: classref-enumeration
 
 enum **PathfindingAlgorithm**:
 
-- **PATHFINDING_ALGORITHM_ASTAR** = **0** --- The path query uses the default A\* pathfinding algorithm.
+.. _class_NavigationPathQueryParameters3D_constant_PATHFINDING_ALGORITHM_ASTAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **PATHFINDING_ALGORITHM_ASTAR** = ``0``
+
+The path query uses the default A\* pathfinding algorithm.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_NavigationPathQueryParameters3D_PathPostProcessing:
 
-.. _class_NavigationPathQueryParameters3D_constant_PATH_POSTPROCESSING_CORRIDORFUNNEL:
-
-.. _class_NavigationPathQueryParameters3D_constant_PATH_POSTPROCESSING_EDGECENTERED:
+.. rst-class:: classref-enumeration
 
 enum **PathPostProcessing**:
 
-- **PATH_POSTPROCESSING_CORRIDORFUNNEL** = **0** --- Applies a funnel algorithm to the raw path corridor found by the pathfinding algorithm. This will result in the shortest path possible inside the path corridor. This postprocessing very much depends on the navmesh polygon layout and the created corridor. Especially tile- or gridbased layouts can face artificial corners with diagonal movement due to a jagged path corridor imposed by the cell shapes.
+.. _class_NavigationPathQueryParameters3D_constant_PATH_POSTPROCESSING_CORRIDORFUNNEL:
 
-- **PATH_POSTPROCESSING_EDGECENTERED** = **1** --- Centers every path position in the middle of the traveled navmesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **PATH_POSTPROCESSING_CORRIDORFUNNEL** = ``0``
+
+Applies a funnel algorithm to the raw path corridor found by the pathfinding algorithm. This will result in the shortest path possible inside the path corridor. This postprocessing very much depends on the navmesh polygon layout and the created corridor. Especially tile- or gridbased layouts can face artificial corners with diagonal movement due to a jagged path corridor imposed by the cell shapes.
+
+.. _class_NavigationPathQueryParameters3D_constant_PATH_POSTPROCESSING_EDGECENTERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **PATH_POSTPROCESSING_EDGECENTERED** = ``1``
+
+Centers every path position in the middle of the traveled navmesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationPathQueryParameters3D_property_map:
 
-- :ref:`RID<class_RID>` **map**
+.. rst-class:: classref-property
 
-+----------+----------------+
-| *Setter* | set_map(value) |
-+----------+----------------+
-| *Getter* | get_map()      |
-+----------+----------------+
+:ref:`RID<class_RID>` **map**
+
+.. rst-class:: classref-property-setget
+
+- void **set_map** **(** :ref:`RID<class_RID>` value **)**
+- :ref:`RID<class_RID>` **get_map** **(** **)**
 
 The navigation ``map`` :ref:`RID<class_RID>` used in the path query.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPathQueryParameters3D_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 The navigation layers the query will use (as a bitmask).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPathQueryParameters3D_property_path_postprocessing:
 
-- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **path_postprocessing**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``0``                          |
-+-----------+--------------------------------+
-| *Setter*  | set_path_postprocessing(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_path_postprocessing()      |
-+-----------+--------------------------------+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **path_postprocessing** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_postprocessing** **(** :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` value **)**
+- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **get_path_postprocessing** **(** **)**
 
 The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPathQueryParameters3D_property_pathfinding_algorithm:
 
-- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **pathfinding_algorithm**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``0``                            |
-+-----------+----------------------------------+
-| *Setter*  | set_pathfinding_algorithm(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_pathfinding_algorithm()      |
-+-----------+----------------------------------+
+:ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **pathfinding_algorithm** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pathfinding_algorithm** **(** :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` value **)**
+- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **get_pathfinding_algorithm** **(** **)**
 
 The pathfinding algorithm used in the path query.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPathQueryParameters3D_property_start_position:
 
-- :ref:`Vector3<class_Vector3>` **start_position**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector3(0, 0, 0)``      |
-+-----------+---------------------------+
-| *Setter*  | set_start_position(value) |
-+-----------+---------------------------+
-| *Getter*  | get_start_position()      |
-+-----------+---------------------------+
+:ref:`Vector3<class_Vector3>` **start_position** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_start_position** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_start_position** **(** **)**
 
 The pathfinding start position in global coordinates.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPathQueryParameters3D_property_target_position:
 
-- :ref:`Vector3<class_Vector3>` **target_position**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``Vector3(0, 0, 0)``       |
-+-----------+----------------------------+
-| *Setter*  | set_target_position(value) |
-+-----------+----------------------------+
-| *Getter*  | get_target_position()      |
-+-----------+----------------------------+
+:ref:`Vector3<class_Vector3>` **target_position** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_position** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_target_position** **(** **)**
 
 The pathfinding target position in global coordinates.
 

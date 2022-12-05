@@ -16,106 +16,167 @@ NativeExtensionManager
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NativeExtension<class_NativeExtension>`             | :ref:`get_extension<class_NativeExtensionManager_method_get_extension>` **(** :ref:`String<class_String>` path **)**                     |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`get_loaded_extensions<class_NativeExtensionManager_method_get_loaded_extensions>` **(** **)** |const|                              |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                   | :ref:`is_extension_loaded<class_NativeExtensionManager_method_is_extension_loaded>` **(** :ref:`String<class_String>` path **)** |const| |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`load_extension<class_NativeExtensionManager_method_load_extension>` **(** :ref:`String<class_String>` path **)**                   |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`reload_extension<class_NativeExtensionManager_method_reload_extension>` **(** :ref:`String<class_String>` path **)**               |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`unload_extension<class_NativeExtensionManager_method_unload_extension>` **(** :ref:`String<class_String>` path **)**               |
-+-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NativeExtension<class_NativeExtension>`             | :ref:`get_extension<class_NativeExtensionManager_method_get_extension>` **(** :ref:`String<class_String>` path **)**                     |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`get_loaded_extensions<class_NativeExtensionManager_method_get_loaded_extensions>` **(** **)** |const|                              |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`is_extension_loaded<class_NativeExtensionManager_method_is_extension_loaded>` **(** :ref:`String<class_String>` path **)** |const| |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`load_extension<class_NativeExtensionManager_method_load_extension>` **(** :ref:`String<class_String>` path **)**                   |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`reload_extension<class_NativeExtensionManager_method_reload_extension>` **(** :ref:`String<class_String>` path **)**               |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` | :ref:`unload_extension<class_NativeExtensionManager_method_unload_extension>` **(** :ref:`String<class_String>` path **)**               |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_NativeExtensionManager_LoadStatus:
 
-.. _class_NativeExtensionManager_constant_LOAD_STATUS_OK:
-
-.. _class_NativeExtensionManager_constant_LOAD_STATUS_FAILED:
-
-.. _class_NativeExtensionManager_constant_LOAD_STATUS_ALREADY_LOADED:
-
-.. _class_NativeExtensionManager_constant_LOAD_STATUS_NOT_LOADED:
-
-.. _class_NativeExtensionManager_constant_LOAD_STATUS_NEEDS_RESTART:
+.. rst-class:: classref-enumeration
 
 enum **LoadStatus**:
 
-- **LOAD_STATUS_OK** = **0**
+.. _class_NativeExtensionManager_constant_LOAD_STATUS_OK:
 
-- **LOAD_STATUS_FAILED** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **LOAD_STATUS_ALREADY_LOADED** = **2**
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **LOAD_STATUS_OK** = ``0``
 
-- **LOAD_STATUS_NOT_LOADED** = **3**
 
-- **LOAD_STATUS_NEEDS_RESTART** = **4**
+
+.. _class_NativeExtensionManager_constant_LOAD_STATUS_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **LOAD_STATUS_FAILED** = ``1``
+
+
+
+.. _class_NativeExtensionManager_constant_LOAD_STATUS_ALREADY_LOADED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **LOAD_STATUS_ALREADY_LOADED** = ``2``
+
+
+
+.. _class_NativeExtensionManager_constant_LOAD_STATUS_NOT_LOADED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **LOAD_STATUS_NOT_LOADED** = ``3``
+
+
+
+.. _class_NativeExtensionManager_constant_LOAD_STATUS_NEEDS_RESTART:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **LOAD_STATUS_NEEDS_RESTART** = ``4``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NativeExtensionManager_method_get_extension:
 
-- :ref:`NativeExtension<class_NativeExtension>` **get_extension** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`NativeExtension<class_NativeExtension>` **get_extension** **(** :ref:`String<class_String>` path **)**
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtensionManager_method_get_loaded_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_extensions** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_extensions** **(** **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtensionManager_method_is_extension_loaded:
 
-- :ref:`bool<class_bool>` **is_extension_loaded** **(** :ref:`String<class_String>` path **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_extension_loaded** **(** :ref:`String<class_String>` path **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtensionManager_method_load_extension:
 
-- :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **load_extension** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **load_extension** **(** :ref:`String<class_String>` path **)**
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtensionManager_method_reload_extension:
 
-- :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **reload_extension** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **reload_extension** **(** :ref:`String<class_String>` path **)**
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NativeExtensionManager_method_unload_extension:
 
-- :ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **unload_extension** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`LoadStatus<enum_NativeExtensionManager_LoadStatus>` **unload_extension** **(** :ref:`String<class_String>` path **)**
 
 .. container:: contribute
 

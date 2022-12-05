@@ -14,10 +14,14 @@ AudioEffectLowPassFilter
 
 Adds a low-pass filter to the audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Cuts frequencies higher than the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and allows lower frequencies to pass.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

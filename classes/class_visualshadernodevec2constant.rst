@@ -14,32 +14,44 @@ VisualShaderNodeVec2Constant
 
 A :ref:`Vector2<class_Vector2>` constant to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A constant :ref:`Vector2<class_Vector2>`, which can be used as an input node.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`constant<class_VisualShaderNodeVec2Constant_property_constant>` | ``Vector2(0, 0)`` |
-+-------------------------------+-----------------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`constant<class_VisualShaderNodeVec2Constant_property_constant>` | ``Vector2(0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVec2Constant_property_constant:
 
-- :ref:`Vector2<class_Vector2>` **constant**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_constant(value) |
-+-----------+---------------------+
-| *Getter*  | get_constant()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **constant** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_constant** **(** **)**
 
 A :ref:`Vector2<class_Vector2>` constant which represents the state of this node.
 

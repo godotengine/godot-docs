@@ -16,90 +16,143 @@ NativeExtension
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                 | :ref:`close_library<class_NativeExtension_method_close_library>` **(** **)**                                                                                      |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_NativeExtension_method_get_minimum_library_initialization_level>` **(** **)** |const|                        |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                 | :ref:`initialize_library<class_NativeExtension_method_initialize_library>` **(** :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` level **)** |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                              | :ref:`is_library_open<class_NativeExtension_method_is_library_open>` **(** **)** |const|                                                                          |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                                | :ref:`open_library<class_NativeExtension_method_open_library>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**             |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                 | :ref:`close_library<class_NativeExtension_method_close_library>` **(** **)**                                                                                      |
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_NativeExtension_method_get_minimum_library_initialization_level>` **(** **)** |const|                        |
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                 | :ref:`initialize_library<class_NativeExtension_method_initialize_library>` **(** :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` level **)** |
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                              | :ref:`is_library_open<class_NativeExtension_method_is_library_open>` **(** **)** |const|                                                                          |
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                                | :ref:`open_library<class_NativeExtension_method_open_library>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**             |
+   +----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_NativeExtension_InitializationLevel:
 
-.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_CORE:
-
-.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_SERVERS:
-
-.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_SCENE:
-
-.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_EDITOR:
+.. rst-class:: classref-enumeration
 
 enum **InitializationLevel**:
 
-- **INITIALIZATION_LEVEL_CORE** = **0**
+.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_CORE:
 
-- **INITIALIZATION_LEVEL_SERVERS** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **INITIALIZATION_LEVEL_SCENE** = **2**
+:ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **INITIALIZATION_LEVEL_CORE** = ``0``
 
-- **INITIALIZATION_LEVEL_EDITOR** = **3**
+
+
+.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_SERVERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **INITIALIZATION_LEVEL_SERVERS** = ``1``
+
+
+
+.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_SCENE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **INITIALIZATION_LEVEL_SCENE** = ``2``
+
+
+
+.. _class_NativeExtension_constant_INITIALIZATION_LEVEL_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **INITIALIZATION_LEVEL_EDITOR** = ``3``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NativeExtension_method_close_library:
 
-- void **close_library** **(** **)**
+.. rst-class:: classref-method
+
+void **close_library** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtension_method_get_minimum_library_initialization_level:
 
-- :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtension_method_initialize_library:
 
-- void **initialize_library** **(** :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` level **)**
+.. rst-class:: classref-method
+
+void **initialize_library** **(** :ref:`InitializationLevel<enum_NativeExtension_InitializationLevel>` level **)**
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeExtension_method_is_library_open:
 
-- :ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
 
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NativeExtension_method_open_library:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
 
 .. container:: contribute
 

@@ -14,6 +14,8 @@ ButtonGroup
 
 Group of Buttons.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,45 +23,75 @@ Group of :ref:`Button<class_Button>`. All direct and indirect children buttons b
 
 \ :ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+-------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
-+-------------------------+-------------------------+---------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | resource_local_to_scene | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +-------------------------+-------------------------+---------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`BaseButton[]<class_BaseButton>` | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
-+---------------------------------------+------------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_BaseButton>`   | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
-+---------------------------------------+------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`BaseButton[]<class_BaseButton>` | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
+   +---------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`BaseButton<class_BaseButton>`   | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ButtonGroup_signal_pressed:
 
-- **pressed** **(** :ref:`BaseButton<class_BaseButton>` button **)**
+.. rst-class:: classref-signal
+
+**pressed** **(** :ref:`BaseButton<class_BaseButton>` button **)**
 
 Emitted when one of the buttons of the group is pressed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ButtonGroup_method_get_buttons:
 
-- :ref:`BaseButton[]<class_BaseButton>` **get_buttons** **(** **)**
+.. rst-class:: classref-method
 
-Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.button_group<class_BaseButton_property_button_group>`).
+:ref:`BaseButton[]<class_BaseButton>` **get_buttons** **(** **)**
+
+Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their **ButtonGroup** (see :ref:`BaseButton.button_group<class_BaseButton_property_button_group>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ButtonGroup_method_get_pressed_button:
 
-- :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
 
 Returns the current pressed button.
 

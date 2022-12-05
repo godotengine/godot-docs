@@ -14,48 +14,73 @@ NavigationPathQueryResult2D
 
 Result from a :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>` navigation path query.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class contains the result of a navigation path query from :ref:`NavigationServer2D.query_path<class_NavigationServer2D_method_query_path>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`path<class_NavigationPathQueryResult2D_property_path>` | ``PackedVector2Array()`` |
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`path<class_NavigationPathQueryResult2D_property_path>` | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+--------------------------------------------------------------------------+
-| void | :ref:`reset<class_NavigationPathQueryResult2D_method_reset>` **(** **)** |
-+------+--------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+--------------------------------------------------------------------------+
+   | void | :ref:`reset<class_NavigationPathQueryResult2D_method_reset>` **(** **)** |
+   +------+--------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationPathQueryResult2D_property_path:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **path**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector2Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_path(value)          |
-+-----------+--------------------------+
-| *Getter*  | get_path()               |
-+-----------+--------------------------+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **path** = ``PackedVector2Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_path** **(** **)**
 
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer2D.map_get_path<class_NavigationServer2D_method_map_get_path>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationPathQueryResult2D_method_reset:
 
-- void **reset** **(** **)**
+.. rst-class:: classref-method
+
+void **reset** **(** **)**
 
 Reset the result object to its initial state.  This is useful to reuse the object across multiple queries.
 

@@ -14,6 +14,8 @@ EditorPaths
 
 Editor-only singleton that returns paths to various OS-specific data folders and files.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,34 +25,49 @@ This editor-only singleton returns OS-specific paths to various data folders and
 
 \ **Note:** Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__ on *all* platforms. You can override environment variables following the specification to change the editor and project data paths.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `File paths in Godot projects <https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_cache_dir<class_EditorPaths_method_get_cache_dir>` **(** **)** |const|                       |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_config_dir<class_EditorPaths_method_get_config_dir>` **(** **)** |const|                     |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_data_dir<class_EditorPaths_method_get_data_dir>` **(** **)** |const|                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_project_settings_dir<class_EditorPaths_method_get_project_settings_dir>` **(** **)** |const| |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>` **(** **)** |const|   |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>` **(** **)** |const|               |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_cache_dir<class_EditorPaths_method_get_cache_dir>` **(** **)** |const|                       |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_config_dir<class_EditorPaths_method_get_config_dir>` **(** **)** |const|                     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_data_dir<class_EditorPaths_method_get_data_dir>` **(** **)** |const|                         |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_project_settings_dir<class_EditorPaths_method_get_project_settings_dir>` **(** **)** |const| |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>` **(** **)** |const|   |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>` **(** **)** |const|               |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorPaths_method_get_cache_dir:
 
-- :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
 
 Returns the absolute path to the user's cache folder. This folder should be used for temporary data that can be removed safely whenever the editor is closed (such as generated resource thumbnails).
 
@@ -62,11 +79,15 @@ Returns the absolute path to the user's cache folder. This folder should be used
     - macOS: ~/Library/Caches/Godot/
     - Linux: ~/.cache/godot/
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorPaths_method_get_config_dir:
 
-- :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_config_dir** **(** **)** |const|
 
 Returns the absolute path to the user's configuration folder. This folder should be used for *persistent* user configuration files.
 
@@ -78,11 +99,15 @@ Returns the absolute path to the user's configuration folder. This folder should
     - macOS: ~/Library/Application Support/Godot/  (same as `get_data_dir()`)
     - Linux: ~/.config/godot/
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorPaths_method_get_data_dir:
 
-- :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_data_dir** **(** **)** |const|
 
 Returns the absolute path to the user's data folder. This folder should be used for *persistent* user data files such as installed export templates.
 
@@ -94,27 +119,39 @@ Returns the absolute path to the user's data folder. This folder should be used 
     - macOS: ~/Library/Application Support/Godot/  (same as `get_config_dir()`)
     - Linux: ~/.local/share/godot/
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorPaths_method_get_project_settings_dir:
 
-- :ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
 
 Returns the project-specific editor settings path. Projects all have a unique subdirectory inside the settings path where project-specific editor settings are saved.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorPaths_method_get_self_contained_file:
 
-- :ref:`String<class_String>` **get_self_contained_file** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_self_contained_file** **(** **)** |const|
 
 Returns the absolute path to the self-contained file that makes the current Godot editor instance be considered as self-contained. Returns an empty string if the current Godot editor instance isn't self-contained. See also :ref:`is_self_contained<class_EditorPaths_method_is_self_contained>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorPaths_method_is_self_contained:
 
-- :ref:`bool<class_bool>` **is_self_contained** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_self_contained** **(** **)** |const|
 
 Returns ``true`` if the editor is marked as self-contained, ``false`` otherwise. When self-contained mode is enabled, user configuration, data and cache files are saved in an ``editor_data/`` folder next to the editor binary. This makes portable usage easier and ensures the Godot editor minimizes file writes outside its own folder. Self-contained mode is not available for exported projects.
 

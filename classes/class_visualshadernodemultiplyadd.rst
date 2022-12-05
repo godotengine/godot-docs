@@ -14,59 +14,99 @@ VisualShaderNodeMultiplyAdd
 
 Performs a fused multiply-add operation within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Uses three operands to compute ``(a * b + c)`` expression.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` | :ref:`op_type<class_VisualShaderNodeMultiplyAdd_property_op_type>` | ``0`` |
-+--------------------------------------------------------+--------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------+--------------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` | :ref:`op_type<class_VisualShaderNodeMultiplyAdd_property_op_type>` | ``0`` |
+   +--------------------------------------------------------+--------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeMultiplyAdd_OpType:
 
-.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_SCALAR:
-
-.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar type.
+.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_SCALAR:
 
-- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_3D** = **2** --- A 3D vector type.
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **OP_TYPE_SCALAR** = ``0``
 
-- **OP_TYPE_VECTOR_4D** = **3** --- A 4D vector type.
+A floating-point scalar type.
 
-- **OP_TYPE_MAX** = **4** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` enum.
+.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **OP_TYPE_VECTOR_2D** = ``1``
+
+A 2D vector type.
+
+.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **OP_TYPE_VECTOR_3D** = ``2``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **OP_TYPE_VECTOR_4D** = ``3``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeMultiplyAdd_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **OP_TYPE_MAX** = ``4``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeMultiplyAdd_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **op_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeMultiplyAdd_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value.
 

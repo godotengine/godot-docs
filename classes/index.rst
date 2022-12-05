@@ -755,6 +755,7 @@ Other objects
     class_navigationserver3d
     class_node
     class_node3dgizmo
+    class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
     class_openxrinterface
     class_os

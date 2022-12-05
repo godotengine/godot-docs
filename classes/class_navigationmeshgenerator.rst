@@ -14,10 +14,12 @@ NavigationMeshGenerator
 
 Helper class for creating and clearing navigation meshes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-This class is responsible for creating and clearing 3D navigation meshes used as :ref:`NavigationMesh<class_NavigationMesh>` resources inside :ref:`NavigationRegion3D<class_NavigationRegion3D>`. The ``NavigationMeshGenerator`` has very limited to no use for 2D as the navigation mesh baking process expects 3D node types and 3D source geometry to parse.
+This class is responsible for creating and clearing 3D navigation meshes used as :ref:`NavigationMesh<class_NavigationMesh>` resources inside :ref:`NavigationRegion3D<class_NavigationRegion3D>`. The **NavigationMeshGenerator** has very limited to no use for 2D as the navigation mesh baking process expects 3D node types and 3D source geometry to parse.
 
 The entire navigation mesh baking is best done in a separate thread as the voxelization, collision tests and mesh optimization steps involved are very performance and time hungry operations.
 
@@ -27,29 +29,46 @@ The finalized navigation mesh is then returned and stored inside the :ref:`Navig
 
 \ **Note:** Using meshes to not only define walkable surfaces but also obstruct navigation baking does not always work. The navigation baking has no concept of what is a geometry "inside" when dealing with mesh source geometry and this is intentional. Depending on current baking parameters, as soon as the obstructing mesh is large enough to fit a navigation mesh area inside, the baking will generate navigation mesh areas that are inside the obstructing source geometry mesh.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`bake<class_NavigationMeshGenerator_method_bake>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)** |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`clear<class_NavigationMeshGenerator_method_clear>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**                                  |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`bake<class_NavigationMeshGenerator_method_bake>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)** |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`clear<class_NavigationMeshGenerator_method_clear>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**                                  |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationMeshGenerator_method_bake:
 
-- void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
+.. rst-class:: classref-method
+
+void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
 
 Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>` and :ref:`NavigationMesh.geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshGenerator_method_clear:
 
-- void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**
+.. rst-class:: classref-method
+
+void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**
 
 Removes all polygons and vertices from the provided ``nav_mesh`` resource.
 

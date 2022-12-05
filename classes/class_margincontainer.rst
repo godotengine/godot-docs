@@ -14,12 +14,14 @@ MarginContainer
 
 Simple margin container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the ``MarginContainer``'s margin, use the ``margin_*`` theme properties listed below.
+Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the **MarginContainer**'s margin, use the ``margin_*`` theme properties listed below.
 
-\ **Note:** Be careful, :ref:`Control<class_Control>` margin values are different from the constant margin values. If you want to change the custom margin values of the ``MarginContainer`` by code, you should use the following examples:
+\ **Note:** Be careful, :ref:`Control<class_Control>` margin values are different from the constant margin values. If you want to change the custom margin values of the **MarginContainer** by code, you should use the following examples:
 
 
 .. tabs::
@@ -44,72 +46,83 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
 
 
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+-----------------------+--------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`margin_bottom<class_MarginContainer_theme_constant_margin_bottom>` | ``0`` |
-+-----------------------+--------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`margin_left<class_MarginContainer_theme_constant_margin_left>`     | ``0`` |
-+-----------------------+--------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`margin_right<class_MarginContainer_theme_constant_margin_right>`   | ``0`` |
-+-----------------------+--------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`margin_top<class_MarginContainer_theme_constant_margin_top>`       | ``0`` |
-+-----------------------+--------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`margin_bottom<class_MarginContainer_theme_constant_margin_bottom>` | ``0`` |
+   +-----------------------+--------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`margin_left<class_MarginContainer_theme_constant_margin_left>`     | ``0`` |
+   +-----------------------+--------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`margin_right<class_MarginContainer_theme_constant_margin_right>`   | ``0`` |
+   +-----------------------+--------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`margin_top<class_MarginContainer_theme_constant_margin_top>`       | ``0`` |
+   +-----------------------+--------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_MarginContainer_theme_constant_margin_bottom:
 
-- :ref:`int<class_int>` **margin_bottom**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **margin_bottom** = ``0``
 
-All direct children of ``MarginContainer`` will have a bottom margin of ``margin_bottom`` pixels.
+All direct children of **MarginContainer** will have a bottom margin of ``margin_bottom`` pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MarginContainer_theme_constant_margin_left:
 
-- :ref:`int<class_int>` **margin_left**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **margin_left** = ``0``
 
-All direct children of ``MarginContainer`` will have a left margin of ``margin_left`` pixels.
+All direct children of **MarginContainer** will have a left margin of ``margin_left`` pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MarginContainer_theme_constant_margin_right:
 
-- :ref:`int<class_int>` **margin_right**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **margin_right** = ``0``
 
-All direct children of ``MarginContainer`` will have a right margin of ``margin_right`` pixels.
+All direct children of **MarginContainer** will have a right margin of ``margin_right`` pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MarginContainer_theme_constant_margin_top:
 
-- :ref:`int<class_int>` **margin_top**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **margin_top** = ``0``
 
-All direct children of ``MarginContainer`` will have a top margin of ``margin_top`` pixels.
+All direct children of **MarginContainer** will have a top margin of ``margin_top`` pixels.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

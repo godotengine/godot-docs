@@ -16,35 +16,48 @@ HBoxContainer
 
 Horizontal box container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+-----------------------+------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`separation<class_HBoxContainer_theme_constant_separation>` | ``4`` |
-+-----------------------+------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`separation<class_HBoxContainer_theme_constant_separation>` | ``4`` |
+   +-----------------------+------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HBoxContainer_theme_constant_separation:
 
-- :ref:`int<class_int>` **separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **separation** = ``4``
 
-The horizontal space between the ``HBoxContainer``'s elements.
+The horizontal space between the **HBoxContainer**'s elements.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

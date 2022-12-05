@@ -14,6 +14,8 @@ AnimationNodeTimeSeek
 
 A time-seeking animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -43,6 +45,8 @@ This node can be used to cause a seek command to happen to any sub-children of t
     animationTree.Set("parameters/Seek/seek_position", 12.0);
 
 
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

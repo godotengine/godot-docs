@@ -14,48 +14,73 @@ NavigationPathQueryResult3D
 
 Result from a :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` navigation path query.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class contains the result of a navigation path query from :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`path<class_NavigationPathQueryResult3D_property_path>` | ``PackedVector3Array()`` |
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`path<class_NavigationPathQueryResult3D_property_path>` | ``PackedVector3Array()`` |
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+--------------------------------------------------------------------------+
-| void | :ref:`reset<class_NavigationPathQueryResult3D_method_reset>` **(** **)** |
-+------+--------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+--------------------------------------------------------------------------+
+   | void | :ref:`reset<class_NavigationPathQueryResult3D_method_reset>` **(** **)** |
+   +------+--------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationPathQueryResult3D_property_path:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **path**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector3Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_path(value)          |
-+-----------+--------------------------+
-| *Getter*  | get_path()               |
-+-----------+--------------------------+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **path** = ``PackedVector3Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_path** **(** **)**
 
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationPathQueryResult3D_method_reset:
 
-- void **reset** **(** **)**
+.. rst-class:: classref-method
+
+void **reset** **(** **)**
 
 Reset the result object to its initial state.  This is useful to reuse the object across multiple queries.
 

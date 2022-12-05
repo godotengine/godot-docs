@@ -14,6 +14,8 @@ PlaceholderCubemap
 
 Placeholder class for a cubemap texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

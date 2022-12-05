@@ -14,6 +14,8 @@ PlaceholderMesh
 
 Placeholder class for a mesh.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,27 +25,37 @@ This class is used when loading a project that uses a :ref:`Mesh<class_Mesh>` su
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------+----------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`aabb<class_PlaceholderMesh_property_aabb>` | ``AABB(0, 0, 0, 0, 0, 0)`` |
-+-------------------------+--------------------------------------------------+----------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------+----------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`aabb<class_PlaceholderMesh_property_aabb>` | ``AABB(0, 0, 0, 0, 0, 0)`` |
+   +-------------------------+--------------------------------------------------+----------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaceholderMesh_property_aabb:
 
-- :ref:`AABB<class_AABB>` **aabb**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``AABB(0, 0, 0, 0, 0, 0)`` |
-+-----------+----------------------------+
-| *Setter*  | set_aabb(value)            |
-+-----------+----------------------------+
-| *Getter*  | get_aabb()                 |
-+-----------+----------------------------+
+:ref:`AABB<class_AABB>` **aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
 
 The smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space.
 

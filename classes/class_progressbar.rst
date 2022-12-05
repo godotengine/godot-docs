@@ -14,175 +14,237 @@ ProgressBar
 
 General-purpose progress bar.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 General-purpose progress bar. Shows fill percentage from right to left.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`   | :ref:`fill_mode<class_ProgressBar_property_fill_mode>`             | ``0``    |
-+-------------------------+--------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`show_percentage<class_ProgressBar_property_show_percentage>` | ``true`` |
-+-------------------------+--------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`   | :ref:`fill_mode<class_ProgressBar_property_fill_mode>`             | ``0``    |
+   +-------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`show_percentage<class_ProgressBar_property_show_percentage>` | ``true`` |
+   +-------------------------+--------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_theme_color_font_color>`                 | ``Color(0.95, 0.95, 0.95, 1)`` |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ProgressBar_theme_color_font_outline_color>` | ``Color(1, 1, 1, 1)``          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_ProgressBar_theme_color_font_shadow_color>`   | ``Color(0, 0, 0, 1)``          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_ProgressBar_theme_constant_outline_size>`          | ``0``                          |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                              |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`int<class_int>`           | :ref:`font_size<class_ProgressBar_theme_font_size_font_size>`               |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`background<class_ProgressBar_theme_style_background>`                 |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`fill<class_ProgressBar_theme_style_fill>`                             |                                |
-+---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_ProgressBar_theme_color_font_color>`                 | ``Color(0.95, 0.95, 0.95, 1)`` |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ProgressBar_theme_color_font_outline_color>` | ``Color(1, 1, 1, 1)``          |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_ProgressBar_theme_color_font_shadow_color>`   | ``Color(0, 0, 0, 1)``          |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_ProgressBar_theme_constant_outline_size>`          | ``0``                          |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                              |                                |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_ProgressBar_theme_font_size_font_size>`               |                                |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`background<class_ProgressBar_theme_style_background>`                 |                                |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`fill<class_ProgressBar_theme_style_fill>`                             |                                |
+   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ProgressBar_FillMode:
 
-.. _class_ProgressBar_constant_FILL_BEGIN_TO_END:
-
-.. _class_ProgressBar_constant_FILL_END_TO_BEGIN:
-
-.. _class_ProgressBar_constant_FILL_TOP_TO_BOTTOM:
-
-.. _class_ProgressBar_constant_FILL_BOTTOM_TO_TOP:
+.. rst-class:: classref-enumeration
 
 enum **FillMode**:
 
-- **FILL_BEGIN_TO_END** = **0** --- The progress bar fills from begin to end horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from left to right, and if it returns ``true``, it fills from right to left.
+.. _class_ProgressBar_constant_FILL_BEGIN_TO_END:
 
-- **FILL_END_TO_BEGIN** = **1** --- The progress bar fills from end to begin horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from right to left, and if it returns ``true``, it fills from left to right.
+.. rst-class:: classref-enumeration-constant
 
-- **FILL_TOP_TO_BOTTOM** = **2** --- The progress fills from top to bottom.
+:ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_BEGIN_TO_END** = ``0``
 
-- **FILL_BOTTOM_TO_TOP** = **3** --- The progress fills from bottom to top.
+The progress bar fills from begin to end horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from left to right, and if it returns ``true``, it fills from right to left.
+
+.. _class_ProgressBar_constant_FILL_END_TO_BEGIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_END_TO_BEGIN** = ``1``
+
+The progress bar fills from end to begin horizontally, according to the language direction. If :ref:`Control.is_layout_rtl<class_Control_method_is_layout_rtl>` returns ``false``, it fills from right to left, and if it returns ``true``, it fills from left to right.
+
+.. _class_ProgressBar_constant_FILL_TOP_TO_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_TOP_TO_BOTTOM** = ``2``
+
+The progress fills from top to bottom.
+
+.. _class_ProgressBar_constant_FILL_BOTTOM_TO_TOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FillMode<enum_ProgressBar_FillMode>` **FILL_BOTTOM_TO_TOP** = ``3``
+
+The progress fills from bottom to top.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ProgressBar_property_fill_mode:
 
-- :ref:`int<class_int>` **fill_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_fill_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_fill_mode()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **fill_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fill_mode** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_fill_mode** **(** **)**
 
 The fill direction. See :ref:`FillMode<enum_ProgressBar_FillMode>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_property_show_percentage:
 
-- :ref:`bool<class_bool>` **show_percentage**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_show_percentage(value) |
-+-----------+----------------------------+
-| *Getter*  | is_percentage_shown()      |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **show_percentage** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_percentage** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_percentage_shown** **(** **)**
 
 If ``true``, the fill percentage is displayed on the bar.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_ProgressBar_theme_color_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
-+-----------+--------------------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color(0.95, 0.95, 0.95, 1)``
 
 The color of the text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_color_font_outline_color:
 
-- :ref:`Color<class_Color>` **font_outline_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
 
-The tint of text outline of the ``ProgressBar``.
+The tint of text outline of the **ProgressBar**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_color_font_shadow_color:
 
-- :ref:`Color<class_Color>` **font_shadow_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(0, 0, 0, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 1)``
 
 The color of the text's shadow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_constant_outline_size:
 
-- :ref:`int<class_int>` **outline_size**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **outline_size** = ``0``
 
 The size of the text outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
+
+:ref:`Font<class_Font>` **font**
 
 Font used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_font_size_font_size:
 
-- :ref:`int<class_int>` **font_size**
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **font_size**
 
 Font size used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_style_background:
 
-- :ref:`StyleBox<class_StyleBox>` **background**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **background**
 
 The style of the background.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ProgressBar_theme_style_fill:
 
-- :ref:`StyleBox<class_StyleBox>` **fill**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **fill**
 
 The style of the progress (i.e. the part that fills the bar).
 

@@ -14,100 +14,147 @@ LightmapGIData
 
 Contains baked lightmap and dynamic object probe data for :ref:`LightmapGI<class_LightmapGI>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``LightmapGIData`` contains baked lightmap and dynamic object probe data for :ref:`LightmapGI<class_LightmapGI>`. It is replaced every time lightmaps are baked in :ref:`LightmapGI<class_LightmapGI>`.
+**LightmapGIData** contains baked lightmap and dynamic object probe data for :ref:`LightmapGI<class_LightmapGI>`. It is replaced every time lightmaps are baked in :ref:`LightmapGI<class_LightmapGI>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------------+-------------------------------------------------------------------+
-| :ref:`TextureLayered<class_TextureLayered>` | :ref:`light_texture<class_LightmapGIData_property_light_texture>` |
-+---------------------------------------------+-------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+-------------------------------------------------------------------+
+   | :ref:`TextureLayered<class_TextureLayered>` | :ref:`light_texture<class_LightmapGIData_property_light_texture>` |
+   +---------------------------------------------+-------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_user<class_LightmapGIData_method_add_user>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`Rect2<class_Rect2>` uv_scale, :ref:`int<class_int>` slice_index, :ref:`int<class_int>` sub_instance **)** |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`clear_users<class_LightmapGIData_method_clear_users>` **(** **)**                                                                                                                                           |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_user_count<class_LightmapGIData_method_get_user_count>` **(** **)** |const|                                                                                                                             |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_LightmapGIData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_using_spherical_harmonics<class_LightmapGIData_method_is_using_spherical_harmonics>` **(** **)** |const|                                                                                                 |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_uses_spherical_harmonics<class_LightmapGIData_method_set_uses_spherical_harmonics>` **(** :ref:`bool<class_bool>` uses_spherical_harmonics **)**                                                        |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_user<class_LightmapGIData_method_add_user>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`Rect2<class_Rect2>` uv_scale, :ref:`int<class_int>` slice_index, :ref:`int<class_int>` sub_instance **)** |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`clear_users<class_LightmapGIData_method_clear_users>` **(** **)**                                                                                                                                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_user_count<class_LightmapGIData_method_get_user_count>` **(** **)** |const|                                                                                                                             |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_LightmapGIData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`is_using_spherical_harmonics<class_LightmapGIData_method_is_using_spherical_harmonics>` **(** **)** |const|                                                                                                 |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_uses_spherical_harmonics<class_LightmapGIData_method_set_uses_spherical_harmonics>` **(** :ref:`bool<class_bool>` uses_spherical_harmonics **)**                                                        |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_LightmapGIData_property_light_texture:
 
-- :ref:`TextureLayered<class_TextureLayered>` **light_texture**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_light_texture(value) |
-+----------+--------------------------+
-| *Getter* | get_light_texture()      |
-+----------+--------------------------+
+:ref:`TextureLayered<class_TextureLayered>` **light_texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_light_texture** **(** :ref:`TextureLayered<class_TextureLayered>` value **)**
+- :ref:`TextureLayered<class_TextureLayered>` **get_light_texture** **(** **)**
 
 The lightmap atlas texture generated by the lightmapper.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_LightmapGIData_method_add_user:
 
-- void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Rect2<class_Rect2>` uv_scale, :ref:`int<class_int>` slice_index, :ref:`int<class_int>` sub_instance **)**
+.. rst-class:: classref-method
 
-Adds an object that is considered baked within this ``LightmapGIData``.
+void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Rect2<class_Rect2>` uv_scale, :ref:`int<class_int>` slice_index, :ref:`int<class_int>` sub_instance **)**
+
+Adds an object that is considered baked within this **LightmapGIData**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightmapGIData_method_clear_users:
 
-- void **clear_users** **(** **)**
+.. rst-class:: classref-method
 
-Clear all objects that are considered baked within this ``LightmapGIData``.
+void **clear_users** **(** **)**
+
+Clear all objects that are considered baked within this **LightmapGIData**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightmapGIData_method_get_user_count:
 
-- :ref:`int<class_int>` **get_user_count** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the number of objects that are considered baked within this ``LightmapGIData``.
+:ref:`int<class_int>` **get_user_count** **(** **)** |const|
+
+Returns the number of objects that are considered baked within this **LightmapGIData**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightmapGIData_method_get_user_path:
 
-- :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** |const|
 
 Returns the :ref:`NodePath<class_NodePath>` of the baked object at index ``user_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightmapGIData_method_is_using_spherical_harmonics:
 
-- :ref:`bool<class_bool>` **is_using_spherical_harmonics** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_using_spherical_harmonics** **(** **)** |const|
 
 If ``true``, lightmaps were baked with directional information. See also :ref:`LightmapGI.directional<class_LightmapGI_property_directional>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightmapGIData_method_set_uses_spherical_harmonics:
 
-- void **set_uses_spherical_harmonics** **(** :ref:`bool<class_bool>` uses_spherical_harmonics **)**
+.. rst-class:: classref-method
+
+void **set_uses_spherical_harmonics** **(** :ref:`bool<class_bool>` uses_spherical_harmonics **)**
 
 If ``uses_spherical_harmonics`` is ``true``, tells the engine to treat the lightmap data as if it was baked with directional information.
 
-\ **Note:** Changing this value on already baked lightmaps will not cause them to be baked again. This means the material appearance will look incorrect until lightmaps are baked again, in which case the value set here is discarded as the entire ``LightmapGIData`` resource is replaced by the lightmapper.
+\ **Note:** Changing this value on already baked lightmaps will not cause them to be baked again. This means the material appearance will look incorrect until lightmaps are baked again, in which case the value set here is discarded as the entire **LightmapGIData** resource is replaced by the lightmapper.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -14,6 +14,8 @@ AnimationNodeOutput
 
 Generic output node to be added to :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 

@@ -16,27 +16,37 @@ VisualShaderNodeParticleEmitter
 
 A base class for particle emitters.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`mode_2d<class_VisualShaderNodeParticleEmitter_property_mode_2d>` | ``false`` |
-+-------------------------+------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`mode_2d<class_VisualShaderNodeParticleEmitter_property_mode_2d>` | ``false`` |
+   +-------------------------+------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleEmitter_property_mode_2d:
 
-- :ref:`bool<class_bool>` **mode_2d**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_mode_2d(value) |
-+-----------+--------------------+
-| *Getter*  | is_mode_2d()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **mode_2d** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mode_2d** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_mode_2d** **(** **)**
 
 If ``true``, the result of this emitter is projected to 2D space. By default it is ``false`` and meant for use in 3D space.
 

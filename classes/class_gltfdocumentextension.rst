@@ -16,110 +16,207 @@ GLTFDocumentExtension
 
 :ref:`GLTFDocument<class_GLTFDocument>` extension class.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Extends the functionality of the :ref:`GLTFDocument<class_GLTFDocument>` class by allowing you to run arbitrary code at various stages of GLTF import or export.
 
+To use, make a new class extending GLTFDocumentExtension, override any methods you need, make an instance of your class, and register it using :ref:`GLTFDocument.register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`.
+
+\ **Note:** Like GLTFDocument itself, all GLTFDocumentExtension classes must be stateless in order to function properly. If you need to store data, use the ``set_additional_data`` and ``get_additional_data`` methods in :ref:`GLTFState<class_GLTFState>` or :ref:`GLTFNode<class_GLTFNode>`.
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                                    |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`Node<class_Node>` root **)** |virtual|                                                                                                                     |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_extensions<class_GLTFDocumentExtension_method__get_supported_extensions>` **(** **)** |virtual|                                                                                                                                  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_import_node<class_GLTFDocumentExtension_method__import_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_import_post<class_GLTFDocumentExtension_method__import_post>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|                                                                                      |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                        |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_import_preflight<class_GLTFDocumentExtension_method__import_preflight>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                          |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`_convert_scene_node<class_GLTFDocumentExtension_method__convert_scene_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_node **)** |virtual|                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`Node<class_Node>` root **)** |virtual|                                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node3D<class_Node3D>`                       | :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_parent **)** |virtual|                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_extensions<class_GLTFDocumentExtension_method__get_supported_extensions>` **(** **)** |virtual|                                                                                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_import_node<class_GLTFDocumentExtension_method__import_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual| |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_import_post<class_GLTFDocumentExtension_method__import_post>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|                                                                                      |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_import_preflight<class_GLTFDocumentExtension_method__import_preflight>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`PackedStringArray<class_PackedStringArray>` extensions **)** |virtual|                                            |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_parse_node_extensions<class_GLTFDocumentExtension_method__parse_node_extensions>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` extensions **)** |virtual|     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
+.. _class_GLTFDocumentExtension_method__convert_scene_node:
+
+.. rst-class:: classref-method
+
+void **_convert_scene_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_node **)** |virtual|
+
+Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` and before :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>`.
+
+Runs when converting the data from a Godot scene node. This method can be used to process the Godot scene node data into a format that can be used by :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFDocumentExtension_method__export_node:
 
-- :ref:`int<class_int>` **_export_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_export_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the export process. This method is run after :ref:`_convert_scene_node<class_GLTFDocumentExtension_method__convert_scene_node>` and before :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>`.
+
+This method can be used to modify the final JSON of each node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__export_post:
 
-- :ref:`int<class_int>` **_export_post** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_export_post** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the export process. This method is run last, after all other parts of the export process.
+
+This method can be used to modify the final JSON of the generated GLTF file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__export_preflight:
 
-- :ref:`int<class_int>` **_export_preflight** **(** :ref:`Node<class_Node>` root **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_export_preflight** **(** :ref:`Node<class_Node>` root **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the export process. This method is run first, before all other parts of the export process.
+
+The return value is used to determine if this GLTFDocumentExtension class should be used for exporting a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the export will use this GLTFDocumentExtension class. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocumentExtension_method__generate_scene_node:
+
+.. rst-class:: classref-method
+
+:ref:`Node3D<class_Node3D>` **_generate_scene_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_parent **)** |virtual|
+
+Part of the import process. This method is run after :ref:`_parse_node_extensions<class_GLTFDocumentExtension_method__parse_node_extensions>` and before :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>`.
+
+Runs when generating a Godot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__get_supported_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_extensions** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_extensions** **(** **)** |virtual|
+
+Part of the import process. This method is run after :ref:`_import_preflight<class_GLTFDocumentExtension_method__import_preflight>` and before :ref:`_parse_node_extensions<class_GLTFDocumentExtension_method__parse_node_extensions>`.
 
 Returns an array of the GLTF extensions supported by this GLTFDocumentExtension class. This is used to validate if a GLTF file with required extensions can be loaded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__import_node:
 
-- :ref:`int<class_int>` **_import_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_import_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the import process. This method is run after :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>` and before :ref:`_import_post<class_GLTFDocumentExtension_method__import_post>`.
+
+This method can be used to make modifications to each of the generated Godot scene nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__import_post:
 
-- :ref:`int<class_int>` **_import_post** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_import_post** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the import process. This method is run last, after all other parts of the import process.
+
+This method can be used to modify the final Godot scene generated by the import process.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__import_post_parse:
 
-- :ref:`int<class_int>` **_import_post_parse** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_import_post_parse** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the import process. This method is run after :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>` and before :ref:`_import_node<class_GLTFDocumentExtension_method__import_node>`.
+
+This method can be used to modify any of the data imported so far, including any scene nodes, before running the final per-node import step.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFDocumentExtension_method__import_preflight:
 
-- :ref:`int<class_int>` **_import_preflight** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+.. rst-class:: classref-method
 
-.. container:: contribute
+:ref:`int<class_int>` **_import_preflight** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`PackedStringArray<class_PackedStringArray>` extensions **)** |virtual|
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Part of the import process. This method is run first, before all other parts of the import process.
+
+The return value is used to determine if this GLTFDocumentExtension class should be used for importing a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the import will use this GLTFDocumentExtension class. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocumentExtension_method__parse_node_extensions:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_parse_node_extensions** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` extensions **)** |virtual|
+
+Part of the import process. This method is run after :ref:`_get_supported_extensions<class_GLTFDocumentExtension_method__get_supported_extensions>` and before :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>`.
+
+Runs when parsing the node extensions of a GLTFNode. This method can be used to process the extension JSON data into a format that can be used by :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

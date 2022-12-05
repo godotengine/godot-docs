@@ -12,71 +12,90 @@ CanvasGroup
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Merges several 2D nodes into a single draw operation.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Child :ref:`CanvasItem<class_CanvasItem>` nodes of a **CanvasGroup** are drawn as a single object. It allows to e.g. draw overlapping translucent 2D nodes without blending (set :ref:`CanvasItem.self_modulate<class_CanvasItem_property_self_modulate>` property of **CanvasGroup** to achieve this effect).
+
+\ **Note:** Since **CanvasGroup** and :ref:`CanvasItem.clip_children<class_CanvasItem_property_clip_children>` both utilize the backbuffer, children of a **CanvasGroup** who have their :ref:`CanvasItem.clip_children<class_CanvasItem_property_clip_children>` set to anything other than :ref:`CanvasItem.CLIP_CHILDREN_DISABLED<class_CanvasItem_constant_CLIP_CHILDREN_DISABLED>` will not function correctly.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`clear_margin<class_CanvasGroup_property_clear_margin>` | ``10.0``  |
-+---------------------------+--------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`fit_margin<class_CanvasGroup_property_fit_margin>`     | ``10.0``  |
-+---------------------------+--------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`use_mipmaps<class_CanvasGroup_property_use_mipmaps>`   | ``false`` |
-+---------------------------+--------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`clear_margin<class_CanvasGroup_property_clear_margin>` | ``10.0``  |
+   +---------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`fit_margin<class_CanvasGroup_property_fit_margin>`     | ``10.0``  |
+   +---------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`use_mipmaps<class_CanvasGroup_property_use_mipmaps>`   | ``false`` |
+   +---------------------------+--------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CanvasGroup_property_clear_margin:
 
-- :ref:`float<class_float>` **clear_margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``10.0``                |
-+-----------+-------------------------+
-| *Setter*  | set_clear_margin(value) |
-+-----------+-------------------------+
-| *Getter*  | get_clear_margin()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **clear_margin** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_clear_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_clear_margin** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CanvasGroup_property_fit_margin:
 
-- :ref:`float<class_float>` **fit_margin**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``10.0``              |
-+-----------+-----------------------+
-| *Setter*  | set_fit_margin(value) |
-+-----------+-----------------------+
-| *Getter*  | get_fit_margin()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **fit_margin** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fit_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_fit_margin** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CanvasGroup_property_use_mipmaps:
 
-- :ref:`bool<class_bool>` **use_mipmaps**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_use_mipmaps(value) |
-+-----------+------------------------+
-| *Getter*  | is_using_mipmaps()     |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **use_mipmaps** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_mipmaps** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_mipmaps** **(** **)**
 
 .. container:: contribute
 

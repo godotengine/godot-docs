@@ -14,12 +14,16 @@ InputEventMouseMotion
 
 Input event type for mouse motion events.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains mouse and pen motion information. Supports relative, absolute positions and velocity. See :ref:`Node._input<class_Node_method__input>`.
 
 \ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,103 +32,117 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`       | :ref:`pen_inverted<class_InputEventMouseMotion_property_pen_inverted>` | ``false``         |
-+-------------------------------+------------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`     | :ref:`pressure<class_InputEventMouseMotion_property_pressure>`         | ``0.0``           |
-+-------------------------------+------------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>`         | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`                 | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventMouseMotion_property_velocity>`         | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`       | :ref:`pen_inverted<class_InputEventMouseMotion_property_pen_inverted>` | ``false``         |
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`     | :ref:`pressure<class_InputEventMouseMotion_property_pressure>`         | ``0.0``           |
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>`         | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`tilt<class_InputEventMouseMotion_property_tilt>`                 | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventMouseMotion_property_velocity>`         | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventMouseMotion_property_pen_inverted:
 
-- :ref:`bool<class_bool>` **pen_inverted**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_pen_inverted(value) |
-+-----------+-------------------------+
-| *Getter*  | get_pen_inverted()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **pen_inverted** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pen_inverted** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_pen_inverted** **(** **)**
 
 Returns ``true`` when using the eraser end of a stylus pen.
 
 \ **Note:** This property is implemented on Linux, macOS and Windows.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_InputEventMouseMotion_property_pressure:
 
-- :ref:`float<class_float>` **pressure**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_pressure(value) |
-+-----------+---------------------+
-| *Getter*  | get_pressure()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **pressure** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressure** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pressure** **(** **)**
 
 Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseMotion_property_relative:
 
-- :ref:`Vector2<class_Vector2>` **relative**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_relative(value) |
-+-----------+---------------------+
-| *Getter*  | get_relative()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_relative** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_relative** **(** **)**
 
 The mouse position relative to the previous position (position at the last frame).
 
-\ **Note:** Since ``InputEventMouseMotion`` is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
+\ **Note:** Since **InputEventMouseMotion** is only emitted when the mouse moves, the last event won't have a relative position of ``Vector2(0, 0)`` when the user stops moving the mouse.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseMotion_property_tilt:
 
-- :ref:`Vector2<class_Vector2>` **tilt**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_tilt(value)   |
-+-----------+-------------------+
-| *Getter*  | get_tilt()        |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **tilt** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tilt** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_tilt** **(** **)**
 
 Represents the angles of tilt of the pen. Positive X-coordinate value indicates a tilt to the right. Positive Y-coordinate value indicates a tilt toward the user. Ranges from ``-1.0`` to ``1.0`` for both axes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseMotion_property_velocity:
 
-- :ref:`Vector2<class_Vector2>` **velocity**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_velocity(value) |
-+-----------+---------------------+
-| *Getter*  | get_velocity()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
 
 The mouse velocity in pixels per second.
 

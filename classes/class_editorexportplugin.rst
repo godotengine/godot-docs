@@ -14,184 +14,255 @@ EditorExportPlugin
 
 A script that is executed when exporting the project.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``EditorExportPlugin``\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file<class_EditorExportPlugin_method__export_file>` is called for each exported file.
+**EditorExportPlugin**\ s are automatically invoked whenever the user exports the project. Their most common use is to determine what files are being included in the exported project. For each plugin, :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` is called at the beginning of the export process and then :ref:`_export_file<class_EditorExportPlugin_method__export_file>` is called for each exported file.
 
-To use ``EditorExportPlugin``, register it using the :ref:`EditorPlugin.add_export_plugin<class_EditorPlugin_method_add_export_plugin>` method first.
+To use **EditorExportPlugin**, register it using the :ref:`EditorPlugin.add_export_plugin<class_EditorPlugin_method_add_export_plugin>` method first.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const| |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`_begin_customize_scenes<class_EditorExportPlugin_method__begin_customize_scenes>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|       |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`_customize_resource<class_EditorExportPlugin_method__customize_resource>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual|                                                                         |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`         | :ref:`_customize_scene<class_EditorExportPlugin_method__customize_scene>` **(** :ref:`Node<class_Node>` scene, :ref:`String<class_String>` path **)** |virtual|                                                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_end_customize_resources<class_EditorExportPlugin_method__end_customize_resources>` **(** **)** |virtual|                                                                                                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_end_customize_scenes<class_EditorExportPlugin_method__end_customize_scenes>` **(** **)** |virtual|                                                                                                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` **(** :ref:`PackedStringArray<class_PackedStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|    |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_export_end<class_EditorExportPlugin_method__export_end>` **(** **)** |virtual|                                                                                                                                                                    |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_export_file<class_EditorExportPlugin_method__export_file>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual|                                   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_method__get_customization_configuration_hash>` **(** **)** |virtual| |const|                                                                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`_get_name<class_EditorExportPlugin_method__get_name>` **(** **)** |virtual| |const|                                                                                                                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_file<class_EditorExportPlugin_method_add_file>` **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_bundle_file<class_EditorExportPlugin_method_add_ios_bundle_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                             |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_cpp_code<class_EditorExportPlugin_method_add_ios_cpp_code>` **(** :ref:`String<class_String>` code **)**                                                                                                                                   |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_embedded_framework<class_EditorExportPlugin_method_add_ios_embedded_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                               |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                                                 |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_linker_flags<class_EditorExportPlugin_method_add_ios_linker_flags>` **(** :ref:`String<class_String>` flags **)**                                                                                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_plist_content<class_EditorExportPlugin_method_add_ios_plist_content>` **(** :ref:`String<class_String>` plist_content **)**                                                                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_ios_project_static_lib<class_EditorExportPlugin_method_add_ios_project_static_lib>` **(** :ref:`String<class_String>` path **)**                                                                                                               |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_macos_plugin_file<class_EditorExportPlugin_method_add_macos_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                         |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**                                     |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const| |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_begin_customize_scenes<class_EditorExportPlugin_method__begin_customize_scenes>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|       |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`_customize_resource<class_EditorExportPlugin_method__customize_resource>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual|                                                                         |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`         | :ref:`_customize_scene<class_EditorExportPlugin_method__customize_scene>` **(** :ref:`Node<class_Node>` scene, :ref:`String<class_String>` path **)** |virtual|                                                                                          |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_end_customize_resources<class_EditorExportPlugin_method__end_customize_resources>` **(** **)** |virtual|                                                                                                                                          |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_end_customize_scenes<class_EditorExportPlugin_method__end_customize_scenes>` **(** **)** |virtual|                                                                                                                                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_export_begin<class_EditorExportPlugin_method__export_begin>` **(** :ref:`PackedStringArray<class_PackedStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|    |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_export_end<class_EditorExportPlugin_method__export_end>` **(** **)** |virtual|                                                                                                                                                                    |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_export_file<class_EditorExportPlugin_method__export_file>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual|                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_method__get_customization_configuration_hash>` **(** **)** |virtual| |const|                                                                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`_get_name<class_EditorExportPlugin_method__get_name>` **(** **)** |virtual| |const|                                                                                                                                                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_file<class_EditorExportPlugin_method_add_file>` **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_bundle_file<class_EditorExportPlugin_method_add_ios_bundle_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                             |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_cpp_code<class_EditorExportPlugin_method_add_ios_cpp_code>` **(** :ref:`String<class_String>` code **)**                                                                                                                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_embedded_framework<class_EditorExportPlugin_method_add_ios_embedded_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                               |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>` **(** :ref:`String<class_String>` path **)**                                                                                                                                 |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_linker_flags<class_EditorExportPlugin_method_add_ios_linker_flags>` **(** :ref:`String<class_String>` flags **)**                                                                                                                          |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_plist_content<class_EditorExportPlugin_method_add_ios_plist_content>` **(** :ref:`String<class_String>` plist_content **)**                                                                                                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_ios_project_static_lib<class_EditorExportPlugin_method_add_ios_project_static_lib>` **(** :ref:`String<class_String>` path **)**                                                                                                               |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_macos_plugin_file<class_EditorExportPlugin_method_add_macos_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                         |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**                                     |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                            |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorExportPlugin_method__begin_customize_resources:
 
-- :ref:`bool<class_bool>` **_begin_customize_resources** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_begin_customize_resources** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|
 
 Return true if this plugin will customize resources based on the platform and features used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__begin_customize_scenes:
 
-- :ref:`bool<class_bool>` **_begin_customize_scenes** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_begin_customize_scenes** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|
 
 Return true if this plugin will customize scenes based on the platform and features used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__customize_resource:
 
-- :ref:`Resource<class_Resource>` **_customize_resource** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **_customize_resource** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual|
 
 Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return ``null``.
 
 The *path* argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorExportPlugin_method__customize_scene:
 
-- :ref:`Node<class_Node>` **_customize_scene** **(** :ref:`Node<class_Node>` scene, :ref:`String<class_String>` path **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Node<class_Node>` **_customize_scene** **(** :ref:`Node<class_Node>` scene, :ref:`String<class_String>` path **)** |virtual|
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__end_customize_resources:
 
-- void **_end_customize_resources** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_end_customize_resources** **(** **)** |virtual|
 
 This is called when the customization process for resources ends.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__end_customize_scenes:
 
-- void **_end_customize_scenes** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_end_customize_scenes** **(** **)** |virtual|
 
 This is called when the customization process for scenes ends.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__export_begin:
 
-- void **_export_begin** **(** :ref:`PackedStringArray<class_PackedStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
+.. rst-class:: classref-method
+
+void **_export_begin** **(** :ref:`PackedStringArray<class_PackedStringArray>` features, :ref:`bool<class_bool>` is_debug, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
 
 Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export. ``features`` is the list of features for the export, ``is_debug`` is ``true`` for debug builds, ``path`` is the target path for the exported project. ``flags`` is only used when running a runnable profile, e.g. when using native run on Android.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__export_end:
 
-- void **_export_end** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_export_end** **(** **)** |virtual|
 
 Virtual method to be overridden by the user. Called when the export is finished.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__export_file:
 
-- void **_export_file** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual|
+.. rst-class:: classref-method
+
+void **_export_file** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual|
 
 Virtual method to be overridden by the user. Called for each exported file, providing arguments that can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`) and ``features`` is the list of features for the export.
 
 Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorExportPlugin_method__get_customization_configuration_hash:
 
-- :ref:`int<class_int>` **_get_customization_configuration_hash** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_customization_configuration_hash** **(** **)** |virtual| |const|
 
 Return a hash based on the configuration passed (for both scenes and resources). This helps keep separate caches for separate export configurations.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method__get_name:
 
-- :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
 
 Return the name identifier of this plugin (for future identification by the exporter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_file:
 
-- void **add_file** **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**
+.. rst-class:: classref-method
+
+void **add_file** **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**
 
 Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file. If ``remap`` is ``true``, file will not be exported, but instead remapped to the given ``path``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_bundle_file:
 
-- void **add_ios_bundle_file** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_ios_bundle_file** **(** :ref:`String<class_String>` path **)**
 
 Adds an iOS bundle file from the given ``path`` to the exported project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_cpp_code:
 
-- void **add_ios_cpp_code** **(** :ref:`String<class_String>` code **)**
+.. rst-class:: classref-method
+
+void **add_ios_cpp_code** **(** :ref:`String<class_String>` code **)**
 
 Adds a C++ code to the iOS export. The final code is created from the code appended by each active export plugin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_embedded_framework:
 
-- void **add_ios_embedded_framework** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_ios_embedded_framework** **(** :ref:`String<class_String>` path **)**
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
@@ -199,53 +270,77 @@ Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode 
 
 This method should not be used for System libraries as they are already present on the device.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_framework:
 
-- void **add_ios_framework** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_ios_framework** **(** :ref:`String<class_String>` path **)**
 
 Adds a static library (\*.a) or dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_linker_flags:
 
-- void **add_ios_linker_flags** **(** :ref:`String<class_String>` flags **)**
+.. rst-class:: classref-method
+
+void **add_ios_linker_flags** **(** :ref:`String<class_String>` flags **)**
 
 Adds linker flags for the iOS export.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_plist_content:
 
-- void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
+.. rst-class:: classref-method
+
+void **add_ios_plist_content** **(** :ref:`String<class_String>` plist_content **)**
 
 Adds content for iOS Property List files.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_ios_project_static_lib:
 
-- void **add_ios_project_static_lib** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_ios_project_static_lib** **(** :ref:`String<class_String>` path **)**
 
 Adds a static lib from the given ``path`` to the iOS project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorExportPlugin_method_add_macos_plugin_file:
 
-- void **add_macos_plugin_file** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_macos_plugin_file** **(** :ref:`String<class_String>` path **)**
 
 Adds file or directory matching ``path`` to ``PlugIns`` directory of macOS app bundle.
 
 \ **Note:** This is useful only for macOS exports.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorExportPlugin_method_add_shared_object:
 
-- void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**
+.. rst-class:: classref-method
+
+void **add_shared_object** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**
 
 Adds a shared object or a directory containing only shared objects with the given ``tags`` and destination ``path``.
 
@@ -253,11 +348,15 @@ Adds a shared object or a directory containing only shared objects with the give
 
 In case of a directory code-sign will error if you place non code object in directory.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorExportPlugin_method_skip:
 
-- void **skip** **(** **)**
+.. rst-class:: classref-method
+
+void **skip** **(** **)**
 
 To be called inside :ref:`_export_file<class_EditorExportPlugin_method__export_file>`. Skips the current file, so it's not included in the export.
 

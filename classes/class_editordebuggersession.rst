@@ -14,6 +14,8 @@ EditorDebuggerSession
 
 A class to interact with the editor debugger.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,112 +23,169 @@ This class cannot be directly instantiated and must be retrieved via a :ref:`Edi
 
 You can add tabs to the session UI via :ref:`add_session_tab<class_EditorDebuggerSession_method_add_session_tab>`, send messages via :ref:`send_message<class_EditorDebuggerSession_method_send_message>`, and toggle :ref:`EngineProfiler<class_EngineProfiler>`\ s via :ref:`toggle_profiler<class_EditorDebuggerSession_method_toggle_profiler>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_session_tab<class_EditorDebuggerSession_method_add_session_tab>` **(** :ref:`Control<class_Control>` control **)**                                                                   |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_active<class_EditorDebuggerSession_method_is_active>` **(** **)**                                                                                                                     |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_breaked<class_EditorDebuggerSession_method_is_breaked>` **(** **)**                                                                                                                   |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_debuggable<class_EditorDebuggerSession_method_is_debuggable>` **(** **)**                                                                                                             |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`remove_session_tab<class_EditorDebuggerSession_method_remove_session_tab>` **(** :ref:`Control<class_Control>` control **)**                                                             |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`send_message<class_EditorDebuggerSession_method_send_message>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data=[] **)**                                        |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`toggle_profiler<class_EditorDebuggerSession_method_toggle_profiler>` **(** :ref:`String<class_String>` profiler, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` data=[] **)** |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_session_tab<class_EditorDebuggerSession_method_add_session_tab>` **(** :ref:`Control<class_Control>` control **)**                                                                   |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_active<class_EditorDebuggerSession_method_is_active>` **(** **)**                                                                                                                     |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_breaked<class_EditorDebuggerSession_method_is_breaked>` **(** **)**                                                                                                                   |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_debuggable<class_EditorDebuggerSession_method_is_debuggable>` **(** **)**                                                                                                             |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`remove_session_tab<class_EditorDebuggerSession_method_remove_session_tab>` **(** :ref:`Control<class_Control>` control **)**                                                             |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`send_message<class_EditorDebuggerSession_method_send_message>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data=[] **)**                                        |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`toggle_profiler<class_EditorDebuggerSession_method_toggle_profiler>` **(** :ref:`String<class_String>` profiler, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` data=[] **)** |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_EditorDebuggerSession_signal_breaked:
 
-- **breaked** **(** :ref:`bool<class_bool>` can_debug **)**
+.. rst-class:: classref-signal
+
+**breaked** **(** :ref:`bool<class_bool>` can_debug **)**
 
 Emitted when the attached remote instance enters a break state. If ``can_debug`` is ``true``, the remote instance will enter the debug loop.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_signal_continued:
 
-- **continued** **(** **)**
+.. rst-class:: classref-signal
+
+**continued** **(** **)**
 
 Emitted when the attached remote instance exits a break state.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_signal_started:
 
-- **started** **(** **)**
+.. rst-class:: classref-signal
+
+**started** **(** **)**
 
 Emitted when a remote instance is attached to this session (i.e. the session becomes active).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_signal_stopped:
 
-- **stopped** **(** **)**
+.. rst-class:: classref-signal
+
+**stopped** **(** **)**
 
 Emitted when a remote instance is detached from this session (i.e. the session becomes inactive).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorDebuggerSession_method_add_session_tab:
 
-- void **add_session_tab** **(** :ref:`Control<class_Control>` control **)**
+.. rst-class:: classref-method
+
+void **add_session_tab** **(** :ref:`Control<class_Control>` control **)**
 
 Adds the given ``control`` to the debug session UI in the debugger bottom panel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_is_active:
 
-- :ref:`bool<class_bool>` **is_active** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_active** **(** **)**
 
 Returns ``true`` if the debug session is currently attached to a remote instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_is_breaked:
 
-- :ref:`bool<class_bool>` **is_breaked** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_breaked** **(** **)**
 
 Returns ``true`` if the attached remote instance is currently in the debug loop.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_is_debuggable:
 
-- :ref:`bool<class_bool>` **is_debuggable** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_debuggable** **(** **)**
 
 Returns ``true`` if the attached remote instance can be debugged.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_remove_session_tab:
 
-- void **remove_session_tab** **(** :ref:`Control<class_Control>` control **)**
+.. rst-class:: classref-method
+
+void **remove_session_tab** **(** :ref:`Control<class_Control>` control **)**
 
 Removes the given ``control`` from the debug session UI in the debugger bottom panel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_send_message:
 
-- void **send_message** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data=[] **)**
+.. rst-class:: classref-method
+
+void **send_message** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data=[] **)**
 
 Sends the given ``message`` to the attached remote instance, optionally passing additionally ``data``. See :ref:`EngineDebugger<class_EngineDebugger>` for how to retrieve those messages.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorDebuggerSession_method_toggle_profiler:
 
-- void **toggle_profiler** **(** :ref:`String<class_String>` profiler, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` data=[] **)**
+.. rst-class:: classref-method
+
+void **toggle_profiler** **(** :ref:`String<class_String>` profiler, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` data=[] **)**
 
 Toggle the given ``profiler`` on the attached remote instance, optionally passing additionally ``data``. See :ref:`EngineProfiler<class_EngineProfiler>` for more details.
 

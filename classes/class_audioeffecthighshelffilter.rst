@@ -14,10 +14,14 @@ AudioEffectHighShelfFilter
 
 Adds a high-shelf filter to the audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Reduces all frequencies above the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

@@ -14,19 +14,32 @@ PackedDataContainerRef
 
 Reference-counted version of :ref:`PackedDataContainer<class_PackedDataContainer>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------+---------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`size<class_PackedDataContainerRef_method_size>` **(** **)** |const| |
-+-----------------------+---------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`size<class_PackedDataContainerRef_method_size>` **(** **)** |const| |
+   +-----------------------+---------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PackedDataContainerRef_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)** |const|
 
 .. container:: contribute
 

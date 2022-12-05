@@ -16,73 +16,110 @@ VisualShaderNodeParameter
 
 A base type for the parameters within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A parameter represents a variable in the shader which is set externally, i.e. from the :ref:`ShaderMaterial<class_ShaderMaterial>`. Parameters are exposed as properties in the :ref:`ShaderMaterial<class_ShaderMaterial>` and can be assigned from the Inspector or from a script.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                                | :ref:`parameter_name<class_VisualShaderNodeParameter_property_parameter_name>` | ``""`` |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
-| :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` | :ref:`qualifier<class_VisualShaderNodeParameter_property_qualifier>`           | ``0``  |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                                | :ref:`parameter_name<class_VisualShaderNodeParameter_property_parameter_name>` | ``""`` |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+   | :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` | :ref:`qualifier<class_VisualShaderNodeParameter_property_qualifier>`           | ``0``  |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeParameter_Qualifier:
 
-.. _class_VisualShaderNodeParameter_constant_QUAL_NONE:
-
-.. _class_VisualShaderNodeParameter_constant_QUAL_GLOBAL:
-
-.. _class_VisualShaderNodeParameter_constant_QUAL_INSTANCE:
-
-.. _class_VisualShaderNodeParameter_constant_QUAL_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Qualifier**:
 
-- **QUAL_NONE** = **0**
+.. _class_VisualShaderNodeParameter_constant_QUAL_NONE:
 
-- **QUAL_GLOBAL** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **QUAL_INSTANCE** = **2**
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_NONE** = ``0``
 
-- **QUAL_MAX** = **3** --- Represents the size of the :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` enum.
+
+
+.. _class_VisualShaderNodeParameter_constant_QUAL_GLOBAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_GLOBAL** = ``1``
+
+
+
+.. _class_VisualShaderNodeParameter_constant_QUAL_INSTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_INSTANCE** = ``2``
+
+
+
+.. _class_VisualShaderNodeParameter_constant_QUAL_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_MAX** = ``3``
+
+Represents the size of the :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParameter_property_parameter_name:
 
-- :ref:`String<class_String>` **parameter_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | set_parameter_name(value) |
-+-----------+---------------------------+
-| *Getter*  | get_parameter_name()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **parameter_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parameter_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_parameter_name** **(** **)**
 
 Name of the parameter, by which it can be accessed through the :ref:`ShaderMaterial<class_ShaderMaterial>` properties.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeParameter_property_qualifier:
 
-- :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **qualifier**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_qualifier(value) |
-+-----------+----------------------+
-| *Getter*  | get_qualifier()      |
-+-----------+----------------------+
+:ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **qualifier** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_qualifier** **(** :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` value **)**
+- :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **get_qualifier** **(** **)**
 
 .. container:: contribute
 

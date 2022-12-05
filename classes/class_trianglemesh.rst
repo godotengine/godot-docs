@@ -14,6 +14,8 @@ TriangleMesh
 
 Internal mesh type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

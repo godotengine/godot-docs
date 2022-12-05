@@ -14,30 +14,44 @@ VisualShaderNodeTexture2DArray
 
 A 2D texture uniform array to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``uniform sampler2DArray`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------+
-| :ref:`Texture2DArray<class_Texture2DArray>` | :ref:`texture_array<class_VisualShaderNodeTexture2DArray_property_texture_array>` |
-+---------------------------------------------+-----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+-----------------------------------------------------------------------------------+
+   | :ref:`Texture2DArray<class_Texture2DArray>` | :ref:`texture_array<class_VisualShaderNodeTexture2DArray_property_texture_array>` |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTexture2DArray_property_texture_array:
 
-- :ref:`Texture2DArray<class_Texture2DArray>` **texture_array**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_texture_array(value) |
-+----------+--------------------------+
-| *Getter* | get_texture_array()      |
-+----------+--------------------------+
+:ref:`Texture2DArray<class_Texture2DArray>` **texture_array**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_array** **(** :ref:`Texture2DArray<class_Texture2DArray>` value **)**
+- :ref:`Texture2DArray<class_Texture2DArray>` **get_texture_array** **(** **)**
 
 A source texture array. Used if :ref:`VisualShaderNodeSample3D.source<class_VisualShaderNodeSample3D_property_source>` is set to :ref:`VisualShaderNodeSample3D.SOURCE_TEXTURE<class_VisualShaderNodeSample3D_constant_SOURCE_TEXTURE>`.
 

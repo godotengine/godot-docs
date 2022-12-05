@@ -14,6 +14,8 @@ ResourceSaver
 
 Singleton for saving Godot-specific resource types.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,92 +23,157 @@ Singleton for saving Godot-specific resource types to the filesystem.
 
 It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`add_resource_format_saver<class_ResourceSaver_method_add_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)** |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                                       |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                   |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**              |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`add_resource_format_saver<class_ResourceSaver_method_add_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)** |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                                       |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                   |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**              |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ResourceSaver_SaverFlags:
 
-.. _class_ResourceSaver_constant_FLAG_NONE:
-
-.. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
-
-.. _class_ResourceSaver_constant_FLAG_BUNDLE_RESOURCES:
-
-.. _class_ResourceSaver_constant_FLAG_CHANGE_PATH:
-
-.. _class_ResourceSaver_constant_FLAG_OMIT_EDITOR_PROPERTIES:
-
-.. _class_ResourceSaver_constant_FLAG_SAVE_BIG_ENDIAN:
-
-.. _class_ResourceSaver_constant_FLAG_COMPRESS:
-
-.. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
+.. rst-class:: classref-enumeration
 
 flags **SaverFlags**:
 
-- **FLAG_NONE** = **0** --- No resource saving option.
+.. _class_ResourceSaver_constant_FLAG_NONE:
 
-- **FLAG_RELATIVE_PATHS** = **1** --- Save the resource with a path relative to the scene which uses it.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_BUNDLE_RESOURCES** = **2** --- Bundles external resources.
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_NONE** = ``0``
 
-- **FLAG_CHANGE_PATH** = **4** --- Changes the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
+No resource saving option.
 
-- **FLAG_OMIT_EDITOR_PROPERTIES** = **8** --- Do not save editor-specific metadata (identified by their ``__editor`` prefix).
+.. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
 
-- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`FileAccess.big_endian<class_FileAccess_property_big_endian>`).
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`FileAccess.COMPRESSION_ZSTD<class_FileAccess_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_RELATIVE_PATHS** = ``1``
 
-- **FLAG_REPLACE_SUBRESOURCE_PATHS** = **64** --- Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
+Save the resource with a path relative to the scene which uses it.
+
+.. _class_ResourceSaver_constant_FLAG_BUNDLE_RESOURCES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_BUNDLE_RESOURCES** = ``2``
+
+Bundles external resources.
+
+.. _class_ResourceSaver_constant_FLAG_CHANGE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_CHANGE_PATH** = ``4``
+
+Changes the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
+
+.. _class_ResourceSaver_constant_FLAG_OMIT_EDITOR_PROPERTIES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_OMIT_EDITOR_PROPERTIES** = ``8``
+
+Do not save editor-specific metadata (identified by their ``__editor`` prefix).
+
+.. _class_ResourceSaver_constant_FLAG_SAVE_BIG_ENDIAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_SAVE_BIG_ENDIAN** = ``16``
+
+Save as big endian (see :ref:`FileAccess.big_endian<class_FileAccess_property_big_endian>`).
+
+.. _class_ResourceSaver_constant_FLAG_COMPRESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_COMPRESS** = ``32``
+
+Compress the resource on save using :ref:`FileAccess.COMPRESSION_ZSTD<class_FileAccess_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
+
+.. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_REPLACE_SUBRESOURCE_PATHS** = ``64``
+
+Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceSaver_method_add_resource_format_saver:
 
-- void **add_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)**
+.. rst-class:: classref-method
+
+void **add_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)**
 
 Registers a new :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`. The ResourceSaver will use the ResourceFormatSaver as described in :ref:`save<class_ResourceSaver_method_save>`.
 
 This method is performed implicitly for ResourceFormatSavers written in GDScript (see :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` for more information).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ResourceSaver_method_get_recognized_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
 Returns the list of extensions available for saving a resource of a given type.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceSaver_method_remove_resource_format_saver:
 
-- void **remove_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**
+.. rst-class:: classref-method
+
+void **remove_resource_format_saver** **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**
 
 Unregisters the given :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceSaver_method_save:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+.. rst-class:: classref-method
 
-Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object. If ``path`` is empty, ``ResourceSaver`` will try to use :ref:`Resource.resource_path<class_Resource_property_resource_path>`.
+:ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+
+Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object. If ``path`` is empty, **ResourceSaver** will try to use :ref:`Resource.resource_path<class_Resource_property_resource_path>`.
 
 The ``flags`` bitmask can be specified to customize the save behavior using :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags.
 

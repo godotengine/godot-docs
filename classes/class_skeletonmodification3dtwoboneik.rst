@@ -14,6 +14,8 @@ SkeletonModification3DTwoBoneIK
 
 A modification that moves two bones to reach the target.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,297 +25,420 @@ TwoBoneIK is great for arms, legs, and really any joints that can be represented
 
 A :ref:`Node3D<class_Node3D>`-based node can be used to define the pole, or bend direction, allowing control over which direction the joint takes when bending to reach the target when the target is within reach.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DTwoBoneIK_property_target_nodepath>` | ``NodePath("")`` |
-+---------------------------------+----------------------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DTwoBoneIK_property_target_nodepath>` | ``NodePath("")`` |
+   +---------------------------------+----------------------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_auto_calculate_joint_length<class_SkeletonModification3DTwoBoneIK_method_get_auto_calculate_joint_length>` **(** **)** |const|                                             |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_joint_one_bone_idx<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_idx>` **(** **)** |const|                                                               |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_joint_one_bone_name<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_name>` **(** **)** |const|                                                             |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`get_joint_one_length<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_length>` **(** **)** |const|                                                                   |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`get_joint_one_roll<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_roll>` **(** **)** |const|                                                                       |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_joint_two_bone_idx<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_idx>` **(** **)** |const|                                                               |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_joint_two_bone_name<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_name>` **(** **)** |const|                                                             |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`get_joint_two_length<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_length>` **(** **)** |const|                                                                   |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`get_joint_two_roll<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_roll>` **(** **)** |const|                                                                       |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_pole_node<class_SkeletonModification3DTwoBoneIK_method_get_pole_node>` **(** **)** |const|                                                                                 |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_tip_node<class_SkeletonModification3DTwoBoneIK_method_get_tip_node>` **(** **)** |const|                                                                                   |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_use_pole_node<class_SkeletonModification3DTwoBoneIK_method_get_use_pole_node>` **(** **)** |const|                                                                         |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_use_tip_node<class_SkeletonModification3DTwoBoneIK_method_get_use_tip_node>` **(** **)** |const|                                                                           |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_auto_calculate_joint_length<class_SkeletonModification3DTwoBoneIK_method_set_auto_calculate_joint_length>` **(** :ref:`bool<class_bool>` auto_calculate_joint_length **)** |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_one_bone_idx<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                                        |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_one_bone_name<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_name>` **(** :ref:`String<class_String>` bone_name **)**                               |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_one_length<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_length>` **(** :ref:`float<class_float>` bone_length **)**                                     |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_one_roll<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_roll>` **(** :ref:`float<class_float>` roll **)**                                                |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_two_bone_idx<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                                        |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_two_bone_name<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_name>` **(** :ref:`String<class_String>` bone_name **)**                               |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_two_length<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_length>` **(** :ref:`float<class_float>` bone_length **)**                                     |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_joint_two_roll<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_roll>` **(** :ref:`float<class_float>` roll **)**                                                |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_pole_node<class_SkeletonModification3DTwoBoneIK_method_set_pole_node>` **(** :ref:`NodePath<class_NodePath>` pole_nodepath **)**                                           |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_tip_node<class_SkeletonModification3DTwoBoneIK_method_set_tip_node>` **(** :ref:`NodePath<class_NodePath>` tip_nodepath **)**                                              |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_use_pole_node<class_SkeletonModification3DTwoBoneIK_method_set_use_pole_node>` **(** :ref:`bool<class_bool>` use_pole_node **)**                                           |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_use_tip_node<class_SkeletonModification3DTwoBoneIK_method_set_use_tip_node>` **(** :ref:`bool<class_bool>` use_tip_node **)**                                              |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_auto_calculate_joint_length<class_SkeletonModification3DTwoBoneIK_method_get_auto_calculate_joint_length>` **(** **)** |const|                                             |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_joint_one_bone_idx<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_idx>` **(** **)** |const|                                                               |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`get_joint_one_bone_name<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_name>` **(** **)** |const|                                                             |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_joint_one_length<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_length>` **(** **)** |const|                                                                   |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_joint_one_roll<class_SkeletonModification3DTwoBoneIK_method_get_joint_one_roll>` **(** **)** |const|                                                                       |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_joint_two_bone_idx<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_idx>` **(** **)** |const|                                                               |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`get_joint_two_bone_name<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_name>` **(** **)** |const|                                                             |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_joint_two_length<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_length>` **(** **)** |const|                                                                   |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_joint_two_roll<class_SkeletonModification3DTwoBoneIK_method_get_joint_two_roll>` **(** **)** |const|                                                                       |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_pole_node<class_SkeletonModification3DTwoBoneIK_method_get_pole_node>` **(** **)** |const|                                                                                 |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_tip_node<class_SkeletonModification3DTwoBoneIK_method_get_tip_node>` **(** **)** |const|                                                                                   |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_use_pole_node<class_SkeletonModification3DTwoBoneIK_method_get_use_pole_node>` **(** **)** |const|                                                                         |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_use_tip_node<class_SkeletonModification3DTwoBoneIK_method_get_use_tip_node>` **(** **)** |const|                                                                           |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_auto_calculate_joint_length<class_SkeletonModification3DTwoBoneIK_method_set_auto_calculate_joint_length>` **(** :ref:`bool<class_bool>` auto_calculate_joint_length **)** |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_one_bone_idx<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                                        |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_one_bone_name<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_name>` **(** :ref:`String<class_String>` bone_name **)**                               |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_one_length<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_length>` **(** :ref:`float<class_float>` bone_length **)**                                     |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_one_roll<class_SkeletonModification3DTwoBoneIK_method_set_joint_one_roll>` **(** :ref:`float<class_float>` roll **)**                                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_two_bone_idx<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                                        |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_two_bone_name<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_name>` **(** :ref:`String<class_String>` bone_name **)**                               |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_two_length<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_length>` **(** :ref:`float<class_float>` bone_length **)**                                     |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_joint_two_roll<class_SkeletonModification3DTwoBoneIK_method_set_joint_two_roll>` **(** :ref:`float<class_float>` roll **)**                                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_pole_node<class_SkeletonModification3DTwoBoneIK_method_set_pole_node>` **(** :ref:`NodePath<class_NodePath>` pole_nodepath **)**                                           |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_tip_node<class_SkeletonModification3DTwoBoneIK_method_set_tip_node>` **(** :ref:`NodePath<class_NodePath>` tip_nodepath **)**                                              |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_use_pole_node<class_SkeletonModification3DTwoBoneIK_method_set_use_pole_node>` **(** :ref:`bool<class_bool>` use_pole_node **)**                                           |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_use_tip_node<class_SkeletonModification3DTwoBoneIK_method_set_use_tip_node>` **(** :ref:`bool<class_bool>` use_tip_node **)**                                              |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SkeletonModification3DTwoBoneIK_property_target_nodepath:
 
-- :ref:`NodePath<class_NodePath>` **target_nodepath**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``NodePath("")``       |
-+-----------+------------------------+
-| *Setter*  | set_target_node(value) |
-+-----------+------------------------+
-| *Getter*  | get_target_node()      |
-+-----------+------------------------+
+:ref:`NodePath<class_NodePath>` **target_nodepath** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
 
 The NodePath to the node that is the target for the TwoBoneIK modification. This node is what the modification will attempt to rotate the bones to reach.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_auto_calculate_joint_length:
 
-- :ref:`bool<class_bool>` **get_auto_calculate_joint_length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_auto_calculate_joint_length** **(** **)** |const|
 
 Returns whether the TwoBoneIK modification will attempt to autocalculate the lengths of the two bones.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_idx:
 
-- :ref:`int<class_int>` **get_joint_one_bone_idx** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_joint_one_bone_idx** **(** **)** |const|
 
 Returns the bone index of the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_one_bone_name:
 
-- :ref:`String<class_String>` **get_joint_one_bone_name** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_joint_one_bone_name** **(** **)** |const|
 
 Returns the name of the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_one_length:
 
-- :ref:`float<class_float>` **get_joint_one_length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joint_one_length** **(** **)** |const|
 
 Returns the length of the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_one_roll:
 
-- :ref:`float<class_float>` **get_joint_one_roll** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joint_one_roll** **(** **)** |const|
 
 Returns the amount of roll/twist applied to the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_idx:
 
-- :ref:`int<class_int>` **get_joint_two_bone_idx** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_joint_two_bone_idx** **(** **)** |const|
 
 Returns the bone index of the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_two_bone_name:
 
-- :ref:`String<class_String>` **get_joint_two_bone_name** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_joint_two_bone_name** **(** **)** |const|
 
 Returns the name of the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_two_length:
 
-- :ref:`float<class_float>` **get_joint_two_length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joint_two_length** **(** **)** |const|
 
 Returns the length of the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_joint_two_roll:
 
-- :ref:`float<class_float>` **get_joint_two_roll** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joint_two_roll** **(** **)** |const|
 
 Returns the amount of roll/twist applied to the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_pole_node:
 
-- :ref:`NodePath<class_NodePath>` **get_pole_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_pole_node** **(** **)** |const|
 
 Returns the node that is being used as the pole node for the TwoBoneIK modification, if a pole node has been set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_tip_node:
 
-- :ref:`NodePath<class_NodePath>` **get_tip_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_tip_node** **(** **)** |const|
 
 Returns the node that is being used to calculate the tip position of the second bone in the TwoBoneIK modification, if a tip node has been set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_use_pole_node:
 
-- :ref:`bool<class_bool>` **get_use_pole_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_use_pole_node** **(** **)** |const|
 
 Returns whether the TwoBoneIK modification will attempt to use the pole node to figure out which direction to bend, if a pole node has been set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_get_use_tip_node:
 
-- :ref:`bool<class_bool>` **get_use_tip_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_use_tip_node** **(** **)** |const|
 
 Returns whether the TwoBoneIK modification will attempt to use the tip node to figure out the length and position of the tip of the second bone.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_auto_calculate_joint_length:
 
-- void **set_auto_calculate_joint_length** **(** :ref:`bool<class_bool>` auto_calculate_joint_length **)**
+.. rst-class:: classref-method
+
+void **set_auto_calculate_joint_length** **(** :ref:`bool<class_bool>` auto_calculate_joint_length **)**
 
 If true, the TwoBoneIK modification will attempt to autocalculate the lengths of the bones being used. The first bone will be calculated by using the distance from the origin of the first bone to the origin of the second bone.
 
 The second bone will be calculated either using the tip node if that setting is enabled, or by using the distances of the second bone's children. If the tip node is not enabled and the bone has no children, then the length cannot be autocalculated. In this case, the length will either have to be manually inputted or a tip node used to calculate the length.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_idx:
 
-- void **set_joint_one_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
+.. rst-class:: classref-method
+
+void **set_joint_one_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
 
 Sets the bone index, ``bone_idx``, of the first bone. When possible, this will also update the ``bone_name`` of the first bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_one_bone_name:
 
-- void **set_joint_one_bone_name** **(** :ref:`String<class_String>` bone_name **)**
+.. rst-class:: classref-method
+
+void **set_joint_one_bone_name** **(** :ref:`String<class_String>` bone_name **)**
 
 Sets the bone name, ``bone_name``, of the first bone. When possible, this will also update the ``bone_index`` of the first bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_one_length:
 
-- void **set_joint_one_length** **(** :ref:`float<class_float>` bone_length **)**
+.. rst-class:: classref-method
+
+void **set_joint_one_length** **(** :ref:`float<class_float>` bone_length **)**
 
 Sets the length of the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_one_roll:
 
-- void **set_joint_one_roll** **(** :ref:`float<class_float>` roll **)**
+.. rst-class:: classref-method
+
+void **set_joint_one_roll** **(** :ref:`float<class_float>` roll **)**
 
 Sets the amount of roll/twist applied to the first bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_idx:
 
-- void **set_joint_two_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
+.. rst-class:: classref-method
+
+void **set_joint_two_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
 
 Sets the bone index, ``bone_idx``, of the second bone. When possible, this will also update the ``bone_name`` of the second bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_two_bone_name:
 
-- void **set_joint_two_bone_name** **(** :ref:`String<class_String>` bone_name **)**
+.. rst-class:: classref-method
+
+void **set_joint_two_bone_name** **(** :ref:`String<class_String>` bone_name **)**
 
 Sets the bone name, ``bone_name``, of the second bone. When possible, this will also update the ``bone_index`` of the second bone based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_two_length:
 
-- void **set_joint_two_length** **(** :ref:`float<class_float>` bone_length **)**
+.. rst-class:: classref-method
+
+void **set_joint_two_length** **(** :ref:`float<class_float>` bone_length **)**
 
 Sets the length of the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_joint_two_roll:
 
-- void **set_joint_two_roll** **(** :ref:`float<class_float>` roll **)**
+.. rst-class:: classref-method
+
+void **set_joint_two_roll** **(** :ref:`float<class_float>` roll **)**
 
 Sets the amount of roll/twist applied to the second bone in the TwoBoneIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_pole_node:
 
-- void **set_pole_node** **(** :ref:`NodePath<class_NodePath>` pole_nodepath **)**
+.. rst-class:: classref-method
+
+void **set_pole_node** **(** :ref:`NodePath<class_NodePath>` pole_nodepath **)**
 
 Sets the node to be used as the for the pole of the TwoBoneIK. When a node is set and the modification is set to use the pole node, the TwoBoneIK modification will bend the nodes in the direction towards this node when the bones need to bend.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_tip_node:
 
-- void **set_tip_node** **(** :ref:`NodePath<class_NodePath>` tip_nodepath **)**
+.. rst-class:: classref-method
+
+void **set_tip_node** **(** :ref:`NodePath<class_NodePath>` tip_nodepath **)**
 
 Sets the node to be used as the tip for the second bone. This is used to calculate the length and position of the end of the second bone in the TwoBoneIK modification.
 
 \ **Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the second bone, with the child node being offset so it is at the end of the bone.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_use_pole_node:
 
-- void **set_use_pole_node** **(** :ref:`bool<class_bool>` use_pole_node **)**
+.. rst-class:: classref-method
+
+void **set_use_pole_node** **(** :ref:`bool<class_bool>` use_pole_node **)**
 
 When ``true``, the TwoBoneIK modification will bend the bones towards the pole node, if one has been set. This gives control over the direction the TwoBoneIK solver will bend, which is helpful for joints like elbows that only bend in certain directions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DTwoBoneIK_method_set_use_tip_node:
 
-- void **set_use_tip_node** **(** :ref:`bool<class_bool>` use_tip_node **)**
+.. rst-class:: classref-method
+
+void **set_use_tip_node** **(** :ref:`bool<class_bool>` use_tip_node **)**
 
 When ``true``, the TwoBoneIK modification will use the tip node to calculate the distance and position of the end/tip of the second bone. This is the most stable solution for knowing the tip position and length of the second bone.
 

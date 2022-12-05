@@ -16,27 +16,37 @@ GLTFAnimation
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`loop<class_GLTFAnimation_property_loop>` | ``false`` |
-+-------------------------+------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`loop<class_GLTFAnimation_property_loop>` | ``false`` |
+   +-------------------------+------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFAnimation_property_loop:
 
-- :ref:`bool<class_bool>` **loop**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_loop(value) |
-+-----------+-----------------+
-| *Getter*  | get_loop()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **loop** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_loop** **(** **)**
 
 .. container:: contribute
 

@@ -16,195 +16,314 @@ VisualShaderNodeTextureParameter
 
 Performs a uniform texture lookup within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Performs a lookup operation on the texture provided as a uniform for the shader.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
-| :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>`   | :ref:`color_default<class_VisualShaderNodeTextureParameter_property_color_default>`   | ``0`` |
-+---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
-| :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` | :ref:`texture_filter<class_VisualShaderNodeTextureParameter_property_texture_filter>` | ``0`` |
-+---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
-| :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` | :ref:`texture_repeat<class_VisualShaderNodeTextureParameter_property_texture_repeat>` | ``0`` |
-+---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
-| :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`     | :ref:`texture_type<class_VisualShaderNodeTextureParameter_property_texture_type>`     | ``0`` |
-+---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+   | :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>`   | :ref:`color_default<class_VisualShaderNodeTextureParameter_property_color_default>`   | ``0`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+   | :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` | :ref:`texture_filter<class_VisualShaderNodeTextureParameter_property_texture_filter>` | ``0`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+   | :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` | :ref:`texture_repeat<class_VisualShaderNodeTextureParameter_property_texture_repeat>` | ``0`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+   | :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`     | :ref:`texture_type<class_VisualShaderNodeTextureParameter_property_texture_type>`     | ``0`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTextureParameter_TextureType:
 
-.. _class_VisualShaderNodeTextureParameter_constant_TYPE_DATA:
-
-.. _class_VisualShaderNodeTextureParameter_constant_TYPE_COLOR:
-
-.. _class_VisualShaderNodeTextureParameter_constant_TYPE_NORMAL_MAP:
-
-.. _class_VisualShaderNodeTextureParameter_constant_TYPE_ANISOTROPY:
-
-.. _class_VisualShaderNodeTextureParameter_constant_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **TextureType**:
 
-- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
+.. _class_VisualShaderNodeTextureParameter_constant_TYPE_DATA:
 
-- **TYPE_COLOR** = **1** --- Adds ``source_color`` as hint to the uniform declaration for proper sRGB to linear conversion.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_NORMAL_MAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **TYPE_DATA** = ``0``
 
-- **TYPE_ANISOTROPY** = **3** --- Adds ``hint_anisotropy`` as hint to the uniform declaration to use for a flowmap.
+No hints are added to the uniform declaration.
 
-- **TYPE_MAX** = **4** --- Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` enum.
+.. _class_VisualShaderNodeTextureParameter_constant_TYPE_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **TYPE_COLOR** = ``1``
+
+Adds ``source_color`` as hint to the uniform declaration for proper sRGB to linear conversion.
+
+.. _class_VisualShaderNodeTextureParameter_constant_TYPE_NORMAL_MAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **TYPE_NORMAL_MAP** = ``2``
+
+Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
+
+.. _class_VisualShaderNodeTextureParameter_constant_TYPE_ANISOTROPY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **TYPE_ANISOTROPY** = ``3``
+
+Adds ``hint_anisotropy`` as hint to the uniform declaration to use for a flowmap.
+
+.. _class_VisualShaderNodeTextureParameter_constant_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **TYPE_MAX** = ``4``
+
+Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_VisualShaderNodeTextureParameter_ColorDefault:
 
-.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_WHITE:
-
-.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_BLACK:
-
-.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_TRANSPARENT:
-
-.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **ColorDefault**:
 
-- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to fully opaque white color.
+.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_WHITE:
 
-- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to fully opaque black color.
+.. rst-class:: classref-enumeration-constant
 
-- **COLOR_DEFAULT_TRANSPARENT** = **2** --- Defaults to fully transparent black color.
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **COLOR_DEFAULT_WHITE** = ``0``
 
-- **COLOR_DEFAULT_MAX** = **3** --- Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` enum.
+Defaults to fully opaque white color.
+
+.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_BLACK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **COLOR_DEFAULT_BLACK** = ``1``
+
+Defaults to fully opaque black color.
+
+.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_TRANSPARENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **COLOR_DEFAULT_TRANSPARENT** = ``2``
+
+Defaults to fully transparent black color.
+
+.. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **COLOR_DEFAULT_MAX** = ``3``
+
+Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_VisualShaderNodeTextureParameter_TextureFilter:
 
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_DEFAULT:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP_ANISOTROPIC:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP_ANISOTROPIC:
-
-.. _class_VisualShaderNodeTextureParameter_constant_FILTER_MAX:
+.. rst-class:: classref-enumeration
 
 enum **TextureFilter**:
 
-- **FILTER_DEFAULT** = **0**
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_DEFAULT:
 
-- **FILTER_NEAREST** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **FILTER_LINEAR** = **2**
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_DEFAULT** = ``0``
 
-- **FILTER_NEAREST_MIPMAP** = **3**
 
-- **FILTER_LINEAR_MIPMAP** = **4**
 
-- **FILTER_NEAREST_MIPMAP_ANISOTROPIC** = **5**
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST:
 
-- **FILTER_LINEAR_MIPMAP_ANISOTROPIC** = **6**
+.. rst-class:: classref-enumeration-constant
 
-- **FILTER_MAX** = **7** --- Represents the size of the :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` enum.
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST** = ``1``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR** = ``2``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST_MIPMAP** = ``3``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR_MIPMAP** = ``4``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP_ANISOTROPIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST_MIPMAP_ANISOTROPIC** = ``5``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP_ANISOTROPIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR_MIPMAP_ANISOTROPIC** = ``6``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_FILTER_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_MAX** = ``7``
+
+Represents the size of the :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_VisualShaderNodeTextureParameter_TextureRepeat:
 
-.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DEFAULT:
-
-.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_ENABLED:
-
-.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DISABLED:
-
-.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **TextureRepeat**:
 
-- **REPEAT_DEFAULT** = **0**
+.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DEFAULT:
 
-- **REPEAT_ENABLED** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **REPEAT_DISABLED** = **2**
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **REPEAT_DEFAULT** = ``0``
 
-- **REPEAT_MAX** = **3** --- Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` enum.
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **REPEAT_ENABLED** = ``1``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **REPEAT_DISABLED** = ``2``
+
+
+
+.. _class_VisualShaderNodeTextureParameter_constant_REPEAT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **REPEAT_MAX** = ``3``
+
+Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTextureParameter_property_color_default:
 
-- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_color_default(value) |
-+-----------+--------------------------+
-| *Getter*  | get_color_default()      |
-+-----------+--------------------------+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color_default** **(** :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` value **)**
+- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **get_color_default** **(** **)**
 
 Sets the default color if no texture is assigned to the uniform.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeTextureParameter_property_texture_filter:
 
-- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_texture_filter(value) |
-+-----------+---------------------------+
-| *Getter*  | get_texture_filter()      |
-+-----------+---------------------------+
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_filter** **(** :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` value **)**
+- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter** **(** **)**
 
 Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` for options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeTextureParameter_property_texture_repeat:
 
-- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_texture_repeat(value) |
-+-----------+---------------------------+
-| *Getter*  | get_texture_repeat()      |
-+-----------+---------------------------+
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_repeat** **(** :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` value **)**
+- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat** **(** **)**
 
 Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` for options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeTextureParameter_property_texture_type:
 
-- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_texture_type(value) |
-+-----------+-------------------------+
-| *Getter*  | get_texture_type()      |
-+-----------+-------------------------+
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_type** **(** :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` value **)**
+- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type** **(** **)**
 
 Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` for options.
 

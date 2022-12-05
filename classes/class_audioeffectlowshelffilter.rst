@@ -14,10 +14,14 @@ AudioEffectLowShelfFilter
 
 Adds a low-shelf filter to the audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Reduces all frequencies below the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

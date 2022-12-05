@@ -14,196 +14,271 @@ MultiplayerSynchronizer
 
 Synchronizes properties from the multiplayer authority to the remote peers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-By default, ``MultiplayerSynchronizer`` synchronizes configured properties to all peers.
+By default, **MultiplayerSynchronizer** synchronizes configured properties to all peers.
 
 Visibility can be handled directly with :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` or as-needed with :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` and :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
 
 \ :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`\ s will handle nodes according to visibility of synchronizers as long as the node at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` was spawned by one.
 
-Internally, ``MultiplayerSynchronizer`` uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
+Internally, **MultiplayerSynchronizer** uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
-| :ref:`bool<class_bool>`                                                        | :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>`           | ``true``           |
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
-| :ref:`SceneReplicationConfig<class_SceneReplicationConfig>`                    | :ref:`replication_config<class_MultiplayerSynchronizer_property_replication_config>`         |                    |
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`                                                      | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>`     | ``0.0``            |
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
-| :ref:`NodePath<class_NodePath>`                                                | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                           | ``NodePath("..")`` |
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
-| :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` | :ref:`visibility_update_mode<class_MultiplayerSynchronizer_property_visibility_update_mode>` | ``0``              |
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`bool<class_bool>`                                                        | :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>`           | ``true``           |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`SceneReplicationConfig<class_SceneReplicationConfig>`                    | :ref:`replication_config<class_MultiplayerSynchronizer_property_replication_config>`         |                    |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`float<class_float>`                                                      | :ref:`replication_interval<class_MultiplayerSynchronizer_property_replication_interval>`     | ``0.0``            |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`NodePath<class_NodePath>`                                                | :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>`                           | ``NodePath("..")`` |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` | :ref:`visibility_update_mode<class_MultiplayerSynchronizer_property_visibility_update_mode>` | ``0``              |
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**                |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_visibility_for<class_MultiplayerSynchronizer_method_get_visibility_for>` **(** :ref:`int<class_int>` peer **)** |const|                          |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`remove_visibility_filter<class_MultiplayerSynchronizer_method_remove_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**          |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)** |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>` **(** :ref:`int<class_int>` for_peer=0 **)**                              |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**                |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_visibility_for<class_MultiplayerSynchronizer_method_get_visibility_for>` **(** :ref:`int<class_int>` peer **)** |const|                          |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`remove_visibility_filter<class_MultiplayerSynchronizer_method_remove_visibility_filter>` **(** :ref:`Callable<class_Callable>` filter **)**          |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)** |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>` **(** :ref:`int<class_int>` for_peer=0 **)**                              |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MultiplayerSynchronizer_signal_visibility_changed:
 
-- **visibility_changed** **(** :ref:`int<class_int>` for_peer **)**
+.. rst-class:: classref-signal
+
+**visibility_changed** **(** :ref:`int<class_int>` for_peer **)**
 
 Emitted when visibility of ``for_peer`` is updated. See :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_MultiplayerSynchronizer_VisibilityUpdateMode:
 
-.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_IDLE:
-
-.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_PHYSICS:
-
-.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_NONE:
+.. rst-class:: classref-enumeration
 
 enum **VisibilityUpdateMode**:
 
-- **VISIBILITY_PROCESS_IDLE** = **0** --- Visibility filters are updated every idle process frame.
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_IDLE:
 
-- **VISIBILITY_PROCESS_PHYSICS** = **1** --- Visibility filters are updated every physics process frame.
+.. rst-class:: classref-enumeration-constant
 
-- **VISIBILITY_PROCESS_NONE** = **2** --- Visibility filters are not updated automatically, and must be updated manually by calling :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_IDLE** = ``0``
+
+Visibility filters are updated every idle process frame.
+
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_PHYSICS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_PHYSICS** = ``1``
+
+Visibility filters are updated every physics process frame.
+
+.. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_NONE** = ``2``
+
+Visibility filters are not updated automatically, and must be updated manually by calling :ref:`update_visibility<class_MultiplayerSynchronizer_method_update_visibility>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MultiplayerSynchronizer_property_public_visibility:
 
-- :ref:`bool<class_bool>` **public_visibility**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``true``                     |
-+-----------+------------------------------+
-| *Setter*  | set_visibility_public(value) |
-+-----------+------------------------------+
-| *Getter*  | is_visibility_public()       |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **public_visibility** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_public** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_visibility_public** **(** **)**
 
 Whether synchronization should be visible to all peers by default. See :ref:`set_visibility_for<class_MultiplayerSynchronizer_method_set_visibility_for>` and :ref:`add_visibility_filter<class_MultiplayerSynchronizer_method_add_visibility_filter>` for ways of configuring fine-grained visibility options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_property_replication_config:
 
-- :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **replication_config**
+.. rst-class:: classref-property
 
-+----------+-------------------------------+
-| *Setter* | set_replication_config(value) |
-+----------+-------------------------------+
-| *Getter* | get_replication_config()      |
-+----------+-------------------------------+
+:ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **replication_config**
+
+.. rst-class:: classref-property-setget
+
+- void **set_replication_config** **(** :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` value **)**
+- :ref:`SceneReplicationConfig<class_SceneReplicationConfig>` **get_replication_config** **(** **)**
 
 Resource containing which properties to synchronize.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_property_replication_interval:
 
-- :ref:`float<class_float>` **replication_interval**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``0.0``                         |
-+-----------+---------------------------------+
-| *Setter*  | set_replication_interval(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_replication_interval()      |
-+-----------+---------------------------------+
+:ref:`float<class_float>` **replication_interval** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_replication_interval** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_replication_interval** **(** **)**
 
 Time interval between synchronizes. When set to ``0.0`` (the default), synchronizes happen every network process frame.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_property_root_path:
 
-- :ref:`NodePath<class_NodePath>` **root_path**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``NodePath("..")``   |
-+-----------+----------------------+
-| *Setter*  | set_root_path(value) |
-+-----------+----------------------+
-| *Getter*  | get_root_path()      |
-+-----------+----------------------+
+:ref:`NodePath<class_NodePath>` **root_path** = ``NodePath("..")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_root_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_root_path** **(** **)**
 
 Node path that replicated properties are relative to.
 
 If :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` was spawned by a :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, the node will be also be spawned and despawned based on this synchronizer visibility options.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiplayerSynchronizer_property_visibility_update_mode:
 
-- :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **visibility_update_mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``0``                             |
-+-----------+-----------------------------------+
-| *Setter*  | set_visibility_update_mode(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_visibility_update_mode()      |
-+-----------+-----------------------------------+
+:ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **visibility_update_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_update_mode** **(** :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` value **)**
+- :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **get_visibility_update_mode** **(** **)**
 
 Specifies when visibility filters are updated (see :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` for options).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MultiplayerSynchronizer_method_add_visibility_filter:
 
-- void **add_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
+.. rst-class:: classref-method
+
+void **add_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
 
 Adds a peer visibility filter for this synchronizer.
 
 \ ``filter`` should take a peer id :ref:`int<class_int>` and return a :ref:`bool<class_bool>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiplayerSynchronizer_method_get_visibility_for:
 
-- :ref:`bool<class_bool>` **get_visibility_for** **(** :ref:`int<class_int>` peer **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_visibility_for** **(** :ref:`int<class_int>` peer **)** |const|
 
 Queries the current visibility for peer ``peer``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_method_remove_visibility_filter:
 
-- void **remove_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
+.. rst-class:: classref-method
+
+void **remove_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)**
 
 Removes a peer visibility filter from this synchronizer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_method_set_visibility_for:
 
-- void **set_visibility_for** **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)**
+.. rst-class:: classref-method
+
+void **set_visibility_for** **(** :ref:`int<class_int>` peer, :ref:`bool<class_bool>` visible **)**
 
 Sets the visibility of ``peer`` to ``visible``. If ``peer`` is ``0``, the value of :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>` will be updated instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerSynchronizer_method_update_visibility:
 
-- void **update_visibility** **(** :ref:`int<class_int>` for_peer=0 **)**
+.. rst-class:: classref-method
+
+void **update_visibility** **(** :ref:`int<class_int>` for_peer=0 **)**
 
 Updates the visibility of ``peer`` according to visibility filters. If ``peer`` is ``0`` (the default), all peers' visibilties are updated.
 

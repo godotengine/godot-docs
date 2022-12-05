@@ -14,85 +14,104 @@ NavigationLink3D
 
 Creates a link between two locations that :ref:`NavigationServer3D<class_NavigationServer3D>` can route agents through.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Creates a link between two locations that :ref:`NavigationServer3D<class_NavigationServer3D>` can route agents through.  Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`bidirectional<class_NavigationLink3D_property_bidirectional>`         | ``true``             |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`enabled<class_NavigationLink3D_property_enabled>`                     | ``true``             |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`end_location<class_NavigationLink3D_property_end_location>`           | ``Vector3(0, 0, 0)`` |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`     | :ref:`enter_cost<class_NavigationLink3D_property_enter_cost>`               | ``0.0``              |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` | ``1``                |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`start_location<class_NavigationLink3D_property_start_location>`       | ``Vector3(0, 0, 0)`` |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`     | :ref:`travel_cost<class_NavigationLink3D_property_travel_cost>`             | ``1.0``              |
-+-------------------------------+-----------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`bidirectional<class_NavigationLink3D_property_bidirectional>`         | ``true``             |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`enabled<class_NavigationLink3D_property_enabled>`                     | ``true``             |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`end_location<class_NavigationLink3D_property_end_location>`           | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`enter_cost<class_NavigationLink3D_property_enter_cost>`               | ``0.0``              |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` | ``1``                |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`start_location<class_NavigationLink3D_property_start_location>`       | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`travel_cost<class_NavigationLink3D_property_travel_cost>`             | ``1.0``              |
+   +-------------------------------+-----------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationLink3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_navigation_layer_value<class_NavigationLink3D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationLink3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_navigation_layer_value<class_NavigationLink3D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationLink3D_property_bidirectional:
 
-- :ref:`bool<class_bool>` **bidirectional**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``true``                 |
-+-----------+--------------------------+
-| *Setter*  | set_bidirectional(value) |
-+-----------+--------------------------+
-| *Getter*  | is_bidirectional()       |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **bidirectional** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bidirectional** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_bidirectional** **(** **)**
 
 Whether this link can be traveled in both directions or only from :ref:`start_location<class_NavigationLink3D_property_start_location>` to :ref:`end_location<class_NavigationLink3D_property_end_location>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationLink3D_property_enabled:
 
-- :ref:`bool<class_bool>` **enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_enabled(value) |
-+-----------+--------------------+
-| *Getter*  | is_enabled()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_enabled** **(** **)**
 
 Whether this link is currently active. If ``false``, :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>` will ignore this link.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationLink3D_property_end_location:
 
-- :ref:`Vector3<class_Vector3>` **end_location**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector3(0, 0, 0)``    |
-+-----------+-------------------------+
-| *Setter*  | set_end_location(value) |
-+-----------+-------------------------+
-| *Getter*  | get_end_location()      |
-+-----------+-------------------------+
+:ref:`Vector3<class_Vector3>` **end_location** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_end_location** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_end_location** **(** **)**
 
 Ending position of the link.
 
@@ -100,51 +119,54 @@ This position will search out the nearest polygon in the navigation mesh to atta
 
 The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NavigationLink3D_property_enter_cost:
 
-- :ref:`float<class_float>` **enter_cost**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_enter_cost(value) |
-+-----------+-----------------------+
-| *Getter*  | get_enter_cost()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **enter_cost** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
 When pathfinding enters this link from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationLink3D_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 A bitfield determining all navigation layers the link belongs to. These navigation layers will be checked when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationLink3D_property_start_location:
 
-- :ref:`Vector3<class_Vector3>` **start_location**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector3(0, 0, 0)``      |
-+-----------+---------------------------+
-| *Setter*  | set_start_location(value) |
-+-----------+---------------------------+
-| *Getter*  | get_start_location()      |
-+-----------+---------------------------+
+:ref:`Vector3<class_Vector3>` **start_location** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_start_location** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_start_location** **(** **)**
 
 Starting position of the link.
 
@@ -152,36 +174,49 @@ This position will search out the nearest polygon in the navigation mesh to atta
 
 The distance the link will search is controlled by :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NavigationLink3D_property_travel_cost:
 
-- :ref:`float<class_float>` **travel_cost**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_travel_cost(value) |
-+-----------+------------------------+
-| *Getter*  | get_travel_cost()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **travel_cost** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
 When pathfinding moves along the link the traveled distance is multiplied with ``travel_cost`` for determining the shortest path.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationLink3D_method_get_navigation_layer_value:
 
-- :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationLink3D_method_set_navigation_layer_value:
 
-- void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_NavigationLink3D_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 

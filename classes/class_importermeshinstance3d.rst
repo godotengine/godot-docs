@@ -16,63 +16,79 @@ ImporterMeshInstance3D
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------+---------------------------------------------------------------------------+------------------+
-| :ref:`ImporterMesh<class_ImporterMesh>` | :ref:`mesh<class_ImporterMeshInstance3D_property_mesh>`                   |                  |
-+-----------------------------------------+---------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`         | :ref:`skeleton_path<class_ImporterMeshInstance3D_property_skeleton_path>` | ``NodePath("")`` |
-+-----------------------------------------+---------------------------------------------------------------------------+------------------+
-| :ref:`Skin<class_Skin>`                 | :ref:`skin<class_ImporterMeshInstance3D_property_skin>`                   |                  |
-+-----------------------------------------+---------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+---------------------------------------------------------------------------+------------------+
+   | :ref:`ImporterMesh<class_ImporterMesh>` | :ref:`mesh<class_ImporterMeshInstance3D_property_mesh>`                   |                  |
+   +-----------------------------------------+---------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>`         | :ref:`skeleton_path<class_ImporterMeshInstance3D_property_skeleton_path>` | ``NodePath("")`` |
+   +-----------------------------------------+---------------------------------------------------------------------------+------------------+
+   | :ref:`Skin<class_Skin>`                 | :ref:`skin<class_ImporterMeshInstance3D_property_skin>`                   |                  |
+   +-----------------------------------------+---------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ImporterMeshInstance3D_property_mesh:
 
-- :ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`ImporterMesh<class_ImporterMesh>` value **)**
+- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImporterMeshInstance3D_property_skeleton_path:
 
-- :ref:`NodePath<class_NodePath>` **skeleton_path**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``NodePath("")``         |
-+-----------+--------------------------+
-| *Setter*  | set_skeleton_path(value) |
-+-----------+--------------------------+
-| *Getter*  | get_skeleton_path()      |
-+-----------+--------------------------+
+:ref:`NodePath<class_NodePath>` **skeleton_path** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skeleton_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_skeleton_path** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ImporterMeshInstance3D_property_skin:
 
-- :ref:`Skin<class_Skin>` **skin**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_skin(value) |
-+----------+-----------------+
-| *Getter* | get_skin()      |
-+----------+-----------------+
+:ref:`Skin<class_Skin>` **skin**
+
+.. rst-class:: classref-property-setget
+
+- void **set_skin** **(** :ref:`Skin<class_Skin>` value **)**
+- :ref:`Skin<class_Skin>` **get_skin** **(** **)**
 
 .. container:: contribute
 

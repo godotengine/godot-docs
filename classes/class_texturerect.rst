@@ -14,144 +14,200 @@ TextureRect
 
 Control for drawing textures.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`                           | ``false``                                                             |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`                           | ``false``                                                             |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`ignore_texture_size<class_TextureRect_property_ignore_texture_size>` | ``false``                                                             |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                               | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>`               | ``0``                                                                 |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`                         |                                                                       |
-+--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`                           | ``false``                                                             |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`                           | ``false``                                                             |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`ignore_texture_size<class_TextureRect_property_ignore_texture_size>` | ``false``                                                             |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                               | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>`               | ``0``                                                                 |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`                         |                                                                       |
+   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_TextureRect_StretchMode:
 
-.. _class_TextureRect_constant_STRETCH_SCALE:
-
-.. _class_TextureRect_constant_STRETCH_TILE:
-
-.. _class_TextureRect_constant_STRETCH_KEEP:
-
-.. _class_TextureRect_constant_STRETCH_KEEP_CENTERED:
-
-.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT:
-
-.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_CENTERED:
-
-.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_COVERED:
+.. rst-class:: classref-enumeration
 
 enum **StretchMode**:
 
-- **STRETCH_SCALE** = **0** --- Scale to fit the node's bounding rectangle.
+.. _class_TextureRect_constant_STRETCH_SCALE:
 
-- **STRETCH_TILE** = **1** --- Tile inside the node's bounding rectangle.
+.. rst-class:: classref-enumeration-constant
 
-- **STRETCH_KEEP** = **2** --- The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_SCALE** = ``0``
 
-- **STRETCH_KEEP_CENTERED** = **3** --- The texture keeps its original size and stays centered in the node's bounding rectangle.
+Scale to fit the node's bounding rectangle.
 
-- **STRETCH_KEEP_ASPECT** = **4** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+.. _class_TextureRect_constant_STRETCH_TILE:
 
-- **STRETCH_KEEP_ASPECT_CENTERED** = **5** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
+.. rst-class:: classref-enumeration-constant
 
-- **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_TILE** = ``1``
+
+Tile inside the node's bounding rectangle.
+
+.. _class_TextureRect_constant_STRETCH_KEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_KEEP** = ``2``
+
+The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+
+.. _class_TextureRect_constant_STRETCH_KEEP_CENTERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_KEEP_CENTERED** = ``3``
+
+The texture keeps its original size and stays centered in the node's bounding rectangle.
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_KEEP_ASPECT** = ``4``
+
+Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_CENTERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_KEEP_ASPECT_CENTERED** = ``5``
+
+Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_COVERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **STRETCH_KEEP_ASPECT_COVERED** = ``6``
+
+Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TextureRect_property_flip_h:
 
-- :ref:`bool<class_bool>` **flip_h**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_h(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_h()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_h** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
 
 If ``true``, texture is flipped horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureRect_property_flip_v:
 
-- :ref:`bool<class_bool>` **flip_v**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_v(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_v()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_v** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
 
 If ``true``, texture is flipped vertically.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureRect_property_ignore_texture_size:
 
-- :ref:`bool<class_bool>` **ignore_texture_size**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``false``                      |
-+-----------+--------------------------------+
-| *Setter*  | set_ignore_texture_size(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_ignore_texture_size()      |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **ignore_texture_size** = ``false``
 
-If ``true``, the size of the texture won't be considered for minimum size calculation, so the ``TextureRect`` can be shrunk down past the texture size. Useful for preventing ``TextureRect``\ s from breaking GUI layout regardless of their texture size.
+.. rst-class:: classref-property-setget
+
+- void **set_ignore_texture_size** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_ignore_texture_size** **(** **)**
+
+If ``true``, the size of the texture won't be considered for minimum size calculation, so the **TextureRect** can be shrunk down past the texture size. Useful for preventing **TextureRect**\ s from breaking GUI layout regardless of their texture size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureRect_property_stretch_mode:
 
-- :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_stretch_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | get_stretch_mode()      |
-+-----------+-------------------------+
+:ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch_mode** **(** :ref:`StretchMode<enum_TextureRect_StretchMode>` value **)**
+- :ref:`StretchMode<enum_TextureRect_StretchMode>` **get_stretch_mode** **(** **)**
 
 Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureRect_property_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
 
 The node's :ref:`Texture2D<class_Texture2D>` resource.
 

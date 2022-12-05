@@ -16,25 +16,37 @@ InputEventShortcut
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------+
-| :ref:`Shortcut<class_Shortcut>` | :ref:`shortcut<class_InputEventShortcut_property_shortcut>` |
-+---------------------------------+-------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------+
+   | :ref:`Shortcut<class_Shortcut>` | :ref:`shortcut<class_InputEventShortcut_property_shortcut>` |
+   +---------------------------------+-------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventShortcut_property_shortcut:
 
-- :ref:`Shortcut<class_Shortcut>` **shortcut**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_shortcut(value) |
-+----------+---------------------+
-| *Getter* | get_shortcut()      |
-+----------+---------------------+
+:ref:`Shortcut<class_Shortcut>` **shortcut**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
+- :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
 
 .. container:: contribute
 

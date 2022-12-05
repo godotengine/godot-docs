@@ -14,6 +14,8 @@ Texture2DArray
 
 A single texture resource which consists of multiple, separate images. Each image has the same dimensions and number of mipmap levels.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

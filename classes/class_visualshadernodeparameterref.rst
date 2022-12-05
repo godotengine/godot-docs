@@ -14,32 +14,44 @@ VisualShaderNodeParameterRef
 
 A reference to an existing :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Creating a reference to a :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` allows you to reuse this parameter in different shaders or shader stages easily.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`parameter_name<class_VisualShaderNodeParameterRef_property_parameter_name>` | ``"[None]"`` |
-+-----------------------------+-----------------------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`parameter_name<class_VisualShaderNodeParameterRef_property_parameter_name>` | ``"[None]"`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParameterRef_property_parameter_name:
 
-- :ref:`String<class_String>` **parameter_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``"[None]"``              |
-+-----------+---------------------------+
-| *Setter*  | set_parameter_name(value) |
-+-----------+---------------------------+
-| *Getter*  | get_parameter_name()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **parameter_name** = ``"[None]"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parameter_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_parameter_name** **(** **)**
 
 The name of the parameter which this reference points to.
 

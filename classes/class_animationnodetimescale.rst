@@ -14,10 +14,14 @@ AnimationNodeTimeScale
 
 A time-scaling animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Allows scaling the speed of the animation (or reversing it) in any children nodes. Setting it to 0 will pause the animation.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

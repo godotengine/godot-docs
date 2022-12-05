@@ -14,6 +14,8 @@ ZIPPacker
 
 Allows the creation of zip files.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -33,84 +35,133 @@ This class implements a writer that allows storing the multiple blobs in a zip a
         writer.close()
         return OK
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`close<class_ZIPPacker_method_close>` **(** **)**                                                                                     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`close_file<class_ZIPPacker_method_close_file>` **(** **)**                                                                           |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`open<class_ZIPPacker_method_open>` **(** :ref:`String<class_String>` path, :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` append=0 **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_file<class_ZIPPacker_method_start_file>` **(** :ref:`String<class_String>` path **)**                                          |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`write_file<class_ZIPPacker_method_write_file>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**                        |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`close<class_ZIPPacker_method_close>` **(** **)**                                                                                     |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`close_file<class_ZIPPacker_method_close_file>` **(** **)**                                                                           |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`open<class_ZIPPacker_method_open>` **(** :ref:`String<class_String>` path, :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` append=0 **)** |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_file<class_ZIPPacker_method_start_file>` **(** :ref:`String<class_String>` path **)**                                          |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`write_file<class_ZIPPacker_method_write_file>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**                        |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ZIPPacker_ZipAppend:
 
-.. _class_ZIPPacker_constant_APPEND_CREATE:
-
-.. _class_ZIPPacker_constant_APPEND_CREATEAFTER:
-
-.. _class_ZIPPacker_constant_APPEND_ADDINZIP:
+.. rst-class:: classref-enumeration
 
 enum **ZipAppend**:
 
-- **APPEND_CREATE** = **0**
+.. _class_ZIPPacker_constant_APPEND_CREATE:
 
-- **APPEND_CREATEAFTER** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **APPEND_ADDINZIP** = **2**
+:ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATE** = ``0``
+
+
+
+.. _class_ZIPPacker_constant_APPEND_CREATEAFTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATEAFTER** = ``1``
+
+
+
+.. _class_ZIPPacker_constant_APPEND_ADDINZIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_ADDINZIP** = ``2``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ZIPPacker_method_close:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
 
 Closes the underlying resources used by this instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ZIPPacker_method_close_file:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **close_file** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **close_file** **(** **)**
 
 Stops writing to a file within the archive.
 
 It will fail if there is no open file.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ZIPPacker_method_open:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path, :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` append=0 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path, :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` append=0 **)**
 
 Opens a zip file for writing at the given path using the specified write mode.
 
 This must be called before everything else.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ZIPPacker_method_start_file:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start_file** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start_file** **(** :ref:`String<class_String>` path **)**
 
 Starts writing to a file within the archive. Only one file can be written at the same time.
 
 Must be called after :ref:`open<class_ZIPPacker_method_open>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ZIPPacker_method_write_file:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **write_file** **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **write_file** **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**
 
 Write the given ``data`` to the file.
 

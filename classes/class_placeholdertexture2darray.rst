@@ -14,6 +14,8 @@ PlaceholderTexture2DArray
 
 Placeholder class for a 2-dimensional texture array.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

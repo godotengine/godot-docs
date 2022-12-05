@@ -14,6 +14,8 @@ OpenXRInteractionProfile
 
 Suggested bindings object for OpenXR.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,71 +23,99 @@ This object stores suggested bindings for an interaction profile. Interaction pr
 
 For more information see the `interaction profiles info in the OpenXR specification <https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#semantic-path-interaction-profiles>`__.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------------------------------------+--------+
-| :ref:`Array<class_Array>`   | :ref:`bindings<class_OpenXRInteractionProfile_property_bindings>`                                 | ``[]`` |
-+-----------------------------+---------------------------------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`interaction_profile_path<class_OpenXRInteractionProfile_property_interaction_profile_path>` | ``""`` |
-+-----------------------------+---------------------------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`   | :ref:`bindings<class_OpenXRInteractionProfile_property_bindings>`                                 | ``[]`` |
+   +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`interaction_profile_path<class_OpenXRInteractionProfile_property_interaction_profile_path>` | ``""`` |
+   +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>` **(** :ref:`int<class_int>` index **)** |const| |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>` **(** **)** |const|                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>` **(** :ref:`int<class_int>` index **)** |const| |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>` **(** **)** |const|                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OpenXRInteractionProfile_property_bindings:
 
-- :ref:`Array<class_Array>` **bindings**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``[]``              |
-+-----------+---------------------+
-| *Setter*  | set_bindings(value) |
-+-----------+---------------------+
-| *Getter*  | get_bindings()      |
-+-----------+---------------------+
+:ref:`Array<class_Array>` **bindings** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bindings** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_bindings** **(** **)**
 
 Action bindings for this interaction profile.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInteractionProfile_property_interaction_profile_path:
 
-- :ref:`String<class_String>` **interaction_profile_path**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``""``                              |
-+-----------+-------------------------------------+
-| *Setter*  | set_interaction_profile_path(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_interaction_profile_path()      |
-+-----------+-------------------------------------+
+:ref:`String<class_String>` **interaction_profile_path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interaction_profile_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_interaction_profile_path** **(** **)**
 
 The interaction profile path identifying the XR device.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OpenXRInteractionProfile_method_get_binding:
 
-- :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding** **(** :ref:`int<class_int>` index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding** **(** :ref:`int<class_int>` index **)** |const|
 
 Retrieve the binding at this index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInteractionProfile_method_get_binding_count:
 
-- :ref:`int<class_int>` **get_binding_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_binding_count** **(** **)** |const|
 
 Get the number of bindings in this interaction profile.
 

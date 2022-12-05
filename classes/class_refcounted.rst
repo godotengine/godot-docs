@@ -16,69 +16,98 @@ RefCounted
 
 Base class for reference-counted objects.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base class for any object that keeps a reference count. :ref:`Resource<class_Resource>` and many other helper objects inherit this class.
 
-Unlike other :ref:`Object<class_Object>` types, ``RefCounted``\ s keep an internal reference counter so that they are automatically released when no longer in use, and only then. ``RefCounted``\ s therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
+Unlike other :ref:`Object<class_Object>` types, **RefCounted**\ s keep an internal reference counter so that they are automatically released when no longer in use, and only then. **RefCounted**\ s therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
 
-In the vast majority of use cases, instantiating and using ``RefCounted``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
+In the vast majority of use cases, instantiating and using **RefCounted**-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
 
 \ **Note:** In C#, reference-counted objects will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free reference-counted objects that are no longer in use. This means that unused ones will linger on for a while before being removed.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_reference_count<class_RefCounted_method_get_reference_count>` **(** **)** |const| |
-+-------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`init_ref<class_RefCounted_method_init_ref>` **(** **)**                               |
-+-------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`reference<class_RefCounted_method_reference>` **(** **)**                             |
-+-------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`unreference<class_RefCounted_method_unreference>` **(** **)**                         |
-+-------------------------+---------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_reference_count<class_RefCounted_method_get_reference_count>` **(** **)** |const| |
+   +-------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`init_ref<class_RefCounted_method_init_ref>` **(** **)**                               |
+   +-------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`reference<class_RefCounted_method_reference>` **(** **)**                             |
+   +-------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`unreference<class_RefCounted_method_unreference>` **(** **)**                         |
+   +-------------------------+---------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RefCounted_method_get_reference_count:
 
-- :ref:`int<class_int>` **get_reference_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_reference_count** **(** **)** |const|
 
 Returns the current reference count.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RefCounted_method_init_ref:
 
-- :ref:`bool<class_bool>` **init_ref** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **init_ref** **(** **)**
 
 Initializes the internal reference counter. Use this only if you really know what you are doing.
 
 Returns whether the initialization was successful.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RefCounted_method_reference:
 
-- :ref:`bool<class_bool>` **reference** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **reference** **(** **)**
 
 Increments the internal reference counter. Use this only if you really know what you are doing.
 
 Returns ``true`` if the increment was successful, ``false`` otherwise.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RefCounted_method_unreference:
 
-- :ref:`bool<class_bool>` **unreference** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **unreference** **(** **)**
 
 Decrements the internal reference counter. Use this only if you really know what you are doing.
 

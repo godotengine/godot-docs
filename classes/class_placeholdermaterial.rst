@@ -14,6 +14,8 @@ PlaceholderMaterial
 
 Placeholder class for a material.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

@@ -14,91 +14,108 @@ InputEventScreenDrag
 
 Input event type for screen drag events. Only available on mobile devices.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       | ``0``             |
-+-------------------------------+---------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` | ``Vector2(0, 0)`` |
-+-------------------------------+---------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | ``Vector2(0, 0)`` |
-+-------------------------------+---------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>` | ``Vector2(0, 0)`` |
-+-------------------------------+---------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       | ``0``             |
+   +-------------------------------+---------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` | ``Vector2(0, 0)`` |
+   +-------------------------------+---------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | ``Vector2(0, 0)`` |
+   +-------------------------------+---------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>` | ``Vector2(0, 0)`` |
+   +-------------------------------+---------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventScreenDrag_property_index:
 
-- :ref:`int<class_int>` **index**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_index(value) |
-+-----------+------------------+
-| *Getter*  | get_index()      |
-+-----------+------------------+
+:ref:`int<class_int>` **index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_index** **(** **)**
 
 The drag event index in the case of a multi-drag event.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventScreenDrag_property_position:
 
-- :ref:`Vector2<class_Vector2>` **position**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_position(value) |
-+-----------+---------------------+
-| *Getter*  | get_position()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
 The drag position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventScreenDrag_property_relative:
 
-- :ref:`Vector2<class_Vector2>` **relative**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_relative(value) |
-+-----------+---------------------+
-| *Getter*  | get_relative()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_relative** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_relative** **(** **)**
 
 The drag position relative to the previous position (position at the last frame).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventScreenDrag_property_velocity:
 
-- :ref:`Vector2<class_Vector2>` **velocity**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(0, 0)``   |
-+-----------+---------------------+
-| *Setter*  | set_velocity(value) |
-+-----------+---------------------+
-| *Getter*  | get_velocity()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
 
 The drag velocity.
 

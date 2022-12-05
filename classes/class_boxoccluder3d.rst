@@ -14,34 +14,46 @@ BoxOccluder3D
 
 Cuboid shape for use with occlusion culling in :ref:`OccluderInstance3D<class_OccluderInstance3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``BoxOccluder3D`` stores a cuboid shape that can be used by the engine's occlusion culling system.
+**BoxOccluder3D** stores a cuboid shape that can be used by the engine's occlusion culling system.
 
 See :ref:`OccluderInstance3D<class_OccluderInstance3D>`'s documentation for instructions on setting up occlusion culling.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxOccluder3D_property_size>` | ``Vector3(1, 1, 1)`` |
-+-------------------------------+------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxOccluder3D_property_size>` | ``Vector3(1, 1, 1)`` |
+   +-------------------------------+------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BoxOccluder3D_property_size:
 
-- :ref:`Vector3<class_Vector3>` **size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_size(value)      |
-+-----------+----------------------+
-| *Getter*  | get_size()           |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
 The box's size in 3D units.
 

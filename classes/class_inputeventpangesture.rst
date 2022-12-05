@@ -16,27 +16,37 @@ InputEventPanGesture
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`delta<class_InputEventPanGesture_property_delta>` | ``Vector2(0, 0)`` |
-+-------------------------------+---------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`delta<class_InputEventPanGesture_property_delta>` | ``Vector2(0, 0)`` |
+   +-------------------------------+---------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventPanGesture_property_delta:
 
-- :ref:`Vector2<class_Vector2>` **delta**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_delta(value)  |
-+-----------+-------------------+
-| *Getter*  | get_delta()       |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **delta** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_delta** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_delta** **(** **)**
 
 .. container:: contribute
 

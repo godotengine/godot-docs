@@ -14,87 +14,121 @@ OccluderPolygon2D
 
 Defines a 2D polygon for LightOccluder2D.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                 |
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`    | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                    |
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PackedVector2Array()`` |
-+-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`closed<class_OccluderPolygon2D_property_closed>`       | ``true``                 |
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   | :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`    | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` | ``0``                    |
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_OccluderPolygon2D_CullMode:
 
-.. _class_OccluderPolygon2D_constant_CULL_DISABLED:
-
-.. _class_OccluderPolygon2D_constant_CULL_CLOCKWISE:
-
-.. _class_OccluderPolygon2D_constant_CULL_COUNTER_CLOCKWISE:
+.. rst-class:: classref-enumeration
 
 enum **CullMode**:
 
-- **CULL_DISABLED** = **0** --- Culling is disabled. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+.. _class_OccluderPolygon2D_constant_CULL_DISABLED:
 
-- **CULL_CLOCKWISE** = **1** --- Culling is performed in the clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+.. rst-class:: classref-enumeration-constant
 
-- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling is performed in the counterclockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **CULL_DISABLED** = ``0``
+
+Culling is disabled. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+.. _class_OccluderPolygon2D_constant_CULL_CLOCKWISE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **CULL_CLOCKWISE** = ``1``
+
+Culling is performed in the clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+.. _class_OccluderPolygon2D_constant_CULL_COUNTER_CLOCKWISE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **CULL_COUNTER_CLOCKWISE** = ``2``
+
+Culling is performed in the counterclockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OccluderPolygon2D_property_closed:
 
-- :ref:`bool<class_bool>` **closed**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``true``          |
-+-----------+-------------------+
-| *Setter*  | set_closed(value) |
-+-----------+-------------------+
-| *Getter*  | is_closed()       |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **closed** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_closed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_closed** **(** **)**
 
 If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderPolygon2D_property_cull_mode:
 
-- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_cull_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_cull_mode()      |
-+-----------+----------------------+
+:ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cull_mode** **(** :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` value **)**
+- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **get_cull_mode** **(** **)**
 
 The culling mode to use.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderPolygon2D_property_polygon:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector2Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_polygon(value)       |
-+-----------+--------------------------+
-| *Getter*  | get_polygon()            |
-+-----------+--------------------------+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 

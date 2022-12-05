@@ -16,34 +16,63 @@ AudioEffectSpectrumAnalyzerInstance
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>` **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const| |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>` **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const| |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode:
 
-.. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_AVERAGE:
-
-.. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **MagnitudeMode**:
 
-- **MAGNITUDE_AVERAGE** = **0** --- Use the average value as magnitude.
+.. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_AVERAGE:
 
-- **MAGNITUDE_MAX** = **1** --- Use the maximum value as magnitude.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` **MAGNITUDE_AVERAGE** = ``0``
+
+Use the average value as magnitude.
+
+.. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` **MAGNITUDE_MAX** = ``1``
+
+Use the maximum value as magnitude.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range:
 
-- :ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range** **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range** **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const|
 
 .. container:: contribute
 

@@ -14,6 +14,8 @@ SceneTreeTimer
 
 One-shot timer.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -44,34 +46,54 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 
 The timer will be dereferenced after its time elapses. To preserve the timer, you can keep a reference to it. See :ref:`RefCounted<class_RefCounted>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`time_left<class_SceneTreeTimer_property_time_left>` |
-+---------------------------+-----------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`time_left<class_SceneTreeTimer_property_time_left>` |
+   +---------------------------+-----------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_SceneTreeTimer_signal_timeout:
 
-- **timeout** **(** **)**
+.. rst-class:: classref-signal
+
+**timeout** **(** **)**
 
 Emitted when the timer reaches 0.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SceneTreeTimer_property_time_left:
 
-- :ref:`float<class_float>` **time_left**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_time_left(value) |
-+----------+----------------------+
-| *Getter* | get_time_left()      |
-+----------+----------------------+
+:ref:`float<class_float>` **time_left**
+
+.. rst-class:: classref-property-setget
+
+- void **set_time_left** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_time_left** **(** **)**
 
 The time remaining (in seconds).
 

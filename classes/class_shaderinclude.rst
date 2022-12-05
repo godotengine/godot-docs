@@ -16,27 +16,37 @@ ShaderInclude
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`code<class_ShaderInclude_property_code>` | ``""`` |
-+-----------------------------+------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`code<class_ShaderInclude_property_code>` | ``""`` |
+   +-----------------------------+------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ShaderInclude_property_code:
 
-- :ref:`String<class_String>` **code**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_code(value) |
-+-----------+-----------------+
-| *Getter*  | get_code()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **code** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_code** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_code** **(** **)**
 
 .. container:: contribute
 

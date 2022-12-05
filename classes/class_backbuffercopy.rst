@@ -14,6 +14,8 @@ BackBufferCopy
 
 Copies a region of the screen (or the whole screen) to a buffer so it can be accessed in your shader scripts through the ``texture(SCREEN_TEXTURE, ...)`` function.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,64 +23,95 @@ Node for back-buffering the currently-displayed screen. The region defined in th
 
 \ **Note:** Since this node inherits from :ref:`Node2D<class_Node2D>` (and not :ref:`Control<class_Control>`), anchors and margins won't apply to child :ref:`Control<class_Control>`-derived nodes. This can be problematic when resizing the window. To avoid this, add :ref:`Control<class_Control>`-derived nodes as *siblings* to the BackBufferCopy node instead of adding them as children.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
-| :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` | ``1``                           |
-+-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
-| :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           | ``Rect2(-100, -100, 200, 200)`` |
-+-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
+   | :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` | :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` | ``1``                           |
+   +-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
+   | :ref:`Rect2<class_Rect2>`                     | :ref:`rect<class_BackBufferCopy_property_rect>`           | ``Rect2(-100, -100, 200, 200)`` |
+   +-----------------------------------------------+-----------------------------------------------------------+---------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_BackBufferCopy_CopyMode:
 
-.. _class_BackBufferCopy_constant_COPY_MODE_DISABLED:
-
-.. _class_BackBufferCopy_constant_COPY_MODE_RECT:
-
-.. _class_BackBufferCopy_constant_COPY_MODE_VIEWPORT:
+.. rst-class:: classref-enumeration
 
 enum **CopyMode**:
 
-- **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
+.. _class_BackBufferCopy_constant_COPY_MODE_DISABLED:
 
-- **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
+.. rst-class:: classref-enumeration-constant
 
-- **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
+:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **COPY_MODE_DISABLED** = ``0``
+
+Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
+
+.. _class_BackBufferCopy_constant_COPY_MODE_RECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **COPY_MODE_RECT** = ``1``
+
+BackBufferCopy buffers a rectangular region.
+
+.. _class_BackBufferCopy_constant_COPY_MODE_VIEWPORT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **COPY_MODE_VIEWPORT** = ``2``
+
+BackBufferCopy buffers the entire screen.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BackBufferCopy_property_copy_mode:
 
-- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1``                |
-+-----------+----------------------+
-| *Setter*  | set_copy_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_copy_mode()      |
-+-----------+----------------------+
+:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_copy_mode** **(** :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` value **)**
+- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **get_copy_mode** **(** **)**
 
 Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BackBufferCopy_property_rect:
 
-- :ref:`Rect2<class_Rect2>` **rect**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``Rect2(-100, -100, 200, 200)`` |
-+-----------+---------------------------------+
-| *Setter*  | set_rect(value)                 |
-+-----------+---------------------------------+
-| *Getter*  | get_rect()                      |
-+-----------+---------------------------------+
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-100, -100, 200, 200)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)**
 
 The area covered by the BackBufferCopy. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 

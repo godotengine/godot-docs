@@ -14,70 +14,84 @@ HeightMapShape3D
 
 Height map shape resource for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Height map shape resource, which can be added to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>`. Heightmap collision is typically used for colliding with terrains. However, since heightmaps cannot store overhangs, collisions with other structures (such as buildings) must be done with other collision shapes such as :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. If needed, "holes" can be created in an ``HeightMapShape3D`` by assigning very low points (like ``-100000``) in the desired area.
+Height map shape resource, which can be added to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>`. Heightmap collision is typically used for colliding with terrains. However, since heightmaps cannot store overhangs, collisions with other structures (such as buildings) must be done with other collision shapes such as :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. If needed, "holes" can be created in an **HeightMapShape3D** by assigning very low points (like ``-100000``) in the desired area.
 
-\ **Performance:** ``HeightMapShape3D`` is faster to check collisions against compared to :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is slower than primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>`.
+\ **Performance:** **HeightMapShape3D** is faster to check collisions against compared to :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is slower than primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
-| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`map_data<class_HeightMapShape3D_property_map_data>`   | ``PackedFloat32Array(0, 0, 0, 0)`` |
-+-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` | ``2``                              |
-+-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`map_width<class_HeightMapShape3D_property_map_width>` | ``2``                              |
-+-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`map_data<class_HeightMapShape3D_property_map_data>`   | ``PackedFloat32Array(0, 0, 0, 0)`` |
+   +-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` | ``2``                              |
+   +-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`map_width<class_HeightMapShape3D_property_map_width>` | ``2``                              |
+   +-----------------------------------------------------+-------------------------------------------------------------+------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_HeightMapShape3D_property_map_data:
 
-- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **map_data**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``PackedFloat32Array(0, 0, 0, 0)`` |
-+-----------+------------------------------------+
-| *Setter*  | set_map_data(value)                |
-+-----------+------------------------------------+
-| *Getter*  | get_map_data()                     |
-+-----------+------------------------------------+
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **map_data** = ``PackedFloat32Array(0, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_data** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_map_data** **(** **)**
 
 Height map data, pool array must be of :ref:`map_width<class_HeightMapShape3D_property_map_width>` \* :ref:`map_depth<class_HeightMapShape3D_property_map_depth>` size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HeightMapShape3D_property_map_depth:
 
-- :ref:`int<class_int>` **map_depth**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``2``                |
-+-----------+----------------------+
-| *Setter*  | set_map_depth(value) |
-+-----------+----------------------+
-| *Getter*  | get_map_depth()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **map_depth** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_depth** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_map_depth** **(** **)**
 
 Depth of the height map data. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HeightMapShape3D_property_map_width:
 
-- :ref:`int<class_int>` **map_width**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``2``                |
-+-----------+----------------------+
-| *Setter*  | set_map_width(value) |
-+-----------+----------------------+
-| *Getter*  | get_map_width()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **map_width** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_map_width** **(** **)**
 
 Width of the height map data. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
 

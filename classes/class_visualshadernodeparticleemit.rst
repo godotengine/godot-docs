@@ -16,54 +16,92 @@ VisualShaderNodeParticleEmit
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------+-----------------------------------------------------------------+--------+
-| :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` | :ref:`flags<class_VisualShaderNodeParticleEmit_property_flags>` | ``31`` |
-+---------------------------------------------------------------+-----------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+-----------------------------------------------------------------+--------+
+   | :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` | :ref:`flags<class_VisualShaderNodeParticleEmit_property_flags>` | ``31`` |
+   +---------------------------------------------------------------+-----------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeParticleEmit_EmitFlags:
 
-.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_POSITION:
-
-.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_ROT_SCALE:
-
-.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_VELOCITY:
-
-.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_COLOR:
-
-.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_CUSTOM:
+.. rst-class:: classref-enumeration
 
 enum **EmitFlags**:
 
-- **EMIT_FLAG_POSITION** = **1**
+.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_POSITION:
 
-- **EMIT_FLAG_ROT_SCALE** = **2**
+.. rst-class:: classref-enumeration-constant
 
-- **EMIT_FLAG_VELOCITY** = **4**
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_POSITION** = ``1``
 
-- **EMIT_FLAG_COLOR** = **8**
 
-- **EMIT_FLAG_CUSTOM** = **16**
+
+.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_ROT_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_ROT_SCALE** = ``2``
+
+
+
+.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_VELOCITY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_VELOCITY** = ``4``
+
+
+
+.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_COLOR** = ``8``
+
+
+
+.. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_CUSTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_CUSTOM** = ``16``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleEmit_property_flags:
 
-- :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **flags**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``31``           |
-+-----------+------------------+
-| *Setter*  | set_flags(value) |
-+-----------+------------------+
-| *Getter*  | get_flags()      |
-+-----------+------------------+
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **flags** = ``31``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flags** **(** :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` value **)**
+- :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **get_flags** **(** **)**
 
 .. container:: contribute
 

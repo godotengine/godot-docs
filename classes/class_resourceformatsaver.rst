@@ -14,58 +14,85 @@ ResourceFormatSaver
 
 Saves a specific resource type to a file.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-The engine can save resources when you do it from the editor, or when you use the :ref:`ResourceSaver<class_ResourceSaver>` singleton. This is accomplished thanks to multiple ``ResourceFormatSaver``\ s, each handling its own format and called automatically by the engine.
+The engine can save resources when you do it from the editor, or when you use the :ref:`ResourceSaver<class_ResourceSaver>` singleton. This is accomplished thanks to multiple **ResourceFormatSaver**\ s, each handling its own format and called automatically by the engine.
 
 By default, Godot saves resources as ``.tres`` (text-based), ``.res`` (binary) or another built-in format, but you can choose to create your own format by extending this class. Be sure to respect the documented return types and values. You should give it a global class name with ``class_name`` for it to be registered. Like built-in ResourceFormatSavers, it will be called automatically when saving resources of its recognized type(s). You may also implement a :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|              |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|              |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceFormatSaver_method__get_recognized_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
 Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`_recognize<class_ResourceFormatSaver_method__recognize>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceFormatSaver_method__recognize:
 
-- :ref:`bool<class_bool>` **_recognize** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_recognize** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
 Returns whether the given resource object can be saved by this saver.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceFormatSaver_method__recognize_path:
 
-- :ref:`bool<class_bool>` **_recognize_path** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_recognize_path** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|
 
 Returns ``true`` if this saver handles a given save path and ``false`` otherwise.
 
 If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ResourceFormatSaver_method__save:
 
-- :ref:`int<class_int>` **_save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
 
 Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
 

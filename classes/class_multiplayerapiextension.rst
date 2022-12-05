@@ -14,6 +14,8 @@ MultiplayerAPIExtension
 
 Base class used for extending the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -95,99 +97,144 @@ Then in your main scene or in an autoload call :ref:`SceneTree.set_multiplayer<c
 
 Native extensions can alternatively use the :ref:`MultiplayerAPI.set_default_interface<class_MultiplayerAPI_method_set_default_interface>` method during initialization to configure themselves as the default implementation.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MultiplayerPeer<class_MultiplayerPeer>`   | :ref:`_get_multiplayer_peer<class_MultiplayerAPIExtension_method__get_multiplayer_peer>` **(** **)** |virtual|                                                                                                          |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_peer_ids<class_MultiplayerAPIExtension_method__get_peer_ids>` **(** **)** |virtual| |const|                                                                                                                  |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_get_remote_sender_id<class_MultiplayerAPIExtension_method__get_remote_sender_id>` **(** **)** |virtual| |const|                                                                                                  |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_get_unique_id<class_MultiplayerAPIExtension_method__get_unique_id>` **(** **)** |virtual| |const|                                                                                                                |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_object_configuration_add<class_MultiplayerAPIExtension_method__object_configuration_add>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|                  |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_object_configuration_remove<class_MultiplayerAPIExtension_method__object_configuration_remove>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|            |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_poll<class_MultiplayerAPIExtension_method__poll>` **(** **)** |virtual|                                                                                                                                          |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`_rpc<class_MultiplayerAPIExtension_method__rpc>` **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual| |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`_set_multiplayer_peer<class_MultiplayerAPIExtension_method__set_multiplayer_peer>` **(** :ref:`MultiplayerPeer<class_MultiplayerPeer>` multiplayer_peer **)** |virtual|                                           |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MultiplayerPeer<class_MultiplayerPeer>`   | :ref:`_get_multiplayer_peer<class_MultiplayerAPIExtension_method__get_multiplayer_peer>` **(** **)** |virtual|                                                                                                          |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_peer_ids<class_MultiplayerAPIExtension_method__get_peer_ids>` **(** **)** |virtual| |const|                                                                                                                  |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_get_remote_sender_id<class_MultiplayerAPIExtension_method__get_remote_sender_id>` **(** **)** |virtual| |const|                                                                                                  |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_get_unique_id<class_MultiplayerAPIExtension_method__get_unique_id>` **(** **)** |virtual| |const|                                                                                                                |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_object_configuration_add<class_MultiplayerAPIExtension_method__object_configuration_add>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|                  |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_object_configuration_remove<class_MultiplayerAPIExtension_method__object_configuration_remove>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|            |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_poll<class_MultiplayerAPIExtension_method__poll>` **(** **)** |virtual|                                                                                                                                          |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`_rpc<class_MultiplayerAPIExtension_method__rpc>` **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual| |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`_set_multiplayer_peer<class_MultiplayerAPIExtension_method__set_multiplayer_peer>` **(** :ref:`MultiplayerPeer<class_MultiplayerPeer>` multiplayer_peer **)** |virtual|                                           |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MultiplayerAPIExtension_method__get_multiplayer_peer:
 
-- :ref:`MultiplayerPeer<class_MultiplayerPeer>` **_get_multiplayer_peer** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`MultiplayerPeer<class_MultiplayerPeer>` **_get_multiplayer_peer** **(** **)** |virtual|
 
 Called when the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` is retrieved.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__get_peer_ids:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_peer_ids** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_peer_ids** **(** **)** |virtual| |const|
 
 Callback for :ref:`MultiplayerAPI.get_peers<class_MultiplayerAPI_method_get_peers>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__get_remote_sender_id:
 
-- :ref:`int<class_int>` **_get_remote_sender_id** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_remote_sender_id** **(** **)** |virtual| |const|
 
 Callback for :ref:`MultiplayerAPI.get_remote_sender_id<class_MultiplayerAPI_method_get_remote_sender_id>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__get_unique_id:
 
-- :ref:`int<class_int>` **_get_unique_id** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_unique_id** **(** **)** |virtual| |const|
 
 Callback for :ref:`MultiplayerAPI.get_unique_id<class_MultiplayerAPI_method_get_unique_id>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__object_configuration_add:
 
-- :ref:`int<class_int>` **_object_configuration_add** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_object_configuration_add** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__object_configuration_remove:
 
-- :ref:`int<class_int>` **_object_configuration_remove** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_object_configuration_remove** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__poll:
 
-- :ref:`int<class_int>` **_poll** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_poll** **(** **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__rpc:
 
-- :ref:`int<class_int>` **_rpc** **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_rpc** **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPIExtension_method__set_multiplayer_peer:
 
-- void **_set_multiplayer_peer** **(** :ref:`MultiplayerPeer<class_MultiplayerPeer>` multiplayer_peer **)** |virtual|
+.. rst-class:: classref-method
+
+void **_set_multiplayer_peer** **(** :ref:`MultiplayerPeer<class_MultiplayerPeer>` multiplayer_peer **)** |virtual|
 
 Called when the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` is set.
 

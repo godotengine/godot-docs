@@ -14,10 +14,12 @@ CompressedCubemap
 
 6-sided texture typically used in 3D rendering, optionally compressed.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-A cubemap that is loaded from a ``.ccube`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. ``CompressedCubemap`` can use one of 4 compresson methods:
+A cubemap that is loaded from a ``.ccube`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. **CompressedCubemap** can use one of 4 compresson methods:
 
 - Uncompressed (uncompressed on the GPU)
 

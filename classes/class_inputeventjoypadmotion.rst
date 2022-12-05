@@ -14,55 +14,70 @@ InputEventJoypadMotion
 
 Input event type for gamepad joysticks and other motions. For buttons, see ``InputEventJoypadButton``.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Stores information about joystick motions. One ``InputEventJoypadMotion`` represents one axis at a time.
+Stores information about joystick motions. One **InputEventJoypadMotion** represents one axis at a time.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------------+---------+
-| :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | ``0``   |
-+-------------------------------------------+---------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                 | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | ``0.0`` |
-+-------------------------------------------+---------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------------+---------+
+   | :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             | ``0``   |
+   +-------------------------------------------+---------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                 | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` | ``0.0`` |
+   +-------------------------------------------+---------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventJoypadMotion_property_axis:
 
-- :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **axis**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_axis(value) |
-+-----------+-----------------+
-| *Getter*  | get_axis()      |
-+-----------+-----------------+
+:ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **axis** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_axis** **(** :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` value **)**
+- :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` **get_axis** **(** **)**
 
 Axis identifier. Use one of the :ref:`JoyAxis<enum_@GlobalScope_JoyAxis>` axis constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventJoypadMotion_property_axis_value:
 
-- :ref:`float<class_float>` **axis_value**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_axis_value(value) |
-+-----------+-----------------------+
-| *Getter*  | get_axis_value()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **axis_value** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_axis_value** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_axis_value** **(** **)**
 
 Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
 

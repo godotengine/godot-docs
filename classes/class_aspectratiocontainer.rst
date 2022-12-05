@@ -14,134 +14,191 @@ AspectRatioContainer
 
 Container that preserves its child controls' aspect ratio.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Arranges child controls in a way to preserve their aspect ratio automatically whenever the container is resized. Solves the problem where the container size is dynamic and the contents' size needs to adjust accordingly without losing proportions.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_horizontal<class_AspectRatioContainer_property_alignment_horizontal>` | ``1``   |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_vertical<class_AspectRatioContainer_property_alignment_vertical>`     | ``1``   |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                                     | :ref:`ratio<class_AspectRatioContainer_property_ratio>`                               | ``1.0`` |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
-| :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>`     | :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`                 | ``2``   |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+   | :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_horizontal<class_AspectRatioContainer_property_alignment_horizontal>` | ``1``   |
+   +---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+   | :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` | :ref:`alignment_vertical<class_AspectRatioContainer_property_alignment_vertical>`     | ``1``   |
+   +---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                                     | :ref:`ratio<class_AspectRatioContainer_property_ratio>`                               | ``1.0`` |
+   +---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+   | :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>`     | :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`                 | ``2``   |
+   +---------------------------------------------------------------+---------------------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AspectRatioContainer_StretchMode:
 
-.. _class_AspectRatioContainer_constant_STRETCH_WIDTH_CONTROLS_HEIGHT:
-
-.. _class_AspectRatioContainer_constant_STRETCH_HEIGHT_CONTROLS_WIDTH:
-
-.. _class_AspectRatioContainer_constant_STRETCH_FIT:
-
-.. _class_AspectRatioContainer_constant_STRETCH_COVER:
+.. rst-class:: classref-enumeration
 
 enum **StretchMode**:
 
-- **STRETCH_WIDTH_CONTROLS_HEIGHT** = **0** --- The height of child controls is automatically adjusted based on the width of the container.
+.. _class_AspectRatioContainer_constant_STRETCH_WIDTH_CONTROLS_HEIGHT:
 
-- **STRETCH_HEIGHT_CONTROLS_WIDTH** = **1** --- The width of child controls is automatically adjusted based on the height of the container.
+.. rst-class:: classref-enumeration-constant
 
-- **STRETCH_FIT** = **2** --- The bounding rectangle of child controls is automatically adjusted to fit inside the container while keeping the aspect ratio.
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **STRETCH_WIDTH_CONTROLS_HEIGHT** = ``0``
 
-- **STRETCH_COVER** = **3** --- The width and height of child controls is automatically adjusted to make their bounding rectangle cover the entire area of the container while keeping the aspect ratio.
+The height of child controls is automatically adjusted based on the width of the container.
+
+.. _class_AspectRatioContainer_constant_STRETCH_HEIGHT_CONTROLS_WIDTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **STRETCH_HEIGHT_CONTROLS_WIDTH** = ``1``
+
+The width of child controls is automatically adjusted based on the height of the container.
+
+.. _class_AspectRatioContainer_constant_STRETCH_FIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **STRETCH_FIT** = ``2``
+
+The bounding rectangle of child controls is automatically adjusted to fit inside the container while keeping the aspect ratio.
+
+.. _class_AspectRatioContainer_constant_STRETCH_COVER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **STRETCH_COVER** = ``3``
+
+The width and height of child controls is automatically adjusted to make their bounding rectangle cover the entire area of the container while keeping the aspect ratio.
 
 When the bounding rectangle of child controls exceed the container's size and :ref:`Control.clip_contents<class_Control_property_clip_contents>` is enabled, this allows to show only the container's area restricted by its own bounding rectangle.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_AspectRatioContainer_AlignmentMode:
 
-.. _class_AspectRatioContainer_constant_ALIGNMENT_BEGIN:
-
-.. _class_AspectRatioContainer_constant_ALIGNMENT_CENTER:
-
-.. _class_AspectRatioContainer_constant_ALIGNMENT_END:
+.. rst-class:: classref-enumeration
 
 enum **AlignmentMode**:
 
-- **ALIGNMENT_BEGIN** = **0** --- Aligns child controls with the beginning (left or top) of the container.
+.. _class_AspectRatioContainer_constant_ALIGNMENT_BEGIN:
 
-- **ALIGNMENT_CENTER** = **1** --- Aligns child controls with the center of the container.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGNMENT_END** = **2** --- Aligns child controls with the end (right or bottom) of the container.
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **ALIGNMENT_BEGIN** = ``0``
+
+Aligns child controls with the beginning (left or top) of the container.
+
+.. _class_AspectRatioContainer_constant_ALIGNMENT_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **ALIGNMENT_CENTER** = ``1``
+
+Aligns child controls with the center of the container.
+
+.. _class_AspectRatioContainer_constant_ALIGNMENT_END:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **ALIGNMENT_END** = ``2``
+
+Aligns child controls with the end (right or bottom) of the container.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AspectRatioContainer_property_alignment_horizontal:
 
-- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_horizontal**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``1``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_alignment_horizontal(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_alignment_horizontal()      |
-+-----------+---------------------------------+
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_horizontal** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alignment_horizontal** **(** :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` value **)**
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_horizontal** **(** **)**
 
 Specifies the horizontal relative position of child controls.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AspectRatioContainer_property_alignment_vertical:
 
-- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_vertical**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``1``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_alignment_vertical(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_alignment_vertical()      |
-+-----------+-------------------------------+
+:ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **alignment_vertical** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alignment_vertical** **(** :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` value **)**
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_vertical** **(** **)**
 
 Specifies the vertical relative position of child controls.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AspectRatioContainer_property_ratio:
 
-- :ref:`float<class_float>` **ratio**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_ratio(value) |
-+-----------+------------------+
-| *Getter*  | get_ratio()      |
-+-----------+------------------+
+:ref:`float<class_float>` **ratio** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_ratio** **(** **)**
 
 The aspect ratio to enforce on child controls. This is the width divided by the height. The ratio depends on the :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AspectRatioContainer_property_stretch_mode:
 
-- :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **stretch_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``2``                   |
-+-----------+-------------------------+
-| *Setter*  | set_stretch_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | get_stretch_mode()      |
-+-----------+-------------------------+
+:ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **stretch_mode** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch_mode** **(** :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` value **)**
+- :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **get_stretch_mode** **(** **)**
 
 The stretch mode used to align child controls.
 

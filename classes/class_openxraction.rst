@@ -14,6 +14,8 @@ OpenXRAction
 
 An OpenXR action.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,86 +27,122 @@ Actions are not directly bound to specific devices, instead OpenXR recognizes a 
 
 Note that the name of the resource is used to register the action with.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
-| :ref:`ActionType<enum_OpenXRAction_ActionType>`   | :ref:`action_type<class_OpenXRAction_property_action_type>`       | ``1``                   |
-+---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                       | :ref:`localized_name<class_OpenXRAction_property_localized_name>` | ``""``                  |
-+---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`toplevel_paths<class_OpenXRAction_property_toplevel_paths>` | ``PackedStringArray()`` |
-+---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
+   | :ref:`ActionType<enum_OpenXRAction_ActionType>`   | :ref:`action_type<class_OpenXRAction_property_action_type>`       | ``1``                   |
+   +---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`                       | :ref:`localized_name<class_OpenXRAction_property_localized_name>` | ``""``                  |
+   +---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`toplevel_paths<class_OpenXRAction_property_toplevel_paths>` | ``PackedStringArray()`` |
+   +---------------------------------------------------+-------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_OpenXRAction_ActionType:
 
-.. _class_OpenXRAction_constant_OPENXR_ACTION_BOOL:
-
-.. _class_OpenXRAction_constant_OPENXR_ACTION_FLOAT:
-
-.. _class_OpenXRAction_constant_OPENXR_ACTION_VECTOR2:
-
-.. _class_OpenXRAction_constant_OPENXR_ACTION_POSE:
+.. rst-class:: classref-enumeration
 
 enum **ActionType**:
 
-- **OPENXR_ACTION_BOOL** = **0** --- This action provides a boolean value.
+.. _class_OpenXRAction_constant_OPENXR_ACTION_BOOL:
 
-- **OPENXR_ACTION_FLOAT** = **1** --- This action provides a float value between ``0.0`` and ``1.0`` for any analogue input such as triggers.
+.. rst-class:: classref-enumeration-constant
 
-- **OPENXR_ACTION_VECTOR2** = **2** --- This action provides a vector2 value and can be bound to embedded trackpads and joysticks
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_BOOL** = ``0``
 
-- **OPENXR_ACTION_POSE** = **3**
+This action provides a boolean value.
+
+.. _class_OpenXRAction_constant_OPENXR_ACTION_FLOAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_FLOAT** = ``1``
+
+This action provides a float value between ``0.0`` and ``1.0`` for any analogue input such as triggers.
+
+.. _class_OpenXRAction_constant_OPENXR_ACTION_VECTOR2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_VECTOR2** = ``2``
+
+This action provides a vector2 value and can be bound to embedded trackpads and joysticks
+
+.. _class_OpenXRAction_constant_OPENXR_ACTION_POSE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_POSE** = ``3``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OpenXRAction_property_action_type:
 
-- :ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1``                  |
-+-----------+------------------------+
-| *Setter*  | set_action_type(value) |
-+-----------+------------------------+
-| *Getter*  | get_action_type()      |
-+-----------+------------------------+
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_action_type** **(** :ref:`ActionType<enum_OpenXRAction_ActionType>` value **)**
+- :ref:`ActionType<enum_OpenXRAction_ActionType>` **get_action_type** **(** **)**
 
 The type of action.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRAction_property_localized_name:
 
-- :ref:`String<class_String>` **localized_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | set_localized_name(value) |
-+-----------+---------------------------+
-| *Getter*  | get_localized_name()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **localized_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_localized_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_localized_name** **(** **)**
 
 The localized description of this action.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRAction_property_toplevel_paths:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``PackedStringArray()``   |
-+-----------+---------------------------+
-| *Setter*  | set_toplevel_paths(value) |
-+-----------+---------------------------+
-| *Getter*  | get_toplevel_paths()      |
-+-----------+---------------------------+
+:ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_toplevel_paths** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths** **(** **)**
 
 A collections of toplevel paths to which this action can be bound.
 

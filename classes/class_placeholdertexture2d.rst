@@ -14,6 +14,8 @@ PlaceholderTexture2D
 
 Placeholder class for a 2-dimensional texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,29 +25,39 @@ This class is used when loading a project that uses a :ref:`Texture2D<class_Text
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | resource_local_to_scene                               | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
-+-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaceholderTexture2D_property_size>` | ``Vector2(1, 1)``                                                                      |
-+-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | resource_local_to_scene                               | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaceholderTexture2D_property_size>` | ``Vector2(1, 1)``                                                                      |
+   +-------------------------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaceholderTexture2D_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(1, 1)`` |
-+-----------+-------------------+
-| *Setter*  | set_size(value)   |
-+-----------+-------------------+
-| *Getter*  | get_size()        |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 The texture's size (in pixels).
 

@@ -14,299 +14,378 @@ MenuButton
 
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
-New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the ``MenuButton`` node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each item new properties.
+New items can be created inside this :ref:`PopupMenu<class_PopupMenu>` using ``get_popup().add_item("My Item Name")``. You can also create them directly from the editor. To do so, select the **MenuButton** node, then in the toolbar at the top of the 2D editor, click **Items** then click **Add** in the popup. You will be able to give each item new properties.
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | flat                                                              | ``true`` (overrides :ref:`Button<class_Button_property_flat>`)                |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | ``0`` (overrides :ref:`Control<class_Control_property_focus_mode>`)           |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`item_count<class_MenuButton_property_item_count>`           | ``0``                                                                         |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``                                                                     |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | toggle_mode                                                       | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
-+-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`ActionMode<enum_BaseButton_ActionMode>` | action_mode                                                       | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | flat                                                              | ``true`` (overrides :ref:`Button<class_Button_property_flat>`)                |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`      | focus_mode                                                        | ``0`` (overrides :ref:`Control<class_Control_property_focus_mode>`)           |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`item_count<class_MenuButton_property_item_count>`           | ``0``                                                                         |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` | ``false``                                                                     |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | toggle_mode                                                       | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
+   +-----------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** |const|                                                  |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`show_popup<class_MenuButton_method_show_popup>` **(** **)**                                                        |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** |const|                                                  |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`show_popup<class_MenuButton_method_show_popup>` **(** **)**                                                        |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_theme_color_font_color>`                   | ``Color(0.875, 0.875, 0.875, 1)`` |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_MenuButton_theme_color_font_disabled_color>` | ``Color(1, 1, 1, 0.3)``           |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_MenuButton_theme_color_font_focus_color>`       | ``Color(0.95, 0.95, 0.95, 1)``    |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_MenuButton_theme_color_font_hover_color>`       | ``Color(0.95, 0.95, 0.95, 1)``    |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_MenuButton_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``             |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_MenuButton_theme_color_font_pressed_color>`   | ``Color(1, 1, 1, 1)``             |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`           | :ref:`h_separation<class_MenuButton_theme_constant_h_separation>`            | ``3``                             |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_MenuButton_theme_constant_outline_size>`            | ``0``                             |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_theme_font_font>`                                |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`           | :ref:`font_size<class_MenuButton_theme_font_size_font_size>`                 |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_theme_style_disabled>`                       |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_theme_style_focus>`                             |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_theme_style_hover>`                             |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_theme_style_normal>`                           |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuButton_theme_style_pressed>`                         |                                   |
-+---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_MenuButton_theme_color_font_color>`                   | ``Color(0.875, 0.875, 0.875, 1)`` |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_MenuButton_theme_color_font_disabled_color>` | ``Color(1, 1, 1, 0.3)``           |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_MenuButton_theme_color_font_focus_color>`       | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_MenuButton_theme_color_font_hover_color>`       | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_MenuButton_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_MenuButton_theme_color_font_pressed_color>`   | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`h_separation<class_MenuButton_theme_constant_h_separation>`            | ``3``                             |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_MenuButton_theme_constant_outline_size>`            | ``0``                             |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_MenuButton_theme_font_font>`                                |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_MenuButton_theme_font_size_font_size>`                 |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuButton_theme_style_disabled>`                       |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuButton_theme_style_focus>`                             |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuButton_theme_style_hover>`                             |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuButton_theme_style_normal>`                           |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuButton_theme_style_pressed>`                         |                                   |
+   +---------------------------------+------------------------------------------------------------------------------+-----------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MenuButton_signal_about_to_popup:
 
-- **about_to_popup** **(** **)**
+.. rst-class:: classref-signal
+
+**about_to_popup** **(** **)**
 
 Emitted when the :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MenuButton_property_item_count:
 
-- :ref:`int<class_int>` **item_count**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_item_count(value) |
-+-----------+-----------------------+
-| *Getter*  | get_item_count()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **item_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_item_count** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_item_count** **(** **)**
 
 The number of items currently in the list.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_property_switch_on_hover:
 
-- :ref:`bool<class_bool>` **switch_on_hover**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``false``                  |
-+-----------+----------------------------+
-| *Setter*  | set_switch_on_hover(value) |
-+-----------+----------------------------+
-| *Getter*  | is_switch_on_hover()       |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **switch_on_hover** = ``false``
 
-If ``true``, when the cursor hovers above another ``MenuButton`` within the same parent which also has ``switch_on_hover`` enabled, it will close the current ``MenuButton`` and open the other one.
+.. rst-class:: classref-property-setget
+
+- void **set_switch_on_hover** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_switch_on_hover** **(** **)**
+
+If ``true``, when the cursor hovers above another **MenuButton** within the same parent which also has ``switch_on_hover`` enabled, it will close the current **MenuButton** and open the other one.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MenuButton_method_get_popup:
 
-- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** |const|
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MenuButton_method_set_disable_shortcuts:
 
-- void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+.. rst-class:: classref-method
+
+void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_method_show_popup:
 
-- void **show_popup** **(** **)**
+.. rst-class:: classref-method
 
-Adjusts popup position and sizing for the ``MenuButton``, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
+void **show_popup** **(** **)**
+
+Adjusts popup position and sizing for the **MenuButton**, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_MenuButton_theme_color_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------------------+
-| *Default* | ``Color(0.875, 0.875, 0.875, 1)`` |
-+-----------+-----------------------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
 
-Default text :ref:`Color<class_Color>` of the ``MenuButton``.
+Default text :ref:`Color<class_Color>` of the **MenuButton**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_color_font_disabled_color:
 
-- :ref:`Color<class_Color>` **font_disabled_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color(1, 1, 1, 0.3)`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(1, 1, 1, 0.3)``
 
-Text :ref:`Color<class_Color>` used when the ``MenuButton`` is disabled.
+Text :ref:`Color<class_Color>` used when the **MenuButton** is disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_color_font_focus_color:
 
-- :ref:`Color<class_Color>` **font_focus_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
-+-----------+--------------------------------+
+:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)``
 
-Text :ref:`Color<class_Color>` used when the ``MenuButton`` is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
+Text :ref:`Color<class_Color>` used when the **MenuButton** is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_color_font_hover_color:
 
-- :ref:`Color<class_Color>` **font_hover_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------------------------------+
-| *Default* | ``Color(0.95, 0.95, 0.95, 1)`` |
-+-----------+--------------------------------+
+:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
 
-Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being hovered.
+Text :ref:`Color<class_Color>` used when the **MenuButton** is being hovered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_color_font_outline_color:
 
-- :ref:`Color<class_Color>` **font_outline_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
 
-The tint of text outline of the ``MenuButton``.
+The tint of text outline of the **MenuButton**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_color_font_pressed_color:
 
-- :ref:`Color<class_Color>` **font_pressed_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)``
 
-Text :ref:`Color<class_Color>` used when the ``MenuButton`` is being pressed.
+Text :ref:`Color<class_Color>` used when the **MenuButton** is being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **h_separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``3`` |
-+-----------+-------+
+:ref:`int<class_int>` **h_separation** = ``3``
 
-The horizontal space between ``MenuButton``'s icon and text. Negative values will be treated as ``0`` when used.
+The horizontal space between **MenuButton**'s icon and text. Negative values will be treated as ``0`` when used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_constant_outline_size:
 
-- :ref:`int<class_int>` **outline_size**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **outline_size** = ``0``
 
 The size of the text outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` of the ``MenuButton``'s text.
+:ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the **MenuButton**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_font_size_font_size:
 
-- :ref:`int<class_int>` **font_size**
+.. rst-class:: classref-themeproperty
 
-Font size of the ``MenuButton``'s text.
+:ref:`int<class_int>` **font_size**
+
+Font size of the **MenuButton**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_style_disabled:
 
-- :ref:`StyleBox<class_StyleBox>` **disabled**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is disabled.
+:ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the **MenuButton** is disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_style_focus:
 
-- :ref:`StyleBox<class_StyleBox>` **focus**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the **MenuButton** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_style_hover:
 
-- :ref:`StyleBox<class_StyleBox>` **hover**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being hovered.
+:ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the **MenuButton** is being hovered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_style_normal:
 
-- :ref:`StyleBox<class_StyleBox>` **normal**
+.. rst-class:: classref-themeproperty
 
-Default :ref:`StyleBox<class_StyleBox>` for the ``MenuButton``.
+:ref:`StyleBox<class_StyleBox>` **normal**
+
+Default :ref:`StyleBox<class_StyleBox>` for the **MenuButton**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MenuButton_theme_style_pressed:
 
-- :ref:`StyleBox<class_StyleBox>` **pressed**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``MenuButton`` is being pressed.
+:ref:`StyleBox<class_StyleBox>` **pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the **MenuButton** is being pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

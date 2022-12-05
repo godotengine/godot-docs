@@ -14,52 +14,77 @@ ConvexPolygonShape2D
 
 Convex polygon shape resource for 2D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 2D convex polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check). See also :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`.
 
-The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex to speed up collision detection.
+The main difference between a **ConvexPolygonShape2D** and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex to speed up collision detection.
 
-\ **Performance:** ``ConvexPolygonShape2D`` is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by a primitive shape.
+\ **Performance:** **ConvexPolygonShape2D** is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by a primitive shape.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PackedVector2Array()`` |
-+-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)** |
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)** |
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConvexPolygonShape2D_property_points:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **points**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector2Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **points** = ``PackedVector2Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points** **(** **)**
 
 The polygon's list of vertices. Can be in either clockwise or counterclockwise order. Only set this property with convex hull points, use :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` to generate a convex hull shape from concave shape points.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ConvexPolygonShape2D_method_set_point_cloud:
 
-- void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
+.. rst-class:: classref-method
+
+void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
 
 Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry2D.convex_hull<class_Geometry2D_method_convex_hull>` for details.
 

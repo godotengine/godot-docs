@@ -16,125 +16,142 @@ TubeTrailMesh
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_TubeTrailMesh_property_curve>`                   |         |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`radial_steps<class_TubeTrailMesh_property_radial_steps>`     | ``8``   |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``0.5`` |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`section_length<class_TubeTrailMesh_property_section_length>` | ``0.2`` |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`section_rings<class_TubeTrailMesh_property_section_rings>`   | ``3``   |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`sections<class_TubeTrailMesh_property_sections>`             | ``5``   |
-+---------------------------+--------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve<class_TubeTrailMesh_property_curve>`                   |         |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`radial_steps<class_TubeTrailMesh_property_radial_steps>`     | ``8``   |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``0.5`` |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`section_length<class_TubeTrailMesh_property_section_length>` | ``0.2`` |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`section_rings<class_TubeTrailMesh_property_section_rings>`   | ``3``   |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`sections<class_TubeTrailMesh_property_sections>`             | ``5``   |
+   +---------------------------+--------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TubeTrailMesh_property_curve:
 
-- :ref:`Curve<class_Curve>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve<class_Curve>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TubeTrailMesh_property_radial_steps:
 
-- :ref:`int<class_int>` **radial_steps**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``8``                   |
-+-----------+-------------------------+
-| *Setter*  | set_radial_steps(value) |
-+-----------+-------------------------+
-| *Getter*  | get_radial_steps()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **radial_steps** = ``8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radial_steps** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_radial_steps** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TubeTrailMesh_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.5``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TubeTrailMesh_property_section_length:
 
-- :ref:`float<class_float>` **section_length**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0.2``                   |
-+-----------+---------------------------+
-| *Setter*  | set_section_length(value) |
-+-----------+---------------------------+
-| *Getter*  | get_section_length()      |
-+-----------+---------------------------+
+:ref:`float<class_float>` **section_length** = ``0.2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_section_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_section_length** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TubeTrailMesh_property_section_rings:
 
-- :ref:`int<class_int>` **section_rings**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``3``                    |
-+-----------+--------------------------+
-| *Setter*  | set_section_rings(value) |
-+-----------+--------------------------+
-| *Getter*  | get_section_rings()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **section_rings** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_section_rings** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_section_rings** **(** **)**
 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_TubeTrailMesh_property_sections:
 
-- :ref:`int<class_int>` **sections**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``5``               |
-+-----------+---------------------+
-| *Setter*  | set_sections(value) |
-+-----------+---------------------+
-| *Getter*  | get_sections()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **sections** = ``5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sections** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_sections** **(** **)**
 
 .. container:: contribute
 

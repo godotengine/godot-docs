@@ -14,6 +14,8 @@ VisualShaderNodeDeterminant
 
 Calculates the determinant of a :ref:`Transform3D<class_Transform3D>` within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

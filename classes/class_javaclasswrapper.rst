@@ -16,19 +16,32 @@ JavaClassWrapper
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
-+-----------------------------------+----------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_JavaClassWrapper_method_wrap:
 
-- :ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
 
 .. container:: contribute
 
