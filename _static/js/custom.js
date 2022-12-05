@@ -253,22 +253,63 @@ $(document).ready(() => {
   if (inDev) {
     // Add a compatibility notice using JavaScript so it doesn't end up in the
     // automatically generated `meta description` tag.
-    const strippedUrl = [location.protocol, '//', location.host, location.pathname].join('');
-    const updatedUrl = strippedUrl.replace('/latest/', '/stable/');
+
+    const baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
+    // These lines only work as expected in the production environment, can't test this locally.
+    const fallbackUrl = baseUrl.replace('/latest/', '/stable/');
+    const homeUrl = baseUrl.split('/latest/')[0] + '/stable/';
+    const searchUrl = homeUrl + 'search.html?q=';
+
+    // Insert the base notice with a placeholder to display as we're making a request.
     document.querySelector('div[itemprop="articleBody"]').insertAdjacentHTML('afterbegin', `
-      <div class="admonition attention">
+      <div class="admonition attention latest-notice">
         <p class="first admonition-title">Attention</p>
         <p>
           You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
           (unstable) version of this documentation, which may document features not available
           or compatible with Godot 3.x.
         </p>
-        <p class="last">
-          See <a class="reference" href="${updatedUrl}">this page</a>
-          for the stable version of this documentation.
+        <p class="last latest-notice-link">
+          Checking the <a class="reference" href="${homeUrl}">stable version</a>
+          of the documentation...
         </p>
       </div>
     `);
+
+    const noticeLink = document.querySelector('.latest-notice-link');
+
+    // Make a HEAD request to the possible stable URL to check if the page exists.
+    fetch(fallbackUrl, { method: 'HEAD' })
+      .then((res) => {
+        // We only check the HTTP status, which should tell us if the link is valid or not.
+        if (res.status === 200) {
+          noticeLink.innerHTML = `
+          See the <a class="reference" href="${fallbackUrl}">stable version</a>
+          of this documentation page instead.
+          `;
+        } else {
+          // Err, just to fallthrough to catch.
+          throw Error('Bad request');
+        }
+      })
+      .catch((err) => {
+        let message = `
+        This page does not exist in the <a class="reference" href="${homeUrl}">stable version</a>
+        of the documentation.
+        `;
+
+        // Also suggest a search query using the page's title. It should work with translations as well.
+        // Note that we can't use the title tag as it has a permanent suffix. OG title doesn't, though.
+        const titleMeta = document.querySelector('meta[property="og:title"]');
+        if (typeof titleMeta !== 'undefined') {
+          const pageTitle = titleMeta.getAttribute('content');
+          message += `
+          You can try searching for "<a class="reference" href="${searchUrl + encodeURIComponent(pageTitle)}">${pageTitle}</a>" instead.
+          `;
+        }
+
+        noticeLink.innerHTML = message;
+      });
   }
 
   // Load instant.page to prefetch pages upon hovering. This makes navigation feel
