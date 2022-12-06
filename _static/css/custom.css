@@ -5,6 +5,25 @@
  * based on browser preferences.
  */
 
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('fonts/JetBrainsMono-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('fonts/JetBrainsMono-Medium.woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('fonts/JetBrainsMono-Bold.woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
  /* Default (light) theme colors */
  :root {
     --body-color: #404040;
@@ -36,9 +55,9 @@
 
     --hr-color: #e1e4e5;
     --table-row-odd-background-color: #f3f6f6;
-    --code-background-color: #fff;
+    --code-background-color: #e9eae5;
     --code-border-color: #e1e4e5;
-    --code-literal-color: #d04c60;
+    --code-literal-color: #c03e41;
     --input-background-color: #fcfcfc;
     --input-focus-border-color: #5f8cff;
 
@@ -48,8 +67,8 @@
     --code-tabs-selected-color: #8a9378;
 
     --classref-primary-color: #252525;
-    --classref-secondary-color: #92979f;
-    --classref-setget-color: #818897;
+    --classref-secondary-color: #616770;
+    --classref-setget-color: #56585b;
 
     --search-input-background-color: #e6eef3; /* derived from --input-background-color */
     --search-match-color: #2c6b96; /* derived from --link-color */
@@ -111,7 +130,7 @@
     --footer-color: #808080;
 
     --system-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --monospace-font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
+    --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
 /* Dark theme colors */
@@ -147,9 +166,9 @@
 
         --hr-color: #555;
         --table-row-odd-background-color: #3b3e41;
-        --code-background-color: #434649;
+        --code-background-color: #22252d;
         --code-border-color: #505356;
-        --code-literal-color: #faa;
+        --code-literal-color: #d68f8f;
         --input-background-color: #333537;
         --input-focus-border-color: #5f8cff;
 
@@ -158,9 +177,9 @@
         --code-tabs-background-color: #353c4c;
         --code-tabs-selected-color: #5a657e;
 
-        --classref-primary-color: #c0c0c0;
-        --classref-secondary-color: #70757b;
-        --classref-setget-color: #7b7f86;
+        --classref-primary-color: #e8e8e8;
+        --classref-secondary-color: #929598;
+        --classref-setget-color: #9e9fa0;
 
         --search-input-background-color: #43464a; /* derived from --input-background-color */
         --search-match-color: #52b4ff; /* derived from --link-color */
@@ -658,6 +677,7 @@ footer {
 }
 
 .rst-content div[class^="highlight"] pre {
+    font-variant-ligatures: none;
     padding: 18px 16px;
 }
 
@@ -712,13 +732,18 @@ code,
 .rst-content tt,
 .rst-content code {
     font-size: 14px;
+    font-family: var(--monospace-font-family);
     background-color: var(--code-background-color);
-    border: 1px solid var(--code-border-color);
+    border: none;
+    border-radius: 4px;
 }
 
 .rst-content tt.literal,
 .rst-content code.literal {
     color: var(--code-literal-color);
+    font-weight: 600;
+    font-variant-ligatures: none;
+    padding: 3px 5px;
 }
 
 .rst-content div[class^="highlight"] {
@@ -735,6 +760,7 @@ code,
     /* Increase the font size and line height in code blocks */
     font-size: 14px;
     line-height: 1.5;
+    font-family: var(--monospace-font-family);
 }
 
 /* Code tab display tweaks */
@@ -951,16 +977,16 @@ kbd.compound > .kbd,
     margin: 26px 0;
 }
 
-.classref-property,
-.classref-signal,
-.classref-annotation,
-.classref-themeproperty,
-.classref-method,
-.classref-constructor,
-.classref-operator,
-.classref-constant,
-.classref-enumeration,
-.classref-enumeration-constant {
+.classref-descriptions-group > p.classref-property,
+.classref-descriptions-group > p.classref-signal,
+.classref-descriptions-group > p.classref-annotation,
+.classref-descriptions-group > p.classref-themeproperty,
+.classref-descriptions-group > p.classref-method,
+.classref-descriptions-group > p.classref-constructor,
+.classref-descriptions-group > p.classref-operator,
+.classref-descriptions-group > p.classref-constant,
+.classref-descriptions-group > p.classref-enumeration,
+.classref-descriptions-group > p.classref-enumeration-constant {
     color: var(--classref-secondary-color);
     font-family: var(--monospace-font-family);
     font-size: 110%;
@@ -972,8 +998,13 @@ kbd.compound > .kbd,
     margin-bottom: 12px;
 }
 
-.classref-enumeration-constant {
+p + .classref-constant {
+    margin-top: 22px;
+}
+
+.classref-descriptions-group > p.classref-enumeration-constant {
     font-size: 100%;
+    margin-top: 18px;
     margin-bottom: 14px;
 }
 
@@ -1016,40 +1047,46 @@ kbd.compound > .kbd,
 .classref-enumeration > strong,
 .classref-enumeration-constant > strong {
     color: var(--classref-primary-color);
-    font-size: 120%;
 }
 
-.classref-property > code,
-.classref-signal > code,
-.classref-annotation > code,
-.classref-themeproperty > code,
-.classref-method > code,
-.classref-constructor > code,
-.classref-operator > code,
-.classref-constant > code,
-.classref-enumeration > code,
-.classref-enumeration-constant > code {
+.classref-property > code.literal,
+.classref-signal > code.literal,
+.classref-annotation > code.literal,
+.classref-themeproperty > code.literal,
+.classref-method > code.literal,
+.classref-constructor > code.literal,
+.classref-operator > code.literal,
+.classref-constant > code.literal,
+.classref-enumeration > code.literal,
+.classref-enumeration-constant > code.literal {
     background-color: transparent;
     border: none;
     padding: 0;
     font-weight: 600;
-    font-size: 105%
+    font-size: 90%
 }
 
 .classref-constant > code.literal,
 .classref-enumeration-constant > code.literal {
     color: var(--classref-setget-color);
+    font-weight: 400;
 }
 
-.classref-property-setget {
+/* Artificially increasing specificity to make it override theme.css. */
+.classref-descriptions-group ul.classref-property-setget {
     color: var(--classref-setget-color);
     font-size: 90%;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.classref-property-setget > li {
+    line-height: 22px;
 }
 
 .classref-property-setget p {
     font-family: var(--monospace-font-family);
     font-size: 100%;
+    line-height: 22px;
 }
 
 .classref-property-setget p > a {
@@ -1086,6 +1123,10 @@ kbd.compound > .kbd,
     margin-left: -48px;
 }
 
+.classref-descriptions-group > p {
+    margin-bottom: 12px;
+}
+
 .classref-descriptions-group .classref-property,
 .classref-descriptions-group .classref-signal,
 .classref-descriptions-group .classref-annotation,
@@ -1102,8 +1143,17 @@ kbd.compound > .kbd,
     margin-left: -48px;
 }
 
+.classref-reftable-group .wy-table-responsive {
+    margin-bottom: 36px;
+}
+
 .classref-reftable-group .wy-table-responsive > table {
     width: 100%;
+}
+
+/* Artificially increasing specificity to make it override theme.css. */
+html.writer-html5 .rst-content .classref-reftable-group .wy-table-responsive > table td > p {
+    line-height: 1.3rem;
 }
 
 /* Buttons */
