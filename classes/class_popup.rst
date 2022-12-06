@@ -19,7 +19,7 @@ Base container control for popups and dialogs.
 Description
 -----------
 
-Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
+Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport, not the current Camera.
 
 Properties
 ----------
