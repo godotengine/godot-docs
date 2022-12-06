@@ -860,7 +860,7 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal par
         player.hit.connect(_on_player_hit.bind("sword", 100))
     
         # Parameters added when emitting the signal are passed first.
-        player.emit_signal("hit", "Dark lord", 5)
+        player.hit.emit("Dark lord", 5)
     
     # We pass two arguments when emitting (`hit_by`, `level`),
     # and bind two more arguments when connecting (`weapon_type`, `damage`).
@@ -879,7 +879,7 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal par
         player.Hit.Connect(OnPlayerHit, new Godot.Collections.Array{ "sword", 100 });
     
         // Parameters added when emitting the signal are passed first.
-        player.EmitSignal("hit", "Dark lord", 5);
+        player.Hit.Emit("Dark lord", 5);
     }
     
     // We pass two arguments when emitting (`hit_by`, `level`),
