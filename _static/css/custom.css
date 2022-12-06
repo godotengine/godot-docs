@@ -261,6 +261,8 @@ legend,
 .rst-versions {
     /* Use a system font stack for better performance (no Web fonts required) */
     font-family: var(--system-font-family);
+    /* Some fonts that we use (namely JetBrains Mono) can come with ligatures. It's better to opt-in if needed. */
+    font-variant-ligatures: none;
 }
 
 h1,
