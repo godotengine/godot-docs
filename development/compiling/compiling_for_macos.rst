@@ -119,8 +119,8 @@ use::
 Building export templates
 -------------------------
 
-To build macOS export templates, you have to compile with the no
-editor targets ``target=template_release`` (release template) and
+To build macOS export templates, you have to compile using the targets without
+the editor: ``target=template_release`` (release template) and
 ``target=template_debug``.
 
 Official templates are universal binaries which support both Intel x86_64 and
