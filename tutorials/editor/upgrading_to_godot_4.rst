@@ -535,7 +535,7 @@ The most notable examples of this are:
   state, instead of relying on ``get_status()`` automatically polling:
   `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__
 - :ref:`class_String`'s ``right()`` method `has changed behavior <https://github.com/godotengine/godot/pull/36180>`__:
-  now it returns a number of characters from the right of the string, rather than
+  it now returns a number of characters from the right of the string, rather than
   the right side of the string from a given position. If you need the old behavior,
   you can use ``substr()`` instead.
 - ``is_connected_to_host()`` was removed from StreamPeerTCP and PacketPeerUDP as
