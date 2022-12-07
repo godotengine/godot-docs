@@ -98,7 +98,7 @@ Resulting binary
 The resulting binaries will be placed in the ``bin/`` subdirectory,
 generally with this naming convention::
 
-    godot.<platform>.[editor/template_release/template_debug].[dev_build].<architecture>[extension]
+    godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
 
 For the previous build attempt, the result would look like this::
 
@@ -129,12 +129,12 @@ build targets, and which will be explained below.
 Target
 ------
 
-Target controls if the editor is contained and used debug flags.
+Target controls if the editor is contained and debug flags are used.
 All builds are optimized. Each mode means:
 
--  **editor**: Build with editor, optimized, with debugging code
--  **template_debug**: Build with C++ debugging symbols
--  **template_release**: Build without symbols
+-  **editor**: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_debug**: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_release**: Build without symbols (defines: ``-O3``/``/O2``)
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can
@@ -148,7 +148,9 @@ Dev build
 ---------
 
 When doing engine development the ``dev_build`` option can be used together
-with ``target`` to enable dev-specific code.
+with ``target`` to enable dev-specific code. ``dev_build`` defines ``DEV_ENABLED``,
+disables optimization (``-O0``/``/0d``), enables generating debug symbols, and
+does not define ``NDEBUG`` (so ``assert()`` works in thirdparty libraries).
 
 ::
 
