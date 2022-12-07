@@ -478,7 +478,7 @@ The most notable examples of this are:
   GDScript. This allows for greater optimization, as StringName is specifically
   designed to be used for "constant" strings that are created once and reused
   many times. These types are not equivalent to each other, which means
-  ``"example") == &"example"`` returns ``false`` (``&`` creates a StringName).
+  ``"example" == &"example"`` returns ``false`` (``&`` creates a StringName).
   This should be taken into account for ``if`` and ``match`` comparisons in
   particular, as you may have to replace ``"example"`` with ``&"example"``.
 - :ref:`GDScript setter and getter syntax <doc_gdscript_basics_setters_getters>`
@@ -534,6 +534,10 @@ The most notable examples of this are:
 - A :ref:`class_StreamPeerTCP` must have ``poll()`` called on it to update its
   state, instead of relying on ``get_status()`` automatically polling:
   `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__
+- :ref:`class_String`'s ``right()`` method `has changed behavior <https://github.com/godotengine/godot/pull/36180>`__:
+  now it returns a number of characters from the right of the string, rather than
+  the right side of the string from a given position. If you need the old behavior,
+  you can use ``substr()`` instead.
 - ``is_connected_to_host()`` was removed from StreamPeerTCP and PacketPeerUDP as
   per `GH-59582 <https://github.com/godotengine/godot/pull/59582>`__.
   ``get_status()`` can be used in StreamPeerTCP instead.
@@ -573,7 +577,7 @@ converter doesn't support updating existing setups:
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | ToolButton          | Button                | ToolButton was Button with the **Flat** property enabled by default.       |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
-| YSort               | Node2D                | Node2D has a new **Y Sort** property in 4.0.                               |
+| YSort               | Node2D or Control     | CanvasItem has a new **Y Sort Enabled** property in 4.0.                   |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | ProximityGroup      | Node3D                | :ref:`class_VisibleOnScreenNotifier3D` can act as a replacement.           |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
