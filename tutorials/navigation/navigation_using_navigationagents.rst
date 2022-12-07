@@ -164,7 +164,7 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
 
     func _physics_process(delta):
 
-        movement_delta = move_speed * delta
+        movement_delta = movement_speed * delta
         var next_path_position : Vector3 = navigation_agent.get_next_location()
         var current_agent_position : Vector3 = global_transform.origin
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
@@ -193,9 +193,10 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
 
     func _physics_process(delta):
 
+        movement_delta = movement_speed * delta
         var next_path_position : Vector3 = navigation_agent.get_next_location()
         var current_agent_position : Vector3 = global_transform.origin
-        var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
+        var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
 
     func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
