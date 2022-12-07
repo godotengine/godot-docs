@@ -94,8 +94,8 @@ root directory with the following arguments:
 
 ::
 
-    scons platform=android target=release android_arch=armv7
-    scons platform=android target=release android_arch=arm64v8
+    scons platform=android target=template_release arch=armv7
+    scons platform=android target=template_release arch=arm64v8
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
@@ -109,8 +109,8 @@ The resulting APK will be located at ``bin/android_release.apk``.
 
 ::
 
-    scons platform=android target=release_debug android_arch=armv7
-    scons platform=android target=release_debug android_arch=arm64v8
+    scons platform=android target=template_debug arch=armv7
+    scons platform=android target=template_debug arch=arm64v8
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
@@ -130,16 +130,16 @@ Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you also want to include support for x86 and x86-64 devices, run the SCons
-command a third and fourth time with the ``android_arch=x86``, and
-``android_arch=x86_64`` arguments before building the APK with Gradle. For
+command a third and fourth time with the ``arch=x86_32``, and
+``arch=x86_64`` arguments before building the APK with Gradle. For
 example, for the release template:
 
 ::
 
-    scons platform=android target=release android_arch=armv7
-    scons platform=android target=release android_arch=arm64v8
-    scons platform=android target=release android_arch=x86
-    scons platform=android target=release android_arch=x86_64
+    scons platform=android target=template_release arch=armv7
+    scons platform=android target=template_release arch=arm64v8
+    scons platform=android target=template_release arch=x86
+    scons platform=android target=template_release arch=x86_64
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
@@ -214,10 +214,10 @@ root directory with the following arguments:
 
 ::
 
-   scons platform=android android_arch=armv7 production=yes tools=yes target=release_debug
-   scons platform=android android_arch=arm64v8 production=yes tools=yes target=release_debug
-   scons platform=android android_arch=x86 production=yes tools=yes target=release_debug
-   scons platform=android android_arch=x86_64 production=yes tools=yes target=release_debug
+   scons platform=android arch=armv7 production=yes target=editor
+   scons platform=android arch=arm64v8 production=yes target=editor
+   scons platform=android arch=x86 production=yes target=editor
+   scons platform=android arch=x86_64 production=yes target=editor
    cd platform/android/java
    # On Windows
    .\gradlew generateGodotEditor
@@ -289,8 +289,8 @@ one of the following reasons:
 
 -  Make sure to use export templates that match your editor version; if
    you use a new Godot version, you *have* to update the templates too.
--  ``libgodot_android.so`` is not in ``libs/<android_arch>/``
-   where ``<android_arch>`` is the device's architecture.
+-  ``libgodot_android.so`` is not in ``libs/<arch>/``
+   where ``<arch>`` is the device's architecture.
 -  The device's architecture does not match the exported one(s).
    Make sure your templates were built for that device's architecture,
    and that the export settings included support for that architecture.

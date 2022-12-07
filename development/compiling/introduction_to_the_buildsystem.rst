@@ -98,22 +98,22 @@ Resulting binary
 The resulting binaries will be placed in the ``bin/`` subdirectory,
 generally with this naming convention::
 
-    godot.<platform>.[opt].[tools/debug].<architecture>[extension]
+    godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
 
 For the previous build attempt, the result would look like this::
 
     ls bin
-    bin/godot.linuxbsd.tools.64
+    bin/godot.linuxbsd.editor.x86_64
 
-This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has tools (the
-whole editor) compiled in, and is meant for 64 bits.
+This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has the
+whole editor compiled in, and is meant for 64 bits.
 
 A Windows binary with the same configuration will look like this:
 
 .. code-block:: console
 
     C:\godot> dir bin/
-    godot.windows.tools.64.exe
+    godot.windows.editor.64.exe
 
 Copy that binary to any location you like, as it contains the project manager,
 editor and all means to execute the game. However, it lacks the data to export
@@ -124,63 +124,58 @@ you can build them yourself).
 Aside from that, there are a few standard options that can be set in all
 build targets, and which will be explained below.
 
-.. _doc_introduction_to_the_buildsystem_tools:
-
-Tools
------
-
-Tools are enabled by default in all PC targets (Linux, Windows, macOS),
-disabled for everything else. Disabling tools produces a binary that can
-run projects but that does not include the editor or the project
-manager.
-
-::
-
-    scons platform=<platform> tools=yes/no
-
 .. _doc_introduction_to_the_buildsystem_target:
 
 Target
 ------
 
-Target controls optimization and debug flags. Each mode means:
+Target controls if the editor is contained and debug flags are used.
+All builds are optimized. Each mode means:
 
--  **debug**: Build with C++ debugging symbols, runtime checks (performs
-   checks and reports error) and none to little optimization.
--  **release_debug**: Build without C++ debugging symbols and
-   optimization, but keep the runtime checks (performs checks and
-   reports errors). Official editor binaries use this configuration.
--  **release**: Build without symbols, with optimization and with little
-   to no runtime checks. This target can't be used together with
-   ``tools=yes``, as the editor requires some debug functionality and run-time
-   checks to run.
+-  **editor**: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_debug**: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_release**: Build without symbols (defines: ``-O3``/``/O2``)
+
+The editor is enabled by default in all PC targets (Linux, Windows, macOS),
+disabled for everything else. Disabling the editor produces a binary that can
+run projects but that does not include the editor or the project manager.
 
 ::
 
-    scons platform=<platform> target=debug/release_debug/release
+    scons platform=<platform> target=editor/template_debug/template_release
 
-This flag appends the ``.debug`` suffix (for debug), or ``.tools`` (for debug
-with tools enabled). When optimization is enabled (release), it appends
-the ``.opt`` suffix.
+Dev build
+---------
 
-Bits
-----
+When doing engine development the ``dev_build`` option can be used together
+with ``target`` to enable dev-specific code. ``dev_build`` defines ``DEV_ENABLED``,
+disables optimization (``-O0``/``/0d``), enables generating debug symbols, and
+does not define ``NDEBUG`` (so ``assert()`` works in thirdparty libraries).
 
-Bits is meant to control the CPU or OS version intended to run the
+::
+
+    scons platform=<platform> dev_build=yes
+
+This flag appends the ``.dev`` suffix (for development) to the generated
+binary name.
+
+Architecture
+------------
+
+The ``arch`` option is meant to control the CPU or OS version intended to run the
 binaries. It is focused mostly on desktop platforms and ignored everywhere
 else.
 
--  **32**: Build binaries for 32-bit platforms.
--  **64**: Build binaries for 64-bit platforms.
--  **default**: Build for the architecture that matches the host platform.
+Supported values for the ``arch`` option are **auto**, **x86_32**, **x86_64**,
+**arm32**, **arm64**, **rv64**, **ppc32**, **ppc64** and **wasm32**.
 
 ::
 
-    scons platform=<platform> bits=default/32/64
+    scons platform=<platform> arch=auto/'auto/x86_32/x86_64/arm32/arm64/rv64/ppc32/ppc64/wasm32
 
-This flag appends ``.32`` or ``.64`` suffixes to resulting binaries when
-relevant. If ``bits=default`` is used, the suffix will match the detected
-architecture.
+This flag appends the value of ``arch`` to resulting binaries when
+relevant.  The default value ``arch=auto`` detects the architecture
+that matches the host platform.
 
 .. _doc_buildsystem_custom_modules:
 

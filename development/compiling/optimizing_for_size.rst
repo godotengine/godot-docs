@@ -61,7 +61,7 @@ To enable this, set the ``optimize`` flag to ``size``:
 
 ::
 
-    scons p=windows target=release tools=no optimize=size
+    scons p=windows target=template_release optimize=size
 
 Some platforms such as WebAssembly already use this mode by default.
 
@@ -79,7 +79,7 @@ and MSVC compilers:
 
 ::
 
-    scons p=windows target=release tools=no use_lto=yes
+    scons p=windows target=template_release use_lto=yes
 
 Linking becomes much slower and more RAM-consuming with this option,
 so it should be used only for release builds:
@@ -100,7 +100,7 @@ For 2D games, having the whole 3D engine available usually makes no sense. Becau
 
 ::
 
-    scons p=windows target=release tools=no disable_3d=yes
+    scons p=windows target=template_release disable_3d=yes
 
 Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
@@ -118,7 +118,7 @@ TextEdit or GraphEdit. They can be disabled using a build flag:
 
 ::
 
-    scons p=windows target=release tools=no disable_advanced_gui=yes
+    scons p=windows target=template_release disable_advanced_gui=yes
 
 This is everything that will be disabled:
 
@@ -167,7 +167,7 @@ a lot of them:
 
 ::
 
-    scons p=windows target=release tools=no module_arkit_enabled=no module_assimp_enabled=no module_bmp_enabled=no module_bullet_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etc_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_mbedtls_enabled=no module_mobile_vr_enabled=no module_opensimplex_enabled=no module_pvr_enabled=no module_recast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_xatlas_unwrap_enabled=no
+    scons p=windows target=template_release module_arkit_enabled=no module_assimp_enabled=no module_bmp_enabled=no module_bullet_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etc_enabled=no module_gdnative_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_mbedtls_enabled=no module_mobile_vr_enabled=no module_opensimplex_enabled=no module_pvr_enabled=no module_recast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_xatlas_unwrap_enabled=no
 
 If this proves not to work for your use case, you should review the list of
 modules and see which ones you actually still need for your game (e.g. you
