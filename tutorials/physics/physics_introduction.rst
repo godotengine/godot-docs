@@ -154,7 +154,7 @@ Code example
 ^^^^^^^^^^^^
 
 In function calls, layers are specified as a bitmask. Where a function enables
-all layers by default, the layer mask will be given as ``0x7fffffff``. Your code
+all layers by default, the layer mask will be given as ``0xffffffff``. Your code
 can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
