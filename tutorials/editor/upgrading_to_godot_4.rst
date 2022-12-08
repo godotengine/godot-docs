@@ -55,8 +55,8 @@ Godot 3.x for the following reasons:
 Caveats of upgrading
 ^^^^^^^^^^^^^^^^^^^^
 
-Since Godot 4 is a complete rewrite in many aspects, some features have
-unfortunately been lost in the process. Some of these features may be restored
+**Since Godot 4 is a complete rewrite in many aspects, some features have
+unfortunately been lost in the process.** Some of these features may be restored
 in future Godot releases:
 
 - Bullet physics was removed in favor of GodotPhysics. This only affects 3D
@@ -70,6 +70,11 @@ in future Godot releases:
 - While rendering still happens in HDR in 3D when using the Forward Plus or
   Forward Mobile backends, Viewports cannot return HDR data anymore. This is
   planned to be restored at some point in the future.
+- Mono was replaced by .NET 6. This means exporting C# projects to Android, iOS
+  and HTML5 is no longer supported for now. Exporting C# projects to desktop
+  platforms is still supported. Support for exporting C# projects to more
+  platforms will be restored in future 4.x releases as upstream support
+  improves.
 
 Preparing before the upgrade (optional)
 ---------------------------------------
