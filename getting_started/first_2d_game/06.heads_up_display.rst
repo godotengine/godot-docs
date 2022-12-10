@@ -413,6 +413,21 @@ click "Groups" and you can type a new group name and click "Add".
 
 .. image:: img/group_tab.png
 
+You might also need to add the mobs directly with code. At the end of _on_MobTimer_timeout() where the mob is instanced you can put the following line.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+        mob.add_to_group("mobs")
+
+ .. code-tab:: csharp
+
+        #someone else fill in
+        
+ .. code-tab:: cpp
+
+        #someone else fill in
+
 Now all mobs will be in the "mobs" group. We can then add the following line to
 the ``new_game()`` function in ``Main``:
 
