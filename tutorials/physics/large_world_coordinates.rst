@@ -181,7 +181,7 @@ to compile an editor build so you can test your large precision world without
 having to export the project every time.
 
 See the :ref:`Compiling <toc-devel-compiling>` section for compiling
-instructions for each target platform. You will need to add the ``float=64``
+instructions for each target platform. You will need to add the ``precision=double``
 SCons option when compiling the editor and export templates.
 
 The resulting binaries will be named with a ``.double`` suffix to distinguish
@@ -212,9 +212,9 @@ Known incompatibilities
 - The GDExtension API changes in an incompatible way in double-precision builds.
   This means extensions **must** be rebuilt to work with double-precision
   builds. On the extension developer's end, the ``REAL_T_IS_DOUBLE`` define is
-  enabled when building a GDExtension with ``float=64``. ``real_t`` can be used
-  as an alias for ``float`` in single-precision builds, and ``double`` in
-  double-precision builds.
+  enabled when building a GDExtension with ``precision=double``.
+  ``real_t`` can be used as an alias for ``float`` in single-precision builds,
+  and ``double`` in double-precision builds.
 
 Limitations
 -----------
