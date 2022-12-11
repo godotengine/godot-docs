@@ -12,7 +12,9 @@ and disadvantages that upgrading would bring to your project.
 Advantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Along with the new features present in 4.0, upgrading gives the following advantages:
+Along with the
+`new features present in 4.0 <https://github.com/godotengine/godot/blob/master/CHANGELOG.md>`__,
+upgrading gives the following advantages:
 
 - Many bugs are fixed in 4.0, but cannot be resolved in 3.x for various reasons
   (such as graphics API differences or backwards compatibility).
@@ -42,6 +44,13 @@ Godot 3.x for the following reasons:
 - Godot 4's baseline hardware requirements (such as memory usage) are slightly
   higher, both for the editor and exported projects. This was required for the
   implementation of some core optimizations.
+- Since Godot 4 includes more features than Godot 3, Godot 4's binary size for
+  exported projects is larger. While this can be mitigated by
+  :ref:`optimizing a build for size <doc_optimizing_for_size>`, a 4.0 build with
+  a given set of enabled modules will remain larger compared to a 3.x build with
+  the same modules. This can be an issue for
+  :ref:`exporting to the Web <doc_exporting_for_web>`, as binary size directly
+  influences how fast the engine can initialize (regardless of download speed).
 - Godot 4 does not and will not have support for GLES2 rendering.
   (There is still support for GLES3 rendering using the new OpenGL backend,
   which means that devices without Vulkan support can still run Godot 4.)
@@ -75,6 +84,9 @@ in future Godot releases:
   platforms is still supported. Support for exporting C# projects to more
   platforms will be restored in future 4.x releases as upstream support
   improves.
+
+You can find a more complete list of functional regressions by searching for
+`issues labeled "regression" but not "bug" on GitHub <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3Aregression+-label%3Abug>`__.
 
 Preparing before the upgrade (optional)
 ---------------------------------------
