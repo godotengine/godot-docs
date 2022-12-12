@@ -691,12 +691,20 @@ footer {
 }
 
 .wy-table-bordered-all td,
-.rst-content table.docutils td,
 .wy-table thead th,
+.rst-content table.docutils td,
 .rst-content table.docutils thead th,
 .rst-content table.field-list thead th {
     border-bottom: 2px solid var(--code-border-color);
     border-left: 2px solid var(--code-border-color);
+    padding: 4px 16px;
+}
+
+html.writer-html5 .rst-content table.docutils th {
+    border-bottom: 4px solid var(--code-border-color);
+    border-left: 2px solid var(--code-border-color);
+    padding: 8px 16px;
+    vertical-align: middle;
 }
 
 .wy-table-odd td,
@@ -726,6 +734,22 @@ footer {
 /* Make sure not to wrap keyboard shortcuts */
 .wy-table-responsive table td kbd {
     white-space: nowrap;
+}
+
+/* Artificially increasing specificity to make it override theme.css. */
+html.writer-html5 .rst-content .wy-table-responsive > table td > p {
+    line-height: 1.425rem;
+}
+html.writer-html5 .rst-content .wy-table-responsive > table th > p {
+    line-height: 1.425rem;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+html.writer-html5 .rst-content .wy-table-responsive > table td > p tt.literal,
+html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal {
+    font-size: .85rem;
+    padding: 2px 5px;
 }
 
 /* Code display tweaks */
@@ -1151,11 +1175,6 @@ p + .classref-constant {
 
 .classref-reftable-group .wy-table-responsive > table {
     width: 100%;
-}
-
-/* Artificially increasing specificity to make it override theme.css. */
-html.writer-html5 .rst-content .classref-reftable-group .wy-table-responsive > table td > p {
-    line-height: 1.3rem;
 }
 
 /* Buttons */
