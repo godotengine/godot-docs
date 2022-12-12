@@ -48,7 +48,7 @@ You can also alter the property with code:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        pause_mode = Node.PAUSE_MODE_PROCESS
+        process_mode = Node.PROCESS_MODE_ALWAYS
 
  .. code-tab:: csharp
 
