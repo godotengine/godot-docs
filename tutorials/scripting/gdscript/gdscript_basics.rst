@@ -347,51 +347,55 @@ Both of these are the same::
 
 Here's the list of available annotations:
 
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| **Annotation**               | **Description**                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@tool``                    | Enable the `Tool mode`_.                                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
-|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
-|                              |                                                                                                   |
-| ``@export_enum``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_file``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_dir``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_file``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_dir``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_multiline``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_placeholder``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_range``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_exp_easing``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_color_no_alpha``   |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_node_path``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_physics`` |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_physics`` |                                                                                                   |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| **Annotation**                  | **Description**                                                                                   |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ``@tool``                       | Enable the `Tool mode`_.                                                                          |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ``@onready``                    | Defer initialization of variable until the node is in the tree. See                               |
+|                                 | :ref:`doc_gdscript_onready_annotation`.                                                           |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ``@icon(path)``                 | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ``@rpc``                        | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
++---------------------------------+---------------------------------------------------------------------------------------------------+
+| ``@export``                     | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
+|                                 |                                                                                                   |
+| ``@export_enum``                |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_file``                |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_dir``                 |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_global_file``         |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_global_dir``          |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_multiline``           |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_placeholder``         |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_range``               |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_exp_easing``          |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_color_no_alpha``      |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_node_path``           |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags``               |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_2d_render``     |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_2d_physics``    |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_2d_navigation`` |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_3d_render``     |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_3d_physics``    |                                                                                                   |
+|                                 |                                                                                                   |
+| ``@export_flags_3d_navigation`` |                                                                                                   |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 
 Comments
