@@ -25,11 +25,8 @@ using the :ref:`class_RandomNumberGenerator` class.
 
 Global scope methods are easier to set up, but they don't offer as much control.
 
-RandomNumberGenerator requires more code to use, but exposes many methods not
-found in global scope such as :ref:`randi_range()
-<class_RandomNumberGenerator_method_randi_range>` and :ref:`randfn()
-<class_RandomNumberGenerator_method_randfn>`. On top of that, it allows creating
-multiple instances each with their own seed.
+RandomNumberGenerator requires more code to use, but allows creating
+multiple instances, each with their own seed and state.
 
 This tutorial uses global scope methods, except when the method only exists in
 the RandomNumberGenerator class.
