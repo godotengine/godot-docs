@@ -69,7 +69,7 @@ Godot has a node that detects when objects leave the screen,
     reason to use pools is to avoid freezes with garbage-collected languages
     like C# or Lua. GDScript uses a different technique to manage memory,
     reference counting, which doesn't have that caveat. You can learn more
-    about that here :ref:`doc_gdscript_basics_memory_management`.
+    about that in :ref:`doc_gdscript_basics_memory_management`.
 
 Select the *Mob* node and add a *VisibilityNotifier* as a child of it. Another
 box, pink this time, appears. When this box completely leaves the screen, the
@@ -212,11 +212,6 @@ Leaving the screen
 We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our *VisibilityNotifier* node's ``screen_exited`` signal to the *Mob*.
 
-Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
-
-|image8|
-
 Select the *VisibilityNotifier* node and on the right side of the interface,
 navigate to the *Node* dock. Double-click the *screen_exited()* signal.
 
@@ -226,7 +221,7 @@ Connect the signal to the *Mob*.
 
 |image10|
 
-This will take you back to the script editor and add a new function for you,
+This will add a new function for you,
 ``_on_VisibilityNotifier_screen_exited()``. From it, call the ``queue_free()``
 method. This will destroy the mob instance when the *VisibilityNotifier* \'s box
 leaves the screen.
