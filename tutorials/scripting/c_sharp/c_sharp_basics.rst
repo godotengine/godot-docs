@@ -292,7 +292,48 @@ the performance of C# in Godot — while generally in the same order of magnitud
 — is roughly **~4×** that of GDScript in some naive cases. C++ is still
 a little faster; the specifics are going to vary according to your use case.
 GDScript is likely fast enough for most general scripting workloads.
-C# is faster, but requires some expensive marshalling when talking to Godot.
+
+Most properties of Godot C# objects that are based on ``Godot.Object``
+(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
+Godot's C++ core.
+Consider assigning values of such properties into a local variable if you need to modify or read them multiple times at
+a single code location:
+
+.. code-block:: csharp
+
+    using Godot;
+    using System;
+
+    public class YourCustomClass : Node3D
+    {
+        private void ExpensiveReposition()
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                // Position is read and set 10 times which incurs native interop.
+                // Furthermore the object is repositioned 10 times in 3D space which takes additional time.
+                Position += new Vector3(i, i);
+            }
+        }
+
+        private void Reposition()
+        {
+            // A variable is used to avoid native interop for Position on every loop.
+            var newPosition = Position;
+            for (var i = 0; i < 10; i++)
+            {
+                newPosition += new Vector3(i, i);
+            }
+            // Setting Position only once avoids native interop and repositioning in 3D space.
+            Position = newPosition;
+        }
+    }
+
+Passing raw arrays (such as ``byte[]``) or ``string`` to Godot's C# API requires marshalling which is
+comparatively pricey.
+
+The implicit conversion from ``string`` to ``NodePath`` or ``StringName`` incur both the native interop and marshalling
+costs as the ``string`` has to be marshalled and passed to the respective native constructor.
 
 Using NuGet packages in Godot
 -----------------------------
