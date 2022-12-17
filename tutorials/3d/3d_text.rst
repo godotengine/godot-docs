@@ -44,6 +44,10 @@ Advantages
   more flexible on that aspect compared to TextMesh, especially for rendering
   fonts with self-intersecting outlines.
 
+.. seealso::
+
+    See :ref:`doc_using_fonts` for guidelines on configuring font imports.
+
 Limitations
 ^^^^^^^^^^^
 
