@@ -465,6 +465,43 @@ GDScript               C#
 ``length_squared()``   ``LengthSquared``
 =====================  =============================================================
 
+Color
+-----
+
+Structs cannot have parameterless constructors in C#. Therefore, ``new Color()``
+initializes all primitive members to their default value (which represents the transparent black color).
+Please use ``Colors.Black`` for the equivalent of ``Color()`` in GDScript and C++.
+
+The global ``Color8`` method to construct a Color from bytes is available as a static method
+in the Color type.
+
+The Color constants are available in the ``Colors`` static class as readonly properties.
+
+The following method was converted to a property with a different name:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_luminance()``   ``Luminance``
+====================  ==============================================================
+
+The following method was converted to a method with a different name:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``html(String)``      ``FromHtml(ReadOnlySpan<char>)``
+====================  ==============================================================
+
+The following methods are available as constructors:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``hex(int)``          ``Color(uint)``
+``hex64(int)``        ``Color(ulong)``
+====================  ==============================================================
+
 Array
 -----
 
@@ -564,7 +601,6 @@ Other differences:
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-``Color8``        ``Color.Color8``
 ``is_inf``        `float.IsInfinity`_ or `double.IsInfinity`_
 ``is_nan``        `float.IsNaN`_ or `double.IsNaN`_
 ``dict_to_inst``  TODO
