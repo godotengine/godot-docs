@@ -494,15 +494,36 @@ Communicating with other scripting languages
 
 This is explained extensively in :ref:`doc_cross_language_scripting`.
 
-.. _doc_c_sharp_differences_yield:
+.. _doc_c_sharp_differences_await:
 
-Yield
------
+Await keyword
+-------------
 
-Something similar to GDScript's ``yield`` with a single parameter can be achieved with
-C#'s `yield keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/yield>`_.
+Something similar to GDScript's ``await`` keyword can be achieved with C#'s
+`await keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/await>`_.
 
-The equivalent of yield on signal can be achieved with async/await and ``Godot.Object.ToSignal``.
+The C# ``await`` keyword can be used with any awaitable expression, it's commonly
+used with operands of the types `Task`_, `Task<TResult>`_, `ValueTask`_, or `ValueTask<TResult>`_.
+
+An expression ``t`` is awaitable if one of the following holds:
+
+* ``t`` is of compile-time type ``dynamic``.
+* ``t`` has an accessible instance or extension method called ``GetAwaiter`` with no
+  parameters and no type parameters, and a return type ``A`` for which all of the
+  following hold:
+
+  * ``A`` implements the interface ``System.Runtime.CompilerServices.INotifyCompletion``.
+  * ``A`` has an accessible, readable instance property ``IsCompleted`` of type ``bool``.
+  * ``A`` has an accessible instance method ``GetResult`` with no parameters and no type
+    parameters.
+
+.. _Task: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task
+.. _Task<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1
+.. _ValueTask: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask
+.. _ValueTask<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1
+
+The equivalent of await on signal can be achieved with the ``await`` keyword and
+``Godot.Object.ToSignal``.
 
 Example:
 
