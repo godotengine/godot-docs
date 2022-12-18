@@ -34,7 +34,6 @@ Special cases:
 =======================  ===========================================================
 GDScript                 C#
 =======================  ===========================================================
-``SPKEY``                ``GD.SpKey``
 ``TYPE_*``               ``Variant.Type`` enum
 ``OP_*``                 ``Variant.Operator`` enum
 =======================  ===========================================================
@@ -55,8 +54,8 @@ Example: ``GD.RandRange`` and ``GD.RandSeed``.
 Other functions
 ^^^^^^^^^^^^^^^
 
-Many other global functions like ``print`` and ``var2str`` are located under ``GD``.
-Example: ``GD.Print`` and ``GD.Var2Str``.
+Many other global functions like ``print`` and ``var_to_str`` are located under ``GD``.
+Example: ``GD.Print`` and ``GD.VarToStr``.
 
 Exceptions:
 
@@ -87,10 +86,10 @@ Example:
         }
     }
 
-Export keyword
---------------
+`@export` annotation
+--------------------
 
-Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
+Use the ``[Export]`` attribute instead of the GDScript `@export` annotation.
 This attribute can also be provided with optional :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` and ``hintString`` parameters.
 Default values can be set by assigning a value.
 
@@ -114,6 +113,8 @@ Example:
         [Export(PropertyHint.File, "*.png,*.jpg")]
         private string _icon;
     }
+
+See also: :ref:`doc_c_sharp_exports`.
 
 Signal keyword
 --------------
@@ -185,8 +186,8 @@ Example:
 
 .. code-block:: csharp
 
-    string text = "Bigrams";
-    string[] bigrams = text.Bigrams(); // ["Bi", "ig", "gr", "ra", "am", "ms"]
+    string text = "Get up!";
+    string[] bigrams = text.Bigrams(); // ["Ge", "et", "t ", " u", "up", "p!"]
 
 Strings are immutable in .NET, so all methods that manipulate a string don't
 modify the original string and return a newly created string with the
@@ -522,8 +523,13 @@ Other differences:
 GDScript          C#
 ================  ==================================================================
 ``Color8``        ``Color.Color8``
-``is_inf``        ``float.IsInfinity``
-``is_nan``        ``float.IsNaN``
-``dict2inst``     TODO
-``inst2dict``     TODO
+``is_inf``        `float.IsInfinity`_ or `double.IsInfinity`_
+``is_nan``        `float.IsNaN`_ or `double.IsNaN`_
+``dict_to_inst``  TODO
+``inst_to_dict``  TODO
 ================  ==================================================================
+
+.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
+.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
+.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
+.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan
