@@ -331,13 +331,6 @@ Cases where you can't specify types
 To wrap up this introduction, let's cover a few cases where you can't
 use type hints. All the examples below **will trigger errors**.
 
-You can't use Enums as types:
-
-::
-
-    enum MoveDirection {UP, DOWN, LEFT, RIGHT}
-    var current_direction: MoveDirection
-
 You can't specify the type of individual members in an array. This will
 give you an error:
 
@@ -354,28 +347,6 @@ element the ``for`` keyword loops over already has a different type. So you
     var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
         pass
-
-Two scripts can't depend on each other in a cyclic fashion:
-
-::
-
-    # Player.gd
-
-    extends Area2D
-    class_name Player
-
-
-    var rifle: Rifle
-
-::
-
-    # Rifle.gd
-
-    extends Area2D
-    class_name Rifle
-
-
-    var player: Player
 
 Summary
 -------
