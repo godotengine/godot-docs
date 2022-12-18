@@ -45,6 +45,12 @@ Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``,
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
 The ``PI`` constant can be found as ``Mathf.Pi``.
 
+C# also provides the static `System.Math`_ and `System.MathF`_ classes that may
+contain other useful mathematical operations.
+
+.. _System.Math: https://learn.microsoft.com/en-us/dotnet/api/system.math
+.. _System.MathF: https://learn.microsoft.com/en-us/dotnet/api/system.mathf
+
 Random functions
 ^^^^^^^^^^^^^^^^
 
