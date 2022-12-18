@@ -51,6 +51,12 @@ Random functions
 Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
 Example: ``GD.RandRange`` and ``GD.RandSeed``.
 
+Consider using `System.Random`_ or, if you need cryptographically strong randomness,
+`System.Security.Cryptography.RandomNumberGenerator`_.
+
+.. _System.Random: https://learn.microsoft.com/en-us/dotnet/api/system.random
+.. _System.Security.Cryptography.RandomNumberGenerator: https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator
+
 Other functions
 ^^^^^^^^^^^^^^^
 
